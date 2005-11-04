@@ -24,7 +24,7 @@
 Developing Maven 2
 
  This document describes how to get started into developing Maven 2 itself. There is a separate page describing how
- to {{{building.html}building Maven 2}}.
+ to {{{guide-building-m2.html}building Maven 2}}.
 
 * Finding some work to do
 
@@ -36,7 +36,7 @@ Developing Maven 2
 
  We categorize the issues in three different categories:
 
- * <<Noice>>: No previous exposure to the code needed.
+ * <<Novice>>: No previous exposure to the code needed.
    <({{{http://jira.codehaus.org/secure/IssueNavigator.jspa?view=rss&pid=10500&resolutionIds=-1&customfield_10010=Novice&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true&decorator=none}rss feed}})>
 
  * <<Intermediate>>: Exposure to Maven pluins and/or internals required.
@@ -213,7 +213,7 @@ Available formats
 
 ** IntelliJ IDEA 4.5+
 
- Download <<<{{{../../maven-codestyle.xml}maven-codestyle.xml}}>>> and copy it to
+ Download <<<{{{../../development/maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
  <<<~/.IntelliJIDEA/config/codestyles>>> then restart IDEA. On Windows, try
  <<<C:\Documents and Settings\<username>\.IntelliJIDEA\config\codestyles>>>
 
@@ -221,7 +221,7 @@ Available formats
 
 ** Eclipse 3.x
 
- Download <<<{{{../../maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
+ Download <<<{{{../../development/maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
 
  After this, select Window \> Preferences, and open up the configuration for Java \> Code
  Style \> Code Formatter. Click on the button labeled Import... and select the file you
