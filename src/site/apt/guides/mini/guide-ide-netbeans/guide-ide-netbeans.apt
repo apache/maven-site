@@ -244,7 +244,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Build the Maven 2 site}
 
-    You can call The <Generate Javadoc for Project> Netbeans action which is mapped to the <<<site:site>>> Maven 2 goal, 
+    You can call The <Generate Javadoc for Project> Netbeans action which is mapped to the <<<site>>> Maven 2 goal, 
     here in the Maven site archetype.
 
 [Generate_Site.png] Generate Site
