@@ -8,7 +8,7 @@
 
 Introduction to dependency management
 
- Dependency management is one of the features of Maven that is best know to users and is one of the areas where
+ Dependency management is one of the features of Maven that is best known to users and is one of the areas where
  Maven excels. There is not much difficulty in managing dependencies for a single a project, but when you start
  getting into dealing with multi-module projects and applications that consist of tens or hundreds of modules this
  is where Maven can help you a great deal in maintaining a high degree of control and stability.

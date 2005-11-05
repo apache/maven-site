@@ -218,7 +218,7 @@ Introduction to Build Profiles
   tests pass, since the path you've provided allows the test plugin to install
   and test this web application.
 
-  <However>, when your your colleague attempts to build to <<integration-test>>,
+  <However>, when your colleague attempts to build to <<integration-test>>,
   his build fails spectacularly, complaining that it cannot resolve the plugin
   configuration parameter \<appserverHome\>, or worse, that the value of that
   parameter - literally $\{appserver.home\} - is invalid (if it warns you at all).
@@ -282,7 +282,7 @@ Introduction to Build Profiles
 </profiles>
 +---+
 
-  This profile looks quite similar to the one from last example, with a few 
+  This profile looks quite similar to the one from the last example, with a few 
   important exceptions: it's plainly geared toward a development environment,
   and it has an activation section that will trigger its inclusion when the
   system properties contain "env=dev". So, executing:
