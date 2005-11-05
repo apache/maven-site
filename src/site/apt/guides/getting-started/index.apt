@@ -1094,7 +1094,7 @@ mvn site
   only SSH is supported, as above which copies to the host <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>.
 
   Deploying the site is done with the <<<site-deploy>>> goal. Note that you cannot just call the deployment goal on its own, however.
-  You must presently run the <<<site:site>>> goal independantly.
+  You must presently run the <<<site>>> goal independantly.
 
 ---------------
 mvn site-deploy
