@@ -176,7 +176,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 [Run_Build_Main_Project.png] Run Build Main Project
 
-    You can also call the <Clean Project> Netbeans action which is mapped to the <<<clean:clean>>> Maven2 goal.
+    You can also call the <Clean Project> Netbeans action which is mapped to the <<<clean>>> Maven2 goal.
 
 [Run_Clean_Main_Project.png] Run Clean Main Project
 

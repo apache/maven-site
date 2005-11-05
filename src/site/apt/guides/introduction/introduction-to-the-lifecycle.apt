@@ -51,10 +51,10 @@ mvn install
   It should also be noted that the same command can be used in a multi-module scenario. For example;
 
 ------
-mvn clean:clean install
+mvn clean install
 ------
 
-  This command will traverse into all of the subprojects and run <<<clean:clean>>>, then <<<install>>> (including all of
+  This command will traverse into all of the subprojects and run <<<clean>>>, then <<<install>>> (including all of
   the prior steps).
 
 * Setting up your Project to Use the Build Lifecycle

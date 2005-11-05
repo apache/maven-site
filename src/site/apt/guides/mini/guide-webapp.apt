@@ -39,7 +39,7 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-webapp -Darchet
 
 +----+
 
-mvn clean:clean package
+mvn clean package
 
 +----+
 

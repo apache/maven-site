@@ -11,7 +11,7 @@ Introduction to Plugin Prefix Resolution
   When you execute Maven using a standard lifecycle phase, resolving the
   plugins that participate in that lifecycle is a relatively simple process.
   However, when you directly invoke a mojo from the command line, as in the case
-  of <<clean:clean>>, Maven must have some way of reliably resolving the 
+  of <<clean>>, Maven must have some way of reliably resolving the 
   <<clean>> plugin prefix to the <<maven-clean-plugin>>. This provides brevity
   for command-line invocations, while preserving the descriptiveness of the
   plugin's real artifactId.
