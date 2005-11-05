@@ -6,11 +6,10 @@
       <question>Tell me about the goals of Maven 2.0</question>
       <answer>
         <p>
-          You've seen
-          <a href="#what-is-maven">above</a>
-          the goals that Maven aims to achieve, however there have also
-          been questions about why Maven 2.0 is rewritten from the successful Maven 1.0. In summary, the main goals of
-          the new Maven 2.0 architecture are:
+          In addition to understanding the   
+          <a href="./what-is-maven.html">Goals of Maven</a> 
+          there have also been questions about why Maven 2.0 is rewritten from the successful Maven 1.0.
+          In summary, the main goals of the new Maven 2.0 architecture are:
         </p>
         <ul>
           <li>To be simple to use - it should be more obvious and consistent about how things are working</li>
@@ -39,7 +38,7 @@
         </p>
         <p>
           For instructions on checking out and building Maven 2.0, see
-          <a href="/maven2/developers/building.html">Building Maven 2.0</a>
+          <a href="./guides/development/guide-building-m2.html">Building Maven 2.0</a>
           .
         </p>
         <p>

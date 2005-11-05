@@ -809,11 +809,12 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  element indicates how your project uses that dependency, and can be values like <<<compile>>>, <<<test>>>, and <<<runtime>>>.
  For more information on everything you can specify for a dependency, see the {{{../../../maven-model/maven.html}Project Descriptor Reference}}.
  ~~DJ: Does this link work? I can't find the document.
- For more information about the dependency mechanism as a whole, see {{{../../dependency-mechanism.html}Dependency Mechanism}}.
+ For more information about the dependency mechanism as a whole, see
+ {{{../introduction/introduction-to-dependency-management.html}Introduction to Dependency Management}}.
 
  With this information about a dependency, Maven will be able to reference the dependency when it builds the project.  Where does
- Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find
- all dependencies.  In a {{{How do I create a JAR and install it in my local repository?}previous section}}, we installed the artifact
+ Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find  
+ all dependencies.  In a {{{#How do I create a JAR and install it in my local repository?}previous section}}, we installed the artifact
  from our project (my-app-1.0-SNAPSHOT.jar) into the local repository.  Once it's installed there, another project can reference that jar
  as a dependency simply by adding the dependency information to its pom.xml:
 
@@ -840,7 +841,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  that isn't available in the local repository, Maven will download the dependency from a remote repository into the local repository.  You
  probably noticed Maven downloading a lot of things when you built your very first project (these downloads were dependencies for the
  various plugins used to build the project).  By default, the remote repository Maven uses can be found (and browsed) at
- {{http://www.ibiblio.org/Maven2}}.  You can also set up your own remote repository (maybe a central repository for your company) to
+ {{http://www.ibiblio.org/maven2}}.  You can also set up your own remote repository (maybe a central repository for your company) to
  use instead of or in addition to ibiblio.  For more information on repositories you can refer to the
  {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}}.
 
@@ -1055,7 +1056,7 @@ my-app
  has been replaced by the site descriptor (see below).
 
  The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this)
- very quickly. A full reference of the {{{apt-format.html} APT Format}} is available.
+ very quickly. A full reference of the {{{../mini/guide-apt-format.html} APT Format}} is available.
 
  The FML format is the FAQ format, also used in Maven 1.0.
 
