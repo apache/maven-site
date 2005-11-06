@@ -58,8 +58,29 @@ Guide to deploying with an external SSH command
 
 +----+
 
- Using the external ssh command means you don't need any additional configuration in your <<<settings.xml>>>
- file as everything will be taken from the environment.
+ If you are deploying from Unix or have Cygwin installed you won't need to any additional configuration in your <<<settings.xml>>>
+ file as everything will be taken from the environment. But if you are on Windows and are using something like <<<plink>>> then
+ you will need something like the following:
+
++----+
+
+<settings>
+  ...
+  <servers>
+    <server>
+      <id>ssh-repository</id>
+      <filePermissions>664</filePermissions>
+      <directoryPermissions>775</directoryPermissions>
+      <configuration>
+        <sshExecutable>plink</sshExecutable>
+        <scpExecutable>pscp</scpExecutable>
+      </configuration>
+    </server>
+  </servers>
+  ...
+</settings>
+
++----+
 
  You should, of course, make sure that you can login into the specified SSH server by hand before attempting the
  deployment with Maven. Once you have verified that everything is setup correctly you can now deploy your artifacts
