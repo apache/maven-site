@@ -50,6 +50,7 @@ README = svn:eol-style=native;svn:keywords="Author Date Id Revision"
 *.pl = svn:eol-style=native;svn:keywords="Author Date Id Revision"
 *.png = svn:mime-type=image/png
 *.pod = svn:eol-style=native;svn:keywords="Author Date Id Revision"
+*.pom = svn:eol-style=native;svn:keywords="Author Date Id Revision"
 *.project = svn:eol-style=native;svn:keywords="Author Date Id Revision"
 *.properties = svn:eol-style=native;svn:keywords="Author Date Id Revision"
 *.py = svn:eol-style=native;svn:keywords="Author Date Id Revision"
