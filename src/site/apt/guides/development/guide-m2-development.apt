@@ -136,14 +136,14 @@ target
  is like any other modern IoC container, using field injection of both requirements and configuration. All
  core Maven 2 functionality are Plexus components.
 
- You can read more about Plexus {{{http://plexus.codehaus.org}here}}.
+ You can {{{http://plexus.codehaus.org}read more about Plexus}}.
 
  * Modello
 
  Modello is a simple tool for representing an object model and generate code and resources from the model. Maven is
  using Modello to generate all Java objects, XML readers and writers, XML Schema and HTML documentation.
 
- You can read more about Modello {{{http://modello.codehaus.org}here}}.
+ You can {{{http://modello.codehaus.org}read more about Modello}}.
 
  * Surefire
 
@@ -151,7 +151,7 @@ target
  use it. It support scriping tests in BeanShell and Jython and has special "batteries" for writing acceptance and
  functional tests for the web and for testing XML-RPC code.
 
- You can read more about Surefire {{{http://surefire.codehaus.org}here}}.
+ You can {{{http://surefire.codehaus.org}read more about Surefire}}.
 
  * Doxia
 
@@ -177,7 +177,7 @@ target
 *---------------------------+----+-----*
 Available formats
 
- You can read more about Doxia {{{http://doxia.codehaus.org}here}}.
+ You can {{{http://doxia.codehaus.org}read more about Doxia}}.
 
  * Mojo
 
@@ -204,7 +204,7 @@ Available formats
 
  Before committing files in subversion repository, you need to read the
  {{{http://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with these properties file : {{{../../developers/svn-eol-style.txt}svn-eol-style.txt}}
+ document and you must set your svn client with this properties file : {{{../../developers/svn-eol-style.txt}svn-eol-style.txt}}
 
 * {Maven Code Style}
 
