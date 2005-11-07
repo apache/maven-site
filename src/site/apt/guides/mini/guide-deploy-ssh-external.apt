@@ -69,8 +69,6 @@ Guide to deploying with an external SSH command
   <servers>
     <server>
       <id>ssh-repository</id>
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
       <configuration>
         <sshExecutable>plink</sshExecutable>
         <scpExecutable>pscp</scpExecutable>
