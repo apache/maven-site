@@ -72,6 +72,7 @@ Guide to deploying with an external SSH command
       <configuration>
         <sshExecutable>plink</sshExecutable>
         <scpExecutable>pscp</scpExecutable>
+        <privateKey></privateKey>
       </configuration>
     </server>
   </servers>
@@ -118,3 +119,6 @@ mvn deploy
 
  +----+
 
+ <<NOTE:>> If you are using Putty it will expect the private key to be in the <<<PPK>>> format and not the standard
+ format so make sure you use <<<puttygen>>> to convert your openssh format key to <<<PPK>>> format or generate another
+ one. Windows users can find the Putty tools {{{http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html}here}}.
