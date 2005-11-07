@@ -91,3 +91,32 @@ Guide to deploying with an external SSH command
 mvn deploy
 
 +----+
+
+ Sometimes you may have permissions problems deploying and if so you can set the file and directory permissions
+ like so:
+
++----+
+
+ <settings>
+   ...
+   <servers>
+     <server>
+       <id>ssh-repository</id>
+       <!--
+        |
+        | Change default file/dir permissions
+        |
+        -->
+       <filePermissions>664</filePermissions>
+       <directoryPermissions>775</directoryPermissions>
+       <configuration>
+         <sshExecutable>plink</sshExecutable>
+         <scpExecutable>pscp</scpExecutable>
+       </configuration>
+     </server>
+   </servers>
+   ...
+ </settings>
+
+ +----+
+
