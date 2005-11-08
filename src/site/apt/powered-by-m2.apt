@@ -8,7 +8,7 @@
 
 Powered by Maven 2.x
 
- * {{{http://maven.apache.org}Maven}}
+ * {{{http://jetty.mortbay.org/jetty6}Jetty 6.x}}
  
  * {{{http://plexus.codehaus.org}Plexus}}
  
