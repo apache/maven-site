@@ -1,1 +1,3 @@
 ErrorDocument 404 /errors/404.html
+RedirectMatch ^/maven2/(.*)$ /$1
+
