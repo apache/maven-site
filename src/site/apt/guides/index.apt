@@ -28,6 +28,8 @@ Documentation
 
  * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
 
+ * {{{mini/guide-creating-plugin-with-lifecycle-modifications.html}Guide to creating plug-ins with lifecycle modifications}}
+
  * {{{mini/guide-deploy-ftp.html}Guide to deploying with FTP}}
 
  * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
@@ -40,11 +42,7 @@ Documentation
 
  * {{{mini/guide-generating-sources.html}Guide to generating Sources}}
 
- * {{{mini/guide-naming-conventions.html}Guide to naming conventions (groupId, artifactId, version)}}
-
  * {{{mini/guide-ibiblio-upload.html}Guide to uploading artifacts to Ibiblio}}
-
- * {{{mini/guide-maven-evangelism.html}Guide to maven evangelism, improving metadata in ibiblio}}
 
  * {{{mini/guide-ide-eclipse.html}Guide to using Eclipse with Maven 2.x}}
 
@@ -60,11 +58,15 @@ Documentation
 
  * {{{mini/guide-maven-classloading.html}Guide to Maven Classloading}}
 
+ * {{{mini/guide-maven-evangelism.html}Guide to Maven Evangelism}}
+
  * {{{mini/guide-mirror-settings.html}Guide to Mirror Settings}}
 
  * {{{mini/guide-multi-module.html}Guide to creating a multi-module build}}
 
  * {{{mini/guide-multiple-repositories.html}Guide to using Multiple Repositories}}
+
+ * {{{mini/guide-naming-conventions.html}Guide to Naming Conventions}}
 
  * {{{mini/guide-proxies.html}Guide to using proxies}}
 
@@ -137,5 +139,7 @@ Documentation
  * {{{../glossary.html}Glossary}}
  
  * {{{../maven-conventions.html}Maven Conventions}}
+
+ * {{{../articles.html}Articles}}
  
  []
