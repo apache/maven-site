@@ -13,8 +13,8 @@ Configuring a proxy
  a secured keystore - in the mean time, please ensure your settings.xml file is secured with permissions
  appropriate for your operating system).
 
-The nonProxyHosts setting accepts wild cards, and each host not to proxy is separated by the | character. This matches
-the JDK configuration equivalent.
+  The <<<nonProxyHosts>>> setting accepts wild cards, and each host not to proxy is separated by the | character. This matches
+  the JDK configuration equivalent.
 
 +----+
 
@@ -38,6 +38,8 @@ the JDK configuration equivalent.
 
 +----+
 
- Please note that urrently NTML proxies are not supported as they have not been tested.
+ Please note that urrently NTLM proxies are not supported as they have not been tested. You may be able to use the
+ relevant system properties on JDK 1.4+ to make this work.
 
  <<Note>>: the settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
+ 
