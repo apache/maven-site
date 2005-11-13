@@ -9,8 +9,12 @@
 
 Introduction to the Dependency Mechanism
 
- There are many aspects to working with dependencies in Maven. While it is not the sole focus of Maven, it
- does comprise a large and important part of the system. Learn more about:
+  Dependency management is one of the features of Maven that is best known to users and is one of the areas where Maven
+  excels. There is not much difficulty in managing dependencies for a single a project, but when you start getting into
+  dealing with multi-module projects and applications that consist of tens or hundreds of modules this is where Maven can
+  help you a great deal in maintaining a high degree of control and stability.
+
+  Learn more about:
 
  * Transitive Dependencies
 
