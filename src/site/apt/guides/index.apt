@@ -22,6 +22,8 @@ Documentation
 
  * {{{mini/guide-bash-m2-completion.html}Guide to Maven 2.x auto completion using BASH}}
 
+ * {{{mini/guide-configuring-maven.html}Guide to Configuring Maven}}
+
  * {{{mini/guide-configuring-plugins.html}Guide to Configuring Plug-ins}}
 
  * {{{mini/guide-coping-with-sun-jars.html}Guide to Coping with Sun JARs}}
