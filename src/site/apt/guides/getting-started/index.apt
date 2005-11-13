@@ -26,6 +26,8 @@ Sections
 
  * {{{index.html#How can Maven benefit my development process?}How can Maven benefit my development process?}}
 
+ * {{{index.html#How do I setup Maven?}How do I setup Maven?}}
+
  * {{{index.html#How do I make my first Maven project?}How do I make my first Maven project?}}
 
  * {{{index.html#How do I compile my application sources?}How do I compile my application sources?}}
@@ -33,6 +35,8 @@ Sections
  * {{{index.html#How do I compile my test sources and run my unit tests?}How do I compile my test sources and run my unit tests?}}
 
  * {{{index.html#How do I create a JAR and install it in my local repository?}How do I create a JAR and install it in my local repository?}}
+
+ * {{{index.html#How do I use plug-ins?}How do I use plug-ins?}}
 
  * {{{index.html#How do add resources to my JAR?}How do add resources to my JAR?}}
 
@@ -46,9 +50,7 @@ Sections
 
  * {{{index.html#How do I deploy my site?}How do I deploy my site?}}
 
- * {{{index.html#How do I use plug-ins?}How do I use plug-ins?}}
-
- * {{{index.html#How do I control what version of a plug-in I use?}How do I control what version of a plug-in I use?}}
+ * {{{index.html#How do I build other types of projects?}How do I build other types of projects?}}
 
  * {{{index.html#How do I build more than one project at once?}How do I build more than one project at once?}}
 
@@ -90,6 +92,12 @@ Sections
 
  Now that we have covered a little bit of the history and purpose of Maven let's get into some real examples to
  get you up and running with Maven!
+
+* {How do I setup Maven?}
+
+  The defaults for Maven are often sufficient, but if you need to change the cache location or are behind a HTTP proxy,
+  you will need to create configuration. See the {{{../mini/guide-configuring-maven.html} Guide to Configuring Maven}} for
+  more information.
 
 * {How do I make my first Maven project?}
 
@@ -447,6 +455,75 @@ Results :
 mvn site
 
 +----+
+
+  There are plenty of other standalone goals that can be executed as well, for example:
+
++----+
+
+mvn clean
+
++----+
+
+  This will remove the<<<target>>> directory with all the build data before starting so that it is fresh.
+
+  Perhaps you'd like to generate an IntelliJ IDEA descriptor for the project?
+
++----+
+
+mvn idea:idea
+
++----+
+
+  This can be run over the top of a previous IDEA project - it will update the settings rather than starting fresh.
+
+  ~~TODO: need a sidebar notation for notes like this
+
+  <<Note:>> some familiar goals from Maven 1.0 are still there - such as <<<jar:jar>>>, but they might
+  not behave like you'd expect. Presently, <<<jar:jar>>> will not recompile sources - it will simply just
+  create a JAR from the <<<target/classes>>> directory, under the assumption everything else had already
+  been done.
+
+* {How do I use plug-ins?}
+
+  Whenever you want to customise the build for a Maven project, this is done by adding or reconfiguring plugins.
+
+  <<Note for Maven 1.0 Users:>> In Maven 1.0, you would have added some <<<preGoal>>> to <<<maven.xml>>>
+  and some entries to <<<project.properties>>>. Here, it is a little different.
+
+  For this example, we will configure the Java compiler to allow JDK 5.0 sources. This is as simple as
+  adding this to your POM:
+
++----+
+
+.
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <source>1.5</source>
+        <target>1.5</target>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+.
+.
+
++----+
+
+  You'll notice that all plugins in Maven 2.0 look much like a dependency - and in some ways they are.
+  This plugin will be automatically downloaded and used - including a specific version if you request it
+  (the default is to use the latest available).
+
+  The <<<configuration>>> element applies the given parameters to every goal from the compiler plugin.
+  In the above case, the compiler plugin is already used as part of the build process and this just changes the
+  configuration. It is also possible to add new goals to the process, and configure specific goals. For information on
+  this, see the {{{../introduction/introduction-to-the-lifecycle.html} Introduction to the Build Lifecycle}}.
+
+  To find out what configuration is available for a plugin, you can see the {{{/plugins/} Plugins List}} and navigate
+  to the plugin and goal you are using.
 
 * {How do add resources to my JAR?}
 
@@ -1241,11 +1318,158 @@ mvn site-deploy
 
   With one site descriptor by language, translated site can evolve independently.
 
-* {How do I use plug-ins?}
+* {How do I build other types of projects?}
 
-* {How do I control what version of a plug-in I use?}
+  Note that the lifecycle applies to any project type. For example, back in the base direcotry we can create a
+  simple web application:
 
-~~http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Matrix
+-------------------
+mvn archetype:create \
+    -DgroupId=com.mycompany.app -DartifactId=my-webapp \
+    -DarchetypeArtifactId=maven-archetype-webapp</source>
+-------------------
+
+  Note that these must all be on a single line. This will create a directory called
+  <<<my-webapp>>> containing the following project descriptor:
+
+-------------------
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-webapp</artifactId>
+  <packaging>war</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <finalName>my-webapp</finalName>
+  </build>
+</project>
+-------------------
+
+  Note the <<<\>packaging\>>>> element - this tells Maven to build as a WAR. Change into the webapp project's directory
+  and try:
+
+-------------------
+mvn clean package
+-------------------
+
+  You'll see <<<target/my-webapp.war>>> is built, and that all the normal steps were executed.
 
 * {How do I build more than one project at once?}
 
+  The concept of dealing with multiple modules is built in to Maven 2.0.
+  In this section, we will show how to build the WAR above, and include the previous JAR as well in one step.
+
+  Firstly, we need to add a parent <<<pom.xml>>> file in the directory above the other two, so it should look like this:
+
+-------------------
++- pom.xml
++- my-app
+| +- pom.xml
++- my-webapp
+| +- pom.xml
+-------------------
+
+  The POM file you'll create should contain the following:
+
+-------------------
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <version>1.0-SNAPSHOT</version>
+  <artifactId>app</artifactId>
+  <packaging>pom</packaging>
+  <modules>
+    <module>my-app</module>
+    <module>my-webapp</module>
+  </modules>
+</project>
+-------------------
+
+  We'll need a dependency on the JAR from the webapp, so add this to <<<my-webapp/pom.xml>>>:
+
+-------------------
+  .
+  .
+  .
+  <dependencies>
+    <dependency>
+      <groupId>com.mycompany.app</groupId>
+      <artifactId>my-app</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+    .
+    .
+    .
+-------------------
+
+  Finally, add the following <<<\<parent\>>>> element to both of the other <<<pom.xml>>> files in the subdirectories:
+
+-------------------
+<project>
+  <parent>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>app</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+  .
+  .
+  .
+-------------------
+
+  Now, try it... from the top level directory, run:
+
+-------------------
+mvn clean install
+-------------------
+
+  The WAR has now been created in <<<my-webapp/target/my-webapp.war>>>, and the JAR is included:
+
+-------------------
+$ jar tvf my-webapp/target/my-webapp-1.0-SNAPSHOT.war
+   0 Fri Jun 24 10:59:56 EST 2005 META-INF/
+ 222 Fri Jun 24 10:59:54 EST 2005 META-INF/MANIFEST.MF
+   0 Fri Jun 24 10:59:56 EST 2005 META-INF/maven/
+   0 Fri Jun 24 10:59:56 EST 2005 META-INF/maven/com.mycompany.app/
+   0 Fri Jun 24 10:59:56 EST 2005 META-INF/maven/com.mycompany.app/my-webapp/
+3239 Fri Jun 24 10:59:56 EST 2005 META-INF/maven/com.mycompany.app/my-webapp/pom.xml
+   0 Fri Jun 24 10:59:56 EST 2005 WEB-INF/
+ 215 Fri Jun 24 10:59:56 EST 2005 WEB-INF/web.xml
+ 123 Fri Jun 24 10:59:56 EST 2005 META-INF/maven/com.mycompany.app/my-webapp/pom.properties
+  52 Fri Jun 24 10:59:56 EST 2005 index.jsp
+   0 Fri Jun 24 10:59:56 EST 2005 WEB-INF/lib/
+2713 Fri Jun 24 10:59:56 EST 2005 WEB-INF/lib/my-app-1.0-SNAPSHOT.jar
+-------------------
+
+  How does this work? Firstly, the parent POM created (called <<<app>>>), has a packaging of <<<pom>>>
+  and a list of modules defined. This tells Maven to run all operations over the set of projects instead of
+  just the current one (to override this behaviour, you can use the <<<--non-recursive>>> command line option).
+
+  Next, we tell the WAR that it requires the <<<my-app>>> JAR. This does a few things: it makes it available
+  on the classpath to any code in the WAR (none in this case), it makes sure the JAR is always built before the
+  WAR, and it indicates to the WAR plugin to include the JAR in its library directory.
+
+  You may have noticed that <<<junit-3.8.1.jar>>> was a dependency, but didn't end up in the WAR. The
+  reason for this is the <<<\<scope\>test\</scope\>>>> element - it is only required for testing,
+  and so is not included in the web application as the compile time dependency <<<my-app>>> is.
+
+  The final step was to include a parent definition. This is different to the <<<extend>>> element you
+  may be familiar with from Maven 1.0: this ensures that the POM can always be located even if the project
+  is distributed separately from its parent by looking it up in the repository.
+
+  Unlike Maven 1.0, it is not required that you run <<<install>>> to successfully perform these steps - you can run
+  <<<package>>> on its own and the artifacts in the reactor will be used from the target directories instead of the
+  local repository.
+
+  You might like to generate your IDEA workspace again from the top level directory...
+
+-------------------
+mvn idea:idea
+-------------------
