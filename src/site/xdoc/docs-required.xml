@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 <document>
+<!-- TODO: include back into site, after checking which are complete, add to instructions on how to contribute docs -->
   <properties>
     <title>Documentation Required</title>
     <author email="brett@apache.org">Brett Porter</author>
