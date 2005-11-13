@@ -28,8 +28,6 @@ Documentation
 
  * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
 
- * {{{mini/guide-creating-plugin-with-lifecycle-modifications.html}Guide to creating plug-ins with lifecycle modifications}}
-
  * {{{mini/guide-deploy-ftp.html}Guide to deploying with FTP}}
 
  * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
@@ -90,8 +88,6 @@ Documentation
  * {{{introduction/introduction-to-archetypes.html}Introduction to Archetypes}}
 
  * {{{introduction/introduction-to-artifact-resolution.html}Introduction to repository definitions and artifact resolution}}
-
- * {{{introduction/introduction-to-dependency-management.html}Introduction to dependency management}}
 
  * {{{introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}
 
