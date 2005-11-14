@@ -26,6 +26,50 @@ Introduction to Plugin Prefix Resolution
   metadata (not associated with any single artifact) for plugin groups, along
   with a plugin mapping manager to organize multiple plugin groups and provide
   search functionality.
+  
+* Specifying a Plugin's Prefix
+
+  In order to give users a convenient prefix with which to reference your plugin
+  a prefix must be associated with your plugin when it is built. By default, Maven
+  will make a guess at the plugin-prefix to be used, by assuming the plugin's artifactId
+  fits the pattern:
+  
++---+
+maven-${prefix}-plugin
++---+
+
+  If your plugin's artifactId fits this pattern, Maven will automatically map
+  your plugin to the correct prefix in the metadata stored within your plugin's
+  groupId path on the repository. However, if you want to customize the prefix
+  used to reference your plugin, you can specify the prefix directly through a
+  configuration parameter on the <<<maven-plugin-plugin>>> in your plugin's POM:
+  
++---+
+<project>
+  ...
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <artifactId>maven-plugin-plugin</artifactId>
+        
+        <configuration>
+          ...
+          <prefix>somePrefix</prefix>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
++---+
+
+  The above configuration will allow users to refer to your plugin by the prefix
+  <<somePrefix>>, as in the following example:
+  
++---+
+mvn somePrefix:goal
++---+
 
 * Mapping Prefixes to Plugins
 
@@ -94,3 +138,12 @@ mvn -Dversion=4.0.0 -Dmodel=maven.mdo modello:java
   order is critical! By specifying a pluginGroup of <<<com.myco.plugins>>> with a prefix
   of <<<clean>>>, I can override the usage of the <<<maven-clean-plugin>>> when 
   <<<clean:clean>>> is invoked.
+  
+  <<NOTE2:>> For more information on <<<settings.xml>>>, see \[{{{#1}1}}\].
+  
+*Resources
+
+  [[{1}]] {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}
+  
+  []
+
