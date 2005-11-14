@@ -113,6 +113,8 @@ Introduction: How Maven Resolves Plugins
         a default answer to this question.
         
         See \[{{{#2}2}}\] for more information on the plugin registry.
+        
+        See \[{{{#3}3}}\] for more information on the <<<settings.xml>>> file.
 
   [[3]] <LATEST version metadata>
   
@@ -141,5 +143,7 @@ Introduction: How Maven Resolves Plugins
   [[{1}]] {{{./introduction-to-plugin-prefix-mapping.html}Introduction to the Plugin Prefix Mapping}}.
   
   [[{2}]] {{{./introduction-to-plugin-registry.html}Introduction to the Plugin Registry}}.
+  
+  [[{3}]] {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}
   
   []
