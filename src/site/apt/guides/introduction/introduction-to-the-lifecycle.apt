@@ -247,14 +247,14 @@ mvn clean install
       <implementation>org.apache.maven.lifecycle.mapping.DefaultLifecycleMapping</implementation>
       <configuration>
         <phases>
-          <process-resources>resources:resources</process-resources>
-          <compile>compiler:compile</compile>
-          <process-test-resources>resources:testResources</process-test-resources>
-          <test-compile>compiler:testCompile</test-compile>
-          <test>surefire:test</test>
-          <package>plexus:app</package>
-          <install>install:install</install>
-          <deploy>deploy:deploy</deploy>
+          <process-resources>org.apache.maven.plugins:maven-resources-plugin:resources</process-resources>
+          <compile>org.apache.maven.plugins:maven-compiler-plugin:compile</compile>
+          <process-test-resources>org.apache.maven.plugins:maven-resources-plugin:testResources</process-test-resources>
+          <test-compile>org.apache.maven.plugins:maven-compiler-plugin:testCompile</test-compile>
+          <test>org.apache.maven.plugins:maven-surefire-plugin:test</test>
+          <package>org.codehaus.plexus:plexus-maven-plugin:app</package>
+          <install>org.apache.maven.plugins:maven-install-plugin:install</install>
+          <deploy>org.apache.maven.plugins:maven-deploy-plugin:deploy</deploy>
         </phases>
       </configuration>
     </component>
@@ -267,7 +267,9 @@ mvn clean install
   <<<implementation>>> is required, and while you can provide your own, the default given above should suit the standard case.
 
   The phases to bind are listed in the configuration element, and each that is given can have one goal associated with
-  that phase for that particular packaging.
+  that phase for that particular packaging. Note that the goal must be "fully qualified" in a <<<groupId:artifactId:goal>>> 
+  or <<<groupId:artifactId:version:goal>>> format, as the normal prefix can resolve to a different plugin dependending on 
+  configuration.
 
   Once this is included in the JAR, the plugin needs to be added to the project to make the packaging available from
   that project. In addition to listing the plugin, you must specify that it provides extensions:
