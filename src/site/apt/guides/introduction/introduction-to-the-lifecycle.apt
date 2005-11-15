@@ -289,6 +289,69 @@ mvn clean install
   Setting the extensions flag is also necessary if you provide custom artifact type handlers (closely related to
   providing a packaging).
 
+  One final task that is required is for the packaging goal you have created to tell Maven where to find what you built. This is
+  done with code such as the following:
+
+----
+project.getArtifact().setFile( new File( "target/myFile-2.0.jar" ) );
+----
+
+** Creating a Custom Artifact Handler
+
+  The default artifact handler maps the packaging, type, and file extension to the same value. For example, if you create a
+  packaging of <<<plexus-application>>>, then the file in the repository will be <<<myartifactId-1.0.plexus-application>>>.
+  The same applies if you request a particular <<<type>>> from a dependency.
+
+  If you want to change that extension, or change how a dependency's <<<type>>> field is mapped to the other fields, you must
+  include a custom artifact handler in your plugin.
+
+  Like giving a packaging, this is currently achieved by adding a Plexus descriptor to your plugin (or modifying it if it
+  already exists). This file is <<<META-INF/plexus/components.xml>>> in the plugin JAR.
+
+  A complete artifact handler for the <<<test-jar>>> type looks like this:
+
+----
+<component-set>
+  <components>
+    <component>
+      <role>org.apache.maven.artifact.handler.ArtifactHandler</role>
+      <role-hint>test-jar</role-hint>
+      <implementation>org.apache.maven.artifact.handler.DefaultArtifactHandler</implementation>
+      <configuration>
+        <classifier>tests</classifier>
+        <extension>jar</extension>
+        <type>test-jar</type>
+        <packaging>jar</packaging>
+        <language>java</language>
+        <addedToClasspath>true</addedToClasspath>
+      </configuration>
+    </component>
+  </components>
+</component-set>
+----
+
+  The fields are configured as follows:
+
+*------------------------+---------------+---------------------+---------------------------------+
+| <<Field>>              | <<Required?>> | <<Default>>         | <<Description>>
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<role-hint>>>        | Y             |                     | The type being defined.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<type>>>             | Y             |                     | Must match the <<<role-hint>>>.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<extension>>>        | N             | The type            | The extension to give the artifact in the repository.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<packaging>>>        | N             | The type            | The packaging of the artifact to look for.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<classifier>>>       | N             |                     | The classifier to append to the artifact name (after version and before extension) when using this type.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<language>>>         | N             | <<<java>>>          | The language the artifact is written in. No set values - free text.
+*------------------------+---------------+---------------------+---------------------------------+
+| <<<addedToClasspath>>> | N             | <<<true>>>          | Whether the artifact should be included in a classpath or library path when used.
+*------------------------+---------------+---------------------+---------------------------------+
+
+  As above, the extensions flag will need to be provided whenever the plugin is declared and the type is used.
+
 ** Forking a Parallel Lifecycle
 
   While lots of mojos will participate in the standard lifecycle, there are just as many that are used in other
