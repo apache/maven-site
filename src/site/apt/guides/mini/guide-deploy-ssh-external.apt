@@ -117,7 +117,7 @@ mvn deploy
    ...
  </settings>
 
- +----+
++----+
 
  <<NOTE:>> If you are using Putty it will expect the private key to be in the <<<PPK>>> format and not the standard
  format so make sure you use <<<puttygen>>> to convert your openssh format key to <<<PPK>>> format or generate another
