@@ -56,7 +56,7 @@ maven-${prefix}-plugin
         
         <configuration>
           ...
-          <prefix>somePrefix</prefix>
+          <goalPrefix>somePrefix</goalPrefix>
         </configuration>
       </plugin>
     </plugins>
