@@ -16,6 +16,9 @@ Guide to add, improve or fix metadata in the ibiblio maven 2 repository
  a patch file from subversion in unified diff format, explaining the reasons why
  it needs to be changed (there were no dependencies, wrong info,...).
 
+ *Important:* by default assume that we won't trust your changes, so you must provide all links
+ to the project documentation you can to convince us that your patch is right.
+
 
 
 Developers information
