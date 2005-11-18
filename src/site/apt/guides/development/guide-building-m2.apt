@@ -51,27 +51,27 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
   release, so set the <<<M2_HOME>>> environment variable accordingly, e.g.:
 
 ----
-export M2_HOME=/usr/local/maven-2.0-SNAPSHOT
+export M2_HOME=/usr/local/maven-2.0.1-SNAPSHOT
 PATH=$M2_HOME/bin:$PATH
 ----
 
   or
 
 ----
-set M2_HOME=c:\maven-2.0-SNAPSHOT
+set M2_HOME=c:\maven-2.0.1-SNAPSHOT
 set PATH=%M2_HOME%\bin;%PATH%
 ----
 
-  From this, run the <<<m2-bootstrap-all>>> command for your system:
+  From this, run the <<<bootstrap>>> command for your system:
 
 ----
-sh m2-bootstrap-all.sh
+sh bootstrap.sh
 ----
 
   or
 
 ----
-m2-bootstrap-all.bat
+bootstrap.bat
 ----
 
   First, the code will be built, then using the new installation the plugins will be rebuilt and installed in the
