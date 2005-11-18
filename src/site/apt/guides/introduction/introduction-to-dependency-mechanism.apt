@@ -57,7 +57,7 @@ Introduction to the Dependency Mechanism
  Dependency scope is used to limit the transitivity of a depedency, and also to affect the classpath used for
  various build tasks.
 
- There are 4 scopes available:
+ There are 5 scopes available:
 
  * <<compile>>
    - this is the default scope, used if none is specified. Compile dependencies are available
@@ -74,6 +74,11 @@ Introduction to the Dependency Mechanism
  * <<test>>
    - this scope indicates that the dependency is not required for normal use of the application, and
      is only available for the test compilation and execution phases.
+
+ * <<system>>
+   - this scope is similar to provided except that you have to provide the JAR
+     which contains it explicitly. The artifact is always available and is not
+     looked up in a repository.
 
  []
 
@@ -242,4 +247,55 @@ Introduction to the Dependency Mechanism
 +----+
 
  The reference information about the dependency management tags is available from the
- {{{maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
+ {{{maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                    -----
+
+
+* System Dependencies
+
+ Dependencies with the scope <system> are always available and are not looked
+ up in repository. They are usually used to tell Maven about dependencies which
+ are provided by the JDK or the VM. Thus, system dependencies are especially
+ useful for resolving dependencies on artifacts which are now provided by the
+ JDK, but where available as separate downloads earlier. Typical example are
+ the JDBC standard extensions or the Java Authentication and Authorization
+ Service (JAAS).
+
+ A simple example would be:
+
++----+
+
+<project>
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>javax.sql</groupId>
+      <artifactId>jdbc-stdext</artifactId>
+      <version>2.0</version>
+      <scope>system</scope>
+      <systemPath>${java.home}/lib/rt.jar</systemPath>
+    </dependency>
+  </dependencies>
+  ...
+</project>
+
++----+
+
+ If your artifact is provided by the JDK's <<<tools.jar>>> the system path
+ would be defined as follows:
+
++----+
+<project>
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>sun.jdk</groupId>
+      <artifactId>tools</artifactId>
+      <version>1.5.0</version>
+      <scope>system</scope>
+      <systemPath>${java.home}/../lib/tools.jar</systemPath>
+    </dependency>
+  </dependencies>
+  ...
+</project>
++----+
+
