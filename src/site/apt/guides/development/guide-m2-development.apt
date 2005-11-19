@@ -30,7 +30,7 @@ Developing Maven 2
 
  First of all you need something to work on! Unless you have found a particular issue you would like to work on
  the Maven team has categorized a few issues that we could use <your> help to solve them. The list is on our
- {{{http://docs.codehaus.org/display/MAVEN/How+to+help}Conflucene wiki}} and will be updated every 60 minutes.
+ {{{http://docs.codehaus.org/display/MAVEN/How+to+help}Confluence wiki}} and will be updated every 60 minutes.
 
  JIRA also has RSS feeds available if you'd like to include those in your favorite feed aggregator.
 
@@ -57,11 +57,13 @@ Developing Maven 2
 
  * Always create the patch from the root of the maven project, i.e. where the pom.xml file is.
 
+ * If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
+
  * Name the file <<<MNG-<issue number>-<artifact id>.patch>>>.
 
- * When adding the patch add a comment to the JIRA suggesting the commit message. For information on what to include
-   in a commit message please take a look at the existing commit messages. Currently the commit mails are sent to
-   {{{http://mail-archives.apache.org/mod_mbox/maven-dev/}dev@maven.apache.org}} with the subject prefix "svn commit".
+ * Attach the patch to the JIRA issue you were working on (do not paste its content in as a comment though). 
+   When adding the patch add a comment to the issue explaining what it does. Shortly after, someone will apply the patch
+   and close the issue.
 
  []
 
