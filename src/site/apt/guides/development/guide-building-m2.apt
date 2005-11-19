@@ -57,6 +57,10 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 svn co https://svn.apache.org/repos/asf/maven/trunks maven
 -------------------
 
+  If you're looking at {{{http://svn.apache.org/viewcvs.cgi/maven/trunks/http://svn.apache.org/viewcvs.cgi/maven/trunks}ViewCVS}}
+  there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
+  to link together all the trunks into one logical location for convenience.
+
 * Building Maven
 
   Once you have checked out the code, change into the <<<maven-components>>> directory that was created.
