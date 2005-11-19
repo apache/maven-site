@@ -31,10 +31,13 @@ Building Maven 2.0
 svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 -------------------
 
-  The <<<maven-components>>> directory will contain the source code. Note that this contains all of the plugins and
-  the Ant tasks.
+  The <<<maven-components>>> directory will contain the source code. Note that this does not contain any of the plugins.
 
   Other modules you might be interested in related to Maven development are:
+
+    * <<<plugins/trunk>>> - The sources of the Maven plugins. These can be individually installed, or bbuilt together.
+
+    * <<<site/trunk>>> - The Maven website.
 
     * <<<wagon/trunk>>> - Maven Wagon, used by the artifact code and others for providing the transport layer to
       get and put artifacts in a repository.
@@ -42,7 +45,17 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
     * <<<scm/trunk>>> - Maven SCM, a generic API to communicate with various different SCM providers, used by
       Continuum and the release and SCM plugins.
 
+    * <<<doxia/trunk>>> - The Doxia site generation library.
+
+    * <<<surefire/trunk>>> - The Surefire test runner.
+
     * {{{http://svn.plexus.codehaus.org/plexus/} Plexus}} - the IoC container used by Maven.
+
+  Alternatively, you can check out all Maven projects in one directory using:
+
+-------------------
+svn co https://svn.apache.org/repos/asf/maven/trunks maven
+-------------------
 
 * Building Maven
 
@@ -74,16 +87,12 @@ sh bootstrap.sh
 bootstrap.bat
 ----
 
-  First, the code will be built, then using the new installation the plugins will be rebuilt and installed in the
-  local repository. Finally, a set of integration tests will run.
+  First, the code will be built, and a Maven installation created. If you have checked out all the trunks so that the plugins
+  exist in <<<../plugins>>>, the plugins will also be rebuilt and installed in the local repository.
+  Finally, a set of integration tests will run.
 
   Note that it isn't necessary to have a previous version (alpha-X...) of maven 2 installed before bootstrap.
 
-  For bootstrap (exclusive possibility):
-
-    * M2_HOME is set to a directory that doesn't exist (if it exists, remove it)!
-
-    * M2_HOME directory contains a valid installation of m2 (ie $M2_HOME/bin/m2.conf or %M2_HOME%\bin\m2.conf exists).
-
   If you have any problems or get any failures during the run, please report them to the
   {{{/mail-lists.html} Maven Developers List}}.
+
