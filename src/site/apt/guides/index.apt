@@ -30,6 +30,8 @@ Documentation
 
  * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
 
+ * {{{mini/guide-creating-plugin-with-lifecycle-modifications.html}Guide to creating plug-ins with lifecycle modifications}}
+
  * {{{mini/guide-deploy-ftp.html}Guide to deploying with FTP}}
 
  * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
@@ -68,9 +70,11 @@ Documentation
 
  * {{{mini/guide-naming-conventions.html}Guide to Naming Conventions}}
 
+ * {{{mini/guide-new-committers.html}Guide for new committers}}
+
  * {{{mini/guide-proxies.html}Guide to using proxies}}
 
- * {{{mini/guide-releasing.html}Guide to Releasing}}
+ * {{{mini/guide-releasing.html}Guide to using the release plugin}}
 
  * {{{mini/guide-site.html}Guide to creating a site}}
 
