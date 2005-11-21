@@ -8,9 +8,9 @@
 
 Guide to deploying with an external SSH command
 
- In order to deploy artifacts using FTP you must first specify the use of an FTP server in the
+ In order to deploy artifacts using SSH you must first specify the use of an SSH server in the
  <<distributionManagement>> element of your POM as well as specifying an <<<extension>>> in your
- <<<build>>> element which will pull in the FTP artifacts required to deploy with FTP:
+ <<<build>>> element which will pull in the SSH artifacts required to deploy with SSH:
 
 +----+
 
@@ -69,10 +69,12 @@ Guide to deploying with an external SSH command
   <servers>
     <server>
       <id>ssh-repository</id>
+      <username>your username in the remote system if different from local</username>
+      <privateKey>/path/to/your/private/key</privateKey>
       <configuration>
         <sshExecutable>plink</sshExecutable>
         <scpExecutable>pscp</scpExecutable>
-        <privateKey></privateKey>
+        <sshArgs>other arguments you may need</sshArgs>
       </configuration>
     </server>
   </servers>
