@@ -33,7 +33,7 @@ Guide to Creating Archetypes
 
 <project>
   <modelVersion>4.0.0</modelVersion>
-  <groupId>my.groupId<groupId>
+  <groupId>my.groupId</groupId>
   <artifactId>my-archetype-id</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>maven-plugin</packaging>
