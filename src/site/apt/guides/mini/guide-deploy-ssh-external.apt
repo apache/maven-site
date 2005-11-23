@@ -70,7 +70,7 @@ Guide to deploying with an external SSH command
     <server>
       <id>ssh-repository</id>
       <username>your username in the remote system if different from local</username>
-      <privateKey>/path/to/your/private/key</privateKey>
+      <privateKey>/path/to/your/private/key</privateKey> <!-- not needed if using pageant -->
       <configuration>
         <sshExecutable>plink</sshExecutable>
         <scpExecutable>pscp</scpExecutable>
