@@ -25,6 +25,15 @@ Guide to uploading artifacts to Ibiblio
 
  The bundle will be created in your <<<target>>> directory of the form:
  <<<${pom.artifactId}-${pom.currentVersion}-bundle.jar>>>
+ 
+ If you want to include a jar with java sources in your upload (recommended, unless your license doesn't
+ allow sources to be redistributed) the command to run is:
+
++----+
+
+ mvn source:jar repository:bundle-create
+
++----+
 
  If you are not using maven as your build system but want something
  uploaded to Ibiblio then you just need to make a JAR (using the <<<jar>>> executable,
@@ -35,6 +44,7 @@ Guide to uploading artifacts to Ibiblio
 LICENSE.txt
 pom.xml
 foo-1.0.jar (or whatever artifact is referred to in the pom.xml)
+foo-1.0-sources.jar (optional, jar containing java sources)
 
 +----+
 
