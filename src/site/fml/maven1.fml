@@ -77,42 +77,26 @@
       <question>Should I use Maven 2.0, or Maven 1.0?</question>
       <answer>
         <p>
-          The answer depends very much on on your circumstances, and in particular whether you are new to Maven or not.
+          Maven 2.0 is the latest stable release, and we certainly recommend it for all new projects.
         </p>
         <p>
-          The simple answer is that we hope you'll try Maven 2.0, and use it if it works for you. However, it is a beta
-          release, so you can expect some unexpected bugs.
-          We'd hate for your first experience with Maven 2.0 to be a bad one - so if you are embarking on a big,
-          complicated
-          or mission critical project - we still recommend Maven 1.0.2 as the latest stable release.
-        </p>
-        <p>
-          If you are already using Maven 1.0 - feel free to try out Maven 2.0, but it may be better to remain on an
-          existing
-          version that is working for you until you need the new features and it covers all of your needs.
+          If you are already using Maven 1.0 - you should try out Maven 2.0, as it is very much improved.
+          However, we still continue to support the Maven 1.x releases at this time.
         </p>
         <p>
           If you do use Maven 1.0, and would like to upgrade in the future, you should carefully consider following some
           of the
           <a href="http://maven.apache.org/using/bestpractices.html">Best Practices</a>
-          listed. These will make
-          your project a lot easier to migrate in the future.
+          listed. These will make your project a lot easier to migrate in the future.
         </p>
         <p>
-          The following are the known limitations in the current Maven 2.0 release:
+          The following are the known limitations in the current Maven 2.0 release compared to Maven 1.x:
         </p>
         <ul>
           <li>
-            <i>Error handling</i>
-            - there are occasions where Maven 2.0 will drop out with a long stack trace
-            when an error has occurred. If a specific trace is not providing enough information to find out what went
-            wrong, please post the message to JIRA.
-          </li>
-          <li>
             <i>Availability of other plugins</i>
             - While most of the core Maven 1.x plugins have been converted,
-            there are still some not available, or not with the same level of features or documentation. In
-            addition, several 3rd party plugins may not be available. Maven 2.0 cannot execute Maven 1.0 plugins.
+            several 3rd party plugins may not be available. Maven 2.0 cannot execute Maven 1.0 plugins.
           </li>
         </ul>
       </answer>
