@@ -30,13 +30,11 @@ Documentation
 
  * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
 
- * {{{mini/guide-creating-plugin-with-lifecycle-modifications.html}Guide to creating plug-ins with lifecycle modifications}}
-
  * {{{mini/guide-deploy-ftp.html}Guide to deploying with FTP}}
 
- * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
-
  * {{{mini/guide-deploy-ssh-external.html}Guide to deploying with an external SSH command}}
+
+ * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
 
  * {{{mini/guide-ear.html}Guide to EARs}}
 
@@ -126,6 +124,8 @@ Documentation
  * {{{development/guide-helping.html}Guide to helping with Maven}}
 
  * {{{development/guide-m2-development.html}Guide to Developing Maven}}
+
+ * {{{development/guide-testing-development-plugins.html}Guide to Testing Development Versions of Plugins}}
 
 
 * Reference
