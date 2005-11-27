@@ -18,6 +18,12 @@ Guide to naming conventions on groupId, artifactId and version
 
  eg. <<<org.apache.maven>>>, <<<org.apache.jakarta.commons>>>
 
+ * A good way to determine the granularity of the group ID is to use the project structure. That is, if
+ the current project is a multiple module project, it should append a new identifier to the parent's
+ group ID.
+
+ eg. <<<org.apache.maven>>>, <<<org.apache.maven.plugins>>>, <<<org.apache.maven.reporting>>>
+
  * <<artifactId>> the name of the jar without version. If you created it then you can choose
  whatever name you want with lowercase letters and no strange symbols. If it's a third party jar
  you have to take the name of the jar as it's distributed.
