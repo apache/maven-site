@@ -1,0 +1,114 @@
+ -----
+ Available Plugins
+ -----
+ Brett Porter
+ -----
+ 9 April 2005
+ -----
+
+Available Plugins
+
+  This page lists some of the available plugins for Maven 2.0. Please bear in mind that this is not a definitive
+  list, and that others can be made available immediately via the Maven repository.
+
+  To see the most up-to-date list of available plugins, browse the Maven 2 plugin repository
+  at {{http://www.ibiblio.org/maven2/}}.
+
+  Plugins are organized according to a directory structure that resembles the standard Java package naming convention.
+  To see a list of available plugins from the Maven project, look in the
+  {{{http://www.ibiblio.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven subfolder>>>}}
+  of this directory.
+
+  ~~ TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins.
+
+*--------------------------------------------------------------------+----------------------------------------------+
+| <<Plugin>>                                                         | <<Description>>
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-ant-plugin} <<<ant>>>}}                                   | Generate an Ant build file for the project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-antlr-plugin} <<<antlr>>> }}                              | Generate sources from an Antlr grammar.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-antrun-plugin} <<<antrun>>>}}                             | Run a set of ant tasks from a phase of the build.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-archetype-plugin} <<<archetype>>>}}                       | Generate a skeleton project structure from an archetype.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-assembly-plugin} <<<assembly>>>}}                         | Build an assembly (distribution) of sources and binaries.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-checkstyle-plugin} <<<checkstyle>>>}}                     | Generate a checkstyle report.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-clean-plugin} <<<clean>>>}}                               | Clean up after the build.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-clover-plugin} <<<clover>>>}}                             | Generate a Clover report.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-compiler-plugin} <<<compiler>>>}}                         | Compiles Java sources.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-deploy-plugin} <<<deploy>>>}}                             | Deploy the built artifact to the remote repository.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-ear-plugin} <<<ear>>>}}                                   | Generate an EAR from the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-eclipse-plugin} <<<eclipse>>>}}                           | Generate an Eclipse project file for the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-ejb-plugin} <<<ejb>>>}}                                   | Build an EJB (and optional client) from the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-idea-plugin} <<<idea>>>}}                                 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-install-plugin} <<<install>>>}}                           | Install the built artifact into the local repository.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-jar-plugin} <<<jar>>>}}                                   | Build a JAR from the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-javadoc-plugin} <<<javadoc>>>}}                           | Generate Javadoc for the project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-plugin-plugin} <<<plugin>>>}}                             | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-pmd-plugin} <<<pmd>>>}}                                   | Generate a PMD report.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-projecthelp-plugin} <<<projecthelp>>>}}                   | Get information about the working environment for the project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-project-info-reports-plugin} <<<project-info-reports>>>}} | Generate a standard project reports.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-rar-plugin} <<<rar>>>}}                                   | Build a RAR from the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-release-plugin} <<<release>>>}}                           | Release the current project - updating the POM and tagging in the SCM.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-resources-plugin} <<<resources>>>}}                       | Copy the resources to the output directory for including in the JAR.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-site-plugin} <<<site>>>}}                                 | Generate a site for the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-source-plugin} <<<source>>>}}                             | Build a JAR of sources for use in IDEs and distribution to the repository.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-surefire-plugin} <<<surefire>>>}}                         | Run the Junit tests in an isolated classloader.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-verifier-plugin} <<<verifier>>>}}                         | Useful for integration tests - verifies the existence of certain conditions.
+*--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-war-plugin} <<<war>>>}}                                   | Build a WAR from the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
+
+  There are also many plug-ins available at the {{{http://mojo.codehaus.org} Mojo}} project at Codehaus.
+
+*-----------------------------------------------------------------------------------+----------------------------------+
+| <<Plugin>>                                                                        | <<Description>>
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/castor-maven-plugin} <<<castor>>>}}                   | Generate sources from an XSD using Castor.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/changlog-maven-plugin} <<<changelog>>>}}              | Generate a list of recent changes from your SCM.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/changes-maven-plugin} <<<changes>>>}}                 | Generate a report from issue tracking or a change document.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/javacc-maven-plugin} <<<javacc>>>}}                   | Generate sources from a JavaCC grammer.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/jdepend-maven-plugin} <<<jdepend>>>}}                 | Generate a report on code metrics using JDepend.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/jxr-maven-plugin} <<<jxr>>>}}                         | Generate a source cross reference.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/surefire-report-maven-plugin} <<<surefire-report>>>}} | Generate a report based on the results of unit tests.
+*----------------------------------------------------------------------+----------------------------------------------+
+| {{{http://mojo.codehaus.org/taglist-maven-plugin} <<<taglist>>>}}                 | Generate a list of tasks based on tags in your code.
+*-----------------------------------------------------------------------------------+----------------------------------+
+
+  A number of other projects provide their own Maven2 plugins. This includes:
+
+*----------------------------------------------------------------------------+----------------------------------------+
+| <<Plugin>>                                                                 | <<Description>>
+*----------------------------------------------------------------------------+----------------------------------------+
+| {{{http://jetty.mortbay.org/jetty6/maven-plugin/howto.html} <<<jetty6>>>}} | Run a Jetty container for rapid webapp development.
+*----------------------------------------------------------------------------+----------------------------------------+
