@@ -84,6 +84,8 @@ Documentation
 
  * {{{mini/guide-using-modello.html}Guide to using Modello}}
 
+ * {{{mini/guide-using-one-source-directory.html}Guide to Using Maven when You Can't Use the Conventions}}
+
  * {{{mini/guide-webapp.html}Guide to Webapps}}
 
 
