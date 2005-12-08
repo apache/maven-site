@@ -1,0 +1,69 @@
+ -----
+ Maven 2.x Plug-in for Eclipse
+ -----
+ Jason van Zyl
+ -----
+ 12 December 2005
+ -----
+
+Maven 2.x Plug-in for Eclipse
+
+ {{{http://www.mergere.com}Mergere}} is developing a Maven 2.x Plug-in for Eclipse and has released
+ it under the ASL 2.0. An application has been submitted to the Eclipse Foundation and we hope that in the near 
+ future the Maven 2.x Plug-in will be a project at the Eclipse Foundation. As such the license will 
+ change if the Maven 2.x Plug-in is accepted as a project. We just want to make users aware of 
+ what might happen in the short term.
+
+* Binaries and Installation
+
+ You can install the Maven 2.x Plug-in for Eclipse by using the following
+ update site from within Eclipse:
+ 
+ {{http://www.md.pp.ru/~eu/12/}}
+
+ There is a Flash demo that you can view which shows you how to install the
+ plug-in if you are unfamiliar with Eclipse's standard install mechanism:
+ 
+ {{http://www.md.pp.ru/~eu/12/Installing_Maven_2.0_plugin_for_Eclipse.html}}
+ 
+* Flash Demos
+
+ You can see what the Maven 2.x Plug-in for Eclipse can do by viewing the
+ following demo in Flash:
+
+ {{http://www.md.pp.ru/~eu/12/Maven_2.0_Plugin_for_Eclipse.html}}
+
+* Source Code
+  
+ You can view the source code for the Maven 2.x Plug-in for Eclipse here:
+  
+ {{http://svn.codehaus.org/trunk/?root=m2eclipse}}
+
+ If you would like to checkout the sources of the Maven 2.x Plug-in for
+ Eclipse you can do so using the following:
+ 
+-----
+svn co svn://svn.codehaus.org/home/projects/m2eclipse/scm/trunk m2eclipse
+-----
+
+* Mailing Lists
+
+ * {{{mailto:users-subscribe@m2eclipse.codehaus.org}User's Mailing List}}
+ 
+ * {{{mailto:dev-subscribe@m2eclipse.codehaus.org}Developer's Mailing List}}
+ 
+ []
+
+* Issue Management
+
+  If you have issues that you would like to raise regarding the Maven 2.x
+  Plug-in for Eclipse then you can do so here:
+  
+  {{http://jira.codehaus.org/browse/MNGECLIPSE}}
+
+* Contributing
+
+ If you would like to make contributions to the Maven 2.x Plug-in for Eclipse then you must
+ fill out the Mergere {{{/maven-eclipse-plugin-cla.pdf}CLA}} and FAX it to
+ Gordon King at 1-800-822-0471.
+          
