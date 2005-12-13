@@ -30,6 +30,9 @@ Download Maven 2.0.1
 *-------------------------+---------+----------+-----------+
 | Maven 2.0.1 Tasks for Ant | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-artifact-ant-2.0.1-dep.jar} maven-artifact-ant-2.0.1-dep.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-artifact-ant-2.0.1-dep.jar.md5} maven-artifact-ant-2.0.1-dep.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-artifact-ant-2.0.1-dep.jar.asc} maven-artifact-ant-2.0.1-dep.jar.asc}} |
 *-------------------------+---------+----------+-----------+
+*-------------------------+---------+----------+-----------+
+| Maven 2.0.1 Embedder | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-embedder-2.0.1-dep.jar} maven-embedder-2.0.1-dep.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-embedder-2.0.1-dep.jar.md5} maven-embedder-2.0.1-dep.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-embedder-2.0.1-dep.jar.asc} maven-embedder-2.0.1-dep.jar.asc}} |
+*-------------------------+---------+----------+-----------+
 
 
 *Previous Releases
