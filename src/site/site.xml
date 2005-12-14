@@ -39,6 +39,7 @@
       <item name="Plug-in Matrix" href="http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Matrix"/>
       <item name="Where is it?" href="/where-is-it.html"/>
       <item name="How to Help" href="/guides/development/guide-helping.html"/>
+      <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>      
     </menu>
 
     <menu name="About Maven 2.0">
