@@ -19,19 +19,19 @@ Maven 2.x Plug-in for Eclipse
  You can install the Maven 2.x Plug-in for Eclipse by using the following
  update site from within Eclipse:
  
- {{http://www.md.pp.ru/~eu/12/}}
+ {{http://m2eclipse.codehaus.org/}}
 
  There is a Flash demo that you can view which shows you how to install the
  plug-in if you are unfamiliar with Eclipse's standard install mechanism:
  
- {{http://www.md.pp.ru/~eu/12/Installing_Maven_2.0_plugin_for_Eclipse.html}}
+ {{http://m2eclipse.codehaus.org/Installing_Maven_2.0_plugin_for_Eclipse.html}}
  
 * Flash Demos
 
  You can see what the Maven 2.x Plug-in for Eclipse can do by viewing the
  following demo in Flash:
 
- {{http://www.md.pp.ru/~eu/12/Maven_2.0_Plugin_for_Eclipse.html}}
+ {{http://m2eclipse.codehaus.org/Maven_2.0_Plugin_for_Eclipse.html}}
 
 * Source Code
   
