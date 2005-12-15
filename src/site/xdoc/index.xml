@@ -7,13 +7,13 @@
   <body>
     <section name="Welcome to Maven">
       <div id="downloadbox">
-        <h5>Get Maven 2.0</h5>
+        <h5>Get Maven 2.0.1</h5>
         <p>
           <a href="download.html">
             <img valign="top" src="http://maven.apache.org/images/folder-open.gif" border="0" alt="" title="download"/>
             Download
           </a>
-          Maven 2.0.1-1
+          Maven 2.0.1
           <small>(1Mb)</small>
         </p>
         <ul>
