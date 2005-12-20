@@ -168,5 +168,5 @@ Using Maven When You Can't Use the Conventions
      so the use case above applies instead.
 
    * If you are producing a JAR that is a derivative of the original (eg, just a subset of classes, or the same JAR with
-     debugging enabled), the Maven supports this completely using profiles. See {{{../introudction/introduction-to-profiles.html} Introduction to Profiles}}
+     debugging enabled), the Maven supports this completely using profiles. See {{{../introduction/introduction-to-profiles.html} Introduction to Profiles}}
      for more information.
