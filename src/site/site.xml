@@ -8,6 +8,7 @@
   <bannerRight>
     <src>http://maven.apache.org/maven2/images/maven-logo-2.gif</src>
   </bannerRight>
+  <publishDate format="dd MMM yyyy" />
   <body>
     <links>
       <item name="Apache" href="http://www.apache.org/"/>
