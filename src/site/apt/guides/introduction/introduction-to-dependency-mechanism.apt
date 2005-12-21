@@ -26,7 +26,7 @@ Introduction to the Dependency Mechanism
 
  <<NOTE:>> <This document is currently in the process of being written, so not all facets are covered.>
 
-* Transitive Dependencies">
+* Transitive Dependencies
 
  Transitive dependencies are a new feature in Maven 2.0. This allows you to avoid needing to discover and
  specify the libraries that your own dependencies require, and including them automatically.
