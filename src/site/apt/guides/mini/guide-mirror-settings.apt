@@ -20,10 +20,11 @@ Using Mirrors for Repositories
 
     * You want to run maven-proxy to provide a local cache to a mirror and need to use it's URL instead
 
- To configure a mirror of a given repository, you provide it in your settings file, giving the new repository it's 
+ To configure a mirror of a given repository, you provide it in your settings file ($HOME/.m2/settings.xml),
+ giving the new repository it's 
  own id and url , and specify the mirrorOf setting that is the ID of the repository you are using a
  mirror of. For example, the ID of the main Maven repository included by default is central, so to use
- an Australian mirror, you would configure the following:
+ a mirror, you would configure the following:
 
 +-----+
 
@@ -31,10 +32,10 @@ Using Mirrors for Repositories
   .
   .
   <mirrors>
-   <mirror>
-      <id>planetmirror</id>
-      <name>Australian Mirror of http://repo1.maven.org/maven2/</name>
-      <url>http://public.planetmirror.com/maven2/</url>
+    <mirror>
+      <id>planetmirror.com</id>
+      <name>planetmirror Mirror of http://repo1.maven.org/maven2/</name>
+      <url>http://public.planetmirror.com/pub/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
@@ -45,3 +46,47 @@ Using Mirrors for Repositories
 +-----+
 
  <<Note>>: the settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
+
+
+ As of today, the following mirrors are available:
+
++-----+
+
+<settings>
+
+  <mirrors>
+    <mirror>
+      <id>dotsrc.org</id>
+      <url>http://mirrors.dotsrc.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>ggi-project.org</id>
+      <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>sunsite.dk</id>
+      <url>http://mirrors.sunsite.dk/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>planetmirror.com</id>
+      <url>http://public.planetmirror.com/pub/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>lsu.edu</id>
+      <url>http://ibiblio.lsu.edu/main/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>ibiblio.net</id>
+      <url>http://www.ibiblio.net/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+
+</settings>
+
++-----+
