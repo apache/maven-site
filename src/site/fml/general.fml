@@ -46,7 +46,7 @@
           </li>
           <li>
             If you have very small amounts of Ant script specific to your project, you can use the
-            <a href="http://www.neonics.com/projects/maven-antrun-plugin/">AntRun plugin</a>.
+            <a href="http://maven.apache.org/plugins/maven-antrun-plugin/index.html">AntRun plugin</a>.
           </li>
         </ul>
       </answer>
@@ -103,7 +103,7 @@
           The source code can be found in subversion: <a href="http://svn.apache.org/repos/asf/maven/components/trunk">http://svn.apache.org/repos/asf/maven/components/trunk</a>.
         </p>
         <p>
-          For more information, see <a href="developers/building.html">Building Maven 2.0</a>.
+          For more information, see <a href="guides/development/guide-building-m2.html">Building Maven 2.0</a>.
         </p>
       </answer>
     </faq>
@@ -113,7 +113,7 @@
       <answer>
         <p>
           You most probably need to configure Maven to use a proxy. Please see the information on
-          <a href="configuration.html">configuring settings.xml</a> for information on how to configure your proxy
+          <a href="guides/mini/guide-proxies.html">Configuring a proxy</a> for information on how to configure your proxy
           for Maven.
         </p>
       </answer>
@@ -139,6 +139,7 @@ m2 install:install-file
   -DartifactId=<artifact-id>
   -Dversion=<version>
   -Dpackaging=<packaging>
+  -DgeneratePom=true
 
 Where: <path-to-file>  the path to the file to load
        <group-id>      the group that the file should be registered under
@@ -167,6 +168,34 @@ Where: <path-to-file>  the path to the file to load
         instructions are also appended to every message sent out on 
         a maven mailing list ...
       </answer>      
+    </faq>
+    <faq id="skip-test">
+      <question>How to skip the tests</question>
+      <answer>
+        add the parameter -Dmaven.test.skip=true in the command line
+      </answer>  
+    </faq>
+    <faq id="special-characters-site">
+      <question>Handle special characters in site</question>
+      <answer>
+      	<p>Configure your ide to use the correct encoding. With eclipse, add -Dfile.encoding=ISO-8859-1 in eclipse.ini file</p>
+      	<p>Configure the output encoding in your pom
+<source><![CDATA[
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-site-plugin</artifactId>
+  <configuration>
+    <outputEncoding>UTF-8</outputEncoding>
+  </configuration>
+</plugin>
+]]></source>      	
+      	</p>
+      	<p>
+      	  Configure the file encoding use by mvn.
+      	  add to MAVEN_OPTS the encoding (same as the ide).
+      	  This can be made with adding MAVEN_OPTS="-Dfile.encoding=ISO-8859-1" in $HOME/.profile
+      	</p>
+      </answer>
     </faq>
   </part>
 </faqs>
