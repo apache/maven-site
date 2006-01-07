@@ -13,7 +13,7 @@ Guide to helping with Maven
 
  * Join the {{{../../mail-lists.html}mailing list}} and answer other user's questions
 
- * Report bugs, feature requests and other issues in the {{{../issue-tracking.html}issue tracking}} application.
+ * Report bugs, feature requests and other issues in the {{{/issue-tracking.html}issue tracking}} application.
 
  * {{{guide-m2-development.html#Creating and submitting a patch}Submit patches}} to reported issues (both those you find, or that others have filed)
 
