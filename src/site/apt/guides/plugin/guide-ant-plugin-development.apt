@@ -78,14 +78,11 @@ Introduction
 hello.build.xml:
 --------------------------------
 
-  <!-- The specification of the "hello" default target here allows us to
-       simplify the mapping document for a single mojo, as below.
-  -->
-  <project default="hello">
-    <target name="hello">
-      <echo>Hello, World</echo>
-    </target>
-  </project>
+<project>
+  <target name="hello">
+    <echo>Hello, World</echo>
+  </target>
+</project>
 +---+
 
 ***The Mapping Document
@@ -110,16 +107,19 @@ hello.build.xml:
 hello.mojos.xml:
 ------------------------------
 
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        <goal>hello</goal>
-        <description>
-          Say Hello, World.
-        </description>
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      <goal>hello</goal>
+        
+      <!-- this element refers to the Ant target we'll invoke -->
+      <call>hello</call>
+      <description>
+        Say Hello, World.
+      </description>
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
 ***The POM
@@ -135,47 +135,55 @@ hello.mojos.xml:
 pom.xml:
 ------------------------------
 
-  <project>
-    <modelVersion>4.0.0</modelVersion>
+<project>
+  <modelVersion>4.0.0</modelVersion>
     
-    <groupId>org.myproject.plugins</groupId>
-    <artifactId>hello-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+  <groupId>org.myproject.plugins</groupId>
+  <artifactId>hello-plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
     
-    <packaging>maven-plugin</packaging>
-    
-    <name>Hello Plugin</name>
-    
-    <build>
-      <plugins>
-        <plugin>
-          <!-- NOTE: We don't need groupId if the plugin's groupId is
-               org.apache.maven.plugins OR org.codehaus.mojo.
-               We also don't have to specify a version, since Maven can
-               automatically resolve the newest one.
-          -->
-          <artifactId>maven-plugin-plugin</artifactId>
-          
-          <!-- Add the Ant plugin tools -->
-          <dependencies>
-            <dependency>
-              <groupId>org.apache.maven</groupId>
-              <artifactId>maven-plugin-tools-ant</artifactId>
-              <version>2.0.1</version>
-            </dependency>
-          </dependencies>
-          
-          <!-- Tell the plugin-plugin which prefix we will use.
-               Later, we'll configure Maven to allow us to invoke this
-               plugin using the "prefix:mojo" shorthand.
-          -->
-          <configuration>
-            <prefix>hello</prefix>
-          </configuration>
-        </plugin>
-      </plugins>
-    </build>
-  </project>
+  <packaging>maven-plugin</packaging>
+  
+  <name>Hello Plugin</name>
+  
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-script-ant</artifactId>
+      <version>2.0.1</version>
+    </dependency>
+  </dependencies>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <!-- NOTE: We don't need groupId if the plugin's groupId is
+             org.apache.maven.plugins OR org.codehaus.mojo.
+             We also don't have to specify a version, since Maven can
+             automatically resolve the newest one.
+        -->
+        <artifactId>maven-plugin-plugin</artifactId>
+        
+        <!-- Add the Ant plugin tools -->
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-tools-ant</artifactId>
+            <version>2.0.1</version>
+          </dependency>
+        </dependencies>
+        
+        <!-- Tell the plugin-plugin which prefix we will use.
+             Later, we'll configure Maven to allow us to invoke this
+             plugin using the "prefix:mojo" shorthand.
+        -->
+        <configuration>
+          <prefix>hello</prefix>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 +---+
 
 ***Build It and Run It
@@ -196,7 +204,7 @@ mvn org.myproject.plugins:hello-plugin:hello
   This should output the following:
   
 +---+
-Hello, World
+[echo] Hello, World
 +---+
 
 *Using <<prefix:mojo>> Invocation Syntax
@@ -223,17 +231,17 @@ Hello, World
 ~/.m2/settings.xml:
 ------------------------------
 
-  <settings>
-    .
-    .
-    .
-    <pluginGroups>
-      <pluginGroup>org.myproject.plugins</pluginGroup>
-    </pluginGroups>
-    .
-    .
-    .
-  </settings>
+<settings>
+  .
+  .
+  .
+  <pluginGroups>
+    <pluginGroup>org.myproject.plugins</pluginGroup>
+  </pluginGroups>
+  .
+  .
+  .
+</settings>
 +---+
 
 **Run It
@@ -260,14 +268,11 @@ mvn hello:hello
 hello.build.xml:
 --------------------------------
 
-  <!-- The specification of the "hello" default target here allows us to
-       simplify the mapping document for a single mojo, as below.
-  -->
-  <project default="hello">
-    <target name="hello">
-      <echo>Hello, ${name}. You're building project: ${projectName}</echo>
-    </target>
-  </project>
+<project>
+  <target name="hello">
+    <echo>Hello, ${name}. You're building project: ${projectName}</echo>
+  </target>
+</project>
 +---+
 
 **Change the Mapping Document
@@ -280,38 +285,42 @@ hello.build.xml:
 hello.mojos.xml:
 ------------------------------
 
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        <goal>hello</goal>
-        <requiresProject>true</requiresProject>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      <goal>hello</goal>
+      
+      <!-- this element refers to the Ant target we'll invoke -->
+      <call>hello</call>
+      
+      <requiresProject>true</requiresProject>
+      
+      <description>
+        Say Hello, including the user's name, and print the project name to the console.
+      </description>
+      <parameters>
+        <parameter>
+          <name>name</name> 
+          <property>name</property> 
+          <required>true</required> 
+          <expression>${name}</expression>
+          <type>java.lang.String</type>
+          <description>The name of the user to greet.</description>
+        </parameter>
         
-        <description>
-          Say Hello, including the user's name, and print the project name to the console.
-        </description>
-        <parameters>
-          <parameter>
-            <name>name</name> 
-            <property>name</property> 
-            <required>true</required> 
-            <expression>${name}</expression>
-            <type>java.lang.String</type>
-            <description>The name of the user to greet.</description>
-          </parameter>
-          
-          <parameter>
-            <name>projectName</name> 
-            <property>projectName</property>
-            <required>true</required>
-            <readonly>true</readonly>
-            <defaultValue>${project.name}</defaultValue>
-            <type>java.lang.String</type>
-            <description>The name of the project currently being built.</description>
-          </parameter>
-        </parameters>
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+        <parameter>
+          <name>projectName</name> 
+          <property>projectName</property>
+          <required>true</required>
+          <readonly>true</readonly>
+          <defaultValue>${project.name}</defaultValue>
+          <type>java.lang.String</type>
+          <description>The name of the project currently being built.</description>
+        </parameter>
+      </parameters>
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
   You'll notice several differences from the old version of the mapping document.
@@ -364,7 +373,7 @@ mvn -Dname=John hello:hello
   This should output the following:
   
 +---+
-Hello, John. You're building project: Hello Plugin
+[echo] Hello, John. You're building project: Hello Plugin
 +---+
 
 *Defining Multiple Mojos from One Build Script
@@ -399,19 +408,15 @@ Hello, John. You're building project: Hello Plugin
 one-two.build.xml:
 --------------------------------
 
-  <!-- NOTE: The default target has been removed. This is no longer
-       needed, since we're going to use two independently mapped
-       mojos from this script.
-  -->
-  <project>
-    <target name="one">
-      <echo>Hello, ${name}.</echo>
-    </target>
-    
-    <target name="two">
-      <echo>You're building project: ${projectName}</echo>
-    </target>
-  </project>
+<project>
+  <target name="one">
+    <echo>Hello, ${name}.</echo>
+  </target>
+  
+  <target name="two">
+    <echo>You're building project: ${projectName}</echo>
+  </target>
+</project>
 +---+
 
 **Map the Mojos
@@ -423,49 +428,53 @@ one-two.build.xml:
 one-two.mojos.xml:
 ------------------------------
 
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        <goal>one</goal>
-        <call>one</call>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      <goal>one</goal>
+      
+      <!-- this element refers to the Ant target we'll invoke -->
+      <call>one</call>
+      
+      <description>
+        Say Hello. Include the user's name.
+      </description>
+      <parameters>
+        <parameter>
+          <name>name</name> 
+          <property>name</property> 
+          <required>true</required> 
+          <expression>${name}</expression>
+          <type>java.lang.String</type>
+          <description>The name of the user to greet.</description>
+        </parameter>
+      </parameters>
+    </mojo>
         
-        <description>
-          Say Hello. Include the user's name.
-        </description>
-        <parameters>
-          <parameter>
-            <name>name</name> 
-            <property>name</property> 
-            <required>true</required> 
-            <expression>${name}</expression>
-            <type>java.lang.String</type>
-            <description>The name of the user to greet.</description>
-          </parameter>
-        </parameters>
-      </mojo>
-          
-      <mojo>
-        <goal>two</goal>
-        <call>two</call>
-        <requiresProject>true</requiresProject>
-        
-        <description>
-          Write the project name to the console.
-        </description>
-        <parameters>
-          <parameter>
-            <name>projectName</name> 
-            <property>projectName</property>
-            <required>true</required>
-            <readonly>true</readonly>
-            <defaultValue>${project.name}</defaultValue>
-            <type>java.lang.String</type>
-            <description>The name of the project currently being built.</description>
-          </parameter>
-        </parameters>
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+    <mojo>
+      <goal>two</goal>
+      
+      <!-- this element refers to the Ant target we'll invoke -->
+      <call>two</call>
+      <requiresProject>true</requiresProject>
+      
+      <description>
+        Write the project name to the console.
+      </description>
+      <parameters>
+        <parameter>
+          <name>projectName</name> 
+          <property>projectName</property>
+          <required>true</required>
+          <readonly>true</readonly>
+          <defaultValue>${project.name}</defaultValue>
+          <type>java.lang.String</type>
+          <description>The name of the project currently being built.</description>
+        </parameter>
+      </parameters>
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
   Now that we've split the old functionality into two distinct mojos, there are
@@ -473,11 +482,15 @@ one-two.mojos.xml:
   requires a valid project instance in order to execute, since we only require 
   the user's name in order to greet him.
   
-  Aside from this, we've added a new <<\<call\>>> element for each mojo in the
-  mapping document. This element describes which Ant target should be called
-  when the mojo is invoked.
-  
 **Build It, Run It
+
+**Rebuild It and Run It
+  
+  Since we've modified our plugin, we have to rebuild it again before re-running it.
+  
++---+
+mvn clean install
++---+
 
   Now that we have two separate mojos, we can execute them singly, or in any order
   we choose. We can bind them to phases of the lifecycle using plugin configuration
@@ -488,14 +501,14 @@ mvn -Dname=John hello:one
 
 RETURNS:
 
-Hello, John.
+[echo] Hello, John.
 
 
 mvn hello:two (executed in the plugin's project directory)
 
 RETURNS:
 
-You're building project: Hello Plugin
+[echo] You're building project: Hello Plugin
 +---+
 
   Alternatively, you could build a POM like this:
@@ -504,37 +517,37 @@ You're building project: Hello Plugin
 test-project/pom.xml:
 ----------------------------
 
-  <project>
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>org.myproject.tests</groupId>
-    <artifactId>hello-plugin-tests</artifactId>
-    <version>1.0</version>
-    
-    <name>Test Project</name>
-    
-    <build>
-      <plugins>
-        <plugin>
-          <groupId>org.myproject.plugins</groupId>
-          <artifactId>hello-plugin</artifactId>
-          
-          <configuration>
-            <name>John</name>
-          </configuration>
-          
-          <executions>
-            <execution>
-              <phase>validate</phase>
-              <goals>
-                <goal>one</goal>
-                <goal>two</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </build>
-  </project>
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.myproject.tests</groupId>
+  <artifactId>hello-plugin-tests</artifactId>
+  <version>1.0</version>
+  
+  <name>Test Project</name>
+  
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.myproject.plugins</groupId>
+        <artifactId>hello-plugin</artifactId>
+        
+        <configuration>
+          <name>John</name>
+        </configuration>
+        
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals>
+              <goal>one</goal>
+              <goal>two</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 +---+
 
   Then, simply call Maven on this new POM:
@@ -547,8 +560,9 @@ mvn validate
   You should see the following output:
   
 +---+
-Hello, John.
-You're building project: Test Project
+[echo] Hello, John.
+...
+[echo] You're building project: Test Project
 +---+
 
 **A Note on Multiple Build Scripts
@@ -573,24 +587,24 @@ You're building project: Test Project
   something similar to the following in the mapping document:
   
 +---+
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        .
-        .
-        .
-        <components>
-          <component>
-            <role>org.apache.maven.project.MavenProjectBuilder</role>
-            <hint>default</hint> <!-- This is optional -->
-          </component>
-        </components>
-        .
-        .
-        .
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      .
+      .
+      .
+      <components>
+        <component>
+          <role>org.apache.maven.project.MavenProjectBuilder</role>
+          <hint>default</hint> <!-- This is optional -->
+        </component>
+      </components>
+      .
+      .
+      .
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
 **Forking New Lifecycles
@@ -599,26 +613,26 @@ You're building project: Test Project
   following in the mapping document:
   
 +---+
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        .
-        .
-        .
-        <execute>
-          <lifecycle>my-custom-lifecycle</lifecycle>
-          <phase>package</phase>
-          
-          <!-- OR -->
-          
-          <goal>some:goal</goal>
-        </execute>
-        .
-        .
-        .
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      .
+      .
+      .
+      <execute>
+        <lifecycle>my-custom-lifecycle</lifecycle>
+        <phase>package</phase>
+        
+        <!-- OR -->
+        
+        <goal>some:goal</goal>
+      </execute>
+      .
+      .
+      .
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
 **Deprecation
@@ -631,45 +645,45 @@ You're building project: Test Project
   To deprecate a mojo parameter, simply add this:
   
 +---+
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        .
-        .
-        .
-        <parameters>
-          <parameter>
-            .
-            .
-            .
-            <deprecated>Use this other parameter instead.</deprecated>
-            .
-            .
-            .
-          </parameter>
-        </parameters>
-        .
-        .
-        .
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      .
+      .
+      .
+      <parameters>
+        <parameter>
+          .
+          .
+          .
+          <deprecated>Use this other parameter instead.</deprecated>
+          .
+          .
+          .
+        </parameter>
+      </parameters>
+      .
+      .
+      .
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
 
   To deprecate an entire mojo, add this:
   
 +---+
-  <pluginMetadata>
-    <mojos>
-      <mojo>
-        .
-        .
-        .
-        <deprecated>Use this other mojo instead.</deprecated>
-        .
-        .
-        .
-      </mojo>
-    </mojos>
-  </pluginMetadata>
+<pluginMetadata>
+  <mojos>
+    <mojo>
+      .
+      .
+      .
+      <deprecated>Use this other mojo instead.</deprecated>
+      .
+      .
+      .
+    </mojo>
+  </mojos>
+</pluginMetadata>
 +---+
