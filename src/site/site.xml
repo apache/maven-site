@@ -46,6 +46,7 @@
       <item name="Where is it?" href="/where-is-it.html"/>
       <item name="How to Help" href="/guides/development/guide-helping.html"/>
       <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>      
+      <item name="Netbeans Module" href="/netbeans-module.html"/>      
     </menu>
 
     <menu name="About Maven 2.0">
