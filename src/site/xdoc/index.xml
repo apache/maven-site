@@ -48,9 +48,6 @@
         </ul>
 
       </div>
-      <div style="clear: right; float: right">
-        <a href="http://www.apachecon.com/2005/US/index.html"><img src="http://www.apache.org/images/ac2005us_white_184x80.jpg" width="184" height="80" border="0" title="ApacheCon US 2005" /></a>
-      </div>
       <p>
         Maven is a software project management and comprehension tool. Based on the concept of a project object model
         (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
