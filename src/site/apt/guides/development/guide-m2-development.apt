@@ -234,13 +234,20 @@ Available formats
   Commits should have a message that follows this template:
 
 -----
-PR: issue1, issue2 (using issue keys from JIRA, not URLs)
+[issue1, issue2] <<comment>>
 Submitted by: (when it was a patch, put that persons name there)
-<< comment >>
 -----
 
-  <<PR>> can be omitted if there was no relevant JIRA issue, though it is strongly encouraged to create one for significant
+  <<issue>> can be omitted if there was no relevant JIRA issue, though it is strongly encouraged to create one for significant
   changes.
 
   <<Submitted by>> only needs to be specified when a patch is being applied for a non-committer.
   
+eg:
+
+-----
+[MNG-1456] Added the foo to the bar
+Submitted by: Baz Bazman
+-----
+
+
