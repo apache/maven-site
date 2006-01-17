@@ -43,7 +43,7 @@ Maven 2.x Plug-in for Eclipse
  Eclipse you can do so using the following:
  
 -----
-svn co svn://svn.codehaus.org/home/projects/m2eclipse/scm/trunk m2eclipse
+svn co https://svn.codehaus.org/m2eclipse/trunk m2eclipse
 -----
 
 * Mailing Lists
