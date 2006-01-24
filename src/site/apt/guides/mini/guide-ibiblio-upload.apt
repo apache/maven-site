@@ -95,7 +95,7 @@ foo-1.0-sources.jar (optional, jar containing java sources)
       <version>...</version>
     </dependency>
     ...
-  <dependencies>
+  </dependencies>
 </project> 
 
 +----+
