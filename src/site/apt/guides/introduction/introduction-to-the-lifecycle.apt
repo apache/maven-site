@@ -451,7 +451,3 @@ private MavenProject executedProject;
 @execute phase="test" lifecycle="clover"
 ----
 
-  For more information about plugin development in general, see the
-  {{{developers/plugin-overview.html} Developer's Section}}.
-
-
