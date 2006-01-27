@@ -50,6 +50,8 @@ Available Plugins
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-ejb-plugin} <<<ejb>>>}}                                   | Build an EJB (and optional client) from the current project.
 *--------------------------------------------------------------------+----------------------------------------------+
+| {{{maven-help-plugin} <<<help>>>}}                                 | Get information about the working environment for the project.
+*--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-idea-plugin} <<<idea>>>}}                                 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-install-plugin} <<<install>>>}}                           | Install the built artifact into the local repository.
@@ -61,8 +63,6 @@ Available Plugins
 | {{{maven-plugin-plugin} <<<plugin>>>}}                             | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-pmd-plugin} <<<pmd>>>}}                                   | Generate a PMD report.
-*--------------------------------------------------------------------+----------------------------------------------+
-| {{{maven-projecthelp-plugin} <<<projecthelp>>>}}                   | Get information about the working environment for the project.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-project-info-reports-plugin} <<<project-info-reports>>>}} | Generate a standard project reports.
 *--------------------------------------------------------------------+----------------------------------------------+
