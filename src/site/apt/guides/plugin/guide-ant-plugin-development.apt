@@ -23,7 +23,29 @@
 ~~ NOTE: This guide has been adapted from "Guide to Developing Java Plugins"
 ~~ by Bob Allison.
 
-Introduction
+Developing Ant Plugins for Maven 2.x
+
+*WARNING
+
+  <<The documentation below assumes that you have updated your locally cached
+  cached copy of the maven-plugin-plugin. To update your copy, you will need to
+  include the -U option when you build your plugin project:>>
+
++---+
+mvn -U clean install
++---+
+
+  The maven-plugin-plugin is responsible for reading plugin metadata in its 
+  various forms and writing a standard Maven plugin descriptor based on the input. 
+  It was designed to accommodate multiple plugin languages side by side, but its
+  initial design was slightly flawed for plugin languages that don't include the
+  metadata inline with the source (within the same file). Since the 2.0.1 release
+  of Maven, the maven-plugin-plugin has contained revisions to handle this scenario.
+  Since the API has changed (in a backward-compatible way), and since the Ant
+  plugin support requires these changes be in place, you will see an <<<AbstractMethodError>>>
+  if you try to build an Ant-based plugin using the old maven-plugin-plugin.
+
+*Introduction
 
   The intent of this document is to help users learn to develop Maven plugins
   using Ant.
