@@ -41,7 +41,6 @@ Guide to uploading artifacts to Ibiblio
 
 +----+
 
-LICENSE.txt
 pom.xml
 foo-1.0.jar (or whatever artifact is referred to in the pom.xml)
 foo-1.0-sources.jar (optional, jar containing java sources)
@@ -65,6 +64,8 @@ foo-1.0-sources.jar (optional, jar containing java sources)
 
  * url
 
+ * licenses
+
  * scm url
 
  * description
@@ -85,6 +86,13 @@ foo-1.0-sources.jar (optional, jar containing java sources)
   <name>Maven core</name>
   <url>http://maven.apache.org</url>
   <description>The maven main core project description</description>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
   <scm>
     <url>http://svn.apache.org/viewcvs.cgi/maven</url>
   </scm>
