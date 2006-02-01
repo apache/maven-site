@@ -31,6 +31,18 @@
         </p>
       </answer>
     </faq>
+    <faq id="plugin-version">
+      <question>How do I determine what version of a plugin I am using?</question>
+      <answer>
+        <p>
+          You can use the Maven Help Plugin's <code>describe</code> goal. For example, to find out the version of the install plugin:
+        </p>
+        <source>mvn -Dplugin=install help:describe</source>
+        <p>
+          Note that you must give the plugin prefix as the argument to plugin, not it's artifact ID.
+        </p>
+      </answer>
+    </faq>
     <faq id="using-ant-tasks">
       <question>How can I use Ant tasks in Maven 2?</question>
       <answer>
