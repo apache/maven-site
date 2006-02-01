@@ -9,6 +9,10 @@
 Powered by Maven 2.x
 
  * {{{http://jetty.mortbay.org/jetty6}Jetty 6.x}}
+
+ * {{{http://celtix.objectweb.org/} Celtix}}
+ 
+ * {{{http://displaytag.sf.net} Display Tag}}
  
  * {{{http://maven.apache.org}Maven}}
  
@@ -16,8 +20,13 @@ Powered by Maven 2.x
  
  * {{{http://maven.apache.org/continuum}Continuum}}
  
+ * {{{http://gforge.public.thoughtworks.org/projects/dbfixture/}DbFixture}}
+
+ Work In Progress
+
+ * {{{http://geronimo.apache.org} Geronimo}}
+
  * {{{http://openejb.codehaus.org}OpenEJB}}
  
  * {{{http://www.activemq.org}ActiveMQ}}
 
- * {{{http://gforge.public.thoughtworks.org/projects/dbfixture/}DbFixture}}
