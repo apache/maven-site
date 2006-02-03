@@ -90,7 +90,7 @@ Available Plugins
 *-----------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin} <<<castor>>>}}                   | Generate sources from an XSD using Castor.
 *-----------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/changlog-maven-plugin} <<<changelog>>>}}              | Generate a list of recent changes from your SCM.
+| {{{http://mojo.codehaus.org/changelog-maven-plugin} <<<changelog>>>}}              | Generate a list of recent changes from your SCM.
 *-----------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/changes-maven-plugin} <<<changes>>>}}                 | Generate a report from issue tracking or a change document.
 *-----------------------------------------------------------------------------------+----------------------------------+
