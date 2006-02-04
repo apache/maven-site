@@ -72,6 +72,10 @@ foo-1.0-sources.jar (optional, jar containing java sources)
 
  * dependencies
 
+ []
+
+ Be sure to always check previous versions of the poms in the repository to use the information
+ already there as a base.
 
  A basic sample:
 
@@ -188,3 +192,44 @@ clipping of nose hairs. Please upload!
  * {{{http://www.opensymphony.com/}OpenSymphony}}
 
  * {{{http://www.osjava.org}OS Java}}
+
+
+
+For Maven developers
+
+
+ The scripts to make the upload to the repository are in the <<<components>>> tree of svn, inside <<<maven-meeper/src/bin>>>
+
+ That sources are checked out in beaver.codehaus.org <<</home/projects/maven/components/maven-meeper/src/bin>>>, so
+ after logging in beaver as maven user you can go there and run
+
++----+
+./deploy-bundle [URL of the bundle]
++----+
+
+  That command will download the bundle, decompress and show the pom. You have to make sure everything is right
+  and hit <<<q>>>, when a summary with groupId, artifactId and version will be shown, and a message saying if the
+  group already exists or not. This is useful as we have to be careful creating new groups, making sure they follow
+  the conventions and that they don't exist already with another name. If the pom is not right or there's any doubt
+  upload should be aborted with Ctrl-C, and a comment posted in the upload request. If there's no response from
+  the reporter in a month the request will be closed as incomplete.
+
+  Things to remember:
+
+  * all the dependencies have to be already in the repo
+
+  * if there are no dependencies it's suspicious and should be asked if it's right in an issue comment
+
+  * parent poms have to be already in the repo
+
+  * all the minimal information previously mentioned has to be in the pom
+
+  * poms should include at least as much information as previous versions, and shouldn't change too much the dependencies
+
+  * while chceking previous version chcek also if it was relocated. If so ask the reporter to update the bundle with the
+    new information
+
+  * groupIds have to follow previously stated naming conventions
+
+  * upload requests for popular projects require being extremely careful (javax.* groups, spring, hibernate,...)
+
