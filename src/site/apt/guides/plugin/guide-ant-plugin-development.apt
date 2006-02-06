@@ -200,7 +200,7 @@ pom.xml:
              plugin using the "prefix:mojo" shorthand.
         -->
         <configuration>
-          <prefix>hello</prefix>
+          <goalPrefix>hello</goalPrefix>
         </configuration>
       </plugin>
     </plugins>
