@@ -36,8 +36,6 @@ Documentation
 
  * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
 
- * {{{mini/guide-ear.html}Guide to EARs}}
-
  * {{{mini/guide-embedding-m2.html}Guide to Embedding Maven 2.x}}
 
  * {{{mini/guide-generating-sources.html}Guide to generating Sources}}
@@ -61,8 +59,6 @@ Documentation
  * {{{mini/guide-maven-evangelism.html}Guide to Maven Evangelism}}
 
  * {{{mini/guide-mirror-settings.html}Guide to Mirror Settings}}
-
- * {{{mini/guide-multi-module.html}Guide to creating a multi-module build}}
 
  * {{{mini/guide-multiple-repositories.html}Guide to using Multiple Repositories}}
 
@@ -116,9 +112,9 @@ Documentation
 
 * Plugin Guides
 
- * {{{plugin/guide-java-plugin-development.html}Guide to Developing Java Plugins}}
-
  * {{{plugin/guide-ant-plugin-development.html}Guide to Developing Ant Plugins}}
+
+ * {{{plugin/guide-java-plugin-development.html}Guide to Developing Java Plugins}}
 
 
 * Development Guides
