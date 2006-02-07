@@ -93,6 +93,8 @@ Documentation
 
  * {{{introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}
 
+ * {{{introduction/introduction-to-optional-and-excludes-dependencies.html}Introduction to Optional and Excludes Dependencies}}
+
  * {{{introduction/introduction-to-plugin-prefix-mapping.html}Introduction to Plugin Prefix Resolution}}
 
  * {{{introduction/introduction-to-plugin-registry.html}Introduction to the Plugin Registry}}
