@@ -45,10 +45,12 @@ Using Mirrors for Repositories
 
 +-----+
 
- <<Note>>: the settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
+ The settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
 
 
  As of today, the following mirrors are available:
+ <<Note>>: The official Maven 2 repository is at http://www.ibiblio.org/maven2, the following mirrors may not have the same contents
+ and we don't support them in any way, although we try to keep info in this page accurate
 
 +-----+
 
@@ -56,18 +58,8 @@ Using Mirrors for Repositories
 
   <mirrors>
     <mirror>
-      <id>dotsrc.org</id>
-      <url>http://mirrors.dotsrc.org/maven2</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-    <mirror>
       <id>ggi-project.org</id>
       <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-    <mirror>
-      <id>sunsite.dk</id>
-      <url>http://mirrors.sunsite.dk/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
     <mirror>
@@ -83,6 +75,18 @@ Using Mirrors for Repositories
     <mirror>
       <id>ibiblio.net</id>
       <url>http://www.ibiblio.net/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+
+    <!-- the following mirrors seem not to get changes, just new files -->
+    <mirror>
+      <id>dotsrc.org</id>
+      <url>http://mirrors.dotsrc.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>sunsite.dk</id>
+      <url>http://mirrors.sunsite.dk/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
