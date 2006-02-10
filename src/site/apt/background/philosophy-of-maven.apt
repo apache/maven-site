@@ -12,7 +12,7 @@ Philosophy of Maven
  with Ant so it's a natural association but Maven is not just a build tool, and not just a replacement for Ant.
  Maven is an entirely different creature from Ant. Ant is simply a toolbox whereas Maven is about the
  application of patterns in order to acheive an infrastructure which displays the characteristics of
- visibility, resuability, maintainability, and comprehensibility.
+ visibility, reusability, maintainability, and comprehensibility.
 
  Without these characteristics it is highly improbable multiple individuals will work productively together
  on a project. Without visibility it is unlikely an invidual will know what another has accomplished and as such
