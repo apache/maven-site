@@ -136,6 +136,10 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
   This last example will trigger the profile when the system property 
   "environment" is specified with the value "test".
 
++---+
+mvn groupId:artifactId:goal -Denvironment=test
++---+
+
 * Which areas of a POM can be customized by each type of profile? Why?
 
   Now that we've talked about where to specify profiles, and how to activate them,
@@ -165,34 +169,40 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 
   Profiles specified in the POM can modify the following POM elements:
 
-  * <<repositories>>
+  * <<\<repositories\>>>
   
-  * <<pluginRepositories>>
+  * <<\<pluginRepositories\>>>
 
-  * <<dependencies>>
+  * <<\<dependencies\>>>
 
-  * <<plugins>>
+  * <<\<plugins\>>>
 
-  * <<properties>> (not actually available in the main POM, but used behind the
+  * <<\<properties\>>> (not actually available in the main POM, but used behind the
     scenes)
 
-  * <<modules>>
+  * <<\<modules\>>>
 
-  * <<reporting>>
+  * <<\<reporting\>>>
 
-  * <<dependencyManagement>>
+  * <<\<dependencyManagement\>>>
 
-  * <<distributionManagement>>
+  * <<\<distributionManagement\>>>
 
-  * a subset of the <<build>> element, which consists of:
+  * a subset of the <<\<build\>>> element, which consists of:
 
-    * <<defaultGoal>>
+    * <<\<defaultGoal\>>>
 
-    * <<resources>>
+    * <<\<resources\>>>
 
-    * <<testResources>>
+    * <<\<testResources\>>>
 
-    * <<finalName>>
+    * <<\<finalName\>>>
+
+  We don't allow modification of some POM elements outside of POM-profiles 
+  because these runtime modifications will not be distributed when the POM 
+  is deployed to the repository system, making that person's build of that 
+  project completely unique from others. While you can do this to some extent 
+  with the options given for external profiles, the danger is limited.
 
 * Profile Pitfalls
 
@@ -342,8 +352,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
   important exceptions: it's plainly geared toward a development environment, 
   a new profile named <<<appserverConfig-dev-2>>> is added and it has an 
   activation section that will trigger its inclusion when the system 
-  properties contain "env=dev" for profile named <<<appserverConfig-dev>>> and "env=dev-2" for 
-  profile named <<<appserverConfig-dev-2>>>. So, executing:
+  properties contain "env=dev" for profile named <<<appserverConfig-dev>>> and 
+  "env=dev-2" for profile named <<<appserverConfig-dev-2>>>. So, executing:
 
 +---+
 mvn -Denv=dev-2 integration-test
@@ -356,18 +366,20 @@ mvn -Denv=dev-2 integration-test
 mvn -Denv=dev integration-test
 +---+
 
-  should result in a successful build. However, executing:
+  should result in a successful build applying the properties given
+  by the profile named <<<appserverConfig-dev>>>. However, executing:
 
 +---+
 mvn -Denv=production integration-test
 +---+
 
-  Wont do a successful build. Why? Because, the resulting non-interpolated literal value of $\{appserver.home\}
-  will not be a valid path for deploying and testing your web application. We
-  haven't considered the case for the production environment when writing our
-  profiles. The "production" environment( env=production ), along with "test" and possibly even
-  "local" constitute a natural set of target environments for which we may want
-  to build the integration-test lifecycle phase. The incomplete specification of
+  Wont do a successful build. Why? Because, the resulting non-interpolated 
+  literal value of $\{appserver.home\} will not be a valid path for deploying 
+  and testing your web application. We haven't considered the case for the 
+  production environment when writing our profiles. The "production" 
+  environment(env=production), along with "test" and possibly even "local" 
+  constitute a natural set of target environments for which we may want to 
+  build the integration-test lifecycle phase. The incomplete specification of 
   this natural set means we have effectively limited our valid target environments 
   to the development environment. Your teammates - and probably your manager - 
   will not see the humor in this. When you construct profiles to handle cases
