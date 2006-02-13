@@ -149,7 +149,7 @@ mvn groupId:artifactId:goal -Denvironment=test
   Depending on where you choose to configure your profile, you will have access
   to varying POM configuration options. Profiles specified in external files 
   (i.e in <<<settings.xml>>> or <<<profiles.xml>>>) are not portable in the 
-  strictest sense, anything that seems to stand a high chance of changing the result 
+  strictest sense that anything that seems to stand a high chance of changing the result 
   of the build is restricted to the inline profiles in the POM. Things like 
   repository lists could simply be a proprietary repository of approved 
   artifacts, and won't change the outcome of the build. Therefore, you will 
@@ -203,6 +203,9 @@ mvn groupId:artifactId:goal -Denvironment=test
   is deployed to the repository system, making that person's build of that 
   project completely unique from others. While you can do this to some extent 
   with the options given for external profiles, the danger is limited.
+  Another reason is that those POM info is being reused sometimes from the 
+  parent POM.
+  
 
 * Profile Pitfalls
 
