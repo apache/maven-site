@@ -198,6 +198,8 @@ mvn groupId:artifactId:goal -Denvironment=test
 
     * <<\<finalName\>>>
 
+  []
+
   We don't allow modification of some POM elements outside of POM-profiles 
   because these runtime modifications will not be distributed when the POM 
   is deployed to the repository system, making that person's build of that 
@@ -206,6 +208,19 @@ mvn groupId:artifactId:goal -Denvironment=test
   Another reason is that those POM info is being reused sometimes from the 
   parent POM.
   
+  External files such as settings and profiles.xml also does not support elements
+  outside the POM-profiles. Let us take this scenario for elaboration. When the 
+  effective POM get deployed to a remote repository, any person can pickup 
+  its info out of the repository and use it to build a Maven project directly. 
+  Now, imagine that if we can set profiles in dependencies which is very 
+  important to a build or in any other elements outside POM-profiles in 
+  settings.xml then most probably we cannot expect someone else to use that 
+  POM from the repository and be able to build it. And we have also to think 
+  how to share the settings.xml with others. Note that too many files to 
+  configure is very confusing and very hard to maintain. 
+  Bottom line is that since this is a build data, it should be in the POM, 
+  one of the goals in Maven 2 is to consolidate all the information needed to 
+  run a build into a single file, or file hierarchy which is the POM.
 
 * Profile Pitfalls
 
