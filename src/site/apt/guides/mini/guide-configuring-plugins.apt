@@ -231,3 +231,109 @@ public class MyQueryMojo
 
  Note the specification of the property name which tells Maven what setter and getter to use when the field
  is not accessed directly.
+
+* Using the executions tag
+
+You can also configure a mojo using the executions tag. Using MyQueryMojo as an example, you may have something that will look like:
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-myquery-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>execution1</id>
+            <phase>test</phase>
+            <configuration>
+              <url>http://www.foo.com/query</url>
+              <timeout>10</timeout>
+              <options>
+                <option>one</option>
+                <option>two</option>
+                <option>three</option>
+              </options>
+            </configuration>
+          </execution>
+          <execution>
+            <id>execution2</id>
+            <configuration>
+              <url>http://www.bar.com/query</url>
+              <timeout>15</timeout>
+              <options>
+                <option>four</option>
+                <option>five</option>
+                <option>six</option>
+              </options>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+The first execution with id "execution1" binds this configuration to the test 
+phase. Some goals can have default phases. The second execution does not have 
+a <phase> tag, how do you think will the execution behave? If the goal is
+binded to a phase then it will execute to that phase. But if the goal is 
+not binded to any lifecycle phases then it will be executed without executing 
+any phases(as if it was executed in the CLI).
+
+Note that execution id's don't have to be unique.  Executions of the same id 
+are merged. 
+
+How about if we have a multiple executions with different phases bound to it? 
+How do you think will it behave? Let us use the example POM above again, but 
+this time we shall bind <<<execution2>>> to a phase.
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        ...
+        <executions>
+          <execution>
+            <id>execution1</id>
+            <phase>test</phase>
+            ...
+          </execution>
+          <execution>
+            <id>execution2</id>
+	    <phase>install</phase>
+            <configuration>
+              <url>http://www.bar.com/query</url>
+              <timeout>15</timeout>
+              <options>
+                <option>four</option>
+                <option>five</option>
+                <option>six</option>
+              </options>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+If there are multiple executions bound to different phases, then the mojo is 
+executed once for each phase indicated. Meaning, <<<execution1>>> will be 
+executed applying the configuration setup when the phase of the build is test, 
+and <<<execution2>>> will be executed applying the configuration setup when 
+the build phase is already in install.
+
+Configurations inside the <executions> tag differ from those that are outside 
+<executions> in that they cannot be used from a direct command line 
+invocation. Instead they are only applied when the lifecycle phase they are 
+bound to are invoked.  Alternatively, if you move a configuration section 
+outside of the executions section, it will apply globally to all invocations 
+of the plugin.
