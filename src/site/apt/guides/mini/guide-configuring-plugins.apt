@@ -332,9 +332,78 @@ public class MyQueryMojo
   and <<<execution2>>> will be executed applying the configuration setup when 
   the build phase is already in install.
 
+  Now, Let us have another mojo example which is binded to a lifecycle phase.
+
++----+
+@phase package
+public class MyBindedQueryMojo
+    extends AbstractMojo
+{
+    /**
+     * @parameter
+     */
+    private String url;
+
+    /**
+     * @parameter
+     */
+    private int timeout;
+
+    /**
+     * @parameter
+     */
+    private String[] options;
+
+    public void execute()
+        throws MojoExecutionException
+    {
+        ...
+    }
+}
++----+
+
+  From the above mojo example, MyBindedQueryMojo is binded to package phase
+  (see the "@phase" notation). But if we want to execute this mojo to install 
+  phase not with package we can rebind this mojo into a new lifecycle phase 
+  using the \<phase\> tag under \<executions\>.
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-myquery-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>execution1</id>
+	    <phase>install</phase>
+            <configuration>
+              <url>http://www.bar.com/query</url>
+              <timeout>15</timeout>
+              <options>
+                <option>four</option>
+                <option>five</option>
+                <option>six</option>
+              </options>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+  Now, MyBindedQueryMojo default phase which is package has been overrided by 
+  install phase. 
+
   Configurations inside the <executions> tag differ from those that are outside 
   <executions> in that they cannot be used from a direct command line 
   invocation. Instead they are only applied when the lifecycle phase they are 
   bound to are invoked.  Alternatively, if you move a configuration section 
   outside of the executions section, it will apply globally to all invocations 
   of the plugin.
+
+  
