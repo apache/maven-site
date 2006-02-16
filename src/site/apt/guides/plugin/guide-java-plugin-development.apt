@@ -187,7 +187,7 @@ groupID:artifactID:version:goal
   In order to shorten the amount of typing needed on the command line,
   you will need to add your plugin's group ID to the list of group IDs
   searched by default.  To do this, you need to add the following to
-  your <<<settings.xml>>> file:
+  your <<<$\{user.home\}/.m2/settings.xml>>> file:
 
 +----+
 <pluginGroups>
