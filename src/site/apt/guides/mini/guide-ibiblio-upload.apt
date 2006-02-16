@@ -31,7 +31,7 @@ Guide to uploading artifacts to Ibiblio
 
 +----+
 
- mvn source:jar repository:bundle-create
+ mvn source:jar javadoc:jar repository:bundle-create
 
 +----+
 
@@ -44,6 +44,7 @@ Guide to uploading artifacts to Ibiblio
 pom.xml
 foo-1.0.jar (or whatever artifact is referred to in the pom.xml)
 foo-1.0-sources.jar (optional, jar containing java sources)
+foo-1.0-javadoc.jar (optional, jar containing javadocs)
 
 +----+
 
