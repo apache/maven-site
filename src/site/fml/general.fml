@@ -209,5 +209,35 @@ Where: <path-to-file>  the path to the file to load
       	</p>
       </answer>
     </faq>
+    <faq id="tools-jar-dependency">
+      <question>How do I include <code>tools.jar</code> in my dependencies?</question>
+      <answer>
+        <p>
+          The following code includes <code>tools.jar</code> on Sun JDKs (it is already included in the runtime for Mac OS X and some free JDKs).
+        </p>
+        <source><![CDATA[
+  <profiles>
+    <profile>
+      <id>default-tools.jar</id>
+      <activation>
+        <property>
+          <name>java.vendor</name>
+          <value>Sun Microsystems Inc.</value>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>com.sun</groupId>
+          <artifactId>tools</artifactId>
+          <version>1.4.2</version>
+          <scope>system</scope>
+          <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+]]></source>
+     </answer>
+    </faq>
   </part>
 </faqs>
