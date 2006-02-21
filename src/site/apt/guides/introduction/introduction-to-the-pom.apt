@@ -18,7 +18,7 @@ Introduction to the POM
   
   * Show what a minimal POM can look like
 
-* {{Super POM}}
+* {Super POM}
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 

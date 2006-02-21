@@ -1,5 +1,5 @@
  ------
- Guide to the APT Format
+ Articles on Maven
  ------
  Jason van Zyl
  ------
@@ -31,17 +31,17 @@ Maven in the Press
 Articles on Maven
 
  * {{{http://blogs.codehaus.org/people/vmassol/archives/001275_javapolis_2005_slides_on_maven_2.html}Maven 2.0 - Javapolis 2005}}
- 
+
   * Vincent Massol
-  
+
   * 15 December 2005
 
  * {{{http://www.javaworld.com/javaworld/jw-12-2005/jw-1205-maven.html?lsrc=maven-users}An introduction to Maven 2}}
 
   * John Ferguson Smart
-  
-  * 5 December 2005 
-  
+
+  * 5 December 2005
+
  * {{{http://www.developer.com/open/article.php/10930_3552026_1}Taking the Maven 2 Plunge}}
 
   * David DeWolf
@@ -76,104 +76,106 @@ Articles on Maven
 
   * 30 March 205
 
-  * {{{http://www.codehaus.org/~vmassol/blog/Maven%201.0%20-%2020041216.ppt}Maven 1.0 Javapolis Presentation}}
+ * {{{http://www.codehaus.org/~vmassol/blog/Maven%201.0%20-%2020041216.ppt}Maven 1.0 Javapolis Presentation}}
 
-   * Vincent Massol
+  * Vincent Massol
 
-   * 16 December 2004
+  * 16 December 2004
 
-  * {{{http://www.oracle.com/technology/pub/articles/masterj2ee/j2ee_wk2.html}Master and Commander by Julien Dubois}}
+ * {{{http://www.oracle.com/technology/pub/articles/masterj2ee/j2ee_wk2.html}Master and Commander by Julien Dubois}}
 
-   * Oracle
+  * Oracle
 
-   * Julien Dubois
+  * Julien Dubois
 
-   * November 2004
+  * November 2004
 
-  * {{{http://www.manfred-wolff.de/Maven-short.pdf}installing and working with Maven (in German)}}
+ * {{{http://www.manfred-wolff.de/Maven-short.pdf}installing and working with Maven (in German)}}
 
-   * Manfred Wolff
+  * Manfred Wolff
 
-   * August 2004
+  * August 2004
 
-  * {{{http://www.onjava.com/pub/a/onjava/2004/03/17/maven.html}Extending Maven Through Plugins by Eric Pugh}}
+ * {{{http://www.onjava.com/pub/a/onjava/2004/03/17/maven.html}Extending Maven Through Plugins by Eric Pugh}}
 
-   * OnJava
+  * OnJava
 
-   * Eric Pugh
+  * Eric Pugh
 
-   * 17 March 2004
+  * 17 March 2004
 
-  * {{{http://www.theserverside.com/articles/article.tss?l=MavenMagic}Maven Magic - a tutorial on Maven and J2EE projects.}}
+ * {{{http://www.theserverside.com/articles/article.tss?l=MavenMagic}Maven Magic - a tutorial on Maven and J2EE projects.}}
 
-   * TheServerSide
+  * TheServerSide
 
-   * Srikanth Shenoy
+  * Srikanth Shenoy
 
-   * November 2003
+  * November 2003
 
-  * {{{http://www.jdocentral.com/JDO_Articles_20031117.html}JDO Meets Maven}}
+ * {{{http://www.jdocentral.com/JDO_Articles_20031117.html}JDO Meets Maven}}
 
-   * JDOCentral
+  * JDOCentral
 
-   * Andy Jefferson
+  * Andy Jefferson
 
-   * 17 November 2003
+  * 17 November 2003
 
-  * {{{http://www.onjava.com/pub/a/onjava/2003/10/22/maven.html}Developing with Maven by Rob Herbst}}
+ * {{{http://www.onjava.com/pub/a/onjava/2003/10/22/maven.html}Developing with Maven by Rob Herbst}}
 
-   * OnJava
+  * OnJava
 
-   * Rob Herbst
+  * Rob Herbst
 
-   * 22 October 2003
+  * 22 October 2003
 
-  * {{{http://www.devx.com/java/Article/17204}Apache Maven Simplifies the Java Build Process Even More Than Ant}}
+ * {{{http://www.devx.com/java/Article/17204}Apache Maven Simplifies the Java Build Process Even More Than Ant}}
 
-   * DevX
+  * DevX
 
-   * Dave Ford
+  * Dave Ford
 
-   * 2 September 2003
+  * 2 September 2003
 
-  * {{{http://www.pivolis.com/pdf/J2EE_projects_Maven_V1.1.pdf}Building J2EE applications with Maven (Slides from TheServerSide Symposium)}}
+ * {{{http://www.pivolis.com/pdf/J2EE_projects_Maven_V1.1.pdf}Building J2EE applications with Maven (Slides from TheServerSide Symposium)}}
 
-   * TheServerSide
+  * TheServerSide
 
-   * Vincent Massol
+  * Vincent Massol
 
-   * 27 June 2003
+  * 27 June 2003
 
-  * {{{http://www.javaworld.com/javaworld/jw-10-2002/jw-1011-maven.html}Maven ties together tools for better code management}}
+ * {{{http://www.javaworld.com/javaworld/jw-10-2002/jw-1011-maven.html}Maven ties together tools for better code management}}
 
-   * JavaWorld
+  * JavaWorld
 
-   * Jeff Linwood
+  * Jeff Linwood
 
-   * 11 October 2002
+  * 11 October 2002
 
-  * {{{http://www.javausergroup.at/events/maven.pdf}The Stairway to Maven}}
+ * {{{http://www.javausergroup.at/events/maven.pdf}The Stairway to Maven}}
 
-   * Siegfried G�SCHL
+  * Siegfried G�SCHL
 
-   * 26 June 2002
+  * 26 June 2002
 
-  * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/MakingWarWithMaven}How to get Maven to build your web service into a WAR on AstroGrid}}
+ * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/MakingWarWithMaven}How to get Maven to build your web service into a WAR on AstroGrid}}
 
-   * Astrogrid
+  * Astrogrid
 
-  * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/MavenFAQ}Some Maven FAQs on AstroGrid}}
+ * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/MavenFAQ}Some Maven FAQs on AstroGrid}}
 
-   * Astrogrid
+  * Astrogrid
 
-  * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/UsefulMavenNotes}Some Useful Maven Notes on AstroGrid}}
+ * {{{http://wiki.astrogrid.org/bin/view/Astrogrid/UsefulMavenNotes}Some Useful Maven Notes on AstroGrid}}
 
-   * Astrogrid
+  * Astrogrid
 
-  * {{{http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html}An Introduction to Maven</a> (in French).}}
+ * {{{http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html}An Introduction to Maven</a> (in French).}}
 
-  * {{{http://hotwork.sourceforge.net/hotwork/manual/maven/index.html}A tutorial for Maven, J2EE projects, and MevenIDE}} (in Portuguese).
+ * {{{http://hotwork.sourceforge.net/hotwork/manual/maven/index.html}A tutorial for Maven, J2EE projects, and MevenIDE}} (in Portuguese).
+
+ []
 
  If you are writing an article on Maven we suggest contacting the developers on the mailing list as we would be happy
- to provide feedback to help ensure accuracy in your artiticle. Just ping us on the {{mail-lists.html}dev mailing list}}
+ to provide feedback to help ensure accuracy in your article. Just ping us on the {{{mail-lists.html}dev mailing list}}
  to get in touch.

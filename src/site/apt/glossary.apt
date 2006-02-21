@@ -23,7 +23,7 @@ Glossary
 
   * {<<Artifact>>}:
     An artifact is something that is either produced or used by a project. Examples of artifacts produced by Maven for a project
-    include: JARs, source and binary distributions, WARs. Each artifact is uniquely identified by a {{{GroupId}group id}}
+    include: JARs, source and binary distributions, WARs. Each artifact is uniquely identified by a {{{#GroupId}group id}}
     and an artifact ID which is unique within a group.
 
   * {<<GroupId>>}:
@@ -39,7 +39,7 @@ Glossary
 
   * {<<Plug-in>>}:
     Maven is organized in plugins. Every piece of functionality in Maven is provided by a plugin.
-    Plugins provide {{{Goal}goals}} and use the metadata found in the POM to perform their task.
+    Plugins provide goals and use the metadata found in the POM to perform their task.
     Examples of plugins are: jar, eclipse, war. Plugins are primarily written in Java, but Maven
     also supports writing plug-ins in Beanshell and Ant Scripting.
 

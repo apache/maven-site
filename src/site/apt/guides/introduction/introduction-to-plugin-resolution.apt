@@ -140,10 +140,8 @@ Introduction: How Maven Resolves Plugins
   
 *Resources
 
-  [[{1}]] {{{./introduction-to-plugin-prefix-mapping.html}Introduction to the Plugin Prefix Mapping}}.
-  
-  [[{2}]] {{{./introduction-to-plugin-registry.html}Introduction to the Plugin Registry}}.
-  
-  [[{3}]] {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}
-  
-  []
+  {1}. {{{./introduction-to-plugin-prefix-mapping.html}Introduction to the Plugin Prefix Mapping}}.
+
+  {2}. {{{./introduction-to-plugin-registry.html}Introduction to the Plugin Registry}}.
+
+  {3}. {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}

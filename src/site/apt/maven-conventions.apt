@@ -23,7 +23,7 @@ Artifact Naming
  If you are building a project to be part of a larger product that is already using Maven, you should attempt to
  follow any patterns already established by other projects for consistency.
 
- These identifiers should be comprised of <i>lowercase</i> letters, digits, and hyphens only.
+ These identifiers should be comprised of <lowercase> letters, digits, and hyphens only.
 
  In general you should select a group ID that describes the entire product, and artifact IDs that are the
  basis of filenames for each item you distribute. The artifact ID may or may not overlap the group ID.
