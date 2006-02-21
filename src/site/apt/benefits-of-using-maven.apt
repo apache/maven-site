@@ -127,6 +127,7 @@ Benefits of using Maven
        and the users are allowed to mix and match their system to the lifecycle instead of cobble together their own
        lifecycle..  this has the additional benefit of allowing people to move from one project to another and speak
        using the same vocabulary in terms of software building
+
  []
 
 *Henning

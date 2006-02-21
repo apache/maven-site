@@ -143,7 +143,5 @@ mvn -Dversion=4.0.0 -Dmodel=maven.mdo modello:java
   
 *Resources
 
-  [[{1}]] {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}
+  {1} {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}}
   
-  []
-

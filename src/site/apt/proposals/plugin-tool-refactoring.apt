@@ -49,6 +49,8 @@ Refactor Details
           used to generate one or more derivative files from the MojoDescriptors
           discovered by the set of Reader/Sources. 
           
+        []
+        
         Once this split is accomplished, an additional class will be created to
         act as a managing component for all generators registered in plexus. It
         will require a mapping of Source-language->Source-instance where each 
