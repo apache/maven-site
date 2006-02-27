@@ -16,6 +16,22 @@ Introduction to the Plugin Registry
   are various ways to configure or bypass this feature, and the feature itself
   can be managed on either a per-user or global level.
 
+* <<Warning!>>
+
+  The plugin registry is currently in a semi-dormant state within Maven 2. This
+  is because it has been shown to have some subtle behavior that is not quite
+  intuitive. While we believe it's important to allow the user to pin down which
+  version of a particular plugin is used across all builds, it's not clear that
+  this type of information should be machine-specific (i.e. tied to something
+  outside the project directory).
+
+  Users should be cautious when attempting to use the <<<plugin-registry.xml>>>.
+  Redesign of this feature in upcoming 2.1 and/or 2.2 is likely.
+
+  For now, Maven <should> keep using the same version of a plugin - assuming a
+  different version is not specified in the POM - until the user chooses to run
+  with the <<<-U>>> option explicitly enabled.
+
 * A Tour of plugin-registry.xml
 
   The plugin registry file (per-user: ~/.m2/plugin-registry.xml, global: 
