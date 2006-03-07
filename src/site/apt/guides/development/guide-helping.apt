@@ -17,6 +17,10 @@ Guide to helping with Maven
 
  * {{{guide-m2-development.html#Creating and submitting a patch}Submit patches}} to reported issues (both those you find, or that others have filed)
 
+ * Help with the documentation by pointing out areas that are lacking or unclear, and if you are so inclined, submitting patches to correct it.
+   You can quickly contribute rough thoughts to the {{{http://docs.codehaus.org/display/MAVENUSER} wiki}}, or you can volunteer to help collate and
+   organise information that is already there.
+
  []
 
  Your participation in the community is much appreciated!
