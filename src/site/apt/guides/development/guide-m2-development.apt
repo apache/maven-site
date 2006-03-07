@@ -3,6 +3,7 @@
  ------
  Emmanuel Venisse
  Trygve Laugstol
+ Brett Porter
  ------
  8 July 2005
  ------
@@ -127,6 +128,29 @@ target
 *.iws
 *.iml
 ---
+
+* Patch acceptance criteria
+
+There are a number of criteria that a patch will be judged on:
+
+  * Whether it works and does what is intended. This one is probably obvious!
+
+  * Whether it fits the spirit of the project. Some patches may be rejected as they take the project in a different
+    direction to that which the current development community has chosen. This is usually discussed on an issue well
+    before a patch is contributed, so if you are unsure, discuss it there or on the mailing lists first. Feel free to
+    continue discussing it (with new justification) if you disagree, or appeal to a wider audience on the mailing lists.
+
+  * Whether it contains tests. It is expected that any patches relating to functionality will be accompanied by unit tests
+    and/or integration tests. It is strongly desired (and will be requested) for bug fixes too, but will not be the basis
+    for not applying it. At a bare minimum, the change should not decrease the amount of automated test coverage.
+    As a community, we are focusing on increasing the current coverage, as there are several areas that do not receive automated testing.
+
+  * Whether it contains documentation. All new functionality needs to be documented for users, even if it is very rough
+    for someone to expand on later. While rough is acceptable, incomplete is not. As with automated testing, as a community
+    we are striving to increase the current coverage of documentation.
+
+Above all, don't be discouraged. These are the same requirements the current commiters should hold each other to as well.
+And remember, your contributions are always welcome!
 
 * Related Projects
 
