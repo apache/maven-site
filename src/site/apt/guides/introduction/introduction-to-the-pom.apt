@@ -10,7 +10,7 @@ Introduction to the POM
 
   * You need a Project Object Model (POM)
   
-  * Explain what is a POM is?
+  * Explain what a POM is?
   
   * Explain that the POM is the fundamental unit of work in Maven
   
@@ -58,5 +58,5 @@ Introduction to the POM
  
  []
 
- <<NOTE:>> Profile inheritance the same inheritance strategy as used for the POM itself.
+ <<NOTE:>> Profile inheritance uses the same inheritance strategy as used for the POM itself.
 

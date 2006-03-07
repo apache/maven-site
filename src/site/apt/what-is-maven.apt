@@ -16,7 +16,7 @@ Introduction
  of, an easy way to publish project information and a way to share JARs
  across several projects.
 
- What resulted is a tool that can now be used for building and managing
+ The result is a tool that can now be used for building and managing
  any Java-based project. We hope that we have created something that
  will make the day-to-day work of Java developers easier and generally
  help with the comprehension of any Java-based project.
@@ -76,7 +76,7 @@ Maven's Objectives
 
  Other products can also provide Maven plugins to allow their set of
  project information alongside some of the standard information given by
- Maven, all still based from the POM.
+ Maven, all still based on the POM.
 
 * Providing guidelines for best practices development
 

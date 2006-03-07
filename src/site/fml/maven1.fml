@@ -12,7 +12,7 @@
         <ul>
           <li>
             <i>Faster and smaller</i>
-            - The Maven core no longer uses Ant, Jelly or Xerces making it much smaller, have
+            - The Maven core no longer uses Ant, Jelly or Xerces making it much smaller, has
             fewer dependencies, and is perfect for embedding in other tools.
           </li>
           <li>
@@ -94,7 +94,7 @@
         </p>
         <ul>
           <li>
-            <i>Availability of other plugins</i>
+            <i>Availability of plugins</i>
             - While most of the core Maven 1.x plugins have been converted,
             several 3rd party plugins may not be available. Maven 2.0 cannot execute Maven 1.0 plugins.
           </li>
