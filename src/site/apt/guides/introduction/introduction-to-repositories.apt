@@ -19,8 +19,8 @@ Introduction to Repositories
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
  <<<file://>>> and <<<http://>>>. These repositories might be a truely remote repository
  set up by a third party to provide their artifacts for downloading (for example,
- <a href="http://www.ibiblio.org/maven/">Ibiblio</a> houses Maven's central repository).
- Other "remote" repositories may be <a href="../reference/internal-repositories.html">internal repositories</a>
+ {{{http://www.ibiblio.org/maven/}Ibiblio}} houses Maven's central repository).
+ Other "remote" repositories may be {{{http://maven.apache.org/maven-1.x/reference/internal-repositories.html}internal repositories}}
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
 
@@ -40,7 +40,7 @@ Introduction to Repositories
  This has the following advantages:
 
  * <<It uses less storage>> - while a repository is typically quite large, because each JAR is only kept
-   in the one place it is actually saving space, even though it may not seem that way</li>
+   in the one place it is actually saving space, even though it may not seem that way
 
  * <<It makes checking out a project quicker>> - initial checkout, and to a small degree updating, a
    project will be faster if there are no large binary files in CVS. While they may need to be downloaded
@@ -60,7 +60,7 @@ Introduction to Repositories
   For the remote repositories, they are used for both downloading and uploading (if you have the permission to
   do so).
 
-** Downloading from a Remote Repository">
+** Downloading from a Remote Repository
 
  Downloading in Maven is triggered by a project declaring a dependency that is not present in the local
  repository (or for a <<<SNAPSHOT>>>, when the remote repository contains one that is newer).
@@ -83,7 +83,7 @@ Introduction to Repositories
 
 +----+
 
- You can set this in your <code>~/build.properties</code> file to globally use a certain mirror, however
+ You can set this in your <<<~/build.properties>>> file to globally use a certain mirror, however
  note that it is common for a project to customise the repository in their <code>project.properties</code>
  and that your setting will take precedence. If you find that dependencies are not being found, check you
  have not overridden the remote repository.
@@ -91,7 +91,13 @@ Introduction to Repositories
  (Future versions should allow you to use a setting of
  <<<${maven.repo.remote},http://planetmirror.com/maven>>>, but currently this causes an infinite recursion).
 
- For more information on dependencies, see <a href="managing-dependencies.html">Handling Dependencies</a>.
+ For more information on dependencies, see {{{http://maven.apache.org/using/managing-dependencies.html}Handling Dependencies}}.
+
+** Using Mirrors for the Central Repository
+
+ Like any server, the central repository at Ibiblio sometimes goes down. If this happens you can make
+ changes to your <<<settings.xml>>> file to use one or more mirrors. Instructions for this can be
+ found in the guide {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}.
 
 * Building Offline
 
@@ -106,10 +112,10 @@ Introduction to Repositories
  Note that many plugins will honour the offline setting and not perform any operations that would connect to
  the internet. Some examples are resolving Javadoc links and link checking the site.
 
-* Uploading to a Remote Repository">
+* Uploading to a Remote Repository
 
  While this is possible for any type of remote repository, you must have the permission to do so.
- To have someone upload to the central Maven repository, see {{../guide/guide-ibiblio-upload.html}Uploading to Ibiblio}}.
+ To have someone upload to the central Maven repository, see {{{../mini/guide-ibiblio-upload.html}Uploading to Ibiblio}}.
 
 Internal Repositories
 
@@ -117,7 +123,7 @@ Internal Repositories
  is not acceptable for security, speed or bandwidth reasons. For that reason, it is desirable to set up an
  internal repository to house a copy of artifacts, and to publish private artifacts to.
 
- Such an internal repository can be downloaded from using HTTP or the file system (using a <code>file://</code>
+ Such an internal repository can be downloaded from using HTTP or the file system (using a <<<file://>>>
  URL), and uploaded to using SCP, FTP, or a file copy.
 
  Note that as far as Maven is concerned, there is nothing special about this repository: it is another
@@ -125,7 +131,7 @@ Internal Repositories
  destination for artifact releases.
 
  Additionally, you may want to share the repository server with your generated project sites. For more
- information on creating and deploying sites, see <a href="../using/site.html">Creating a Site</a>.
+ information on creating and deploying sites, see {{{http://maven.apache.org/using/site.html}Creating a Site}}.
 
 * Setting up the Internal Repository
 
@@ -133,7 +139,7 @@ Internal Repositories
  required artifacts there using the same layout as in a remote repository such as {{{http://www.ibiblio.org/maven/}Ibiblio}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of Ibiblio as there is a large amount
- of data there. You can use a program such as <a href="http://maven-proxy.codehaus.org/">Maven Proxy</a>,
+ of data there. You can use a program such as {{{http://maven-proxy.codehaus.org/}Maven Proxy}},
  running on your internal repository's server, to download from the internet as required and then hold
  the artifacts in your internal repository for faster downloading later.
 
@@ -170,4 +176,5 @@ Internal Repositories
  your own private releases to share.
 
  To publish to the repository, you will need to have access via one of SCP, SFTP, FTP, or the filesystem.
- For example, to set up an SCP transfer. ~~ show the scp example.
+ For example, to set up an SCP transfer.
+~~ show the scp example.

@@ -89,7 +89,7 @@ mvn clean install
   This is an almost standard set of bindings; however, some packages handle them differently. For example, a project
   that is purely metadata (packaging <<<pom>>>) only binds the <<<install>>> and <<<deploy>>> phases.
 
-  Note that for some packaging tpyes to be available, you may also need to include a particular plugin in your
+  Note that for some packaging types to be available, you may also need to include a particular plugin in your
   <<<build>>> section (as described in the next section). One example of a plugin that requires this is the Plexus plugin,
   which provides a <<<plexus-application>>> and <<<plexus-service>>> packaging.
 

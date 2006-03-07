@@ -50,7 +50,7 @@ Introduction to the Standard Directory Layout
  directories that would be expected here are metadata like <<<CVS>>> or <<<.svn>>>, and any
  subprojects in a multiproject build (each of which would be laid out as above).
 
- The <<<target>>>directory is used to house all output of the build.
+ The <<<target>>> directory is used to house all output of the build.
 
  The <<<src>>> directory contains all of the source material for building the project, its site and so on.
  It contains a subdirectory for each type: <<<main>>> for the main build artifact, <<<test>>> for
@@ -58,7 +58,7 @@ Introduction to the Standard Directory Layout
 
  Within artifact producing source directories (ie. <<<main>>> and <<<test>>>), there is one
  directory for the language <<<java>>> (under which the normal package hierarchy exists), and one for
- <<<resources>>> (the structure under which is copied to the target classpath given the default resource definition).
+ <<<resources>>> (the structure which is copied to the target classpath given the default resource definition).
 
  If there are other contributing sources to the artifact build, they would be under other subdirectories: for
  example <<<src/main/antlr>>> would contain Antlr grammar definition files.
