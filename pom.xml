@@ -1,33 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
-    <artifactId>maven</artifactId>
+    <artifactId>maven-parent</artifactId>
     <groupId>org.apache.maven</groupId>
-    <version>2.0.1</version>
+    <version>1</version>
+    <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>maven-site</artifactId>
-  <name>Maven</name>
-  <url>http://maven.apache.org/maven2</url>
-  <inceptionYear>2001</inceptionYear>
-  <distributionManagement>
-    <site>
-      <id>website</id>
-      <!--
-      <url>scpexe://minotaur.apache.org/x1/home/jvanzyl/public_html/</url>
-      -->
-      <url>scpexe://minotaur.apache.org/www/maven.apache.org/</url>
-    </site>
-  </distributionManagement>
   
   <build>
-    <extensions>
-      <extension>
-        <groupId>org.apache.maven.wagon</groupId>
-         <artifactId>wagon-ssh-external</artifactId>
-         <version>1.0-alpha-5</version>
-      </extension>
-    </extensions>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -53,4 +35,11 @@
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/components/trunk/</developerConnection>
     <url>http://svn.apache.org/viewcvs.cgi/maven/components/trunk/</url>
   </scm>
+
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://minotaur.apache.org/www/maven.apache.org/</url>
+    </site>
+  </distributionManagement>
 </project>
