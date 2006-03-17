@@ -22,6 +22,8 @@ Powered by Maven 2.x
  
  * {{{http://gforge.public.thoughtworks.org/projects/dbfixture/}DbFixture}}
 
+ * {{{http://ehcache.sourceforge.net}ehcache}}
+
  Work In Progress
 
  * {{{http://geronimo.apache.org} Geronimo}}
