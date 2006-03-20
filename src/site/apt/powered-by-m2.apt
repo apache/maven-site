@@ -24,6 +24,8 @@ Powered by Maven 2.x
 
  * {{{http://ehcache.sourceforge.net}ehcache}}
 
+ * {{{http://spring-rich-c.sourceforge.net/}Spring rich client}}
+
  Work In Progress
 
  * {{{http://geronimo.apache.org} Geronimo}}
@@ -32,3 +34,4 @@ Powered by Maven 2.x
  
  * {{{http://www.activemq.org}ActiveMQ}}
 
+ * {{{http://www.acegisecurity.org/}Acegi Security System for Spring}}
