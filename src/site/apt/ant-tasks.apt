@@ -53,7 +53,7 @@ Installing the Ant Tasks
   ...
   <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant">
     <classpath>
-      <pathelement location="lib/maven-artifact-ant-2.0-beta-1.jar" />
+      <pathelement location="lib/maven-artifact-ant-2.0.2-dep.jar" />
     </classpath>
   </typedef>
   ...
@@ -100,9 +100,9 @@ Using the Antlib
   you could use the following:
 
 -----
-<dependencies filesetId="dependency.fileset" useScope="runtime">
+<artifact:dependencies filesetId="dependency.fileset" useScope="runtime">
   ...
-</dependencies>
+</artifact:dependencies>
 <copy todir="${webapp.output}/WEB-INF/lib">
   <fileset refid="dependency.fileset" />
   <mapper type="flatten" />
@@ -154,7 +154,7 @@ Using the Antlib
 
   If you want to share your built artifacts between projects, you can use two other tasks: <<<install>>> for
   placing them in your local repository for access as dependencies in other scripts, and <<<deploy>>> for
-  deploying them to an remote location you have set up to serve as a repository in your organisation.
+  deploying them to a remote location you have set up to serve as a repository in your organisation.
 
   Note that the installation and deployment require that you have a Maven 2.0 POM file to deploy along with it.
   These are required for the transitive dependency mechanism to work effectively, and can be quite simple to
@@ -278,7 +278,7 @@ Using the Antlib
 -----
   <artifact:pom id="project" file="pom.xml" />
 
-  <echo>The version is ${project.build.directory}</echo>
+  <echo>The build directory is ${project.build.directory}</echo>
 -----
 
   For more information on the elements available in the POM, see the {{{maven-model/maven.html} descriptor reference}}.
@@ -348,9 +348,9 @@ Task Reference
 *-----------------+--------------------------------------------------------+
 | <<<verbose>>>   | If <<<true>>> this displays the results of each dependency resolution and their relationships. Default is <false>.
 *-----------------+--------------------------------------------------------+
-| <<<filesetId>>> | The reference ID to store a fileset under of the resolved dependencies.
+| <<<filesetId>>> | The reference ID to store a fileset under for the resolved dependencies.
 *-----------------+--------------------------------------------------------+
-| <<<pathId>>>    | The reference ID to store a path under of the resolved dependencies.
+| <<<pathId>>>    | The reference ID to store a path under for the resolved dependencies.
 *-----------------+--------------------------------------------------------+
 
   The task can include the <<<dependency>>> nested type, in addition to the other shared types explained later.
@@ -359,9 +359,9 @@ Task Reference
 ** <<<dependency>>>
 
 *------------------+--------------------------------------------------------+
-| <<<groupId>>>    | The group ID for of the dependency. <Required>
+| <<<groupId>>>    | The group ID of the dependency. <Required>
 *------------------+--------------------------------------------------------+
-| <<<artifactId>>> | The artifact ID for of the dependency. <Required>
+| <<<artifactId>>> | The artifact ID of the dependency. <Required>
 *------------------+--------------------------------------------------------+
 | <<<version>>>    | The version of the dependency. <Required>
 *------------------+--------------------------------------------------------+
@@ -377,9 +377,9 @@ Task Reference
   An exclusion can be used to prevent the resolution of a particular artifact in the tree of the dependency.
 
 *------------------+--------------------------------------------------------+
-| <<<groupId>>>    | The group ID for of the dependency to exclude. <Required>
+| <<<groupId>>>    | The group ID of the dependency to exclude. <Required>
 *------------------+--------------------------------------------------------+
-| <<<artifactId>>> | The artifact ID for of the dependency to exclude. <Required>
+| <<<artifactId>>> | The artifact ID of the dependency to exclude. <Required>
 *------------------+--------------------------------------------------------+
 
 * <<<install>>>
@@ -431,14 +431,14 @@ Type Reference
 | <<<releases>>>       | Policies regarding downloading released artifacts.
 *----------------------+--------------------------------------------------------+
 
-* <<<snapshots>>>, <<<releases>>>
+** <<<snapshots>>>, <<<releases>>>
 
   Policies about downloading each type of artifact.
 
 *----------------------+--------------------------------------------------------+
 | <<<enabled>>>        | Whether to download this type of artifact from the repository. Default is <<<true>>>.
 *----------------------+--------------------------------------------------------+
-| <<<updatePolicy>>>   | How often to check for updates on dependencies with that are snapshots or include a range of versions. Valid values are <<<never>>>, <<<interval:MINUTES>>>, <<<daily>>> (<default)>, <<<always>>>.
+| <<<updatePolicy>>>   | How often to check for updates on dependencies that are snapshots or include a range of versions. Valid values are <<<never>>>, <<<interval:MINUTES>>>, <<<daily>>> (<default)>, <<<always>>>.
 *----------------------+--------------------------------------------------------+
 | <<<checksumPolicy>>> | How to treat missing or incorrect checksums for the dependencies that are downloaded. Valid values are <<<warn>>> (<default>) and <<<fail>>>.
 *----------------------+--------------------------------------------------------+
