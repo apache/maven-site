@@ -7,14 +7,14 @@
   <body>
     <section name="Welcome to Maven">
       <div id="downloadbox">
-        <h5>Get Maven 2.0.2</h5>
+        <h5>Get Maven 2.0.3</h5>
         <p>
           <a href="download.html">
             <img valign="top" src="http://maven.apache.org/images/folder-open.gif" border="0" alt="" title="download"/>
             Download
           </a>
-          Maven 2.0.2
-          <small>(1Mb)</small>
+          Maven 2.0.3
+          <small>(1.1Mb)</small>
         </p>
         <ul>
           <li>
@@ -38,7 +38,7 @@
             <img valign="top" src="http://maven.apache.org/images/folder-open.gif" border="0" alt="" title="download"/>
             Download
           </a>
-          Maven 2.0.2 Tasks for Ant
+          Maven 2.0.3 Tasks for Ant
           <small>(870k)</small>
         </p>
         <ul>
@@ -46,7 +46,6 @@
             <a href="/ant-tasks.html">Documentation</a>
           </li>
         </ul>
-
       </div>
       <p>
         Maven is a software project management and comprehension tool. Based on the concept of a project object model
