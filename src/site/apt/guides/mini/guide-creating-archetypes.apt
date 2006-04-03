@@ -17,7 +17,7 @@ Guide to Creating Archetypes
 
  * the prototype files that are copied by the archetype (directory: <src/main/resources/archetype-resources/>)
 
- * the prototpye pom (<pom.xml> in: <src/main/resourcs/archetype-resources>)
+ * the prototpye pom (<pom.xml> in: <src/main/resources/archetype-resources>)
 
  * a pom for the archetype (<pom.xml> in the archetype's root directory).
 
@@ -65,7 +65,7 @@ Guide to Creating Archetypes
 
  The \<id\> tag should be the same as the artifactId in the archetype <pom.xml>. 
 
- An optional \<allowPartial\>true\</allowPartial\> tag makes it possible to run the archetype:create even existing projects. 
+ An optional \<allowPartial\>true\</allowPartial\> tag makes it possible to run the archetype:create even on existing projects. 
 
  The \<sources\>, \<resources\>, \<test-resources\> and \<site-resources\> tags represent the different sections of the project: 
 
@@ -84,6 +84,8 @@ Guide to Creating Archetypes
  \<sources\> and \<test-sources\> can contain \<source\> elements that specify a source file. 
 
  \<test-resources\> and \<site-resources\> can contain \<resource\> elements that specify a resource file. 
+
+ Place other resources such as the ones in the <<<src/main/webapp>>> directory inside the \<resources\> tag.
 
  At this point one can only specify individual files to be created but not empty directories. 
 
