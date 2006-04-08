@@ -33,6 +33,10 @@ Available Plugins
 | {{{maven-archetype-plugin} <<<archetype>>>}}                       | Generate a skeleton project structure from an archetype.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-assembly-plugin} <<<assembly>>>}}                         | Build an assembly (distribution) of sources and binaries.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{maven-changelog-plugin} <<<changelog>>>}}                       | Generate a list of recent changes from your SCM.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{maven-changes-plugin} <<<changes>>>}}                           | Generate a report from issue tracking or a change document.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-checkstyle-plugin} <<<checkstyle>>>}}                     | Generate a checkstyle report.
 *--------------------------------------------------------------------+----------------------------------------------+
@@ -59,6 +63,8 @@ Available Plugins
 | {{{maven-jar-plugin} <<<jar>>>}}                                   | Build a JAR from the current project.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-javadoc-plugin} <<<javadoc>>>}}                           | Generate Javadoc for the project.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{maven-jxr-plugin} <<<jxr>>>}}                                   | Generate a source cross reference.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-one-plugin} <<<one>>>}}                                   | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *--------------------------------------------------------------------+----------------------------------------------+
@@ -79,6 +85,8 @@ Available Plugins
 | {{{maven-source-plugin} <<<source>>>}}                             | Build a JAR of sources for use in IDEs and distribution to the repository.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-surefire-plugin} <<<surefire>>>}}                         | Run the Junit tests in an isolated classloader.
+*-----------------------------------------------------------------------------------+----------------------------------+
+| {{{maven-surefire-report-plugin} <<<surefire-report>>>}}           | Generate a report based on the results of unit tests.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-verifier-plugin} <<<verifier>>>}}                         | Useful for integration tests - verifies the existence of certain conditions.
 *--------------------------------------------------------------------+----------------------------------------------+
@@ -92,17 +100,9 @@ Available Plugins
 *-----------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin} <<<castor>>>}}                   | Generate sources from an XSD using Castor.
 *-----------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/changelog-maven-plugin} <<<changelog>>>}}              | Generate a list of recent changes from your SCM.
-*-----------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/changes-maven-plugin} <<<changes>>>}}                 | Generate a report from issue tracking or a change document.
-*-----------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/javacc-maven-plugin} <<<javacc>>>}}                   | Generate sources from a JavaCC grammer.
 *-----------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/jdepend-maven-plugin} <<<jdepend>>>}}                 | Generate a report on code metrics using JDepend.
-*-----------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/jxr-maven-plugin} <<<jxr>>>}}                         | Generate a source cross reference.
-*-----------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/surefire-report-maven-plugin} <<<surefire-report>>>}} | Generate a report based on the results of unit tests.
 *----------------------------------------------------------------------+----------------------------------------------+
 | {{{http://mojo.codehaus.org/taglist-maven-plugin} <<<taglist>>>}}                 | Generate a list of tasks based on tags in your code.
 *-----------------------------------------------------------------------------------+----------------------------------+
