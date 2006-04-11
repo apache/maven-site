@@ -29,9 +29,15 @@ Guide for new Maven committers
 
  []
 
- And here are the documents that pertain to Maven specifically:
+ Here are the documents that pertain to Maven specifically:
 
  * {{{http://maven.apache.org/guides/development/guide-m2-development.html}Guide to Maven 2 development}}
+
+ []
+
+And here are the specifics on setting up your SVN access:
+
+* {{{http://www.apache.org/dev/version-control.html}Apache's Source Code Repository}}
 
  []
 
