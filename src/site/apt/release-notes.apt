@@ -16,6 +16,19 @@ Release Notes - Maven 2.0.4
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
 
+  The core release is independent of the plugins available. Further releases of plugins will be made separately.
+  See {{{http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Matrix} Maven Plugin Matrix}} for more information.
+
+  We hope you enjoy using Maven! If you have any questions, please consult:
+
+    * the web site: {{http://maven.apache.org/maven2/}}
+
+    * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
+
+  For news and information, see:
+
+    * Maven Blogs: {{http://www.mavenblogs.com/}}
+
   
 * 2.0.4 Release Notes
 
@@ -347,16 +360,4 @@ Release Notes - Maven 2.0.4
 
   This release is considered stable with a feature set that encompasses and supersedes Maven 1.0.
 
-  This core release is independent of the plugins available. Further releases of plugins will be made separately.
-  See {{{http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Matrix} Maven Plugin Matrix}} for more information.
-
-  We hope you enjoy using Maven! If you have any questions, please consult:
-
-    * the web site: {{http://maven.apache.org/maven2/}}
-
-    * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
-
-  For news and information, see:
-
-    * Maven Blogs: {{http://www.mavenblogs.com/}}
 
