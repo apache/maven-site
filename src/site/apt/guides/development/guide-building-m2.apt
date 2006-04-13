@@ -67,7 +67,26 @@ svn co https://svn.apache.org/repos/asf/maven/trunks maven
 svn propget svn:externals
 -------------------
 
-* Building Maven
+* Building Maven with Maven installed
+
+  If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
+
+  To do this, run from the root:
+
+----
+mvn install
+----
+
+  This will build, test and install all libraries in the local repository. Next, if you want to produce the binary distribution:
+
+----
+cd maven-core
+mvn assembly:assembly
+----
+
+  The assemblies will be created in <<<target>>> and can be unzipped to the location where you'd like Maven installed.
+
+* Building Maven without Maven installed
 
   Once you have checked out the code, change into the <<<maven-components>>> directory that was created.
   You may want to setup a different environment to install Maven to other than your normal installation of a
