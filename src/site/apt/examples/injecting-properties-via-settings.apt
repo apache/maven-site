@@ -47,7 +47,7 @@ Example: Injecting POM Properties via Settings.xml
   </profiles>
 
   <activeProfiles>
-    <activeProfile>inject-application-home</id>
+    <activeProfile>inject-application-home</activeProfile>
   </activeProfiles>
 </settings>
 +---+
