@@ -1,0 +1,15 @@
+  ---
+  Summary of Maven 2.0 Examples
+  ---
+  John Casey
+  ---
+  20-Apr-2006
+  ---
+
+Examples
+
+* <<<settings.xml>>> Configuration
+
+  * {{{injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
+
+  []
