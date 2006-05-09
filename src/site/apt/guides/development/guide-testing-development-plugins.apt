@@ -17,7 +17,7 @@ Guide to Testing Development Versions of Plugins
 
 * How do I do this?
 
-  Development versions of Maven plugins are periodically published to the repository: {{http://snapshots.maven.codehaus.org/maven2}}
+  Development versions of Maven plugins are periodically published to the repository: {{http://svn.apache.org/maven-snapshot-repository}}
 
   <Note:> Currently, this is not done automatically by our continuous integration setup. This is coming soon.
 
@@ -27,7 +27,7 @@ Guide to Testing Development Versions of Plugins
 <pluginRepositories>
   <pluginRepository>
     <id>snapshots</id>
-    <url>http://snapshots.maven.codehaus.org/maven2</url>
+    <url>http://svn.apache.org/maven-snapshot-repository</url>
   </pluginRepository>
 </pluginRepositories>
 -------
@@ -47,7 +47,7 @@ Guide to Testing Development Versions of Plugins
 <pluginRepositories>
   <pluginRepository>
     <id>snapshots</id>
-    <url>http://snapshots.maven.codehaus.org/maven2</url>
+    <url>http://svn.apache.org/maven-snapshot-repository</url>
     <!-- The releases element here is due to an issue in Maven 2.0 that will be fixed in future releases.
          This should be able to be disabled altogether. -->
     <releases>
