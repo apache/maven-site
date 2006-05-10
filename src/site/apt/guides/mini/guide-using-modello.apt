@@ -27,7 +27,7 @@ Guide to using Modello
 
  A typical modello model looks like the following:
 
-%{snippet|id=modello-model|url=http://svn.apache.org/repos/asf/maven/archetype/trunk/maven-archetype-model/src/main/mdo/archetype.mdo}
+%{snippet|id=modello-model|url=http://svn.apache.org/repos/asf/maven/archetype/trunk/maven-archetype/maven-archetype-model/src/main/mdo/archetype.mdo}
 
  To utilize Modello you would configure the <<<maven-modello-plugin>>> something like the following where you want
  to generate the Java sources for the model, the xpp3 serialization code and the xpp3 deserialization code:
