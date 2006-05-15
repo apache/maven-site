@@ -35,7 +35,7 @@ Using Mirrors for Repositories
     <mirror>
       <id>planetmirror.com</id>
       <name>planetmirror Mirror of http://repo1.maven.org/maven2/</name>
-      <url>http://public.planetmirror.com/pub/maven2</url>
+      <url>http://downloads.planetmirror.com/pub/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
@@ -64,7 +64,7 @@ Using Mirrors for Repositories
     </mirror>
     <mirror>
       <id>planetmirror.com</id>
-      <url>http://public.planetmirror.com/pub/maven2</url>
+      <url>http://downloads.planetmirror.com/pub/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
     <mirror>
