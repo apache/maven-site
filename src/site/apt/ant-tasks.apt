@@ -388,7 +388,7 @@ Task Reference
   POM.
 
 *------------------+--------------------------------------------------------+
-| <<<file>>>       | The file to install in the local repository. <Required>
+| <<<file>>>       | The file to install in the local repository.
 *------------------+--------------------------------------------------------+
 
   The task must also take a nested <<<pom>>>, and can have an optional <<<localRepository>>> element.
@@ -399,7 +399,7 @@ Task Reference
   POM.
 
 *------------------+--------------------------------------------------------+
-| <<<file>>>       | The file to deploy in the remote repository. <Required>
+| <<<file>>>       | The file to deploy in the remote repository.
 *------------------+--------------------------------------------------------+
 
   The task must also take a nested <<<pom>>>, and can have an optional <<<remoteRepository>>> element. If no
