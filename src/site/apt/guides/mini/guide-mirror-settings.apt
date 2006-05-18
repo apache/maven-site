@@ -77,6 +77,11 @@ Using Mirrors for Repositories
       <url>http://www.ibiblio.net/pub/packages/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
+    <mirror>
+      <id>sateh.com</id>
+      <url>http://maven.sateh.com/repository</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
 
     <!-- the following mirrors seem not to get changes, just new files -->
     <mirror>
