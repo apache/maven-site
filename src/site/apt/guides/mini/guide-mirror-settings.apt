@@ -26,6 +26,9 @@ Using Mirrors for Repositories
  mirror of. For example, the ID of the main Maven repository included by default is central, so to use
  a mirror, you would configure the following:
 
+ If you are interested in mirroring the repository and be listed here, please contact us at the
+ {{{mailto:users@maven.apache.org}Maven Users List}}.
+
 +-----+
 
 <settings>
@@ -61,38 +64,43 @@ Using Mirrors for Repositories
       <id>ggi-project.org</id>
       <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
       <mirrorOf>central</mirrorOf>
+      <!-- The Netherlands, Amsterdam -->
     </mirror>
     <mirror>
       <id>planetmirror.com</id>
       <url>http://downloads.planetmirror.com/pub/maven2</url>
       <mirrorOf>central</mirrorOf>
+      <!-- Australia, Queensland -->
     </mirror>
     <mirror>
       <id>lsu.edu</id>
       <url>http://ibiblio.lsu.edu/main/pub/packages/maven2</url>
       <mirrorOf>central</mirrorOf>
-    </mirror>
+      <!-- United States, Louisiana -->
+     </mirror>
     <mirror>
       <id>ibiblio.net</id>
       <url>http://www.ibiblio.net/pub/packages/maven2</url>
       <mirrorOf>central</mirrorOf>
+      <!-- United States, North Carolina -->
     </mirror>
     <mirror>
       <id>sateh.com</id>
       <url>http://maven.sateh.com/repository</url>
       <mirrorOf>central</mirrorOf>
+      <!-- The Netherlands, Amsterdam -->
     </mirror>
-
-    <!-- the following mirrors seem not to get changes, just new files -->
     <mirror>
       <id>dotsrc.org</id>
       <url>http://mirrors.dotsrc.org/maven2</url>
       <mirrorOf>central</mirrorOf>
+      <!-- Denmark -->
     </mirror>
     <mirror>
       <id>sunsite.dk</id>
       <url>http://mirrors.sunsite.dk/maven2</url>
       <mirrorOf>central</mirrorOf>
+      <!-- Denmark -->
     </mirror>
   </mirrors>
 
