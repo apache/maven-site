@@ -8,7 +8,19 @@
 
 Books on Maven
 
+ * Better Builds with Maven
+
+  * Maven 2
+
+  * {{{http://library.mergere.com}Mergere Library Press}}. Free PDF download.
+
+  * {{{http://www.commonjava.org/blogs/john}John Casey}}, {{{http://blogs.codehaus.org/people/vmassol/}Vincent Massol}}, {{{http://blogs.codehaus.org/people/vmassol/}Brett Porter}}, {{{http://www.jroller.com/page/carlossg}Carlos Sanchez}}, {{{http://blogs.codehaus.org/projects/maven/}Jason Van Zyl}}
+
+  * March 2006
+
  * Maven: A Developer's Notebook
+
+  * Maven 1
 
   * O'Reilly
 
@@ -20,15 +32,15 @@ Maven in the Press
 
  Have written or would like to write a story on Maven? {{{../../mail-lists.html}Contact us}} on the developers mailing list.
 
- * {{{http://www.internetnews.com/dev-news/article.php/3381841}Apache's Maven Comes of Age}} (Coverage of the release of Maven 1.0)
-
-  * internetnews.com
-
-  * Sean Michael Kerner
-
-  * 15 July 2004</td>
-
 Articles on Maven
+
+ * {{{http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}The Maven 2 POM demystified}}
+
+  * JavaWorld
+
+  * Eric Redmond
+
+  * 29 May 2006
 
  * {{{http://blogs.codehaus.org/people/vmassol/archives/001275_javapolis_2005_slides_on_maven_2.html}Maven 2.0 - Javapolis 2005}}
 
@@ -96,6 +108,14 @@ Articles on Maven
 
   * August 2004
 
+ * {{{http://www.internetnews.com/dev-news/article.php/3381841}Apache's Maven Comes of Age}} (Coverage of the release of Maven 1.0)
+
+  * internetnews.com
+
+  * Sean Michael Kerner
+
+  * 15 July 2004
+
  * {{{http://www.onjava.com/pub/a/onjava/2004/03/17/maven.html}Extending Maven Through Plugins by Eric Pugh}}
 
   * OnJava
@@ -154,7 +174,7 @@ Articles on Maven
 
  * {{{http://www.javausergroup.at/events/maven.pdf}The Stairway to Maven}}
 
-  * Siegfried G�SCHL
+  * Siegfried GOSCHL
 
   * 26 June 2002
 
@@ -170,7 +190,7 @@ Articles on Maven
 
   * Astrogrid
 
- * {{{http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html}An Introduction to Maven</a> (in French).}}
+ * {{{http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html}An Introduction to Maven (in French).}}
 
  * {{{http://hotwork.sourceforge.net/hotwork/manual/maven/index.html}A tutorial for Maven, J2EE projects, and MevenIDE}} (in Portuguese).
 
