@@ -13,9 +13,6 @@
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-stylus-skin</artifactId>
   </skin>
-  <poweredBy>
-    <item name="foo" href="foo" img="foo.png" />
-  </poweredBy>
   <body>
     <links>
       <item name="Apache" href="http://www.apache.org/"/>
