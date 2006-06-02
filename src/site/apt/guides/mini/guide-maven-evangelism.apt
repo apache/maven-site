@@ -12,6 +12,8 @@ Guide to add, improve or fix metadata in the ibiblio maven 2 repository
  <<<svn://svn.codehaus.org/maven/scm/repository>>>
  (note that this subversion repo has a lot of files and folders)
 
+ If the poms is not yet in subversion you will have to add it.
+
  Fix the poms and open an issue at {{{http://jira.codehaus.org/browse/MEV}JIRA}} with
  a patch file from subversion in unified diff format, explaining the reasons why
  it needs to be changed (there were no dependencies, wrong info,...).
@@ -19,6 +21,9 @@ Guide to add, improve or fix metadata in the ibiblio maven 2 repository
  *Important:* by default assume that we won't trust your changes, so you must provide all links
  to the project documentation you can to convince us that your patch is right.
 
+ There are artifacts in the repository that don't have poms. They come from the Maven 1 repositories of our
+ partners (Apache Software Foundation, Codehaus,...). We know it but can't do anything unless you provide
+ a pom for it or you ask the project in question to add the pom when they add the artifacts.
 
 
 Developers information
