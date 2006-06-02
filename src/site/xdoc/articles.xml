@@ -96,6 +96,24 @@
             <td>29 May 2006</td>
           </tr>
           <tr>
+            <td><a href="http://www.ddj.com/showArticle.jhtml?articleID=186100398">Maven: Building Complex Systems</a></td>
+            <td>Dr.Dobb's</td>
+            <td>Gigi Sayfan</td>
+            <td>21 April 2006</td>
+          </tr>
+          <tr>
+            <td><a href="http://www.javaworld.com/javaworld/jw-02-2006/jw-0227-maven_p.html">Get the most out of Maven 2 site generation</a></td>
+            <td>JavaWorld</td>
+            <td>John Ferguson Smart</td>
+            <td>27 February 2006</td>
+          </tr>
+          <tr>
+            <td><a href="http://dcabasson.developpez.com/articles/java/maven/introduction-maven2/">An introduction to Maven 2 (in french)</a></td>
+            <td>Developpez.com</td>
+            <td>Denis Cabasson</td>
+            <td>27 January 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://blogs.codehaus.org/people/vmassol/archives/001275_javapolis_2005_slides_on_maven_2.html">Maven 2.0 - Javapolis 2005</a></td>
             <td></td>
             <td>Vincent Massol</td>
