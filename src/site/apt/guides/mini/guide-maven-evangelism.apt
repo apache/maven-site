@@ -9,7 +9,7 @@
 Guide to add, improve or fix metadata in the ibiblio maven 2 repository
 
  Checkout with subversion the poms you need from
- <<<svn://svn.codehaus.org/maven/scm/repository>>>
+ <<<svn://svn.codehaus.org/maven/repository>>>
  (note that this subversion repo has a lot of files and folders)
 
  If the poms is not yet in subversion you will have to add it.
