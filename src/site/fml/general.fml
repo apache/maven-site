@@ -72,22 +72,22 @@
           to 1.5, you should have in your pom :
         </p>
 
-        <source><![CDATA[
-<build>
-  ...
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-        <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
-        </configuration>
-    </plugin>
-  </plugins>
-  ...
-</build>
-        ]]></source>
+        <source>
+  <build>
+    ...
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+          <configuration>
+            <source>1.5</source>
+            <target>1.5</target>
+          </configuration>
+      </plugin>
+    </plugins>
+    ...
+  </build>
+        </source>
       </answer>
     </faq>
 
@@ -158,8 +158,7 @@ Where: <path-to-file>  the path to the file to load
        <artifact-id>   the artifact name for the file
        <version>       the version of the file
        <packaging>     the packaging of the file e.g. jar
-        ]]></source>
-
+     ]]></source>
         <p>
           This should load in the file into the maven repository, renaming it as needed.
         </p>
@@ -192,7 +191,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
       	<p>Configure your ide to use the correct encoding. With eclipse, add -Dfile.encoding=ISO-8859-1 in eclipse.ini file</p>
       	<p>Configure the output encoding in your pom
-<source><![CDATA[
+      <source>
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-site-plugin</artifactId>
@@ -200,7 +199,7 @@ Where: <path-to-file>  the path to the file to load
     <outputEncoding>UTF-8</outputEncoding>
   </configuration>
 </plugin>
-]]></source>      	
+      </source>
       	</p>
       	<p>
       	  Configure the file encoding use by mvn.
@@ -215,7 +214,7 @@ Where: <path-to-file>  the path to the file to load
         <p>
           The following code includes <code>tools.jar</code> on Sun JDKs (it is already included in the runtime for Mac OS X and some free JDKs).
         </p>
-        <source><![CDATA[
+        <source>
   <profiles>
     <profile>
       <id>default-tools.jar</id>
@@ -236,8 +235,35 @@ Where: <path-to-file>  the path to the file to load
       </dependencies>
     </profile>
   </profiles>
-]]></source>
+    </source>
      </answer>
+    </faq>
+    <faq id="test-property-name">
+      <question>Why does Maven compile my test classes but don't run them?</question>
+      <answer>
+        <p>
+          Tests are run by the surefire plugin.  The surefire plugin can be configured to run certain test classes and
+          you may have unintentionally done so by specifying a value to ${test}.
+
+          Check your settings.xml and pom.xml for a property named "test" which would like this:
+        </p>
+        <source>
+  <properties>
+    <property>
+      <name>test</name>
+      <value>some-value</value>
+     </property>
+   </properties>
+        </source>
+        <p>
+          or
+        </p>
+        <source>
+  <properties>
+    <test>some-value</test>
+   </properties>
+        </source>
+      </answer>
     </faq>
   </part>
 </faqs>
