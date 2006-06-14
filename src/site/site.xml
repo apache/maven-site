@@ -66,6 +66,10 @@
       <item name="How to Help" href="/guides/development/guide-helping.html"/>
     </menu>
 
+   <menu name="Developers">
+     <item name="Continuous Integration" href="/continuous-integration.html"/>
+   </menu>
+
     ${reports}
   </body>
 </project>
