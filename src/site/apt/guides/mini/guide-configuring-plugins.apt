@@ -170,7 +170,7 @@ public class MyAnimalMojo
             <animal>cat</animal>
             <animal>dog</animal>
             <animal>aardvark</animal>
-          </options>
+          </animals>
         </configuration>
       </plugin>
     </plugins>
