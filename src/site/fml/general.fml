@@ -145,7 +145,7 @@
         </p>
 
         <source><![CDATA[
-m2 install:install-file
+mvn install:install-file
   -Dfile=<path-to-file>
   -DgroupId=<group-id>
   -DartifactId=<artifact-id>

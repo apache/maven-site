@@ -12,6 +12,6 @@ Site Maven pour votre projet
   
 +-----+
 
-m2 site:site
+mvn site:site
 
 +-----+
