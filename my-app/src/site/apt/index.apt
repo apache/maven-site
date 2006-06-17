@@ -11,6 +11,6 @@ Maven Site for your project
   
 +-----+
 
-m2 site:site
+mvn site:site
 
 +-----+

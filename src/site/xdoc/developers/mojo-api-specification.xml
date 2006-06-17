@@ -693,7 +693,7 @@
       <p>After making the changes above, the developer can simply call
         <br/>
         <br/>
-        <code>m2 install</code>
+        <code>mvn install</code>
         <br/>
         <br/>
         to install the plugin to
