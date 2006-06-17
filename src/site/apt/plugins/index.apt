@@ -80,6 +80,8 @@ Available Plugins
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-resources-plugin} <<<resources>>>}}                       | Copy the resources to the output directory for including in the JAR.
 *--------------------------------------------------------------------+----------------------------------------------+
+| {{{/scm/plugins} <<<scm>>>}}                                       | Generate a SCM for the current project.
+*--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-site-plugin} <<<site>>>}}                                 | Generate a site for the current project.
 *--------------------------------------------------------------------+----------------------------------------------+
 | {{{maven-source-plugin} <<<source>>>}}                             | Build a JAR of sources for use in IDEs and distribution to the repository.
