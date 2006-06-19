@@ -8,21 +8,41 @@
 
 Introduction to the POM
 
-  * You need a Project Object Model (POM)
+  * What is a POM?
   
-  * Explain what a POM is?
+  * Super POM
   
-  * Explain that the POM is the fundamental unit of work in Maven
-  
-  * Explain the notion of the Super POM
-  
-  * Show what a minimal POM can look like
+  * Project Inheritance
 
-* {Super POM}
+* What is a POM?
+
+ A Project Object Model or POM is the fundamental unit of work in Maven. It is an xml file that contains information 
+ about the project and configuration details used by Maven to build the project. It contains default values for most projects.
+ Examples for this is the build directory, which is "target"; the source directory, which is "src/main/java"; the test
+ source directory, which is "src/main/test"; and so on.
+ 
+ The POM was renamed from project.xml in Maven 1 to pom.xml in Maven 2. Instead of having a maven.xml file that contains
+ the goals that can be executed, the goals or plugins are now configured in the pom.xml. When executing a task or goal, Maven 
+ looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the 
+ goal.  
+ 
+ Some of the configuration that can be specified in the POM are the project dependencies, the plugins or goals that 
+ can be executed, the build profiles, and so on. Other information such as the project version, description, developers, 
+ mailing lists and such can also be specified.
+
+* {{Super POM}}
+
+ The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified 
+ in the Super POM is inherited by the POMs you created for your projects. Let's take a look at the Super POM and the sample minimal 
+ POM below.
+
+Super POM
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
 +-----+
+
+Minimal POM
 
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -42,7 +62,12 @@ Introduction to the POM
 
 +-----+
 
-* Project Inheritance
+You can see that in the minimal POM, the <repositories> were not specified. If you build your project using the minimal POM,
+it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
+the minimal POM, it would know that these dependencies will be downloaded from http://repo1.maven.org/maven2 which was specified 
+in the Super POM.
+
+* Project Inheritance 
 
  Elements in the POM that are merged are the following:
 
@@ -58,5 +83,5 @@ Introduction to the POM
  
  []
 
- <<NOTE:>> Profile inheritance uses the same inheritance strategy as used for the POM itself.
+ <<NOTE:>> Profile inheritance the same inheritance strategy as used for the POM itself.
 
