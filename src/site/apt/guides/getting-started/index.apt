@@ -231,7 +231,8 @@ my-app
 
 * {How do I compile my application sources?}
 
- Execute the following command to compile your application sources:
+ Change to the directory where pom.xml is created by archetype:create and execute the following command to compile 
+ your application sources:
 
 +-----+
 
