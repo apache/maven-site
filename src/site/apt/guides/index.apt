@@ -14,7 +14,13 @@ Documentation
 
 * Mini Guides
 
+ * {{{mini/guide-3rd-party-jars-local.html}Guide to installing 3rd party JARs}}
+
+ * {{{mini/guide-3rd-party-jars-remote.html}Guide to deploying 3rd party JARs to remote repository}}
+
  * {{{mini/guide-apt-format.html}Guide to the APT Format}}
+
+ * {{{mini/guide-archive-configuration.html}Guide to Configuring Archive Plugins}}
 
  * {{{mini/guide-assemblies.html}Guide to Creating Assemblies}}
 
@@ -47,10 +53,6 @@ Documentation
  * {{{mini/guide-ide-idea.html}Guide to using IDEA with Maven 2.x}}
 
  * {{{mini/guide-ide-netbeans/guide-ide-netbeans.html}Guide to Using maven 2 in Netbeans 4.0 (4.1 and 5.0)}}
-
- * {{{mini/guide-installing-3rd-party-jars.html}Guide to installing 3rd party JARs}}
-
- * {{{mini/guide-deploying-3rd-party-jars.html}Guide to deploying 3rd party JARs to remote repository}}
 
  * {{{mini/guide-m1-m2.html}Guide to Moving From Maven 1.x to Maven 2.x}}
 
@@ -94,8 +96,6 @@ Documentation
  * {{{introduction/introduction-to-artifact-resolution.html}Introduction to repository definitions and artifact resolution}}
 
  * {{{introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}
-
- * {{{introduction/introduction-to-optional-and-excludes-dependencies.html}Introduction to Optional and Excludes Dependencies}}
 
  * {{{introduction/introduction-to-plugin-prefix-mapping.html}Introduction to Plugin Prefix Resolution}}
 

@@ -114,4 +114,5 @@ echo >> $toc
   done       
 )       
 
-cat tail.txt >> $toc
+cat tail.txt | sed 's/
+//g' >> $toc
