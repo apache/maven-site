@@ -1,9 +1,9 @@
 
 * Reference
 
- * {{{../maven-model/maven.html}Project Descriptor}}
+ * {{{../ref/current/maven-model/maven.html}Project Descriptor}}
  
- * {{{../maven-settings/settings.html}Settings Descriptor}}
+ * {{{../ref/current/maven-settings/settings.html}Settings Descriptor}}
  
  * {{{../plugins/index.html}Available Plug-ins}}
  
