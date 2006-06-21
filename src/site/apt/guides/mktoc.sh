@@ -114,5 +114,26 @@ echo >> $toc
   done       
 )       
 
-cat tail.txt | sed 's/
-//g' >> $toc
+cat >> $toc <<EOF
+
+* Reference
+
+ * {{{../ref/current/maven-model/maven.html}Project Descriptor}}
+ 
+ * {{{../ref/current/maven-settings/settings.html}Settings Descriptor}}
+ 
+ * {{{../plugins/index.html}Available Plug-ins}}
+ 
+ * {{{../developers/mojo-api-specification.html}Mojo API}}
+ 
+ * {{{../ant-tasks.html}Ant Tasks}}
+ 
+ * {{{../glossary.html}Glossary}}
+ 
+ * {{{../maven-conventions.html}Maven Conventions}}
+
+ * {{{../articles.html}Articles}}
+ 
+ []
+EOF
+
