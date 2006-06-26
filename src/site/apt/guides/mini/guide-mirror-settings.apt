@@ -107,3 +107,33 @@ Using Mirrors for Repositories
 </settings>
 
 +-----+
+
+Using A Single Repository
+
+  You can force Maven to use a single repository by having it mirror all repository requests. The repository must contain all of the desired
+  artifacts, or be able to proxy the requests to other repositories. This setting is most useful when using an internal company repository with
+  the Maven Repository Manager to proxy external requests.
+
+  To achieve this, set <<<mirrorOf>>> to <<<*>>>.
+
+  <This feature is only available from Maven 2.0.5+>
+
++-----+
+
+<settings>
+  .
+  .
+  <mirrors>
+    <mirror>
+      <id>internal-repository</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://repo.mycompany.com/proxy</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+  .
+  .
+</settings>
+
++-----+
+
