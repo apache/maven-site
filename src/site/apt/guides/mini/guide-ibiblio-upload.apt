@@ -49,7 +49,7 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
 +----+
 
  Note that the bundle will be read by a script, so it must follow the above format. Also,
- the <<<pom.xml>>> should at least contain the following elements:
+ the <<<pom.xml>>> must at least contain the following elements:
 
  * modelVersion
 
@@ -139,7 +139,7 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
 * Step 2: Posting the request
 
  Post your request to {{{http://jira.codehaus.org/secure/CreateIssue.jspa?pid=10367&amp;issuetype=3}JIRA}}.
- In the description you should write the URL of the upload bundle
+ In the description you must write the URL of the upload bundle
  (if you're uploading more than one bundle please add all the urls under the same issue),
  then leave a blank line and provide the following:
 
@@ -212,20 +212,20 @@ For Maven developers
   and hit <<<q>>>, when a summary with groupId, artifactId and version will be shown, and a message saying if the
   group already exists or not. This is useful as we have to be careful creating new groups, making sure they follow
   the conventions and that they don't exist already with another name. If the pom is not right or there's any doubt
-  upload should be aborted with Ctrl-C, and a comment posted in the upload request. If there's no response from
+  upload must be aborted with Ctrl-C, and a comment posted in the upload request. If there's no response from
   the reporter in a month the request will be closed as incomplete.
 
   Things to remember:
 
   * all the dependencies have to be already in the repo
 
-  * if there are no dependencies it's suspicious and should be asked if it's right in an issue comment
+  * if there are no dependencies it's suspicious and must be asked if it's right in an issue comment
 
   * parent poms have to be already in the repo
 
   * all the minimal information previously mentioned has to be in the pom
 
-  * poms should include at least as much information as previous versions, and shouldn't change too much the dependencies
+  * poms must include at least as much information as previous versions, and shouldn't change too much the dependencies
 
   * while chceking previous version chcek also if it was relocated. If so ask the reporter to update the bundle with the
     new information
