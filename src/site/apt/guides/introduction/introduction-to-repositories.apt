@@ -84,7 +84,7 @@ Introduction to Repositories
 +----+
 
  You can set this in your <<<~/build.properties>>> file to globally use a certain mirror, however
- note that it is common for a project to customise the repository in their <code>project.properties</code>
+ note that it is common for a project to customise the repository in their <<<project.properties>>>
  and that your setting will take precedence. If you find that dependencies are not being found, check you
  have not overridden the remote repository.
 
