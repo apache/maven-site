@@ -44,7 +44,7 @@ Guide to Configuring Archive Plugins
 
 * Configuring the Manifest
 
-  The archive configuration also accepts manifest configuration. See {{{guide-manifest.html}} Guide to Working with Manifests} for more information.
+  The archive configuration also accepts manifest configuration. See {{{guide-manifest.html}Guide to Working with Manifests}} for more information.
 
 
 
