@@ -84,12 +84,18 @@
             <th>Published</th>
           </tr> 
           <tr>
+            <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
+            <td></td>
+            <td>Maurício Linhares</td>
+            <td>7 July 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://today.java.net/pub/a/today/2006/05/30/continuous-integration-with-continuum.html">Continuous Integration with Continuum</a></td>
             <td>Java.net</td>
             <td>John Ferguson Smart</td>
             <td>30 May 2006</td>
           </tr>
-<tr>
+          <tr>
             <td><a href="http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html">The Maven 2 POM demystified</a></td>
             <td>JavaWorld</td>
             <td>Eric Redmond</td>
