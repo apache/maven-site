@@ -37,7 +37,7 @@ Guide to relocation
  [[2]] Change the groupId to <<<org.bar>>> in all the <<<foo>>>-related pom files in
  the temporary location.
 
- [[3]] If your project uses MD5 checksums you must now create new checksums for
+ [[3]] If your project uses MD5 or SHA1 checksums you must now create new checksums for
  the changed pom files in the temporary location. If the pom file needs to be
  signed, do that as well.
 
@@ -99,7 +99,7 @@ Guide to relocation
  see
  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_relocation}the pom reference}}.
 
- [[5]] If your project uses MD5 checksums you must now create new checksums for
+ [[5]] If your project uses MD5 or SHA1 checksums you must now create new checksums for
  the pom files in <<</bar/foo/>>> in your Maven 2 repository. If the pom file needs
  to be signed, do that as well.
 
@@ -115,9 +115,18 @@ Guide to relocation
 
 ** Releasing the next version
 
- When the next release of <<<foo>>> is made, you only need to publish a Maven 2
- pom with a groupId of <<<org.bar>>>, since users of previous versions have
- already been informed of the changed groupId.
+ When the next release of <<<foo>>> is made, you should publish two Maven 2 pom
+ files. First you should publish a pom with the new groupId <<<org.bar>>>.
+ 
+ Because data in the repository is not supposed to change, Maven 2 doesn't
+ download pom files that it has already downloaded. Therefor you will also need
+ to publish a pom file with the old groupId <<<bar>>> for the new version. This
+ should be a minimal relocation pom (as described in step 4 above), but for the
+ new version of <<<foo>>>.
+
+ For the release after that, you only need to publish a Maven 2 pom with a
+ groupId of <<<org.bar>>>, since users of the previous version have been
+ informed of the changed groupId.
 
  
 * How to relocate a Maven 1 artifact to a Maven 2 artifact with a different groupId
