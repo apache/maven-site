@@ -178,14 +178,14 @@ public class ExampleMojo
  descriptor template.
  
 +--------------+  
-   <body>
+  <body>
     <links>
       <item name="Maven 2" href="http://maven.apache.org/maven2/"/>
     </links>
 
     <menu name="Overview">
-      <item name="Introduction" href="index.html">
-      <item name="Goals" href="plugin-info.html">
+      <item name="Introduction" href="index.html"/>
+      <item name="Goals" href="plugin-info.html"/>
       <item name="Usage" href="usage.html"/>
       <item name="FAQ" href="faq.html"/>
     </menu>
@@ -210,7 +210,7 @@ public class ExampleMojo
  
 +--------------+    
  ------
- Plugin Name: Overview
+ Introduction
  ------
  Author
  ------
