@@ -129,6 +129,8 @@ Documentation
 
  * {{{development/guide-m2-development.html}Guide to Developing Maven}}
 
+ * {{{development/guide-plugin-documentation.html}Guide to the Plugin Documentation Standard}}
+
  * {{{development/guide-testing-development-plugins.html}Guide to Testing Development Versions of Plugins}}
 
 
