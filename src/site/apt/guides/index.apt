@@ -74,6 +74,8 @@ Documentation
 
  * {{{mini/guide-releasing.html}Guide to using the release plugin}}
 
+ * {{{mini/guide-relocation.html}Guide to relocation of artifacts}}
+
  * {{{mini/guide-site.html}Guide to creating a site}}
 
  * {{{mini/guide-using-ant.html}Guide to using Ant with Maven}}
