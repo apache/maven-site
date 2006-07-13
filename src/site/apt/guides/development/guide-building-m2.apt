@@ -24,7 +24,7 @@ Building Maven 2.0
 * Checking out the sources
 
   All of the source code for Maven 2.0 and its related libraries are in {{{http://subversion.tigris.org/} Subversion}}.
-  You can {{{http://svn.apache.org/viewcvs.cgi/maven/} browse the repository}}, or checkout specific modules directly.
+  You can {{{http://svn.apache.org/viewvc/maven/} browse the repository}}, or checkout specific modules directly.
 
   To build Maven 2.0, you need the <<<components>>> module. To check that out, run the command:
 
@@ -36,7 +36,7 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 
   Other modules you might be interested in related to Maven development are:
 
-    * <<<plugins/trunk>>> - The sources of the Maven plugins. These can be individually installed, or bbuilt together.
+    * <<<plugins/trunk>>> - The sources of the Maven plugins. These can be individually installed, or built together.
 
     * <<<site/trunk>>> - The Maven website.
 
@@ -58,10 +58,10 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 svn co https://svn.apache.org/repos/asf/maven/trunks maven
 -------------------
 
-  If you're looking at {{{http://svn.apache.org/viewcvs.cgi/maven/trunks/http://svn.apache.org/viewcvs.cgi/maven/trunks}ViewCVS}}
+  If you're looking at {{{http://svn.apache.org/viewvc/maven/trunks/}ViewVC}}
   there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
   to link together all the trunks into one logical location for convenience. If you want to see what is being 
-  linked into one logical location you canuse the following command:
+  linked into one logical location you can use the following command:
 
 -------------------
 svn propget svn:externals
@@ -89,7 +89,7 @@ mvn assembly:assembly
 * Building Maven without Maven installed
 
   Once you have checked out the code, change into the <<<maven-components>>> directory that was created.
-  You may want to setup a different environment to install Maven to other than your normal installation of a
+  You may want to setup a different environment to install Maven to, other than your normal installation of a
   release, so set the <<<M2_HOME>>> environment variable accordingly, e.g.:
 
 ----
