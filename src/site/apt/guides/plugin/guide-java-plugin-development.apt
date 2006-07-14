@@ -57,8 +57,8 @@ import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
 
 /**
+ * Says "Hi" to the user.
  * @goal sayhi
- * @description Says "Hi" to the user
  */
 public class GreetingMojo extends AbstractMojo 
 {
@@ -73,8 +73,8 @@ public class GreetingMojo extends AbstractMojo
     infrastructure required to implement a mojo except for the
     <<<execute>>> method.
 
-  * The comment lines starting with "<<<@goal>>>" and "<<<@description>>>"
-    are examples of annotations.  These two annotations are required, but
+  * The comment line starting with "<<<@goal>>>"
+    is an example of an annotation.  This annotation is required, but
     there are a number of annotations which can be used to control how and
     when the mojo is executed.
 
