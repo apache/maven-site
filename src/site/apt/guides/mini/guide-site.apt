@@ -30,7 +30,7 @@ Creating a site
       +- site.xml
 --------------------
 
-  The Xdoc format is the same as {{{http://maven.apache.org/using/site.html} used in Maven 1.0}}. However, <<<navigation.xml>>>
+  The Xdoc format is the same as {{{http://maven.apache.org/maven-1.x/using/site.html} used in Maven 1.0}}. However, <<<navigation.xml>>>
   has been replaced by the site descriptor (see below).
 
   The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this)
