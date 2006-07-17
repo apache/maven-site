@@ -36,9 +36,9 @@ Documentation
 
  * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
 
- * {{{mini/guide-deploy-ftp.html}Guide to deploying with FTP}}
+ * {{{http://maven.apache.org/plugins/maven-deploy-plugin/examples/deploy-ftp.html}Guide to deploying with FTP}}
 
- * {{{mini/guide-deploy-ssh-external.html}Guide to deploying with an external SSH command}}
+ * {{{http://maven.apache.org/plugins/maven-deploy-plugin/examples/deploy-ssh-external.html}Guide to deploying with an external SSH command}}
 
  * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
 
