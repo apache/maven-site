@@ -249,7 +249,7 @@ Plugin Name
   to the main menu for greater visibility. This contains the goals and their descriptions with a link to the configuration parameters.
   The information is based on the comments and annotations of the plugin. 
   
-  *Usage (Howto)
+ *Usage (Howto)
   
    The usage page describes the the basic use cases for the plugin goals which includes sample pom configurations and explanation of
   how the goals work. 
