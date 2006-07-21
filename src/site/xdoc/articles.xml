@@ -84,6 +84,12 @@
             <th>Published</th>
           </tr> 
           <tr>
+            <td><a href="http://www.javaposse.com/index.php?post_id=112128">Java Posse #070 - Interview with Brett Porter of Maven</a></td>
+            <td>Java Posse</td>
+            <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
+            <td>18 July 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
             <td></td>
             <td>Maurício Linhares</td>
