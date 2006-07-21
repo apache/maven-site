@@ -184,9 +184,9 @@ clipping of nose hairs. Please upload!
  If you want a project from any of this sites to be uploaded to ibiblio you'll have to
  contact the project maintainers.
 
- * {{{http://www.apache.org}The Apache Software Foundation}}
+ * {{{http://www.apache.org/dev/release-publishing.html#maven-repo}The Apache Software Foundation}} - 
 
- * {{{http://www.codehaus.org}Codehaus}}
+ * {{{http://docs.codehaus.org/display/HAUSMATES/Maven+Guide}Codehaus}}
 
  * {{{http://jetty.mortbay.org}MortBay Jetty}}
 
@@ -194,6 +194,15 @@ clipping of nose hairs. Please upload!
 
  * {{{http://www.osjava.org}OS Java}}
 
+
+Sync'ing your own repository with ibiblio
+
+ If you want to sync automatically your own repository to ibiblio you must make sure the server has rsync or rsync over ssh
+ and provide a script like the
+ {{{http://svn.apache.org/viewvc/maven/components/trunk/maven-meeper/src/bin/m2-sync/}current scripts}},
+ open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with it and we'll add it to the automatically synced repos.
+
+ <<Important>>: nothing is deleted or changed in ibiblio after it is synced (except maven-metadata.xml files)
 
 
 For Maven developers
