@@ -17,23 +17,28 @@ Guide to Testing Development Versions of Plugins
 
 * How do I do this?
 
-  Development versions of Maven plugins are periodically published to the repository: {{http://svn.apache.org/maven-snapshot-repository}}
+  Development versions of Maven plugins are periodically published to the repository: {{http://people.apache.org/maven-snapshot-repository/}}
 
   <Note:> Currently, this is not done automatically by our continuous integration setup. This is coming soon.
 
   The first step is to include this in your project:
 
 -------
-<pluginRepositories>
-  <pluginRepository>
-    <id>snapshots</id>
-    <url>http://svn.apache.org/maven-snapshot-repository</url>
-  </pluginRepository>
-</pluginRepositories>
+<project>
+  ...
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <url>http://people.apache.org/maven-snapshot-repository/</url>
+    </pluginRepository>
+  </pluginRepositories>
+  ...
+</project>
 -------
 
   <Note:> If you are using the goals from the command line on a number of projects, you should include this in your
-  <<<settings.xml>>> file instead.
+  <<<settings.xml>>> file instead. See {{{../mini/guide-configuring-maven.html}Guide to configuring Maven}}
+  for more info.
 
   After this is included, there are three ways to use the updated versions:
 
@@ -44,20 +49,24 @@ Guide to Testing Development Versions of Plugins
     * You can have Maven automatically check for updates on a given interval, for example:
 
 -------
-<pluginRepositories>
-  <pluginRepository>
-    <id>snapshots</id>
-    <url>http://svn.apache.org/maven-snapshot-repository</url>
-    <!-- The releases element here is due to an issue in Maven 2.0 that will be fixed in future releases.
-         This should be able to be disabled altogether. -->
-    <releases>
-      <updatePolicy>daily</updatePolicy>
-    </releases>
-    <snapshots>
-      <updatePolicy>daily</updatePolicy>
-    </snapshots>
-  </pluginRepository>
-</pluginRepositories>
+<project>
+  ...
+  <pluginRepositories>
+    <pluginRepository>
+      <id>snapshots</id>
+      <url>http://people.apache.org/maven-snapshot-repository/</url>
+      <!-- The releases element here is due to an issue in Maven 2.0 that will be
+           fixed in future releases. This should be able to be disabled altogether. -->
+      <releases>
+        <updatePolicy>daily</updatePolicy>
+      </releases>
+      <snapshots>
+        <updatePolicy>daily</updatePolicy>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  ...
+</project>
 -------
 
   <Note:> These last two techniques mean that <every> plugin will be updated to the latest snapshot version. Finer grained
@@ -66,9 +75,9 @@ Guide to Testing Development Versions of Plugins
 * How do I stop doing this?
 
   The development version will stop being used if the <<<\<pluginRepository\>>>> element is removed from your POM or
-  settings (regardless of what is in your local repository).
+  <<<settings.xml>>> (regardless of what is in your local repository).
 
 * How do I make changes to the source and test development versions of the plugins?
 
-  For information on this, see the {{{guide-m2-development.html} Guide to Maven 2.0 Development}}.
+  For information on this, see the {{{guide-m2-development.html}Guide to Maven 2.0 Development}}.
   
