@@ -27,24 +27,23 @@ Configuring Maven
   ~~TODO: versioning doc that discusses this
 
   You can specify your user configuration in <<<$\{user.home\}/.m2/settings.xml>>>. A
-  {{{/maven-settings/settings.html} full reference}} to the configuration file is available. This section will show how
+  {{{/maven-settings/settings.html}full reference}} to the configuration file is available. This section will show how
   to make some common configurations. Note that the file is not required - defaults will be used if it is not found.
 
 * Configuring your Local Repository
 
-  The local repository is part of a profile in your user configuration. You can have multiple profiles, with one
-  set to active so that you can switch environments.
+  The location of your local repository can be changed in your user configuration.
+  The default value is <<<$\{user.home\}/.m2/repository/>>>.
 
 -------------
 <settings>
-  .
-  .
-  <localRepository>/path/to/local/repo</localRepository>
-  .
-  .
+  ...
+  <localRepository>/path/to/local/repo/</localRepository>
+  ...
+</settings>
 -------------
 
-  The local repository must be an absolute path.
+  <<Note:>> The local repository must be an absolute path.
 
 * Configuring a Proxy
 
@@ -59,7 +58,7 @@ Configuring Maven
   you should add a server definition to your own settings with an
   <<<id>>> that matches that of the deployment repository in the project.
 
-  In addition, some repositories may require authorisation to download from, so the corresponding settings can
+  In addition, some repositories may require authorization to download from, so the corresponding settings can
   be specified in a <<<server>>> element in the same way.
 
   Which settings are required will depend on the type of repository you are deploying to. As of the first release,
@@ -68,8 +67,7 @@ Configuring Maven
 
 -------------
 <settings>
-  .
-  .
+  ...
   <servers>
     <server>
       <id>repo1</id>
@@ -80,14 +78,15 @@ Configuring Maven
         <passphrase>my_key_passphrase</passphrase>
       -->
     </server>
+	...
   </servers>
-  .
-  .
+  ...
+</settings>
 -------------
 
 * Using Mirrors for Repositories
 
-  Repositories are declared inside a project, which means that if you have your own custom repositories, those
+  Repositories can be declared inside a project, which means that if you have your own custom repositories, those
   sharing your project easily get the right settings out of the box. However, you may want to use an alternative
   mirror for a particular repository without changing the project files.
 
@@ -101,13 +100,12 @@ Configuring Maven
 
   To configure a mirror of a given repository, you provide it in your settings file, giving the new repository its own
   <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a mirror
-  of. For example, the ID of the main Maven repository included by default is <<<central>>>, so to use an Australian
+  of. For example, the <<<id>>> of the main Maven repository included by default is <<<central>>>, so to use an Australian
   mirror, you would configure the following:
 
 -------------
 <settings>
-  .
-  .
+  ...
   <mirrors>
    <mirror>
       <id>planetmirror</id>
@@ -115,8 +113,17 @@ Configuring Maven
       <url>http://public.planetmirror.com/maven2/</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
+	...
   </mirrors>
-  .
-  .
+  ...
+</settings>
 -------------
+  
+  More info about mirrors is available in the {{{guide-mirror-settings.html}Guide to Mirror Settings}}.
 
+* Profiles
+
+ Repository configuration can also be put into a profile. You can have multiple
+ profiles, with one set to active so that you can easily switch environments.
+ Read more about profiles in {{{../introduction/introduction-to-profiles.html}Introduction to Build Profiles}}.
+ 
