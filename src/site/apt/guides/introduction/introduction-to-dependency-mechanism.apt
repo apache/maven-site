@@ -178,16 +178,19 @@ Introduction to the Dependency Mechanism
   <dependencyManagement>
     <dependencies>
       <dependency>
-          <groupId>group-a</groupId>
+        <groupId>group-a</groupId>
         <artifactId>artifact-a</artifactId>
         <version>1.0</version>
-      <exclusions>
+
+        <exclusions>
           <exclusion>
             <groupId>group-c</groupId>
             <artifactId>excluded-artifact</artifactId>
           </exclusion>
         </exclusions>
+
       </dependency>
+
       <dependency>
         <groupId>group-c</groupId>
         <artifactId>artifact-b</artifactId>
@@ -195,6 +198,7 @@ Introduction to the Dependency Mechanism
         <type>war</type>
         <scope>runtime</scope>
       </dependency>
+
       <dependency>
         <groupId>group-a</groupId>
         <artifactId>artifact-b</artifactId>
@@ -219,9 +223,12 @@ Introduction to the Dependency Mechanism
       <groupId>group-a</groupId>
       <artifactId>artifact-a</artifactId>
     </dependency>
+
     <dependency>
       <groupId>group-a</groupId>
       <artifactId>artifact-b</artifactId>
+      <!-- This is not a jar dependency, so we must specify type. -->
+      <type>bar</type>
     </dependency>
   </dependencies>
 </project>
@@ -236,15 +243,27 @@ Introduction to the Dependency Mechanism
     <dependency>
       <groupId>group-c</groupId>
       <artifactId>artifact-b</artifactId>
+      <!-- This is not a jar dependency, so we must specify type. -->
+      <type>war</type>
     </dependency>
+
     <dependency>
       <groupId>group-a</groupId>
       <artifactId>artifact-b</artifactId>
+      <!-- This is not a jar dependency, so we must specify type. -->
+      <type>bar</type>
     </dependency>
   </dependencies>
 </project>
 
 +----+
+
+ <<NOTE:>> In two of these dependency references, we had to specify the \<type/\>
+ element. This is because the minimal set of information for matching a dependency
+ reference against a dependencyManagement section is actually 
+ <<\{groupId, artifactId, type\}>>. In many cases, these dependencies will refer to
+ jar artifacts. This allows us to shorthand the identity set to <<\{groupId, artifactId\}>>,
+ since the default for the type field is <<<jar>>>.
 
  The reference information about the dependency management tags is available from the
  {{{maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                    -----
