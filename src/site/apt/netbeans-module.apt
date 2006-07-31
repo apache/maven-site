@@ -8,12 +8,12 @@
 
 Maven 2.x Module for Netbeans
 
- The Netbeans integration is developed at {{http://mevenide.codehaus.org}} To get a current feature list along with
-screenshots, please refer to the {{http://docs.codehaus.org/display/MEVENIDE/MevenideNetbeans2.0}} download page.
+ The Netbeans integration is developed at {{http://mevenide.codehaus.org}} It allows to load any Maven 2 project into Netbeans and start coding. 
+To get a current feature list along with screenshots, please refer to the {{http://mevenide.codehaus.org/m2-site}} download page.
 
 
 * Binaries and Installation
 
- You can install the Maven 2.x Modules for Netbeans by following te instructions at {{http://docs.codehaus.org/display/MEVENIDE/MevenideNetbeans2.0}}
-Currently the Netbeans 5.0 beta2, 5.0 final and later builds are supported.
+ You can install the Maven 2.x Modules for Netbeans by following the instructions at {{http://mevenide.codehaus.org/m2-site}}
+Currently the Netbeans 5.0 final, 5.5 beta and later builds are supported.
           
