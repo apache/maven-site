@@ -91,7 +91,7 @@ Introduction to Repositories
  (Future versions should allow you to use a setting of
  <<<${maven.repo.remote},http://planetmirror.com/maven>>>, but currently this causes an infinite recursion).
 
- For more information on dependencies, see {{{http://maven.apache.org/using/managing-dependencies.html}Handling Dependencies}}.
+ For more information on dependencies, see {{{http://maven.apache.org/maven-1.x/using/managing-dependencies.html}Handling Dependencies}}.
 
 ** Using Mirrors for the Central Repository
 
@@ -131,7 +131,7 @@ Internal Repositories
  destination for artifact releases.
 
  Additionally, you may want to share the repository server with your generated project sites. For more
- information on creating and deploying sites, see {{{http://maven.apache.org/using/site.html}Creating a Site}}.
+ information on creating and deploying sites, see {{{http://maven.apache.org/maven-1.x/using/site.html}Creating a Site}}.
 
 * Setting up the Internal Repository
 
