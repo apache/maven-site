@@ -184,8 +184,22 @@ groupID:artifactID:version:goal
 ~~ 
 ~~  You also need to add your plugin's group ID to the list of group IDs
 
-  In order to shorten the amount of typing needed on the command line,
-  you will need to add your plugin's group ID to the list of group IDs
+
+  There are several ways to reduce the amount of required typing:
+
+  * If you need to run the latest version of a plugin installed in your local 
+  repository, you can omit its version number. So just use
+  "<<<mvn sample.plugin:maven-hello-plugin:sayhi>>>" to run your plugin.
+
+  * The "<<<maven-$name-plugin>>>" and "<<<$name-maven-plugin>>>" artifactId 
+  patterns are treated in a special way. If no plugin matches the artifactId
+  specified on the command line, Maven will try expanding the artifactId to these
+  patterns in that order. So in the case of our example, you can use
+  "<<<mvn sample.plugin:hello:sayhi>>>" to run your plugin.  Note: these 2 
+  patterns are used respectively by the official Maven 2 plugins and the Mojo 
+  project plugins.
+
+  * Finally, you can also add your plugin's groupId to the list of groupIds
   searched by default.  To do this, you need to add the following to
   your <<<$\{user.home\}/.m2/settings.xml>>> file:
 
@@ -194,6 +208,8 @@ groupID:artifactID:version:goal
   <pluginGroup>sample.plugin</pluginGroup>
 </pluginGroups>
 +----+
+
+  []
 
   At this point, you can run the mojo with "<<<mvn hello:sayhi>>>".
 
