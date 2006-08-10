@@ -17,7 +17,7 @@ Antlib for Maven 2.0
 
     * <POM processing> - for reading a Maven 2.0 <<<pom.xml>>> file
 
-  The Ant tasks can be downloaded from {{{download.html#ant} Maven 2.0 download page}}.
+  The Ant tasks can be downloaded from {{{download.html} Maven 2.0 download page}}.
 
 Installing the Ant Tasks
 
@@ -63,7 +63,7 @@ Using the Antlib
 
 * Declaring Dependencies
 
-  The main purpose of the antlib is to utilise Maven's {{{dependencies.html} dependency management features}}.
+  The main purpose of the antlib is to utilise Maven's {{{guides/introduction/introduction-to-dependency-mechanism.html} dependency management features}}.
 
   This is achieved with the <<<dependencies>>> task. The simplest usage involves specifying your dependencies inline,
   such as in the following example:
@@ -115,7 +115,7 @@ Using the Antlib
 
   You can also specify a <<<scope>>> parameter on each dependency. This changes the behaviour of
   transitive dependencies and is useful for building different types of classpaths. To see how it affects
-  the behaviour of the dependencies, see the {{{dependencies.html#Dependency_Scope} Dependency Mechanism}}
+  the behaviour of the dependencies, see the {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
   documentation in the Maven 2.0 site.
 
 * Declaring Repositories
@@ -309,7 +309,7 @@ The Settings File
 
   For more information in configuring <<<settings.xml>>>, see:
 
-    * {{{configuration.html} Configuring Maven}}.
+    * {{{guides/mini/guide-configuring-maven.html} Configuring Maven}}.
 
     * {{{maven-settings/settings.html} Settings Descriptor Reference}}.
 
@@ -330,7 +330,7 @@ Getting Help
 
   For more on the Maven functionality behind them, try the following links:
 
-    * {{{dependencies.html} Dependency Mechanism}}
+    * {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
 
     * {{{maven-settings/settings.html} Settings Reference}}
 
@@ -448,12 +448,12 @@ Type Reference
 ** <<<proxy>>>
 
   The proxy element is typically used for HTTP repositories. The layout is the same as in the
-  {{{maven-settings/settings.html#Proxy} settings reference}}.
+  {{{maven-settings/settings.html#class_proxy} settings reference}}.
 
 ** <<<authentication>>>
 
   The authentication element is used for passing a username, password and other credentials to the repository either
-  on upload or download. The layout is the same as in the {{{maven-settings/settings.html#Server} settings reference}}.
+  on upload or download. The layout is the same as in the {{{maven-settings/settings.html#class_server} settings reference}}.
 
 * <<<pom>>>
 
