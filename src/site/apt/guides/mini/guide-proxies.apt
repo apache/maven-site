@@ -41,5 +41,8 @@ Configuring a proxy
  Please note that urrently NTLM proxies are not supported as they have not been tested. You may be able to use the
  relevant system properties on JDK 1.4+ to make this work.
 
- <<Note>>: the settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
- 
+* Resources
+
+    [[1]] {{{../../maven-settings/settings.html}Settings descriptor documentation}}
+
+    [[2]] {{{guide-configuring-maven.html}Configuring Maven}}
