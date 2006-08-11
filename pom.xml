@@ -33,7 +33,7 @@
               <report>mailing-list</report>
               <report>license</report>
               <report>project-team</report>
-              <report>scm</report>
+              <!-- <report>scm</report> -->
             </reports>
           </reportSet>
         </reportSets>
@@ -42,9 +42,9 @@
   </reporting>
   <!-- repeated here so that maven-site is not appended -->
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/components/trunk/</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/components/trunk/</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/components/trunk/</url>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
   </scm>
 
   <distributionManagement>
