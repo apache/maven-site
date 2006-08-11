@@ -706,14 +706,8 @@
         information.</p>
       <p>
         <ul>
-          <li>M2 Plugin Overview [
-            <a
-                href="plugin-overview.html">link</a>
-            ]
-          </li>
           <li>QDox Project (Javadoc annotations) [
-            <a
-                href="http://qdox.codehaus.org">link</a>
+            <a href="http://qdox.codehaus.org">link</a>
             ]
           </li>
         </ul>
