@@ -1,0 +1,94 @@
+ ------
+ Guide to Plugin Snapshot Repositories
+ ------
+ Maven Team
+ ------
+ 11 August 2006
+ ------
+
+Introduction
+
+  If you are trying to build a development version of a maven plugin, or you 
+  just need to trial the latest plugin code that is yet to be released, then
+  you may need to access the maven plugin snapshot repositories.
+
+Repositories
+
+  The most widely known repositories are {{{http://maven.apache.org/}Maven}} 
+  itself hosted at Apache and the {{{http://mojo.codehaus.org/}Mojo Project hosted}}
+  at CodeHaus.
+
+  Both of these sites provide snapshot versions of their plugins which are
+  available from the plugin snapshot repository.
+
+  * apache snapshots = {{http://people.apache.org/maven-snapshot-repository}}
+
+  * codehaus snapshots = {{http://snapshots.maven.codehaus.org/maven2}}
+
+How to include the plugin snapshot repositories as part of your build
+
+  You need to modify your <~/.m2/settings.xml> file to include two new profiles
+  and then when you need access to the plugin snapshots use <<<-Papache>>> or 
+  <<<-Pcodehaus>>> to enable the profiles. The profile only needs to be enabled 
+  once so that the plugins can be downloaded into you local repository.  Once 
+  in your local repository Maven can succesfully resolve the dependencies and
+  the profile no longer needs to be activated.
+
++---
+<settings>
+  ...
+    <profile>
+      <id>apache</id>
+      <repositories>
+        <repository>
+          <id>apache.snapshots</id>
+          <name>Maven Snapshots</name>
+          <url>http://people.apache.org/maven-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>apache.snapshots</id>
+          <name>Maven Plugin Snapshots</name>
+          <url>http://people.apache.org/maven-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+
+    <profile>
+      <id>codehaus</id>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>codehaus.plugin.snapshots</id>
+          <name>CodeHaus Plugin Snapshots</name>
+          <url>http://snapshots.maven.codehaus.org/maven2</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  ...
+</settings>
++---
+
+  When invoking Maven for Apache profile, do it like this:
+
++---
+mvn -Papache <phase|goal>
++---
