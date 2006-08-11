@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!-- 
 /*
- * Copyright 2001-2004 The Apache Software Foundation.
+ * Copyright 2001-2006 The Apache Software Foundation.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -614,6 +614,17 @@
             </td>
           </tr>
           <tr>
+            <td>configuration</td>
+            <td>@component</td>
+            <td>No</td>
+            <td>Indicates to lookup and populate the field with an implementation with a Plexus Component.
+              Similar to <code>@parameter expression="${component.yourpackage.YourComponentClass}"</code>.
+
+              <i>NOTE: 'YourComponentClass' should have a Plexus tag, for instance 
+              <code>@plexus.component role="yourpackage.YourComponentClass"</code>.</i>
+            </td>
+          </tr>
+          <tr>
             <td>deprecated</td>
             <td>@deprecated</td>
             <td>No</td>
@@ -667,7 +678,9 @@
             <td>packaging</td>
             <td>Yes</td>
             <td>
-              <code>&lt;packaging&gt;maven-plugin&lt;/packaging&gt;</code>
+              <code>&lt;packaging&gt;
+              maven-plugin
+              &lt;/packaging&gt;</code>
             </td>
             <td>The POM must declare a packaging element which describes this
               project as a Maven plugin project.</td>
@@ -676,7 +689,9 @@
             <td>scriptSourceDirectory</td>
             <td>No</td>
             <td>
-              <code>&lt;scriptSourceDirectory&gt;src/main/scripts&lt;/scriptSourceDirectory&gt;</code>
+              <code>&lt;scriptSourceDirectory&gt;
+              src/main/scripts
+              &lt;/scriptSourceDirectory&gt;</code>
             </td>
             <td>In the case of script-based Mojos (which are not covered in
               detail within this document), the POM must include an additional
@@ -691,11 +706,7 @@
         </table>
       </p>
       <p>After making the changes above, the developer can simply call
-        <br/>
-        <br/>
-        <code>mvn install</code>
-        <br/>
-        <br/>
+        <div class="source"><pre>mvn install</pre></div>
         to install the plugin to
         the local repository. (Any of the other standard lifecycle targets like
         package, deploy, etc. are also available in like fashion.)
@@ -708,6 +719,10 @@
         <ul>
           <li>QDox Project (Javadoc annotations) [
             <a href="http://qdox.codehaus.org">link</a>
+            ]
+          </li>
+          <li>Plexus Project (Plexus container) [
+            <a href="http://plexus.codehaus.org">link</a>
             ]
           </li>
         </ul>
