@@ -113,7 +113,7 @@ $ svn revert -R .
  reference the file with the <<<-F>>> option:
 
 ---
-$ svn propset . svn:ignore -F ~/bin/svnignore
+$ svn propset svn:ignore -F ~/bin/svnignore .
 ---
 
  An example svnignore file:
