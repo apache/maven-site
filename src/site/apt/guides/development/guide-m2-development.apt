@@ -245,7 +245,7 @@ Available formats
 
  After this, restart IDEA and open the settings to select the new code style.
 
-** Eclipse 3.x
+** Eclipse 3.2+
 
  Download <<<{{{../../developers/maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
 
