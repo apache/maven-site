@@ -73,8 +73,9 @@
         </p>
 
         <source>
+  ...
   <build>
-    ...
+  ...
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -85,9 +86,9 @@
           </configuration>
       </plugin>
     </plugins>
-    ...
+  ...
   </build>
-        </source>
+  ...</source>
       </answer>
     </faq>
 
@@ -98,8 +99,8 @@
           Absolutely yes!
         </p>
         <p>
-          By configuring &amp;lt;sourceDirectory&amp;gt;, &amp;lt;resources&amp;gt; and other elements of
-          the &amp;lt;build&amp;gt; section.
+          By configuring &lt;sourceDirectory&gt;, &lt;resources&gt; and other elements of
+          the &lt;build&gt; section.
         </p>
         <p>
           In addition, you may need to change the plugin configuration if you are
@@ -167,45 +168,55 @@ Where: <path-to-file>  the path to the file to load
     <faq id="unsubscribing-from-mailing-lists">
       <question>How do I unsubscribe from Maven mailing lists?</question>
       <answer>
+        <p>
         To unsubscribe from a Maven mailing list you simply send a message to
-        \[mailing-list\]-unsubscribe@maven.apache.org. So, if you have
-        subscribed to users@maven.apache.org then you would send a message 
-        to users-unsubscribe@maven.apache.org in order to get off the list.
+        <source>[mailing-list]-unsubscribe@maven.apache.org</source>
+        </p>
+        <p>
+        So, if you have subscribed to <code>users@maven.apache.org</code> then you would 
+        send a message to <code>users-unsubscribe@maven.apache.org</code> in order to 
+        get off the list.
         People tend to have problems when they subscribe with one address and
         attempt to unsubscribe with another. So make sure that you are using the
         same address when unsubscribing that you used to subscribe before
-        asking for help. If you find you still cannot get off a list then
-        send a message to \[mailing-list\]-help@maven.apache.org. These
-        instructions are also appended to every message sent out on 
-        a maven mailing list ...
-      </answer>      
+        asking for help. 
+        </p>
+        <p>
+        If you find you still cannot get off a list then
+        send a message to <code>[mailing-list]-help@maven.apache.org</code>. These
+        instructions are also appended to every message sent out on a maven mailing 
+        list ...
+        </p>
+      </answer>
     </faq>
     <faq id="skip-test">
       <question>How to skip the tests</question>
       <answer>
-        add the parameter -Dmaven.test.skip=true in the command line
+        Add the parameter <code>-Dmaven.test.skip=true</code> in the command line
       </answer>  
     </faq>
     <faq id="special-characters-site">
       <question>Handle special characters in site</question>
       <answer>
-      	<p>Configure your ide to use the correct encoding. With eclipse, add -Dfile.encoding=ISO-8859-1 in eclipse.ini file</p>
-      	<p>Configure the output encoding in your pom
+        <p>Configure your ide to use the correct encoding. With eclipse, add 
+        <code>-Dfile.encoding=ISO-8859-1</code> in eclipse.ini file</p>
+        <p>Configure the output encoding in your pom
       <source>
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-site-plugin</artifactId>
-  <configuration>
-    <outputEncoding>UTF-8</outputEncoding>
-  </configuration>
-</plugin>
-      </source>
-      	</p>
-      	<p>
-      	  Configure the file encoding use by mvn.
-      	  add to MAVEN_OPTS the encoding (same as the ide).
-      	  This can be made with adding MAVEN_OPTS="-Dfile.encoding=ISO-8859-1" in $HOME/.profile
-      	</p>
+  ...
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-site-plugin</artifactId>
+    <configuration>
+      <outputEncoding>UTF-8</outputEncoding>
+    </configuration>
+  </plugin>
+  ...</source>
+        </p>
+        <p>
+          Configure the file encoding use by mvn.
+          add to MAVEN_OPTS the encoding (same as the ide).
+          This can be made with adding <code>MAVEN_OPTS="-Dfile.encoding=ISO-8859-1"</code> in $HOME/.profile
+        </p>
       </answer>
     </faq>
     <faq id="tools-jar-dependency">
@@ -215,6 +226,7 @@ Where: <path-to-file>  the path to the file to load
           The following code includes <code>tools.jar</code> on Sun JDKs (it is already included in the runtime for Mac OS X and some free JDKs).
         </p>
         <source>
+...
   <profiles>
     <profile>
       <id>default-tools.jar</id>
@@ -235,7 +247,7 @@ Where: <path-to-file>  the path to the file to load
       </dependencies>
     </profile>
   </profiles>
-    </source>
+  ...</source>
      </answer>
     </faq>
     <faq id="test-property-name">
@@ -248,21 +260,23 @@ Where: <path-to-file>  the path to the file to load
           Check your settings.xml and pom.xml for a property named "test" which would like this:
         </p>
         <source>
+  ...
   <properties>
     <property>
       <name>test</name>
       <value>some-value</value>
      </property>
-   </properties>
-        </source>
+  </properties>
+  ...</source>
         <p>
           or
         </p>
         <source>
+  ...
   <properties>
     <test>some-value</test>
-   </properties>
-        </source>
+  </properties>
+  ...</source>
       </answer>
     </faq>
   </part>
