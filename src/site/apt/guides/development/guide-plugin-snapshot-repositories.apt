@@ -41,7 +41,7 @@ How to include the plugin snapshot repositories as part of your build
       <id>apache</id>
       <repositories>
         <repository>
-          <id>apache.snapshots</id>
+          <id>apache.org</id>
           <name>Maven Snapshots</name>
           <url>http://people.apache.org/maven-snapshot-repository</url>
           <releases>
@@ -54,7 +54,7 @@ How to include the plugin snapshot repositories as part of your build
       </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>apache.snapshots</id>
+          <id>apache.org</id>
           <name>Maven Plugin Snapshots</name>
           <url>http://people.apache.org/maven-snapshot-repository</url>
           <releases>
@@ -69,11 +69,24 @@ How to include the plugin snapshot repositories as part of your build
 
     <profile>
       <id>codehaus</id>
+      <repositories>
+        <repository>
+          <id>codehaus.org</id>
+          <name>CodeHaus Snapshots</name>
+          <url>http://snapshots.repository.codehaus.org</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </repository>
+      </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>codehaus.plugin.snapshots</id>
+          <id>codehaus.org</id>
           <name>CodeHaus Plugin Snapshots</name>
-          <url>http://snapshots.maven.codehaus.org/maven2</url>
+          <url>http://snapshots.repository.codehaus.org</url>
           <releases>
             <enabled>false</enabled>
           </releases>
