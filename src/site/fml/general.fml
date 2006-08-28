@@ -279,5 +279,20 @@ Where: <path-to-file>  the path to the file to load
   ...</source>
       </answer>
     </faq>
+    <faq id="snapshot-artifacts">
+      <question>Where are Maven SNAPSHOT artifacts?</question>
+      <answer>
+        <p>
+          If you are trying to build a development version of Maven or plugins, 
+          you may need to access the maven snapshot repositories.
+        </p>
+
+        <p>
+          You need to update your settings.xml file using the
+          <a href="guides/development/guide-plugin-snapshot-repositories.html">
+          Guide to Plugin Snapshot Repositories</a>
+        </p>
+      </answer>
+    </faq>
   </part>
 </faqs>
