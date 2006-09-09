@@ -84,6 +84,18 @@
             <th>Published</th>
           </tr> 
           <tr>
+            <td><a href="http://www.devx.com/Java/Article/32386">Keep Your Maven Projects Portable Throughout the Build Cycle</a></td>
+            <td>DevX</td>
+            <td>Eric Redmond</td>
+            <td>8 September 2006</td>
+          </tr>
+          <tr>
+            <td><a href="http://www-128.ibm.com/developerworks/java/library/j-ap09056/index.html">Automation for the people: Choosing a Continuous Integration server</a></td>
+            <td>deverloperWorks</td>
+            <td>Paul Duvall</td>
+            <td>5 September 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://www.javaposse.com/index.php?post_id=112128">Java Posse #070 - Interview with Brett Porter of Maven</a></td>
             <td>Java Posse</td>
             <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
