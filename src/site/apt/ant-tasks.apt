@@ -314,7 +314,7 @@ The Settings File
     * {{{maven-settings/settings.html} Settings Descriptor Reference}}.
 
     * There is a
-      {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-core/src/conf/settings.xml} sample settings file}}
+      {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-cli/src/conf/settings.xml} sample settings file}}
       in the Maven installation.
 
 Sample Ant Script
