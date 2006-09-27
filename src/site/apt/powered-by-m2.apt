@@ -2,8 +2,9 @@
  Powered by Maven 2.x
  -----
  Jason van Zyl
+ Vincent Massol
  -----
- 12 October 2005
+ 27 September 2006
  -----     
 
 Powered by Maven 2.x
@@ -25,6 +26,8 @@ Powered by Maven 2.x
  * {{{http://ehcache.sourceforge.net}ehcache}}
 
  * {{{http://spring-rich-c.sourceforge.net/}Spring rich client}}
+ 
+ * {{{http://maven.nuxeo.org/}Nuxeo ECM}}
 
  Work In Progress
 
