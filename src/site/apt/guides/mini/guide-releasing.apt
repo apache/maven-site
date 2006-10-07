@@ -3,8 +3,9 @@
  -----
  Jason van Zyl
  Trent Rosenbaum
+ Vincent Massol
  -----
- 14 November 2005
+ 7 October 2006
  -----
 
 Releasing
@@ -265,4 +266,22 @@ checkpoint.check-in-development-version=OK
     The contents of the <pom.xml> file used to create the current release of the project.
   
   []	
+  
+* Troubleshooting
+
+** I get a "The authenticity of host '<host>' can't be established." error and the build hangs
+
+  This is because your <<<~user/.ssh/known_hosts>>> file doesn't have the host listed. You'd normally get a prompt to add the host to the
+  known host list but Maven doesn't propagate that prompt. The solution is to add the host the <<<known_hosts>>> file before
+  executing Maven. On Windows, this can be done by installing an OpenSSH client (for example
+  {{{http://sshwindows.sourceforge.net/download/}SSHWindows}}), running <<<ssh <host>>>> and accepting to add the host.
+  
+** The site deploy goal hangs
+
+  First, this means that you have successfully deployed the artifacts to the remote repo and that it's only the site
+  deployment that is now an issue. Stop your build, cd to <<target/checkout>>> and run the build again by 
+  executing <<<mvn site:deploy>>>. You should see a prompt asking you to enter a password. This happens if your key is not
+  in the authorized keys on the server.
+  
+  
   
