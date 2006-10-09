@@ -1,17 +1,17 @@
  ------
- Guide to uploading artifacts to Ibiblio
+ Guide to uploading artifacts to the Central Repository
  ------
  Jason van Zyl
  ------
  12 October 2005
  ------
 
-Guide to uploading artifacts to Ibiblio
+Guide to uploading artifacts to The Central Repository
 
  In order for users of Maven to utilize artifacts produced by your project you must deploy them to
  a remote repository. Many open source projects want to allow users of their projects who build with
  Maven to have transparent access to their project's artifacts. In order to allow for this a project
- must have their artifacts deployed the Ibiblio which acts as Maven's central global repostory.
+ must have their artifacts deployed to the Central Repository.
 
 * Step 1: Create an upload bundle
 
@@ -36,7 +36,7 @@ Guide to uploading artifacts to Ibiblio
 +----+
 
  If you are not using maven as your build system but want something
- uploaded to Ibiblio then you just need to make a JAR (using the <<<jar>>> executable,
+ uploaded to the Central Repository then you just need to make a JAR (using the <<<jar>>> executable,
  not <<<zip>>>, <<<pkzip>>> or equivalent) with the following format:
 
 +----+
