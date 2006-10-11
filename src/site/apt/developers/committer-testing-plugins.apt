@@ -1,0 +1,395 @@
+ ------
+ Developers centre - Testing Plugins Strategies
+ ------
+ Vincent Siveton
+ ------
+ October 2006
+ ------
+
+ ~~ Copyright 2006 The Apache Software Foundation.
+ ~~
+ ~~ Licensed under the Apache License, Version 2.0 (the "License");
+ ~~ you may not use this file except in compliance with the License.
+ ~~ You may obtain a copy of the License at
+ ~~
+ ~~      http://www.apache.org/licenses/LICENSE-2.0
+ ~~
+ ~~ Unless required by applicable law or agreed to in writing, software
+ ~~ distributed under the License is distributed on an "AS IS" BASIS,
+ ~~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ ~~ See the License for the specific language governing permissions and
+ ~~ limitations under the License.
+
+ ~~ NOTE: For help with the syntax of this file, see:
+ ~~ http://maven.apache.org/guides/mini/guide-apt-format.html
+
+
+Introduction
+
+ Currently, Maven only supports unit testing out of the box. This document is intended to help Maven Developers to
+ test Plugins with Unit Tests, Integration Tests or Functional tests.
+
+ <<Note>>: It is a <<DRAFT>> document, only the unit testing part is more official.
+
+Unit Tests
+
+ Typically, these tests will be executed with the <<<test>>> phase.
+
+* Junit
+
+ Globally, you need to create a *Test (by convention) class which <<<extends TestCase>>>.
+
+ If you need Plexus container services, you need to <<<extends PlexusTestCase>>> instead of TestCase.
+
+* maven-plugin-testing-harness
+
+ The {{{https://svn.apache.org/repos/asf/maven/shared/trunk/maven-plugin-testing-harness}maven-plugin-testing-harness}}
+ is attended to test the <<<org.apache.maven.reporting.AbstractMavenReport#execute()>>> implementation.
+
+ Globally, you need to include <<<maven-plugin-testing-harness>>> as dependency, and create a *MojoTest (by convention)
+ class which <<<extends AbstractMojoTestCase>>>.
+
++-----+
+...
+  <dependencies>
+    ...
+    <dependency>
+      <groupId>org.apache.maven.shared</groupId>
+      <artifactId>maven-plugin-testing-harness</artifactId>
+      <version>1.0-beta-1</version>
+      <scope>test</scope>
+    </dependency>
+    ...
+  </dependencies>
+...
++-----+
++-----+
+public class YourMojoTest
+    extends AbstractMojoTestCase
+{
+    /**
+     * @see junit.framework.TestCase#setUp()
+     */
+    protected void setUp() throws Exception {
+
+        // required for mojo lookups to work
+        super.setUp();
+    }
+
+    /**
+     * @throws Exception
+     */
+    public void testMojoGoal() throws Exception
+    {
+        File testPom = new File( getBasedir(),
+          "src/test/resources/unit/basic-test/basic-test-plugin-config.xml" );
+
+        YourMojo mojo = (YourMojo) lookupMojo ( "yourGoal", testPom );
+
+        assertNotNull( mojo );
+    }
+}
++-----+
+
+ For more information, please refer to {{{http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
+
+Integration testing
+
+ These tests require the artifact, so they should be run before the <<<install>>> phase, in the <<<integration-test>>>
+ phase.
+
+* maven-it-plugin
+
+ The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-it-plugin/}maven-it-plugin}} is used directly
+ in the <<<integration-test>>> phase.
+
+ <<Note>>: this it plugin can not be used to test a plugin that is being built for the first time (i.e. with no
+ release). In this case, you could, for instance, defined an it-snapshot of the plugin with <<<maven-install-plugin>>>.
+ during the <<<pre-integration-test>>> phase.
+
++-----+
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  ...
+  <artifactId>maven-XXX-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <description>Test Report plugin in the site phase</description>
+  ...
+  <build>
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-it-plugin</artifactId>
+        <version>1.0-alpha-1-SNAPSHOT</version>
+        <configuration>
+          <integrationTestsDirectory>${basedir}/src/it</integrationTestsDirectory>
+          <includes>
+            <include>**/pom.xml</include>
+          </includes>
+          <goals>site</goals>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Need to install IT snapshot of maven-XXX-plugin -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>2.2-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>it-test</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>install-file</goal>
+            </goals>
+            <configuration>
+              <file>${basedir}/target/maven-XXX-plugin-1.0-SNAPSHOT.jar</file>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-XXX-plugin</artifactId>
+              <version>1.0-it-SNAPSHOT</version> <!-- IT SNAPSHOT -->
+              <packaging>maven-plugin</packaging>
+              <pomFile>${basedir}/pom.xml</pomFile>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Testing the result of the it pom.xml -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>it-test</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>**/*TestIt.class</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++-----+
+
+ The it pom should use the it snapshot:
+
++-----+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+...
+  <reporting>
+    <outputDirectory>
+      ${basedir}/../../../../../target/it/it1/target/site
+    </outputDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-XXX-plugin</artifactId>
+        <version>1.0-it-SNAPSHOT</version>
+      </plugin>
+    </plugins>
+  </reporting>
+...
+</project>
++-----+
+
+* maven-plugin-test-plugin
+
+ The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-plugin-test-plugin/}maven-plugin-test-plugin}}
+ is attended to staging/unstaging plugin into local repository for pre/post-integration-test.
+
+ You need to configure the <<<maven-plugin-test-plugin>>> and the <<<maven-surefire-plugin>>>:
+
++-----+
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  ...
+  <artifactId>maven-XXX-plugin</artifactId>
+  <packaging>maven-plugin</packaging>
+  <version>1.0-SNAPSHOT</version>
+  <description>Test Report plugin in the site phase</description>
+  <prerequisites>
+    <maven>2.0.4</maven>
+  </prerequisites>
+  ...
+  <dependencies>
+    ...
+    <!-- Due to the Maven 2.0.4 prerequisites.
+    By default, maven-plugin-test-plugin uses 2.0.1 -->
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-embedder</artifactId>
+      <version>2.0.4</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>2.0.4</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <build>
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-test-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>pre-it-test</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>stage</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>post-it-test</id>
+            <phase>post-integration-test</phase>
+            <goals>
+              <goal>unstage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Testing the result of the it pom.xml -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>it-test</id>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+            <configuration>
+              <includes>
+                <include>**/*TestIt.class</include>
+              </includes>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++-----+
+
+ The *TestIt classes could use the Maven Embedder to provide tests:
+
++-----+
+public class MyMojoTestIt
+    extends PlexusTestCase
+{
+    /**
+     * @throws Exception
+     */
+    public void testDefaultProject()
+        throws Exception
+    {
+        MavenEmbedder maven = new MavenEmbedder();
+        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+        maven.setClassLoader( classLoader );
+        maven.setLogger( new MavenEmbedderConsoleLogger() );
+        maven.setOffline( true );
+        maven.setLocalRepositoryDirectory( getTestFile( "target/local-repo" ) );
+        maven.start();
+
+        File itbasedir = new File( getBasedir(), "src/it/it1" );
+        MavenProject pom =
+          maven.readProjectWithDependencies( new File( itbasedir, "pom.xml" ) );
+
+        EventMonitor eventMonitor =
+          new DefaultEventMonitor(
+            new PlexusLoggerAdapter(
+              new MavenEmbedderConsoleLogger() ) );
+        maven.execute( pom,
+          Collections.singletonList(
+            "org.apache.maven.plugins:maven-XXX-plugin:1.0-SNAPSHOT:yourGoal" ),
+          eventMonitor,
+          new ConsoleDownloadMonitor(),
+          null,
+          itbasedir );
+
+        maven.stop();
+    }
+}
++-----+
+
+ <<Note>>: The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-plugin-management-plugin/}maven-plugin-management-plugin}}
+ is similar to <<<maven-plugin-test-plugin>>>.
+
+Functionnal testing
+
+* maven-invoker
+
+ The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-invoker-plugin/}maven-invoker-plugin}}
+ is attended to invoke maven and to provide some BeanShell tests.
+
++-----+
+<project
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <configuration>
+          <debug>true</debug>
+          <projectsDirectory>src/it</projectsDirectory>
+          <pomIncludes>
+            <pomInclude>**/pom.xml</pomInclude>
+          </pomIncludes>
+          <postBuildHookScript>verify.bsh</postBuildHookScript>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>integration-test</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+  ...
+</project>
++-----+
+
