@@ -31,6 +31,16 @@
       <script type="text/javascript">
         _uacct = "UA-140879-1";
         urchinTracker();
+		function expand( item ) {
+			var expandIt = document.getElementById( item );
+			if( expandIt.style.display == "block" ) {
+				expandIt.style.display = "none";
+				expandIt.parentNode.className = "collapsed";
+			} else {
+				expandIt.style.display = "block";
+				expandIt.parentNode.className = "expanded";
+			}
+		}
       </script>
     </head>
 
@@ -70,6 +80,5 @@
      <item name="Continuous Integration" href="/continuous-integration.html"/>
    </menu>
 
-    ${reports}
   </body>
 </project>

@@ -1,155 +1,177 @@
  ------ 
- Summary of Maven 2.x documentation 
+ Maven Documentation 
  ------ 
- Jason van Zyl 
+ Jason van Zyl
+ Eric Redmond
  ------ 
- 12 October 2005 
- ------ 
+ 18 October 2006 
+ ------
 
 Documentation
 
-* Getting Started Guide
+* Getting Started with Maven
 
- * {{{getting-started/index.html}Getting Started Guide}}
+  * {{{quick.html}Getting Started in 5 Minutes}}
 
-* Mini Guides
+  * {{{getting-started/index.html}Getting Started in 30 Minutes}}
 
- * {{{mini/guide-3rd-party-jars-local.html}Guide to installing 3rd party JARs}}
+* Introductions
 
- * {{{mini/guide-3rd-party-jars-remote.html}Guide to deploying 3rd party JARs to remote repository}}
+ * {{{introduction/introduction-to-the-lifecycle.html}The Build Lifecycle}}
 
- * {{{mini/guide-apt-format.html}Guide to the APT Format}}
+ * {{{introduction/introduction-to-the-pom.html}The POM}}
 
- * {{{mini/guide-archive-configuration.html}Guide to Configuring Archive Plugins}}
+ * {{{introduction/introduction-to-profiles.html}Profiles}}
 
- * {{{mini/guide-assemblies.html}Guide to Creating Assemblies}}
+ * {{{introduction/introduction-to-repositories.html}Repositories}}
 
- * {{{mini/guide-attached-tests.html}Guide to using attached tests}}
+ * {{{introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}
 
- * {{{mini/guide-bash-m2-completion.html}Guide to Maven 2.x auto completion using BASH}}
+ * {{{introduction/introduction-to-dependency-mechanism.html}The Dependency Mechanism}}
 
- * {{{mini/guide-central-repository-upload.html}Guide to uploading artifacts to the Central Repository}}
+** Plugins
 
- * {{{mini/guide-configuring-maven.html}Guide to Configuring Maven}}
+ * {{{introduction/introduction-to-plugins.html}Plugin Development}}
 
- * {{{mini/guide-configuring-plugins.html}Guide to Configuring Plug-ins}}
+ * {{{mini/guide-configuring-plugins.html}Configuring Plug-ins}}
 
- * {{{mini/guide-coping-with-sun-jars.html}Guide to Coping with Sun JARs}}
+ * {{{introduction/introduction-to-plugin-registry.html}The Plugin Registry}}
 
- * {{{mini/guide-creating-archetypes.html}Guide to Creating Archetypes}}
+ * {{{introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix Resolution}}
 
- * {{{mini/guide-deployment-security-settings.html}Guide to Deployment and Security Settings}}
+ * {{{plugin/guide-ant-plugin-development.html}Developing Ant Plugins}}
 
- * {{{mini/guide-embedding-m2.html}Guide to Embedding Maven 2.x}}
+ * {{{plugin/guide-java-plugin-development.html}Developing Java Plugins}}
 
- * {{{mini/guide-generating-sources.html}Guide to generating Sources}}
+** Site
 
- * {{{mini/guide-ide-eclipse.html}Guide to using Eclipse with Maven 2.x}}
+ * {{{mini/guide-site.html}Creating a Site}}
 
- * {{{mini/guide-ide-idea.html}Guide to using IDEA with Maven 2.x}}
+ * {{{mini/guide-apt-format.html}The APT Format}}
 
- * {{{mini/guide-ide-netbeans/guide-ide-netbeans.html}Guide to Using maven 2 in Netbeans 4.0 (4.1 and 5.0)}}
+** Archetypes
 
- * {{{mini/guide-m1-m2.html}Guide to Moving From Maven 1.x to Maven 2.x}}
+ * {{{introduction/introduction-to-archetypes.html}What is an Archetype}}
 
- * {{{mini/guide-manifest.html}Guide to Working with Manifests}}
+ * {{{mini/guide-creating-archetypes.html}Creating Archetypes}}
 
- * {{{mini/guide-maven-classloading.html}Guide to Maven Classloading}}
+** Upgrading
 
- * {{{mini/guide-maven-evangelism.html}Guide to Maven Evangelism}}
+ * {{{mini/guide-m1-m2.html}From Maven 1.x to Maven 2.x}}
 
- * {{{mini/guide-mirror-settings.html}Guide to Mirror Settings}}
+ * {{{mini/guide-using-m1-repos-with-m2.html}Using Maven 1.x repositories with Maven 2.x}}
 
- * {{{mini/guide-multiple-repositories.html}Guide to using Multiple Repositories}}
+ * {{{mini/guide-relocation.html}Relocation of Artifacts}}
 
- * {{{mini/guide-naming-conventions.html}Guide to Naming Conventions}}
+** Repositories
 
- * {{{mini/guide-new-committers.html}Guide for new committers}}
+ * {{{mini/guide-3rd-party-jars-local.html}Installing 3rd party JARs to Local Repository}}
 
- * {{{mini/guide-proxies.html}Guide to using proxies}}
+ * {{{mini/guide-3rd-party-jars-remote.html}Deploying 3rd party JARs to Remote Repository}}
 
- * {{{mini/guide-releasing.html}Guide to using the release plugin}}
+ * {{{mini/guide-coping-with-sun-jars.html}Coping with Sun JARs}}
 
- * {{{mini/guide-relocation.html}Guide to relocation}}
-
- * {{{mini/guide-site.html}Guide to creating a site}}
-
- * {{{mini/guide-using-ant.html}Guide to using Ant with Maven}}
-
- * {{{mini/guide-using-extensions.html}Guide to using Extensions}}
-
- * {{{mini/guide-using-m1-repos-with-m2.html}Guide to using Maven 1.x repositories with Maven 2.x}}
-
- * {{{mini/guide-using-modello.html}Guide to using Modello}}
-
- * {{{mini/guide-using-one-source-directory.html}Guide to Using Maven when You Can't Use the Conventions}}
-
- * {{{mini/guide-webapp.html}Guide to Webapps}}
+~~ * {{{introduction/introduction-to-artifact-resolution.html}Repository Definitions and Artifact Resolution}}
 
 
-* Introductory Material
+* Guides
 
- * {{{introduction/introduction-to-archetypes.html}Introduction to Archetypes}}
+ * {{{mini/guide-assemblies.html}Creating Assemblies}}
 
- * {{{introduction/introduction-to-artifact-resolution.html}Introduction to repository definitions and artifact resolution}}
+ * {{{mini/guide-archive-configuration.html}Configuring Archive Plugins}}
 
- * {{{introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}
+ * {{{mini/guide-configuring-maven.html}Configuring Maven}}
 
- * {{{introduction/introduction-to-plugin-prefix-mapping.html}Introduction to Plugin Prefix Resolution}}
+ * {{{mini/guide-mirror-settings.html}Mirror Settings}}
 
- * {{{introduction/introduction-to-plugin-registry.html}Introduction to the Plugin Registry}}
+ * {{{mini/guide-deployment-security-settings.html}Deployment and Security Settings}}
 
- * {{{introduction/introduction-to-plugins.html}Introduction to Maven 2.0 Plugin Development}}
+ * {{{mini/guide-embedding-m2.html}Embedding Maven 2.x}}
 
- * {{{introduction/introduction-to-profiles.html}Introduction to build profiles}}
+ * {{{mini/guide-generating-sources.html}Generating Sources}}
 
- * {{{introduction/introduction-to-repositories.html}Introduction to Repositories}}
+ * {{{mini/guide-manifest.html}Working with Manifests}}
 
- * {{{introduction/introduction-to-the-lifecycle.html}Introduction to the Build Lifecycle}}
+ * {{{mini/guide-maven-classloading.html}Maven Classloading}}
 
- * {{{introduction/introduction-to-the-pom.html}Introduction to the POM}}
+ * {{{mini/guide-multiple-repositories.html}Using Multiple Repositories}}
 
- * {{{introduction/introduction-to-the-standard-directory-layout.html}Introduction to the Standard Directory Layout}}
+ * {{{mini/guide-proxies.html}Using Proxies}}
 
+ * {{{mini/guide-releasing.html}Using the Release Plugin}}
 
-* Plugin Guides
+ * {{{mini/guide-using-ant.html}Using Ant with Maven}}
 
- * {{{plugin/guide-ant-plugin-development.html}Guide to Developing Ant Plugins}}
+ * {{{mini/guide-using-modello.html}Using Modello}}
 
- * {{{plugin/guide-java-plugin-development.html}Guide to Developing Java Plugins}}
+ * {{{mini/guide-webapp.html}Webapps}}
+
+ * {{{mini/guide-using-extensions.html}Using Extensions}}
+
+** Testing
+
+ * {{{mini/guide-attached-tests.html}Reusable Test JARs}}
+
+** Maven Tools and IDE Integration
+
+ * {{{mini/guide-ide-eclipse.html}Eclipse}}
+
+ * {{{mini/guide-ide-idea.html}IDEA}}
+
+ * {{{mini/guide-ide-netbeans/guide-ide-netbeans.html}Netbeans 4.0 (4.1 and 5.0)}}
+
+ * {{{mini/guide-bash-m2-completion.html}Maven 2.x Auto-Completion Using BASH}}
 
 
 * Development Guides
 
- * {{{development/guide-building-m2.html}Guide to Building Maven 2.0}}
+ * {{{development/guide-building-m2.html}Building Maven from Scratch}}
 
- * {{{development/guide-helping.html}Guide to helping with Maven}}
+ * {{{development/guide-m2-development.html}Developing Maven}}
 
- * {{{development/guide-m2-development.html}Guide to Developing Maven}}
+ * {{{development/guide-plugin-snapshot-repositories.html}Plugin Snapshot Repositories}}
 
- * {{{development/guide-plugin-documentation.html}Guide to the Plugin Documentation Standard}}
+ * {{{development/guide-plugin-documentation.html}The Plugin Documentation Standard}}
 
- * {{{development/guide-plugin-snapshot-repositories.html}Guide to Plugin Snapshot Repositories}}
 
- * {{{development/guide-testing-development-plugins.html}Guide to Testing Development Versions of Plugins}}
+* The Maven Community
+
+ * {{{../community.html}The Maven Community}}
+
+ * {{{development/guide-helping.html}Helping with Maven}}
+
+ * {{{mini/guide-new-committers.html}Guide for New Committers}}
+
+ * {{{development/guide-testing-development-plugins.html}Testing Development Versions of Plugins}}
+
+ * {{{../articles.html}3rd Party Books and Articles}}
+
+** Conventions
+
+ * {{{../maven-conventions.html}Maven Conventions}}
+
+ * {{{mini/guide-naming-conventions.html}Naming Conventions}}
+
+ * {{{mini/guide-using-one-source-directory.html}When You Can't Use the Conventions}}
+
+** The Central Repository
+
+ * {{{mini/guide-central-repository-upload.html}Uploading Artifacts to the Central Repository}}
+
+ * {{{mini/guide-maven-evangelism.html}Improving the Repository}}
 
 
 * Reference
 
- * {{{../ref/current/maven-model/maven.html}Project Descriptor}}
+ * {{{../pom.html}POM Overview}} ({{{../ref/current/maven-model/maven.html}Technical Project Descriptor}})
  
- * {{{../ref/current/maven-settings/settings.html}Settings Descriptor}}
- 
- * {{{../plugins/index.html}Available Plug-ins}}
- 
- * {{{../developers/mojo-api-specification.html}Mojo API}}
- 
- * {{{../ant-tasks.html}Ant Tasks}}
- 
- * {{{../glossary.html}Glossary}}
- 
- * {{{../maven-conventions.html}Maven Conventions}}
+ * {{{../settings.html}Settings Overview}} ({{{../ref/current/maven-settings/settings.html}Technical Settings Descriptor}})
 
- * {{{../articles.html}Articles}}
- 
+ * {{{../plugins/index.html}Core Plug-ins List}}
+
+ * {{{../developers/mojo-api-specification.html}Mojo API}}
+
+ * {{{../glossary.html}Glossary}}
+
  []
+
