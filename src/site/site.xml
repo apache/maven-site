@@ -2,11 +2,11 @@
 <project name="Maven">
   <bannerLeft>
     <name>Maven</name>
-    <src>http://maven.apache.org/images/apache-maven-project-2.png</src>
+    <src>images/apache-maven-project-2.png</src>
     <href>http://maven.apache.org/</href>
   </bannerLeft>
   <bannerRight>
-    <src>http://maven.apache.org/images/maven-logo-2.gif</src>
+    <src>images/maven-logo-2.gif</src>
   </bannerRight>
   <publishDate format="dd MMM yyyy" />
   <skin>
@@ -41,44 +41,81 @@
 				expandIt.parentNode.className = "expanded";
 			}
 		}
-      </script>
+	  </script>
     </head>
 
-    <menu name="Quick Links">
-      <item name="Features" href="/maven-features.html"/>
+    <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
-      <item name="Installation Instructions" href="/download.html#Installation"/>
-      <item name="FAQ" href="/general.html"/>
-    </menu>
+      <item name="Release Notes" href="/release-notes.html"/>
+      <item name="Tools">
+        <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>
+        <item name="Netbeans Module" href="/netbeans-module.html"/>      
+      </item>
+	</menu>
 
     <menu name="Documentation">
-      <item name="Getting Started" href="/guides/getting-started/index.html"/>
-      <item name="Guides" href="/guides/index.html"/>
-      <item name="Examples" href="/examples/index.html"/>
-      <item name="Plug-ins" href="/plugins/index.html"/>
-      <item name="User Contributed" href="http://docs.codehaus.org/display/MAVENUSER/FAQs"/>      
-      <item name="Where is it?" href="/where-is-it.html"/>
-      <item name="Reference" href="/ref/current/index.html"/>
-      <item name="Books and Articles" href="/articles.html" />
+      <item name="Quick Start" href="/quick.html" />
+	  <item name="User Guides">
+        <!-- item name="Concepts">
+		  	<item name="POM" href="/concepts.html#pom" />
+			<item name="Artifacts" href="/concepts.html#artifacts" />
+			<item name="Lifecycle" href="/concepts.html#lifecycle" />
+			<item name="Repositories" href="/concepts.html#repositories" />
+			<item name="Plugins" href="/concepts.html#plugins" />
+			<item name="Conventions" href="/concepts.html#conventions" />
+			<item name="Archetypes" href="/concepts.html#archetypes" />
+			<item name="Multimodule" href="/concepts.html#multimodule" />
+			<item name="Sites" href="/concepts.html#sites" />
+			<item name="Reports" href="/concepts.html#reports" />
+		</item -->
+        <item name="Getting Started" href="/guides/getting-started/index.html" />
+	    <!-- item name="Build Cookbook" href="/" / -->
+	    <item name="POM Reference" href="/pom.html" />
+	    <item name="Profiles Reference" href="/pom.html#Profiles" />
+	    <item name="Settings Reference" href="/settings.html" />
+	    <item name="Wiki" href="http://docs.codehaus.org/display/MAVENUSER" /> 
+	  </item>
+
+	  <item name="Plugin Developer Guides">
+	    <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
+	    <!-- item name="Plugin Cookbook" href="/" / -->
+	    <item name="Mojo API" href="/developers/mojo-api-specification.html" />
+	    <!-- item name="Maven API" href="/" / -->
+	  </item>
+
+	  <item name="Plugins">
+	    <item name="By Category" href="/plugins/index.html" />
+	    <!-- item name="By Host" href="/" / -->
+	    <item name="Search" href="http://www.mvnrepository.com/" />
+	  </item>
+
+  	  <item name="Documentation Index">
+	    <item name="By Category" href="/guides/index.html" />
+	    <!-- item name="Alphabetical" href="/" / -->
+	  </item>
+
+	  <item name="Books and Articles" href="/articles.html" />
+	</menu>
+
+	<menu name="Community">
+	  <item name="Community Overview" href="/community.html"/>
+      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
+      <item name="Maven Repository">
+		<item name="How to Help" href="/guides/mini/guide-maven-evangelism.html" />
+        <item name="Central Repo" href="http://repo1.maven.org/maven2/" />
+        <item name="Codehaus Repo" href="http://repository.codehaus.org/" />
+      </item>
+	  <item name="Getting Support" href="/mail-lists.html" />
     </menu>
 
-    <menu name="Integration">
-      <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>
-      <item name="Netbeans Module" href="/netbeans-module.html"/>      
-    </menu>
-
-    <menu name="About Maven 2.0">
+    <menu name="About">
       <item name="What is Maven?" href="/what-is-maven.html"/>
-      <item name="General Information" href="/about.html"/>
-      <item name="For Maven 1.0 Users" href="/maven1.html"/>
-      <item name="For Other Projects" href="/project-faq.html"/>
+      <item name="Features" href="/maven-features.html"/>
+      <item name="FAQ" href="/general.html"/>
       <item name="Powered By" href="/powered-by-m2.html"/>
-      <item name="How to Help" href="/guides/development/guide-helping.html"/>
     </menu>
 
-   <menu name="Developers">
-     <item name="Continuous Integration" href="/continuous-integration.html"/>
-   </menu>
-
+<!-- The "Project Documentation" section detracts from the Documentation above -->
+<!--    ${reports} -->
   </body>
 </project>
