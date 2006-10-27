@@ -84,6 +84,12 @@
             <th>Published</th>
           </tr> 
           <tr>
+            <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven 2 and Continuum (in French)</a></td>
+            <td>Developpez.com</td>
+            <td>Eric Reboisson</td>
+            <td>11 October 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://www.devx.com/Java/Article/32386">Keep Your Maven Projects Portable Throughout the Build Cycle</a></td>
             <td>DevX</td>
             <td>Eric Redmond</td>
