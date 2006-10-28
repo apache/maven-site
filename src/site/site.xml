@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project name="Maven">
+  <!-- TODO: inherited publish, banner, skin -->
   <bannerLeft>
     <name>Maven</name>
     <src>images/apache-maven-project-2.png</src>
@@ -8,22 +9,17 @@
   <bannerRight>
     <src>images/maven-logo-2.gif</src>
   </bannerRight>
-  <publishDate format="dd MMM yyyy" />
+  <publishDate format="dd MMM yyyy" position="right" />
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-stylus-skin</artifactId>
   </skin>
   <body>
-    <links>
+    <!-- TODO: inherited breadcrumbs, head, link menu -->
+    <breadcrumbs>
       <item name="Apache" href="http://www.apache.org/"/>
-      <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x"/>
-      <item name="Maven 2.x" href="http://maven.apache.org/"/>
-      <item name="Continuum" href="http://maven.apache.org/continuum"/>
-      <item name="SCM" href="http://maven.apache.org/scm"/>
-      <item name="Wagon" href="http://maven.apache.org/wagon"/>
-      <item name="JXR" href="http://maven.apache.org/jxr"/>
-      <item name="Doxia" href="http://maven.apache.org/doxia"/>
-    </links>
+      <item name="Maven" href="http://maven.apache.org/"/>
+    </breadcrumbs>
 
     <head>
       <script src="http://www.google-analytics.com/urchin.js" type="text/javascript">
@@ -31,91 +27,94 @@
       <script type="text/javascript">
         _uacct = "UA-140879-1";
         urchinTracker();
-		function expand( item ) {
-			var expandIt = document.getElementById( item );
-			if( expandIt.style.display == "block" ) {
-				expandIt.style.display = "none";
-				expandIt.parentNode.className = "collapsed";
-			} else {
-				expandIt.style.display = "block";
-				expandIt.parentNode.className = "expanded";
-			}
-		}
-	  </script>
+      </script>
     </head>
+
+<!-- TODO: incorporate, remove, etc
+    <menu name="Documentation">
+      <item name="Getting Started" href="/guides/getting-started/index.html"/>
+      <item name="Guides" href="/guides/index.html"/>
+      <item name="Examples" href="/examples/index.html"/>
+      <item name="Plug-ins" href="/plugins/index.html"/>
+      <item name="User Contributed" href="http://docs.codehaus.org/display/MAVENUSER/FAQs"/>      
+      <item name="Where is it?" href="/where-is-it.html"/>
+      <item name="Reference" href="/ref/current/index.html"/>
+    </menu>
+
+      <item name="General Information" href="/about.html"/>
+      <item name="For Maven 1.0 Users" href="/maven1.html"/>
+      <item name="For Other Projects" href="/project-faq.html"/>
+      <item name="How to Help" href="/guides/development/guide-helping.html"/>
+-->
 
     <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
       <item name="Release Notes" href="/release-notes.html"/>
-      <item name="Tools">
-        <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>
-        <item name="Netbeans Module" href="/netbeans-module.html"/>      
-      </item>
-	</menu>
-
-    <menu name="Documentation">
-      <item name="Quick Start" href="/quick.html" />
-	  <item name="User Guides">
-        <!-- item name="Concepts">
-		  	<item name="POM" href="/concepts.html#pom" />
-			<item name="Artifacts" href="/concepts.html#artifacts" />
-			<item name="Lifecycle" href="/concepts.html#lifecycle" />
-			<item name="Repositories" href="/concepts.html#repositories" />
-			<item name="Plugins" href="/concepts.html#plugins" />
-			<item name="Conventions" href="/concepts.html#conventions" />
-			<item name="Archetypes" href="/concepts.html#archetypes" />
-			<item name="Multimodule" href="/concepts.html#multimodule" />
-			<item name="Sites" href="/concepts.html#sites" />
-			<item name="Reports" href="/concepts.html#reports" />
-		</item -->
-        <item name="Getting Started" href="/guides/getting-started/index.html" />
-	    <!-- item name="Build Cookbook" href="/" / -->
-	    <item name="POM Reference" href="/pom.html" />
-	    <item name="Profiles Reference" href="/pom.html#Profiles" />
-	    <item name="Settings Reference" href="/settings.html" />
-	    <item name="Wiki" href="http://docs.codehaus.org/display/MAVENUSER" /> 
-	  </item>
-
-	  <item name="Plugin Developer Guides">
-	    <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
-	    <!-- item name="Plugin Cookbook" href="/" / -->
-	    <item name="Mojo API" href="/developers/mojo-api-specification.html" />
-	    <!-- item name="Maven API" href="/" / -->
-	  </item>
-
-	  <item name="Plugins">
-	    <item name="By Category" href="/plugins/index.html" />
-	    <!-- item name="By Host" href="/" / -->
-	    <item name="Search" href="http://www.mvnrepository.com/" />
-	  </item>
-
-  	  <item name="Documentation Index">
-	    <item name="By Category" href="/guides/index.html" />
-	    <!-- item name="Alphabetical" href="/" / -->
-	  </item>
-
-	  <item name="Books and Articles" href="/articles.html" />
-	</menu>
-
-	<menu name="Community">
-	  <item name="Community Overview" href="/community.html"/>
-      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
-      <item name="Maven Repository">
-		<item name="How to Help" href="/guides/mini/guide-maven-evangelism.html" />
-        <item name="Central Repo" href="http://repo1.maven.org/maven2/" />
-        <item name="Codehaus Repo" href="http://repository.codehaus.org/" />
-      </item>
-	  <item name="Getting Support" href="/mail-lists.html" />
     </menu>
 
-    <menu name="About">
+    <!-- TODO: Candidate for chopping, or folding menu -->
+    <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
-      <item name="FAQ" href="/general.html"/>
+      <item name="FAQ" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
+      <item name="Getting Support" href="todo.html" />
       <item name="Powered By" href="/powered-by-m2.html"/>
+      <item name="Books and Articles" href="/articles.html" />
     </menu>
 
-<!-- The "Project Documentation" section detracts from the Documentation above -->
-<!--    ${reports} -->
+    <menu name="Documentation">
+      <item name="Builder Centre" href="todo.html" />
+      <item name="User Centre" href="todo.html" collapse="true">
+        <item name="Concepts" href="todo.html" /> <!-- TODO: POM, artifacts, lifecycle, repositories, plugins, conventions, archetypes, multimodule, sites, reports - each a high level description with links into guides -->
+        <item name="Getting Started Guide" href="todo.html" />
+        <item name="Trail 1" href="todo.html" /> <!-- TODO: some good trail ideas in John's proposal - need to go back to email to get them. Trails might need to be a page rather than listed here depending on quantity. Do we need to support more depth in navigation? -->
+        <item name="Trail 2" href="todo.html" />
+        <item name="Build Cookbook" href="todo.html" />
+        <item name="Settings Reference" href="todo.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
+        <item name="POM Reference" href="todo.html" />
+        <item name="Profiles Reference" href="todo.html" />
+      </item>
+      <item name="Plugin Developer Centre" href="todo.html" collapse="true">
+        <item name="Plugin Concepts" href="todo.html" />
+        <item name="Writing your first Mojo" href="todo.html" />
+        <item name="Mojo API Reference" href="todo.html" />
+        <item name="Plugin Cookbook" href="todo.html" />
+        <item name="Maven API Reference" href="todo.html" />
+      </item>
+      <item name="Maven Developer Centre" href="todo.html" collapse="true">
+        <!-- TODO: under documentation? Review structure under here, aim for consistency -->
+        <!-- TODO .... -->
+        <item name="Continuous Integration" href="/continuous-integration.html"/>
+      </item>
+      <item name="Maven Repository Centre" href="todo.html" collapse="true">
+        <item name="How to upload" href="/repository/upload.html" />
+        <item name="How to partner" href="/repository/partner.html" />
+        <item name="How to mirror" href="/repository/mirror.html" />
+      </item>
+      <item name="Index (category)" href="todo.html" />
+      <item name="Index (alphabetical)" href="todo.html" />
+    </menu>
+
+    <menu name="Get Maven Plugins">
+      <item name="By Host" href="todo.html" />
+      <item name="By Category" href="todo.html" />
+      <item name="By Phase" href="todo.html" />
+    </menu>
+
+    <menu name="IDE Integration">
+      <item name="Eclipse" href="/eclipse-plugin.html"/>
+      <item name="Netbeans" href="/netbeans-module.html"/>      
+    </menu>
+
+    <menu name="Maven Projects" inherit="bottom">
+      <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x"/>
+      <item name="Continuum" href="http://maven.apache.org/continuum"/>
+      <item name="SCM" href="http://maven.apache.org/scm"/>
+      <item name="Wagon" href="http://maven.apache.org/wagon"/>
+      <item name="JXR" href="http://maven.apache.org/jxr"/>
+      <item name="Doxia" href="http://maven.apache.org/doxia"/>
+    </menu>
+
+    <menu ref="reports" />
   </body>
 </project>
