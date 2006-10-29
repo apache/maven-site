@@ -23,7 +23,7 @@ Guide to uploading artifacts to the Central Repository
 
 +----+
 
- The bundle will be created in your <<<target>>> directory of the form:
+ The bundle will be created in your <<<target>>> directory with the name:
  <<<${pom.artifactId}-${pom.currentVersion}-bundle.jar>>>
  
  If you want to include a jar with java sources in your upload (recommended, unless your license doesn't
@@ -37,7 +37,7 @@ Guide to uploading artifacts to the Central Repository
 
  If you are not using maven as your build system but want something
  uploaded to the Central Repository then you just need to make a JAR (using the <<<jar>>> executable,
- not <<<zip>>>, <<<pkzip>>> or equivalent) with the following format:
+ not <<<zip>>>, <<<pkzip>>> or equivalent) with the following content:
 
 +----+
 
@@ -116,8 +116,8 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
  []
 
  <<IMPORTANT>> considerations about the <<groupId>>: it will identify your project uniquely across all
- projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to ibiblio it can
- be equal to the previous used, but for new projects it has to follow the package name rules, what
+ projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to the Central Repository it can
+ be equal to the one used previously, but for new projects it has to follow the package name rules, what
  means that has to be at least as a domain name you control, and you can create as many subgroups
  as you want.
  There are a lot of poorly defined package names so you <<must provide proof that you control the domain>> that
@@ -172,7 +172,7 @@ clipping of nose hairs. Please upload!
  Some folks have asked why do we require the POM and license each time an artifact is deployed so here's a small explanation. The POM
  being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting
  transitive dependencies working is really not that hard, the problem is getting the data. The other applications
- that may be possible having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
+ that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
  process we open up the doors to new ideas that involve unified
  access to project POMs.
 
@@ -183,7 +183,7 @@ clipping of nose hairs. Please upload!
 * Maven partners
 
  The following sites sync automatically their project repository with the central one.
- If you want a project from any of this sites to be uploaded to ibiblio you'll have to
+ If you want a project from any of these sites to be uploaded to the Central Repository you'll have to
  contact the project maintainers.
 
  * {{{http://www.apache.org/dev/release-publishing.html#maven-repo}The Apache Software Foundation}}
@@ -199,7 +199,7 @@ clipping of nose hairs. Please upload!
 
 Sync'ing your own repository with ibiblio
 
- If you want to sync automatically your own repository to ibiblio you must make sure the server has rsync or rsync over ssh
+ If you want to automatically sync your own repository to ibiblio you must make sure the server has rsync or rsync over ssh
  and provide a script like the
  {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/m2-sync/conf/}current scripts}},
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with it and we'll add it to the automatically synced repos.
@@ -213,7 +213,7 @@ For Maven developers
 
  The scripts to make the upload to the repository are in the <<<components>>> tree of svn, inside <<<maven-meeper/src/bin>>>
 
- That sources are checked out in beaver.codehaus.org <<</home/projects/maven/components/maven-meeper/src/bin>>>, so
+ Those scripts are checked out in beaver.codehaus.org <<</home/projects/maven/components/maven-meeper/src/bin>>>, so
  after logging in beaver as maven user you can go there and run
 
 +----+
@@ -239,7 +239,7 @@ For Maven developers
 
   * poms must include at least as much information as previous versions, and shouldn't change too much the dependencies
 
-  * while chceking previous version chcek also if it was relocated. If so ask the reporter to update the bundle with the
+  * while checking previous version check also if it was relocated. If so ask the reporter to update the bundle with the
     new information
 
   * groupIds have to follow previously stated naming conventions
