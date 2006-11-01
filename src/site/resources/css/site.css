@@ -463,8 +463,8 @@ p {
 	height: 1px;
 	background-image: url(../images/breadcrumbs.jpg);
 	padding: 5px 10px 14px 20px;
-    font-size: 8px;
-    margin: 0px;
+  font-size: smaller;
+  margin: 0px;
 }
 * html #breadcrumbs {
 	padding-bottom: 8px;
