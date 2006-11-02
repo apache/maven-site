@@ -2,7 +2,7 @@ ErrorDocument 404 /errors/404.html
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /maven-1.x/reference/$1
 RedirectMatch ^/maven-1.x/reference/plugins/(.*)$ /maven-1.x/plugins/$1
-RedirectMatch ^/maven-model/(.*)$ /ref/2.0.3-SNAPSHOT/maven-model/$1
+RedirectMatch ^/maven-model/(.*)$ /ref/2.0.4/maven-model/$1
 RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /maven-1.x/plugins/$1
 RedirectMatch ^/repository-manager/(.*)$ /archiva/$1
 
