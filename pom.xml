@@ -41,7 +41,7 @@
   <distributionManagement>
     <site>
       <id>apache.website</id>
-      <url>scp://minotaur.apache.org/www/maven.apache.org/</url>
+      <url>scp://people.apache.org/www/maven.apache.org/</url>
     </site>
   </distributionManagement>
 
