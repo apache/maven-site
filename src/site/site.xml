@@ -32,17 +32,7 @@
       <script type="text/javascript">
         _uacct = "UA-140879-1";
         urchinTracker();
-		function expand( item ) {
-			var expandIt = document.getElementById( item );
-			if( expandIt.style.display == "block" ) {
-				expandIt.style.display = "none";
-				expandIt.parentNode.className = "collapsed";
-			} else {
-				expandIt.style.display = "block";
-				expandIt.parentNode.className = "expanded";
-			}
-		}
-	  </script>
+      </script>
     </head>
 
     <menu name="Get Maven">
@@ -52,61 +42,61 @@
         <item name="Eclipse Plug-in" href="/eclipse-plugin.html"/>
         <item name="Netbeans Module" href="/netbeans-module.html"/>      
       </item>
-	</menu>
+    </menu>
 
     <menu name="Documentation">
       <item name="Quick Start" href="/quick.html" />
-	  <item name="User Guides">
+      <item name="User Guides">
         <!-- item name="Concepts">
-		  	<item name="POM" href="/concepts.html#pom" />
-			<item name="Artifacts" href="/concepts.html#artifacts" />
-			<item name="Lifecycle" href="/concepts.html#lifecycle" />
-			<item name="Repositories" href="/concepts.html#repositories" />
-			<item name="Plugins" href="/concepts.html#plugins" />
-			<item name="Conventions" href="/concepts.html#conventions" />
-			<item name="Archetypes" href="/concepts.html#archetypes" />
-			<item name="Multimodule" href="/concepts.html#multimodule" />
-			<item name="Sites" href="/concepts.html#sites" />
-			<item name="Reports" href="/concepts.html#reports" />
-		</item -->
+            <item name="POM" href="/concepts.html#pom" />
+            <item name="Artifacts" href="/concepts.html#artifacts" />
+            <item name="Lifecycle" href="/concepts.html#lifecycle" />
+            <item name="Repositories" href="/concepts.html#repositories" />
+            <item name="Plugins" href="/concepts.html#plugins" />
+            <item name="Conventions" href="/concepts.html#conventions" />
+            <item name="Archetypes" href="/concepts.html#archetypes" />
+            <item name="Multimodule" href="/concepts.html#multimodule" />
+            <item name="Sites" href="/concepts.html#sites" />
+            <item name="Reports" href="/concepts.html#reports" />
+        </item -->
         <item name="Getting Started" href="/guides/getting-started/index.html" />
-	    <!-- item name="Build Cookbook" href="/" / -->
-	    <item name="POM Reference" href="/pom.html" />
-	    <item name="Profiles Reference" href="/pom.html#Profiles" />
-	    <item name="Settings Reference" href="/settings.html" />
-	    <item name="Wiki" href="http://docs.codehaus.org/display/MAVENUSER" /> 
-	  </item>
+        <!-- item name="Build Cookbook" href="/" / -->
+        <item name="POM Reference" href="/pom.html" />
+        <item name="Profiles Reference" href="/pom.html#Profiles" />
+        <item name="Settings Reference" href="/settings.html" />
+        <item name="Wiki" href="http://docs.codehaus.org/display/MAVENUSER" /> 
+      </item>
 
-	  <item name="Plugin Developer Guides">
-	    <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
-	    <!-- item name="Plugin Cookbook" href="/" / -->
-	    <item name="Mojo API" href="/developers/mojo-api-specification.html" />
-	    <!-- item name="Maven API" href="/" / -->
-	  </item>
+      <item name="Plugin Developer Guides">
+        <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
+        <!-- item name="Plugin Cookbook" href="/" / -->
+        <item name="Mojo API" href="/developers/mojo-api-specification.html" />
+        <!-- item name="Maven API" href="/" / -->
+      </item>
 
-	  <item name="Plugins">
-	    <item name="By Category" href="/plugins/index.html" />
-	    <!-- item name="By Host" href="/" / -->
-	    <item name="Search" href="http://www.mvnrepository.com/" />
-	  </item>
+      <item name="Plugins">
+        <item name="By Category" href="/plugins/index.html" />
+        <!-- item name="By Host" href="/" / -->
+        <item name="Search" href="http://www.mvnrepository.com/" />
+      </item>
 
-  	  <item name="Documentation Index">
-	    <item name="By Category" href="/guides/index.html" />
-	    <!-- item name="Alphabetical" href="/" / -->
-	  </item>
+      <item name="Documentation Index">
+        <item name="By Category" href="/guides/index.html" />
+        <!-- item name="Alphabetical" href="/" / -->
+      </item>
 
-	  <item name="Books and Articles" href="/articles.html" />
-	</menu>
+      <item name="Books and Articles" href="/articles.html" />
+    </menu>
 
-	<menu name="Community">
-	  <item name="Community Overview" href="/community.html"/>
+    <menu name="Community">
+      <item name="Community Overview" href="/community.html"/>
       <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Maven Repository">
-		<item name="How to Help" href="/guides/mini/guide-maven-evangelism.html" />
+        <item name="How to Help" href="/guides/mini/guide-maven-evangelism.html" />
         <item name="Central Repo" href="http://repo1.maven.org/maven2/" />
         <item name="Codehaus Repo" href="http://repository.codehaus.org/" />
       </item>
-	  <item name="Getting Support" href="/mail-lists.html" />
+      <item name="Getting Support" href="/mail-lists.html" />
     </menu>
 
     <menu name="About">
