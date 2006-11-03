@@ -66,7 +66,8 @@ The Maven Community
   lots of bandwidth, please consider becomming a mirror for the Maven central repository.
   
   As you can imagine, thousands of users downloading can put quite a strain on one server.
-  If you wish to be a mirror, please make an announcement on the {{{mailto:users@maven.apache.org}Maven User List}}.
+  If you wish to be a mirror, please file a request in the {{{http://jira.codehaus.org/browse/MPA}Maven Project Administration}}
+  JIRA project.
 
 ** Host a Public Repository
 
@@ -80,9 +81,11 @@ The Maven Community
 
 ** Mailing Lists
 
-  The {{{mail-lists.html}Maven Mailing Lists}}. Specifically, the {{{mailto:users@maven.apache.org}Maven User List}}.
+  Maven has a number of {{{mail-lists.html}Mailing Lists}}, and a the Maven User List is specifically dedicated to
+  answering questions about all things Maven.
 
 ** IRC
 
-  Log into the {{{http://irc.codehaus.org/}#maven IRC channel}} at {{{http://codehaus.org/}Codehaus}}.
+  Log into the <<<#maven>>> IRC channel on <<<irc.codehaus.org>>>. If you would like to access this over a web interface,
+  you can do so at {{http://irc.codehaus.org/}}.
 

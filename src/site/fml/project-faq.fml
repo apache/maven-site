@@ -40,7 +40,7 @@
         <p>
           It is best to get it right at the time of a release to avoid having to make difficult updates later on.
           Your information can be submitted to Maven using the regular
-          <a href="http://maven.apache.org/maven2/guides/mini/guide-ibiblio-upload.html">repository upload procedure</a>
+          <a href="guides/mini/guide-ibiblio-upload.html">repository upload procedure</a>
           .
         </p>
         <p>

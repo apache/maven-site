@@ -5,133 +5,175 @@
     <author email="brett@apache.org">Brett Porter</author>
   </properties>
   <body>
-    <section name="Welcome to Maven">
-      <div id="downloadbox">
-        <h5>Get Maven 2.0.4</h5>
-        <p>
-          <a href="download.html">
-            <img valign="top" src="http://maven.apache.org/images/folder-open.gif" border="0" alt="" title="download"/>
-            Download
-          </a>
+    <!-- TODO: news? -->
+    <div id="downloadbox">
+      <h5>Get Maven 2.0.4</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 10 April 2006</span>
+      <p>
+        <a href="download.html">
+          <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
           Maven 2.0.4
-          <small>(1.1Mb)</small>
-        </p>
-        <ul>
-          <li>
-            <a href="download.html#requirements">System Requirements</a>
-          </li>
-          <li>
-            <a href="download.html#installation">Installation Instructions</a>
-          </li>
-          <li>
-            <a href="release-notes.html">Release Notes</a>
-          </li>                         
-          <li>
-            <a href="guides/getting-started/index.html">Getting Started</a>
-          </li>
-          <li>
-            <a href="guides/index.html">Documentation</a>
-          </li>          
-        </ul>
-        <p>
-          <a href="download.html">
-            <img valign="top" src="http://maven.apache.org/images/folder-open.gif" border="0" alt="" title="download"/>
-            Download
-          </a>
-          Maven 2.0.4 Tasks for Ant
-          <small>(870k)</small>
-        </p>
-        <ul>
-          <li>
-            <a href="/ant-tasks.html">Documentation</a>
-          </li>
-        </ul>
-      </div>
+        </a>
+        <small>(1.1Mb)</small>
+        <span style="font-size: smaller">
+          <br/>
+          <a href="download.html#requirements">System Requirements</a>,
+          <a href="download.html#installation">Installation Instructions</a>,
+          <a href="release-notes.html">Release Notes</a>
+        </span>
+      </p>
+      <p>
+        <a href="download.html">
+          <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
+          Maven Tasks for Ant 2.0.4
+        </a>
+        <small>(870k)</small>
+        <span style="font-size: smaller">
+          <br/>
+          <!-- TODO: does this need to be in the Navigation? -->
+          <a href="ant-tasks.html">Documentation</a>
+        </span>
+      </p>
+      <!-- TODO: what about pointing to older releases? Maven 2.0.x (x < 4) and Maven 1.x? -->
+      <!-- TODO: what about downloads for Continuum, etc.? Would be good to have one big download page -->
+
+      <h5>Other Maven Projects</h5>
+      <p>
+        <a href="continuum">
+          <img src="images/continuum.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
+        Continuum
+        </a>
+        continuous integration server
+      </p>
+      <p>
+        <a href="archiva">
+          <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
+        Archiva
+        </a>
+        repository and artifact management server 
+      </p>
+    </div>
+    <section name="Welcome to Maven">
+
+      <!-- TODO: I reckon it's time for a new description -->
       <p>
         Maven is a software project management and comprehension tool. Based on the concept of a project object model
         (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
       </p>
       <p>
-        <h4>Maven Documentation</h4>
+        If you think that Maven could help your project, you can find out more information about in the "About Maven"
+        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a>,
+        a <a href="maven-features.html">list of some of its main features</a>, and a set of <a href="general.html">frequently
+        asked questions about what Maven is</a>.
       </p>
+      <h3>Learning about Maven</h3>
       <p>
-        All the documentation for Maven is in the form of guides
-        which can all be found <a href="guides/index.html">here</a>.
-      </p>            
-      <p>
-        <h4>About Maven 2.0</h4>
+        <!-- TODO: this could be the big button type thing instead of a list of links -->
+        This site is separated into the following sections, depending on how you'd like to use Maven:
       </p>
-      <p>
-        Maven 2.0 is a rewrite of the popular Maven application to achieve a number of goals, and to provide a stable
-        basis to take it into the future.
-      </p>
+      <!-- TODO: use CSS -->
       <ul>
         <li>
-          <i>
-            <a href="what-is-maven.html">What is Maven?</a>
-          </i>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="run-maven/index.html">Run Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those needing to build a project that uses Maven
+          </span>
         </li>
         <li>
-          <i>What are the
-            <a href="maven-features.html">features of Maven 2.0</a>
-            ?
-          </i>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="users/index.html">Use Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those wanting to use Maven to build their project, including a "10 minute test" that gives a
+            practical overview of Maven's main features in just 10 minutes
+          </span>
         </li>
         <li>
-          <i>Where is the
-            <a href="guides/index.html">Documentation</a>
-            ?
-          </i>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="plugin-developers/index.html">Write Maven Plugins</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who may or may not be using Maven, but want to provide a plugin for shared
+            functionality or to accompany their own product or toolset
+          </span>
         </li>
         <li>
-          <i>Tell me about the
-            <a href="about.html#m2-goals">goals of Maven 2.0</a>
-          </i>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="repository/index.html">Improve the Maven Repository</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who may or may not use, but are interested in getting project metadata into the
+            repository
+          </span>
         </li>
         <li>
-          <i>Can I
-            <a href="about.html#get-involved">get involved</a>
-            ?
-          </i>
-        </li>
-        <li>
-          <i>Where do I
-            <a href="about.html#get-help">get help</a>
-            with Maven 2.0?
-          </i>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="maven-developers/index.html">Develop Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who are currently developers, or interested in becoming developers of the Maven
+            project itself
+          </span>
         </li>
       </ul>
       <p>
-        <h4>Information for Maven 1.0 Users</h4>
+        Each guide is divided into a number of trails to get you started on a particular topic, and includes a
+        reference area and a "cookbook" of common examples.
       </p>
       <p>
-        Maven 1.0 users will likely have a lot of questions about Maven 2.0 and how it will impact the future of Maven
-        1.0.
+        You can access the guides at any time from the left navigation.
+      </p>
+      <h3>Documentation Index</h3>
+      <p>
+        If you are looking for a quick reference, you can use the <a href="guides/index.html">documentation index.</a>
+<!-- TODO
+        If you are looking for a quick reference, you can use the documentation index. It is available in both
+        <a href="todo.html">alphabetical</a> and <a href="todo.html">categorical</a> listing formats.
+-->
+      </p>
+      <h3>Plugins</h3>
+<!-- TODO
+      <p>
+        Maven functionality is provided by plugins. For an explanation of how plugins work, and basic information on how
+        to use a plugin, see the <a href="todo.html">introduction to plugins</a> in the Users Centre.
+      </p>
+-->
+      <p>
+        For detailed information on just some of the plugins available for Maven, see the
+        <a href="plugins/index.html">plugin list</a>.
+      </p>
+<!-- TODO: Should these be here, or just in the user centre?
+      <h3>Converting from a different Build System</h3>
+      <p>
+        If you are currently using a different build system, there are options for converting from that to Maven 2
+        either partially or completely. These guides also give an overview of the differences between Maven and the
+        other build system. The following guides are available in the Users Centre:
       </p>
       <ul>
-        <li>
-          <i>
-            <a href="maven1.html#">What's changed?</a>
-          </i>
-        </li>
-        <li>
-          <i>
-            <a href="maven1.html#m1-or-m2">Should I use Maven 2.0, or Maven 1.0?</a>
-          </i>
-        </li>
-        <li>
-          <i>
-            <a href="maven1.html#m1-future">What will happen</a>
-            to Maven 1.0?
-          </i>
-        </li>
-        <li>
-          <i>Will my
-            <a href="maven1.html#m1-plugins">Maven 1.0 plugins</a>
-            be supported?
-          </i>
-        </li>
+        <li><a href="todo.html">Converting from Ant to Maven 2</a></li>
+        <li><a href="todo.html">Converting from Maven 1.x to Maven 2</a></li>
+        <li><a href="todo.html">Adding Maven 2 to an IDE based build</a></li>
       </ul>
+-->
+      <h3>How to Get Support</h3>
+      <p>
+        Support for Maven is available in a variety of different forms.
+      </p>
+      <p>
+        To get started, search the documentation, the <a href="http://docs.codehaus.org/display/MAVENUSER">wiki</a>,
+        <a href="issue-tracking.html">issue tracker</a>, or the <a href="mail-lists.html">mailing list archives</a> to
+        see if the problem has been solved or reported before.
+      </p>
+      <p>
+        If the problem has not been reported before, the recommended way to get help is to
+        subscribe to the <a href="mail-lists.html">Maven Users Mailing list</a>. Many other users and Maven developers
+        will answer your questions there, and the answer will be archived for others in the future.
+      </p>
+      <p>
+        You can also reach the Maven developers on <a href="community.html">IRC</a>.
+      </p>
     </section>
   </body>
 </document>
