@@ -11,11 +11,11 @@
         </p>
         <p>
           Dependencies with this scope will not be passed on transitively, nor will they be bundled in an package such
-          as
-          a WAR, or included in the runtime classpath.
+          as a WAR, or included in the runtime classpath.
         </p>
       </answer>
     </faq>
+
     <faq id="available-plugins">
       <question>How do I list available plugins?</question>
       <answer>
@@ -31,11 +31,13 @@
         </p>
       </answer>
     </faq>
+
     <faq id="plugin-version">
       <question>How do I determine what version of a plugin I am using?</question>
       <answer>
         <p>
-          You can use the Maven Help Plugin's <code>describe</code> goal. For example, to find out the version of the install plugin:
+          You can use the Maven Help Plugin's <code>describe</code> goal. For example, to find out the version
+          of the install plugin:
         </p>
         <source>mvn -Dplugin=install help:describe</source>
         <p>
@@ -43,6 +45,7 @@
         </p>
       </answer>
     </faq>
+
     <faq id="using-ant-tasks">
       <question>How can I use Ant tasks in Maven 2?</question>
       <answer>
@@ -68,10 +71,9 @@
       <question>How do I set up Maven so it will compile with a target and source JVM of my choice?</question>
       <answer>
         <p>
-          You must configure the source and target parameters in your pom. For example, to set the source and target JVM
-          to 1.5, you should have in your pom :
+          You must configure the source and target parameters in your pom. For example, to set the source and
+          target JVM to 1.5, you should have in your pom :
         </p>
-
         <source>
   ...
   <build>
@@ -136,7 +138,7 @@
       <question>I have a jar that I want to put into my local repository. How can I copy it in?</question>
       <answer>
         <p>
-          If you understand the layout of the maven repository, you can copy the jar directly into where it 
+          If you understand the layout of the maven repository, you can copy the jar directly into where it
           is meant to go. Maven will find this file next time it is run.
         </p>
 
@@ -165,6 +167,7 @@ Where: <path-to-file>  the path to the file to load
         </p>
       </answer>
     </faq>
+
     <faq id="unsubscribing-from-mailing-lists">
       <question>How do I unsubscribe from Maven mailing lists?</question>
       <answer>
@@ -173,32 +176,34 @@ Where: <path-to-file>  the path to the file to load
         <source>[mailing-list]-unsubscribe@maven.apache.org</source>
         </p>
         <p>
-        So, if you have subscribed to <code>users@maven.apache.org</code> then you would 
-        send a message to <code>users-unsubscribe@maven.apache.org</code> in order to 
+        So, if you have subscribed to <code>users@maven.apache.org</code> then you would
+        send a message to <code>users-unsubscribe@maven.apache.org</code> in order to
         get off the list.
         People tend to have problems when they subscribe with one address and
         attempt to unsubscribe with another. So make sure that you are using the
         same address when unsubscribing that you used to subscribe before
-        asking for help. 
+        asking for help.
         </p>
         <p>
         If you find you still cannot get off a list then
         send a message to <code>[mailing-list]-help@maven.apache.org</code>. These
-        instructions are also appended to every message sent out on a maven mailing 
+        instructions are also appended to every message sent out on a maven mailing
         list ...
         </p>
       </answer>
     </faq>
+
     <faq id="skip-test">
       <question>How to skip the tests</question>
       <answer>
         Add the parameter <code>-Dmaven.test.skip=true</code> in the command line
-      </answer>  
+      </answer>
     </faq>
+
     <faq id="special-characters-site">
       <question>Handle special characters in site</question>
       <answer>
-        <p>Configure your ide to use the correct encoding. With eclipse, add 
+        <p>Configure your ide to use the correct encoding. With eclipse, add
         <code>-Dfile.encoding=ISO-8859-1</code> in eclipse.ini file</p>
         <p>Configure the output encoding in your pom
       <source>
@@ -219,6 +224,7 @@ Where: <path-to-file>  the path to the file to load
         </p>
       </answer>
     </faq>
+
     <faq id="tools-jar-dependency">
       <question>How do I include <code>tools.jar</code> in my dependencies?</question>
       <answer>
@@ -250,6 +256,7 @@ Where: <path-to-file>  the path to the file to load
   ...</source>
      </answer>
     </faq>
+
     <faq id="test-property-name">
       <question>Why does Maven compile my test classes but don't run them?</question>
       <answer>
@@ -279,11 +286,12 @@ Where: <path-to-file>  the path to the file to load
   ...</source>
       </answer>
     </faq>
+
     <faq id="snapshot-artifacts">
       <question>Where are Maven SNAPSHOT artifacts?</question>
       <answer>
         <p>
-          If you are trying to build a development version of Maven or plugins, 
+          If you are trying to build a development version of Maven or plugins,
           you may need to access the maven snapshot repositories.
         </p>
 
@@ -291,6 +299,35 @@ Where: <path-to-file>  the path to the file to load
           You need to update your settings.xml file using the
           <a href="guides/development/guide-plugin-snapshot-repositories.html">
           Guide to Plugin Snapshot Repositories</a>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="maven-xsd">
+      <question>Where are the Maven XSD schemas?</question>
+      <answer>
+        <p>
+          The Maven XSD is located <a href="http://maven.apache.org/maven-v4_0_0.xsd">here</a> and the Maven
+          Settings XSD is located <a href="http://maven.apache.org/xsd/settings-1.0.0.xsd">here</a>.
+        </p>
+        <p>
+          Your favorite IDE probably supports XSD schema's for pom.xml and settings.xml editing. You need to
+          specify the following:
+        <source>
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd"&gt;
+
+  ...
+&lt;/project&gt;</source>
+        <source>
+&lt;settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+  ...
+&lt;/settings&gt;</source>
         </p>
       </answer>
     </faq>

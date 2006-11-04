@@ -122,9 +122,10 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
  <<<pom.xml>>> that should look like this:
 
 +-----+
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -248,9 +249,11 @@ mvn compile
 [INFO] Building Maven Quick Start Archetype
 [INFO]    task-segment: [compile]
 [INFO] ----------------------------------------------------------------------------
-[INFO] artifact org.apache.maven.plugins:maven-resources-plugin: checking for updates from central
+[INFO] artifact org.apache.maven.plugins:maven-resources-plugin: \
+  checking for updates from central
 ...
-[INFO] artifact org.apache.maven.plugins:maven-compiler-plugin: checking for updates from central
+[INFO] artifact org.apache.maven.plugins:maven-compiler-plugin: \
+  checking for updates from central
 ...
 [INFO] [resources:resources]
 ...
@@ -302,7 +305,8 @@ mvn test
 [INFO] Building Maven Quick Start Archetype
 [INFO]    task-segment: [test]
 [INFO] ----------------------------------------------------------------------------
-[INFO] artifact org.apache.maven.plugins:maven-surefire-plugin: checking for updates from central
+[INFO] artifact org.apache.maven.plugins:maven-surefire-plugin: \
+  checking for updates from central
 ...
 [INFO] [resources:resources]
 [INFO] [compiler:compile]
@@ -407,7 +411,8 @@ Results :
 [INFO] [jar:jar]
 [INFO] Building jar: <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar
 [INFO] [install:install]
-[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
+[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to \
+   <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
 [INFO] ----------------------------------------------------------------------------
 [INFO] BUILD SUCCESSFUL
 [INFO] ----------------------------------------------------------------------------
@@ -495,8 +500,7 @@ mvn idea:idea
   adding this to your POM:
 
 +----+
-
-.
+...
 <build>
   <plugins>
     <plugin>
@@ -509,9 +513,7 @@ mvn idea:idea
     </plugin>
   </plugins>
 </build>
-.
-.
-
+...
 +----+
 
   You'll notice that all plugins in Maven 2.0 look much like a dependency - and in some ways they are.
@@ -658,8 +660,10 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 
 +----+
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -743,9 +747,10 @@ my.filter.value=hello!
  Next, we'll add a reference to this new file in the pom.xml:
 
 +----+
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -792,9 +797,10 @@ message=${my.filter.value}
  section of your pom.xml and you'd get the same effect (notice I don't need the references to src/main/filters/filter.properties either):
 
 +----+
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -859,9 +865,10 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  now, our project is depending on JUnit only (I took out all of the resource filtering stuff for clarity):
 
 +----+
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -896,8 +903,10 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  as a dependency simply by adding the dependency information to its pom.xml:
 
 +----+
-
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-other-app</artifactId>
   ...
@@ -962,9 +971,10 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  Now that we know the information we need, we can add the dependency to our pom.xml:
 
 +----+
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -998,8 +1008,10 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 +----+
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
@@ -1048,10 +1060,11 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 +----+
 
 +----+
-
-<settings>
-  .
-  .
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
   <servers>
     <server>
       <id>mycompany-repository</id>
@@ -1061,8 +1074,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
       <passphrase>my_key_passphrase</passphrase>
     </server>
   </servers>
-  .
-  .
+  ...
 </settings>
 
 +----+
@@ -1074,7 +1086,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 +----+
 
-mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site
+mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app \
+  -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site
 
 +----+
 
@@ -1258,7 +1271,10 @@ mvn site-deploy
   POM in a friendly format:
 
 -------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   ...
   <reporting>
     <plugins>
@@ -1284,7 +1300,10 @@ mvn site-deploy
   To enable multiple locales, add configuration similar to the following to your POM:
 
 -------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   ...
   <build>
     <plugins>
@@ -1334,7 +1353,10 @@ mvn archetype:create \
   <<<my-webapp>>> containing the following project descriptor:
 
 -------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-webapp</artifactId>
@@ -1381,7 +1403,10 @@ mvn clean package
   The POM file you'll create should contain the following:
 
 -------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <version>1.0-SNAPSHOT</version>
@@ -1397,32 +1422,30 @@ mvn clean package
   We'll need a dependency on the JAR from the webapp, so add this to <<<my-webapp/pom.xml>>>:
 
 -------------------
-  .
-  .
-  .
+  ...
   <dependencies>
     <dependency>
       <groupId>com.mycompany.app</groupId>
       <artifactId>my-app</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
-    .
-    .
-    .
+    ...
+  </dependencies>
 -------------------
 
   Finally, add the following <<<\<parent\>>>> element to both of the other <<<pom.xml>>> files in the subdirectories:
 
 -------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>app</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-  .
-  .
-  .
+  ...
 -------------------
 
   Now, try it... from the top level directory, run:
