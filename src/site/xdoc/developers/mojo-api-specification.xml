@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
-<!-- 
+<!--
 /*
  * Copyright 2001-2006 The Apache Software Foundation.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *      http://www.apache.org/licenses/LICENSE-2.0
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -35,22 +35,22 @@
         each scripting language will present these same basic requirements with
         various forms of implementation.</p>
       <p>Although the requirements on Mojos are minimal by design, there are
-        still a very few requirements that Mojo developers must keep in mind. <!-- First, a Mojo must have a method named <code>execute</code> which 
-        declares no parameters, and has a void return type. If this method 
-        throws an exception, that exception must either be a derivative of 
-        <code>java.lang.RuntimeException</code>, or a derivative of 
-        <code>org.apache.maven.plugin.MojoExecutionException</code>. It goes 
-        without saying that in the latter case, the execute method must declare 
-        that it throws this exception. Additionally, Mojos must declare a field 
-        for each parameter they specify, and these parameter fields will be 
-        populated before execute() is called (Maven does support other 
-        mechanisms for parameter injection, but they are not considered part of 
-        the preferred practice, and are therefore a topic for an advanced Mojo 
-        developer's guide). Finally, all Mojos must be accompanied by metadata 
-        describing parameters, lifecycle bindings, etc. This descriptor will be 
+        still a very few requirements that Mojo developers must keep in mind. <!-- First, a Mojo must have a method named <code>execute</code> which
+        declares no parameters, and has a void return type. If this method
+        throws an exception, that exception must either be a derivative of
+        <code>java.lang.RuntimeException</code>, or a derivative of
+        <code>org.apache.maven.plugin.MojoExecutionException</code>. It goes
+        without saying that in the latter case, the execute method must declare
+        that it throws this exception. Additionally, Mojos must declare a field
+        for each parameter they specify, and these parameter fields will be
+        populated before execute() is called (Maven does support other
+        mechanisms for parameter injection, but they are not considered part of
+        the preferred practice, and are therefore a topic for an advanced Mojo
+        developer's guide). Finally, all Mojos must be accompanied by metadata
+        describing parameters, lifecycle bindings, etc. This descriptor will be
         covered in more detail below.</p>
-      <p>While this will satisfy the requirements for execution as a Mojo 
-        inside Maven, it is recommended that Mojos implement 
+      <p>While this will satisfy the requirements for execution as a Mojo
+        inside Maven, it is recommended that Mojos implement
          --> Basically, these Mojo requirements are embodied by the
         <code>org.apache.maven.plugin.Mojo</code>
         interface, which the Mojo
@@ -65,8 +65,8 @@
         standard Maven user-feedback mechanism,
         <code>org.apache.maven.monitor.logging.Log</code>
         , so the Mojo can
-        communicate important events to the console or other log sink.<!-- Using the 
-        Plugin/Mojo API will give that Mojo access to the Maven-integrated Log, 
+        communicate important events to the console or other log sink.<!-- Using the
+        Plugin/Mojo API will give that Mojo access to the Maven-integrated Log,
         along with tighter integration into the Maven build. -->
       </p>
       <p>As mentioned before, each Plugin - or packaged set of Mojos - must
@@ -622,7 +622,7 @@
             <td>Indicates to lookup and populate the field with an implementation with a Plexus Component.
               Similar to <code>@parameter expression="${component.yourpackage.YourComponentClass}"</code>.
 
-              <i>NOTE: 'YourComponentClass' should have a Plexus tag, for instance 
+              <i>NOTE: 'YourComponentClass' should have a Plexus tag, for instance
               <code>@plexus.component role="yourpackage.YourComponentClass"</code>.</i>
             </td>
           </tr>
@@ -712,6 +712,26 @@
         to install the plugin to
         the local repository. (Any of the other standard lifecycle targets like
         package, deploy, etc. are also available in like fashion.)
+      </p>
+    </section>
+    <section name="IDE integration">
+      <p>If you're using Jetbrains IntelliJ Idea to develop your plugin,
+       you can use the following to configure the javadoc annotations as live
+       templates.</p>
+      <p>
+        <ol>
+          <li>Download <a href="maven.xml">this file</a>,
+            and place it in $USER_HOME/.IntelliJIdea/config/templates</li>
+          <li>(re)startup IntelliJ (templates are loaded on startup)</li>
+          <li>add the following list to Settings -> IDE -> Errors -> General
+            -> Unknown javadoc tags -> Additional javadoc tags
+            <ul>
+              <li>aggregator, execute, goal, phase, requiresDirectInvocation,
+                requiresProject, requiresReports, requiresOnline, parameter,
+                component, required, readonly</li>
+            </ul>
+          </li>
+        </ol>
       </p>
     </section>
     <section name="Resources">

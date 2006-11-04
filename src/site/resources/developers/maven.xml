@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templateSet group="maven">
+  <template name="maven.class.aggregator" value="@aggregator $aggregator$" description="aggregator" toReformat="false" toShortenFQNames="true">
+    <variable name="aggregator" expression="enum(&quot;true&quot;, &quot;false&quot;)" defaultValue="true, false" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.execute" value="@execute goal=&quot;$mojo$&quot; phase=&quot;$phase$&quot; lifecycle=&quot;$lifecyle$&quot;" description="executePhase, executeLifecycle, executeGoal" toReformat="false" toShortenFQNames="true">
+    <variable name="mojo" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="phase" expression="enum(&quot;validate&quot;, &quot;initialize&quot;, &quot;generate-source&quot;, &quot;process-sources&quot;, &quot;generate-resources&quot;, &quot;process-resources&quot;, &quot;compile&quot;, &quot;process-classes&quot;, &quot;generate-test-sources&quot;, &quot;process-test-sources&quot;, &quot;generate-test-resources&quot;,&quot;process-test-resources&quot;, &quot;test-compile&quot;, &quot;test&quot;, &quot;package&quot;, &quot;pre-integration-test&quot;, &quot;integration-test&quot;, &quot;post-integration-test&quot;, &quot;verify&quot;, &quot;install&quot;, &quot;deploy&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="lifecyle" expression="enum(&quot;clean&quot;, &quot;default&quot;, &quot;site&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.goal" value="@goal $goal$" description="goal" toReformat="false" toShortenFQNames="true">
+    <variable name="goal" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.phase" value="@phase $phase$" description="phase" toReformat="false" toShortenFQNames="true">
+    <variable name="phase" expression="enum(&quot;validate&quot;, &quot;initialize&quot;, &quot;generate-source&quot;, &quot;process-sources&quot;, &quot;generate-resources&quot;, &quot;process-resources&quot;, &quot;compile&quot;, &quot;process-classes&quot;, &quot;generate-test-sources&quot;, &quot;process-test-sources&quot;, &quot;generate-test-resources&quot;,&quot;process-test-resources&quot;, &quot;test-compile&quot;, &quot;test&quot;, &quot;package&quot;, &quot;pre-integration-test&quot;, &quot;integration-test&quot;, &quot;post-integration-test&quot;, &quot;verify&quot;, &quot;install&quot;, &quot;deploy&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.requiresDirectInvocation" value="@requiresDirectInvocation $requiresDirectInvocation$ " description="requiresDirectInvocation" toReformat="false" toShortenFQNames="true">
+    <variable name="requiresDirectInvocation" expression="enum(&quot;false&quot;, &quot;true&quot;)" defaultValue="&quot;false&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.requiresOnline" value="@requiresOnline $requiresOnline$" description="requiresOnline" toReformat="false" toShortenFQNames="true">
+    <variable name="requiresOnline" expression="enum(&quot;false&quot;, &quot;true&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.requiresProject" value="@requiresProject $requiresProject$" description="requiresProject" toReformat="false" toShortenFQNames="true">
+    <variable name="requiresProject" expression="enum(&quot;true&quot;, &quot;false&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.class.requiresReports" value="@requiresReports $requiresReports$" description="requiresReports" toReformat="false" toShortenFQNames="true">
+    <variable name="requiresReports" expression="enum(&quot;false&quot;, &quot;true&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.field.component" value="@component roleHint=&quot;$roleHint$&quot;" description="Requirements section" toReformat="false" toShortenFQNames="true">
+    <variable name="roleHint" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.field.editable" value="@readonly" description="editable" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.field.parameter" value="@parameter expression=&quot;${$expression$}&quot; alias=&quot;$alias$&quot; default-value=&quot;$value$&quot;" description="alias, parameter configuration section" toReformat="false" toShortenFQNames="true">
+    <variable name="expression" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="alias" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_CODE" value="false" />
+      <option name="JAVA_COMMENT" value="true" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+  <template name="maven.field.required" value="@required" description="required" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_CODE" value="true" />
+      <option name="JAVA_COMMENT" value="false" />
+      <option name="JAVA_STRING" value="false" />
+      <option name="XML" value="false" />
+      <option name="HTML" value="false" />
+      <option name="JSP" value="false" />
+      <option name="COMPLETION" value="false" />
+      <option name="OTHER" value="false" />
+    </context>
+  </template>
+</templateSet>
