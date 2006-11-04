@@ -352,9 +352,14 @@ Task Reference
 *-----------------+--------------------------------------------------------+
 | <<<pathId>>>    | The reference ID to store a path under for the resolved dependencies.
 *-----------------+--------------------------------------------------------+
+| <<<pomRefId>>>  | The reference ID from a pom datatype defined earlier in the build file.
+*-----------------+--------------------------------------------------------+
 
   The task can include the <<<dependency>>> nested type, in addition to the other shared types explained later.
-  You must include at least one <<<dependency>>> element, or a single <<<pom>>> element, but not both.
+  You must include either:
+       a single <<<pom>>> element,
+       or a pomRefId attribute 
+       or one or more <<<dependency>>> element(s).
 
 ** <<<dependency>>>
 
@@ -372,7 +377,7 @@ Task Reference
 
   The dependency can also nest multiple <<<exclusion>>> elements.
 
-*** <<<exclusion>>>
+** <<<exclusion>>>
 
   An exclusion can be used to prevent the resolution of a particular artifact in the tree of the dependency.
 
@@ -387,22 +392,32 @@ Task Reference
   This task will install the given file into the local repository. It is stored using the information in the supplied
   POM.
 
-*------------------+--------------------------------------------------------+
-| <<<file>>>       | The file to install in the local repository.
-*------------------+--------------------------------------------------------+
+*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| Attribute        | Description                                                              | Required                                        |
+*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| <<<file>>>       | The file to install in the local repository.                             | Yes, except if packaging is pom                 |
+*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| <<<pomRefId>>>   | The reference ID from a pom datatype defined earlier in the build file.  | No, if a pom nested element is provided instead |
+*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 
-  The task must also take a nested <<<pom>>>, and can have an optional <<<localRepository>>> element.
+  The task must also take a either a nested <<<pom>>> element, or a pomRefId attribute.
+  The task can have an optional <<<localRepository>>> element.
 
 * <<<deploy>>>
 
   This task will deploy the given file into the remote repository. It is stored using the information in the supplied
   POM.
 
-*------------------+--------------------------------------------------------+
-| <<<file>>>       | The file to deploy in the remote repository.
-*------------------+--------------------------------------------------------+
+*------------------+----------------------------------------------------------------------------+-------------------------------------------------+
+| Attribute        | Description                                                                | Required                                        |
+*------------------+----------------------------------------------------------------------------+-------------------------------------------------+
+| <<<file>>>       | The file to deploy in the remote repository.                               | Yes, except if packaging is pom                 |
+*------------------+----------------------------------------------------------------------------+-------------------------------------------------+
+| <<<pomRefId>>>   | The reference ID from a pom datatype defined earlier in the build file.    | No, if a pom nested element is provided instead |
+*-----------------+--------------------------------------------------------+--------------------+-------------------------------------------------+                          
 
-  The task must also take a nested <<<pom>>>, and can have an optional <<<remoteRepository>>> element. If no
+  The task must have either a nested <<<pom>>> or a pomRefId attribute.
+  <<<deploy>>> can have an optional <<<remoteRepository>>> element. If no
   <<<remoteRepository>>> element is given, the <<<distributionManagement>>> section of the POM is used.
 
 Type Reference
