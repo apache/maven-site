@@ -53,7 +53,10 @@ Settings Reference
   Here is an overview of the top elements under <<<settings>>>:
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository/>
   <interactiveMode/>
   <usePluginRegistry/>
@@ -75,7 +78,10 @@ Settings Reference
   values which describe elements of the build system that are active full-time.
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository>${user.dir}/.m2/repository</localRepository>
   <interactiveMode>true</interactiveMode>
   <usePluginRegistry>false</usePluginRegistry>
@@ -127,7 +133,10 @@ mvn castor-maven-plugin:generate
   <<<settings.xml>>>.
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <servers>
     <server>
@@ -167,7 +176,10 @@ mvn castor-maven-plugin:generate
 * {Mirrors}
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <mirrors>
     <mirror>
@@ -199,7 +211,10 @@ mvn castor-maven-plugin:generate
 * {Proxies}
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <proxies>
     <proxy>
@@ -255,7 +270,10 @@ mvn castor-maven-plugin:generate
   element.
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -340,7 +358,10 @@ mvn help:active-profiles
   []
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -365,7 +386,10 @@ mvn help:active-profiles
   be searched for a matching release or snapshot artifact.
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -434,7 +458,10 @@ mvn help:active-profiles
 * {Active Profiles}
 
 +------------------------------------+
-<settings>
+<settings xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <activeProfiles>
     <activeProfile>env-test</activeProfile>
