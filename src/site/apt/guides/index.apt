@@ -161,7 +161,7 @@ Documentation
  * {{{mini/guide-maven-evangelism.html}Improving the Repository}}
 
 
-* Reference
+* References
 
  * {{{../pom.html}POM Overview}} ({{{../ref/current/maven-model/maven.html}Technical Project Descriptor}})
  
@@ -172,6 +172,8 @@ Documentation
  * {{{../developers/mojo-api-specification.html}Mojo API}}
 
  * {{{../glossary.html}Glossary}}
+
+ * Maven Quick Reference Card: {{{MavenQuickReferenceCard.odt}ODT}}-{{{MavenQuickReferenceCard.pdf}PDF}}
 
  []
 
