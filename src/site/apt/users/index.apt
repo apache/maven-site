@@ -15,9 +15,9 @@ Maven Users Centre
 
   * {{{../download.html} Download Maven}} - Download the latest version of Maven
 
-  * {{{../getting-started/maven-in-five-minutes.html} The 5 minute test}} - Learn how to use Maven in 5 minutes
+  * {{{../guides/getting-started/maven-in-five-minutes.html} The 5 minute test}} - Learn how to use Maven in 5 minutes
 
-  * {{{../getting-started/index.html} Getting Started Tutorial}} - An in depth tutorial once you've learned the basics
+  * {{{../guides/getting-started/index.html} Getting Started Tutorial}} - An in depth tutorial once you've learned the basics
 
   * {{{cookbook/index.html} Build Cookbook}} - Examples for how to add functionality to your build
 
