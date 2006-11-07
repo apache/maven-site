@@ -2,9 +2,10 @@
  Maven Getting Started Guide
  -----
  Jason van Zyl
+ Vincent Siveton
  -----
- 12 October 2005
- -----     
+ November 2006
+ -----
 
 Maven Getting Started Guide
 
@@ -105,7 +106,7 @@ Sections
  To create our first Maven project we are going to use Maven's archetype mechanism. An archetype is defined as
  <an original pattern or model from which all other things of the same kind are made>. In Maven, an archetype is a template
  of a project which is combined with some user input to produce a working Maven project that has been tailored to the
- user's requirements. We are going to show you how the archetype mechanism works now, but if you would like to know more 
+ user's requirements. We are going to show you how the archetype mechanism works now, but if you would like to know more
  about archetypes please refer to our {{{../introduction/introduction-to-archetypes.html}Introduction to Archetypes}}.
 
  On to creating your first project! In order to create the simplest of Maven projects, execute the following from
@@ -113,8 +114,10 @@ Sections
 
 +-----+
 
-mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
-
+mvn archetype:create \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DgroupId=com.mycompany.app \
+  -DartifactId=my-app
 +-----+
 
  Once you have executed this command, you will notice a few things have happened. First, you will notice that
@@ -124,7 +127,7 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
 +-----+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -232,7 +235,7 @@ my-app
 
 * {How do I compile my application sources?}
 
- Change to the directory where pom.xml is created by archetype:create and execute the following command to compile 
+ Change to the directory where pom.xml is created by archetype:create and execute the following command to compile
  your application sources:
 
 +-----+
@@ -481,6 +484,14 @@ mvn idea:idea
 +----+
 
   This can be run over the top of a previous IDEA project - it will update the settings rather than starting fresh.
+
+  If you are using Eclipse IDE, just call:
+
++----+
+
+mvn eclipse:eclipse
+
++----+
 
   ~~TODO: need a sidebar notation for notes like this
 
@@ -747,7 +758,7 @@ my.filter.value=hello!
  Next, we'll add a reference to this new file in the pom.xml:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -797,7 +808,7 @@ message=${my.filter.value}
  section of your pom.xml and you'd get the same effect (notice I don't need the references to src/main/filters/filter.properties either):
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -865,7 +876,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  now, our project is depending on JUnit only (I took out all of the resource filtering stuff for clarity):
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -897,13 +908,13 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  {{{../introduction/introduction-to-dependency-management.html}Introduction to Dependency Management}}.
 
  With this information about a dependency, Maven will be able to reference the dependency when it builds the project.  Where does
- Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find  
+ Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find
  all dependencies.  In a {{{#How do I create a JAR and install it in my local repository?}previous section}}, we installed the artifact
  from our project (my-app-1.0-SNAPSHOT.jar) into the local repository.  Once it's installed there, another project can reference that jar
  as a dependency simply by adding the dependency information to its pom.xml:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1008,7 +1019,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 +----+
 
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1062,7 +1073,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 +----+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <servers>
@@ -1086,8 +1097,11 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 +----+
 
-mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app \
-  -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-site
+mvn archetype:create \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DarchetypeArtifactId=maven-archetype-site \
+  -DgroupId=com.mycompany.app \
+  -DartifactId=my-app-site
 
 +----+
 
@@ -1095,47 +1109,60 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app \
 
 +----+
 
-my-app
+my-app-site
 |-- pom.xml
 `-- src
-    |-- main
-    |   |-- filters
-    |   |   `-- filters.properties
-    |   |-- java
-    |   |   `-- com
-    |   |       `-- mycompany
-    |   |           `-- app
-    |   |               `-- App.java
-    |   `-- resources
-    |       `-- META-INF
-    |           |-- application.properties
-    |           `-- application.properties~
-    |-- site
-    |   |-- apt
-    |   |   |-- format.apt
-    |   |   `-- index.apt
-    |   |-- fml
-    |   |   `-- faq.fml
-    |   |-- fr
-    |   |   |-- apt
-    |   |   |   |-- format.apt
-    |   |   |   `-- index.apt
-    |   |   |-- fml
-    |   |   |   `-- faq.fml
-    |   |   `-- xdoc
-    |   |       `-- xdoc.xml
-    |   |-- site.xml
-    |   |-- site_fr.xml
-    |   `-- xdoc
-    |       `-- xdoc.xml
-    `-- test
-        |-- java
-        |   `-- com
-        |       `-- mycompany
-        |           `-- app
-        |               `-- AppTest.java
-        `-- resources
-            `-- test.properties
+    `-- site
+        |-- apt
+        |   |-- format.apt
+        |   `-- index.apt
+        |-- fml
+        |   `-- faq.fml
+        |-- fr
+        |   |-- apt
+        |   |   |-- format.apt
+        |   |   `-- index.apt
+        |   |-- fml
+        |   |   `-- faq.fml
+        |   `-- xdoc
+        |       `-- xdoc.xml
+        |-- xdoc
+        |   `-- xdoc.xml
+        |-- site.xml
+        `-- site_fr.xml
++----+
+
+ The pom.xml should look like this:
+
++----+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app-site</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <name>Maven</name>
+  <url>http://maven.apache.org/maven2</url>
+  <inceptionYear>2001</inceptionYear>
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://webhost.company.com/www/website</url>
+    </site>
+  </distributionManagement>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <locales>en,fr</locales>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
 +----+
 
  You will notice there is now a <<<${basedir}/src/site>>> directory within which is contained a site descriptor
@@ -1271,7 +1298,7 @@ mvn site-deploy
   POM in a friendly format:
 
 -------------------
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1300,7 +1327,7 @@ mvn site-deploy
   To enable multiple locales, add configuration similar to the following to your POM:
 
 -------------------
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1345,15 +1372,17 @@ mvn site-deploy
 
 -------------------
 mvn archetype:create \
-    -DgroupId=com.mycompany.app -DartifactId=my-webapp \
-    -DarchetypeArtifactId=maven-archetype-webapp
+    -DarchetypeGroupId=org.apache.maven.archetypes \
+    -DarchetypeArtifactId=maven-archetype-webapp \
+    -DgroupId=com.mycompany.app \
+    -DartifactId=my-webapp
 -------------------
 
   Note that these must all be on a single line. This will create a directory called
   <<<my-webapp>>> containing the following project descriptor:
 
 -------------------
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1403,7 +1432,7 @@ mvn clean package
   The POM file you'll create should contain the following:
 
 -------------------
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
@@ -1436,7 +1465,7 @@ mvn clean package
   Finally, add the following <<<\<parent\>>>> element to both of the other <<<pom.xml>>> files in the subdirectories:
 
 -------------------
-<project xmlns="http://maven.apache.org/POM/4.0.0" 
+<project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/maven-v4_0_0.xsd">
