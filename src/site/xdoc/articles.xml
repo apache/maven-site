@@ -1,4 +1,21 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+/*
+ * Copyright 2001-2006 The Apache Software Foundation.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+ -->
 <document>
   <properties>
     <title>Articles on Maven</title>
@@ -6,28 +23,26 @@
   </properties>
   <body>
     <section name="Books on Maven">
-
-      <img src="http://www.mergere.com/_design/images/m2book.jpg" width="95" height="110" title="Better Builds with Maven" style="float:left;" />
+      <img src="http://www.mergere.com/images/m2book.jpg" width="95" height="110" title="Better Builds with Maven" style="float:left;" />
       <div style="margin-left: 125px">
         <p><a href="http://library.mergere.com/"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
-
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.4</li>
           <li><strong>Publisher:</strong>Mergere Library Press</li>
           <li><strong>Published:</strong>March 2006</li>
           <li><strong>Authors:</strong>
-            <a href="http://www.commonjava.org/blogs/john">John Casey</a>, 
+            <a href="http://www.commonjava.org/blogs/john">John Casey</a>,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
             <a href="http://blogs.codehaus.org/people/brett/">Brett Porter</a>,
             <a href="http://www.jroller.com/page/carlossg">Carlos Sanchez</a>,
             <a href="http://blogs.codehaus.org/projects/maven/">Jason van Zyl</a>
           </li>
         </ul>
-  
+
         <p>
           Better Builds with Maven combines detailed explanations and code examples to walk you through improving your software development process with Maven 2.0, covering:
         </p>
-  
+
         <ul>
           <li>An introduction to Maven 2.0</li>
           <li>Advanced tools for "power" users</li>
@@ -53,11 +68,11 @@
             Tim O'Brien
           </li>
         </ul>
-  
+
         <p>
          You'll discover how Maven can help you:
         </p>
-  
+
         <ul>
           <li>manage a project's build, reporting, and documentation, all from a central piece of information</li>
           <li>break a complex project into a series of smaller subprojects</li>
@@ -74,7 +89,7 @@
         to provide feedback to help ensure accuracy in your article. Just ping us on the <a href="mail-lists.html">dev mailing list</a>
         to get in touch.
       </p>
-      
+
       <div style="margin-top: 1.5em;">
         <table>
           <tr>
@@ -82,7 +97,7 @@
             <th>Publisher</th>
             <th>Author</th>
             <th>Published</th>
-          </tr> 
+          </tr>
           <tr>
             <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven 2 and Continuum (in French)</a></td>
             <td>Developpez.com</td>
