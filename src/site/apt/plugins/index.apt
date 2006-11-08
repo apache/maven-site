@@ -10,7 +10,7 @@ Available Plugins
 
   Maven is - at its heart - a plugin execution framework; all work is done by plugins. Looking for
   a specific goal to execute? This page lists the core plugins and others.
-  
+
   To see the most up-to-date list browse the Maven repository at {{http://repo1.maven.org/maven2/}}, specifically
   the {{{http://repo1.maven.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subfolder.
   <(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)>
@@ -60,6 +60,8 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-clover-plugin/} <<<clover>>>}}                   | 2.3    | Generate a Clover report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-doap-plugin/} <<<doap>>>}}                       |        | Generate a Description of a Project (DOAP) file from a POM.
+*-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-docck-plugin/} <<<docck>>>}}                     | 1.0-beta-1 | Documentation checker plugin.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-javadoc-plugin/} <<<javadoc>>>}}                 | 2.1    | Generate Javadoc for the project.
@@ -84,7 +86,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation. 
+| {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-help-plugin/} <<<help>>>}}                       | 2.0.1  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -94,7 +96,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| <<<repository>>>                                          | 2.0    | Plugin to help woth repository-based tasks.
+| {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help woth repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-3 | Generate a SCM for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -107,7 +109,7 @@ Available Plugins
 | {{{maven-idea-plugin/} <<<idea>>>}}                       | 2.0    | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *-----------------------------------------------------------+--------+----------------------------------------------+
 
-  There are also many plug-ins available at the {{{http://mojo.codehaus.org} Mojo}} project at Codehaus. 
+  There are also many plug-ins available at the {{{http://mojo.codehaus.org} Mojo}} project at Codehaus.
   To see the most up-to-date list browse the Codehaus repository at {{http://repository.codehaus.org/}}, specifically
   the {{{http://repository.codehaus.org/org/codehaus/mojo/} <<<org/codehaus/mojo>>>}} subfolder. Here are a few
   common ones:
