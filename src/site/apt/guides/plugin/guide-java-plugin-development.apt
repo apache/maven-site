@@ -2,23 +2,27 @@
  Guide to Developing Java Plugins
  ------
  Bob Allison
+ Vincent Siveton
  ------
- 12 October 2005
+ November 2006
  ------
 
-~~ Copyright 2001-2005 The Apache Software Foundation.
-~~ 
+~~ Copyright 2001-2006 The Apache Software Foundation.
+~~
 ~~ Licensed under the Apache License, Version 2.0 (the "License");
 ~~ you may not use this file except in compliance with the License.
 ~~ You may obtain a copy of the License at
-~~ 
+~~
 ~~      http://www.apache.org/licenses/LICENSE-2.0
-~~ 
+~~
 ~~ Unless required by applicable law or agreed to in writing, software
 ~~ distributed under the License is distributed on an "AS IS" BASIS,
 ~~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 ~~ See the License for the specific language governing permissions and
 ~~ limitations under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/guides/mini/guide-apt-format.html
 
 Introduction
 
@@ -60,9 +64,9 @@ import org.apache.maven.plugin.MojoExecutionException;
  * Says "Hi" to the user.
  * @goal sayhi
  */
-public class GreetingMojo extends AbstractMojo 
+public class GreetingMojo extends AbstractMojo
 {
-    public void execute() throws MojoExecutionException 
+    public void execute() throws MojoExecutionException
     {
         getLog().info("Hello, world.");
     }
@@ -155,15 +159,33 @@ public class GreetingMojo extends AbstractMojo
 
   The most direct means of executing your new plugin is to specify the
   plugin goal directly on the command line.  To do this, you need to
-  specify a fully-qualified goal in the form of:
+  configure the <<<maven-hello-plugin>>> plugin in you project:
 
 +----+
-groupID:artifactID:version:goal
+...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>sample.plugin</groupId>
+        <artifactId>maven-hello-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </plugin>
+    </plugins>
+  </build>
+...
++----+
+
+  And, you need to specify a fully-qualified goal in the form of:
+
++----+
+mvn groupID:artifactID:version:goal
 +----+
 
   For example, to run the simple mojo in the sample plugin, you would enter
   "<<<mvn sample.plugin:maven-hello-plugin:1.0-SNAPSHOT:sayhi>>>" on the
   command line.
+
+  <<Tips>>: <<<version>>> is not requiered to run a standalone goal.
 
 *** Shortening the Command Line
 
@@ -177,26 +199,26 @@ groupID:artifactID:version:goal
 ~~  It is possible to shorten the amount of typing needed on the command
 ~~  line.  To do this, you need to install the plugin with the
 ~~  <<<updateReleaseInfo>>> option set to true; for example:
-~~ 
+~~
 ~~ +----+
 ~~ mvn -DupdateReleaseInfo=true install
 ~~ +----+
-~~ 
+~~
 ~~  You also need to add your plugin's group ID to the list of group IDs
 
 
   There are several ways to reduce the amount of required typing:
 
-  * If you need to run the latest version of a plugin installed in your local 
+  * If you need to run the latest version of a plugin installed in your local
   repository, you can omit its version number. So just use
   "<<<mvn sample.plugin:maven-hello-plugin:sayhi>>>" to run your plugin.
 
-  * The "<<<maven-$name-plugin>>>" and "<<<$name-maven-plugin>>>" artifactId 
+  * The "<<<maven-$name-plugin>>>" and "<<<$name-maven-plugin>>>" artifactId
   patterns are treated in a special way. If no plugin matches the artifactId
   specified on the command line, Maven will try expanding the artifactId to these
   patterns in that order. So in the case of our example, you can use
-  "<<<mvn sample.plugin:hello:sayhi>>>" to run your plugin.  Note: these 2 
-  patterns are used respectively by the official Maven 2 plugins and the Mojo 
+  "<<<mvn sample.plugin:hello:sayhi>>>" to run your plugin.  Note: these 2
+  patterns are used respectively by the official Maven 2 plugins and the Mojo
   project plugins.
 
   * Finally, you can also add your plugin's groupId to the list of groupIds
@@ -242,6 +264,18 @@ groupID:artifactID:version:goal
   For more information on binding a mojo to phases in the lifecycle, please
   refer to the {{{/guides/introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
 
+* Mojo archetype
+
+  To create a new plugin project, you could using the Mojo
+  {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
+
++---+
+mvn archetype:create \
+  -DgroupId=sample.plugin \
+  -DartifactId=maven-hello-plugin \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DarchetypeArtifactId=maven-archetype-mojo
++---+
 
 * Parameters
 
@@ -263,6 +297,7 @@ groupID:artifactID:version:goal
 +-----+
     /**
      * The greeting to display.
+     *
      * @parameter expression="Hello"
      */
     private String greeting;
@@ -276,6 +311,18 @@ groupID:artifactID:version:goal
   "<<<${project.version}>>>" (more can be found in the
   "Parameter Expressions" document).  The name of the variable is used
   as the name of the parameter.
+
+  <<Note>>: You could use <<<default-value>>> Javadoc annotation to specify a
+  default value. Example:
+
++-----+
+    /**
+     * My String.
+     *
+     * @parameter default-value="Hello World!"
+     */
+    private String myString;
++-----+
 
 ** Configuring Parameters in a Project
 
@@ -296,7 +343,9 @@ groupID:artifactID:version:goal
   In the configuration section, the element name
   ("<<<greeting>>>") is the parameter name and the contents of
   the element ("<<<Welcome>>>") is the value to be assigned to
-  the parameter.  More details can be found in the
+  the parameter.
+
+  <<Note>>: More details can be found in the
   {{{../mini/guide-configuring-plugins.html}Guide to Configuring Plugins}}.
 
 ** Parameter Types With One Value
@@ -309,7 +358,20 @@ groupID:artifactID:version:goal
 
   This includes variables typed <<<boolean>>> and <<<Boolean>>>.  When reading
   the configuration, the text "<<<true>>>" causes the parameter to be set to
-  true and all other text causes the parameter to be set to false.
+  true and all other text causes the parameter to be set to false. Example:
+
++-----+
+    /**
+     * My boolean.
+     *
+     * @parameter
+     */
+    private boolean myBoolean;
++-----+
+
++-----+
+<myBoolean>true</myBoolean>
++-----+
 
 *** Fixed-Point Numbers
 
@@ -319,7 +381,20 @@ groupID:artifactID:version:goal
   integer value using either <<<Integer.parseInt()>>> or the <<<valueOf()>>>
   method of the appropriate class.  This means that the strings must be valid
   decimal integer values, consisting only of the digits 0 to 9 with an optional
-  <<<->>> in front for a negative value.
+  <<<->>> in front for a negative value. Example:
+
++-----+
+    /**
+     * My Integer.
+     *
+     * @parameter
+     */
+    private Integer myInteger;
++-----+
+
++-----+
+<myInteger>10</myInteger>
++-----+
 
 *** Floating-Point Numbers
 
@@ -330,6 +405,19 @@ groupID:artifactID:version:goal
   section 3.10.2 of the Java Language Specification.  Some samples of valid
   values are <<<1.0>>> and <<<6.02E+23>>>.
 
++-----+
+    /**
+     * My Double.
+     *
+     * @parameter
+     */
+    private Double myDouble;
++-----+
+
++-----+
+<myDouble>1.0</myDouble>
++-----+
+
 *** Dates
 
   This includes variables typed <<<Date>>>.  When reading the configuration,
@@ -339,7 +427,20 @@ groupID:artifactID:version:goal
   2:22:55PM").  Note that parsing is done using <<<DateFormat.parse()>>> which
   allows some leniency in formatting.  If the method can parse a date and time
   out of what is specified it will do so even if it doesn't exactly match the
-  patterns above.
+  patterns above. Example:
+
++-----+
+    /**
+     * My Date.
+     *
+     * @parameter
+     */
+    private Date myDate;
++-----+
+
++-----+
+<myDate>2005-10-06 2:22:55.1 PM</myDate>
++-----+
 
 *** Files and Directories
 
@@ -347,7 +448,20 @@ groupID:artifactID:version:goal
   the text in the XML file is used as the path to the desired file or
   directory.  If the path is relative (does not start with <<</>>> or a drive
   letter like <<<C:>>>), the path is relative to the directory containing
-  the POM.
+  the POM. Example:
+
++-----+
+    /**
+     * My File.
+     *
+     * @parameter
+     */
+    private File myFile;
++-----+
+
++-----+
+<myFile>c:\temp</myFile>
++-----+
 
 *** URLs
 
@@ -356,6 +470,19 @@ groupID:artifactID:version:goal
   guidelines, and looks like any web browser URL
   (<<<scheme://host:port/path/to/file>>>).  No restrictions are placed on the
   content of any of the parts of the URL while converting the URL.
+
++-----+
+    /**
+     * My URL.
+     *
+     * @parameter
+     */
+    private URL myURL;
++-----+
+
++-----+
+<myURL>http://maven.apache.org</myURL>
++-----+
 
 *** Plain Text
 
@@ -391,35 +518,118 @@ groupID:artifactID:version:goal
 *** Arrays
 
   Array type parameters are configured by specifying the parameter multiple
-  times (for example, "<<< <param>value1</param> <param>value2</param> >>>").
+  times. Example:
+
++-----+
+    /**
+     * My Array.
+     *
+     * @parameter
+     */
+    private String[] myArray;
++-----+
+
++-----+
+<myArray>
+  <param>value1</param>
+  <param>value2</param>
+</myArray>
++-----+
 
 *** Collections
 
   This category covers any class which implements <<<java.util.Collection>>>
   such as <<<ArrayList>>> or <<<HashSet>>>.  These parameters are configured by
-  specifying the parameter multiple times just like an array.
+  specifying the parameter multiple times just like an array. Example:
+
++-----+
+    /**
+     * My List.
+     *
+     * @parameter
+     */
+    private List myList;
++-----+
+
++-----+
+<myList>
+  <param>value1</param>
+  <param>value2</param>
+</myList>
++-----+
 
 *** Maps
 
   This category covers any class which implements <<<java.util.Map>>>
   such as <<<HashMap>>> but does <<not>> implement <<<java.util.Properties>>>.
   These parameters are configured by including XML tags in the form
-  <<< <key>value</key> >>> in the parameter configuration.
+  <<< <key>value</key> >>> in the parameter configuration. Example:
+
++-----+
+    /**
+     * My Map.
+     *
+     * @parameter
+     */
+    private Map myMap;
++-----+
+
++-----+
+<myMap>
+  <key1>value1</key1>
+  <key2>value2</key2>
+</myMap>
++-----+
 
 *** Properties
 
   This category covers any map which implements <<<java.util.Properties>>>.
   These parameters are configured by including XML tags in the form
-  <<< <key>value</key> >>> in the parameter configuration.
+  <<< <property><name>myName</name> <value>myValue</value> </property> >>>
+  in the parameter configuration. Example:
+
++-----+
+    /**
+     * My Properties.
+     *
+     * @parameter
+     */
+    private Properties myProperties;
++-----+
+
++-----+
+<myProperties>
+  <property>
+    <name>propertyName1</name>
+    <value>propertyValue1</value>
+  <property>
+  <property>
+    <name>propertyName2</name>
+    <value>propertyValue2</value>
+  <property>
+</myProperties>
++-----+
 
 *** Other Object Classes
 
   This category covers any class which does not implement <<<java.util.Map>>>,
-  <<<java.util.Collection>>>, or <<<java.util.Dictionary>>>.
+  <<<java.util.Collection>>>, or <<<java.util.Dictionary>>>. Example:
+
++-----+
+    /**
+     * My Object.
+     *
+     * @parameter
+     */
+    private Object myObject;
++-----+
+
++-----+
+<myObject>test</myObject>
++-----+
 
 * Resources
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo API specification}}
 
     [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness}Maven-plugin-testing-harness}}
-          

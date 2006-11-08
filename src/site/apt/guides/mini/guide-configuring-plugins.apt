@@ -2,9 +2,27 @@
  Guide to Configuring Plug-ins
  ------
  Jason van Zyl
+ Vincent Siveton
  ------
- 12 October 2005
+ November 2006
  ------
+
+~~ Copyright 2001-2006 The Apache Software Foundation.
+~~
+~~ Licensed under the Apache License, Version 2.0 (the "License");
+~~ you may not use this file except in compliance with the License.
+~~ You may obtain a copy of the License at
+~~
+~~      http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing, software
+~~ distributed under the License is distributed on an "AS IS" BASIS,
+~~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+~~ See the License for the specific language governing permissions and
+~~ limitations under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/guides/mini/guide-apt-format.html
 
 Guide to Configuring Plug-ins
 
@@ -185,7 +203,61 @@ public class MyAnimalMojo
 
 ** Mapping maps
 
+ In the same way, you could define maps like the following:
+
++-----+
+...
+    /**
+     * My Map.
+     *
+     * @parameter
+     */
+    private Map myMap;
+...
++-----+
+
++-----+
+...
+  <configuration>
+    <myMap>
+      <key1>value1</key1>
+      <key2>value2</key2>
+    </myMap>
+  </configuration>
+...
++-----+
+
 ** Mapping properties
+
+ Properties should be defined like the following:
+
++-----+
+...
+    /**
+     * My Properties.
+     *
+     * @parameter
+     */
+    private Properties myProperties;
+...
++-----+
+
++-----+
+...
+  <configuration>
+    <myProperties>
+      <property>
+        <name>propertyName1</name>
+        <value>propertyValue1</value>
+      <property>
+      <property>
+        <name>propertyName2</name>
+        <value>propertyValue2</value>
+      <property>
+    </myProperties>
+  </configuration>
+...
++-----+
 
 * Using setters
 
@@ -234,7 +306,7 @@ public class MyQueryMojo
 
 * Using the executions tag
 
-  You can also configure a mojo using the executions tag. Using MyQueryMojo 
+  You can also configure a mojo using the executions tag. Using MyQueryMojo
   as an example, you may have something that will look like:
 
 +----+
@@ -278,18 +350,18 @@ public class MyQueryMojo
 </project>
 +----+
 
-  The first execution with id "execution1" binds this configuration to the test 
-  phase. Some goals can have default phases. The second execution does not have 
+  The first execution with id "execution1" binds this configuration to the test
+  phase. Some goals can have default phases. The second execution does not have
   a <phase> tag, how do you think will the execution behave? If the goal is
-  binded to a phase then it will execute to that phase. But if the goal is 
-  not binded to any lifecycle phases then it will be executed without executing 
+  binded to a phase then it will execute to that phase. But if the goal is
+  not binded to any lifecycle phases then it will be executed without executing
   any phases(as if it was executed in the CLI).
 
-  Note that execution id's don't have to be unique.  Executions of the same id 
-  are merged. 
+  Note that execution id's don't have to be unique.  Executions of the same id
+  are merged.
 
-  How about if we have a multiple executions with different phases bound to it? 
-  How do you think will it behave? Let us use the example POM above again, but 
+  How about if we have a multiple executions with different phases bound to it?
+  How do you think will it behave? Let us use the example POM above again, but
   this time we shall bind <<<execution2>>> to a phase.
 
 +----+
@@ -307,7 +379,7 @@ public class MyQueryMojo
           </execution>
           <execution>
             <id>execution2</id>
-	    <phase>install</phase>
+            <phase>install</phase>
             <configuration>
               <url>http://www.bar.com/query</url>
               <timeout>15</timeout>
@@ -326,10 +398,10 @@ public class MyQueryMojo
 </project>
 +----+
 
-  If there are multiple executions bound to different phases, then the mojo is 
-  executed once for each phase indicated. Meaning, <<<execution1>>> will be 
-  executed applying the configuration setup when the phase of the build is test, 
-  and <<<execution2>>> will be executed applying the configuration setup when 
+  If there are multiple executions bound to different phases, then the mojo is
+  executed once for each phase indicated. Meaning, <<<execution1>>> will be
+  executed applying the configuration setup when the phase of the build is test,
+  and <<<execution2>>> will be executed applying the configuration setup when
   the build phase is already in install.
 
   Now, Let us have another mojo example which is binded to a lifecycle phase.
@@ -363,8 +435,8 @@ public class MyBindedQueryMojo
 +----+
 
   From the above mojo example, MyBindedQueryMojo is binded to package phase
-  (see the "@phase" notation). But if we want to execute this mojo to install 
-  phase not with package we can rebind this mojo into a new lifecycle phase 
+  (see the "@phase" notation). But if we want to execute this mojo to install
+  phase not with package we can rebind this mojo into a new lifecycle phase
   using the \<phase\> tag under \<executions\>.
 
 +----+
@@ -377,7 +449,7 @@ public class MyBindedQueryMojo
         <executions>
           <execution>
             <id>execution1</id>
-	    <phase>install</phase>
+            <phase>install</phase>
             <configuration>
               <url>http://www.bar.com/query</url>
               <timeout>15</timeout>
@@ -396,14 +468,13 @@ public class MyBindedQueryMojo
 </project>
 +----+
 
-  Now, MyBindedQueryMojo default phase which is package has been overrided by 
-  install phase. 
+  Now, MyBindedQueryMojo default phase which is package has been overrided by
+  install phase.
 
-  Configurations inside the <executions> tag differ from those that are outside 
-  <executions> in that they cannot be used from a direct command line 
-  invocation. Instead they are only applied when the lifecycle phase they are 
-  bound to are invoked.  Alternatively, if you move a configuration section 
-  outside of the executions section, it will apply globally to all invocations 
+  Configurations inside the <executions> tag differ from those that are outside
+  <executions> in that they cannot be used from a direct command line
+  invocation. Instead they are only applied when the lifecycle phase they are
+  bound to are invoked.  Alternatively, if you move a configuration section
+  outside of the executions section, it will apply globally to all invocations
   of the plugin.
 
-  
