@@ -99,6 +99,12 @@
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="http://www.manuelrecena.com/docs/maven_061106.pdf">Maven - Menos mal que has venido (in Spanish)</a></td>
+            <td>Universidad de Sevilla</td>
+            <td>Manuel J. Recena Soto</td>
+            <td>6 November 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven 2 and Continuum (in French)</a></td>
             <td>Developpez.com</td>
             <td>Eric Reboisson</td>
