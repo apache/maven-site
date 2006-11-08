@@ -137,3 +137,17 @@ Using A Single Repository
 
 +-----+
 
+
+Creating your own mirror
+
+  The central repository requires around 10 GB and growing, and it's updated every 4 hours.
+
+  You can mirror the central repository using rsync with
+
++-----+
+
+rsync -v -t -l -r ftp.ibiblio.org::maven2 /your/local/path
+
++-----+
+
+  If you want to become an official mirror, email us to dev@maven.apache.org with your location and we'll add you to the list of mirrors.
