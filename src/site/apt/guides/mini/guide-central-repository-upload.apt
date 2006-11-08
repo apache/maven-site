@@ -205,6 +205,8 @@ Sync'ing your own repository with ibiblio
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with it and we'll add it to the automatically synced repos.
  If using ssh you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log in the machine.
 
+ Remember to subscribe to {{{mailto:repository-subscribe@maven.org}Maven repository mailing list}}.
+
  <<Important>>: nothing is deleted or changed in the Central Repository after it is synced (except maven-metadata.xml files)
 
 
