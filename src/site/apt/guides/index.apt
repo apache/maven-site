@@ -1,10 +1,10 @@
- ------ 
- Maven Documentation 
- ------ 
+ ------
+ Maven Documentation
+ ------
  Jason van Zyl
  Eric Redmond
- ------ 
- 18 October 2006 
+ ------
+ 18 October 2006
  ------
 
 Documentation
@@ -70,6 +70,8 @@ Documentation
  * {{{mini/guide-3rd-party-jars-remote.html}Deploying 3rd party JARs to Remote Repository}}
 
  * {{{mini/guide-coping-with-sun-jars.html}Coping with Sun JARs}}
+
+ * {{{mini/guide-repository-ssl.html}Remote repository access through authenticated HTTPS}}
 
 ~~ * {{{introduction/introduction-to-artifact-resolution.html}Repository Definitions and Artifact Resolution}}
 
@@ -164,7 +166,7 @@ Documentation
 * References
 
  * {{{../pom.html}POM Overview}} ({{{../ref/current/maven-model/maven.html}Technical Project Descriptor}})
- 
+
  * {{{../settings.html}Settings Overview}} ({{{../ref/current/maven-settings/settings.html}Technical Settings Descriptor}})
 
  * {{{../plugins/index.html}Core Plug-ins List}}
