@@ -84,7 +84,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-archetype-plugin/} <<<archetype>>>}}             | 1.0-alpha-4 | Generate a skeleton project structure from an archetype.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and binaries.
+| {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -96,7 +96,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help woth repository-based tasks.
+| {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-3 | Generate a SCM for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
