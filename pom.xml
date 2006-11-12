@@ -9,6 +9,7 @@
   <modelVersion>4.0.0</modelVersion>
   <artifactId>maven-site</artifactId>
   <packaging>pom</packaging>
+  <name>Maven Site</name>
 
   <reporting>
     <excludeDefaults>true</excludeDefaults>
