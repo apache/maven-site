@@ -1,5 +1,5 @@
  ------
- Guide to Building Maven 2.0
+ Guide to Building Maven
  ------
  Brett Porter
  Jason van Zyl
@@ -7,11 +7,11 @@
  12 June 2005
  ------
 
-Building Maven 2.0
+Building Maven
 
-* Why would I want to build Maven 2.0?
+* Why would I want to build Maven?
 
-  Building Maven 2.0 yourself is for one of two reasons:
+  Building Maven yourself is for one of two reasons:
 
     * to try out a bleeding edge feature or bugfix (issues can be found in
       {{{http://jira.codehaus.org/browse/MNG} JIRA}}),
@@ -23,16 +23,24 @@ Building Maven 2.0
 
 * Checking out the sources
 
-  All of the source code for Maven 2.0 and its related libraries are in {{{http://subversion.tigris.org/} Subversion}}.
+  All of the source code for Maven and its related libraries is in {{{http://subversion.tigris.org/} Subversion}}.
   You can {{{http://svn.apache.org/viewvc/maven/} browse the repository}}, or checkout specific modules directly.
 
-  To build Maven 2.0, you need the <<<components>>> module. To check that out, run the command:
+  To build Maven 2.0, you need the <<<maven-2.0.x>>> branch of the <<<components>>> module. To check that out, run the command:
 
 -------------------
-svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
+svn co https://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x
 -------------------
 
-  The <<<maven-components>>> directory will contain the source code. Note that this does not contain any of the plugins.
+  Alternatively, you can check out all Maven projects in one directory using:
+
+-------------------
+svn co https://svn.apache.org/repos/asf/maven/trunks maven
+-------------------
+
+  The <<<maven-2.0.x>>> directory will contain the Maven 2.0 source code, and
+  the <<<maven-components>>> directory will contain the 2.1 source code. Note
+  that neither directory contains any of the plugins.
 
   Other modules you might be interested in related to Maven development are:
 
@@ -52,12 +60,6 @@ svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 
     * {{{http://svn.plexus.codehaus.org/plexus/} Plexus}} - the IoC container used by Maven.
 
-  Alternatively, you can check out all Maven projects in one directory using:
-
--------------------
-svn co https://svn.apache.org/repos/asf/maven/trunks maven
--------------------
-
   If you're looking at {{{http://svn.apache.org/viewvc/maven/trunks/}ViewVC}}
   there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
   to link together all the trunks into one logical location for convenience. If you want to see what is being 
@@ -67,11 +69,11 @@ svn co https://svn.apache.org/repos/asf/maven/trunks maven
 svn propget svn:externals
 -------------------
 
-* Building Maven with Maven installed
+* Building Maven 2.0 with Maven installed
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
 
-  To do this, run from the root:
+  To do this, run from the <<<maven-2.0.x>>> directory:
 
 ----
 mvn install
@@ -86,21 +88,21 @@ mvn assembly:assembly
 
   The assemblies will be created in <<<target>>> and can be unzipped to the location where you'd like Maven installed.
 
-* Building Maven without Maven installed
+* Building Maven 2.0 without Maven installed
 
-  Once you have checked out the code, change into the <<<maven-components>>> directory that was created.
+  Once you have checked out the code, change into the <<<maven-2.0.x>>> directory that was created.
   You may want to setup a different environment to install Maven to, other than your normal installation of a
   release, so set the <<<M2_HOME>>> environment variable accordingly, e.g.:
 
 ----
-export M2_HOME=/usr/local/maven-2.0.1-SNAPSHOT
+export M2_HOME=/usr/local/maven-2.0.5-SNAPSHOT
 PATH=$M2_HOME/bin:$PATH
 ----
 
   or
 
 ----
-set M2_HOME=c:\maven-2.0.1-SNAPSHOT
+set M2_HOME=c:\maven-2.0.5-SNAPSHOT
 set PATH=%M2_HOME%\bin;%PATH%
 ----
 
@@ -124,4 +126,8 @@ bootstrap.bat
 
   If you have any problems or get any failures during the run, please report them to the
   {{{/mail-lists.html} Maven Developers List}}.
+
+* Building Maven 2.1
+
+  TODO
 
