@@ -21,7 +21,7 @@ Repositories
   Both of these sites provide snapshot versions of their plugins which are
   available from the plugin snapshot repository.
 
-  * apache snapshots = {{http://people.apache.org/maven-snapshot-repository}}
+  * apache snapshots = {{http://people.apache.org/m2-snapshot-repository}}
 
   * codehaus snapshots = {{http://snapshots.maven.codehaus.org/maven2}}
 
