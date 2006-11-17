@@ -125,11 +125,11 @@
 
     <menu name="Get Maven Plugins">
 <!--
-      <item name="By Host" href="todo.html" />
+      <item name="Plugins by Host" href="todo.html" />
 -->
-      <item name="By Category" href="/plugins/index.html" />
+      <item name="Plugins by Category" href="/plugins/index.html" />
 <!--
-      <item name="By Phase" href="todo.html" />
+      <item name="Plugins by Phase" href="todo.html" />
 -->
       <!-- TODO: use the repository.maven.org plugin search, this doesn't seem to have one -->
       <!-- <item name="Search" href="http://www.mvnrepository.com/plugins.html" /> -->
