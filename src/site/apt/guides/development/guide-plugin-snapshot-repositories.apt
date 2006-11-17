@@ -43,7 +43,7 @@ How to include the plugin snapshot repositories as part of your build
         <repository>
           <id>apache.org</id>
           <name>Maven Snapshots</name>
-          <url>http://people.apache.org/maven-snapshot-repository</url>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
           <releases>
             <enabled>false</enabled>
           </releases>
@@ -56,7 +56,7 @@ How to include the plugin snapshot repositories as part of your build
         <pluginRepository>
           <id>apache.org</id>
           <name>Maven Plugin Snapshots</name>
-          <url>http://people.apache.org/maven-snapshot-repository</url>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
           <releases>
             <enabled>false</enabled>
           </releases>
