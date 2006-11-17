@@ -29,7 +29,14 @@ Building Maven
   To build Maven 2.0, you need the <<<maven-2.0.x>>> branch of the <<<components>>> module. To check that out, run the command:
 
 -------------------
-svn co https://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x
+svn co https://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x maven-2.0.x
+-------------------
+
+  To build Maven 2.1, you need the trunk of the <<<components>>> module. To
+  check that out, run the command:
+
+-------------------
+svn co https://svn.apache.org/repos/asf/maven/components/trunk maven-components
 -------------------
 
   Alternatively, you can check out all Maven projects in one directory using:
@@ -60,7 +67,7 @@ svn co https://svn.apache.org/repos/asf/maven/trunks maven
 
     * {{{http://svn.plexus.codehaus.org/plexus/} Plexus}} - the IoC container used by Maven.
 
-  If you're looking at {{{http://svn.apache.org/viewvc/maven/trunks/}ViewVC}}
+  If you're {{{http://svn.apache.org/viewvc/maven/trunks/}looking at the <<<trunks>>> directory with ViewVC}},
   there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
   to link together all the trunks into one logical location for convenience. If you want to see what is being 
   linked into one logical location you can use the following command:
@@ -127,7 +134,115 @@ bootstrap.bat
   If you have any problems or get any failures during the run, please report them to the
   {{{/mail-lists.html} Maven Developers List}}.
 
-* Building Maven 2.1
+  
+* Building Maven 2.1 with Maven installed
+  
+  Once you have checked out the code, change into the <<<maven-components>>>
+  directory. (If you checked out <<<trunks>>>, then it will be the
+  <<<components>>> directory.)
 
-  TODO
+  Then execute the following command:
+
+----
+mvn install
+----
+
+  This will build, test and install all libraries in the local repository. Next,
+  if you want to produce the binary distribution:
+
+----
+cd maven-cli
+mvn assembly:assembly
+----
+
+  The assemblies will be created in <<<target>>> and can be unzipped to the
+  location where you'd like Maven installed.
+
+
+* Building Maven 2.1 without Maven installed
+
+  If you do not have Maven installed, you can use
+  {{{http://ant.apache.org}Apache Ant}} to build Maven 2.1.
+
+  Set the M2_HOME environment variable to the location that should contain
+  Maven. This directory <<must>> be named after the Maven version you want to
+  build and install, for example <<</usr/local/maven-2.1-SNAPSHOT>>>.
+
+----
+export M2_HOME=/usr/local/maven-2.1-SNAPSHOT
+----
+
+  or
+
+----
+set M2_HOME=c:\maven-2.1-SNAPSHOT
+----
+
+  Once you have checked out the code, change into the <<<maven-components>>>
+  directory. (If you checked out <<<trunks>>>, then it will be the
+  <<<components>>> directory.)
+
+  From this, just run <<<ant>>> which will execute the default <<<all>>> target.
+  
+----
+ant 
+----
+
+  This will download dependencies, build Maven 2.1, and install it into the
+  directory you specified as <<<M2_HOME>>> above.
+
+  For more information, consult the project help in the Ant build file.
+  
+----
+ant -projecthelp
+----
+
+  The result is included here for convenience:
+  
++--------+
+Buildfile: build.xml
+
+    The first time you build Maven from source, you have to build Maven without
+    Maven. This Ant script builds a minimal Maven, just enough to re-launch
+    Maven again in this directory and generate an installation assembly. Then we
+    extract the assembly and re-run the Maven build one more time, this time
+    with the full generated Maven.
+
+    To run this script, you must set the M2_HOME environment variable or the mav
+    en.home property to the location that should contain Maven. This directory
+    *must* be named after the maven version you want to install, e.g.
+    /usr/local/maven-2.1-SNAPSHOT.
+
+    You can set the maven.repo.local property to specify a custom location for 
+    your local repository for the bootstrap process.
+
+Main targets:
+
+ classpath-pre     constructs a classpath reference containing our dependencies,
+                   and verifies that all files are present
+                   
+ clean-bootstrap   cleans up generated bootstrap classes
+ 
+ compile-boot      compiles the bootstrap sources
+ 
+ extract-assembly  extracts the maven assembly into maven.home
+ 
+ generate-sources  generates Java sources from Modello mdo model files
+ 
+ maven-assembly    generates the Maven installation assembly using the bootstrap
+                   Maven
+ 
+ maven-compile     compiles Maven using the bootstrap Maven, skipping automated
+                   tests
+ 
+ pull              copies all required dependencies from the Maven remote 
+                   repository into your local repository.  Set the 'skip.pull' 
+                   property to skip this step, but only if you're sure you 
+                   already have all of the dependencies downloaded to
+                   your local repository
+ 
+ run-full-maven    runs the full extracted Maven, now with tests
+ 
+Default target: all
++--------+
 
