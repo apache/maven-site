@@ -24,8 +24,6 @@ Introduction to the Dependency Mechanism
 
  []
 
- <<NOTE:>> <This document is currently in the process of being written, so not all facets are covered.>
-
 * Transitive Dependencies
 
  Transitive dependencies are a new feature in Maven 2.0. This allows you to avoid needing to discover and
@@ -43,8 +41,15 @@ Introduction to the Dependency Mechanism
 
  * <Dependency mediation>
    - this determines what version of a dependency will be used when multiple
-     versions of an artifact are encountered. Currently, Maven 2.0 only supports using the "nearest definition" - so
-     you can always guarantee a version by declaring it explicitly in your project's POM.
+     versions of an artifact are encountered. Currently, Maven 2.0 only supports using the "nearest definition" which means
+     that it will use the version of the closest dependency to your project in the tree of dependencies.
+     You can always guarantee a version by declaring it explicitly in your project's POM.
+     Note that if two dependency versions are at the same depth in the dependency tree it's not defined which one will win.
+
+     * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies,
+        eg. if dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
+        then D 1.0 will be used when building A because the path from A to D through E is shorter.
+        You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0
 
  * <Dependency scope>
    - this allows you to only include dependencies appropriate for the current stage
