@@ -102,7 +102,7 @@ POM Reference
 
 {Introduction}
 
-  * {{{http://maven.apache.org/maven-v4_0_0.xsd}The POM 4.0.0 XSD}}
+  * {{{http://maven.apache.org/xsd/maven-4.0.0.xsd}The POM 4.0.0 XSD}}
   
 * {What is the POM?}
 
