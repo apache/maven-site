@@ -619,11 +619,13 @@
             <td>configuration</td>
             <td>@component</td>
             <td>No</td>
-            <td>Indicates to lookup and populate the field with an implementation with a Plexus Component.
-              Similar to <code>@parameter expression="${component.yourpackage.YourComponentClass}"</code>.
+            <td>
+              Populates the field with an instance of a Plexus component. This is like declaring a <i>requirement</i> in a Plexus component.
+              The default requirement will have a role equal to the declared type of the field, and will use the default role hint. You can customise either of these by providing a <code>role</code> and/or <code>roleHint</code> parameter.
 
-              <i>NOTE: 'YourComponentClass' should have a Plexus tag, for instance
-              <code>@plexus.component role="yourpackage.YourComponentClass"</code>.</i>
+              <i>e.g.</i> <code>@component role="org.apache.maven.artifact.ArtifactHandler" roleHint="ear"</code>
+
+              <b>Note:</b> This is identical to the deprecated form of parameter: <code>@parameter expression="${component.yourpackage.YourComponentClass}"</code>.
             </td>
           </tr>
           <tr>
