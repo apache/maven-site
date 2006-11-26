@@ -39,8 +39,8 @@ Guide to the Snippet Macro
  Each snippet must be assigned an id, and the id must be unique within the
  source document.
  
- Following are examples of snippets in Java and XML source documents, as well
- as the corresponding macros in the APT documentation formats.
+ Following are examples of snippets in various source documents, as well
+ as the corresponding macros in the APT documentation format.
 
 * Snippets in Sources
 
@@ -69,17 +69,39 @@ Guide to the Snippet Macro
   <!-- END SNIPPET: snip-id -->
 -----
 
+** JSP
+
+------
+  <%-- START-SNIPPET: snip-id --%>
+  <ul>
+      <li><a href="newPerson!input.action">Create</a> a new person</li>
+      <li><a href="listPeople.action">List</a> all people</li>
+  </ul>
+  <%-- START-SNIPPET: snip-id --%>
+------
+
 * Snippets in Documentation
 
 ** APT
 
-  Macros in apt <<must not>> be indented.
+------
+ %{snippet|id=snip-id|url=http://svn.example.com/path/to/Sample.java}
+
+ %{snippet|id=snip-id|url=file:///path/to/Sample.java}
+------
+
+  As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available.
+  If a full path is not specified, the location is assumed to be relative to
+  $\{basedir\}.
 
 ------
-%{snippet|id=snip-id|url=http://svn.example.com/path/to/Sample.java}
-
-%{snippet|id=snip-id|url=file:///path/to/Sample.java}
+ ~~ Since doxia-core 1.0-alpha-9
+ %{snippet|id=abc|file=src/main/webapp/index.jsp}
 ------
+
+ * Macros in apt <<must not>> be indented.
+ 
+ * Exactly one of <<<url>>> or <<<file>>> <<must>> be specified.
 
 ** XDOC
 
