@@ -61,10 +61,10 @@ Using Mirrors for Repositories
 
   <mirrors>
     <mirror>
-      <id>ggi-project.org</id>
-      <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
+      <id>ibiblio.org</id>
+      <url>http://www.ibiblio.org/maven2</url>
       <mirrorOf>central</mirrorOf>
-      <!-- The Netherlands, Amsterdam -->
+      <!-- United States, North Carolina -->
     </mirror>
     <mirror>
       <id>planetmirror.com</id>
@@ -78,12 +78,6 @@ Using Mirrors for Repositories
       <mirrorOf>central</mirrorOf>
       <!-- United States, Louisiana -->
      </mirror>
-    <mirror>
-      <id>ibiblio.net</id>
-      <url>http://www.ibiblio.net/pub/packages/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- United States, North Carolina -->
-    </mirror>
     <mirror>
       <id>sateh.com</id>
       <url>http://maven.sateh.com/repository</url>
@@ -101,6 +95,20 @@ Using Mirrors for Repositories
       <url>http://mirrors.sunsite.dk/maven2</url>
       <mirrorOf>central</mirrorOf>
       <!-- Denmark -->
+    </mirror>
+
+    <!-- these just point to ibiblio.org --> 
+    <mirror>
+      <id>ibiblio.net</id>
+      <url>http://www.ibiblio.net/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+      <!-- United States, North Carolina -->
+    </mirror>
+    <mirror>
+      <id>ggi-project.org</id>
+      <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
+      <mirrorOf>central</mirrorOf>
+      <!-- The Netherlands, Amsterdam -->
     </mirror>
   </mirrors>
 
