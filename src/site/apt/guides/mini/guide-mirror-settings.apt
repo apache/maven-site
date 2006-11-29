@@ -52,7 +52,7 @@ Using Mirrors for Repositories
 
 
  As of today, the following mirrors are available:
- <<Note>>: The official Maven 2 repository is at http://www.ibiblio.org/maven2, the following mirrors may not have the same contents
+ <<Note>>: The official Maven 2 repository is at http://repo1.maven.org/maven2, the following mirrors may not have the same contents
  and we don't support them in any way, although we try to keep info in this page accurate
 
 +-----+
@@ -62,7 +62,7 @@ Using Mirrors for Repositories
   <mirrors>
     <mirror>
       <id>ibiblio.org</id>
-      <url>http://www.ibiblio.org/maven2</url>
+      <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
       <mirrorOf>central</mirrorOf>
       <!-- United States, North Carolina -->
     </mirror>
