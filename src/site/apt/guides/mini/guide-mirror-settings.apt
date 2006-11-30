@@ -154,7 +154,7 @@ Creating your own mirror
 
 +-----+
 
-rsync -v -t -l -r ftp.ibiblio.org::maven2 /your/local/path
+rsync -v -t -l -r mirrors.ibiblio.org::maven2 /your/local/path
 
 +-----+
 
