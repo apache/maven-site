@@ -72,12 +72,12 @@ Guide to the Snippet Macro
 ** JSP
 
 ------
-  <%-- START-SNIPPET: snip-id --%>
+  <%-- START SNIPPET: snip-id --%>
   <ul>
       <li><a href="newPerson!input.action">Create</a> a new person</li>
       <li><a href="listPeople.action">List</a> all people</li>
   </ul>
-  <%-- START-SNIPPET: snip-id --%>
+  <%-- END SNIPPET: snip-id --%>
 ------
 
 * Snippets in Documentation
