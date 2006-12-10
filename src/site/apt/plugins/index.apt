@@ -88,13 +88,19 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-gpg-plugin/} <<<gpg>>>}}                         |        | Create signatures for the artifacts and poms
+*-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-help-plugin/} <<<help>>>}}                       | 2.0.1  | Get information about the working environment for the project.
+*-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-invoker-plugin/} <<<invoker>>>}}                 |        | Run a set of Maven projects and verify the output
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-one-plugin/} <<<one>>>}}                         | 1.0     | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.1    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
+*-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}|       | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
