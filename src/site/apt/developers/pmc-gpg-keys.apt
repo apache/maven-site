@@ -150,6 +150,6 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 -----END PGP PUBLIC KEY BLOCK-----
 +-----+
 
- You need to append this result to {{https://svn.apache.org/repos/asf/maven/KEYS}}.
+ You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
 
  You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
