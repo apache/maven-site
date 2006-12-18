@@ -28,17 +28,13 @@
 <ul>
   <li>The page has moved, was outdated, or has not been created yet</li>
   <li>You typed the address incorrectly</li>
-  <li>You following a link from another site that pointed to this page.</li>
+  <li>You followed a link from another site that pointed to this page.</li>
 </ul>
 
 <p>
   We have recently reorganised our site, so please try looking in the navigation on the left for the item
-  you are looking for on Maven 1.x or the Maven project. For information about Maven 2.0 or Continuum, please
-  visit their sub sites, available from the links in the top right of the page.
-</p>
-
-<p>
-  There is no need to report this broken link to the Maven team, as errors are periodically monitored and repaired.
+  you are looking for on Maven or the Maven project. For information about Maven 1, Continuum, or Archiva, please
+  visit their sub sites, available from the links in the bottom left of the page.
 </p>
 
 </section>
