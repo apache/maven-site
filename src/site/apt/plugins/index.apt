@@ -26,7 +26,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-compiler-plugin/} <<<compiler>>>}}               | 2.0.1  | Compiles Java sources.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-deploy-plugin/} <<<deploy>>>}}                   | 2.2.1  | Deploy the built artifact to the remote repository.
+| {{{maven-deploy-plugin/} <<<deploy>>>}}                   | 2.3    | Deploy the built artifact to the remote repository.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-install-plugin/} <<<install>>>}}                 | 2.1    | Install the built artifact into the local repository.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -40,7 +40,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<packaging types / tools>> | | <These plugins relate to packaging respective artifact types.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-ear-plugin/} <<<ear>>>}}                         | 2.2    | Generate an EAR from the current project.
+| {{{maven-ear-plugin/} <<<ear>>>}}                         | 2.3    | Generate an EAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-ejb-plugin/} <<<ejb>>>}}                         | 2.0    | Build an EJB (and optional client) from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -48,7 +48,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-rar-plugin/} <<<rar>>>}}                         | 2.1    | Build a RAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-war-plugin/} <<<war>>>}}                         | 2.0.1  | Build a WAR from the current project.
+| {{{maven-war-plugin/} <<<war>>>}}                         | 2.0.2  | Build a WAR from the current project.
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<reporting>> | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>
 *-----------------------------------------------------------+-----------------------+----------------------------------+
@@ -88,7 +88,7 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-gpg-plugin/} <<<gpg>>>}}                         |        | Create signatures for the artifacts and poms
+| {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-1 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-help-plugin/} <<<help>>>}}                       | 2.0.1  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -96,11 +96,11 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-one-plugin/} <<<one>>>}}                         | 1.0     | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.1    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
+| {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.2    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}|       | Copy remote resources to the output directory for inclusion in the artifact.
+| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-1 | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
