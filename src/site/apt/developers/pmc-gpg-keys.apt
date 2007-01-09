@@ -151,5 +151,7 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 +-----+
 
  You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
+ 
+ Then you must also register this result with a {{{http://www.apache.org/dev/release-signing.html#keyserver}public key server}}
 
  You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
