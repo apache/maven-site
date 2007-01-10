@@ -99,6 +99,12 @@
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="http://www-128.ibm.com/developerworks/edu/j-dw-java-mavenv2.html">Introduction to Apache Maven 2</a></td>
+            <td>developerWorks</td>
+            <td>Sing Li</td>
+            <td>19 December 2006</td>
+          </tr>
+          <tr>
             <td><a href="http://www.manuelrecena.com/docs/maven_061106.pdf">Maven - Menos mal que has venido (in Spanish)</a></td>
             <td>Universidad de Sevilla</td>
             <td>Manuel J. Recena Soto</td>
@@ -157,6 +163,12 @@
             <td>PeopleWare</td>
             <td>Jan Dockx</td>
             <td>13 April 2006</td>
+          </tr>
+          <tr>
+            <td><a href="http://www.onjava.com/pub/a/onjava/2006/03/29/maven-2-0.html">Maven 2.0: Compile, Test, Run, Deploy, and More</a></td>
+            <td>onjava</td>
+            <td>Chris Hardin</td>
+            <td>29 March 2006</td>
           </tr>
           <tr>
             <td><a href="http://metaware-inc.wiki.mailxmail.com/AntMaven">Descripcion tecnica de Maven (in Spanish)</a></td>
