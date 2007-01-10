@@ -67,12 +67,6 @@ Using Mirrors for Repositories
       <!-- United States, North Carolina -->
     </mirror>
     <mirror>
-      <id>planetmirror.com</id>
-      <url>http://downloads.planetmirror.com/pub/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Australia, Queensland -->
-    </mirror>
-    <mirror>
       <id>lsu.edu</id>
       <url>http://ibiblio.lsu.edu/main/pub/packages/maven2</url>
       <mirrorOf>central</mirrorOf>
