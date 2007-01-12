@@ -12,4 +12,4 @@ Continuous Integration
  the _maven_ user. Currently this is just our {{{http://svn.apache.org/viewvc/maven/components/trunk/ci.sh?view=markup}ci.sh}}
  script.
 
- We currently using Continuum running on {{{http://ci.codehaus.org/continuum/servlet/continuum}ci.codehaus.org}}.
+ We currently using Continuum running on {{{http://maven.zones.apache.org/continuum}http://maven.zones.apache.org/continuum}}.
