@@ -90,6 +90,12 @@ Using Mirrors for Repositories
       <mirrorOf>central</mirrorOf>
       <!-- Denmark -->
     </mirror>
+    <mirror>
+      <id>skynet.be</id>
+      <url>http://maven2.mirrors.skynet.be/pub/maven2</url>
+      <mirrorOf>central</mirrorOf>
+      <!-- Belgium -->
+    </mirror>
 
     <!-- these just point to ibiblio.org --> 
     <mirror>
