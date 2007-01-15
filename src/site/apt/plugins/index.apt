@@ -86,7 +86,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-dependency-plugin/} <<<dependency>>>}}           |        | Dependency manipulation.
+| {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-1 | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-1 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
