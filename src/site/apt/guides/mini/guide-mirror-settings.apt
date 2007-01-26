@@ -156,11 +156,12 @@ Creating your own mirror
 
   The central repository requires around 10 GB and growing, and it's updated every 4 hours.
 
-  You can mirror the central repository using rsync with
+  You can mirror the central repository using rsync from several mirrors, choose one
 
 +-----+
 
 rsync -v -t -l -r mirrors.ibiblio.org::maven2 /your/local/path
+rsync -v -t -l -r rsync://rsync.cica.es/maven2 /your/local/path
 
 +-----+
 
