@@ -96,6 +96,12 @@ Using Mirrors for Repositories
       <mirrorOf>central</mirrorOf>
       <!-- Belgium -->
     </mirror>
+    <mirror>
+      <id>cica.es</id>
+      <url>http://ftp.cica.es/mirrors/maven2</url>
+      <mirrorOf>central</mirrorOf>
+      <!-- Spain, Sevilla -->
+     </mirror>
 
     <!-- these just point to ibiblio.org --> 
     <mirror>
