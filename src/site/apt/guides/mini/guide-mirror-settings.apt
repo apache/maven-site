@@ -102,6 +102,12 @@ Using Mirrors for Repositories
       <mirrorOf>central</mirrorOf>
       <!-- Spain, Sevilla -->
     </mirror>
+    <mirror>
+      <id>redv.com</id>
+      <url>http://mirrors.redv.com/maven2</url>
+      <mirrorOf>central</mirrorOf>
+      <!-- Shanghai, China -->
+    </mirror>
 
     <!-- these just point to ibiblio.org --> 
     <mirror>
