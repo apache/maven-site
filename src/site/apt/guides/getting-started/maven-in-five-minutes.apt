@@ -12,7 +12,7 @@ Maven in 5 Minutes
 
   <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed>
 
-  First, {{{download.html}download Maven}} and unzip it to your desired installation directory, for example
+  First, {{{/download.html}download Maven}} and unzip it to your desired installation directory, for example
   <<<C:\\maven>>> in windows, or <<</usr/local/maven>>> in Linux. After this, add the system variable M2_HOME
   as well as the $M2_HOME/bin directory to your system path. Type the following in a terminal or command prompt:
 
@@ -27,7 +27,7 @@ mvn --version
 ------
 
   Depending upon your network setup, you may require extra configuration. Check out the
-  {{{guides/mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
+  {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
 
 * Creating a Project
 
@@ -50,7 +50,7 @@ cd my-app
 -------  
 
   Under this directory you will notice the following 
-  {{{guides/introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
+  {{{../introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
 
 -------
 my-app
@@ -106,7 +106,7 @@ my-app
 ** What did I just do?
   
   You executed the Maven goal <archetype:create>, and passed in various parameters to that goal. 
-  The prefix <archetype> is the {{{plugin}plugins/index.html}} that contains the goal. If you are familiar with 
+  The prefix <archetype> is the {{{/plugins/index.html}plugin}} that contains the goal. If you are familiar with 
   {{{http://ant.apache.org}Ant}}, you
   may concieve of this as similar to a task. This goal created a simple project based upon an archetype.
   Suffice it to say for now that a <plugin> is a collection
@@ -134,7 +134,7 @@ mvn package
 
   Unlike the first command executed (<archetype:create>) you may notice the second is simply
   a single word - <package>. Rather than a goal, this is a <phase>. A phase is a step in the
-  {{{introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
+  {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
   sequence of phases. When a phase is given, Maven will execute every phase in the sequence
   up to and including the one defined. For example, if we execute the <compile> phase, the
   phases that actually get executed are:
@@ -225,5 +225,5 @@ mvn site
 
   We hope this quick overview has piqued your interest in the versitility of Maven. Note that this is a very
   truncated quick-start guide. Now you are ready for more comprehensive details concerning
-  the actions you have just performed. Check out the {{{guides/getting-started/index.html}Maven Getting Started Guide}}.
+  the actions you have just performed. Check out the {{{index.html}Maven Getting Started Guide}}.
 
