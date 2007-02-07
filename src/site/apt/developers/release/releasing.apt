@@ -75,7 +75,7 @@ mvn release:prepare
  
 Releasing a Project Directly into a Production Repository
 
- If you want to release directly to a production repository then you simply make the staging repository point at 
+ If you want to release directly to a production repository then you simply configure the staging repository point at 
  the production repository by using the following in your <<<$HOME/.m2/settings.xml>>>:
 
 +-----+
@@ -94,5 +94,5 @@ Releasing a Project Directly into a Production Repository
 </settings>
 +-----+  
 
- This will allow you to by pass the staging phase and push the release directly into a production repository. It is assume that
- you have pushed a snapshot somewhere that people have looked at and approve of.
+ This will allow you to bypass the staging phase and push the release directly into a production repository. It is assume that
+ you have pushed a snapshot somewhere that people have looked at and approved of.
