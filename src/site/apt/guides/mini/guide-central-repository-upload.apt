@@ -215,11 +215,11 @@ For Maven developers
 
  The scripts to make the upload to the repository are in the <<<components>>> tree of svn, inside <<<maven-meeper/src/bin>>>
 
- Those scripts are checked out in beaver.codehaus.org <<</home/projects/maven/components/maven-meeper/src/bin>>>, so
- after logging in beaver as maven user you can go there and run
+ Those scripts are checked out in www.maven.org <<</home/maven/bin>>>, so
+ after logging as maven user you can go to the bundle-upload and run
 
 +----+
-./deploy-bundle [URL of the bundle]
+./deploy-bundle bundle_URL [groupId] [version]
 +----+
 
   That command will download the bundle, decompress and show the pom. You have to make sure everything is right
@@ -228,6 +228,9 @@ For Maven developers
   the conventions and that they don't exist already with another name. If the pom is not right or there's any doubt
   upload must be aborted with Ctrl-C, and a comment posted in the upload request. If there's no response from
   the reporter in a month the request will be closed as incomplete.
+
+  If groupId and version are not specified in the command line the script will try to get the values from the pom.
+  It won't work if the pom extends another pom and the tags are not in the bundle pom.
 
   Things to remember:
 
