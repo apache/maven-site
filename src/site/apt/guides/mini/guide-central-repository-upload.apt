@@ -201,7 +201,7 @@ Sync'ing your own repository with ibiblio
 
  If you want to automatically sync your own repository to ibiblio you must make sure the server has rsync or rsync over ssh
  and provide a script like the
- {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/m2-sync/conf/}current scripts}},
+ {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with it and we'll add it to the automatically synced repos.
  If using ssh you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log in the machine.
 
