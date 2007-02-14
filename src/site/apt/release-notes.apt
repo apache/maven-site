@@ -31,17 +31,19 @@ Release Notes - Maven 2.0.5
 
 * 2.0.5 Release Notes
   
-  {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=12294&sorter/field=issuekey&sorter/order=DESC}Issue Tracker Roadmap}}
+  Changes in this release: {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&styleName=Html&version=12294} Issue Tracker Release Notes}}
   
-  One behavioral note that users should be aware of is the following.
-  
-  The only thing in the list which may bite you is that the the dependency resolution is more correct, at least in terms 
-  of what we documented, in that the nearest version of a  dependency will be selected. This will affect if you are not 
-  specifying all dependencies which you actually need to compile your project. Technically you should always list the dependencies 
-  that your project actually needs to compile, but we currently don't enforce that. So if you are relying on transitive 
-  dependencies to pick up your compile time requirements you might have some issues. Specifically this:
+** Changes that may affect existing builds
 
-  {{http://jira.codehaus.org/browse/MNG-2794}}  
+    * {{{http://jira.codehaus.org/browse/MNG-2794} MNG-2794}} - Maven now behaves in a defined way when matching the nearest dependency when two
+      exist at the same depth in the dependency graph, by matching the first encountered. Previously, it was undefined. This may result in some
+      builds having a different dependency graph, which could cause failures if all compilation dependencies are not specified completely in the POM.
+      While not currently enforced, projects should always list the dependencies it needs to compile, even if they are available transitively.
+
+    * {{{http://jira.codehaus.org/browse/MNG-2228} MNG-2228}} - The handling of build extensions has changed. This technique causes less pollution to the
+      global classloader, allowing them to be used more widely for extensions to Maven's core. This may affect builds that used them to expose extra
+      classes to various plugins. While in most scenarios these builds will continue to work, in these situations the <<<\<dependencies\>>>> element of
+      <<<\<plugin\>>>> should be used instead.
   
 * 2.0.4 Release Notes
 
