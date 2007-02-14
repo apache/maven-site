@@ -21,7 +21,7 @@ Download Maven 2.0.5
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
-| Maven 2.0.5 (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.tar.bz2} maven-2.0.5-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.md5} maven-2.0.52.0.5-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.asc} maven-2.0.5-bin.tar.bz2.asc}} |
+| Maven 2.0.5 (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.tar.bz2} maven-2.0.5-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.md5} maven-2.0.5-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.asc} maven-2.0.5-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven 2.0.5 (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.tar.gz} maven-2.0.5-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.gz.md5} maven-2.0.5-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.gz.asc} maven-2.0.5-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
