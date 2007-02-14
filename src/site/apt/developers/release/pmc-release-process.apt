@@ -190,22 +190,22 @@ http://maven.apache.org/plugins/maven-XXX-plugin
 From: YOUR_APACHE_EMAIL
 To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
-Subject: [ANN] Maven XXX Plugin 2.1 for Maven 2 Released
+Subject: [ANN] Maven XXX Plugin Y.Y for Maven 2 Released
 
-The Maven team is pleased to announce the release of the Maven XXX Plugin, version 2.1
+The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Y
 
 http://maven.apache.org/plugins/maven-XXX-plugin/
 
-You can run mvn -U to get the latest version of the plugin, or specify
+You can run mvn -up to get the latest version of the plugin, or specify
 the version in your project's plugin configuration:
 
 <plugin>
  <groupId>org.apache.maven.plugins</groupId>
  <artifactId>maven-XXX-plugin</artifactId>
- <version>2.1</version>
+ <version>Y.Y</version>
 </plugin>
 
-Release Notes - Maven 2.x XXX Plugin - Version 2.1
+Release Notes - Maven 2.x XXX Plugin - Version Y.Y
 
 (Copy Here Release Notes in Text Format from Jira)
 
