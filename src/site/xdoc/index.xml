@@ -7,12 +7,12 @@
   <body>
     <!-- TODO: news? -->
     <div id="downloadbox">
-      <h5>Get Maven 2.0.4</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 10 April 2006</span>
+      <h5>Get Maven 2.0.5</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 14 Feb 2007</span>
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
-          Maven 2.0.4
+          Maven 2.0.5
         </a>
         <small>(1.1Mb)</small>
         <span style="font-size: smaller">
@@ -22,6 +22,7 @@
           <a href="release-notes.html">Release Notes</a>
         </span>
       </p>
+      <!--
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
@@ -30,10 +31,10 @@
         <small>(870k)</small>
         <span style="font-size: smaller">
           <br/>
-          <!-- TODO: does this need to be in the Navigation? -->
           <a href="ant-tasks.html">Documentation</a>
         </span>
       </p>
+      -->
       <!-- TODO: what about pointing to older releases? Maven 2.0.x (x < 4) and Maven 1.x? -->
       <!-- TODO: what about downloads for Continuum, etc.? Would be good to have one big download page -->
 
@@ -45,6 +46,11 @@
         </a>
         continuous integration server
       </p>
+      <!--
+      
+      You can't be promoting Archiva when it's never been released, it's completely alpha and this is misleading.
+      When it's released I think it can rightfully be put here.
+      
       <p>
         <a href="archiva">
           <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
@@ -52,6 +58,7 @@
         </a>
         repository and artifact management server 
       </p>
+      -->
       <p>
         <a href="maven-1.x">
           <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>

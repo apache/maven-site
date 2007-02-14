@@ -1,17 +1,17 @@
  ------
-Release Notes - Maven 2.0.4
+Release Notes - Maven 2.0.5
  ------
 Brett Porter
+Jason van Zyl
  ------
 18 October 2005
  ------
 
-
 Release Notes - Maven 2.0.4
 
-  The Apache Maven team would like to announce the release of Maven 2.0.4.
+  The Apache Maven team would like to announce the release of Maven 2.0.5.
 
-  Maven 2.0.4 is {{{download.html} available for download}}.
+  Maven 2.0.5 is {{{download.html} available for download}}.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
@@ -29,6 +29,19 @@ Release Notes - Maven 2.0.4
 
     * Maven Blogs: {{http://blogs.maven.org/}}
 
+* 2.0.5 Release Notes
+  
+  {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=12294&sorter/field=issuekey&sorter/order=DESC}Issue Tracker Roadmap}}
+  
+  One behavioral note that users should be aware of is the following.
+  
+  The only thing in the list which may bite you is that the the dependency resolution is more correct, at least in terms 
+  of what we documented, in that the nearest version of a  dependency will be selected. This will affect if you are not 
+  specifying all dependencies which you actually need to compile your project. Technically you should always list the dependencies 
+  that your project actually needs to compile, but we currently don't enforce that. So if you are relying on transitive 
+  dependencies to pick up your compile time requirements you might have some issues. Specifically this:
+
+  {{http://jira.codehaus.org/browse/MNG-2794}}  
   
 * 2.0.4 Release Notes
 
