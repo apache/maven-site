@@ -44,7 +44,7 @@ Releasing A Maven Project
       <id>release</id>
       <properties>
         <gpg.passphrase>secretPhrase</gpg.passphrase>
-        <deploy.altRepository>username::default::scp://hostname/path/to/directory/stage/repo</deploy.altRepository>
+        <deploy.altRepository>apache.releases::default::scp://hostname/path/to/directory/stage/repo</deploy.altRepository>
       </properties>
     </profile>
   </profiles>
@@ -64,9 +64,9 @@ Releasing A Maven Project
  All you need to do in order to release are the familiar 
  
 +-----+
-mvn release:perform
-
 mvn release:prepare
+
+mvn release:perform
 +-----+
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
