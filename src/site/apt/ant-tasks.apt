@@ -320,7 +320,7 @@ The Settings File
 Sample Ant Script
 
   The file 
-  {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-artifact-ant/sample.build.xml} sample.build.xml}}
+  {{{http://svn.apache.org/repos/asf/maven/ant-tasks/trunk/sample.build.xml} sample.build.xml}}
   is a sample Ant script showing some of the functionality in action.
 
 Getting Help
