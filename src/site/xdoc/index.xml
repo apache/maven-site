@@ -129,7 +129,7 @@ width="244" height="136"></iframe>
         </li>
         <li>
           <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-            <a href="maven-developers/index.html">Develop Maven</a>
+            <a href="developers/index.html">Develop Maven</a>
           </span>
           <span style="display: block; margin-bottom: 0.5em">
             Information for those who are currently developers, or interested in becoming developers of the Maven

@@ -1,7 +1,8 @@
  ------
- Developers centre
+ Maven Developer Centre
  ------
  Vincent Siveton
+ Brett Porter
  ------
  October 2006
  ------
@@ -24,12 +25,11 @@
  ~~ http://maven.apache.org/guides/mini/guide-apt-format.html
 
 
-Introduction
+Maven Developer Centre
 
- These pages attempt to list all resources and information related to the Maven development. It contains information
- aimed at developers, committers and PMC members.
+  This documentation centre is for people who are Maven developers, or would like to contribute.
 
- If you cannot find your answers here, feel free to ask the {{{mailto:dev@maven.apache.org}Maven Developer List}}.
+  If you cannot find your answers here, feel free to ask the {{{mailto:dev@maven.apache.org}Maven Developer List}}.
 
 * Contributors Resources
 
@@ -70,3 +70,9 @@ Introduction
   * {{{http://www.apache.org/dev/}ASF Development Infrastructure Information}}
 
   * {{{http://www.apache.org/foundation/}About the Apache Software Foundation}}
+
+~~TODO: tasks as buttons?
+
+~~TODO: de-dupe with existing documents in community
+
+~~TODO: clean up, have cookbook with more in depth documents like cutting releases, etc.
