@@ -24,34 +24,3 @@ Guide to add, improve or fix metadata in the ibiblio maven 2 repository
  *Important:* by default assume that we won't trust your info, so you must provide all links
  to the project documentation you can to convince us that your solution is right.
 
-
-Information about the current configuration
-
- The canonical repository is at <<<maven.org>>>, under <<</home/maven>>>
-
- * repository-staging/to-ibiblio/maven  - maven 1 repo
-
- * repository-staging/to-ibiblio/maven2 - maven 2 repo
-
-
-
- Every 4 hours a crontab runs
-
-  <<<$HOME/components/maven-meeper/src/bin/synchronize.sh 2>&1 | tee $HOME/repository-tools/last-sync-results.txt>>>
-
-
-
- Folder contents:
-
- * <<<components>>> - svn checkout from maven/components svn
-
- * <<<components/maven-meeper/src/bin/deploy-bundle>>> script to deploy an upload bundle from JIRA MAVENUPLOAD
-
- * <<<components/maven-meeper/src/bin/syncopate/>>> scripts to rsync from partner repos
-
- * <<<components/maven-meeper/src/bin/syncopate/conf/>>> syncopate configuration for each of the partners
-
- * <<<components/maven-meeper/src/bin/ibiblio-sync/>>> scripts to rsync to and from ibiblio
-
- * <<<repository-tools/repoclean>>> snapshot of the repoclean tool (20060206 as of today)
-    <<<https://svn.apache.org/repos/asf/maven/components/trunk/sandbox/repoclean>>>
