@@ -25,7 +25,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-clean-plugin/} <<<clean>>>}}                     | 2.1.1  | Clean up after the build.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-compiler-plugin/} <<<compiler>>>}}               | 2.0.1  | Compiles Java sources.
+| {{{maven-compiler-plugin/} <<<compiler>>>}}               | 2.0.2  | Compiles Java sources.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-deploy-plugin/} <<<deploy>>>}}                   | 2.3    | Deploy the built artifact to the remote repository.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -35,7 +35,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-site-plugin/} <<<site>>>}}                       | 2.0-beta-5 | Generate a site for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-surefire-plugin/} <<<surefire>>>}}               | 2.2    | Run the Junit tests in an isolated classloader.
+| {{{maven-surefire-plugin/} <<<surefire>>>}}               | 2.3    | Run the Junit tests in an isolated classloader.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-verifier-plugin/} <<<verifier>>>}}               | 1.0-beta-1 | Useful for integration tests - verifies the existence of certain conditions.
 *-----------------------------------------------------------*--------+----------------------------------------------+
@@ -43,7 +43,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-ear-plugin/} <<<ear>>>}}                         | 2.3    | Generate an EAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-ejb-plugin/} <<<ejb>>>}}                         | 2.0    | Build an EJB (and optional client) from the current project.
+| {{{maven-ejb-plugin/} <<<ejb>>>}}                         | 2.1    | Build an EJB (and optional client) from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-jar-plugin/} <<<jar>>>}}                         | 2.1    | Build a JAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -53,7 +53,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<reporting>> | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-changelog-plugin/} <<<changelog>>>}}             |        | Generate a list of recent changes from your SCM.
+| {{{maven-changelog-plugin/} <<<changelog>>>}}             | 2.0    | Generate a list of recent changes from your SCM.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-changes-plugin/} <<<changes>>>}}                 | 2.0-beta-2 | Generate a report from issue tracking or a change document.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -61,11 +61,11 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-clover-plugin/} <<<clover>>>}}                   | 2.3    | Generate a Clover report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-doap-plugin/} <<<doap>>>}}                       |        | Generate a Description of a Project (DOAP) file from a POM.
+| {{{maven-doap-plugin/} <<<doap>>>}}                       | 1.0-beta-1 | Generate a Description of a Project (DOAP) file from a POM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-docck-plugin/} <<<docck>>>}}                     | 1.0-beta-1 | Documentation checker plugin.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-javadoc-plugin/} <<<javadoc>>>}}                 | 2.1    | Generate Javadoc for the project.
+| {{{maven-javadoc-plugin/} <<<javadoc>>>}}                 | 2.2    | Generate Javadoc for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-jxr-plugin/} <<<jxr>>>}}                         | 2.0    | Generate a source cross reference.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -73,7 +73,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate a standard project reports.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.0    | Generate a report based on the results of unit tests.
+| {{{maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.3    | Generate a report based on the results of unit tests.
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<tools>> | | <These are miscellaneous tools available through Maven by default.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -93,7 +93,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-help-plugin/} <<<help>>>}}                       | 2.0.1  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-invoker-plugin/} <<<invoker>>>}}                 |        | Run a set of Maven projects and verify the output
+| {{{maven-invoker-plugin/} <<<invoker>>>}}                 | 1.0    | Run a set of Maven projects and verify the output
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-one-plugin/} <<<one>>>}}                         | 1.0     | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -105,13 +105,13 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-3 | Generate a SCM for the current project.
+| {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-4 | Generate a SCM for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-source-plugin/} <<<source>>>}}                   | 2.0.1  | Build a JAR of sources for use in IDEs and distribution to the repository.
+| {{{maven-source-plugin/} <<<source>>>}}                   | 2.0.2  | Build a JAR of sources for use in IDEs and distribution to the repository.
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<IDEs>> | | <Plugins that simplify integration with integrated developer environments.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-eclipse-plugin/} <<<eclipse>>>}}                 | 2.2    | Generate an Eclipse project file for the current project.
+| {{{maven-eclipse-plugin/} <<<eclipse>>>}}                 | 2.3    | Generate an Eclipse project file for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-idea-plugin/} <<<idea>>>}}                       | 2.0    | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -130,11 +130,11 @@ Available Plugins
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 | {{{http://mojo.codehaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}            | 2.0-beta-1 | Generate a report on code metrics using JDepend.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
-| {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}} | 1.0-alpha-1 | Compiles C and C++ code with native compilers.
+| {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}} | 1.0-alpha-2 | Compiles C and C++ code with native compilers.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
-| {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                    | 1.0-beta-2 | Executes SQL scripts from files or inline.
+| {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                    | 1.0     | Executes SQL scripts from files or inline.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
-| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | 2.0-beta-1 | Generate a list of tasks based on tags in your code.
+| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | 2.0     | Generate a list of tasks based on tags in your code.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 
 
