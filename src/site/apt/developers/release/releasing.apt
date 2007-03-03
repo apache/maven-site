@@ -86,7 +86,7 @@ Releasing a Project Directly into a Production Repository
       <id>release</id>
       <properties>
         <gpg.passphrase>secretPhrase</gpg.passphrase>
-        <deploy.altRepository>username::default::scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</deploy.altRepository>
+        <deploy.altRepository>apache.releases::default::scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</deploy.altRepository>
       </properties>
     </profile>
   </profiles>
