@@ -89,7 +89,7 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-1 | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-1 | Create signatures for the artifacts and poms
+| {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-3 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-help-plugin/} <<<help>>>}}                       | 2.0.1  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -101,7 +101,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-2 | Copy remote resources to the output directory for inclusion in the artifact.
+| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-3 | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
