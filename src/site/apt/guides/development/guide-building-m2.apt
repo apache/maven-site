@@ -103,14 +103,14 @@ mvn assembly:assembly
   release, so set the <<<M2_HOME>>> environment variable accordingly, e.g.:
 
 ----
-export M2_HOME=/usr/local/maven-2.0.5-SNAPSHOT
+export M2_HOME=/usr/local/maven-2.0.6-SNAPSHOT
 PATH=$M2_HOME/bin:$PATH
 ----
 
   or
 
 ----
-set M2_HOME=c:\maven-2.0.5-SNAPSHOT
+set M2_HOME=c:\maven-2.0.6-SNAPSHOT
 set PATH=%M2_HOME%\bin;%PATH%
 ----
 
@@ -246,4 +246,5 @@ Main targets:
  
 Default target: all
 +--------+
+
 
