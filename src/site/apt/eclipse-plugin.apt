@@ -1,32 +1,12 @@
  -----
- Maven 2.x Plug-in for Eclipse
+ Maven 2.x Integration for Eclipse
  -----
- Brett Porter
+ Jason van Zyl
  -----
- 30 March 2006
+ 11 March 2007
  -----
 
-Maven 2.x Plug-in for Eclipse
+Maven 2.x Integration for Eclipse
 
-  {{{http://www.mergere.com}Mergere}} is developing a Maven 2.x Plug-in for Eclipse and has released
-  it under the ASL 2.0. The project can be found at Codehaus - {{http://m2eclipse.codehaus.org/}}.
-
-* Binaries and Installation
-
- You can install the Maven 2.x Plug-in for Eclipse by using the following
- update site from within Eclipse:
-
- {{http://m2eclipse.codehaus.org/}}
-
-* Flash Demos
-
- There is a Flash demo that you can view which shows you how to install the
- plug-in if you are unfamiliar with Eclipse's standard install mechanism:
-
- {{http://m2eclipse.codehaus.org/Installing_Maven_2.0_plugin_for_Eclipse.html}}
-
- You can see what the Maven 2.x Plug-in for Eclipse can do by viewing the
- following demo in Flash:
-
- {{http://m2eclipse.codehaus.org/Maven_2.0_Plugin_for_Eclipse.html}}
-
+  The {{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing the standard Maven 2.x integration piece for 
+  Eclipse and has released it under the ASL 2.0. You can find everything you need to know from the project website.
