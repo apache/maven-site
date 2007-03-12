@@ -62,12 +62,16 @@ mvn site
   deployment.
 
 ---------------
-<distributionManagement>
-  <site>
-    <id>website</id>
-    <url>scp://www.mycompany.com/www/docs/project/</url>
-  </site>
-</distributionManagement>
+<project>
+  ...
+  <distributionManagement>
+    <site>
+      <id>website</id>
+      <url>scp://www.mycompany.com/www/docs/project/</url>
+    </site>
+  </distributionManagement>
+  ...
+</project>
 ---------------
 
   The <<<id>>> element identifies the repository, so that you can attach credentials to it in your <<<settings.xml>>>
@@ -114,7 +118,7 @@ mvn site-deploy
       <item name="Road Map" href="roadmap.html" />
     </menu>
 
-    ${reports}
+    <menu ref="reports"/>
 
     ...
   </body>
@@ -123,12 +127,12 @@ mvn site-deploy
 
   ~~TODO: deserves more explanation.
 
-  Note the <<<${reports}>>> string in the navigation. When building the site, this is replaced by menus for any reports
+  Note the <<<\<menu ref="reports"/\>>>> string in the navigation. When building the site, this is replaced by menus for any reports
   that you have configured.
 
 * Adding Extra Resources
 
-  You can add any arbitrary resources to you site by including them in a
+  You can add any arbitrary resource to your site by including them in a
   <<<resources>>> directory as shown below. Additional CSS files will be picked up
   when they are placed in the <<<css>>> directory within the <<<resources>>>
   directory.
@@ -169,9 +173,10 @@ mvn site-deploy
     </plugins>
   </reporting>
   ...
+</project>
 -------------------
 
-  If you have included the appropriate <<<${reports}>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
+  If you have included the appropriate <<<\<menu ref="reports"/\>>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
   the site those items will appear on the menu.
 
   ~~TODO: explain report sets
@@ -181,7 +186,7 @@ mvn site-deploy
   Internationalisation in Maven is very simple, as long as the reports you are using have that particular locale
   defined.
 
-  To enable multiple locales, add configuration similar to the following to your POM:
+  To enable multiple locales, add a configuration similar to the following to your POM:
 
 -------------------
 <project>
@@ -196,7 +201,9 @@ mvn site-deploy
         </configuration>
       </plugin>
     </plugins>
+  </build>
   ...
+</project>
 -------------------
 
   This will generate both an English and a French version of the site. If <<<en>>> is your current locale, then it will
@@ -210,9 +217,11 @@ mvn site-deploy
    +- site/
       +- apt/
       |  +- index.apt     (Default version)
+      |
       +- fr/
       |  +- apt/
-      |  |  +- index.apt  (French version)
+      |     +- index.apt  (French version)
+      |
       +- site.xml         (Default site descriptor)
       +- site_fr.xml      (French site descriptor)
 --------------------
@@ -239,4 +248,4 @@ Using standard reports
  * License
  
  To find out more please refer to the
- {{{http://maven.apache.org/plugins/maven-project-info-reports-plugin/howto.html}Project Info Reports Plug-in}}.
+ {{{http://maven.apache.org/plugins/maven-project-info-reports-plugin/index.html}Project Info Reports Plug-in}}.
