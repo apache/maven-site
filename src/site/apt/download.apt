@@ -16,16 +16,16 @@ Download Maven 2.0.5
 
   Maven 2.0.5 is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
-  We <<strongly>> encorage our users to configure a Maven repository mirror closer to their location, please read {{{guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
+  We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
-| Maven 2.0.5 (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.tar.bz2} maven-${project.version}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.bz2.md5} maven-${project.version}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.bz2.asc} maven-${project.version}-bin.tar.bz2.asc}} |
+| Maven 2.0.5 (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.tar.bz2} maven-2.0.5-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.md5} maven-2.0.5-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.bz2.asc} maven-2.0.5-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven 2.0.5 (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.tar.gz} maven-${project.version}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.gz.md5} maven-${project.version}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.gz.asc} maven-${project.version}-bin.tar.gz.asc}} |
+| Maven 2.0.5 (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.tar.gz} maven-2.0.5-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.gz.md5} maven-2.0.5-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.tar.gz.asc} maven-2.0.5-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven 2.0.5 (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.zip} maven-${project.version}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.zip.md5} maven-${project.version}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.zip.asc} maven-${project.version}-bin.zip.asc}} |
+| Maven 2.0.5 (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-2.0.5-bin.zip} maven-2.0.5-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.zip.md5} maven-2.0.5-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-2.0.5-bin.zip.asc} maven-2.0.5-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
 
 *Previous Releases
@@ -48,7 +48,7 @@ All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/
 
 ** Windows 2000/XP
 
-  [[1]] Unzip <<<maven-2.0.5-bin.zip>>> to the directory you wish to install Maven ${project.version}. These instructions
+  [[1]] Unzip <<<maven-2.0.5-bin.zip>>> to the directory you wish to install Maven 2.0.5. These instructions
         assume you chose <<<C:\Program Files\Apache Software Foundation\maven-2.0.5>>>
 
   [[2]] Add the <<<bin>>> directory to your path, by opening up the system properties (WinKey + Pause),
@@ -64,7 +64,7 @@ All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
   [[1]] Extract the distribution archive to the directory you wish to install Maven 2.0.5. These instructions
-        assume you chose <<</usr/local/maven-2.0.5>>>. The directory <<<maven-${project.version}>>> will be created from
+        assume you chose <<</usr/local/maven-2.0.5>>>. The directory <<<maven-2.0.5>>> will be created from
         the archive.
 
   [[2]] Add the <<<bin>>> directory to your path, eg. <<<export
