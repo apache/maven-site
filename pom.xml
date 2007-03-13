@@ -96,4 +96,30 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-notifications/</archive>
     </mailingList>
   </mailingLists>
+
+  <!-- TODO: temporary, remove once site plugin can filter during transformation -->
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <configuration>
+          <tasks>
+            <copy tofile="src/site/apt/download.apt" file="src/site/apt/download.apt.template" overwrite="true">
+              <filterset>
+                <filter token="project.version" value="2.0.5" />
+              </filterset>
+            </copy>
+          </tasks>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <phase>pre-site</phase>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
 </project>

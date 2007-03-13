@@ -1,5 +1,5 @@
  ------
-Download Maven ${project.version}
+Download Maven @project.version@
  ------
 Brett Porter
 Jason van Zyl
@@ -7,30 +7,32 @@ Jason van Zyl
 4 October 2005
  ------
 
-Download Maven ${project.version}
+Download Maven @project.version@
 
   Maven is distributed in several formats for your convenience.
 
   You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
   hours to reach all mirrors.
 
-  Maven ${project.version} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
+  Maven @project.version@ is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
   We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
-| Maven ${project.version} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.tar.bz2} maven-${project.version}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.bz2.md5} maven-${project.version}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.bz2.asc} maven-${project.version}-bin.tar.bz2.asc}} |
+| Maven @project.version@ (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-@project.version@-bin.tar.bz2} maven-@project.version@-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.tar.bz2.md5} maven-@project.version@-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.tar.bz2.asc} maven-@project.version@-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${project.version} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.tar.gz} maven-${project.version}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.gz.md5} maven-${project.version}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.tar.gz.asc} maven-${project.version}-bin.tar.gz.asc}} |
+| Maven @project.version@ (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-@project.version@-bin.tar.gz} maven-@project.version@-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.tar.gz.md5} maven-@project.version@-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.tar.gz.asc} maven-@project.version@-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${project.version} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-${project.version}-bin.zip} maven-${project.version}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.zip.md5} maven-${project.version}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-${project.version}-bin.zip.asc} maven-${project.version}-bin.zip.asc}} |
+| Maven @project.version@ (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-@project.version@-bin.zip} maven-@project.version@-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.zip.md5} maven-@project.version@-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-@project.version@-bin.zip.asc} maven-@project.version@-bin.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven 2.0.4 Tasks for Ant              | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-artifact-ant-2.0.4-dep.jar} maven-artifact-ant-2.0.4-dep.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-artifact-ant-2.0.4-dep.jar.md5} maven-artifact-ant-2.0.4-dep.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-artifact-ant-2.0.4-dep.jar.asc} maven-artifact-ant-2.0.4-dep.jar.asc}} |
 *-------------------------+---------+----------+-----------+
 
-*Previous Releases
+* Previous Releases
 
-All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/closer.cgi/maven/binaries}distribution repository}}.
+  All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/closer.cgi/maven/binaries}distribution repository}}.
 
 * System {Requirements}
 
@@ -48,13 +50,13 @@ All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/
 
 ** Windows 2000/XP
 
-  [[1]] Unzip <<<maven-${project.version}-bin.zip>>> to the directory you wish to install Maven ${project.version}. These instructions
-        assume you chose <<<C:\Program Files\Apache Software Foundation\maven-${project.version}>>>
+  [[1]] Unzip <<<maven-@project.version@-bin.zip>>> to the directory you wish to install Maven @project.version@. These instructions
+        assume you chose <<<C:\Program Files\Apache Software Foundation\maven-@project.version@>>>
 
   [[2]] Add the <<<bin>>> directory to your path, by opening up the system properties (WinKey + Pause),
         selecting the "Advanced" tab, and the "Environment Variables" button, then editing the <<<PATH>>>
         variable in the user variables. eg.
-        <<<"C:\Program Files\Apache Software Foundation\maven-${project.version}\bin";%PATH%>>>
+        <<<"C:\Program Files\Apache Software Foundation\maven-@project.version@\bin";%PATH%>>>
 
   [[3]] In the same dialog, make sure that <<<JAVA_HOME>>> is set to the location of your JDK,
         eg. <<<C:\Program Files\Java\jdk1.5.0_02>>>
@@ -63,12 +65,12 @@ All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/
 
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
-  [[1]] Extract the distribution archive to the directory you wish to install Maven ${project.version}. These instructions
-        assume you chose <<</usr/local/maven-${project.version}>>>. The directory <<<maven-${project.version}>>> will be created from
+  [[1]] Extract the distribution archive to the directory you wish to install Maven @project.version@. These instructions
+        assume you chose <<</usr/local/maven-@project.version@>>>. The directory <<<maven-@project.version@>>> will be created from
         the archive.
 
   [[2]] Add the <<<bin>>> directory to your path, eg. <<<export
-PATH=/usr/local/maven-${project.version}/bin:$PATH>>>
+PATH=/usr/local/maven-@project.version@/bin:$PATH>>>
 
   [[3]] Make sure that <<<JAVA_HOME>>> is set to the location of your JDK, eg.
         <<<export JAVA_HOME=/usr/java/jdk1.5.0_02>>>

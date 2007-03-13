@@ -22,7 +22,6 @@
           <a href="release-notes.html">Release Notes</a>
         </span>
       </p>
-      <!--
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
@@ -34,8 +33,6 @@
           <a href="ant-tasks.html">Documentation</a>
         </span>
       </p>
-      -->
-      <!-- TODO: what about pointing to older releases? Maven 2.0.x (x < 4) and Maven 1.x? -->
       <!-- TODO: what about downloads for Continuum, etc.? Would be good to have one big download page -->
 
       <h5>Other Maven Projects</h5>
