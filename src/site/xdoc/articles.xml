@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!--
 /*
- * Copyright 2001-2006 The Apache Software Foundation.
+ * Copyright 2001-2007 The Apache Software Foundation.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,8 +18,9 @@
  -->
 <document>
   <properties>
-    <title>Articles on Maven</title>
+    <title>External Resources on Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
+    <author email="vmassol@apache.org">Vincent Massol</author>
   </properties>
   <body>
     <section name="Books on Maven">
@@ -81,6 +82,13 @@
           <li>build simple and complex plug-ins</li>
         </ul>
       </div>
+    </section>
+
+    <section name="Miscellaneous on Maven">
+      <p>
+        If you're interested in testing your Maven skills, check out <a href="http://www.javablackbelt.com/QuestionnaireDefDisplay.wwa?questPublicId=01559">JavaBlackBelt's Maven exam</a>. 
+        This exam is beeing written collaboratively by the community. Feel free to add new questions, suggest improvements, etc.
+      </p>    
     </section>
 
     <section name="Articles on Maven">
