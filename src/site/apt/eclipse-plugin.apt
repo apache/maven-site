@@ -8,5 +8,5 @@
 
 Maven 2.x Integration for Eclipse
 
-  The {{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing the standard Maven 2.x integration piece for 
+  The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing the standard Maven 2.x integration piece for 
   Eclipse and has released it under the ASL 2.0. You can find everything you need to know from the project website.
