@@ -51,6 +51,13 @@ Introduction to the Dependency Mechanism
         then D 1.0 will be used when building A because the path from A to D through E is shorter.
         You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0
 
+ * <Dependency management>
+   - this allows project authors to directly specify the versions of artifiacts to be used when they are encountered
+     in transitive dependencies or in dependencies where no version has been specified. In the example in
+     the preceding section a dependency was directly added to A even though it is not directly used by A. Instead,
+     A can include D as a dependency in its dependencyManagement section and directly control which version of
+     D is used when, or if, it is ever referenced.
+
  * <Dependency scope>
    - this allows you to only include dependencies appropriate for the current stage
      of the build. This is described in more detail below.
@@ -271,9 +278,111 @@ Introduction to the Dependency Mechanism
  identity set to <<\{groupId, artifactId\}>>, since the default for the type field 
  is <<<jar>>>, and the default classifier is null.
 
+ A second, and very important use of the dependency management section is to control the versions
+ of artifacts used in transitive dependencies. As an example consider these projects:
+
+ Project A:
+
++----+
+
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>maven</groupId>
+ <artifactId>A</artifactId>
+ <packaging>pom</packaging>
+ <name>A</name>
+ <version>1.0</version>
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>a</artifactId>
+       <version>1.2</version>
+     </dependency>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>b</artifactId>
+       <version>1.0</version>
+       <scope>compile</scope>
+     </dependency>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>c</artifactId>
+       <version>1.0</version>
+       <scope>compile</scope>
+     </dependency>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>d</artifactId>
+       <version>1.2</version>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
+</project>
+
++----+
+
+ Project B:
+
++----+
+
+<project>
+  <parent>
+    <artifactId>A</artifactId>
+    <groupId>maven</groupId>
+    <version>1.0</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven</groupId>
+  <artifactId>B</artifactId>
+  <packaging>pom</packaging>
+  <name>B</name>
+  <version>1.0</version>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>test</groupId>
+        <artifactId>d</artifactId>
+        <version>1.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>maven-test</groupId>
+      <artifactId>a</artifactId>
+      <version>1.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>maven-test</groupId>
+      <artifactId>c</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+
++----+
+
+ When maven is run on project B version 1.0 of artifacts a, b, c, and d will be used regardless of
+ the version specified in their pom.
+
+ * a and c both are declared as dependencies of the project so  version 1.0 is used due to
+ dependency mediation. Both will also have runtime scope since it is directly specified.
+
+ * b is defined in B's parent's dependency managemnet section and since dependency management
+ takes precedence over dependency mediation for transitive dependencies, version 1.0 will be
+ selected should it be referenced in a or c's pom. b will also have compile scope.
+ 
+ * Finally, since d is specified in B's dependency management section, should d be a dependency
+ (or transitive dependency) of a or c, version 1.0 will be chosen - again  because dependency
+ management takes precedence over dependency mediation and also because the current pom's
+ declaration takes precedence over its parent's declaration.
+ 
+ []
 
  The reference information about the dependency management tags is available from the
- {{{maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                    -----
+ {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                 
 
 
 * System Dependencies
