@@ -69,7 +69,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-jxr-plugin/} <<<jxr>>>}}                         | 2.0    | Generate a source cross reference.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-pmd-plugin/} <<<pmd>>>}}                         | 2.1    | Generate a PMD report.
+| {{{maven-pmd-plugin/} <<<pmd>>>}}                         | 2.2    | Generate a PMD report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate a standard project reports.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -87,7 +87,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-1 | Dependency manipulation.
+| {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-3 | Dependency manipulation.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-3 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -101,7 +101,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-3 | Copy remote resources to the output directory for inclusion in the artifact.
+| {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-4 | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
