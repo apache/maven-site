@@ -1,15 +1,23 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <!--
   <parent>
     <artifactId>maven-parent</artifactId>
     <groupId>org.apache.maven</groupId>
     <version>5</version>
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
+  -->
+  <groupId>org.apache.maven</groupId>
+  <version>1.0</version>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>maven-site</artifactId>
   <packaging>pom</packaging>
   <name>Maven Site</name>
+
+  <properties>
+    <currentVersion>2.0.6</currentVersion>
+  </properties>
 
   <reporting>
     <excludeDefaults>true</excludeDefaults>
@@ -96,30 +104,4 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-notifications/</archive>
     </mailingList>
   </mailingLists>
-
-  <!-- TODO: temporary, remove once site plugin can filter during transformation -->
-  <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-antrun-plugin</artifactId>
-        <configuration>
-          <tasks>
-            <copy tofile="src/site/apt/download.apt" file="src/site/apt/download.apt.template" overwrite="true">
-              <filterset>
-                <filter token="project.version" value="2.0.5" />
-              </filterset>
-            </copy>
-          </tasks>
-        </configuration>
-        <executions>
-          <execution>
-            <goals>
-              <goal>run</goal>
-            </goals>
-            <phase>pre-site</phase>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
 </project>
