@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven 2.0.5
+Release Notes - Maven 2.0.6
  ------
 Brett Porter
 Jason van Zyl
@@ -7,11 +7,11 @@ Jason van Zyl
 18 October 2005
  ------
 
-Release Notes - Maven 2.0.5
+Release Notes - Maven 2.0.6
 
-  The Apache Maven team would like to announce the release of Maven 2.0.5.
+  The Apache Maven team would like to announce the release of Maven 2.0.6.
 
-  Maven 2.0.5 is {{{download.html} available for download}}.
+  Maven 2.0.6 is {{{download.html} available for download}}.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
@@ -28,6 +28,15 @@ Release Notes - Maven 2.0.5
   For news and information, see:
 
     * Maven Blogs: {{http://blogs.maven.org/}}
+
+* 2.0.6 Release Notes
+
+** Changes that may affect existing builds
+
+    * {{{http://jira.codehaus.org/browse/MNG-1577} MNG-1577}} - Maven will now only obey the dependendencyManagment element in the POM and 
+      will align all transitive dependencies to versions specified in the dependencyManagement. To detect any problems that you might have
+      you can refer to these {{{http://maven.apache.org/plugins/maven-dependency-plugin/examples/preparing-dependencies.html}notes}} to
+      prepare for the upgrade.
 
 * 2.0.5 Release Notes
   
