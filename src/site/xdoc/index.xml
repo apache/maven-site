@@ -7,12 +7,12 @@
   <body>
     <!-- TODO: news? -->
     <div id="downloadbox">
-      <h5>Get Maven 2.0.5</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 14 Feb 2007</span>
+      <h5>Get Maven ${currentVersion}</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 31 March 2007</span>
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
-          Maven 2.0.5
+          Maven ${currentVersion}
         </a>
         <small>(1.1Mb)</small>
         <span style="font-size: smaller">
