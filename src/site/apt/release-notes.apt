@@ -37,6 +37,9 @@ Release Notes - Maven 2.0.6
       will align all transitive dependencies to versions specified in the dependencyManagement. To detect any problems that you might have
       you can refer to these {{{http://maven.apache.org/plugins/maven-dependency-plugin/examples/preparing-dependencies.html}notes}} to
       prepare for the upgrade.
+      
+    * The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=13010&sorter/field=issuekey&sorter/order=DESC}
+      here}}.
 
 * 2.0.5 Release Notes
   
