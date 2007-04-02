@@ -31,6 +31,9 @@ Release Notes - Maven 2.0.6
 
 * 2.0.6 Release Notes
 
+  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=13010&sorter/field=issuekey&sorter/order=DESC}
+  here}}, and is reproduced below.
+      
 ** Changes that may affect existing builds
 
     * {{{http://jira.codehaus.org/browse/MNG-1577} MNG-1577}} - Maven will now only obey the dependendencyManagment element in the POM and 
@@ -90,7 +93,10 @@ Release Notes - Maven 2.0.6
     * [MNG-2898] - Look at allowing all org.codehaus.plexus.util.xml to show through
 
 * 2.0.5 Release Notes
-  
+
+  The full list of changes can be found {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=12294&styleName=Text&projectId=10500&Create=Create}
+  here}}, and is reproduced below.
+
 ** Changes that may affect existing builds
 
     * {{{http://jira.codehaus.org/browse/MNG-2794} MNG-2794}} - Maven now behaves in a defined way when matching the nearest dependency when two
