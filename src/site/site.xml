@@ -140,8 +140,10 @@
       <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
       <item name="Getting Support" href="/mail-lists.html" />
+      <!--
       <item name="Issue Tracking" href="/issue-tracking.html" />
       <item name="The Maven Team" href="/team-list.html" />
+      -->
     </menu>
 
     <menu name="Maven Projects" inherit="bottom">
