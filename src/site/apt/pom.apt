@@ -1679,7 +1679,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   will match. 
   
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above. 
+  The <<<os>>> element can define some operating system specific properties shown above. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
+
   
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
