@@ -1,13 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <!--
+  
   <parent>
     <artifactId>maven-parent</artifactId>
     <groupId>org.apache.maven</groupId>
-    <version>5</version>
+    <version>6-SNAPSHOT</version>
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
-  -->
+  
   <groupId>org.apache.maven</groupId>
   <version>1.0</version>
   <modelVersion>4.0.0</modelVersion>
@@ -18,6 +18,11 @@
   <properties>
     <currentVersion>2.0.6</currentVersion>
   </properties>
+ 
+ <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/MNG</url>
+  </issueManagement>
 
   <pluginRepositories>
     <pluginRepository>

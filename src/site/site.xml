@@ -35,7 +35,9 @@
       <item name="For Maven 1.0 Users" href="/maven1.html"/>
       <item name="For Other Projects" href="/project-faq.html"/>
 -->
-
+	<menu name="Main">
+	   <item name="Welcome" href="/index.html"/>
+	</menu>
     <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
       <item name="Release Notes" href="/release-notes.html"/>
@@ -139,11 +141,9 @@
       <item name="Community Overview" href="/community.html"/>
       <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
-      <item name="Getting Support" href="/mail-lists.html" />
-      <!--
-      <item name="Issue Tracking" href="/issue-tracking.html" />
+      <item name="Getting Support" href="/mail-lists.html" /> 
+     <item name="Issue Tracking" href="/issue-tracking.html" />
       <item name="The Maven Team" href="/team-list.html" />
-      -->
     </menu>
 
     <menu name="Maven Projects" inherit="bottom">
