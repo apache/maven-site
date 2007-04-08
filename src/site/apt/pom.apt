@@ -832,7 +832,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   configuration, possibly even binding a plugin's goal to a different phase altogether.
   <<<executions>>> configure the <<<execution>>> of a plugin’s goals.
 
-  For example, suppose you wanted to bind the <<<anrun:run>>> goal to the <<<verify>>> phase.
+  For example, suppose you wanted to bind the <<<antrun:run>>> goal to the <<<verify>>> phase.
   We want the task to echo the build directory, as well as avoid passing on this configuration
   to its children (assuming it is a parent) by setting <<<inherited>>> to <<<false>>>. 
   You would get an <<<execution>>> like this:
