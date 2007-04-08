@@ -87,7 +87,9 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-3 | Dependency manipulation.
+| {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-4 | Dependency manipulation (copy, unpack) and analysis.
+*-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-enforcer-plugin/} <<<enforcer>>>}}           | 1.0-alpha-1 | Environmental constraint checking (Maven Version, JDK etc).
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-3 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -124,6 +126,8 @@ Available Plugins
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 | <<Plugin>>                                                                    | <<Version>> | <<Description>>
 *-------------------------------------------------------------------------------+---------+----------------------------------+
+| {{{http://mojo.codehaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}  | 1.0 | Attach extra artifacts and source folders to build.
+*----------------------------------------------------------------------------+----------------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}              | 1.0     | Generate sources from an XSD using Castor.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 | {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}              | 2.1     | Generate sources from a JavaCC grammer.
