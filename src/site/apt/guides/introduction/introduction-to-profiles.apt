@@ -91,7 +91,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
     the value of a system property. Here are some examples.
 
     The follwing configuration will trigger the profile when the JDK's
-    version starts with "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"):
+	version starts with "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"):
 
 +---+
 <profiles>
@@ -99,6 +99,24 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
     <activation>
       <jdk>1.4</jdk>
     </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+	This next one will activate based on OS settings. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
+
++---+
+<profiles>
+  <profile>
+	<activation>
+	 <os>
+	  <name>Windows XP</name>
+	  <family>Windows</family>
+	  <arch>x86</arch>
+	  <version>5.1.2600</version>
+	 </os>
+	</activation>
     ...
   </profile>
 </profiles>
