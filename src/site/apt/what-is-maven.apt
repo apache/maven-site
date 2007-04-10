@@ -124,7 +124,7 @@ What is Maven Not?
  []
 
  While Maven does these things, as you can read above in the "What is Maven?" section,
- these are not the only features Maven has, and it's objectives are quite different.
+ these are not the only features Maven has, and its objectives are quite different.
 
  Maven does encourage best practices, but we realise that some projects may not fit with
  these ideals for historical reasons.  While Maven is designed to be flexible, to an extent, in these
