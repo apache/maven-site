@@ -20,7 +20,7 @@ Introduction to Repositories
  <<<file://>>> and <<<http://>>>. These repositories might be a truely remote repository
  set up by a third party to provide their artifacts for downloading (for example,
  {{{http://www.ibiblio.org/maven/}Ibiblio}} houses Maven's central repository).
- Other "remote" repositories may be {{{http://maven.apache.org/maven-1.x/reference/internal-repositories.html}internal repositories}}
+ Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
 
