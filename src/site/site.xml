@@ -61,6 +61,8 @@
     </menu>
 
     <menu name="Documentation">
+	        <!-- TODO: improve categorisation -->
+      <item name="Index (category)" href="/guides/index.html" />
       <item name="Running Maven" href="/run-maven/index.html" />
       <item name="User Centre" href="/users/index.html" collapse="true">
         <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html" />
@@ -111,13 +113,12 @@
         <item name="How to mirror" href="/repository/mirror.html" />
 -->
       </item>
-      <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
+	  <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <!-- TODO: under documentation? Review structure under here, aim for consistency -->
         <!-- TODO .... -->
         <item name="Continuous Integration" href="/continuous-integration.html"/>
       </item>
-      <!-- TODO: improve categorisation -->
-      <item name="Index (category)" href="/guides/index.html" />
+
 <!--
       <item name="Index (alphabetical)" href="todo.html" />
 -->
