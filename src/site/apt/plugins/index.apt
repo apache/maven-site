@@ -85,7 +85,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-archetype-plugin/} <<<archetype>>>}}             | 1.0-alpha-4 | Generate a skeleton project structure from an archetype.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.1    | Build an assembly (distribution) of sources and/or binaries.
+| {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.2-beta-1   | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-4 | Dependency manipulation (copy, unpack) and analysis.
 *-----------------------------------------------------------+--------+----------------------------------------------+
