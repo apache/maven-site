@@ -13,6 +13,140 @@ Guide to uploading artifacts to the Central Repository
  Maven to have transparent access to their project's artifacts. In order to allow for this a project
  must have their artifacts deployed to the Central Repository.
 
+
+Requirements
+
+ Only releases can be uploaded to the central repository, that means files that won't change and that only depend in other files
+ already released and available in the repository.
+
+ There are some requirements about the minimal information in the poms that are in the central repository. At least these must be present
+
+ * modelVersion
+
+ * groupId
+
+ * artifactId
+
+ * packaging
+
+ * name
+
+ * version
+
+ * url
+
+ * licenses
+
+ * scm url
+
+ * description
+
+ * dependencies
+
+
+ <<groupId>>: it will identify your project uniquely across all
+ projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to the Central Repository it can
+ be equal to the one used previously, but for new projects it has to follow the package name rules, what
+ means that has to be at least as a domain name you control, and you can create as many subgroups
+ as you want.
+ There are a lot of poorly defined package names so you <<must provide proof that you control the domain>> that
+ matches the groupId. Provide proof means that the project is hosted at that domain or it's owned by a member,
+ in that case you must give the link to the registrar database (whois) where the owner is listed and the page
+ in the project web where the owner is associated with the project.
+ eg. If you use a com.sun.xyz package name we expect that the project is hosted at http://xyz.sun.com.
+
+ Look at {{{http://java.sun.com/docs/books/jls/third_edition/html/packages.html#7.7}
+ More information about package names}}. Check also the guide about
+ {{{guide-naming-conventions.html}Maven naming conventions}}
+
+ Examples:
+
+ * www.springframework.org -> org.springframework
+
+ * oness.sf.net -> net.sf.oness
+
+
+* Explanation
+
+ Some folks have asked why do we require all this information in the POM for deployed artifacts so here's a small explanation. The POM
+ being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting
+ transitive dependencies working is really not that hard, the problem is getting the data. The other applications
+ that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
+ process we open up the doors to new ideas that involve unified access to project POMs.
+
+ We also ask for license now because it is possible that your project's license may change in the course of
+ its life time and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
+ for a particular graph of artifacts we could have some strategies that would identify potential licensing problems.
+
+
+
+* A basic sample:
+
++----+
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.apache.maven</groupId>
+  <artifactId>maven</artifactId>
+  <version>2.0</version>
+  <packaging>jar</packaging>
+  <name>Maven core</name>
+  <url>http://maven.apache.org</url>
+  <description>The maven main core project description</description>
+  <licenses>
+    <license>
+      <name>The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+  <scm>
+    <url>http://svn.apache.org/viewcvs.cgi/maven</url>
+  </scm>
+  <dependencies>
+    <dependency>
+      <groupId>...</groupId>
+      <artifactId>...</artifactId>
+      <version>...</version>
+    </dependency>
+    ...
+  </dependencies>
+</project> 
+
++----+
+
+
+
+Sync'ing your own repository to the central repository automatically
+
+ This is the preferred process. You first have to setup your project to
+ {{{http://maven.apache.org/plugins/maven-deploy-plugin/}deploy to a remote repository}}.
+
+ You must make sure the remote repository server has rsync or rsync over ssh, there are free services like
+ {{{http://sf.net}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
+
+ After you are able to deploy to your remote repository <<make sure you only deploy releases>>. Then you can provide a script like the
+ {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
+ open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} and attach the script, and we'll add it to the automatically synced repos.
+
+ Make sure you provide proof of owning the domain that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
+ under that domain, your name shows up in a prominent place in the domain, or you provide a link to a whois database where your name shows up as the domain owner.
+
+ If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log
+ in the machine.
+
+ Remember to subscribe to {{{mailto:repository-subscribe@maven.org}Maven repository mailing list}}.
+
+ <<Important>>: nothing is deleted or changed in the Central Repository after it is synced (except maven-metadata.xml files)
+
+
+
+Manual upload of artifacts
+
+ Note that this manual process is time consuming and <<will only be accepted for a limited number of requests>>. If you want to upload frequently read the
+ section above about automatic sync.
+
+
 * Step 1: Create an upload bundle
 
  Use the repository plugin provided with the standard Maven distribution to create an upload bundle:
@@ -48,93 +182,12 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
 
 +----+
 
- Note that the bundle will be read by a script, so it must follow the above format. Also,
- the <<<pom.xml>>> must at least contain the following elements:
-
- * modelVersion
-
- * groupId
-
- * artifactId
-
- * packaging
-
- * name
-
- * version
-
- * url
-
- * licenses
-
- * scm url
-
- * description
-
- * dependencies
+ Note that the bundle will be read by a script, so it must follow the above format.
 
  []
 
  Be sure to always check previous versions of the poms in the repository to use the information
  already there as a base.
-
- A basic sample:
-
-+----+
-
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>org.apache.maven</groupId>
-  <artifactId>maven</artifactId>
-  <version>2.0</version>
-  <packaging>jar</packaging>
-  <name>Maven core</name>
-  <url>http://maven.apache.org</url>
-  <description>The maven main core project description</description>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
-  <scm>
-    <url>http://svn.apache.org/viewcvs.cgi/maven</url>
-  </scm>
-  <dependencies>
-    <dependency>
-      <groupId>...</groupId>
-      <artifactId>...</artifactId>
-      <version>...</version>
-    </dependency>
-    ...
-  </dependencies>
-</project> 
-
-+----+
-
- []
-
- <<IMPORTANT>> considerations about the <<groupId>>: it will identify your project uniquely across all
- projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to the Central Repository it can
- be equal to the one used previously, but for new projects it has to follow the package name rules, what
- means that has to be at least as a domain name you control, and you can create as many subgroups
- as you want.
- There are a lot of poorly defined package names so you <<must provide proof that you control the domain>> that
- matches the groupId. Provide proof means that the project is hosted at that domain or it's owned by a member,
- in that case you must give the link to the registrar database (whois) where the owner is listed and the page
- in the project web where the owner is associated with the project.
- eg. If you use a com.sun.xyz package name we expect that the project is hosted at http://xyz.sun.com.
-
- Look at {{{http://java.sun.com/docs/books/jls/third_edition/html/packages.html#7.7}
- More information about package names}}. Check also the guide about
- {{{guide-naming-conventions.html}Maven naming conventions}}
-
- Examples:
-
- * www.springframework.org -> org.springframework
-
- * oness.sf.net -> net.sf.oness
 
  []
 
@@ -167,20 +220,9 @@ clipping of nose hairs. Please upload!
 
 +----+
 
-* Explanation
 
- Some folks have asked why do we require the POM and license each time an artifact is deployed so here's a small explanation. The POM
- being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting
- transitive dependencies working is really not that hard, the problem is getting the data. The other applications
- that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
- process we open up the doors to new ideas that involve unified
- access to project POMs.
 
- We also ask for a license now because it is possible that your project's license may change in the course of
- its life time and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
- for a particular graph of artifacts we could have some strategies that would identify potential licensing problems.
-
-* Maven partners
+Maven partners
 
  The following sites sync automatically their project repository with the central one.
  If you want a project from any of these sites to be uploaded to the Central Repository you'll have to
@@ -195,19 +237,6 @@ clipping of nose hairs. Please upload!
  * {{{http://www.opensymphony.com/}OpenSymphony}}
 
  * {{{http://www.osjava.org}OS Java}}
-
-
-Sync'ing your own repository with ibiblio
-
- If you want to automatically sync your own repository to ibiblio you must make sure the server has rsync or rsync over ssh
- and provide a script like the
- {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
- open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with it and we'll add it to the automatically synced repos.
- If using ssh you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log in the machine.
-
- Remember to subscribe to {{{mailto:repository-subscribe@maven.org}Maven repository mailing list}}.
-
- <<Important>>: nothing is deleted or changed in the Central Repository after it is synced (except maven-metadata.xml files)
 
 
 For Maven developers
