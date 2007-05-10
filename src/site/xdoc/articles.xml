@@ -107,6 +107,12 @@
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="http://today.java.net/pub/a/today/2007/03/01/building-web-applications-with-maven-2.html">Building Web Applications with Maven 2</a></td>
+            <td>java.net</td>
+            <td>Will Iverson</td>
+            <td>1 March 2007</td>
+          </tr>
+          <tr>
             <td><a href="http://www-128.ibm.com/developerworks/edu/j-dw-java-mavenv2.html">Introduction to Apache Maven 2</a></td>
             <td>developerWorks</td>
             <td>Sing Li</td>
