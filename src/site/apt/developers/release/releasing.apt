@@ -69,10 +69,20 @@ mvn release:prepare
 mvn release:perform
 +-----+
 
+Copying from the staging repo to the production repo
+
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
- be available to all users. Currently the tools to do this are inconvenient so if you want to stage a release you 
- can contact Jason and he'll show you how to do it. Otherwise you can release directly to a production repository.
- 
+ be available to all users. Note that for now the stage plugin hasn't been released yet and you need to build it yourself.
+ As an example
+
++-----+
+mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" -Dversion=2.3 -DrepositoryId=apache.releases
++-----+
+
+ TODO for some reason the repositoryId configuration doesn't work yet
+ repositoryId parameter is required if you need the server configuration from the settings file (username, password,...).
+
+
 Releasing a Project Directly into a Production Repository
 
  If you want to release directly to a production repository then you simply configure the staging repository point at 
