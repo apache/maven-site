@@ -148,16 +148,9 @@ bootstrap.bat
 mvn install
 ----
 
-  This will build, test and install all libraries in the local repository. Next,
-  if you want to produce the binary distribution:
-
-----
-cd maven-cli
-mvn assembly:assembly
-----
-
-  The assemblies will be created in <<<target>>> and can be unzipped to the
-  location where you'd like Maven installed.
+  This will build, test and install all libraries in the local repository and
+  produce the binary distribution under <<<maven-embedder/target/maven-2.1-SNAPSHOT-bin.*>>>
+  that can be unzipped to the location where you'd like Maven installed.
 
 
 * Building Maven 2.1 without Maven installed
