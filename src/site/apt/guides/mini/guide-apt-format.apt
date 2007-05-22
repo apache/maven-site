@@ -4,17 +4,17 @@
  Jason van Zyl
  ------
  12 October 2005
- ------      
+ ------
 
 The APT format
 ~~~~~~~~~~~~~~
 
   <<APT stands for "Almost Plain Text">>. APT is a format thats takes the hassle out
-  of writing documentation by striving for simplicity.  APT syntax resembles 
-  plain-text more than it resembles markup languages such as HTML, and the 
+  of writing documentation by striving for simplicity.  APT syntax resembles
+  plain-text more than it resembles markup languages such as HTML, and the
   following document contains some examples of available APT formatting.
-  The following sections contain formatted text that demonstrates the use 
-  of APT to create paragraphs, headers, sections, lists, code samples, 
+  The following sections contain formatted text that demonstrates the use
+  of APT to create paragraphs, headers, sections, lists, code samples,
   figures, tables, rules, breaks, and text level elements such as font styles,
   anchors, and special characters.
 
@@ -39,7 +39,7 @@ The APT format
   First line of first paragraph.
   Second line of first paragraph.
   Third line of first paragraph.
-  
+
   Line 1 of paragraph 2 (separated from first paragraph by an open line).
   Line 2 of paragraph 2.
 +------------------------------------------------------------------------+
@@ -69,8 +69,8 @@ My section title (not indented).
 spaces. Then the author did even bother to indent the
 other lines of the paragraph.
 
-  Second paragraph contains several lines which are all 
-  indented by two spaces. This style is much nicer than 
+  Second paragraph contains several lines which are all
+  indented by two spaces. This style is much nicer than
   the one used for the previous paragraph.
 +-------------------------------------------------------+
 
@@ -89,12 +89,12 @@ other lines of the paragraph.
   document.
 
 +----------------------------------------------------------------------------+
-				    ------
-				    Title
-				    ------
-				    Author
-				    ------
-				     Date
+            ------
+            Title
+            ------
+            Author
+            ------
+             Date
 +----------------------------------------------------------------------------+
 
   A title block is indented (centering it is nicer). It begins with a line
@@ -114,12 +114,12 @@ other lines of the paragraph.
   with no declared author.
 
 +----------------------------------------------------------------------------+
-				    ------
-				    Title
-				    ------
-				    ------
-				     Date
-				    ------
+            ------
+            Title
+            ------
+            ------
+             Date
+            ------
 +----------------------------------------------------------------------------+
 
   The last line is ignored. It is just there to make the block nicer.
@@ -170,16 +170,16 @@ Section title
 
       * List item 2.
 
-	Paragraph contained in list item 2.
+  Paragraph contained in list item 2.
 
-	    * Sub-list item 1.
+        * Sub-list item 1.
 
-	    * Sub-list item 2.
+        * Sub-list item 2.
 
       * List item 3.
 +---------------------------------------+
 
-  List items are indented and begin with a asterisk (<<<*>>>). 
+  List items are indented and begin with a asterisk (<<<*>>>).
 
   Plain paragraphs more indented than the first list item are nested in that
   list. Displays such as tables (not indented) are always nested in the
@@ -215,11 +215,11 @@ Verbatim text not contained in list item 3
 
       * List item 2.
 
-	    * Sub-list item 1.
+        * Sub-list item 1.
 
-	    * Sub-list item 2.
+        * Sub-list item 2.
 
-	    []
+      []
 
 -------------------------------------------------------------------
 Verbatim text contained in list item 2, but not in sub-list item 2
@@ -270,10 +270,10 @@ Verbatim text contained in list item 2, but not in sub-list item 2
 
 +----------------------------------------+
 ----------------------------------------
-Verbatim 
-	 text,
-		preformatted,
-				escaped.
+Verbatim
+   text,
+    preformatted,
+        escaped.
 ----------------------------------------
 +----------------------------------------+
 
@@ -313,12 +313,12 @@ Verbatim
   similar line.
 
   The first line is not only used to recognize a table but also to specify
-  column justification. In the following example, 
+  column justification. In the following example,
 
       * the second asterisk (<<<*>>>) is used to specify that column 1 is
         centered,
 
-      * the plus sign (<<<+>>>) specifies that column 2 is left aligned, 
+      * the plus sign (<<<+>>>) specifies that column 2 is left aligned,
 
       * the colon (<<<:>>>) specifies that column 3 is right aligned.
 
@@ -399,7 +399,7 @@ Table caption
 ~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------+
-  {Anchor}. Link to {{anchor}}. Link to {{http://www.pixware.fr}}. 
+  {Anchor}. Link to {{anchor}}. Link to {{http://www.pixware.fr}}.
   Link to {{{anchor}showing alternate text}}.
   Link to {{{http://www.pixware.fr}Pixware home page}}.
 +-----------------------------------------------------------------+
@@ -490,12 +490,12 @@ Table caption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ------------------------------------------------------------------------------
-				    ------
-				    Title
-				    ------
-				    Author
-				    ------
-				     Date
+            ------
+            Title
+            ------
+            Author
+            ------
+             Date
 
   Paragraph 1, line 1.
   Paragraph 1, line 2.
@@ -517,11 +517,11 @@ Section title
 
       * List item 2.
 
-	Paragraph contained in list item 2.
+  Paragraph contained in list item 2.
 
-	    * Sub-list item 1.
+        * Sub-list item 1.
 
-	    * Sub-list item 2.
+        * Sub-list item 2.
 
       * List item 3.
         Force end of list:
@@ -548,7 +548,7 @@ Verbatim text not contained in list item 3
 
 +-------------------------------+
 Verbatim text
-			in a box	
+      in a box
 +-------------------------------+
 
   --- instead of +-- suppresses the box around verbatim text.
@@ -580,7 +580,7 @@ Table caption
 
   <Italic> font. <<Bold>> font. <<<Monospaced>>> font.
 
-  {Anchor}. Link to {{anchor}}. Link to {{http://www.pixware.fr}}. 
+  {Anchor}. Link to {{anchor}}. Link to {{http://www.pixware.fr}}.
   Link to {{{anchor}showing alternate text}}.
   Link to {{{http://www.pixware.fr}Pixware home page}}.
 
@@ -597,3 +597,11 @@ Table caption
 
 ------------------------------------------------------------------------------
 
+* References
+~~~~~~~~~~~~
+
+ * {{{http://maven.apache.org/doxia/}Doxia}}
+
+ * {{{http://maven.apache.org/doxia/guide-doxia-macros.html}Guide to Doxia Macros}}
+
+ []
