@@ -48,7 +48,7 @@ Documentation
  * {{{mini/guide-site.html}Creating a Site}}
 
  * {{{mini/guide-apt-format.html}The APT Format}}
- 
+
  * {{{mini/guide-snippet-macro.html}Snippet Macro}}
 
 ** Archetypes
@@ -181,3 +181,23 @@ Documentation
 
  []
 
+* Javadoc API
+
+ Here is some useful Javadoc API links to the current version of Maven:
+
+ * {{{http://maven.apache.org/ref/current/maven-artifact/apidocs/}Maven Artifact}}
+
+ * {{{http://maven.apache.org/ref/current/maven-reporting/apidocs/}Maven Reporting}}
+
+ * {{{http://maven.apache.org/ref/current/maven-plugin-api/apidocs/}Maven Plugin API}}
+
+ * {{{http://maven.apache.org/ref/current/maven-model/apidocs/}Maven Model}}
+
+ * {{{http://maven.apache.org/ref/current/maven-core/apidocs/}Maven Core}}
+
+ * {{{http://maven.apache.org/ref/current/maven-settings/apidocs/}Maven Settings}}
+
+ []
+
+ You could also browse the full technical documentation references of the current version of Maven
+ {{{http://maven.apache.org/ref/current/}here}}.

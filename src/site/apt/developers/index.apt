@@ -65,6 +65,10 @@ Maven Developer Centre
 
 ~~TODO: merge the above two documents
 
+* Deploy Maven references
+
+  * {{{website/deploy-maven-current-ref.html}Deploy Maven Current References}}
+
 * Others Resources
 
   * {{{http://people.apache.org/~vgritsenko/stats/projects/maven.html}Maven Web Stats}}
