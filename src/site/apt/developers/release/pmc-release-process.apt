@@ -33,7 +33,7 @@ Prerequisite
  Be sure that:
 
  * you have all Maven servers defined in your settings.xml. For more information, please refer to
- {{{committer-settings.html}Committer settings}}.
+ {{{../committer-settings.html}Committer settings}}.
 
  * you have created your GPG keys. For more information, please refer to {{{pmc-gpg-keys.html}Making GPG Keys}}.
 
