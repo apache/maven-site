@@ -1,5 +1,5 @@
   --------
-  Ant Taks for Maven 
+  Ant Tasks for Maven 
   --------
   Brett Porter
   Herve Boutemy
@@ -22,7 +22,7 @@ Antlib for Maven
 
 Installing the Ant Tasks
 
-  For convenience, the Ant task and all its dependencies are packaged together as a single JAR file.
+  For convenience, the Ant tasks and all its dependencies are packaged together as a single JAR file.
 
   There are two ways to use the tasks from your scripts.
 
@@ -83,7 +83,7 @@ Using the Antlib
   The above example will download those 3 dependencies, and their dependencies, and so on. They will be stored in
   the default local repository location, <<<$\{user.home\}/.m2/repository>>>.
 
-  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{#POM} explained below}}. This is a
+  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{#pom} explained below}}. This is a
   recommended practice so that you can reuse the file to deploy your own artifacts. 
 
   You may have noticed the <<<pathId>>> reference. This is optional, but if given will create a classpath reference
@@ -289,7 +289,7 @@ Using the Antlib
 The Settings File
 
   The POM can be used to represent most of the information that the tasks have access to, including remote
-  repositories. For information that is user or environment specific, such as the <<<authentication>>> tag, are
+  repositories. Informations that are user or environment specific, such as the <<<authentication>>> tag, are
   specified in the <<<settings.xml>>> file in Maven, and can be accessed from the Ant tasks also.
 
   The file is first looked for in <<<$\{user.home\}/.ant/settings.xml>>>, then in <<<$\{user.home\}/.m2/settings.xml>>>
@@ -333,7 +333,7 @@ The Settings File
 </settings>
 -----
 
-  For more information in configuring <<<settings.xml>>>, see:
+  For more information on configuring <<<settings.xml>>>, see:
 
     * {{{guides/mini/guide-configuring-maven.html} Configuring Maven}}.
 
@@ -342,7 +342,7 @@ The Settings File
     * {{{guides/mini/guide-mirror-settings.html} Using Mirrors for Repositories}}.
 
     * There is a
-      {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-cli/src/conf/settings.xml} sample settings file}}
+      {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/conf/settings.xml} sample settings file}}
       in the Maven installation.
 
 Sample Ant Script

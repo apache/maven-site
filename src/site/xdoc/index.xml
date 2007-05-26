@@ -14,7 +14,7 @@
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
           Maven ${currentVersion}
         </a>
-        <small>(1.1Mb)</small>
+        <small>(1.3Mb)</small>
         <span style="font-size: smaller">
           <br/>
           <a href="download.html#requirements">System Requirements</a>,
@@ -25,9 +25,9 @@
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
-          Maven Tasks for Ant 2.0.4
+          Maven Tasks for Ant 2.0.6
         </a>
-        <small>(870k)</small>
+        <small>(931k)</small>
         <span style="font-size: smaller">
           <br/>
           <a href="ant-tasks.html">Documentation</a>
