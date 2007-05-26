@@ -192,6 +192,9 @@ Using the Antlib
 ...
 -----
 
+  Note that if you use <<<antcall>>>, the provider isn't available during the Ant call: you have to register
+  it again if you need it.
+
   Maven Ant Tasks contain <<<file>>> and <<<http-lightweight>>> providers. The other available providers are:
 
 *--------------+--------------------------+-------------------+
