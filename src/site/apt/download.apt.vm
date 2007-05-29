@@ -32,7 +32,7 @@ Download Maven ${currentVersion}
 
 * Previous Releases
 
-  All previous releases of Maven can be found in the {{{http://www.apache.org/dyn/closer.cgi/maven/binaries}distribution repository}}.
+  All previous releases of Maven can be found in the {{{http://archive.apache.org/dist/maven/binaries}archives}}.
 
 * System {Requirements}
 
