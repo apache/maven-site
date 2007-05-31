@@ -81,6 +81,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" -Dtarget
 
  TODO for some reason the repositoryId configuration doesn't work yet
  repositoryId parameter is required if you need the server configuration from the settings file (username, password,...).
+ version parameter seems to be ignored and <<ENTIRE>> repository is synced, not just the given version or the current project.
 
 
 Releasing a Project Directly into a Production Repository
