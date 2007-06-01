@@ -116,6 +116,8 @@ Introduction to the POM
 
  * plugin configuration
  
+ * resources
+ 
  []
  
  The Super POM is one example of project inheritance, however you can also introduce your own parent POMs by specifying
