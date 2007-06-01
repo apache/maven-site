@@ -1017,6 +1017,11 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 * {How do I deploy my jar in my remote repository?}
 
+ For deploying jars to an external repository, you have to configure the repository url in the pom.xml
+ and the authentication information for connectiong to the repository in the settings.xml.
+
+ Here is an example using scp and username/password authentication:
+
 +----+
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1089,6 +1094,11 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 </settings>
 
 +----+
+
+ Note that if you are connecting to an openssh ssh server  which has the parameter "PasswordAuthentication" set to "no"
+ in the sshd_confing, you will have to type your password each time for username/password authentication
+ (although you can log in using another ssh client by typing in the username and password).
+ You might want to switch to public key authentication in this case.
 
 * {How do I create documentation?}
 
