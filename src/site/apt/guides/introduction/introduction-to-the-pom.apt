@@ -2,19 +2,38 @@
  Introduction to the POM
  ------
  Jason van Zyl
+ Franz Allan Valencia See
  ------
- 12 October 2005
+ 09 November 2006
  ------
 
 Introduction to the POM
 
-  * What is a POM?
+  * {{{introduction-to-the-pom.html#What is a POM}What is a POM}}?
   
-  * Super POM
+  * {{{introduction-to-the-pom.html#Super POM}Super POM}}
   
-  * Project Inheritance
+  * {{{introduction-to-the-pom.html#Minimal POM}Minimal POM}}
+  
+  * {{{introduction-to-the-pom.html#Project Inheritance}Project Inheritance}}
+  
+    * {{{introduction-to-the-pom.html#Example 1}Example 1}}
+    
+    * {{{introduction-to-the-pom.html#Example 2}Example 2}}
+  
+  * {{{introduction-to-the-pom.html#Project Aggregation}Project Aggregation}}
+  
+    * {{{introduction-to-the-pom.html#Example 3}Example 3}}
+    
+    * {{{introduction-to-the-pom.html#Example 4}Example 4}}
+  
+  * {{{introduction-to-the-pom.html#Project Inheritance vs Project Aggregation}Project Inheritance vs Project Aggregation}}
+  
+    * {{{introduction-to-the-pom.html#Example 5}Example 5}}
+  
+  []
 
-* What is a POM?
+* {What is a POM}?
 
  A Project Object Model or POM is the fundamental unit of work in Maven. It is an xml file that contains information 
  about the project and configuration details used by Maven to build the project. It contains default values for most projects.
@@ -26,48 +45,64 @@ Introduction to the POM
  looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the 
  goal.  
  
- Some of the configuration that can be specified in the POM are the project dependencies, the plugins or goals that 
- can be executed, the build profiles, and so on. Other information such as the project version, description, developers, 
+ Some of the configuration that can be specified in the POM are the project dependencies, the plugins or goals that
+ can be executed, the build profiles, and so on. Other information such as the project version, description, developers,
  mailing lists and such can also be specified.
 
-* {{Super POM}}
+ {{{introduction-to-the-pom.html}[top]}}
+
+* {Super POM}
 
  The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified 
- in the Super POM is inherited by the POMs you created for your projects. Let's take a look at the Super POM and the sample minimal 
- POM below.
-
-Super POM
+ in the Super POM is inherited by the POMs you created for your projects. The snippet below is the Super POM.
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
+ {{{introduction-to-the-pom.html}[top]}}
+
+* {Minimal POM}
+
+ The minimum requirement for a POM are the following:
+ 
+ * project root
+
+ * modelVersion - should be set to 4.0.0
+ 
+ * groupId - the id of the project's group. 
+ 
+ * artifactId - the id of the artifact (project)
+ 
+ * version - the version of the artifact under the specified group
+ 
+ []
+ 
+ Here's an example:
+ 
 +-----+
-
-Minimal POM
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+  <version>1</version>
 </project>
-
 +-----+
 
-You can see that in the minimal POM, the <repositories> were not specified. If you build your project using the minimal POM,
-it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
-the minimal POM, it would know that these dependencies will be downloaded from http://repo1.maven.org/maven2 which was specified 
-in the Super POM.
+ A POM requires that its groupId, artifactId, and version be configured. These three values form the project's fully
+ qualified artifact name. This is in the form of \<groupId\>:\<artifactId\>:\<version\>. As for the example above, its
+ fully qualified artifact name is "com.mycompany.app:my-app:1". 
+ 
+ Also, as mentioned in the {{{introduction-to-the-pom.html#What is a POM}first section}}, if the configuration details 
+ are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project
+ has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
 
-* Project Inheritance 
+ Furthermore, as you can see that in the minimal POM, the <repositories> were not specified. If you build your project using the minimal POM,
+ it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
+ the minimal POM, it would know that these dependencies will be downloaded from http://repo1.maven.org/maven2 which was specified 
+ in the Super POM.
+
+ {{{introduction-to-the-pom.html}[top]}}
+
+* {Project Inheritance}
 
  Elements in the POM that are merged are the following:
 
@@ -82,6 +117,334 @@ in the Super POM.
  * plugin configuration
  
  []
+ 
+ The Super POM is one example of project inheritance, however you can also introduce your own parent POMs by specifying
+ the parent element in the POM, as demonstrated in the following examples.
+ 
+ []
+ 
+** {Example 1}
 
- <<NOTE:>> Profile inheritance the same inheritance strategy as used for the POM itself.
+*** The Scenario
+
+ As an example, let us reuse our previous artifact, com.mycompany.app:my-app:1. And let us introduce another artifact, 
+ com.mycompany.app:my-module:1.
+
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-module</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ And let us specify their directory structure as the following:
+ 
++-----+
+.
+ |-- my-module
+ |   `-- pom.xml
+ `-- pom.xml
++-----+
+
+ <<Note:>> my-module/pom.xml is the POM of com.mycompany.app:my-module:1 while pom.xml is the POM of
+ com.mycompany.app:my-app:1
+
+*** The Solution
+
+ Now, if we were to turn com.mycompany.app:my-app:1 into a parent artifact of com.mycompany.app:my-module:1,we will have to 
+ modify com.mycompany.app:my-module:1's POM to the following configuration:
+ 
+ <<com.mycompany.app:my-module:1's POM>>
+ 
++-----+
+<project>
+  <parent>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-module</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ Notice that we now have an added section, the parent section. This section allows us to specify which artifact is the
+ parent of our POM. And we do so by specifying the fully qualified artifact name of the parent POM. With this setup, our
+ module can now inherit some of the properties of our parent POM. 
+ 
+ Alternatively, if we want the groupId and / or the version of your modules to be the same as their parents, you can 
+ remove the groupId and / or the version identity of your module in its POM.
+ 
++-----+
+<project>
+  <parent>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>my-module</artifactId>
+</project>
++-----+
+ 
+ This allows the module to inherit the groupId and / or the version of its parent POM.
+
+ {{{introduction-to-the-pom.html}[top]}}
+ 
+** {Example 2}
+
+*** The Scenario
+
+ However, that would work if the parent project was already installed in our local repository or was in that specific 
+ directory structure (parent pom.xml is one directory higher than that of the module's pom.xml).
+ 
+ But what if the parent is not yet installed and if the directory structure is
+ 
++-----+
+.
+ |-- my-module
+ |   `-- pom.xml
+ `-- parent
+     `-- pom.xml
++-----+
+  
+*** The Solution
+
+ To address this directory structure (or any other directory structure), we would have to add the relativePath tag to 
+ our parent section. 
+ 
++-----+
+<project>
+  <parent>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <relativePath>.../parent/pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>my-module</artifactId>
+</project>
++-----+
+
+ As the name suggests, it's the relative path from the module's pom.xml to the parent's pom.xml.
+ 
+* {Project Aggregation}
+
+ Project Aggregation is similar to {{{introduction-to-the-pom.html#Project Inheritance}Project Inheritance}}. But 
+ instead of specifying the parent POM from the module, it specifies the modules from the parent POM. By doing so, the 
+ parent project now knows its modules, and if a maven command is invoked against the parent project, that maven command 
+ will then be executed to the parent's modules as well. To do Project Aggregation, you must do the following:
+ 
+ * Change the parent POMs packaging to the value "pom" .
+ 
+ * Specify in the parent POM the directories of its modules (children POMs)
+ 
+ []
+ 
+ {{{introduction-to-the-pom.html}[top]}}
+ 
+** {Example 3}
+
+*** The Scenario
+
+ Given the previous original artifact poms, and directory structure,
+
+ <<com.mycompany.app:my-app:1's POM>>
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ <<com.mycompany.app:my-module:1's POM>>
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-module</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ <<directory structure>>
+ 
++-----+
+.
+ |-- my-module
+ |   `-- pom.xml
+ `-- pom.xml
++-----+
+
+*** The Solution
+
+ if we are to aggregate my-module into my-app, we would only have to modify my-app.
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>my-module</module>
+  </modules>
+</project>
++-----+
+
+ In the revised com.mycompany.app:my-app:1, the packaging section and the modules sections were added. For
+ the packaging, it's value was set to "pom", and for the modules section, we have the element 
+ /<module/>my-module/<//module/>. The value of /<module///> is the relative path from the com.mycompany.app:my-module:1
+ to com.mycompany.app:my-module:1's POM (<by practice, we use the module's artifactId as the module directory's name>).
+
+ Now, whenever a maven command processes com.mycompany.app:my-module:1, that same maven command would be ran against
+ com.mycompany.app:my-module:1 as well. Furthermore, some commands (goals specifically) handles project aggregation 
+ differently. 
+ 
+ {{{introduction-to-the-pom.html}[top]}}
+ 
+** {Example 4}
+ 
+*** The Scenario
+
+ But what if we change the directory structure to the following:
+ 
++-----+
+.
+ |-- my-module
+ |   `-- pom.xml
+ `-- parent
+     `-- pom.xml
++-----+
+
+ How would the parent pom specify its modules?
+ 
+*** The Solution
+
+ The answer? - the same way as Example 3, by specifying the path to the module.
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>../my-module</module>
+  </modules>
+</project>
++-----+
+
+* {Project Inheritance vs Project Aggregation}
+
+ If you have several maven projects, and they all have similar configurations, you can refactor your projects by pulling
+ out those similar configurations and making a parent project. Thus, all you have to do is to let your maven projects 
+ inherit that parent project, and those configurations would then be applied to all of them.
+ 
+ And if you have a group of projects that are built or processed together, you can create a parent project and have that
+ parent project declare those projects as its modules. By doing so, you'd only have to build the parent and the rest 
+ will follow.
+ 
+ But of course, you can have both Project Inheritance and Project Aggregation. Meaning, you can have your modules 
+ specify a parent project, and at the same time, have that parent project specify those maven projects as its modules.
+ You'd just have to apply all three rules:
+ 
+ * Specify in every child POM who their parent POM is.
+ 
+ * Change the parent POMs packaging to the value "pom" .
+ 
+ * Specify in the parent POM the directories of its modules (children POMs)
+ 
+ []
+ 
+ {{{introduction-to-the-pom.html}[top]}}
+ 
+** {Example 5}
+
+*** The Scenario
+
+ Given the previous original artifact poms again,
+
+ <<com.mycompany.app:my-app:1's POM>>
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ <<com.mycompany.app:my-module:1's POM>>
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-module</artifactId>
+  <version>1</version>
+</project>
++-----+
+
+ and this <<directory structure>>
+ 
++-----+
+.
+ |-- my-module
+ |   `-- pom.xml
+ `-- parent
+     `-- pom.xml
++-----+
+ 
+*** The Solution
+
+ To do both project inheritance and aggregation, you only have to apply all three rules.
+ 
+ <<com.mycompany.app:my-app:1's POM>>
+ 
++-----+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.mycompany.app</groupId>
+  <artifactId>my-app</artifactId>
+  <version>1</version>
+  <packaging>pom</packaging>
+
+  <modules>
+    <module>../my-module</module>
+  </modules>
+</project>
++-----+
+
+ <<com.mycompany.app:my-module:1's POM>>
+ 
++-----+
+<project>
+  <parent>
+    <groupId>com.mycompany.app</groupId>
+    <artifactId>my-app</artifactId>
+    <version>1</version>
+    <relativePath>../parent/pom.xml</relativePath>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>my-module</artifactId>
+</project>
++-----+
+
+  <<NOTE:>> Profile inheritance the same inheritance strategy as used for the POM itself.
+  
+ {{{introduction-to-the-pom.html}[top]}}
 
