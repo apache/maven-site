@@ -20,6 +20,6 @@ Maven Repository Centre
 
   * {{{../guides/mini/guide-maven-evangelism.html} Guide to Maven Evangelism}} - Helping to improve the metadata of the dependencies you use
 
-  * {{{../guides/mini/guide-ibiblio-upload.html} Guide to uploading artifacts} - How to get things uploaded to the repository
+  * {{{../guides/mini/guide-central-repository-upload.html} Guide to uploading artifacts} - How to get things uploaded to the repository
 
 ~~TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc).
