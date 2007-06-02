@@ -27,8 +27,21 @@ under the License.
   </properties>
   <body>
     <section name="Books on Maven">
-      <img src="http://www.mergere.com/images/m2book.jpg" width="95" height="110" title="Better Builds with Maven" style="float:left;" />
-      <div style="margin-left: 125px">
+      <div>
+        <p><a href="http://www.sonatype.com/book//"><strong>Maven: The Definitive Guide</strong></a> (Readable online alpha release)</p>
+        <ul>
+          <li><strong>Covers:</strong>Maven 2.0.x</li>
+          <li><strong>Published:</strong>Not yet</li>
+          <li><strong>Authors:</strong>
+            <a href="http://www.sonatype.com/">Sonatype</a>
+          </li>
+        </ul>
+      </div>
+
+      <hr style="margin-top: 2em; margin-bottom: 1em;"/>
+
+      <img src="http://www.mergere.com/images/m2book.jpg" width="95" height="110" title="Better Builds with Maven" style="float:right;"/>
+      <div>
         <p><a href="http://library.mergere.com/"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.4</li>
@@ -42,25 +55,11 @@ under the License.
             <a href="http://blogs.codehaus.org/projects/maven/">Jason van Zyl</a>
           </li>
         </ul>
-
-        <p>
-          Better Builds with Maven combines detailed explanations and code examples to walk you through improving your software development process with Maven 2.0, covering:
-        </p>
-
-        <ul>
-          <li>An introduction to Maven 2.0</li>
-          <li>Advanced tools for "power" users</li>
-          <li>Creating J2EE builds and using J2EE models</li>
-          <li>Extending builds through plugins</li>
-          <li>Monitoring source code, testing, dependencies and releases</li>
-          <li>Leveraging repositories, continuous integration and transitive dependency</li>
-          <li>Converting existing Ant builds</li>
-        </ul>
       </div>
-      <hr style="margin-top: 1em; margin-bottom: 1em;"/>
+      <hr style="margin-top: 2em; margin-bottom: 1em;"/>
 
-      <img src="http://www.oreilly.com/catalog/covers/0596007507_cat.gif" width="95" height="125" title="Maven: A Developer's Notebook" style="float:left;" />
-      <div style="margin-left: 125px">
+      <img src="http://www.oreilly.com/catalog/covers/0596007507_cat.gif" width="95" height="125" title="Maven: A Developer's Notebook" style="float:right;"/>
+      <div>
         <p><a href="http://www.oreilly.com/catalog/mavenadn/"><strong>Maven: A Developer's Notebook</strong></a></p>
 
         <ul>
@@ -69,21 +68,10 @@ under the License.
           <li><strong>Published:</strong>July 2005</li>
           <li><strong>Authors:</strong>
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            Tim O'Brien
+            <a href="http://www.oreillynet.com/pub/au/1738">Tim O'Brien</a>
           </li>
         </ul>
 
-        <p>
-         You'll discover how Maven can help you:
-        </p>
-
-        <ul>
-          <li>manage a project's build, reporting, and documentation, all from a central piece of information</li>
-          <li>break a complex project into a series of smaller subprojects</li>
-          <li>report on code quality, unit tests, code duplication, and project activity</li>
-          <li>create a custom remote repository</li>
-          <li>build simple and complex plug-ins</li>
-        </ul>
       </div>
     </section>
 
