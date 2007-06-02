@@ -28,7 +28,7 @@ under the License.
   <body>
     <section name="Books on Maven">
       <div>
-        <p><a href="http://www.sonatype.com/book//"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML alpha release)</p>
+        <p><a href="http://www.sonatype.com/book/"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML alpha release)</p>
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.x</li>
           <li><strong>Published:</strong>Not yet</li>
