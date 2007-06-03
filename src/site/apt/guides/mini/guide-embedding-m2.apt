@@ -1,69 +1,54 @@
  ------
- Guide to Embedding Maven 2.x
+ The Maven Embedder
  ------
  Jason van Zyl
  ------
- 12 October 2005
+ 26 February 2007
  ------
 
-Embedding Maven 2.x
+The Maven Embedder
 
- The Maven Embedder is intended to be the single component that tool
- integrators will need to access all the features of Maven. The Maven Embedder
- is currently a work in progress but is advancing rapidly as it is being used
- for a Maven 2.x plugin for Eclipse. The Maven Embedder will be release in its
- final form after the final release of Maven 2.0 itself.
- 
- Here are some of the features  provided by the Maven Embedder:
- 
- * Reading/writing <<<pom.xml>>> files as models
- 
- * Reading/writing <<<pom.xml>>> files as projects
- 
- * Retrieval of standard lifecycle phases
- 
- * Retrieval of plugin metadata
- 
- * Execution of Maven
- 
+ The Maven Embedder is used by the Maven CLI, by IDE integration projects like {{{http://mevenide.codehaus.org}Mevenide}}
+ and potentially any tool that needs to embed Maven's capabilities. You could embed Maven in a Continuous Integration
+ application to run Maven build, an application lifecycle management (ALF) tool, or Ant tasks that utilize Maven's
+ functionality. These are just a few examples of what the Maven Embedder can be used for.
+
+A Simple Example
+
+%{snippet|id=simple-embedder-example|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
+
+A Note on Configuring Settings
+
+ Currently there is a notion of a user settings, and a global settings where either can specify information about the
+ following:
+
+ * Local Repository
+
+ * Proxies
+
+ * Mirrors
+
+ * Server Configurations
+
+ * Plugin Groups
+
  []
- 
-+----+
 
-public class Plugin
-{
-    public Plugin()
-        throws Exception
-    {
-        MavenEmbedder maven = new MavenEmbedder();
+ If you are using the embedder it is entirely your responsibility to take user and global settings information and specify
+ it in the embedder configuration. The embedder carries with it <<<no>>> defaults about where these are located and how
+ they are used. If you want your embedded use of Maven to mimic the behavior of the Maven CLI insofar as settings use
+ then use the following code:
 
-        ClassLoader classLoader = Thread.currentThread().getContextClassLoader();
+%{snippet|id=mimic-cli|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
 
-        maven.setClassLoader( classLoader );
+  Also note that the user and global settings are merged, and the user settings are dominant.
 
-        maven.setLogger( new MavenEmbedderConsoleLogger() );
+Accessing the Underlying Plexus Container
 
-        maven.start();
+  Though it is not recommended for general use, it is possible to get at the underlying Plexus Container instance if you
+  wish to lookup custom components. The Maven Embedder was specifically designed to be used for Maven and not a general
+  purpose use of Plexus. So if you use this method then you use it at your peril. You can access the Plexus Container
+  using the following:
 
-        File targetDirectory = new File( System.getProperty( "user.dir" ), "target/embedder-test-project" );
+%{snippet|id=plexus-container|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
 
-        File pomFile = new File( targetDirectory, "pom.xml" );
-
-        MavenProject pom = maven.readProjectWithDependencies( pomFile );
-
-        EventMonitor eventMonitor = new DefaultEventMonitor( new PlexusLoggerAdapter( new MavenEmbedderConsoleLogger() ) );
-
-        maven.execute( pom, Collections.singletonList( "package" ), eventMonitor, new ConsoleDownloadMonitor(), null, targetDirectory );
-    }
-
-    public static void main( String[] args )
-        throws Exception
-    {
-        Plugin plugin = new Plugin();
-    }
-}
-
-+----+
-
- There are many known issues with the embedder and you can find them 
- {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&mode=hide&pid=10500&sorter/order=DESC&sorter/field=priority&resolutionIds=-1&component=11850}here}}.
