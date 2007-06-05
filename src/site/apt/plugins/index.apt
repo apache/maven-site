@@ -29,7 +29,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-deploy-plugin/} <<<deploy>>>}}                   | 2.3    | Deploy the built artifact to the remote repository.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-install-plugin/} <<<install>>>}}                 | 2.1    | Install the built artifact into the local repository.
+| {{{maven-install-plugin/} <<<install>>>}}                 | 2.2    | Install the built artifact into the local repository.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-resources-plugin/} <<<resources>>>}}             | 2.2    | Copy the resources to the output directory for including in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -59,7 +59,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-checkstyle-plugin/} <<<checkstyle>>>}}           | 2.1    | Generate a checkstyle report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-clover-plugin/} <<<clover>>>}}                   | 2.3    | Generate a Clover report.
+| {{{maven-clover-plugin/} <<<clover>>>}}                   | 2.4    | Generate a Clover report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-doap-plugin/} <<<doap>>>}}                       | 1.0-beta-1 | Generate a Description of a Project (DOAP) file from a POM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -89,7 +89,7 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-4 | Dependency manipulation (copy, unpack) and analysis.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-enforcer-plugin/} <<<enforcer>>>}}           | 1.0-alpha-1 | Environmental constraint checking (Maven Version, JDK etc).
+| {{{maven-enforcer-plugin/} <<<enforcer>>>}}               | 1.0-alpha-2 | Environmental constraint checking (Maven Version, JDK etc).
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-3 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -97,11 +97,11 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-invoker-plugin/} <<<invoker>>>}}                 | 1.0    | Run a set of Maven projects and verify the output
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-one-plugin/} <<<one>>>}}                         | 1.0     | A plugin for interacting with legacy Maven 1.x repositories and builds.
+| {{{maven-one-plugin/} <<<one>>>}}                         | 1.1    | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.2    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
+| {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.3    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-4 | Release the current project - updating the POM and tagging in the SCM.
+| {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-6 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-4 | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -109,7 +109,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-4 | Generate a SCM for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-source-plugin/} <<<source>>>}}                   | 2.0.2  | Build a JAR of sources for use in IDEs and distribution to the repository.
+| {{{maven-source-plugin/} <<<source>>>}}                   | 2.0.3  | Build a JAR of sources for use in IDEs and distribution to the repository.
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<IDEs>> | | <Plugins that simplify integration with integrated developer environments.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
