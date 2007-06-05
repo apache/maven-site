@@ -351,7 +351,7 @@ public class MyMojoTestIt
  <<Note>>: The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-plugin-management-plugin/}maven-plugin-management-plugin}}
  is similar to <<<maven-plugin-test-plugin>>>.
 
-Functionnal testing
+Functional testing
 
 * maven-invoker
 
