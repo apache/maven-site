@@ -183,7 +183,7 @@ And remember, your contributions are always welcome!
  use it. It support scriping tests in BeanShell and Jython and has special "batteries" for writing acceptance and
  functional tests for the web and for testing XML-RPC code.
 
- You can {{{http://surefire.codehaus.org}read more about Surefire}}.
+ You can {{{http://maven.apache.org/surefire/}read more about Surefire}}.
 
  * Doxia
 
@@ -209,7 +209,7 @@ And remember, your contributions are always welcome!
 *---------------------------+----+-----*
 Available formats
 
- You can {{{http://doxia.codehaus.org}read more about Doxia}}.
+ You can {{{http://maven.apache.org/doxia/}read more about Doxia}}.
 
  * Mojo
 
