@@ -319,7 +319,7 @@ The Settings File
   specified in the <<<settings.xml>>> file in Maven, and can be accessed from the Ant tasks also.
 
   The file is first looked for in <<<$\{user.home\}/.ant/settings.xml>>>, then in <<<$\{user.home\}/.m2/settings.xml>>>
-  so that the settings can be shared with Maven 2.0 itself. Since 2.0.6.1, it is then looked for in
+  so that the settings can be shared with Maven 2.0 itself. Since 2.0.7, it is then looked for in
   <<<$\{ANT_HOME\}/etc/settings.xml>>>, then in <<<$\{M2_HOME\}/conf/settings.xml>>> so that the settings
   can be set for all users.
   
@@ -411,7 +411,7 @@ Task Reference
 *-------------------------+--------------------------------------------------------+
 | <<<sourcesFilesetId>>>  | The reference ID to store a fileset under for the sources attachements of the resolved dependencies. <(since 2.0.6)>
 *-------------------------+--------------------------------------------------------+
-| <<<versionsId>>>        | The property ID to store versions of the resolved dependencies, for <<<VersionMapper>>> use. <(since 2.0.6.1)>
+| <<<versionsId>>>        | The property ID to store versions of the resolved dependencies, for <<<VersionMapper>>> use. <(since 2.0.7)>
 *-------------------------+--------------------------------------------------------+
 | <<<useScope>>>          | The scope to be retrieved.
 *-------------------------+--------------------------------------------------------+
@@ -490,6 +490,20 @@ Task Reference
 *------------------+--------------------------------------------------------+
 | <<<classifier>>> | The classifier of the file.
 *------------------+--------------------------------------------------------+
+
+* <<<install-provider>>>
+
+  This task will install a Wagon provider, to add support for more protocols.
+
+*------------------+--------------------------------------------------------------------------+
+| Attribute        | Description
+*------------------+--------------------------------------------------------------------------+
+| <<<artifactId>>> | The artifact ID of the provider to install. <Required>
+*------------------+--------------------------------------------------------------------------+
+| <<<groupId>>>    | The group ID of the provider to install. The default is <<<org.apache.maven.wagon>>>. <(since 2.0.7)>
+*------------------+--------------------------------------------------------------------------+
+| <<<version>>>    | The version of the provider to install. <Required>
+*------------------+--------------------------------------------------------------------------+
 
 Type Reference
 
