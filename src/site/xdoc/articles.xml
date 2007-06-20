@@ -40,18 +40,18 @@ under the License.
 
       <hr style="margin-top: 2em; margin-bottom: 1em;"/>
 
-      <img src="http://www.mergere.com/images/m2book.jpg" width="95" height="110" title="Better Builds with Maven" style="float:right;"/>
+      <img src="http://www.devzuz.com/image/image_gallery?img_id=1011" width="95" height="110" title="Better Builds with Maven" style="float:right;"/>
       <div>
-        <p><a href="http://library.mergere.com/"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
+        <p><a href="http://www.devzuz.com/web/guest/products/resources#BBWM"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.4</li>
-          <li><strong>Publisher:</strong>Mergere Library Press</li>
+          <li><strong>Publisher:</strong><a href="http://www.devzuz.com">DevZuz</a></li>
           <li><strong>Published:</strong>March 2006</li>
           <li><strong>Authors:</strong>
             <a href="http://www.commonjava.org/blogs/john">John Casey</a>,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            <a href="http://blogs.codehaus.org/people/brett/">Brett Porter</a>,
-            <a href="http://www.jroller.com/page/carlossg">Carlos Sanchez</a>,
+            <a href="http://www.devzuz.org/blogs/bporter">Brett Porter</a>,
+            <a href="http://www.carlossanchez.eu">Carlos Sanchez</a>,
             <a href="http://blogs.codehaus.org/projects/maven/">Jason van Zyl</a>
           </li>
         </ul>
