@@ -1,5 +1,5 @@
  ------
-Download Maven $project.version
+Download Maven ${currentVersion}
  ------
 Brett Porter
 Jason van Zyl
