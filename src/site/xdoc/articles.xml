@@ -33,7 +33,7 @@ under the License.
           <li><strong>Covers:</strong>Maven 2.0.x</li>
           <li><strong>Published:</strong>Not yet</li>
           <li><strong>Authors:</strong>
-            <a href="http://www.sonatype.com/">Sonatype</a>
+            <a href="http://www.sonatype.com/">Sonatype (Jason van Zyl, John Casey, Eric Redmond)</a>
           </li>
         </ul>
       </div>
@@ -51,8 +51,7 @@ under the License.
             <a href="http://www.commonjava.org/blogs/john">John Casey</a>,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
             <a href="http://www.devzuz.org/blogs/bporter">Brett Porter</a>,
-            <a href="http://www.carlossanchez.eu">Carlos Sanchez</a>,
-            <a href="http://blogs.codehaus.org/projects/maven/">Jason van Zyl</a>
+            <a href="http://www.carlossanchez.eu">Carlos Sanchez</a>
           </li>
         </ul>
       </div>
