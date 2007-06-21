@@ -51,8 +51,7 @@ Maven ${currentVersion}
 
 * 2.0.7 Release Notes
 
-  The full list of changes can be found {{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}
-  here}}, and is reproduced below.
+  The full list of changes can be found {{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
 
 **Bug      
    
