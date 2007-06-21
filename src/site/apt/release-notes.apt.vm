@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven 2.0.6
+Release Notes - Maven ${currentVersion}
  ------
 Brett Porter
 Jason van Zyl
@@ -49,7 +49,12 @@ Release Notes - Maven ${currentVersion}
 
     * Maven Dashboard: {{http://docs.codehaus.org/display/MAVEN/Home}}
 
-**Bug 
+* 2.0.7 Release Notes
+
+  The full list of changes can be found {{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}
+  here}}, and is reproduced below.
+
+**Bug      
    
     * [MNG-2247] - Release-Dates of maven releases not documented on website?    
     
@@ -83,7 +88,7 @@ Release Notes - Maven ${currentVersion}
     
     * [MNG-2934] - Cannot Deploy Using Webdav due to DependencyManagement    
     
-    * [MNG-2939] - ${basedir isn't well interpolated in properties files    
+    * [MNG-2939] - $\{basedir} isn't well interpolated in properties files    
     
     * [MNG-2942] - Typo in Maven introduction    
     
@@ -116,11 +121,6 @@ Release Notes - Maven ${currentVersion}
 **New Feature    
     
     * [MNG-2169] - Want to contribute: Contributing Maven 2 refcard
-
-* 2.0.7 Release Notes
-
-  The full list of changes can be found {{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}
-  here}}, and is reproduced below.
 
 * 2.0.6 Release Notes
 
