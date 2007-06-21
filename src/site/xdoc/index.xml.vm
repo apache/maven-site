@@ -3,12 +3,13 @@
   <properties>
     <title>Welcome to Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
+    <author email="jason@sonatype.com">Jason van Zyl</author>
   </properties>
   <body>
     <!-- TODO: news? -->
     <div id="downloadbox">
       <h5>Get Maven ${currentVersion}</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 31 March 2007</span>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 20 June 2007</span>
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
