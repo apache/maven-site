@@ -72,17 +72,28 @@ mvn release:perform
 Copying from the staging repo to the production repo
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
- be available to all users. Note that for now the stage plugin hasn't been released yet and you need to build it yourself.
- As an example
+ be available to all users.
+ 
+ <<Note:>> For now the stage plugin hasn't been released yet and you need to build it yourself.
+ The tests for the stage plugin requires that an scp server is present on your local machine. If you are trying to build
+ the plugin on Windows you need to exlude the tests. You do this by adding <<<-Dmaven.test.skip=true>>> on the command
+ line when you build it.
+ 
+ Here is an example on how to use the stage plugin:
 
 +-----+
 mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" -Dversion=2.3 -DrepositoryId=apache.releases
 +-----+
 
- TODO for some reason the repositoryId configuration doesn't work yet
- repositoryId parameter is required if you need the server configuration from the settings file (username, password,...).
- version parameter seems to be ignored and <<ENTIRE>> repository is synced, not just the given version or the current project.
+ <<Note:>> For some reason the <<<repositoryId>>> configuration parameter doesn't work yet.
+ The <<<repositoryId>>> parameter is required if you need the the plugin to use the server configuration from your settings file (username, password etc.).
+ The <<<version>>> parameter seems to be ignored and the <<entire>> repository is synced, not just the given version or the current project.
 
+ <<Work-around:>> Until the <<<repositoryId>>> problem has been solved you can specify your <username> in the target URL like this:
+
++-----+
+mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" -Dtarget="scp://myusername@people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" -Dversion=2.3 -DrepositoryId=apache.releases
++-----+
 
 Releasing a Project Directly into a Production Repository
 
