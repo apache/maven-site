@@ -26,12 +26,13 @@
       <p>
         <a href="download.html">
           <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
-          Maven Tasks for Ant 2.0.6
+          Maven Tasks for Ant 2.0.7
         </a>
-        <small>(931k)</small>
+        <small>(938k)</small>
         <span style="font-size: smaller">
           <br/>
-          <a href="ant-tasks.html">Documentation</a>
+          <a href="ant-tasks.html">Documentation</a>,
+          <a href="ant-tasks-release-notes.html">Release Notes</a>
         </span>
       </p>
       <!-- TODO: what about downloads for Continuum, etc.? Would be good to have one big download page -->
