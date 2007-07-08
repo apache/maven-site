@@ -1,0 +1,87 @@
+  ------
+  Release Notes - Maven Ant Tasks 2.0.7
+  ------
+  Herve Boutemy
+  ------
+  29 June 2007
+  ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/guides/mini/guide-apt-format.html
+
+Maven Ant Tasks
+
+* 2.0.7 Release Notes
+
+  <<Warning>>: there are 2 incompatible changes that you must know before upgrading, to fix your Ant build files:
+
+    [[1]][MANTTASKS-44]: <<<\<localRepository path="..."/\>>>> instead of <<<\<localRepository location=""/\>>>> for Ant 1.7 compatibility
+    (location attribute is used internally by Ant 1.7)
+
+    [[2]][MANTTASKS-65]:  central repository is not automatically added any more if a remoteRepository is set: the code has been changed to work
+    as expected and documented (explicit declaration)
+
+  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13521&pid=11533&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+
+**Bug
+
+    * [MANTTASKS-1] - dependencies ant task incorrectly handles transitive snapshot dependencies
+
+    * [MANTTASKS-6] - ant artifact doesn't read settings.xml
+
+    * [MANTTASKS-11] - antlib + http based repository + version range errors badly
+
+    * [MANTTASKS-12] - No means of preventing ant task from querying repo1.maven.org
+
+    * [MANTTASKS-15] - scp:// urls not recognised, even when wagon-ssh is installed.
+
+    * [MANTTASKS-18] - filesetId does not contain all dependencies when artifact was not yet locally installed
+
+    * [MANTTASKS-26] - artifact:dependencies filesetId attribute causes NPE
+
+    * [MANTTASKS-65] - [PATCH] add central repository only if no remoteRepository set
+
+    * [MANTTASKS-70] - m2 tasks not reentrant
+
+    * [MANTTASKS-75] - [PATCH] NPE if loaded settings.xml does not contain <localRepository>
+
+**Improvement
+
+    * [MANTTASKS-44] - bootstrap of components/trunk fails with ant-1.7.0RC1
+
+    * [MANTTASKS-66] - [PATCH] add more information when Ant run in verbose mode (ant -v)
+
+    * [MANTTASKS-69] - [PATCH] improve sample.build.xml
+
+    * [MANTTASKS-72] - Remove hardcoded groupId in install-provider task
+
+    * [MANTTASKS-76] - [PATCH] update Maven Ant Tasks to Maven core 2.0.7
+
+**New Feature
+
+    * [MANTTASKS-29] - more powerful filesetId
+
+**Wish
+
+    * [MANTTASKS-24] - Not enough diagnostics if failed to validate POM
+
+    * [MANTTASKS-37] - The Dependencies task of Maven Antlib should override an existing path reference instead of failing
+
+    * [MANTTASKS-73] - miss RemoteRepository sub-element for tasks pom and install-provider
