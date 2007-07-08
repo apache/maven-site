@@ -162,7 +162,8 @@ Using the Antlib
 -----
 
   If no remote repositories are specified, the default {{{http://repo1.maven.org/maven2} http://repo1.maven.org/maven2}}
-  is used.
+  is used. But if at least one remote repository is specified, repo1 is not automatically added: you have
+  to declare it if you need it.
 
   <<Note:>> to work with transitive dependencies, you <must> use a Maven 2.0 repository.
 
@@ -430,7 +431,7 @@ Task Reference
 <copy todir="...">
   <fileset refid="..." />
   <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
-          from="${...versionId value...}" to="flatten" />
+          from="${...versionId property...}" to="flatten" />
 </copy>
 -----
 
@@ -517,7 +518,7 @@ Type Reference
 | <<<layout>>>     | The layout of the local repository. The valid options are <<<legacy>>> (Maven 1), or <<<default>>> (Maven 2).
 *------------------+--------------------------------------------------------+
 
-  <<Note>>: until 2.0.6, attribute <<<path>>> was named <<<location>>>, but this has changed to solve a conflict with Ant 1.7.
+  <<Note>>: until 2.0.6, attribute <<<path>>> was named <<<location>>>, but this has changed in 2.0.7 to solve a conflict with Ant 1.7.
 
 * <<<remoteRepository>>>
 
