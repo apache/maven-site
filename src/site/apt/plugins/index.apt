@@ -151,7 +151,7 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------------------------------+
 | {{{http://ws.apache.org/jaxme/mp/} <<<jaxme>>>}}                           | Use the JaxMe JAXB implementation to generate Java sources from XML schema.
 *----------------------------------------------------------------------------+----------------------------------------+
-| {{{http://jetty.mortbay.org/maven-plugin/howto.html} <<<jetty>>>}}         | Run a Jetty container for rapid webapp development.
+| {{{http://jetty.mortbay.org/maven-plugin/} <<<jetty>>>}}                   | Run a Jetty container for rapid webapp development.
 *----------------------------------------------------------------------------+----------------------------------------+
 | {{{http://www.triemax.com/products/jalopy/manual/plugin-maven.html} <<<jalopy>>>}} | Use Jalopy to format your source code
 *----------------------------------------------------------------------------+----------------------------------------+
