@@ -57,19 +57,31 @@ Introduction to Build Profiles
 
   A profile can be triggered/activated in several ways:
 
-  * Profiles can be explicitly specified using the <<<-P>>> CLI option.
+  * Explicitly
 
-    This option takes an argument that is a comma-delimited list of
-    profile-ids to use. When this option is specified, no profiles other
-    than those specified in the option argument will be activated.
+  * Through Maven settings
+
+  * Based on environment variables
+
+  * OS settings
+
+  * Present or missing files
+
+** Details on profile activation
+
+  Profiles can be explicitly specified using the <<<-P>>> CLI option.
+
+  This option takes an argument that is a comma-delimited list of
+  profile-ids to use. When this option is specified, no profiles other
+  than those specified in the option argument will be activated.
 
 +---+
 mvn groupId:artifactId:goal -P profile-1,profile-2
 +---+
 
-  * Profiles can be activated in the Maven settings, via the <<activeProfiles>>
-    section. This section takes a list of <<activeProfile>> elements, each
-    containing a profile-id inside.
+  Profiles can be activated in the Maven settings, via the <<activeProfiles>>
+  section. This section takes a list of <<activeProfile>> elements, each
+  containing a profile-id inside.
 
 +---+
 <settings>
@@ -81,16 +93,16 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </settings>
 +---+
   
-    Profiles listed in the <activeProfiles> tag would be activated by default 
-    everytime a project use it.
+  Profiles listed in the <activeProfiles> tag would be activated by default
+  everytime a project use it.
 
-  * Profiles can be automatically triggered based on the detected state of
-    the build environment. These triggers are specified via an <<activation>>
-    section in the profile itself. Currently, this detection is limited to 
-    prefix-matching of the JDK version, the presence of a system property or 
-    the value of a system property. Here are some examples.
+  Profiles can be automatically triggered based on the detected state of
+  the build environment. These triggers are specified via an <<activation>>
+  section in the profile itself. Currently, this detection is limited to
+  prefix-matching of the JDK version, the presence of a system property or
+  the value of a system property. Here are some examples.
 
-    The follwing configuration will trigger the profile when the JDK's
+  The follwing configuration will trigger the profile when the JDK's
 	version starts with "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"):
 
 +---+
@@ -109,21 +121,21 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 +---+
 <profiles>
   <profile>
-	<activation>
-	 <os>
-	  <name>Windows XP</name>
-	  <family>Windows</family>
-	  <arch>x86</arch>
-	  <version>5.1.2600</version>
-	 </os>
+    <activation>
+      <os>
+      <name>Windows XP</name>
+      <family>Windows</family>
+      <arch>x86</arch>
+      <version>5.1.2600</version>
+    </os>
 	</activation>
-    ...
+  ...
   </profile>
 </profiles>
 +---+
 
-    This will activate the profile when the system property "debug" is specified
-    with any value:
+  This will activate the profile when the system property "debug" is specified
+  with any value:
 
 +---+
 <profiles>
@@ -138,8 +150,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-    This last example will trigger the profile when the system property 
-    "environment" is specified with the value "test":
+  This example will trigger the profile when the system property
+  "environment" is specified with the value "test":
 
 +---+
 <profiles>
@@ -155,10 +167,26 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-    To activate this you would type this on teh command line:
+    To activate this you would type this on the command line:
 
 +---+
 mvn groupId:artifactId:goal -Denvironment=test
++---+
+
+  This last example will trigger the profile when the generated file
+  {{target/generated-sources/axistools/wsdl2java/org/apache/maven}} is missing.
+
++---+
+<profiles>
+  <profile>
+    <activation>
+      <file>
+        <missing>target/generated-sources/axistools/wsdl2java/org/apache/maven</missing>
+      </file>
+    </activation>
+    ...
+  </profile>
+</profiles>
 +---+
 
 * Which areas of a POM can be customized by each type of profile? Why?
