@@ -12,7 +12,7 @@
       <span style="display: block; text-align: right; font-size: smaller">Released: 20 June 2007</span>
       <p>
         <a href="download.html">
-          <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentVersion}"/>
           Maven ${currentVersion}
         </a>
         <small>(1.3Mb)</small>
@@ -25,7 +25,7 @@
       </p>
       <p>
         <a href="download.html">
-          <img valign="top" src="images/folder-open.gif" border="0" alt="" title="download"/>
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven Tasks for Ant 2.0.7"/>
           Maven Tasks for Ant 2.0.7
         </a>
         <small>(938k)</small>
@@ -40,7 +40,7 @@
       <h5>Other Maven Projects</h5>
       <p>
         <a href="continuum">
-          <img src="images/continuum.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
+          <img src="images/continuum.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Continuum" />
         Continuum
         </a>
         continuous integration server
@@ -52,7 +52,7 @@
       
       <p>
         <a href="archiva">
-          <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
+          <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Archiva" />
         Archiva
         </a>
         repository and artifact management server 
@@ -60,7 +60,7 @@
       -->
       <p>
         <a href="maven-1.x">
-          <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;"/>
+          <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Maven 1.x" />
         Maven 1.x
         </a>
         All stories start at the beginning...
