@@ -115,7 +115,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-eclipse-plugin/} <<<eclipse>>>}}                 | 2.3    | Generate an Eclipse project file for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-idea-plugin/} <<<idea>>>}}                       | 2.0    | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
+| {{{maven-idea-plugin/} <<<idea>>>}}                       | 2.1    | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *-----------------------------------------------------------+--------+----------------------------------------------+
 
   There are also many plug-ins available at the {{{http://mojo.codehaus.org} Mojo}} project at Codehaus.
