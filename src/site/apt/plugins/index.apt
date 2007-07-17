@@ -107,7 +107,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-repository-plugin/} <<<repository>>>}}           | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/scm/plugins/} <<<scm>>>}}                             | 1.0-beta-4 | Generate a SCM for the current project.
+| {{{/scm/plugins/} <<<scm>>>}}                             | 1.0    | Generate a SCM for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-source-plugin/} <<<source>>>}}                   | 2.0.3  | Build a JAR of sources for use in IDEs and distribution to the repository.
 *-----------------------------------------------------------*--------+----------------------------------------------+
