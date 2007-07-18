@@ -79,8 +79,6 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-ant-plugin/} <<<ant>>>}}                         | 2.0-beta-1 | Generate an Ant build file for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-antlr-plugin/} <<<antlr>>> }}                    | 2.0-beta-1 | Generate sources from an Antlr grammar.
-*-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-antrun-plugin/} <<<antrun>>>}}                   | 1.1    | Run a set of ant tasks from a phase of the build.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-archetype-plugin/} <<<archetype>>>}}             | 1.0-alpha-4 | Generate a skeleton project structure from an archetype.
