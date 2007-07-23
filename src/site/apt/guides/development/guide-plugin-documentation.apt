@@ -47,84 +47,84 @@ Generated Documentation
 
  Minimum Elements for a valid pom
 
- *modelVersion - POM model version, currently 4.0.0
+ * modelVersion - POM model version, currently 4.0.0
  
- *version - the plugin version
+ * groupId - the package name
  
- *groupId - the package name
+ * artifactId - artifact name
  
- *artifactId - artifact name
- 
- *packaging - type of artifact produced by the POM
+ * packaging - type of artifact produced by the POM
+
+ * version - the plugin version
  
 **Optional Elements 
 
  This might be optional elements in a valid POM but they are important basic project information
  required by the users to effectively use the plugin.
 
- *name - plugin's name
+ * name - plugin's name
  
- *description - project description, an overview of what the plugin can do
+ * description - project description, an overview of what the plugin can do
  
- *url - the site of the plugin, normally maven.apache.org or mojo.codehaus.org
+ * url - the site of the plugin, normally maven.apache.org or mojo.codehaus.org
  
- *issueManagement - describes the system used for reporting problems and modification requests
- 
-+--------------+
- [...]
-    <issueManagement>
-       <system>jira</system>
-       <url>http://jira.someproject.org</url>
-    </issueManagement>    
- [...] 
-+--------------+
- 
- *prerequisites - would have an initial value of maven, list of descriptive name of dependencies.
+ * prerequisites - would have an initial value of maven, list of descriptive name of dependencies.
   
- *inceptionYear - year the plugin was made
- 
- *mailingLists - list where the developers can be contacted for  problems and modification requests
+ * issueManagement - describes the system used for reporting problems and modification requests
  
 +--------------+
- [...]
-    <mailingLists>
-        <mailingList>
-           <name>Project issues</name>
-           <post>announce@noonecares.com</post>
-           <subscribe>issues-subscribe@noonecares.com</subscribe>
-           <unsubscribe>issue-unsubscribe@noonecares.com</unsubscribe>
-           <archive>http://noonecares.archive.org</archive>
-        </mailingList>    
-        <mailingList>
-        [...]
-        <mailingList>
-    </mailingLists>    
- [...] 
+  [...]
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.someproject.org</url>
+  </issueManagement>    
+  [...] 
 +--------------+
  
- *license - plugin license
+ * inceptionYear - year the plugin was made
  
- *scm - the source code management configuration. A plugin without this would raise suspicion, might not be OSS.
+ * mailingLists - list where the developers can be contacted for  problems and modification requests
  
 +--------------+
- [...]
-    <scm>
-       <connection>scm:svn:http://noonecares.com/some/plugin/project/trunk</connection>
-       <developerConnection>scm:svn:https://noonecares.com/some/plugin/project/trunk</developerConnection>
-       <url>http://noonecares.com/viewcvs.cgi/some/project/trunk/</url>
-    </scm>
- [...]
+  [...]
+  <mailingLists>
+    <mailingList>
+      <name>Project issues</name>
+      <post>announce@noonecares.com</post>
+      <subscribe>issues-subscribe@noonecares.com</subscribe>
+      <unsubscribe>issue-unsubscribe@noonecares.com</unsubscribe>
+      <archive>http://noonecares.archive.org</archive>
+    </mailingList>    
+    <mailingList>
+      [...]
+    <mailingList>
+  </mailingLists>    
+  [...] 
++--------------+
+ 
+ * license - plugin license
+ 
+ * scm - the source code management configuration. A plugin without this would raise suspicion, might not be OSS.
+ 
++--------------+
+  [...]
+  <scm>
+    <connection>scm:svn:http://noonecares.com/some/plugin/project/trunk</connection>
+    <developerConnection>scm:svn:https://noonecares.com/some/plugin/project/trunk</developerConnection>
+    <url>http://noonecares.com/viewcvs.cgi/some/project/trunk/</url>
+  </scm>
+  [...]
 +--------------+ 
  
- *organization - the organization maintaining the plugin, just in case we need someone to blame.
+ * organization - the organization maintaining the plugin, just in case we need someone to blame.
 
 +--------------+
- [...]
+  [...]
   <organization>
     <name>Noone Care Software Foundation</name>
     <url>http://noonecare.org/</url>
   </organization> 
- [...]
+  [...]
 +--------------+  
 
 *Plugin Configuration Parameters
@@ -133,20 +133,20 @@ Generated Documentation
  names are extracted from the plugin source and rendered in the Plugin Info page. In order for the generated site to 
  be useful here's some guidelines you can follow when documenting your plugin.
  
- *all @parameter field should have a descriptive comment, informative enough that even a regular user can understand. 
+ * all @parameter field should have a descriptive comment, informative enough that even a regular user can understand. 
  
 +--------------+  
- [...]
+    [...]
     /**
-     *  put something informative here that a regular user can understand
+     * put something informative here that a regular user can understand
      * 
      * @parameter 
      */
     private boolean someparameter;
- [...]
+    [...]
 +--------------+   
 
- *class level comment should explain what the goal does.
+ * class level comment should explain what the goal does.
  
 +--------------+   
 [...]
@@ -165,7 +165,7 @@ public class ExampleMojo
 [...]
 +--------------+   
 
- *all @component and @readonly parameters are not required to have any comments but it's still a good practice to provide one.
+ * all @component and @readonly parameters are not required to have any comments but it's still a good practice to provide one.
  
 *Site organization 
  
@@ -202,7 +202,7 @@ public class ExampleMojo
   
 ***Navigation links
   
- *Introduction
+ * Introduction
  
  The introduction is the front page of the plugin documentation. This is a good place to place any section and pages that needs
  to be emphasized. It is also suggested that the generated plugin parameter configuration be linked here. Below is the suggested
@@ -243,40 +243,40 @@ Plugin Name
  
 +--------------+     
  
- *Goals
+ * Goals
   
    <<<plugin-info.html>>> is generated by the plugin plugin. Until the site plugin is updated it would be better to pull it out
   to the main menu for greater visibility. This contains the goals and their descriptions with a link to the configuration parameters.
   The information is based on the comments and annotations of the plugin. 
   
- *Usage (Howto)
+ * Usage (Howto)
   
    The usage page describes the the basic use cases for the plugin goals which includes sample pom configurations and explanation of
   how the goals work. 
   
- *FAQ
+ * FAQ
   
    A well documented project always collates frequently asked questions, so here it is.
    
    <<<faq.fml>>> template
    
 +--------------+     
-  <?xml version="1.0"?>
-  <faqs id="FAQ" title="Frequently Asked Questions">
-   <part id="General">
-     <faq id="question">
-       <question>Question?</question>
-       <answer>
-         <p>
-         Answer
-         </p>
-       </answer>
-     </faq>
-   </part>
-  </faqs>
+<?xml version="1.0"?>
+<faqs id="FAQ" title="Frequently Asked Questions">
+  <part id="General">
+    <faq id="question">
+      <question>Question?</question>
+      <answer>
+        <p>
+          Answer
+        </p>
+      </answer>
+    </faq>
+  </part>
+</faqs>
 +--------------+        
   
- *Examples
+ * Examples
   
    The advanced configurations and examples not covered in the usage page is located here. Advanced users who wants to maximize the use
    of a plugin can check the items here. Tips on how to use the plugin effectively is also a good thing to put here.
@@ -291,7 +291,7 @@ Plugin Name
  
   There are 2 recommended report plugin to enhance the plugin documentation, javadoc and jxr.
   
-  *Javadoc Report Plugin
+  * Javadoc Report Plugin
   
   Javadocs provide documentation that makes it easier for developers to know how to use a particular class. Instead of reading and 
   understanding the actual source code, the developer can use the Javadocs instead to lookup the class attributes and methods.
@@ -299,9 +299,9 @@ Plugin Name
   To enable javadoc for your plugin add the following to your <<<pom.xml>>>
   
 +--------------+ 
-[...]
-  <build>
   [...]
+  <build>
+    [...]
   </build>
   <reporting>
     <plugins>
@@ -315,14 +315,14 @@ Plugin Name
         </configuration>
       </plugin>
     </plugins>
-  [...]
+    [...]
   </reporting>   
-[...]
+  [...]
 +--------------+   
   
   Check the {{{http://maven.apache.org/plugins/maven-javadoc-plugin/configuration.html}javadoc documentation}} for the advanced configurations.
   
-  *JXR Report Plugin
+  * JXR Report Plugin
   
   The jxr plugin generates a cross-reference of the project sources. The generated cross-references are also linked to the corresponding
   javadoc if javadoc is generated. The cross-references is great for those who wants to better understand the inner workings of the
@@ -331,24 +331,19 @@ Plugin Name
   To enable the jxr plugin add the following to your <<<pom.xml>>>
   
 +--------------+ 
-[...]
-   <build>
-   [...]
-   </build>
-   <reporting>
-      <plugins>
-         <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-jxr-plugin</artifactId>
-         </plugin>
-      </plugins>
-   </reporting>    
-[...]  
+  [...]
+  <build>
+    [...]
+  </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jxr-plugin</artifactId>
+      </plugin>
+    </plugins>
+  </reporting>    
+  [...]  
 +--------------+   
   
   Check the {{{http://maven.apache.org/plugins/maven-jxr-plugin/jxr-mojo.html}jxr configuration page}} for the possible configuration parameters.
-  
-
-  
-  
- 
