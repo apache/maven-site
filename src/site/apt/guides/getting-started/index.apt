@@ -1264,7 +1264,7 @@ mvn site-deploy
       <item name="Road Map" href="roadmap.html" />
     </menu>
 
-    ${reports}
+    <menu ref="reports"/>
 
     ...
   </body>
@@ -1273,7 +1273,7 @@ mvn site-deploy
 
   ~~TODO: deserves more explanation.
 
-  Note the <<<${reports}>>> string in the navigation. When building the site, this is replaced by menus for any reports
+  Note the <<<\<menu ref="reports"/\>>>> string in the navigation. When building the site, this is replaced by menus for any reports
   that you have configured.
 
 * Adding Extra Resources
