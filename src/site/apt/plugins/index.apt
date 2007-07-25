@@ -53,7 +53,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<reporting>> | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{maven-changelog-plugin/} <<<changelog>>>}}             | 2.0    | Generate a list of recent changes from your SCM.
+| {{{maven-changelog-plugin/} <<<changelog>>>}}             | 2.1    | Generate a list of recent changes from your SCM.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-changes-plugin/} <<<changes>>>}}                 | 2.0-beta-2 | Generate a report from issue tracking or a change document.
 *-----------------------------------------------------------+--------+----------------------------------------------+
