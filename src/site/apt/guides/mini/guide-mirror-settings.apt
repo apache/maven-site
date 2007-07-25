@@ -21,18 +21,13 @@ Using Mirrors for Repositories
     * You want to run maven-proxy to provide a local cache to a mirror and need to use it's URL instead
 
  To configure a mirror of a given repository, you provide it in your settings file ($HOME/.m2/settings.xml),
- giving the new repository it's 
- own id and url , and specify the mirrorOf setting that is the ID of the repository you are using a
- mirror of. For example, the ID of the main Maven repository included by default is central, so to use
- a mirror, you would configure the following:
-
- If you are interested in mirroring the repository and be listed here, please contact us at the
- {{{mailto:users@maven.apache.org}Maven Users List}}.
+ giving the new repository its 
+ own <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a
+ mirror of. For example, the ID of the main Maven repository included by default is <<<central>>>, so to use
+ the mirror at <ibiblio>, you would configure the following:
 
 +-----+
-
 <settings>
-  .
   .
   <mirrors>
     <mirror>
@@ -43,22 +38,18 @@ Using Mirrors for Repositories
     </mirror>
   </mirrors>
   .
-  .
 </settings>
-
 +-----+
 
  The settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
 
+ <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>, the following mirrors may not have the same contents
+ and we don't support them in any way, although we try to keep info in this page accurate.
 
  As of today, the following mirrors are available:
- <<Note>>: The official Maven 2 repository is at http://repo1.maven.org/maven2, the following mirrors may not have the same contents
- and we don't support them in any way, although we try to keep info in this page accurate
 
 +-----+
-
 <settings>
-
   <mirrors>
     <mirror>
       <id>ibiblio.org</id>
@@ -123,9 +114,7 @@ Using Mirrors for Repositories
       <!-- The Netherlands, Amsterdam -->
     </mirror>
   </mirrors>
-
 </settings>
-
 +-----+
 
 Using A Single Repository
@@ -136,12 +125,10 @@ Using A Single Repository
 
   To achieve this, set <<<mirrorOf>>> to <<<*>>>.
 
-  <This feature is only available from Maven 2.0.5+>
+  <<Note:>> This feature is only available in Maven 2.0.5+.
 
 +-----+
-
 <settings>
-  .
   .
   <mirrors>
     <mirror>
@@ -152,15 +139,13 @@ Using A Single Repository
     </mirror>
   </mirrors>
   .
-  .
 </settings>
-
 +-----+
 
 
 FTP access
 
-  The repository is available through FTP at ftp://mirrors.ibiblio.org/pub/packages/maven2
+  The repository is available through FTP at <ftp://mirrors.ibiblio.org/pub/packages/maven2>
 
 
 Creating your own mirror
@@ -170,10 +155,8 @@ Creating your own mirror
   You can mirror the central repository using rsync from several mirrors, choose one
 
 +-----+
-
 rsync -v -t -l -r mirrors.ibiblio.org::maven2 /your/local/path
 rsync -v -t -l -r rsync://rsync.cica.es/maven2 /your/local/path
-
 +-----+
 
-  If you want to become an official mirror, email us to dev@maven.apache.org with your location and we'll add you to the list of mirrors.
+  If you want to become an official mirror, email us to <dev@maven.apache.org> with your location and we'll add you to the list of mirrors.
