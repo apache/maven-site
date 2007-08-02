@@ -37,6 +37,7 @@ How to include the plugin snapshot repositories as part of your build
 +---
 <settings>
   ...
+  <profiles>
     <profile>
       <id>apache</id>
       <repositories>
@@ -96,6 +97,7 @@ How to include the plugin snapshot repositories as part of your build
         </pluginRepository>
       </pluginRepositories>
     </profile>
+  </profiles>
   ...
 </settings>
 +---
