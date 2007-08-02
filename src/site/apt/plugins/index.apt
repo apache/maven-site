@@ -97,6 +97,8 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-one-plugin/} <<<one>>>}}                         | 1.1    | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
+| {{{maven-patch-plugin/} <<<patch>>>}}                     | 1.0    | Use the gnu patch tool to apply patch files to source code.
+*-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-plugin-plugin/} <<<plugin>>>}}                   | 2.3    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-release-plugin/} <<<release>>>}}                 | 2.0-beta-6 | Release the current project - updating the POM and tagging in the SCM.
