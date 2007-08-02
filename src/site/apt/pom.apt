@@ -1252,7 +1252,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   ...
   <issueManagement>
     <system>Bugzilla</system>
-    <url>http://127.0.0.1/bugzilla</url>
+    <url>http://127.0.0.1/bugzilla/</url>
   </issueManagement>
   ...
 </project>
