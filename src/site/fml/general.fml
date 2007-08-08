@@ -326,5 +326,15 @@ Where: <path-to-file>  the path to the file to load
         </p>
       </answer>
     </faq>
+
+    <faq id="getting help">
+      <question>Maven doesn't work, how do I get help?</question>
+      <answer>
+        <p>
+          We have compiled a list of available resources on the
+          <a href="users/getting-help.html">getting help page</a>
+        </p>
+      </answer>
+    </faq>
   </part>
 </faqs>

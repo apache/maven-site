@@ -88,7 +88,8 @@
         </item>
 -->
         <!-- TODO: make this a true, wiki based, commentable cookbook type thingymabob -->
-        <item name="Build Cookbook" href="/examples/index.html"/>
+        <item name="Build Cookbook" href="/users/cookbook/index.html"/>
+        <item name="Getting Help" href="/users/getting-help.html"/>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
 <!-- profiles.xml reference needed
@@ -142,7 +143,7 @@
       <item name="Community Overview" href="/community.html"/>
       <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
-      <item name="Getting Support" href="/mail-lists.html" /> 
+      <item name="Getting Help" href="/users/getting-help.html" /> 
      <item name="Issue Tracking" href="/issue-tracking.html" />
       <item name="The Maven Team" href="/team-list.html" />
     </menu>
