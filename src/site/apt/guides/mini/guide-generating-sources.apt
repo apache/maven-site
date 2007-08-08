@@ -11,7 +11,7 @@ Guide to generating sources
  Let's run though a short example to try and help. To generate sources you must first have a plugin that
  participates in the generate-sources phase like the Antlr plugin:
 
-%{snippet|id=generate-sources-0|url=http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antlr-plugin/src/main/java/org/apache/maven/plugin/antlr/AntlrPlugin.java}
+%{snippet|id=generate-sources-0|url=http://svn.codehaus.org/mojo/trunk/mojo/antlr-maven-plugin/src/main/java/org/codehaus/mojo/antlr/AntlrPlugin.java}
 
  The first two lines say "I want to be fit into the generate-sources
  phase and my 'handle' is generate".
