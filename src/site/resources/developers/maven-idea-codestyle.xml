@@ -9,6 +9,8 @@
       <option name="TAB_SIZE" value="4" />
       <option name="USE_TAB_CHARACTER" value="false" />
       <option name="SMART_TABS" value="false" />
+      <option name="LABEL_INDENT_SIZE" value="0" />
+      <option name="LABEL_INDENT_ABSOLUTE" value="false" />
     </value>
   </option>
   <option name="JSP_INDENT_OPTIONS">
@@ -18,6 +20,8 @@
       <option name="TAB_SIZE" value="2" />
       <option name="USE_TAB_CHARACTER" value="false" />
       <option name="SMART_TABS" value="false" />
+      <option name="LABEL_INDENT_SIZE" value="0" />
+      <option name="LABEL_INDENT_ABSOLUTE" value="false" />
     </value>
   </option>
   <option name="XML_INDENT_OPTIONS">
@@ -27,6 +31,8 @@
       <option name="TAB_SIZE" value="2" />
       <option name="USE_TAB_CHARACTER" value="false" />
       <option name="SMART_TABS" value="false" />
+      <option name="LABEL_INDENT_SIZE" value="0" />
+      <option name="LABEL_INDENT_ABSOLUTE" value="false" />
     </value>
   </option>
   <option name="LINE_SEPARATOR" value="&#10;" />
@@ -57,7 +63,7 @@
   <option name="EXTENDS_KEYWORD_WRAP" value="2" />
   <option name="THROWS_KEYWORD_WRAP" value="2" />
   <option name="BINARY_OPERATION_WRAP" value="1" />
-  <option name="TERNARY_OPERATION_WRAP" value="1" />
+  <option name="TERNARY_OPERATION_WRAP" value="5" />
   <option name="TERNARY_OPERATION_SIGNS_ON_NEXT_LINE" value="true" />
   <option name="FOR_STATEMENT_WRAP" value="1" />
   <option name="ARRAY_INITIALIZER_WRAP" value="1" />
@@ -66,5 +72,6 @@
   <option name="DOWHILE_BRACE_FORCE" value="3" />
   <option name="WHILE_BRACE_FORCE" value="3" />
   <option name="FOR_BRACE_FORCE" value="3" />
+  <option name="ENUM_CONSTANTS_WRAP" value="2" />
 </code_scheme>
 
