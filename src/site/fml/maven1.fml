@@ -105,13 +105,11 @@
       <question>What will happen to Maven 1.0?</question>
       <answer>
         <p>
-          Maven 1.0.2 continues to work, and a 1.1 release is still under way. While significant new features will not
-          be added to the Maven 1.0 core (such as transitive dependencies), bugfixes and support continue and the
-          repository is still available. Features from Maven 2.0 may be included in Maven 1.1 where possible.
-        </p>
-        <p>
-          An end-of-life for Maven 1.0.2 will be announced when this is decided - but there are currently no plans for
-          this to happen.
+          Support for Maven 1.0.2 has been discontinued with the release of Maven 1.1.
+          While significant new features will not be added to the
+          <a href="http://maven.apache.org/maven-1.x/">Maven 1.x</a> core
+          (such as transitive dependencies), bugfixes and support continue and the
+          repository is still available.
         </p>
       </answer>
     </faq>
