@@ -111,6 +111,9 @@ Documentation
  * {{{mini/guide-webapp.html}Webapps}}
 
  * {{{mini/guide-using-extensions.html}Using Extensions}}
+ 
+ * {{{mini/guide-building-for-different-environments.html}Building For Different Environments with Maven 2}}
+ 
 
 ** Testing
 
