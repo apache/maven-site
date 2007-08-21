@@ -97,6 +97,12 @@ under the License.
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="http://msozen.home.anadolu.edu.tr/maven2.x_dokuman.pdf">Maven 2.x (in Turkish)</a></td>
+            <td>Anadolu Üniversitesi</td>
+            <td>Mustafa Sait Özen</td>
+            <td>August 2007</td>
+          </tr>
+          <tr>
             <td><a href="http://today.java.net/pub/a/today/2007/03/01/building-web-applications-with-maven-2.html">Building Web Applications with Maven 2</a></td>
             <td>java.net</td>
             <td>Will Iverson</td>
