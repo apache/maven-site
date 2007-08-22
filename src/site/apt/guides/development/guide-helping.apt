@@ -13,11 +13,11 @@ Guide to helping with Maven
 
  * Join the {{{../../mail-lists.html}mailing list}} and answer other user's questions
 
- * Report bugs, feature requests and other issues in the {{{/issue-tracking.html}issue tracking}} application.
+ * Report bugs, feature requests and other issues in the {{{../../issue-tracking.html}issue tracking}} application.
 
  * {{{guide-building-m2.html} Build Maven}} for yourself, in order to fix bugs.
 
- * {{{guide-m2-development.html#Creating and submitting a patch}Submit patches}} to reported issues (both those you find, or that others have filed)
+ * {{{guide-m2-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find, or that others have filed)
 
  * Help with the documentation by pointing out areas that are lacking or unclear, and if you are so inclined, submitting patches to correct it.
    You can quickly contribute rough thoughts to the {{{http://docs.codehaus.org/display/MAVENUSER} wiki}}, or you can volunteer to help collate and
@@ -54,9 +54,9 @@ Developers Conventions
   There are a number of conventions used in the project, which contributors and developers alike should follow for
   consistency's sake.
 
-  * {{{guide-m2-development.html#Maven Code Style} Code Style}}
+  * {{{guide-m2-development.html#Maven_Code_Style} Code Style}}
 
-  * {{{guide-m2-development.html#Commit Message Template} Commit Message Template}}
+  * {{{guide-m2-development.html#Commit_Message_Template} Commit Message Template}}
 
 Resources for committers
 
