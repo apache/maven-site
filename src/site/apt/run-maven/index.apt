@@ -17,7 +17,7 @@ Building a Project with Maven
 
   * {{{../download.html} Download Maven}} - Download the latest version of Maven
 
-  * {{{#Quick Start} Quick Start}} - Get started building the project quickly
+  * {{{Quick_Start} Quick Start}} - Get started building the project quickly
 
   * {{{cookbook/index.html} Cookbook}} - Examples of how to perform other common tasks on a Maven-built project
 
