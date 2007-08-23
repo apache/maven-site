@@ -135,7 +135,7 @@ Sync'ing your own repository to the central repository automatically
  If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log
  in the machine.
 
- Remember to subscribe to {{{mailto:repository-subscribe@apache.org}repository mailing list}}.
+ Remember to subscribe to {{{mailto:repo-maintainers-subscribe@maven.apache.org}repository mailing list}}.
 
  <<Important>>: nothing is deleted or changed in the Central Repository after it is synced (except maven-metadata.xml files)
 
