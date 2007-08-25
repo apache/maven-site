@@ -96,9 +96,9 @@ Introduction to the Dependency Mechanism
  []
 
  Each of the scopes affects transitive dependencies in different ways, as is demonstrated in the table below.
- If a dependency is set to the scope in the left column, dependencies with the scope across the top row will
- result in a dependency in the main project with the scope listed at the intersection. If no scope is listed,
- it means the dependency will be omitted.
+ If a dependency is set to the scope in the left column, transitive dependencies of that dependency with the
+ scope across the top row will result in a dependency in the main project with the scope listed at the
+ intersection. If no scope is listed, it means the dependency will be omitted.
 
 *----------+------------+----------+----------+------+
 |          | compile    | provided | runtime  | test
@@ -434,4 +434,5 @@ Introduction to the Dependency Mechanism
   ...
 </project>
 +----+
+
 
