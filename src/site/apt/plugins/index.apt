@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 9 April 2005
+ 10 July 2007
  -----
 
 Available Plugins
@@ -87,7 +87,7 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{maven-dependency-plugin/} <<<dependency>>>}}           | 2.0-alpha-4 | Dependency manipulation (copy, unpack) and analysis.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-enforcer-plugin/} <<<enforcer>>>}}               | 1.0-alpha-2 | Environmental constraint checking (Maven Version, JDK etc).
+| {{{maven-enforcer-plugin/} <<<enforcer>>>}}               | 1.0-alpha-3 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-gpg-plugin/} <<<gpg>>>}}                         | 1.0-alpha-3 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -113,7 +113,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<IDEs>> | | <Plugins that simplify integration with integrated developer environments.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-eclipse-plugin/} <<<eclipse>>>}}                 | 2.3    | Generate an Eclipse project file for the current project.
+| {{{maven-eclipse-plugin/} <<<eclipse>>>}}                 | 2.4    | Generate an Eclipse project file for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-idea-plugin/} <<<idea>>>}}                       | 2.1    | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *-----------------------------------------------------------+--------+----------------------------------------------+
