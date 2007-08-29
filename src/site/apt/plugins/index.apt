@@ -81,7 +81,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-antrun-plugin/} <<<antrun>>>}}                   | 1.1    | Run a set of ant tasks from a phase of the build.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{maven-archetype-plugin/} <<<archetype>>>}}             | 1.0-alpha-4 | Generate a skeleton project structure from an archetype.
+| {{{maven-archetype-plugin/} <<<archetype>>>}}             | 1.0-alpha-6 | Generate a skeleton project structure from an archetype.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{maven-assembly-plugin/} <<<assembly>>>}}               | 2.2-beta-1   | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
