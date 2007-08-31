@@ -43,7 +43,7 @@ Subversion Configuration
 
 * IntelliJ IDEA 4.5+
 
- Download <<<{{{maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
+ Download <<<{{{./maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
  <<<~/.IntelliJIDEA/config/codestyles>>> then restart IDEA. On Windows, try
  <<<C:\Documents and Settings\<username>\.IntelliJIDEA\config\codestyles>>>
 
@@ -51,7 +51,7 @@ Subversion Configuration
 
 * Eclipse 3.2+
 
- Download <<<{{{maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
+ Download <<<{{{./maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
 
  After this, select Window \> Preferences, and open up the configuration for Java \> Code
  Style \> Code Formatter. Click on the button labeled Import... and select the file you
