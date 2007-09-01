@@ -182,11 +182,18 @@ gpg: Good signature from "Vincent Siveton <vsiveton@apache.org>"
 http://maven.apache.org/plugins/maven-XXX-plugin
 +-----+
 
- [[9]] Update Jira
+ [[9]] Update the plugins page
 
- Go to Admin section in Jira for the <<<maven-XXX-plugin>>> project and mark <<<2.1>>> version as release.
+ If this is a plugin release, update the version number for the plugin on the
+ </plugins/index.html> page.
 
- [[10]] Create Announcements. For instance:
+ [[10]] Update JIRA
+
+ Go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
+ the <<<2.1>>> version as released. Create version 2.2, if that hasn't already
+ been done.
+
+ [[11]] Create an Announcement. For instance:
 
 +-----+
 From: YOUR_APACHE_EMAIL
@@ -217,4 +224,9 @@ Enjoy,
 
 +-----+
 
- [[11]] Celebrate :o)
+ [[12]] Add the release to the next board report, in the private subversion area.
+
+ [[13]] Add the release to the wiki, under the <Recent Releases> section of the
+ front page and on the <Releases> page.
+
+ [[14]] Celebrate :o)
