@@ -73,7 +73,7 @@ mvn deploy
       <version>1.0-SNAPSHOT</version>
       <type>test-jar</type>
     </dependency>
-  </depdendnecies>
+  </dependencies>
   ...
 </project>
 
