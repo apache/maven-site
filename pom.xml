@@ -84,7 +84,7 @@
       <subscribe>users-subscribe@maven.apache.org</subscribe>
       <unsubscribe>users-unsubscribe@maven.apache.org</unsubscribe>
       <post>users@maven.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-users/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
         <otherArchive>http://www.nabble.com/Maven---Users-f178.html</otherArchive>
@@ -95,14 +95,14 @@
       <subscribe>dev-subscribe@maven.apache.org</subscribe>
       <unsubscribe>dev-unsubscribe@maven.apache.org</unsubscribe>
       <post>dev@maven.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev/</archive>
     </mailingList>
     <mailingList>
       <name>Maven Commits List</name>
       <subscribe>commits-subscribe@maven.apache.org</subscribe>
       <unsubscribe>commits-unsubscribe@maven.apache.org</unsubscribe>
       <post>commits@maven.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
+      <archive>http://mail-archives.apache.org/mod_mbox/maven-dev/</archive>
     </mailingList>
     <!-- duplication from parent pom - temporary until they inherit properly -->
     <mailingList>
