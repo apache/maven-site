@@ -138,7 +138,7 @@ Available Plugins
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 | {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                    | 1.0     | Executes SQL scripts from files or inline.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
-| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | 2.0     | Generate a list of tasks based on tags in your code.
+| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | 2.1     | Generate a list of tasks based on tags in your code.
 *-------------------------------------------------------------------------------+---------+----------------------------------+
 
 
