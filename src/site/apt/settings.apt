@@ -203,7 +203,7 @@ mvn castor-maven-plugin:generate
   
   * <<mirrorOf>>:
   The <<<id>>> of the server that this is a mirror of. For example, to point to a mirror
-  of the Maven <<<central>>> server ({{http://repo1.maven.org/maven2}}), set this element to
+  of the Maven <<<central>>> server ({{http://repo1.maven.org/maven2/}}), set this element to
   <<<central>>>. This must not match the mirror <<<id>>>.
 
   []

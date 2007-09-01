@@ -225,7 +225,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
     The last option is to create the <<<nbproject>>> folder and its content in another directory than in the Maven 2 project's one.
 
-    The full configuration can be found at {{http://mojo.codehaus.org/netbeans-freeform-maven-plugin}}.
+    The full configuration can be found at {{http://mojo.codehaus.org/netbeans-freeform-maven-plugin/}}.
 
 
 

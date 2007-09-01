@@ -21,9 +21,9 @@ Repositories
   Both of these sites provide snapshot versions of their plugins which are
   available from the plugin snapshot repository.
 
-  * apache snapshots = {{http://people.apache.org/repo/m2-snapshot-repository}}
+  * apache snapshots = {{http://people.apache.org/repo/m2-snapshot-repository/}}
 
-  * codehaus snapshots = {{http://snapshots.maven.codehaus.org/maven2}}
+  * codehaus snapshots = {{http://snapshots.repository.codehaus.org/}}
 
 How to include the plugin snapshot repositories as part of your build
 

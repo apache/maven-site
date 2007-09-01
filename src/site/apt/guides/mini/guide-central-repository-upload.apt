@@ -123,7 +123,7 @@ Sync'ing your own repository to the central repository automatically
  {{{http://maven.apache.org/plugins/maven-deploy-plugin/}deploy to a remote repository}}.
 
  You must make sure the remote repository server has rsync or rsync over ssh, there are free services like
- {{{http://sf.net}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
+ {{{http://sf.net/}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
 
  After you are able to deploy to your remote repository <<make sure you only deploy releases>>. Then you can provide a script like the
  {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
@@ -232,7 +232,7 @@ Maven partners
 
  * {{{http://docs.codehaus.org/display/HAUSMATES/Maven+Guide}Codehaus}}
 
- * {{{http://jetty.mortbay.org}MortBay Jetty}}
+~~ * {{{http://jetty.mortbay.org}MortBay Jetty}}
 
  * {{{http://www.opensymphony.com/}OpenSymphony}}
 

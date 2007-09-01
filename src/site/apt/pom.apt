@@ -1401,7 +1401,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The repository elements within a POM specify those alternate repositories to search.
 
   The repository is one of the most powerful features of the Maven community. The default central Maven
-  repository lives on {{http://repo1.maven.org/maven2}}. Another source for artifacts not yet in iBiblio
+  repository lives on {{http://repo1.maven.org/maven2/}}. Another source for artifacts not yet in iBiblio
   is the Codehaus snapshots repo.
 
 +-------------------------+

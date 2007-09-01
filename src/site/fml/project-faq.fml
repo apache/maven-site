@@ -40,7 +40,7 @@
         <p>
           It is best to get it right at the time of a release to avoid having to make difficult updates later on.
           Your information can be submitted to Maven using the regular
-          <a href="guides/mini/guide-ibiblio-upload.html">repository upload procedure</a>
+          <a href="guides/mini/guide-central-repository-upload.html">repository upload procedure</a>
           .
         </p>
         <p>
@@ -76,7 +76,7 @@
         </p>
         <p>
           See the format of the
-          <a href="/maven2/maven-model/maven.html">project descriptor</a>
+          <a href="/maven-model/maven.html">project descriptor</a>
           for more information.
         </p>
       </answer>

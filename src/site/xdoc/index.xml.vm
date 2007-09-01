@@ -39,7 +39,7 @@
 
       <h5>Other Maven Projects</h5>
       <p>
-        <a href="continuum/">
+        <a href="/continuum/">
           <img src="images/continuum.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Continuum" />
         Continuum
         </a>
@@ -59,7 +59,7 @@
       </p>
       -->
       <p>
-        <a href="maven-1.x/">
+        <a href="/maven-1.x/">
           <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Maven 1.x" />
         Maven 1.x
         </a>

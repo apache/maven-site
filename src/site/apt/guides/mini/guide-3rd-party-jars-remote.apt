@@ -8,7 +8,7 @@
 
 Guide to deploying 3rd party JARs to remote repository
 
- Same concept of the {{{guide-installing-3rd-party-jars.html}install:install-file}}
+ Same concept of the {{{./guide-3rd-party-jars-local.html}install:install-file}}
  goal of the maven-install-plugin where the 3rd party JAR is installed 
  in the local repository. But this time instead to local repository the 
  JAR will be install both in the local and remote repository. 

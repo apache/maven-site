@@ -144,12 +144,14 @@ under the License.
             <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
             <td>18 July 2006</td>
           </tr>
+          <!--
           <tr>
             <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
             <td></td>
             <td>Maurício Linhares</td>
             <td>7 July 2006</td>
           </tr>
+          -->
           <tr>
             <td><a href="http://today.java.net/pub/a/today/2006/05/30/continuous-integration-with-continuum.html">Continuous Integration with Continuum</a></td>
             <td>Java.net</td>
@@ -276,12 +278,14 @@ under the License.
             <td>Srikanth Shenoy</td>
             <td>November 2003</td>
           </tr>
+          <!--
           <tr>
             <td><a href="http://www.jdocentral.com/JDO_Articles_20031117.html">JDO Meets Maven</a></td>
             <td>JDOCentral</td>
             <td>Andy Jefferson</td>
             <td>17 November 2003</td>
           </tr>
+          -->
           <tr>
             <td><a href="http://www.onjava.com/pub/a/onjava/2003/10/22/maven.html">Developing with Maven by Rob Herbst</a></td>
             <td>OnJava</td>
@@ -306,12 +310,14 @@ under the License.
             <td>Jeff Linwood</td>
             <td>11 October 2002</td>
           </tr>
+          <!--
           <tr>
             <td><a href="http://www.javausergroup.at/events/maven.pdf">The Stairway to Maven</a></td>
             <td></td>
             <td>Siegfried GOSCHL</td>
             <td>26 June 2002</td>
           </tr>
+          -->
           <tr>
             <td><a href="http://wiki.astrogrid.org/bin/view/Astrogrid/MakingWarWithMaven">How to get Maven to build your web service into a WAR on AstroGrid</a></td>
             <td>Astrogrid</td>
@@ -330,12 +336,14 @@ under the License.
             <td></td>
             <td></td>
           </tr>
+          <!--
           <tr>
             <td><a href="http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html">An Introduction to Maven (in French).</a></td>
             <td></td>
             <td></td>
             <td></td>
           </tr>
+          -->
           <tr>
             <td><a href="http://hotwork.sourceforge.net/hotwork/manual/maven/index.html">A tutorial for Maven, J2EE projects, and MevenIDE</a> (in Portuguese).</td>
             <td></td>

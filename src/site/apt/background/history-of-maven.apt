@@ -14,7 +14,7 @@ History of Maven by Jason van Zyl
  {{{http://cvs.apache.org/viewcvs.cgi/jakarta-alexandria/proposal/maven/?hideattic=0}CVS}} archive
  you can see that as of the date of this document Maven was removed from Alexandria about 3 years, 7 months ago
  making Maven about 4 years old! Maven spent about 5 months as part of the Alexandria before moving on to its next home
- in the {{{http://jakarta.apache.org/turbine}Turbine}} project.
+ in the {{{http://turbine.apache.org/}Turbine}} project.
 
  Though Maven started in Alexandria the test bed for its use was the Turbine project. Turbine was in the process of
  decoupling its persistence layer, services layer and web layer into separate builds and I got very tired of having
