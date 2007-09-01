@@ -68,7 +68,7 @@ maven-2.0.X$ mvn site:stage -Preporting -DstagingDirectory=/tmp/maven-2.0.X
 maven-2.0.X$ mvn site-deploy -Preporting
 +-----+
 
- It will create a new folder <maven-2.0.X> in </www/maven.apache.org/ref/> on the Apache server.
+ It will create a new folder <2.0.X> in </www/maven.apache.org/ref/> on the Apache server.
 
  <<Note:>> It will take an hour or so to sync.
 
