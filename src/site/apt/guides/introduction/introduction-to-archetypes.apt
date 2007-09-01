@@ -34,7 +34,7 @@ What is Archetype?
 * What makes up an Archetype?
    
  Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of
- archetype and a set of {{{http://jakarta.apache.org/velocity}Velocity}} templates which make up the prototype
+ archetype and a set of {{{http://velocity.apache.org/}Velocity}} templates which make up the prototype
  project. If you would like to know how to make your own archetypes please refer to our
  {{{../mini/guide-creating-archetypes.html}Guide to creating archetypes}}.
 

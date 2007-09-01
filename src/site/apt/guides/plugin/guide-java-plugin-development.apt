@@ -635,4 +635,4 @@ mvn archetype:create \
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo API specification}}
 
-    [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness}Maven-plugin-testing-harness}}
+    [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness/}Maven-plugin-testing-harness}}

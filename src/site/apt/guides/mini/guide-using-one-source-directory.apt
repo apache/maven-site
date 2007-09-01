@@ -68,8 +68,9 @@ Using Maven When You Can't Use the Conventions
 
   Here is an example of setting it up when there is a project with two JARs produced: <<<core>>> and <<<module>>>.
 
-  You might like to review the {{{../getting-started/} Getting Started Guide}} or {{{guide-multi-module.html} Guide to Using Multiple Modules}}
-  that demonstrate how this is normally done in Maven, as it is quite similar.
+  You might like to review the {{{../getting-started/} Getting Started Guide}}
+~~ or {{{guide-multi-module.html} Guide to Using Multiple Modules}}
+  that demonstrates how this is normally done in Maven, as it is quite similar.
 
   Your directory will look something like this:
 

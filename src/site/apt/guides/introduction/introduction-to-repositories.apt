@@ -20,7 +20,7 @@ Introduction to Repositories
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
  <<<file://>>> and <<<http://>>>. These repositories might be a truely remote repository
  set up by a third party to provide their artifacts for downloading (for example,
- {{{http://repo1.maven.org/maven2}repo1.maven.org}} houses Maven's central repository).
+ {{{http://repo1.maven.org/maven2/}repo1.maven.org}} houses Maven's central repository).
  Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
@@ -65,7 +65,7 @@ Introduction to Repositories
 
  Downloading in Maven is triggered by a project declaring a dependency that is not present in the local
  repository (or for a <<<SNAPSHOT>>>, when the remote repository contains one that is newer).
- By default, Maven will download from the {{{http://repo1.maven.org/maven2}central}} repository.
+ By default, Maven will download from the {{{http://repo1.maven.org/maven2/}central}} repository.
 
  To override this, you need to specify a <<<repositories>>> element as follows:
 
@@ -137,7 +137,7 @@ Internal Repositories
  required artifacts there using the same layout as in a remote repository such as {{{http://repo1.maven.org/maven2/}repo1.maven.org}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
- of data there. You can use a program such as {{{http://maven.apache.org/archiva}Archiva}}, {{{http://proximity.abstracthorizon.org}Proximity}} or {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
+ of data there. You can use a program such as {{{http://maven.apache.org/archiva/}Archiva}}, {{{http://proximity.abstracthorizon.org}Proximity}} or {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
  running on your internal repository's server, to download from the internet as required and then hold
  the artifacts in your internal repository for faster downloading later.
 

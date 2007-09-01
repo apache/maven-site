@@ -9,21 +9,21 @@
 
 Powered by Maven 2.x
 
- * {{{http://jetty.mortbay.org/jetty6}Jetty 6.x}}
+~~ * {{{http://jetty.mortbay.org/jetty6}Jetty 6.x}}
 
  * {{{http://celtix.objectweb.org/} Celtix}}
  
- * {{{http://displaytag.sf.net} Display Tag}}
+ * {{{http://displaytag.sf.net/} Display Tag}}
  
- * {{{http://maven.apache.org}Maven}}
+ * {{{http://maven.apache.org/}Maven}}
  
- * {{{http://plexus.codehaus.org}Plexus}}
+ * {{{http://plexus.codehaus.org/}Plexus}}
  
- * {{{http://maven.apache.org/continuum}Continuum}}
+ * {{{http://maven.apache.org/continuum/}Continuum}}
  
  * {{{http://gforge.public.thoughtworks.org/projects/dbfixture/}DbFixture}}
 
- * {{{http://ehcache.sourceforge.net}ehcache}}
+ * {{{http://ehcache.sourceforge.net/}ehcache}}
 
  * {{{http://spring-rich-c.sourceforge.net/}Spring rich client}}
  
@@ -31,14 +31,14 @@ Powered by Maven 2.x
 
  * {{{http://appfuse.org/}AppFuse}}
 
- * {{{http://equinox.dev.java.net/}AppFuse Light}}
+ * {{{https://equinox.dev.java.net/}AppFuse Light}}
 
  Work In Progress
 
- * {{{http://geronimo.apache.org} Geronimo}}
+ * {{{http://geronimo.apache.org/} Geronimo}}
 
- * {{{http://openejb.codehaus.org}OpenEJB}}
+ * {{{http://openejb.apache.org/}OpenEJB}}
  
- * {{{http://www.activemq.org}ActiveMQ}}
+~~ * {{{http://www.activemq.org/}ActiveMQ}}
 
  * {{{http://www.acegisecurity.org/}Acegi Security System for Spring}}

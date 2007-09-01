@@ -161,7 +161,7 @@ Using the Antlib
 </artifact:dependencies>
 -----
 
-  If no remote repositories are specified, the default {{{http://repo1.maven.org/maven2} http://repo1.maven.org/maven2}}
+  If no remote repositories are specified, the default {{{http://repo1.maven.org/maven2/} http://repo1.maven.org/maven2/}}
   is used. But if at least one remote repository is specified, repo1 is not automatically added: you have
   to declare it if you need it.
 
@@ -311,7 +311,7 @@ Using the Antlib
   <echo>The build directory is ${project.build.directory}</echo>
 -----
 
-  For more information on the elements available in the POM, see the {{{maven-model/maven.html} descriptor reference}}.
+  For more information on the elements available in the POM, see the {{{/maven-model/maven.html} descriptor reference}}.
 
 The Settings File
 
@@ -365,7 +365,7 @@ The Settings File
 
     * {{{guides/mini/guide-configuring-maven.html} Configuring Maven}}.
 
-    * {{{maven-settings/settings.html} Settings Descriptor Reference}}.
+    * {{{/maven-settings/settings.html} Settings Descriptor Reference}}.
 
     * {{{guides/mini/guide-mirror-settings.html} Using Mirrors for Repositories}}.
 
@@ -388,9 +388,9 @@ Getting Help
 
     * {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
 
-    * {{{maven-settings/settings.html} Settings Reference}}
+    * {{{/maven-settings/settings.html} Settings Reference}}
 
-    * {{{maven-model/maven.html} POM Reference}}
+    * {{{/maven-model/maven.html} POM Reference}}
 
 Task Reference
 
@@ -551,12 +551,12 @@ Type Reference
 ** <<<proxy>>>
 
   The proxy element is typically used for HTTP repositories. The layout is the same as in the
-  {{{maven-settings/settings.html#class_proxy} settings reference}}.
+  {{{/maven-settings/settings.html#class_proxy} settings reference}}.
 
 ** <<<authentication>>>
 
   The authentication element is used for passing a username, password and other credentials to the repository either
-  on upload or download. The layout is the same as in the {{{maven-settings/settings.html#class_server} settings reference}}.
+  on upload or download. The layout is the same as in the {{{/maven-settings/settings.html#class_server} settings reference}}.
 
 * <<<pom>>>
 

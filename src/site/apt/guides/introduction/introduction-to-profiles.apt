@@ -174,7 +174,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 
   This last example will trigger the profile when the generated file
-  {{target/generated-sources/axistools/wsdl2java/org/apache/maven}} is missing.
+  <<<target/generated-sources/axistools/wsdl2java/org/apache/maven>>> is missing.
 
 +---+
 <profiles>
