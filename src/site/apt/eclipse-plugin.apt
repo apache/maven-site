@@ -6,7 +6,14 @@
  11 March 2007
  -----
 
-Maven 2.x Integration for Eclipse
+Q for Eclipse
 
-  The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing the standard Maven 2.x integration piece for 
+  The {{{http://code.google.com/p/q4e/}Q for Eclipse}} project is a Maven 2.x plugin for 
+  Eclipse under the EPL license, whose objective is to be part of the Eclipse Foundation.
+
+  Check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
+
+Tycho (aka M2Eclipse)
+
+  The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing a Maven 2.x integration piece for 
   Eclipse and has released it under the ASL 2.0. You can find everything you need to know from the project website.
