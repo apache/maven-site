@@ -8,7 +8,8 @@
 
 Introduction
 
- Maven was originally started as an attempt to simplify the build
+ Maven, a {{{http://en.wikipedia.org/wiki/Maven}Yiddish word}} meaning <accumulator of knowledge>, 
+ was originally started as an attempt to simplify the build
  processes in the Jakarta Turbine project. There were several
  projects each with their own Ant build files that were all slightly
  different and JARs were checked into CVS. We wanted a standard way to
