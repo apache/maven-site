@@ -10,27 +10,27 @@ Settings Reference
 
   [[1]] {{{#Introduction}Introduction}}
 
-    [[1]] {{{#Quick Overview}Quick Overview}}
+    [[1]] {{{#Quick_Overview}Quick Overview}}
 
-  [[2]] {{{#Settings Details}Settings Details}}
-	
-    [[1]] {{{#Simple Values}Simple Values}}
-	
+  [[2]] {{{#Settings_Details}Settings Details}}
+
+    [[1]] {{{#Simple_Values}Simple Values}}
+
     [[2]] {{{#Servers}Servers}}
-	
+
     [[3]] {{{#Mirrors}Mirrors}}
 
     [[4]] {{{#Proxies}Proxies}}
-	
+
     [[5]] {{{#Profiles}Profiles}}
-	
+
       [[1]] {{{#Activation}Activation}}
 
       [[2]] {{{#Repositories}Repositories}}
-	  
-      [[3]] {{{#Plugin Repositories}Plugin Repositories}}
-	  
-    [[6]] {{{#Active Profiles}Active Profiles}}
+
+      [[3]] {{{#Plugin_Repositories}Plugin Repositories}}
+
+    [[6]] {{{#Active_Profiles}Active Profiles}}
 
   []
 
@@ -43,9 +43,9 @@ Settings Reference
   any specific project, or distributed to an audience. These include values such as the local repository
   location, alternate remote repository servers, and authentication information. There are two
   locations where a <<<settings.xml>>> file may live:
-  
+
   * The Maven install: <<<$M2_HOME/conf/settings.xml>>>
-  
+
   * A user's install: <<<$\{user.dir\}/.m2/settings.xml>>>
 
   []
@@ -97,21 +97,21 @@ Settings Reference
   This value is the path of this build system's local repository. The default value is
   <<<${user.dir}/.m2/repository>>>. This element is especially useful for a main build
   server allowing all logged-in users to build from a common local repository.
-  
+
   * <<interactiveMode>>:
   <<<true>>> if Maven should attempt to interact with the user for input, <<<false>>> if not.
   Defaults to <<<true>>>.
-  
+
   * <<usePluginRegistry>>:
   <<<true>>> if Maven should use the <<<$\{user.dir\}/.m2/plugin-registry.xml>>> file to manage plugin
   versions, defaults to <<<false>>>. <Note that for the current version of Maven 2.0, the
   plugin-registry.xml file should not be depended upon. Consider it dormant for now.>
-  
+
   * <<offline>>:
   <<<true>>> if this build system should operate in offline mode, defaults to <<<false>>>.
   This element is useful for build servers which cannot connect to a remote repository,
   either because of network setup or security reasons.
-  
+
   * <<pluginGroups>>:
   This element contains a list of <<<pluginGroup>>> elements, each contains a groupId. The
   list is searched when a plugin is used and the groupId is not provided in the command line.
@@ -126,7 +126,7 @@ mvn castor-maven-plugin:generate
  []
 
 * {Servers}
-  
+
   The <<<distributionManagement>>> element of the POM defines the repositories for deploment.
   However, certain settings such as <<<username>>> and <<<password>>> should not be distributed
   along with the <<<pom.xml>>>. This type of information should exist on the build server in the
@@ -153,24 +153,24 @@ mvn castor-maven-plugin:generate
   ...
 </settings>
 +------------------------------------+
-  
+
   * <<id>>:
   This is the ID of the server <(not of the user to login as)> that matches the <<<distributionManagement>>>
   <<<repository>>> element's <<<id>>>.
-  
+
   * <<username>>, <<password>>:
   These elements appear as a pair denoting the login and password required to authenticate to this
   server.
-  
+
   * <<privateKey>>, <<passphrase>>:
   Like the previous two elements, this pair specifies a path to a private key (default is 
   <<<${usr.home}/.ssh/id_dsa>>>) and a <<<passphrase>>>, if required. The <<<passphrase>>> and <<<password>>> elements
   may be externalized in the future, but for now they must be set plain-text in the <<<settings.xml>>> file.
-  
+
   * <<filePermissions>>, <<directoryPermissions>>:
   When a repository file or directory is created on deployment, these are the permissions to use.
   The legal values of each is a three digit number corrosponding to *nix file permissions, ie. 664, or 775.
-  
+
   []
 
 * {Mirrors}
@@ -196,11 +196,11 @@ mvn castor-maven-plugin:generate
   * <<id>>, <<name>>:
   The unique identifier and readable name of this mirror. The <<<id>>> is used to differentiate between
   <<<mirror>>> elements.
-  
+
   * <<url>>:
   The base URL of this mirror. The build system will use prepend this URL to connect to a
   repository rather than the default server URL.
-  
+
   * <<mirrorOf>>:
   The <<<id>>> of the server that this is a mirror of. For example, to point to a mirror
   of the Maven <<<central>>> server ({{http://repo1.maven.org/maven2/}}), set this element to
@@ -234,18 +234,18 @@ mvn castor-maven-plugin:generate
 
   * <<id>>:
   The unique identifier for this proxy. This is used to differentiate between <<<proxy>>> elements.
-  
+
   * <<active>>:
   <<<true>>> if this proxy is active. This is useful for declaring a set of proxies, but only one may be
   active at a time.
-  
+
   * <<protocol>>, <<host>>, <<port>>:
   The <<<protocol://host:port>>> of the proxy, seperated into discrete elements.
-  
+
   * <<username>>, <<password>>:
   These elements appear as a pair denoting the login and password required to authenticate to this
   proxy server.
-  
+
   * <<nonProxyHosts>>:
   This is a list of hosts which should not be proxied. The delimiter of the list is the expected type of
   the proxy server; the example above is pipe delimited - comma delimited is also common.
@@ -262,7 +262,7 @@ mvn castor-maven-plugin:generate
 
   If a profile is active from <<<settings>>>, its values will override any equivalently ID'd profiles in a
   POM or <<<profiles.xml>>> file.
-  
+
 ** {Activation}
 
   Activations are the key of a profile. Like the POM's profiles, the power of a profile comes from its ability
@@ -309,24 +309,24 @@ mvn castor-maven-plugin:generate
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
   will match. 
-  
+
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. 
-  
+
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
   of the corresponding <<<name=value>>> pair.
-  
+
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
   is <<<missing>>>.
-  
+
   []
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
   activated explicitly through the command line via a comma separated list after the <<<–P>>> flag (e.g. <<<-P test>>>).
-  
+
   <To see which profile will activate in a certain build, use the> <<<maven-help-plugin>>>.
 
 -------

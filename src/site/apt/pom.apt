@@ -10,91 +10,91 @@ POM Reference
 
   [[1]] {{{#Introduction}Introduction}}
 
-    [[1]] {{{#What is the POM?}What is the POM?}}
-  
-    [[2]] {{{#Quick Overview}Quick Overview}}
-  
-  [[2]] {{{#The Basics}The Basics}}
+    [[1]] {{{#What_is_the_POM}What is the POM?}}
 
-    [[1]] {{{#Maven Coordinates}Maven Coordinates}}
-    
-    [[2]] {{{#POM Relationships}POM Relationships}}
-    
+    [[2]] {{{#Quick_Overview}Quick Overview}}
+
+  [[2]] {{{#The_Basics}The Basics}}
+
+    [[1]] {{{#Maven_Coordinates}Maven Coordinates}}
+
+    [[2]] {{{#POM_Relationships}POM Relationships}}
+
       [[1]] {{{#Dependencies}Dependencies}}
-      
+
         [[1]] {{{#Exclusions}Exclusions}}
-      
+
       [[2]] {{{#Inheritance}Inheritance}}
-	  
-        [[1]] {{{#The Super POM}The Super POM}}
-		
-        [[2]] {{{#Dependency Management}Dependency Management}}
+
+        [[1]] {{{#The_Super_POM}The Super POM}}
+
+        [[2]] {{{#Dependency_Management}Dependency Management}}
 
       [[3]] {{{#Aggregation}Aggregation (or Multi-Module)}}
 
-        [[1]] {{{#Inheritance v}Inheritance v. Aggregation}}
+        [[1]] {{{#Inheritance_v}Inheritance v. Aggregation}}
 
     [[3]] {{{#Properties}Properties}}
 
-  [[3]] {{{#Build Settings}Build Settings}}
+  [[3]] {{{#Build_Settings}Build Settings}}
 
     [[1]] {{{#Build}Build}}
 
-      [[1]] {{{#BaseBuild Element}The BaseBuild Element Set}}
-	  
-        [[1]] {{{#Resources}Resources}}
-		
-        [[2]] {{{#Plugins}Plugins}}
-		
-        [[3]] {{{#Plugin Management}Plugin Management}}
+      [[1]] {{{#BaseBuild_Element}The BaseBuild Element Set}}
 
-      [[2]] {{{#Build Element}The Build Element Set}}
-	  
+        [[1]] {{{#Resources}Resources}}
+
+        [[2]] {{{#Plugins}Plugins}}
+
+        [[3]] {{{#Plugin_Management}Plugin Management}}
+
+      [[2]] {{{#Build_Element}The Build Element Set}}
+
         [[1]] {{{#Directories}Directories}}
-		
+
         [[2]] {{{#Extensions}Extensions}}
-		
+
     [[2]] {{{#Reporting}Reporting}}
 
-      [[1]] {{{#Report Sets}Report Sets}}
-	  
-  [[4]] {{{#More Project Information}More Project Information}}
-  
+      [[1]] {{{#Report_Sets}Report Sets}}
+
+  [[4]] {{{#More_Project_Information}More Project Information}}
+
     [[1]] {{{#Licenses}Licenses}}
-	
+
     [[2]] {{{#Organization}Organization}}
-	
+
     [[3]] {{{#Developers}Developers}}
-	
+
     [[4]] {{{#Contributors}Contributors}}
-	
-  [[5]] {{{#Environment Settings}Environment Settings}}
-  
-    [[1]] {{{#Issue Management}Issue Management}}
-	
-    [[2]] {{{#Continuous Integration Management}Continuous Integration Management}}
-	
-    [[3]] {{{#Mailing Lists}Mailing Lists}}
-	
+
+  [[5]] {{{#Environment_Settings}Environment Settings}}
+
+    [[1]] {{{#Issue_Management}Issue Management}}
+
+    [[2]] {{{#Continuous_Integration_Management}Continuous Integration Management}}
+
+    [[3]] {{{#Mailing_Lists}Mailing Lists}}
+
     [[4]] {{{#SCM}SCM}}
-	
+
     [[5]] {{{#Repositories}Repositories}}
-	
-    [[6]] {{{#Plugin Repositories}Plugin Repositories}}
-	
-    [[7]] {{{#Distribution Management}Distribution Management}}
+
+    [[6]] {{{#Plugin_Repositories}Plugin Repositories}}
+
+    [[7]] {{{#Distribution_Management}Distribution Management}}
 
       [[1]] {{{#Repository}Repository}}
-	  
-      [[2]] {{{#Site Distribution}Site Distribution}}
-	  
+
+      [[2]] {{{#Site_Distribution}Site Distribution}}
+
       [[3]] {{{#Relocation}Relocation}}
-	  
+
     [[8]] {{{#Profiles}Profiles}}
 
       [[1]] {{{#Activation}Activation}}
-	  
-      [[2]] {{{#The BaseBuild Element Set}The BaseBuild Element Set <(revisited)>}}
+
+      [[2]] {{{#The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
 
   [[6]] {{{#Final}Final}}
 
@@ -103,7 +103,7 @@ POM Reference
 {Introduction}
 
   * {{{http://maven.apache.org/xsd/maven-4.0.0.xsd}The POM 4.0.0 XSD}}
-  
+
 * {What is the POM?}
 
   POM stands for "Project Object Model". It is an XML representation of a Maven project held in a file
@@ -301,12 +301,12 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
 ---------------
 
         Notice that an address is still required, only this time you use the command line and the install plugin will
-		create a POM for you with the given address.
+        create a POM for you with the given address.
 
-   [[2]]	Create your own repository and deploy it there. This is a favorite method for companies with an
+   [[2]] Create your own repository and deploy it there. This is a favorite method for companies with an
         intranet and need to be able to keep everyone in synch. There is a Maven goal called
-		<<<deploy:deploy-file>>> which is similar to the <<<install:install-file>>> goal (read the plugin's goal
-		page for more information).
+        <<<deploy:deploy-file>>> which is similar to the <<<install:install-file>>> goal (read the plugin's goal
+        page for more information).
 
    [[3]] Set the dependency scope to <<<system>>> and define a <<<systemPath>>>. This is not recommended, however,
         but leads us to explaining the following elements:
@@ -421,7 +421,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
 
     * plugin configuration
 
-	[]
+    []
 
 +-----------------------------+
 <project>
@@ -1677,25 +1677,25 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
   will match. 
-  
+
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
 
-  
+
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
   of the corresponding <<<name=value>>> pair.
-  
+
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
   is <<<missing>>>.
-  
+
   []
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
   activated explicitly through the command line via a comma separated list after the <<<–P>>> flag (e.g. <<<-P test>>>).
-  
+
   <To see which profile will activate in a certain build, use the> <<<maven-help-plugin>>>.
 
 -------
