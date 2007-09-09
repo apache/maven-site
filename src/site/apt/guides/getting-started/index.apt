@@ -23,37 +23,37 @@ Maven Getting Started Guide
 
 Sections
 
- * {{{index.html#What is Maven?}What is Maven?}}
+ * {{{index.html#What_is_Maven}What is Maven?}}
 
- * {{{index.html#How can Maven benefit my development process?}How can Maven benefit my development process?}}
+ * {{{index.html#How_can_Maven_benefit_my_development_process}How can Maven benefit my development process?}}
 
- * {{{index.html#How do I setup Maven?}How do I setup Maven?}}
+ * {{{index.html#How_do_I_setup_Maven}How do I setup Maven?}}
 
- * {{{index.html#How do I make my first Maven project?}How do I make my first Maven project?}}
+ * {{{index.html#How_do_I_make_my_first_Maven_project}How do I make my first Maven project?}}
 
- * {{{index.html#How do I compile my application sources?}How do I compile my application sources?}}
+ * {{{index.html#How_do_I_compile_my_application_sources}How do I compile my application sources?}}
 
- * {{{index.html#How do I compile my test sources and run my unit tests?}How do I compile my test sources and run my unit tests?}}
+ * {{{index.html#How_do_I_compile_my_test_sources_and_run_my_unit_tests}How do I compile my test sources and run my unit tests?}}
 
- * {{{index.html#How do I create a JAR and install it in my local repository?}How do I create a JAR and install it in my local repository?}}
+ * {{{index.html#How_do_I_create_a_JAR_and_install_it_in_my_local_repository}How do I create a JAR and install it in my local repository?}}
 
- * {{{index.html#How do I use plug-ins?}How do I use plug-ins?}}
+ * {{{index.html#How_do_I_use_plug-ins}Howdo I use plug-ins?}}
 
- * {{{index.html#How do add resources to my JAR?}How do add resources to my JAR?}}
+ * {{{index.html#How_do_I_add_resources_to_my_JAR}How do I add resources to my JAR?}}
 
- * {{{index.html#How do I filter resource files?}How do I filter resource files?}}
+ * {{{index.html#How_do_I_filter_resource_files}How do I filter resource files?}}
 
- * {{{index.html#How do I use external dependencies?}How do I use external dependencies?}}
+ * {{{index.html#How_do_I_use_external_dependencies}How do I use external dependencies?}}
 
- * {{{index.html#How do I deploy my jar in my remote repository?}How do I deploy my jar in my remote repository?}}
+ * {{{index.html#How_do_I_deploy_my_jar_in_my_remote_repository}How do I deploy my jar in my remote repository?}}
 
- * {{{index.html#How do I create documentation?}How do I create documentation?}}
+ * {{{index.html#How_do_I_create_documentation}How do I create documentation?}}
 
- * {{{index.html#How do I deploy my site?}How do I deploy my site?}}
+ * {{{index.html#How_do_I_deploy_my_site}How do I deploy my site?}}
 
- * {{{index.html#How do I build other types of projects?}How do I build other types of projects?}}
+ * {{{index.html#How_do_I_build_other_types_of_projects}How do I build other types of projects?}}
 
- * {{{index.html#How do I build more than one project at once?}How do I build more than one project at once?}}
+ * {{{index.html#How_do_I_build_more_than_one_project_at_once}How do I build more than one project at once?}}
 
  []
 
@@ -539,7 +539,7 @@ mvn eclipse:eclipse
   To find out what configuration is available for a plugin, you can see the {{{/plugins/} Plugins List}} and navigate
   to the plugin and goal you are using.
 
-* {How do add resources to my JAR?}
+* {How do I add resources to my JAR?}
 
  Another common use case that can be satisfied which requires no changes to the POM that we have
  above is packaging resources in the JAR file. For this common task, Maven again relies on the
