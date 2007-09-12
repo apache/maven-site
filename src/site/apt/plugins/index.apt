@@ -95,7 +95,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.0    | Run a set of Maven projects and verify the output
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-one-plugin/} <<<one>>>}}                | 1.1    | A plugin for interacting with legacy Maven 1.x repositories and builds.
+| {{{/plugins/maven-one-plugin/} <<<one>>>}}                | 1.2    | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-patch-plugin/} <<<patch>>>}}            | 1.0    | Use the gnu patch tool to apply patch files to source code.
 *-----------------------------------------------------------+--------+----------------------------------------------+
