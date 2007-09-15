@@ -59,7 +59,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}  | 2.1    | Generate a checkstyle report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-clover-plugin/} <<<clover>>>}}          | 2.4    | Generate a Clover report.
+| {{{/plugins/maven-clover-plugin/} <<<clover>>>}}          | 2.4    | Generate a Clover report. NOTE: Moved to Atlassian.com
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}              | 1.0-beta-1 | Generate a Description of a Project (DOAP) file from a POM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
