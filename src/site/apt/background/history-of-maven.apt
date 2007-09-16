@@ -10,11 +10,14 @@ History of Maven by Jason van Zyl
 
  Maven began its life in the {{{http://jakarta.apache.org}Jakarta}} {{{ http://jakarta.apache.org/alexandria/legacy/}Alexandria}}
  project. The Alexandria project is now defunct but was the breeding ground for not only Maven, but for the
- {{{http://gump.apache.org}Gump}} and {{{http://forrest.apache.org}Forrest}} projects as well. From the old
- {{{http://cvs.apache.org/viewcvs.cgi/jakarta-alexandria/proposal/maven/?hideattic=0}CVS}} archive
- you can see that as of the date of this document Maven was removed from Alexandria about 3 years, 7 months ago
- making Maven about 4 years old! Maven spent about 5 months as part of the Alexandria before moving on to its next home
- in the {{{http://turbine.apache.org/}Turbine}} project.
+ {{{http://gump.apache.org}Gump}} and {{{http://forrest.apache.org}Forrest}} projects as well.
+~~ From the old {{{http://cvs.apache.org/viewcvs.cgi/jakarta-alexandria/proposal/maven/?hideattic=0}CVS}} archive
+ The first import of prototype sources happened in
+ {{{http://mail-archives.apache.org/mod_mbox/jakarta-alexandria-dev/200108.mbox/%3c20010827163505.53005.qmail@icarus.apache.org%3e}August 2001}}.
+ As of the date of this document (October 2005) Maven was
+ {{{http://mail-archives.apache.org/mod_mbox/jakarta-alexandria-dev/200202.mbox/%3c20020202153719.50163.qmail@icarus.apache.org%3e}removed}}
+ from Alexandria about 3 years, 7 months ago making Maven about 4 years old! Maven spent about 5 months
+ as part of the Alexandria before moving on to its next home in the {{{http://turbine.apache.org/}Turbine}} project.
 
  Though Maven started in Alexandria the test bed for its use was the Turbine project. Turbine was in the process of
  decoupling its persistence layer, services layer and web layer into separate builds and I got very tired of having
