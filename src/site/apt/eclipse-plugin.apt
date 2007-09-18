@@ -13,10 +13,29 @@ Eclipse plugins for Maven
   Both plugins allow running Maven goals from Eclipse, see the output in a view inside the IDE and synchronize Maven POM information with
   Eclipse project information to some extent.
 
-Tycho (aka M2Eclipse)
+M2Eclipse (Tycho)
 
-  The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing a Maven 2.x integration piece for 
-  Eclipse and has released it under the ASL 2.0. You can find everything you need to know from the project website.
+  The first, and most mature of the Eclipse integration projects. The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing
+  Maven 2.x integration for Eclipse, project lead by Eugene Kuleshov (Subclipse & Mylyn developer) and is released under the ASL 2.0. 
+  Features include:
+  
+  * Launching Maven builds from within Eclipse  
+  
+  * Dependency management for Eclipse build path based on Maven's pom.xml
+  
+  * Resolving Maven dependencies from the Eclipse workspace without installing to local Maven repository
+  
+  * Automatic downloading of the required dependencies from the remote Maven repositories
+  
+  * Wizards for creating new Maven projects, pom.xml or to enable Maven support on plain Java project
+  
+  * Quick search for dependencies in Maven remote repositories
+  
+  * Quick fixes in the Java editor for looking up required dependencies/jars by the class or package name
+  
+  * ...more features to come  
+  
+  []
 
 Q for Eclipse
 
