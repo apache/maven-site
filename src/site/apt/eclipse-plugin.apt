@@ -6,6 +6,13 @@
  11 March 2007
  -----
 
+Eclipse plugins for Maven
+
+  The following plugins allow using Maven from the Eclipse IDE, avoiding the use of the Maven command line interface. They integrate Maven
+  in the IDE in different ways, please check their sites for more information.
+  Both plugins allow running Maven goals from Eclipse, see the output in a view inside the IDE and synchronize Maven POM information with
+  Eclipse project information to some extent.
+
 Q for Eclipse
 
   The {{{http://code.google.com/p/q4e/}Q for Eclipse}} project is a Maven 2.x plugin for 
