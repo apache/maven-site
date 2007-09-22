@@ -71,8 +71,8 @@ mvn deploy
       <groupId>com.myco.app</groupId>
       <artifactId>foo</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <type>tests</type>
-	  <scope>test</scope>
+      <classifier>tests</classifier>
+      <scope>test</scope>
     </dependency>
   </dependencies>
   ...
