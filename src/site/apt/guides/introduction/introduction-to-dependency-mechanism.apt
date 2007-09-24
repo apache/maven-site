@@ -389,6 +389,7 @@ Introduction to the Dependency Mechanism
 
  The reference information about the dependency management tags is available from the
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                 
+
 ** Importing Dependencies
  
  <The features defined in this section are only available in maven 2.0.8 or later.>
