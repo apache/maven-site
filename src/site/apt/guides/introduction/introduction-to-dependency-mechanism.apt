@@ -70,7 +70,7 @@ Introduction to the Dependency Mechanism
  Dependency scope is used to limit the transitivity of a depedency, and also to affect the classpath used for
  various build tasks.
 
- There are 6 scopes available:
+ There are 5 scopes available:
 
  * <<compile>>
    - this is the default scope, used if none is specified. Compile dependencies are available
@@ -92,18 +92,13 @@ Introduction to the Dependency Mechanism
    - this scope is similar to provided except that you have to provide the JAR
      which contains it explicitly. The artifact is always available and is not
      looked up in a repository.
-     
- * <<import>>
-   - this scope is only used on a dependency of type "pom" in the dependencyManagement section. It indicates that the specified
-     pom should be replaced with the dependencies in that pom's dependencyManagement section. Since they are replaced, 
-     dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency. 
 
  []
 
- Each of the scopes (except for import) affects transitive dependencies in different ways, as is demonstrated in the table below.
+ Each of the scopes affects transitive dependencies in different ways, as is demonstrated in the table below.
  If a dependency is set to the scope in the left column, transitive dependencies of that dependency with the
  scope across the top row will result in a dependency in the main project with the scope listed at the
- intersection. If no scope is listed, it means the dependency will be omitted. 
+ intersection. If no scope is listed, it means the dependency will be omitted.
 
 *----------+------------+----------+----------+------+
 |          | compile    | provided | runtime  | test
@@ -278,10 +273,10 @@ Introduction to the Dependency Mechanism
 
  <<NOTE:>> In two of these dependency references, we had to specify the \<type/\>
  element. This is because the minimal set of information for matching a dependency
- reference against a dependencyManagement section is actually 
- <<\{groupId, artifactId, type, classifier\}>>. In many cases, these dependencies 
- will refer to jar artifacts with no classifier. This allows us to shorthand the 
- identity set to <<\{groupId, artifactId\}>>, since the default for the type field 
+ reference against a dependencyManagement section is actually
+ <<\{groupId, artifactId, type, classifier\}>>. In many cases, these dependencies
+ will refer to jar artifacts with no classifier. This allows us to shorthand the
+ identity set to <<\{groupId, artifactId\}>>, since the default for the type field
  is <<<jar>>>, and the default classifier is null.
 
  A second, and very important use of the dependency management section is to control the versions
@@ -379,171 +374,17 @@ Introduction to the Dependency Mechanism
  * b is defined in B's parent's dependency managemnet section and since dependency management
  takes precedence over dependency mediation for transitive dependencies, version 1.0 will be
  selected should it be referenced in a or c's pom. b will also have compile scope.
- 
+
  * Finally, since d is specified in B's dependency management section, should d be a dependency
  (or transitive dependency) of a or c, version 1.0 will be chosen - again  because dependency
  management takes precedence over dependency mediation and also because the current pom's
  declaration takes precedence over its parent's declaration.
- 
+
  []
 
  The reference information about the dependency management tags is available from the
- {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.                 
+ {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
-** Importing Dependencies
- 
- <The features defined in this section are only available in maven 2.0.8 or later.>
-
- The examples in the previous section describe how to specify managed dependencies through inheritence. However,
- in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
- To accomodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a 
- pom artifact as a dependency with a scope of "import". 
-
- Project B:
-
-+----+
-
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>maven</groupId>
-  <artifactId>B</artifactId>
-  <packaging>pom</packaging>
-  <name>B</name>
-  <version>1.0</version>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>maven</groupId>
-        <artifactId>A</artifactId>
-        <version>1.0</version>
-	<type>pom</type>
-	<scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>test</groupId>
-        <artifactId>d</artifactId>
-        <version>1.0</version>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-  <dependencies>
-    <dependency>
-      <groupId>maven-test</groupId>
-      <artifactId>a</artifactId>
-      <version>1.0</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>maven-test</groupId>
-      <artifactId>c</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-  </dependencies>
-</project>
-
-+----+
-
- Assuming A is the pom defined in the preceding example, the end result would be the same. All of A's managed dependencies 
- would be incorporated into B except for d since it is defined in this pom.  
-
- Project X:
-
-+----+
-
-<project>
- <modelVersion>4.0.0</modelVersion>
- <groupId>maven</groupId>
- <artifactId>X</artifactId>
- <packaging>pom</packaging>
- <name>X</name>
- <version>1.0</version>
- <dependencyManagement>
-   <dependencies>
-     <dependency>
-       <groupId>test</groupId>
-       <artifactId>a</artifactId>
-       <version>1.1</version>
-     </dependency>
-     <dependency>
-       <groupId>test</groupId>
-       <artifactId>b</artifactId>
-       <version>1.0</version>
-       <scope>compile</scope>
-     </dependency>
-   </dependencies>
- </dependencyManagement>
-</project>
-
-+----+
-
- Project Y:
-
-+----+
-
-<project>
- <modelVersion>4.0.0</modelVersion>
- <groupId>maven</groupId>
- <artifactId>Y</artifactId>
- <packaging>pom</packaging>
- <name>Y</name>
- <version>1.0</version>
- <dependencyManagement>
-   <dependencies>
-     <dependency>
-       <groupId>test</groupId>
-       <artifactId>a</artifactId>
-       <version>1.2</version>
-     </dependency>
-     <dependency>
-       <groupId>test</groupId>
-       <artifactId>c</artifactId>
-       <version>1.0</version>
-       <scope>compile</scope>
-     </dependency>
-   </dependencies>
- </dependencyManagement>
-</project>
-
-+----+
-
- Project Z:
-
-+----+
-
-<project>
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>maven</groupId>
-  <artifactId>Z</artifactId>
-  <packaging>pom</packaging>
-  <name>Z</name>
-  <version>1.0</version>
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>maven</groupId>
-        <artifactId>X</artifactId>
-        <version>1.0</version>
-	<type>pom</type>
-	<scope>import</scope>
-      </dependency>
-      <dependency>
-        <groupId>maven</groupId>
-        <artifactId>Y</artifactId>
-        <version>1.0</version>
-	<type>pom</type>
-	<scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
-</project>
-
-+----+
-
- In the example above Z imports the managed dependencies from both X and Y. However, both X and Y contain depedency a. Here,
- version 1.1 of a would be used since X is declared first and a is not declared in Z's dependencyManagement.
-
- This process is recursive. For example, if X imports another pom, Q, when Z is processed it will simply appear that all  
- of Q's managed dependencies are defined in X.
 
 * System Dependencies
 
