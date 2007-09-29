@@ -6,9 +6,20 @@
     <author email="jason@sonatype.com">Jason van Zyl</author>
   </properties>
   <body>
+
     <!-- TODO: news? -->
     <div id="downloadbox">
-      <h5>Get Maven ${currentVersion}</h5>
+    <h5>Search Maven Sites</h5>
+<!-- Google CSE Search Box Begins  -->
+<form action="http://www.google.com/cse" id="searchbox_006660305041243700248:hyqtfwsewpm">
+  <input type="hidden" name="cx" value="006660305041243700248:hyqtfwsewpm" />
+  <input type="text" name="q" size="25" />
+  <input type="submit" name="sa" value="Search" />
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006660305041243700248%3Ahyqtfwsewpm"></script>
+<!-- Google CSE Search Box Ends -->
+
+	<h5>Get Maven ${currentVersion}</h5>
       <span style="display: block; text-align: right; font-size: smaller">Released: 20 June 2007</span>
       <p>
         <a href="download.html">
