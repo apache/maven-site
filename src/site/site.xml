@@ -35,9 +35,9 @@
       <item name="For Maven 1.0 Users" href="/maven1.html"/>
       <item name="For Other Projects" href="/project-faq.html"/>
 -->
-	<menu name="Main">
-	   <item name="Welcome" href="/index.html"/>
-	</menu>
+    <menu name="Main">
+      <item name="Welcome" href="/index.html"/>
+    </menu>
     <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
       <item name="Release Notes" href="/release-notes.html"/>
@@ -53,7 +53,8 @@
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
-      <item name="FAQ" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
+      <item name="FAQ (official)" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
+      <item name="FAQ (unofficial)" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1"/>
 <!--
       <item name="Getting Support" href="todo.html" />
 -->
@@ -61,7 +62,7 @@
     </menu>
 
     <menu name="Documentation">
-	        <!-- TODO: improve categorisation -->
+      <!-- TODO: improve categorisation -->
       <item name="Index (category)" href="/guides/index.html" />
       <item name="Running Maven" href="/run-maven/index.html" />
       <item name="User Centre" href="/users/index.html" collapse="true">
@@ -114,7 +115,7 @@
         <item name="How to mirror" href="/repository/mirror.html" />
 -->
       </item>
-	  <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
+      <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <!-- TODO: under documentation? Review structure under here, aim for consistency -->
         <!-- TODO .... -->
         <item name="Continuous Integration" href="/continuous-integration.html"/>
