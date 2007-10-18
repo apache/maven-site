@@ -466,13 +466,15 @@ Task Reference
   These tasks will install/deploy the given file into the local/remote repository. It is stored using the information in the supplied
   POM. Multiple artifacts can be attached during install/deploy using <<<attach>>> elements.
 
-*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
-| Attribute        | Description                                                              | Required                                        |
-*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
-| <<<file>>>       | The file to install in the local repository.                             | Yes, except if packaging is pom                 |
-*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
-| <<<pomRefId>>>   | The reference ID from a pom datatype defined earlier in the build file.  | No, if a pom nested element is provided instead |
-*------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+*---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| Attribute           | Description                                                              | Required                                        |
+*---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| <<<file>>>          | The file to install in the local repository.                             | Yes, except if packaging is pom                 |
+*---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| <<<pomRefId>>>      | The reference ID from a pom datatype defined earlier in the build file.  | No, if a pom nested element is provided instead |
+*---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
+| <<<uniqueVersion>>> | (<<<deploy>>> only) Whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time | No, the default is <<<true>>>. |
+*---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 
   The task must also take a either a nested <<<pom>>> element, or a pomRefId attribute.
   The tasks can have an optional <<<localRepository>>> element.
