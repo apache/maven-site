@@ -41,7 +41,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<packaging types / tools>> | | <These plugins relate to packaging respective artifact types.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                | 2.3    | Generate an EAR from the current project.
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                | 2.3.1  | Generate an EAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                | 2.1    | Build an EJB (and optional client) from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -55,7 +55,7 @@ Available Plugins
 *-----------------------------------------------------------+-----------------------+----------------------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}    | 2.1    | Generate a list of recent changes from your SCM.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
-| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.0-beta-2 | Generate a report from issue tracking or a change document.
+| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.0-beta-3 | Generate a report from issue tracking or a change document.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}  | 2.1    | Generate a checkstyle report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
@@ -101,9 +101,9 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}          | 2.3    | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-release-plugin/} <<<release>>>}}        | 2.0-beta-6 | Release the current project - updating the POM and tagging in the SCM.
+| {{{/plugins/maven-release-plugin/} <<<release>>>}}        | 2.0-beta-7 | Release the current project - updating the POM and tagging in the SCM.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-4 | Copy remote resources to the output directory for inclusion in the artifact.
+| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-alpha-6 | Copy remote resources to the output directory for inclusion in the artifact.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}  | 2.0    | Plugin to help with repository-based tasks.
 *-----------------------------------------------------------+--------+----------------------------------------------+
