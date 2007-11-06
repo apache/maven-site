@@ -188,28 +188,10 @@ And remember, your contributions are always welcome!
  * Doxia
 
  Doxia is Maven's documentation engine. It has a sink and parser API that can be used to plug in support for input
- and output documents. Currently it has support for these document formats:
+ and output documents.
 
-*---------------------------+----+-----*
-| Format                    | In | Out |
-*---------------------------+----+-----*
-| APT - Almost Plain Text   | Y  | N   |
-*---------------------------+----+-----*
-| DocBook                   | Y  | Y   |
-*---------------------------+----+-----*
-| FML - FAQ Markup Language | Y  | N/A |
-*---------------------------+----+-----*
-| LaTeX                     | N  | Y   |
-*---------------------------+----+-----*
-| RTF                       | N  | Y   |
-*---------------------------+----+-----*
-| XDoc                      | Y  | Y   |
-*---------------------------+----+-----*
-| XHTML                     | Y  | Y   |
-*---------------------------+----+-----*
-Available formats
-
- You can {{{http://maven.apache.org/doxia/}read more about Doxia}}.
+ You can read more about {{{http://maven.apache.org/doxia/}Doxia}} and the currently support
+ {{{http://maven.apache.org/doxia/references/index.html}document formats}}.
 
  * Mojo
 
