@@ -190,7 +190,7 @@ And remember, your contributions are always welcome!
  Doxia is Maven's documentation engine. It has a sink and parser API that can be used to plug in support for input
  and output documents.
 
- You can read more about {{{http://maven.apache.org/doxia/}Doxia}} and the currently support
+ You can read more about {{{http://maven.apache.org/doxia/}Doxia}} and the currently supported
  {{{http://maven.apache.org/doxia/references/index.html}document formats}}.
 
  * Mojo
