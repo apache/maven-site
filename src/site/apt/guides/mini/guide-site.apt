@@ -30,10 +30,14 @@ Creating a site
       +- site.xml
 --------------------
 
+ You will notice there is now a <<<$\{basedir\}/src/site>>> directory within which is contained a site descriptor
+ along with various directories corresponding to the supported document types. Let's take a look at site
+ descriptor and the examples of the various document types.
+
   The Xdoc format is the same as {{{http://maven.apache.org/maven-1.x/using/site.html} used in Maven 1.x}}. However, <<<navigation.xml>>>
   has been replaced by the site descriptor (see below).
 
-  The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this)
+  The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one)
   very quickly. A full reference of the {{{guide-apt-format.html} APT Format}} is available.
 
   The FML format is the FAQ format, also used in Maven 1.x.
@@ -78,12 +82,15 @@ mvn site
   file in the same way as you would for any other repository. The URL gives the location to deploy to. Currently,
   only SSH is supported, as above which copies to the host <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>.
 
+  <<Note:>> the trailing slash in the <<<\<url\>>>> above indicates that any subprojects that inherit this value should append their <<<artifactId>>> to
+  the path instead of using it as-is.
+
+  Deploying the site is done by using the <<<site-deploy>>> phase of the site
+  lifecycle.
+
 ---------------
 mvn site-deploy
 ---------------
-
-  <<Note:>> the trailing slash in the URL above indicates that any subprojects that inherit this value should append their <<<artifactId>>> to
-  the path instead of using it as-is.
 
 * Creating a Site Descriptor
 
