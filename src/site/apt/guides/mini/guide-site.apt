@@ -30,13 +30,13 @@ Creating a site
       +- site.xml
 --------------------
 
-  The Xdoc format is the same as {{{http://maven.apache.org/maven-1.x/using/site.html} used in Maven 1.0}}. However, <<<navigation.xml>>>
+  The Xdoc format is the same as {{{http://maven.apache.org/maven-1.x/using/site.html} used in Maven 1.x}}. However, <<<navigation.xml>>>
   has been replaced by the site descriptor (see below).
 
   The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this)
   very quickly. A full reference of the {{{guide-apt-format.html} APT Format}} is available.
 
-  The FML format is the FAQ format, also used in Maven 1.0.
+  The FML format is the FAQ format, also used in Maven 1.x.
 
   Other formats are available, but at this point these 3 are the best tested. There are also several possible output formats,
   but as of 2.0, only XHTML is available.
@@ -82,12 +82,13 @@ mvn site
 mvn site-deploy
 ---------------
 
-  <<Note:>> the trailing slash in the URL above indicates that any subprojects that inherit this value should append their artifact ID to
+  <<Note:>> the trailing slash in the URL above indicates that any subprojects that inherit this value should append their <<<artifactId>>> to
   the path instead of using it as-is.
 
 * Creating a Site Descriptor
 
-  The <<<site.xml>>> file is used to describe the layout of the site, and replaces the navigation file used in Maven 1.0.
+  The <<<site.xml>>> file is used to describe the layout of the site, and
+  replaces the <<<navigation.xml>>> file used in Maven 1.x.
 
   A sample is given below:
 
@@ -105,7 +106,7 @@ mvn site-deploy
   <body>
     <links>
       <item name="Apache" href="http://www.apache.org/" />
-      <item name="Maven 1.0" href="http://maven.apache.org/maven-1.x/"/>
+      <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x/"/>
       <item name="Maven 2" href="http://maven.apache.org/"/>
     </links>
 
@@ -114,7 +115,7 @@ mvn site-deploy
       <item name="Download" href="download.html"/>
       <item name="Release Notes" href="release-notes.html" />
       <item name="General Information" href="about.html"/>
-      <item name="For Maven 1.0 Users" href="maven1.html"/>
+      <item name="For Maven 1.x Users" href="maven1.html"/>
       <item name="Road Map" href="roadmap.html" />
     </menu>
 
@@ -127,8 +128,12 @@ mvn site-deploy
 
   ~~TODO: deserves more explanation.
 
-  Note the <<<\<menu ref="reports"/\>>>> string in the navigation. When building the site, this is replaced by menus for any reports
-  that you have configured.
+  <<Note:>> the <<<\<menu ref="reports"/\>>>> element above.
+  When building the site, this is replaced by a menu with links to all the
+  reports that you have configured.
+
+  More information about the site descriptor is available at the site for the
+  {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}site plugin}}.
 
 * Adding Extra Resources
 
@@ -148,7 +153,7 @@ mvn site-deploy
             +- pic1.jpg
 --------------------
 
-  The file <<<site.css>>> will be added to the default XHTML output, so can be used to adjust the default Maven stylesheets if desired.
+  The file <<<site.css>>> will be added to the default XHTML output, so it can be used to adjust the default Maven stylesheets if desired.
 
   The file <<<pic1.jpg>>> will be available via a relative reference to the <<<images>>> directory from any page in your site.
 
@@ -157,7 +162,7 @@ mvn site-deploy
   Maven has several reports that you can add to your web site to display the current state of the project.
   These reports take the form of plugins, just like those used to build the project.
 
-  To add these reports to your site, you must add the plugins to a special <<<reporting>>> section in the POM. The
+  To add these reports to your site, you must add the plugins to a special <<<\<reporting\>>>> section in the POM. The
   following example shows how to configure the standard project information reports that display information from the
   POM in a friendly format:
 
@@ -177,7 +182,7 @@ mvn site-deploy
 -------------------
 
   If you have included the appropriate <<<\<menu ref="reports"/\>>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
-  the site those items will appear on the menu.
+  the site those items will appear in the menu.
 
   ~~TODO: explain report sets
 
