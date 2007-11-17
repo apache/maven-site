@@ -149,6 +149,11 @@
       <item name="The Maven Team" href="/team-list.html" />
     </menu>
 
+    <menu name="Thanks">
+      <item name="Sponsorship" href="http://www.apache.org/foundation/sponsorship.html" />
+      <item name="Thanks" href="http://www.apache.org/foundation/thanks.html" />
+    </menu>
+
     <menu name="Maven Projects" inherit="bottom">
       <item name="Maven" href="http://maven.apache.org/"/>
       <item name="Continuum" href="http://maven.apache.org/continuum"/>
