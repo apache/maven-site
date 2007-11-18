@@ -126,7 +126,7 @@ Sync'ing your own repository to the central repository automatically
  {{{http://sf.net/}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
 
  After you are able to deploy to your remote repository <<make sure you only deploy releases>>. Then you can provide a script like the
- {{{http://svn.apache.org/viewvc/maven/archiva/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
+ {{{http://svn.apache.org/viewvc/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} and attach the script, and we'll add it to the automatically synced repos.
 
  Make sure you provide proof of owning the domain that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
