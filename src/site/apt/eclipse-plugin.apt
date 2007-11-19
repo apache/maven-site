@@ -37,9 +37,21 @@ M2Eclipse (Tycho)
   
   []
 
-Q for Eclipse
+Eclipse Foundation' Integration for Apache Maven
 
-  The {{{http://code.google.com/p/q4e/}Q for Eclipse}} project is a Maven 2.x plugin for 
-  Eclipse under the EPL license, whose objective is to be part of the Eclipse Foundation.
+  The Eclipse Foundation is going through the creation of an official project based on the work done at the
+  {{{http://code.google.com/p/q4e/}Q for Eclipse}} project, to develop in the foundation an official Maven 2 plugin.
 
-  Check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
+  The proposal is called {{{http://www.eclipse.org/proposals/iam/}Eclipse Integration for Apache Maven}}
+  ({{{http://www.eclipse.org/proposals/iam/}Eclipse IAM}}), and you can join the newsgroup at
+
+  * server: news.eclipse.org
+
+  * group: eclipse.technology.iam
+
+  * or at the {{{http://www.eclipse.org/newsportal/thread.php?group=eclipse.technology.iam}web interface}}
+
+  []
+
+  The current implementation is at {{{http://code.google.com/p/q4e/}Q for Eclipse}},
+  check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
