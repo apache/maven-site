@@ -49,7 +49,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-rar-plugin/} <<<rar>>>}}                | 2.2    | Build a RAR from the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.0.2  | Build a WAR from the current project.
+| {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-alpha-1  | Build a WAR from the current project.
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<reporting>> | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>
 *-----------------------------------------------------------+-----------------------+----------------------------------+
@@ -77,11 +77,11 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<tools>> | | <These are miscellaneous tools available through Maven by default.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                | 2.0-beta-1 | Generate an Ant build file for the project.
+| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                | 2.0 | Generate an Ant build file for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | 1.1    | Run a set of ant tasks from a phase of the build.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 1.0-alpha-4 | Generate a skeleton project structure from an archetype.
+| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 1.0-alpha-7 | Generate a skeleton project structure from an archetype.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}      | 2.2-beta-1   | Build an assembly (distribution) of sources and/or binaries.
 *-----------------------------------------------------------+-----------------------+----------------------------------+
@@ -89,7 +89,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-enforcer-plugin/} <<<enforcer>>>}}      | 1.0-alpha-3 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                | 1.0-alpha-3 | Create signatures for the artifacts and poms
+| {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                | 1.0-alpha-4 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.1  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
