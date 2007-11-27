@@ -120,7 +120,7 @@ public class GreetingMojo extends AbstractMojo
 |                  |API to resolve "<<<AbstractMojo>>>" and related classes   |
 *------------------+----------------------------------------------------------+
 
-  Listed below is a POM for a plugin which uses the simple sample mojo:
+  Listed below is an illustration of the sample mojo project's pom with the parameters set as described in the above table:
 
 +----+
 <project>
