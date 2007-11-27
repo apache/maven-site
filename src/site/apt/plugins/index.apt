@@ -91,7 +91,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                | 1.0-alpha-4 | Create signatures for the artifacts and poms
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.1  | Get information about the working environment for the project.
+| {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.2  | Get information about the working environment for the project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.0    | Run a set of Maven projects and verify the output
 *-----------------------------------------------------------+--------+----------------------------------------------+
