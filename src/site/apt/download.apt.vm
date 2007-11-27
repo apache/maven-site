@@ -50,13 +50,13 @@ Download Maven ${currentVersion}
 
 ** Windows 2000/XP
 
-  [[1]] Unzip <<<maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}. These instructions
-        assume you chose <<<C:\Program Files\Apache Software Foundation\maven-${currentVersion}>>>
+  [[1]] Unzip <<<apache-maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}. These instructions
+        assume you chose <<<C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}>>>
 
   [[2]] Add the <<<bin>>> directory to your path, by opening up the system properties (WinKey + Pause),
         selecting the "Advanced" tab, and the "Environment Variables" button, then editing the <<<PATH>>>
         variable in the user variables. eg.
-        <<<"C:\Program Files\Apache Software Foundation\maven-${currentVersion}\bin";%PATH%>>>
+        <<<"C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}\bin";%PATH%>>>
 
   [[3]] In the same dialog, make sure that <<<JAVA_HOME>>> is set to the location of your JDK,
         eg. <<<C:\Program Files\Java\jdk1.5.0_02>>>
@@ -66,11 +66,11 @@ Download Maven ${currentVersion}
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
   [[1]] Extract the distribution archive to the directory you wish to install Maven ${currentVersion}. These instructions
-        assume you chose <<</usr/local/maven-${currentVersion}>>>. The directory <<<maven-${currentVersion}>>> will be created from
+        assume you chose <<</usr/local/apache-maven-${currentVersion}>>>. The directory <<<maven-${currentVersion}>>> will be created from
         the archive.
 
   [[2]] Add the <<<bin>>> directory to your path, eg. <<<export
-PATH=/usr/local/maven-${currentVersion}/bin:$PATH>>>
+PATH=/usr/local/apache-maven-${currentVersion}/bin:$PATH>>>
 
   [[3]] Make sure that <<<JAVA_HOME>>> is set to the location of your JDK, eg.
         <<<export JAVA_HOME=/usr/java/jdk1.5.0_02>>>
