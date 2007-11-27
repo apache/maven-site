@@ -80,18 +80,47 @@ svn propget svn:externals
 * Building Maven 2.0 with Maven installed
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
+  
+  You may need to add the snapshots repository to your settings:
+  
++---+
+<settings>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <id>apache.snapshots</id>
+          <name>Apache Snapshot Repository</name>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </repository>
+      </repositories>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>apache.snapshots</id>
+          <name>Apache Snapshot Repository</name>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+        </pluginRepository>
+        </pluginRepositories>      
+      <id>m2.snapshotbuild</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>m2.snapshotbuild</activeProfile>
+  </activeProfiles>
+</settings>
++---+
 
   To do this, run from the <<<maven-2.0.x>>> directory:
 
 ----
 mvn install
-----
-
-  This will build, test and install all libraries in the local repository. Next, if you want to produce the binary distribution:
-
-----
-cd maven-core
-mvn assembly:assembly
 ----
 
   The assemblies will be created in <<<target>>> and can be unzipped to the location where you'd like Maven installed.
