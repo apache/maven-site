@@ -113,7 +113,8 @@ archetype
     `-- main
         `-- resources
             |-- META-INF
-            |   `-- archetype.xml
+            |   `-- maven
+            |       `--archetype.xml
             `-- archetype-resources
                 |-- pom.xml
                 `-- src
