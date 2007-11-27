@@ -48,7 +48,14 @@ Creating a site
   Note that all of the above is optional - just one index file is required in one of the input trees. Each of the paths will be merged
   together to form the root directory of the site.
 
-* Generating The Site
+* Customizing the Look & Feel
+
+  If you want to tune the way your site looks, you can use a custom skin to provide your own CSS styles. If that is
+  still not enough, you can even tweak the output templates that Maven uses to generate the site documentation. For
+  an in-depth discussion of site customization, please have a look at the
+  {{{http://www.sonatype.com/book/site-generation.html} Maven User Guide, Chapter 9, "Site Generation"}}.
+
+* Generating the Site
 
   Generating the site is very simple, and fast!
 
@@ -60,7 +67,7 @@ mvn site
 
   For more information on the site plugin, see the {{{../../plugins/maven-site-plugin/} plugin reference}}.
 
-* Deploying The Site
+* Deploying the Site
 
   To be able to deploy the site, you must first declare a location to distribute to in your <<<pom.xml>>>, similar to the repository for
   deployment.
@@ -78,12 +85,12 @@ mvn site
 </project>
 ---------------
 
-  The <<<id>>> element identifies the repository, so that you can attach credentials to it in your <<<settings.xml>>>
-  file in the same way as you would for any other repository. The URL gives the location to deploy to. Currently,
-  only SSH is supported, as above which copies to the host <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>.
+  The <<<\<id\>>>> element identifies the repository, so that you can attach credentials to it in your <<<settings.xml>>>
+  file using the {{{../../settings.html#Servers} <<<\<servers\>>>> element}} as you would for any other repository.
 
-  <<Note:>> the trailing slash in the <<<\<url\>>>> above indicates that any subprojects that inherit this value should append their <<<artifactId>>> to
-  the path instead of using it as-is.
+  The <<<\<url\>>>> gives the location to deploy to. Currently, only SSH is supported, as above which copies to the host
+  <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>. If subprojects inherit the site URL from a parent POM,
+  they will automatically append their <<<\<artifactId\>>>> to form their effective deployment location.
 
   Deploying the site is done by using the <<<site-deploy>>> phase of the site
   lifecycle.
@@ -169,6 +176,28 @@ mvn site-deploy
   Maven has several reports that you can add to your web site to display the current state of the project.
   These reports take the form of plugins, just like those used to build the project.
 
+  There are many standard reports that are available by gleaning information from the POM. Currently
+  what is provided by default are:
+
+  * Dependencies Report
+
+  * Mailing Lists
+
+  * Continous Integration
+
+  * Source Repository
+
+  * Issue Tracking
+
+  * Project Team
+
+  * License
+
+  []
+
+  To find out more please refer to the
+  {{{../../plugins/maven-project-info-reports-plugin/}Project Info Reports Plugin}}.
+
   To add these reports to your site, you must add the plugins to a special <<<\<reporting\>>>> section in the POM. The
   following example shows how to configure the standard project information reports that display information from the
   POM in a friendly format:
@@ -239,27 +268,3 @@ mvn site-deploy
 --------------------
 
   With one site descriptor per language, the translated site(s) can evolve independently.
-
-Using standard reports
-
- There are many standard reports that are available by gleaning information from the POM. Currently
- what is provided by default are:
-
- * Dependencies Report
-
- * Mailing Lists
-
- * Continous Integration
-
- * Source Repository
-
- * Issue Tracking
-
- * Project Team
-
- * License
- 
- []
-
- To find out more please refer to the
- {{{http://maven.apache.org/plugins/maven-project-info-reports-plugin/index.html}Project Info Reports Plug-in}}.
