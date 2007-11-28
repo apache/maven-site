@@ -20,13 +20,13 @@
 <!-- Google CSE Search Box Ends -->
 
 	<h5>Get Maven ${currentVersion}</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 20 June 2007</span>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 27 November 2007</span>
       <p>
         <a href="download.html">
           <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentVersion}"/>
           Maven ${currentVersion}
         </a>
-        <small>(1.3Mb)</small>
+        <small>(1.6Mb)</small>
         <span style="font-size: smaller">
           <br/>
           <a href="download.html#Requirements">System Requirements</a>,
