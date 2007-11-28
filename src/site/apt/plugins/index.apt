@@ -33,7 +33,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-resources-plugin/} <<<resources>>>}}    | 2.2    | Copy the resources to the output directory for including in the JAR.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-site-plugin/} <<<site>>>}}              | 2.0-beta-5 | Generate a site for the current project.
+| {{{/plugins/maven-site-plugin/} <<<site>>>}}              | 2.0-beta-6 | Generate a site for the current project.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-surefire-plugin/} <<<surefire>>>}}      | 2.3    | Run the Junit tests in an isolated classloader.
 *-----------------------------------------------------------+--------+----------------------------------------------+
