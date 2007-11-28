@@ -39,7 +39,7 @@ Subversion Configuration
 {Maven Code Style}
 
  The following sections show how to set up the code style for Maven in IDEA and Eclipse.
- It is strongly preferred that patches use this style before they are spplied.
+ It is strongly preferred that patches use this style before they are supplied.
 
 * IntelliJ IDEA 4.5+
 
