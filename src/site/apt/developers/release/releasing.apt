@@ -26,16 +26,16 @@
 Releasing A Maven Project
 
  What follows is a description of releasing a Maven project to a staging repository, whereupon it is scruntized by
- the community, approved, and transfered to a production repository. In order to release a project you must have the 
+ the community, approved, and transfered to a production repository. In order to release a project you must have the
  following setup in your <<<$HOME/.m2/settings.xml>>> which is a profile which provides settings for:
- 
+
  * Your GPG passphrase which will be used to sign all artifacts that are released. If you have no idea what your
    GPG passphrase is then refer to {{{pmc-release-process.html}this document}}.
-            
+
  * The staging repository that you want to deploy the release to.
 
  Here's what your <<<release>>> profile might look like in your <<<$HOME/.m2/settings.xml>>>:
- 
+
 +-----+
 <settings>
   ...
@@ -50,15 +50,15 @@ Releasing A Maven Project
   </profiles>
   ...
 </settings>
-+-----+  
++-----+
 
  Everything that you need to release has been configured in the POM all Maven projects inherit from. The release plugin configuration
  being used is the following:
 
 %{snippet|id=release-plugin-configuration|url=http://svn.apache.org/repos/asf/maven/pom/trunk/maven/pom.xml}
- 
+
  And the profile being used for releases is the following:
- 
+
 %{snippet|id=release-profile|url=http://svn.apache.org/repos/asf/maven/pom/trunk/maven/pom.xml}
 
 * The New Steps
@@ -71,12 +71,17 @@ Releasing A Maven Project
 +-----+
 mvn release:prepare
 +-----+
- 
+
  [[2]] Perform the release
 
 +-----+
 mvn release:perform
 +-----+
+
+ <<IMPORTANT NOTE:>> Be sure that the generated artifacts should respect the
+ {{{http://www.apache.org/dev/release.html}Apache release rules}}: NOTICE and LICENSE files should be present in
+ META-INF directory within the jar. For -sources artifact, be sure that your pom does NOT use the
+ maven-source-plugin:2.3 which is broken.
 
  [[3]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
@@ -113,12 +118,12 @@ Vote open for 72 hours.
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
- 
+
  <<Note:>> For now the stage plugin hasn't been released yet and you need to build it yourself.
  The tests for the stage plugin requires that an scp server is present on your local machine. If you are trying to build
  the plugin on Windows you need to exlude the tests. You do this by adding <<<-Dmaven.test.skip=true>>> on the command
  line when you build it.
- 
+
  Here is an example on how to use the stage plugin:
 
 +-----+
@@ -134,7 +139,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" \
 
  <<Releasing a Project Directly into a Production Repository>>
 
- If you want to release directly to a production repository then you simply configure the staging repository point at 
+ If you want to release directly to a production repository then you simply configure the staging repository point at
  the production repository by using the following in your <<<$HOME/.m2/settings.xml>>>:
 
 +-----+
@@ -151,7 +156,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" \
   </profiles>
   ...
 </settings>
-+-----+  
++-----+
 
  This will allow you to bypass the staging phase and push the release directly into a production repository. It is assume that
  you have pushed a snapshot somewhere that people have looked at and approved of.
