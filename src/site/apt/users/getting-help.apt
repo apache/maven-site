@@ -12,7 +12,7 @@ Getting Help
   So something didn't work as you expected it to? You think that
   <Maven is broken>. What should you do?
 
-  Here's an list of actions that you can take:
+  Here's a list of actions that you can take:
 
 *You did check the documentation, didn't you?
 
@@ -68,8 +68,8 @@ Getting Help
   us resolve problems. 
 
   Create a POM that can be used to verify that it is a bug. If your pom uses
-  plugins, make sure that you have specified the version for each of the
-  plugins. If you don't, then we might not be using the same version as you are
+  plugins, make sure that you have specified the version for each and every
+  plugin. If you don't, then we might not be using the same version as you are
   when we test it.
 
   What we like best are patches that fixes the problem. If you want to create a
