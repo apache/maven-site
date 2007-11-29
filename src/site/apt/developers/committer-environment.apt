@@ -45,7 +45,7 @@ Subversion Configuration
 
  Download <<<{{{./maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
  <<<~/.IntelliJIDEA/config/codestyles>>> then restart IDEA. On Windows, try
- <<<C:\Documents and Settings\<username>\.IntelliJIDEA\config\codestyles>>>
+ <<<C:\Documents and Settings\\<username\>\.IntelliJIDEA\config\codestyles>>>
 
  After this, restart IDEA and open the settings to select the new code style.
 
@@ -59,7 +59,7 @@ Subversion Configuration
 
 Setting up SSH public/private keys
 
- By default, SSH (Secure Shell) asks to type password each time, i.e.:
+ By default, SSH (Secure Shell) asks you to enter your password each time, i.e.:
 
 +-----+
 >ssh vsiveton@apache.org
@@ -88,7 +88,7 @@ ec:06:c7:44:9e:a6:2c:c0:8a:87:04:07:a0:5b:94:d2 YOUR_MACHINE_USERNAME @ YOUR_MAC
  to copy the content of <<<\{cygwin.install.path\}\home\YOUR_MACHINE_USERNAME\.ssh>>> into
  <<<C:\Documents and Settings\YOUR_MACHINE_USERNAME\.ssh>>> for Maven.
 
- To test the installation, try to log again on Apache. No more password should be asked.
+ To test the installation, try to log in again on Apache. You should not be asked for your password any more.
 
 +-----+
 >ssh vsiveton@apache.org
@@ -106,7 +106,7 @@ Time to change your password? Type "passwd" and follow the prompts.
 -bash-2.05b$
 +-----+
 
-Usefull softwares
+Useful software
 
  The Maven Team uses several software. Here is a partial list:
 
