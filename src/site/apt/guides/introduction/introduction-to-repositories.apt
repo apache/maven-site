@@ -73,12 +73,12 @@ Introduction to Repositories
 
 <project>
   ...
-   <repositories>
-     <repository>
+  <repositories>
+    <repository>
       <id>my-internal-site</id>
       <url>http://myserver/repo</url>
-     </repository>
-   </repositories>
+    </repository>
+  </repositories>
   ...
 </project>
 
@@ -157,14 +157,14 @@ Internal Repositories
 +----+
 
 <project>
-   ...
-   <repositories>
-     <repository>
+  ...
+  <repositories>
+    <repository>
       <id>my-internal-site</id>
       <url>http://myserver/repo</url>
-     </repository>
-   </repositories>
-   ...
+    </repository>
+  </repositories>
+  ...
 </project>
 
 +----+
