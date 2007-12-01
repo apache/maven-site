@@ -71,7 +71,7 @@ Available Plugins
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                | 2.2    | Generate a PMD report.
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate a standard project reports.
+| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate standard project reports.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.3    | Generate a report based on the results of unit tests.
 *-----------------------------------------------------------*--------+----------------------------------------------+
