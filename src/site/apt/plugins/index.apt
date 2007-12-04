@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 10 July 2007
+ 04 December 2007
  -----
 
 Available Plugins
@@ -23,7 +23,7 @@ Available Plugins
 *-----------------------------------------------------------*--------+----------------------------------------------+
 | <<core plugins>> | | <Plugins corresponding to default core phases (ie. clean, compile). They may have muliple goals as well.>
 *-----------------------------------------------------------+--------+----------------------------------------------+
-| {{{/plugins/maven-clean-plugin/} <<<clean>>>}}            | 2.1.1  | Clean up after the build.
+| {{{/plugins/maven-clean-plugin/} <<<clean>>>}}            | 2.2    | Clean up after the build.
 *-----------------------------------------------------------+--------+----------------------------------------------+
 | {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}      | 2.0.2  | Compiles Java sources.
 *-----------------------------------------------------------+--------+----------------------------------------------+
