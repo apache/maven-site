@@ -56,11 +56,6 @@
         </a>
         continuous integration server
       </p>
-      <!--
-      
-      You can't be promoting Archiva when it's never been released, it's completely alpha and this is misleading.
-      When it's released I think it can rightfully be put here.
-      
       <p>
         <a href="archiva">
           <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Archiva" />
@@ -68,7 +63,6 @@
         </a>
         repository and artifact management server 
       </p>
-      -->
       <p>
         <a href="/maven-1.x/">
           <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Maven 1.x" />
