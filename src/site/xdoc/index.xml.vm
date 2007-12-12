@@ -57,7 +57,7 @@
         continuous integration server
       </p>
       <p>
-        <a href="archiva">
+        <a href="/archiva/">
           <img src="images/archiva.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Archiva" />
         Archiva
         </a>
