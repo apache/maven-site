@@ -27,7 +27,7 @@ Download Maven ${currentVersion}
 *-------------------------+---------+----------+-----------+
 | Maven ${currentVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentVersion}-bin.zip} apache-maven-${currentVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.zip.md5} apache-maven-${currentVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.zip.asc} apache-maven-${currentVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven Ant Tasks 2.0.7                 | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.7.jar} maven-ant-tasks-2.0.7.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.7.jar.md5} maven-ant-tasks-2.0.7.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.7.jar.asc} maven-ant-tasks-2.0.7.jar.asc}} |
+| Maven Ant Tasks 2.0.8                 | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.8.jar} maven-ant-tasks-2.0.8.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.8.jar.md5} maven-ant-tasks-2.0.8.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.8.jar.asc} maven-ant-tasks-2.0.8.jar.asc}} |
 *-------------------------+---------+----------+-----------+
 
 * Previous Releases
