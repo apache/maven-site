@@ -28,6 +28,46 @@
 
 Maven Ant Tasks
 
+* 2.0.8 Release Notes
+
+  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=11533&fixfor=13618&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+
+**Bug
+
+    * [MANTTASKS-2] - artifact:dependencies related error: No files specified for filelist
+
+    * [MANTTASKS-22] - artifact:dependencies does not respect in the generated classpath the order of the dependencies
+
+    * [MANTTASKS-23] - antlib:deploy doesn't set correct snapshot version
+
+    * [MANTTASKS-67] - artifact:deploy - The name of deploying element in snapshot repository is wrong
+
+    * [MANTTASKS-77] - <offline> element of settings.xml ignored by artifact:dependencies.
+
+    * [MANTTASKS-78] - unable to download a dependency when it is a SNAPSHOT and multiple remoteRepositories are used
+
+    * [MANTTASKS-79] - add XML encoding support for pom.xml and settings.xml
+
+    * [MANTTASKS-82] - Environment variables are not resolved in settings files
+
+    * [MANTTASKS-84] - VersionMapper does not work on SNAPSHOT dependencies where uniqueVersion="true"
+
+    * [MANTTASKS-85] - settings config ignored for remoteRepositories not defined in pom
+
+    * [MANTTASKS-87] - Using a pom.xml for dependencies, in which the pom.xml has a parent pom.xml will cause a "Error downloading parent pom" error
+
+    * [MANTTASKS-98] - NPE if user settings file doesn't exist
+
+**Improvement
+
+    * [MANTTASKS-33] - Pass Ant properties for resolved dependency JARs
+
+    * [MANTTASKS-80] - weak/Inconsistent handling of settings
+
+    * [MANTTASKS-97] - add support for <mirrorOf>*</mirrorOf>
+
+    * [MANTTASKS-101] - get pom properties values like any other element
+
 * 2.0.7 Release Notes
 
   <<Warning>>: there are 2 incompatible changes that you must know before upgrading, to fix your Ant build files:
@@ -38,7 +78,7 @@ Maven Ant Tasks
     [[2]][MANTTASKS-65]:  central repository is not automatically added any more if a remoteRepository is set: the code has been changed to work
     as expected and documented (explicit declaration)
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13521&pid=11533&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&fixfor=13521&pid=11533&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
 
 **Bug
 
