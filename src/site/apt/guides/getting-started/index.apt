@@ -1178,8 +1178,14 @@ mvn clean package
 +- pom.xml
 +- my-app
 | +- pom.xml
+| +- src
+|   +- main
+|     +- java
 +- my-webapp
 | +- pom.xml
+| +- src
+|   +- main
+|     +- webapp
 -------------------
 
   The POM file you'll create should contain the following:

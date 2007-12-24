@@ -40,6 +40,9 @@ Maven Developer Centre
   * {{{../guides/development/guide-m2-development.html}Developing Maven 2}}
 
   * {{{../continuous-integration.html}Continuous Integration}}
+  
+  * Source Repository for Maven {{{../ref/2.0.9-SNAPSHOT/source-repository.html}2.0.x}} 
+    or {{{../ref/2.1-SNAPSHOT/source-repository.html}2.1.x}}
 
 * Committers Resources
 

@@ -141,8 +141,8 @@ width="244" height="68"></iframe> -->
             <a href="developers/index.html">Develop Maven</a>
           </span>
           <span style="display: block; margin-bottom: 0.5em">
-            Information for those who are currently developers, or interested in becoming developers of the Maven
-            project itself
+            Information for those who are currently developers, or who are interested 
+            in contributing to the Maven project itself
           </span>
         </li>
       </ul>
