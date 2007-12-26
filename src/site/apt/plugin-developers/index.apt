@@ -20,6 +20,10 @@ Plugin Developers Centre
 
   * {{{../guides/plugin/guide-java-plugin-development.html} Your First Mojo}} - Learn how to write your first plugin
 
+  * {{{plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
+
+  * {{{plugin-documenting.html} Documenting your Plugin}} - How to write documentation for your plugins
+
   * {{{cookbook/index.html} Plugin Cookbook}} - Examples for how to perform common tasks in plugins.
 
 ~~TODO: trails

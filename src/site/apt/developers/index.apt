@@ -54,12 +54,6 @@ Maven Developer Centre
 
   * {{{committer-settings.html}Committer Settings}}
 
-** Maven Plugins Resources
-
-  * {{{committer-testing-plugins.html}Testing Plugins Strategies}}
-
-  * {{{committer-documentation-plugins.html}Documentation Plugins Strategies}}
-
 * Making Releases
 
   * {{{release/pmc-gpg-keys.html}Making GPG Keys}}
