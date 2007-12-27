@@ -938,8 +938,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  that isn't available in the local repository, Maven will download the dependency from a remote repository into the local repository.  You
  probably noticed Maven downloading a lot of things when you built your very first project (these downloads were dependencies for the
  various plugins used to build the project).  By default, the remote repository Maven uses can be found (and browsed) at
- {{http://www.ibiblio.org/maven2/}}.  You can also set up your own remote repository (maybe a central repository for your company) to
- use instead of or in addition to ibiblio.  For more information on repositories you can refer to the
+ {{http://repo1.maven.org/maven2/}}.  You can also set up your own remote repository (maybe a central repository for your company) to
+ use instead of or in addition to the default remote repository.  For more information on repositories you can refer to the
  {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}}.
 
  Let's add another dependency to our project.  Let's say we've added some logging to the code and need to add log4j as a dependency.
