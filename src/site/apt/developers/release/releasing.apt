@@ -78,10 +78,10 @@ mvn release:prepare
 mvn release:perform
 +-----+
 
- <<IMPORTANT NOTE:>> Be sure that the generated artifacts should respect the
+ <<IMPORTANT NOTE:>> Be sure that the generated artifacts respect the
  {{{http://www.apache.org/dev/release.html}Apache release rules}}: NOTICE and LICENSE files should be present in
- META-INF directory within the jar. For -sources artifact, be sure that your pom does NOT use the
- maven-source-plugin:2.3 which is broken.
+ the META-INF directory within the jar. For -sources artifacts, be sure that your pom does NOT use the
+ maven-source-plugin:2.0.3 which is broken. The recommended version at this time is 2.0.4.
 
  [[3]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
