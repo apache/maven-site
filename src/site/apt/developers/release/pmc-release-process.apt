@@ -41,7 +41,27 @@ Prerequisite
 
 Release Process for Part Of Maven
 
- [[1]] Make sure there are <<NO>> snapshots in the poms to be released.
+ [[1]] Prepare your poms for release:
+
+   [[a]] Make sure there are <<NO>> snapshots in the poms to be released.
+
+   [[b]] Check that your poms will not loose content when they are rewritten
+         during the release process.
+
+     * <<<mvn release:prepare -DdryRun=true>>>
+
+     * Diff the original file <<<pom.xml>>> with the one called
+       <<<pom.xml.tag>>> to see if the license or any other info has been
+       removed. This has been known to happen if the starting
+       <<<\<project\>>>> tag is <<not>> on a single line.
+
+       The only things that should be different between these files are the
+       <<<\<version\>>>> and <<<\<scm\>>>> elements. Any other changes, you
+       must backport yourself to the original <<<pom.xml>>> file and commit
+       before proceeding with the release.
+
+     * Remember to do '<<<mvn release:clean>>>' before you start the real
+       release process.
 
  [[2]] Publish a snapshot:
 
