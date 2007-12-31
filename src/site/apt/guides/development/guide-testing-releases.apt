@@ -10,13 +10,14 @@ Guide to Testing Staged Releases
 
   As part of the release process, the artifacts are staged in a temporary repository
   for testing and evaluation before voting. Such repositories are not available by
-  default, so to test the project must be configured appropriately.
+  default, so to use them your project must be configured appropriately.
   
   The steps are as follows:
 
     * add the repository or plugin repository to your POM (see below)
 
-    * ensure you are using the released version of the artifacts in your project (e.g. by setting the \<version\> in the \<plugin\> tag)
+    * ensure you are using the version being released of the artifacts in your project,
+      e.g. by setting the <<<\<version\>>>> in the <<<\<plugin\>>>> tag.
 
     * test the release
 
@@ -81,7 +82,7 @@ Guide to Testing Staged Releases
   <<<http://localhost:8080/archiva/repository/staged-releases/>>>.
 
   The advantage of this approach is that you can usually remove your entire local repository afterwards and after removing the staged repository
-  from your POM or settings the artifacts will no longer be used.
+  from your POM the artifacts will no longer be used.
 
   If you are using the repository mirroring technique to lock down to the repository manager in your environment, you would add an additional
   mirror to correspond to the additional repository in the POM, such as:
