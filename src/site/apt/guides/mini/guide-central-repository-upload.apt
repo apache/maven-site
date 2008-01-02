@@ -111,9 +111,35 @@ Requirements
     </dependency>
     ...
   </dependencies>
+  <!--
+  NOT ALLOWED: (see FAQ)
+  <repositories></repositories>
+  <pluginRepositories></pluginRepositories>
+  -->
 </project> 
 
 +----+
+
+
+FAQ and common mistakes
+
+ * I have other repositories or pluginRepositories listed in my pom, is that a problem?
+
+ Yes, the central repo must be self contained, which means that all your dependencies must be already in the central repository.
+ You need to remove the repositories and pluginRepositories entries and make sure your project still builds when your local repository cache is empty.
+
+ The only exception allowed is when a dependency can not be distributed from the central repository due to the license, in that case only the pom for that
+ dependency is required, listing where the dependency can be downloaded.
+ {{{http://repo1.maven.org/maven2/javax/activation/activation/1.0.2/activation-1.0.2.pom}See an example}}.
+
+ * I have a patched version of the foo project developed at foo.com, what groupId should I use?
+
+ When you patch / modify a third party project, that patched version becomes your project and therefore should be distributed under a groupId you control
+ as any project you would have developed, never under com.foo. See above considerations about groupId.
+
+ * My project is hosted at a project hosting service like SourceForge or dev.java.net, what should I use as groupId?
+
+ If your project name is <<<foo>>> at SourceForge, then <<<net.sf.foo>>>. If it's foo at dev.java.net, then <<<net.java.dev.foo>>>
 
 
 
@@ -129,7 +155,7 @@ Sync'ing your own repository to the central repository automatically
  {{{http://svn.apache.org/viewvc/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} and attach the script, and we'll add it to the automatically synced repos.
 
- Make sure you provide proof of owning the domain that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
+ Make sure you <<provide proof of owning the domain>> that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
  under that domain, your name shows up in a prominent place in the domain, or you provide a link to a whois database where your name shows up as the domain owner.
 
  If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log
@@ -140,11 +166,25 @@ Sync'ing your own repository to the central repository automatically
  <<Important>>: nothing is deleted or changed in the Central Repository after it is synced (except maven-metadata.xml files)
 
 
+Sync FAQ
+
+ * Can I provide a sync for a groupId of a third party project?
+
+ If the third party project is not willing to provide a repository to sync from, and you are a regular user of maven and the third party project, the answer is yes,
+ you can set up a repository as if the project were yours (see instructions above). Please create a {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} Jira
+ issue first describing what and why you are trying to do it, and you may be designated the "unofficial" mantainer of the repository section associated to that project,
+ and you will be responsible of publishing the new releases for that project in your repository if other users request it. You can opt out at any time.
+
+
 
 Manual upload of artifacts
 
  Note that this manual process is time consuming and <<will only be accepted for a limited number of requests>>. If you want to upload frequently read the
  section above about automatic sync.
+
+ <<Estimated process time is FOUR WEEKS>>. If you want to use the manual process, that is the estimated time to process <<if no problems are detected>>.
+ It means that for each version you release and want to upload to the central repository you will have to wait that time. If a problem is detected it will
+ be notified in the Jira issue and <<you will wait again>> until the next time the issues are processed.
 
 
 * Step 1: Create an upload bundle
@@ -162,6 +202,8 @@ Manual upload of artifacts
  
  If you want to include a jar with java sources in your upload (recommended, unless your license doesn't
  allow sources to be redistributed) the command to run is:
+
+ <<Note>> due to a bug in repository:bundle-create you will need to <<manually add the javadoc jar>> to the bundle jar, using zip or any other compression program.
 
 +----+
 
@@ -215,10 +257,36 @@ http://wiggle.sourceforge.net/downloads/wiggle-1.0-bundle.jar
 http://wiggle.sourceforge.net
 http://wiggle.sourceforge.net/team-list.html
 
-Wiggle is a fantastic new piece of software for automating the
-clipping of nose hairs. Please upload!
+I'm a developer in wiggle, please upload!
 
 +----+
+
+ or
+
++----+
+
+http://wiggle.sourceforge.net/downloads/wiggle-1.0-bundle.jar
+
+http://wiggle.sourceforge.net
+http://wiggle.sourceforge.net/team-list.html
+
+I'm a developer in wiggle, and want to use the org.wiggle groupId
+I own wiggle.org domain, you can see my name in http://reports.internic.net/cgi/whois?whois_nic=wiggle.org&type=domain
+or you can see the project web page in www.wiggle.org
+
++----+
+
+
+
+Manual process FAQ and common mistakes
+
+ * I use parent poms how do I include them in the bundle?
+
+ You can't. You need to use the automated synchronization process noted above.
+
+ * I want to get several bundles uploaded, do I need to create a Jira issue for each?
+
+ No, please ignore the bundle url field and put in only one Jira issue the URLs of all bundles in the description or comments fields.
 
 
 
