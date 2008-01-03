@@ -55,7 +55,7 @@ _m2_complete()
   local cur goals
 
   COMPREPLY=()
-  cur=${ COMP_WORDS[COMP_CWORD]}
+  cur=${COMP_WORDS[COMP_CWORD]}
   goals='clean compile test install package deploy site'
   goals=$goals _m2_make_goals "eclipse" "eclipse"
   goals=$goals _m2_make_goals "idea" "idea"
