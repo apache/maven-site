@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -445,7 +445,12 @@ under the License.
           </tr>
           <tr>
             <td>execute</td>
-            <td>@execute [phase=&lt;phaseName&gt;|goal=&lt;goalName&gt;] [lifecycle=&lt;lifecycleId&gt;]</td>
+            <td><ul>
+              <li>@execute phase="&lt;phaseName&gt;" lifecycle="&lt;lifecycleId&gt;"</li>
+              <li>@execute phase="&lt;phaseName&gt;"</li>
+              <li>@execute goal="&lt;goalName&gt;"</li>
+            </ul>
+            </td>
             <td>No</td>
             <td>When this goal is invoked, it will first invoke a parallel lifecycle, ending at the given phase.
               If a goal is provided instead of a phase, that goal will be executed in isolation. The execution of either
@@ -472,6 +477,19 @@ under the License.
                 scopes.
               </i>
             </td>
+          </tr>
+          <tr>
+            <td>requiresProject</td>
+            <td>@requiresProject</td>
+            <td>No. Default: true</td>
+            <td>Flags this Mojo to run inside of a project.</td>
+          </tr>
+          <tr>
+            <td>aggregator</td>
+            <td>@aggregator</td>
+            <td>No</td>
+            <td>Flags this Mojo to run it in a multi module way, i.e. aggregate the build with the
+              set of projects listed as modules.</td>
           </tr>
           <tr>
             <td>description</td>
