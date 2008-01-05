@@ -4,7 +4,7 @@
  Bob Allison
  Vincent Siveton
  ------
- November 2006
+ January 2008
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -95,10 +95,16 @@ public class GreetingMojo extends AbstractMojo
       problem (such as a compilation failure) occurs.  Throwing this exception
       causes a "BUILD FAILURE" message to be displayed.
 
+    []
+
   * The <<<getLog>>> method (defined in <<<AbstractMojo>>>) returns a
     log4j-like logger object which allows plugins to create messages at levels
     of "debug", "info", "warn", and "error".  This logger is the accepted means
     to display information to the user.
+
+  []
+
+ All Mojo annotations are described {{{../../developers/mojo-api-specification.html#The_Descriptor_and_Annotations}here}}.
 
 ** Project Definition
 
@@ -142,7 +148,7 @@ public class GreetingMojo extends AbstractMojo
 
 ** Build Goals
 
-  There are a few goals which are defined with the Maven plugin
+  There are few goals which are defined with the Maven plugin
   packaging as part of a standard build lifecycle:
 
 *-------------+----------------------------------------------------+
@@ -290,6 +296,8 @@ mvn archetype:create \
 
   * It provides a means to easily extract the value of elements from
     the POM without the need to navigate the objects.
+
+  []
 
 ** Defining Parameters Within a Mojo
 
@@ -631,8 +639,63 @@ mvn archetype:create \
 <myObject>test</myObject>
 +-----+
 
+* Some Pitfalls
+
+ The following is some subtle anti-patterns that plugin developers should avoid or take care.
+
+** Defining Logger Field
+
+ Defining a <<<logger>>> field in your Mojo like the following is bad:
+
++-----+
+public MyMojo extends AbstractMojo
+{
+    private Log log = getLog();
+
+    public void execute() throws MojoExecutionException
+    {
+        log.debug( "..." );
+    }
+}
++-----+
+
+ <<Explanation>>: Getting the logger this way will retrieve some default logger instead of the logger that is injected into the mojo by the plexus container.
+ This is easily noticed by the different output styles of the log messages and the fact that one gets [debug] message without having "-X" enabled.
+
+** Using Relative File Path Parameter
+
+ Defining a relative file path parameter could be dangerous:
+
++-----+
+public MyMojo extends AbstractMojo
+{
+    /**
+     * This parameter will take a file path (file paths are platform-dependent...)
+     *
+     * @parameter
+     */
+    private String outputDirectory;
+
+    public void execute() throws MojoExecutionException
+    {
+        File outputDir = new File( outputDirectory ).getAbsoluteFile();
+        outputDir.mkdirs();
+    }
+}
++-----+
+
+  <<Explanation>>: <<<java.io.File>>> resolves relative paths (i.e. outputDirectory = "target/something" ) against the current directory
+  which is the project base directory (i.e. outputDir = "${basedir}/target/something"). Therefore, specific path parameters should be declared
+  of type <<<java.io.File>>> rather than simple strings: Maven should automatically push in properly resolved paths into the mojo.
+
 * Resources
 
-    [[1]] {{{../../developers/mojo-api-specification.html}Mojo API specification}}
+    [[1]] {{{../../developers/mojo-api-specification.html}Mojo Documentation}}: Mojo API, Mojo annotations
 
-    [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness/}Maven-plugin-testing-harness}}
+    [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
+
+    [[3]] {{{http://plexus.codehaus.org/}Plexus}}: The IoC container used by Maven.
+
+    [[4]] {{{http://plexus.codehaus.org/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
+
+    []
