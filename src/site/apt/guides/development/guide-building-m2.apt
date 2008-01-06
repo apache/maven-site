@@ -50,6 +50,15 @@ svn co https://svn.apache.org/repos/asf/maven/trunks maven
   contain the 2.1 source code. Note that neither directory contains any of the
   plugins.
 
+  <<Note>>: For Windows users, the checkout could be not complete with the following message:
+
+-------------------
+svn: Can't open file 'XXX': The system cannot find the path specified.
+-------------------
+
+  The problem is that while Windows allows filenames up to 256 characters the maximum path length it allows is 260 characters.
+  You will be able to check it out to the root directory without problem.
+
 ** Other Modules
 
   Other modules you might be interested in related to Maven development are:
