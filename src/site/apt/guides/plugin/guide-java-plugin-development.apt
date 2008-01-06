@@ -641,11 +641,11 @@ mvn archetype:create \
 
 * Some Pitfalls
 
- The following is some subtle anti-patterns that plugin developers should avoid or take care.
+ The following are some subtle anti-patterns that plugin developers should avoid or take care.
 
-** Defining Logger Field
+** Retrieving the Mojo Logger
 
- Defining a <<<logger>>> field in your Mojo like the following is bad:
+ Defining an instance field in your mojo to save the logger like the following is bad:
 
 +-----+
 public MyMojo extends AbstractMojo
@@ -659,12 +659,14 @@ public MyMojo extends AbstractMojo
 }
 +-----+
 
- <<Explanation>>: Getting the logger this way will retrieve some default logger instead of the logger that is injected into the mojo by the plexus container.
- This is easily noticed by the different output styles of the log messages and the fact that one gets [debug] message without having "-X" enabled.
+ <<Explanation>>: Getting the logger this way (i.e. during the construction of the mojo) will retrieve some default logger. In contrast, calling
+ <<<getLog()>>> later in the <<<execute()>>> method will retrieve a logger that has been injected by the plexus container.
+ This is easily noticed by the different output styles of the log messages and the fact that one gets <<<[debug]>>> messages without having "-X" enabled
+ when using the wrong logger. Just call <<<getLog()>>> whenever you need it, it is fast enough and needs not be saved in an instance field.
 
-** Using Relative File Path Parameter
+** Using Relative File Path Parameters
 
- Defining a relative file path parameter could be dangerous:
+ Defining a file path parameter of type <<<java.lang.String>>> is dangerous:
 
 +-----+
 public MyMojo extends AbstractMojo
@@ -684,9 +686,15 @@ public MyMojo extends AbstractMojo
 }
 +-----+
 
-  <<Explanation>>: <<<java.io.File>>> resolves relative paths (i.e. outputDirectory = "target/something" ) against the current directory
-  which is the project base directory (i.e. outputDir = "${basedir}/target/something"). Therefore, specific path parameters should be declared
-  of type <<<java.io.File>>> rather than simple strings: Maven should automatically push in properly resolved paths into the mojo.
+  <<Explanation>>: Users of your mojo will usually provide relative paths for its parameters (i.e. outputDirectory = "target/something") and
+  expect the mojo to resolve these paths against the base directory of the project (i.e. outputDirectory = "$\{basedir\}/target/something").
+  However, whenever you use <<<java.io.File>>> with a relative path to access the file system, the relative path will be resolved against
+  the current working directory. But the current working directory might be anything and is <not> necessarily the project's base directory.
+  This is especially true during a reactor build when the current working directory is usually the base directory of the parent project
+  and not the base directory of the currently executed sub module. For this reason, mojo parameters taking paths should be of type
+  <<<java.io.File>>>. The important difference compared to <<<java.lang.String>>> is that Maven will automatically push properly resolved paths
+  into the mojo fields. If you really need to use <<<java.lang.String>>> for the parameter type (e.g. to allow the user to alternatively specify
+  a class path resource or URL), be sure to always resolve relative file paths manually against the base directory of the project.
 
 * Resources
 
@@ -697,5 +705,7 @@ public MyMojo extends AbstractMojo
     [[3]] {{{http://plexus.codehaus.org/}Plexus}}: The IoC container used by Maven.
 
     [[4]] {{{http://plexus.codehaus.org/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
+
+    [[5]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
 
     []
