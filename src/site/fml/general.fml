@@ -354,5 +354,16 @@ Where: <path-to-file>  the path to the file to load
         </p>
       </answer>
     </faq>
+
+    <faq id="How to produce execution debug output or error messages">
+      <question>How to produce execution debug output or error messages?</question>
+      <answer>
+        <p>
+          You could call Maven with <i>-X</i> parameter or <i>-e</i> parameter. For more information,
+          run:
+          <source>mvn --help</source>
+        </p>
+      </answer>
+    </faq>
   </part>
 </faqs>
