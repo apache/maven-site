@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  ------
- 12 June 2005
+ January 2008
  ------
 
 Building Maven
@@ -50,39 +50,59 @@ svn co https://svn.apache.org/repos/asf/maven/trunks maven
   contain the 2.1 source code. Note that neither directory contains any of the
   plugins.
 
+** Other Modules
+
   Other modules you might be interested in related to Maven development are:
 
     * <<<plugins/trunk>>> - The sources of the Maven plugins. These can be individually installed, or built together.
 
+    * <<<plugin-tools/trunk>>> - Set of tools for Maven plugins like test harness.
+
+    * <<<release/trunk>>> - Release manager and plugin.
+
     * <<<site/trunk>>> - The Maven website.
 
-    * <<<wagon/trunk>>> - Maven Wagon, used by the artifact code and others for providing the transport layer to
-      get and put artifacts in a repository.
+    * <<<skins/trunk>>> - Skins for generated site used by site plugin.
 
-    * <<<scm/trunk>>> - Maven SCM, a generic API to communicate with various different SCM providers, used by
-      Continuum and the release and SCM plugins.
+    * Some Maven sub projects
 
-    * <<<doxia/trunk>>> - The Doxia site generation library.
+      * <<<wagon/trunk>>> - Maven Wagon, used by the artifact code and others for providing the transport layer to
+        get and put artifacts in a repository.
 
-    * <<<surefire/trunk>>> - The Surefire test runner.
+      * <<<scm/trunk>>> - Maven SCM, a generic API to communicate with various different SCM providers, used by
+        Continuum and the release and SCM plugins.
+
+      * <<<doxia/trunk>>> - The Doxia site generation library used by several report plugins and site plugin.
+
+      * <<<surefire/trunk>>> - The Surefire test runner.
+
+      []
+
+    * <<<shared/trunk>>> - Collection of shared libraries like file/path handling.
+
+    * <<<sandbox/trunk>>> - Sandbox codes.
 
     * {{{http://svn.plexus.codehaus.org/plexus/} Plexus}} - the IoC container used by Maven.
 
+    []
+
   If you're {{{http://svn.apache.org/viewvc/maven/trunks/}looking at the <<<trunks>>> directory with ViewVC}},
   there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
-  to link together all the trunks into one logical location for convenience. If you want to see what is being 
+  to link together all the trunks into one logical location for convenience. If you want to see what is being
   linked into one logical location you can use the following command:
 
 -------------------
 svn propget svn:externals
 -------------------
 
-* Building Maven 2.0 with Maven installed
+* Building Maven 2.0
+
+** Building Maven 2.0 With Maven Installed
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
-  
+
   You may need to add the snapshots repository to your settings:
-  
+
 +---+
 <settings>
   <profiles>
@@ -97,7 +117,6 @@ svn propget svn:externals
           </releases>
         </repository>
       </repositories>
-      </repositories>
       <pluginRepositories>
         <pluginRepository>
           <id>apache.snapshots</id>
@@ -107,7 +126,7 @@ svn propget svn:externals
             <enabled>false</enabled>
           </releases>
         </pluginRepository>
-        </pluginRepositories>      
+      </pluginRepositories>
       <id>m2.snapshotbuild</id>
     </profile>
   </profiles>
@@ -125,7 +144,7 @@ mvn install
 
   The assemblies will be created in <<<target>>> and can be unzipped to the location where you'd like Maven installed.
 
-* Building Maven 2.0 without Maven installed
+** Building Maven 2.0 Without Maven Installed
 
   Once you have checked out the code, change into the <<<maven-2.0.x>>> directory that was created.
   You may want to setup a different environment to install Maven to, other than your normal installation of a
@@ -164,9 +183,10 @@ bootstrap.bat
   If you have any problems or get any failures during the run, please report them to the
   {{{/mail-lists.html} Maven Developers List}}.
 
-  
-* Building Maven 2.1 with Maven installed
-  
+* Building Maven 2.1
+
+** Building Maven 2.1 With Maven Installed
+
   Once you have checked out the code, change into the <<<maven-components>>>
   directory. (If you checked out <<<trunks>>>, then it will be the
   <<<components>>> directory.)
@@ -181,8 +201,7 @@ mvn install
   produce the binary distribution under <<<maven-embedder/target/maven-2.1-SNAPSHOT-bin.*>>>
   that can be unzipped to the location where you'd like Maven installed.
 
-
-* Building Maven 2.1 without Maven installed
+** Building Maven 2.1 Without Maven Installed
 
   If you do not have Maven installed, you can use
   {{{http://ant.apache.org}Apache Ant}} to build Maven 2.1.
@@ -206,22 +225,22 @@ set M2_HOME=c:\maven-2.1-SNAPSHOT
   <<<components>>> directory.)
 
   From this, just run <<<ant>>> which will execute the default <<<all>>> target.
-  
+
 ----
-ant 
+ant
 ----
 
   This will download dependencies, build Maven 2.1, and install it into the
   directory you specified as <<<M2_HOME>>> above.
 
   For more information, consult the project help in the Ant build file.
-  
+
 ----
 ant -projecthelp
 ----
 
   The result is included here for convenience:
-  
+
 +--------+
 Buildfile: build.xml
 
@@ -236,36 +255,36 @@ Buildfile: build.xml
     directory *must* be named after the maven version you want to install, e.g.
     /usr/local/maven-2.1-SNAPSHOT.
 
-    You can set the maven.repo.local property to specify a custom location for 
+    You can set the maven.repo.local property to specify a custom location for
     your local repository for the bootstrap process.
 
 Main targets:
 
  classpath-pre     constructs a classpath reference containing our dependencies,
                    and verifies that all files are present
-                   
+
  clean-bootstrap   cleans up generated bootstrap classes
- 
+
  compile-boot      compiles the bootstrap sources
- 
+
  extract-assembly  extracts the maven assembly into maven.home
- 
+
  generate-sources  generates Java sources from Modello mdo model files
- 
+
  maven-assembly    generates the Maven installation assembly using the bootstrap
                    Maven
- 
+
  maven-compile     compiles Maven using the bootstrap Maven, skipping automated
                    tests
- 
- pull              copies all required dependencies from the Maven remote 
-                   repository into your local repository.  Set the 'skip.pull' 
-                   property to skip this step, but only if you're sure you 
+
+ pull              copies all required dependencies from the Maven remote
+                   repository into your local repository.  Set the 'skip.pull'
+                   property to skip this step, but only if you're sure you
                    already have all of the dependencies downloaded to
                    your local repository
- 
+
  run-full-maven    runs the full extracted Maven, now with tests
- 
+
 Default target: all
 +--------+
 
