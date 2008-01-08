@@ -1,7 +1,7 @@
  ---
  Introduction to build profiles
  ---
- 05-Feb-2006
+ January 2008
  ---
  John Casey/Allan Ramirez
  ---
@@ -167,7 +167,9 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-    To activate this you would type this on the command line:
+  <<Note>>: Environment variable <<<FOO>>> would be set like <<<env.FOO>>>.
+
+  To activate this you would type this on the command line:
 
 +---+
 mvn groupId:artifactId:goal -Denvironment=test
