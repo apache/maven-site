@@ -191,6 +191,8 @@ mvn groupId:artifactId:goal -Denvironment=test
 </profiles>
 +---+
 
+  <<Note>>: The tags \<exists/\> and \<missing/\> could be interpolated with some patterns like $\{user.home\}.
+
 * Which areas of a POM can be customized by each type of profile? Why?
 
   Now that we've talked about where to specify profiles, and how to activate them,
