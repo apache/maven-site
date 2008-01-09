@@ -207,9 +207,17 @@ Where: <path-to-file>  the path to the file to load
     </faq>
 
     <faq id="skip-test">
-      <question>How to skip the tests</question>
+      <question>How do I skip the tests?</question>
       <answer>
         Add the parameter <code>-Dmaven.test.skip=true</code> in the command line
+      </answer>
+    </faq>
+
+    <faq id="run-one-test">
+      <question>How can I run a single unit test?</question>
+      <answer>
+        Use the parameter <code>-Dtest=MyTest</code> at the command line.
+        NB: do not specify the entire package (org.apache.x.y.MyTest)
       </answer>
     </faq>
 
@@ -271,7 +279,7 @@ Where: <path-to-file>  the path to the file to load
     </faq>
 
     <faq id="test-property-name">
-      <question>Why does Maven compile my test classes but don't run them?</question>
+      <question>Maven compiles my test classes but doesn't run them?</question>
       <answer>
         <p>
           Tests are run by the surefire plugin.  The surefire plugin can be configured to run certain test classes and
