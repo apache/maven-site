@@ -73,7 +73,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.3    | Generate a report based on the results of unit tests. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
+| {{{/plugins/maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.3    | Generate a report based on the results of unit tests. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | <<tools>>                                                 | | <These are miscellaneous tools available through Maven by default.> | |
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
