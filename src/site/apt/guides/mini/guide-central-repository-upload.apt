@@ -43,6 +43,7 @@ Requirements
 
  * dependencies
 
+ []
 
  <<groupId>>: it will identify your project uniquely across all
  projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to the Central Repository it can
@@ -57,7 +58,7 @@ Requirements
 
  Look at {{{http://java.sun.com/docs/books/jls/third_edition/html/packages.html#7.7}
  More information about package names}}. Check also the guide about
- {{{guide-naming-conventions.html}Maven naming conventions}}
+ {{{guide-naming-conventions.html}Maven naming conventions}}.
 
  Examples:
 
@@ -65,6 +66,7 @@ Requirements
 
  * oness.sf.net -> net.sf.oness
 
+ []
 
 * Explanation
 
@@ -77,8 +79,6 @@ Requirements
  We also ask for license now because it is possible that your project's license may change in the course of
  its life time and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
  for a particular graph of artifacts we could have some strategies that would identify potential licensing problems.
-
-
 
 * A basic sample:
 
@@ -116,7 +116,7 @@ Requirements
   <repositories></repositories>
   <pluginRepositories></pluginRepositories>
   -->
-</project> 
+</project>
 
 +----+
 
@@ -141,7 +141,7 @@ FAQ and common mistakes
 
  If your project name is <<<foo>>> at SourceForge, then <<<net.sf.foo>>>. If it's foo at dev.java.net, then <<<net.java.dev.foo>>>
 
-
+ []
 
 Sync'ing your own repository to the central repository automatically
 
@@ -155,7 +155,7 @@ Sync'ing your own repository to the central repository automatically
  {{{http://svn.apache.org/viewvc/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} and attach the script, and we'll add it to the automatically synced repos.
 
- Make sure you <<provide proof of owning the domain>> that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
+ Make sure you <<provide proof of owning the domain>> that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name
  under that domain, your name shows up in a prominent place in the domain, or you provide a link to a whois database where your name shows up as the domain owner.
 
  If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log
@@ -175,7 +175,7 @@ Sync FAQ
  issue first describing what and why you are trying to do it, and you may be designated the "unofficial" mantainer of the repository section associated to that project,
  and you will be responsible of publishing the new releases for that project in your repository if other users request it. You can opt out at any time.
 
-
+ []
 
 Manual upload of artifacts
 
@@ -185,7 +185,6 @@ Manual upload of artifacts
  <<Estimated process time is FOUR WEEKS>>. If you want to use the manual process, that is the estimated time to process <<if no problems are detected>>.
  It means that for each version you release and want to upload to the central repository you will have to wait that time. If a problem is detected it will
  be notified in the Jira issue and <<you will wait again>> until the next time the issues are processed.
-
 
 * Step 1: Create an upload bundle
 
@@ -199,7 +198,7 @@ Manual upload of artifacts
 
  The bundle will be created in your <<<target>>> directory with the name:
  <<<${pom.artifactId}-${pom.currentVersion}-bundle.jar>>>
- 
+
  If you want to include a jar with java sources in your upload (recommended, unless your license doesn't
  allow sources to be redistributed) the command to run is:
 
@@ -236,14 +235,15 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
 * Step 2: Posting the request
 
  Post your request to {{{http://jira.codehaus.org/secure/CreateIssue.jspa?pid=10367&amp;issuetype=3}JIRA}}.
- In the description you must write the URL of the upload bundle
+ Under this URL, you need to choose that the project is "maven-upload-requests" and issue type is "wish".
+ In the description, you must write the URL of the upload bundle
  (if you're uploading more than one bundle please add all the urls under the same issue),
  then leave a blank line and provide the following:
 
  * a url where the project can be found.
 
  * if you are one of its developers, a url where your name or email can be found inside the project site.
- 
+
  []
 
  This will speed up the uploading process.
@@ -276,8 +276,6 @@ or you can see the project web page in www.wiggle.org
 
 +----+
 
-
-
 Manual process FAQ and common mistakes
 
  * I use parent poms how do I include them in the bundle?
@@ -288,7 +286,7 @@ Manual process FAQ and common mistakes
 
  No, please ignore the bundle url field and put in only one Jira issue the URLs of all bundles in the description or comments fields.
 
-
+ []
 
 Maven partners
 
@@ -304,6 +302,7 @@ Maven partners
 
  * {{{http://www.opensymphony.com/}OpenSymphony}}
 
+ []
 
 For Maven developers
 
@@ -346,3 +345,4 @@ For Maven developers
 
   * upload requests for popular projects require being extremely careful (javax.* groups, spring, hibernate,...)
 
+  []
