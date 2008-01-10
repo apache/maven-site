@@ -21,7 +21,7 @@ Using Mirrors for Repositories
     * You want to run maven-proxy to provide a local cache to a mirror and need to use it's URL instead
 
  To configure a mirror of a given repository, you provide it in your settings file ($HOME/.m2/settings.xml),
- giving the new repository its 
+ giving the new repository its
  own <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a
  mirror of. For example, the ID of the main Maven repository included by default is <<<central>>>, so to use
  the mirror at <ibiblio>, you would configure the following:
@@ -100,7 +100,7 @@ Using Mirrors for Repositories
       <!-- Shanghai, China -->
     </mirror>
 
-    <!-- these just point to ibiblio.org --> 
+    <!-- these just point to ibiblio.org -->
     <mirror>
       <id>ibiblio.net</id>
       <url>http://www.ibiblio.net/pub/packages/maven2</url>
@@ -150,7 +150,7 @@ FTP access
 
 Creating your own mirror
 
-  The central repository requires around 10 GB and growing, and it's updated every 4 hours.
+  The central repository requires around 16 GB and growing, and it's updated every 4 hours.
 
   You can mirror the central repository using rsync from several mirrors, choose one
 
