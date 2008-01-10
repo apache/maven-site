@@ -3,7 +3,7 @@
  -----
  Brett Porter
  -----
- 3 November 2006
+ January 2008
  -----
 
 Plugin Developers Centre
@@ -26,6 +26,8 @@ Plugin Developers Centre
 
   * {{{cookbook/index.html} Plugin Cookbook}} - Examples for how to perform common tasks in plugins.
 
+  []
+
 ~~TODO: trails
 
 * Reference
@@ -34,3 +36,10 @@ Plugin Developers Centre
 
   * {{{../ref/current/index.html} Maven API Reference}}
 
+  []
+
+* Examples
+
+  * {{{../examples/injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
+
+  []
