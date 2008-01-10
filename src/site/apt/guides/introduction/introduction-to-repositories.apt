@@ -168,8 +168,8 @@ Internal Repositories
 </project>
 
 +----+
- 
- If your internal repository requires authentication, the <<<id>>> element can be used in your {{{../../settings.html#Servers}settings}} file 
+
+ If your internal repository requires authentication, the <<<id>>> element can be used in your {{{../../settings.html#Servers}settings}} file
  to specify login information.
 
 * Deploying to the Internal Repository
@@ -177,7 +177,19 @@ Internal Repositories
  One of the most important reasons to have one or more internal repositories is to be able to publish
  your own private releases to share.
 
- To publish to the repository, you will need to have access via one of SCP, SFTP, FTP, WebDAV, or the filesystem. Connectivity is accomplished with the various 
+ To publish to the repository, you will need to have access via one of SCP, SFTP, FTP, WebDAV, or the filesystem. Connectivity is accomplished with the various
  {{{http://maven.apache.org/wagon/wagon-providers/index.html}wagons}}. Some wagons may need to be added as {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_extension}extension}} to your build.
 ~~ For example, to set up an SCP transfer.
 ~~ show the scp example.
+
+* External Links
+
+  * {{{http://www.devzuz.org/blogs/oching/2007/11/05/1194233400000.html}The Hype About Repository Managers}}
+
+  * {{{http://maven.apache.org/archiva}Archiva}}
+
+  * {{{http://artifactory.sourceforge.net}Artifactory}}
+
+  * {{{http://www.pdark.de/dsmp/}DSMP (Dead Simple Maven Proxy)}}
+
+  * {{{http://proximity.abstracthorizon.org/}Proximity}}
