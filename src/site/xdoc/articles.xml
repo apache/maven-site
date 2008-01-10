@@ -76,9 +76,9 @@ under the License.
 
     <section name="Miscellaneous on Maven">
       <p>
-        If you're interested in testing your Maven skills, check out <a href="http://www.javablackbelt.com/QuestionnaireDefDisplay.wwa?questPublicId=01559">JavaBlackBelt's Maven exam</a>. 
+        If you're interested in testing your Maven skills, check out <a href="http://www.javablackbelt.com/QuestionnaireDefDisplay.wwa?questPublicId=01559">JavaBlackBelt's Maven exam</a>.
         This exam is being written collaboratively by the community. Feel free to add new questions, suggest improvements, etc.
-      </p>    
+      </p>
     </section>
 
     <section name="Articles on Maven">
@@ -101,6 +101,12 @@ under the License.
             <td>Anadolu Üniversitesi</td>
             <td>Mustafa Sait Özen</td>
             <td>August 2007</td>
+          </tr>
+          <tr>
+            <td><a href="http://www.theserverside.com/tt/articles/article.tss?l=SettingUpMavenRepository">Setting up the Internal Repository</a></td>
+            <td>The Server Side</td>
+            <td>Avneet Mangat</td>
+            <td>June 2007</td>
           </tr>
           <tr>
             <td><a href="http://today.java.net/pub/a/today/2007/03/01/building-web-applications-with-maven-2.html">Building Web Applications with Maven 2</a></td>
