@@ -1,9 +1,9 @@
  -----
  Guide to Moving From Maven 1.x to Maven 2.x
- ---	
+ ---
  Jay H. Hartley
  -----
- 12 October 2005
+ January 2008
  -----
 
 Guide to Moving from Maven 1.x to Maven 2.x
@@ -18,23 +18,25 @@ Guide to Moving from Maven 1.x to Maven 2.x
  It is possible to establish parallel Maven builds, one using the old M1 settings,
  and a second using M2. The Maven 2 configuration file names and uses have been modified,
  so the two builds should not conflict.
-	
+
  A Maven 1.x build is configured with the following files:
-	
+
  * [project.xml] Project Object Model (POM) definition
-	
+
  * [maven.xml] Custom build scripts
-	
+
  * [project.properties] general build settings
-	
+
  * [build.properties] local build settings
 
  A Maven 2 build is configured with a different file set:
-	
+
  * [pom.xml] POM definition
-		
+
  * [settings.xml] local configuration
-			
+
+ []
+
 * Migrating the POM
 
  The Project Object Model (POM) has moved from the project.xml file to pom.xml.
@@ -47,9 +49,8 @@ Guide to Moving from Maven 1.x to Maven 2.x
  should not cause a problem with an initial build.
 
  project.xml:
-	    
-+----+
 
++----+
 <project>
   <pomVersion>3</pomVersion>
   <id>util</id>
@@ -63,15 +64,13 @@ Guide to Moving from Maven 1.x to Maven 2.x
   <build>
     ...
   </build>
-	...
+  ...
 </project>
-
 +----+
 
  pom.xml:
-	
-+----+
 
++----+
 <project>
   <modelVersion>4.0.0</modelVersion>
   <artifactId>util</artifactId>
@@ -85,24 +84,23 @@ Guide to Moving from Maven 1.x to Maven 2.x
   <build>
   ...
   </build>
-	...
+  ...
 </project>
-
 +----+
 
  For more details, check out the
  {{{/guides/introduction/introduction-to-the-pom.html}POM Guide}}.
-	
+
 * build.properties and project.properties
 
  These files have been replaced with
  {{{/settings.html}settings.xml}}.
  Like with the POM, you can establish a parallel build environment, so the m1 build
  never breaks while the m2 build is being debugged.
-	
+
  Additional local build customization options can also be created using
  {{{/guides/introduction/introduction-to-profiles.html}profiles}}.
-	    
+
 * What to do with maven.xml?
 
  See {{/maven1.html#m1-maven-xml}} for an explanation of
@@ -118,7 +116,7 @@ Guide to Moving from Maven 1.x to Maven 2.x
  but it is not required. You can begin by customizing the
  directories in Maven 2, then when satisfied that both build paths are working, move
  to the Maven 2 structure and customize the settings in Maven 1.
-	
+
 * Migrating Plug-ins
 
  The main conceptual change in plugins and their use has to do with the concept of
@@ -127,27 +125,26 @@ Guide to Moving from Maven 1.x to Maven 2.x
  plugin are associated with the pre-defined stages of the build cycle. See the
  {{{/guides/introduction/introduction-to-the-lifecycle.html}Introduction to the Build Lifecycle}}
  for more on how plugins relate.
-	
+
 ** Re-use Ant Tasks
 
  See the {{{/general.html#using-ant-tasks}Ant Script FAQ}}.
 
 ** Replace scripts with Mojos
 
-	The new plugin architecture does not specify a specific language implementation, so
-	Jelly scripts and other such artifacts should be re-usable with wrappers. It is recommended
-	that you look into moving to 
-	{{{/guides/plugin/guide-java-plugin-development.html}Mojos}}.
+  The new plugin architecture does not specify a specific language implementation, so
+  Jelly scripts and other such artifacts should be re-usable with wrappers. It is recommended
+  that you look into moving to
+  {{{/guides/plugin/guide-java-plugin-development.html}Mojos}}.
 
 ** Utilize built-in Maven 2 capabilities
 
 *** Resource filtering to inject POM variables into application
 
- You can turn on {{{/guides/getting-started/index.html#How do I filter resource files?}resource filtering}}
+ You can turn on {{{/guides/getting-started/index.html#How_do_I_filter_resource_files?}resource filtering}}
  in your POM. Tokens of the form <<<$\{pom.variable\}>>> in resource files will be replaced with the  corresponding POM property.
-	
-+----+
 
++----+
 <project>
   ...
   <build>
@@ -159,7 +156,6 @@ Guide to Moving from Maven 1.x to Maven 2.x
     </resources>
   </build>
 </project>
-
 +----+
 
 *** Multiproject Builds
@@ -172,4 +168,10 @@ Guide to Moving from Maven 1.x to Maven 2.x
 * Migrating repositories
 
  Every four hours the Maven 1.x repository is converted over to a Maven 2.x repository and we plan to release
- a plug-in based on our conversion tool but currently
+ a plug-in based on our conversion tool but currently.
+
+* Related links
+
+ * {{{http://maven.apache.org/plugins/maven-one-plugin}Maven 2 One Plugin}}
+
+ * {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/other/m1-m2/maven1+project+to+maven2+pom.xsl}XSLT}} from {{{http://jira.codehaus.org/browse/MNG-2337}MNG-2337}}
