@@ -100,11 +100,12 @@ public class GreetingMojo extends AbstractMojo
   * The <<<getLog>>> method (defined in <<<AbstractMojo>>>) returns a
     log4j-like logger object which allows plugins to create messages at levels
     of "debug", "info", "warn", and "error".  This logger is the accepted means
-    to display information to the user.
+    to display information to the user. Please have a look at the section about
+    pitfalls for a hint on its proper usage.
 
   []
 
- All Mojo annotations are described {{{../../developers/mojo-api-specification.html#The_Descriptor_and_Annotations}here}}.
+ All Mojo annotations are described by the {{{../../developers/mojo-api-specification.html#The_Descriptor_and_Annotations}Mojo API Specification}}.
 
 ** Project Definition
 
@@ -319,7 +320,7 @@ mvn archetype:create \
   the variable as a mojo parameter.  The "<<<expression>>>"
   parameter defines the default value for the variable.  This value can
   include expressions which reference the project, such as
-  "<<<${project.version}>>>" (more can be found in the
+  "<<<$\{project.version\}>>>" (more can be found in the
   "Parameter Expressions" document).  The name of the variable is used
   as the name of the parameter.
 
@@ -696,6 +697,24 @@ public MyMojo extends AbstractMojo
   into the mojo fields. If you really need to use <<<java.lang.String>>> for the parameter type (e.g. to allow the user to alternatively specify
   a class path resource or URL), be sure to always resolve relative file paths manually against the base directory of the project.
 
+** Creating Resource Bundles
+
+ Omitting an explicit resource bundle for the default locale provided by the base bundle is not allowed. For example, the following family
+ of resource bundles does not provide reliable internationalization for your mojo:
+
++-----+
+mymojo-report.properties
+mymojo-report_de.properties
++-----+
+
+  <<Explanation>>: As described in the method javadoc about
+  <<<{{{http://java.sun.com/javase/6/docs/api/java/util/ResourceBundle.html#getBundle(java.lang.String,%20java.util.Locale,%20java.lang.ClassLoader)}ResourceBundle.getBundle(String, Locale, ClassLoader)}}>>>,
+  the lookup strategy to find a bundle for a specific locale will prefer the bundle for the JVM's default locale over the base bundle.
+  However, the JVM's default locale needs not to match the locale of the base bundle. In the example above, a request for the locale "en" will
+  retrieve the bundle <<<mymojo-report_de.properties>>> instead of <<<mymojo-report.properties>>> if the JVM's default locale happens to be "de".
+  Therefore, always provide a dedicated bundle for the default locale of your bundle family (e.g. <<<mymojo-report_en.properties>>>). This
+  bundle should be empty such that it retrieves strings via the parent chain from the base bundle.
+
 * Resources
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo Documentation}}: Mojo API, Mojo annotations
@@ -707,5 +726,7 @@ public MyMojo extends AbstractMojo
     [[4]] {{{http://plexus.codehaus.org/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
 
     [[5]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
+
+    [[6]] {{{http://www.nabble.com/Common-Bugs-td14783703s177.html}Common Bugs Thread}}.
 
     []
