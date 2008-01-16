@@ -21,6 +21,8 @@ Introduction to the Dependency Mechanism
  * Dependency Scope
 
  * Dependency Management
+ 
+ * Excluded/Optional Dependencies
 
  []
 
@@ -53,7 +55,7 @@ Introduction to the Dependency Mechanism
         You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0
 
  * <Dependency management>
-   - this allows project authors to directly specify the versions of artifiacts to be used when they are encountered
+   - this allows project authors to directly specify the versions of artifacts to be used when they are encountered
      in transitive dependencies or in dependencies where no version has been specified. In the example in
      the preceding section a dependency was directly added to A even though it is not directly used by A. Instead,
      A can include D as a dependency in its dependencyManagement section and directly control which version of
@@ -62,6 +64,17 @@ Introduction to the Dependency Mechanism
  * <Dependency scope>
    - this allows you to only include dependencies appropriate for the current stage
      of the build. This is described in more detail below.
+
+ * <Excluded dependencies>
+   - If project X depends on project Y, and project Y depends on project Z, the owner of project X can explicitly exclude project Z
+     as a dependency, using the "exclusion" element.
+
+ * <Optional dependencies>
+   - If project Y depends on project Z, the owner of project Y can mark project Z
+     as an optional dependency, using the "optional" element.  When project X depends on project Y, X will 
+     depend only on Y and not on Y's optional dependency Z.  The owner of project X may then
+     explicitly add a dependency on Z, at her option.  (It may be helpful to think of optional
+     dependencies as "excluded by default.")
 
  []
 
