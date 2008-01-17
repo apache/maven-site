@@ -154,4 +154,8 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 
  You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
 
+ You also need to upload your key to the public server: {{http://pgp.mit.edu/}}
+ by copying the same you appended in the text field and submit. 
+ You can ensure by searching your email in key search engine.
+
  You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
