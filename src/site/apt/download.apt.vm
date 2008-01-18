@@ -50,32 +50,49 @@ Download Maven ${currentVersion}
 
 * {Installation} Instructions
 
+  <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed.>
+
 ** Windows 2000/XP
 
-  [[1]] Unzip <<<apache-maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}. These instructions
-        assume you chose <<<C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}>>>
+  [[1]] Unzip the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}.
+        These instructions assume you chose <<<"C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}">>>.
+        The directory <<<apache-maven-${currentVersion}>>> will be created from the archive.
 
-  [[2]] Add the <<<bin>>> directory to your path, by opening up the system properties (WinKey + Pause),
-        selecting the "Advanced" tab, and the "Environment Variables" button, then editing the <<<PATH>>>
-        variable in the user variables. eg.
-        <<<"C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}\bin";%PATH%>>>
+  [[2]] Add the <<<M2_HOME>>> environment variable by opening up the system properties (WinKey + Pause),
+        selecting the "Advanced" tab, and the "Environment Variables" button, then adding the <<<M2_HOME>>>
+        variable in the user variables with the value
+        <<<"C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}">>>. <<Note>>: for Maven \< 2.0.9, be sure that the <<<M2_HOME>>>
+        doesn't have a '\' as last character.
 
-  [[3]] In the same dialog, make sure that <<<JAVA_HOME>>> is set to the location of your JDK,
-        eg. <<<C:\Program Files\Java\jdk1.5.0_02>>>
+  [[3]] In the same dialog, add the <<<M2>>> environment variable in the user variables with the value <<<"%M2_HOME%\bin">>>.
 
-  [[4]] Run <<<mvn --version>>> to verify that it is correctly installed.
+  [[4]] <<Optional>>: in the same dialog, add the <<<MAVEN_OPTS>>> environment variable in the user variables to specify JVM properties, e.g. the value
+        <<<"-Xms256m -Xmx512m">>>. This environment variable can be used to supply extra options to Maven.
+
+  [[5]] In the same dialog, update/create the <<<Path>>> environment variable in the user variables with the value <<<"%M2%;%Path%">>> to add
+        maven available in the command line.
+
+  [[6]] In the same dialog, make sure that <<<JAVA_HOME>>> exists in your user variables or in the system variables and it is set to the location of your JDK,
+        e.g. <<<"C:\Program Files\Java\jdk1.5.0_02">>> and that <<<"%JAVA_HOME%\bin">>> is in your <<<Path>>> environment variable.
+
+  [[7]] Open a new command prompt (Winkey + R then type <<<"cmd">>>) and run <<<"mvn --version">>> to verify that it is correctly installed.
 
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
-  [[1]] Extract the distribution archive to the directory you wish to install Maven ${currentVersion}. These instructions
-        assume you chose <<</usr/local/apache-maven-${currentVersion}>>>. The directory <<<apache-maven-${currentVersion}>>> will be created from
-        the archive.
+  [[1]] Extract the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.tar.gz>>> to the directory you wish to install Maven ${currentVersion}.
+        These instructions assume you chose <<<"/usr/local/apache-maven-${currentVersion}">>>. The directory <<<apache-maven-${currentVersion}>>> will
+        be created from the archive.
 
-  [[2]] Add the <<<bin>>> directory to your path, eg. <<<export
-PATH=/usr/local/apache-maven-${currentVersion}/bin:$PATH>>>
+  [[2]] In a command terminal, add the <<<M2_HOME>>> environment variable, e.g. <<<"export M2_HOME=/usr/local/apache-maven-${currentVersion}">>>.
 
-  [[3]] Make sure that <<<JAVA_HOME>>> is set to the location of your JDK, eg.
-        <<<export JAVA_HOME=/usr/java/jdk1.5.0_02>>>
+  [[3]] Add the <<<M2>>> environment variable, e.g. <<<"export M2=$M2_HOME/bin">>>.
 
-  [[4]] Run <<<mvn --version>>> to verify that it is correctly installed.
+  [[4]] <<Optional>>: add the <<<MAVEN_OPTS>>> environment variable to specify JVM properties, e.g. <<<"export MAVEN_OPTS=-Xms256m -Xmx512m">>>.
+        This environment variable can be used to supply extra options to Maven.
 
+  [[5]] Add <<<M2>>> environment variable to your path, e.g. <<<"export PATH=$M2:$PATH">>>.
+
+  [[6]] Make sure that <<<JAVA_HOME>>> is set to the location of your JDK, e.g.
+        <<<"export JAVA_HOME=/usr/java/jdk1.5.0_02">>> and that <<<"$JAVA_HOME/bin">>> is in your <<<PATH>>> environment variable.
+
+  [[7]] Run <<<"mvn --version">>> to verify that it is correctly installed.
