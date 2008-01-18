@@ -3,18 +3,17 @@
  -----
  Eric Redmond
  -----
- 14 September 2006
+ January 2008
  -----
 
 Maven in 5 Minutes
 
 * Installation
 
-  <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed>
+  <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed.>
 
-  First, {{{/download.html}download Maven}} and unzip it to your desired installation directory, for example
-  <<<C:\\maven>>> in windows, or <<</usr/local/maven>>> in Linux. After this, add the system variable M2_HOME
-  as well as the $M2_HOME/bin directory to your system path. Type the following in a terminal or command prompt:
+  First, {{{../../download.html}download Maven}} and follow the {{{../../download.html#Installation}installation instructions}}.
+  After that, type the following in a terminal or in a command prompt:
 
 ------
 mvn --version
@@ -23,7 +22,9 @@ mvn --version
   It should print out your installed version of Maven, for example:
 
 ------
-  Maven version: 2.0.4
+Maven version: 2.0.8
+Java version: 1.5.0_12
+OS name: "windows 2003" version: "5.2" arch: "x86" Family: "windows"
 ------
 
   Depending upon your network setup, you may require extra configuration. Check out the
@@ -31,7 +32,7 @@ mvn --version
 
 * Creating a Project
 
-  On your command line, execute the following maven goal:
+  On your command line, execute the following Maven goal:
 
 -------
 mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
@@ -47,9 +48,9 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
 
 -------
 cd my-app
--------  
+-------
 
-  Under this directory you will notice the following 
+  Under this directory you will notice the following
   {{{../introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
 
 -------
@@ -79,7 +80,7 @@ my-app
   file that contains the majority of information required to build a project in just the way you want.
   The POM is huge and can be daunting in its complexity, but it is not necessary to understand all
   of the intricacies just yet to use it effectively. This project's POM is:
-  
+
 ------
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -99,18 +100,16 @@ my-app
     </dependency>
   </dependencies>
 </project>
-------  
-
-  
+------
 
 ** What did I just do?
-  
-  You executed the Maven goal <archetype:create>, and passed in various parameters to that goal. 
-  The prefix <archetype> is the {{{/plugins/index.html}plugin}} that contains the goal. If you are familiar with 
+
+  You executed the Maven goal <archetype:create>, and passed in various parameters to that goal.
+  The prefix <archetype> is the {{{/plugins/index.html}plugin}} that contains the goal. If you are familiar with
   {{{http://ant.apache.org}Ant}}, you
   may concieve of this as similar to a task. This goal created a simple project based upon an archetype.
   Suffice it to say for now that a <plugin> is a collection
-  of <goals> with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with 
+  of <goals> with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with
   various jboss items".
 
 ** Build the Project
@@ -138,7 +137,7 @@ mvn package
   sequence of phases. When a phase is given, Maven will execute every phase in the sequence
   up to and including the one defined. For example, if we execute the <compile> phase, the
   phases that actually get executed are:
-  
+
   [[1]] validate
 
   [[2]] generate-sources
@@ -170,7 +169,7 @@ Hello World!
 ** Maven Phases
 
   Although hardly a comprehensive list, these are the most common <default> lifecycle phases executed.
-  
+
   * <<validate>>: validate the project is correct and all necessary information is available
 
   * <<compile>>: compile the source code of the project
@@ -190,13 +189,13 @@ Hello World!
   []
 
   There are two other Maven lifecycles of note beyond the <default> list above. They are
-  
+
   * <<clean>>: cleans up artifacts created by prior builds
-  
+
   []
-  
+
   * <<site>>: generates site documentation for this project
-  
+
   []
 
   Phases are actually mapped to underlying goals. The specific goals executed per phase is dependant upon the
@@ -204,7 +203,7 @@ Hello World!
   <war:war> is the project type is - you guessed it - a WAR.
 
   An interesting thing to note is that phases and goals may be executed in sequence.
-  
+
 ------
 mvn clean dependency:copy-dependencies package
 ------
