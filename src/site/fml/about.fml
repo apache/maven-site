@@ -103,25 +103,15 @@
       <answer>
         <p>
           Help for both Maven 1.0 and Maven 2.0 can be obtained by subscribing and posting to the
-          <a href="http://maven.apache.org/mail-lists.html">Maven Users List</a>
-          . If you are posting about Maven 2.0,
-          please make that clear in your email.
+          <a href="http://maven.apache.org/mail-lists.html">Maven Users List</a>.
         </p>
         <p>
-          You can also join us on IRC at
-          <code>irc.codehaus.org</code>
-          on
-          <code>#maven</code>
-          . This is available both
-          over
-          <a href="irc://irc.codehaus.org/#maven">IRC</a>
-          and
-          <a href="http://irc.codehaus.org/">HTTP</a>
-          for those behind firewalls (enter
-          <code>#maven</code>
-          in the
-          <i>Channel</i>
-          box).
+          You can also join us on IRC (Internet Relay Chat) at <code>irc.codehaus.org</code>
+          on <code>#maven</code>. This is available both
+          over <a href="irc://irc.codehaus.org/#maven">IRC</a>
+          and <a href="http://irc.codehaus.org/">HTTP</a>
+          for those behind firewalls (enter <code>#maven</code> in the <i>Channel</i> box).
+          You could also browse the IRC logs <a href="http://dev.rectang.com/logs/codehaus/%23maven/">here</a>.
         </p>
       </answer>
     </faq>
