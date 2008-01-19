@@ -1,13 +1,33 @@
  -----
- Plugin Cookbook
+ Plugins Cookbook
  -----
  Brett Porter
+ Vincent Siveton
  -----
- 3 November 2006
+ January 2008
  -----
 
-Plugin Cookbook
+Maven Plugins Cookbook
 
-  <<COMING SOON!>>
+  A set of small complete working examples projects that demonstrate how to use Maven Plugins.
+  It is based on commons how-to questions from the {{{../../mail-lists.html}Maven User Mailing List}}.
 
-  <(Like to help write documentation? See {{{../../guides/development/guide-helping.html} How to Contribute}})>
+  <(Like to add more cookbooks? See {{{../../guides/development/guide-helping.html} How to Contribute}} page)>
+
+* How To/Recipes
+
+  * {{{add-build-time-to-manifest.html}How to add build time to a JAR manifest?}}
+
+  * {{{add-svn-revision-to-manifest.html}How to add SVN revision to a JAR manifest?}}
+
+  * {{{attach-source-javadoc-artifacts.html}How to attach source and javadoc artifacts?}}
+
+  * {{{generate-assembly.html}How to generate assembly?}}
+
+  []
+
+* Other Resources
+
+  * {{{http://docs.codehaus.org/display/MAVENUSER/Mojo+Developer+Cookbook}Mojo Developer Cookbook}}
+
+  []
