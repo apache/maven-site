@@ -3,7 +3,7 @@
  -----
  Eric Redmond
  -----
- 17 October 2006
+ January 2008
  -----
 
 The Maven Community
@@ -26,13 +26,8 @@ The Maven Community
 ** Help Log Defects in JIRA
 
   Just as any other healthy project requires a quick turn-around on defects, and a transparent
-  method of users to have their wishes heard, so too does Maven need your help.
-
-  * {{{http://jira.codehaus.org/browse/MNG}Maven Defects, Improvements and Tasks}}
-
-  * {{{http://jira.codehaus.org/browse/MPA}Maven Project Administration}}
-
-  []
+  method of users to have their wishes heard, so too does Maven need your help. Refer to the
+  {{{issue-tracking.html}Issue Tracking}} page.
 
 ** Developers
 
@@ -47,7 +42,7 @@ The Maven Community
 ** Be a Kind Public Repository User
 
   The best thing that a user can do is to set up their own remote repository mirror containing the
-  projects needed. There are several tools to make this simpler, such as 
+  projects needed. There are several tools to make this simpler, such as
   {{{http://proximity.abstracthorizon.org/}Proximity}} or {{{http://maven.apache.org/archiva/}Archiva}}. This
   reduces strain on the Maven central repository, and allows new users to get acquainted with Maven
   easier and quicker. This is especially important for power-users and corporations. The incentive
@@ -59,12 +54,12 @@ The Maven Community
 
   Please take only the jars you need. We understand this is may entail more work,
   but grabbing all 9+ Gigs of binaries really kills our servers.
-  
+
 ** Host a Mirror
 
   As an extention to the previous statement, if you have access to a large data repository with
   lots of bandwidth, please consider becomming a mirror for the Maven central repository.
-  
+
   As you can imagine, thousands of users downloading can put quite a strain on one server.
   If you wish to be a mirror, please file a request in the {{{http://jira.codehaus.org/browse/MPA}Maven Project Administration}}
   JIRA project.
@@ -81,11 +76,11 @@ The Maven Community
 
 ** Mailing Lists
 
-  Maven has a number of {{{mail-lists.html}Mailing Lists}}, and a the Maven User List is specifically dedicated to
-  answering questions about all things Maven.
+  Maven has a number of {{{mail-lists.html}Mailing Lists}}, and the Maven User List is specifically dedicated to
+  answering questions about all Maven things.
 
-** IRC
+** IRC (Internet Relay Chat)
 
   Log into the <<<#maven>>> IRC channel on <<<irc.codehaus.org>>>. If you would like to access this over a web interface,
-  you can do so at {{http://irc.codehaus.org/}}.
-
+  you can do so at {{http://irc.codehaus.org/}} or {{irc://irc.codehaus.org/maven}}.
+  IRC logs are browsable at: {{http://dev.rectang.com/logs/codehaus/%23maven/}}.
