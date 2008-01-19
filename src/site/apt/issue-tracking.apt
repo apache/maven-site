@@ -22,6 +22,10 @@ Issue Tracking
 
  {{{http://jira.codehaus.org/browse/MNGSITE}http://jira.codehaus.org/browse/MNGSITE}}
 
+* Maven Project Administration
+
+ {{{http://jira.codehaus.org/browse/MPA}http://jira.codehaus.org/browse/MPA}}
+
 * Maven Plugins Projects
 
  Please refer you to the {{{plugins/index.html}Available Plugins}} page.
