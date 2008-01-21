@@ -51,6 +51,8 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-alpha-1  | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.0-beta-1  | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
+*-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | <<reporting>>                                             | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.> | |
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}    | 2.1    | Generate a list of recent changes from your SCM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGELOG}JIRA}}
