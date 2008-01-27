@@ -4,17 +4,17 @@
   Brett Porter
   Herve Boutemy
   --------
-  24 June 2005
+  27 January 2008
   --------
 
-Antlib for Maven 
+Ant Tasks for Maven 
 
   Maven comes with a set of Ant tasks that can be used to utilise Maven's artifact handling features
   from within Ant. This includes:
 
     * <Dependency management> - including transitive dependencies, scope recognition and SNAPSHOT handling
 
-    * <Artifact deployment> - file and SSH based deployment to a Maven repository
+    * <Artifact deployment> - deployment to a Maven repository (file integrated, other with extensions)
 
     * <POM processing> - for reading a Maven 2.0.x <<<pom.xml>>> file
 
@@ -58,11 +58,11 @@ Installing the Ant Tasks
   ...
 -----
 
-Using the Antlib
+Using the Maven Ant Tasks
 
 * Declaring Dependencies
 
-  The main purpose of the antlib is to utilise Maven's {{{guides/introduction/introduction-to-dependency-mechanism.html} dependency management features}}.
+  The main purpose of the Maven Ant Tasks is to utilise Maven's {{{guides/introduction/introduction-to-dependency-mechanism.html} dependency management features}}.
 
   This is achieved with the <<<dependencies>>> task. The simplest usage involves specifying your dependencies inline,
   such as in the following example:
@@ -119,15 +119,18 @@ Using the Antlib
   
   Other options are:
   
-    * <<<sourcesFilesetId>>>, which will give you a fileset reference containing sources artifacts,
+    * <<<sourcesFilesetId>>>, which will give you a fileset reference containing sources artifacts, <(since 2.0.6)>
     
-    * <<<org.apache.maven.artifact.ant.VersionMapper>>>, which can be used to drop version numbers in filenames
+    * <<<javadocFilesetId>>>, which will give you a fileset reference containing javadoc artifacts, <(since 2.0.9)>
+    
+    * <<<org.apache.maven.artifact.ant.VersionMapper>>>, which can be used to drop version numbers in filenames <(since 2.0.7)>
 
   For example, to populate <<<lib>>> with your dependencies without version in filename and <<<lib/src>>> with corresponding sources:
 
 -----
 <artifact:dependencies filesetId="dependency.fileset"
-        sourcesFilesetId="sources.dependency.fileset" versionsId="dependency.versions">
+        sourcesFilesetId="sources.dependency.fileset" javadocFilesetId="javadoc.dependency.fileset"
+        versionsId="dependency.versions">
   ...
 </artifact:dependencies>
 <copy todir="lib">
@@ -137,6 +140,11 @@ Using the Antlib
 </copy>
 <copy todir="lib/src">
   <fileset refid="sources.dependency.fileset" />
+  <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
+          from="${dependency.versions}" to="flatten" />
+</copy>
+<copy todir="lib/javadoc">
+  <fileset refid="javadoc.dependency.fileset" />
   <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
           from="${dependency.versions}" to="flatten" />
 </copy>
@@ -205,7 +213,7 @@ Using the Antlib
 
 -----
 ...
-  <artifact:install-provider artifactId="wagon-ssh" version="1.0-alpha-5"/>
+  <artifact:install-provider artifactId="wagon-ssh" version="1.0-beta-2"/>
   
   <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
     <remoteRepository url="scp://localhost/www/repository">
@@ -299,7 +307,7 @@ Using the Antlib
 -----
   <artifact:pom id="maven.project" file="pom.xml" />
 
-  <echo>The version is ${maven.project.version}</echo>
+  <echo>The version is $\{maven.project.version\}</echo>
 -----
 
   You can also access nested parts of the POM. For example, you can read the default value of the <<<directory>>>
@@ -308,7 +316,7 @@ Using the Antlib
 -----
   <artifact:pom id="project" file="pom.xml" />
 
-  <echo>The build directory is ${project.build.directory}</echo>
+  <echo>The build directory is $\{project.build.directory\}</echo>
 -----
 
   For more information on the elements available in the POM, see the {{{/maven-model/maven.html} descriptor reference}}.
@@ -411,6 +419,8 @@ Task Reference
 | <<<pomRefId>>>          | The reference ID from a pom datatype defined earlier in the build file.
 *-------------------------+--------------------------------------------------------+
 | <<<sourcesFilesetId>>>  | The reference ID to store a fileset under for the sources attachements of the resolved dependencies. <(since 2.0.6)>
+*-------------------------+--------------------------------------------------------+
+| <<<javadocFilesetId>>>  | The reference ID to store a fileset under for the javadoc attachements of the resolved dependencies. <(since 2.0.9)>
 *-------------------------+--------------------------------------------------------+
 | <<<versionsId>>>        | The property ID to store versions of the resolved dependencies, for <<<VersionMapper>>> use. <(since 2.0.7)>
 *-------------------------+--------------------------------------------------------+
