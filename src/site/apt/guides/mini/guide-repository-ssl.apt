@@ -143,4 +143,4 @@ MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
 
     * {{{http://java.sun.com/j2se/1.4.2/docs/guide/security/} Javasecurity infrastructure (1.4.2)}}
 
-    * {{{http://commons.apache.org/httpclient/sslguide.html} HttpClient}}'s SSL guide
+    * {{{http://hc.apache.org/httpclient-3.x/sslguide.html} HttpClient}}'s SSL guide

@@ -272,7 +272,7 @@ mvn groupID:artifactID:version:goal
 
   This causes the simple mojo to be executed whenever Java code is compiled.
   For more information on binding a mojo to phases in the lifecycle, please
-  refer to the {{{/guides/introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
+  refer to the {{{guides/introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
 
 * Mojo archetype
 

@@ -57,7 +57,7 @@ Introduction to the Build Lifecycle
   stage in the lifecycle.
 
   For example, the default lifecycle has the following build phases (for a complete list of the build phases, refer
-  to the {{{introduction-to-the-lifecycle#lifecycle_reference}Lifecycle Reference}}):
+  to the {{{introduction-to-the-lifecycle#Lifecycle_Reference}Lifecycle Reference}}):
 
     * <<<validate>>> - validate the project is correct and all necessary information is available
 
@@ -176,7 +176,7 @@ mvn clean dependency:copy-dependencies package
   This is an almost standard set of bindings; however, some packages handle them differently. For example, a project
   that is purely metadata (packaging value is <<<pom>>>) only binds the <<<install>>> and <<<deploy>>> phases (for a
   complete list of build-phase-to-goal binding of some of the <<<packaging>>>s, refer to the
-  {{{introduction-to-the-lifecycle#lifecycle_reference}Lifecycle Reference}}).
+  {{{introduction-to-the-lifecycle#Lifecycle_Reference}Lifecycle Reference}}).
 
   Note that for some packaging types to be available, you may also need to include a particular plugin in your
   <<<build>>> section of your POM (as described in the next section). One example of a plugin that requires this is the

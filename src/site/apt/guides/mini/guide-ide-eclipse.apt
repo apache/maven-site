@@ -5,7 +5,7 @@
  ------
  28 October 2005
  ------
- 
+
 Guide to using Eclipse with Maven 2.x
 
  This mini guide explains howto use Maven 2 in Eclipse IDE.
@@ -26,7 +26,7 @@ set. Execute the following command:
 
 +----+
 
-mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo 
+mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo
 
 +----+
 
@@ -144,9 +144,9 @@ mvn archetype:create -DgroupId=guide.ide.eclipse.module1 -DartifactId=guide-ide-
 
 +----+
   <parent>
-	<groupId>guide.ide.eclipse</groupId>
-	<artifactId>guide-ide-eclipse</artifactId>
-	<version>1.0-SNAPSHOT</version>
+  <groupId>guide.ide.eclipse</groupId>
+  <artifactId>guide-ide-eclipse</artifactId>
+  <version>1.0-SNAPSHOT</version>
   </parent>
 +----+
 
@@ -209,7 +209,7 @@ your maven repository.
  <<Issue:>> The maven-eclipse-plugin should optionally generate
 project dependencies for those modules which are available in the
 workspace.
- 
+
 ** {Flat Project Layout}
 
  It is possible to move the parent POM in its own directory on the
@@ -230,4 +230,4 @@ same level with the referenced modules.
  []
 
  <<Issue:>> The release plugin does not support the flat structure
-({{{http://jira.codehaus.org/browse/MNG-1263}MNG-1263}})
+({{{http://jira.codehaus.org/browse/MRELEASE-6}MRELEASE-6}})

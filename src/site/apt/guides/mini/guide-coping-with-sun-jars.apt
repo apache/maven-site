@@ -10,7 +10,7 @@ Coping with SUN JARs
 
  Often users are confronted with the need to build against JARs provide by
  SUN like the {{{http://java.sun.com/products/javamail/}JavaMail}} JAR, or the
- {{{http://java.sun.com/products/javabeans/glasgow/jaf.html}Activation}} JAR
+ {{{http://java.sun.com/products/javabeans/jaf/downloads/index.html}Activation}} JAR
  and users have found these JARs not present in central repository resulting
  in a broken build. Unfortunately most of these artifacts fall under Sun's
  Binary License which disallows us from distributing them from Ibiblio.

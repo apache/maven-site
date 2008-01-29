@@ -48,10 +48,10 @@ under the License.
           <li><strong>Publisher:</strong><a href="http://www.devzuz.com">DevZuz</a></li>
           <li><strong>Published:</strong>March 2006</li>
           <li><strong>Authors:</strong>
-            <a href="http://www.commonjava.org/blogs/john">John Casey</a>,
+            John Casey,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
             <a href="http://www.devzuz.org/blogs/bporter">Brett Porter</a>,
-            <a href="http://www.carlossanchez.eu">Carlos Sanchez</a>
+            <a href="http://www.jroller.com/carlossg/">Carlos Sanchez</a>
           </li>
         </ul>
       </div>
@@ -195,7 +195,7 @@ under the License.
             <td>13 March 2006</td>
           </tr>
           <tr>
-            <td><a href="http://www.javaworld.com/javaworld/jw-02-2006/jw-0227-maven_p.html">Get the most out of Maven 2 site generation</a></td>
+            <td><a href="http://www.javaworld.com/javaworld/jw-02-2006/jw-0227-maven.html">Get the most out of Maven 2 site generation</a></td>
             <td>JavaWorld</td>
             <td>John Ferguson Smart</td>
             <td>27 February 2006</td>
@@ -279,7 +279,7 @@ under the License.
             <td>17 March 2004</td>
           </tr>
           <tr>
-            <td><a href="http://www.theserverside.com/articles/article.tss?l=MavenMagic">Maven Magic - a tutorial on Maven and J2EE projects.</a></td>
+            <td><a href="http://www.theserverside.com/tt/articles/article.tss?l=MavenMagic">Maven Magic - a tutorial on Maven and J2EE projects.</a></td>
             <td>TheServerSide</td>
             <td>Srikanth Shenoy</td>
             <td>November 2003</td>
