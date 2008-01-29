@@ -98,30 +98,30 @@ mvn one:convert
 +----+
 
  For more details, check out the
- {{{/guides/introduction/introduction-to-the-pom.html}POM Guide}}.
+ {{{guides/introduction/introduction-to-the-pom.html}POM Guide}}.
 
 * build.properties and project.properties
 
  These files have been replaced with
- {{{/settings.html}settings.xml}}.
+ {{{settings.html}settings.xml}}.
  Like with the POM, you can establish a parallel build environment, so the m1 build
  never breaks while the m2 build is being debugged.
 
  Additional local build customization options can also be created using
- {{{/guides/introduction/introduction-to-profiles.html}profiles}}.
+ {{{guides/introduction/introduction-to-profiles.html}profiles}}.
 
 * What to do with maven.xml?
 
- See {{/maven1.html#m1-maven-xml}} for an explanation of
+ See {{maven1.html#m1-maven-xml}} for an explanation of
  why maven.xml was discarded, and
- {{/guides/introduction/introduction-to-plugins.html}} for
+ {{guides/introduction/introduction-to-plugins.html}} for
  a guide to writing your own plug-ins.
 
 * Directory Structure
 
  The POM allows customization of the directory structure in both Maven 1 and Maven 2
  using the <<<\<build\>>>> tag. For simplicity, it would be ideal to move source to the
- {{{/guides/introduction/introduction-to-the-standard-directory-layout.html}Maven 2 default structure}},
+ {{{guides/introduction/introduction-to-the-standard-directory-layout.html}Maven 2 default structure}},
  but it is not required. You can begin by customizing the
  directories in Maven 2, then when satisfied that both build paths are working, move
  to the Maven 2 structure and customize the settings in Maven 1.
@@ -132,25 +132,25 @@ mvn one:convert
  a build cycle in Maven 2. Instead of using <<<preGoal>>> and <<<postGoal>>> tags
  in <<<maven.xml>>> to tie plugin goals into the build process, the goals of a
  plugin are associated with the pre-defined stages of the build cycle. See the
- {{{/guides/introduction/introduction-to-the-lifecycle.html}Introduction to the Build Lifecycle}}
+ {{{guides/introduction/introduction-to-the-lifecycle.html}Introduction to the Build Lifecycle}}
  for more on how plugins relate.
 
 ** Re-use Ant Tasks
 
- See the {{{/general.html#using-ant-tasks}Ant Script FAQ}}.
+ See the {{{general.html#using-ant-tasks}Ant Script FAQ}}.
 
 ** Replace scripts with Mojos
 
   The new plugin architecture does not specify a specific language implementation, so
   Jelly scripts and other such artifacts should be re-usable with wrappers. It is recommended
   that you look into moving to
-  {{{/guides/plugin/guide-java-plugin-development.html}Mojos}}.
+  {{{guides/plugin/guide-java-plugin-development.html}Mojos}}.
 
 ** Utilize built-in Maven 2 capabilities
 
 *** Resource filtering to inject POM variables into application
 
- You can turn on {{{/guides/getting-started/index.html#How_do_I_filter_resource_files?}resource filtering}}
+ You can turn on {{{guides/getting-started/index.html#How_do_I_filter_resource_files?}resource filtering}}
  in your POM. Tokens of the form <<<$\{pom.variable\}>>> in resource files will be replaced with the  corresponding POM property.
 
 +----+

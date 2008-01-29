@@ -27,7 +27,7 @@ Configuring Maven
   ~~TODO: versioning doc that discusses this
 
   You can specify your user configuration in <<<$\{user.home\}/.m2/settings.xml>>>. A
-  {{{/maven-settings/settings.html}full reference}} to the configuration file is available. This section will show how
+  {{{maven-settings/settings.html}full reference}} to the configuration file is available. This section will show how
   to make some common configurations. Note that the file is not required - defaults will be used if it is not found.
 
 * Configuring your Local Repository
@@ -78,7 +78,7 @@ Configuring Maven
         <passphrase>my_key_passphrase</passphrase>
       -->
     </server>
-	...
+  ...
   </servers>
   ...
 </settings>
@@ -113,12 +113,12 @@ Configuring Maven
       <url>http://public.planetmirror.com/maven2/</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
-	...
+  ...
   </mirrors>
   ...
 </settings>
 -------------
-  
+
   More info about mirrors is available in the {{{guide-mirror-settings.html}Guide to Mirror Settings}}.
 
 * Profiles
@@ -126,4 +126,3 @@ Configuring Maven
  Repository configuration can also be put into a profile. You can have multiple
  profiles, with one set to active so that you can easily switch environments.
  Read more about profiles in {{{../introduction/introduction-to-profiles.html}Introduction to Build Profiles}}.
- 

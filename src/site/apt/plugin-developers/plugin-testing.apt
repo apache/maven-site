@@ -3,7 +3,7 @@
  ------
  Vincent Siveton
  ------
- October 2006
+ January 2008
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -36,9 +36,9 @@ Introduction
 Testing Styles: Unit Testing vs. Functional/Integration Testing
 
  A unit test attempts to verify a mojo as an isolated unit, by mocking out the rest of the Maven environment.  A mojo unit test does not attempt to run your plugin in the context of a real Maven build.  Unit tests are designed to be fast.
- 
+
  A functional/integration test attempts to use a mojo in a real Maven build, by launching a real instance of Maven in a real project.  Normally this requires you to construct special dummy Maven projects with real POM files.  Often this requires you to have already installed your plugin into your local repository so it can be used in a real Maven build.  Functional tests run much more slowly than unit tests, but they can catch bugs that you may not catch with unit tests.
- 
+
  The general wisdom is that your code should be mostly tested with unit tests, but should also have some functional tests.
 
 Unit Tests
@@ -46,20 +46,20 @@ Unit Tests
 * Using JUnit alone
 
  In principle, you can write a unit test of a plugin Mojo the same way you'd write any other JUnit test case, by writing a class that <<<extends TestCase>>>.
- 
+
  However, most mojos need more information to work properly.  For example, you'll probably need to inject a reference to a MavenProject, so your mojo can query project variables.
- 
+
 * Using PlexusTestCase
 
  Mojo variables are injected using Plexus, and many Mojos are written to take specific advantage of the Plexus container (by executing a lifecycle or having various injected dependencies).
 
  If you all you need is Plexus container services, you can write your class with <<<extends PlexusTestCase>>> instead of TestCase.
- 
+
  With that said, if you need to inject Maven objects into your mojo, you'll probably prefer to use the maven-plugin-testing-harness.
 
 * maven-plugin-testing-harness
 
- The {{{https://svn.apache.org/repos/asf/maven/shared/trunk/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
+ The {{{https://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
  is explicitly intended to test the <<<org.apache.maven.reporting.AbstractMavenReport#execute()>>> implementation.
 
  In general, you need to include <<<maven-plugin-testing-harness>>> as dependency, and create a *MojoTest (by convention)
@@ -114,7 +114,7 @@ Integration/Functional testing
 * maven-verifier
 
  maven-verifier tests are run using JUnit or TestNG, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.  It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it.
- 
+
  Maven itself uses maven-verifier to run its core integration tests.  For more information, please refer to {{{http://docs.codehaus.org/display/MAVEN/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
 
 +-----+
@@ -170,7 +170,7 @@ public class TrivialMavenVerifierTest extends TestCase
          * again.
          */
         verifier.resetStreams();
-        
+
         /*
          * The verifier also supports beanshell scripts for
          * verification of more complex scenarios. There are
@@ -184,7 +184,7 @@ public class TrivialMavenVerifierTest extends TestCase
 
 * maven-invoker-plugin
 
- You can use {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-invoker-plugin/}maven-invoker-plugin}}
+ You can use {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin/}maven-invoker-plugin}}
  to invoke Maven and to provide some BeanShell tests.  Tests written in this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
 
 +-----+
@@ -227,15 +227,15 @@ public class TrivialMavenVerifierTest extends TestCase
 * shitty-maven-plugin
 
  The {{{http://mojo.codehaus.org/shitty-maven-plugin/}shitty-maven-plugin}} (Super Helpful Integration Testing ThingY) provides a simple way to run integration tests for a project (single module or multi-module).
- 
+
  shitty-maven-plugin does many of the same things as the maven-invoker-plugin (it supports Groovy tests instead of BeanShell tests), though it has some features that aren't available in maven-invoker-plugin.  Notably, it provides some advanced setup steps to automatically install your plugin using a special version name ("TESTING"), so your dummy projects can depend on that version explicitly.
 
 * maven-it-plugin
 
  <<Note>>: maven-it-plugin is not at 1.0 yet.  Use it at your own risk.
 
- The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-it-plugin/}maven-it-plugin}} is used directly
- in the <<<integration-test>>> phase.  
+ The {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins/maven-it-plugin/}maven-it-plugin}} is used directly
+ in the <<<integration-test>>> phase.
 
  <<Note>>: this it plugin can not be used to test a plugin that is being built for the first time (i.e. with no
  release). In this case, you could, for instance, defined an it-snapshot of the plugin with <<<maven-install-plugin>>>.
@@ -350,9 +350,9 @@ public class TrivialMavenVerifierTest extends TestCase
 </project>
 +-----+
 
-* maven-plugin-test-plugin
+* maven-plugin-management-plugin
 
- The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-plugin-test-plugin/}maven-plugin-test-plugin}}
+ The {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins/maven-plugin-management-plugin/}maven-plugin-management-plugin}}
  is to stage/unstage a plugin into the local repository for pre/post-integration-test.
 
  You need to configure the <<<maven-plugin-test-plugin>>> and the <<<maven-surefire-plugin>>>:
@@ -394,7 +394,7 @@ public class TrivialMavenVerifierTest extends TestCase
       ...
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-test-plugin</artifactId>
+        <artifactId>maven-plugin-management-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
         <executions>
           <execution>
@@ -480,6 +480,6 @@ public class MyMojoTestIt
 }
 +-----+
 
- <<Note>>: The {{{https://svn.apache.org/repos/asf/maven/sandbox/plugins/maven-plugin-management-plugin/}maven-plugin-management-plugin}}
+ <<Note>>: The {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins/maven-it-plugin/}maven-plugin-management-plugin}}
  is similar to <<<maven-plugin-test-plugin>>>.
 
