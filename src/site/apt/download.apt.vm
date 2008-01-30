@@ -55,8 +55,8 @@ Download Maven ${currentVersion}
 ** Windows 2000/XP
 
   [[1]] Unzip the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}.
-        These instructions assume you chose <<<"C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}">>>.
-        The directory <<<apache-maven-${currentVersion}>>> will be created from the archive.
+        These instructions assume you chose <<<"C:\Program Files\Apache Software Foundation\">>>.
+        The subdirectory <<<apache-maven-${currentVersion}>>> will be created from the archive.
 
   [[2]] Add the <<<M2_HOME>>> environment variable by opening up the system properties (WinKey + Pause),
         selecting the "Advanced" tab, and the "Environment Variables" button, then adding the <<<M2_HOME>>>
@@ -80,10 +80,10 @@ Download Maven ${currentVersion}
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
   [[1]] Extract the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.tar.gz>>> to the directory you wish to install Maven ${currentVersion}.
-        These instructions assume you chose <<<"/usr/local/apache-maven-${currentVersion}">>>. The directory <<<apache-maven-${currentVersion}>>> will
+        These instructions assume you chose <<<"/usr/local/apache-maven">>>. The subdirectory <<<apache-maven-${currentVersion}>>> will
         be created from the archive.
 
-  [[2]] In a command terminal, add the <<<M2_HOME>>> environment variable, e.g. <<<"export M2_HOME=/usr/local/apache-maven-${currentVersion}">>>.
+  [[2]] In a command terminal, add the <<<M2_HOME>>> environment variable, e.g. <<<"export M2_HOME=/usr/local/apache-maven/apache-maven-${currentVersion}">>>.
 
   [[3]] Add the <<<M2>>> environment variable, e.g. <<<"export M2=$M2_HOME/bin">>>.
 
