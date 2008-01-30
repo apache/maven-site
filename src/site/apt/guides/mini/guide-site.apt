@@ -63,9 +63,9 @@ Creating a site
 mvn site
 ---------------
 
-  The resulting site will be in <<<target/site/...>>>
+  By default, the resulting site will be in <<<target/site/...>>>
 
-  For more information on the site plugin, see the {{{../../plugins/maven-site-plugin/} plugin reference}}.
+  For more information on the Maven Site Plugin, see its {{{../../plugins/maven-site-plugin/} plugin reference}}.
 
 * Deploying the Site
 
@@ -142,12 +142,12 @@ mvn site-deploy
 
   ~~TODO: deserves more explanation.
 
-  <<Note:>> the <<<\<menu ref="reports"/\>>>> element above.
+  <<Note:>> The <<<\<menu ref="reports"/\>>>> element above.
   When building the site, this is replaced by a menu with links to all the
   reports that you have configured.
 
   More information about the site descriptor is available at the site for the
-  {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}site plugin}}.
+  {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}Maven Site Plugin}}.
 
 * Adding Extra Resources
 
@@ -220,12 +220,18 @@ mvn site-deploy
   If you have included the appropriate <<<\<menu ref="reports"/\>>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
   the site those items will appear in the menu.
 
+  <<Note:>> Many report plugins provide a parameter called <<<outputDirectory>>> or similar to specify the destination
+  for their report outputs. This parameter is only relevant if the report plugin is run standalone, i.e. by invocation
+  directly from the command line. In constrast, when reports are generated as part of the site, the configuration of the
+  Maven Site Plugin will determine the effective output directory to ensure that all reports end up in a central location.
+
   ~~TODO: explain report sets
 
-* Internationalisation
+* Internationalization
 
-  Internationalisation in Maven is very simple, as long as the reports you are using have that particular locale
-  defined.
+  Internationalization in Maven is very simple, as long as the reports you are using have that particular locale
+  defined. For an overview of supported languages and instructions on how to add further languages, please see the
+  related article {{{../../plugins/maven-site-plugin/i18n.html} Internationalization}} from the Maven Site Plugin.
 
   To enable multiple locales, add a configuration similar to the following to your POM:
 
