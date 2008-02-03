@@ -737,14 +737,14 @@ under the License.
       </p>
     </section>
     <section name="IDE integration">
-      <p>If you're using Jetbrains IntelliJ Idea to develop your plugin,
+      <p>If you're using JetBrains IntelliJ IDEA to develop your plugin,
        you can use the following to configure the javadoc annotations as live
        templates.</p>
       <p>
         <ol>
-          <li>Download <a href="maven.xml">this file</a>,
+          <li>Download <a href="./maven.xml">this file</a>,
             and place it in $USER_HOME/.IntelliJIdea/config/templates</li>
-          <li>(re)startup IntelliJ (templates are loaded on startup)</li>
+          <li>(re)startup IntelliJ IDEA (templates are loaded on startup)</li>
           <li>add the following list to Settings -> IDE -> Errors -> General
             -> Unknown javadoc tags -> Additional javadoc tags
             <ul>
