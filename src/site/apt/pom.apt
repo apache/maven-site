@@ -116,7 +116,7 @@ POM Reference
 
 * {Quick Overview}
 
-  This is a listing of the elements directly under the POM’s project element. Notice that <<<modelVersion>>>
+  This is a listing of the elements directly under the POM's project element. Notice that <<<modelVersion>>>
   contains 4.0.0. That is currently the only supported POM version for Maven 2, and is always required.
 
 +--------------------------+
@@ -169,7 +169,7 @@ POM Reference
   The POM contains all necessary information about a project, as well as configurations of plugins to be
   used during the build process. It is, effectively, the declarative manifestation of the "who", "what",
   and "where", while the build lifecycle is the "when" and "how". That is not to say that the POM cannot
-  affect the flow of the lifecycle – it can. For example, by configuring the <<<maven-antrun-plugin>>>, one can
+  affect the flow of the lifecycle - it can. For example, by configuring the <<<maven-antrun-plugin>>>, one can
   effectively embed ant tasks inside of the POM. It is ultimately a declaration, however. Where as a
   <<<build.xml>>> tells ant precisely what to do when it is run (procedural), a POM states its
   configuration (declarative). If some external force causes the lifecycle to skip the ant plugin
@@ -193,7 +193,7 @@ POM Reference
 
   The POM defined above is the minimum that Maven 2 will allow. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version need not be explicitly defined if they are inherited
-  from a parent – more on inheritance later). The three fields act much like an address and timestamp
+  from a parent - more on inheritance later). The three fields act much like an address and timestamp
   in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects.
 
   * <<groupId>>:
@@ -203,7 +203,7 @@ POM Reference
   groupId does not have to correspond to the package structure that the project contains. It is,
   however, a good practice to follow. When stored within a repository, the group acts much like the
   Java packaging structure does in an operating system. The dots are replaced by OS specific directory
-  separators (such as ‘/’ in Unix) which becomes a relative directory structure from the base
+  separators (such as `/' in Unix) which becomes a relative directory structure from the base
   repository. In the example given, the <<<org.codehaus.mojo>>> group lives within the directory
   <<<$M2_REPO/org/codehaus/mojo>>>.
 
@@ -213,14 +213,14 @@ POM Reference
   same ID, such as the {{{http://mojo.codehaus.org/}Codehaus Mojo}} project groupId: <<<org.codehaus.mojo>>>).
   It, along with the groupId, create a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
-  the artifact’s living quarters within the repository. In the case of the above project, <<<my-project>>> lives
+  the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
 
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denote a single project but
   they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of today (version 4), or of four years ago (version 2)? In short: code changes, those changes
-  should be versioned, and this element keeps those versions in line. It is also used within an artifact’s
+  should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
   structure <<<$M2_REPO/org/codehaus/mojo/my-project/1.0>>>.
 
@@ -310,7 +310,7 @@ POM Reference
    [[1]] Install the dependency locally using the install plugin. The method is the simplest recommended method. For example:
 
 ---------------
-mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –DartifactId=non-maven-proj –Dversion=1
+mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1
 ---------------
 
         Notice that an address is still required, only this time you use the command line and the install plugin will
@@ -535,14 +535,14 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property.
   They come in five different styles:
 
-  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell’s environment variable. For example, 
+  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example, 
   <<<$\{env.PATH\}>>> contains the $path environment variable (<<<%PATH%>>> in Windows).
 
-  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element’s value.
+  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
   For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via 
   <<<$\{project.version\}>>>.
 
-  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element’s value.
+  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
   For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via 
   <<<$\{settings.offline\}>>>.
 
@@ -610,7 +610,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
 
   * <<directory>>:
   This is the directory where the build will dump its files or, in Maven parlance, the build's target.
-  It aptly defaults to <<<${basedir}/target>>>.
+  It aptly defaults to <<<$\{basedir\}/target>>>.
 
   * <<finalName>>:
   This is the name of the bundled project when it is finally built (sans the file extension, for
@@ -624,8 +624,8 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   Defines <<<*.properties>>> files that contain a list of properties that apply to resources which
   accept their settings (covered below). In other words, the "<<<name=value>>>" pairs defined within
   the filter files replace <<<${name}>>> strings within resources on build. The example above defines
-  the <<<filter1.properties>>> file under the <<<filter/>>> directory. Maven’s default filter
-  directory is <<<${basedir}/src/main/filters/>>>.
+  the <<<filter1.properties>>> file under the <<<filter/>>> directory. Maven's default filter
+  directory is <<<$\{basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
   {{{/guides/getting-started}quick start guide}}.
@@ -679,14 +679,14 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
 
   * <<filtering>>:
   is <<<true>>> or <<<false>>>, denoting if filtering is to be enabled for this resource. Note, that filter
-  <<<*.properties>>> files do not have to be defined for filtering to occur – resources can also use properties
+  <<<*.properties>>> files do not have to be defined for filtering to occur - resources can also use properties
   that are by default defined in the POM (such as ${project.version}), passed into the command line using the
   "-D" flag (for example, "<<<-Dname>>>=<<<value>>>") or are explicitly defined by the properties element.
   Filter files were covered above.
 
   * <<directory>>:
   This element's value defines where the resources are to be found. The default directory for a build is
-  <<<${basedir}/src/main/resources>>>.
+  <<<$\{basedir\}/src/main/resources>>>.
 
   * <<includes>>:
   A set of files patterns which specify the files to include as resources under that specified directory, using *
@@ -700,7 +700,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   The <<<testResources>>> element block contains <<<testResource>>>
   elements. Their definitions are similar to <<<resource>>> elements, but are naturally used during test
   phases. The one difference is that the default (Super POM defined) test resource directory for a project is
-  <<<${basedir}/src/test/resources>>>. Test resources are not deployed.
+  <<<$\{basedir\}/src/test/resources>>>. Test resources are not deployed.
 
 *** {Plugins}
 
@@ -760,7 +760,7 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
   * <<executions>>:
   It is important to keep in mind that a plugin may have multiple goals. Each goal may have a separate
   configuration, possibly even binding a plugin's goal to a different phase altogether.
-  <<<executions>>> configure the <<<execution>>> of a plugin’s goals.
+  <<<executions>>> configure the <<<execution>>> of a plugin's goals.
 
   For example, suppose you wanted to bind the <<<antrun:run>>> goal to the <<<verify>>> phase.
   We want the task to echo the build directory, as well as avoid passing on this configuration
@@ -993,13 +993,13 @@ mvn install:install-file –Dfile=non-maven-proj.jar –DgroupId=some.group –Dartifa
 +------------------------------------------+
 
   The other difference is the <<<outputDirectory>>> element under <<<plugin>>>. In the case of reporting,
-  the output directory is <<<${basedir}/target/site>>> by default.
+  the output directory is <<<$\{basedir\}/target/site>>> by default.
 
 ** {Report Sets}
 
   It is important to keep in mind that an individual plugin may have multiple goals. Each goal may have a
-  separate configuration. Report sets configure execution of a report plugin’s goals. Does this sound familiar
-  – deja-vu? The same thing was said about build’s <<<execution>>> element with one difference: you cannot bind a
+  separate configuration. Report sets configure execution of a report plugin's goals. Does this sound familiar
+  - deja-vu? The same thing was said about build's <<<execution>>> element with one difference: you cannot bind a
   report to another phase. Sorry.
 
   For example, suppose you wanted to configure the <<<javadoc:javadoc>>> goal to link to 
@@ -1425,7 +1425,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<updatePolicy>>:
   This element specifies how often updates should attempt to occur. Maven will compare the local
-  POM’s timestamp (stored in a repository’s maven-metadata file) to the remote. The choices are:
+  POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
   <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>.
 
   * <<checksumPolicy>>:
@@ -1469,7 +1469,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 +-------------------------+
 
   * <<downloadUrl>>:
-  is the url of the repository from whence another POM may point to in order to grab this POM’s
+  is the url of the repository from whence another POM may point to in order to grab this POM's
   artifact. In the simplest terms, we told the POM how to upload it (through repository/url),
   but from where can the public download it? This element answers that question.
 
@@ -1547,7 +1547,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 ** {Site Distribution}
 
   More than distribution to the repositories, <<<distributionManagement>>> is responsible for defining
-  how to deploy the project’s site and documentation.
+  how to deploy the project's site and documentation.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1694,7 +1694,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
-  activated explicitly through the command line via a comma separated list after the <<<–P>>> flag (e.g. <<<-P test>>>).
+  activated explicitly through the command line via a comma separated list after the <<<-P>>> flag (e.g. <<<-P test>>>).
 
   <To see which profile will activate in a certain build, use the> <<<maven-help-plugin>>>.
 
@@ -1716,10 +1716,10 @@ mvn help:active-profiles
   The Maven 2 POM is big. However, its size is also a testament to its versatility. The ability
   to abstract all of the aspects of a project into a single artifact is powerful, to say the least.
   Gone are the days of dozens of disparate build scripts and scattered documentation concerning each
-  individual project. Along with Maven’s other stars that make up the Maven galaxy – a well defined
+  individual project. Along with Maven's other stars that make up the Maven galaxy - a well defined
   build lifecycle, easy to write and maintain plugins, centralized repositories, system-wide and
-  user-based configurations, as well as the increasing number of tools to make developers’ jobs easier
-  to maintain complex projects – the POM is the large, but bright, center.
+  user-based configurations, as well as the increasing number of tools to make developers' jobs easier
+  to maintain complex projects - the POM is the large, but bright, center.
 
 ======================
 
