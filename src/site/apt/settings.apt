@@ -325,7 +325,7 @@ mvn castor-maven-plugin:generate
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
-  activated explicitly through the command line via a comma separated list after the <<<–P>>> flag (e.g. <<<-P test>>>).
+  activated explicitly through the command line via a comma separated list after the <<<-P>>> flag (e.g. <<<-P test>>>).
 
   <To see which profile will activate in a certain build, use the> <<<maven-help-plugin>>>.
 
@@ -339,14 +339,14 @@ mvn help:active-profiles
   anywhere within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property.
   They come in five different styles, all accessible from the <<<settings.xml>>> file:
 
-  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell’s environment variable. For example, 
+  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example, 
   <<<$\{env.PATH\}>>> contains the $path environment variable (<<<%PATH%>>> in Windows).
 
-  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element’s value.
+  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
   For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via 
   <<<$\{project.version\}>>>.
 
-  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element’s value.
+  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
   For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via 
   <<<$\{settings.offline\}>>>.
 
@@ -433,7 +433,7 @@ mvn help:active-profiles
 
   * <<updatePolicy>>:
   This element specifies how often updates should attempt to occur. Maven will compare the local
-  POM’s timestamp (stored in a repository’s maven-metadata file) to the remote. The choices are:
+  POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
   <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>.
 
   * <<checksumPolicy>>:
