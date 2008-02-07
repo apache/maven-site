@@ -55,7 +55,7 @@ Settings Reference
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository/>
   <interactiveMode/>
@@ -80,7 +80,7 @@ Settings Reference
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository>${user.dir}/.m2/repository</localRepository>
   <interactiveMode>true</interactiveMode>
@@ -95,7 +95,7 @@ Settings Reference
 
   * <<localRepository>>:
   This value is the path of this build system's local repository. The default value is
-  <<<${user.dir}/.m2/repository>>>. This element is especially useful for a main build
+  <<<$\{user.dir\}/.m2/repository>>>. This element is especially useful for a main build
   server allowing all logged-in users to build from a common local repository.
 
   * <<interactiveMode>>:
@@ -135,7 +135,7 @@ mvn castor-maven-plugin:generate
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <servers>
@@ -163,8 +163,8 @@ mvn castor-maven-plugin:generate
   server.
 
   * <<privateKey>>, <<passphrase>>:
-  Like the previous two elements, this pair specifies a path to a private key (default is 
-  <<<${usr.home}/.ssh/id_dsa>>>) and a <<<passphrase>>>, if required. The <<<passphrase>>> and <<<password>>> elements
+  Like the previous two elements, this pair specifies a path to a private key (default is
+  <<<$\{usr.home\}/.ssh/id_dsa>>>) and a <<<passphrase>>>, if required. The <<<passphrase>>> and <<<password>>> elements
   may be externalized in the future, but for now they must be set plain-text in the <<<settings.xml>>> file.
 
   * <<filePermissions>>, <<directoryPermissions>>:
@@ -178,7 +178,7 @@ mvn castor-maven-plugin:generate
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <mirrors>
@@ -213,7 +213,7 @@ mvn castor-maven-plugin:generate
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <proxies>
@@ -272,7 +272,7 @@ mvn castor-maven-plugin:generate
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -308,10 +308,10 @@ mvn castor-maven-plugin:generate
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. 
+  will match.
 
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above. 
+  The <<<os>>> element can define some operating system specific properties shown above.
 
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
@@ -339,28 +339,28 @@ mvn help:active-profiles
   anywhere within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property.
   They come in five different styles, all accessible from the <<<settings.xml>>> file:
 
-  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example, 
+  [[1]]  <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example,
   <<<$\{env.PATH\}>>> contains the $path environment variable (<<<%PATH%>>> in Windows).
 
-  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
-  For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via 
+  [[2]]  <<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
+  For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via
   <<<$\{project.version\}>>>.
 
-  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
-  For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via 
+  [[3]]  <<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
+  For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via
   <<<$\{settings.offline\}>>>.
 
-  [[4]]	Java System Properties: All properties accessible via <<<java.lang.System.getProperties()>>> are
+  [[4]]  Java System Properties: All properties accessible via <<<java.lang.System.getProperties()>>> are
   available as POM properties, such as <<<$\{java.home\}>>>.
 
-  [[5]]	<<<x>>>: Set within a \<properties /\> element or an external files, the value may be used as <<<$\{someVar\}>>>.
+  [[5]]  <<<x>>>: Set within a \<properties /\> element or an external files, the value may be used as <<<$\{someVar\}>>>.
 
   []
 
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -376,7 +376,7 @@ mvn help:active-profiles
 </settings>
 +------------------------------------+
 
-  The property <<<${user.install}>>> is accessible from a POM if this profile is active.
+  The property <<<$\{user.install\}>>> is accessible from a POM if this profile is active.
 
 ** {Repositories}
 
@@ -388,7 +388,7 @@ mvn help:active-profiles
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -460,7 +460,7 @@ mvn help:active-profiles
 +------------------------------------+
 <settings xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <activeProfiles>
@@ -471,9 +471,8 @@ mvn help:active-profiles
 
   The final piece of the <<<settings.xml>>> puzzle is the <<<activeProfiles>>> element. This contains
   a set of <<<activeProfile>>> elements, which each have a value of a <<<profile>>> <<<id>>>. Any
-  <<<profile>>> <<<id>>> defined as an <<<activeProfile>>> will be active, reguardless of 
+  <<<profile>>> <<<id>>> defined as an <<<activeProfile>>> will be active, reguardless of
   any environment settings. If no matching profile is found nothing will happen. For example, if
   <<<env-test>>> is an <<<activeProfile>>>, a profile in a <<<pom.xml>>> (or <<<profile.xml>>> with a
   corrosponding <<<id>>> will be active. If no such profile is found then execution will continue
   as normal.
-

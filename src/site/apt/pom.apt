@@ -5,7 +5,7 @@
  -----
  January 2008
  -----
- 
+
 POM Reference
 
   [[1]] {{{#Introduction}Introduction}}
@@ -154,7 +154,7 @@ POM Reference
   <!-- Environment Settings -->
   <issueManagement>...</issueManagement>
   <ciManagement>...</ciManagement>
-  <mailingLists>...</mailingLists> 
+  <mailingLists>...</mailingLists>
   <scm>...</scm>
   <prerequisites>...</prerequisites>
   <repositories>...</repositories>
@@ -203,7 +203,7 @@ POM Reference
   groupId does not have to correspond to the package structure that the project contains. It is,
   however, a good practice to follow. When stored within a repository, the group acts much like the
   Java packaging structure does in an operating system. The dots are replaced by OS specific directory
-  separators (such as `/' in Unix) which becomes a relative directory structure from the base
+  separators (such as '/' in Unix) which becomes a relative directory structure from the base
   repository. In the example given, the <<<org.codehaus.mojo>>> group lives within the directory
   <<<$M2_REPO/org/codehaus/mojo>>>.
 
@@ -267,7 +267,7 @@ POM Reference
   becomes large and complicated. <"Jar Hell"> follows, where versions of dependencies on one system
   are not equivalent to versions as those developed with, either by the wrong version given, or conflicting
   versions between similarly named jars. Maven solves both problems through a common local repository
-  from which to link projects correctly, versions and all. 
+  from which to link projects correctly, versions and all.
 
 ** {Dependencies}
 
@@ -324,6 +324,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    [[3]] Set the dependency scope to <<<system>>> and define a <<<systemPath>>>. This is not recommended, however,
         but leads us to explaining the following elements:
 
+   []
+
   * <<type>>:
   Corresponds to the dependant artifact's <<<packaging>>> type. This defaults to <<<jar>>>. While it usually represents
   the extension on the filename of the dependency, that is not always the case. A type can be mapped to a
@@ -349,7 +351,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   is used <only> if the the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
   element is set. The path must be absolute, so it is recommended to use a property to specify the
   machine-specific path (more on <<<properties>>> below),
-  such as <<<${java.home}/lib>>>. Since it is assumed that system scope dependencies are installed <a priori>,
+  such as <<<$\{java.home\}/lib>>>. Since it is assumed that system scope dependencies are installed <a priori>,
   Maven will not check the repositories for the project, but instead checks to ensure that the file exists.
   If not, Maven will fail the build and suggest that you download and install it manually.
 
@@ -535,22 +537,23 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property.
   They come in five different styles:
 
-  [[1]] <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example, 
+  [[1]]  <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example,
   <<<$\{env.PATH\}>>> contains the $path environment variable (<<<%PATH%>>> in Windows).
 
-  [[2]]	<<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
-  For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via 
+  [[2]]  <<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
+  For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via
   <<<$\{project.version\}>>>.
 
-  [[3]]	<<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
-  For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via 
+  [[3]]  <<<settings.x>>>: A dot (.) notated path in the <<<settings.xml>>> will contain the corresponding element's value.
+  For example: <<<\<settings\>\<offline\>false\</offline\>\</settings\>>>> is accessible via
   <<<$\{settings.offline\}>>>.
 
-  [[4]]	Java System Properties: All properties accessible via <<<java.lang.System.getProperties()>>> are
+  [[4]]  Java System Properties: All properties accessible via <<<java.lang.System.getProperties()>>> are
   available as POM properties, such as <<<$\{java.home\}>>>.
 
-  [[5]]	<<<x>>>: Set within a \<properties /\> element. The value may be used as <<<$\{someVar\}>>>.
+  [[5]]  <<<x>>>: Set within a \<properties /\> element. The value may be used as <<<$\{someVar\}>>>.
 
+  []
 
 {Build Settings}
 
@@ -563,7 +566,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   According to the POM 4.0.0 XSD, the <<<build>>> element is conceptually divided into two parts:
   there is a <<<BaseBuild>>> type which contains the set of elements common to both <<<build>>> elements
-  (the top-level build element under <<<project>>> and the build element under <<<profiles>>>, 
+  (the top-level build element under <<<project>>> and the build element under <<<profiles>>>,
   covered below); and there is the <<<Build>>> type, which contains the <<<BaseBuild>>> set as well as more
   elements for the top level definition. Let us begin with an analysis of the common elements between
   the two.
@@ -614,7 +617,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * <<finalName>>:
   This is the name of the bundled project when it is finally built (sans the file extension, for
-  example: <<<my-project-1.0.jar>>>). It defaults to <<<${artifactId}-${version}>>>. The term 
+  example: <<<my-project-1.0.jar>>>). It defaults to <<<$\{artifactId\}-$\{version\}>>>. The term
   "finalName" is kind of a misnomer, however, as plugins that build the bundled project have every
   right to ignore/modify this name (but they usually do not). For example, if the <<<maven-jar-plugin>>>
   is configured to give a jar a <<<classifier>>> of <<<test>>>, then the actual jar defined above will
@@ -623,7 +626,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<filter>>:
   Defines <<<*.properties>>> files that contain a list of properties that apply to resources which
   accept their settings (covered below). In other words, the "<<<name=value>>>" pairs defined within
-  the filter files replace <<<${name}>>> strings within resources on build. The example above defines
+  the filter files replace <<<$\{name\}>>> strings within resources on build. The example above defines
   the <<<filter1.properties>>> file under the <<<filter/>>> directory. Maven's default filter
   directory is <<<$\{basedir\}/src/main/filters/>>>.
 
@@ -680,7 +683,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<filtering>>:
   is <<<true>>> or <<<false>>>, denoting if filtering is to be enabled for this resource. Note, that filter
   <<<*.properties>>> files do not have to be defined for filtering to occur - resources can also use properties
-  that are by default defined in the POM (such as ${project.version}), passed into the command line using the
+  that are by default defined in the POM (such as $\{project.version\}), passed into the command line using the
   "-D" flag (for example, "<<<-Dname>>>=<<<value>>>") or are explicitly defined by the properties element.
   Filter files were covered above.
 
@@ -733,7 +736,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   configure the plugin or this builds interaction with it.
 
   * <<extensions>>:
-  <<<true>>> or <<<false>>>, whether or not to load extensions of this plugin. It is by default false. 
+  <<<true>>> or <<<false>>>, whether or not to load extensions of this plugin. It is by default false.
   Extensions are covered later in this document.
 
   * <<inherited>>:
@@ -764,7 +767,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   For example, suppose you wanted to bind the <<<antrun:run>>> goal to the <<<verify>>> phase.
   We want the task to echo the build directory, as well as avoid passing on this configuration
-  to its children (assuming it is a parent) by setting <<<inherited>>> to <<<false>>>. 
+  to its children (assuming it is a parent) by setting <<<inherited>>> to <<<false>>>.
   You would get an <<<execution>>> like this:
 
 +------------------------------------------+
@@ -954,7 +957,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 * {Reporting}
 
-  Reporting contains the elements that correspond specifically for the <<<site>>> generation phase. 
+  Reporting contains the elements that correspond specifically for the <<<site>>> generation phase.
   Certain Maven plugins can generate reports defined and configured under the reporting element,
   for example: generating Javadoc reports. Much like the build element's ability to configure plugins,
   reporting commands the same ability. The glaring difference is that rather than fine-grained control
@@ -1002,7 +1005,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   - deja-vu? The same thing was said about build's <<<execution>>> element with one difference: you cannot bind a
   report to another phase. Sorry.
 
-  For example, suppose you wanted to configure the <<<javadoc:javadoc>>> goal to link to 
+  For example, suppose you wanted to configure the <<<javadoc:javadoc>>> goal to link to
   "{{http://java.sun.com/j2se/1.5.0/docs/api/}}", but only the <<<javadoc>>> goal (not the
   goal <<<maven-javadoc-plugin:jar>>>). We would also like this configuration passed to its
   children, and set <<<inherited>>> to true. The <<<reportSet>>> would resemble the following:
@@ -1328,7 +1331,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   code (for example, an update), developerConnection requires a connection that will give write
   access. The Maven project has spawned another project named
   Maven SCM, which creates a common API for any SCMs that wish to implement it. The most popular
-  are CVS and Subversion, however, there is a growing list of other supported 
+  are CVS and Subversion, however, there is a growing list of other supported
   {{{/scm/scms-overview.html}SCMs}}. All SCM connections are made
   through a common URL structure.
 
@@ -1538,7 +1541,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<url>>:
   This is the core of the repository element. It specifies both the location and the transport protocol to be
-  used to transfer a built artifact (and POM file, and checksum data) to the repository. 
+  used to transfer a built artifact (and POM file, and checksum data) to the repository.
 
   * <<layout>>:
   These are the same types and purpose as the layout element defined in the repository element.
@@ -1676,7 +1679,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. 
+  will match.
 
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
@@ -1723,5 +1726,5 @@ mvn help:active-profiles
 
 ======================
 
-  Aspects of this guide were originally published in the 
+  Aspects of this guide were originally published in the
   {{{http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}Maven 2 Pom Demystified}}.
