@@ -715,6 +715,48 @@ mymojo-report_de.properties
   Therefore, always provide a dedicated bundle for the default locale of your bundle family (e.g. <<<mymojo-report_en.properties>>>). This
   bundle should be empty such that it retrieves strings via the parent chain from the base bundle.
 
+** Getting the Output Directory for a Report Mojo
+
+ A report mojo that subclasses <<<AbstractReportMojo>>> needs to implement <<<AbstractReportMojo.getOutputDirectory()>>>. This method
+ should <never> be called during the generation of the report, i.e. the code shown below is buggy:
+
++-----+
+public MyReportMojo extends AbstractReportMojo
+{
+    /**
+     * The base directory of the report output. Only relevant if the mojo is not run as part of a site generation.
+     *
+     * @parameter expression="${project.reporting.outputDirectory}"
+     */
+    private File outputDirectory;
+
+    /**
+     * @see org.apache.maven.reporting.AbstractMavenReport#getOutputDirectory()
+     */
+    protected String getOutputDirectory()
+    {
+        return outputDirectory.toString();
+    }
+
+    /**
+     * @see org.apache.maven.reporting.AbstractMavenReport#executeReport( java.util.Locale )
+     */
+    public void executeReport( Locale locale )
+    {
+        // will fail during a site generation
+        File outputFile = new File( getOutputDirectory(), "summary.txt" );
+    }
+}
++-----+
+
+  <<Explanation>>: There are in principal two situations in which a report mojo could be invoked. The mojo might be run
+  directly from the command line or it might be run indirectly as part of the site generation along with other report mojos.
+  The glaring difference between these two invocations is the way the output directory is controlled. In the first case,
+  the parameter <<<outputDirectory>>> from the mojo itself is used. In the second case however, the Maven Site Plugin
+  will set the output directory according to its own configuration by calling <<<MavenReport.setReportOutputDirectory()>>>
+  on the reports being generated. Therefore, developers should always use <<<MavenReport.getReportOutputDirectory()>>> if they
+  need to query the effective output directory for the report. 
+
 * Resources
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo Documentation}}: Mojo API, Mojo annotations
