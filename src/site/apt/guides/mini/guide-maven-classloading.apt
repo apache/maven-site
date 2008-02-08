@@ -9,7 +9,7 @@
 How Maven's classloaders work
 
  Maven uses the {{{http://classworlds.codehaus.org}Classworlds}} classloading framework with which we
- create our classloader graph. If you look in your <<<${maven.home}/m2/core>>> directory you will see a single JAR
+ create our classloader graph. If you look in your <<<$\{maven.home\}/m2/core>>> directory you will see a single JAR
  which is the classworlds JAR we use to boot the classloader graph. The Classworlds JAR is the only element of
  the Java $CLASSPATH and Classworlds then builds the following graph of classloaders where the <<<plexus.core>>> classloader, 
  or Realm in Classworlds, is the parent in the context of Maven.

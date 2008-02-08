@@ -40,7 +40,7 @@ Guide to creating assemblies
 
 +----+
 
- You'll notice that the assembly descriptor is located in <<<${basedir}/src/main/assembly>>> which is the 
+ You'll notice that the assembly descriptor is located in <<<$\{basedir\}/src/main/assembly>>> which is the
  {{{../introduction/introduction-to-the-standard-directory-layout.html}standard}} location for assembly
  descriptors.
 

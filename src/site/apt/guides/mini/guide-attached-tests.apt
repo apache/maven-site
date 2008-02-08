@@ -9,7 +9,7 @@
 Guide to using attached tests
 
  Many times you may want to resuse the tests that you have created for a project in another. For example if you have
- written <<<foo-core>>> and it contains test code in the <<<${basedir}/src/test/java>>> it would be useful to package
+ written <<<foo-core>>> and it contains test code in the <<<$\{basedir\}/src/test/java>>> it would be useful to package
  up those compiled tests in a JAR and deploy them for general resuse. To do this you would configure the
  <<<maven-jar-plugin>>> as follows:
 
