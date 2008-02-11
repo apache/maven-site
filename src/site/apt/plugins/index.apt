@@ -85,7 +85,9 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | 1.1    | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 1.0-alpha-7 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/maven-archetype/maven-archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
+| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 2.0-alpha-1 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
+*-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-archetype-plugin-1.0-alpha-7/} <<<archetype>>>}}    | 1.0-alpha-7 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/tags/maven-archetype-1.0-alpha-7/maven-archetype-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}      | 2.2-beta-1   | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
