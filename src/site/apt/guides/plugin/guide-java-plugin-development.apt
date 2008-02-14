@@ -757,6 +757,19 @@ public MyReportMojo extends AbstractReportMojo
   on the reports being generated. Therefore, developers should always use <<<MavenReport.getReportOutputDirectory()>>> if they
   need to query the effective output directory for the report. 
 
+** Using Plexus Utilities
+
+  If you depend on a version of plexus-utils later than 1.1, be sure to properly specify your prerequisites on Maven:
+
++-----+
+  <prerequisites>
+    <maven>2.0.6</maven>
+  </prerequisites>
++-----+
+
+  <<Explanation>>: Before Maven 2.0.6, Maven always used plexus-utils 1.1 for the plugin class realm regardless of the
+  version of plexus-utils that the plugin specified in its POM.
+
 * Resources
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo Documentation}}: Mojo API, Mojo annotations
