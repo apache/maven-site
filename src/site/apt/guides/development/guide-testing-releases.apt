@@ -14,14 +14,14 @@ Guide to Testing Staged Releases
   
   The steps are as follows:
 
-    * add the repository or plugin repository to your POM (see below)
+    * add the repository or plugin repository to your POM or settings (see below)
 
     * ensure you are using the version being released of the artifacts in your project,
       e.g. by setting the <<<\<version\>>>> in the <<<\<plugin\>>>> tag.
 
     * test the release
 
-    * remove the repository from your POM
+    * remove the repository from your POM if it was specified there
 
     * remove the artifacts from your local repository when you have completed testing
 
@@ -31,7 +31,7 @@ Guide to Testing Staged Releases
   ...
   <pluginRepositories>
     <pluginRepository>
-      <id>staged.releases</id>
+      <id>staged-releases</id>
       <url>http://people.apache.org/~dfabulich/stage-repo</url>
     </pluginRepository>
   </pluginRepositories>
@@ -82,7 +82,11 @@ Guide to Testing Staged Releases
   <<<http://localhost:8080/archiva/repository/staged-releases/>>>.
 
   The advantage of this approach is that you can usually remove your entire local repository afterwards and after removing the staged repository
-  from your POM the artifacts will no longer be used.
+  from your POM the artifacts will no longer be used. There is no need to remove the repository or artifacts from Archiva itself - unless a
+  staged release is updated for further testing.
+
+  It is also quite easy to test another staged release at a later date by reusing the repository, or adding a proxy connector and remote
+  repository for a different staging repository.
 
   If you are using the repository mirroring technique to lock down to the repository manager in your environment, you would add an additional
   mirror to correspond to the additional repository in the POM, such as:
@@ -97,4 +101,33 @@ Guide to Testing Staged Releases
   ...
 ----
 
+* Using a Settings Profile
+
+  If you regularly test staged releases and want to have a more convenient way to add the repository to a build without
+  modifying your POM, you may add a profile to your POM:
+
+----
+  ...
+  <profiles>
+    <profile>
+      <id>staged-releases</id>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>staged-releases</id>
+          <url>http://people.apache.org/~dfabulich/stage-repo</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  ...
+----
+
+  With this in place, you can activate it by simply changing the plugin version to the one you are testing in the POM as above, then
+  run the build with the following command:
+
+----
+mvn clean install -Pstaged-releases
+----
+
+  Note that the same conditions apply as above about cleaning out the local repository to prevent pollution of your local build
+  environment.
 
