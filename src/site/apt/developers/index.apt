@@ -60,8 +60,6 @@ Maven Developer Centre
 
   * {{{release/releasing.html}Release Process}}
 
-~~TODO: merge the above two documents
-
 * Deploy Maven references
 
   * {{{website/deploy-maven-current-ref.html}Deploy Maven Current References}}
