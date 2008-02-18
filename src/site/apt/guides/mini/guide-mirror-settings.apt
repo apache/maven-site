@@ -142,6 +142,31 @@ Using A Single Repository
 </settings>
 +-----+
 
+Using A Single Server To Mirror Multiple Repositories
+
+  In corporate environment you may want to use a mirror for all repository requests, but still get a fine grained proxying policy.
+  Archiva can be used for such a use case to managed your private artifacts and mirror public repositories on Internet, with various
+  policies for each mirrored repository. Simply set up your mirror server to expose the mirrored repository ID in the URL, and use 
+  a pattern based URL in settings.xml.
+
+  <<Note:>> This feature is only available in Maven 2.0.9+.
+
++-----+
+<settings>
+  .
+  <mirrors>
+    <mirror>
+      <id>archiva</id>
+      <name>Archiva running on archiva.mycompany.com</name>
+      <url>http://archiva.mycompany.com/repository/{0}</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+  .
+</settings>
++-----+
+
+
 
 FTP access
 
