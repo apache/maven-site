@@ -122,11 +122,20 @@ mvn release:prepare
 
  <<Note>>: Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
 
- [[4]] Perform the release
+ [[4]] Stage the release for a vote
 
 +-----+
 mvn release:perform
 +-----+
+
+ [[4]] Stage the latest documentation
+
+ <<Note>>: The plugin parent pom is configured to stage the documentation in a "versioned" directory
+ such as <<</plugins/maven-XXX-plugin-Y.Z-SNAPSHOT>>>.
+
++------+
+mvn site:stage-deploy -Preporting
++------+
 
  [[3]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
@@ -147,7 +156,10 @@ Staging repo:
 http://people.apache.org/~YOUR_APACHE_USERNAME/staging-repo/maven-XXX-plugin/
 
 Staging site:
-http://people.apache.org/~YOUR_APACHE_USERNAME/maven-XXX-plugin/
+http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z-SNAPSHOT/
+
+Guide to testing staged releases:
+http://maven.apache.org/guides/development/guide-testing-releases.html
 
 Vote open for 72 hours.
 
@@ -206,10 +218,15 @@ mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" \
  This will allow you to bypass the staging phase and push the release directly into a production repository. It is assume that
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
- [[6]] Deploy the project site.
+ [[6]] Deploy the current and versioned websites
 
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
-  and call <<<mvn site -Preporting site:deploy>>>.
+
++-----+
+mvn site-deploy -Preporting
+
+mvn site:stage-deploy -Preporting
++-----+
 
  [[7]] Review Website
 

@@ -58,9 +58,7 @@ Maven Developer Centre
 
   * {{{release/pmc-gpg-keys.html}Making GPG Keys}}
 
-  * {{{release/pmc-release-process.html}Release Process}}
-
-  * {{{release/releasing.html}New Release Process}}
+  * {{{release/releasing.html}Release Process}}
 
 ~~TODO: merge the above two documents
 
