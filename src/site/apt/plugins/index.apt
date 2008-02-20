@@ -37,7 +37,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin/} <<<site>>>}}              | 2.0-beta-6 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-surefire-plugin/} <<<surefire>>>}}      | 2.4.1    | Run the Junit tests in an isolated classloader. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+| {{{/plugins/maven-surefire-plugin/} <<<surefire>>>}}      | 2.4.2    | Run the Junit tests in an isolated classloader. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}      | 1.0-beta-1 | Useful for integration tests - verifies the existence of certain conditions. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-verifier-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MVERIFIER}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
