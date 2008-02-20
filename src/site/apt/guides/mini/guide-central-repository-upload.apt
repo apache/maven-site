@@ -151,11 +151,34 @@ Sync'ing your own repository to the central repository automatically
  You must make sure the remote repository server has rsync or rsync over ssh, there are free services like
  {{{http://sf.net/}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
 
- After you are able to deploy to your remote repository <<make sure you only deploy releases>>. Then you can provide a script like the
- {{{http://svn.apache.org/viewvc/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/conf/}current scripts}},
- open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} and attach the script, and we'll add it to the automatically synced repos.
+ After you are able to deploy to your remote repository <<make sure you only deploy releases>>. 
+ Then you need to provide us the following information in comma delimited format
 
- Make sure you <<provide proof of owning the domain>> that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name
+ * groupId, eg. org.apache.maven
+
+ * location, eg. <<<mavensync@shell.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo>>> for rsync over ssh
+   or <<<rsync://maven2.hortis.ch/releases>>> for non secure rsync
+
+ * protocol, <<<rsync>>> or <<<rsync_ssh>>>
+
+ * contactName, your name
+
+ * contactMail, your email (not a mailing list)
+
+ The comma delimited version would be something like (note that the two last columns are for internal purposes, you can omit them)
+
+ * <<<"org.apache.maven","mavensync@shell.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo","rsync_ssh","John Doe","doe@doe.com",,>>>
+
+ * <<<"org.apache.maven","rsync://maven2.hortis.ch/releases","rsync","John Doe","doe@doe.com",,>>>
+
+
+ You can see the list of
+ {{{https://svn.apache.org/repos/asf/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/sync.csv}repositories synchronized automatically}} for examples
+
+ open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with the information (in the comma delimited format!), and we'll add it to the
+ automatically synced repos.
+
+ Make sure you <<provide proof of owning the domain>> that matches the groupId (see groupId considerations above). Proof means either the server to sync from has a name 
  under that domain, your name shows up in a prominent place in the domain, or you provide a link to a whois database where your name shows up as the domain owner.
 
  If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log
@@ -307,7 +330,8 @@ Maven partners
 For Maven developers
 
 
- The scripts to make the upload to the repository are in the <<<components>>> tree of svn, inside <<<maven-meeper/src/bin>>>
+ The scripts to make the upload to the repository are in
+ <<<https://svn.apache.org/repos/asf/maven/archiva/tools/trunk/maven-meeper>>> inside <<<src/bin>>>
 
  Those scripts are checked out in www.maven.org <<</home/maven/bin>>>, so
  after logging as maven user you can go to the bundle-upload and run
