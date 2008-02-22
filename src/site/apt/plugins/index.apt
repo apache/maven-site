@@ -117,6 +117,8 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-source-plugin/} <<<source>>>}}          | 2.0.4  | Build a JAR of sources for use in IDEs and distribution to the repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-source-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSOURCES}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}            | 1.0-alpha-1 | Assists with release staging and promotion. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSTAGE}JIRA}}
+*-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | <<IDEs>>                                                  | | <Plugins that simplify integration with integrated developer environments.> | |
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}        | 2.4    | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
