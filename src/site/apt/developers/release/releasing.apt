@@ -253,9 +253,11 @@ http://maven.apache.org/plugins/maven-XXX-plugin
 From: YOUR_APACHE_EMAIL
 To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
-Subject: [ANN] Maven XXX Plugin Y.Y for Maven 2 Released
+Subject: [ANN] Maven XXX Plugin Y.Y Released
 
 The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Y
+
+This plugin (insert short description of the plugin's purpose).
 
 http://maven.apache.org/plugins/maven-XXX-plugin/
 
