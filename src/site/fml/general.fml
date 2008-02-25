@@ -373,5 +373,15 @@ Where: <path-to-file>  the path to the file to load
         </p>
       </answer>
     </faq>
+
+    <faq id="What is a Mojo">
+      <question>What is a Mojo?</question>
+      <answer>
+        <p>
+          A mojo is a <b>M</b>aven plain <b>O</b>ld <b>J</b>ava <b>O</b>bject. Each mojo is an executable
+          <i>goal</i> in Maven, and a plugin is a distribution of one or more related mojos.
+        </p>
+      </answer>
+    </faq>
   </part>
 </faqs>
