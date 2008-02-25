@@ -158,7 +158,7 @@ Using A Single Server To Mirror Multiple Repositories
     <mirror>
       <id>archiva</id>
       <name>Archiva running on archiva.mycompany.com</name>
-      <url>http://archiva.mycompany.com/repository/{0}</url>
+      <url>http://archiva.mycompany.com/repository/${mirrorOf}</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
