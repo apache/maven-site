@@ -174,7 +174,6 @@
 
     <menu name="Maven Projects" inherit="bottom">
       <item name="Maven" href="http://maven.apache.org/"/>
-      <item name="Continuum" href="http://maven.apache.org/continuum"/>
       <item name="Archiva" href="http://maven.apache.org/archiva"/>
       <item name="SCM" href="http://maven.apache.org/scm"/>
       <item name="Wagon" href="http://maven.apache.org/wagon"/>
@@ -182,5 +181,11 @@
       <item name="Doxia" href="http://maven.apache.org/doxia"/>
       <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x"/>
     </menu>
+
+    <menu name="Related Topics">
+      <item name="Repository Management" href="/repository-management.html" />
+      <item name="Continuous Integration" href="/continuous-integration.html" />
+    </menu>
+
   </body>
 </project>
