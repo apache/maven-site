@@ -89,7 +89,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}      | 2.2-beta-2   | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}  | 2.0-alpha-4 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
+| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}  | 2.0 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-enforcer-plugin/} <<<enforcer>>>}}      | 1.0-alpha-3 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{http://svn.apache.org/repos/asf/maven/enforcer/trunk/maven-enforcer-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MENFORCER}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
