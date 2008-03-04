@@ -176,11 +176,6 @@ Vote open for 72 hours.
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- <<Note:>> For now the stage plugin hasn't been released yet and you need to build it yourself.
- The tests for the stage plugin requires that an scp server is present on your local machine. If you are trying to build
- the plugin on Windows you need to exlude the tests. You do this by adding <<<-Dmaven.test.skip=true>>> on the command
- line when you build it.
-
  Here is an example on how to use the stage plugin:
 
 +-----+
