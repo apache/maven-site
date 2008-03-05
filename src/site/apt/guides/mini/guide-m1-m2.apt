@@ -112,9 +112,9 @@ mvn one:convert
 
 * What to do with maven.xml?
 
- See {{{../../maven1.html#m1-maven-xml}}How do I write custom scripts without a maven.xml file?} for an explanation of
+ See {{{../../maven1.html#m1-maven-xml}How do I write custom scripts without a maven.xml file?}} for an explanation of
  why maven.xml was discarded, and
- {{{../introduction/introduction-to-plugins.html}}Introduction to Maven 2.0 Plugin Development} for
+ {{{../introduction/introduction-to-plugins.html}Introduction to Maven 2.0 Plugin Development}} for
  a guide to writing your own plug-ins.
 
 * Directory Structure
