@@ -272,7 +272,7 @@ mvn groupID:artifactID:version:goal
 
   This causes the simple mojo to be executed whenever Java code is compiled.
   For more information on binding a mojo to phases in the lifecycle, please
-  refer to the {{{guides/introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
+  refer to the {{{../introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
 
 * Mojo archetype
 
@@ -755,7 +755,7 @@ public MyReportMojo extends AbstractReportMojo
   the parameter <<<outputDirectory>>> from the mojo itself is used. In the second case however, the Maven Site Plugin
   will set the output directory according to its own configuration by calling <<<MavenReport.setReportOutputDirectory()>>>
   on the reports being generated. Therefore, developers should always use <<<MavenReport.getReportOutputDirectory()>>> if they
-  need to query the effective output directory for the report. 
+  need to query the effective output directory for the report.
 
 ** Using Plexus Utilities
 
