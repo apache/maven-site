@@ -49,12 +49,12 @@ Introduction to Maven 2.0 Plugin Development
   description of each plugin goal (or Mojo).
 
   One of the simplest plugins in Maven 2.0 is the Clean Plugin.  The
-  {{{/plugins/maven-clean-plugin/}Maven
+  {{{../../plugins/maven-clean-plugin/}Maven
   Clean plugin}} (maven-clean-plugin) is responsible for removing the target
   directory of a Maven 2 project.  When you run "mvn clean", Maven 2 executes
   the "clean" goal as defined in the Clean plug-in, and the target directory
   is removed.  The Clean plugin
-  {{{/plugins/maven-clean-plugin/clean-mojo.html}defines
+  {{{../../plugins/maven-clean-plugin/clean-mojo.html}defines
   a parameter}} which can be used to customize plugin behavior, this parameter is
   called outputDirectory and it defaults to $\{project.build.directory\}.
 

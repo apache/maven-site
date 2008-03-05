@@ -534,7 +534,7 @@ mvn eclipse:eclipse
   configuration. It is also possible to add new goals to the process, and configure specific goals. For information on
   this, see the {{{../introduction/introduction-to-the-lifecycle.html} Introduction to the Build Lifecycle}}.
 
-  To find out what configuration is available for a plugin, you can see the {{{/plugins/} Plugins List}} and navigate
+  To find out what configuration is available for a plugin, you can see the {{{../../plugins/} Plugins List}} and navigate
   to the plugin and goal you are using.
 
 * {How do I add resources to my JAR?}

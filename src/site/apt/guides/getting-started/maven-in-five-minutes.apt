@@ -105,7 +105,7 @@ my-app
 ** What did I just do?
 
   You executed the Maven goal <archetype:create>, and passed in various parameters to that goal.
-  The prefix <archetype> is the {{{/plugins/index.html}plugin}} that contains the goal. If you are familiar with
+  The prefix <archetype> is the {{{../../plugins/index.html}plugin}} that contains the goal. If you are familiar with
   {{{http://ant.apache.org}Ant}}, you
   may concieve of this as similar to a task. This goal created a simple project based upon an archetype.
   Suffice it to say for now that a <plugin> is a collection
