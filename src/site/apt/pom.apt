@@ -631,7 +631,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   directory is <<<$\{basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
-  {{{/guides/getting-started}quick start guide}}.
+  {{{guides/getting-started}quick start guide}}.
 
 *** {Resources}
 

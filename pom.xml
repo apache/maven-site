@@ -92,6 +92,13 @@
           </reportSet>
         </reportSets>
       </plugin>
+      <!-- Note: 'site' needs to be called twice to generate the linkcheck report
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-linkcheck-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </plugin>
+      -->
     </plugins>
   </reporting>
 
@@ -285,7 +292,7 @@
         <otherArchive>http://maven.doxia.commits.markmail.org/</otherArchive>
       </otherArchives>
     </mailingList>
-    
+
     <!-- duplication from scm - temporary until they inherit properly -->
     <mailingList>
       <name>SCM Developer List</name>
