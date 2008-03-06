@@ -261,9 +261,9 @@ http://maven.apache.org/plugins/maven-XXX-plugin
 From: YOUR_APACHE_EMAIL
 To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
-Subject: [ANN] Maven XXX Plugin Y.Y Released
+Subject: [ANN] Maven XXX Plugin Y.Z Released
 
-The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Y
+The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
 
 This plugin (insert short description of the plugin's purpose).
 
@@ -275,10 +275,10 @@ the version in your project's plugin configuration:
 <plugin>
  <groupId>org.apache.maven.plugins</groupId>
  <artifactId>maven-XXX-plugin</artifactId>
- <version>Y.Y</version>
+ <version>Y.Z</version>
 </plugin>
 
-Release Notes - Maven Y.Z XXX Plugin - Version Y.Y
+Release Notes - Maven 2.x XXX Plugin - Version Y.Z
 
 (Copy Here Release Notes in Text Format from Jira)
 
