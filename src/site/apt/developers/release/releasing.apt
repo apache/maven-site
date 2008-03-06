@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 03 December 2007
+ March 2008
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -27,18 +27,17 @@ Releasing A Maven Project
 
  What follows is a description of releasing a Maven project to a staging repository, whereupon it is scruntized by
  the community, approved, and transfered to a production repository.
- 
- 
+
 Prerequisite
 
  Be sure that:
- 
+
   * you have all Maven servers defined in your settings.xml. For more information, please refer to
   {{{../committer-settings.html}Committer settings}}.
 
   * you have created your GPG keys. For more information, please refer to {{{pmc-gpg-keys.html}Making GPG Keys}}.
 
- 
+
  In order to release a project you must also have the
  following setup in your <<<$HOME/.m2/settings.xml>>> which is a profile that defines the staging repository.
 
@@ -84,7 +83,6 @@ Prerequisite
        <<<pom.xml.tag>>> to see if the license or any other info has been
        removed. This has been known to happen if the starting
        <<<\<project\>>>> tag is <<not>> on a single line.
-
        The only things that should be different between these files are the
        <<<\<version\>>>> and <<<\<scm\>>>> elements. Any other changes, you
        must backport yourself to the original <<<pom.xml>>> file and commit
@@ -92,6 +90,10 @@ Prerequisite
 
      * Remember to do '<<<mvn release:clean>>>' before you start the real
        release process.
+
+     * Verify that all <<<pom.xml>>> have a SCM definition.
+
+     []
 
  [[2]] Publish a snapshot:
 
@@ -103,7 +105,7 @@ Prerequisite
 ...
 +-----+
 
- <<IMPORTANT NOTE:>> Be sure that the generated artifacts respect the
+ <<IMPORTANT NOTE>>: Be sure that the generated artifacts respect the
  {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files should be present in
  the META-INF directory within the jar. For -sources artifacts, be sure that your pom does NOT use the
  maven-source-plugin:2.0.3 which is broken. The recommended version at this time is 2.0.4.
@@ -111,7 +113,7 @@ Prerequisite
  <<Note>>: You could verify the deployment under Maven Snapshot repository on Apache.
 
 +-----+
-http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/maven-XXX-plugin/2.1/
+http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/maven-XXX-plugin/Y.Z-SNAPSHOT/
 +-----+
 
  [[3]] Prepare the release
@@ -130,19 +132,30 @@ mvn release:perform
 
  [[4]] Stage the latest documentation
 
- <<Note>>: The plugin parent pom is configured to stage the documentation in a "versioned" directory
+ The plugin parent pom is configured to stage the documentation in a "versioned" directory
  such as <<</plugins/maven-XXX-plugin-Y.Z-SNAPSHOT>>>.
 
+ <<IMPORTANT NOTE>>: You need to stage the documentation for the current release version.
+
++------+
+cd target/checkout
++------+
 +------+
 mvn site:stage-deploy -Preporting
 +------+
+
+ <<Note>>: You could verify the deployment of the site on the Maven website (you need to wait the sync).
+
++-----+
+http://maven.apache.org/plugins/plugins/maven-XXX-plugin-Y.Z/
++-----+
 
  [[3]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
 +-----+
 To: "Maven Developers List" <dev@maven.apache.org>
-Subject: [VOTE] Release Maven XXX plugin version 2.1
+Subject: [VOTE] Release Maven XXX plugin version Y.Z
 
 Hi,
 
@@ -156,7 +169,7 @@ Staging repo:
 http://people.apache.org/~YOUR_APACHE_USERNAME/staging-repo/maven-XXX-plugin/
 
 Staging site:
-http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z-SNAPSHOT/
+http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 
 Guide to testing staged releases:
 http://maven.apache.org/guides/development/guide-testing-releases.html
@@ -179,9 +192,9 @@ Vote open for 72 hours.
  Here is an example on how to use the stage plugin:
 
 +-----+
-mvn stage:copy -Dsource="http://people.apache.org/~carlos/staging-repo" \
+mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
                -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" \
-               -Dversion=2.3 \
+               -Dversion=Y.Z \
                -DtargetRepositoryId=apache.releases
 +-----+
 
@@ -239,7 +252,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin
  [[9]] Update JIRA
 
  Go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
- the <<<2.1>>> version as released. Create version 2.2, if that hasn't already
+ the <<<Y.Z>>> version as released. Create version Y.Z+1, if that hasn't already
  been done.
 
  [[10]] Create an Announcement. For instance:
@@ -265,7 +278,7 @@ the version in your project's plugin configuration:
  <version>Y.Y</version>
 </plugin>
 
-Release Notes - Maven 2.x XXX Plugin - Version Y.Y
+Release Notes - Maven Y.Z XXX Plugin - Version Y.Y
 
 (Copy Here Release Notes in Text Format from Jira)
 
