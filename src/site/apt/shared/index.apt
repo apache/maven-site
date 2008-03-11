@@ -20,7 +20,5 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
 | {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.2          | Converts between version 3.0.0 and version 4.0.0 models. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-model-converter/}SVN}}
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
-| {{{/shared/maven-plugin-testing-tools/} <<<maven-plugin-testing-tools>>>}} | 1.0-alpha-3  | Provide a series of convenience tools for developers wishing to test Maven plugins. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-plugin-testing-tools/}SVN}}
-*----------------------------------------------------------------------------+--------------+------------------+------------------------+
 | {{{/shared/maven-shared-jar/} <<<maven-shared-jar>>>}}                     | 1.0          | Utilities that help identify the contents of a JAR, including Java class analysis and Maven metadata analysis. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-jar/}SVN}}
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
