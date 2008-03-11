@@ -180,6 +180,7 @@
       <item name="JXR" href="http://maven.apache.org/jxr"/>
       <item name="Doxia" href="http://maven.apache.org/doxia"/>
       <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x"/>
+      <item name="Shared Components" href="/shared/index.html"/>
     </menu>
 
     <menu name="Related Topics">
