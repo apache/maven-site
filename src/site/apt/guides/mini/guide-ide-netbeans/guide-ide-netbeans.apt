@@ -212,6 +212,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>netbeans-freeform-maven-plugin</artifactId>
+        <version>2.0</version>
         <configuration>
           <additionalGoals>source:jar</additionalGoals>
         </configuration>

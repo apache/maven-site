@@ -120,6 +120,7 @@ Using Maven When You Can't Use the Conventions
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
         <configuration>
           <includes><include>**/core/**</include></includes>
         </configuration>

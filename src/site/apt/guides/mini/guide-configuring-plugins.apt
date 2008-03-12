@@ -74,6 +74,7 @@ public class MyQueryMojo
     <plugins>
       <plugin>
         <artifactId>maven-myquery-plugin</artifactId>
+        <version>1.0</version>
         <configuration>
           <url>http://www.foobar.com/query</url>
           <timeout>10</timeout>
@@ -186,6 +187,7 @@ public class MyAnimalMojo
     <plugins>
       <plugin>
         <artifactId>maven-myanimal-plugin</artifactId>
+        <version>1.0</version>
         <configuration>
           <animals>
             <animal>cat</animal>
@@ -319,6 +321,7 @@ public class MyQueryMojo
     <plugins>
       <plugin>
         <artifactId>maven-myquery-plugin</artifactId>
+        <version>1.0</version>
         <executions>
           <execution>
             <id>execution1</id>
@@ -449,6 +452,7 @@ public class MyBindedQueryMojo
     <plugins>
       <plugin>
         <artifactId>maven-myquery-plugin</artifactId>
+        <version>1.0</version>
         <executions>
           <execution>
             <id>execution1</id>

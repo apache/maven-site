@@ -29,6 +29,7 @@ Guide to creating assemblies
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
+        <version>2.2-beta-2</version>
         <configuration>
           <descriptor>src/main/assembly/dep.xml</descriptor>
         </configuration>

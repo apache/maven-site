@@ -41,6 +41,7 @@ Guide to using Modello
       <plugin>
         <groupId>org.codehaus.modello</groupId>
         <artifactId>modello-maven-plugin</artifactId>
+        <version>1.0-alpha-18</version>
         <executions>
           <execution>
             <goals>

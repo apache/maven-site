@@ -9,7 +9,7 @@
 Guide to generating sources
 
  Let's run though a short example to try and help. To generate sources you must first have a plugin that
- participates in the generate-sources phase like the Antlr plugin:
+ participates in the <<<generate-sources>>> phase like the Antlr plugin:
 
 %{snippet|id=generate-sources-0|url=http://svn.codehaus.org/mojo/trunk/mojo/antlr-maven-plugin/src/main/java/org/codehaus/mojo/antlr/AntlrPlugin.java}
 
@@ -28,6 +28,7 @@ Guide to generating sources
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antlr-plugin</artifactId>
+        <version>2.0-beta-1</version>
         <configuration>
           <grammars>java.g</grammars>
         </configuration>
@@ -46,8 +47,8 @@ Guide to generating sources
 
 +----+
 
- If you then type "mvn compile" m2 will walk through the {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
+ If you then type "mvn compile" Maven will walk through the {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
  and will eventually hit the <<<generate-sources>>> phase and see you have a plugin configured that
- wants to participate in that phase and the antlr plugin is executed with
+ wants to participate in that phase and the Antlr plugin is executed with
  your given configuration.
 

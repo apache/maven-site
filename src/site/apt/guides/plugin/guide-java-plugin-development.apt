@@ -257,6 +257,7 @@ mvn groupID:artifactID:version:goal
       <plugin>
         <groupId>sample.plugin</groupId>
         <artifactId>maven-hello-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
         <executions>
           <execution>
             <phase>compile</phase>
@@ -346,6 +347,7 @@ mvn archetype:create \
 <plugin>
   <groupId>sample.plugin</groupId>
   <artifactId>maven-hello-plugin</artifactId>
+  <version>1.0-SNAPSHOT</version>
   <configuration>
     <greeting>Welcome</greeting>
   </configuration>

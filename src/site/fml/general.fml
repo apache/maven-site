@@ -95,10 +95,11 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-          <configuration>
-            <source>1.5</source>
-            <target>1.5</target>
-          </configuration>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
       </plugin>
     </plugins>
   ...
@@ -232,6 +233,7 @@ Where: <path-to-file>  the path to the file to load
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
+    <version>2.0-beta-6</version>
     <configuration>
       <outputEncoding>UTF-8</outputEncoding>
     </configuration>

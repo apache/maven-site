@@ -24,6 +24,7 @@ Example: Injecting POM Properties via Settings.xml
       <plugin>
         <groupId>org.myproject.plugins</groupId>
         <artifactId>my-cool-maven-plugin</artifactId>
+        <version>1.0</version>
         <configuration>
           <deploymentDirectory>${application-home}/deploy</deploymentDirectory>
         </configuration>
