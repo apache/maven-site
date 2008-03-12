@@ -309,6 +309,7 @@ Plugin Name
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
+        <version>2.2</version>
         <configuration>
           <minmemory>128m</minmemory>
           <maxmemory>512</maxmemory>
@@ -341,6 +342,7 @@ Plugin Name
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
+        <version>2.1</version>
       </plugin>
     </plugins>
   </reporting>    

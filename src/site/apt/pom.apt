@@ -780,7 +780,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-
+        <version>1.1</version>
         <executions>
           <execution>
             <id>echodir</id>
@@ -848,7 +848,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.0</version>
+          <version>2.2</version>
           <executions>
             <execution>
               <id>pre-process-classes</id>
@@ -985,6 +985,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
       <plugin>
         <outputDirectory>${basedir}/target/site</outputDirectory>
         <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.0.1</version>
         <reportSets>
           <reportSet></reportSet>
         </reportSets>

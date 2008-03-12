@@ -99,7 +99,7 @@ src/
      </build>
    </profile>
 
-   .. Other profiles goes here ..
+   .. Other profiles go here ..
 
  </profiles>
 ----

@@ -21,6 +21,7 @@ Guide to Working with Manifests
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.2</version>
         <configuration>
           <archive>
             <manifestEntries>
@@ -71,6 +72,7 @@ url: http://maven.apache.org
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
+        <version>2.2</version>
         <configuration>
           <archive>
             <!--
