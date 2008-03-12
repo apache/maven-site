@@ -27,15 +27,17 @@ Introduction to the Build Lifecycle
 
 * Table Of Contents
 
- * {{{introduction-to-the-lifecycle.html#Build_Lifecycle_Basics}Build Lifecycle Basics}}
+ * {{{Build_Lifecycle_Basics}Build Lifecycle Basics}}
 
- * {{{introduction-to-the-lifecycle.html#Setting_Up_Your_Project_To_Use_The_Build_Lifecycle}Setting Up Your Project To Use The Build Lifecycle}}
+ * {{{Setting_Up_Your_Project_to_Use_the_Build_Lifecycle}Setting Up Your Project to Use the Build Lifecycle}}
 
-   * {{{introduction-to-the-lifecycle.html#Packaging}Packaging}}
+   * {{{Packaging}Packaging}}
 
-   * {{{introduction-to-the-lifecycle.html#Plugins}Plugins}}
+   * {{{Plugins}Plugins}}
 
- * {{{introduction-to-the-lifecycle.html#Lifecycle_Reference}Lifecycle Reference}}
+ * {{{Lifecycle_Reference}Lifecycle Reference}}
+
+ * {{{Built-in_Lifecycle_Bindings}Built-in Lifecycle Bindings}}
 
  []
 
@@ -45,19 +47,19 @@ Introduction to the Build Lifecycle
   and distributing a particular artifact (project) is clearly defined.
 
   For the person building a project, this means that it is only necessary to learn a small set of commands to build any
-  Maven project, and the POM will ensure they get the results they desired.
+  Maven project, and the {{{introduction-to-the-pom.html}POM}} will ensure they get the results they desired.
 
-  There are three built-in Build Lifecycles: default, clean, and site. The default lifecycle handles your project
+  There are three built-in build lifecycles: default, clean and site. The default lifecycle handles your project
   deployment, the clean lifecycle handles project cleaning, while the site lifecycle handles the creation of your
   project's site documentation.
 
 **  {A Build Lifecycle is Made Up of Phases}
 
-  Each of these build lifecycles are defined by a different list of build phases, wherein a build phase represents a
+  Each of these build lifecycles is defined by a different list of build phases, wherein a build phase represents a
   stage in the lifecycle.
 
   For example, the default lifecycle has the following build phases (for a complete list of the build phases, refer
-  to the {{{introduction-to-the-lifecycle#Lifecycle_Reference}Lifecycle Reference}}):
+  to the {{{Lifecycle_Reference}Lifecycle Reference}}):
 
     * <<<validate>>> - validate the project is correct and all necessary information is available
 
@@ -78,13 +80,13 @@ Introduction to the Build Lifecycle
     * <<<deploy>>> - done in an integration or release environment, copies the final package to the remote repository
       for sharing with other developers and projects.
 
-  These build phases (plus the other build phases not shown here) and executed sequentially to complete the default
+  These build phases (plus the other build phases not shown here) are executed sequentially to complete the default
   lifecycle. Given the build phases above, this means that when the default lifecycle is used, Maven will first validate
-  the project, then will try to compile the sources, run those against the tests, packages the binaries (i.e jar), run
-  integration tests against that package, verifies the packaging, install the verifed package to the local repository,
-  then depoy the installed package in a specified environment.
+  the project, then will try to compile the sources, run those against the tests, package the binaries (e.g. jar), run
+  integration tests against that package, verify the package, install the verifed package to the local repository,
+  then deploy the installed package in a specified environment.
 
-  To do all those, you only need to call the last build phase to be executed, in this case, deploy.
+  To do all those, you only need to call the last build phase to be executed, in this case, <<<deploy>>>:
 
 -------
 mvn deploy
@@ -97,12 +99,12 @@ mvn deploy
 mvn integration-test
 -------
 
-  Will do every build phase before it (validate, compile, package), before executing integration-test.
+  will do every build phase before it (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), before executing <<<integration-test>>>.
 
   There are more commands that are part of the lifecycle, which will be discussed in the following sections.
 
   It should also be noted that the same command can be used in a multi-module scenario (i.e. a project with one or more
-  subprojects). For example;
+  subprojects). For example:
 
 ------
 mvn clean install
@@ -119,41 +121,41 @@ mvn clean install
   carries out those responsibilities may vary. And this is done by declaring the goals bound to those build phases.
 
   A goal represents a specific task (finer than a build phase) which contributes to the building and managing of a
-  project. It may bound itself to zero or more build phases. And a goal not bound to any build phase executes outside of
-  the build lifecycle. The order of execution depends on the order in which the goal(s) and the build phase(s) are
-  invoked. For exmaple, the in command below. The <<<clean>>> and <<<package>>> arguments are build phases. While the
+  project. It may be bound to zero or more build phases. A goal not bound to any build phase could be executed outside of
+  the build lifecycle by direct invocation. The order of execution depends on the order in which the goal(s) and the build phase(s) are
+  invoked. For example, consider the command below. The <<<clean>>> and <<<package>>> arguments are build phases while the
   <<<dependency:copy-dependencies>>> is a goal.
 
 ------
 mvn clean dependency:copy-dependencies package
 ------
 
-  If this were to be executed, the <<<clean>>> phase will first be executed (meaning it will run all preceeding phases,
+  If this were to be executed, the <<<clean>>> phase will be executed first (meaning it will run all preceeding phases of the clean lifecycle,
   plus the <<<clean>>> phase itself), and then the <<<dependency:copy-dependencies>>> goal, before finally executing the
-  <<<package>>> phase (and all its preceeding build phases).
+  <<<package>>> phase (and all its preceeding build phases of the default lifecycle).
 
   Moreover, if a goal is bound to one or more build phases, that goal will be called in all those phases.
 
   Furthermore, a build phase can also have zero or more goals bound to it. If a build phase has no goals bound to it,
   that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals
-  (<Note: as of maven-2.0.5, multiple goals bound to a phase are executed in the same order as they are declared in the
+  (<Note: As of Maven 2.0.5, multiple goals bound to a phase are executed in the same order as they are declared in the
   POM>).
 
-* {Setting Up Your Project To Use The Build Lifecycle}
+  <{{{introduction-to-the-lifecycle.html}[top]}}.>
+
+* {Setting Up Your Project to Use the Build Lifecycle}
 
  The build lifecycle is simple enough to use, but when you are constructing a Maven build for a project, how do you go
  about assigning tasks to each of those build phases?
 
-  <{{{introduction-to-the-lifecycle.html}[top]}}.>
-
 ** {Packaging}
 
- The first, and most common way, is to set the <<<packaging>>> for your project. Some of the valid <<<packaging>>>
- values are <<<jar>>>, <<<war>>>, <<<ear>>>, and <<<pom>>>. If no packaging value have been specified, it will default
+ The first, and most common way, is to set the packaging for your project via the equally named POM element <<<\<packaging\>>>>. Some of the valid
+ packaging values are <<<jar>>>, <<<war>>>, <<<ear>>> and <<<pom>>>. If no packaging value has been specified, it will default
  to <<<jar>>>.
 
- Each packaging contains a list of goals to bind to a particular phase. For example, a JAR will bind the following build
- phases to the default lifecycle.
+ Each packaging contains a list of goals to bind to a particular phase. For example, the <<<jar>>> packaging will bind the following
+ goals to build phases of the default lifecycle.
 
 *------------------------------+---------------------------------------------------------------------------------------+
 | <<<process-resources>>>      | <<<resources:resources>>>
@@ -173,43 +175,44 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                 | <<<deploy:deploy>>>
 *------------------------------+---------------------------------------------------------------------------------------+
 
-  This is an almost standard set of bindings; however, some packages handle them differently. For example, a project
-  that is purely metadata (packaging value is <<<pom>>>) only binds the <<<install>>> and <<<deploy>>> phases (for a
-  complete list of build-phase-to-goal binding of some of the <<<packaging>>>s, refer to the
-  {{{introduction-to-the-lifecycle#Lifecycle_Reference}Lifecycle Reference}}).
+  This is an almost standard set of bindings; however, some packagings handle them differently. For example, a project
+  that is purely metadata (packaging value is <<<pom>>>) only binds goals to the <<<install>>> and <<<deploy>>> phases (for a
+  complete list of goal-to-build-phase bindings of some of the packaging types, refer to the
+  {{{Lifecycle_Reference}Lifecycle Reference}}).
 
   Note that for some packaging types to be available, you may also need to include a particular plugin in your
-  <<<build>>> section of your POM (as described in the next section). One example of a plugin that requires this is the
+  <<<\<build\>>>> section of your POM (as described in the next section). One example of a plugin that requires this is the
   Plexus plugin, which provides a <<<plexus-application>>> and <<<plexus-service>>> packaging.
 
   <{{{introduction-to-the-lifecycle.html}[top]}}.>
 
 ** {Plugins}
 
-  The second way to add goals to phases is to configure plugins in your project. Plugins are artifacts that provides
+  The second way to add goals to phases is to configure plugins in your project. Plugins are artifacts that provide
   goals to Maven. Furthermore, a plugin may have one or more goals wherein each goal represents a capability of that
-  plugin. For example, the <<<maven-compiler-plugin>>> has two goals: <<<compile>>> and <<<testCompile>>>. The former
-  compiles the source code of your main code, while the latter compiles the source code of your test codes.
+  plugin. For example, the Compiler plugin has two goals: <<<compile>>> and <<<testCompile>>>. The former
+  compiles the source code of your main code, while the later compiles the source code of your test code.
 
-  As you will see in the later sections, plugins contain information that indicate which lifecycle phase to bind each
+  As you will see in the later sections, plugins can contain information that indicates which lifecycle phase to bind a
   goal to. Note that adding the plugin on its own is not enough information - you must also specify the goals you want
-  run as part of your build.
+  to run as part of your build.
 
   The goals that are configured will be added to the goals already bound to the lifecycle from the packaging selected.
   If more than one goal is bound to a particular phase, the order used is that those from the packaging are executed
-  first, followed by those configured in the POM. Note that you can use the <<<executions>>> element to gain more
+  first, followed by those configured in the POM. Note that you can use the <<<\<executions\>>>> element to gain more
   control over the order of particular goals.
 
-  For example, the Modello plugin always binds <<<modello:java>>> to the <<<generate-sources>>> phase (Note: the
-  <<<modello:java>>> goal generates java source codes). So to use the Modello plugin and have it generate sources from
-  a model and incorporate that into the build, you would add the following to your POM in the <<<plugins>>> section of
-  <<<build>>>:
+  For example, the Modello plugin binds by default its goal <<<modello:java>>> to the <<<generate-sources>>> phase (Note: The
+  <<<modello:java>>> goal generates Java source codes). So to use the Modello plugin and have it generate sources from
+  a model and incorporate that into the build, you would add the following to your POM in the <<<\<plugins\>>>> section of
+  <<<\<build\>>>>:
 
 ----
 ...
  <plugin>
    <groupId>org.codehaus.modello</groupId>
    <artifactId>modello-maven-plugin</artifactId>
+   <version>1.0-alpha-18</version>
    <executions>
      <execution>
        <configuration>
@@ -225,8 +228,8 @@ mvn clean dependency:copy-dependencies package
 ...
 ----
 
-  You might be wondering why that executions element is there. That is so that you can run the same goal multiple times
-  with different configuration if needed. Separate executions can also be given an ID so that during inheritence or the
+  You might be wondering why that <<<\<executions\>>>> element is there. That is so that you can run the same goal multiple times
+  with different configuration if needed. Separate executions can also be given an ID so that during inheritance or the
   application of profiles you can control whether goal configuration is merged or turned into an additional execution.
 
   When multiple executions are given that match a particular phase, they are executed in the order specified in the POM,
@@ -243,6 +246,7 @@ mvn clean dependency:copy-dependencies package
  <plugin>
    <groupId>com.mycompany.example</groupId>
    <artifactId>maven-touch-plugin</artifactId>
+   <version>1.0</version>
    <executions>
      <execution>
        <phase>process-test-resources</phase>
@@ -330,16 +334,20 @@ mvn clean dependency:copy-dependencies package
 | site-deploy                   | deploys the generated site documentation to the specified web server
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  Furthermore, some phases have goals binded to it by default. And for the default lifecycle, the bindings depends on
-  the <<<packaging>>> value. Here are some of the build-phase-to-goal bindings.
+  <{{{introduction-to-the-lifecycle.html}[top]}}.>
 
-  <<Clean Lifecycle Bindings>>
+* {Built-in Lifecycle Bindings}
+
+  Some phases have goals binded to them by default. And for the default lifecycle, these bindings depend on
+  the packaging value. Here are some of the goal-to-build-phase bindings.
+
+** Clean Lifecycle Bindings
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<clean>>>                   | <<<clean:clean>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Default Lifecycle - EJB / EJB3 / JAR / PAR / RAR / WAR Packaging>>
+** Default Lifecycle Bindings - Packaging <<<ejb>>> / <<<ejb3>>> / <<<jar>>> / <<<par>>> / <<<rar>>> / <<<war>>>
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<process-resources>>>       | <<<resources:resources>>>
@@ -359,7 +367,7 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                  | <<<deploy:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Default Lifecycle - EAR Packaging>>
+** Default Lifecycle Bindings - Packaging <<<ear>>>
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<generate-resources>>>      | <<<ear:generateApplicationXml>>>
@@ -373,7 +381,7 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                  | <<<deploy:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Default Lifecycle Bindings - maven-plugin Packaging>>
+** Default Lifecycle Bindings - Packaging <<<maven-plugin>>>
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<generate-resources>>>      | <<<plugin:descriptor>>>
@@ -395,7 +403,7 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                  | <<<deploy:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Default Lifecycle Bindings - POM Packaging>>
+** Default Lifecycle Bindings - Packaging <<<pom>>>
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<package>>>                 | <<<site:attach-descriptor>>>
@@ -405,7 +413,7 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                  | <<<deploy:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Site Lifecycle Bindings>>
+** Site Lifecycle Bindings
 
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<site>>>                    | <<<site:site>>>
@@ -413,10 +421,10 @@ mvn clean dependency:copy-dependencies package
 | <<<site-deploy>>>             | <<<site:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<References>>
+** References
 
- The full Maven lifecycle is defined
- {{{http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-core/src/main/resources/META-INF/plexus/components.xml}here}} for Maven 2.0.x
- and {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-core/src/main/resources/META-INF/plexus/components.xml}here}} for Maven 2.1.x.
+ The full Maven lifecycle is defined by the file <<<components.xml>>> in the module <<<maven-core>>> and viewable from SVN in the branches for
+ {{{http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.0.x}}
+ and {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.1.x}}.
 
   <{{{introduction-to-the-lifecycle.html}[top]}}.>
