@@ -46,7 +46,7 @@ Settings Reference
 
   * The Maven install: <<<$M2_HOME/conf/settings.xml>>>
 
-  * A user's install: <<<$\{user.dir\}/.m2/settings.xml>>>
+  * A user's install: <<<$\{user.home\}/.m2/settings.xml>>>
 
   []
 
@@ -82,7 +82,7 @@ Settings Reference
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <localRepository>${user.dir}/.m2/repository</localRepository>
+  <localRepository>${user.home}/.m2/repository</localRepository>
   <interactiveMode>true</interactiveMode>
   <usePluginRegistry>false</usePluginRegistry>
   <offline>false</offline>
@@ -95,7 +95,7 @@ Settings Reference
 
   * <<localRepository>>:
   This value is the path of this build system's local repository. The default value is
-  <<<$\{user.dir\}/.m2/repository>>>. This element is especially useful for a main build
+  <<<$\{user.home\}/.m2/repository>>>. This element is especially useful for a main build
   server allowing all logged-in users to build from a common local repository.
 
   * <<interactiveMode>>:
@@ -103,7 +103,7 @@ Settings Reference
   Defaults to <<<true>>>.
 
   * <<usePluginRegistry>>:
-  <<<true>>> if Maven should use the <<<$\{user.dir\}/.m2/plugin-registry.xml>>> file to manage plugin
+  <<<true>>> if Maven should use the <<<$\{user.home\}/.m2/plugin-registry.xml>>> file to manage plugin
   versions, defaults to <<<false>>>. <Note that for the current version of Maven 2.0, the
   plugin-registry.xml file should not be depended upon. Consider it dormant for now.>
 
@@ -367,7 +367,7 @@ mvn help:active-profiles
     <profile>
       ...
       <properties>
-        <user.install>${user.dir}/our-project</user.install>
+        <user.install>${user.home}/our-project</user.install>
       </properties>
       ...
     </profile>
