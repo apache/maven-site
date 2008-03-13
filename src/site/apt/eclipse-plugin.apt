@@ -37,13 +37,16 @@ M2Eclipse (Tycho)
   
   []
 
-Eclipse Foundation' Integration for Apache Maven
+Q for Eclipse / Eclipse Integration for Apache Maven (Proposal)
 
-  The Eclipse Foundation is going through the creation of an official project based on the work done at the
-  {{{http://code.google.com/p/q4e/}Q for Eclipse}} project, to develop in the foundation an official Maven 2 plugin.
+  Q is an Apache Maven plugin for Eclipse that will let you use Maven 2 from the Eclipse IDE.
 
-  The proposal is called {{{http://www.eclipse.org/proposals/iam/}Eclipse Integration for Apache Maven}}
-  ({{{http://www.eclipse.org/proposals/iam/}Eclipse IAM}}), and you can join the newsgroup at
+  Check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
+
+  This plugin forms the basis of the Eclipse Foundation project proposal called
+  {{{http://www.eclipse.org/proposals/iam/}Eclipse IAM}}.
+
+  You can join the newsgroup at
 
   * server: news.eclipse.org
 
@@ -53,5 +56,4 @@ Eclipse Foundation' Integration for Apache Maven
 
   []
 
-  The current implementation is at {{{http://code.google.com/p/q4e/}Q for Eclipse}},
-  check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
+
