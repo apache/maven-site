@@ -212,52 +212,6 @@
       </otherArchives>
     </mailingList>
 
-    <!-- duplication from continuum - temporary until the site layout is clearer -->
-    <mailingList>
-      <name>Continuum User List</name>
-      <post>continuum-users@maven.apache.org</post>
-      <subscribe>continuum-users-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>continuum-users-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-continuum-users/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/continuum-users@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Continuum---Users-f13868.html</otherArchive>
-        <otherArchive>http://maven.continuum.users.markmail.org/</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Continuum Developer List</name>
-      <post>continuum-dev@maven.apache.org</post>
-      <subscribe>continuum-dev-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>continuum-dev-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-continuum-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/continuum-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Continuum---Dev-f13867.html</otherArchive>
-        <otherArchive>http://maven.continuum.dev.markmail.org/</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Continuum Commits List</name>
-      <subscribe>continuum-commits-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>continuum-commits-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-continuum-commits/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/continuum-commits@maven.apache.org</otherArchive>
-        <otherArchive>http://maven.continuum.commits.markmail.org/</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Continuum Issues List</name>
-      <subscribe>continuum-issues-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>continuum-issues-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-continuum-issues/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/continuum-issues@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Continuum---Issues-f29618.html</otherArchive>
-      </otherArchives>
-    </mailingList>
-
     <!-- duplication from doxia - temporary until they inherit properly -->
     <mailingList>
       <name>Doxia Developer List</name>
