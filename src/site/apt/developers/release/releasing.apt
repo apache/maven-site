@@ -130,7 +130,7 @@ mvn release:prepare
 mvn release:perform
 +-----+
 
- [[4]] Stage the latest documentation
+ [[5]] Stage the latest documentation
 
  The plugin parent pom is configured to stage the documentation in a "versioned" directory
  such as <<</plugins/maven-XXX-plugin-Y.Z-SNAPSHOT>>>.
@@ -150,7 +150,7 @@ mvn site:stage-deploy -Preporting
 http://maven.apache.org/plugins/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
- [[3]] Propose a vote on the dev list with the closed issues, the issues left,
+ [[6]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
 +-----+
@@ -184,7 +184,7 @@ Vote open for 72 hours.
 
  Once a vote is successful, post the result to the dev list and cc the pmc.
 
- [[5]] Copy from the staging repo to the production repo
+ [[7]] Copy from the staging repo to the production repo
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
@@ -204,7 +204,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
 
  <<Releasing a Project Directly into a Production Repository>>
 
- If you want to release directly to a production repository then you simply configure the staging repository point at
+ If you want to release directly to a production repository then you simply configure the staging repository to point at
  the production repository by using the following in your <<<$HOME/.m2/settings.xml>>>:
 
 +-----+
@@ -223,10 +223,10 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
 </settings>
 +-----+
 
- This will allow you to bypass the staging phase and push the release directly into a production repository. It is assume that
+ This will allow you to bypass the staging phase and push the release directly into a production repository. It is assumed that
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
- [[6]] Deploy the current and versioned websites
+ [[8]] Deploy the current and versioned websites
 
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
 
@@ -236,7 +236,7 @@ mvn site-deploy -Preporting
 mvn site:stage-deploy -Preporting
 +-----+
 
- [[7]] Review Website
+ [[9]] Review Website
 
  Wait for the files to arrive at
 
@@ -244,18 +244,18 @@ mvn site:stage-deploy -Preporting
 http://maven.apache.org/plugins/maven-XXX-plugin
 +-----+
 
- [[8]] Update the plugins page
+ [[10]] Update the plugins page
 
  If this is a plugin release, update the version number for the plugin on the
  </plugins/index.html> page.
 
- [[9]] Update JIRA
+ [[11]] Update JIRA
 
  Go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
  the <<<Y.Z>>> version as released. Create version Y.Z+1, if that hasn't already
  been done.
 
- [[10]] Create an Announcement. For instance:
+ [[12]] Create an Announcement. For instance:
 
 +-----+
 From: YOUR_APACHE_EMAIL
@@ -288,9 +288,9 @@ Enjoy,
 
 +-----+
 
- [[11]] Add the release to the next board report, in the private subversion area.
+ [[13]] Add the release to the next board report, in the private subversion area.
 
- [[12]] Add the release to the wiki, under the <Recent Releases> section of the
+ [[14]] Add the release to the wiki, under the <Recent Releases> section of the
  front page and on the <Releases> page.
 
- [[13]] Celebrate :o)
+ [[15]] Celebrate :o)
