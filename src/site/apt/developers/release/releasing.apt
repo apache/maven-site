@@ -150,6 +150,15 @@ mvn site:stage-deploy -Preporting
 http://maven.apache.org/plugins/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
+ Some developers have {{{http://www.nabble.com/site%3Astage-deploy-asks-for-a-password--tt15582961s177.html}
+ reported problems}} with the stage-deploy goal.  In that case, you can stage the site locally and
+ upload it manually:
+
++------+
+mvn site:stage -Preporting
+scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
++------+
+
  [[6]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
@@ -226,14 +235,12 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
  This will allow you to bypass the staging phase and push the release directly into a production repository. It is assumed that
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
- [[8]] Deploy the current and versioned websites
+ [[8]] Deploy the current website
 
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
 
 +-----+
 mvn site-deploy -Preporting
-
-mvn site:stage-deploy -Preporting
 +-----+
 
  [[9]] Review Website
