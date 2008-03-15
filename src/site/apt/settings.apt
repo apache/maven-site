@@ -143,7 +143,7 @@ mvn castor-maven-plugin:generate
       <id>server001</id>
       <username>my_login</username>
       <password>my_password</password>
-      <privateKey>${usr.home}/.ssh/id_dsa</privateKey>
+      <privateKey>${user.home}/.ssh/id_dsa</privateKey>
       <passphrase>some_passphrase</passphrase>
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
@@ -164,7 +164,7 @@ mvn castor-maven-plugin:generate
 
   * <<privateKey>>, <<passphrase>>:
   Like the previous two elements, this pair specifies a path to a private key (default is
-  <<<$\{usr.home\}/.ssh/id_dsa>>>) and a <<<passphrase>>>, if required. The <<<passphrase>>> and <<<password>>> elements
+  <<<$\{user.home\}/.ssh/id_dsa>>>) and a <<<passphrase>>>, if required. The <<<passphrase>>> and <<<password>>> elements
   may be externalized in the future, but for now they must be set plain-text in the <<<settings.xml>>> file.
 
   * <<filePermissions>>, <<directoryPermissions>>:
