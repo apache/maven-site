@@ -156,7 +156,7 @@ http://maven.apache.org/plugins/plugins/maven-XXX-plugin-Y.Z/
 
 +------+
 mvn site:stage -Preporting
-scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
+scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
  [[6]] Propose a vote on the dev list with the closed issues, the issues left,
