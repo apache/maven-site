@@ -45,6 +45,7 @@ README = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.js = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.junit = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.m4 = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.mdo = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.mod = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.pdf = svn:mime-type=application/pdf
 *.pen = svn:eol-style=native;svn:keywords=Author Date Id Revision
