@@ -303,6 +303,8 @@ mvn clean dependency:copy-dependencies package
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<test-compile>>>            | compile the test source code into the test destination directory
 *-------------------------------+--------------------------------------------------------------------------------------+
+| <<<process-test-classes>>>    | post-process the generated files from test compilation, for example to do bytecode enhancement on Java classes. For Maven 2.0.5 and above.
+*-------------------------------+--------------------------------------------------------------------------------------+
 | <<<test>>>                    | run tests using a suitable unit testing framework. These tests should not require the code be packaged or deployed.
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<prepare-package>>>         | perform any operations necessary to prepare a package before the actual packaging. This often results in an unpacked, processed version of the package. (Maven 2.1 and above)
