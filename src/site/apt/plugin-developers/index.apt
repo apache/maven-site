@@ -24,7 +24,7 @@ Plugin Developers Centre
 
   * {{{plugin-documenting.html} Documenting your Plugin}} - How to write documentation for your plugins
 
-  * {{{cookbook/index.html} Plugins Cookbook}} - Examples for how to perform common tasks in plugins.
+  * {{{cookbook/index.html} Plugins Cookbook}} - Examples for how to perform common tasks in plugins
 
   []
 
@@ -35,6 +35,8 @@ Plugin Developers Centre
   * {{{../developers/mojo-api-specification.html} Mojo API and Annotation Reference}}
 
   * {{{../ref/current/index.html} Maven API Reference}}
+
+  * {{{../guides/mini/guide-maven-classloading.html} Maven Class Loading}}
 
   []
 

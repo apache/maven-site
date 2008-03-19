@@ -37,9 +37,9 @@ ${maven.home}/lib/*.jar
  runtime as required by the system.
 
  After that, each plugin has its own classloader, including its dependencies, itself, and the libraries above.
- It *does not* contain the project dependencies as in Maven 1.x, but instead has access to a list of JAR files in case
+ It <does not> contain the project dependencies as in Maven 1.x, but instead has access to a list of JAR files in case
  they are needed.
 
- In addition, a project can list <<extensions>>. These are loaded into <<<[plexus.maven.core]>>> classloader and
+ In addition, a project can list <extensions>. These are loaded into <<<[plexus.maven.core]>>> classloader and
  so available to the Maven core and all plug-ins for the current project and subsequent projects (in the future,
  we plan to remove it from subsequent projects).
