@@ -53,7 +53,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-alpha-1  | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.0          | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
+| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.0.1          | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | <<reporting>>                                             | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.> | |
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
@@ -69,7 +69,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-docck-plugin/} <<<docck>>>}}            | 1.0-beta-2 | Documentation checker plugin. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-docck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOCCK}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}        | 2.3    | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
+| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}        | 2.4    | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jxr-plugin/} <<<jxr>>>}}                | 2.1    | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
@@ -107,7 +107,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-release-plugin/} <<<release>>>}}        | 2.0-beta-7 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0-beta-2 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
+| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}  | 2.0    | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
