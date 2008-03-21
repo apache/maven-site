@@ -20,7 +20,7 @@ Guide to Creating Archetypes
  * the prototype files that are copied by the archetype (directory: 
    <<<src/main/resources/archetype-resources/>>>)
 
- * the prototpye pom (<<<pom.xml>>> in: 
+ * the prototype pom (<<<pom.xml>>> in: 
    <<<src/main/resources/archetype-resources>>>)
 
  * a pom for the archetype (<<<pom.xml>>> in the archetype's root directory).
@@ -40,19 +40,19 @@ Guide to Creating Archetypes
   <groupId>my.groupId</groupId>
   <artifactId>my-archetype-id</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>maven-plugin</packaging>
+  <packaging>jar</packaging>
 </project>
 
 +----+ 
 
   All you need to specify is a <<<groupId>>>, <<<artifactId>>> and 
   <<<version>>>. These three parameters will be needed later for invoking the 
-  archetype via <<<archetype:create>>> from the commandline.  
+  archetype via <<<archetype:create>>> from the commandline.
 
 * 2. Create the archetype descriptor
 
  The archetype descriptor is a file called <<<archetype.xml>>> which must be 
- located in <<<src/main/resources/META-INF/>>> An example for an archetype 
+ located in the <<<src/main/resources/META-INF/>>> directory. An example of an archetype 
  descriptor can be found in the quickstart archetype: 
 
 +----+
@@ -75,7 +75,7 @@ Guide to Creating Archetypes
  An optional <<<\<allowPartial\>true\</allowPartial\>>>> tag makes it possible 
  to run the <<<archetype:create>>> even on existing projects. 
 
- The <<<\<sources\>>>>, <<<\<resources\>>>>, <<<\<testResources\>>>> and 
+ The <<<\<sources\>>>>, <<<\<resources\>>>>, <<<\<testSources\>>>>, <<<\<testResources\>>>> and 
  <<<\<siteResources\>>>> tags represent the different sections of the project: 
 
  * <<<\<sources\>>>> = <<<src/main/java>>>
