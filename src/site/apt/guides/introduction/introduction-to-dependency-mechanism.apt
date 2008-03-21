@@ -106,9 +106,14 @@ Introduction to the Dependency Mechanism
      which contains it explicitly. The artifact is always available and is not
      looked up in a repository.
 
+ * <<import>>
+   - this scope is only used on a dependency of type "pom" in the dependencyManagement section. It indicates that the specified
+     pom should be replaced with the dependencies in that pom's dependencyManagement section. Since they are replaced,
+     dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency.
+
  []
 
- Each of the scopes affects transitive dependencies in different ways, as is demonstrated in the table below.
+ Each of the scopes (except for import) affects transitive dependencies in different ways, as is demonstrated in the table below.
  If a dependency is set to the scope in the left column, transitive dependencies of that dependency with the
  scope across the top row will result in a dependency in the main project with the scope listed at the
  intersection. If no scope is listed, it means the dependency will be omitted.
@@ -398,6 +403,342 @@ Introduction to the Dependency Mechanism
  The reference information about the dependency management tags is available from the
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
+** Importing Dependencies
+
+ <The features defined in this section are only available in maven 2.0.9 or later.>
+
+ The examples in the previous section describe how to specify managed dependencies through inheritence. However,
+ in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
+ To accomodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a
+ pom artifact as a dependency with a scope of "import".
+
+ Project B:
+
++----+
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven</groupId>
+  <artifactId>B</artifactId>
+  <packaging>pom</packaging>
+  <name>B</name>
+  <version>1.0</version>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>maven</groupId>
+        <artifactId>A</artifactId>
+        <version>1.0</version>
+	    <type>pom</type>
+	    <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>test</groupId>
+        <artifactId>d</artifactId>
+        <version>1.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>maven-test</groupId>
+      <artifactId>a</artifactId>
+      <version>1.0</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>maven-test</groupId>
+      <artifactId>c</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+  </dependencies>
+</project>
+
++----+
+
+ Assuming A is the pom defined in the preceding example, the end result would be the same. All of A's managed dependencies
+ would be incorporated into B except for d since it is defined in this pom.
+
+ Project X:
+
++----+
+
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>maven</groupId>
+ <artifactId>X</artifactId>
+ <packaging>pom</packaging>
+ <name>X</name>
+ <version>1.0</version>
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>a</artifactId>
+       <version>1.1</version>
+     </dependency>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>b</artifactId>
+       <version>1.0</version>
+       <scope>compile</scope>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
+</project>
+
++----+
+
+ Project Y:
+
++----+
+
+<project>
+ <modelVersion>4.0.0</modelVersion>
+ <groupId>maven</groupId>
+ <artifactId>Y</artifactId>
+ <packaging>pom</packaging>
+ <name>Y</name>
+ <version>1.0</version>
+ <dependencyManagement>
+   <dependencies>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>a</artifactId>
+       <version>1.2</version>
+     </dependency>
+     <dependency>
+       <groupId>test</groupId>
+       <artifactId>c</artifactId>
+       <version>1.0</version>
+       <scope>compile</scope>
+     </dependency>
+   </dependencies>
+ </dependencyManagement>
+</project>
+
++----+
+
+ Project Z:
+
++----+
+
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>maven</groupId>
+  <artifactId>Z</artifactId>
+  <packaging>pom</packaging>
+  <name>Z</name>
+  <version>1.0</version>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>maven</groupId>
+        <artifactId>X</artifactId>
+        <version>1.0</version>
+	<type>pom</type>
+	<scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>maven</groupId>
+        <artifactId>Y</artifactId>
+        <version>1.0</version>
+	<type>pom</type>
+	<scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+</project>
+
++----+
+
+ In the example above Z imports the managed dependencies from both X and Y. However, both X and Y contain depedency a. Here,
+ version 1.1 of a would be used since X is declared first and a is not declared in Z's dependencyManagement.
+
+ This process is recursive. For example, if X imports another pom, Q, when Z is processed it will simply appear that all
+ of Q's managed dependencies are defined in X.
+
+ Imports are most effective when used for defining a "library" of related artifacts that are generally part of a
+ multiproject build. It is fairly common for one project to use one or more artifacts from these libraries.
+ However, it has sometimes been difficult to keep the versions in the project using the artifacts in synch
+ with the versions distributed in the library. The pattern below illustrates how a "bill of materials" (BOM) can be
+ created for use by other projects.
+
+ The root of the project is the BOM pom. It defines the versions of all the artifacts that will be created
+ in the library. Other projects that wish to use the library should import this pom into the dependencyManagement
+ section of their pom.
+
++----+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.test</groupId>
+  <artifactId>bom</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+   <properties>
+     <project1Version>1.0.0</project1Version>
+     <project2Version>1.0.0</project2Version>
+   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.test</groupId>
+        <artifactId>project1</artifactId>
+        <version>${project1Version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.test</groupId>
+        <artifactId>project2</artifactId>
+        <version>${project1Version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <modules>
+    <module>parent</module>
+  </modules>
+</project>
+
++----+
+
+ The parent subproject has the BOM pom as its parent. It is a normal multiproject pom.
+
++----+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test</groupId>
+    <version>1.0.0</version>
+    <artifactId>bom</artifactId>
+  </parent>
+
+  <groupId>com.test</groupId>
+  <artifactId>parent</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.12</version>
+      </dependency>
+      <dependency>
+        <groupId>commons-logging</groupId>
+        <artifactId>commons-logging</artifactId>
+        <version>1.1.1</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <modules>
+    <module>project1</module>
+    <module>project2</module>
+  </modules>
+</project>
+
++----+
+
+ Next are the actual project poms.
+
++----+
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test</groupId>
+    <version>1.0.0</version>
+    <artifactId>parent</artifactId>
+  </parent>
+  <groupId>com.test</groupId>
+  <artifactId>project1</artifactId>
+  <version>${project1Version}</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>log4j</groupId>
+      <artifactId>log4j</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.test</groupId>
+    <version>1.0.0</version>
+    <artifactId>parent</artifactId>
+  </parent>
+  <groupId>com.test</groupId>
+  <artifactId>project2</artifactId>
+  <version>${project2Version}</version>
+  <packaging>jar</packaging>
+
+  <dependencies>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+
++----+
+
+ The project that follows shows how the library can now be used in another project without having to
+ specify the dependent project's versions.
+
++----+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.test</groupId>
+  <artifactId>use</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.test</groupId>
+        <artifactId>bom</artifactId>
+        <version>1.0.0</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>com.test</groupId>
+      <artifactId>project1</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.test</groupId>
+      <artifactId>project2</artifactId>
+    </dependency>
+  </dependencies>
+</project>
+
++----+
+
+ Finally, when creating projects that import dependencies beware of the following:
+
+ * Do not attempt to import a pom that is defined in a submodule of the current pom.
+     Attempting to do that will result in the build failing since it won't be able to locate the pom.
+
+ * Never declare the pom importing a pom as the parent (or grandparent, etc) of the target pom.
+   There is no way to resolve the cicularity and an exception will be thrown.
+     
+ * When referring to artifacts whose poms have transitive dependencies the project will need to specify versions
+     of those artifacts as managed dependencies. Not doing so will result in a build failure since the
+     artifact may not have a version specified. (This should be considered a best practice in any case as it
+     keeps the versions of artifacts from changing from one build to the next).
 
 * System Dependencies
 
