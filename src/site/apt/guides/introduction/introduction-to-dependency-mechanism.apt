@@ -429,8 +429,8 @@ Introduction to the Dependency Mechanism
         <groupId>maven</groupId>
         <artifactId>A</artifactId>
         <version>1.0</version>
-	    <type>pom</type>
-	    <scope>import</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>test</groupId>
@@ -536,15 +536,15 @@ Introduction to the Dependency Mechanism
         <groupId>maven</groupId>
         <artifactId>X</artifactId>
         <version>1.0</version>
-	<type>pom</type>
-	<scope>import</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>maven</groupId>
         <artifactId>Y</artifactId>
         <version>1.0</version>
-	<type>pom</type>
-	<scope>import</scope>
+        <type>pom</type>
+        <scope>import</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -577,10 +577,10 @@ Introduction to the Dependency Mechanism
   <artifactId>bom</artifactId>
   <version>1.0.0</version>
   <packaging>pom</packaging>
-   <properties>
-     <project1Version>1.0.0</project1Version>
-     <project2Version>1.0.0</project2Version>
-   </properties>
+  <properties>
+    <project1Version>1.0.0</project1Version>
+    <project2Version>1.0.0</project2Version>
+  </properties>
   <dependencyManagement>
     <dependencies>
       <dependency>
