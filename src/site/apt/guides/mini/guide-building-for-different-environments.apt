@@ -24,8 +24,8 @@ Building For Different Environments with Maven 2
   
   
   This example assume the use of the
-     {{{../introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}. A fully-working
-     example project can be found {{{http://www.codehaus.org/~trygvis/static/2006/simpleenvironment.tar.gz} here}}.
+     {{{../introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}. Also available
+     for download is a {{{http://www.codehaus.org/~trygvis/static/2006/simpleenvironment.tar.gz} fully-working example project}}.
   
 ----
 pom.xml

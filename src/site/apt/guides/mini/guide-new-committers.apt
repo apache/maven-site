@@ -14,8 +14,8 @@ Guide for new commiters
  Agreement}}.
 
  While this process is sorting itself out it is recommended that you peruse
- the various guides provided by Apache. All the guides are located
- {{{http://www.apache.org/dev/}here}}.
+ the various guides provided by Apache. All the guides are located in the
+ {{{http://www.apache.org/dev/}Development Infrastructure Information}}.
 
  Of particular interest is the {{{http://www.apache.org/dev/committers.html}Committer's FAQ}} and the 
  {{{http://www.apache.org/dev/new-committers-guide.html}New Committer's Guide}}.

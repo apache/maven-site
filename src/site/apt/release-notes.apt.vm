@@ -37,7 +37,7 @@ Maven ${currentVersion}
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
-  See {{{plugins/index.html} Plugin List}} for more information.
+  See the {{{plugins/index.html} Plugin List}} for more information.
 
   We hope you enjoy using Maven! If you have any questions, please consult:
 
@@ -53,13 +53,13 @@ Maven ${currentVersion}
 
   Release Notes - Maven 2 - Version 2.0.8
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=13139&styleName=Text&projectId=10500&Create=Create}here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=13139&styleName=Text&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
 
 ** Changes that may affect existing builds
   
   
   *{{{http://jira.codehaus.org/browse/MNG-3118} MNG-3118}} - Test-classes should come before classes in the classpath. This may slightly alter
-  behavior of tests. The test-classes is now included first in the classpath to allow test resources to override normal runtime ones.
+  behavior of tests. The <<<test-classes>>> directory is now included first in the classpath to allow test resources to override normal runtime ones.
   
 ** Bug
 
@@ -138,7 +138,7 @@ Maven ${currentVersion}
     
 * 2.0.7 Release Notes
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&fixfor=13138&pid=10500&sorter/field=issuekey&sorter/order=DESC}issue management system}}, and is reproduced below.
 
 **Bug      
    
@@ -210,14 +210,14 @@ Maven ${currentVersion}
 
 * 2.0.6 Release Notes
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=13010&sorter/field=issuekey&sorter/order=DESC}
-  here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&&pid=10500&fixfor=13010&sorter/field=issuekey&sorter/order=DESC}
+  issue management system}}, and is reproduced below.
 
 ** Changes that may affect existing builds
 
-    * {{{http://jira.codehaus.org/browse/MNG-1577} MNG-1577}} - Maven will now only obey the dependendencyManagment element in the POM and
-      will align all transitive dependencies to versions specified in the dependencyManagement. To detect any problems that you might have
-      you can refer to these {{{http://maven.apache.org/plugins/maven-dependency-plugin/examples/preparing-dependencies.html}notes}} to
+    * {{{http://jira.codehaus.org/browse/MNG-1577} MNG-1577}} - Maven will now only obey the <<<\<dependencyManagement\>>>> element in the POM and
+      will align all transitive dependencies to versions specified in the <<<\<dependencyManagement\>>>>. To detect any problems that you might have
+      you can refer to these {{{http://maven.apache.org/plugins/maven-dependency-plugin/examples/preparing-dependencies.html}upgrade notes for Maven 2.0.6}} to
       prepare for the upgrade.
 
 ** Bug
@@ -273,8 +273,8 @@ Maven ${currentVersion}
 
 * 2.0.5 Release Notes
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=12294&styleName=Text&projectId=10500&Create=Create}
-  here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=12294&styleName=Text&projectId=10500&Create=Create}
+  issue management system}}, and is reproduced below.
 
 ** Changes that may affect existing builds
 

@@ -24,7 +24,7 @@ Getting Help
 
   Someone else might have experienced the same problem as you before. A list
   of mail-archives can be found on
-  {{{http://maven.apache.org/mail-lists.html}this page}}. Please search one of
+  {{{http://maven.apache.org/mail-lists.html}mailing list index page}}. Please search one of
   them before going any further.
 
 *Ask on the user list
@@ -41,8 +41,8 @@ Getting Help
   the plugins, you should report it to our issue management system JIRA.
 
   First of all you need to create an account in JIRA. This is so that we can
-  communicate with you while we work together on the issue. Go
-  {{{http://jira.codehaus.org/secure/Signup!default.jspa}here}} to create an
+  communicate with you while we work together on the issue. Go to the
+  {{{http://jira.codehaus.org/secure/Signup!default.jspa}sign up form}} to create an
   account if you don't already have one.
 
 **Where?
@@ -52,8 +52,8 @@ Getting Help
   correct link is important. Click on <Project Information> and then
   <Issue Tracking>. On that page you will find the correct link.
 
-  If the problem is in Maven itself you can find the link on
-  {{{http://maven.apache.org/issue-tracking.html}this page}}.
+  If the problem is in Maven itself you can find the appropriate link on the
+  {{{http://maven.apache.org/issue-tracking.html}issue tracking page}}.
 
 **How?
 
@@ -73,8 +73,8 @@ Getting Help
   when we test it.
 
   What we like best are patches that fixes the problem. If you want to create a
-  patch for an issue please read
-  {{{../guides/development/guide-m2-development.html}this document}} first.
+  patch for an issue please read the
+  {{{../guides/development/guide-m2-development.html}Maven Developer Guide}} first.
 
 * References
 
