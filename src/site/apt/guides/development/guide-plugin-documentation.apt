@@ -225,13 +225,13 @@ Plugin Name
 
 * Goals Overview
 
-  General Information about the goals.
+  General information about the goals.
 
   * {{{<goal>.html}prefix:goal}} short description for this plugin goal.
 
 * Usage
 
-  Instructions on how to use the Plugin Name can be found {{{usage.html}here}}.
+  Instructions on how to use the Plugin Name can be found on the {{{usage.html}usage page}}.
 
 * Examples
 

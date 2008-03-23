@@ -31,7 +31,7 @@ Guide to Maven 2.x auto completion using BASH
 
  First you must go to the following site to install the BASH programmable
  auto completion setup if your distro doesn't have it by default. I don't
- think many do so you'll need to go {{{http://www.caliban.org/bash/index.shtml#completion}here}}.
+ think many do so you'll need to go to the {{{http://www.caliban.org/bash/index.shtml#completion}Programmable Completion Website}}.
 
  Once you've setup your system for auto completion you need to take the
  following:

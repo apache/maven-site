@@ -41,7 +41,7 @@ Using Mirrors for Repositories
 </settings>
 +-----+
 
- The settings descriptor documentation can be found {{{../../maven-settings/settings.html}here}}.
+ The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
 
  <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>, the following mirrors may not have the same contents
  and we don't support them in any way, although we try to keep info in this page accurate.

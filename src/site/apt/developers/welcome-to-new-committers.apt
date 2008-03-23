@@ -13,7 +13,7 @@ Guide for new Maven committers
  that need to be sorted out before you can participate fully.
 
  The first thing to get out of the way is sending in your contributor's license agreement (CLA). You
- can't participate at Apache until we have received your signed CLA, so go {{{http://www.apache.org/licenses/#clas}here}},
+ can't participate at Apache until we have received your signed CLA, so go to the {{{http://www.apache.org/licenses/#clas}Apache website}},
  print out the CLA, sign it, and send it in ASAP.
 
  Once you've dealt with your CLA, there are a some documents that pertain to Apache as a whole you should

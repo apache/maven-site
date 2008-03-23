@@ -30,7 +30,7 @@ Maven Ant Tasks
 
 * 2.0.8 Release Notes
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=11533&fixfor=13618&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=11533&fixfor=13618&sorter/field=issuekey&sorter/order=DESC}issue management system}}, and is reproduced below.
 
 **Bug
 
@@ -78,7 +78,7 @@ Maven Ant Tasks
     [[2]][MANTTASKS-65]:  central repository is not automatically added any more if a remoteRepository is set: the code has been changed to work
     as expected and documented (explicit declaration)
 
-  The full list of changes can be found {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&fixfor=13521&pid=11533&sorter/field=issuekey&sorter/order=DESC}here}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&fixfor=13521&pid=11533&sorter/field=issuekey&sorter/order=DESC}issue management system}}, and is reproduced below.
 
 **Bug
 
