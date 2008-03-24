@@ -6,10 +6,10 @@
  January 2008
  ------
 
-Coping with SUN JARs
+Coping with Sun JARs
 
  Often users are confronted with the need to build against JARs provide by
- SUN like the {{{http://java.sun.com/products/javamail/}JavaMail}} JAR, or the
+ Sun like the {{{http://java.sun.com/products/javamail/}JavaMail}} JAR, or the
  {{{http://java.sun.com/products/javabeans/jaf/downloads/index.html}Activation}} JAR
  and users have found these JARs not present in central repository resulting
  in a broken build. Unfortunately most of these artifacts fall under Sun's
@@ -19,54 +19,54 @@ Coping with SUN JARs
  for naming their own JARs so we have taken steps in suggesting some common
  names for Sun's artifacts. You can find a list of our suggestions here:
 
-*----------------------------------------------+-------------------+----------------+
-|Product artifact                              | Group ID          | Artifact ID
-*----------------------------------------------+-------------------+----------------+
-| Java Activation Framework                    | javax.activation  | activation
-*----------------------------------------------+-------------------+----------------+
-| J2EE                                         | javax.j2ee        | j2ee
-*----------------------------------------------+-------------------+----------------+
-| JDO                                          | javax.jdo         | jdo
-*----------------------------------------------+-------------------+----------------+
-| JMS                                          | javax.jms         | jms
-*----------------------------------------------+-------------------+----------------+
-| JavaMail                                     | javax.mail        | mail
-*----------------------------------------------+-------------------+----------------+
-| EJB 3                                        | javax.persistence | ejb
-*----------------------------------------------+-------------------+----------------+
-| J2EE Connector Architecture                  | javax.resource    | connector
-*----------------------------------------------+-------------------+----------------+
-| J2EE Connector Architecture API              | javax.resource    | connector-api
-*----------------------------------------------+-------------------+----------------+
-| Java Authentication and Authorization Service| javax.security    | jaas
-*----------------------------------------------+-------------------+----------------+
-| Java Authorization Contract for Containers   | javax.security    | jacc
-*----------------------------------------------+-------------------+----------------+
-| Servlet                                      | javax.servlet     | servlet-api
-*----------------------------------------------+-------------------+----------------+
-| Servlet JSP                                  | javax.servlet     | jsp-api
-*----------------------------------------------+-------------------+----------------+
-| Servlet JSTL                                 | javax.servlet     | jstl
-*----------------------------------------------+-------------------+----------------+
-| JDBC 2.0 Optional Package                    | javax.sql         | jdbc-stdext
-*----------------------------------------------+-------------------+----------------+
-| Java Transaction API (JTA)                   | javax.transaction | jta
-*----------------------------------------------+-------------------+----------------+
-| Java XML RPC                                 | javax.xml         | jaxrpc
-*----------------------------------------------+-------------------+----------------+
-| Portlet                                      | javax.portlet     | portlet-api
-*----------------------------------------------+-------------------+----------------+
-| JNDI                                         | javax.naming      | jndi
-*----------------------------------------------+-------------------+----------------+
+*----------------------------------------------------------+-------------------+----------------+
+| Product artifact                                         | Group ID          | Artifact ID
+*----------------------------------------------------------+-------------------+----------------+
+| Java Activation Framework                                | javax.activation  | activation
+*----------------------------------------------------------+-------------------+----------------+
+| J2EE                                                     | javax.j2ee        | j2ee
+*----------------------------------------------------------+-------------------+----------------+
+| Java Data Object (JDO)                                   | javax.jdo         | jdo
+*----------------------------------------------------------+-------------------+----------------+
+| Java Message Service (JMS)                               | javax.jms         | jms
+*----------------------------------------------------------+-------------------+----------------+
+| JavaMail                                                 | javax.mail        | mail
+*----------------------------------------------------------+-------------------+----------------+
+| Java Persistence API (JPA) / EJB 3                       | javax.persistence | persistence-api
+*----------------------------------------------------------+-------------------+----------------+
+| J2EE Connector Architecture                              | javax.resource    | connector
+*----------------------------------------------------------+-------------------+----------------+
+| J2EE Connector Architecture API                          | javax.resource    | connector-api
+*----------------------------------------------------------+-------------------+----------------+
+| Java Authentication and Authorization Service (JAAS)     | javax.security    | jaas
+*----------------------------------------------------------+-------------------+----------------+
+| Java Authorization Contract for Containers               | javax.security    | jacc
+*----------------------------------------------------------+-------------------+----------------+
+| Servlet API                                              | javax.servlet     | servlet-api
+*----------------------------------------------------------+-------------------+----------------+
+| Servlet JavaServer Pages (JSP)                           | javax.servlet     | jsp-api
+*----------------------------------------------------------+-------------------+----------------+
+| Servlet JavaServer Pages Standard Tag Library (JSTL)     | javax.servlet     | jstl
+*----------------------------------------------------------+-------------------+----------------+
+| JDBC 2.0 Optional Package                                | javax.sql         | jdbc-stdext
+*----------------------------------------------------------+-------------------+----------------+
+| Java Transaction API (JTA)                               | javax.transaction | jta
+*----------------------------------------------------------+-------------------+----------------+
+| Java XML RPC                                             | javax.xml         | jaxrpc
+*----------------------------------------------------------+-------------------+----------------+
+| Portlet                                                  | javax.portlet     | portlet-api
+*----------------------------------------------------------+-------------------+----------------+
+| Java Naming and Directory Interface (JNDI)               | javax.naming      | jndi
+*----------------------------------------------------------+-------------------+----------------+
 
  If you use our suggestions as noted above when adding a Sun dependency to your
  POM, Maven 2.x can help you locate the JARs by providing
  the site where they can be retrieved. It is important that you follow
- the suggested naming conventions as we cannot store the JARs at Ibiblio we
- can store metadata about those JARs and it is the metadata that contains
+ the suggested naming conventions as we cannot store the JARs at Ibiblio. We
+ can only store metadata about those JARs and it is the metadata that contains
  location and retrieval information.
 
- Once you have downloaded a particular SUN JAR to your system you can install the JAR
+ Once you have downloaded a particular Sun JAR to your system you can install the JAR
  in your local repository. Please refer to our {{{guide-3rd-party-jars-local.html}Guide to installing 3rd party JARs}}
  for instructions on how to accomplish this.
 
