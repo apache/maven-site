@@ -127,7 +127,7 @@ mvn castor-maven-plugin:generate
 
 * {Servers}
 
-  The <<<distributionManagement>>> element of the POM defines the repositories for deploment.
+  The repositories for deployment are defined by the {{{pom.html#Distribution_Management}<<<distributionManagement>>>}} element of the POM.
   However, certain settings such as <<<username>>> and <<<password>>> should not be distributed
   along with the <<<pom.xml>>>. This type of information should exist on the build server in the
   <<<settings.xml>>>.
