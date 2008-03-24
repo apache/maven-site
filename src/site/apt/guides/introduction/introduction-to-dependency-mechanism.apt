@@ -89,35 +89,37 @@ Introduction to the Dependency Mechanism
 
  There are 5 scopes available:
 
- * <<compile>>
-   - this is the default scope, used if none is specified. Compile dependencies are available
-     in all classpaths.
+ * <<compile>>\
+   This is the default scope, used if none is specified. Compile dependencies are available
+   in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.
 
- * <<provided>>
-   - this is much like compile, but indicates you expect the JDK or a container to provide it.
-     It is only available on the compilation classpath, and is not transitive.
+ * <<provided>>\
+   This is much like <<<compile>>>, but indicates you expect the JDK or a container to provide the dependency. For
+   example, when building a web application for the Java Enterprise Edition, you would set the dependency on the
+   Servlet API and related Java EE APIs to scope <<<provided>>> because the web container provides those classes. This
+   scope is only available on the compilation classpath, and is not transitive.
 
- * <<runtime>>
-   - this scope indicates that the dependency is not required for compilation, but is for
-     execution. It is in the runtime and test classpaths, but not the compile classpath.
+ * <<runtime>>\
+   This scope indicates that the dependency is not required for compilation, but is for
+   execution. It is in the runtime and test classpaths, but not the compile classpath.
 
- * <<test>>
-   - this scope indicates that the dependency is not required for normal use of the application, and
-     is only available for the test compilation and execution phases.
+ * <<test>>\
+   This scope indicates that the dependency is not required for normal use of the application, and
+   is only available for the test compilation and execution phases.
 
- * <<system>>
-   - this scope is similar to provided except that you have to provide the JAR
-     which contains it explicitly. The artifact is always available and is not
-     looked up in a repository.
+ * <<system>>\
+   This scope is similar to <<<provided>>> except that you have to provide the JAR
+   which contains it explicitly. The artifact is always available and is not
+   looked up in a repository.
 
- * <<import>>
-   - this scope is only used on a dependency of type "pom" in the dependencyManagement section. It indicates that the specified
-     pom should be replaced with the dependencies in that pom's dependencyManagement section. Since they are replaced,
-     dependencies with a scope of import do not actually participate in limiting the transitivity of a dependency.
+ * <<import>>\
+   This scope is only used on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It indicates that the specified
+   POM should be replaced with the dependencies in that POM's <<<\<dependencyManagement\>>>> section. Since they are replaced,
+   dependencies with a scope of <<<import>>> do not actually participate in limiting the transitivity of a dependency.
 
  []
 
- Each of the scopes (except for import) affects transitive dependencies in different ways, as is demonstrated in the table below.
+ Each of the scopes (except for <<<import>>>) affects transitive dependencies in different ways, as is demonstrated in the table below.
  If a dependency is set to the scope in the left column, transitive dependencies of that dependency with the
  scope across the top row will result in a dependency in the main project with the scope listed at the
  intersection. If no scope is listed, it means the dependency will be omitted.
@@ -135,7 +137,7 @@ Introduction to the Dependency Mechanism
 *----------+------------+----------+----------+------+
 
  <<(*) Note:>>
- it is intended that this should be runtime instead, so that all compile dependencies must
+ it is intended that this should be runtime scope instead, so that all compile dependencies must
  be explicitly listed - however, there is the case where the library you depend on extends a class from another
  library, forcing you to have available at compile time. For this reason, compile time dependencies remain
  as compile scope even when they are transitive.
