@@ -298,7 +298,7 @@ POM Reference
 </project>
 +-----------------+
 
-  * <<groupId>>, <<artifactId>>, <<version>>:
+  * <<groupId>>, <<artifactId>>, <<version>>:\
   These elements are self-explanatory, and you will see them often. This trinity represents the coordinate
   of a specific project in time, demarcating it as a dependency of this project. You may be thinking:
   "This means that my project can only depend upon Maven artifacts!" The answer is, "Of course, but that's a
@@ -326,14 +326,26 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
    []
 
-  * <<type>>:
+  * <<classifier>>:\
+  The classifier allows to distinguish artifacts that were built from the same POM but differ in their content. It is
+  some optional and arbitrary string that - if present - is appended to the artifact name just after the version number.
+  
+  As a motivation for this element, consider for example a project that offers an artifact targeting JRE 1.5 but at the
+  same also an artifact that still supports JRE 1.4. The first artifact could be equipped with the classifier
+  <<<jdk15>>> and the second one with <<<jdk14>>> such that clients can choose which one to use.
+  
+  Another common use case for classifiers is the need to attach secondary artifacts to the project's main artifact. If
+  you browse the Maven central repository, you will notice that the classifiers <<<sources>>> and <<<javadoc>>> are used
+  to deploy the project source code and API docs along with the packaged class files.
+
+  * <<type>>:\
   Corresponds to the dependant artifact's <<<packaging>>> type. This defaults to <<<jar>>>. While it usually represents
   the extension on the filename of the dependency, that is not always the case. A type can be mapped to a
   different extension and a classifier. The type often correspongs to the packaging used, though this is
   also not always the case. Some examples are <<<jar>>>, <<<ejb-client>>> and <<<test-jar>>>. New types can be
   defined by plugins that set <<<extensions>>> to true, so this is not a complete list.
 
-  * <<scope>>:
+  * <<scope>>:\
   This element refers to the classpath of the task at hand (compiling and runtime, testing, etc.) as well as
   how to limit the transitivity of a depedency. There are five scopes available:
 
@@ -347,7 +359,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
     * <<system>> - this scope is similar to provided except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.
 
-  * <<systemPath>>:
+  * <<systemPath>>:\
   is used <only> if the the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
   element is set. The path must be absolute, so it is recommended to use a property to specify the
   machine-specific path (more on <<<properties>>> below),
@@ -355,7 +367,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   Maven will not check the repositories for the project, but instead checks to ensure that the file exists.
   If not, Maven will fail the build and suggest that you download and install it manually.
 
-  * <<optional>>:
+  * <<optional>>:\
   Marks optional a dependency when this project itself is a dependency. Confused?
   For example, imagine a project <<<A>>> that depends upon project <<<B>>> to
   compile a portion of code that may not be used at runtime, then we may have no need for project <<<B>>>
