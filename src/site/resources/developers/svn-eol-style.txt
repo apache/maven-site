@@ -8,9 +8,11 @@ Makefile = svn:eol-style=native;svn:keywords=Author Date Id Revision
 README = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.aart = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.ac = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.aj = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.am = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.apt = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.bat = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.bsh = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.c = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.cat = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.cgi = svn:eol-style=native;svn:keywords=Author Date Id Revision
