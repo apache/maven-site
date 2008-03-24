@@ -16,17 +16,21 @@ Introduction to the Dependency Mechanism
 
   Learn more about:
 
- * Transitive Dependencies
+ * {{{Transitive_Dependencies}Transitive Dependencies}}
 
- * Dependency Scope
+   * Excluded/Optional Dependencies
 
- * Dependency Management
- 
- * Excluded/Optional Dependencies
+ * {{{Dependency_Scope}Dependency Scope}}
+
+ * {{{Dependency_Management}Dependency Management}}
+
+   * {{{Importing_Dependencies}Importing Dependencies}}
+
+ * {{{System_Dependencies}System Dependencies}}
 
  []
 
-* Transitive Dependencies
+* {Transitive Dependencies}
 
  Transitive dependencies are a new feature in Maven 2.0. This allows you to avoid needing to discover and
  specify the libraries that your own dependencies require, and including them automatically.
@@ -78,7 +82,7 @@ Introduction to the Dependency Mechanism
 
  []
 
-* Dependency Scope
+* {Dependency Scope}
 
  Dependency scope is used to limit the transitivity of a depedency, and also to affect the classpath used for
  various build tasks.
@@ -136,7 +140,7 @@ Introduction to the Dependency Mechanism
  library, forcing you to have available at compile time. For this reason, compile time dependencies remain
  as compile scope even when they are transitive.
 
-* Dependency Management
+* {Dependency Management}
 
  The dependency management section is a mechanism for centralizing dependency information. When you have
  a set of projects that inherits a common parent it's possible to put all information about the dependency
@@ -403,7 +407,7 @@ Introduction to the Dependency Mechanism
  The reference information about the dependency management tags is available from the
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
-** Importing Dependencies
+** {Importing Dependencies}
 
  <The features defined in this section are only available in maven 2.0.9 or later.>
 
@@ -740,7 +744,7 @@ Introduction to the Dependency Mechanism
      artifact may not have a version specified. (This should be considered a best practice in any case as it
      keeps the versions of artifacts from changing from one build to the next).
 
-* System Dependencies
+* {System Dependencies}
 
  Dependencies with the scope <system> are always available and are not looked
  up in repository. They are usually used to tell Maven about dependencies which
