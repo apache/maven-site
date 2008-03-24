@@ -111,10 +111,10 @@ Useful software
  The Maven Team uses several software. Here is a partial list:
 
  * {{{http://www.cygwin.com/}Cygwin}}: collection of free software tools to allow various versions of Microsoft
-  Windows to act somewhat like a Unix system
+   Windows to act somewhat like a Unix system
 
- * {{{http://winscp.net/}Winscp}}: SFTP client for Windows.
+ * {{{http://winscp.net/}WinSCP}}: SFTP client for Windows.
 
- * {{{http://tortoisesvn.tigris.org/}Tortoisesvn}}: Subversion client, implemented as a windows shell extension.
+ * {{{http://tortoisesvn.tigris.org/}TortoiseSVN}}: Subversion client, implemented as a Windows shell extension.
 
  * {{{http://www.gnupg.org/}GnuPG}}: GNU Privacy Guard.
