@@ -62,7 +62,7 @@ Coping with Sun JARs
  If you use our suggestions as noted above when adding a Sun dependency to your
  POM, Maven 2.x can help you locate the JARs by providing
  the site where they can be retrieved. It is important that you follow
- the suggested naming conventions as we cannot store the JARs at Ibiblio. We
+ the suggested naming conventions as we cannot store the JARs at the central repository. We
  can only store metadata about those JARs and it is the metadata that contains
  location and retrieval information.
 
