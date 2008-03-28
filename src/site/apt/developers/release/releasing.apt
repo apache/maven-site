@@ -147,7 +147,7 @@ mvn site:stage-deploy -Preporting
  <<Note>>: You could verify the deployment of the site on the Maven website (you need to wait the sync).
 
 +-----+
-http://maven.apache.org/plugins/plugins/maven-XXX-plugin-Y.Z/
+http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
  Some developers have {{{http://www.nabble.com/site%3Astage-deploy-asks-for-a-password--tt15582961s177.html}
