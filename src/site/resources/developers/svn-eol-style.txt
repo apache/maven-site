@@ -35,6 +35,7 @@ README = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.fv = svn:eol-style=native;svn:keywords=Author Date Id Revision 
 *.grm = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.g = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.groovy = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.h = svn:eol-style=native;svn:keywords=Author Date Id Revision
 .htaccess = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.html = svn:eol-style=native;svn:keywords=Author Date Id Revision
