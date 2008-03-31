@@ -173,7 +173,7 @@ Sync'ing your own repository to the central repository automatically
 
 
  You can see the list of
- {{{https://svn.apache.org/repos/asf/maven/archiva/tools/trunk/maven-meeper/src/bin/synchronize/m2-sync/sync.csv}repositories synchronized automatically}} for examples
+ {{{https://svn.apache.org/repos/asf/maven/repository-tools/trunk/src/bin/synchronize/m2-sync/sync.csv}repositories synchronized automatically}} for examples
 
  open an issue under {{{http://jira.codehaus.org/browse/MAVENUPLOAD}MAVENUPLOAD}} with the information (in the comma delimited format!), and we'll add it to the
  automatically synced repos.
@@ -331,7 +331,7 @@ For Maven developers
 
 
  The scripts to make the upload to the repository are in
- <<<https://svn.apache.org/repos/asf/maven/archiva/tools/trunk/maven-meeper>>> inside <<<src/bin>>>
+ <<<https://svn.apache.org/repos/asf/maven/repository-tools/trunk>>> inside <<<src/bin>>>
 
  Those scripts are checked out in www.maven.org <<</home/maven/bin>>>, so
  after logging as maven user you can go to the bundle-upload and run
