@@ -41,13 +41,13 @@ Introduction to the POM
 
 * {What is a POM}?
 
- A Project Object Model or POM is the fundamental unit of work in Maven. It is an xml file that contains information
+ A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information
  about the project and configuration details used by Maven to build the project. It contains default values for most projects.
- Examples for this is the build directory, which is "target"; the source directory, which is "src/main/java"; the test
- source directory, which is "src/main/test"; and so on.
+ Examples for this is the build directory, which is <<<target>>>; the source directory, which is <<<src/main/java>>>; the test
+ source directory, which is <<<src/main/test>>>; and so on.
 
- The POM was renamed from project.xml in Maven 1 to pom.xml in Maven 2. Instead of having a maven.xml file that contains
- the goals that can be executed, the goals or plugins are now configured in the pom.xml. When executing a task or goal, Maven
+ The POM was renamed from <<<project.xml>>> in Maven 1 to <<<pom.xml>>> in Maven 2. Instead of having a <<<maven.xml>>> file that contains
+ the goals that can be executed, the goals or plugins are now configured in the <<<pom.xml>>>. When executing a task or goal, Maven
  looks for the POM in the current directory. It reads the POM, gets the needed configuration information, then executes the
  goal.
 
@@ -101,13 +101,13 @@ Introduction to the POM
  qualified artifact name. This is in the form of \<groupId\>:\<artifactId\>:\<version\>. As for the example above, its
  fully qualified artifact name is "com.mycompany.app:my-app:1".
 
- Also, as mentioned in the {{{introduction-to-the-pom.html#What is a POM}first section}}, if the configuration details
+ Also, as mentioned in the {{{What_is_a_POM}first section}}, if the configuration details
  are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project
  has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
 
  Furthermore, as you can see that in the minimal POM, the <repositories> were not specified. If you build your project using the minimal POM,
  it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
- the minimal POM, it would know that these dependencies will be downloaded from http://repo1.maven.org/maven2 which was specified
+ the minimal POM, it would know that these dependencies will be downloaded from <<<http://repo1.maven.org/maven2>>> which was specified
  in the Super POM.
 
  {{{introduction-to-the-pom.html}[top]}}
@@ -160,7 +160,7 @@ Introduction to the POM
  `-- pom.xml
 +-----+
 
- <<Note:>> my-module/pom.xml is the POM of com.mycompany.app:my-module:1 while pom.xml is the POM of
+ <<Note:>> <<<my-module/pom.xml>>> is the POM of com.mycompany.app:my-module:1 while <<<pom.xml>>> is the POM of
  com.mycompany.app:my-app:1
 
 *** The Solution
@@ -212,7 +212,7 @@ Introduction to the POM
 *** The Scenario
 
  However, that would work if the parent project was already installed in our local repository or was in that specific
- directory structure (parent pom.xml is one directory higher than that of the module's pom.xml).
+ directory structure (parent <<<pom.xml>>> is one directory higher than that of the module's <<<pom.xml>>>).
 
  But what if the parent is not yet installed and if the directory structure is
 
@@ -226,7 +226,7 @@ Introduction to the POM
 
 *** The Solution
 
- To address this directory structure (or any other directory structure), we would have to add the relativePath tag to
+ To address this directory structure (or any other directory structure), we would have to add the <<<\<relativePath\>>>> element to
  our parent section.
 
 +-----+
@@ -242,13 +242,13 @@ Introduction to the POM
 </project>
 +-----+
 
- As the name suggests, it's the relative path from the module's pom.xml to the parent's pom.xml.
+ As the name suggests, it's the relative path from the module's <<<pom.xml>>> to the parent's <<<pom.xml>>>.
 
 * {Project Aggregation}
 
- Project Aggregation is similar to {{{introduction-to-the-pom.html#Project Inheritance}Project Inheritance}}. But
+ Project Aggregation is similar to {{{Project_Inheritance}Project Inheritance}}. But
  instead of specifying the parent POM from the module, it specifies the modules from the parent POM. By doing so, the
- parent project now knows its modules, and if a maven command is invoked against the parent project, that maven command
+ parent project now knows its modules, and if a Maven command is invoked against the parent project, that Maven command
  will then be executed to the parent's modules as well. To do Project Aggregation, you must do the following:
 
  * Change the parent POMs packaging to the value "pom" .
@@ -263,7 +263,7 @@ Introduction to the POM
 
 *** The Scenario
 
- Given the previous original artifact poms, and directory structure,
+ Given the previous original artifact POMs, and directory structure,
 
  <<com.mycompany.app:my-app:1's POM>>
 
@@ -298,7 +298,7 @@ Introduction to the POM
 
 *** The Solution
 
- if we are to aggregate my-module into my-app, we would only have to modify my-app.
+ If we are to aggregate my-module into my-app, we would only have to modify my-app.
 
 +-----+
 <project>
@@ -316,11 +316,11 @@ Introduction to the POM
 
  In the revised com.mycompany.app:my-app:1, the packaging section and the modules sections were added. For
  the packaging, it's value was set to "pom", and for the modules section, we have the element
- \<module\>my-module\</module\>. The value of \<module/\> is the relative path from the com.mycompany.app:my-app:1
+ <<<\<module\>my-module\</module\>>>>. The value of <<<\<module\>>>> is the relative path from the com.mycompany.app:my-app:1
  to com.mycompany.app:my-module:1's POM (<by practice, we use the module's artifactId as the module directory's name>).
 
- Now, whenever a maven command processes com.mycompany.app:my-app:1, that same maven command would be ran against
- com.mycompany.app:my-module:1 as well. Furthermore, some commands (goals specifically) handles project aggregation
+ Now, whenever a Maven command processes com.mycompany.app:my-app:1, that same Maven command would be ran against
+ com.mycompany.app:my-module:1 as well. Furthermore, some commands (goals specifically) handle project aggregation
  differently.
 
  {{{introduction-to-the-pom.html}[top]}}
@@ -361,8 +361,8 @@ Introduction to the POM
 
 * {Project Inheritance vs Project Aggregation}
 
- If you have several maven projects, and they all have similar configurations, you can refactor your projects by pulling
- out those similar configurations and making a parent project. Thus, all you have to do is to let your maven projects
+ If you have several Maven projects, and they all have similar configurations, you can refactor your projects by pulling
+ out those similar configurations and making a parent project. Thus, all you have to do is to let your Maven projects
  inherit that parent project, and those configurations would then be applied to all of them.
 
  And if you have a group of projects that are built or processed together, you can create a parent project and have that
@@ -370,7 +370,7 @@ Introduction to the POM
  will follow.
 
  But of course, you can have both Project Inheritance and Project Aggregation. Meaning, you can have your modules
- specify a parent project, and at the same time, have that parent project specify those maven projects as its modules.
+ specify a parent project, and at the same time, have that parent project specify those Maven projects as its modules.
  You'd just have to apply all three rules:
 
  * Specify in every child POM who their parent POM is.
@@ -387,7 +387,7 @@ Introduction to the POM
 
 *** The Scenario
 
- Given the previous original artifact poms again,
+ Given the previous original artifact POMs again,
 
  <<com.mycompany.app:my-app:1's POM>>
 
