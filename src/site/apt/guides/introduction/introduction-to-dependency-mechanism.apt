@@ -94,10 +94,10 @@ Introduction to the Dependency Mechanism
    in all classpaths of a project. Furthermore, those dependencies are propagated to dependent projects.
 
  * <<provided>>\
-   This is much like <<<compile>>>, but indicates you expect the JDK or a container to provide the dependency. For
+   This is much like <<<compile>>>, but indicates you expect the JDK or a container to provide the dependency at runtime. For
    example, when building a web application for the Java Enterprise Edition, you would set the dependency on the
    Servlet API and related Java EE APIs to scope <<<provided>>> because the web container provides those classes. This
-   scope is only available on the compilation classpath, and is not transitive.
+   scope is only available on the compilation and test classpath, and is not transitive.
 
  * <<runtime>>\
    This scope indicates that the dependency is not required for compilation, but is for
