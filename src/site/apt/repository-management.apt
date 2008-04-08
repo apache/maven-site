@@ -24,14 +24,47 @@
 
 Repository Management
 
-~~ TODO:  definition, description, motivation for using, etc.
+*  What is a Build Artifact Repository Manager
 
-* Repository Managers
+   The purpose of a <Maven repository> is to hold all software libraries used within an organization. The responsibility
+    of a <Build Artifact Repository Manager> is to
+
+    1. <<Proxy content from remote artifact repositories>>.
+
+    The proxy functionality gives increased <speed>, better <availability> and makes it <easier find and add
+    dependencies> to their projects (no more which repo holds artifactX?).
+   
+    2. <<Share artifacts between developers>>.
+
+    The repository supports deployment of internal and external snapshots and releases and advanced security options
+    can be to restrict access to sensitive artifacts.
+    This functionality is required to work effectively with a large number of Maven projects and without it it is
+    hard to implement the "one deployment unit, one Maven project" concept.
+
+    3. <<Make it easier to manage repositories and dependencies>>
+
+    The products often provide a graphical user interface that supports search and browsing of the repositories and functionality to view/add/delete artifacts.
+
+* Repository Manager Overview
 
   Following is an alphabetical list of some repository managers we've heard mentioned around the Maven community:
 
  * {{{http://maven.apache.org/archiva}Apache Archiva}}
 
- * {{{http://www.jfrog.org/sites/artifactory/1.2/}Artifactory}}
+ * {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
 
  * {{{http://proximity.abstracthorizon.org}Proximity}}
+
+
+~~ TODO Add link to comparison matrix on the MAVENUSER wiki that shows the which features the different products have.
+
+~~ TODO Link to instructions for configuring repositories and mirrors
+
+* Other resources
+
+  * {{{http://www.theserverside.com/tt/articles/article.tss?l=SettingUpMavenRepository&nbsp;}Setting Up Maven Repository}} by Avneet Mangat
+
+  * {{{http://docs.codehaus.org/display/MAVENUSER/Maven+Concepts+Repositories}Maven Concepts Repositories}} from Maven wiki
+
+  * {{{http://blogs.exist.com/oching/2007/11/05/the-hype-about-repository-managers/}The Hype About Repository Managers}} by Deng Ching 
+
