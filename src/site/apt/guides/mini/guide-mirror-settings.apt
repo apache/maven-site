@@ -2,8 +2,9 @@
  Guide to Mirror Settings
  ------
  Jason van Zyl
+ Brian Fox
  ------
- 12 October 2005
+ 8 April 2008
  ------
 
 Using Mirrors for Repositories
@@ -142,6 +143,54 @@ Using A Single Repository
 </settings>
 +-----+
 
+Advanced Mirror specification
+
+  A single mirror can handle multiple repositories when used in conjunction with a repository manager. 
+
+  The syntax as of Maven 2.0.9:
+  
+ * \* matches all repo ids.
+    
+ * external:\* matches all repos except those using localhost or file based repositories. This is used in conjunction with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
+    
+ * multiple repos may be specified using , as the delimiter
+    
+ * ! may be used in conjunction with one of the above wildcards to exclude a repo id.
+    
+ The order is not important from left to right as the wildcards defer to further processing and explicit includes or excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of HashMap such that the user may influence match order by changing the order of the definitions in the settings.xml 
+    
+ Examples:
+  
+ *  \* = everything
+  
+ *  external:\* = everything not on the localhost and not file based.
+  
+ *  repo,repo1 = repo or repo1
+  
+ *  \*,!repo1 = everything except repo1
+
+ <<Note:>> This feature is only available in Maven 2.0.9+.
+
++-----+
+<settings>
+  .
+  <mirrors>
+    <mirror>
+      <id>internal-repository</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://repo.mycompany.com/proxy</url>
+      <mirrorOf>external:*,!foo</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>foo-repository</id>
+      <name>Foo</name>
+      <url>http://repo.mycompany.com/foo</url>
+      <mirrorOf>foo</mirrorOf>
+    </mirror>
+  </mirrors>
+  .
+</settings>
++-----+
 
 FTP access
 

@@ -411,7 +411,7 @@ Introduction to the Dependency Mechanism
 
 ** {Importing Dependencies}
 
- <The features defined in this section are only available in maven 2.0.9 or later.>
+ <The features defined in this section are only available in Maven 2.0.9 or later. This means that poms declaring the import scope will not be parseable by earlier versions of Maven. Weigh this information carefully before deciding to use it. If you do use it, we suggest you use the enforcer plugin to require a minimum Maven version of 2.0.9. We currently do not recommend using this for projects that get deployed to Central.>
 
  The examples in the previous section describe how to specify managed dependencies through inheritence. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
