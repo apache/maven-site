@@ -35,7 +35,7 @@
   <name>Maven Site</name>
 
   <properties>
-    <currentVersion>2.0.8</currentVersion>
+    <currentVersion>2.0.9</currentVersion>
   </properties>
 
  <issueManagement>

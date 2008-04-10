@@ -53,7 +53,7 @@ Repository Management
 
  * {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
 
- * {{{http://proximity.abstracthorizon.org}Proximity}}
+ * {{{http://nexus.sonatype.org}Nexus Repository Manager}}
 
 
 ~~ TODO Add link to comparison matrix on the MAVENUSER wiki that shows the which features the different products have.
