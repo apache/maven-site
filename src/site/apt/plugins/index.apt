@@ -59,7 +59,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}    | 2.1    | Generate a list of recent changes from your SCM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGELOG}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.0-beta-3 | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
+| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.0    | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}  | 2.1    | Generate a checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
