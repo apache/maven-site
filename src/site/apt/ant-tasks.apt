@@ -9,7 +9,7 @@
 
 Ant Tasks for Maven 
 
-  Maven comes with a set of Ant tasks that can be used to utilise Maven's artifact handling features
+  Maven comes with a set of Ant tasks that can be used to utilize Maven's artifact handling features
   from within Ant. This includes:
 
     * <Dependency management> - including transitive dependencies, scope recognition and SNAPSHOT handling
@@ -52,7 +52,7 @@ Installing the Ant Tasks
 -----
 <project ... xmlns:artifact="urn:maven-artifact-ant">
   ...
-  <path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.0.8.jar" />
+  <path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.0.9.jar" />
   <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant"
            classpathref="maven-ant-tasks.classpath" />
   ...

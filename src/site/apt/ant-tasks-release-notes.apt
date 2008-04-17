@@ -1,9 +1,9 @@
   ------
-  Release Notes - Maven Ant Tasks 2.0.7
+  Release Notes - Maven Ant Tasks
   ------
   Herve Boutemy
   ------
-  29 June 2007
+  17 april 2008
   ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -27,6 +27,30 @@
 ~~ http://maven.apache.org/guides/mini/guide-apt-format.html
 
 Maven Ant Tasks
+
+* 2.0.9 Release Notes
+
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=11533&fixfor=13935&sorter/field=issuekey&sorter/order=DESC}issue management system}}, and is reproduced below.
+
+**Bug
+
+    * [MANTTASKS-13] - Ant Tasks use of <authentication> is inconsistent
+  
+    * [MANTTASKS-91] - [task dependencies]Trouble between mvn and manttasks
+  
+    * [MANTTASKS-103] - Can't deploy to a file: repository
+  
+    * [MANTTASKS-104] - files returned in sourcesFileset when no dependencies sources available
+  
+    * [MANTTASKS-105] - dependencies task don't read remote repositories from settings xml
+  
+    * [MANTTASKS-107] - repository defined in pom not used to download parent pom when defining pom reference
+  
+    * [MANTTASKS-108] - Maven Ant Tasks are switching the Classloader of the Main Ant Thread
+
+**Improvement
+
+    * [MANTTASKS-88] - Add the ability to download javadoc dependencies
 
 * 2.0.8 Release Notes
 
