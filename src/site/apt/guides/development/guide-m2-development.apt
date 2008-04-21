@@ -62,7 +62,10 @@ Developing Maven 2
  When you have either completed an issue or just want some feedback on the work you have done, create a patch
  and attach the patch to the issue in question. We have a couple of guidelines when creating patches:
 
- * Always create the patch from the root of the maven project, i.e. where the pom.xml file is.
+ * Patch the trunk, not a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
+   to the development head.
+
+ * Always create the patch from the root of the maven project, i.e. where the <<<pom.xml>>> file is.
 
  * If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
 
