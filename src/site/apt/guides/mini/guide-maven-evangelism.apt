@@ -6,20 +6,20 @@
  31 October 2005
  ------
 
-Guide to add, improve or fix metadata in the ibiblio maven 2 repository
+Guide to add, improve or fix metadata in the Central Maven 2 repository
 
- There are artifacts in the repository that don't have poms. They come from the Maven 1 repositories of our
+ There are artifacts in the repository that don't have POMs. They come from the Maven 1 repositories of our
  partners (Apache Software Foundation, Codehaus,...). We know it but can't do anything unless you provide
- a pom for it or you ask the project in question to add the pom when they add the artifacts.
+ a POM for it or you ask the project in question to add the POM when they add the artifacts.
 
- We don't change dependencies in poms already in the repository anymore as builds need to be reproducible.
+ We don't change dependencies in POMs already in the repository anymore as builds need to be reproducible.
 
  You need to contact the original publisher of the metadata to make sure in next versions it will
  be fixed or improved before getting it into the repository.
 
  For any other types of issues related to metadata in the repository, open an issue at
  {{{http://jira.codehaus.org/browse/MEV}JIRA MEV}} with the relevant information and
- explaining the reasons why it is an issue.
+ explain the reasons why it is an issue.
 
  *Important:* by default assume that we won't trust your info, so you must provide all links
  to the project documentation you can to convince us that your solution is right.
