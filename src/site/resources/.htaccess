@@ -10,5 +10,7 @@ RedirectMatch ^/maven-1.x/reference/plugins/(.*)$ /maven-1.x/plugins/$1
 RedirectMatch ^/maven-model/(.*)$ /ref/2.0.8/maven-model/$1
 RedirectMatch ^/maven-settings/(.*)$ /ref/2.0.8/maven-settings/$1
 RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /maven-1.x/plugins/$1
-RedirectMatch ^/repository-manager/(.*)$ /archiva/$1
+
+RedirectMatch permanent ^/repository-manager/(.*)$ http://archiva.apache.org/$1
+RedirectMatch permanent ^/archiva/(.*)$ http://archiva.apache.org/$1
 

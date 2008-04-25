@@ -174,7 +174,6 @@
 
     <menu name="Maven Projects" inherit="bottom">
       <item name="Maven" href="http://maven.apache.org/"/>
-      <item name="Archiva" href="http://maven.apache.org/archiva"/>
       <item name="SCM" href="http://maven.apache.org/scm"/>
       <item name="Wagon" href="http://maven.apache.org/wagon"/>
       <item name="JXR" href="http://maven.apache.org/jxr"/>
