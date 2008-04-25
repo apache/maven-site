@@ -49,7 +49,7 @@ Repository Management
 
   Following is an alphabetical list of some repository managers we've heard mentioned around the Maven community:
 
- * {{{http://maven.apache.org/archiva}Apache Archiva}}
+ * {{{http://archiva.apache.org/}Apache Archiva}}
 
  * {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
 
