@@ -3,7 +3,7 @@
  -----
  Milos Kleint
  -----
- 3 January 2006
+ 7 May 2008
  -----
 
 Maven 2.x Module for Netbeans
@@ -11,8 +11,10 @@ Maven 2.x Module for Netbeans
  The Netbeans integration is developed at {{http://mevenide.codehaus.org}} It allows to load any Maven 2 project into Netbeans and start coding immediately.
 To get a current feature list along with screenshots, please refer to the {{http://mevenide.codehaus.org/m2-site}} download page.
 
+ An article describing the current features in detail is available at the {{{http://wiki.netbeans.org/MavenBestPractices}Netbeans.org wiki}} as well.
+
 
 * Binaries and Installation
 
- The Maven integration is easily accessible in NetBeans 6.0 via the Tools/Plugins dialog. 
+ The Maven integration is easily accessible in NetBeans 6.0 and 6.1 via the Tools/Plugins dialog. 
 More detailed instructions available (also for older versions of NetBeans) at the {{{http://mevenide.codehaus.org/m2-site/mevenide2-netbeans/installation.html}Mevenide site}}.
