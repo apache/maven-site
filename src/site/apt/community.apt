@@ -43,7 +43,7 @@ The Maven Community
 
   The best thing that a user can do is to set up their own remote repository mirror containing the
   projects needed. There are several tools to make this simpler, such as
-  {{{http://proximity.abstracthorizon.org/}Proximity}} or {{{http://maven.apache.org/archiva/}Archiva}}. This
+  {{{http://nexus.sonatype.org/}Nexus}} or {{{http://maven.apache.org/archiva/}Archiva}}. This
   reduces strain on the Maven central repository, and allows new users to get acquainted with Maven
   easier and quicker. This is especially important for power-users and corporations. The incentive
   behind this is, controlling your own servers can give you desired level of security and
