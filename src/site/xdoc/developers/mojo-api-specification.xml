@@ -455,8 +455,9 @@ under the License.
           <td>@requiresDependencyResolution &lt;requiredScope&gt;</td>
           <td>No</td>
           <td>Flags this Mojo as requiring the dependencies in the specified scope (or an implied scope)
-            to be resolved before it can execute. <i>NOTE: Currently supports <b>compile</b> ,
-              <b>runtime</b> , and <b>test</b> scopes. </i>
+            to be resolved before it can execute. Currently supports <code>compile</code>,
+              <code>runtime</code>, and <code>test</code> scopes. If this annotation is present but no scope
+              is specified, the scope defaults to <code>runtime</code>.
           </td>
         </tr>
         <tr>
