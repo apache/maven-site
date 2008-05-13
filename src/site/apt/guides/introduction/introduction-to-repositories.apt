@@ -4,7 +4,7 @@
  Jason van Zyl
  Brian Fox
  ------
- 10 April 2007
+ 13 May 2008
  ------
 
 Introduction to Repositories
@@ -137,7 +137,7 @@ Internal Repositories
  required artifacts there using the same layout as in a remote repository such as {{{http://repo1.maven.org/maven2/}repo1.maven.org}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
- of data there. You can use a program such as {{{http://maven.apache.org/archiva/}Archiva}}, {{{http://proximity.abstracthorizon.org}Proximity}} or {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
+ of data there. You can use a program such as {{{http://archiva.apache.org/}Archiva}}, {{{http://nexus.sonatype.org}Nexus Maven Repository Manager}} or {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
  running on your internal repository's server, to download from the internet as required and then hold
  the artifacts in your internal repository for faster downloading later.
 
@@ -192,4 +192,4 @@ Internal Repositories
 
   * {{{http://www.pdark.de/dsmp/}DSMP (Dead Simple Maven Proxy)}}
 
-  * {{{http://proximity.abstracthorizon.org/}Proximity}}
+  * {{{http://nexus.sonatype.org/}Nexus Maven Repository Manager}}
