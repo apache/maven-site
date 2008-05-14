@@ -116,7 +116,17 @@ Prerequisite
 http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/maven-XXX-plugin/Y.Z-SNAPSHOT/
 +-----+
 
- [[3]] Prepare the release
+ [[3]] Run fix-permissions.sh
+ 
+ Login to people.apache.org, then run:
+
++-----+
+/www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
++-----+
+
+ This will set maven-metadata.xml file permissions back to 664, and set permissions on any directories you created to 775.
+
+ [[4]] Prepare the release
 
 +-----+
 mvn release:prepare
@@ -124,13 +134,13 @@ mvn release:prepare
 
  <<Note>>: Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
 
- [[4]] Stage the release for a vote
+ [[5]] Stage the release for a vote
 
 +-----+
 mvn release:perform
 +-----+
 
- [[5]] Stage the latest documentation
+ [[6]] Stage the latest documentation
 
  The plugin parent pom is configured to stage the documentation in a "versioned" directory
  such as <<</plugins/maven-XXX-plugin-Y.Z-SNAPSHOT>>>.
@@ -159,7 +169,7 @@ mvn site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
- [[6]] Propose a vote on the dev list with the closed issues, the issues left,
+ [[7]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
 +-----+
@@ -193,7 +203,7 @@ Vote open for 72 hours.
 
  Once a vote is successful, post the result to the dev list and cc the pmc.
 
- [[7]] Copy from the staging repo to the production repo
+ [[8]] Copy from the staging repo to the production repo
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
@@ -235,7 +245,18 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
  This will allow you to bypass the staging phase and push the release directly into a production repository. It is assumed that
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
- [[8]] Deploy the current website
+ [[9]] Run fix-permissions.sh again
+ 
+ Login to people.apache.org, then run:
+
++-----+
+/www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
++-----+
+
+ This will once again set maven-metadata.xml file permissions back to 664, and set permissions on any directories you created to 775.
+ The script lives in m2-snapshot-repository, but it's smart enough to fix permissions in m2-ibiblio-rsync-repository and m2-incubating-repository also.
+
+ [[10]] Deploy the current website
 
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
 
@@ -243,7 +264,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
 mvn site-deploy -Preporting
 +-----+
 
- [[9]] Review Website
+ [[11]] Review Website
 
  Wait for the files to arrive at
 
@@ -251,18 +272,18 @@ mvn site-deploy -Preporting
 http://maven.apache.org/plugins/maven-XXX-plugin
 +-----+
 
- [[10]] Update the plugins page
+ [[12]] Update the plugins page
 
  If this is a plugin release, update the version number for the plugin on the
  </plugins/index.html> page.
 
- [[11]] Update JIRA
+ [[13]] Update JIRA
 
  Go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
  the <<<Y.Z>>> version as released. Create version Y.Z+1, if that hasn't already
  been done.
 
- [[12]] Create an Announcement. For instance:
+ [[14]] Create an Announcement. For instance:
 
 +-----+
 From: YOUR_APACHE_EMAIL
@@ -295,9 +316,9 @@ Enjoy,
 
 +-----+
 
- [[13]] Add the release to the next board report, in the private subversion area.
+ [[15]] Add the release to the next board report, in the private subversion area.
 
- [[14]] Add the release to the wiki, under the <Recent Releases> section of the
+ [[16]] Add the release to the wiki, under the <Recent Releases> section of the
  front page and on the <Releases> page.
 
- [[15]] Celebrate :o)
+ [[17]] Celebrate :o)
