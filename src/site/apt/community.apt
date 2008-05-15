@@ -15,7 +15,7 @@ The Maven Community
 
 * Helping With Maven
 
-  There is already a comprehensive {{{guides/development/guide-helping.html}Guide to Helping With Maven}}.
+  There is already a comprehensive {{{./guides/development/guide-helping.html}Guide to Helping With Maven}}.
   That guide focuses upon beginning as a supporter, with information on how to help the coding effort.
 
 ** Commit Questions or Answers to the Maven User FAQ
@@ -27,11 +27,11 @@ The Maven Community
 
   Just as any other healthy project requires a quick turn-around on defects, and a transparent
   method of users to have their wishes heard, so too does Maven need your help. Refer to the
-  {{{issue-tracking.html}Issue Tracking}} page.
+  {{{./issue-tracking.html}Issue Tracking}} page.
 
 ** Developers
 
-  For Maven developers, commiters, PMC: there is a {{{developers/index.html}Developers Guide}}.
+  For Maven developers, commiters, PMC: there is a {{{./developers/index.html}Developers Guide}}.
 
 * Being a Good Maven Citizen
 
@@ -76,7 +76,7 @@ The Maven Community
 
 ** Mailing Lists
 
-  Maven has a number of {{{mail-lists.html}Mailing Lists}}, and the Maven User List is specifically dedicated to
+  Maven has a number of {{{./mail-lists.html}Mailing Lists}}, and the Maven User List is specifically dedicated to
   answering questions about all Maven things.
 
 ** IRC (Internet Relay Chat)

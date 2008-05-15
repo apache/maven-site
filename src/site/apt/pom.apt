@@ -8,95 +8,95 @@
 
 POM Reference
 
-  [[1]] {{{#Introduction}Introduction}}
+  [[1]] {{{Introduction}Introduction}}
 
-    [[1]] {{{#What_is_the_POM}What is the POM?}}
+    [[1]] {{{What_is_the_POM}What is the POM?}}
 
-    [[2]] {{{#Quick_Overview}Quick Overview}}
+    [[2]] {{{Quick_Overview}Quick Overview}}
 
-  [[2]] {{{#The_Basics}The Basics}}
+  [[2]] {{{The_Basics}The Basics}}
 
-    [[1]] {{{#Maven_Coordinates}Maven Coordinates}}
+    [[1]] {{{Maven_Coordinates}Maven Coordinates}}
 
-    [[2]] {{{#POM_Relationships}POM Relationships}}
+    [[2]] {{{POM_Relationships}POM Relationships}}
 
-      [[1]] {{{#Dependencies}Dependencies}}
+      [[1]] {{{Dependencies}Dependencies}}
 
-        [[1]] {{{#Exclusions}Exclusions}}
+        [[1]] {{{Exclusions}Exclusions}}
 
-      [[2]] {{{#Inheritance}Inheritance}}
+      [[2]] {{{Inheritance}Inheritance}}
 
-        [[1]] {{{#The_Super_POM}The Super POM}}
+        [[1]] {{{The_Super_POM}The Super POM}}
 
-        [[2]] {{{#Dependency_Management}Dependency Management}}
+        [[2]] {{{Dependency_Management}Dependency Management}}
 
-      [[3]] {{{#Aggregation}Aggregation (or Multi-Module)}}
+      [[3]] {{{Aggregation}Aggregation (or Multi-Module)}}
 
-        [[1]] {{{#Inheritance_v}Inheritance v. Aggregation}}
+        [[1]] {{{Inheritance_v}Inheritance v. Aggregation}}
 
-    [[3]] {{{#Properties}Properties}}
+    [[3]] {{{Properties}Properties}}
 
-  [[3]] {{{#Build_Settings}Build Settings}}
+  [[3]] {{{Build_Settings}Build Settings}}
 
-    [[1]] {{{#Build}Build}}
+    [[1]] {{{Build}Build}}
 
-      [[1]] {{{#BaseBuild_Element}The BaseBuild Element Set}}
+      [[1]] {{{BaseBuild_Element}The BaseBuild Element Set}}
 
-        [[1]] {{{#Resources}Resources}}
+        [[1]] {{{Resources}Resources}}
 
-        [[2]] {{{#Plugins}Plugins}}
+        [[2]] {{{Plugins}Plugins}}
 
-        [[3]] {{{#Plugin_Management}Plugin Management}}
+        [[3]] {{{Plugin_Management}Plugin Management}}
 
-      [[2]] {{{#Build_Element}The Build Element Set}}
+      [[2]] {{{Build_Element}The Build Element Set}}
 
-        [[1]] {{{#Directories}Directories}}
+        [[1]] {{{Directories}Directories}}
 
-        [[2]] {{{#Extensions}Extensions}}
+        [[2]] {{{Extensions}Extensions}}
 
-    [[2]] {{{#Reporting}Reporting}}
+    [[2]] {{{Reporting}Reporting}}
 
-      [[1]] {{{#Report_Sets}Report Sets}}
+      [[1]] {{{Report_Sets}Report Sets}}
 
-  [[4]] {{{#More_Project_Information}More Project Information}}
+  [[4]] {{{More_Project_Information}More Project Information}}
 
-    [[1]] {{{#Licenses}Licenses}}
+    [[1]] {{{Licenses}Licenses}}
 
-    [[2]] {{{#Organization}Organization}}
+    [[2]] {{{Organization}Organization}}
 
-    [[3]] {{{#Developers}Developers}}
+    [[3]] {{{Developers}Developers}}
 
-    [[4]] {{{#Contributors}Contributors}}
+    [[4]] {{{Contributors}Contributors}}
 
-  [[5]] {{{#Environment_Settings}Environment Settings}}
+  [[5]] {{{Environment_Settings}Environment Settings}}
 
-    [[1]] {{{#Issue_Management}Issue Management}}
+    [[1]] {{{Issue_Management}Issue Management}}
 
-    [[2]] {{{#Continuous_Integration_Management}Continuous Integration Management}}
+    [[2]] {{{Continuous_Integration_Management}Continuous Integration Management}}
 
-    [[3]] {{{#Mailing_Lists}Mailing Lists}}
+    [[3]] {{{Mailing_Lists}Mailing Lists}}
 
-    [[4]] {{{#SCM}SCM}}
+    [[4]] {{{SCM}SCM}}
 
-    [[5]] {{{#Repositories}Repositories}}
+    [[5]] {{{Repositories}Repositories}}
 
-    [[6]] {{{#Plugin_Repositories}Plugin Repositories}}
+    [[6]] {{{Plugin_Repositories}Plugin Repositories}}
 
-    [[7]] {{{#Distribution_Management}Distribution Management}}
+    [[7]] {{{Distribution_Management}Distribution Management}}
 
-      [[1]] {{{#Repository}Repository}}
+      [[1]] {{{Repository}Repository}}
 
-      [[2]] {{{#Site_Distribution}Site Distribution}}
+      [[2]] {{{Site_Distribution}Site Distribution}}
 
-      [[3]] {{{#Relocation}Relocation}}
+      [[3]] {{{Relocation}Relocation}}
 
-    [[8]] {{{#Profiles}Profiles}}
+    [[8]] {{{Profiles}Profiles}}
 
-      [[1]] {{{#Activation}Activation}}
+      [[1]] {{{Activation}Activation}}
 
-      [[2]] {{{#The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
+      [[2]] {{{The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
 
-  [[6]] {{{#Final}Final}}
+  [[6]] {{{Final}Final}}
 
   []
 
@@ -645,7 +645,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   directory is <<<$\{basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
-  {{{guides/getting-started}quick start guide}}.
+  {{{./guides/getting-started}quick start guide}}.
 
 *** {Resources}
 

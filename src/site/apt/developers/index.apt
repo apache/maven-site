@@ -48,21 +48,21 @@ Maven Developer Centre
 
 ** General Resources
 
-  * {{{welcome-to-new-committers.html}Guide for new Maven committers}}
+  * {{{./welcome-to-new-committers.html}Guide for new Maven committers}}
 
-  * {{{committer-environment.html}Committer Environment}}
+  * {{{./committer-environment.html}Committer Environment}}
 
-  * {{{committer-settings.html}Committer Settings}}
+  * {{{./committer-settings.html}Committer Settings}}
 
 * Making Releases
 
-  * {{{release/pmc-gpg-keys.html}Making GPG Keys}}
+  * {{{./release/pmc-gpg-keys.html}Making GPG Keys}}
 
-  * {{{release/releasing.html}Release Process}}
+  * {{{./release/releasing.html}Release Process}}
 
 * Deploy Maven references
 
-  * {{{website/deploy-maven-current-ref.html}Deploy Maven Current References}}
+  * {{{./website/deploy-maven-current-ref.html}Deploy Maven Current References}}
 
 * Others Resources
 
