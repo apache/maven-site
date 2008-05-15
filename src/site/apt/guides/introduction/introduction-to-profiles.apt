@@ -175,7 +175,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 mvn groupId:artifactId:goal -Denvironment=test
 +---+
 
-  This last example will trigger the profile when the generated file
+  This example will trigger the profile when the generated file
   <<<target/generated-sources/axistools/wsdl2java/org/apache/maven>>> is missing.
 
 +---+
@@ -192,6 +192,36 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 
   <<Note>>: The tags \<exists/\> and \<missing/\> could be interpolated with some patterns like $\{user.home\}.
+
+  Profiles can also be active by default using a configuration like the following:
+
++---+
+<profiles>
+  <profile>
+    <id>profile-1</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+  This profile will automatically be active for all builds unless another profile in the same pom
+  is activated using one of the previously described methods.  All profiles that are active by
+  default are automatically deactivated when a profile in the pom is activated on the command line
+  or through its activation config.
+  
+** Deactivating a profile
+
+  One or more profiles can be deactivated using the command line:
+  
++---+
+mvn groupId:artifactId:goal -P !profile-1,!profile-2
++---+
+
+  This can be used to deactivate profiles marked as activeByDefault or profiles that would 
+  otherwise be activated through their activation config.
 
 * Which areas of a POM can be customized by each type of profile? Why?
 
