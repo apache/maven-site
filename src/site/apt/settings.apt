@@ -8,29 +8,29 @@
 
 Settings Reference
 
-  [[1]] {{{#Introduction}Introduction}}
+  [[1]] {{{Introduction}Introduction}}
 
-    [[1]] {{{#Quick_Overview}Quick Overview}}
+    [[1]] {{{Quick_Overview}Quick Overview}}
 
-  [[2]] {{{#Settings_Details}Settings Details}}
+  [[2]] {{{Settings_Details}Settings Details}}
 
-    [[1]] {{{#Simple_Values}Simple Values}}
+    [[1]] {{{Simple_Values}Simple Values}}
 
-    [[2]] {{{#Servers}Servers}}
+    [[2]] {{{Servers}Servers}}
 
-    [[3]] {{{#Mirrors}Mirrors}}
+    [[3]] {{{Mirrors}Mirrors}}
 
-    [[4]] {{{#Proxies}Proxies}}
+    [[4]] {{{Proxies}Proxies}}
 
-    [[5]] {{{#Profiles}Profiles}}
+    [[5]] {{{Profiles}Profiles}}
 
-      [[1]] {{{#Activation}Activation}}
+      [[1]] {{{Activation}Activation}}
 
-      [[2]] {{{#Repositories}Repositories}}
+      [[2]] {{{Repositories}Repositories}}
 
-      [[3]] {{{#Plugin_Repositories}Plugin Repositories}}
+      [[3]] {{{Plugin_Repositories}Plugin Repositories}}
 
-    [[6]] {{{#Active_Profiles}Active Profiles}}
+    [[6]] {{{Active_Profiles}Active Profiles}}
 
   []
 
@@ -127,7 +127,7 @@ mvn castor-maven-plugin:generate
 
 * {Servers}
 
-  The repositories for deployment are defined by the {{{pom.html#Distribution_Management}<<<distributionManagement>>>}} element of the POM.
+  The repositories for deployment are defined by the {{{./pom.html#Distribution_Management}<<<distributionManagement>>>}} element of the POM.
   However, certain settings such as <<<username>>> and <<<password>>> should not be distributed
   along with the <<<pom.xml>>>. This type of information should exist on the build server in the
   <<<settings.xml>>>.
