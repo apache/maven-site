@@ -20,13 +20,15 @@ Ant Tasks for Maven
 
   The Ant tasks can be downloaded from {{{download.html} Maven 2.0 download page}}.
 
-Installing the Ant Tasks
+  ~~ TODO: What is the minimum version of Ant required to use Maven Ant tasks?
 
-  For convenience, the Ant tasks and all its dependencies are packaged together as a single JAR file.
+Installing the Maven Ant Tasks
+
+  For convenience, the Maven Ant tasks and all its dependencies are packaged together as a single JAR file.
 
   There are two ways to use the tasks from your scripts.
 
-* Intalling in Ant's <<<lib>>> directory
+* Installing in Ant's <<<lib>>> directory
 
   This is the simplest installation method but requires changes on every machine using the build file.
   You can place the JAR in your Ant <<<lib>>> directory, include it in the <<<CLASSPATH>>> environment variable,
@@ -38,11 +40,12 @@ Installing the Ant Tasks
 -----
 <project ... xmlns:artifact="antlib:org.apache.maven.artifact.ant">
   ...
+</project>
 -----
 
 * Declaring a <<<typedef>>>
 
-  Using a <<<typedef>>> declaration allows you to store the library anywhere you like (such as source control)
+  Using a <<<typedef>>> declaration allows you to store the Ant Tasks' library anywhere you like (such as source control)
   and put it's location in the build file. This can be used to bootstrap the tasks by using <<<get>>> to obtain
   the library, and then reference it from the build script.
 
@@ -53,9 +56,11 @@ Installing the Ant Tasks
 <project ... xmlns:artifact="urn:maven-artifact-ant">
   ...
   <path id="maven-ant-tasks.classpath" path="lib/maven-ant-tasks-2.0.9.jar" />
-  <typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="urn:maven-artifact-ant"
+  <typedef resource="org/apache/maven/artifact/ant/antlib.xml"
+           uri="urn:maven-artifact-ant"
            classpathref="maven-ant-tasks.classpath" />
   ...
+</project>
 -----
 
 Using the Maven Ant Tasks
@@ -69,7 +74,8 @@ Using the Maven Ant Tasks
 
 -----
 <artifact:dependencies pathId="dependency.classpath">
-  <dependency groupId="org.apache.maven.wagon" artifactId="wagon-provider-test"
+  <dependency groupId="org.apache.maven.wagon"
+              artifactId="wagon-provider-test"
               version="1.0-alpha-2"/>
   <dependency groupId="org.codehaus.modello" artifactId="modello-core" 
               version="1.0-alpha-2-SNAPSHOT"/>
@@ -81,7 +87,7 @@ Using the Maven Ant Tasks
   The above example will download those 3 dependencies, and their dependencies, and so on. They will be stored in
   the default local repository location, <<<$\{user.home\}/.m2/repository>>>.
 
-  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{#pom} explained below}}. This is a
+  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{#pom} explained below}}. This is the
   recommended practice so that you can reuse the file to deploy your own artifacts. 
 
   You may have noticed the <<<pathId>>> reference. This is optional, but if given will create a classpath reference
@@ -100,22 +106,24 @@ Using the Maven Ant Tasks
 
 -----
 <artifact:dependencies filesetId="dependency.fileset" useScope="runtime">
+  <!-- Your dependency definitions go here -->
   ...
 </artifact:dependencies>
 <copy todir="${webapp.output}/WEB-INF/lib">
   <fileset refid="dependency.fileset" />
+  <!-- This mapper strips off all leading directory information --> 
   <mapper type="flatten" />
 </copy>
 -----
 
   Note the <<<useScope>>> attribute in this call. This ensures that your web application only includes your compile
-  and runtime dependencies, excluding those that are only for testing or are expected to already be provided in
+  and runtime dependencies, excluding those that are only for testing or are expected to already be provided by
   the servlet container.
 
-  You can also specify a <<<scope>>> parameter on each dependency. This changes the behaviour of
+  You can also specify a <<<scope>>> parameter on each dependency. This changes the behavior of
   transitive dependencies and is useful for building different types of classpaths. To see how it affects
   the behaviour of the dependencies, see the {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
-  documentation in the Maven 2.0 site.
+  documentation on the Maven 2.0 site.
   
   Other options are:
   
@@ -125,30 +133,40 @@ Using the Maven Ant Tasks
     
     * <<<org.apache.maven.artifact.ant.VersionMapper>>>, which can be used to drop version numbers in filenames <(since 2.0.7)>
 
-  For example, to populate <<<lib>>> with your dependencies without version in filename and <<<lib/src>>> with corresponding sources:
+  For example, to populate <<<lib>>> with your dependencies without the version in the filenames, <<<lib/src>>> with the corresponding sources
+  and <<<lib/javadoc>>> with the corresponding javadocs:
 
 -----
 <artifact:dependencies filesetId="dependency.fileset"
-        sourcesFilesetId="sources.dependency.fileset" javadocFilesetId="javadoc.dependency.fileset"
+        sourcesFilesetId="sources.dependency.fileset"
+        javadocFilesetId="javadoc.dependency.fileset"
         versionsId="dependency.versions">
+  <!-- Your dependency definitions go here -->
   ...
 </artifact:dependencies>
 <copy todir="lib">
   <fileset refid="dependency.fileset" />
-  <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
+  <mapper classpathref="maven-ant-tasks.classpath"
+          classname="org.apache.maven.artifact.ant.VersionMapper"
           from="${dependency.versions}" to="flatten" />
 </copy>
 <copy todir="lib/src">
   <fileset refid="sources.dependency.fileset" />
-  <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
+  <mapper classpathref="maven-ant-tasks.classpath"
+          classname="org.apache.maven.artifact.ant.VersionMapper"
           from="${dependency.versions}" to="flatten" />
 </copy>
 <copy todir="lib/javadoc">
   <fileset refid="javadoc.dependency.fileset" />
-  <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
+  <mapper classpathref="maven-ant-tasks.classpath"
+          classname="org.apache.maven.artifact.ant.VersionMapper"
           from="${dependency.versions}" to="flatten" />
 </copy>
 -----
+
+  <<Note:>> In the above example you only need to specify
+  <<<classpathref="maven-ant-tasks.classpath">>> if are using Maven Ant Tasks
+  by declaring a <<<typedef>>>.
 
 * Declaring Repositories
 
@@ -161,9 +179,11 @@ Using the Maven Ant Tasks
   For example, you can specify the remote repository you want to use:
 
 -----
-<artifact:remoteRepository id="remote.repository" url="http://repository.mycompany.com/" />
+<artifact:remoteRepository id="remote.repository"
+        url="http://repository.mycompany.com/" />
 ...
 <artifact:dependencies>
+  <!-- Your dependency definitions go here -->
   ...
   <remoteRepository refid="remote.repository" />
 </artifact:dependencies>
@@ -183,15 +203,17 @@ Using the Maven Ant Tasks
 <authentication username="brett" privateKey="${user.home}/.ssh/id_dsa" />
 -----
 
-* Installing and Deploying Your Own Artifacts
+* Installing and Deploying Your Own Artifacts to a Repository
 
   If you want to share your built artifacts between projects, you can use two other tasks: <<<install>>> for
-  placing them in your local repository for access as dependencies in other scripts, and <<<deploy>>> for
+  installing them in your local repository for access as dependencies in other scripts, and <<<deploy>>> for
   deploying them to a remote location you have set up to serve as a repository in your organisation.
 
-  Note that the installation and deployment require that you have a Maven 2.0 POM file to deploy along with it.
+  <<Note:>> that the installation and deployment require that you have a Maven 2.0 POM file to deploy along with it.
   These are required for the transitive dependency mechanism to work effectively, and can be quite simple to
   create.
+
+  ~~ TODO: Write an introductory text explaining the example below
 
 -----
 ...
@@ -217,17 +239,20 @@ Using the Maven Ant Tasks
   
   <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
     <remoteRepository url="scp://localhost/www/repository">
-      <authentication username="${repository.username}" privateKey="${user.home}/.ssh/id_dsa"/>
+      <authentication username="${repository.username}"
+              privateKey="${user.home}/.ssh/id_dsa"/>
     </remoteRepository>
     <pom refid="maven.project"/>
   </artifact:deploy>
 ...
 -----
 
-  Note that if you use <<<antcall>>>, the provider isn't available during the Ant call: you have to register
+  <<Note:>> that if you use <<<antcall>>>, the provider isn't available during the Ant call: you have to register
   it again if you need it.
 
-  Maven Ant Tasks contain <<<file>>> and <<<http-lightweight>>> providers. The other available providers are:
+  ~~ TODO: Explain more thoroughly when you need to register a provider
+
+  Maven Ant Tasks contain <<<wagon-file>>> and <<<wagon-http-lightweight>>> providers. The other available providers are:
 
 *--------------+--------------------------+-------------------+
 | Protocol     | Artifact ID              | Version           |
@@ -247,12 +272,16 @@ Using the Maven Ant Tasks
 
   In Maven, the Project Object Model (POM) represents a unit of work - one exists for each artifact that is built.
 
-  Maven 2.0 POM files are required for deploying your own artifacts to a repository for use in the dependencies
+  A Maven 2.0 POM file is required for deploying your own artifact to a repository for use in the dependencies
   elements of other projects. 
 
-  They can also be reused for declaring your own dependencies, instead of specifying the inline version given earlier.
+  It can also be reused for declaring your own dependencies, instead of specifying the inline version given earlier.
 
   Here is the earlier example, expressed as a POM:
+
+  ~~ TODO: Using wagon-provider-api below is a bad example, because it can
+  ~~ easily be mixed up with registering a provider. I suggest we replace it
+  ~~ with junit with test scope.
 
 -----
 <project>
@@ -286,7 +315,7 @@ Using the Maven Ant Tasks
 
   These elements represent:
 
-    * <modelVersion> - this is the version of the POM layout in use, currently <<<4.0.0>>>
+    * <modelVersion> - this is the version of the POM layout in use, currently <<<4.0.0>>>.
 
     * <groupId> - the group ID represents your organisation and project name, much like a Java package name.
       This must be universally unique. This becomes the base directory in the repository as well.
@@ -296,18 +325,18 @@ Using the Maven Ant Tasks
 
     * <version> - the version of the artifact you are building.
 
-    * <dependencies> - the artifacts the project is dependant on.
+    * <dependencies> - the artifacts that this project is dependant on.
 
   This is all that is required for most projects. However, it is also possible to use other fields available in
   Maven to describe your project, and reference them from your build script. 
 
-  To access a POM as Ant properties, you must define it as a reference. For example, to access the version from a POM,
-  you could use the following:
+  To access a part of the POM as an Ant property, you must define it as a reference. For example, to access the version from a POM,
+  you can use the following:
 
 -----
   <artifact:pom id="maven.project" file="pom.xml" />
 
-  <echo>The version is $\{maven.project.version\}</echo>
+  <echo>The version is ${maven.project.version}</echo>
 -----
 
   You can also access nested parts of the POM. For example, you can read the default value of the <<<directory>>>
@@ -316,7 +345,7 @@ Using the Maven Ant Tasks
 -----
   <artifact:pom id="project" file="pom.xml" />
 
-  <echo>The build directory is $\{project.build.directory\}</echo>
+  <echo>The build directory is ${project.build.directory}</echo>
 -----
 
   For more information on the elements available in the POM, see the {{{/maven-model/maven.html} descriptor reference}}.
@@ -324,15 +353,15 @@ Using the Maven Ant Tasks
 The Settings File
 
   The POM can be used to represent most of the information that the tasks have access to, including remote
-  repositories. Informations that are user or environment specific, such as the <<<authentication>>> tag, are
-  specified in the <<<settings.xml>>> file in Maven, and can be accessed from the Ant tasks also.
+  repositories. Information that are user or environment specific, such as the <<<authentication>>> tag, are
+  specified in the <<<settings.xml>>> file in Maven, and can also be accessed from the Ant tasks.
 
   The file is first looked for in <<<$\{user.home\}/.ant/settings.xml>>>, then in <<<$\{user.home\}/.m2/settings.xml>>>
   so that the settings can be shared with Maven 2.0 itself. Since 2.0.7, it is then looked for in
   <<<$\{ANT_HOME\}/etc/settings.xml>>>, then in <<<$\{M2_HOME\}/conf/settings.xml>>> so that the settings
   can be set for all users.
   
-  Since 2.0.6, you can read a settings file anywhere using <<<settingsFile>>> attribute:
+  Since 2.0.6, you can provide access to a settings file anywhere using <<<settingsFile>>> attribute:
 
 -----
 <artifact:dependencies settingsFile="/opt/maven/conf/settings.xml">
@@ -377,6 +406,8 @@ The Settings File
 
     * {{{guides/mini/guide-mirror-settings.html} Using Mirrors for Repositories}}.
 
+    ~~ TODO: The link below is broken
+
     * There is a
       {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/conf/settings.xml} sample settings file}}
       in the Maven installation.
@@ -402,6 +433,9 @@ Getting Help
 
 Task Reference
 
+  ~~ TODO: Can the task and type classes be generated using Modello?
+  ~~ If so, the reference documentation can be generated from the model.
+
 * <<<dependencies>>>
 
   This task will check if any of the specified dependencies, and their dependencies are missing or updated, and
@@ -412,17 +446,17 @@ Task Reference
 *-------------------------+--------------------------------------------------------+
 | <<<verbose>>>           | If <<<true>>> this displays the results of each dependency resolution and their relationships. Default is <false>.
 *-------------------------+--------------------------------------------------------+
-| <<<filesetId>>>         | The reference ID to store a fileset under for the resolved dependencies.
+| <<<filesetId>>>         | The reference ID to store a fileset under, for the resolved dependencies.
 *-------------------------+--------------------------------------------------------+
-| <<<pathId>>>            | The reference ID to store a path under for the resolved dependencies.
+| <<<pathId>>>            | The reference ID to store a path under, for the resolved dependencies.
 *-------------------------+--------------------------------------------------------+
-| <<<pomRefId>>>          | The reference ID from a pom datatype defined earlier in the build file.
+| <<<pomRefId>>>          | The reference ID from a POM datatype defined earlier in the build file.
 *-------------------------+--------------------------------------------------------+
-| <<<sourcesFilesetId>>>  | The reference ID to store a fileset under for the sources attachements of the resolved dependencies. <(since 2.0.6)>
+| <<<sourcesFilesetId>>>  | The reference ID to store a fileset under, for the sources attachements of the resolved dependencies. <(since 2.0.6)>
 *-------------------------+--------------------------------------------------------+
-| <<<javadocFilesetId>>>  | The reference ID to store a fileset under for the javadoc attachements of the resolved dependencies. <(since 2.0.9)>
+| <<<javadocFilesetId>>>  | The reference ID to store a fileset under, for the javadoc attachements of the resolved dependencies. <(since 2.0.9)>
 *-------------------------+--------------------------------------------------------+
-| <<<versionsId>>>        | The property ID to store versions of the resolved dependencies, for <<<VersionMapper>>> use. <(since 2.0.7)>
+| <<<versionsId>>>        | The property ID to store the versions of the resolved dependencies, for use by a <<<VersionMapper>>>. <(since 2.0.7)>
 *-------------------------+--------------------------------------------------------+
 | <<<useScope>>>          | The scope to be retrieved.
 *-------------------------+--------------------------------------------------------+
@@ -440,7 +474,8 @@ Task Reference
 -----
 <copy todir="...">
   <fileset refid="..." />
-  <mapper classpathref="maven-ant-tasks.classpath" classname="org.apache.maven.artifact.ant.VersionMapper"
+  <mapper classpathref="maven-ant-tasks.classpath"
+          classname="org.apache.maven.artifact.ant.VersionMapper"
           from="${...versionId property...}" to="flatten" />
 </copy>
 -----
@@ -449,6 +484,8 @@ Task Reference
   the corresponding file.
 
 ** <<<dependency>>>
+
+  ~~ TODO: Is system scope supported, in the table below?
 
 *------------------+--------------------------------------------------------+
 | <<<groupId>>>    | The group ID of the dependency. <Required>
@@ -459,7 +496,7 @@ Task Reference
 *------------------+--------------------------------------------------------+
 | <<<type>>>       | The type of the dependency. The default is <<<jar>>>.
 *------------------+--------------------------------------------------------+
-| <<<scope>>>      | The scope of the usage of the dependency, which affects which of its dependencies are also retrieved. This can be <<<compile>>>, <<<runtime>>>, <<<test>>>, <<<provided>>>.
+| <<<scope>>>      | The scope of the usage of the dependency, which affects which of that dependency's own dependencies are also retrieved. This can be <<<compile>>>, <<<runtime>>>, <<<test>>>, <<<provided>>>.
 *------------------+--------------------------------------------------------+
 
   The dependency can also nest multiple <<<exclusion>>> elements.
@@ -482,22 +519,22 @@ Task Reference
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 | Attribute           | Description                                                              | Required                                        |
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
-| <<<file>>>          | The file to install in the local repository.                             | Yes, except if packaging is pom                 |
+| <<<file>>>          | The file to install in the repository.                                   | Yes, except if packaging is <<<pom>>>           |
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
-| <<<pomRefId>>>      | The reference ID from a pom datatype defined earlier in the build file.  | No, if a pom nested element is provided instead |
+| <<<pomRefId>>>      | The reference ID from a POM datatype defined earlier in the build file.  | No, if a <<<pom>>> nested element is provided instead |
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 | <<<uniqueVersion>>> | (<<<deploy>>> only) Whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time | No, the default is <<<true>>>. |
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 
-  The task must also take a either a nested <<<pom>>> element, or a pomRefId attribute.
-  The tasks can have an optional <<<localRepository>>> element.
+  The task must also take either a nested <<<pom>>> element, or a <<<pomRefId>>> attribute.
+  The task can have an optional <<<localRepository>>> element.
 
   <<<deploy>>> can have an optional <<<remoteRepository>>> element. If no
   <<<remoteRepository>>> element is given, the <<<distributionManagement>>> section of the POM is used.
 
 ** <<<attach>>> <(since 2.0.6)>
 
-  Multiple artifacts can be attached to the main artifact, for exemple: sources, apidocs, ...
+  Multiple artifacts can be attached to the main artifact, for exemple: sources, javadocs, ...
 
 *------------------+--------------------------------------------------------+
 | <<<file>>>       | The file to attach. <Required>
@@ -527,6 +564,8 @@ Type Reference
 
   Specifies the location of the local repository of artifacts.
 
+  ~~ TODO: Specify the default value for layout
+
 *------------------+--------------------------------------------------------+
 | <<<path>>>       | The directory of the local repository. <Required>
 *------------------+--------------------------------------------------------+
@@ -538,6 +577,8 @@ Type Reference
 * <<<remoteRepository>>>
 
   Specifies the location of the remote repository.
+
+  ~~ TODO: Specify the default value for layout
 
 *----------------------+--------------------------------------------------------+
 | <<<url>>>            | The URL of the repository. <Required>
@@ -551,7 +592,7 @@ Type Reference
 
 ** <<<snapshots>>>, <<<releases>>>
 
-  Policies about downloading each type of artifact.
+  Policies about downloading different types of artifacts.
 
 *----------------------+--------------------------------------------------------+
 | <<<enabled>>>        | Whether to download this type of artifact from the repository. Default is <<<true>>>.
@@ -565,13 +606,13 @@ Type Reference
 
 ** <<<proxy>>>
 
-  The proxy element is typically used for HTTP repositories. The layout is the same as in the
+  The proxy element is typically used for HTTP repositories. The content is the same as for <<<proxy>>> in the
   {{{/maven-settings/settings.html#class_proxy} settings reference}}.
 
 ** <<<authentication>>>
 
   The authentication element is used for passing a username, password and other credentials to the repository either
-  on upload or download. The layout is the same as in the {{{/maven-settings/settings.html#class_server} settings reference}}.
+  on upload or download. The content is the same as for <<<server>>> in the {{{/maven-settings/settings.html#class_server} settings reference}}.
 
 * <<<pom>>>
 
@@ -581,3 +622,4 @@ Type Reference
 | <<<file>>>       | The file of the POM to load. <Required>
 *------------------+--------------------------------------------------------+
 
+  ~~ TODO: Add reference documentation for VersionMapper
