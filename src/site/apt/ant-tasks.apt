@@ -203,71 +203,6 @@ Using the Maven Ant Tasks
 <authentication username="brett" privateKey="${user.home}/.ssh/id_dsa" />
 -----
 
-* Installing and Deploying Your Own Artifacts to a Repository
-
-  If you want to share your built artifacts between projects, you can use two other tasks: <<<install>>> for
-  installing them in your local repository for access as dependencies in other scripts, and <<<deploy>>> for
-  deploying them to a remote location you have set up to serve as a repository in your organisation.
-
-  <<Note:>> that the installation and deployment require that you have a Maven 2.0 POM file to deploy along with it.
-  These are required for the transitive dependency mechanism to work effectively, and can be quite simple to
-  create.
-
-  ~~ TODO: Write an introductory text explaining the example below
-
------
-...
-  <artifact:pom id="maven.project" file="pom.xml" />
-
-  <artifact:install file="target/maven-artifact-ant-2.0-alpha-3.jar">
-    <pom refid="maven.project"/>
-  </artifact:install>
-
-  <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
-    <remoteRepository url="file://localhost/www/repository"/>
-    <pom refid="maven.project"/>
-  </artifact:deploy>
-...
------
-
-  For deploying using a protocol other than local file system, you need to register a provider to make the other
-  protocols available. For example:
-
------
-...
-  <artifact:install-provider artifactId="wagon-ssh" version="1.0-beta-2"/>
-  
-  <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
-    <remoteRepository url="scp://localhost/www/repository">
-      <authentication username="${repository.username}"
-              privateKey="${user.home}/.ssh/id_dsa"/>
-    </remoteRepository>
-    <pom refid="maven.project"/>
-  </artifact:deploy>
-...
------
-
-  <<Note:>> that if you use <<<antcall>>>, the provider isn't available during the Ant call: you have to register
-  it again if you need it.
-
-  ~~ TODO: Explain more thoroughly when you need to register a provider
-
-  Maven Ant Tasks contain <<<wagon-file>>> and <<<wagon-http-lightweight>>> providers. The other available providers are:
-
-*--------------+--------------------------+-------------------+
-| Protocol     | Artifact ID              | Version           |
-*--------------+--------------------------+-------------------+
-| <<<http>>>   | <<<wagon-http>>>         | <<<1.0-beta-2>>>  |
-*--------------+--------------------------+-------------------+
-| <<<scp>>>    | <<<wagon-ssh>>>          | <<<1.0-beta-2>>>  |
-*--------------+--------------------------+-------------------+
-| <<<scpexe>>> | <<<wagon-ssh-external>>> | <<<1.0-beta-2>>>  |
-*--------------+--------------------------+-------------------+
-| <<<ftp>>>    | <<<wagon-ftp>>>          | <<<1.0-beta-2>>>  |
-*--------------+--------------------------+-------------------+
-| <<<webdav>>> | <<<wagon-webdav>>>       | <<<1.0-beta-2>>>  |
-*--------------+--------------------------+-------------------+
-
 * Using a Maven {POM} File
 
   In Maven, the Project Object Model (POM) represents a unit of work - one exists for each artifact that is built.
@@ -349,6 +284,71 @@ Using the Maven Ant Tasks
 -----
 
   For more information on the elements available in the POM, see the {{{/maven-model/maven.html} descriptor reference}}.
+
+* Installing and Deploying Your Own Artifacts to a Repository
+
+  If you want to share your built artifacts between projects, you can use two other tasks: <<<install>>> for
+  installing them in your local repository for access as dependencies in other scripts, and <<<deploy>>> for
+  deploying them to a remote location you have set up to serve as a repository in your organisation.
+
+  <<Note:>> that the installation and deployment require that you have a Maven 2.0 POM file to deploy along with it.
+  These are required for the transitive dependency mechanism to work effectively, and can be quite simple to
+  create.
+
+  ~~ TODO: Write an introductory text explaining the example below
+
+-----
+...
+  <artifact:pom id="maven.project" file="pom.xml" />
+
+  <artifact:install file="target/maven-artifact-ant-2.0-alpha-3.jar">
+    <pom refid="maven.project"/>
+  </artifact:install>
+
+  <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
+    <remoteRepository url="file://localhost/www/repository"/>
+    <pom refid="maven.project"/>
+  </artifact:deploy>
+...
+-----
+
+  For deploying using a protocol other than local file system, you need to register a provider to make the other
+  protocols available. For example:
+
+-----
+...
+  <artifact:install-provider artifactId="wagon-ssh" version="1.0-beta-2"/>
+
+  <artifact:deploy file="target/maven-artifact-ant-2.0-alpha-3.jar">
+    <remoteRepository url="scp://localhost/www/repository">
+      <authentication username="${repository.username}"
+              privateKey="${user.home}/.ssh/id_dsa"/>
+    </remoteRepository>
+    <pom refid="maven.project"/>
+  </artifact:deploy>
+...
+-----
+
+  <<Note:>> that if you use <<<antcall>>>, the provider isn't available during the Ant call: you have to register
+  it again if you need it.
+
+  ~~ TODO: Explain more thoroughly when you need to register a provider
+
+  Maven Ant Tasks contain <<<wagon-file>>> and <<<wagon-http-lightweight>>> providers. The other available providers are:
+
+*--------------+--------------------------+-------------------+
+| Protocol     | Artifact ID              | Version           |
+*--------------+--------------------------+-------------------+
+| <<<http>>>   | <<<wagon-http>>>         | <<<1.0-beta-2>>>  |
+*--------------+--------------------------+-------------------+
+| <<<scp>>>    | <<<wagon-ssh>>>          | <<<1.0-beta-2>>>  |
+*--------------+--------------------------+-------------------+
+| <<<scpexe>>> | <<<wagon-ssh-external>>> | <<<1.0-beta-2>>>  |
+*--------------+--------------------------+-------------------+
+| <<<ftp>>>    | <<<wagon-ftp>>>          | <<<1.0-beta-2>>>  |
+*--------------+--------------------------+-------------------+
+| <<<webdav>>> | <<<wagon-webdav>>>       | <<<1.0-beta-2>>>  |
+*--------------+--------------------------+-------------------+
 
 The Settings File
 
