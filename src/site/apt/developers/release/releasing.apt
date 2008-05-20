@@ -321,6 +321,7 @@ Enjoy,
  [[15]] Add the release to the next board report, in the private subversion area.
 
  [[16]] Add the release to the wiki, under the <Recent Releases> section of the
- front page and on the <Releases> page.
+ {{{http://docs.codehaus.org/display/MAVEN/Home}front page}} and on the
+ {{{http://docs.codehaus.org/display/MAVEN/Releases}Releases page}}.
 
  [[17]] Celebrate :o)
