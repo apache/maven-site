@@ -169,6 +169,8 @@ mvn site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
+ <<Note>>: Verify/change folder permissions to 0775.
+
  [[7]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
