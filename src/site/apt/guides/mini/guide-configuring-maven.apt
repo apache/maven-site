@@ -119,7 +119,7 @@ Configuring Maven
 </settings>
 -------------
 
-  More info about mirrors is available in the {{{guide-mirror-settings.html}Guide to Mirror Settings}}.
+  More info about mirrors is available in the {{{./guide-mirror-settings.html}Guide to Mirror Settings}}.
 
 * Profiles
 

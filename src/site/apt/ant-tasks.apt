@@ -67,7 +67,7 @@ Using the Maven Ant Tasks
 
 * Declaring Dependencies
 
-  The main purpose of the Maven Ant Tasks is to utilise Maven's {{{guides/introduction/introduction-to-dependency-mechanism.html} dependency management features}}.
+  The main purpose of the Maven Ant Tasks is to utilise Maven's {{{./guides/introduction/introduction-to-dependency-mechanism.html} dependency management features}}.
 
   This is achieved with the <<<dependencies>>> task. The simplest usage involves specifying your dependencies inline,
   such as in the following example:
@@ -87,7 +87,7 @@ Using the Maven Ant Tasks
   The above example will download those 3 dependencies, and their dependencies, and so on. They will be stored in
   the default local repository location, <<<$\{user.home\}/.m2/repository>>>.
 
-  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{#pom} explained below}}. This is the
+  You can also use a Maven 2.0 POM to declare your dependencies, which is {{{pom} explained below}}. This is the
   recommended practice so that you can reuse the file to deploy your own artifacts. 
 
   You may have noticed the <<<pathId>>> reference. This is optional, but if given will create a classpath reference
@@ -122,7 +122,7 @@ Using the Maven Ant Tasks
 
   You can also specify a <<<scope>>> parameter on each dependency. This changes the behavior of
   transitive dependencies and is useful for building different types of classpaths. To see how it affects
-  the behaviour of the dependencies, see the {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
+  the behaviour of the dependencies, see the {{{./guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
   documentation on the Maven 2.0 site.
   
   Other options are:
@@ -400,11 +400,11 @@ The Settings File
 
   For more information on configuring <<<settings.xml>>>, see:
 
-    * {{{guides/mini/guide-configuring-maven.html} Configuring Maven}}.
+    * {{{./guides/mini/guide-configuring-maven.html} Configuring Maven}}.
 
     * {{{/maven-settings/settings.html} Settings Descriptor Reference}}.
 
-    * {{{guides/mini/guide-mirror-settings.html} Using Mirrors for Repositories}}.
+    * {{{./guides/mini/guide-mirror-settings.html} Using Mirrors for Repositories}}.
 
     ~~ TODO: The link below is broken
 
@@ -425,7 +425,7 @@ Getting Help
 
   For more on the Maven functionality behind them, try the following links:
 
-    * {{{guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
+    * {{{./guides/introduction/introduction-to-dependency-mechanism.html} Dependency Mechanism}}
 
     * {{{/maven-settings/settings.html} Settings Reference}}
 
@@ -614,7 +614,7 @@ Type Reference
   The authentication element is used for passing a username, password and other credentials to the repository either
   on upload or download. The content is the same as for <<<server>>> in the {{{/maven-settings/settings.html#class_server} settings reference}}.
 
-* <<<pom>>>
+* <<<{pom}>>>
 
   The POM element will load a POM file and make it available as a reference for the other tasks or as properties.
 

@@ -48,5 +48,5 @@ maven : wagon-api
 Directory Structure
 
  Maven encourages a common directory structure for a project. For more information on this please refer
- to our {{{guides/introduction/introduction-to-the-standard-directory-layout.html}Introduction to the standard
+ to our {{{./guides/introduction/introduction-to-the-standard-directory-layout.html}Introduction to the standard
  directory structure}}.

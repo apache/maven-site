@@ -139,7 +139,7 @@ mvn -Dversion=4.0.0 -Dmodel=maven.mdo modello:java
   of <<<clean>>>, I can override the usage of the <<<maven-clean-plugin>>> when
   <<<clean:clean>>> is invoked.
 
-  <<NOTE2:>> For more information on <<<settings.xml>>>, see \[{{{#1}1}}\].
+  <<NOTE2:>> For more information on <<<settings.xml>>>, see \[{{{1}1}}\].
 
 *Resources
 

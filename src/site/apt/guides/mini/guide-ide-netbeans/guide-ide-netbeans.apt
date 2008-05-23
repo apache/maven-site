@@ -12,19 +12,19 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
     To use Maven 2 in Netbeans you have to follow these steps:
 
-        * {{{#Retreive/Create the Maven 2 project}Retreive/Create the Maven 2 project.}}
+        * {{{RetreiveCreate_the_Maven_2_project}Retreive/Create the Maven 2 project.}}
 
-        * {{{#Launch Maven 2 in command line using the netbeans-freeform plugin}Launch Maven 2 in command line using the netbeans-freeform plugin.}}
+        * {{{Launch_Maven_2_in_command_line_using_the_netbeans-freeform_plugin}Launch Maven 2 in command line using the netbeans-freeform plugin.}}
 
-        * {{{#Open the project with Netbeans}Open the project with Netbeans.}}
+        * {{{Open_the_project_with_Netbeans}Open the project with Netbeans.}}
 
-        * {{{#Build the project and launch other Maven goals}Build the project and launch other Maven goals.}}
+        * {{{Build_the_project_and_launch_other_Maven_goals}Build the project and launch other Maven goals.}}
 
-        * {{{#Edit properties of the plugin}Edit properties of the plugin.}}
+        * {{{Edit_properties_of_the_plugin}Edit properties of the plugin.}}
 
-        * {{{#Refresh the project view}Refresh the project view.}}
+        * {{{Refresh_the_project_view}Refresh the project view.}}
 
-        * {{{#Build the Maven 2 site}Build the Maven 2 site.}}
+        * {{{Build_the_Maven_2_site}Build the Maven 2 site.}}
 
 
 
