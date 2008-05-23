@@ -16,7 +16,7 @@ Download Maven ${currentVersion}
 
   Maven ${currentVersion} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
-  We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
+  We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{./guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |

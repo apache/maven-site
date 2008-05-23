@@ -9,31 +9,31 @@
 
 Introduction to the POM
 
-  * {{{introduction-to-the-pom.html#What_is_a_POM}What is a POM}}?
+  * {{{./introduction-to-the-pom.html#What_is_a_POM}What is a POM}}?
 
-  * {{{introduction-to-the-pom.html#Super_POM}Super POM}}
+  * {{{./introduction-to-the-pom.html#Super_POM}Super POM}}
 
-  * {{{introduction-to-the-pom.html#Minimal_POM}Minimal POM}}
+  * {{{./introduction-to-the-pom.html#Minimal_POM}Minimal POM}}
 
-  * {{{introduction-to-the-pom.html#Project_Inheritance}Project Inheritance}}
+  * {{{./introduction-to-the-pom.html#Project_Inheritance}Project Inheritance}}
 
-    * {{{introduction-to-the-pom.html#Example_1}Example 1}}
+    * {{{./introduction-to-the-pom.html#Example_1}Example 1}}
 
-    * {{{introduction-to-the-pom.html#Example_2}Example 2}}
-
-    []
-
-  * {{{introduction-to-the-pom.html#Project_Aggregation}Project Aggregation}}
-
-    * {{{introduction-to-the-pom.html#Example_3}Example 3}}
-
-    * {{{introduction-to-the-pom.html#Example_4}Example 4}}
+    * {{{./introduction-to-the-pom.html#Example_2}Example 2}}
 
     []
 
-  * {{{introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation}Project Inheritance vs Project Aggregation}}
+  * {{{./introduction-to-the-pom.html#Project_Aggregation}Project Aggregation}}
 
-    * {{{introduction-to-the-pom.html#Example_5}Example 5}}
+    * {{{./introduction-to-the-pom.html#Example_3}Example 3}}
+
+    * {{{./introduction-to-the-pom.html#Example_4}Example 4}}
+
+    []
+
+  * {{{./introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation}Project Inheritance vs Project Aggregation}}
+
+    * {{{./introduction-to-the-pom.html#Example_5}Example 5}}
 
     []
 

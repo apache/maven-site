@@ -71,7 +71,7 @@ Introduction: How Maven Resolves Plugins
   Maven's approach to resolving a plugin's groupId and artifactId given its prefix is actually
   relatively simple. The user can specify a set of plugin groupId's to be searched. Using 
   repository metadata for each configured groupId, Maven will search for plugin prefix mappings
-  using the process detailed in \[{{{#1}1}}\].
+  using the process detailed in \[{{{1}1}}\].
   
 **Resolving a Plugin's Version
   
@@ -112,9 +112,9 @@ Introduction: How Maven Resolves Plugins
         prompting is disabled (batch mode), the plugin registry can be configured with
         a default answer to this question.
         
-        See \[{{{#2}2}}\] for more information on the plugin registry.
+        See \[{{{2}2}}\] for more information on the plugin registry.
         
-        See \[{{{#3}3}}\] for more information on the <<<settings.xml>>> file.
+        See \[{{{3}3}}\] for more information on the <<<settings.xml>>> file.
 
   [[3]] <LATEST version metadata>
   

@@ -23,7 +23,7 @@ Glossary
 
   * {<<Artifact>>}:
     An artifact is something that is either produced or used by a project. Examples of artifacts produced by Maven for a project
-    include: JARs, source and binary distributions, WARs. Each artifact is uniquely identified by a {{{#GroupId}group id}}
+    include: JARs, source and binary distributions, WARs. Each artifact is uniquely identified by a {{{GroupId}group id}}
     and an artifact ID which is unique within a group.
 
   * {<<GroupId>>}:
@@ -57,7 +57,7 @@ Glossary
 
   * {<<Repository>>}:
 
-    Refer to {{{guides/introduction/introduction-to-repositories.html}Introduction to Repositories}}
+    Refer to {{{./guides/introduction/introduction-to-repositories.html}Introduction to Repositories}}
 
   * {<<Snapshots>>}:
     Projects can (and should) have a special version including <<<SNAPSHOT>>>
@@ -73,12 +73,12 @@ Glossary
     APT is a wiki-like format of documentation that Maven currently understands.
 
     For information on how to create APT files, refer to the
-    {{{guides/mini/guide-site.html}Guide to creating a site}} document.
+    {{{./guides/mini/guide-site.html}Guide to creating a site}} document.
 
   * {<<XDoc>>}:
     XDoc is the format of documentation that Maven currently understands. It is quite simple, and
     allows embedding XHTML within a simple layout that is transformed into a uniform site.
 
     For information on how to create XDoc files, refer to the
-    {{{guides/mini/guide-site.html}Guide to creating a site}} document.
+    {{{./guides/mini/guide-site.html}Guide to creating a site}} document.
 

@@ -10,13 +10,13 @@ Guide to using Eclipse with Maven 2.x
 
  This mini guide explains howto use Maven 2 in Eclipse IDE.
 
- * {{{#Maven 2 repository}Maven 2 repository}}
+ * {{{Maven_2_repository}Maven 2 repository}}
 
- * {{{#Maven as an external tool}Maven as an external tool}}
+ * {{{Maven_as_an_external_tool}Maven as an external tool}}
 
- * {{{#Simple Project}Simple Project}}
+ * {{{Simple_Project}Simple Project}}
 
- * {{{#Multiple Module Project}Multiple Module Project}}
+ * {{{Multiple_Module_Project}Multiple Module Project}}
 
 * {Maven 2 repository}
 
@@ -77,8 +77,8 @@ want to use eclipse as the scm client.
 
  Due to the workspace idea many eclipse users are used to a flat
 layout and therefore want to keep this structure, which is possible
-but not recommended.  Actually, the only reason for a {{{#Flat Project
-Layout}flat multiple module project layout}} is the possibility to
+but not recommended.  Actually, the only reason for a
+{{{Flat_Project_Layout}flat multiple module project layout}} is the possibility to
 checkout and edit the parent POM without checking out the whole
 project. The following sample shows how to handle maven multiple
 module projects with eclipse while keeping the
@@ -92,7 +92,7 @@ hierachical project layout}}.
 example shows how to set up a new mutiple module project.
 
  [[1]] Set up a new eclipse workspace called <step-by-step> and add
-the <M2_REPO> classpath variable as {{{#Maven 2 repository}described
+the <M2_REPO> classpath variable as {{{Maven_2_repository}described
 above}}.
 
  [[1]] Open the command line shell and change to the newly created workspace directory.
@@ -202,7 +202,7 @@ to check out all modules and keep them up to date. Especially if you
 are only interested in one or two modules. In this case using binary
 dependencies is much more comfortable. Just check out the modules you
 want to work on with eclipse and run <mvn eclipse:eclipse> for each
-module (see also {{{#Maven as an external tool}Maven as an external
+module (see also {{{Maven_as_an_external_tool}Maven as an external
 tool}}). Of course all referenced artifacts have to be available from
 your maven repository.
 

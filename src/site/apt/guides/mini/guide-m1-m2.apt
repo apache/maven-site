@@ -150,7 +150,7 @@ mvn one:convert
 
 *** Resource filtering to inject POM variables into application
 
- You can turn on {{{../getting-started/index.html#How_do_I_filter_resource_files?}resource filtering}}
+ You can turn on {{{../getting-started/index.html#How_do_I_filter_resource_files}resource filtering}}
  in your POM. Tokens of the form <<<$\{pom.variable\}>>> in resource files will be replaced with the  corresponding POM property.
 
 +----+
