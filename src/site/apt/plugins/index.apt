@@ -53,7 +53,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-alpha-1  | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.0.1          | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
+| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.1          | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | <<reporting>>                                             | | <Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.> | |
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
@@ -73,7 +73,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jxr-plugin/} <<<jxr>>>}}                | 2.1    | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                | 2.3    | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
+| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                | 2.4    | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.0.1 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
