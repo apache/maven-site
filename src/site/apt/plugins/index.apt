@@ -97,7 +97,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.2  | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPH}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.1    | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
+| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.2    | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-one-plugin/} <<<one>>>}}                | 1.2    | A plugin for interacting with legacy Maven 1.x repositories and builds. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-one-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MONE}JIRA}}
 *-----------------------------------------------------------+--------------+------------------+------------------------+--------------------+
