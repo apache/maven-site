@@ -70,11 +70,11 @@ Prerequisite
 
 * Release Process for Part Of Maven
 
- [[1]] Prepare your poms for release:
+ [[1]] Prepare your POMs for release:
 
-   [[a]] Make sure there are <<NO>> snapshots in the poms to be released.
+   [[a]] Make sure there are <<no>> snapshots in the POMs to be released.
 
-   [[b]] Check that your poms will not lose content when they are rewritten
+   [[b]] Check that your POMs will not lose content when they are rewritten
          during the release process.
 
      * <<<mvn release:prepare -DdryRun=true>>>
@@ -91,7 +91,7 @@ Prerequisite
      * Remember to do '<<<mvn release:clean>>>' before you start the real
        release process.
 
-     * Verify that all <<<pom.xml>>> have a SCM definition.
+     * Verify that all <<<pom.xml>>> files have an SCM definition.
 
      []
 
@@ -105,18 +105,18 @@ Prerequisite
 ...
 +-----+
 
- <<IMPORTANT NOTE>>: Be sure that the generated artifacts respect the
+ <<Note:>> Be sure that the generated artifacts respect the
  {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files should be present in
- the META-INF directory within the jar. For -sources artifacts, be sure that your pom does NOT use the
+ the META-INF directory within the jar. For <<<-sources>>> artifacts, be sure that your POM does <<not>> use the
  maven-source-plugin:2.0.3 which is broken. The recommended version at this time is 2.0.4.
 
- <<Note>>: You could verify the deployment under Maven Snapshot repository on Apache.
+ <<Note:>> You should verify the deployment under Maven Snapshot repository on Apache.
 
 +-----+
 http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/maven-XXX-plugin/Y.Z-SNAPSHOT/
 +-----+
 
- [[3]] Run fix-permissions.sh
+ [[3]] Run <<<fix-permissions.sh>>>
  
  Login to people.apache.org, then run:
 
@@ -124,7 +124,7 @@ http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/ma
 /www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
 +-----+
 
- This will set maven-metadata.xml file permissions back to 664, and set permissions on any directories you created to 775.
+ This will set <<<maven-metadata.xml>>> file permissions back to 664, and set permissions on any directories you created to 775.
 
  [[4]] Prepare the release
 
@@ -132,7 +132,7 @@ http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/ma
 mvn release:prepare
 +-----+
 
- <<Note>>: Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
+ <<Note:>> Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
 
  [[5]] Stage the release for a vote
 
@@ -142,26 +142,24 @@ mvn release:perform
 
  [[6]] Stage the latest documentation
 
- The plugin parent pom is configured to stage the documentation in a "versioned" directory
- such as <<</plugins/maven-XXX-plugin-Y.Z-SNAPSHOT>>>.
+ The plugin parent POM is configured to stage the documentation in a "versioned" directory
+ such as <<</plugins/maven-XXX-plugin-Y.Z>>>.
 
- <<IMPORTANT NOTE>>: You need to stage the documentation for the current release version.
+ <<Note:>> You need to stage the documentation for the current release version.
 
 +------+
 cd target/checkout
-+------+
-+------+
 mvn site:stage-deploy -Preporting
 +------+
 
- <<Note>>: You could verify the deployment of the site on the Maven website (you need to wait the sync).
+ <<Note:>> You should verify the deployment of the site on the Maven website (you need to wait the sync).
 
 +-----+
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
  Some developers have {{{http://www.nabble.com/site%3Astage-deploy-asks-for-a-password--tt15582961s177.html}
- reported problems}} with the stage-deploy goal.  In that case, you can stage the site locally and
+ reported problems}} with the <<<site:stage-deploy>>> goal.  In that case, you can stage the site locally and
  upload it manually:
 
 +------+
@@ -169,7 +167,7 @@ mvn site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
- <<Note>>: Verify/change folder permissions to 0775.
+ <<Note:>> Verify/change folder permissions to 0775.
 
  [[7]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
@@ -203,7 +201,7 @@ Vote open for 72 hours.
 
 +-----+
 
- Once a vote is successful, post the result to the dev list and cc the pmc.
+ Once a vote is successful, post the result to the dev list and cc the PMC.
 
  [[8]] Copy from the staging repo to the production repo
 
@@ -213,7 +211,7 @@ Vote open for 72 hours.
  Here is an example on how to use the stage plugin:
 
 +-----+
-mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
+mvn stage:copy -Dsource="http://people.apache.org/~YOUR_APACHE_USERNAME/staging-repo" \
                -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" \
                -Dversion=Y.Z \
                -DtargetRepositoryId=apache.releases
@@ -247,7 +245,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
  This will allow you to bypass the staging phase and push the release directly into a production repository. It is assumed that
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
- [[9]] Run fix-permissions.sh again
+ [[9]] Run <<<fix-permissions.sh>>> again
  
  Login to people.apache.org, then run:
 
@@ -255,8 +253,8 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
 /www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
 +-----+
 
- This will once again set maven-metadata.xml file permissions back to 664, and set permissions on any directories you created to 775.
- The script lives in m2-snapshot-repository, but it's smart enough to fix permissions in m2-ibiblio-rsync-repository and m2-incubating-repository also.
+ This will once again set <<<maven-metadata.xml>>> file permissions back to 664, and set permissions on any directories you created to 775.
+ The script lives in the <<<m2-snapshot-repository>>> directory, but it's smart enough to fix permissions in <<<m2-ibiblio-rsync-repository>>> and <<<m2-incubating-repository>>> also.
 
  [[10]] Deploy the current website
 
@@ -266,7 +264,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_USERNAME/staging-repo" \
 mvn site-deploy -Preporting
 +-----+
 
- [[11]] Review Website
+ [[11]] Review the website
 
  Wait for the files to arrive at
 
@@ -285,7 +283,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin
  the <<<Y.Z>>> version as released. Create version Y.Z+1, if that hasn't already
  been done.
 
- [[14]] Create an Announcement. For instance:
+ [[14]] Create an announcement. For instance:
 
 +-----+
 From: YOUR_APACHE_EMAIL
