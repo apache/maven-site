@@ -16,7 +16,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
 | {{{/shared/maven-archiver/} <<<maven-archiver>>>}}                         | 2.3          | Is mainly used by plugins to handle packaging. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-archiver/}SVN}}
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
-| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.0          | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}}
+| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.0.1        | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}}
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
 | {{{/shared/maven-invoker/} <<<maven-invoker>>>}}                           | 2.0.8        | Fires up a Maven build in a new JVM. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-invoker/}SVN}}
 *----------------------------------------------------------------------------+--------------+------------------+------------------------+
