@@ -87,7 +87,7 @@ Introduction to the Dependency Mechanism
  Dependency scope is used to limit the transitivity of a depedency, and also to affect the classpath used for
  various build tasks.
 
- There are 5 scopes available:
+ There are 6 scopes available:
 
  * <<compile>>\
    This is the default scope, used if none is specified. Compile dependencies are available
@@ -112,7 +112,7 @@ Introduction to the Dependency Mechanism
    which contains it explicitly. The artifact is always available and is not
    looked up in a repository.
 
- * <<import>>\
+ * <<import>> <(only available in Maven 2.0.9 or later)>\
    This scope is only used on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It indicates that the specified
    POM should be replaced with the dependencies in that POM's <<<\<dependencyManagement\>>>> section. Since they are replaced,
    dependencies with a scope of <<<import>>> do not actually participate in limiting the transitivity of a dependency.
