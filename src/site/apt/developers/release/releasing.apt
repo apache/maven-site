@@ -28,7 +28,7 @@ Releasing A Maven Project
  What follows is a description of releasing a Maven project to a staging repository, whereupon it is scruntized by
  the community, approved, and transfered to a production repository.
 
-Prerequisite
+* Prerequisites
 
  Be sure that:
 
@@ -152,7 +152,8 @@ cd target/checkout
 mvn site:stage-deploy -Preporting
 +------+
 
- <<Note:>> You should verify the deployment of the site on the Maven website (you need to wait the sync).
+ <<Note:>> You should verify the deployment of the site on the Maven website
+ (you need to wait {{{http://www.apache.org/dev/project-site.html}the sync}}).
 
 +-----+
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
@@ -272,16 +273,33 @@ mvn site-deploy -Preporting
 http://maven.apache.org/plugins/maven-XXX-plugin
 +-----+
 
- [[12]] Update the plugins page
+ or for a shared component at
+
++-----+
+http://maven.apache.org/shared/maven-XXX
++-----+
+
+ The wait is necessary to allow the site to be
+ {{{http://www.apache.org/dev/project-site.html}rsync'ed into production}}.
+
+ [[12]] Update the index page
 
  If this is a plugin release, update the version number for the plugin on the
  </plugins/index.html> page.
 
+ If this is a shared component release, update the version number for the
+ component on the </shared/index.html> page.
+
  [[13]] Update JIRA
 
- Go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
- the <<<Y.Z>>> version as released. Create version Y.Z+1, if that hasn't already
+ For a plugin, go to Admin section in JIRA for the <<<maven-XXX-plugin>>> project and mark
+ the <<<Y.Z>>> version as released. Create version <<<Y.Z+1>>>, if that hasn't already
  been done.
+
+ If this is a shared component, go to Admin section in JIRA for the
+ {{{http://jira.codehaus.org/browse/MSHARED}MSHARED}} project and mark the
+ <<<maven-XXX-Y.Z>>> version as released. Create version <<<maven-XXX-Y.Z+1>>>,
+ if that hasn't already been done.
 
  [[14]] Create an announcement. For instance:
 
