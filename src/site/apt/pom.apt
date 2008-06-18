@@ -529,9 +529,14 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   <modules>
     <module>my-project<module>
+    <module>another-project<module>
   </modules>
 </project>
 +-----------------------------+
+
+  You do not need to consider the inter-module dependencies yourself when listing the modules, i.e. the
+  ordering of the modules given by the POM is not important. Maven will topologically sort the modules
+  such that dependencies are always build before dependent modules.
 
 *** A final note on {Inheritance v}. Aggregation
 
