@@ -27,7 +27,7 @@
   <bannerRight>
     <src>images/maven-logo-2.gif</src>
   </bannerRight>
-  <publishDate format="dd MMM yyyy" position="right" />
+  <publishDate position="right" />
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-stylus-skin</artifactId>
