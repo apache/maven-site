@@ -74,13 +74,12 @@ Using the Maven Ant Tasks
 
 -----
 <artifact:dependencies pathId="dependency.classpath">
-  <dependency groupId="org.apache.maven.wagon"
-              artifactId="wagon-provider-test"
-              version="1.0-alpha-2"/>
+  <dependency groupId="junit" artifactId="junit"
+              version="3.8.2" scope="test"/>
   <dependency groupId="org.codehaus.modello" artifactId="modello-core" 
               version="1.0-alpha-2-SNAPSHOT"/>
   <dependency groupId="javax.servlet" artifactId="servlet-api" 
-              version="2.4" scope="provided" />
+              version="2.4" scope="provided"/>
 </artifact:dependencies>
 -----
 
@@ -214,10 +213,6 @@ Using the Maven Ant Tasks
 
   Here is the earlier example, expressed as a POM:
 
-  ~~ TODO: Using wagon-provider-api below is a bad example, because it can
-  ~~ easily be mixed up with registering a provider. I suggest we replace it
-  ~~ with junit with test scope.
-
 -----
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -227,9 +222,10 @@ Using the Maven Ant Tasks
 
   <dependencies>
     <dependency>
-      <groupId>org.apache.maven.wagon</groupId>
-      <artifactId>wagon-provider-api</artifactId>
-      <version>1.0-alpha-2</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.2</version>
+      <scope>test</scope>
     </dependency>
 
     <dependency>
@@ -444,9 +440,9 @@ Task Reference
   The dependencies task accepts the following attributes:
 
 *-------------------------+--------------------------------------------------------+
-| <<<verbose>>>           | If <<<true>>> this displays the results of each dependency resolution and their relationships. Default is <false>.
-*-------------------------+--------------------------------------------------------+
 | <<<filesetId>>>         | The reference ID to store a fileset under, for the resolved dependencies.
+*-------------------------+--------------------------------------------------------+
+| <<<javadocFilesetId>>>  | The reference ID to store a fileset under, for the javadoc attachements of the resolved dependencies. <(since 2.0.9)>
 *-------------------------+--------------------------------------------------------+
 | <<<pathId>>>            | The reference ID to store a path under, for the resolved dependencies.
 *-------------------------+--------------------------------------------------------+
@@ -454,20 +450,22 @@ Task Reference
 *-------------------------+--------------------------------------------------------+
 | <<<sourcesFilesetId>>>  | The reference ID to store a fileset under, for the sources attachements of the resolved dependencies. <(since 2.0.6)>
 *-------------------------+--------------------------------------------------------+
-| <<<javadocFilesetId>>>  | The reference ID to store a fileset under, for the javadoc attachements of the resolved dependencies. <(since 2.0.9)>
-*-------------------------+--------------------------------------------------------+
-| <<<versionsId>>>        | The property ID to store the versions of the resolved dependencies, for use by a <<<VersionMapper>>>. <(since 2.0.7)>
+| <<<type>>>              | The type of artifacts to be retrieved. The default is <<<jar>>>.
 *-------------------------+--------------------------------------------------------+
 | <<<useScope>>>          | The scope to be retrieved.
 *-------------------------+--------------------------------------------------------+
-| <<<type>>>              | The type of artifacts to be retrieved. The default is <<<jar>>>.
+| <<<verbose>>>           | If <<<true>>> this displays the results of each dependency resolution and their relationships. Default is <false>.
+*-------------------------+--------------------------------------------------------+
+| <<<versionsId>>>        | The property ID to store the versions of the resolved dependencies, for use by a <<<VersionMapper>>>. <(since 2.0.7)>
 *-------------------------+--------------------------------------------------------+
 
-  The task can include the <<<dependency>>> nested type, in addition to the other shared types explained later.
+  The task can include the <<<dependency>>> nested type, in addition to the other shared types
+  <<<localRepository>>>, <<<pom>>> and <<<remoteRepository>>>, which will be explained later.
+
   You must include either:
-       a single <<<pom>>> element,
-       or a pomRefId attribute 
-       or one or more <<<dependency>>> element(s).
+       a single <<<pom>>> element
+       or a <<<pomRefId>>> attribute
+       or one or more <<<dependency>>> elements.
 
   If you have set a value for <<<versionsId>>>, you can later use <<<VersionMapper>>>, for example during a copy:
 
@@ -501,9 +499,9 @@ Task Reference
 
   The dependency can also nest multiple <<<exclusion>>> elements.
 
-** <<<exclusion>>>
+*** <<<exclusion>>>
 
-  An exclusion can be used to prevent the resolution of a particular artifact in the tree of the dependency.
+  An exclusion can be used to prevent the resolution of a particular artifact in the tree of the <<<dependency>>>.
 
 *------------------+--------------------------------------------------------+
 | <<<groupId>>>    | The group ID of the dependency to exclude. <Required>
@@ -526,11 +524,11 @@ Task Reference
 | <<<uniqueVersion>>> | (<<<deploy>>> only) Whether to assign snapshots a unique version comprised of the timestamp and build number, or to use the same version each time | No, the default is <<<true>>>. |
 *---------------------+--------------------------------------------------------------------------+-------------------------------------------------+
 
-  The task must also take either a nested <<<pom>>> element, or a <<<pomRefId>>> attribute.
-  The task can have an optional <<<localRepository>>> element.
+  The task must take either a nested <<<pom>>> element, or a <<<pomRefId>>> attribute.
+  The task can have an optional <<<localRepository>>> nested element.
 
-  <<<deploy>>> can have an optional <<<remoteRepository>>> element. If no
-  <<<remoteRepository>>> element is given, the <<<distributionManagement>>> section of the POM is used.
+  <<<deploy>>> can have an optional <<<remoteRepository>>> nested element. If no
+  <<<remoteRepository>>> nested element is given, the <<<distributionManagement>>> section of the POM is used.
 
 ** <<<attach>>> <(since 2.0.6)>
 
@@ -564,12 +562,10 @@ Type Reference
 
   Specifies the location of the local repository of artifacts.
 
-  ~~ TODO: Specify the default value for layout
-
+*------------------+--------------------------------------------------------+
+| <<<layout>>>     | The layout of the local repository. The valid options are <<<legacy>>> (Maven 1), or <<<default>>> (Maven 2). Defaults to <<<default>>>.
 *------------------+--------------------------------------------------------+
 | <<<path>>>       | The directory of the local repository. <Required>
-*------------------+--------------------------------------------------------+
-| <<<layout>>>     | The layout of the local repository. The valid options are <<<legacy>>> (Maven 1), or <<<default>>> (Maven 2).
 *------------------+--------------------------------------------------------+
 
   <<Note>>: until 2.0.6, attribute <<<path>>> was named <<<location>>>, but this has changed in 2.0.7 to solve a conflict with Ant 1.7.
@@ -578,41 +574,39 @@ Type Reference
 
   Specifies the location of the remote repository.
 
-  ~~ TODO: Specify the default value for layout
-
 *----------------------+--------------------------------------------------------+
-| <<<url>>>            | The URL of the repository. <Required>
-*----------------------+--------------------------------------------------------+
-| <<<layout>>>         | The layout of the remote repository. The valid options are <<<legacy>>> (Maven 1), or <<<default>>> (Maven 2).
-*----------------------+--------------------------------------------------------+
-| <<<snapshots>>>      | Policies regarding downloading snapshot artifacts.
+| <<<layout>>>         | The layout of the remote repository. The valid options are <<<legacy>>> (Maven 1), or <<<default>>> (Maven 2). Defaults to <<<default>>>.
 *----------------------+--------------------------------------------------------+
 | <<<releases>>>       | Policies regarding downloading released artifacts.
 *----------------------+--------------------------------------------------------+
+| <<<snapshots>>>      | Policies regarding downloading snapshot artifacts.
+*----------------------+--------------------------------------------------------+
+| <<<url>>>            | The URL of the repository. <Required>
+*----------------------+--------------------------------------------------------+
 
-** <<<snapshots>>>, <<<releases>>>
+  The <<<remoteRepository>>> can have the following nested elements: <<<authentication>>> and <<<proxy>>>.
+
+** <<<releases>>>, <<<snapshots>>>
 
   Policies about downloading different types of artifacts.
 
+*----------------------+--------------------------------------------------------+
+| <<<checksumPolicy>>> | How to treat missing or incorrect checksums for the dependencies that are downloaded. Valid values are <<<warn>>> (<default>) and <<<fail>>>.
 *----------------------+--------------------------------------------------------+
 | <<<enabled>>>        | Whether to download this type of artifact from the repository. Default is <<<true>>>.
 *----------------------+--------------------------------------------------------+
 | <<<updatePolicy>>>   | How often to check for updates on dependencies that are snapshots or include a range of versions. Valid values are <<<never>>>, <<<interval:MINUTES>>>, <<<daily>>> (<default)>, <<<always>>>.
 *----------------------+--------------------------------------------------------+
-| <<<checksumPolicy>>> | How to treat missing or incorrect checksums for the dependencies that are downloaded. Valid values are <<<warn>>> (<default>) and <<<fail>>>.
-*----------------------+--------------------------------------------------------+
-
-  The remote repository can also nest the following elements: <<<authentication>>> and <<<proxy>>>.
-
-** <<<proxy>>>
-
-  The proxy element is typically used for HTTP repositories. The content is the same as for <<<proxy>>> in the
-  {{{/maven-settings/settings.html#class_proxy} settings reference}}.
 
 ** <<<authentication>>>
 
   The authentication element is used for passing a username, password and other credentials to the repository either
   on upload or download. The content is the same as for <<<server>>> in the {{{/maven-settings/settings.html#class_server} settings reference}}.
+
+** <<<proxy>>>
+
+  The proxy element is typically used for HTTP repositories. The content is the same as for <<<proxy>>> in the
+  {{{/maven-settings/settings.html#class_proxy} settings reference}}.
 
 * <<<{pom}>>>
 
@@ -620,6 +614,8 @@ Type Reference
 
 *------------------+--------------------------------------------------------+
 | <<<file>>>       | The file of the POM to load. <Required>
+*------------------+--------------------------------------------------------+
+| <<<id>>>         | The reference ID of this POM.
 *------------------+--------------------------------------------------------+
 
   ~~ TODO: Add reference documentation for VersionMapper
