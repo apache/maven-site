@@ -13,30 +13,40 @@ Eclipse plugins for Maven
   Both plugins allow running Maven goals from Eclipse, see the output in a view inside the IDE and synchronize Maven POM information with
   Eclipse project information to some extent.
 
-M2Eclipse (Tycho)
+  The Maven Integration for Eclipse (m2eclipse)
 
-  The first, and most mature of the Eclipse integration projects. The {{{http://m2eclipse.codehaus.org/}Maven 2.x Integration for Eclipse}} project is developing
-  Maven 2.x integration for Eclipse, project lead by Eugene Kuleshov (Subclipse & Mylyn developer) and is released under the ASL 2.0. 
+  [The Maven Integration for Eclipse|http://m2eclipse.codehaus.org/] is the first and most mature of the projects aimed at integrating 
+  Maven within the Eclipse IDE. It is released under the EPL 1.0 license.
+  
   Features include:
-  
-  * Launching Maven builds from within Eclipse  
-  
-  * Dependency management for Eclipse build path based on Maven's pom.xml
-  
-  * Resolving Maven dependencies from the Eclipse workspace without installing to local Maven repository
-  
-  * Automatic downloading of the required dependencies from the remote Maven repositories
-  
-  * Wizards for creating new Maven projects, pom.xml or to enable Maven support on plain Java project
-  
-  * Quick search for dependencies in Maven remote repositories
-  
-  * Quick fixes in the Java editor for looking up required dependencies/jars by the class or package name
-  
-  * ...more features to come  
-  
-  []
 
+   * Launching Maven builds from within Eclipse
+   
+   * Dependency management for Eclipse build path based on Maven's pom.xml
+   
+   * Resolving Maven dependencies from the Eclipse workspace without installing to local Maven repository
+   
+   * Automatic downloading of the required dependencies and sources from the remote Maven repositories
+   
+   * Wizards for creating new Maven projects, pom.xml and to enable Maven support on existing projects
+   
+   * Quick search for dependencies in remote Maven repositories
+   
+   * Quick fixes in the Java editor for looking up required dependencies/jars by the class or package name
+   
+   * Integration with other Eclipse tools, such as WTP, AJDT, Mylyn, Subclipse and others.
+   
+   []
+
+  For installation instructions, see the {{{http://m2eclipse.codehaus.org/}m2eclipse website}}. For the most recent list of features, see the 
+  {{{http://docs.codehaus.org/display/M2ECLIPSE/New+and+Noteworthy}New and Noteworthy}} page on the 
+  {{{http://docs.codehaus.org/display/M2ECLIPSE}m2eclipse wiki}}.
+
+  Currently, this project is being {{{http://eclipse.org/m2e/}incubated at Eclipse}}. Subscribe to the Eclipse
+  {{{news://news.eclipse.org:119/eclipse.technology.m2e}eclipse.technology.m2e}} newsgroup or use the 
+  {{{http://www.eclipse.org/newsportal/thread.php?group=eclipse.technology.m2e}web interface}} to stay up-to-date with 
+  the latest progress.
+  
 Q for Eclipse / Eclipse Integration for Apache Maven (Proposal)
 
   Q is an Apache Maven plugin for Eclipse that will let you use Maven 2 from the Eclipse IDE.
