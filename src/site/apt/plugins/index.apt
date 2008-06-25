@@ -109,7 +109,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+--------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| 1.0 | 20/Mar/08 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
 *-----------------------------------------------------------+--------------+--------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-repository-plugin/} <<<repository>>>}}  | 2.0    | 25/Oct/05 | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
+| {{{/plugins/maven-repository-plugin/} <<<repository>>>}}  | 2.1    | 2008-06-26 | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
 *-----------------------------------------------------------+--------------+--------------+------------------+------------------------+--------------------+
 | {{{/scm/plugins/} <<<scm>>>}}                             | 1.0    | 25/May/07 | Generate a SCM for the current project. | {{{http://svn.apache.org/repos/asf/maven/scm/trunk/maven-scm-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
 *-----------------------------------------------------------+--------------+--------------+------------------+------------------------+--------------------+
