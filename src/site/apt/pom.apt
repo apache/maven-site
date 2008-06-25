@@ -1000,9 +1000,9 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
                       http://maven.apache.org/maven-v4_0_0.xsd">
   ...
   <reporting>
+    <outputDirectory>${basedir}/target/site</outputDirectory>
     <plugins>
       <plugin>
-        <outputDirectory>${basedir}/target/site</outputDirectory>
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <version>2.0.1</version>
         <reportSets>
