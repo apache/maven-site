@@ -13,9 +13,9 @@ Eclipse plugins for Maven
   Both plugins allow running Maven goals from Eclipse, see the output in a view inside the IDE and synchronize Maven POM information with
   Eclipse project information to some extent.
 
-  The Maven Integration for Eclipse (m2eclipse)
+The Maven Integration for Eclipse (m2eclipse, Eclipse m2e)
 
-  [The Maven Integration for Eclipse|http://m2eclipse.codehaus.org/] is the first and most mature of the projects aimed at integrating 
+  {{{http://m2eclipse.codehaus.org/}The Maven Integration for Eclipse}} is the first and most mature of the projects aimed at integrating 
   Maven within the Eclipse IDE. It is released under the EPL 1.0 license.
   
   Features include:
