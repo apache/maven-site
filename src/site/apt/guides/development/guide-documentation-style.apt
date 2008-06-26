@@ -1,0 +1,47 @@
+ ------
+ Guide To Maven Documentation Style
+ ------
+ Dennis Lundberg
+ ------
+ 2008-06-26
+ ------
+
+Guide To Maven Documentation Style
+
+ 
+* Where did the style came from?
+
+  The documentation style guide was created to make our documentation more
+  consistent and also to apply best practices to the documentation as well.
+  The standard has just been started and will expand over time based on the
+  suggestions made on the Maven dev mailing list. It is a community consensus
+  of how we should write our documentation.
+ 
+  Each rule in this guide should come with a motivation as to why it exists.
+  References to external sources are encouraged.
+
+  
+* Date format
+
+  How people format a date varies around the world, sometimes making it hard
+  for people to understand each other. The solution to this problem comes in
+  the form of the ISO-8601 standard.
+  
+  A date in our documentation must follow this standard:
+  
+  <<YYYY-MM-DD>>
+
+  where <<YYYY>> is the year in the Gregorian calendar, <<MM>> is the month of
+  the year between 01 (January) and 12 (December), and <<DD>> is the day of the
+  month between 01 and 31.
+
+** References
+  
+  * {{{http://www.w3.org/QA/Tips/iso-date}W3C Quality Web Tips}}
+  
+  * {{{http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=26780}ISO-8601}}
+  
+  []
+
+
+~~ NOTE: Add more rules here. Follow the heading style of the rule above.
