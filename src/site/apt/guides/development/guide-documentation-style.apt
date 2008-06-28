@@ -45,3 +45,34 @@ Guide To Maven Documentation Style
 
 
 ~~ NOTE: Add more rules here. Follow the heading style of the rule above.
+
+
+* POM indentation
+
+  A POM file must use 2 spaces for each indentation. Because POM snippets are
+  often used in documentation to show the user how to configure something, it is
+  important that these snippets aren't too wide. If the are too wide it will
+  make the page difficult to read on a smaller screen.
+
+  When you use a snippet of XML from the POM as an example in your
+  documentation, you need to make sure that the example is properly indented.
+  A user should be able to copy and paste the example into their own POM without
+  the need to change the indentation afterwards.
+
+** Example
+
+  The following is an example of how the distribution management of the Maven
+  site is configured.
+
++-----
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://people.apache.org/www/maven.apache.org/</url>
+    </site>
+  </distributionManagement>
++-----
+
+  As you can see above the <<<\<distributionManagement\>>>> element is indented
+  once (=2 spaces), the <<<\<site\>>>> element in indented twice (=4 spaces) and
+  the <<<\<id\>>>> is indented three times (=6 spaces).
