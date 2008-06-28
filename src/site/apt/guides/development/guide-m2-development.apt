@@ -5,7 +5,7 @@
  Trygve Laugstol
  Brett Porter
  ------
- 8 July 2005
+ 28 June 2008
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -65,13 +65,13 @@ Developing Maven 2
  * Patch the trunk, not a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
    to the development head.
 
- * Always create the patch from the root of the maven project, i.e. where the <<<pom.xml>>> file is.
+ * Always create the patch from the root of the Maven project, i.e. where the <<<pom.xml>>> file is.
 
  * If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
 
  * Name the file <<<MNG-<issue number>-<artifact id>.patch>>>.
 
- * Attach the patch to the JIRA issue you were working on (do not paste its content in as a comment though). 
+ * Attach the patch to the JIRA issue you were working on (do not paste its content in as a comment though).
    When adding the patch add a comment to the issue explaining what it does. Shortly after, someone will apply the patch
    and close the issue.
 
@@ -158,7 +158,7 @@ There are a number of criteria that a patch will be judged on:
     for someone to expand on later. While rough is acceptable, incomplete is not. As with automated testing, as a community
     we are striving to increase the current coverage of documentation.
 
-Above all, don't be discouraged. These are the same requirements the current commiters should hold each other to as well.
+Above all, don't be discouraged. These are the same requirements the current committers should hold each other to as well.
 And remember, your contributions are always welcome!
 
 * Related Projects
@@ -183,7 +183,7 @@ And remember, your contributions are always welcome!
  * Surefire
 
  Surefire is a testing framework. It can run regular JUnit tests so you won't have to change anything in your code to
- use it. It support scriping tests in BeanShell and Jython and has special "batteries" for writing acceptance and
+ use it. It support scripting tests in BeanShell and Jython and has special "batteries" for writing acceptance and
  functional tests for the web and for testing XML-RPC code.
 
  You can {{{http://maven.apache.org/surefire/}read more about Surefire}}.
@@ -226,7 +226,7 @@ And remember, your contributions are always welcome!
 * {Maven Code Style}
 
  The following sections show how to set up the code style for Maven in IDEA and Eclipse.
- It is strongly preferred that patches use this style before they are spplied.
+ It is strongly preferred that patches use this style before they are applied.
 
 ** IntelliJ IDEA 4.5+
 
@@ -257,7 +257,7 @@ Submitted by: (when it was a patch, put that persons name there)
   changes.
 
   <<Submitted by>> only needs to be specified when a patch is being applied for a non-committer.
-  
+
 eg:
 
 -----
