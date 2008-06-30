@@ -14,3 +14,7 @@ RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /maven-1.x/plugins/$1
 RedirectMatch permanent ^/repository-manager/(.*)$ http://archiva.apache.org/$1
 RedirectMatch permanent ^/archiva/(.*)$ http://archiva.apache.org/$1
 
+RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/$1
+RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
+RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/int$1
+
