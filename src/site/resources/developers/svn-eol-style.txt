@@ -20,6 +20,7 @@ README = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.cmd = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.cpp = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.css = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.cs = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.cwiki = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.data = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.dcl = svn:eol-style=native;svn:keywords=Author Date Id Revision
@@ -61,6 +62,7 @@ README = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.py = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.rb = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.rdf = svn:eol-style=native;svn:keywords=Author Date Id Revision
+*.resx = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.rnc = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.rng = svn:eol-style=native;svn:keywords=Author Date Id Revision
 *.rnx = svn:eol-style=native;svn:keywords=Author Date Id Revision
