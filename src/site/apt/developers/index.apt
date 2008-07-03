@@ -4,7 +4,7 @@
  Vincent Siveton
  Brett Porter
  ------
- July 2008
+ 2008-07-03
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -64,6 +64,10 @@ Maven Developer Centre
   consistency's sake.
 
   * {{{./conventions/code.html}Maven Code Style And Convention}}
+
+  * {{{./conventions/jira.html}Maven Jira Convention}}
+
+  * {{{./conventions/svn.html}Maven SVN Convention}}
 
   []
 

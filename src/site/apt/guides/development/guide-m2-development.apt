@@ -217,29 +217,12 @@ And remember, your contributions are always welcome!
  Maven Wagon is also a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
  API to download and upload artifacts and artifact metadata and the site plug-in uses it to publish the site.
 
-* Subversion Configuration
+* Further Links
 
- Before committing files in subversion repository, you need to read the
- {{{http://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with this properties file : {{{../../developers/svn-eol-style.txt}svn-eol-style.txt}}
+  * {{{../../developers/code.html}Maven Code Style And Code Convention}}
 
-* {Commit Message Template}
+  * {{{../../developers/jira.html}Maven Jira Convention}}
 
-  Commits should have a message that follows this template:
+  * {{{../../developers/svn.html}Maven SVN Convention}}
 
------
-[issue1, issue2] <<comment>>
-Submitted by: (when it was a patch, put that persons name there)
------
-
-  <<issue>> can be omitted if there was no relevant JIRA issue, though it is strongly encouraged to create one for significant
-  changes.
-
-  <<Submitted by>> only needs to be specified when a patch is being applied for a non-committer.
-
-eg:
-
------
-[MNG-1456] Added the foo to the bar
-Submitted by: Baz Bazman
------
+  []
