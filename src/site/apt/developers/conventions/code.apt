@@ -64,6 +64,68 @@ Maven Code Style And Code Convention
 
  * <<Blocks>>: Always enclose with a new line brace.
 
+ * <<Readingness>>: Specify code grouping members, if needed. For instance in a MOJO, you could have:
+
++-----+
+public class MyPlugin
+{
+    // ----------------------------------------------------------------------
+    // Mojo components
+    // ----------------------------------------------------------------------
+
+    /**
+     * Artifact factory.
+     *
+     * @component
+     */
+    private ArtifactFactory artifactFactory;
+
+    ...
+
+    // ----------------------------------------------------------------------
+    // Mojo parameters
+    // ----------------------------------------------------------------------
+
+    /**
+     * The POM.
+     *
+     * @parameter expression="${project}"
+     * @required
+     */
+    private MavenProject project;
+
+    ...
+
+    // ----------------------------------------------------------------------
+    // Plugin options
+    // ----------------------------------------------------------------------
+    ...
+
+    // ----------------------------------------------------------------------
+    // Public methods
+    // ----------------------------------------------------------------------
+
+    /**
+     * {@inheritDoc}
+     */
+    public void execute()
+        throws MojoExecutionException
+    {
+      ...
+    }
+
+    // ----------------------------------------------------------------------
+    // Private methods
+    // ----------------------------------------------------------------------
+    ...
+
+    // ----------------------------------------------------------------------
+    // Static methods
+    // ----------------------------------------------------------------------
+    ...
+}
++-----+
+
  * <<Indentation>>: Always use 2 space indents, unless you're wrapping a line in which case you should indent 4 spaces
    or indent to line up arguments.
 
@@ -111,6 +173,10 @@ Maven Code Style And Code Convention
  * <<Testing>>: All non-trivial public classes should include corresponding unit or IT tests.
 
  []
+
+** {JavaDoc Convention}
+
+ TO BE DISCUSSED
 
 * {XML}
 
