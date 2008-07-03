@@ -82,7 +82,9 @@ Developers Conventions
 
   * {{{../../developers/conventions/code.html}Maven Code Style And Convention}}
 
-  * {{{./guide-m2-development.html#Commit_Message_Template} Commit Message Template}}
+  * {{{../../developers/conventions/jira.html}Maven Jira Convention}}
+
+  * {{{../../developers/conventions/svn.html}Maven SVN Convention}}
 
   []
 
