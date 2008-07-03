@@ -4,7 +4,7 @@
  Vincent Siveton
  Brett Porter
  ------
- October 2006
+ July 2008
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -44,6 +44,8 @@ Maven Developer Centre
   * Source Repository for Maven {{{../ref/2.0.9-SNAPSHOT/source-repository.html}2.0.x}}
     or {{{../ref/2.1-SNAPSHOT/source-repository.html}2.1.x}}
 
+  []
+
 * Committers Resources
 
 ** General Resources
@@ -54,15 +56,32 @@ Maven Developer Centre
 
   * {{{./committer-settings.html}Committer Settings}}
 
+  []
+
+* Developers Conventions
+
+  There are a number of conventions used in the Maven projects, which contributors and developers alike should follow for
+  consistency's sake.
+
+  * {{{./conventions/code.html}Maven Code Style And Convention}}
+
+  []
+
+ <<Note>>: If you cannot find your answers here, feel free to ask the {{{mailto:dev@maven.apache.org}Maven Developer List}}.
+
 * Making Releases
 
   * {{{./release/pmc-gpg-keys.html}Making GPG Keys}}
 
   * {{{./release/releasing.html}Release Process}}
 
+  []
+
 * Deploy Maven references
 
   * {{{./website/deploy-maven-current-ref.html}Deploy Maven Current References}}
+
+  []
 
 * Others Resources
 
@@ -73,6 +92,8 @@ Maven Developer Centre
   * {{{http://www.apache.org/dev/}ASF Development Infrastructure Information}}
 
   * {{{http://www.apache.org/foundation/}About the Apache Software Foundation}}
+
+  []
 
 ~~TODO: tasks as buttons?
 
