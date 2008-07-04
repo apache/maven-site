@@ -64,10 +64,10 @@ Maven Code Style And Code Convention
 
  * <<Blocks>>: Always enclose with a new line brace.
 
- * <<Readingness>>: Specify code grouping members, if needed. For instance in a MOJO, you could have:
+ * <<Readingness>>: Specify code grouping members, if needed. For instance in a Mojo class, you could have:
 
 +-----+
-public class MyPlugin
+public class MyMojo
 {
     // ----------------------------------------------------------------------
     // Mojo components
@@ -97,7 +97,7 @@ public class MyPlugin
     ...
 
     // ----------------------------------------------------------------------
-    // Plugin options
+    // Mojo options
     // ----------------------------------------------------------------------
     ...
 
@@ -113,6 +113,11 @@ public class MyPlugin
     {
       ...
     }
+
+    // ----------------------------------------------------------------------
+    // Protected methods
+    // ----------------------------------------------------------------------
+    ...
 
     // ----------------------------------------------------------------------
     // Private methods
