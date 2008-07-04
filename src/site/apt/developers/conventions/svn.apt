@@ -82,3 +82,36 @@ svn pe svn:log --revprop -r XXX
 +-----+
 
  where <<XXX>> is the wanted version
+
+* Other useful Subversion commands while developing
+
+ If you've done a chunk of work and you would like ditch your changes and start from scratch use this command to
+ revert to the original checkout:
+
+---
+$ svn revert -R .
+---
+
+ The <<<-R>>> argument means that the command will recurse down all directories and revert all changes.
+
+ Before committing code to the Subversion repository we always set the <<<svn:ignore>>> property on the directory
+ to prevent some files and directories to be checked in. We always exclude the IDE project files and the <<<target/>>>
+ directory. Instead of keeping all of the excludes in mind all the time it's useful to put them all in a file and
+ reference the file with the <<<-F>>> option:
+
+---
+$ svn propset svn:ignore -F ~/bin/svnignore .
+---
+
+ An example svnignore file:
+
+---
+target
+*~
+*.log
+.classpath
+.project
+*.ipr
+*.iws
+*.iml
+---
