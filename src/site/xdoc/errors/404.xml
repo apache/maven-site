@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -24,24 +24,18 @@ under the License.
     <author email="brett@apache.org">Brett Porter</author>
     <title>Page Not Found</title>
   </properties>
-<body>
-<section name="Page Not Found">
+  <body>
+    <section name="Page Not Found">
 
-<p>Sorry, the page you requested was not found. This may because:</p>
-<ul>
-  <li>The page has moved, was outdated, or has not been created yet</li>
-  <li>You typed the address incorrectly</li>
-  <li>You followed a link from another site that pointed to this page.</li>
-</ul>
+      <p>We're sorry, but the page you requested cannot be found. This may because:</p>
+    <ul>
+      <li>The page has moved, was outdated, or has not been created yet</li>
+      <li>You typed the address incorrectly</li>
+      <li>You followed a link from another site that pointed to this page.</li>
+    </ul>
 
-<p>
-  We have recently reorganised our site, so please try looking in the navigation on the left for the item
-  you are looking for on Maven or the Maven project. For information about Maven 1, Continuum, or Archiva, please
-  visit their sub sites, available from the links in the bottom left of the page.
-</p>
+    <p>If you came to this page by following a broken link on our site, you can report the <a href="http://jira.codehaus.org/browse/MNGSITE">problem</a>.</p>
 
-</section>
-
-</body>
+    </section>
+  </body>
 </document>
-
