@@ -3,7 +3,7 @@
  ------
  Vincent Siveton
  ------
- 2008-07-03
+ 2008-07-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -30,7 +30,21 @@ Maven Jira Convention
 
  This document describes how Maven developers should use Jira, our issue tracking.
 
-* Issue Details
+* When To Create a JIRA Issue?
+
+ This section discusses when to create a JIRA issue versus just committing a change in SVN.
+
+ * <<Minor changes>>, like bug fixes, documentation fixes, etc. that aren't going to impact other users can be
+ committed without much issue.
+
+ * <<Larger changes>>, like API changes, significant refactoring, new classes, and pretty much any change of more than
+  100 lines, should have a JIRA ticket associated with it, or at least an email discussion.
+
+ []
+
+* How To Use Issue Details?
+
+ This section presents some conventions about the issue fields.
 
 ** Priority
 
