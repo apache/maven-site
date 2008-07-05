@@ -3,7 +3,7 @@
  ------
  Vincent Siveton
  ------
- 2008-07-03
+ 2008-07-05
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -52,6 +52,8 @@ Maven Code Style And Code Convention
 
  []
 
+ <<Note>>: The specific styles and conventions, listed in the next sections, could override these generic rules.
+
 * {Java}
 
 ** {Java Code Style}
@@ -61,6 +63,8 @@ Maven Code Style And Code Convention
  * <<White space>>: One space after control statements and between arguments (i.e. <<<if ( foo )>>> instead of
    <<<if(foo)>>>), <<<myFunc( foo, bar, baz )>>> instead of <<<myFunc(foo,bar,baz)>>>).
    No spaces after methods names (i.e. <<<void myMethod(), myMethod( "foo" )>>>)
+
+ * <<Indentation>>: Always use 4 space indents and <<never>> use tabs!
 
  * <<Blocks>>: Always enclose with a new line brace.
 
