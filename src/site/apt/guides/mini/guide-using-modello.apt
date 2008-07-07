@@ -55,7 +55,9 @@ Guide to using Modello
           </execution>
         </executions>
         <configuration>
-          <model>src/main/mdo/descriptor.mdo</model>
+          <models>
+            <model>src/main/mdo/descriptor.mdo</model>
+          </models>
           <version>1.0.0</version>
         </configuration>
       </plugin>
