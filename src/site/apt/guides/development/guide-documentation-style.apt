@@ -3,7 +3,7 @@
  ------
  Dennis Lundberg
  ------
- 2008-07-03
+ 2008-07-12
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -125,3 +125,14 @@ Guide To Maven Documentation Style
 * Updating Documentation Files
 
  A good practice is to update the date (with the correct date format) when you are updating documentation files.
+
+* Write Thinking
+
+ Here are some pointers about English rules when typing material:
+
+ * {{{http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style}Wikipedia:Manual of Style}}, specifically
+ {{{http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style#Punctuation}Punctuation Part}}
+
+ * {{{http://developer.gnome.org/projects/gtp/style-guides/pdf/styleguide-C.pdf}Linguistic Style Guidelines}}, specifically the "Grammatical Guidelines" chapter.
+
+ []
