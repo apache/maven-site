@@ -34,7 +34,7 @@ Maven SVN Convention
 
  Before committing files in subversion repository, you need to read the
  {{{http://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with this properties file :
+ document and you must set your svn client with this properties file:
  {{{../../developers/svn-eol-style.txt}svn-eol-style.txt}}
 
 * {Commit Message Template}
