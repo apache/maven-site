@@ -24,7 +24,7 @@ Guide to Remote repository access through authenticated HTTPS
   as the server is used only internally.
 
   So we assume that we have access to the trusted certificate in X.509
-  format stored in a file named :
+  format stored in a file named:
 
 ------------
    /somewhere/in/filesystem/CACert.cert
@@ -34,7 +34,7 @@ Guide to Remote repository access through authenticated HTTPS
   described in this document in  PKCS#12 format, which is the format
   that is accepted by browsers (at least Firefox and Internet Explorer)
   for importation in their keystore.
-  This file is named :
+  This file is named:
 
 ---------------------
    /home/directory/mycertificate.p12
@@ -42,7 +42,7 @@ Guide to Remote repository access through authenticated HTTPS
 
    and we assume it is accessible when launching maven.
    Note that this file contains the client's private key which may be
-   very sensitive information and so is secured by a password :
+   very sensitive information and so is secured by a password:
 
 --------------------
    CeRtPwD
@@ -50,7 +50,7 @@ Guide to Remote repository access through authenticated HTTPS
 
     The remote repository is referenced either through the <<<pom.xml>>>
     file  (maven2.0) or one of <<<build.properties>>> or
-    <<<project.properties>>> (Maven1.X). In Maven 1.X :
+    <<<project.properties>>> (Maven1.X). In Maven 1.X:
 
 ---------------
 maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
@@ -58,7 +58,7 @@ maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
 
 * The solution
 
-   For maven to use this repository, we should take the following steps :
+   For maven to use this repository, we should take the following steps:
 
    [[1]] Create a  store to hold the  server's certificate usings Sun's
          {{{http://java.sun.com/j2se/1.4.2/docs/tooldocs/solaris/keytool.html} keytool}},
@@ -121,7 +121,7 @@ $>
   They may be set either on maven's command-line, in
   <<<.mavenrc>>> file  or in <<<MAVEN_OPTS>>> environment
   variable. For the setting defined in this document, here is an example
-  <<<.mavenrc>>> file :
+  <<<.mavenrc>>> file:
 
 -------------
 MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
