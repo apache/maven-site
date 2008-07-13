@@ -89,7 +89,7 @@ Guide To Maven Documentation Style
   A user should be able to copy and paste the example into their own POM without
   the need to change the indentation afterwards.
 
-  Also, you should declare all parent POM elements to improve the comprehension. You could use ellipsis (i.e. ...) is
+  Also, you should declare all parent POM elements to improve the comprehension. You could use ellipsis (i.e. ...) if
   you don't want to specify elements.
 
 ** Example
