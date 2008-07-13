@@ -18,6 +18,7 @@
   under the License.
 -->
 <project name="Maven">
+  <publishDate position="right" />
   <version position="none" />
   <body>
     <!-- TODO: inherited breadcrumbs, link menu -->
