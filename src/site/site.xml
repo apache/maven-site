@@ -150,19 +150,26 @@
       <item name="Thanks" href="http://www.apache.org/foundation/thanks.html" />
     </menu>
 
-    <menu name="Maven Projects" inherit="bottom">
-      <item name="Maven" href="http://maven.apache.org/"/>
-      <item name="SCM" href="http://maven.apache.org/scm"/>
-      <item name="Wagon" href="http://maven.apache.org/wagon"/>
-      <item name="JXR" href="http://maven.apache.org/jxr"/>
-      <item name="Doxia" href="http://maven.apache.org/doxia"/>
-      <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x"/>
-      <item name="Shared Components" href="/shared/index.html"/>
-    </menu>
-
     <menu name="Related Topics">
       <item name="Repository Management" href="/repository-management.html" />
       <item name="Continuous Integration" href="/continuous-integration.html" />
+    </menu>
+
+    <!-- TODO: Inherit Maven Projects -->
+    <menu name="Maven Projects" inherit="bottom">
+      <item name="Ant Tasks"         href="http://maven.apache.org/ant-tasks.html" />
+      <!-- No site available for archetype yet
+      <item name="Archetype"         href="http://maven.apache.org/archetype/index.html" />
+      -->
+      <item name="Doxia"             href="http://maven.apache.org/doxia/index.html" />
+      <item name="JXR"               href="http://maven.apache.org/jxr/index.html" />
+      <item name="Maven 1.x"         href="http://maven.apache.org/maven-1.x/index.html" />
+      <item name="Maven 2"           href="http://maven.apache.org/index.html" />
+      <item name="Plugins"           href="http://maven.apache.org/plugins/index.html" />
+      <item name="SCM"               href="http://maven.apache.org/scm/index.html" />
+      <item name="Shared Components" href="http://maven.apache.org/shared/index.html" />
+      <item name="Surefire"          href="http://maven.apache.org/surefire/index.html" />
+      <item name="Wagon"             href="http://maven.apache.org/wagon/index.html" />
     </menu>
 
   </body>
