@@ -117,7 +117,7 @@ http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/ma
 +-----+
 
  [[3]] Run <<<fix-permissions.sh>>>
- 
+
  Login to people.apache.org, then run:
 
 +-----+
@@ -168,7 +168,13 @@ mvn site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
- <<Note:>> Verify/change folder permissions to 0775.
+ <<Note:>> Verify/change folder permissions to 0775 and files permissions to 0664 i.e.:
+
++------+
+find . -type d -exec chmod a+rx {} \;
+find . -type d -exec chmod g+w {} \;
+find . -type f -exec chmod 664 {} \;
++------+
 
  [[7]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
@@ -247,7 +253,7 @@ mvn stage:copy -Dsource="http://people.apache.org/~YOUR_APACHE_USERNAME/staging-
  you have pushed a snapshot somewhere that people have looked at and approved of.
 
  [[9]] Run <<<fix-permissions.sh>>> again
- 
+
  Login to people.apache.org, then run:
 
 +-----+
