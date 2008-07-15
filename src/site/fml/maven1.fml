@@ -151,8 +151,7 @@
       <answer>
         <p>Taken from
           <a href="http://mail-archives.apache.org/mod_mbox/maven-users/200504.mbox/%3c1113788711.5625.30.camel@172.16.1.36%3e">
-            this post to the Maven User's List</a>
-          :
+            this post to the Maven User's List</a>:
         </p>
         <blockquote>
           Everything in m2 is a plugin so for doing any sort of custom work like

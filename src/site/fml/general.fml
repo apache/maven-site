@@ -85,7 +85,7 @@
       <answer>
         <p>
           You must configure the source and target parameters in your pom. For example, to set the source and
-          target JVM to 1.5, you should have in your pom :
+          target JVM to 1.5, you should have in your pom:
         </p>
         <source>
   ...
