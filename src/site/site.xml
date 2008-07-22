@@ -151,10 +151,15 @@
       <item name="Thanks" href="http://www.apache.org/foundation/thanks.html" />
     </menu>
 
+    <!--
+    
+    These links are over on the right, if necessary we can re-enable these but there's not point in putting these links in two places. 
+    
     <menu name="Related Topics">
       <item name="Repository Management" href="/repository-management.html" />
       <item name="Continuous Integration" href="/continuous-integration.html" />
     </menu>
+    -->
 
     <!-- TODO: Inherit Maven Projects -->
     <menu name="Maven Projects" inherit="bottom">
