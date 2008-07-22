@@ -69,10 +69,10 @@ width="244" height="68"></iframe>
 -->
 
       <!-- Leave this up for 3 months until the new homes are established -->
-      <h5>Looking for Archiva?</h5>
-      <p><a href="http://archiva.apache.org">Apache Archiva</a> now has it's own project at the Apache Software Foundation</p>
-      <h5>Looking for Continuum?</h5>
-      <p><a href="http://continuum.apache.org">Apache Continuum</a> also has it's own project at the Apache Software Foundation</p>
+      <h5>Looking for Repository Managers?</h5>
+      <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
+      <h5>Looking for CI Servers?</h5>
+      <p><a href="http://maven.apache.org/continuous-integration.html">Take a look</a> at the CI Servers available from the community.</p>
     </div>
     <section name="Welcome to Maven">
 
