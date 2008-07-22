@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+ <?xml version="1.0" encoding="ISO-8859-1" ?>
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -32,7 +32,7 @@ under the License.
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.x</li>
           <li><strong>Published:</strong>Not yet</li>
-          <li><strong>Authors:</strong>
+          <li><strong>Authors: </strong>
             <a href="http://www.sonatype.com/">Sonatype (Jason van Zyl, John Casey, Eric Redmond)</a>
           </li>
         </ul>
@@ -95,6 +95,12 @@ under the License.
             <th>Publisher</th>
             <th>Author</th>
             <th>Published</th>
+          </tr>
+          <tr>
+            <td><a href="http://www.theserverside.com/tt/articles/article.tss?l=Introductiontom2eclipse">Introduction to m2eclipse</a></td>
+            <td>TheServerSide</td>
+            <td>Tim O'Brien, Bruce Snyder, Eugene Kuleshov</td>
+            <td>July 2008</td>
           </tr>
           <tr>
             <td><a href="http://msozen.home.anadolu.edu.tr/maven2.x_dokuman.pdf">Maven 2.x (in Turkish)</a></td>
