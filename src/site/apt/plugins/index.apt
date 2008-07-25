@@ -90,7 +90,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                | 2.1          | 2008-05-29 | Generate an Ant build file for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ant-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANT}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | 1.1          | 2006-01-04 | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
+| {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | 1.2          | 2008-07-25 | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 2.0-alpha-2  | 2008-04-28 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
