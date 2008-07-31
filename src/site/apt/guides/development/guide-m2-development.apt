@@ -36,10 +36,9 @@ Developing Maven 2
 * Finding some work to do
 
  First of all you need something to work on! Unless you have found a particular issue you would like to work on
- the Maven team has categorized a few issues that we could use <your> help to solve them. The list is on our
- {{{http://docs.codehaus.org/display/MAVEN/How+to+help}Confluence wiki}} and will be updated every 60 minutes.
+ the Maven team has categorized a few issues that we could use <your> help to solve them.
 
- JIRA also has RSS feeds available if you'd like to include those in your favorite feed aggregator.
+ JIRA has RSS feeds available if you'd like to include those in your favorite feed aggregator.
 
  We categorize the issues in three different categories:
 
