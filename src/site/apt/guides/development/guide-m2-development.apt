@@ -42,13 +42,13 @@ Developing Maven 2
 
  We categorize the issues in three different categories:
 
- * <<Novice>>: No previous exposure to the code needed.
+ * <<{{{http://jira.codehaus.org/secure/IssueNavigator.jspa?pid=10500&resolutionIds=-1&customfield_10010=Novice&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true}Novice}}>>: No previous exposure to the code needed.
    <({{{http://jira.codehaus.org/secure/IssueNavigator.jspa?view=rss&pid=10500&resolutionIds=-1&customfield_10010=Novice&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true&decorator=none}rss feed}})>
 
- * <<Intermediate>>: Exposure to Maven pluins and/or internals required.
+ * <<{{{http://jira.codehaus.org/secure/IssueNavigator.jspa?pid=10500&resolutionIds=-1&customfield_10010=Intermediate&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true}Intermediate}}>>: Exposure to Maven pluins and/or internals required.
    <({{{http://jira.codehaus.org/secure/IssueNavigator.jspa?view=rss&pid=10500&resolutionIds=-1&customfield_10010=Intermediate&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true&decorator=none}rss feed}})>
 
- * <<Expert>>: Good knowledge of Maven internals and it's dependencies required.
+ * <<{{{http://jira.codehaus.org/secure/IssueNavigator.jspa?pid=10500&resolutionIds=-1&customfield_10010=Expert&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true}Expert}}>>: Good knowledge of Maven internals and it's dependencies required.
    <({{{http://jira.codehaus.org/secure/IssueNavigator.jspa?view=rss&pid=10500&resolutionIds=-1&customfield_10010=Expert&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true&decorator=none}rss feed}})>
 
  []
