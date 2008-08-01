@@ -1,5 +1,5 @@
  ------
- Maven Code Style And Code Convention
+ Maven Code Style And Code Conventions
  ------
  Vincent Siveton
  ------
@@ -26,7 +26,7 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Maven Code Style And Code Convention
+Maven Code Style And Code Conventions
 
  This document describes how developers and contributors should write code. The reasoning of these styles and conventions is
  mainly for consistency, readability and maintainability reasons.

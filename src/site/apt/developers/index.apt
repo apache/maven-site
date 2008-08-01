@@ -63,9 +63,9 @@ Maven Developer Centre
   There are a number of conventions used in the Maven projects, which contributors and developers alike should follow for
   consistency's sake.
 
-  * {{{./conventions/code.html}Maven Code Style And Convention}}
+  * {{{./conventions/code.html}Maven Code Style And Conventions}}
 
-  * {{{./conventions/jira.html}Maven Jira Convention}}
+  * {{{./conventions/jira.html}Maven JIRA Convention}}
 
   * {{{./conventions/svn.html}Maven SVN Convention}}
 
