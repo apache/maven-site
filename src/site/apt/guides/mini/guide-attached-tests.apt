@@ -10,7 +10,7 @@ Guide to using attached tests
 
  Many times you may want to reuse the tests that you have created for a project in another. For example if you have
  written <<<foo-core>>> and it contains test code in the <<<$\{basedir\}/src/test/java>>> it would be useful to package
- up those compiled tests in a JAR and deploy them for general resuse. To do this you would configure the
+ up those compiled tests in a JAR and deploy them for general reuse. To do this you would configure the
  <<<maven-jar-plugin>>> as follows:
 
 +----+
@@ -38,7 +38,7 @@ Guide to using attached tests
 
 * Installing the attached test JAR
 
- In order to install the attached test JAR you simply use the standard install phase by executing
+ In order to install the attached test JAR you simply use the standard <<<install>>> phase by executing
  the following command:
 
 +----+
@@ -49,7 +49,7 @@ mvn install
 
 * Deploying the attached test JAR
 
- In order to deploy the attached test JAR you simply use the standard deploy phase by executing
+ In order to deploy the attached test JAR you simply use the standard <<<deploy>>> phase by executing
  the following command:
 
 +----+
@@ -61,7 +61,7 @@ mvn deploy
 * Using the attached test JAR
 
  In order to use the attached test JAR that was created above you simply specify a dependency on the main
- artifact with a specified type of <<<tests>>>:
+ artifact with a specified classifier of <<<tests>>>:
 
 +----+
 
