@@ -18,13 +18,11 @@
   under the License.
 -->
 <project name="Maven">
-  <publishDate position="right" />
   <version position="none" />
   <body>
-    <!-- TODO: inherited breadcrumbs, link menu -->
     <breadcrumbs>
-      <item name="Apache" href="http://www.apache.org/"/>
-      <item name="Maven" href="http://maven.apache.org/"/>
+      <!-- TODO: This breadcrumb should be removed when it has been solved in the parent -->
+      <item name="Maven" href="http://maven.apache.org/index.html"/>
     </breadcrumbs>
 
 <!-- TODO: incorporate, remove, etc
@@ -160,23 +158,6 @@
       <item name="Continuous Integration" href="/continuous-integration.html" />
     </menu>
     -->
-
-    <!-- TODO: Inherit Maven Projects -->
-    <menu name="Maven Projects" inherit="bottom">
-      <item name="Ant Tasks"         href="http://maven.apache.org/ant-tasks.html" />
-      <!-- No site available for archetype yet
-      <item name="Archetype"         href="http://maven.apache.org/archetype/index.html" />
-      -->
-      <item name="Doxia"             href="http://maven.apache.org/doxia/index.html" />
-      <item name="JXR"               href="http://maven.apache.org/jxr/index.html" />
-      <item name="Maven 1.x"         href="http://maven.apache.org/maven-1.x/index.html" />
-      <item name="Maven 2"           href="http://maven.apache.org/index.html" />
-      <item name="Plugins"           href="http://maven.apache.org/plugins/index.html" />
-      <item name="SCM"               href="http://maven.apache.org/scm/index.html" />
-      <item name="Shared Components" href="http://maven.apache.org/shared/index.html" />
-      <item name="Surefire"          href="http://maven.apache.org/surefire/index.html" />
-      <item name="Wagon"             href="http://maven.apache.org/wagon/index.html" />
-    </menu>
 
   </body>
 </project>
