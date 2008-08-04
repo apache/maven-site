@@ -142,3 +142,16 @@ Maven 2.1
   *  Location/Attribute driven behavior
     *  JC: What's this?
 
+|| Status || Work || Version || Issue || SVN || Developers || Date ||
+| WIP | [POM Interpolation Refactor] | 2.0.x | Multiple (see doc) | [john-2.0.x-plxInterpolation|https://svn.apache.org/repos/asf/maven/components/branches/john-2.0.x-plxInterpolation] | John Casey | |
+| WIP | [Dynamic POM Build Sections] | 2.0.x | [MNG-3530|http://jira.codehaus.org/browse/MNG-3530] | [john-2.0.x-dymanicBuild|https://svn.apache.org/repos/asf/maven/components/branches/john-2.0.x-dynamicBuild] | John Casey | |
+| WIP | [Decoupling of Maven Artifact] | 2.1.x | N/A | N/A | Jason van Zyl | 2 Aug 2007 |
+| WIP | [Java 5 Annotations for Plugins] | 2.1.x | [MNG-2521|http://jira.codehaus.org/browse/MNG-2521] | [MNG-2521 Branch | https://svn.apache.org/repos/asf/maven/components/branches/MNG-2521] | Yoav Landman, Jason van Zyl | |
+| WIP | [IT Problems] | 2.0.x,2.1.x | [MPA-1000|http://jira.codehaus.org/browse/MPA-100] | [Integration Tests|http://svn.apache.org/repos/asf/maven/core-integration-testing/trunk] | Jason van Zyl, John Casey, Raphael Pieroni | |
+| WIP | [Custom Profile Activators] | 2.1.x | ??? | [trunk|http://svn.apache.org/repos/asf/maven/components/trunk] | John Casey | |
+| WIP | [Conflict Resolvers] | 2.0.x, 2.1.x | [MNG-612|http://jira.codehaus.org/browse/MNG-612] | [MNG-612 Branch|https://svn.apache.org/repos/asf/maven/components/branches/MNG-612] | Mark Hobson | |
+| Complete | [Mirror Settings and File repositories] | 2.0.x, 2.1.x \\ | [MNG-3461|http://jira.codehaus.org/browse/MNG-3461] | | Brian Fox \\ | March 13th, 2008 \\ |
+| WIP \\ | [Source File Encoding configuration|MAVENUSER:POM Element for Source File Encoding]\\ | 2.0.x, 2.1.x \\ | [MNG-2216|http://jira.codehaus.org/browse/MNG-2216] | \\ | Benjamin Bentmann, Hervé Boutemy \\ | |
+| New | [Eclipse plugin refactored for extensibility]\\ | 2.0.x \\ | N/A \\ | N/A | Arnaud Héritier, Nicolas De Loof \\ | 30 April 2008 \\ |
+| WIP | [Doxia Release Plan] | N/A | N/A | N/A | Dennis Lundberg, Vincent Siveton, Lukas Theussl | |
+| New | [Reporting Output Files Encoding Configuration|Reporting Encoding Configuration] | 2.0.x, 2.1.x | [MNG-3608|http://jira.codehaus.org/browse/MNG-3608] | | Hervé Boutemy, Benjamin Bentmann | 31 May 2008 |
