@@ -1,32 +1,54 @@
-Maven 2.1
+h1. Maven 2.1 
+
+h2. Architectural Goals
+
+h3. Embedder
+
+h3. Custom Components
+* Tycho
+
+h3. Mercury
+* Sustained connections for transfers (releasing and deploying)
+* Artifact Resolution
+* Graph-based artifact resolution
+* Decouple from Maven's core
+* Binary graph that is pre-resolved for a POM
+* Conflict resolution is handled by SAT
+* PGP support
+
+h3. Model Changes
 *  Tags and categorization in the POM
 *  Specification dependencies
-*  Custom components
 *  Dependency extensions
   *   Exclude all
-*  Sustained connections for transfers (releasing and deploying)
-*  Better parent versioning
-*  Greatly improved embedder
-*  Java5 annotations for plugins
-*  Integration and promotion of scriptable plugins
 
-*  Architectural Goals for Maven 2.1
-  *  Backward compatibility
-    *  Provide layer of adapters for plugin backward compatibility, to
-       avoid immediate necessity to recode entire suite of plugins and
-       reports for 2.1 compat.
+h3. Core Refactorings
+* Project Builder
+** Pluggable model readers
+ * A new terse format that uses attributes
+ * Allow mixin capabilities using an import directive
+ * Automatic parent versioning
+ * New interpolation component (plexus-interpolation)
+ * Dynamic build sections ([MNG-3530|http://jira.codehaus.org/browse/MNG-3530])
+* Plugin Manager
+* Lifecycle Executor 
+**  Queryable Lifecycle
+*** The most important change in the embedding environment. You can actually query Maven for the complete execution before it happens. We must know the entire
+    model of execution before we execute.
+*  Java5 annotations for plugins: we have two implementations that have now been merged in plexus-cdc. QDOX 1.7 has now been released so we may want to check the 
+   source level gleaning again. Jason Dillon has created a working class processing model. We need to deal with Plexus components and Maven plugins.
+   
+h3. Integration and promotion of scriptable plugins
+
+h3. Backward compatibility
+*  Provide layer of adapters for plugin backward compatibility, to avoid immediate necessity to recode entire suite of plugins and reports for 2.1 compat.
   *  Integrity checking
     *  Don't allow builds where versions come from non-project sources
        like local settings and CLI parameters
     *  JC: Don't allow builds where versions come from profiles that
        have to be activated manually
-  *  Queryable Lifecycle
-    *  The most important change in the embedding environment. You can
-       actually query Maven for the complete execution before it happens
-    *  I would like to hook in the artifact resolution ghosting to this
-      *  JC: This tends more toward simulating an entire build, and
-         should include simulating additions to source roots and
-         resources, IMO...but not in the core, in a simulator mojo
+       
+       
   *  Toolchains
     *  Some preliminary work has been done on a branch by Milos and
        myself, we're basically going to steal all the profile work from
@@ -38,9 +60,6 @@ Maven 2.1
       *  JC: Posted where?
     *  We Kenney's and Johns tools which are complementary embedder
        inside the invoker
-  *  Java5 Annotations
-    *  We have two implementations for mojos which will be merged
-    *  We have two implementations for plexus components
   *  Integration Testing
     *  Still not entirely happy with the current setup but it's working
        and relatively easy to update
@@ -122,10 +141,6 @@ Maven 2.1
   *  Decouple script-based Plugins from the core
     *  We should just completely push this out of the core
   *  Refactor Project Builder
-    *  Pluggable model readers
-      *  A new terse format that uses attributes
-      *  Allow mixin capabilities using an import directive
-      *  Automatic parent versioning
     *  JC: Pipelining of the various steps occurring in the project
        builder now, according to a strict and well-documented workflow.
   *  Execution Configuration
@@ -134,24 +149,10 @@ Maven 2.1
     *  Have one configuration model for request
     *  Have one configuration model for session: session takes the
        request in the constructor and delegates
-  *  Artifact Resolution
-    *  Graph-based artifact resolution
-    *  Decouple from Maven's core
-    *  Binary graph that is pre-resolved for a POM
   *  Domain logging
   *  Location/Attribute driven behavior
     *  JC: What's this?
 
-|| Status || Work || Version || Issue || SVN || Developers || Date ||
-| WIP | [POM Interpolation Refactor] | 2.0.x | Multiple (see doc) | [john-2.0.x-plxInterpolation|https://svn.apache.org/repos/asf/maven/components/branches/john-2.0.x-plxInterpolation] | John Casey | |
-| WIP | [Dynamic POM Build Sections] | 2.0.x | [MNG-3530|http://jira.codehaus.org/browse/MNG-3530] | [john-2.0.x-dymanicBuild|https://svn.apache.org/repos/asf/maven/components/branches/john-2.0.x-dynamicBuild] | John Casey | |
-| WIP | [Decoupling of Maven Artifact] | 2.1.x | N/A | N/A | Jason van Zyl | 2 Aug 2007 |
-| WIP | [Java 5 Annotations for Plugins] | 2.1.x | [MNG-2521|http://jira.codehaus.org/browse/MNG-2521] | [MNG-2521 Branch | https://svn.apache.org/repos/asf/maven/components/branches/MNG-2521] | Yoav Landman, Jason van Zyl | |
-| WIP | [IT Problems] | 2.0.x,2.1.x | [MPA-1000|http://jira.codehaus.org/browse/MPA-100] | [Integration Tests|http://svn.apache.org/repos/asf/maven/core-integration-testing/trunk] | Jason van Zyl, John Casey, Raphael Pieroni | |
+- Need to ask brian and john about clarification
 | WIP | [Custom Profile Activators] | 2.1.x | ??? | [trunk|http://svn.apache.org/repos/asf/maven/components/trunk] | John Casey | |
-| WIP | [Conflict Resolvers] | 2.0.x, 2.1.x | [MNG-612|http://jira.codehaus.org/browse/MNG-612] | [MNG-612 Branch|https://svn.apache.org/repos/asf/maven/components/branches/MNG-612] | Mark Hobson | |
 | Complete | [Mirror Settings and File repositories] | 2.0.x, 2.1.x \\ | [MNG-3461|http://jira.codehaus.org/browse/MNG-3461] | | Brian Fox \\ | March 13th, 2008 \\ |
-| WIP \\ | [Source File Encoding configuration|MAVENUSER:POM Element for Source File Encoding]\\ | 2.0.x, 2.1.x \\ | [MNG-2216|http://jira.codehaus.org/browse/MNG-2216] | \\ | Benjamin Bentmann, Hervé Boutemy \\ | |
-| New | [Eclipse plugin refactored for extensibility]\\ | 2.0.x \\ | N/A \\ | N/A | Arnaud Héritier, Nicolas De Loof \\ | 30 April 2008 \\ |
-| WIP | [Doxia Release Plan] | N/A | N/A | N/A | Dennis Lundberg, Vincent Siveton, Lukas Theussl | |
-| New | [Reporting Output Files Encoding Configuration|Reporting Encoding Configuration] | 2.0.x, 2.1.x | [MNG-3608|http://jira.codehaus.org/browse/MNG-3608] | | Hervé Boutemy, Benjamin Bentmann | 31 May 2008 |
