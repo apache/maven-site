@@ -46,29 +46,9 @@
           <a href="ant-tasks-release-notes.html">Release Notes</a>
         </span>
       </p>
-      <!-- TODO: what about downloads for Continuum, etc.? Would be good to have one big download page -->
-
-      <h5>Other Maven Projects</h5>
-      <p>
-        <a href="/maven-1.x/">
-          <img src="images/maven-1.x.png" border="0" width="76" height="32" style="float: left; margin-right: 1em;" alt="" title="Maven 1.x" />
-        Maven 1.x
-        </a>
-        All stories start at the beginning...
-      </p>
 
       <!-- TODO: we should use the SSI instead, but two things prevent it: a) the SSI's aren't working on apache.org yet so I can't test it; b) SSI's get eliminated from xdoc. For some reason even inside CDATA they are escaped. -->
-      <iframe src="http://www.apache.org/ads/bannerbar.html"
-style="margin-left: -10px; padding: 0;" frameborder="0" scrolling="no"
-width="244" height="68"></iframe>
-<!-- -->
-<!-- POSTPONED
-      <div>
- <a href="http://www.ossummit.com"><img src="http://www.ossummit.com/ads/ossummit_button_2.jpg" alt="OS Summit Asia" border="0" width="234" height="60" /></a>
-      </div>
--->
-
-      <!-- Leave this up for 3 months until the new homes are established -->
+      <iframe src="http://www.apache.org/ads/bannerbar.html" style="margin-left: -10px; padding: 0;" frameborder="0" scrolling="no" width="244" height="68"></iframe>
       <h5>Looking for Repository Managers?</h5>
       <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
       <h5>Looking for CI Servers?</h5>
