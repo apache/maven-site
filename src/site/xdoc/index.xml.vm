@@ -53,6 +53,9 @@
       <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
       <h5>Looking for CI Servers?</h5>
       <p><a href="http://maven.apache.org/continuous-integration.html">Take a look</a> at the CI Servers available from the community.</p>
+
+      <h5>Supporting Maven</h5>
+      <p>We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank the sponsors of the Apache Software Foundation</a> for their support and assistance. To support the ASF, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.</p>
     </div>
     <section name="Welcome to Maven">
 
@@ -174,6 +177,17 @@
       </p>
       <p>
         You can also reach the Maven developers on <a href="community.html">IRC</a>.
+      </p>
+
+      <h3>How can I help?</h3>
+      <p>
+        Maven is an open source community and welcomes contributions. If you'd like to get involved, see the 
+        <a href="guides/development/guide-helping.html">Guide to helping with Maven</a>.
+      </p>
+      <p>
+        Maven is a part of the Apache Software Foundation. We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank
+        the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
+        foundation, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.
       </p>
     </section>
   </body>
