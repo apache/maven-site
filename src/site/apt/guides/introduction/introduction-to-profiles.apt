@@ -79,8 +79,8 @@ Introduction to Build Profiles
 mvn groupId:artifactId:goal -P profile-1,profile-2
 +---+
 
-  Profiles can be activated in the Maven settings, via the <<activeProfiles>>
-  section. This section takes a list of <<activeProfile>> elements, each
+  Profiles can be activated in the Maven settings, via the <<<\<activeProfiles\>>>>
+  section. This section takes a list of <<<\<activeProfile\>>>> elements, each
   containing a profile-id inside.
 
 +---+
@@ -93,11 +93,11 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </settings>
 +---+
 
-  Profiles listed in the <activeProfiles> tag would be activated by default
+  Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
   everytime a project use it.
 
   Profiles can be automatically triggered based on the detected state of
-  the build environment. These triggers are specified via an <<activation>>
+  the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
   prefix-matching of the JDK version, the presence of a system property or
   the value of a system property. Here are some examples.
@@ -116,7 +116,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-  This next one will activate based on OS settings. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
+  This next one will activate based on OS settings. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
 
 +---+
 <profiles>
@@ -191,7 +191,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 </profiles>
 +---+
 
-  <<Note>>: The tags \<exists/\> and \<missing/\> could be interpolated with some patterns like $\{user.home\}.
+  <<Note>>: The tags <<<\<exists\>>>> and <<<\<missing\>>>> could be interpolated with some patterns like <<<$\{user.home\}>>>.
 
   Profiles can also be active by default using a configuration like the following:
 
@@ -214,7 +214,8 @@ mvn groupId:artifactId:goal -Denvironment=test
   
 ** Deactivating a profile
 
-  One or more profiles can be deactivated using the command line:
+  Starting with Maven 2.0.10, one or more profiles can be deactivated using the command line by prefixing their
+  identifier with either the character '!' or '-' as shown below:
   
 +---+
 mvn groupId:artifactId:goal -P !profile-1,!profile-2
@@ -240,14 +241,14 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
   of the build is restricted to the inline profiles in the POM. Things like
   repository lists could simply be a proprietary repository of approved
   artifacts, and won't change the outcome of the build. Therefore, you will
-  only be able to modify the <<repositories>> and <<pluginRepositories>>
-  sections, plus an extra <<properties>> section.
+  only be able to modify the <<<\<repositories\>>>> and <<<\<pluginRepositories\>>>>
+  sections, plus an extra <<<\<properties\>>>> section.
 
-  The <<properties>> section allows you to specify free-form key-value pairs
+  The <<<\<properties\>>>> section allows you to specify free-form key-value pairs
   which will be included in the interpolation process for the POM. This allows
-  you to specify a plugin configuration in the form of $\{profile.provided.path\}.
+  you to specify a plugin configuration in the form of <<<$\{profile.provided.path\}>>>.
 
-** Profiles in pom.xml
+** Profiles in POMs
 
   On the other hand, if your profiles can be reasonably specified <inside> the
   POM, you have many more options. The trade-off, of course, is that you can
@@ -258,34 +259,34 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
 
   Profiles specified in the POM can modify the following POM elements:
 
-  * <<\<repositories\>>>
+  * <<<\<repositories\>>>>
 
-  * <<\<pluginRepositories\>>>
+  * <<<\<pluginRepositories\>>>>
 
-  * <<\<dependencies\>>>
+  * <<<\<dependencies\>>>>
 
-  * <<\<plugins\>>>
+  * <<<\<plugins\>>>>
 
-  * <<\<properties\>>> (not actually available in the main POM, but used behind the
+  * <<<\<properties\>>>> (not actually available in the main POM, but used behind the
     scenes)
 
-  * <<\<modules\>>>
+  * <<<\<modules\>>>>
 
-  * <<\<reporting\>>>
+  * <<<\<reporting\>>>>
 
-  * <<\<dependencyManagement\>>>
+  * <<<\<dependencyManagement\>>>>
 
-  * <<\<distributionManagement\>>>
+  * <<<\<distributionManagement\>>>>
 
-  * a subset of the <<\<build\>>> element, which consists of:
+  * a subset of the <<<\<build\>>>> element, which consists of:
 
-    * <<\<defaultGoal\>>>
+    * <<<\<defaultGoal\>>>>
 
-    * <<\<resources\>>>
+    * <<<\<resources\>>>>
 
-    * <<\<testResources\>>>
+    * <<<\<testResources\>>>>
 
-    * <<\<finalName\>>>
+    * <<<\<finalName\>>>>
 
   []
 
@@ -385,15 +386,15 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
 
   <However>, when your colleague attempts to build to <<integration-test>>,
   his build fails spectacularly, complaining that it cannot resolve the plugin
-  configuration parameter \<appserverHome\>, or worse, that the value of that
-  parameter - literally $\{appserver.home\} - is invalid (if it warns you at all).
+  configuration parameter <<<\<appserverHome\>>>>, or worse, that the value of that
+  parameter - literally <<<$\{appserver.home\}>>> - is invalid (if it warns you at all).
 
   Congratulations, your project is now non-portable. Inlining this profile in
   your <<<pom.xml>>> can help alleviate this, with the obvious drawback that
   each project hierarchy (allowing for the effects of inheritance) now have to
   specify this information. Since Maven provides good support for project
   inheritance, it's possible to stick this sort of configuration in the
-  <<pluginManagement>> section of a team-level POM or similar, and simply
+  <<<\<pluginManagement\>>>> section of a team-level POM or similar, and simply
   inherit the paths.
 
   Another, less attractive answer might be standardization of development
@@ -490,7 +491,7 @@ mvn -Denv=production integration-test
 +---+
 
   will not do a successful build. Why? Because, the resulting non-interpolated
-  literal value of $\{appserver.home\} will not be a valid path for deploying
+  literal value of <<<$\{appserver.home\}>>> will not be a valid path for deploying
   and testing your web application. We haven't considered the case for the
   production environment when writing our profiles. The "production"
   environment (env=production), along with "test" and possibly even "local"
@@ -511,7 +512,7 @@ mvn -Denv=production integration-test
 * How can I tell which profiles are in effect during a build?
 
   Determining active profiles will help the user to know what particular
-  profiles has been executed during a build. We can use the <<maven-help-plugin>>
+  profiles has been executed during a build. We can use the {{{http://maven.apache.org/plugins/maven-help-plugin/}Maven Help Plugin}}
   to tell what profiles are in effect during a build.
 
 +---+
