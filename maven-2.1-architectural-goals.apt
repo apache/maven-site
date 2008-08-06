@@ -1,5 +1,12 @@
 h1. Maven 2.1 -- Jason van Zyl
 
+- architecture document for maven-shared-model and the new project building code
+- architecture document and spec for mercury (largely in the wiki)
+- architecture document on maven itself
+ - plugin manager
+ - lifecycle executor
+- profile construction
+
 h2. Architectural Goals
 
 h3. Backward Compatibility
@@ -21,12 +28,12 @@ There are many changes that users have requested in the POM, in addition to whol
 because we need to support different versions simultaneously so that if projecta A builds with 2.0.x, project B can consume the project A POM using 2.1.x.
 We just need some way to easy support multiple versions and support mediation between the different versions.
 
-* Tags 
-* dependency excludes && symmetry
-* terse attribute based format for the POM
-* properties on dependencies
+* Tags: loose categorization people to use to help categorize as they see fit
+* Categories: more standard categories that form over time by using category structures that exist or common tags that are used so often they become categories
+* Dendency excludes: being to transitively exclude a dependency
+* Properties on dependencies 
 * Specification Dependencies
-* Schematron/RelaxNG descriptor for each plugin -- Bryon Jacob proposed a flexible model but XSD is hard to fight here
+* Schematron/RelaxNG descriptor for each plugin -- Bryon Jacob proposed a flexible model but XSD is hard to fight here so I'm not sure how far this will go
 
 h3. Embedding
 
