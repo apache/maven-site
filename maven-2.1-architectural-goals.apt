@@ -3,8 +3,17 @@ h1. Maven 2.1 -- Jason van Zyl
 h2. Architectural Goals
 
 h3. Backward Compatibility
-* Plugins using the 2.0.x Plugin API must run in 2.1.x (* with the exception of anything maven-artifact related)
-* Reports using the 2.0.x Report API must run in 2.1.x (* with the exception of anything maven-artifat related)
+
+We must ensure that plugins and reports written against the Maven 2.0.x APIs remain to work in 2.1. We don't want people to have to rewrite 
+their plugins. There are several plugins that are using the current artifact resolution code that will not be supported (please see the Mercury section below). The
+ones that are in our control we can port over to use Mercury, and external users will have to deal with the major version change. Most people will not be affected and
+Mercury will be a far better solution.
+
+We must also ensure that POMs of version 4.0.0 are supported in 2.1.x along with the behavior currently experienced. We are relying heavily on our integrations tests right
+now but as we move forward the work that Shane is doing on the project builder with maven-shared-model will help us to accommodate different versions of a POM, and different
+formats we decide to support. The maven-shared-model code has no limitation to formats of XML, or any of format like YAML, script, or anything else anyone can dream up. These
+implementations may find use outside of Maven. For example someone might build something with the Maven Embedder, JRuby, and Mercury to create a JRuby-based system. The
+same could be done for Groovy, or Intercal.
 
 h3. POM changes
 
@@ -121,12 +130,11 @@ h3. Core Refactorings
 **  Load Plugin dependencies into a separate ClassRealm (done)
 **  Plugin Execution Environment: Ability to run any version of a plugin where an environment is created which contains all the
     requirements for a particular version of the Plugin API
-
 * Lifecycle Executor 
 **  Queryable Lifecycle
 *** The most important change in the embedding environment. You can actually query Maven for the complete execution before it happens. We must know the entire
     model of execution before we execute.
-* Custom profile activators -- we don't have a lot of users except the C-based builds so it might be worth while getting rid of it.
+* OSGi-like Classloading to support isolated execution environments
 
 h3. Java 5
 
