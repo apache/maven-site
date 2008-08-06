@@ -156,3 +156,29 @@ h3. Toolchains
 h3. Reporting
 * Report Execution Environment: Ability to run any version of a report where an environment is created which contains all the requirements for a particular version of the Report API.
 * Decouple the reporting core. We need to get Doxia out of the core. Anything it needs to run should be isolated.
+
+h1. Other Use Cases to Integrate
+
+h2. Determining project type in Eclipse (Igor Fedorenko)
+
+Support for "java" projects in Eclipse has certain overhead and it is desirable to only enable for projects that actually require it. More specifically, java maven projects have JRE classpath container, maven classpath container, have java-specific UI elements enabled and are offered in various java-related searches. Also, tools like WTP and AJDT treat (eclipse) java projects specially.
+
+There is currently no direct way to tell if a (maven) project needs to be configured as java project in eclipse. The closest test condition I can think off is
+
+1 the project ArtifactHandler language=java
+
+and
+
+2.1 ArtifactHandler addedToClasspath=true
+
+or
+
+2.2 MavenProject.getCompileSourceRoots().size() > 0
+
+or
+
+2.3 MavenProject.getTestCompileSourceRoots().size() > 0
+
+(in other words the project is java and either itself is added to classpath or has sources to compile).
+
+This test will return false negative for some WAR projects (not added to classpath and don't have any sources to compile). Also, compileSourceRoots and testCompileSourceRoots only become fully populated after running maven build lifecycle, which is expensive.
