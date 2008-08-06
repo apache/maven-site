@@ -1,6 +1,10 @@
-h1. Maven 2.1 
+h1. Maven 2.1 -- Jason van Zyl
 
 h2. Architectural Goals
+
+h3. Backward Compatibility
+* Plugins using the 2.0.x Plugin API must run in 2.1.x (* with the exception of anything maven-artifact related)
+* Reports using the 2.0.x Report API must run in 2.1.x (* with the exception of anything maven-artifat related)
 
 h3. POM changes
 
@@ -8,7 +12,7 @@ There are many changes that users have requested in the POM, in addition to whol
 because we need to support different versions simultaneously so that if projecta A builds with 2.0.x, project B can consume the project A POM using 2.1.x.
 We just need some way to easy support multiple versions and support mediation between the different versions.
 
-* tags/categories
+* Tags 
 * dependency excludes && symmetry
 * terse attribute based format for the POM
 * properties on dependencies
@@ -48,14 +52,45 @@ without a POM and actually using a manifest. In this case we need to somehow det
 we need a different project builder, and artifact resolver.
 
 h3. Mercury
-* Sustained connections for transfers (releasing and deploying)
-* Artifact Resolution
-* Graph-based artifact resolution
-* Decouple from Maven's core
-* Binary graph that is pre-resolved for a POM
-* Conflict resolution is handled by SAT
-* PGP support
 
+Mercury is a replacement for the current Maven Artifact subsystem, and a complete replacement for the HTTP and DAV portions of the existing transport.
+
+The primary reasons for replacing the code are that it is unmaintainable and nearly impossible to navigate, it uses completely non-standard structures and libraries for
+version calculations, the API is too hard for people to use, and it is not given to users to consume as a single componment to use. Users are forced to know how several
+complicated components interact in order to implement a mechanism of retrieving artifacts from a repository. The entire mechanism needs to be replaced with something
+that can be maintained and is reliable. 
+
+Mercury started as some fixes to Maven Artifact to first help with embeddability and error reporting for IDE integration. This was a direct result of all IDE integrators
+having to reimplement the current artifact resolver to provide decent feedback to users when errors occured. The artifact subsystem would just die and leave the IDE in
+an unusable state. Milos was the first to implement his own artifact resolver, and Eugene soon had to do the same in m2eclipse. Oleg and I were also trying to use the
+current artifact mechanism in an embedded mode for some Eclipse plugins and this also proved to be quite painful. After the first attempt of removing the fail-fast
+behavior, Oleg and I decided to make a break from the old codebase and attempt to create Mercury with the following goals in mind:
+
+* Find the best people in the world to help create an awesome HTTP and DAV implementation. We did this by talking to Greg, Jan, and Jesse who are the Jetty folks
+  and there just isn't anyone who knows HTTP better. Greg and Jan are awesome, and Jesse is Maven committer so we have some deep understanding of the issues involved. So
+  what Oleg and I wanted to see was: 
+** Easy SSL support where mucky with certificates in the default install is not required.
+** Connection pooling 
+** Connection parallelization
+** Built in DAV client support for deployment
+** Atomic retrieval: we make sure absolutely everything is been safely transported to disk before we place it in the local Maven repository
+** Atomic deployment: in this case we could only support this using a special filter Greg created which blocks requests for any artifacts being deploy in the current 
+   set until the entire set land safely to disk. So it becomes impossible to ask for an artifact that refers to something else in the set before it is actually available. 
+
+* Find the best solution possible solution for dealing with version calculations, in particular ranges. For this we called on Daniel Le Berre and ask for some help in
+  integrating his SAT4J library. We learned about the SAT4J library from the P2 project over at Eclipse.org at the last EclipseCon. SAT4J was deemed the best way forward
+  by the P2 team in providing the most reliable, and most workable solution for doing version calculation. SAT4J provides ways to plug-in strategies to deal with our 
+  scopes, conflict resolution strategies and it is deadly fast. We felt we are in good company as we can call on Daniel and the P2 team and collaborate when difficult
+  problems arise. 
+  
+* Find the best people to help with with security. This might an SSL-based solution to secure the channel where the source is known to be safe, a PGP-based solution where
+  the contents must be secured assuming a hostile channel, or a combination of the two. To that end I have contacted the folks at the Legion of the Bouncy Castle and asked
+  them to provide us the expertise to implement a safe and correct solution. I have not persued any help on the SSL.
+  
+So in the end I believe it would be detrimental to use the Maven Artifact code in the 2.1.x tree and the change needs to be made to use Mercury before the first alpha ships. Oleg
+and I started this work, and Oleg has subsequently worked tirelessly on Mercury along with a great deal of help from Greg, Jan and Jesse. I think Oleg understands the requirements
+as he's seen Maven in action in one of the largest development environments in the world and watched how Maven can fail spectacularly. 
+  
 h3. Plugin API
 * Symmetric output expressions
 * Java5 Mojo annotations (Yoav Landman has this working already)
@@ -99,14 +134,6 @@ Java5 annotations for plugins: we have two implementations that have now been me
 source level gleaning again. Jason Dillon has created a working class processing model. We need to deal with Plexus components and Maven plugins.
    
 h3. Integration and promotion of scriptable plugins
-
-h3. Backward compatibility
-*  Provide layer of adapters for plugin backward compatibility, to avoid immediate necessity to recode entire suite of plugins and reports for 2.1 compat.
-  *  Integrity checking
-    *  Don't allow builds where versions come from non-project sources
-       like local settings and CLI parameters
-    *  JC: Don't allow builds where versions come from profiles that
-       have to be activated manually
        
 h3. Toolchains
 * Milos has implemented this and Shane had some feedback so this needs to be linked together
