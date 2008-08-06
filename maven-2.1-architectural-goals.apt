@@ -56,12 +56,6 @@ h3. Mercury
 * Conflict resolution is handled by SAT
 * PGP support
 
-h3. Model Changes
-*  Tags and categorization in the POM
-*  Specification dependencies
-*  Dependency extensions
-  *   Exclude all
-
 h3. Plugin API
 * Symmetric output expressions
 * Java5 Mojo annotations (Yoav Landman has this working already)
