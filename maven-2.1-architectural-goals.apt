@@ -14,9 +14,12 @@ We just need some way to easy support multiple versions and support mediation be
 * properties on dependencies
 * Specification Dependencies
 * Schematron/RelaxNG descriptor for each plugin -- Bryon Jacob proposed a flexible model but XSD is hard to fight here
-* Mixin support -- allowing a paramterizable template which can be imported with one line.
 
 h3. Embedding
+
+Full embedding of the Maven core is a major feature of the 2.1.x line. The embedder was created primarily for IDE integration and is now being consumed by m2eclipse, Mevenide and IDEA,
+but the embedder is also used by the Maven CLI to ensure parity between IDEs and the CLI as much as possible. To understand how the embedder work you can refer to
+the [Maven Embedder documentation|http://maven.apache.org/guides/mini/guide-embedding-m2.html].
 
 h3. Custom Components
 
@@ -63,17 +66,19 @@ h3. Plugin API
 * Symmetric output expressions
 * Java5 Mojo annotations (Yoav Landman has this working already)
 * Clean separation of plugins from reports. It's not good that those are the same thing in the Maven internals.
+** Not using concrete XML classes in the Plugin API (Xpp3Dom)
 
 h3. Core Refactorings
 * Project Builder
-** Maven shared model work
-** Pluggable model readers
+** Maven shared model work: a new way of reading in the models for Maven that is not format dependent in any way i.e. XML, text, YAML, scripts, whatever.
+** Pluggable model readers: this could leverage different implementations provided by the shared model work, but we still need a way to detect the type and version
+   of the model that we want to consume
 ** A new terse format that uses attributes
-** Allow mixin capabilities using an import directive
 ** Automatic parent versioning
 ** New interpolation component (plexus-interpolation)
 ** Dynamic build sections ([MNG-3530|http://jira.codehaus.org/browse/MNG-3530])
-** Not using concrete XML classes in the Plugin API (Xpp3Dom)
+** Mixin support -- allowing a paramterizable template which can be imported with one line.
+
 * Remove the use of separate plugin repositories. We only need to pull resources from one repository. We started doing this but I've had a couple
    clients that want to separate the tools they use from the code they are developing/building.
 * Decouple script-based Plugins from the core -- we are a large part of the way here I need to summarize what was done.
