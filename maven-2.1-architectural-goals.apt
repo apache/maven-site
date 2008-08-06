@@ -14,8 +14,29 @@ h3. POM changes
 h3. Embedding
 
 h3. Custom Components
-* Tycho
-* Kenney did a first implementation of this -- need to link the documentation and process
+
+As discussed in [Substituting of Custom Components|http://docs.codehaus.org/display/MAVEN/Substitution+of+Custom+Maven+Components] we now have two ways
+to insert new components into the system.
+
+* Using a directory and specifying it in the Classworlds configuration. Tycho simply has a special set of components that load first before the standard maven components and they override 
+  the standard Maven components. Here's the example based on what Tycho is currently doing which allows custom components to be used.
+  
+{code}
+main is org.apache.maven.cli.MavenCli from plexus.core                                                                                                                     
+                                                                                                                                                                           
+set maven.home default ${user.home}/m2                                                                                                                                     
+                                                                                                                                                                           
+[plexus.core]                                                                                                                                                              
+load ${maven.home}/tycho/*.jar                                                                                                                                             
+load ${maven.home}/lib/*.jar 
+{code}
+
+* The embedder has the ContainerCustomizer which allow you to inject new component descriptors. This is used in the IDE integration (m2ecipse, Netbeans) for adding
+  custom artifact resolvers.
+
+But what we ultimately need for Tycho is a way to dynamically pull in a set of components based on the packaging of a project. In our case with Tycho the packaging is
+maven-osgi-bundle and that should kick in the set of components that do builds for OSGi bundles. We also have another use case in Tycho where we are building OSGi bundles
+without a POM and actually using a manifest. In this case we need to somehow detect the manifest and then have the custom set of components kick in.
 
 h3. Mercury
 * Sustained connections for transfers (releasing and deploying)
