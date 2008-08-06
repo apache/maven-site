@@ -320,7 +320,7 @@ Where: <path-to-file>  the path to the file to load
 
         <p>
           You need to update your settings.xml file using the
-          <a href="guides/development/guide-plugin-snapshot-repositories.html">
+          <a href="guides/development/guide-testing-development-plugins.html">
           Guide to Plugin Snapshot Repositories</a>
         </p>
       </answer>

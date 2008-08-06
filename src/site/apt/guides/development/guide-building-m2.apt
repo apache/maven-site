@@ -104,116 +104,33 @@ svn: Can't open file 'XXX': The system cannot find the path specified.
 svn propget svn:externals
 -------------------
 
-* Building Maven 2.0
+* Building Maven
 
-** Building Maven 2.0 With Maven Installed
+** Building Maven With Maven Installed
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
 
-  You may need to add the snapshots repository to your settings:
-
-+---+
-<settings>
-  <profiles>
-    <profile>
-      <repositories>
-        <repository>
-          <id>apache.snapshots</id>
-          <name>Apache Snapshot Repository</name>
-          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-          <releases>
-            <enabled>false</enabled>
-          </releases>
-        </repository>
-      </repositories>
-      <pluginRepositories>
-        <pluginRepository>
-          <id>apache.snapshots</id>
-          <name>Apache Snapshot Repository</name>
-          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
-          <releases>
-            <enabled>false</enabled>
-          </releases>
-        </pluginRepository>
-      </pluginRepositories>
-      <id>m2.snapshotbuild</id>
-    </profile>
-  </profiles>
-  <activeProfiles>
-    <activeProfile>m2.snapshotbuild</activeProfile>
-  </activeProfiles>
-</settings>
-+---+
-
-  To do this, run from the <<<maven-2.0.x>>> directory:
+  To do this, run from the <<<components>>> or <<<maven-2.0.x>>> directory:
 
 ----
 mvn install
 ----
 
-  The assemblies will be created in <<<target>>> and can be unzipped to the location where you'd like Maven installed.
-
-** Building Maven 2.0 Without Maven Installed
-
-  Once you have checked out the code, change into the <<<maven-2.0.x>>> directory that was created.
-  You may want to setup a different environment to install Maven to, other than your normal installation of a
-  release, so set the <<<M2_HOME>>> environment variable accordingly, e.g.:
+  Optionally, you can use the following to run the full (long) suite of integration tests:
 
 ----
-export M2_HOME=/usr/local/maven-2.0.6-SNAPSHOT
-PATH=$M2_HOME/bin:$PATH
+mvn install -Prun-its
 ----
 
-  or
+  The assemblies will be created in <<<apache-maven/target>>> for Maven 2.0.x or <<<maven-distribution>>> for Maven 2.1,
+  and can be unzipped to the location where you'd like Maven installed.
 
-----
-set M2_HOME=c:\maven-2.0.6-SNAPSHOT
-set PATH=%M2_HOME%\bin;%PATH%
-----
-
-  From this, run the <<<bootstrap>>> command for your system:
-
-----
-sh bootstrap.sh
-----
-
-  or
-
-----
-bootstrap.bat
-----
-
-  First, the code will be built, and a Maven installation created. If you have checked out all the trunks so that the plugins
-  exist in <<<../plugins>>>, the plugins will also be rebuilt and installed in the local repository.
-  Finally, a set of integration tests will run.
-
-  Note that it isn't necessary to have a previous version (alpha-X...) of maven 2 installed before bootstrap.
-
-  If you have any problems or get any failures during the run, please report them to the
-  {{{/mail-lists.html} Maven Developers List}}.
-
-* Building Maven 2.1
-
-** Building Maven 2.1 With Maven Installed
-
-  Once you have checked out the code, change into the <<<maven-components>>>
-  directory. (If you checked out <<<trunks>>>, then it will be the
-  <<<components>>> directory.)
-
-  Then execute the following command:
-
-----
-mvn install
-----
-
-  This will build, test and install all libraries in the local repository and
-  produce the binary distribution under <<<maven-embedder/target/maven-2.1-SNAPSHOT-bin.*>>>
-  that can be unzipped to the location where you'd like Maven installed.
-
-** Building Maven 2.1 Without Maven Installed
+** Building Maven Without Maven Installed
 
   If you do not have Maven installed, you can use
-  {{{http://ant.apache.org}Apache Ant}} to build Maven 2.1.
+  {{{http://ant.apache.org}Apache Ant}} to build Maven.
+
+  Once you have checked out the code, change into the <<<components>>> or <<<maven-2.0.x>>> directory that was created.
 
   Set the M2_HOME environment variable to the location that should contain
   Maven. This directory <<must>> be named after the Maven version you want to
@@ -221,26 +138,27 @@ mvn install
 
 ----
 export M2_HOME=/usr/local/maven-2.1-SNAPSHOT
+PATH=$M2_HOME/bin:$PATH
 ----
 
   or
 
 ----
 set M2_HOME=c:\maven-2.1-SNAPSHOT
+set PATH=%M2_HOME%\bin;%PATH%
 ----
 
-  Once you have checked out the code, change into the <<<maven-components>>>
-  directory. (If you checked out <<<trunks>>>, then it will be the
-  <<<components>>> directory.)
-
-  From this, just run <<<ant>>> which will execute the default <<<all>>> target.
+  From this, run the <<<ant>>> command:
 
 ----
 ant
 ----
 
-  This will download dependencies, build Maven 2.1, and install it into the
+  This will download dependencies, build Maven, and install it into the
   directory you specified as <<<M2_HOME>>> above.
+
+  If you have any problems or get any failures during the run, please report them to the
+  {{{/mail-lists.html} Maven Developers List}}.
 
   For more information, consult the project help in the Ant build file.
 

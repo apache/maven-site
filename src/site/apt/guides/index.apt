@@ -138,8 +138,6 @@ Documentation
 
  * {{{./development/guide-m2-development.html}Developing Maven}}
 
- * {{{./development/guide-plugin-snapshot-repositories.html}Plugin Snapshot Repositories}}
-
  * {{{./development/guide-plugin-documentation.html}The Plugin Documentation Standard}}
 
  * {{{./development/guide-documentation-style.html}Maven Documentation Style}}

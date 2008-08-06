@@ -13,13 +13,19 @@ Guide to Testing Development Versions of Plugins
   If a bug you are encountering has been reported as fixed but not yet released, you can confirm that it has been fixed
   for you. Or perhaps you just like to live on the bleeding edge.
 
-  <Note:> This is <<not>> recommended as an everyday or in production practice!
+  You are highly encouraged to join the development list for the project and provide your feedback, or help promote release
+  of the plugin in question.
+
+  <Note:> This is <<not>> recommended as an everyday or in production practice! Snapshots are for testing purposes only and
+  are not official releases. For more information, see {{{http://www.apache.org/dev/release.html#what} the Releases FAQ}}.
 
 * How do I do this?
 
-  Development versions of Maven plugins are periodically published to the repository: {{http://people.apache.org/repo/m2-snapshot-repository/}}
+  Development versions of Maven plugins are periodically published to the repository: {{http://people.apache.org/repo/m2-snapshot-repository/}}.
 
   <Note:> Currently, this is not done automatically by our continuous integration setup. This is coming soon.
+
+  Other sites may publish there own - for example, the Mojo project hosts theirs at {{http://snapshots.repository.codehaus.org/}}
 
   The first step is to include this in your project:
 
@@ -35,10 +41,6 @@ Guide to Testing Development Versions of Plugins
   ...
 </project>
 -------
-
-  <Note:> If you are using the goals from the command line on a number of projects, you should include this in your
-  <<<settings.xml>>> file instead. See {{{../mini/guide-configuring-maven.html}Guide to configuring Maven}}
-  for more info.
 
   After this is included, there are three ways to use the updated versions:
 
@@ -69,13 +71,58 @@ Guide to Testing Development Versions of Plugins
 </project>
 -------
 
-  <Note:> These last two techniques mean that <every> plugin will be updated to the latest snapshot version. Finer grained
-  control will be available in future versions.
+  <Note:> These last two techniques mean that <every> plugin will be updated to the latest snapshot version.
 
-* How do I stop doing this?
+  The development version will stop being used if the <<<\<pluginRepository\>>>> element is removed from your POM
+  and the version is set back to the release version. If you are using the command line or an unspecified version,
+  you will also need to remove the version from the local repository.
 
-  The development version will stop being used if the <<<\<pluginRepository\>>>> element is removed from your POM or
-  <<<settings.xml>>> (regardless of what is in your local repository).
+* Using Settings without Modifying the Project
+
+  If you are using the goals from the command line on a number of projects, you should include this in your
+  <<<settings.xml>>> file instead. 
+
+  You need to modify your <<<~/.m2/settings.xml>>> file to include two new profiles
+  and then when you need access to the plugin snapshots use <<<-Papache>>>.
+  The profile only needs to be enabled once so that the plugins can be downloaded into you local repository.  Once 
+  in your local repository Maven can succesfully resolve the dependencies and
+  the profile no longer needs to be activated.
+
++---
+<settings>
+  ...
+  <profiles>
+    <profile>
+      <id>apache</id>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>apache.org</id>
+          <name>Maven Plugin Snapshots</name>
+          <url>http://people.apache.org/repo/m2-snapshot-repository</url>
+          <releases>
+            <enabled>false</enabled>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  ...
+</settings>
++---
+
+  When invoking Maven for Apache profile, do it like this:
+
++---
+mvn -Papache <phase|goal>
++---
+
+* Using a Repository Manager
+
+  In addition to the above you may want to use a repository manager so that you can retain the builds you have been using.
+  For information on this technique, see the {{{guide-testing-releases.html} Guide to Testing Staged Releases}}.
 
 * How do I make changes to the source and test development versions of the plugins?
 

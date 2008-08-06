@@ -41,7 +41,7 @@ Guide to helping with Maven
 
  * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mail-lists.html} mailing list}} for release votes
 
- * {{{./guide-plugin-snapshot-repositories.html} test snapshot plugins}} help test the latest development versions of plugins and report issues
+ * {{{./guide-testing-development-plugins.html} test snapshot plugins}} help test the latest development versions of plugins and report issues
 
  * Help with the documentation by pointing out areas that are lacking or unclear, and if you are so inclined, submitting patches to correct it.
    You can quickly contribute rough thoughts to the {{{http://docs.codehaus.org/display/MAVENUSER/} wiki}}, or you can volunteer to help collate and
