@@ -3,6 +3,11 @@ h1. Maven 2.1
 h2. Architectural Goals
 
 h3. POM changes
+
+There are many changes that users have requested in the POM, in addition to wholesale formatting changes. Acommodating these requests is a little tricky
+because we need to support different versions simultaneously so that if projecta A builds with 2.0.x, project B can consume the project A POM using 2.1.x.
+We just need some way to easy support multiple versions and support mediation between the different versions.
+
 * tags/categories
 * dependency excludes && symmetry
 * terse attribute based format for the POM
@@ -36,7 +41,8 @@ load ${maven.home}/lib/*.jar
 
 But what we ultimately need for Tycho is a way to dynamically pull in a set of components based on the packaging of a project. In our case with Tycho the packaging is
 maven-osgi-bundle and that should kick in the set of components that do builds for OSGi bundles. We also have another use case in Tycho where we are building OSGi bundles
-without a POM and actually using a manifest. In this case we need to somehow detect the manifest and then have the custom set of components kick in.
+without a POM and actually using a manifest. In this case we need to somehow detect the manifest and then have the custom set of components kick in. In the case of Tycho
+we need a different project builder, and artifact resolver.
 
 h3. Mercury
 * Sustained connections for transfers (releasing and deploying)
