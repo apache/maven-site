@@ -22,6 +22,85 @@ formats we decide to support. The maven-shared-model code has no limitation to f
 implementations may find use outside of Maven. For example someone might build something with the Maven Embedder, JRuby, and Mercury to create a JRuby-based system. The
 same could be done for Groovy, or Intercal.
 
+h3. Strategies for ensuring backward compatibility
+
+* Plugin integration testing
+
+{code}
+jason: so when you and benjamin went through the tests you have "integration-tests" as the standard hook in the plugin build to grab on to?
+[07:59am] jason: why is the activator a property negation? why don't you just run in hudson with -Pintegration-tests?
+[08:02am] jason: i want to document what you and benjamin have done as a strategy for ensuring backward compatibility
+[08:03am] ltheussl left the chat room. (Client closed connection)
+[08:04am] aheritier: I started with this idea to have an additional profile that we activate with a property like integration-tests=true
+[08:05am] jason: yah, i think -Pintegration-tests=true in a schedule in hudson is fine
+[08:05am] jason: don't think the skip property is necessary
+[08:05am] bentmann joined the chat room.
+[08:05am] aheritier: but others showed me that he major part of existing integration tests were activated with skipTests ! true
+[08:05am] aheritier: I asked why
+[08:05am] aheritier: they said it was to be sure to launch it by default
+[08:06am] aheritier: but to have the possibility to deactivate them if we skip tests
+[08:06am] jason: sure, so by default they run
+[08:07am] aheritier: yes.
+[08:07am] aheritier: I prefer to activate them if I want
+[08:07am] jason: yes
+[08:07am] aheritier: not to have them always
+[08:07am] jason: i agree that should be the pattern
+[08:07am] aheritier: it's too long
+[08:07am] jason: a smoke test in one mode
+[08:07am] jason: and then turn them all on in hudson
+[08:07am] aheritier: it's why we invented CI servers 
+[08:07am] aheritier: yes
+[08:07am] eu left the chat room. (Ping timeout)
+[08:08am] jason: i will document the setup but you and ben should figure out the pattern you want for a given plugin test
+[08:08am] jason: and i'll document this as a strategy for testing 2.1
+[08:08am] eu joined the chat room.
+[08:08am] ekuleshov is now known as eu.
+[08:08am] jason: as i would like to take your setup, and parameterize the version of maven
+[08:08am] jason: so when some changes are made in 2.1 i'll run the plugin smoke test first
+[08:09am] jason: make sure nothing we change in the apis or hooks is screwed up
+[08:09am] jason: and then run the ITs to make sure those plugins are working
+[08:09am] jason: i already know a handful that are not working
+[08:09am] bentmann: jason: How exactly do you intend to parametrize the Maven version? As far as I see, you only need to run them with the Maven of your choice.
+[08:10am] jason: by taking the existing build, read the job, and change the version
+[08:10am] jason: i have tools for reading/writing jobs
+[08:10am] jason: but even low tech cloning the job and changing the maven installation
+[08:10am] bentmann: So the parametrization is limited to the Hudson job config, right?
+[08:11am] jason: actually you could parameterize anything if you control the job reading/writing
+[08:11am] eu left the chat room. (Ping timeout)
+[08:11am] jason: but this is something kohsuke added himself about a week ago
+[08:11am] jason: in hudson itself
+[08:11am] jason: i will create a set of parameters to test old/new versions of maven with a given set of plugins
+[08:12am] jason: this is a great start, we couldn't do it if the plugins didn't have the same hook
+[08:12am] jason: so all the maven plugin builds now have "integration-tests" profiles?
+[08:12am] bentmann: Well, not all, only those that ITs before.
+[08:12am] ekuleshov joined the chat room.
+[08:12am] veleno left the chat room. (veleno)
+[08:13am] jason: well that's a start and they are at least consistent now
+[08:13am] ekuleshov is now known as eu.
+[08:13am] jason: which is a great start
+[08:13am] bentmann: I believe you just need to try to setup a Hudson job with Maven 2.1 to build "maven-plugins" and see what's missing in terms of config
+[08:14am] jason: not sure what you mean
+[08:14am] bentmann: IIRC, both Invoker and Shitty were picking up the maven.home from the currently running Maven, so the ITs should inherit that
+[08:14am] jason: also, do you guys have a quick way to tell what plugins don't have ITs?
+[08:14am] bentmann: Seach for src/it...
+[08:15am] jason: yes, i want to make more a report but i can do that
+[08:15am] jason: so anything that does have ITs you guys have made consistent?
+[08:15am] jason: yes?
+[08:15am] bentmann: Not sure what kind of consistency you actually require
+[08:16am] bentmann: The IT profile should be named equal for all of them
+[08:16am] bentmann: by inheriting from the parent
+[08:16am] i386_ left the chat room. (i386_)
+[08:16am] bentmann: whether the are run by Invoker or Shitty shouldn't matter, I guess
+[08:17am] jason: no, the actual project just needs a profile name the same. not taken from the parent but stated in the project itself
+[08:17am] jason: though the parent could specify that profile which just echos "No ITs"
+[08:17am] jason: so in a run we would know which plugins don't have ITs at all
+[08:17am] bentmann: Ah, I see
+[08:17am] jason: so i can try what i want and that's a great start
+[08:18am] jason: if our plugins don't all have ITs i cannot reasonably test 2.1
+[08:18am] jason: and any discussion about compatibility is pointless until that's done
+{code}
+
+
 h3. POM changes
 
 There are many changes that users have requested in the POM, in addition to wholesale formatting changes. Acommodating these requests is a little tricky
