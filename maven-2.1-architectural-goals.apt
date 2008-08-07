@@ -1,11 +1,14 @@
 h1. Maven 2.1 -- Jason van Zyl
 
-- architecture document for maven-shared-model and the new project building code
-- architecture document and spec for mercury (largely in the wiki)
-- architecture document on maven itself
- - plugin manager
- - lifecycle executor
-- profile construction
+TODO: Jesse and Greg spent a lot of time getting the async SSL working so a little description this work would be useful
+TODO: architecture document about Mercury transport as the async HTTP/DAV client
+TODO: architecture document for maven-shared-model and the new project building code
+TODO: architecture document and spec for mercury (largely in the wiki)
+TODO: architecture document on maven itself, plugin manager, lifecycle executor, profile construction
+TODO: check with kenney to see if his work survived in substituting components or if it's his work that's actually making it work
+TODO: get an explanation of the process Arnaud and Benjamin have for plugins. I started by capturing the log
+TODO: document standard setup for Hudson we have so people can see the results of testing
+TODO: setup hudson with emma for code coverage and ask VELO to help us setup coverage for integration tests
 
 h2. Architectural Goals
 
@@ -99,7 +102,6 @@ jason: so when you and benjamin went through the tests you have "integration-tes
 [08:18am] jason: if our plugins don't all have ITs i cannot reasonably test 2.1
 [08:18am] jason: and any discussion about compatibility is pointless until that's done
 {code}
-
 
 h3. POM changes
 
