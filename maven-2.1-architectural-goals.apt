@@ -1,11 +1,14 @@
 h1. Maven 2.1 -- Jason van Zyl
 
+Discussion: need some answers to these before even pushing this to the list
 TODO: Jesse and Greg spent a lot of time getting the async SSL working so a little description this work would be useful
 TODO: architecture document about Mercury transport as the async HTTP/DAV client
 TODO: architecture document for maven-shared-model and the new project building code
 TODO: architecture document and spec for mercury (largely in the wiki)
 TODO: architecture document on maven itself, plugin manager, lifecycle executor, profile construction
 TODO: check with kenney to see if his work survived in substituting components or if it's his work that's actually making it work
+
+Technical Preparation: not necessary before discussions can start but helpful to help guide how we concretely determine backward compat
 TODO: get an explanation of the process Arnaud and Benjamin have for plugins. I started by capturing the log
 TODO: document standard setup for Hudson we have so people can see the results of testing
 TODO: setup hudson with emma for code coverage and ask VELO to help us setup coverage for integration tests
