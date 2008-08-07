@@ -56,7 +56,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}      | 2.0.2        | 2007-02-13 | Compiles Java sources. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-compiler-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCOMPILER}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}          | 2.3          | 2006-12-30 | Deploy the built artifact to the remote repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-deploy-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEPLOY}JIRA}}
+| {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}          | 2.4          | 2008-08-06 | Deploy the built artifact to the remote repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-deploy-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEPLOY}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-install-plugin/} <<<install>>>}}        | 2.2          | 2007-05-17 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINSTALL}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
