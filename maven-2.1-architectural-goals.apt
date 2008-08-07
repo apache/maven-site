@@ -92,6 +92,7 @@ behavior, Oleg and I decided to make a break from the old codebase and attempt t
 ** Atomic retrieval: we make sure absolutely everything is been safely transported to disk before we place it in the local Maven repository
 ** Atomic deployment: in this case we could only support this using a special filter Greg created which blocks requests for any artifacts being deploy in the current 
    set until the entire set land safely to disk. So it becomes impossible to ask for an artifact that refers to something else in the set before it is actually available. 
+** Starting thinking about a client that can understand GeoIP. Given the recent spikes in traffic we are going to start needing to distribute the load.
 
 * Find the best solution possible solution for dealing with version calculations, in particular ranges. For this we called on Daniel Le Berre and ask for some help in
   integrating his SAT4J library. We learned about the SAT4J library from the P2 project over at Eclipse.org at the last EclipseCon. SAT4J was deemed the best way forward
