@@ -47,7 +47,18 @@ h2. Plugin API
 h3. Shading of plexus-utils causing a ClassCastException on plugin.getConfiguration() ([MNG-3012|http://jira.codehaus.org/browse/MNG-3012])
 
  The fact that plexus-utils is hidden from plugins in the newer releases of Maven means that plugin.getConfiguration() from maven-model can cause a ClassCastException, if used from within a mojo. The plan to fix this is basically just to import Xpp3Dom from the shaded plexus-utils version in maven-core within the plugin's classrealm. This should allow us to share the same instance of that class (only, shouldn't really affect other p-u classes) and preserve backward compatibility for existing plugin releases.
+
+comment from kenney:
+The problem with this is that it's a hack. If xpp3dom/plexus utils is updated and the plugin requires the new xpp3dom class, which has a new method for instance, this will break the plugin.
+
+About this specific issue (MNG-3012): The best solution is to only share java., javax., and core maven api classes, so we can no longer export anything outside the plugin api (which includes maven-model, maven-project, maven-settings e.a.). This would require to phase out plugin.getConfiguration() and other model methods that return xpp3dom classes, and let them return interfaces present in the maven core api. Those interfaces would have an implementation class that implements both that interface and extends xpp3dom, which will be hidden for the plugin. Another solution could be to use xmlplexusconfiguration
+
+There's one more solution to consider; using ASM to rewrite plugins as they're loaded. We could add code modifiers that workaround incompatibilities by detecting usage patterns, like (Xpp3Dom) plugin.getConfiguration(). An example could be to modify the code to wrap   Xpp3DomParser.parse( new StringReader( String.valueOf( /plugin.getConfiguration()/ ) ) ) around the call. This is even more of a hack though. Perhaps a mojo that scans for plugin incompatibilities using ASM is more feasible (no code modification).
+
+So the basic problem we're up against is that there can be core api changes between major versions that pose incompatibilities for plugins written against an older version. The simplest solution would be to let plugins specify the maven versions they work against (which is partly present: <requires><mavenVersion>2.0.6</mavenVersion></requires>. If this field supports a versionrange, or we'd default the version interpretation above to mean [2.0.6,2.1), we can detect plugins that won't run. The shading mentioned above is solving only one incompatibility problem, and there are bound to be more. Maybe we even need 2 versions of a plugin at some point, targeted toward different maven versions, though I'd really like to avoid that. But we cannot just assume our 2.0 plugin api will never change across 'major' (read: minor) releases.
+
 h3. Strategies for ensuring backward compatibility
+
 
 * Plugin integration testing
 
