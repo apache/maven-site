@@ -269,3 +269,9 @@ or
 (in other words the project is java and either itself is added to classpath or has sources to compile).
 
 This test will return false negative for some WAR projects (not added to classpath and don't have any sources to compile). Also, compileSourceRoots and testCompileSourceRoots only become fully populated after running maven build lifecycle, which is expensive.
+
+* Extensions
+** Different categories of extensions: providers vs packaging vs PMD/Checkstyle resources stuff in a JAR
+** Transparent Extension Loading
+*** Any Wagon or SCM providers should get picked up automatically from SCM and distributionManagement URLs
+*** Any extensions containing packaging/lifecycle related bits needs to be picked up automatically
