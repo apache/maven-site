@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2008-08-01
+ 2008-08-08
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -148,7 +148,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}        | 2.5.1        | 2008-04-05 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-idea-plugin/} <<<idea>>>}}              | 2.1          | 2007-06-23 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules) | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-idea-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MIDEA}JIRA}}
+| {{{/plugins/maven-idea-plugin/} <<<idea>>>}}              | 2.2          | 2008-08-08 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules) | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-idea-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MIDEA}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 
   There are also some sandbox plugins into our {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}source reposity}}.
