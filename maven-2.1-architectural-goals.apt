@@ -5,7 +5,6 @@ TODO: Jesse and Greg spent a lot of time getting the async SSL working so a litt
 TODO: architecture document about Mercury transport as the async HTTP/DAV client
 TODO: example of user facing API for Mercury
 TODO: architecture document and spec for mercury (largely in the wiki)
-TODO: architecture document for maven-shared-model and the new project building code
 TODO: example of user facing API for maven-shared-model
 TODO: architecture document on maven itself, plugin manager, lifecycle executor, profile construction
 TODO: check with kenney to see if his work survived in substituting components or if it's his work that's actually making it work
@@ -229,7 +228,7 @@ h3. Plugin API
 ** Not using concrete XML classes in the Plugin API (Xpp3Dom)
 
 h3. Core Refactorings
-* Project Builder
+* Project Builder ([architecture|http://docs.codehaus.org/display/MAVENUSER/Project+Builder])
 ** Maven shared model work: a new way of reading in the models for Maven that is not format dependent in any way i.e. XML, text, YAML, scripts, whatever.
 ** Pluggable model readers: this could leverage different implementations provided by the shared model work, but we still need a way to detect the type and version
    of the model that we want to consume
