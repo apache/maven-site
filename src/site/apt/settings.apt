@@ -173,6 +173,9 @@ mvn castor-maven-plugin:generate
 
   []
 
+  <Note:> If you use a private key to login to the server, make sure you omit the <<<\<password\>>>> element.
+  Otherwise, the key will be ignored.
+
 * {Mirrors}
 
 +------------------------------------+
