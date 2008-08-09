@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2008-08-08
+ 2008-08-09
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -124,7 +124,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.2        | 2007-11-27 | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPH}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.2          | 2008-05-30 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
+| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.2.1        | 2008-08-09 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-one-plugin/} <<<one>>>}}                | 1.2          | 2007-09-12 | A plugin for interacting with legacy Maven 1.x repositories and builds. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-one-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MONE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
