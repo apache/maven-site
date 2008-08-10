@@ -252,7 +252,8 @@ Where: <path-to-file>  the path to the file to load
       <question>How do I include <code>tools.jar</code> in my dependencies?</question>
       <answer>
         <p>
-          The following code includes <code>tools.jar</code> on Sun JDKs (it is already included in the runtime for Mac OS X and some free JDKs).
+          The following code includes <code>tools.jar</code> for JDKs on Windows, Linux and Solaris (it is already
+          included in the runtime for Mac OS X and some free JDKs).
         </p>
         <source>
 ...
