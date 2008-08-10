@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- March 2008
+ 2008-08-10
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -321,8 +321,7 @@ This plugin (insert short description of the plugin's purpose).
 
 http://maven.apache.org/plugins/maven-XXX-plugin/
 
-You can run mvn -up to get the latest version of the plugin, or specify
-the version in your project's plugin configuration:
+You should specify the version in your project's plugin configuration:
 
 <plugin>
  <groupId>org.apache.maven.plugins</groupId>
