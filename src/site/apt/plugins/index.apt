@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2008-08-09
+ 2008-08-21
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -130,7 +130,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-patch-plugin/} <<<patch>>>}}            | 1.0          | 2008-01-26 | Use the gnu patch tool to apply patch files to source code. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-patch-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPATCH}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}          | 2.4.2        | 2008-06-26 | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
+| {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}          | 2.4.3        | 2008-08-20 | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-release-plugin/} <<<release>>>}}        | 2.0-beta-7   | 2007-10-27 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
