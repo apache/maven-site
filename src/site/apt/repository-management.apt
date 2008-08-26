@@ -67,9 +67,18 @@ Repository Management with Maven Repository Managers
  Maven Proxy was the first Maven repository manager to come on the scene, but the project is now defuct and it's not recommended for
  general use anymore. The code that was in Maven Proxy was used as the initial basis of Artifactory.
 
-* Proximity
+* Proximity/{{{http://nexus.sonatype.org}Nexus: Maven Repository Manager}}
 
- Anyone who was using Proximity is now encouraged to use Nexus. The entire codebase of Proximity was absorbed into Nexus.
+ Anyone who was using Proximity is now encouraged to use Nexus. The entire codebase of Proximity was absorbed into Nexus and
+ Nexus provides a migration path for all Proximity users.
+
+ Tamas Cservenak started working on Proximity in December 2005 as he was trying to find a way to isolate his own systems from an 
+ incredibly slow ADSL connection provided by a Hungarian ISP. Proximity started as a simple web application to proxy artifacts for 
+ a small organization with connectivity issues. Creating a local on-demand cache for Maven artifacts from the central Maven repository 
+ gave an organization access to the artifacts on the Central Maven Repository, but it also made sure that these artifacts weren't 
+ downloaded over a very slow ADSL connection used by a number of developers. In 2007, Sonatype asked Tamas to help create a similar 
+ product named Nexus. Nexus is currently considered the logical next step to Proximity. Nexus currently has an active development team, 
+ and portions of the indexing code from Nexus are also being used in {{{http://m2eclipse.sonatype.org/}m2eclipse}}
 
 * {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
 
@@ -91,23 +100,13 @@ Repository Management with Maven Repository Managers
 
  DSMP is a proxy. It can be used as a repository server but it's main purposs it to act as a filter when Maven accesses the internet. If you need a repository server, use Archiva.
 
-* {{{http://nexus.sonatype.org}Nexus: Maven Repository Manager}}
-
- Tamas Cservenak started working on Proximity in December 2005 as he was trying to find a way to isolate his own systems from an 
- incredibly slow ADSL connection provided by a Hungarian ISP. Proximity started as a simple web application to proxy artifacts for 
- a small organization with connectivity issues. Creating a local on-demand cache for Maven artifacts from the central Maven repository 
- gave an organization access to the artifacts on the Central Maven Repository, but it also made sure that these artifacts weren't 
- downloaded over a very slow ADSL connection used by a number of developers. In 2007, Sonatype asked Tamas to help create a similar 
- product named Nexus. Nexus is currently considered the logical next step to Proximity. Nexus currently has an active development team, 
- and portions of the indexing code from Nexus are also being used in {{{http://m2eclipse.sonatype.org/}m2eclipse}}
-
 ~~ TODO Add link to comparison matrix on the MAVENUSER wiki that shows the which features the different products have.
 
 ~~ TODO Link to instructions for configuring repositories and mirrors
 
 * Other resources
 
-  * {{{http://www.sonatype.com/book/reference/repository-manager.html#}Chapter on Nexus in <Maven: The Definitive Guide>}}
+  * {{{http://www.sonatype.com/book/reference/repository-manager.html#}Chapter on Nexus in Sonatype's <Maven: The Definitive Guide>}}
 
   * {{{http://www.theserverside.com/tt/articles/article.tss?l=SettingUpMavenRepository}Setting Up Maven Repository}} by Avneet Mangat
 
