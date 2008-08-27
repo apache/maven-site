@@ -20,7 +20,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-filtering/} <<<maven-filtering>>>}}                       | 1.0-beta-1   | 2008-08-06        | Components for filtering resources. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-filtering/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
-| {{{/shared/maven-invoker/} <<<maven-invoker>>>}}                           | 2.0.9        | 2008-08-06        | Fires up a Maven build in a new JVM. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-invoker/}SVN}}
+| {{{/shared/maven-invoker/} <<<maven-invoker>>>}}                           | 2.0.10        | 2008-08-27        | Fires up a Maven build in a new JVM. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-invoker/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.2          | 2007-08-22        | Converts between version 3.0.0 and version 4.0.0 models. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-model-converter/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
