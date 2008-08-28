@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+<document>
+  <properties>
+    <title>Source Repository</title>
+    <author>Benjamin Bentmann</author>
+  </properties>
+  <body>
+    <section name="Source Repository">
+      <p>
+        Maven projects use <a href="http://subversion.tigris.org/">Subversion</a> to manage their source code.
+        Instructions on Subversion use can be found in the online book
+        <a href="http://svnbook.red-bean.com/">Version Control with Subversion</a>.
+      </p>
+      <subsection name="Web Access">
+        <p>
+          The following list shows the links to the online source repositories for the various development branches of
+          the Maven core:
+        </p>
+        <source>
+<a href="http://svn.apache.org/viewvc/maven/components/branches/maven-2.0.x">http://svn.apache.org/viewvc/maven/components/branches/maven-2.0.x</a>&#xA0;<!-- protected space to force line break -->
+<a href="http://svn.apache.org/viewvc/maven/components/branches/maven-2.1.x">http://svn.apache.org/viewvc/maven/components/branches/maven-2.1.x</a>&#xA0;<!-- protected space to force line break -->
+<a href="http://svn.apache.org/viewvc/maven/components/trunk">http://svn.apache.org/viewvc/maven/components/trunk</a></source>
+        <p>
+          The source repositories for the various plugins are listed in the documentation of the respective plugin,
+          reachable via the <a href="plugins/index.html">plugin index</a>.
+        </p>
+      </subsection>
+      <subsection name="Anonymous Access">
+        <p>
+          The source can be checked out anonymously from SVN with one of these commands depending on the development
+          line you are looking for:
+        </p>
+        <source>
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x maven-2.0.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.1.x maven-2.1.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/trunk maven-3.0.x</source>
+      </subsection>
+      <subsection name="Developer Access">
+        <p>
+          Everyone can access the Subversion repository via HTTP, but committers must checkout the Subversion
+          repository via HTTPS to gain write access:
+        </p>
+        <source>
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x maven-2.0.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.1.x maven-2.1.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/trunk maven-3.0.x</source>
+        <p>
+          To commit changes to the repository, execute the following command to commit your changes (<code>svn</code> will
+          prompt you for your password):
+        </p>
+        <source>
+$ svn commit --username your-username -m "A message"</source>
+      </subsection>
+      <subsection name="Access from behind a Firewall">
+        <p>
+          For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion
+          repository, you can try to access it via the developer connection:
+        </p>
+        <source>
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x maven-2.0.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/branches/maven-2.1.x maven-2.1.x
+$ svn checkout http://svn.apache.org/repos/asf/maven/components/trunk maven-3.0.x</source>
+      </subsection>
+      <subsection name="Access through a Proxy">
+        <p>
+          The Subversion client can go through a proxy, if you configure it to do so. First, edit your <code>servers</code>
+          configuration file to indicate which proxy to use. The file's location depends on your operating system. On
+          Linux or Unix it is located in the directory <code>~/.subversion</code>. On Windows it is in <code>%APPDATA%\Subversion</code>
+          (try <code>echo %APPDATA%</code>, note this is a hidden directory).
+        </p>
+        <p>
+          There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion
+          client and run any command; this will cause the configuration directory and template files to be created.
+        </p>
+        <p>
+          Example: Edit the <code>servers</code> file and add something like:
+        </p>
+        <source>
+[global]
+http-proxy-host = your.proxy.name
+http-proxy-port = 3128</source>
+      </subsection>
+    </section>
+  </body>
+</document>
