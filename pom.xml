@@ -66,6 +66,9 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <outputEncoding>UTF-8</outputEncoding>
+        </configuration>
         <executions>
           <execution>
             <id>jar</id>
