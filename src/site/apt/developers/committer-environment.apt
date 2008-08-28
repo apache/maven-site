@@ -30,6 +30,14 @@ Introduction
 
  This document is intended to set up the Maven committer environment.
 
+{Source File Encoding}
+
+ When editing source files, make sure you use the right file encoding. For the Maven project, UTF-8 has been chosen
+ as the default file encoding. UTF-8 is an encoding scheme for the Unicode character set and as such allows to encode
+ all characters that Java can handle. The source files should not contain the byte order mark (BOM). There can be
+ exceptions to this general rule, e.g. properties files are usually encoded using ISO-8859-1 as per the JRE API, so
+ please keep this in mind, too.
+
 Subversion Configuration
 
  Before committing files in subversion repository, you need to read the
