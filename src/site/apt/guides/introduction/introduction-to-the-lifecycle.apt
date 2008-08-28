@@ -281,6 +281,8 @@ mvn clean dependency:copy-dependencies package
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<validate>>>                | validate the project is correct and all necessary information is available.
 *-------------------------------+--------------------------------------------------------------------------------------+
+| <<<initialize>>>              | initialize build state, e.g. set properties or create directories.
+*-------------------------------+--------------------------------------------------------------------------------------+
 | <<<generate-sources>>>        | generate any source code for inclusion in compilation.
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<process-sources>>>         | process the source code, for example to filter any values.
