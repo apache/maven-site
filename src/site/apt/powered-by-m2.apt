@@ -19,7 +19,7 @@ Powered by Maven 2.x
  
  * {{{http://plexus.codehaus.org/}Plexus}}
  
- * {{{http://maven.apache.org/continuum/}Continuum}}
+ * {{{http://continuum.apache.org/}Continuum}}
  
  * {{{http://gforge.public.thoughtworks.org/projects/dbfixture/}DbFixture}}
 
