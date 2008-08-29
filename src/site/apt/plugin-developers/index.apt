@@ -26,6 +26,8 @@ Plugin Developers Centre
 
   * {{{./cookbook/index.html} Plugins Cookbook}} - Examples for how to perform common tasks in plugins
 
+  * {{{./common-bugs.html} Common Bugs and Pitfalls}} - Overview of problematic coding patterns
+
   []
 
 ~~TODO: trails
