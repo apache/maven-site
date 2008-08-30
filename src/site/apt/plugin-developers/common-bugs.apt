@@ -44,6 +44,8 @@ Common Bugs and Pitfalls
 
   * {{{Using_System_Properties}Using System Properties}}
 
+  * {{{Using_Shutdown_Hooks}Using Shutdown Hooks}}
+
   * {{{Resolving_Relative_Paths}Resolving Relative Paths}}
 
   * {{{Determining_the_Output_Directory_for_a_Site_Report}Determining the Output Directory for a Site Report}}
@@ -276,6 +278,34 @@ public MyMojo extends AbstractMojo
   current JVM. To prevent conflicts with other code running in the same JVM, Maven plugins should instead query the
   execution properties. These can be obtained from
   <<<{{{http://maven.apache.org/ref/current/maven-core/apidocs/org/apache/maven/execution/MavenSession.html#getExecutionProperties()}MavenSession.getExecutionProperties()}}>>>.
+
+* {Using Shutdown Hooks}
+
+  People occasionally employ shutdown hooks to perform cleanup tasks, e.g. to delete temporary files as shown in the
+  example below:
+
++---
+public MyMojo extends AbstractMojo
+{
+    public void execute()
+    {
+        File tempFile = File.createTempFile( "temp", null );
+        /*
+         * FIXME: This assumes the JVM terminates soon after
+         * the Maven build has finished.
+         */
+        tempFile.deleteOnExit();
+    }
+}
++---
+
+  The problem is that the JVM executing Maven can be running much longer than the actual Maven build. Of course, this
+  does not apply to the standalone invocation of Maven from the command line. However, it affects the embedded usage of
+  Maven in IDEs or CI servers. In those cases, the cleanup tasks will be deferred, too. If the JVM is then executing a
+  bunch of other Maven builds, many such cleanup tasks can sum up, eating up resources of the JVM.
+
+  For this reason, plugin developers should avoid usage of shutdown hooks and rather use <<<try>>>/<<<finally>>> blocks
+  to perform cleanup as soon as the resources are no longer needed.
 
 * {Resolving Relative Paths}
 
