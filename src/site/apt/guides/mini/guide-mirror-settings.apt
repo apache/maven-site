@@ -31,7 +31,7 @@ Using Mirrors for Repositories
 
 +-----+
 <settings>
-  .
+  ...
   <mirrors>
     <mirror>
       <id>ibiblio.org</id>
@@ -40,86 +40,16 @@ Using Mirrors for Repositories
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
-  .
+  ...
 </settings>
 +-----+
 
  The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
  Model Website}}.
 
- <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>, the following mirrors may not have
- the same contents and we don't support them in any way, although we try to keep info in this page accurate.
-
- As of today, the following mirrors are available:
-
-+-----+
-<settings>
-  <mirrors>
-    <mirror>
-      <id>ibiblio.org</id>
-      <url>http://mirrors.ibiblio.org/pub/mirrors/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- United States, North Carolina -->
-    </mirror>
-    <mirror>
-      <id>lsu.edu</id>
-      <url>http://ibiblio.lsu.edu/main/pub/packages/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- United States, Louisiana -->
-     </mirror>
-    <mirror>
-      <id>sateh.com</id>
-      <url>http://maven.sateh.com/repository</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- The Netherlands, Amsterdam -->
-    </mirror>
-    <mirror>
-      <id>dotsrc.org</id>
-      <url>http://mirrors.dotsrc.org/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Denmark -->
-    </mirror>
-    <mirror>
-      <id>sunsite.dk</id>
-      <url>http://mirrors.sunsite.dk/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Denmark -->
-    </mirror>
-    <mirror>
-      <id>skynet.be</id>
-      <url>http://maven2.mirrors.skynet.be/pub/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Belgium -->
-    </mirror>
-    <mirror>
-      <id>cica.es</id>
-      <url>http://ftp.cica.es/mirrors/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Spain, Sevilla -->
-    </mirror>
-    <mirror>
-      <id>redv.com</id>
-      <url>http://mirrors.redv.com/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- Shanghai, China -->
-    </mirror>
-
-    <!-- these just point to ibiblio.org -->
-    <mirror>
-      <id>ibiblio.net</id>
-      <url>http://www.ibiblio.net/pub/packages/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- United States, North Carolina -->
-    </mirror>
-    <mirror>
-      <id>ggi-project.org</id>
-      <url>http://ftp.ggi-project.org/pub/packages/maven2</url>
-      <mirrorOf>central</mirrorOf>
-      <!-- The Netherlands, Amsterdam -->
-    </mirror>
-  </mirrors>
-</settings>
-+-----+
+ <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>. A list of known mirrors is available at
+ {{http://docs.codehaus.org/display/MAVENUSER/Mirrors+Repositories}}. These mirrors may not have the same contents
+ and we don't support them in any way, although we try to keep info in this page accurate.
 
 Using A Single Repository
 
@@ -183,7 +113,7 @@ Advanced Mirror specification
 
 +-----+
 <settings>
-  .
+  ...
   <mirrors>
     <mirror>
       <id>internal-repository</id>
@@ -198,7 +128,7 @@ Advanced Mirror specification
       <mirrorOf>foo</mirrorOf>
     </mirror>
   </mirrors>
-  .
+  ...
 </settings>
 +-----+
 
