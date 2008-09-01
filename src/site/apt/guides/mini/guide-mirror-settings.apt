@@ -4,7 +4,7 @@
  Jason van Zyl
  Brian Fox
  ------
- 8 April 2008
+ 2008-09-01
  ------
 
 Using Mirrors for Repositories
@@ -20,6 +20,8 @@ Using Mirrors for Repositories
     * You want to replace a particular repository with your own internal repository which you have greater control over
 
     * You want to run maven-proxy to provide a local cache to a mirror and need to use it's URL instead
+
+    []
 
  To configure a mirror of a given repository, you provide it in your settings file ($HOME/.m2/settings.xml),
  giving the new repository its
@@ -42,10 +44,11 @@ Using Mirrors for Repositories
 </settings>
 +-----+
 
- The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
+ The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
+ Model Website}}.
 
- <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>, the following mirrors may not have the same contents
- and we don't support them in any way, although we try to keep info in this page accurate.
+ <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>, the following mirrors may not have
+ the same contents and we don't support them in any way, although we try to keep info in this page accurate.
 
  As of today, the following mirrors are available:
 
@@ -120,9 +123,9 @@ Using Mirrors for Repositories
 
 Using A Single Repository
 
-  You can force Maven to use a single repository by having it mirror all repository requests. The repository must contain all of the desired
-  artifacts, or be able to proxy the requests to other repositories. This setting is most useful when using an internal company repository with
-  the Maven Repository Manager to proxy external requests.
+  You can force Maven to use a single repository by having it mirror all repository requests. The repository must
+  contain all of the desired artifacts, or be able to proxy the requests to other repositories. This setting is most
+  useful when using an internal company repository with the Maven Repository Manager to proxy external requests.
 
   To achieve this, set <<<mirrorOf>>> to <<<*>>>.
 
@@ -130,7 +133,7 @@ Using A Single Repository
 
 +-----+
 <settings>
-  .
+  ...
   <mirrors>
     <mirror>
       <id>internal-repository</id>
@@ -139,35 +142,42 @@ Using A Single Repository
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
-  .
+  ...
 </settings>
 +-----+
 
 Advanced Mirror specification
 
-  A single mirror can handle multiple repositories when used in conjunction with a repository manager. 
+  A single mirror can handle multiple repositories when used in conjunction with a repository manager.
 
   The syntax as of Maven 2.0.9:
-  
+
  * \* matches all repo ids.
-    
- * external:\* matches all repos except those using localhost or file based repositories. This is used in conjunction with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
-    
+
+ * external:\* matches all repos except those using localhost or file based repositories. This is used in conjunction
+  with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
+
  * multiple repos may be specified using , as the delimiter
-    
+
  * ! may be used in conjunction with one of the above wildcards to exclude a repo id.
-    
- The order is not important from left to right as the wildcards defer to further processing and explicit includes or excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of HashMap such that the user may influence match order by changing the order of the definitions in the settings.xml 
-    
+
+ []
+
+ The order is not important from left to right as the wildcards defer to further processing and explicit includes or
+ excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of
+ HashMap such that the user may influence match order by changing the order of the definitions in the settings.xml
+
  Examples:
-  
+
  *  \* = everything
-  
+
  *  external:\* = everything not on the localhost and not file based.
-  
+
  *  repo,repo1 = repo or repo1
-  
+
  *  \*,!repo1 = everything except repo1
+
+ []
 
  <<Note:>> This feature is only available in Maven 2.0.9+.
 
@@ -196,7 +206,6 @@ FTP access
 
   The repository is available through FTP at <ftp://mirrors.ibiblio.org/pub/packages/maven2>
 
-
 Creating your own mirror
 
   The central repository requires around 16 GB and growing, and it's updated every 4 hours.
@@ -208,4 +217,5 @@ rsync -v -t -l -r mirrors.ibiblio.org::maven2 /your/local/path
 rsync -v -t -l -r rsync://rsync.cica.es/maven2 /your/local/path
 +-----+
 
-  If you want to become an official mirror, email us to <dev@maven.apache.org> with your location and we'll add you to the list of mirrors.
+  If you want to become an official mirror, email us to <dev@maven.apache.org> with your location and we'll add you to
+  the list of mirrors.
