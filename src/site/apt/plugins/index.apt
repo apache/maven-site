@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2008-08-27
+ 2008-09-04
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -122,7 +122,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                | 1.0-alpha-4  | 2007-09-28 | Create signatures for the artifacts and poms. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-gpg-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MGPG}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.0.2        | 2007-11-27 | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPH}JIRA}}
+| {{{/plugins/maven-help-plugin/} <<<help>>>}}              | 2.1          | 2008-09-04 | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPH}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}        | 1.2.1        | 2008-08-09 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
