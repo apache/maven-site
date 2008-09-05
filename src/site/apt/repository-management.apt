@@ -112,5 +112,7 @@ Repository Management with Maven Repository Managers
 
   * {{{http://docs.codehaus.org/display/MAVENUSER/Maven+Concepts+Repositories}Maven Concepts Repositories}} from Maven wiki
 
+  *{{{http://docs.codehaus.org/display/MAVENUSER/Maven+Repository+Manager+Feature+Matrix} Continuously updated Feature matrix.}} Superceeds original matrix in the blog below.
+  
   * {{{http://blogs.exist.com/oching/2007/11/05/the-hype-about-repository-managers/}The Hype About Repository Managers}} by Deng Ching 
 
