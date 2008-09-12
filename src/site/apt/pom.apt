@@ -481,6 +481,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   to Maven to first search the path given for this project's parent, before searching the
   local and then remote repositories.
 
+  To see inheritance in action, just have a look at the
+  {{{http://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
+  {{{http://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's. 
+
 *** {The Super POM}
 
   Similar to the inheritance of objects in object oriented programming, POMs that extend
@@ -538,11 +542,16 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   ordering of the modules given by the POM is not important. Maven will topologically sort the modules
   such that dependencies are always build before dependent modules.
 
+  To see aggregation in action, just have a look at the
+  {{{http://svn.apache.org/viewvc/maven/components/trunk/pom.xml?view=markup}Maven}} or
+  {{{http://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
+
 *** A final note on {Inheritance v}. Aggregation
 
   Inheritance and aggregation create a nice dynamic to control builds through a single,
   high-level POM. You will often see projects that are both parents and aggregators.
-  For example, the entire maven core runs through a single base POM <<<org.apache.maven:maven>>>,
+  For example, the entire maven core runs through a single base POM
+  {{{http://svn.apache.org/viewvc/maven/components/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
   so building the Maven project can be executed by a single command: <<<mvn compile>>>.
   However, although both POM projects, an aggregator project and a parent project are not
   one in the same and should not be confused. A POM project may be inherited from - but does
