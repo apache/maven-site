@@ -868,7 +868,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  You've probably already noticed a <<<dependencies>>> element in the POM we've been using as an example.
  You have, in fact, been using an external dependency all this time, but here we'll talk about how this
  works in a bit more detail. For a more thorough introduction, please refer to our
- {{{../introduction/introduction-to-dependency-management.html}Introduction to Dependency Management}}.
+ {{{../introduction/introduction-to-dependency-mechanism.html}Introduction to Dependency Mechanism}}.
 
  The <<<dependencies>>> section of the pom.xml lists all of the external dependencies that our project needs
  in order to build (whether it needs that dependency at compile time, test time, run time, or whatever).  Right
@@ -904,7 +904,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  For more information on everything you can specify for a dependency, see the {{{../../../maven-model/maven.html}Project Descriptor Reference}}.
  ~~DJ: Does this link work? I can't find the document.
  For more information about the dependency mechanism as a whole, see
- {{{../introduction/introduction-to-dependency-management.html}Introduction to Dependency Management}}.
+ {{{../introduction/introduction-to-dependency-mechanism.html}Introduction to Dependency Mechanism}}.
 
  With this information about a dependency, Maven will be able to reference the dependency when it builds the project.  Where does
  Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find
