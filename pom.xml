@@ -36,7 +36,8 @@
   <url>http://maven.apache.org/</url>
 
   <properties>
-    <currentVersion>2.1.0-M1</currentVersion>
+    <currentVersion>2.0.9</currentVersion>
+    <currentPreviewVersion>2.1.0-M1</currentPreviewVersion>
   </properties>
 
  <issueManagement>

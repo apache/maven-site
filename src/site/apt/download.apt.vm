@@ -31,6 +31,18 @@ Download Maven ${currentVersion}
 *-------------------------+---------+----------+-----------+
 
   You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
+  
+* Maven ${currentPreviewVersion} Preview
+
+*-------------------------+---------+----------+-----------+
+|                         | Mirrors | Checksum | Signature |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentPreviewVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2} apache-maven-${currentPreviewVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2.md5} apache-maven-${currentPreviewVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2.asc} apache-maven-${currentPreviewVersion}-bin.tar.bz2.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentPreviewVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz} apache-maven-${currentPreviewVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz.md5} apache-maven-${currentPreviewVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz.asc} apache-maven-${currentPreviewVersion}-bin.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentPreviewVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip} apache-maven-${currentPreviewVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip.md5} apache-maven-${currentPreviewVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip.asc} apache-maven-${currentPreviewVersion}-bin.zip.asc}} |
+*-------------------------+---------+----------+-----------+
 
 * Previous Releases
 
