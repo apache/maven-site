@@ -64,7 +64,7 @@ Introduction to the POM
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
- The snippet below is the Super POM for Maven 2.1.x.
+ The snippet below is the Super POM for Maven 3.0.x.
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 

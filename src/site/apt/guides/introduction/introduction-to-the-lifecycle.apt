@@ -429,6 +429,6 @@ mvn clean dependency:copy-dependencies package
 
  The full Maven lifecycle is defined by the file <<<components.xml>>> in the module <<<maven-core>>> and viewable from SVN in the branches for
  {{{http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.0.x}}
- and {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.1.x}}.
+ and {{{http://svn.apache.org/repos/asf/maven/components/trunk/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 3.0.x}}.
 
   <{{{introduction-to-the-lifecycle.html}[top]}}.>
