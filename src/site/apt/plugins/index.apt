@@ -112,7 +112,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | 1.2          | 2008-07-25 | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 2.0-alpha-2  | 2008-04-28 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
+| {{{/plugins/maven-archetype-plugin/} <<<archetype>>>}}    | 2.0-alpha-4  | 2008-09-26 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}      | 2.2-beta-2   | 2008-02-29 | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
