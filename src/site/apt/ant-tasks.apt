@@ -478,8 +478,14 @@ Task Reference
 </copy>
 -----
 
-  <(since 2.0.8)> For each dependency resolved, the property <<<groupId:artifactId:type[:classifier]>>> is defined pointing to
-  the corresponding file.
+  <(since 2.0.8)> For each dependency resolved using either inline declaration or a pom reference, the property 
+  <<<groupId:artifactId:type[:classifier]>>> is defined pointing to the corresponding file.  For example,
+  a resolved dependency on junit can be accessed in the following way.
+  
+-----
+<echo message="JUnit jar file downloaded to ${junit:junit:jar}"/>
+-----
+  
 
 ** <<<dependency>>>
 
