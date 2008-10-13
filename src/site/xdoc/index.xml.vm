@@ -42,8 +42,8 @@
         <small>(994k)</small>
         <span style="font-size: smaller">
           <br/>
-          <a href="ant-tasks.html">Documentation</a>,
-          <a href="ant-tasks-release-notes.html">Release Notes</a>
+          <a href="ant-tasks/index.html">Documentation</a>,
+          <a href="ant-tasks/release-notes.html">Release Notes</a>
         </span>
       </p>
 
@@ -117,7 +117,7 @@
             <a href="developers/index.html">Develop Maven</a>
           </span>
           <span style="display: block; margin-bottom: 0.5em">
-            Information for those who are currently developers, or who are interested 
+            Information for those who are currently developers, or who are interested
             in contributing to the Maven project itself
           </span>
         </li>
@@ -181,7 +181,7 @@
 
       <h3>How can I help?</h3>
       <p>
-        Maven is an open source community and welcomes contributions. If you'd like to get involved, see the 
+        Maven is an open source community and welcomes contributions. If you'd like to get involved, see the
         <a href="guides/development/guide-helping.html">Guide to helping with Maven</a>.
       </p>
       <p>
