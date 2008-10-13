@@ -413,6 +413,16 @@ Enjoy,
  This is a PMC activity.  If you are not a PMC member then email the <<<"Maven Developers List" <dev@maven.apache.org>>>>
  with a request to update this file for your release.
 
++-----+
+From: YOUR_APACHE_USERNAME@apache.org
+To: dev@maven.apache.org
+Subject: [PMC] Maven XXX Plugin Y.Z needs adding to board report
+
+The Maven XXX Plugin has been released.
+Can this get added to the next board report please.
++-----+
+
+
  [[17]] Add the release to the wiki, under the <Recent Releases> section of the
  {{{http://docs.codehaus.org/display/MAVEN/Home}front page}} and on the
  {{{http://docs.codehaus.org/display/MAVEN/Releases}Releases page}}.
