@@ -87,7 +87,7 @@ Settings Reference
   <usePluginRegistry>false</usePluginRegistry>
   <offline>false</offline>
   <pluginGroups>
-    <pluginGroup>org.codehaus.mojo</pluginGroup>
+    <pluginGroup>org.mortbay.jetty</pluginGroup>
   </pluginGroups>
   ...
 </settings>
@@ -115,12 +115,12 @@ Settings Reference
   * <<pluginGroups>>:
   This element contains a list of <<<pluginGroup>>> elements, each contains a groupId. The
   list is searched when a plugin is used and the groupId is not provided in the command line.
-  This list contains <<<org.apache.maven.plugins>>> by default. For example, given the above
-  settings the Maven command-line may execute <<<org.codehaus.mojo:castor-maven-plugin:generate>>>
+  This list automatically contains <<<org.apache.maven.plugins>>> and <<<org.codehaus.mojo>>>. For example, given the
+  above settings the Maven command line may execute <<<org.mortbay.jetty:jetty-maven-plugin:run>>>
   with the truncated command:
 
 ------------------------------------
-mvn castor-maven-plugin:generate
+mvn jetty:run
 ------------------------------------
 
  []
