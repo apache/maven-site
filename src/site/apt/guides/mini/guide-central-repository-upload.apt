@@ -159,7 +159,7 @@ Sync'ing your own repository to the central repository automatically
 
  * groupId, eg. <<<org.apache.maven>>>
 
- * location, eg. <<<mavensync@shell.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo>>> for rsync over ssh
+ * location, eg. <<<mavensync@web.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo>>> for rsync over ssh
    or <<<rsync://maven2.hortis.ch/releases>>> for non secure rsync
 
  * protocol, <<<rsync>>> or <<<rsync_ssh>>>
@@ -175,7 +175,7 @@ Sync'ing your own repository to the central repository automatically
 ~~TODO The following examples both use org.apache.maven as groupId - shouldn't that be something else?
 
 +----+
-"org.apache.maven","mavensync@shell.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo","rsync_ssh","John Doe","doe@doe.com",,
+"org.apache.maven","mavensync@web.sourceforge.net:/home/groups/m/ma/maven-js-plugin/htdocs/m2repo","rsync_ssh","John Doe","doe@doe.com",,
 "org.apache.maven","rsync://maven2.hortis.ch/releases","rsync","John Doe","doe@doe.com",,
 +----+
 
