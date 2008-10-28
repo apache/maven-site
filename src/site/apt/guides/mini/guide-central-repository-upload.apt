@@ -152,6 +152,7 @@ Sync'ing your own repository to the central repository automatically
 
  You must make sure the remote repository server has rsync or rsync over ssh, there are free services like
  {{{http://sf.net/}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
+ Or you can {{{http://vafer.org/blog/20081026142413}setup your own server}}.
 
  After you are able to deploy to your remote repository <<make sure you only deploy releases>>. 
  Then you need to provide us the following information in a comma delimited format
