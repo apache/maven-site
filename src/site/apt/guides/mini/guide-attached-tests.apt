@@ -72,7 +72,7 @@ mvn deploy
       <groupId>com.myco.app</groupId>
       <artifactId>foo</artifactId>
       <version>1.0-SNAPSHOT</version>
-      <classifier>tests</classifier>
+      <type>test-jar</type>
       <scope>test</scope>
     </dependency>
   </dependencies>
