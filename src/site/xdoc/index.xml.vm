@@ -48,7 +48,8 @@
       </p>
 
       <!-- TODO: we should use the SSI instead, but two things prevent it: a) the SSI's aren't working on apache.org yet so I can't test it; b) SSI's get eliminated from xdoc. For some reason even inside CDATA they are escaped. -->
-      <iframe src="http://www.apache.org/ads/bannerbar.html" style="margin-left: -13px; margin-top: -3px; padding: 0" frameborder="0" scrolling="no" width="247" height="88"></iframe>
+      <h5>Looking for Artifacts?</h5>
+      <p><a href="http://repository.sonatype.org">Search Central</a> and other Public Repositories.</p>
       <h5>Looking for Repository Managers?</h5>
       <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
       <h5>Looking for CI Servers?</h5>
