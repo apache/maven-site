@@ -22,7 +22,45 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Repository Management with Maven Repository Managers
+The List of Repository Managers
+
+  The Following is a list of the known Maven repository managers and listed in chronological order of appearance in the community:
+
+* {{{http://nexus.sonatype.org}Proximity/Nexus: Maven Repository Manager}}
+
+ Anyone who was using Proximity is now encouraged to use Nexus. The entire codebase of Proximity was absorbed into Nexus and
+ Nexus provides a migration path for all Proximity users.
+
+ Tamas Cservenak started working on Proximity in December 2005 as he was trying to find a way to isolate his own systems from an 
+ incredibly slow ADSL connection provided by a Hungarian ISP. Proximity started as a simple web application to proxy artifacts for 
+ a small organization with connectivity issues. Creating a local on-demand cache for Maven artifacts from the central Maven repository 
+ gave an organization access to the artifacts on the Central Maven Repository, but it also made sure that these artifacts weren't 
+ downloaded over a very slow ADSL connection used by a number of developers. In 2007, Sonatype asked Tamas to help create a similar 
+ product named Nexus. Nexus is currently considered the logical next step to Proximity. Nexus currently has an active development team, 
+ and portions of the indexing code from Nexus are also being used in {{{http://m2eclipse.sonatype.org/}m2eclipse}}
+
+* {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
+
+ Artifactory is a Maven 2 enterprise repository. It offers advanced proxying, caching and security facilities to provide a 
+ robust, reproducible and independent build environment when using Maven. Artifactory is being used by clients ranging from 
+ small startup teams to international corporate teams employing distributed development, thus improving the development 
+ experience for tens of thousands of developers. Artifactory exposes a robust artifacts management platform using rich Ajax 
+ web UI and can be run out-of-the-box with a simple "unzip and launch".
+
+* {{{http://archiva.apache.org/}Apache Archiva}}
+
+ Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide build artifact repository. It 
+ is the perfect companion for build tools such as Maven, Continuum, and ANT.
+
+ Archiva offers several capabilities, amongst which remote repository proxying, security access management, build artifact storage, 
+ delivery, browsing, indexing and usage reporting, extensible scanning functionality... and many more!
+
+* {{{http://www.pdark.de/dsmp/}Dead Simple Maven Proxy}}
+
+ DSMP is a proxy. It can be used as a repository server but it's main purposs it to act as a filter when Maven accesses the internet. If you need a repository server, use Archiva.
+
+
+Why do I need a Repository Manager?
 
  Maven Repository managers serve two purposes: they act as highly configurable proxies between your organization and the public Maven repositories 
  and they also provide an organization with a deployment destination for your own generated artifacts.
@@ -60,47 +98,6 @@ Repository Management with Maven Repository Managers
  with such a deployment target. Once you install a Maven repository manager, you can start using Maven to deploy snapshots and releases to a custom repository managed 
  by the repository manager. Over time, this central deployment point for internal projects becomes the fabric for collaboration between different development teams.
 
- The Following is a list of the known Maven repository managers and listed in chronological order of appearance in the community:
-
-* {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
-
- Maven Proxy was the first Maven repository manager to come on the scene, but the project is now defuct and it's not recommended for
- general use anymore. The code that was in Maven Proxy was used as the initial basis of Artifactory.
-
-* Proximity/{{{http://nexus.sonatype.org}Nexus: Maven Repository Manager}}
-
- Anyone who was using Proximity is now encouraged to use Nexus. The entire codebase of Proximity was absorbed into Nexus and
- Nexus provides a migration path for all Proximity users.
-
- Tamas Cservenak started working on Proximity in December 2005 as he was trying to find a way to isolate his own systems from an 
- incredibly slow ADSL connection provided by a Hungarian ISP. Proximity started as a simple web application to proxy artifacts for 
- a small organization with connectivity issues. Creating a local on-demand cache for Maven artifacts from the central Maven repository 
- gave an organization access to the artifacts on the Central Maven Repository, but it also made sure that these artifacts weren't 
- downloaded over a very slow ADSL connection used by a number of developers. In 2007, Sonatype asked Tamas to help create a similar 
- product named Nexus. Nexus is currently considered the logical next step to Proximity. Nexus currently has an active development team, 
- and portions of the indexing code from Nexus are also being used in {{{http://m2eclipse.sonatype.org/}m2eclipse}}
-
-* {{{http://www.jfrog.org/sites/artifactory/latest/}Artifactory}}
-
- Artifactory is a Maven 2 enterprise repository. It offers advanced proxying, caching and security facilities to provide a 
- robust, reproducible and independent build environment when using Maven. Artifactory is being used by clients ranging from 
- small startup teams to international corporate teams employing distributed development, thus improving the development 
- experience for tens of thousands of developers. Artifactory exposes a robust artifacts management platform using rich Ajax 
- web UI and can be run out-of-the-box with a simple "unzip and launch".
-
-* {{{http://archiva.apache.org/}Apache Archiva}}
-
- Apache Archiva is an extensible repository management software that helps taking care of your own personal or enterprise-wide build artifact repository. It 
- is the perfect companion for build tools such as Maven, Continuum, and ANT.
-
- Archiva offers several capabilities, amongst which remote repository proxying, security access management, build artifact storage, 
- delivery, browsing, indexing and usage reporting, extensible scanning functionality... and many more!
-
-* {{{http://www.pdark.de/dsmp/}Dead Simple Maven Proxy}}
-
- DSMP is a proxy. It can be used as a repository server but it's main purposs it to act as a filter when Maven accesses the internet. If you need a repository server, use Archiva.
-
-~~ TODO Add link to comparison matrix on the MAVENUSER wiki that shows the which features the different products have.
 
 ~~ TODO Link to instructions for configuring repositories and mirrors
 
