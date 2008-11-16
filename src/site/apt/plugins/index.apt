@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2008-09-04
+ 2008-11-16
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -94,7 +94,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}              | 1.0          | 2008-08-01 | Generate a Description of a Project (DOAP) file from a POM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOAP}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}            | 1.0-beta-2   | 2007-08-09 | Documentation checker plugin. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-docck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOCCK}JIRA}}
+| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}            | 1.0          | 2008-11-16 | Documentation checker plugin. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-docck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOCCK}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}        | 2.5          | 2008-08-26 | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
