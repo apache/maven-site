@@ -47,14 +47,15 @@ The Maven Integration for Eclipse (m2eclipse, Eclipse m2e)
   {{{http://www.eclipse.org/newsportal/thread.php?group=eclipse.technology.m2e}web interface}} to stay up-to-date with 
   the latest progress.
   
-Q for Eclipse / Eclipse Integration for Apache Maven (Proposal)
+Eclipse Integration for Apache Maven (Eclipse IAM), formerly Q for Eclipse
 
-  Q is an Apache Maven plugin for Eclipse that will let you use Maven 2 from the Eclipse IDE.
+  {{{http://www.eclipse.org/iam/}Eclipse IAM}} is a newer Apache Maven plugin for Eclipse with a fresh approach for Maven integration with the
+  Eclipse IDE and other Eclipse plugins (JDT, WTP, Candy for Appfuse,...),
+  also opening the doors for other Eclipse plugin developers to access Maven features as easy as possible.
+
+  With five releases already, and continuing to make one every other month it's quickly maturing.
 
   Check the {{{http://code.google.com/p/q4e/wiki/FAQ}FAQ}} and {{{http://code.google.com/p/q4e/wiki/Installation}Installation instructions}}
-
-  This plugin forms the basis of the Eclipse Foundation project proposal called
-  {{{http://www.eclipse.org/proposals/iam/}Eclipse IAM}}.
 
   You can join the newsgroup at
 
