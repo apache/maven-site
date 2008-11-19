@@ -27,9 +27,11 @@ under the License.
   </properties>
   <body>
     <section name="Books on Maven">
-<a href="http://blogs.sonatype.com/people/book/about/"><img src="http://www.sonatype.com/images/page7_3.jpg" width="95" title="Maven: The Definitive Guide" style="float:right;"/></a>
+<div style="float: left; margin-right: 5em;">
+<a href="http://blogs.sonatype.com/people/book/about/"><img src="images/books/definitive_guide.jpg" title="Maven: The Definitive Guide" /></a>
+</div>
 
-      <div>
+      <div style="min-height: 220px">
         <p><a href="http://blogs.sonatype.com/people/book/about/"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML and Free PDF Download)</p>
         <ul>
           <li><strong>Covers: </strong>Maven 2.0.9+</li>
@@ -48,33 +50,33 @@ Eric Redmond)
         </ul>
       </div>
 
-      <hr style="margin-top: 2em; margin-bottom: 1em;"/>
-
-      <img src="http://www.devzuz.com/image/image_gallery?img_id=1011" width="95" height="110" title="Better Builds with Maven" style="float:right;"/>
-      <div>
-        <p><a href="http://www.exist.com/?q=node/151"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
+<div style="float: left; margin-right: 5em;">
+      <img src="images/books/better_builds.png" title="Better Builds with Maven" />
+</div>
+      <div style="min-height: 220px">
+        <p><a href="http://www.exist.com/better-build-maven"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
         <ul>
           <li><strong>Covers:</strong>Maven 2.0.4</li>
-          <li><strong>Publisher:</strong><a href="http://www.devzuz.com">DevZuz</a></li>
-          <li><strong>Published:</strong>March 2006</li>
+          <li><strong>Published:</strong><a href="http://www.exist.com">Exist</a> (March 2006)</li>
           <li><strong>Authors:</strong>
             John Casey,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            <a href="http://www.devzuz.org/blogs/bporter">Brett Porter</a>,
+            <a href="http://blogs.exist.com/bporter">Brett Porter</a>,
             <a href="http://www.jroller.com/carlossg/">Carlos Sanchez</a>
           </li>
+          <li><strong>Read Online:</strong> <a href="http://www.exist.com/better-build-maven">http://www.exist.com/better-build-maven</a></li>
         </ul>
       </div>
-      <hr style="margin-top: 2em; margin-bottom: 1em;"/>
 
-      <img src="http://www.oreilly.com/catalog/covers/0596007507_cat.gif" width="95" height="125" title="Maven: A Developer's Notebook" style="float:right;"/>
-      <div>
+<div style="float: left; margin-right: 5em;">
+      <img src="images/books/developer_notebook.gif" title="Maven: A Developer's Notebook" />
+</div>
+      <div style="min-height: 220px">
         <p><a href="http://www.oreilly.com/catalog/mavenadn/"><strong>Maven: A Developer's Notebook</strong></a></p>
 
         <ul>
           <li><strong>Covers:</strong>Maven 1.0.2</li>
-          <li><strong>Publisher:</strong>O'Reilly</li>
-          <li><strong>Published:</strong>July 2005</li>
+          <li><strong>Published:</strong> O'Reilly (July 2005)</li>
           <li><strong>Authors:</strong>
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
             <a href="http://www.oreillynet.com/pub/au/1738">Tim O'Brien</a>
