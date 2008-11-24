@@ -86,7 +86,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}    | 2.1          | 2007-07-25 | Generate a list of recent changes from your SCM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGELOG}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.0          | 2008-04-16 | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
+| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}        | 2.1          | 2008-11-24 | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}  | 2.2          | 2008-06-04 | Generate a checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
