@@ -106,7 +106,7 @@ Download Maven ${currentVersion}
 
   [[3]] Add the <<<M2>>> environment variable, e.g. <<<export M2=$M2_HOME/bin>>>.
 
-  [[4]] <<Optional>>: Add the <<<MAVEN_OPTS>>> environment variable to specify JVM properties, e.g. <<<export MAVEN_OPTS=-Xms256m -Xmx512m>>>.
+  [[4]] <<Optional>>: Add the <<<MAVEN_OPTS>>> environment variable to specify JVM properties, e.g. <<<export MAVEN_OPTS="-Xms256m -Xmx512m">>>.
         This environment variable can be used to supply extra options to Maven.
 
   [[5]] Add <<<M2>>> environment variable to your path, e.g. <<<export PATH=$M2:$PATH>>>.
