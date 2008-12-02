@@ -374,13 +374,13 @@ Introduction to the Dependency Mechanism
   </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>maven-test</groupId>
+      <groupId>test</groupId>
       <artifactId>a</artifactId>
       <version>1.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>maven-test</groupId>
+      <groupId>test</groupId>
       <artifactId>c</artifactId>
       <scope>runtime</scope>
     </dependency>
@@ -395,7 +395,7 @@ Introduction to the Dependency Mechanism
  * a and c both are declared as dependencies of the project so  version 1.0 is used due to
  dependency mediation. Both will also have runtime scope since it is directly specified.
 
- * b is defined in B's parent's dependency managemnet section and since dependency management
+ * b is defined in B's parent's dependency management section and since dependency management
  takes precedence over dependency mediation for transitive dependencies, version 1.0 will be
  selected should it be referenced in a or c's pom. b will also have compile scope.
 
@@ -447,13 +447,13 @@ Introduction to the Dependency Mechanism
   </dependencyManagement>
   <dependencies>
     <dependency>
-      <groupId>maven-test</groupId>
+      <groupId>test</groupId>
       <artifactId>a</artifactId>
       <version>1.0</version>
       <scope>runtime</scope>
     </dependency>
     <dependency>
-      <groupId>maven-test</groupId>
+      <groupId>test</groupId>
       <artifactId>c</artifactId>
       <scope>runtime</scope>
     </dependency>
