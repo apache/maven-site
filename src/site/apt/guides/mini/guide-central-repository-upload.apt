@@ -14,7 +14,7 @@ Guide to uploading artifacts to the Central Repository
  must have their artifacts deployed to the Central Repository.
 
 
-Requirements
+{Requirements}
 
  Only releases can be uploaded to the central repository, that means files that won't change and that only depend on other files
  already released and available in the repository.
@@ -145,7 +145,7 @@ Requirements
 
  []
 
-Sync'ing your own repository to the central repository automatically
+{Sync'ing your own repository to the central repository automatically}
 
  This is the preferred process. You first have to setup your project to
  {{{http://maven.apache.org/plugins/maven-deploy-plugin/}deploy to a remote repository}}.
@@ -210,7 +210,7 @@ Sync'ing your own repository to the central repository automatically
 
  []
 
-Manual upload of artifacts
+{Manual upload of artifacts}
 
  Note that this manual process is time consuming and <<will only be accepted for a limited number of requests>>. If you want to upload frequently read the
  section above about automatic sync.
@@ -329,7 +329,7 @@ or you can see the project web page in www.wiggle.org
 
  []
 
-Maven partners
+{Maven partners}
 
  The following sites automatically sync their project repository with the central one.
  If you want a project from any of these sites to be uploaded to the Central Repository you'll have to
@@ -345,7 +345,7 @@ Maven partners
 
  []
 
-For Maven developers
+{For Maven developers}
 
 
  The scripts to make the upload to the repository are at
