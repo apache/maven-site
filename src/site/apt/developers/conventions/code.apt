@@ -46,7 +46,7 @@ Maven Code Style And Code Conventions
 
  and the following style:
 
- * <<Indentation>>: Always use 2 space indents and <<never>> use tabs!
+ * <<Indentation>>: <<Never>> use tabs!
 
  * <<Line wrapping>>: Always use a 120-column line width.
 
@@ -67,6 +67,8 @@ Maven Code Style And Code Conventions
  * <<Indentation>>: Always use 4 space indents and <<never>> use tabs!
 
  * <<Blocks>>: Always enclose with a new line brace.
+
+ * <<Line wrapping>>: Always use a 120-column line width for Java code and Javadoc.
 
  * <<Readingness>>: Specify code grouping members, if needed. For instance in a Mojo class, you could have:
 
@@ -134,11 +136,6 @@ public class MyMojo
     ...
 }
 +-----+
-
- * <<Indentation>>: Always use 2 space indents, unless you're wrapping a line in which case you should indent 4 spaces
-   or indent to line up arguments.
-
- * <<Line wrapping>>: Always use a 120-column line width for Java code and Javadoc.
 
  []
 
@@ -234,7 +231,7 @@ public class MyMojo
  The team has {{{http://www.nabble.com/-Proposal--Pom-Code-Style-(WAS-svn-commit%3A-r670264----maven-plugins-trunk-maven-site-plugin-pom.xml)-td18083228.html}voted}}
  during the end of June 2008 to follow a specific POM convention to ordering POM elements.
  The consequence of this vote is that the {{{http://maven.apache.org/ref/current/maven-model/maven.html}Maven project descriptor}}
- is <<no more>> consider as the reference for the ordering.
+ is <<no more>> considered as the reference for the ordering.
 
  The following is the recommended ordering for all Maven POM files:
 
