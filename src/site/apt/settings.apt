@@ -53,9 +53,9 @@ Settings Reference
   Here is an overview of the top elements under <<<settings>>>:
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository/>
   <interactiveMode/>
@@ -78,9 +78,9 @@ Settings Reference
   values which describe elements of the build system that are active full-time.
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   <localRepository>${user.home}/.m2/repository</localRepository>
   <interactiveMode>true</interactiveMode>
@@ -133,9 +133,9 @@ mvn jetty:run
   <<<settings.xml>>>.
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <servers>
@@ -179,9 +179,9 @@ mvn jetty:run
 * {Mirrors}
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <mirrors>
@@ -236,9 +236,9 @@ mvn jetty:run
 * {Proxies}
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <proxies>
@@ -295,9 +295,9 @@ mvn jetty:run
   element.
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -383,9 +383,9 @@ mvn help:active-profiles
   []
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -411,9 +411,9 @@ mvn help:active-profiles
   be searched for a matching release or snapshot artifact.
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <profiles>
@@ -483,9 +483,9 @@ mvn help:active-profiles
 * {Active Profiles}
 
 +------------------------------------+
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <activeProfiles>
