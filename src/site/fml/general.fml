@@ -346,9 +346,9 @@ Where: <path-to-file>  the path to the file to load
   ...
 &lt;/project&gt;</source>
         <source>
-&lt;settings xmlns="http://maven.apache.org/POM/4.0.0"
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
                       http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
   ...
 &lt;/settings&gt;</source>
