@@ -4,7 +4,7 @@
  Jason van Zyl
  Franz Allan Valencia See
  ------
- January 2008
+ 2008-12-23
  ------
 
 Introduction to the POM
@@ -66,7 +66,7 @@ Introduction to the POM
 
  The snippet below is the Super POM for Maven 3.0.x.
 
-%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
+%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project-builder/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
  {{{introduction-to-the-pom.html}[top]}}
 
