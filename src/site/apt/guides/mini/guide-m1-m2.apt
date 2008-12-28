@@ -40,7 +40,7 @@ Guide to Moving from Maven 1.x to Maven 2.x
 * Migrating the POM
 
  The Project Object Model (POM) has moved from the <<<project.xml>>> file to <<<pom.xml>>>.
- The XML schema has also changed, from {{{http://maven.apache.org/maven-v3_0_0.xsd}Version 3}} to
+ The XML schema has also changed, from {{{http://maven.apache.org/xsd/maven-v3_0_0.xsd}Version 3}} to
  {{{http://maven.apache.org/xsd/maven-4.0.0.xsd}Version 4}}.
 
  The new POM is nominally a superset of the old, so the first step in creating a
