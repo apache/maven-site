@@ -562,28 +562,32 @@ under the License.
           <td>configuration</td>
           <td>@component role=&quot;...&quot; roleHint=&quot;...&quot;</td>
           <td>No</td>
-          <td> Populates the field with an instance of a Plexus component. This is like declaring a
+          <td>Populates the field with an instance of a Plexus component. This is like declaring a
             <i>requirement</i> in a Plexus component. The default requirement will have a role equal
-            to the declared type of the field, and will use the default role hint. You can customise
+            to the declared type of the field, and will use the role hint "default". You can customise
             either of these by providing a <code>role</code> and/or <code>roleHint</code> parameter.
             <i>e.g.</i>
             <code>@component role=&quot;org.apache.maven.artifact.ArtifactHandler&quot;
-              roleHint=&quot;ear&quot;</code><b>Note:</b> This is identical to the deprecated
+              roleHint=&quot;ear&quot;</code>. <b>Note:</b> This is identical to the deprecated
             form of parameter: <code>@parameter
-              expression=&quot;${component.yourpackage.YourComponentClass}&quot;</code>. </td>
+              expression=&quot;${component.yourpackage.YourComponentClass#roleHint}&quot;</code>. </td>
         </tr>
         <tr>
           <td>configuration</td>
-          <td>@parameter expression=&quot;${someExpression}&quot;
-            default-value=&quot;value&quot;</td>
+          <td>@parameter expression=&quot;${aSystemProperty}&quot;
+            default-value=&quot;${anExpression}&quot;</td>
           <td>No</td>
-          <td>Specifies the expression used to calculate the value to be injected into this parameter of
-            the Mojo at buildtime. This is commonly used to refer to specific elements in the POM, such
-            as ${project.resources}, which refers to the list of resources meant to accompany the
-            classes in the resulting jar file. The default value is used when the expression evaluates
-            to <code>null</code> . <i>NOTE: If not specified, an expression of ${&lt;name&gt;}
-              is assumed, which can only be satisfied from POM configuration or System properties. The
-              use of '${' and '}' is required to delimit actual expressions which may be evaluated.</i>
+          <td>Specifies the expressions used to calculate the value to be injected into this parameter of
+            the Mojo at buildtime. The expression given by <code>default-value</code> is commonly used to refer to
+            specific elements in the POM, such as <code>${project.resources}</code>, which refers to the list of
+            resources meant to accompany the classes in the resulting JAR file. Of course, the default value need not
+            be an expression but can also be a simple constant like <code>true</code> or <code>1.5</code>. And for
+            parameters of type <code>String</code> one can mix expressions with literal values, e.g.
+            <code>${project.artifactId}-${project.version}-special</code>. The system property given by <code>expression</code>
+            enables users to override the default value from the command line via <code>-DaSystemProperty=value</code>.
+            <i>NOTE: If neither <code>default-value</code> nor <code>expression</code> are specified, the parameter can
+            only be configured from the POM. The use of '${' and '}' is required to delimit actual expressions
+            which may be evaluated.</i>
           </td>
         </tr>
         <tr>
