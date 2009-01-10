@@ -137,8 +137,8 @@ Internal Repositories
  required artifacts there using the same layout as in a remote repository such as {{{http://repo1.maven.org/maven2/}repo1.maven.org}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
- of data there. You can use a program such as {{{http://archiva.apache.org/}Archiva}}, {{{http://nexus.sonatype.org}Nexus Maven Repository Manager}} or {{{http://maven-proxy.codehaus.org/}Maven Proxy}}
- running on your internal repository's server, to download from the internet as required and then hold
+ of data there and doing so will get you banned. You can use a program such as those described on the {{{../../repository-management.html}Repository Management}} page to
+ run your internal repository's server, to download from the internet as required and then hold
  the artifacts in your internal repository for faster downloading later.
 
  The other options available are to manually download and vet releases, then copy them to the internal
@@ -181,15 +181,3 @@ Internal Repositories
  {{{http://maven.apache.org/wagon/wagon-providers/index.html}wagons}}. Some wagons may need to be added as {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_extension}extension}} to your build.
 ~~ For example, to set up an SCP transfer.
 ~~ show the scp example.
-
-* External Links
-
-  * {{{http://blogs.exist.com/oching/2007/11/05/the-hype-about-repository-managers/}The Hype About Repository Managers}}
-
-  * {{{http://maven.apache.org/archiva}Archiva}}
-
-  * {{{http://artifactory.sourceforge.net}Artifactory}}
-
-  * {{{http://www.pdark.de/dsmp/}DSMP (Dead Simple Maven Proxy)}}
-
-  * {{{http://nexus.sonatype.org/}Nexus Maven Repository Manager}}
