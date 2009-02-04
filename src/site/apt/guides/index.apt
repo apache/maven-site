@@ -98,6 +98,8 @@ Documentation
 
  * {{{./mini/guide-maven-classloading.html}Maven Classloading}}
 
+ * {{{./mini/guide-multiple-modules.html}Using Multiple Modules in a Build}}
+
  * {{{./mini/guide-multiple-repositories.html}Using Multiple Repositories}}
 
  * {{{./mini/guide-proxies.html}Using Proxies}}
