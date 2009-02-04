@@ -333,10 +333,10 @@ mvn jetty:run
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match.
+  will match. Ranges are also supported as of Maven 2.1. See the {{{http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
 
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above.
+  The <<<os>>> element can define some operating system specific properties shown above. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
 
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
