@@ -116,6 +116,22 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
+  Ranges can also be used as of Maven 2.1 (refer to the {{{http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} Enforcer Version Range Syntax}} for more information).
+  The following honours versions 1.3, 1.4 and 1.5.
+
++---+
+<profiles>
+  <profile>
+    <activation>
+      <jdk>[1.3,1.6)</jdk>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+  <Note:> an upper bound such as <<<,1.5]>>> is likely not to include most releases of 1.5, since they will have an additional "patch" release such as <<<_05>>> that is not taken into consideration in the above range.
+
   This next one will activate based on OS settings. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
 
 +---+
