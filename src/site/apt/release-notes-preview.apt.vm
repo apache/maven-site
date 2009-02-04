@@ -1,0 +1,314 @@
+ ------
+Release Notes - Maven ${currentPreviewVersion}
+ ------
+Brett Porter
+Jason van Zyl
+Brian Fox
+ ------
+4 February 2009
+ ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Maven ${currentPreviewVersion}
+
+  The Apache Maven team would like to announce the release of Maven ${currentPreviewVersion}.
+
+  Maven ${currentPreviewVersion} is {{{./download.html} available for download}}.
+
+  Maven is a software project management and comprehension tool. Based on the concept of a project object model
+  (POM), Maven can manage a project's build, reporting and documentation from a central place.
+
+  The core release is independent of the plugins available. Further releases of plugins will be made separately.
+  See the {{{./plugins/index.html} Plugin List}} for more information.
+
+  We hope you enjoy using Maven! If you have any questions, please consult:
+
+    * the web site: {{http://maven.apache.org/}}
+
+    * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
+
+* 2.1.0-M2 Release Notes
+
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=14587&styleName=Html&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
+
+** Changes that may affect existing builds.
+
+    * MNG-3600 - The <<<\<server\>>>> element in <<<settings.xml>>> no longer specifies a default value for file and directory modes on remotely deployed files. Please refer to the Settings guides for how to configure this appropriately for your deployment environment.
+
+** Noteworthy Changes and improvements  
+    
+    * MNG-3760 - <<<$\{project.baseUri\}>>> has been added as a valid expression in the POM, and is a valid URI equivalent of <<<$\{basedir\}>>>
+
+    * MNG-2576 - Additional switches to the command line for alternate reactor behavior: <<<--resume-from>>>, <<<--also-make>>>, and <<<--also-make-dependents>>>.
+
+** Complete list of issues fixed in 2.1.0-M2
+
+*** Bug
+
+    * [MNG-1349] - openssl checksums are not accepted by maven
+
+    * [MNG-1992] - CLI -D should override properties in settings.xml
+
+    * [MNG-1999] - Reporting inheritance does not work properly
+
+    * [MNG-2433] - Maven looks for snapshots in offline mode
+
+    * [MNG-2605] - Profiles in profiles.xml are active by default
+
+    * [MNG-2668] - Plugin dependencies should be considered when the reactor creates the build order list
+
+    * [MNG-2695] - -o makes build fail for snapshot plugins
+
+    * [MNG-3139] - The skin does not exist: Unable to determine the release version
+
+    * [MNG-3271] - \<excludeDefaults\> does not seem to work
+
+    * [MNG-3314] - offline build not running, when having SNAPSHOT dependencies
+
+    * [MNG-3530] - Regression: Properties get resolved before the LifeCycle is Forked.
+
+    * [MNG-3628] - When running offline, snapshot artifcats cannot be resolved even if they have previously be dowloaded from a repository
+
+    * [MNG-3645] - Maven doesn't do strict model validation for POMs in the current reactor
+
+    * [MNG-3719] - [regression] plugin execution ordering no longer POM ordered in 2.0.9
+
+    * [MNG-3757] - Setting M2_HOME to nothing and running ant delets contents of the current folder
+
+    * [MNG-3768] - [regression] Class folder system dependency doesn't work anymore
+
+    * [MNG-3769] - [regression] Excluding relocated transitive dependencies does not work
+
+    * [MNG-3776] - Namespace misspelled in settings.xml
+
+    * [MNG-3808] - Execution order of report plugins is arbitrary if inheritance is involved
+
+    * [MNG-3810] - [regression] Null Pointer Exception when Activation Profile Property is Empty
+
+    * [MNG-3899] - Inheritance does not merge extensions with same gid and aid
+
+    * [MNG-3906] - Project-level plugin dependencies are in random order after merging
+
+    * [MNG-3920] - Problem using velocity component
+
+    * [MNG-3930] - mvn.bat doesn't handle ampersand in Windows user name properly
+
+    * [MNG-3933] - Profiles.xml does not pickup OS family
+
+    * [MNG-3940] - Interpolation of environment variables is not case-insensitive on Windows
+
+    * [MNG-3948] - Remote repos defined by profiles outside of settings.xml are not used to resolve parent POMs
+
+    * [MNG-3974] - New mirror syntax is not stopping on first match
+
+    * [MNG-4016] - Properties with the prefix project/pom are not interpolated from the properties section
+
+*** Improvement
+
+    * [MNG-553] - Secure Storage of Server Passwords
+
+    * [MNG-1830] - add  a 'compiled on \<timestamp\>' label when maven 2 is invoked with --version option
+
+    * [MNG-1957] - \<jdk\>\</jdk\> clause in the activation section has to provide more complex expressions.
+
+    * [MNG-3424] - Respect ordering of elements as given in POM
+
+    * [MNG-3451] - Add german translation
+
+    * [MNG-3503] - Shade MX* classes from plexus-utils
+
+    * [MNG-3544] - Beautify debug output for mojo parameters of type array
+
+    * [MNG-3600] - remove default settings of 664 / 775 for permissions
+
+    * [MNG-3787] - Add plugin version to default reports
+
+    * [MNG-3795] - Add example \<pluginGroups\> snippet to conf/settings.xml in distribution
+
+    * [MNG-3867] - Support MAVEN_OPTS in mvnDebug script
+
+    * [MNG-3951] - Hide drive-relative paths from plugins
+
+    * [MNG-3975] - getArtifact(Artifact artifact, List remoteRepositories) should include Exception in debug log messages.
+
+*** New Feature
+
+    * [MNG-2097] - adding a phase called prepare-package
+
+    * [MNG-3760] - Support property $\{baseurl\} to get RFC-compliant URL of project base directory
+
+*** Task
+
+    * [MNG-2883] - Make sure that the network isn't used for snapshots in offline mode when legacy repositories are used
+
+    * [MNG-3936] - Remove m2.bat from distribution
+
+** Complete list of issues fixed in 2.1.0-M1
+  
+*** Bug
+
+    * [MNG-2739] - Repository entries are not validated and NPE will occur
+
+    * [MNG-2873] - Unable to find transitive dependencies when they have been relocated.
+
+    * [MNG-3052] - Transitive Dependency not found when repo is not listed
+
+    * [MNG-3070] - $\{x\} properties no longer expanded in \</version\> tag after 2.0.3
+
+    * [MNG-3106] - Multiple profile activation conditions broken
+
+    * [MNG-3368] - Printing version (-v argument) should not stop lifecycle execution
+
+    * [MNG-3380] - MavenMetadataSource retrieves ResolutionGroup without consulting ManagedVersionMap, is problem when relocation
+
+    * [MNG-3475] - Some directories are not basedir aligned
+
+    * [MNG-3482] - merging managed dependencies happens before managed-dependency versions are interpolated
+
+    * [MNG-3497] - rar, par and ejb3 archives should not be added to classpath
+
+    * [MNG-3498] - StringIndexOutOfBounds -1 during path translation while reading pom.xml
+
+    * [MNG-3527] - profile deactivation has no affect
+
+    * [MNG-3535] - Valid properties which look self referential fail to resolve
+
+    * [MNG-3536] - REGRESSION: pom.build.sourceDirectory in Maven 2.0.9: it doesn't work anymore
+
+    * [MNG-3545] - Option -P-profile overridden if profile is activebyDefault
+
+    * [MNG-3581] - stage:copy ClassCastException with maven 2.0.9
+
+    * [MNG-3584] - possible new memory leak in Maven 2.0.9
+
+    * [MNG-3585] - nonProxyHosts separator is wrong in the default settings.xml
+
+    * [MNG-3599] - webdav does not set http-proxy correctly
+
+    * [MNG-3622] - upgrade to wagon 1.0-beta-4
+
+    * [MNG-3639] - Ant 1.7.0 Task not found after upgrading from Maven 2.0.8 to 2.0.9
+
+    * [MNG-3642] - back-propagation of resources doesn't handle multiple resources with the same directory
+
+    * [MNG-3651] - mvn.bat returns an incorrect error code
+
+    * [MNG-3654] - [regression] unable to build ServiceMix 3 - IndexOutOfBoundsException in mergeDeterministicBuildElements
+
+    * [MNG-3662] - Model interpolation crashes if property resolves to value with ampersand
+
+    * [MNG-3667] - Dependencies resolution is wrong in some cases (xfire-core:1.2.6 for example)
+
+    * [MNG-3671] - plugin-level dependencies in POMs are not interpolated at correct time
+
+    * [MNG-3679] - \<execution\>\<id\>$\{some.custom.var\}\</id\> ... broke
+
+    * [MNG-3680] - POM validation fails on projects in central repo starting with 2.0.10 RCs
+
+    * [MNG-3684] - Injection of Build instance as report parameter results in uninterpolated values for build.directory, etc.
+
+    * [MNG-3693] - Updating project POM via project.setFile(..) changes project basedir, and project classpath when used as a dependency in a reactor
+
+    * [MNG-3694] - plugin parameters injecting $\{project.compileSourceRoots\} get uninterpolated source directories
+
+    * [MNG-3697] - NPE at DefaultPluginManager line 700 (from Hudson CI)
+
+    * [MNG-3701] - ClassCastException when building settings.xml with profiles that have activeByDefault set
+
+    * [MNG-3703] - ExecutionProject contains relative paths in compileSourceRoots
+
+    * [MNG-3704] - NPE in DefaultLIfecycleExecutor when run from within Hudson builds
+
+    * [MNG-3705] - Expression: $\{executedProject\} doesn't work in reports
+
+    * [MNG-3710] - ModelUtils.cloneModel() and .cloneBuild() pollute existing Plugin instances with merged information
+
+    * [MNG-3716] - Aggregators that fork lifecycles don't have execution projects setup for all projects in the reactor.
+
+    * [MNG-3717] - Maven prompts for a password when one is provided over SSH in some circumstances
+
+    * [MNG-3718] - Build timestamp interpolator gives hours in AM/PM instead of 24-hour time
+
+    * [MNG-3722] - Fail to run CXF code generation with 2.0.10 RC
+
+    * [MNG-3723] - $\{project.basedir\} is not interpolated
+
+    * [MNG-3724] - ExecutionProject not getting updated compile/test-compile/script roots in RC10
+
+    * [MNG-3729] - Maven 2.0.10-RC10 fails with NPE on assembly:assembly
+
+    * [MNG-3740] - Plugin builds that reference earlier versions of themselves in the \<plugins\> section of the POM result in StackOverflowError in 2.1.0-M1-RC12
+
+    * [MNG-3741] - CLONE maven-plugin-tools-api requires relative script root paths
+
+    * [MNG-3743] - pluginManagement not consulted when building from lifecycle forked via javdoc reports
+
+    * [MNG-3746] - POM properties do not override default system properties during POM interpolation
+
+    * [MNG-3747] - relative build paths are not path-translated when using prefixed expressions (eg. project.build.directory) in plugin configurations
+
+    * [MNG-3748] - settings builder doesn't use strict mode in xml parser
+
+    * [MNG-3885] - Modules of Maven projects are deployed with Timestamp during reactor build when uniqueVersion is set to false in parent profile
+
+    * [MNG-3924] - FATAL ERROR if a variable contains &lt; or &gt;
+
+*** Improvement
+
+    * [MNG-2609] - Mention 'activeByDefault' in the "Introduction to Build Profiles" guide
+
+    * [MNG-3268] - Command line doesn't handle multiple -P correctly
+
+    * [MNG-3478] - Use expression $\{project.build.directory\} instead of hard-coding "target" in super POM
+
+    * [MNG-3509] - Make "mvn -v" output locale/encoding
+
+    * [MNG-3511] - Review fix for MNG-2166
+
+    * [MNG-3520] - Korean message resource
+
+    * [MNG-3571] - Allow use of ! when deactivating profiles
+
+    * [MNG-3652] - set a user agent for Maven HTTP requests
+
+    * [MNG-3673] - Upgrade plugin versions in super-POM where appropriate
+
+    * [MNG-3698] - Improve performance regarding concrete/dynamic build transitions surrounding plugin executions and report instantiations
+
+    * [MNG-3709] - Be sure source distro has the same name as the binary distro in the repository.
+
+*** New Feature
+
+    * [MNG-2562] - expose current time as a property for POM interpolation
+
+    * [MNG-2576] - Make Like Reactor Mode
+
+    * [MNG-3219] - Create a CLIRR/JarDiff setup for 2.0.x and 3.0.x
+
+    * [MNG-3675] - Add accessor for lifecycles list to LifecycleExecutor/DefaultLifecycleExecutor
+
+* Release notes for stable versions
+
+
+    * See {{{./release-notes.html}here}}
+
+  
