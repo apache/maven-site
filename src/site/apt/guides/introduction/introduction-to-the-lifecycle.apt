@@ -138,8 +138,9 @@ mvn clean dependency:copy-dependencies package
 
   Furthermore, a build phase can also have zero or more goals bound to it. If a build phase has no goals bound to it,
   that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals
-  (<Note: In Maven 2.0.5 thru 2.0.8, multiple goals bound to a phase are executed in the same order as they are declared in the
-  POM. However, this behavior is not correct in Maven 2.0.9 and 2.0.10, or versions earlier than Maven 2.0.5>).
+  (<Note: In Maven 2.0.5 and above, multiple goals bound to a phase are executed in the same order as they are declared in the
+  POM, however multiple instances of the same plugin are not supported. Multiple instances of the same plugin are grouped to execute together and ordered in
+  Maven 2.0.11 and above>).
 
   <{{{introduction-to-the-lifecycle.html}[top]}}.>
 
