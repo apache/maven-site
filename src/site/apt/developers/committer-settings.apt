@@ -43,8 +43,7 @@ Enable Apache Servers
     <server>
       <id>apache.snapshots</id>
       <username> <!-- YOUR APACHE USERNAME --> </username>
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
+      <password> <!-- YOUR APACHE PASSWORD --> </password>
     </server>
     <!-- To publish a website of some part of Maven -->
     <server>
@@ -57,8 +56,7 @@ Enable Apache Servers
     <server>
       <id>apache.releases</id>
       <username> <!-- YOUR APACHE USERNAME --> </username>
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
+      <password> <!-- YOUR APACHE PASSWORD --> </password>
     </server>
     ...
   </servers>

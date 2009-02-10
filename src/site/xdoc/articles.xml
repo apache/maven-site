@@ -28,24 +28,24 @@ under the License.
   <body>
     <section name="Books on Maven">
 <div style="float: left; margin-right: 5em;">
-<a href="http://blogs.sonatype.com/people/book/about/"><img src="images/books/definitive_guide.jpg" title="Maven: The Definitive Guide" /></a>
+<a href="http://www.sonatype.com/books/maven-book/"><img src="images/books/definitive_guide.jpg" title="Maven: The Definitive Guide" /></a>
 </div>
 
       <div style="min-height: 220px">
-        <p><a href="http://blogs.sonatype.com/people/book/about/"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML and Free PDF Download)</p>
+        <p><a href="http://www.sonatype.com/books/maven-book/"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML and Free PDF Download)</p>
         <ul>
           <li><strong>Covers: </strong>Maven 2.0.9+</li>
           <li><strong>Published: </strong> O'Reilly (Edition 1: October 1, 2008)</li>
           <li><strong>Authors: </strong>
             <a href="http://www.sonatype.com">Sonatype</a> (
-<a href="http://blogs.sonatype.com/people/jvanzyl">Jason van Zyl</a>, 
-<a href="http://blogs.sonatype.com/people/brian">Brian Fox</a>,
-<a href="http://blogs.sonatype.com/people/john">John Casey</a>,
+<a href="http://www.sonatype.com/people/author/jvanzyl">Jason van Zyl</a>, 
+<a href="http://www.sonatype.com/people/author/brian">Brian Fox</a>,
+<a href="http://www.sonatype.com/people/author/john">John Casey</a>,
 <a href="http://bsnyderblog.blogspot.com/">Bruce Snyder</a>,
-<a href="http://blogs.sonatype.com/people/book">Tim O'Brien</a>,
+<a href="http://www.sonatype.com/people/author/book">Tim O'Brien</a>,
 Eric Redmond)
           </li>
-          <li><strong>Read Online:</strong> <a href="http://blogs.sonatype.com/people/book/about/">http://blogs.sonatype.com/people/book/about/</a></li>
+          <li><strong>Read Online:</strong> <a href="http://www.sonatype.com/books/maven-book/">http://www.sonatype.com/books/maven-book/</a></li>
           <li><strong>Buy the Book:</strong> <a href="http://www.amazon.com/Maven-Definitive-Guide-Sonatype-Company/dp/0596517335/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1226091388&amp;sr=8-1">Amazon</a></li>
         </ul>
       </div>
