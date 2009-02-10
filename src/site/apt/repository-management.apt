@@ -55,10 +55,6 @@ The List of Repository Managers
  Archiva offers several capabilities, amongst which remote repository proxying, security access management, build artifact storage, 
  delivery, browsing, indexing and usage reporting, extensible scanning functionality... and many more!
 
-* {{{http://www.pdark.de/dsmp/}Dead Simple Maven Proxy}}
-
- DSMP is a proxy. It can be used as a repository server but it's main purposs it to act as a filter when Maven accesses the internet. If you need a repository server, use Archiva.
-
 
 Why do I need a Repository Manager?
 
@@ -103,9 +99,9 @@ Why do I need a Repository Manager?
 
 * Other resources
 
-  * {{{http://www.sonatype.com/book/reference/repository-manager.html#}Chapter on Nexus in Sonatype's <Maven: The Definitive Guide>}}
+  * {{{http://www.sonatype.com/books/nexus-book/reference/}Chapter on Nexus in Sonatype's <Maven: The Definitive Guide>}}
 
   * {{{http://docs.codehaus.org/display/MAVENUSER/Maven+Concepts+Repositories}Maven Concepts Repositories}} from Maven wiki
 
-  *{{{http://docs.codehaus.org/display/MAVENUSER/Maven+Repository+Manager+Feature+Matrix} Continuously updated Feature matrix.}} Superceeds original matrix in the blog below.
+  *{{{http://docs.codehaus.org/display/MAVENUSER/Maven+Repository+Manager+Feature+Matrix} Continuously updated Feature matrix.}}
 

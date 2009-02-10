@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2008-08-10
+ 2009-02-07
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -51,7 +51,6 @@ Releasing A Maven Project
       <id>release</id>
       <properties>
         <gpg.passphrase>secretPhrase</gpg.passphrase>
-        <deploy.altRepository>apache.releases::default::scp://people.apache.org/home/YOUR_APACHE_USERNAME/staging-repo/maven-XXX-plugin-Y.Z</deploy.altRepository>
       </properties>
     </profile>
   </profiles>
@@ -110,18 +109,8 @@ Releasing A Maven Project
  <<Note:>> You should verify the deployment under Maven Snapshot repository on Apache.
 
 +-----+
-http://people.apache.org/repo/m2-snapshot-repository/org/apache/maven/plugins/maven-XXX-plugin/Y.Z-SNAPSHOT/
+https://repository.apache.org/content/groups/snapshots/org/apache/maven/plugins/maven-XXX-plugin/Y.Z-SNAPSHOT/
 +-----+
-
- [[3]] Run <<<fix-permissions.sh>>>
-
- Login to people.apache.org, then run:
-
-+-----+
-/www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
-+-----+
-
- This will set <<<maven-metadata.xml>>> file permissions back to 664, and set permissions on any directories you created to 775.
 
  [[4]] Prepare the release
 
@@ -138,7 +127,25 @@ mvn release:prepare
 mvn release:perform
 +-----+
 
- [[6]] Stage the latest documentation
+  The release will automatically be inserted into a temporary staging repository for you. See the Nexus {{{http://www.sonatype.com/books/nexus-book/reference/staging.html} staging documentation}} for full details.
+ 
+ [[6]] Close the staging repository
+
+ Login to {{{https://repository.apache.org}}} using your Apache credentials. Click on "Staging Repositories". Then click on "Maven" in the list of profiles. In the panel below you should see an open repository that is linked to your username and ip. Right click on this repository and select "Finish". This will close the repository from future deployments and make it available for others to view. If you are staging multiple releases together, skip this step until you have staged everything.
+
+ See the image below for details.
+ 
+[../../images/Close_Repo.png] Closing the repository
+
+ [[7]] Verify the Staged artifacts
+
+ Still logged in to {{{https://repository.apache.org}}}, click on "Browse Repositories". Next select the drop down and choose "Nexus Managed Repositories". You will see a list of existing stage repositories. Find yours and then browse the contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of .asc (signature) files. If the you don't like the content of the repository, go back to the Staging Repositories screen, right click your repository and choose "Drop". You can then rollback your release and repeat the process.
+
+ Note the repository url, you will need this in your vote email.
+
+[../../images/Validate_Artifacts.png] Validating the artifacts
+
+ [[8]] Stage the latest documentation
 
  The plugin parent POM is configured to stage the documentation in a "versioned" directory
  such as <<</plugins/maven-XXX-plugin-Y.Z>>>.
@@ -174,7 +181,7 @@ find . -type d -exec chmod g+w {} \;
 find . -type f -exec chmod 664 {} \;
 +------+
 
- [[7]] Propose a vote on the dev list with the closed issues, the issues left,
+ [[9]] Propose a vote on the dev list with the closed issues, the issues left,
  the staging repository and the staging site. For instance:
 
 +-----+
@@ -190,7 +197,7 @@ There are still a couple of issues left in JIRA:
 http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=XXX&status=1
 
 Staging repo:
-http://people.apache.org/~YOUR_APACHE_USERNAME/staging-repo/maven-XXX-plugin-Y.Z
+https://repository.apache.org/content/repositories/maven-staging-[YOUR REPOSITORY ID]/
 
 Staging site:
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
@@ -212,7 +219,7 @@ Vote open for 72 hours.
  To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Project Summary>
  on the right, use the link for <Open> issues.
 
- [[8]] Check the vote results
+ [[10]] Check the vote results
 
  Copied from {{{http://www.apache.org/foundation/voting.html}Votes on Package Releases}}.
 
@@ -241,99 +248,23 @@ The vote has passed with the following result :
 +1 (binding): <<list of names>>
 +1 (non binding): <<list of names>>
 
-I will move artifacts to central repo.
+I will promote the artifacts to the central repo.
 +-----+
 
-  If the vote is unsuccessful, the process will need to be restarted.
+  If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as described above.
 
- [[9]] Copy from the staging repo to the production repo
+ [[11]] Promote the release
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- Here is an example on how to use the stage plugin:
+ Login to https://repository.apache.org with your Apache credentials. Click on "Staging Repositories". Find your closed staging repository, right click on it and choose promote. Select the Release repository and click "ok". 
 
-+-----+
-mvn stage:copy -Dsource="http://people.apache.org/~YOUR_APACHE_USERNAME/staging-repo/maven-XXX-plugin-Y.Z" \
-               -Dtarget="scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository" \
-               -Dversion=Y.Z \
-               -DtargetRepositoryId=apache.releases
-+-----+
+ See image below.
 
- <<Note:>> The <<<version>>> parameter is currently ignored and the <<entire>>
- staging repository is synced, not just the given version or the current
- project. It still needs to be provided, though.
+[../../images/Promote.png] Promote the artifacts
 
- <<Cleanup>>
-
- Double check there are no *.rip files left after this process.
-
-+-----+
-find /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/maven -name '*.rip' -ls
-+-----+
-
-  And delete any that you own.
-
- <<TROUBLE SHOOTING>>
-
- If you find that stage:copy is hanging at
-
-+-----+
-   [INFO] Running rename script on the target machine.
-+-----+
-
- Then this is likely a permission problems.
- Run
-
-+-----+
-find /www/people.apache.org/repo/m2-ibiblio-rsync-repository/org/apache/maven -name '*.rip' -ls
-+-----+
-
- Then email them the matching users and ask them to run <<<fix-permissions.sh>>>.
-
- (not recommended) <<Releasing a Project Directly into a Production Repository>>
-
- If you want to release directly to a production repository then you simply configure the staging repository to point at
- the production repository by using the following in your <<<$HOME/.m2/settings.xml>>>:
-
-+-----+
-<settings>
-  ...
-  <profiles>
-    <profile>
-      <id>release</id>
-      <properties>
-        <gpg.passphrase>secretPhrase</gpg.passphrase>
-        <deploy.altRepository>apache.releases::default::scp://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</deploy.altRepository>
-      </properties>
-    </profile>
-  </profiles>
-  ...
-</settings>
-+-----+
-
- This will allow you to bypass the staging phase and push the release directly into a production repository. It is assumed that
- you have pushed a snapshot somewhere that people have looked at and approved of.
-
- [[10]] Run <<<fix-permissions.sh>>> again
-
- Login to people.apache.org, then run:
-
-+-----+
-/www/people.apache.org/repo/m2-snapshot-repository/fix-permissions.sh
-+-----+
-
- This will once again set <<<maven-metadata.xml>>> file permissions back to 664, and set permissions on any directories you created to 775.
- The script lives in the <<<m2-snapshot-repository>>> directory, but it's smart enough to fix permissions in <<<m2-ibiblio-rsync-repository>>> and <<<m2-incubating-repository>>> also.
-
- [[11]] Deploy the current website
-
- <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
-
-+-----+
-cd target\checkout
-mvn site-deploy -Preporting
-+-----+
+ Next click on Browse Repositories, select the Release repository and validate that your artifacts exist as you expect them.
 
  [[12]] Review the website
 
