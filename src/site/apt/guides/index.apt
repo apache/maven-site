@@ -178,6 +178,8 @@ Documentation
 
  * {{{../settings.html}Settings Overview}} ({{{../ref/current/maven-settings/settings.html}Technical Settings Descriptor}})
 
+ * {{{../encryption.html}Password Encryption}}
+
  * {{{../plugins/index.html}Core Plug-ins List}}
 
  * {{{../developers/mojo-api-specification.html}Mojo API}}
