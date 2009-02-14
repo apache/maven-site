@@ -24,17 +24,22 @@ under the License.
     <author email="brett@apache.org">Brett Porter</author>
     <title>Page Not Found</title>
   </properties>
+
+  <head>
+    <base href="http://maven.apache.org/errors" />
+  </head>
+
   <body>
     <section name="Page Not Found">
 
-      <p>We're sorry, but the page you requested cannot be found. This may because:</p>
-    <ul>
-      <li>The page has moved, was outdated, or has not been created yet</li>
-      <li>You typed the address incorrectly</li>
-      <li>You followed a link from another site that pointed to this page.</li>
-    </ul>
+      <p>We're sorry, but the page you requested cannot be found. This may be because:</p>
+      <ul>
+        <li>The page has moved, was outdated, or has not been created yet</li>
+        <li>You typed the address incorrectly</li>
+        <li>You followed a link from another site that pointed to this page.</li>
+      </ul>
 
-    <p>If you came to this page by following a broken link on our site, you can report the <a href="http://jira.codehaus.org/browse/MNGSITE">problem</a>.</p>
+      <p>If you came to this page by following a broken link on our site, you can report the <a href="http://jira.codehaus.org/browse/MNGSITE">problem</a>.</p>
 
     </section>
   </body>
