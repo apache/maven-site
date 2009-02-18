@@ -118,6 +118,8 @@ Documentation
 
  * {{{./mini/guide-using-toolchains.html}Using Toolchains}}
  
+ * {{{./mini/guide-encryption.html} Encrypting passwords in settings.xml}}
+ 
 
 ** Testing
 
