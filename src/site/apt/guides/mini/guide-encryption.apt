@@ -10,16 +10,16 @@
 
   [[1]] {{{Introduction}Introduction}}
 
-  [[2]] {{{How_to_create_master_password}How to create master password}}
+  [[2]] {{{How_to_create_master_password}How to create a master password}}
 
   [[3]] {{{How_to_encrypt_server_passwords}How to encrypt server passwords}}
 
-  [[4]] {{{How_to_keep_master_password_on_removable_drive}How to keep master password on removable drive}}
+  [[4]] {{{How_to_keep_master_password_on_removable_drive}How to keep the master password on removable drive}}
   
 
 * {Introduction}
 
- Maven 2.1.x trunk now supports server password decryption. This solution is a 
+ Maven 2.1.x trunk now supports server password encryption. This solution is a 
  first implementation and will be enhanced and made more user-friendly in the 
  nearest future. What is described here is working, but not too user-friendly, 
  a Maven plugin to address password maintenance is in the works.
@@ -48,7 +48,7 @@
     
       ** for now - this is done via CLI <<after>> master password has been created and stored in appropriate location
 
-* {How to create master password}
+* {How to create a master password}
 
  All necessary classes are in the maven uber jar which is in $\{maven.home}/lib  
 
@@ -77,7 +77,7 @@ java -cp maven-2.1.0-M2-SNAPSHOT-uber.jar \
 
 * {How to encrypt server passwords}
 
- You will have to use the same command line tool as for master password (see above), but parameter is different: <<-p>>
+ You will have to use the same command line tool as used for the master password (see above), but the parameter is different: <<-p>>
 
  Use the following command line:
  
@@ -92,7 +92,7 @@ java -cp maven-2.1.0-M2-SNAPSHOT-uber.jar \
 {COQLCE6DU6GtcS5P=}
 +------------------------------------+
 
- Cut-n-paste it into you <<<settings.xml>>> file in the server section. This will look like:
+ Cut-n-paste it into your <<<settings.xml>>> file in the server section. This will look like:
  
 +------------------------------------+
 <settings>
@@ -120,7 +120,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
 
 
-* {How to keep master password on removable drive}
+* {How to keep the master password on removable drive}
 
  Create the master password exactly as described above, and store it on a 
  removable drive, for instance on OSX, my USB drive mounts as <<</Volumes/mySecureUsb>>>, 
@@ -134,12 +134,11 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
  in the file <<</Volumes/mySecureUsb/secure/settings-security.xml>>>
 
- And then create <<<~/.m2/settings-security.xml>>> with the following content:
+ And then I create <<<~/.m2/settings-security.xml>>> with the following content:
  
 +------------------------------------+
 <settingsSecurity>
   <relocation>/Volumes/mySecureUsb/secure/settings-security.xml</relocation>
-
 </settingsSecurity>
 +------------------------------------+
 

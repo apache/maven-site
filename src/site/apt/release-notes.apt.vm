@@ -50,7 +50,7 @@ Maven ${currentVersion}
 
     * Maven Dashboard: {{http://docs.codehaus.org/display/MAVEN/Home}}
 
-* 2.0.9 Release Notes
+* 2.0.10 Release Notes
 
   The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=13801&styleName=Html&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
 
@@ -58,35 +58,17 @@ Maven ${currentVersion}
 
   This release was extensively screened for regressions with Release Candidates but several things are worth noting.
 
-  * MNG-3395 - Starting in 2.0.9, we have provided defaults in the super pom for the plugins bound by default to the lifecycle and a few other often used plugins. This will introduce a bit of stability to your builds because core plugins will not change magically on you when they are released. We still recommend taking control of your plugin versions via pluginManagement declarations as this is the most robust way to future proof your builds. Defaulting the plugins in the superpom was a step towards introducing stability for small builds and new users. A full table of the versions used is shown in the next section.
+  * MNG-3974 - The mirror syntax order did not match the documentation. In 2.0.9, the last mirror that matched a repository would win. The correct behavior in 2.0.10 is the first match wins. Using the syntax that lets you exclude a repository from a match (*,!notthisone,thisone), it should always be possible to ensure your matching is deterministic regardless of order. See the settings {{{./settings.html#Mirrors}specification}} for more information.
   
-  * MNG-1412 / MNG-3111 introduced deterministic ordering of dependencies on the classpath. In the past, natural set ordering was used and this lead to odd results. The ordering is now preserved from your pom, with dependencies added by inheritence added last. In builds that had conflicting or duplicate dependencies, this may introduce a change to the output. In short, if you have weird issues with 2.0.9, take a look at the dependencies to see if you have conflicts somewhere.
+  * MNG-3424 - in 2.0.9 we made the dependency order deterministic using linkedHashMaps, in 2.0.10, the rest of the hashMaps in the pom model have been replaced with linkedHashMaps. This may cause subtle changes in the ordering of executions or other processing since 2.0.9. The fix would be to reorder the elements that cause problems, and know that it will be predictable from now on.
 
-** Noteworthy Changes and improvements  
-    
-    
-    * MNG-2234 - In the past, settings.xml was ignored if there was no pom present (like in archetype:generate). Now all settings will be interpreted correctly.
-    
-    * MNG-2664 - The webdav wagon is now included in the core bundle by default. This means deploying 3rd party jars without a pom is a bit easier. The version of the wagon may still be overriden with an extension declaration within your pom.
-    
-    * MNG-2972 The plugin.dependency section can now override the dependencies specified by a plugin itself. This is useful for example to upgrade the version of checkstyle used by the checkstyle plugin (and many more).
 
-    * MNG-3286 - The inherited field in a plugin execution block is now functioning correctly. Previously you could only dis-inherit an entire plugin configuration.
+** Plugin Versions defined in the 2.0.10 super pom:
 
-    * MNG-3220 - There is now a new scope for importing managed dependencies. See {{{http://docs.codehaus.org/display/MAVEN/Importing+Managed+Dependencies}here}} and {{{./guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies}here}} for details. Please note that the use of this scope will break backwards compatibility with older Maven versions. If you use this, you should use the maven-enforcer-plugin to require a minimum maven version of 2.0.9
-    
-    * MNG-3394 - plugin versions specified in pluginManagement are now properly overriden by build.plugin.version specification.
-
-    * MNG-3415 - Transmission errors when downloading artifacts should not corrupt the local repository metadata. Hopefully this means the end of "delete your local repo" as a debug step.
-    
-    * MNG-3461 - There is a new, more flexible way to define mirror settings. See the settings {{{./settings.html#Mirrors}specification}} for more information.
-
-** Plugin Versions defined in the 2.0.9 super pom:
-
- See the raw super pom for 2.0.9 {{{http://svn.apache.org/viewvc/maven/components/tags/maven-2.0.9/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}here}}.
+ See the raw super pom for 2.0.10 {{{http://svn.apache.org/viewvc/maven/components/tags/maven-2.0.10/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}here}}.
  
 *--*--*
-| Antrun | 1.1 |
+| <<Antrun>> | <<1.3>> |
 *--*--*
 | Assembly|  2.2-beta-2 |
 *--*--*
@@ -96,7 +78,7 @@ Maven ${currentVersion}
 *--*--*
 | Dependency| 2.0 |
 *--*--*
-| Deploy| 2.3 |
+| <<Deploy>>| <<2.4>> |
 *--*--*
 | Ear| 2.3.1|
 *--*--*
@@ -106,165 +88,125 @@ Maven ${currentVersion}
 *--*--*
 | Jar| 2.2|
 *--*--*
-| Javadoc| 2.4 |
+| <<Javadoc>>| <<2.5>> |
 *--*--*
-| Plugin| 2.4.1|
+| <<Plugin>>| <<2.4.3>>|
 *--*--*
 | Rar| 2.2|
 *--*--*
-| Release| 2.0-beta-7|
+| <<Release>>| <<2.0-beta-8>>|
 *--*--*
-| Resources| 2.2|
+| <<Resources>>| <<2.3>>|
 *--*--*
-| Site|2.0-beta-6 |
+| <<Site>>|<<2.0-beta-7>> |
 *--*--*
 | Source| 2.0.4 |
 *--*--*
-| Surefire| 2.4.2|
+| <<Surefire>>| <<2.4.3>>|
 *--*--*
-| War| 2.1-alpha-1|
+| <<War>>| <<2.1-alpha-2>>|
 *--*--*
-Default Plugin Versions
+Default Plugin Versions (Bold indicates a change from 2.0.9)
  
  
  
-* Complete list of issues fixed in 2.0.9    
+* Complete list of issues fixed in 2.0.10    
   
 ** Bug
 
-    * [MNG-1412] - dependency sorting in classpath
+    * [MNG-1999] - Reporting inheritance does not work properly
     
-    * [MNG-1914] - Wrong url in error message when using a mirror
+    * [MNG-2433] - Maven looks for snapshots in offline mode
     
-    * [MNG-2123] - NullPointerException when a dependency uses version range and another uses an actual version incompatible with that range
+    * [MNG-2695] - -o makes build fail for snapshot plugins
     
-    * [MNG-2145] - Plugins' dependencies are not always checked
+    * [MNG-2739] - Repository entries are not validated and NPE will occur
     
-    * [MNG-2178] - incorrect M2_HOME guess in mvn.bat
+    * [MNG-3052] - Transitive Dependency not found when repo is not listed
     
-    * [MNG-2234] - activeProfile in ~/.m2/settings.xml is ignored when profiles section is missing or empty
+    * [MNG-3070] - ${x} properties no longer expanded in </version> tag after 2.0.3
     
-    * [MNG-2339] - $\{project.*\} are interpreted in the wrong place
+    * [MNG-3106] - Multiple profile activation conditions broken
     
-    * [MNG-2744] - checksum comparison should be case-insensitive
+    * [MNG-3271] - <excludeDefaults> does not seem to work
     
-    * [MNG-2809] - Can't activate a profile by checking for the presence of a file in ${user.home}
+    * [MNG-3314] - offline build not running, when having SNAPSHOT dependencies
     
-    * [MNG-2848] - Environment variables in profile activation not working
+    * [MNG-3380] - MavenMetadataSource retrieves ResolutionGroup without consulting ManagedVersionMap, is problem when relocation
     
-    * [MNG-2861] - NullPointerException in DefaultArtifactCollector for relocated resolvedArtifacts with different version ranges and available versions.
+    * [MNG-3497] - rar, par and ejb3 archives should not be added to classpath
     
-    * [MNG-2925] - NullPointerException in PluginDescriptor.getMojo() if there's no mojo in pom.xml
+    * [MNG-3527] - profile deactivation has no affect
     
-    * [MNG-2928] - Null pointer exeception when introducing version range [major.minor.build-SNAPSHOT,)
+    * [MNG-3545] - Option -P-profile overridden if profile is activebyDefault
     
-    * [MNG-2972] - Ignores version of plugin dependency specified in my pom
+    * [MNG-3581] - stage:copy ClassCastException with maven 2.0.9
     
-    * [MNG-3086] - NullPointerException in ResolutionNode.getTrail(ResolutionNode.java:136)
+    * [MNG-3628] - When running offline, snapshot artifcats cannot be resolved even if they have previously be dowloaded from a repository
     
-    * [MNG-3099] - Profiles ignored when working with non-projects (such as archetype:create)
+    * [MNG-3639] - Ant 1.7.0 Task not found after upgrading from Maven 2.0.8 to 2.0.9
     
-    * [MNG-3111] - Classpath order incorrect
+    * [MNG-3645] - Maven doesn't do strict model validation for POMs in the current reactor
     
-    * [MNG-3156] - NullPointerException with mvn dependency:sources
+    * [MNG-3680] - POM validation fails on projects in central repo starting with 2.0.10 RCs
     
-    * [MNG-3221] - Infinite loop in DefaultLifecycleExecutor
+    * [MNG-3701] - ClassCastException when building settings.xml with profiles that have activeByDefault set
     
-    * [MNG-3259] - Regression: Maven drops dependencies in multi-module build
+    * [MNG-3717] - Maven prompts for a password when one is provided over SSH in some circumstances
     
-    * [MNG-3286] - execution.inherited field is ignored
+    * [MNG-3723] - ${project.basedir} is not interpolated
     
-    * [MNG-3288] - Invalid systemPath allows build to continue--failing in later phase.
+    * [MNG-3769] - [regression] Excluding relocated transitive dependencies does not work
     
-    * [MNG-3296] - mvn.bat looses error code on windows NT type platforms
+    * [MNG-3776] - Namespace misspelled in settings.xml
     
-    * [MNG-3310] - JAVACMD set incorrectly when JAVA_HOME is not set
+    * [MNG-3805] - Ordering of extension class path is indeterministic
     
-    * [MNG-3316] - Barfs at attribues named .*encoding
+    * [MNG-3898] - can't generate Maven site: modello fails at xsd generation step due to a Boolean field in model
     
-    * [MNG-3354] - mvn.bat incorrectly detects OS on Windows NT or XP with Novell login
+    * [MNG-3907] - Profile XSD has wrong namespace
     
-    * [MNG-3355] - CLONE -${pom.build.sourceDirectory} and ${pom.build.testSourceDirectory} no longer recognized
+    * [MNG-3921] - Extensions are subject to NPEs in their hashCode() impl
     
-    * [MNG-3365] - Remove trailing-backslashes from M2_HOME in mvn.bat
+    * [MNG-3974] - New mirror syntax is not stopping on first match
     
-    * [MNG-3394] - Plugin versions inherited via <pluginManagement> cannot be overriden by <build>.<plugins> sect
-ion of sub modules
-
-    * [MNG-3396] - Managed versions dont affect over constrained ranges
-
-    * [MNG-3400] - MavenProject is not extensible
-
-    * [MNG-3405] - "Checking for updates from repository" logging should not display if WagonManager is offline
-
-    * [MNG-3410] - Managed versions in plugins are not considered when using them
-
-    * [MNG-3415] - Transfer errors cause junk metadata in the local repo
-
-    * [MNG-3426] - regression : <dependency> in plugin configuration doesn't override plugin classpath
-
-    * [MNG-3430] - Toolchain doesn't match Toolchain extensions
-
-    * [MNG-3431] - Pom Extensions not supported for Toolchains
-
-    * [MNG-3439] - incorrect child dependency selected when parent is not selected
-
-    * [MNG-3441] - Maven should always retrieve metadata to be updated from the deployment repository
-
-    * [MNG-3460] - org.apache.maven.profiles.DefaultProfileManagerTest fails if you use a different local repo
-
-    * [MNG-3464] - maven-toolchains missing from final binary.. need to update the assembly
-
-    * [MNG-3473] - site generation with 2.0.9 and plugin:report (2.4 ONLY) is broken
-
-    * [MNG-3484] - INT_MAVEN_OPTS are not quoted in mvnDebug which causes issues on some shells
-
-    * [MNG-3485] - unable to override wagons that are bundled with a different version via extensions
-
-    * [MNG-3494] - local pom dependencies should get injected before inherited dependencies
-
-    * [MNG-3495] - NPE  at org.apache.maven.wagon.repository.Repository.hashCode(Repository.java:241)
 
 ** Improvement
 
-    * [MNG-428] - Japanese message resource
-
-    * [MNG-2881] - Improve logging when downloading snapshots in offline mode
-
-    * [MNG-3279] - Support Exception Chaining for MojoFailureException
-
-    * [MNG-3318] - ActiveProjectArtifact should have appropriate equals and hashCode methods
-
-    * [MNG-3331] - Normalize paths to sub modules
-
-    * [MNG-3388] - DefaultPluginManager needs to catch LinkageError
-
-    * [MNG-3395] - Default core plugin versions in the superpom.
-
-    * [MNG-3442] - Add explicit resource bundle for English
-
-    * [MNG-3461] - Enhance Mirror definition syntax
-
-    * [MNG-3467] - PatternSet needs a toString() method to properly print in debug mode
-
-    * [MNG-3468] - FileSet needs a toString() method to properly print in debug mode
-
-    * [MNG-3469] - Resource needs a toString() method to properly print in debug mode
+    * [MNG-2609] - Mention 'activeByDefault' in the "Introduction to Build Profiles" guide
+    
+    * [MNG-2636] - Namespace settings-1.0.0.xsd correct?
+    
+    * [MNG-3224] - Maven XML schemes are not usable in XML catalogs
+    
+    * [MNG-3268] - Command line doesn't handle multiple -P correctly
+    
+    * [MNG-3424] - Respect ordering of elements as given in POM
+    
+    * [MNG-3503] - Shade MX* classes from plexus-utils
+    
+    * [MNG-3511] - Review fix for MNG-2166
+    
+    * [MNG-3520] - Korean message resource
+    
+    * [MNG-3571] - Allow use of ! when deactivating profiles
+    
+    * [MNG-3652] - set a user agent for Maven HTTP requests
+    
+    * [MNG-3975] - getArtifact(Artifact artifact, List remoteRepositories) should include Exception in debug log messages.
+    
 
 ** New Feature
 
-    * [MNG-2664] - Add native support for webdav
-
-    * [MNG-3220] - Allow managed dependencies to be imported into other projects
+    * [MNG-3219] - Create a CLIRR/JarDiff setup for 2.0.x and 3.0.x
 
 ** Task
 
     * [MNG-2883] - Make sure that the network isn't used for snapshots in offline mode when legacy repositories are used
 
-** Wish
 
-    * [MNG-1491] - Reactor should print out a message if it detects a collision of artifact ids  
-    
+
+
     
 * Release notes for older versions
 

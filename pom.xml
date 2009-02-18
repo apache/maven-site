@@ -23,7 +23,7 @@
   <parent>
     <artifactId>maven-parent</artifactId>
     <groupId>org.apache.maven</groupId>
-    <version>11-SNAPSHOT</version>
+    <version>11</version>
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
 
@@ -36,7 +36,7 @@
   <url>http://maven.apache.org/</url>
 
   <properties>
-    <currentVersion>2.0.9</currentVersion>
+    <currentVersion>2.0.10</currentVersion>
     <currentPreviewVersion>2.1.0-M1</currentPreviewVersion>
   </properties>
 
