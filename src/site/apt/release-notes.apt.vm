@@ -52,7 +52,9 @@ Maven ${currentVersion}
 
 * 2.0.10 Release Notes
 
-  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=13801&styleName=Html&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
+  The full list of changes can be found in our
+  {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=14112&styleName=Html&projectId=10500&Create=Create}issue management system}},
+  and is reproduced below.
 
 ** Changes that may affect existing builds.
 
