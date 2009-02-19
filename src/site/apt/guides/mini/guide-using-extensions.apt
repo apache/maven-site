@@ -22,7 +22,7 @@ Using Extensions
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
          <artifactId>wagon-ftp</artifactId>
-         <version>1.0-alpha-3</version>
+         <version>1.0-beta-2</version>
       </extension>
     </extensions>
   </build>
@@ -30,6 +30,10 @@ Using Extensions
 </project>
 
 +----+
+
+ <Note:> Wagon 1.0-beta-3+ requires Maven 2.1.0 or above. For Maven 2.0.10 and earlier, use Wagon 1.0-beta-2.
+
+ <Note:> Some Wagons require JDK 5.0 to operate correctly.
 
 * Plug-ins which provide lifecycle enhancements
 
