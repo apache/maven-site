@@ -51,6 +51,21 @@ Configuring Maven
 
   For more information, see the {{{guide-proxies.html} Guide to using a Proxy}}.
 
+* Configuring Parallel Artifact Resolution
+
+  By default, Maven 2.1.0+ will download up to 5 artifacts (from different groups) at once. To change the size of the thread pool, start Maven using
+  <<<-Dmaven.artifact.threads>>>. For example, to only download single artifacts at a time:
+
+----
+mvn -Dmaven.artifact.threads=1 clean install
+----
+
+  You may wish to set this option permanently, in which case you can use the <<<MAVEN_OPTS>>> environment variable. For example:
+
+----
+export MAVEN_OPTS=-Dmaven.artifact.threads=3
+----
+
 * Security and Deployment Settings
 
   Repositories to deploy to are defined in a project in the <<<\<distributionManagement\>>>> section.

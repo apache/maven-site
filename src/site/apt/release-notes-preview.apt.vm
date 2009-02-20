@@ -46,7 +46,7 @@ Maven ${currentPreviewVersion}
 
     * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
 
-* 2.1.0-M2 Release Notes
+* 2.1.0 Release Notes
 
   The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=14587&styleName=Html&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
 
@@ -60,7 +60,9 @@ Maven ${currentPreviewVersion}
 
     * MNG-2576 - Additional switches to the command line for alternate reactor behavior: <<<--resume-from>>>, <<<--also-make>>>, and <<<--also-make-dependents>>>.
 
-** Complete list of issues fixed in 2.1.0-M2
+    * MNG-3379 - Parallel resolution of dependencies now occurs, with the default number of concurrent of threads set to 5. A configuration option <<<-Dmaven.artifact.threads>>> can be used to change the number of threads.
+
+** Complete list of issues fixed in 2.1.0
 
 *** Bug
 
