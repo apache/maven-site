@@ -19,12 +19,7 @@
 
 * {Introduction}
 
- Maven 2.1.x trunk now supports server password encryption. This solution is a 
- first implementation and will be enhanced and made more user-friendly in the 
- nearest future. What is described here is working, but not too user-friendly, 
- a Maven plugin to address password maintenance is in the works.
-
- The main use case, addressed by this solution is:
+ Maven 2.1.0+ now supports server password encryption. The main use case, addressed by this solution is:
 
    * multiple users share the same build machine (server, CI box)
    
@@ -32,11 +27,11 @@
    
       ** this applies to any server operations, requiring authorization, not only deployment
    
-   * settings.xml is shared between users
+   * <<<settings.xml>>> is shared between users
 
  The implemented solution adds the following capabilities:
 
-   * authorized users have an additional settings-security.xml file in their ~/.m2 folder
+   * authorized users have an additional <<<settings-security.xml>>> file in their <<<~/.m2>>> folder
    
       ** this file either contains encrypted <<master password>>, used to encrypt other passwords
       
@@ -50,13 +45,10 @@
 
 * {How to create a master password}
 
- All necessary classes are in the maven uber jar which is in $\{maven.home}/lib  
-
  Use the following command line:
  
 +------------------------------------+
-java -cp maven-2.1.0-M2-SNAPSHOT-uber.jar \
-  org.sonatype.plexus.components.sec.dispatcher.DefaultSecDispatcher -m
+mvn --enc-master-passwd <password>
 +------------------------------------+
 
  This command will prompt you for the master password and will produce an encrypted version of it, something like
@@ -82,8 +74,7 @@ java -cp maven-2.1.0-M2-SNAPSHOT-uber.jar \
  Use the following command line:
  
 +------------------------------------+
-java -cp maven-2.1.0-M2-SNAPSHOT-uber.jar \  
-  org.sonatype.plexus.components.sec.dispatcher.DefaultSecDispatcher -p
+mvn --enc-passwd <password>
 +------------------------------------+
 
  This command will prompt you for a password and will produce an encrypted version of it, something like
