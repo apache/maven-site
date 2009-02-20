@@ -99,6 +99,8 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 </settings>
 -------------
 
+  To encrypt passwords in these sections, refer to {{{guide-encryption.html} Encryption Settings}}.
+
 * Using Mirrors for Repositories
 
   Repositories can be declared inside a project, which means that if you have your own custom repositories, those
