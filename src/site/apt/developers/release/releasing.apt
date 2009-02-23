@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2009-02-07
+ 2009-02-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -99,6 +99,23 @@ Releasing A Maven Project
 [INFO] [deploy:deploy]
 [INFO] Retrieving previous build number from apache.snapshots
 ...
++-----+
+
+ <<Note:>> Be sure to have a server called <<<apache.snapshots.https>>> in your <<<settings.xml>>>.
+
++-----+
+<settings>
+  <servers>
+    <server>
+      <id>apache.snapshots.https</id>
+      <username>YOUR_APACHE_USERNAME</username>
+      <password>YOUR_APACHE_PASSWORD</password>
+      <filePermissions>664</filePermissions>
+      <directoryPermissions>775</directoryPermissions>
+    </server>
+    ...
+  </servers>
+</settings>
 +-----+
 
  <<Note:>> Be sure that the generated artifacts respect the
