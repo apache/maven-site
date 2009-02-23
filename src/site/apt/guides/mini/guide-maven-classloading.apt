@@ -87,9 +87,9 @@ Guide to Maven Classloading
  <<<$\{plugin.artifactMap\}>>> to have a list or map, respectively, of resolved artifacts injected from the
  <<<{{{http://maven.apache.org/ref/current/maven-plugin-descriptor/apidocs/org/apache/maven/plugin/descriptor/PluginDescriptor.html}PluginDescriptor}}>>>.
 
- Please note that the plugin classloader does not contain the
+ Please note that the plugin classloader does neither contain the
  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_dependency}dependencies}}
- of the current project. Instead, plugins can query the project's compile, runtime and test class path from the 
+ of the current project nor its build output. Instead, plugins can query the project's compile, runtime and test class path from the 
  <<<{{{http://maven.apache.org/ref/current/maven-project/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  in combination with the mojo annotation <<<requiresDependencyResolution>>> from the
  {{{http://maven.apache.org/developers/mojo-api-specification.html}Mojo API Specification}}. For instance, flagging a
