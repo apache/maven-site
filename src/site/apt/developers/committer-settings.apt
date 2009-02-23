@@ -41,7 +41,7 @@ Enable Apache Servers
   <servers>
     <!-- To publish a snapshot of some part of Maven -->
     <server>
-      <id>apache.snapshots</id>
+      <id>apache.snapshots.https</id>
       <username> <!-- YOUR APACHE USERNAME --> </username>
       <password> <!-- YOUR APACHE PASSWORD --> </password>
     </server>
@@ -52,9 +52,9 @@ Enable Apache Servers
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
     </server>
-    <!-- To publish a release of some part of Maven - ONLY FOR PMC -->
+    <!-- To stage a release of some part of Maven -->
     <server>
-      <id>apache.releases</id>
+      <id>apache.releases.https</id>
       <username> <!-- YOUR APACHE USERNAME --> </username>
       <password> <!-- YOUR APACHE PASSWORD --> </password>
     </server>
