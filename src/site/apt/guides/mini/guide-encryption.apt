@@ -48,7 +48,7 @@
  Use the following command line:
  
 +------------------------------------+
-mvn --encrypt-master-passwd <password>
+mvn --encrypt-master-password <password>
 +------------------------------------+
 
  This command will prompt you for the master password and will produce an encrypted version of it, something like
@@ -74,7 +74,7 @@ mvn --encrypt-master-passwd <password>
  Use the following command line:
  
 +------------------------------------+
-mvn --encrypt-passwd <password>
+mvn --encrypt-password <password>
 +------------------------------------+
 
  This command will prompt you for a password and will produce an encrypted version of it, something like
