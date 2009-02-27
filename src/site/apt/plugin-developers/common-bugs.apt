@@ -67,7 +67,7 @@ Common Bugs and Pitfalls
   For example, if developer A has UTF-8 as default encoding while developer B uses ISO-8859-1, text files are very
   likely to get messed up during resource filtering or similar tasks.
 
-  Therefore, plugin developers should avoid any direct or indirect usage of the classes/methods that simply employ the
+  Therefore, developers should avoid any direct or indirect usage of the classes/methods that simply employ the
   platform's default encoding. For instance, <<<FileWriter>>> and <<<FileReader>>> should usually be avoided:
 
 +---
@@ -324,7 +324,7 @@ public MyMojo extends AbstractMojo
 
   [[a]] Reactor Builds
 
-        When a child module is build during a reactor build, the current working is usually the base directory of the
+        When a child module is build during a reactor build, the current working directory is usually the base directory of the
         parent project, not the base directory of the current module. That is the most common scenario where users are
         faced with the bug.
 

@@ -39,6 +39,8 @@ Maven Developer Centre
 
   * {{{../guides/development/guide-m2-development.html}Developing Maven 2}}
 
+  * {{{../plugin-developers/common-bugs.html} Common Bugs and Pitfalls}}
+
   * {{{../guides/development/guide-building-m2.html}Building Maven 2}}
 
   * {{{../continuous-integration.html}Continuous Integration}}
