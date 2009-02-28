@@ -312,31 +312,20 @@ mvn archetype:create \
     /**
      * The greeting to display.
      *
-     * @parameter expression="Hello"
+     * @parameter expression="${sayhi.greeting}" default-value="Hello World!"
      */
     private String greeting;
 +-----+
 
   The portion before the annotations is the description of the
-  parameter.  The "<<<parameter>>>" annotation identifies
-  the variable as a mojo parameter.  The "<<<expression>>>"
-  parameter defines the default value for the variable.  This value can
+  parameter.  The <<<parameter>>> annotation identifies
+  the variable as a mojo parameter.  The <<<default-value>>>
+  parameter of the annotation defines the default value for the variable.  This value can
   include expressions which reference the project, such as
   "<<<$\{project.version\}>>>" (more can be found in the
-  "Parameter Expressions" document).  The name of the variable is used
-  as the name of the parameter.
-
-  <<Note>>: You could use <<<default-value>>> Javadoc annotation to specify a
-  default value. Example:
-
-+-----+
-    /**
-     * My String.
-     *
-     * @parameter default-value="Hello World!"
-     */
-    private String myString;
-+-----+
+  "Parameter Expressions" document). The <<<expression>>> parameter can be used to allow configuration
+  of the mojo parameter from the command line by referencing a system property that the user sets
+  via the <<<-D>>> option.
 
 ** Configuring Parameters in a Project
 
