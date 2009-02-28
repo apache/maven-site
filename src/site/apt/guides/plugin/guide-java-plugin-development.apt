@@ -504,17 +504,19 @@ mvn archetype:create \
   value) is determined as follows (the first step which yields a valid class
   is used):
 
-  [[1]] If the XML contains an <<<implementation>>> hint, that is used
+  [[1]] If the XML element contains an <<<implementation>>> hint attribute, that is used
 
-  [[2]] If the XML tag contains a <<<.>>>, try that as a class name
+  [[2]] If the XML tag contains a <<<.>>>, try that as a fully qualified class name
 
-  [[3]] Try the XML tag as a class in the same package as the object being
+  [[3]] Try the XML tag (with capitalized first letter) as a class in the same package as the mojo/object being
         configured
 
-  [[4]] For arrays, use the class of the array (for example, use <<<String>>>
+  [[4]] For arrays, use the component type of the array (for example, use <<<String>>>
         for a <<<String[]>>> parameter); for collections and maps, use the
         class specified in the mojo configuration for the collection or map;
         use <<<String>>> for entries in a collection and values in a map
+
+  []
 
   Once the type for the element is defined, the text in the XML file is
   converted to the appropriate type of object
@@ -561,6 +563,9 @@ mvn archetype:create \
   <param>value2</param>
 </myList>
 +-----+
+
+  For details on the mapping of the individual collection elements, see
+  {{{../mini/guide-configuring-plugins.html#Mapping_Lists}Mapping Lists}}.
 
 *** Maps
 
@@ -625,12 +630,17 @@ mvn archetype:create \
      *
      * @parameter
      */
-    private Object myObject;
+    private MyObject myObject;
 +-----+
 
 +-----+
-<myObject>test</myObject>
+<myObject>
+  <myField>test</myField>
+</myObject>
 +-----+
+
+  Please see {{{../mini/guide-configuring-plugins.html#Mapping_Complex_Objects}Mapping Complex Objects}} for details
+  on the strategy used to configure those kind of parameters.
 
 
 * Resources
