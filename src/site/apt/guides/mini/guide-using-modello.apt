@@ -2,14 +2,15 @@
  Guide to using Modello
  ------
  Jason van Zyl
+ Hervé Boutemy
  ------
- 12 October 2005
+ 2009-03-01
  ------
 
 Guide to using Modello
 
- Modello is a tool for generating resources from a simple model. From a simple model you can generate
- things like:
+ {{{http://modello.codehaus.org/index.html}Modello}} is a tool for generating resources from a simple model. From a
+ simple model you can generate things like:
 
  * Java sources
 
@@ -20,8 +21,6 @@ Guide to using Modello
  * Model documentation
 
  * XSD
-
- * JDO bindings
 
  []
 
@@ -41,7 +40,7 @@ Guide to using Modello
       <plugin>
         <groupId>org.codehaus.modello</groupId>
         <artifactId>modello-maven-plugin</artifactId>
-        <version>1.0-alpha-18</version>
+        <version>1.0</version>
         <executions>
           <execution>
             <goals>
