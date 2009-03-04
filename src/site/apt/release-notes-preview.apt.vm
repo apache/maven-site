@@ -70,6 +70,8 @@ Maven ${currentPreviewVersion}
 
     * [MNG-1349] - openssl checksums are not accepted by maven
 
+    * [MNG-1585] - debug logging from wagon not shown in debug mode
+
     * [MNG-1992] - CLI -D should override properties in settings.xml
 
     * [MNG-1999] - Reporting inheritance does not work properly
@@ -80,25 +82,39 @@ Maven ${currentPreviewVersion}
 
     * [MNG-2668] - Plugin dependencies should be considered when the reactor creates the build order list
 
+    * [MNG-2690] - DefaultPluginManager.getConfiguredMojo() doesn't handle NoClassDefFoundError correctly
+
     * [MNG-2695] - -o makes build fail for snapshot plugins
+
+    * [MNG-2720] - Multiproject dependencies not accurate for project.compileClasspathElements when run from root project
+
+    * [MNG-3023] - Reactor projects should be included in dependency resolution
+
+    * [MNG-3057] - properties not expanded in generated POMs when building A/B/C nested projects
 
     * [MNG-3139] - The skin does not exist: Unable to determine the release version
 
+    * [MNG-3217] - a plugin's dependencies can influence other plugins in a build
+
+    * [MNG-3228] - Maven profile activation does not work when profile is defined in inherited 'parent' pom
+
     * [MNG-3271] - \<excludeDefaults\> does not seem to work
+
+    * [MNG-3284] - Cached plugins are used, even when the specifically declared
 
     * [MNG-3314] - offline build not running, when having SNAPSHOT dependencies
 
-    * [MNG-3530] - Regression: Properties get resolved before the LifeCycle is Forked.
+    * [MNG-3621] - site url inheritance broken for UNC paths
 
     * [MNG-3628] - When running offline, snapshot artifcats cannot be resolved even if they have previously be dowloaded from a repository
+
+    * [MNG-3641] - Lack of error checks on profiles
 
     * [MNG-3645] - Maven doesn't do strict model validation for POMs in the current reactor
 
     * [MNG-3719] - [regression] plugin execution ordering no longer POM ordered in 2.0.9
 
     * [MNG-3757] - Setting M2_HOME to nothing and running ant delets contents of the current folder
-
-    * [MNG-3768] - [regression] Class folder system dependency doesn't work anymore
 
     * [MNG-3769] - [regression] Excluding relocated transitive dependencies does not work
 
@@ -107,6 +123,8 @@ Maven ${currentPreviewVersion}
     * [MNG-3808] - Execution order of report plugins is arbitrary if inheritance is involved
 
     * [MNG-3810] - [regression] Null Pointer Exception when Activation Profile Property is Empty
+
+    * [MNG-3811] - Report plugins don't inherit configuration
 
     * [MNG-3899] - Inheritance does not merge extensions with same gid and aid
 
@@ -126,9 +144,15 @@ Maven ${currentPreviewVersion}
 
     * [MNG-4016] - Properties with the prefix project/pom are not interpolated from the properties section
 
-*** Improvement
+    * [MNG-4023] - Profiles from parent POM are injected multiple times if parent is part of reactor build
 
-    * [MNG-553] - Secure Storage of Server Passwords
+    * [MNG-4026] - [regression] Order of project class path does not match POM order during reactor build
+
+    * [MNG-4032] - Test jar dependency not available for for main classes in multi module builds
+
+    * [MNG-4043] - Resolve or rollback WebDAV wagon deployment issue where hostname is improperly extracted from URL
+
+*** Improvement
 
     * [MNG-1830] - add  a 'compiled on \<timestamp\>' label when maven 2 is invoked with --version option
 
@@ -146,25 +170,51 @@ Maven ${currentPreviewVersion}
 
     * [MNG-3787] - Add plugin version to default reports
 
+    * [MNG-3794] - Improve error logging when downloading depedencies
+
     * [MNG-3795] - Add example \<pluginGroups\> snippet to conf/settings.xml in distribution
 
     * [MNG-3867] - Support MAVEN_OPTS in mvnDebug script
 
     * [MNG-3951] - Hide drive-relative paths from plugins
 
+    * [MNG-3971] - Provide parity in features between native ant-mojo support and antrun plugin
+
     * [MNG-3975] - getArtifact(Artifact artifact, List remoteRepositories) should include Exception in debug log messages.
+
+    * [MNG-4024] - Open up CLIManager
+
+    * [MNG-4037] - Include Java home in version information
+
+    * [MNG-4057] - Propose checking of plugin artifact when plugin descriptor cannot be found
 
 *** New Feature
 
+    * [MNG-553] - Secure Storage of Server Passwords
+
     * [MNG-2097] - adding a phase called prepare-package
+
+    * [MNG-3379] - Parallel resolution of artifacts
 
     * [MNG-3760] - Support property $\{baseurl\} to get RFC-compliant URL of project base directory
 
+    * [MNG-3914] - Add CLI option to control location of global settings from command line
+
 *** Task
+
+    * [MNG-2387] - <active> on <proxy> in settings is misleading
 
     * [MNG-2883] - Make sure that the network isn't used for snapshots in offline mode when legacy repositories are used
 
+    * [MNG-3602] - Schedule and release Doxia-1.1
+
+    * [MNG-3842] - Revert temporary changes to scp wagon handling
+
     * [MNG-3936] - Remove m2.bat from distribution
+
+    * [MNG-4030] - Release maven-plugin-tools 2.4.4/2.5 to enable enhanced ant-mojo support
+
+    * [MNG-4031] - Release plexus-ant-factory 1.0-alpha-2.1 to enable enhanced ant-mojo support
 
 ** Complete list of issues fixed in 2.1.0-M1
   
