@@ -54,6 +54,8 @@ Maven ${currentPreviewVersion}
 
     * MNG-3600 - The <<<\<server\>>>> element in <<<settings.xml>>> no longer specifies a default value for file and directory modes on remotely deployed files. Please refer to the Settings guides for how to configure this appropriately for your deployment environment.
 
+    * MNG-3475 - neither the script source directory nor the reporting output directory were aligned to the base directory. While this was a bug, if you used an expression such as <<<$\{basedir\}/$\{project.reporting.outputDirectory\}>>> then where this would of worked in Maven 2.0.10, it will have two copies of the project base directory in Maven 2.1.0+. You should remove the leading <<<$\{basedir\}>>> from the expression - however note that in some cases this will cause the build to be incompatible with earlier versions of Maven.
+
 ** Noteworthy Changes and improvements  
     
     * MNG-3760 - <<<$\{project.baseUri\}>>> has been added as a valid expression in the POM, and is a valid URI equivalent of <<<$\{basedir\}>>>
