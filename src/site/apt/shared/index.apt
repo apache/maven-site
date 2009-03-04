@@ -3,7 +3,7 @@
  -----
  Dennis Lundberg
  -----
- 2009-01-05
+ 2009-03-04
  -----
 
 Shared Components
@@ -20,7 +20,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-dependency-tree/} <<<maven-dependency-tree>>>}}           | 1.2          | 2008-09-02        | Maven Dependency Tree constructs a tree model of a Maven project's dependencies. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-tree/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
-| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.0.1        | 2008-06-14        | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}}
+| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.0.2        | 2009-03-04        | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-filtering/} <<<maven-filtering>>>}}                       | 1.0-beta-1   | 2008-08-06        | Components for filtering resources. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-filtering/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
