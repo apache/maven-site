@@ -8,6 +8,7 @@
   <body>
 
     <!-- TODO: news? -->
+    <section name=""> <!-- valid xdoc needs at least a section -->
     <div id="downloadbox">
     <h5>Search Maven Sites</h5>
 <!-- Google CSE Search Box Begins  -->
@@ -60,6 +61,8 @@
       <h5>Supporting Maven</h5>
       <p>We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank the sponsors of the Apache Software Foundation</a> for their support and assistance. To support the ASF, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.</p>
     </div>
+    </section>
+
     <section name="Welcome to Maven">
 
       <!-- TODO: I reckon it's time for a new description -->
