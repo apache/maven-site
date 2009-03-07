@@ -70,7 +70,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Packaging types / tools>>                               |              |            | <<These plugins relate to packaging respective artifact types.>> | |
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                | 2.3.1        | 2007-08-21 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                | 2.3.2        | 2009-03-07 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                | 2.1          | 2007-02-09 | Build an EJB (and optional client) from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ejb-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEJB}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
