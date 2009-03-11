@@ -69,6 +69,8 @@ Download Maven ${currentVersion}
   <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed. More precisely,
   you need a Java Development Kit (JDK), the Java Runtime Environment (JRE) is not sufficient.>
 
+  Additional optional installation steps are listed after the platform specific instructions.
+
 ~~ NOTE:
 ~~ At least Windows users seem to be confused if the instructions contain quotation marks because people included them
 ~~ literally in the environment variables which does not work. For this reason, literal values are only printed using
@@ -119,3 +121,28 @@ Download Maven ${currentVersion}
         <<<export JAVA_HOME=/usr/java/jdk1.5.0_02>>> and that <<<$JAVA_HOME/bin>>> is in your <<<PATH>>> environment variable.
 
   [[7]] Run <<<mvn --version>>> to verify that it is correctly installed.
+
+** Optional configuration
+
+  Maven will work for most tasks with the above configuration, however if you have any environmental specific configuration outside of individual
+  projects then you will need to configure settings. The following sections refer to what is available.
+
+*** Settings
+
+  Maven has a settings file located in the Maven installation and/or user home directory that configure environmental specifics such as:
+
+    * HTTP proxy server
+
+    * repository manager location
+
+    * server authentication and passwords
+
+    * other configuration properties
+
+  For information on this file, see the {{{settings.html} Settings reference}}
+
+*** Security
+
+  As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
+  both server passwords and the master password, see the {{{guides/mini/guide-encryption.html} Guide to password encryption}}.
+  
