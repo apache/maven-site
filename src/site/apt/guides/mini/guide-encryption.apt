@@ -101,6 +101,25 @@ mvn --encrypt-password <password>
 </settings>
 +------------------------------------+
 
+
+ Please note that password can contain any information outside of the curly brackets, so that the following will still work:
+ 
++------------------------------------+
+<settings>
+...
+  <servers>
+...
+    <server>
+      <id>my.server</id>
+      <username>foo</username>
+      <password>Oleg reset this password on 2009-03-11, expires on 2009-04-11 {COQLCE6DU6GtcS5P=}</password>
+    </server>
+...
+  </servers>
+...
+</settings>
++------------------------------------+
+
  Then you can use, say, deploy plugin, to write to this server:
  
 +------------------------------------+
