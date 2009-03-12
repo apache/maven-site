@@ -102,7 +102,7 @@ $ patch -p0 < MNG-123.patch
  Including absolute paths in the patch will make the useless for us as we most likely don't have the same directory
  structure as you.
 
- * Make sure that you follow our code style, see {{{#Further_Links}Further Links}}.
+ * Make sure that you follow our code style, see {{{Further_Links}Further Links}}.
 
  []
 
