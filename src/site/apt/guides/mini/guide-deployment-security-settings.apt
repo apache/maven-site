@@ -41,6 +41,6 @@ Security and Deployment Settings
 
 +-----+
 
-  To encrypt passwords in these sections, refer to {{{guide-encryption.html} Encryption Settings}}.
+  To encrypt passwords in these sections, refer to {{{./guide-encryption.html} Encryption Settings}}.
 
  <<Note>>: The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
