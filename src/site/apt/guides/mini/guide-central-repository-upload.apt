@@ -331,9 +331,12 @@ or you can see the project web page in www.wiggle.org
 
 {Maven partners}
 
- The following sites automatically sync their project repository with the central one.
+ There is a list of sites that automatically sync their project repository with the central one.
  If you want a project from any of these sites to be uploaded to the Central Repository you'll have to
  contact their project maintainers.
+ Check the {{{https://svn.apache.org/repos/asf/maven/repository-tools/trunk/src/bin/synchronize/m2-sync/sync.csv}updated list}}
+
+ Some of the most known groups automatically synced are:
 
  * {{{http://www.apache.org/dev/release-publishing.html#maven-repo}The Apache Software Foundation}}
 
