@@ -76,6 +76,8 @@ Maven ${currentPreviewVersion}
 
     * [MNG-1999] - Reporting inheritance does not work properly
 
+    * [MNG-2432] - Apache and Mojo plugins take precendence over plugins in the pom.
+
     * [MNG-2433] - Maven looks for snapshots in offline mode
 
     * [MNG-2605] - Profiles in profiles.xml are active by default
@@ -100,7 +102,7 @@ Maven ${currentPreviewVersion}
 
     * [MNG-3271] - \<excludeDefaults\> does not seem to work
 
-    * [MNG-3284] - Cached plugins are used, even when the specifically declared
+    * [MNG-3284] - Cached plugins are used, even when the specifically declared 
 
     * [MNG-3314] - offline build not running, when having SNAPSHOT dependencies
 
@@ -152,6 +154,16 @@ Maven ${currentPreviewVersion}
 
     * [MNG-4043] - Resolve or rollback WebDAV wagon deployment issue where hostname is improperly extracted from URL
 
+    * [MNG-4074] - cyclic reference with 2.1.0-RC1 that doesn't occur with 2.0.10
+
+    * [MNG-4079] - Duplicate error messages
+
+    * [MNG-4084] - Unnecessary Warning for an activate profile in child project
+
+    * [MNG-4086] - [regression] Explicitly using plugin metaversions crashes plugin manager
+
+    * [MNG-4087] - Percent encoded characters in file URLs are not decoded upon deployment
+
 *** Improvement
 
     * [MNG-1830] - add  a 'compiled on \<timestamp\>' label when maven 2 is invoked with --version option
@@ -188,6 +200,12 @@ Maven ${currentPreviewVersion}
 
     * [MNG-4057] - Propose checking of plugin artifact when plugin descriptor cannot be found
 
+    * [MNG-4075] - Tone down warnings about reactor dependencies that don't have an associated file
+
+    * [MNG-4091] - Validate the plugin descriptors and improve error reporting when mismatched with artifact
+
+    * [MNG-4092] - remove plugin listeners for minor memory improvement and to avoid scanning descriptors from dependencies of plugins
+
 *** New Feature
 
     * [MNG-553] - Secure Storage of Server Passwords
@@ -215,6 +233,14 @@ Maven ${currentPreviewVersion}
     * [MNG-4030] - Release maven-plugin-tools 2.4.4/2.5 to enable enhanced ant-mojo support
 
     * [MNG-4031] - Release plexus-ant-factory 1.0-alpha-2.1 to enable enhanced ant-mojo support
+
+    * [MNG-4046] - Update to Doxia 1.0
+
+    * [MNG-4077] - Review log level for VersionExpressionTransformation.transformVersions()
+
+*** Wish
+
+    * [MNG-4056] - Relax resolution of active project artifacts from the reactor with regard to artifact type
 
 ** Complete list of issues fixed in 2.1.0-M1
   
