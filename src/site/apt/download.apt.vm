@@ -1,5 +1,5 @@
  ------
-Download Maven ${currentVersion}
+Download Maven ${current21xVersion}
  ------
 Brett Porter
 Jason van Zyl
@@ -7,47 +7,47 @@ Jason van Zyl
 January 2008
  ------
 
-Download Maven ${currentVersion}
+Download Maven ${current21xVersion}
 
   Maven is distributed in several formats for your convenience.
 
   You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
   hours to reach all mirrors.
 
-  Maven ${currentVersion} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
+  Maven ${current21xVersion} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
   We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{./guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentVersion}-bin.tar.bz2} apache-maven-${currentVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.tar.bz2.md5} apache-maven-${currentVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.tar.bz2.asc} apache-maven-${currentVersion}-bin.tar.bz2.asc}} |
+| Maven ${current21xVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2} apache-maven-${current21xVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2.md5} apache-maven-${current21xVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2.asc} apache-maven-${current21xVersion}-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentVersion}-bin.tar.gz} apache-maven-${currentVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.tar.gz.md5} apache-maven-${currentVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.tar.gz.asc} apache-maven-${currentVersion}-bin.tar.gz.asc}} |
+| Maven ${current21xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz} apache-maven-${current21xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.md5} apache-maven-${current21xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.asc} apache-maven-${current21xVersion}-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentVersion}-bin.zip} apache-maven-${currentVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.zip.md5} apache-maven-${currentVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentVersion}-bin.zip.asc} apache-maven-${currentVersion}-bin.zip.asc}} |
+| Maven ${current21xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.zip} apache-maven-${current21xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.zip.md5} apache-maven-${current21xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.zip.asc} apache-maven-${current21xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven Ant Tasks 2.0.9                 | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.9.jar} maven-ant-tasks-2.0.9.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.9.jar.md5} maven-ant-tasks-2.0.9.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.9.jar.asc} maven-ant-tasks-2.0.9.jar.asc}} |
-*-------------------------+---------+----------+-----------+
-| Release Notes           | {{{./release-notes.html} ${currentVersion}}} | | |
+| Release Notes           | {{{./release-notes.html} ${current21xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
   You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
   
-* Maven ${currentPreviewVersion} Preview
+* Maven ${current20xVersion}
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentPreviewVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2} apache-maven-${currentPreviewVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2.md5} apache-maven-${currentPreviewVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.bz2.asc} apache-maven-${currentPreviewVersion}-bin.tar.bz2.asc}} |
+| Maven ${current20xVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2} apache-maven-${current20xVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2.md5} apache-maven-${current20xVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2.asc} apache-maven-${current20xVersion}-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentPreviewVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz} apache-maven-${currentPreviewVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz.md5} apache-maven-${currentPreviewVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.tar.gz.asc} apache-maven-${currentPreviewVersion}-bin.tar.gz.asc}} |
+| Maven ${current20xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz} apache-maven-${current20xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.md5} apache-maven-${current20xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.asc} apache-maven-${current20xVersion}-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${currentPreviewVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip} apache-maven-${currentPreviewVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip.md5} apache-maven-${currentPreviewVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentPreviewVersion}-bin.zip.asc} apache-maven-${currentPreviewVersion}-bin.zip.asc}} |
+| Maven ${current20xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.zip} apache-maven-${current20xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.md5} apache-maven-${current20xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.asc} apache-maven-${current20xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
-| Release Notes           | {{{./release-notes-preview.html} ${currentPreviewVersion}}} | | |
+| Maven Ant Tasks 2.0.9                 | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.9.jar} maven-ant-tasks-2.0.9.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.9.jar.md5} maven-ant-tasks-2.0.9.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.9.jar.asc} maven-ant-tasks-2.0.9.jar.asc}} |
 *-------------------------+---------+----------+-----------+
-
+| Release Notes           | {{{./release-notes-2.0.x.html} ${current20xVersion}}} | | |
+*-------------------------+---------+----------+-----------+
+  
 * Previous Releases
 
   All previous releases of Maven can be found in the {{{http://archive.apache.org/dist/maven/binaries/}archives}}.
@@ -78,14 +78,14 @@ Download Maven ${currentVersion}
 
 ** Windows 2000/XP
 
-  [[1]] Unzip the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.zip>>> to the directory you wish to install Maven ${currentVersion}.
+  [[1]] Unzip the distribution archive, i.e. <<<apache-maven-${current20xVersion}-bin.zip>>> to the directory you wish to install Maven ${current20xVersion}.
         These instructions assume you chose <<<C:\Program Files\Apache Software Foundation>>>.
-        The subdirectory <<<apache-maven-${currentVersion}>>> will be created from the archive.
+        The subdirectory <<<apache-maven-${current20xVersion}>>> will be created from the archive.
 
   [[2]] Add the <<<M2_HOME>>> environment variable by opening up the system properties (WinKey + Pause),
         selecting the "Advanced" tab, and the "Environment Variables" button, then adding the <<<M2_HOME>>>
         variable in the user variables with the value
-        <<<C:\Program Files\Apache Software Foundation\apache-maven-${currentVersion}>>>. Be sure to omit any quotation marks around the path
+        <<<C:\Program Files\Apache Software Foundation\apache-maven-${current20xVersion}>>>. Be sure to omit any quotation marks around the path
         even if it contains spaces. <<Note>>: For Maven \< 2.0.9, also be sure that the <<<M2_HOME>>>
         doesn't have a '\' as last character.
 
@@ -104,11 +104,11 @@ Download Maven ${currentVersion}
 
 ** Unix-based Operating Systems (Linux, Solaris and Mac OS X)
 
-  [[1]] Extract the distribution archive, i.e. <<<apache-maven-${currentVersion}-bin.tar.gz>>> to the directory you wish to install Maven ${currentVersion}.
-        These instructions assume you chose <<</usr/local/apache-maven>>>. The subdirectory <<<apache-maven-${currentVersion}>>> will
+  [[1]] Extract the distribution archive, i.e. <<<apache-maven-${current20xVersion}-bin.tar.gz>>> to the directory you wish to install Maven ${current20xVersion}.
+        These instructions assume you chose <<</usr/local/apache-maven>>>. The subdirectory <<<apache-maven-${current20xVersion}>>> will
         be created from the archive.
 
-  [[2]] In a command terminal, add the <<<M2_HOME>>> environment variable, e.g. <<<export M2_HOME=/usr/local/apache-maven/apache-maven-${currentVersion}>>>.
+  [[2]] In a command terminal, add the <<<M2_HOME>>> environment variable, e.g. <<<export M2_HOME=/usr/local/apache-maven/apache-maven-${current20xVersion}>>>.
 
   [[3]] Add the <<<M2>>> environment variable, e.g. <<<export M2=$M2_HOME/bin>>>.
 
