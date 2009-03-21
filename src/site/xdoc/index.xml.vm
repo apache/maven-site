@@ -20,14 +20,27 @@
 <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006660305041243700248%3Ahyqtfwsewpm"></script>
 <!-- Google CSE Search Box Ends -->
 
-	<h5>Get Maven ${currentVersion}</h5>
+	<h5>Get Maven ${current21xVersion}</h5>
       <span style="display: block; text-align: right; font-size: smaller">Released: 17 Feb 2009</span>
       <p>
         <a href="download.html">
-          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentVersion}"/>
-          Maven ${currentVersion}
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current21xVersion}"/>
+          Maven ${current21xVersion}
         </a>
-        <small>(1.6Mb)</small>
+        <small>(2.8Mb)</small>
+        <span style="font-size: smaller">
+          <br/>
+          <a href="download.html#Requirements">System Requirements</a>,
+          <a href="download.html#Installation">Installation Instructions</a>,
+          <a href="release-notes.html">Release Notes</a>
+        </span>
+      </p>
+      <p>
+        <a href="download.html">
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current20xVersion}"/>
+          Maven ${current20xVersion}
+        </a>
+        <small>(2.0Mb)</small>
         <span style="font-size: smaller">
           <br/>
           <a href="download.html#Requirements">System Requirements</a>,
