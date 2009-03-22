@@ -32,7 +32,7 @@ Download Maven ${current21xVersion}
 
   You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
   
-* Maven ${current20xVersion}
+* {Maven ${current20xVersion}}
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |

@@ -388,9 +388,10 @@ Maven ${current21xVersion}
 
     * [MNG-3675] - Add accessor for lifecycles list to LifecycleExecutor/DefaultLifecycleExecutor
 
-* Release notes for stable versions
+* Release notes for earlier versions
 
+    * {{{./release-notes-2.0.x.html}Maven ${current20xVersion} Release Notes}}
 
-    * See {{{./release-notes.html}here}}
+    * {{{./release-notes-older.html}Release Notes for earlier versions}}
 
   

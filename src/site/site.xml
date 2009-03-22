@@ -32,7 +32,8 @@ under the License.
     </menu>
     <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
-      <item name="Release Notes" href="/release-notes.html"/>
+      <item name="Release Notes (${current21xVersion})" href="/release-notes.html"/>
+      <item name="Release Notes (${current20xVersion})" href="/release-notes-2.0.x.html"/>
       <item name="License" href="/license.html"/>
     </menu>
 
