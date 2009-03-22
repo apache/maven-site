@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2009-03-11
+ 2009-03-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -78,7 +78,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-rar-plugin/} <<<rar>>>}}                | 2.2          | 2007-02-28 | Build a RAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-rar-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-alpha-2  | 2008-08-14 | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
+| {{{/plugins/maven-war-plugin/} <<<war>>>}}                | 2.1-beta-1   | 2009-03-22 | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-shade-plugin/} <<<shade>>>}}            | 1.2          | 2008-10-17 | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
