@@ -36,7 +36,7 @@
         </span>
       </p>
       <p>
-        <a href="download.html">
+        <a href="download.html#Maven_${current20xVersion}">
           <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current20xVersion}"/>
           Maven ${current20xVersion}
         </a>
