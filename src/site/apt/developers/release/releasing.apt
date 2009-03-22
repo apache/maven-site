@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2009-02-23
+ 2009-03-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -58,8 +58,8 @@ Releasing A Maven Project
 </settings>
 +-----+
 
- Everything that you need to release has been configured in the POM all Maven projects inherit from. The release plugin configuration
- being used is the following:
+ Everything that you need to release has been configured in the POM all Maven projects inherit from. The release plugin
+ configuration being used is the following:
 
 %{snippet|id=release-plugin-configuration|url=http://svn.apache.org/repos/asf/maven/pom/trunk/maven/pom.xml}
 
@@ -119,7 +119,8 @@ Releasing A Maven Project
 +-----+
 
  <<Note:>> Be sure that the generated artifacts respect the
- {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files should be present in
+ {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files
+ should be present in
  the META-INF directory within the jar. For <<<-sources>>> artifacts, be sure that your POM does <<not>> use the
  maven-source-plugin:2.0.3 which is broken. The recommended version at this time is 2.0.4.
 
@@ -144,19 +145,28 @@ mvn release:prepare
 mvn release:perform
 +-----+
 
-  The release will automatically be inserted into a temporary staging repository for you. See the Nexus {{{http://www.sonatype.com/books/nexus-book/reference/staging.html} staging documentation}} for full details.
- 
+ The release will automatically be inserted into a temporary staging repository for you. See the Nexus
+ {{{http://www.sonatype.com/books/nexus-book/reference/staging.html} staging documentation}} for full details.
+
  [[5]] Close the staging repository
 
- Login to {{https://repository.apache.org}} using your Apache credentials. Click on "Staging Repositories". Then click on "Maven" in the list of profiles. In the panel below you should see an open repository that is linked to your username and ip. Right click on this repository and select "Finish". This will close the repository from future deployments and make it available for others to view. If you are staging multiple releases together, skip this step until you have staged everything.
+ Login to {{https://repository.apache.org}} using your Apache credentials. Click on "Staging Repositories". Then click
+ on "org.apache.maven" in the list of repositories. In the panel below you should see an open repository that is linked
+ to your username and ip. Right click on this repository and select "Finish". This will close the repository from future
+ deployments and make it available for others to view. If you are staging multiple releases together, skip this step
+ until you have staged everything.
 
  See the image below for details.
- 
+
 [../../images/Close_Repo.png] Closing the repository
 
  [[6]] Verify the Staged artifacts
 
- Still logged in to {{https://repository.apache.org}}, click on "Browse Repositories". Next select the drop down and choose "Nexus Managed Repositories". You will see a list of existing stage repositories. Find yours and then browse the contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of .asc (signature) files. If the you don't like the content of the repository, go back to the Staging Repositories screen, right click your repository and choose "Drop". You can then rollback your release and repeat the process.
+ Still logged in to {{https://repository.apache.org}}, click on "Browse Repositories". Next select the drop down and
+ choose "Nexus Managed Repositories". You will see a list of existing stage repositories. Find yours and then browse the
+ contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of .asc (signature)
+ files. If the you don't like the content of the repository, go back to the Staging Repositories screen, right click
+ your repository and choose "Drop". You can then rollback your release and repeat the process.
 
  Note the repository URL, you will need this in your vote email.
 
@@ -268,24 +278,29 @@ The vote has passed with the following result :
 I will promote the artifacts to the central repo.
 +-----+
 
-  If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as described above.
+  If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as
+  described above.
 
  [[10]] Promote the release
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- Login to {{https://repository.apache.org}} with your Apache credentials. Click on "Staging Repositories". Find your closed staging repository, right click on it and choose "Promote". Select the "Releases" repository and click "Promote". 
+ Login to {{https://repository.apache.org}} with your Apache credentials. Click on "Staging Repositories". Find your
+ closed staging repository, right click on it and choose "Promote". Select the "Releases" repository and click
+ "Promote".
 
  See image below.
 
 [../../images/Promote.png] Promote the artifacts
 
- Next click on "Browse Repositories", select the "Releases" repository and validate that your artifacts exist as you expect them.
+ Next click on "Browse Repositories", select the "Releases" repository and validate that your artifacts exist as you
+ expect them.
 
  [[11]] Deploy the current website
 
- <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check out the tag (or go to <<<target/checkout>>>)
+ <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check
+ out the tag (or go to <<<target/checkout>>>)
 
 +-----+
 cd target\checkout
