@@ -51,13 +51,13 @@
 mvn --encrypt-master-password <password>
 +------------------------------------+
 
- This command will prompt you for the master password and will produce an encrypted version of it, something like
+ This command will produce an encrypted version of the password, something like
  
 +------------------------------------+
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
 +------------------------------------+
 
- Please store this password in the <<<~/.m2/settings-security.xml>>>; it should look like 
+ Store this password in the <<<~/.m2/settings-security.xml>>>; it should look like 
  
 +------------------------------------+
 <settingsSecurity>
@@ -69,15 +69,13 @@ mvn --encrypt-master-password <password>
 
 * {How to encrypt server passwords}
 
- You will have to use the same command line tool as used for the master password (see above), but the parameter is different: <<-p>>
-
- Use the following command line:
+ You will have to use the following command line:
  
 +------------------------------------+
 mvn --encrypt-password <password>
 +------------------------------------+
 
- This command will prompt you for a password and will produce an encrypted version of it, something like
+ This command will produce an encrypted version of it, something like
  
 +------------------------------------+
 {COQLCE6DU6GtcS5P=}
@@ -100,7 +98,6 @@ mvn --encrypt-password <password>
 ...
 </settings>
 +------------------------------------+
-
 
  Please note that password can contain any information outside of the curly brackets, so that the following will still work:
  
