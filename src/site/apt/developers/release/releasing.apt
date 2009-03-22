@@ -200,7 +200,9 @@ mvn site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
-   [[b]] Verify/change folder permissions to 0775 and files permissions to 0664 i.e.:
+   [[b]] Verify/change folder permissions to 0775 and files permissions to 0664. Log on to <<<people.apache.org>>> and
+   change to the directory above the staging directory. That would be <<</www/maven.apache.org/plugins>>> for a plugin.
+   Then run these commands:
 
 +------+
 find . -type d -exec chmod a+rx {} \;
