@@ -60,6 +60,8 @@ Maven ${current21xVersion}
 
 ** Noteworthy Changes and improvements  
     
+    * MNG-553 - Secure Storage of Server Passwords
+
     * MNG-3760 - <<<$\{project.baseUri\}>>> has been added as a valid expression in the POM, and is a valid URI equivalent of <<<$\{basedir\}>>>
 
     * MNG-2576 - Additional switches to the command line for alternate reactor behavior: <<<--resume-from>>>, <<<--also-make>>>, and <<<--also-make-dependents>>>.
