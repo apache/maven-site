@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2009-03-22
+ 2009-03-25
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -58,7 +58,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}          | 2.4          | 2008-08-06 | Deploy the built artifact to the remote repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-deploy-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEPLOY}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-install-plugin/} <<<install>>>}}        | 2.2          | 2007-05-17 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINSTALL}JIRA}}
+| {{{/plugins/maven-install-plugin/} <<<install>>>}}        | 2.3          | 2009-03-25 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINSTALL}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-resources-plugin/} <<<resources>>>}}    | 2.3          | 2008-10-17 | Copy the resources to the output directory for including in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRESOURCES}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
