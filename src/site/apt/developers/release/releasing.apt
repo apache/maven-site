@@ -162,10 +162,9 @@ mvn release:perform
 
  [[6]] Verify the Staged artifacts
 
- Still logged in to {{https://repository.apache.org}}, click on "Browse Repositories". Next select the drop down and
- choose "Nexus Managed Repositories". You will see a list of existing stage repositories. Find yours and then browse the
+ If you click on your repository, a tree view will appear below. You can then browse the
  contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of .asc (signature)
- files. If the you don't like the content of the repository, go back to the Staging Repositories screen, right click
+ files. If the you don't like the content of the repository, right click
  your repository and choose "Drop". You can then rollback your release and repeat the process.
 
  Note the repository URL, you will need this in your vote email.
