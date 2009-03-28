@@ -23,7 +23,7 @@ Using Mirrors for Repositories
 
     []
 
- To configure a mirror of a given repository, you provide it in your settings file ($HOME/.m2/settings.xml),
+ To configure a mirror of a given repository, you provide it in your settings file (<<<$\{user.home\}/.m2/settings.xml>>>),
  giving the new repository its
  own <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a
  mirror of. For example, the ID of the main Maven repository included by default is <<<central>>>, so to use
@@ -47,9 +47,10 @@ Using Mirrors for Repositories
  The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
  Model Website}}.
 
- <<Note>>: The official Maven 2 repository is at <http://repo1.maven.org/maven2>. A list of known mirrors is available at
- {{http://docs.codehaus.org/display/MAVENUSER/Mirrors+Repositories}}. These mirrors may not have the same contents
- and we don't support them in any way, although we try to keep info in this page accurate.
+ <<Note>>: The official Maven 2 repository is at <<<http://repo1.maven.org/maven2>>>. A list of known mirrors is available
+ in our wiki article {{{http://docs.codehaus.org/display/MAVENUSER/Mirrors+Repositories}Mirrors Repository}}. These
+ mirrors may not have the same contents and we don't support them in any way, although we try to keep info in this page
+ accurate.
 
 Using A Single Repository
 
@@ -76,36 +77,36 @@ Using A Single Repository
 </settings>
 +-----+
 
-Advanced Mirror specification
+Advanced Mirror Specification
 
   A single mirror can handle multiple repositories when used in conjunction with a repository manager.
 
   The syntax as of Maven 2.0.9:
 
- * \* matches all repo ids.
+ * <<<\*>>> matches all repo ids.
 
- * external:\* matches all repos except those using localhost or file based repositories. This is used in conjunction
+ * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used in conjunction
   with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
 
- * multiple repos may be specified using , as the delimiter
+ * multiple repositories may be specified using a comma as the delimiter
 
- * ! may be used in conjunction with one of the above wildcards to exclude a repo id.
+ * an exclamation mark may be used in conjunction with one of the above wildcards to exclude a repository id
 
  []
 
  The order is not important from left to right as the wildcards defer to further processing and explicit includes or
  excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of
- HashMap such that the user may influence match order by changing the order of the definitions in the settings.xml
+ HashMap such that the user may influence match order by changing the order of the definitions in the <<<settings.xml>>>
 
  Examples:
 
- *  \* = everything
+ *  <<<\*>>> = everything
 
- *  external:\* = everything not on the localhost and not file based.
+ *  <<<external:\*>>> = everything not on the localhost and not file based.
 
- *  repo,repo1 = repo or repo1
+ *  <<<repo,repo1>>> = repo or repo1
 
- *  \*,!repo1 = everything except repo1
+ *  <<<\*,!repo1>>> = everything except repo1
 
  []
 
@@ -132,20 +133,15 @@ Advanced Mirror specification
 </settings>
 +-----+
 
-FTP access
+FTP Access
 
-  The repository is available through FTP at <ftp://mirrors.ibiblio.org/pub/packages/maven2>
+  The repository is available through FTP at <<<ftp://mirrors.ibiblio.org/pub/mirrors/maven2>>>
 
-Creating your own mirror
+Creating Your Own Mirror
 
-  The central repository requires around 16 GB and growing, and it's updated every 4 hours.
+  The central repository requires several dozens GB and growing. Apparently, to save us bandwidth and you time,
+  mirroring the entire central repository is not recommended. Instead, we suggest to setup a
+  {{{../../repository-management.html}repository manager}} as a proxy.
 
-  You can mirror the central repository using rsync from several mirrors, choose one
-
-+-----+
-rsync -v -t -l -r mirrors.ibiblio.org::maven2 /your/local/path
-rsync -v -t -l -r rsync://rsync.cica.es/maven2 /your/local/path
-+-----+
-
-  If you want to become an official mirror, email us to <dev@maven.apache.org> with your location and we'll add you to
-  the list of mirrors.
+  If you really want to become an official mirror, email us to <<<dev@maven.apache.org>>> with your location and we'll
+  add you to the list of mirrors.
