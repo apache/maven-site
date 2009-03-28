@@ -19,7 +19,7 @@ Using Mirrors for Repositories
 
     * You want to replace a particular repository with your own internal repository which you have greater control over
 
-    * You want to run maven-proxy to provide a local cache to a mirror and need to use it's URL instead
+    * You want to run maven-proxy to provide a local cache to a mirror and need to use its URL instead
 
     []
 
