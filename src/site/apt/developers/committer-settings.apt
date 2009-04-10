@@ -33,7 +33,8 @@ Introduction
 Enable Apache Servers
 
  Maven uses several servers configuration to deploy snapshots, releases and documentation on the Apache servers.
- You need to tell to Maven what your Apache username is.
+ You need to tell to Maven what your Apache username is. Please note that some servers use your SVN credentials
+ while others use your SSH credentials.
 
 +-----+
 <settings>
@@ -42,25 +43,32 @@ Enable Apache Servers
     <!-- To publish a snapshot of some part of Maven -->
     <server>
       <id>apache.snapshots.https</id>
-      <username> <!-- YOUR APACHE USERNAME --> </username>
-      <password> <!-- YOUR APACHE PASSWORD --> </password>
+      <username> <!-- YOUR APACHE SVN USERNAME --> </username>
+      <password> <!-- YOUR APACHE SVN PASSWORD --> </password>
     </server>
     <!-- To publish a website of some part of Maven -->
     <server>
       <id>apache.website</id>
-      <username> <!-- YOUR APACHE USERNAME --> </username>
+      <username> <!-- YOUR APACHE SSH USERNAME --> </username>
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
     </server>
     <!-- To stage a release of some part of Maven -->
     <server>
       <id>apache.releases.https</id>
-      <username> <!-- YOUR APACHE USERNAME --> </username>
-      <password> <!-- YOUR APACHE PASSWORD --> </password>
+      <username> <!-- YOUR APACHE SVN USERNAME --> </username>
+      <password> <!-- YOUR APACHE SVN PASSWORD --> </password>
+    </server>
+    <!-- To stage a website of some part of Maven -->
+    <server>
+      <id>stagingSite</id> <!-- must match hard-coded repository identifier in site:stage-deploy -->
+      <username> <!-- YOUR APACHE SSH USERNAME --> </username>
+      <filePermissions>664</filePermissions>
+      <directoryPermissions>775</directoryPermissions>
     </server>
     ...
   </servers>
 </settings>
 +-----+
 
- You also need to be a member of the group <<<apcvs>>> and <<<maven>>> on people.apache.org.
+ You also need to be a member of the group <<<apcvs>>> and <<<maven>>> on <<<people.apache.org>>>.
