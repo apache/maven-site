@@ -28,7 +28,7 @@ Releasing A Maven Project
  What follows is a description of releasing a Maven project to a staging repository, whereupon it is scrutinized by
  the community, approved, and transferred to a production repository.
 
-* Prerequisites
+* {Prerequisites}
 
  Be sure that:
 
@@ -37,11 +37,12 @@ Releasing A Maven Project
 
   * you have created your GPG keys. For more information, please refer to {{{pmc-gpg-keys.html}Making GPG Keys}}.
 
+ Formerly, a <<<release>>> profile was required in the <<<$\{user.home\}/.m2/settings.xml>>> to define the staging
+ repository. As of inheritance from the Apache parent POM version 5, a repository manager will automatically handle
+ staging (see below for details). Hence, configuration of <<<deploy.altRepository>>> is no longer necessary and
+ should be removed from your existing <<<release>>> profile.
 
- In order to release a project you must also have the
- following setup in your <<<$HOME/.m2/settings.xml>>> which is a profile that defines the staging repository.
-
- Here's what your <<<release>>> profile might look like in your <<<$HOME/.m2/settings.xml>>>:
+ Here's what your <<<release>>> profile might look like in your <<<$\{user.home\}/.m2/settings.xml>>>:
 
 +-----+
 <settings>
@@ -50,7 +51,7 @@ Releasing A Maven Project
     <profile>
       <id>release</id>
       <properties>
-        <gpg.passphrase>secretPhrase</gpg.passphrase>
+        <gpg.passphrase> <!-- YOUR KEY PASSPHRASE --> </gpg.passphrase>
       </properties>
     </profile>
   </profiles>
@@ -97,26 +98,12 @@ Releasing A Maven Project
 >mvn deploy
 ...
 [INFO] [deploy:deploy]
-[INFO] Retrieving previous build number from apache.snapshots
+[INFO] Retrieving previous build number from apache.snapshots.https
 ...
 +-----+
 
- <<Note:>> Be sure to have a server called <<<apache.snapshots.https>>> in your <<<settings.xml>>>.
-
-+-----+
-<settings>
-  <servers>
-    <server>
-      <id>apache.snapshots.https</id>
-      <username>YOUR_APACHE_USERNAME</username>
-      <password>YOUR_APACHE_PASSWORD</password>
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
-    </server>
-    ...
-  </servers>
-</settings>
-+-----+
+ If you experience an error during deployment like a HTTP 401 check your settings for the required server entries
+ as outlined in the {{{Prerequisites}Prerequisites}}.
 
  <<Note:>> Be sure that the generated artifacts respect the
  {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files
@@ -150,7 +137,7 @@ mvn release:perform
 
  [[5]] Close the staging repository
 
- Login to {{https://repository.apache.org}} using your Apache credentials. Click on "Staging Repositories". Then click
+ Login to <<<{{https://repository.apache.org}}>>> using your Apache SVN credentials. Click on "Staging Repositories". Then click
  on "org.apache.maven" in the list of repositories. In the panel below you should see an open repository that is linked
  to your username and ip. Right click on this repository and select "Finish". This will close the repository from future
  deployments and make it available for others to view. If you are staging multiple releases together, skip this step
@@ -163,7 +150,7 @@ mvn release:perform
  [[6]] Verify the Staged artifacts
 
  If you click on your repository, a tree view will appear below. You can then browse the
- contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of .asc (signature)
+ contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of <<<*.asc>>> (signature)
  files. If the you don't like the content of the repository, right click
  your repository and choose "Drop". You can then rollback your release and repeat the process.
 
@@ -287,7 +274,7 @@ I will promote the artifacts to the central repo.
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- Login to {{https://repository.apache.org}} with your Apache credentials. Click on "Staging Repositories". Find your
+ Login to <<<{{https://repository.apache.org}}>>> with your Apache SVN credentials. Click on "Staging Repositories". Find your
  closed staging repository, right click on it and choose "Promote". Select the "Releases" repository and click
  "Promote".
 
