@@ -191,8 +191,7 @@ scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-p
    Then run these commands:
 
 +------+
-find . -type d -exec chmod a+rx {} \;
-find . -type d -exec chmod g+w {} \;
+find . -type d -exec chmod a+rx,g+w {} \;
 find . -type f -exec chmod 664 {} \;
 +------+
 
@@ -282,7 +281,7 @@ I will promote the artifacts to the central repo.
 
 [../../images/Promote.png] Promote the artifacts
 
- Next click on "Browse Repositories", select the "Releases" repository and validate that your artifacts exist as you
+ Next click on "Repositories", select the "Releases" repository and validate that your artifacts exist as you
  expect them.
 
  [[11]] Deploy the current website
