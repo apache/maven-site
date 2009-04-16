@@ -56,6 +56,13 @@ Maven ${current21xVersion}
 
     * MNG-3475 - neither the script source directory nor the reporting output directory were aligned to the base directory. While this was a bug, if you used an expression such as <<<$\{basedir\}/$\{project.reporting.outputDirectory\}>>> then where this would of worked in Maven 2.0.10, it will have two copies of the project base directory in Maven 2.1.0+. You should remove the leading <<<$\{basedir\}>>> from the expression - however note that in some cases this will cause the build to be incompatible with earlier versions of Maven.
 
+    * MNG-3940 - While environment variables are case-insensitive on Windows, Maven internally stores them in a
+      <<<Properties>>> collection. For the time being, the names of environment variables are normalized to all
+      upper-case when Maven executes on Windows, thereby at least partly abstracting from different character casing of
+      the original variable name. Hence, <<<$\{env.PATH\}>>> will now be reliably resolved on Windows. However, POMs
+      that previously used lower-case or mixed-case variable names like <<<$\{env.ProgramFiles\}>>> will need to be
+      updated.
+
     * MNG-4056 - Dependencies specified with a classifier of <<<sources>>> and type of <<<jar>>> are correctly considered source JARs and no longer added to the classpath. This is {{{http://code.google.com/p/gwt-maven/issues/detail?id=200} known to affect the GWT plugin}}
 
 ** Noteworthy Changes and improvements  

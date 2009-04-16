@@ -566,7 +566,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   They come in five different styles:
 
   [[1]]  <<<env.X>>>: Prefixing a variable with "env." will return the shell's environment variable. For example,
-  <<<$\{env.PATH\}>>> contains the $path environment variable (<<<%PATH%>>> in Windows).
+  <<<$\{env.PATH\}>>> contains the PATH environment variable.
+  <Note:> While environment variables themselves are case-insensitive on Windows, lookup of properties is
+  case-sensitive. In other words, while the Windows shell returns the same value for <<<%PATH%>>> and <<<%Path%>>>,
+  Maven distinguishes between <<<$\{env.PATH\}>>> and <<<$\{env.Path\}>>>. As of Maven 2.1.0, the names of environment
+  variables are normalized to all upper-case for the sake of reliability.
 
   [[2]]  <<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
   For example: <<<\<project\>\<version\>1.0\</version\>\</project\>>>> is accessible via
