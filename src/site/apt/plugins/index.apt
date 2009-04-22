@@ -142,7 +142,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/scm/maven-scm-plugin/} <<<scm>>>}}                    | 1.1          | 2008-08-27 | Generate a SCM for the current project. | {{{http://svn.apache.org/repos/asf/maven/scm/trunk/maven-scm-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-source-plugin/} <<<source>>>}}          | 2.0.4        | 2007-11-11 | Build a JAR of sources for use in IDEs and distribution to the repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-source-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSOURCES}JIRA}}
+| {{{/plugins/maven-source-plugin/} <<<source>>>}}          | 2.1          | 2009-04-22 | Build a JAR of sources for use in IDEs and distribution to the repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-source-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSOURCES}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-stage-plugin/} <<<stage>>>}}            | 1.0-alpha-1  | 2008-02-22 | Assists with release staging and promotion. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSTAGE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
