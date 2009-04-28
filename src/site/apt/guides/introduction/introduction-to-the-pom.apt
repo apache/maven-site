@@ -69,11 +69,11 @@ Introduction to the POM
  The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified
  in the Super POM is inherited by the POMs you created for your projects. The snippet below is the Super POM for Maven 2.0.x.
 
-%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
+%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-2.0/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
- The snippet below is the Super POM for Maven 3.0.x.
+ The snippet below is the Super POM for Maven 2.1.x.
 
-%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-project-builder/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
+%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-2.1.0/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
  {{{introduction-to-the-pom.html}[top]}}
 
