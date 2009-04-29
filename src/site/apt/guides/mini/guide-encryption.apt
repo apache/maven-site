@@ -16,6 +16,8 @@
 
   [[4]] {{{How_to_keep_master_password_on_removable_drive}How to keep the master password on removable drive}}
   
+  [[5]] {{{Tips}Tips}}
+  
 
 * {Introduction}
 
@@ -152,4 +154,29 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
  This assures that encryption will only work when the usb drive is mounted by OS. 
  This addresses a use case where only certain people are authorized to deploy and 
  are issued these devices.
+
+* {Tips}
+
+** Escaping curly-brace literals in your password <(Since: Maven 2.2.0)>
+
+  At times, you might find that your password (or the encrypted form of it) may 
+  actually contain '{' or '}' as a literal value. If you added such a password as-is
+  to your settings.xml file, you would find that Maven does strange things with it.
+  Specifically, Maven will treat all the characters preceding the '{' literal, and
+  all the characters after the '}' literal, as comments. Obviously, this is not the
+  behavior you want in such a situation. What you really need is a way of <<escaping>>
+  the curly-brace literals in your password.
+  
+  Starting in Maven 2.2.0, you can do just this, with the widely used '\' escape character.
+  If your password looks like this:
+  
++---+
+jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
++---+
+
+  Then, the value you would add to your settings.xml would look like this:
+  
++---+
+{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+\{EF1iFQyJQ=}
++---+
 
