@@ -47,6 +47,10 @@ Guide to the Snippet Macro
  
  Following are examples of snippets in various source documents, as well
  as the corresponding macros in the APT documentation format.
+ 
+ See the Doxia
+ {{{http://maven.apache.org/doxia/macros/index.html#Snippet_Macro}Macros Guide}}
+ for more information and examples.
 
 * Snippets in Sources
 
@@ -108,15 +112,4 @@ Guide to the Snippet Macro
  * Macros in apt <<must not>> be indented.
  
  * Exactly one of <<<url>>> or <<<file>>> <<must>> be specified.
-
-** XDOC
-
-  See {{{http://jira.codehaus.org/browse/DOXIA-77}DOXIA-77}} - 
-  Snippets do not work in xdoc
-  
-~~ ------
-~~ <snippet id="snip-id" url="http://svn.example.com/path/to/Sample.java"/>
-~~
-~~ <snippet id="snip-id" url="file:///c:/temp/my-app/src/main/java/com/mycompany/app/App.java"/>
-~~ ------
 
