@@ -62,11 +62,11 @@ Releasing A Maven Project
  Everything that you need to release has been configured in the POM all Maven projects inherit from. The release plugin
  configuration being used is the following:
 
-%{snippet|id=release-plugin-configuration|url=http://svn.apache.org/repos/asf/maven/pom/trunk/maven/pom.xml}
+%{snippet|id=release-plugin-configuration|url=http://svn.apache.org/repos/asf/maven/pom/trunk/asf/pom.xml}
 
  And the profile being used for releases is the following:
 
-%{snippet|id=release-profile|url=http://svn.apache.org/repos/asf/maven/pom/trunk/maven/pom.xml}
+%{snippet|id=release-profile|url=http://svn.apache.org/repos/asf/maven/pom/trunk/asf/pom.xml}
 
 * Release Process for Part Of Maven
 
