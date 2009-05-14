@@ -144,5 +144,5 @@ Download Maven ${current21xVersion}
 *** Security
 
   As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
-  both server passwords and the master password, see the {{{guides/mini/guide-encryption.html} Guide to password encryption}}.
+  both server passwords and the master password, see the {{{./guides/mini/guide-encryption.html} Guide to password encryption}}.
   
