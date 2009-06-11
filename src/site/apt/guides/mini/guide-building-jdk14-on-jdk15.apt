@@ -30,7 +30,7 @@ Guide to Building JDK 1.4 Projects Using JDK 1.5
   
 *Enter the Animal Sniffer
 
-  Fortunately, there is a project at dev.java.net called {{Animal Sniffer{https://animal-sniffer.dev.java.net/signature-checker.html} 
+  Fortunately, there is a project at dev.java.net called {{{https://animal-sniffer.dev.java.net/signature-checker.html}Animal Sniffer}} 
   that does exactly what we need. This project can verify the compatibility of a codebase against a whole range of Java APIs. Even better, 
   it provides a Maven 2.x plugin to give users an easy way to integrate these checks into their build. To verify that your 
   codebase complies with JDK 1.4 API, you simply tell the animal sniffer plugin to use:
