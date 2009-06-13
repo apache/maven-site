@@ -148,7 +148,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | <<IDEs>>                                                  |              |            | <<Plugins that simplify integration with integrated developer environments.>> | |
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}        | 2.6          | 2009-03-23 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}        | 2.7          | 2009-06-13 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-idea-plugin/} <<<idea>>>}}              | 2.2          | 2008-08-08 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules) | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-idea-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MIDEA}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
