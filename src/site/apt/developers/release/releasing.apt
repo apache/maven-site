@@ -315,6 +315,9 @@ cd target\checkout
 mvn site-deploy -Preporting
 +-----+
 
+  <<Note:>> You can not just copy the documentation from Step 7 into the released documentation as the links are not identical.
+  See the email thread {{http://www.nabble.com/forum/ViewPost.jtp?post=24018250&framed=y}}
+
  [[12]] Review the website
 
  Wait for the files to arrive at
