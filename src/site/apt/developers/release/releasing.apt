@@ -59,7 +59,7 @@ Releasing A Maven Project
   ...
   <profiles>
     <profile>
-      <id>release</id>
+      <id>apache-release</id>
       <properties>
         <gpg.passphrase> <!-- YOUR KEY PASSPHRASE --> </gpg.passphrase>
       </properties>
