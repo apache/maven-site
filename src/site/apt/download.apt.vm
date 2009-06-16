@@ -57,7 +57,7 @@ Download Maven ${current21xVersion}
 *-------------------------+---------+----------+-----------+
 | Sources (zip)               | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.zip} maven-ant-tasks-2.0.10.zip}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.md5} maven-ant-tasks-2.0.10-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.asc} maven-ant-tasks-2.0.10-src.zip.asc}} |
 *-------------------------+---------+----------+-----------+
-| Source (tar.gz)             | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.tar.gz} maven-ant-tasks-2.0.10.tar.gz}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.md5} maven-ant-tasks-2.0.10-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.asc} maven-ant-tasks-2.0.10-src.tar.gz.asc}} |
+| Sources (tar.gz)             | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.tar.gz} maven-ant-tasks-2.0.10.tar.gz}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.md5} maven-ant-tasks-2.0.10-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.asc} maven-ant-tasks-2.0.10-src.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 
 * Previous Releases
