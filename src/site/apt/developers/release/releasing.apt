@@ -45,6 +45,8 @@ Releasing A Maven Project
   
   * you have set the environment variable MAVEN_OPTS=-Xmx512m 
   
+  * you are using Maven 2.0.x (or 2.2.x), as Maven 2.1.x is known to produce wrong gpg pom signatures (see {{{http://jira.codehaus.org/browse/MGPG-14}MGPG-14}}).
+  
   []
 
  Formerly, a <<<release>>> profile was required in the <<<$\{user.home\}/.m2/settings.xml>>> to define the staging
