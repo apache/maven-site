@@ -62,7 +62,7 @@ Eric Redmond)
             John Casey,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
             <a href="http://blogs.exist.com/bporter">Brett Porter</a>,
-            <a href="http://www.jroller.com/carlossg/">Carlos Sanchez</a>
+            <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
           </li>
           <li><strong>Read Online:</strong> <a href="http://www.exist.com/better-build-maven">http://www.exist.com/better-build-maven</a></li>
         </ul>
@@ -107,6 +107,12 @@ Eric Redmond)
             <th>Publisher</th>
             <th>Author</th>
             <th>Published</th>
+          </tr>
+          <tr>
+            <td><a href="http://www.manuelrecena.com/docs/maven_090625.pdf">Maven: mas que una herramienta de construccion (in Spanish)</a></td>
+            <td></td>
+            <td>Manuel Recena</td>
+            <td>June 2009</td>
           </tr>
           <tr>
             <td><a href="http://www.theserverside.com/tt/articles/article.tss?l=Introductiontom2eclipse">Introduction to m2eclipse</a></td>
