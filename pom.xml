@@ -32,7 +32,7 @@
   <version>1.0</version>
   <packaging>pom</packaging>
 
-  <name>Maven Site</name>
+  <name>Apache Maven Site</name>
   <url>http://maven.apache.org/</url>
 
   <mailingLists>
@@ -265,13 +265,22 @@
       <url>scp://people.apache.org/www/maven.apache.org/</url>
     </site>
   </distributionManagement>
-  
+
   <properties>
     <current20xVersion>2.0.10</current20xVersion>
     <current21xVersion>2.1.0</current21xVersion>
   </properties>
 
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-pdf-plugin</artifactId>
+          <version>1.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -288,6 +297,22 @@
             </goals>
             <configuration>
               <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pdf-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>pdf</id>
+            <phase>site</phase>
+            <goals>
+              <goal>pdf</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
             </configuration>
           </execution>
         </executions>
