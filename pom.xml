@@ -21,8 +21,8 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <artifactId>maven-parent</artifactId>
     <groupId>org.apache.maven</groupId>
+    <artifactId>maven-parent</artifactId>
     <version>12</version>
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
@@ -34,83 +34,6 @@
 
   <name>Maven Site</name>
   <url>http://maven.apache.org/</url>
-
-  <properties>
-    <current20xVersion>2.0.10</current20xVersion>
-    <current21xVersion>2.1.0</current21xVersion>
-  </properties>
-
-  <issueManagement>
-    <system>jira</system>
-    <url>http://jira.codehaus.org/browse/MNG</url>
-  </issueManagement>
-
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <outputEncoding>UTF-8</outputEncoding>
-        </configuration>
-        <executions>
-          <execution>
-            <id>jar</id>
-            <phase>site</phase>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <configuration>
-              <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-
-  <reporting>
-    <excludeDefaults>true</excludeDefaults>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <reportSets>
-          <reportSet>
-            <reports>
-              <report>cim</report>
-              <!-- <report>issue-tracking</report> -->
-              <report>mailing-list</report>
-              <report>license</report>
-              <report>project-team</report>
-              <!-- <report>scm</report> -->
-            </reports>
-          </reportSet>
-        </reportSets>
-      </plugin>
-      <!-- Note: 'site' needs to be called twice to generate the linkcheck report
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-linkcheck-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </plugin>
-      -->
-    </plugins>
-  </reporting>
-
-  <!-- repeated here so that maven-site is not appended -->
-  <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
-  </scm>
-
-  <distributionManagement>
-    <site>
-      <id>apache.website</id>
-      <url>scp://people.apache.org/www/maven.apache.org/</url>
-    </site>
-  </distributionManagement>
 
   <mailingLists>
     <!-- duplication from components - temporary until the site layout is clearer -->
@@ -325,4 +248,79 @@
       </otherArchives>
     </mailingList>
   </mailingLists>
+
+  <!-- repeated here so that maven-site is not appended -->
+  <scm>
+    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
+    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
+    <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
+  </scm>
+  <issueManagement>
+    <system>jira</system>
+    <url>http://jira.codehaus.org/browse/MNG</url>
+  </issueManagement>
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://people.apache.org/www/maven.apache.org/</url>
+    </site>
+  </distributionManagement>
+  
+  <properties>
+    <current20xVersion>2.0.10</current20xVersion>
+    <current21xVersion>2.1.0</current21xVersion>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <outputEncoding>UTF-8</outputEncoding>
+        </configuration>
+        <executions>
+          <execution>
+            <id>jar</id>
+            <phase>site</phase>
+            <goals>
+              <goal>jar</goal>
+            </goals>
+            <configuration>
+              <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <reporting>
+    <excludeDefaults>true</excludeDefaults>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>cim</report>
+              <!-- <report>issue-tracking</report> -->
+              <report>mailing-list</report>
+              <report>license</report>
+              <report>project-team</report>
+              <!-- <report>scm</report> -->
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+      <!-- Note: 'site' needs to be called twice to generate the linkcheck report
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-linkcheck-plugin</artifactId>
+        <version>1.0-SNAPSHOT</version>
+      </plugin>
+      -->
+    </plugins>
+  </reporting>
 </project>
