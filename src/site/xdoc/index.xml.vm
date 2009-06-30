@@ -25,7 +25,7 @@
       <p>
         <a href="download.html">
           <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current22xVersion}"/>
-          Maven ${current21xVersion}
+          Maven ${current22xVersion}
         </a>
         <small>(2.8Mb)</small>
         <span style="font-size: smaller">
