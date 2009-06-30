@@ -62,7 +62,7 @@ Introduction to the POM
  can be executed, the build profiles, and so on. Other information such as the project version, description, developers,
  mailing lists and such can also be specified.
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 * {Super POM}
 
@@ -75,7 +75,7 @@ Introduction to the POM
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-2.1.0/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 * {Minimal POM}
 
@@ -117,7 +117,7 @@ Introduction to the POM
  the minimal POM, it would know that these dependencies will be downloaded from <<<http://repo1.maven.org/maven2>>> which was specified
  in the Super POM.
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 * {Project Inheritance}
 
@@ -212,7 +212,7 @@ Introduction to the POM
 
  This allows the module to inherit the groupId and / or the version of its parent POM.
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 ** {Example 2}
 
@@ -264,7 +264,7 @@ Introduction to the POM
 
  []
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 ** {Example 3}
 
@@ -330,7 +330,7 @@ Introduction to the POM
  com.mycompany.app:my-module:1 as well. Furthermore, some commands (goals specifically) handle project aggregation
  differently.
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 ** {Example 4}
 
@@ -388,7 +388,7 @@ Introduction to the POM
 
  []
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 ** {Example 5}
 
@@ -465,7 +465,7 @@ Introduction to the POM
 
   <<NOTE:>> Profile inheritance the same inheritance strategy as used for the POM itself.
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 
 * {Project Interpolation} and Variables
 
@@ -542,5 +542,5 @@ Introduction to the POM
 </project>
 +----+
 
- {{{introduction-to-the-pom.html}[top]}}
+ {{{./introduction-to-the-pom.html}[top]}}
 

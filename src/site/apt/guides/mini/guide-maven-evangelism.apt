@@ -18,7 +18,7 @@ Guide to add, improve or fix metadata in the Central Maven 2 repository
  
  An alternative is to create a new version with the fixes. If the broken project is org.foo/bar/1.0 you can
  provide a fixed POM,JAR,... under org.foo/bar/1.0-1 (add a comment to the POM explaining what is being fixed
- and why). See {{{guide-central-repository-upload.html}Maven Respository Upload}} for the instructions to
+ and why). See {{{./guide-central-repository-upload.html}Maven Respository Upload}} for the instructions to
  get this new version in the repository.
 
  You need to contact the original publisher of the metadata to make sure in next versions it will

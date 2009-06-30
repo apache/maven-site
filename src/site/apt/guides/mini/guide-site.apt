@@ -38,7 +38,7 @@ Creating a site
   has been replaced by the site descriptor (see below).
 
   The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one)
-  very quickly. A full reference of the {{{guide-apt-format.html} APT Format}} is available.
+  very quickly. A full reference of the {{{./guide-apt-format.html} APT Format}} is available.
 
   The FML format is the FAQ format, also used in Maven 1.x.
 

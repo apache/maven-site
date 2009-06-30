@@ -200,24 +200,6 @@ mvn groupID:artifactID:version:goal
 
 *** Shortening the Command Line
 
-~~ [jdcasey; 10-Jan-2006]
-~~
-~~ I'm commenting this out, since it's obsolete. The plugin version
-~~ manager now checks LATEST metadata before it checks RELEASE metadata.
-~~ Since LATEST metadata is _always_ published for plugins, nothing
-~~ special needs to be done for the prefix matching to work.
-~~
-~~  It is possible to shorten the amount of typing needed on the command
-~~  line.  To do this, you need to install the plugin with the
-~~  <<<updateReleaseInfo>>> option set to true; for example:
-~~
-~~ +----+
-~~ mvn -DupdateReleaseInfo=true install
-~~ +----+
-~~
-~~  You also need to add your plugin's group ID to the list of group IDs
-
-
   There are several ways to reduce the amount of required typing:
 
   * If you need to run the latest version of a plugin installed in your local

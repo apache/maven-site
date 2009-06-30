@@ -31,7 +31,7 @@
 Developing Maven 2
 
  This document describes how to get started into developing Maven 2 itself. There is a separate page describing how
- to {{{guide-building-m2.html}building Maven 2}}.
+ to {{{./guide-building-m2.html}building Maven 2}}.
 
 * Finding some work to do
 
