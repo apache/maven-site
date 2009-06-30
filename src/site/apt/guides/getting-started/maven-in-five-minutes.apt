@@ -224,5 +224,5 @@ mvn site
 
   We hope this quick overview has piqued your interest in the versitility of Maven. Note that this is a very
   truncated quick-start guide. Now you are ready for more comprehensive details concerning
-  the actions you have just performed. Check out the {{{index.html}Maven Getting Started Guide}}.
+  the actions you have just performed. Check out the {{{./index.html}Maven Getting Started Guide}}.
 

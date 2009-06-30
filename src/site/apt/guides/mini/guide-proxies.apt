@@ -45,4 +45,4 @@ Configuring a proxy
 
     [[1]] {{{../../maven-settings/settings.html}Settings descriptor documentation}}
 
-    [[2]] {{{guide-configuring-maven.html}Configuring Maven}}
+    [[2]] {{{./guide-configuring-maven.html}Configuring Maven}}

@@ -60,7 +60,7 @@ Guide to uploading artifacts to the Central Repository
 
  Look at {{{http://java.sun.com/docs/books/jls/third_edition/html/packages.html#7.7}
  More information about package names}}. Check also the guide about
- {{{guide-naming-conventions.html}Maven naming conventions}}.
+ {{{./guide-naming-conventions.html}Maven naming conventions}}.
 
  Examples:
 
@@ -154,7 +154,7 @@ Guide to uploading artifacts to the Central Repository
  {{{http://sf.net/}Sourceforge}} that provide you {{{http://sourceforge.net/docman/display_doc.php?docid=4297&group_id=1#shell}ssh server access}}.
  Or you can {{{http://vafer.org/blog/20081026142413}setup your own server}}.
 
- After you are able to deploy to your remote repository <<make sure you only deploy releases>>. 
+ After you are able to deploy to your remote repository <<make sure you only deploy releases>>.
  Then you need to provide us the following information in a comma delimited format
 
  * groupId, eg. <<<org.apache.maven>>>
@@ -186,7 +186,7 @@ Guide to uploading artifacts to the Central Repository
  Open an issue in {{{http://jira.codehaus.org/secure/CreateIssue.jspa?pid=10367&issuetype=5}JIRA}} with the information (in the comma delimited format), and we'll add it to the
  list of automatically synced repositories.
 
- Make sure you <<provide proof of owning the domain>> that matches the <<<groupId>>> (see <<<groupId>>> considerations above). Proof means either the server to sync from has a name 
+ Make sure you <<provide proof of owning the domain>> that matches the <<<groupId>>> (see <<<groupId>>> considerations above). Proof means either the server to sync from has a name
  under that domain, your name shows up in a prominent place in the domain or you provide a link to a whois database where your name shows up as the domain owner.
 
  If you are using ssh in your own server you need to add the {{{http://www.ibiblio.org/maven/id_dsa.pub}maven public key}} to the authorized ones to allow us to log

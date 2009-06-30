@@ -41,10 +41,10 @@ Available Plugins
   ~~ TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins.
 
 
-~~ -----------------------------------------------------------------------------
+~~ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ~~ The release dates in this table must follow the ISO-8601 standard: yyyy-MM-dd
 ~~ See http://maven.apache.org/guides/development/guide-documentation-style.html
-~~ -----------------------------------------------------------------------------
+~~ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+

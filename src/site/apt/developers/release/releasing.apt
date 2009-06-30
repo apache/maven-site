@@ -35,18 +35,18 @@ Releasing A Maven Project
   * you have all Maven servers defined in your settings.xml. For more information, please refer to
   {{{../committer-settings.html}Committer settings}}.
 
-  * you have created your GPG keys. For more information, please refer to {{{pmc-gpg-keys.html}Making GPG Keys}}.
-  
+  * you have created your GPG keys. For more information, please refer to {{{./pmc-gpg-keys.html}Making GPG Keys}}.
+
   * you have a GPG client installed and on your shell's path. See {{{http://www.gnupg.org/}http://www.gnupg.org/}}.
-  
+
   * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.tigris.org/}http://subversion.tigris.org/}}.
-  
+
   * you have a Java 1.4.2 JDK installed and on your shell's path. See {{{http://java.sun.com/j2se/1.4.2/download.html}http://java.sun.com/j2se/1.4.2/download.html}}.
-  
-  * you have set the environment variable MAVEN_OPTS=-Xmx512m 
-  
+
+  * you have set the environment variable MAVEN_OPTS=-Xmx512m
+
   * you are using Maven 2.0.x (or 2.2.x), as Maven 2.1.x is known to produce wrong gpg pom signatures (see {{{http://jira.codehaus.org/browse/MGPG-14}MGPG-14}}).
-  
+
   []
 
  Formerly, a <<<release>>> profile was required in the <<<$\{user.home\}/.m2/settings.xml>>> to define the staging
@@ -346,7 +346,7 @@ http://maven.apache.org/shared/maven-XXX
 
  If this is a shared component release, update the version number for the
  component on the <src/site/apt/shared/index.apt> page.
- 
+
  Commit your changes.
 
  [[14]] Update JIRA
@@ -417,7 +417,7 @@ Can this get added to the next board report please.
  <<Note:>> If you don't have access to edit this page email <<<"Jason van Zyl" <jason@maven.org>>>>
 
  [[18]] Celebrate :o)
- 
+
 Trouble Shooting
 
 * mvn release:prepare "commit failed" during <<<Prepare the release>>>
@@ -434,7 +434,7 @@ Trouble Shooting
 +-----+
 
   Then the resolution is to use a Subversion client 1.6+ and to run <<<svn update>>>.
-  
+
 * mvn release:prepare "commit failed" during <<<Prepare the release>>>
 
   If you get an error message similar to:
@@ -449,5 +449,4 @@ Command output:
 svn: Path 'https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7' already exists
 +-----+
 
-  Then the resolution is to delete the tag using <<<svn del -m "re-releasing build" <svn path>>>> 
-  
+  Then the resolution is to delete the tag using <<<svn del -m "re-releasing build" <svn path>>>>
