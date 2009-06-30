@@ -262,15 +262,15 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   the one used by the client to access the server. If you have this problem, and know that you don't need to use
   this session cookie, you can ignore cookies from this server with the above configuration.
 
-*Deprecation Notes
+*Support for General-Wagon Configuration Standards
 
-  It should be noted that configuration options previously available in the HttpClient-driven HTTP wagon have been
-  deprecated in favor of this more general, fine-grained approach. These include the configuration of HTTP headers
+  It should be noted that configuration options previously available in the HttpClient-driven HTTP wagon are still
+  supported in addition to this new, fine-grained approach. These include the configuration of HTTP headers
   and connection timeouts. Let's examine each of these briefly:
 
 **HTTP Headers
 
-  Previously, you could add your own HTTP headers to the HttpClient-based wagon like this:
+  In all HTTP Wagon implementations, you can add your own HTTP headers like this:
   
 +---+
 <settings>
@@ -290,8 +290,9 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+
 
-  It's important to understand that the above method didn't allow you to turn off the default HTTP headers; nor
-  did it allow you to specify headers on a per-method basis.
+  It's important to understand that the above approach doesn't allow you to turn off all of the default HTTP headers; nor
+  does it allow you to specify headers on a per-method basis. However, this configuration remains available in both the 
+  lightweight and httpclient-based Wagon implementations.
 
 **Connection Timeouts
 
