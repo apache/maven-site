@@ -269,6 +269,7 @@
   <properties>
     <current20xVersion>2.0.10</current20xVersion>
     <current21xVersion>2.1.0</current21xVersion>
+    <current22xVersion>2.2.0</current22xVersion>
   </properties>
 
   <build>
