@@ -19,7 +19,11 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-<project name="Maven">
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+  name="Maven">
   <version position="none" />
   <body>
     <breadcrumbs>
@@ -51,7 +55,7 @@ under the License.
     </menu>
 
     <menu name="Documentation">
-      <item name="Maven Plugins" href="/plugins/index.html" />    
+      <item name="Maven Plugins" href="/plugins/index.html" />
       <item name="Index (category)" href="/guides/index.html" />
       <item name="Running Maven" href="/run-maven/index.html" />
       <item name="User Centre" href="/users/index.html" collapse="true">
