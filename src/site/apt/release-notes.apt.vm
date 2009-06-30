@@ -1,11 +1,12 @@
  ------
-Release Notes - Maven ${current21xVersion}
+Release Notes - Maven ${current22xVersion}
  ------
 Brett Porter
 Jason van Zyl
 Brian Fox
+John Casey
  ------
-4 February 2009
+30 June 2009
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -28,11 +29,11 @@ Brian Fox
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Maven ${current21xVersion}
+Maven ${current22xVersion}
 
-  The Apache Maven team would like to announce the release of Maven ${current21xVersion}.
+  The Apache Maven team would like to announce the release of Maven ${current22xVersion}.
 
-  Maven ${current21xVersion} is {{{./download.html} available for download}}.
+  Maven ${current22xVersion} is {{{./download.html} available for download}}.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
@@ -45,362 +46,106 @@ Maven ${current21xVersion}
     * the web site: {{http://maven.apache.org/}}
 
     * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
+    
+* 2.2.0 Release Notes
 
-* 2.1.0 Release Notes
+  Maven 2.2.0 contains a few important changes that justify the version upgrade, instead of simply naming it 2.1.1. First, the Java requirement for Maven 2.2.0 has been upgraded to 1.5 or later. This upgrade was planned for 2.1.0, but that release still contained binaries that were compatible with JDK 1.4. In addition, due to some serious flaws in the version-expression POM transformation included in 2.1.0, this feature has been removed for the time being. Finally, some new default execution IDs have been added to Maven to enable the separation of configuration for plugins bound by the default lifecycle mappings, and for those invoked directly from the command line. All of these issues have been described below with their associated JIRA tickets.
 
-  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?version=14587&styleName=Html&projectId=10500&Create=Create}issue management system}}, and is reproduced below.
+  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&styleName=Html&version=15103}issue management system}}, and is reproduced below.
 
 ** Changes that may affect existing builds.
 
-    * MNG-3600 - The <<<\<server\>>>> element in <<<settings.xml>>> no longer specifies a default value for file and directory modes on remotely deployed files. Please refer to the Settings guides for how to configure this appropriately for your deployment environment.
-
-    * MNG-3475 - neither the script source directory nor the reporting output directory were aligned to the base directory. While this was a bug, if you used an expression such as <<<$\{basedir\}/$\{project.reporting.outputDirectory\}>>> then where this would of worked in Maven 2.0.10, it will have two copies of the project base directory in Maven 2.1.0+. You should remove the leading <<<$\{basedir\}>>> from the expression - however note that in some cases this will cause the build to be incompatible with earlier versions of Maven.
-
-    * MNG-3940 - While environment variables are case-insensitive on Windows, Maven internally stores them in a
-      <<<Properties>>> collection. For the time being, the names of environment variables are normalized to all
-      upper-case when Maven executes on Windows, thereby at least partly abstracting from different character casing of
-      the original variable name. Hence, <<<$\{env.PATH\}>>> will now be reliably resolved on Windows. However, POMs
-      that previously used lower-case or mixed-case variable names like <<<$\{env.ProgramFiles\}>>> will need to be
-      updated.
-
-    * MNG-4056 - Dependencies specified with a classifier of <<<sources>>> and type of <<<jar>>> are correctly considered source JARs and no longer added to the classpath. This is {{{http://code.google.com/p/gwt-maven/issues/detail?id=200} known to affect the GWT plugin}}
-
-** Noteworthy Changes and improvements  
+    * MNG-3401 - Starting in Maven 2.2.0, goals invoked directly from the command line can be configured in the POM separately from other plugin invocations using a special executionId called <<<default-cli>>>. Where previously, all configurations for command-line goals had to go in the plugin-level configuration, Maven 2.2.0 allows command-line-specific configurations to be separated into their own <<<\<execution\>>>>. For more information, see the {{{/guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
     
-    * MNG-553 - Secure Storage of Server Passwords
+    * MNG-3203 - Similar to MNG-3401, previous to Maven 2.2.0 it was impossible to separate configurations for different goals froma single plugin that were bound to the lifecycle by the default mappings for a given packaging. Beginning in Maven 2.2.0, it is possible to separate configurations for <<<compiler:compile>>> from those for <<<compiler:testCompile>>> using executions with IDs <<<default-compile>>> and <<<default-testCompile>>> respectively. In the case of the compiler plugin, this allows the separation of include and exclude patterns that are applied during the two compiler activities in the <<<jar>>> build. For more information, see the {{{/guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
+    
+    * MNG-4143 - Starting in 2.2.0, Maven will run only on Java 1.5 and later. You can still build projects for JDK1.4 and earlier using the approach documented in the  {{{/guides/mini/guide-building-jdk14-on-jdk15.html}Guide to Building JDK 1.4 Projects on JDK 1.5}}.
 
-    * MNG-3760 - <<<$\{project.baseUri\}>>> has been added as a valid expression in the POM, and is a valid URI equivalent of <<<$\{basedir\}>>>
+    * MNG-4167 - Version-expression resolution for POMs in Maven 2.1.0 took place as a transformation phase during artifact installation and deployment. However, this caused the deployed POM to be different from the one signed by the GPG plugin. Because of this and other use-case problems, version-expression resolution has been removed from Maven 2.2.0 pending a more comprehensive design review. MNG-4223 provides tracking for this review.
 
-    * MNG-2576 - Additional switches to the command line for alternate reactor behavior: <<<--resume-from>>>, <<<--also-make>>>, and <<<--also-make-dependents>>>.
+    * MNG-4140 - Version-expression resolution for POMs in Maven 2.1.0 was too aggressive, replacing not only version expressions in artifact coordinates, but also in plugin configurations and POM properties. As mentioned above, version-expression resolution has been removed pending further review.
 
-    * MNG-3379 - Parallel resolution of dependencies now occurs, with the default number of concurrent of threads set to 5. A configuration option <<<-Dmaven.artifact.threads>>> can be used to change the number of threads.
+** Noteworthy changes and improvements
 
-** Complete list of issues fixed in 2.1.0
+  * MNG-4179 - <<Regression:>> In Maven 2.1.0, artifact downloads hang when a transfer failure occurred. This has been corrected.
+  
+  * MNG-4184 - <<Regression:>> Maven 2.1.0 failed with a cyclic dependency in cases where a dependency for a report plugin is build as part of the current reactor. This has been corrected.
+  
+** Complete list of issues fixed in 2.2.0
+
+*** Sub-task
+
+    * MNG-4144 - document escape character for curly braces in clear-text passwords for settings.xml password security
+    
+    * MNG-4145 - switch to released versions of plexus-sec-dispatcher (and by ext. plexus-cipher) once they're available
 
 *** Bug
 
-    * [MNG-1349] - openssl checksums are not accepted by maven
-
-    * [MNG-1585] - debug logging from wagon not shown in debug mode
-
-    * [MNG-1992] - CLI -D should override properties in settings.xml
-
-    * [MNG-1999] - Reporting inheritance does not work properly
-
-    * [MNG-2432] - Apache and Mojo plugins take precendence over plugins in the pom.
-
-    * [MNG-2433] - Maven looks for snapshots in offline mode
-
-    * [MNG-2605] - Profiles in profiles.xml are active by default
-
-    * [MNG-2668] - Plugin dependencies should be considered when the reactor creates the build order list
-
-    * [MNG-2690] - DefaultPluginManager.getConfiguredMojo() doesn't handle NoClassDefFoundError correctly
-
-    * [MNG-2695] - -o makes build fail for snapshot plugins
-
-    * [MNG-2720] - Multiproject dependencies not accurate for project.compileClasspathElements when run from root project
-
-    * [MNG-3023] - Reactor projects should be included in dependency resolution
-
-    * [MNG-3057] - properties not expanded in generated POMs when building A/B/C nested projects
-
-    * [MNG-3139] - The skin does not exist: Unable to determine the release version
-
-    * [MNG-3217] - a plugin's dependencies can influence other plugins in a build
-
-    * [MNG-3228] - Maven profile activation does not work when profile is defined in inherited 'parent' pom
-
-    * [MNG-3271] - \<excludeDefaults\> does not seem to work
-
-    * [MNG-3284] - Cached plugins are used, even when the specifically declared 
-
-    * [MNG-3314] - offline build not running, when having SNAPSHOT dependencies
-
-    * [MNG-3621] - site url inheritance broken for UNC paths
-
-    * [MNG-3628] - When running offline, snapshot artifcats cannot be resolved even if they have previously be dowloaded from a repository
-
-    * [MNG-3641] - Lack of error checks on profiles
-
-    * [MNG-3645] - Maven doesn't do strict model validation for POMs in the current reactor
-
-    * [MNG-3719] - [regression] plugin execution ordering no longer POM ordered in 2.0.9
-
-    * [MNG-3757] - Setting M2_HOME to nothing and running ant delets contents of the current folder
-
-    * [MNG-3769] - [regression] Excluding relocated transitive dependencies does not work
-
-    * [MNG-3776] - Namespace misspelled in settings.xml
-
-    * [MNG-3808] - Execution order of report plugins is arbitrary if inheritance is involved
-
-    * [MNG-3810] - [regression] Null Pointer Exception when Activation Profile Property is Empty
-
-    * [MNG-3811] - Report plugins don't inherit configuration
-
-    * [MNG-3899] - Inheritance does not merge extensions with same gid and aid
-
-    * [MNG-3906] - Project-level plugin dependencies are in random order after merging
-
-    * [MNG-3920] - Problem using velocity component
-
-    * [MNG-3930] - mvn.bat doesn't handle ampersand in Windows user name properly
-
-    * [MNG-3933] - Profiles.xml does not pickup OS family
-
-    * [MNG-3940] - Interpolation of environment variables is not case-insensitive on Windows
-
-    * [MNG-3948] - Remote repos defined by profiles outside of settings.xml are not used to resolve parent POMs
-
-    * [MNG-3974] - New mirror syntax is not stopping on first match
-
-    * [MNG-4016] - Properties with the prefix project/pom are not interpolated from the properties section
-
-    * [MNG-4023] - Profiles from parent POM are injected multiple times if parent is part of reactor build
-
-    * [MNG-4026] - [regression] Order of project class path does not match POM order during reactor build
-
-    * [MNG-4032] - Test jar dependency not available for for main classes in multi module builds
-
-    * [MNG-4043] - Resolve or rollback WebDAV wagon deployment issue where hostname is improperly extracted from URL
-
-    * [MNG-4074] - cyclic reference with 2.1.0-RC1 that doesn't occur with 2.0.10
-
-    * [MNG-4079] - Duplicate error messages
-
-    * [MNG-4084] - Unnecessary Warning for an activate profile in child project
-
-    * [MNG-4086] - [regression] Explicitly using plugin metaversions crashes plugin manager
-
-    * [MNG-4087] - Percent encoded characters in file URLs are not decoded upon deployment
+    * MNG-2258 - Wrong execution order of plugins in same phase
+    
+    * MNG-3401 - Plugin parameters must be specified outside an execution block when they are invoked from the command line
+    
+    * MNG-3553 - cannot resolve dependency with scope import
+    
+    * MNG-3776 - Namespace misspelled in settings.xml
+    
+    * MNG-4074 - cyclic reference with 2.1.0-RC1 that doesn't occur with 2.0.10
+    
+    * MNG-4082 - Encryption is triggered if passwords merely contain curly braces
+    
+    * MNG-4126 - regression Properties defined in profiles.xml of parent are not inherited during multimodule build
+    
+    * MNG-4137 - NPE in DefaultLIfecycleExecutor when run from within Hudson builds
+    
+    * MNG-4140 - Properties incorrectly replaced in pom
+    
+    * MNG-4146 - password security doesn't work with custom password providers
+    
+    * MNG-4147 - very long passwords cause LightweightHTTP wagon to line-wrap the Base64-encoded Authorization header
+    
+    * MNG-4165 - http session cookies rejected with non-lightweight http wagon (maybe with lightweight one too)
+    
+    * MNG-4166 - Problem parsing command-line options in release:perform
+    
+    * MNG-4167 - version-expression transformation interferes with plugins like GPG
+    
+    * MNG-4168 - String index out of range: 43807
+    
+    * MNG-4179 - regression Artifact download hangs upon transfer failure
+    
+    * MNG-4184 - regression maven2.1 fails with cyclic dependency in case of extension/dependency for report-plugin to reactor-project
+    
+    * MNG-4207 - Plugins that use ArtifactResolver with http repositories AND depend on log4j run into ExceptionInInitializerError
+    
+    * MNG-4213 - preemptive auth in non-lightweight http wagon causes Unauthorized responses from some servers
+    
+    * MNG-4219 - update plexus-utils to avoid leaking processes in CommandLineUtils.getSystemEnvars()
 
 *** Improvement
 
-    * [MNG-1830] - add  a 'compiled on \<timestamp\>' label when maven 2 is invoked with --version option
-
-    * [MNG-1957] - \<jdk\>\</jdk\> clause in the activation section has to provide more complex expressions.
-
-    * [MNG-3424] - Respect ordering of elements as given in POM
-
-    * [MNG-3451] - Add german translation
-
-    * [MNG-3503] - Shade MX* classes from plexus-utils
-
-    * [MNG-3544] - Beautify debug output for mojo parameters of type array
-
-    * [MNG-3600] - remove default settings of 664 / 775 for permissions
-
-    * [MNG-3787] - Add plugin version to default reports
-
-    * [MNG-3794] - Improve error logging when downloading depedencies
-
-    * [MNG-3795] - Add example \<pluginGroups\> snippet to conf/settings.xml in distribution
-
-    * [MNG-3867] - Support MAVEN_OPTS in mvnDebug script
-
-    * [MNG-3951] - Hide drive-relative paths from plugins
-
-    * [MNG-3971] - Provide parity in features between native ant-mojo support and antrun plugin
-
-    * [MNG-3975] - getArtifact(Artifact artifact, List remoteRepositories) should include Exception in debug log messages.
-
-    * [MNG-4024] - Open up CLIManager
-
-    * [MNG-4037] - Include Java home in version information
-
-    * [MNG-4057] - Propose checking of plugin artifact when plugin descriptor cannot be found
-
-    * [MNG-4075] - Tone down warnings about reactor dependencies that don't have an associated file
-
-    * [MNG-4091] - Validate the plugin descriptors and improve error reporting when mismatched with artifact
-
-    * [MNG-4092] - remove plugin listeners for minor memory improvement and to avoid scanning descriptors from dependencies of plugins
-
-*** New Feature
-
-    * [MNG-553] - Secure Storage of Server Passwords
-
-    * [MNG-2097] - adding a phase called prepare-package
-
-    * [MNG-3379] - Parallel resolution of artifacts
-
-    * [MNG-3760] - Support property $\{baseurl\} to get RFC-compliant URL of project base directory
-
-    * [MNG-3914] - Add CLI option to control location of global settings from command line
+    * MNG-2979 - Cross module dependencies for multi-module site
+    
+    * MNG-3203 - maven should execute compiler:compile and :test-compile in separate executions, to allow separate configuration
+    
+    * MNG-3834 - Improve error message when dependency with classifier is missing version
+    
+    * MNG-4210 - Remove log4j configuration warning
 
 *** Task
 
-    * [MNG-2387] - <active> on <proxy> in settings is misleading
-
-    * [MNG-2883] - Make sure that the network isn't used for snapshots in offline mode when legacy repositories are used
-
-    * [MNG-3602] - Schedule and release Doxia-1.1
-
-    * [MNG-3842] - Revert temporary changes to scp wagon handling
-
-    * [MNG-3936] - Remove m2.bat from distribution
-
-    * [MNG-4030] - Release maven-plugin-tools 2.4.4/2.5 to enable enhanced ant-mojo support
-
-    * [MNG-4031] - Release plexus-ant-factory 1.0-alpha-2.1 to enable enhanced ant-mojo support
-
-    * [MNG-4046] - Update to Doxia 1.0
-
-    * [MNG-4077] - Review log level for VersionExpressionTransformation.transformVersions()
+    * MNG-4143 - Update Java requirement to 1.5
+    
+    * MNG-4169 - Remove invocation of maven-plugin-plugin:updatePluginRegistry from default lifecycle bindings
 
 *** Wish
+ 
+    * MNG-4139 - avoid the schema location in generated maven-metadata*.xml
 
-    * [MNG-4056] - Relax resolution of active project artifacts from the reactor with regard to artifact type
-
-** Complete list of issues fixed in 2.1.0-M1
-  
-*** Bug
-
-    * [MNG-2739] - Repository entries are not validated and NPE will occur
-
-    * [MNG-2873] - Unable to find transitive dependencies when they have been relocated.
-
-    * [MNG-3052] - Transitive Dependency not found when repo is not listed
-
-    * [MNG-3070] - $\{x\} properties no longer expanded in \</version\> tag after 2.0.3
-
-    * [MNG-3106] - Multiple profile activation conditions broken
-
-    * [MNG-3368] - Printing version (-v argument) should not stop lifecycle execution
-
-    * [MNG-3380] - MavenMetadataSource retrieves ResolutionGroup without consulting ManagedVersionMap, is problem when relocation
-
-    * [MNG-3475] - Some directories are not basedir aligned
-
-    * [MNG-3482] - merging managed dependencies happens before managed-dependency versions are interpolated
-
-    * [MNG-3497] - rar, par and ejb3 archives should not be added to classpath
-
-    * [MNG-3498] - StringIndexOutOfBounds -1 during path translation while reading pom.xml
-
-    * [MNG-3527] - profile deactivation has no affect
-
-    * [MNG-3535] - Valid properties which look self referential fail to resolve
-
-    * [MNG-3536] - REGRESSION: pom.build.sourceDirectory in Maven 2.0.9: it doesn't work anymore
-
-    * [MNG-3545] - Option -P-profile overridden if profile is activebyDefault
-
-    * [MNG-3581] - stage:copy ClassCastException with maven 2.0.9
-
-    * [MNG-3584] - possible new memory leak in Maven 2.0.9
-
-    * [MNG-3585] - nonProxyHosts separator is wrong in the default settings.xml
-
-    * [MNG-3599] - webdav does not set http-proxy correctly
-
-    * [MNG-3622] - upgrade to wagon 1.0-beta-4
-
-    * [MNG-3639] - Ant 1.7.0 Task not found after upgrading from Maven 2.0.8 to 2.0.9
-
-    * [MNG-3642] - back-propagation of resources doesn't handle multiple resources with the same directory
-
-    * [MNG-3651] - mvn.bat returns an incorrect error code
-
-    * [MNG-3654] - [regression] unable to build ServiceMix 3 - IndexOutOfBoundsException in mergeDeterministicBuildElements
-
-    * [MNG-3662] - Model interpolation crashes if property resolves to value with ampersand
-
-    * [MNG-3667] - Dependencies resolution is wrong in some cases (xfire-core:1.2.6 for example)
-
-    * [MNG-3671] - plugin-level dependencies in POMs are not interpolated at correct time
-
-    * [MNG-3679] - \<execution\>\<id\>$\{some.custom.var\}\</id\> ... broke
-
-    * [MNG-3680] - POM validation fails on projects in central repo starting with 2.0.10 RCs
-
-    * [MNG-3684] - Injection of Build instance as report parameter results in uninterpolated values for build.directory, etc.
-
-    * [MNG-3693] - Updating project POM via project.setFile(..) changes project basedir, and project classpath when used as a dependency in a reactor
-
-    * [MNG-3694] - plugin parameters injecting $\{project.compileSourceRoots\} get uninterpolated source directories
-
-    * [MNG-3697] - NPE at DefaultPluginManager line 700 (from Hudson CI)
-
-    * [MNG-3701] - ClassCastException when building settings.xml with profiles that have activeByDefault set
-
-    * [MNG-3703] - ExecutionProject contains relative paths in compileSourceRoots
-
-    * [MNG-3704] - NPE in DefaultLIfecycleExecutor when run from within Hudson builds
-
-    * [MNG-3705] - Expression: $\{executedProject\} doesn't work in reports
-
-    * [MNG-3710] - ModelUtils.cloneModel() and .cloneBuild() pollute existing Plugin instances with merged information
-
-    * [MNG-3716] - Aggregators that fork lifecycles don't have execution projects setup for all projects in the reactor.
-
-    * [MNG-3717] - Maven prompts for a password when one is provided over SSH in some circumstances
-
-    * [MNG-3718] - Build timestamp interpolator gives hours in AM/PM instead of 24-hour time
-
-    * [MNG-3722] - Fail to run CXF code generation with 2.0.10 RC
-
-    * [MNG-3723] - $\{project.basedir\} is not interpolated
-
-    * [MNG-3724] - ExecutionProject not getting updated compile/test-compile/script roots in RC10
-
-    * [MNG-3729] - Maven 2.0.10-RC10 fails with NPE on assembly:assembly
-
-    * [MNG-3740] - Plugin builds that reference earlier versions of themselves in the \<plugins\> section of the POM result in StackOverflowError in 2.1.0-M1-RC12
-
-    * [MNG-3741] - CLONE maven-plugin-tools-api requires relative script root paths
-
-    * [MNG-3743] - pluginManagement not consulted when building from lifecycle forked via javdoc reports
-
-    * [MNG-3746] - POM properties do not override default system properties during POM interpolation
-
-    * [MNG-3747] - relative build paths are not path-translated when using prefixed expressions (eg. project.build.directory) in plugin configurations
-
-    * [MNG-3748] - settings builder doesn't use strict mode in xml parser
-
-    * [MNG-3885] - Modules of Maven projects are deployed with Timestamp during reactor build when uniqueVersion is set to false in parent profile
-
-    * [MNG-3924] - FATAL ERROR if a variable contains &lt; or &gt;
-
-*** Improvement
-
-    * [MNG-2609] - Mention 'activeByDefault' in the "Introduction to Build Profiles" guide
-
-    * [MNG-3268] - Command line doesn't handle multiple -P correctly
-
-    * [MNG-3478] - Use expression $\{project.build.directory\} instead of hard-coding "target" in super POM
-
-    * [MNG-3509] - Make "mvn -v" output locale/encoding
-
-    * [MNG-3511] - Review fix for MNG-2166
-
-    * [MNG-3520] - Korean message resource
-
-    * [MNG-3571] - Allow use of ! when deactivating profiles
-
-    * [MNG-3652] - set a user agent for Maven HTTP requests
-
-    * [MNG-3673] - Upgrade plugin versions in super-POM where appropriate
-
-    * [MNG-3698] - Improve performance regarding concrete/dynamic build transitions surrounding plugin executions and report instantiations
-
-    * [MNG-3709] - Be sure source distro has the same name as the binary distro in the repository.
-
-*** New Feature
-
-    * [MNG-2562] - expose current time as a property for POM interpolation
-
-    * [MNG-2576] - Make Like Reactor Mode
-
-    * [MNG-3219] - Create a CLIRR/JarDiff setup for 2.0.x and 3.0.x
-
-    * [MNG-3675] - Add accessor for lifecycles list to LifecycleExecutor/DefaultLifecycleExecutor
 
 * Release notes for earlier versions
 
+    * {{{./release-notes-2.1.x.html}Maven ${current21xVersion} Release Notes}}
+    
     * {{{./release-notes-2.0.x.html}Maven ${current20xVersion} Release Notes}}
 
     * {{{./release-notes-older.html}Release Notes for earlier versions}}
-
-  
