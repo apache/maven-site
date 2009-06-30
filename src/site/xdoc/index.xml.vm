@@ -21,7 +21,7 @@
 <!-- Google CSE Search Box Ends -->
 
 	<h5>Get Maven ${current22xVersion}</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 21 Mar 2009</span>
+      <span style="display: block; text-align: right; font-size: smaller">Released: 30 June 2009</span>
       <p>
         <a href="download.html">
           <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current22xVersion}"/>
