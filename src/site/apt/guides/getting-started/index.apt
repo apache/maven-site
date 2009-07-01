@@ -536,7 +536,8 @@ mvn eclipse:eclipse
   this, see the {{{../introduction/introduction-to-the-lifecycle.html} Introduction to the Build Lifecycle}}.
 
   To find out what configuration is available for a plugin, you can see the {{{../../plugins/} Plugins List}} and navigate
-  to the plugin and goal you are using.
+  to the plugin and goal you are using. For general information about how to configure the available parameters of a
+  plugin, have a look at the {{{../mini/guide-configuring-plugins.html}Guide to Configuring Plug-ins}}.
 
 * {How do I add resources to my JAR?}
 

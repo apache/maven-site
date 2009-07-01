@@ -50,16 +50,19 @@ Guide to Configuring Plug-ins
 
 +----+
 
+/**
+ * @goal query
+ */
 public class MyQueryMojo
     extends AbstractMojo
 {
     /**
-     * @parameter
+     * @parameter expression="${query.url}"
      */
     private String url;
 
     /**
-     * @parameter
+     * @parameter default-value="60"
      */
     private int timeout;
 
@@ -113,6 +116,21 @@ public class MyQueryMojo
  <<<options>>> element maps to the <<<options>>> field. The mapping mechanism can deal with arrays by inspecting
  the type of the field and determining if a suitable mapping is possible.
 
+  For mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be
+  configured via system properties instead of a <<<\<configuration\>>>> section in the POM. The plugin documentation
+  for those parameters will list an <expression> that denotes the system properties for the configuration. In the
+  mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
+  be specified by the system property <<<query.url>>> as shown below:
+
++----+
+mvn myquery:query -Dquery.url=http://maven.apache.org
++----+
+
+  Note that the name of the system property does not necessarily match the name of the mojo parameter. While this is
+  a rather common practice, you will often notice plugins that employ some prefix for the system properties to avoid
+  name clashes with other system properties. Though rarely, there are also plugin parameters that (e.g. for historical
+  reasons) employ system properties which are completely unrelated to the parameter name. So be sure to have a close
+  look at the plugin documentation.
 
 * {Mapping Complex Objects}
 
@@ -345,8 +363,9 @@ public class MyQueryMojo
 
 * {Using the <<<\<executions\>>>> Tag}
 
-  You can also configure a mojo using the <<<\<executions\>>>> tag. Using <<<MyQueryMojo>>>
-  as an example, you may have something that will look like:
+  You can also configure a mojo using the <<<\<executions\>>>> tag. This is most commonly used for mojos that are
+  intended to participate in some phase of the build lifecycle. Using <<<MyQueryMojo>>> as an example, you may have
+  something that will look like:
 
 +----+
 <project>
@@ -369,6 +388,9 @@ public class MyQueryMojo
                 <option>three</option>
               </options>
             </configuration>
+            <goals>
+              <goal>query</goal>
+            </goals>
           </execution>
           <execution>
             <id>execution2</id>
@@ -381,6 +403,9 @@ public class MyQueryMojo
                 <option>six</option>
               </options>
             </configuration>
+            <goals>
+              <goal>query</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -390,15 +415,14 @@ public class MyQueryMojo
 </project>
 +----+
 
-  The first execution with id "execution1" binds this configuration to the test
-  phase. Some goals can have default phase bindings. The second execution does not have
-  a <<<\<phase\>>>> tag, how do you think will the execution behave? If the goal is
-  bound to a phase then it will execute in that phase. But if the goal is
-  not bound to any lifecycle phase then it will be executed without executing
-  any phases (as if it was executed in the CLI).
+  The first execution with id "execution1" binds this configuration to the test phase. The second execution does not
+  have a <<<\<phase\>>>> tag, how do you think will this execution behave? Well, goals can have a default phase binding
+  as discussed further below. If the goal has a default phase binding then it will execute in that phase. But if the
+  goal is not bound to any lifecycle phase then it simply won't be executed during the build lifecycle.
 
-  Note that execution id's don't have to be unique.  Executions of the same id
-  are merged.
+  Note that while execution id's have to be unique among all executions of a single plugin within a POM, they don't
+  have to be unique across an inheritance hierarchy of POMs.  Executions of the same id from different POMs are merged.
+  The same applies to executions that are defined by profiles.
 
   How about if we have a multiple executions with different phases bound to it?
   How do you think will it behave? Let us use the example POM above again, but
@@ -429,6 +453,9 @@ public class MyQueryMojo
                 <option>six</option>
               </options>
             </configuration>
+            <goals>
+              <goal>query</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
@@ -444,22 +471,23 @@ public class MyQueryMojo
   and <<<execution2>>> will be executed applying the configuration setup when
   the build phase is already in install.
 
-  Now, let us have another mojo example which is bound to a lifecycle phase.
+  Now, let us have another mojo example which shows a default lifecycle phase binding.
 
 +----+
 /**
+ * @goal query
  * @phase package
  */
 public class MyBindedQueryMojo
     extends AbstractMojo
 {
     /**
-     * @parameter
+     * @parameter expression="${query.url}"
      */
     private String url;
 
     /**
-     * @parameter
+     * @parameter default-value="60"
      */
     private int timeout;
 
@@ -476,7 +504,7 @@ public class MyBindedQueryMojo
 }
 +----+
 
-  From the above mojo example, <<<MyBindedQueryMojo>>> is bound to package phase
+  From the above mojo example, <<<MyBindedQueryMojo>>> is by default bound to the package phase
   (see the <<<@phase>>> notation). But if we want to execute this mojo during the install
   phase and not with package we can rebind this mojo into a new lifecycle phase
   using the <<<\<phase\>>>> tag under <<<\<execution\>>>>.
@@ -502,6 +530,9 @@ public class MyBindedQueryMojo
                 <option>six</option>
               </options>
             </configuration>
+            <goals>
+              <goal>query</goal>
+            </goals>
           </execution>
         </executions>
       </plugin>
