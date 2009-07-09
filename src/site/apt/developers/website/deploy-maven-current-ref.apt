@@ -42,16 +42,16 @@ Prerequisite
 
 Deploy Maven Current References
 
- [[1]] Do a fresh check out of a release tag of Maven
+ [[1]] Do a fresh check out of a release tag of Maven, for example:
 
 +-----+
-$ svn checkout https://svn.apache.org/repos/asf/maven/components/tags/maven-2.0.X maven-2.0.X
+$ svn checkout https://svn.apache.org/repos/asf/maven/maven-2/tags/maven-2.2.0 maven-2.2.0
 +-----+
 
- [[2]] Execute the site goal for the <maven-2.0.X> project
+ [[2]] Execute the site goal for the <maven-2.2.0> project
 
 +-----+
-maven-2.0.X$ mvn site -Preporting
+maven-2.2.0$ mvn site -Preporting
 +-----+
 
  [[3]] Verify the documentation before deploying
@@ -59,16 +59,16 @@ maven-2.0.X$ mvn site -Preporting
  You could also use the <stage> goal of the Maven Site Plugin to verify the site output. For instance:
 
 +-----+
-maven-2.0.X$ mvn site:stage -Preporting -DstagingDirectory=/tmp/maven-2.0.X
+maven-2.2.0$ mvn site:stage -Preporting -DstagingDirectory=/tmp/maven-2.2.0
 +-----+
 
  [[4]] Deploy to people.apache.org
 
 +-----+
-maven-2.0.X$ mvn site-deploy -Preporting
+maven-2.2.0$ mvn site-deploy -Preporting
 +-----+
 
- It will create a new folder <2.0.X> in </www/maven.apache.org/ref/> on the Apache server.
+ It will create a new folder <2.2.0> in </www/maven.apache.org/ref/> on the Apache server.
 
  <<Note:>> It will take an hour or so to sync.
 
@@ -76,12 +76,11 @@ maven-2.0.X$ mvn site-deploy -Preporting
 
  * Connect you to <people.apache.org> and go to </www/maven.apache.org/ref/> folder.
 
- * Create a symlink from <2.0.X> folder to <current>:
+ * Create a symlink from <2.2.0> folder to <current> if it is the newest stable release of Maven:
 
 +-----+
-ref$ ln -s 2.0.X/ ./current
+ref$ ln -s 2.2.0/ ./current
 +-----+
 
  []
 
- <<Note:>> The <2.0.X> folder is the last release of Maven.

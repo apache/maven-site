@@ -492,7 +492,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   ultimately inherit from <<<java.lang.Object>>>, all Project Object Models inherit from
   a base Super POM. The snippet below is the Super POM for Maven 2.0.x.
 
-%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/components/branches/maven-2.0.x/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
+%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/maven-2/tags/maven-2.2.0/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
   You can take a look at how the Super POM affects your Project Object Model by creating a
   minimal <<<pom.xml>>> and executing on the command line: <<<mvn help:effective-pom>>>
