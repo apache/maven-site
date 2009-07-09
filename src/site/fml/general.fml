@@ -129,7 +129,7 @@
       <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.</question>
       <answer>
         <p>
-          The source code can be found in subversion: <a href="http://svn.apache.org/repos/asf/maven/components/trunk">http://svn.apache.org/repos/asf/maven/components/trunk</a>.
+          The source code can be found in subversion: <a href="http://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x">http://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x</a> or <a href="http://svn.apache.org/repos/asf/maven/components/trunk">http://svn.apache.org/repos/asf/maven/components/trunk</a>.
         </p>
         <p>
           For more information, see <a href="guides/development/guide-building-m2.html">Building Maven 2.0</a>.
