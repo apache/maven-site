@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven ${current20xVersion}
+Release Notes - Maven 2.0.10
  ------
 Brett Porter
 Jason van Zyl
@@ -28,17 +28,17 @@ Brian Fox
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Maven ${current20xVersion}
+Maven 2.0.10
 
-  The Apache Maven team would like to announce the release of Maven ${current20xVersion}.
+  The Apache Maven team would like to announce the release of Maven 2.0.10.
 
-  Maven ${current20xVersion} is {{{./download.html} available for download}}.
+  Maven 2.0.10 is {{{../../download.html} available for download}}.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
-  See the {{{./plugins/index.html} Plugin List}} for more information.
+  See the {{{../../plugins/index.html} Plugin List}} for more information.
 
   We hope you enjoy using Maven! If you have any questions, please consult:
 
@@ -212,6 +212,6 @@ Default Plugin Versions (Bold indicates a change from 2.0.9)
     
 * Release notes for older versions
 
-    * See {{{./release-notes-older.html}here}}
+    * See {{{../../release-notes-older.html}here}}
 
   
