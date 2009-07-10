@@ -1,7 +1,10 @@
 ErrorDocument 404 /errors/404.html
 
-Redirect /ant-tasks.html http://maven.apache.org/ant-tasks/index.html
-Redirect /ant-tasks-release-notes.html http://maven.apache.org/ant-tasks/release-notes.html
+Redirect /ref/current http://maven.apache.org/ref/${current21xVersion}
+Redirect /ref/current-2.0.x http://maven.apache.org/ref/${current20xVersion}
+
+Redirect Permanent /ant-tasks.html http://maven.apache.org/ant-tasks/index.html
+Redirect Permanent /ant-tasks-release-notes.html http://maven.apache.org/ant-tasks/release-notes.html
 
 Redirect Permanent /guides/mini/guide-ibiblio-upload.html http://maven.apache.org/guides/mini/guide-central-repository-upload.html
 Redirect Permanent /faq.html http://maven.apache.org/general.html
