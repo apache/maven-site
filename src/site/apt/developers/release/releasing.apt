@@ -193,6 +193,9 @@ cd target/checkout
 mvn site:stage-deploy -Preporting
 +------+
 
+   <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
+   versions will fail due to <<<com.jcraft.jsch.JSchException: Algorithm negotiation fail>>>.
+
    <<Note:>> You should verify the deployment of the site on the Maven website
    (you need to wait {{{http://www.apache.org/dev/project-site.html}the sync}}).
 
