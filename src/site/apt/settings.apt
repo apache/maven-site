@@ -129,7 +129,8 @@ mvn jetty:run
 
 * {Servers}
 
-  The repositories for deployment are defined by the {{{./pom.html#Distribution_Management}<<<distributionManagement>>>}} element of the POM.
+  The repositories for download and deployment are defined by the {{{./pom.html#Repositories}<<<repositories>>>}} and
+  {{{./pom.html#Distribution_Management}<<<distributionManagement>>>}} elements of the POM.
   However, certain settings such as <<<username>>> and <<<password>>> should not be distributed
   along with the <<<pom.xml>>>. This type of information should exist on the build server in the
   <<<settings.xml>>>.
@@ -157,8 +158,8 @@ mvn jetty:run
 +------------------------------------+
 
   * <<id>>:
-  This is the ID of the server <(not of the user to login as)> that matches the <<<distributionManagement>>>
-  <<<repository>>> element's <<<id>>>.
+  This is the ID of the server <(not of the user to login as)> that matches the <<<id>>> element of the repository/mirror
+  that Maven tries to connect to.
 
   * <<username>>, <<password>>:
   These elements appear as a pair denoting the login and password required to authenticate to this
@@ -204,16 +205,17 @@ mvn jetty:run
 +------------------------------------+
 
   * <<id>>, <<name>>:
-  The unique identifier and readable name of this mirror. The <<<id>>> is used to differentiate between
-  <<<mirror>>> elements.
+  The unique identifier and user-friendly name of this mirror. The <<<id>>> is used to differentiate between
+  <<<mirror>>> elements and to pick the corresponding credentials from the {{{Servers}<<<\<servers\>>>>}} section when
+  connecting to the mirror.
 
   * <<url>>:
-  The base URL of this mirror. The build system will use prepend this URL to connect to a
-  repository rather than the default server URL.
+  The base URL of this mirror. The build system will use this URL to connect to a
+  repository rather than the original repository URL.
 
   * <<mirrorOf>>:
-  The <<<id>>> of the server that this is a mirror of. For example, to point to a mirror
-  of the Maven <<<central>>> server (<<<{{http://repo1.maven.org/maven2/}}>>>), set this element to
+  The <<<id>>> of the repository that this is a mirror of. For example, to point to a mirror
+  of the Maven <<<central>>> repository (<<<{{http://repo1.maven.org/maven2/}}>>>), set this element to
   <<<central>>>. More advanced mappings like <<<repo1,repo2>>> or <<<*,!inhouse>>> are also possible. This must not
   match the mirror <<<id>>>.
 
