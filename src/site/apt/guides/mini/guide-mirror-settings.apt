@@ -44,6 +44,11 @@ Using Mirrors for Repositories
 </settings>
 +-----+
 
+  Note that there can be at most one mirror for a given repository. In other words, you cannot map a single
+  repository to a group of mirrors that all define the same <<<\<mirrorOf\>>>> value. Maven will not aggregate the
+  mirrors but simply picks the first match. If you want to provide a combined view of several repositories, use a
+  {{{../../repository-management.html}repository manager}} instead.
+
  The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
  Model Website}}.
 
@@ -94,9 +99,14 @@ Advanced Mirror Specification
 
  []
 
- The order is not important from left to right as the wildcards defer to further processing and explicit includes or
- excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of
- HashMap such that the user may influence match order by changing the order of the definitions in the <<<settings.xml>>>
+  The position of wildcards within a comma separated list of repository identifiers is not important as the wildcards
+  defer to further processing and explicit includes or excludes stop the processing, overruling any wildcard match.
+
+  When you use the advanced syntax and configure multiple mirrors, keep in mind that their declaration order matters.
+  When Maven looks for a mirror of some repository, it first checks for a mirror whose <<<\<mirrorOf\>>>> exactly
+  matches the repository identifier. If no direct match is found, Maven picks the first mirror declaration that matches
+  according to the rules above (if any). Hence, you may influence match order by changing the order of the definitions
+  in the <<<settings.xml>>>
 
  Examples:
 
