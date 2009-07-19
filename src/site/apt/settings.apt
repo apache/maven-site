@@ -213,32 +213,14 @@ mvn jetty:run
 
   * <<mirrorOf>>:
   The <<<id>>> of the server that this is a mirror of. For example, to point to a mirror
-  of the Maven <<<central>>> server ({{http://repo1.maven.org/maven2/}}), set this element to
-  <<<central>>>. This must not match the mirror <<<id>>>.
-  
-  In 2.0.9+, an enhanced syntax is supported:
-    
-    * \* matches all repo ids.
-    
-    * external:\* matches all repos except those using localhost or file based repositories. This is used in conjunction with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
-    
-    * multiple repos may be specified using , as the delimiter
-    
-    * ! may be used in conjunction with one of the above wildcards to exclude a repo id.
-    
-  The order is not important from left to right as the wildcards defer to further processing and explicit includes or excludes stop the processing. Additionally, the mirror list will now be ordered using a LinkedHashMap instead of HashMap such that the user may influence match order by changing the order of the definitions in the settings.xml 
-    
- Examples:
-  
-  *  \* = everything
-  
-  *  external:\* = everything not on the localhost and not file based.
-  
-  *  repo,repo1 = repo or repo1
-  
-  *  \*,!repo1 = everything except repo1
+  of the Maven <<<central>>> server (<<<{{http://repo1.maven.org/maven2/}}>>>), set this element to
+  <<<central>>>. More advanced mappings like <<<repo1,repo2>>> or <<<*,!inhouse>>> are also possible. This must not
+  match the mirror <<<id>>>.
 
   []
+
+  For a more in-depth introduction of mirrors, please read the
+  {{{./guides/mini/guide-mirror-settings.html}Guide to Mirror Settings}}.
 
 * {Proxies}
 
