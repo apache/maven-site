@@ -26,7 +26,7 @@ The List of Repository Managers
 
   The Following is a list of the known Maven repository managers and listed in chronological order of appearance in the community:
 
-* {{{http://nexus.sonatype.org}Nexus: Maven Repository Manager (previously Proximity}}
+* {{{http://nexus.sonatype.org}Nexus: Maven Repository Manager (previously Proximity)}}
 
  Anyone who was using Proximity is now encouraged to use Nexus. The entire codebase of Proximity was absorbed into Nexus and
  Nexus provides a migration path for all Proximity users.
