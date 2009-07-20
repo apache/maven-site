@@ -19,6 +19,26 @@
 -->
 <faqs title="Frequently Asked Technical Questions">
   <part id="faq">
+    <faq id="encoding-warning">
+      <question>How do I prevent "[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!"</question>
+      <answer>
+        <p>
+          This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to
+          use a specific file encoding. So eliminating the warning is simply a matter of finding out what plugin emits it
+          and how to configure the file encoding for it. For plugins that follow our guideline for
+          <a href="http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding">source file encoding</a>,
+          this is as easy as adding the following property to your POM (or one of its parent POMs):
+        </p>
+        <source><project>
+  ...
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+   </properties>
+  ...
+</project></source>
+      </answer>
+    </faq>
+
     <faq id="scope-provided">
       <question>How do I prevent including JARs in WEB-INF/lib? I need a "compile only" scope!</question>
       <answer>
