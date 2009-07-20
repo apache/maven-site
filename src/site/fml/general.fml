@@ -29,13 +29,13 @@
           <a href="http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding">source file encoding</a>,
           this is as easy as adding the following property to your POM (or one of its parent POMs):
         </p>
-        <source><project>
+        <source><![CDATA[<project>
   ...
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-   </properties>
+  </properties>
   ...
-</project></source>
+</project>]]></source>
       </answer>
     </faq>
 
