@@ -17,7 +17,11 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<faqs title="Frequently Asked Technical Questions">
+
+<faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/FML/1.0"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  title="Frequently Asked Technical Questions">
   <part id="faq">
     <faq id="encoding-warning">
       <question>How do I prevent "[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!"</question>
@@ -404,6 +408,22 @@ Where: <path-to-file>  the path to the file to load
           A mojo is a <b>M</b>aven plain <b>O</b>ld <b>J</b>ava <b>O</b>bject. Each mojo is an executable
           <i>goal</i> in Maven, and a plugin is a distribution of one or more related mojos.
         </p>
+      </answer>
+    </faq>
+
+    <faq id="How_to_find_dependencies">
+      <question>How to find dependencies on public Maven repositories?</question>
+      <answer>
+        <p>
+          You could use the following search engines:
+        </p>
+        <ul>
+          <li><a href="http://repository.apache.org">http://repository.apache.org</a></li>
+          <li><a href="http://mvnrepository.com">http://mvnrepository.com</a></li>
+          <li><a href="http://www.mvnbrowser.com">http://www.mvnbrowser.com</a></li>
+          <li><a href="http://www.jarvana.com">http://www.jarvana.com</a></li>
+          <li><a href="http://mavensearch.net">http://mavensearch.net</a></li>
+        </ul>
       </answer>
     </faq>
   </part>
