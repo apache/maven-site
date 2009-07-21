@@ -17,8 +17,11 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<faqs title="About Maven 2.0">
 
+<faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/FML/1.0"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  title="About Maven 2.0">
   <part id="about">
     <faq id="m2-goals">
       <question>Tell me about the goals of Maven 2.0</question>

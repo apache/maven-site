@@ -17,7 +17,10 @@
   specific language governing permissions and limitations
   under the License.
 -->
-<faqs title="Frequently Asked Questions About Project Metadata">
+<faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/FML/1.0"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  title="Frequently Asked Questions About Project Metadata">
   <part id="faq">
     <faq id="why-care">
       <question>Why do I care?</question>
