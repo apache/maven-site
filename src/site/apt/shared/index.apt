@@ -3,7 +3,7 @@
  -----
  Dennis Lundberg
  -----
- 2009-03-09
+ 2009-07-23
  -----
 
 Shared Components
@@ -28,7 +28,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.2          | 2007-08-22        | Converts between version 3.0.0 and version 4.0.0 models. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-model-converter/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
-| {{{/shared/maven-reporting-impl/} <<<maven-reporting-impl>>>}}             | 2.0.4.1      | 2008-03-26        | Abstract classes to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-impl/}SVN}}
+| {{{/shared/maven-reporting-impl/} <<<maven-reporting-impl>>>}}             | 2.0.4.2      | 2009-07-23        | Abstract classes to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-impl/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-runtime/} <<<maven-runtime>>>}}                           | 1.0-alpha-1  | 2008-06-02        | Maven Runtime allows introspection of Maven project metadata at runtime. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-runtime/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
