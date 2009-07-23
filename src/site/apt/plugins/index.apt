@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2009-03-25
+ 2009-07-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -102,7 +102,7 @@ Available Plugins
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                | 2.4          | 2008-01-08 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.1.1 | 2009-03-03 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
+| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | 2.1.2 | 2009-07-23 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-surefire-report-plugin/} <<<surefire-report>>>}} | 2.4.3 | 2008-05-14 | Generate a report based on the results of unit tests. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *-----------------------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
