@@ -6,6 +6,9 @@
  26 February 2007
  ------
 
+~~ TODO: This duplicates embedder.apt
+~~ TODO: Update once embedder is refactored
+
 The Maven Embedder
 
  The Maven Embedder is used by the Maven CLI, by IDE integration projects like {{{http://mevenide.codehaus.org}Mevenide}}
@@ -15,7 +18,7 @@ The Maven Embedder
 
 A Simple Example
 
-%{snippet|id=simple-embedder-example|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
+%{snippet|id=simple-embedder-example|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-3.0-alpha-2/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
 
 A Note on Configuring Settings
 
@@ -39,7 +42,7 @@ A Note on Configuring Settings
  they are used. If you want your embedded use of Maven to mimic the behavior of the Maven CLI insofar as settings use
  then use the following code:
 
-%{snippet|id=mimic-cli|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
+%{snippet|id=mimic-cli|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-3.0-alpha-2/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
 
   Also note that the user and global settings are merged, and the user settings are dominant.
 
@@ -50,5 +53,5 @@ Accessing the Underlying Plexus Container
   purpose use of Plexus. So if you use this method then you use it at your peril. You can access the Plexus Container
   using the following:
 
-%{snippet|id=plexus-container|url=http://svn.apache.org/repos/asf/maven/components/trunk/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
+%{snippet|id=plexus-container|url=http://svn.apache.org/repos/asf/maven/components/tags/maven-3.0-alpha-2/maven-embedder/src/test/java/org/apache/maven/embedder/MavenEmbedderExampleTest.java}
 
