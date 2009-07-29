@@ -50,8 +50,8 @@ Introduction to the Dependency Mechanism
      versions of an artifact are encountered. Currently, Maven 2.0 only supports using the "nearest definition" which means
      that it will use the version of the closest dependency to your project in the tree of dependencies.
      You can always guarantee a version by declaring it explicitly in your project's POM.
-     Note that if two dependency versions are at the same depth in the dependency tree, until Maven 2.0.4 it was not defined which one would win,
-     but since Maven 2.0.5 it's the order in the declaration that counts: the first declaration wins.
+     Note that if two dependency versions are at the same depth in the dependency tree, until Maven 2.0.8 it was not defined which one would win,
+     but since Maven 2.0.9 it's the order in the declaration that counts: the first declaration wins.
 
      * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies,
         eg. if dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
