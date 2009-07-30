@@ -422,6 +422,7 @@ Where: <path-to-file>  the path to the file to load
         </p>
         <ul>
           <li><a href="http://repository.apache.org">http://repository.apache.org</a></li>
+          <li><a href="http://www.artifact-repository.org/">http://www.artifact-repository.org</a></li>
           <li><a href="http://mvnrepository.com">http://mvnrepository.com</a></li>
           <li><a href="http://www.mvnbrowser.com">http://www.mvnbrowser.com</a></li>
           <li><a href="http://www.jarvana.com">http://www.jarvana.com</a></li>
