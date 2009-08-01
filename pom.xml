@@ -348,13 +348,6 @@
           </reportSet>
         </reportSets>
       </plugin>
-      <!-- Note: 'site' needs to be called twice to generate the linkcheck report
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-linkcheck-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </plugin>
-      -->
     </plugins>
   </reporting>
 
@@ -386,6 +379,42 @@
           </plugin>
         </plugins>
       </build>
+    </profile>
+    <profile>
+      <id>linkcheck</id>
+      <activation>
+        <property>
+          <name>!linkcheck.skip</name>
+        </property>
+      </activation>
+      <reporting>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-linkcheck-plugin</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <configuration>
+              <excludedLinks>
+                <excludedLink>**/ant-tasks/*</excludedLink>
+                <excludedLink>**/doxia/*</excludedLink>
+                <excludedLink>**/jxr/*</excludedLink>
+                <excludedLink>**/maven-1.x/*</excludedLink>
+                <excludedLink>**/mercury/*</excludedLink>
+                <excludedLink>**/scm/*</excludedLink>
+                <excludedLink>**/shared/*</excludedLink>
+                <excludedLink>**/skins/*</excludedLink>
+                <excludedLink>**/surefire/*</excludedLink>
+                <excludedLink>**/wagon/*</excludedLink>
+                <excludedLink>**/plugins/maven-*</excludedLink>
+                <excludedLink>**/ref/*</excludedLink>
+                <excludedLink>**/maven-model/*</excludedLink>
+                <excludedLink>**/maven-settings/*</excludedLink>
+                <excludedLink>irc://*</excludedLink>
+              </excludedLinks>
+            </configuration>
+          </plugin>
+        </plugins>
+      </reporting>
     </profile>
   </profiles>
 </project>
