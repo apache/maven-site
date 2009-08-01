@@ -1,5 +1,27 @@
 <?xml version="1.0"?>
-<document>
+
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<document xmlns="http://maven.apache.org/XDOC/2.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
 <!-- TODO: include back into site, after checking which are complete, add to instructions on how to contribute docs -->
   <properties>
     <title>Documentation Required</title>
@@ -10,7 +32,7 @@
       <p>
         This page lists some of the most pressing documentation needs. If you feel something is missing, please be sure
         to let us know at the
-        <a href="/mail-lists.html">Maven Users Mailing List</a>.
+        <a href="./mail-lists.html">Maven Users Mailing List</a>.
       </p>
       <h4>Documentation for users</h4>
       <ul>
@@ -98,7 +120,7 @@
         - overriding central repo
         - using POM info in applications: the POM is packaged so there is acccess
           continuum example to get the version.
-        - quick description of scm,wagon,continuum        
+        - quick description of scm,wagon,continuum
       </pre>
       <h4>Profiles Example</h4>
       <pre><![CDATA[
