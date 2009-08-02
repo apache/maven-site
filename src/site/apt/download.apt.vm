@@ -58,7 +58,7 @@ Download Maven ${current22xVersion}
 *-------------------------+---------+----------+-----------+
 
   You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
-  
+
 * {Maven ${current21xVersion}}
 
 *-------------------------+---------+----------+-----------+
@@ -202,7 +202,7 @@ Download Maven ${current22xVersion}
 
     * other configuration properties
 
-  For information on this file, see the {{{settings.html} Settings reference}}
+  For information on this file, see the {{{./settings.html} Settings reference}}
 
 *** Security
 
