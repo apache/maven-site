@@ -471,8 +471,8 @@ under the License.
         <tr>
           <td>requiresOnline</td>
           <td>@requiresOnline &lt;true|false&gt;</td>
-          <td>No. Default: <code>true</code></td>
-          <td>Flags this Mojo to be run in online mode.</td>
+          <td>No. Default: <code>false</code></td>
+          <td>Flags this Mojo to require online mode for its operation.</td>
         </tr>
         <tr>
           <td>requiresProject</td>
