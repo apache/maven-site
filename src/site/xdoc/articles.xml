@@ -109,6 +109,12 @@ Eric Redmond)
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="http://www.sonatype.com/people/2009/08/create-a-customized-build-process-in-maven/">Create a Customized Build Process in Maven</a></td>
+            <td></td>
+            <td>John Casey</td>
+            <td>August 2009</td>
+          </tr>
+          <tr>
             <td><a href="http://www.manuelrecena.com/docs/maven_090625.pdf">Maven: mas que una herramienta de construccion (in Spanish)</a></td>
             <td></td>
             <td>Manuel Recena</td>
