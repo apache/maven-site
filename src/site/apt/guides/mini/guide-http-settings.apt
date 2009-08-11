@@ -1,16 +1,34 @@
   ------
-  Guide to HTTP Wagon Configuration
+  Guide to Advanced HTTP Wagon Configuration
   ------
   John Casey
   ------
   22 June 2009
   ------
 
-Configuring the HTTP Wagon
+Advanced Configuration of the HttpClient HTTP Wagon
 
-  <<NOTE:>> This feature is available in <<Maven 2.2.0>> and later.
+*Notice on Maven Versioning and Availability
 
-  Since the introduction of the HttpClient\[1\]-based HTTP Wagon as the default for Maven 2.2.0 and above, you have a lot more control over the
+**Maven 2.2.0
+
+  Starting in <<Maven 2.2.0>>, the HttpClient wagon was the implementation in use. The remainder of this document
+  deals specifically with the differences between the HttpClient- and Sun-based HTTP wagons.
+
+**Maven 2.2.1
+  
+  Due to several critical issues introduced by the HttpClient-based HTTP wagon, <<Maven 2.2.1>> reverted back to 
+  the Sun implementation (a.k.a. 'lightweight') of the HTTP wagon as the default for HTTP/HTTPS transfers.
+  The issues with the HttpClient-based wagon were mainly related to checksums, transfer timeouts, and NTLM proxies,
+  and served as the primary cause for the release of <<2.2.1>> in the first place.
+  
+  <<However>>, starting in <<Maven 2.2.1>> you have a choice: you can use the default wagon implementation for a given
+  protocol, or you can select an alternative wagon <<<provider>>> you'd like to use on a per-protocol basis. 
+  For more information, see the {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
+
+*Introduction
+
+  Using the HttpClient-based HTTP wagon, you have a lot more control over the
   configuration used to access HTTP-based Maven repositories. For starters, you have fine-grained control over what HTTP headers
   are used when resolving artifacts. In addition, you can also configure a wide range of parameters to control the behavior
   of HttpClient itself. Best of all, you have the ability to control these headers and parameters for all requests, or individual 
@@ -343,5 +361,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
     [[1]] {{{http://hc.apache.org/httpclient-3.x/}HttpClient website}}
     
     [[2]] {{{http://hc.apache.org/httpclient-3.x/preference-api.html}HttpClient preference architecture and configuration guide}}
+    
+    [[3]] {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}}
     
     []
