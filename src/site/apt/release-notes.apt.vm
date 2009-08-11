@@ -52,7 +52,7 @@ Maven ${current22xVersion}
   Maven 2.2.1 aims to correct several critical regressions related to the selection of the HttpClient-based Wagon implementation for HTTP/HTTPS transfers in Maven 2.2.0. 
   The new release reverts this selection, reinstating the Sun-based - or <<<lightweight>>> - Wagon implementation as the default for this sort of traffic. However, 
   Maven 2.2.1 goes a step further to provide a means of selecting which <<<provider>>> - or implementation - the user wishes to use for a particular transfer protocol. 
-  More information on providers can be found in our {{{Guide to Wagon Providers}http://maven.apache.org/guides/mini/guide-wagon-providers.html}}.
+  More information on providers can be found in our {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}}.
   
   In addition, Maven 2.2.1 addresses some long-standing problems related to injecting custom lifecycle mappings and artifact handlers. These custom components are now correctly loaded
   regardless of whether they come from a plugin with the extensions flag enabled, or from a pure build extension. In addition, custom artifact handlers now will be used to configure
