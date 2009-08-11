@@ -20,6 +20,13 @@ Getting Help
   to the {{{../plugins/index.html}plugins page}} and follow the link to the
   plugin you are having problems with.
 
+* Try the latest version of Maven or the plugin in question
+
+  Before you start intensive investigations on your problem, you should try to update Maven and/or the plugins
+  in question to the latest stable release. After all, the issue you encounter might have been fixed already.
+  To find out what is the latest stable release version, consult {{{../download.html}Maven's download section}}
+  and the {{{../plugins/index.html}plugin index}}.
+
 *Search the user-list archives
 
   Someone else might have experienced the same problem as you before. A list
