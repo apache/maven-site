@@ -180,10 +180,10 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 ** Escaping curly-brace literals in your password <(Since: Maven 2.2.0)>
 
   At times, you might find that your password (or the encrypted form of it) may
-  actually contain '{' or '}' as a literal value. If you added such a password as-is
+  actually contain '\{' or '\}' as a literal value. If you added such a password as-is
   to your settings.xml file, you would find that Maven does strange things with it.
-  Specifically, Maven will treat all the characters preceding the '{' literal, and
-  all the characters after the '}' literal, as comments. Obviously, this is not the
+  Specifically, Maven will treat all the characters preceding the '\{' literal, and
+  all the characters after the '\}' literal, as comments. Obviously, this is not the
   behavior you want in such a situation. What you really need is a way of <<escaping>>
   the curly-brace literals in your password.
 
