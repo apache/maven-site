@@ -16,7 +16,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-archiver/} <<<maven-archiver>>>}}                         | 2.4          | 2009-01-05        | Is mainly used by plugins to handle packaging. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-archiver/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
-| {{{/shared/maven-common-artifact-filters/} <<<maven-common-artifact-filters>>>}}  | 1.1   | 2009-01-05        | Used to filter lists of Artifact instances. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-common-artifact-filters/}SVN}}
+| {{{/shared/maven-common-artifact-filters/} <<<maven-common-artifact-filters>>>}}  | 1.2   | 2009-08-20        | Used to filter lists of Artifact instances. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-common-artifact-filters/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-dependency-tree/} <<<maven-dependency-tree>>>}}           | 1.2          | 2008-09-02        | Maven Dependency Tree constructs a tree model of a Maven project's dependencies. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-tree/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
