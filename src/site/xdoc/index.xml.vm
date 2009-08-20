@@ -19,7 +19,7 @@ under the License.
 -->
 <document>
   <properties>
-    <title>Welcome to Maven</title>
+    <title>Welcome to Apache Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
     <author email="jason@sonatype.com">Jason van Zyl</author>
   </properties>
@@ -106,11 +106,11 @@ under the License.
     </div>
     </section>
 
-    <section name="Welcome to Maven">
+    <section name="Welcome to Apache Maven">
 
       <!-- TODO: I reckon it's time for a new description -->
       <p>
-        Maven is a software project management and comprehension tool. Based on the concept of a project object model
+        Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
         (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
       </p>
       <p>
