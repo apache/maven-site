@@ -28,6 +28,13 @@ John Casey
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
+~~ ...............................................................
+~~ .
+~~ [jdcasey; 24-aug-2009]
+~~ NOTE: Need to use '?path=' syntax for closer.cgi for .tar.gz files, Safari doesn't like the regular syntax.
+~~ .
+~~ ...............................................................
+
 Download Maven ${current22xVersion}
 
    Maven is distributed in several formats for your convenience.
@@ -44,13 +51,13 @@ Download Maven ${current22xVersion}
 *-------------------------+---------+----------+-----------+
 | Maven ${current22xVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current22xVersion}-bin.tar.bz2} apache-maven-${current22xVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.bz2.md5} apache-maven-${current22xVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.bz2.asc} apache-maven-${current22xVersion}-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${current22xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz} apache-maven-${current22xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz.md5} apache-maven-${current22xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz.asc} apache-maven-${current22xVersion}-bin.tar.gz.asc}} |
+| Maven ${current22xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz} apache-maven-${current22xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz.md5} apache-maven-${current22xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.tar.gz.asc} apache-maven-${current22xVersion}-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven ${current22xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current22xVersion}-bin.zip} apache-maven-${current22xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.zip.md5} apache-maven-${current22xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current22xVersion}-bin.zip.asc} apache-maven-${current22xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven ${current22xVersion} (Source tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/source/apache-maven-${current22xVersion}-src.tar.bz2} apache-maven-${current22xVersion}-src.tar.bz2}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.bz2.md5} apache-maven-${current22xVersion}-src.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.bz2.asc} apache-maven-${current22xVersion}-src.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${current22xVersion} (Source tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/source/apache-maven-${current22xVersion}-src.tar.gz} apache-maven-${current22xVersion}-src.tar.gz}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.gz.md5} apache-maven-${current22xVersion}-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.gz.asc} apache-maven-${current22xVersion}-src.tar.gz.asc}} |
+| Maven ${current22xVersion} (Source tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/source/apache-maven-${current22xVersion}-src.tar.gz} apache-maven-${current22xVersion}-src.tar.gz}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.gz.md5} apache-maven-${current22xVersion}-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.tar.gz.asc} apache-maven-${current22xVersion}-src.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven ${current22xVersion} (Source zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/source/apache-maven-${current22xVersion}-src.zip} apache-maven-${current22xVersion}-src.zip}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.zip.md5} apache-maven-${current22xVersion}-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${current22xVersion}-src.zip.asc} apache-maven-${current22xVersion}-src.zip.asc}} |
 *-------------------------+---------+----------+-----------+
@@ -66,7 +73,7 @@ Download Maven ${current22xVersion}
 *-------------------------+---------+----------+-----------+
 | Maven ${current21xVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2} apache-maven-${current21xVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2.md5} apache-maven-${current21xVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.bz2.asc} apache-maven-${current21xVersion}-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${current21xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz} apache-maven-${current21xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.md5} apache-maven-${current21xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.asc} apache-maven-${current21xVersion}-bin.tar.gz.asc}} |
+| Maven ${current21xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz} apache-maven-${current21xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.md5} apache-maven-${current21xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.tar.gz.asc} apache-maven-${current21xVersion}-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven ${current21xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current21xVersion}-bin.zip} apache-maven-${current21xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.zip.md5} apache-maven-${current21xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current21xVersion}-bin.zip.asc} apache-maven-${current21xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
@@ -80,7 +87,7 @@ Download Maven ${current22xVersion}
 *-------------------------+---------+----------+-----------+
 | Maven ${current20xVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2} apache-maven-${current20xVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2.md5} apache-maven-${current20xVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.bz2.asc} apache-maven-${current20xVersion}-bin.tar.bz2.asc}} |
 *-------------------------+---------+----------+-----------+
-| Maven ${current20xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz} apache-maven-${current20xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.md5} apache-maven-${current20xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.asc} apache-maven-${current20xVersion}-bin.tar.gz.asc}} |
+| Maven ${current20xVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz} apache-maven-${current20xVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.md5} apache-maven-${current20xVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.tar.gz.asc} apache-maven-${current20xVersion}-bin.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 | Maven ${current20xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.zip} apache-maven-${current20xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.md5} apache-maven-${current20xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.asc} apache-maven-${current20xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
@@ -106,9 +113,9 @@ Download Maven ${current22xVersion}
 *-------------------------+---------+----------+-----------+
 | Maven Ant Tasks 2.0.10      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.10.jar} maven-ant-tasks-2.0.10.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.10.jar.md5} maven-ant-tasks-2.0.10.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.10.jar.asc} maven-ant-tasks-2.0.10.jar.asc}} |
 *-------------------------+---------+----------+-----------+
-| Sources (zip)               | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.zip} maven-ant-tasks-2.0.10.zip}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.md5} maven-ant-tasks-2.0.10-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.asc} maven-ant-tasks-2.0.10-src.zip.asc}} |
+| Sources (zip)               | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.zip} maven-ant-tasks-2.0.10-src.zip}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.md5} maven-ant-tasks-2.0.10-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.asc} maven-ant-tasks-2.0.10-src.zip.asc}} |
 *-------------------------+---------+----------+-----------+
-| Sources (tar.gz)             | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.tar.gz} maven-ant-tasks-2.0.10.tar.gz}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.md5} maven-ant-tasks-2.0.10-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.asc} maven-ant-tasks-2.0.10-src.tar.gz.asc}} |
+| Sources (tar.gz)             | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/source/maven-ant-tasks-2.0.10-src.tar.gz} maven-ant-tasks-2.0.10-src.tar.gz}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.md5} maven-ant-tasks-2.0.10-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.asc} maven-ant-tasks-2.0.10-src.tar.gz.asc}} |
 *-------------------------+---------+----------+-----------+
 
 * Previous Releases
