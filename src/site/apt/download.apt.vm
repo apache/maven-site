@@ -28,13 +28,6 @@ John Casey
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-~~ ...............................................................
-~~ .
-~~ [jdcasey; 24-aug-2009]
-~~ NOTE: Need to use '?path=' syntax for closer.cgi for .tar.gz files, Safari doesn't like the regular syntax.
-~~ .
-~~ ...............................................................
-
 Download Maven ${current22xVersion}
 
    Maven is distributed in several formats for your convenience.
