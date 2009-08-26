@@ -4,7 +4,7 @@
  Bob Allison
  Vincent Siveton
  ------
- January 2008
+ 2009-08-26
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -271,7 +271,7 @@ mvn archetype:create \
   -DarchetypeArtifactId=maven-archetype-mojo
 +---+
 
-* Parameters
+* {Parameters}
 
   It is unlikely that a mojo will be very useful without parameters.
   Parameters provide a few very important functions:
@@ -624,6 +624,59 @@ mvn archetype:create \
   Please see {{{../mini/guide-configuring-plugins.html#Mapping_Complex_Objects}Mapping Complex Objects}} for details
   on the strategy used to configure those kind of parameters.
 
+* Using Setters
+
+ You are not restricted to using private field mapping which is good if you are trying to make you Mojos resuable
+ outside the context of Maven. Using the example above we could name our private fields using the underscore
+ convention and provide setters that the configuration mapping mechanism can use. So our Mojo would look
+ like the following:
+
++----+
+
+public class MyQueryMojo
+    extends AbstractMojo
+{
+    /**
+     * @parameter property="url"
+     */
+    private String _url;
+
+    /**
+     * @parameter property="timeout"
+     */
+    private int _timeout;
+
+    /**
+     * @parameter property="options"
+     */
+    private String[] _options;
+
+    public void setUrl( String url )
+    {
+        _url = url;
+    }
+
+    public void setTimeout( int timeout )
+    {
+        _timeout = timeout;
+    }
+
+    public void setOptions( String[] options )
+    {
+        _options = options;
+    }
+
+    public void execute()
+        throws MojoExecutionException
+    {
+        ...
+    }
+}
+
++----+
+
+ Note the specification of the property name for each parameter which tells Maven what setter and getter to use when
+ the field's name does not match the intended name of the parameter in the plugin configuration.
 
 * Resources
 

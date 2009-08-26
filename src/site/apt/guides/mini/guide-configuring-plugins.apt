@@ -4,7 +4,7 @@
  Jason van Zyl
  Vincent Siveton
  ------
- November 2006
+ 2009-08-26
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -29,27 +29,79 @@
 
 Guide to Configuring Plug-ins
 
-  [[1]] {{{Mapping_Complex_Objects}Mapping Complex Objects}}
+  [[1]] {{{Generic_Configuration}Generic Configuration}}
 
-  [[2]] {{{Mapping_Collections}Mapping Collections}}
+    [[1]] {{{Help_Goal}Help Goal}}
 
-    [[1]] {{{Mapping_Lists}Mapping Lists}}
+    [[2]] {{{Configuring_Parameters}Configuring Parameters}}
 
-    [[2]] {{{Mapping_Maps}Mapping Maps}}
+        [[1]] {{{Mapping_Simple_Objects}Mapping Simple Objects}}
 
-    [[3]] {{{Mapping_Properties}Mapping Properties}}
+        [[2]] {{{Mapping_Complex_Objects}Mapping Complex Objects}}
 
-  [[3]] {{{Using_Setters}Using Setters}}
+        [[3]] {{{Mapping_Collections}Mapping Collections}}
 
-  [[4]] {{{Using_the_executions_Tag}Using the <<<\<executions\>>>> Tag}}
+            [[1]] {{{Mapping_Lists}Mapping Lists}}
 
- In Maven plug-ins are configured by specifying a <<<\<configuration\>>>> element where the child elements of the
- <<<\<configuration\>>>> element are mapped to fields, or setters, inside your Mojo (remember that a plug-in consists of
+            [[2]] {{{Mapping_Maps}Mapping Maps}}
+
+            [[3]] {{{Mapping_Properties}Mapping Properties}}
+
+            []
+
+        []
+
+    []
+
+  [[2]] {{{Configuring_Build_Plugins}Configuring Build Plugins}}
+
+      [[1]] {{{Using_the_executions_Tag}Using the <<<\<executions\>>>> Tag}}
+
+      [[2]] {{{Using_the_dependencies_Tag}Using the <<<\<dependencies\>>>> Tag}}
+
+      [[3]] {{{Using_the_inherited_Tag_In_Build_Plugins}Using the <<<\<inherited\>>>> Tag In Build Plugins}}
+
+      []
+
+  [[3]] {{{Configuring_Reporting_Plugins}Configuring Reporting Plugins}}
+
+      [[1]] {{{Using_the_reportSets_Tag}Using the <<<\<reportSets\>>>> Tag}}
+
+      [[2]] {{{Using_the_inherited_Tag_In_Reporting_Plugins}Using the <<<\<inherited\>>>> Tag In Reporting Plugins}}
+
+      []
+
+  []
+
+* Introduction
+
+ In Maven, there are the build and the reporting plugins:
+
+  * <<Build plugins>> will be executed during the build and then, they should be configured in the <<<\<build/\>>>>
+  element.
+
+  * <<Reporting plugins>> will be executed during the site generation and they should be configured in the
+  <<<\<reporting/\>>>> element.
+
+  []
+
+  All plugins should have minimal required
+  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_plugin}informations}}:
+  <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
+
+  <<Important Note>>: it is recommended to always defined the plugin version to guarantee the build reproducibility. A good
+  practice is to define the default plugin version in the
+  <<<\<build\>\<pluginManagement/\>\</build\>>>> tag for each build plugin and in the
+  <<<\<reporting\>\<plugins/\>\</reporting\>>>> tag for each reporting plugin.
+
+* {Generic Configuration}
+
+ Maven plugins (build and reporting) are configured by specifying a <<<\<configuration/\>>>> element where the child elements of the
+ <<<\<configuration/\>>>> element are mapped to fields, or setters, inside your Mojo (remember that a plug-in consists of
  one or more Mojos where a Mojo maps to a goal). Say, for example, we had a Mojo that performed a query against
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 +----+
-
 /**
  * @goal query
  */
@@ -77,14 +129,12 @@ public class MyQueryMojo
         ...
     }
 }
-
 +----+
 
  To configure the Mojo from your POM with the desired URL, timeout and options you might have something like
  the following:
 
 +----+
-
 <project>
   ...
   <build>
@@ -106,7 +156,6 @@ public class MyQueryMojo
   </build>
   ...
 </project>
-
 +----+
 
  As you can see the elements in the configuration match the names of the fields in the Mojo. The configuration
@@ -117,7 +166,7 @@ public class MyQueryMojo
  the type of the field and determining if a suitable mapping is possible.
 
   For mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be
-  configured via system properties instead of a <<<\<configuration\>>>> section in the POM. The plugin documentation
+  configured via system properties instead of a <<<\<configuration/\>>>> section in the POM. The plugin documentation
   for those parameters will list an <expression> that denotes the system properties for the configuration. In the
   mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
   be specified by the system property <<<query.url>>> as shown below:
@@ -132,23 +181,53 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
   reasons) employ system properties which are completely unrelated to the parameter name. So be sure to have a close
   look at the plugin documentation.
 
-* {Mapping Complex Objects}
+** {Help Goal}
+
+  Recent Maven plugins have generally an <<<help>>> goal to have in the command line the description of the plugin,
+  with their parameters and types. For instance, to understand the javadoc goal, you need to call:
+
++----+
+mvn javadoc:help -Ddetail -Dgoal=javadoc
++----+
+
+  And you will see all parameters for the javadoc:javadoc goal, similar to this
+  {{{http://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
+
+** {Configuring Parameters}
+
+*** {Mapping Simple Objects}
+
+  Mapping simple types, like Boolean or Integer, is very simple. The <<<\<configuration/\>>>> element might look like
+  the following:
+
++----+
+...
+<configuration>
+  <myString>a string</myString>
+  <myBoolean>true</myBoolean>
+  <myInteger>10</myInteger>
+  <myDouble>1.0</myDouble>
+  <myFile>c:\temp</myFile>
+  <myURL>http://maven.apache.org</myURL>
+</configuration>
+...
++----+
+
+*** {Mapping Complex Objects}
 
   Mapping complex types is also fairly straight forward in Maven so let's look at a simple example where we
-  are trying to map a configuration for Person object. The <<<\<configuration\>>>> element might look like the
+  are trying to map a configuration for Person object. The <<<\<configuration/\>>>> element might look like the
   following:
 
 +----+
-
 ...
 <configuration>
- <person>
-   <firstName>Jason</firstName>
-   <lastName>van Zyl</lastName>
- </person>
+  <person>
+    <firstName>Jason</firstName>
+    <lastName>van Zyl</lastName>
+  </person>
 </configuration>
 ...
-
 +----+
 
  The rules for mapping complex objects are as follows:
@@ -168,30 +247,27 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
  []
 
 +----+
-
 ...
 <configuration>
- <person implementation="com.mycompany.mojo.query.SuperPerson">
-   <firstName>Jason</firstName>
-   <lastName>van Zyl</lastName>
- </person>
+  <person implementation="com.mycompany.mojo.query.SuperPerson">
+    <firstName>Jason</firstName>
+    <lastName>van Zyl</lastName>
+  </person>
 </configuration>
 ...
-
 +----+
 
-* {Mapping Collections}
+*** {Mapping Collections}
 
  The configuration mapping mechanism can easily deal with most collections so let's go through a few examples
  to show you how it's done:
 
-** {Mapping Lists}
+**** {Mapping Lists}
 
  Mapping lists works in much the same way as mapping to arrays where you a list of elements will be
  mapped to the List. So if you have a mojo like the following:
 
 +----+
-
 public class MyAnimalMojo
     extends AbstractMojo
 {
@@ -206,13 +282,11 @@ public class MyAnimalMojo
         ...
     }
 }
-
 +----+
 
  Where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
 
 +----+
-
 <project>
   ...
   <build>
@@ -232,12 +306,11 @@ public class MyAnimalMojo
   </build>
   ...
 </project>
-
 +----+
 
  Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections have no
  specific component type. In order to derive the type of a list item, the following strategy is used:
- 
+
   [[1]] If the XML element contains an <<<implementation>>> hint attribute, that is used
 
   [[2]] If the XML tag contains a <<<.>>>, try that as a fully qualified class name
@@ -249,7 +322,7 @@ public class MyAnimalMojo
 
   []
 
-** {Mapping Maps}
+**** {Mapping Maps}
 
  In the same way, you could define maps like the following:
 
@@ -275,7 +348,7 @@ public class MyAnimalMojo
 ...
 +-----+
 
-** {Mapping Properties}
+**** {Mapping Properties}
 
  Properties should be defined like the following:
 
@@ -307,65 +380,15 @@ public class MyAnimalMojo
 ...
 +-----+
 
-* {Using Setters}
+* {Configuring Build Plugins}
 
- You are not restricted to using private field mapping which is good if you are trying to make you Mojos resuable
- outside the context of Maven. Using the example above we could name our private fields using the underscore
- convention and provide setters that the configuration mapping mechanism can use. So our Mojo would look
- like the following:
+  The following is only to configure Build plugins in the <<<\<build/\>>>> element.
 
-+----+
-
-public class MyQueryMojo
-    extends AbstractMojo
-{
-    /**
-     * @parameter property="url"
-     */
-    private String _url;
-
-    /**
-     * @parameter property="timeout"
-     */
-    private int _timeout;
-
-    /**
-     * @parameter property="options"
-     */
-    private String[] _options;
-
-    public void setUrl( String url )
-    {
-        _url = url;
-    }
-
-    public void setTimeout( int timeout )
-    {
-        _timeout = timeout;
-    }
-
-    public void setOptions( String[] options )
-    {
-        _options = options;
-    }
-
-    public void execute()
-        throws MojoExecutionException
-    {
-        ...
-    }
-}
-
-+----+
-
- Note the specification of the property name for each parameter which tells Maven what setter and getter to use when
- the field's name does not match the intended name of the parameter in the plugin configuration.
-
-* {Using the <<<\<executions\>>>> Tag}
+** {Using the <<<\<executions/\>>>> Tag}
 
   You can also configure a mojo using the <<<\<executions\>>>> tag. This is most commonly used for mojos that are
-  intended to participate in some phase of the build lifecycle. Using <<<MyQueryMojo>>> as an example, you may have
-  something that will look like:
+  intended to participate in some phases of the {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}.
+  Using <<<MyQueryMojo>>> as an example, you may have something that will look like:
 
 +----+
 <project>
@@ -551,4 +574,119 @@ public class MyBindedQueryMojo
   bound to are invoked.  Alternatively, if you move a configuration section
   outside of the executions section, it will apply globally to all invocations
   of the plugin.
+
+** {Using the <<<\<dependencies/\>>>> Tag}
+
+  You could configure the dependencies of the Build plugins, commonly to use a more recent dependency version.
+
+  For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version
+  when running this plugin, you need to add <<<\<dependencies/\>>>> element like the following:
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.2</version>
+        ...
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.7.1</version>
+          </dependency>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant-launcher</artifactId>
+            <version>1.7.1</version>
+          </dependency>
+         </dependencies>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+** {Using the <<<\<inherited/\>>>> Tag In Build Plugins}
+
+  By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could uses
+  the <<<\<inherited/\>>>> tag:
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-antrun-plugin</artifactId>
+        <version>1.2</version>
+        <inherited>false</inherited>
+        ...
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+
+* {Configuring Reporting Plugins}
+
+  The following is only to configure Reporting plugins in the <<<\<reporting/\>>>> element.
+
+** {Using the <<<\<reportSets/\>>>> Tag}
+
+  You can configure a reporting plugin using the <<<\<reportSets\>>>> tag. This is most commonly used to generate
+  reports selectively when running <<<mvn site>>>. The following will generate only the project team report.
+
++----+
+<project>
+  ...
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.1.2</version>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>project-team</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+  ...
+</project>
++----+
+
+  <<Note>>: Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
+
+** {Using the <<<\<inherited/\>>>> Tag In Reporting Plugins}
+
+  Similar to the build plugins, to break the inheritance, you could uses the <<<\<inherited/\>>>> tag:
+
++----+
+<project>
+  ...
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.1.2</version>
+        <inherited>false</inherited>
+      </plugin>
+    </plugins>
+  </reporting>
+  ...
+</project>
++----+
 
