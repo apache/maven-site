@@ -3,7 +3,7 @@
  ------
  Jason van Zyl
  ------
- 12 October 2005
+ 12009-08-26
  ------
 
 Introduction to Archetypes
@@ -31,8 +31,97 @@ What is Archetype?
  for EJBs, or WARs, or for your web services. Once these archetypes are created and deployed in your organization's
  repository they are available for use by all developers within your organization.
 
+* Using an Archetype
+
+  To create a new project based on an Archetype, you need to call <<<mvn archetype:create>>> goal, like the following:
+
++---+
+mvn archetype:create \
+  -DgroupId=com.mycompany.app \
+  -DartifactId=myapp
++---+
+
+  For more informations on this goal, you could call <<<mvn archetype:help -Ddetail>>>:
+
++---+
+archetype:create
+  The archetype creation goal looks for an archetype with a given groupId,
+  artifactId, and version and retrieves it from the remote repository. Once
+  the archetype is retrieved, it is then processed against a set of user
+  parameters to create a working Maven project.
+
+  Available parameters:
+
+    archetypeArtifactId (Default: 'maven-archetype-quickstart')
+      The Archetype Artifact Id to be used.
+    archetypeGroupId (Default: 'org.apache.maven.archetypes')
+      The Archetype Group Id to be used.
+    archetypeVersion (Default: 'RELEASE')
+      The Archetype Version to be used.
+    artifactId
+      The Artifact Id of the project to be build.
+    basedir (Default: '${user.dir}')
+      No description available.
+    groupId
+      The Group Id of the project to be build.
+    localRepository
+      Maven's local repository.
+    packageName
+      The Package Name of the project to be build.
+    pomRemoteRepositories
+      The remote repositories available for discovering dependencies and
+      extensions as indicated by the POM.
+    project
+      The project to be created an archetype of.
+    remoteRepositories
+      Other remote repositories available for discovering dependencies and
+      extensions.
+    version (Default: '1.0-SNAPSHOT')
+      The Version of the project to be build.
++---+
+
+* Provided Archetypes
+
+  Maven provides several Achetype artifacts, to be used with the <<<-DarchetypeArtifactId>>> parameter:
+
+*-----------------------------+----------------+
+|| Archetype ArtifactIds      || Description   ||
+*-----------------------------+----------------+
+| maven-archetype-archetype   | An archetype which contains a sample archetype. |
+*-----------------------------+----------------+
+| maven-archetype-j2ee-simple | An archetype which contains a simplifed sample J2EE application. |
+*-----------------------------+----------------+
+| maven-archetype-mojo        | An archetype which contains a sample a sample Maven plugin. |
+*-----------------------------+----------------+
+| maven-archetype-plugin      | An archetype which contains a sample Maven plugin. |
+*-----------------------------+----------------+
+| maven-archetype-plugin-site | An archetype which contains a sample Maven plugin site. |
+*-----------------------------+----------------+
+| maven-archetype-portlet     | An archetype which contains a sample JSR-268 Portlet. |
+*-----------------------------+----------------+
+| maven-archetype-quickstart  | An archetype which contains a sample Maven project. |
+*-----------------------------+----------------+
+| maven-archetype-simple      | An archetype which contains a simple Maven project. |
+*-----------------------------+----------------+
+| maven-archetype-site        | An archetype which contains a sample Maven site which demonstrates some of the supported document types like APT, XDoc, and FML and demonstrates how to i18n your site. |
+*-----------------------------+----------------+
+| maven-archetype-site-simple | An archetype which contains a sample Maven site. |
+*-----------------------------+----------------+
+| maven-archetype-webapp      | An archetype which contains a sample Maven Webapp project. |
+*-----------------------------+----------------+
+
+  Example:
+
++----+
+mvn archetype:create \
+  -DarchetypeGroupId=org.apache.maven.archetypes \
+  -DarchetypeArtifactId=maven-archetype-site \
+  -DgroupId=com.mycompany.app \
+  -DartifactId=my-app-site
++----+
+
 * What makes up an Archetype?
-   
+
  Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of
  archetype and a set of {{{http://velocity.apache.org/}Velocity}} templates which make up the prototype
  project. If you would like to know how to make your own archetypes please refer to our
