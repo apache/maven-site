@@ -100,6 +100,8 @@ under the License.
       <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
       <h5>Looking for CI Servers?</h5>
       <p><a href="http://maven.apache.org/continuous-integration.html">Take a look</a> at the CI Servers available from the community.</p>
+      <h5>Looking for Code Quality Management tools?</h5>
+      <p><a href="http://maven.apache.org/code-quality-management.html">Take a look</a> at the Code Quality Management platforms available from the community.</p>
 
       <h5>Supporting Maven</h5>
       <p>We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank the sponsors of the Apache Software Foundation</a> for their support and assistance. To support the ASF, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.</p>
