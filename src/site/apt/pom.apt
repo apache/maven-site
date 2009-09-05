@@ -543,7 +543,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   such that dependencies are always build before dependent modules.
 
   To see aggregation in action, just have a look at the
-  {{{http://svn.apache.org/viewvc/maven/components/trunk/pom.xml?view=markup}Maven}} or
+  {{{http://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
   {{{http://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
 
 *** A final note on {Inheritance v}. Aggregation
@@ -551,7 +551,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   Inheritance and aggregation create a nice dynamic to control builds through a single,
   high-level POM. You will often see projects that are both parents and aggregators.
   For example, the entire maven core runs through a single base POM
-  {{{http://svn.apache.org/viewvc/maven/components/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
+  {{{http://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
   so building the Maven project can be executed by a single command: <<<mvn compile>>>.
   However, although both POM projects, an aggregator project and a parent project are not
   one in the same and should not be confused. A POM project may be inherited from - but does
