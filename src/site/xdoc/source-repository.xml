@@ -40,7 +40,7 @@ under the License.
         </p>
         <source>
 <a href="http://svn.apache.org/viewvc/maven/maven-2/branches/maven-2.2.x">http://svn.apache.org/viewvc/maven/maven-2/branches/maven-2.2.x</a>&#xA0;<!-- protected space to force line break -->
-<a href="http://svn.apache.org/viewvc/maven/components/trunk">http://svn.apache.org/viewvc/maven/components/trunk</a></source>
+<a href="http://svn.apache.org/viewvc/maven/maven-3/trunk">http://svn.apache.org/viewvc/maven/maven-3/trunk</a></source>
         <p>
           The source repositories for the various plugins are listed in the documentation of the respective plugin,
           reachable via the <a href="plugins/index.html">plugin index</a>.
@@ -53,7 +53,7 @@ under the License.
         </p>
         <source>
 $ svn checkout http://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout http://svn.apache.org/repos/asf/maven/components/trunk maven-3</source>
+$ svn checkout http://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3</source>
       </subsection>
       <subsection name="Developer Access">
         <p>
@@ -62,7 +62,7 @@ $ svn checkout http://svn.apache.org/repos/asf/maven/components/trunk maven-3</s
         </p>
         <source>
 $ svn checkout https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout https://svn.apache.org/repos/asf/maven/components/trunk maven-3</source>
+$ svn checkout https://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3</source>
         <p>
           To commit changes to the repository, execute the following command to commit your changes (<code>svn</code> will
           prompt you for your password):
@@ -77,7 +77,7 @@ $ svn commit --username your-username -m "A message"</source>
         </p>
         <source>
 $ svn checkout https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout https://svn.apache.org/repos/asf/maven/components/trunk maven-3</source>
+$ svn checkout https://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3</source>
       </subsection>
       <subsection name="Access through a Proxy">
         <p>
