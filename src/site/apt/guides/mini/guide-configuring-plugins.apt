@@ -667,7 +667,21 @@ public class MyBindedQueryMojo
 </project>
 +----+
 
-  <<Note>>: Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
+  <<Notes>>:
+
+  [[1]] To exclude all reports, you need to use:
+
++----+
+  <reportSets>
+    <reportSet>
+      <reports/>
+    </reportSet>
+  </reportSets>
++----+
+
+  [[2]] Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
+
+  []
 
 ** {Using the <<<\<inherited/\>>>> Tag In Reporting Plugins}
 
