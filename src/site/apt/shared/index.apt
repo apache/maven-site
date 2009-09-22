@@ -16,6 +16,8 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-archiver/} <<<maven-archiver>>>}}                         | 2.4          | 2009-01-05        | Is mainly used by plugins to handle packaging. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-archiver/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
+| {{{/shared/maven-artifact-resolver/} <<<maven-artifact-resolver>>>}}       | 1.0          | 2009-09-22        | Resolve dependency artifacts for one or more projects. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-artifact-resolver/}SVN}}
+*----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-common-artifact-filters/} <<<maven-common-artifact-filters>>>}}  | 1.2   | 2009-08-20        | Used to filter lists of Artifact instances. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-common-artifact-filters/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-dependency-tree/} <<<maven-dependency-tree>>>}}           | 1.2          | 2008-09-02        | Maven Dependency Tree constructs a tree model of a Maven project's dependencies. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-tree/}SVN}}
@@ -33,4 +35,6 @@ Shared Components
 | {{{/shared/maven-runtime/} <<<maven-runtime>>>}}                           | 1.0-alpha-1  | 2008-06-02        | Maven Runtime allows introspection of Maven project metadata at runtime. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-runtime/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-shared-jar/} <<<maven-shared-jar>>>}}                     | 1.0          | 2007-07-11        | Utilities that help identify the contents of a JAR, including Java class analysis and Maven metadata analysis. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-jar/}SVN}}
+*----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
+| {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.2          | 2009-09-22        | Used to run Maven builds as part of tests. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-verifier/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
