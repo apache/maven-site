@@ -310,7 +310,7 @@ POM Reference
    [[1]] Install the dependency locally using the install plugin. The method is the simplest recommended method. For example:
 
 ---------------
-mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1
+mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
 ---------------
 
         Notice that an address is still required, only this time you use the command line and the install plugin will
