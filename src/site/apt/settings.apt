@@ -16,15 +16,17 @@ Settings Reference
 
     [[1]] {{{Simple_Values}Simple Values}}
 
-    [[2]] {{{Servers}Servers}}
+    [[2]] {{{Plugin_Groups}Plugin Groups}}
+
+    [[3]] {{{Servers}Servers}}
 
        [[1]] {{{Password_Encryption}Password Encryption}}
 
-    [[3]] {{{Mirrors}Mirrors}}
+    [[4]] {{{Mirrors}Mirrors}}
 
-    [[4]] {{{Proxies}Proxies}}
+    [[5]] {{{Proxies}Proxies}}
 
-    [[5]] {{{Profiles}Profiles}}
+    [[6]] {{{Profiles}Profiles}}
 
       [[1]] {{{Activation}Activation}}
 
@@ -32,7 +34,7 @@ Settings Reference
 
       [[3]] {{{Plugin_Repositories}Plugin Repositories}}
 
-    [[6]] {{{Active_Profiles}Active Profiles}}
+    [[7]] {{{Active_Profiles}Active Profiles}}
 
   []
 
@@ -88,9 +90,6 @@ Settings Reference
   <interactiveMode>true</interactiveMode>
   <usePluginRegistry>false</usePluginRegistry>
   <offline>false</offline>
-  <pluginGroups>
-    <pluginGroup>org.mortbay.jetty</pluginGroup>
-  </pluginGroups>
   ...
 </settings>
 +------------------------------------+
@@ -114,18 +113,33 @@ Settings Reference
   This element is useful for build servers which cannot connect to a remote repository,
   either because of network setup or security reasons.
 
-  * <<pluginGroups>>:
+ []
+
+* {Plugin Groups}
+
   This element contains a list of <<<pluginGroup>>> elements, each contains a groupId. The
   list is searched when a plugin is used and the groupId is not provided in the command line.
-  This list automatically contains <<<org.apache.maven.plugins>>> and <<<org.codehaus.mojo>>>. For example, given the
-  above settings the Maven command line may execute <<<org.mortbay.jetty:jetty-maven-plugin:run>>>
+  This list automatically contains <<<org.apache.maven.plugins>>> and <<<org.codehaus.mojo>>>.
+
++------------------------------------+
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <pluginGroups>
+    <pluginGroup>org.mortbay.jetty</pluginGroup>
+  </pluginGroups>
+  ...
+</settings>
++------------------------------------+
+
+  For example, given the above settings the Maven command line may execute <<<org.mortbay.jetty:jetty-maven-plugin:run>>>
   with the truncated command:
 
 ------------------------------------
 mvn jetty:run
 ------------------------------------
-
- []
 
 * {Servers}
 
