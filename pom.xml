@@ -362,7 +362,8 @@
       <id>pdf</id>
       <activation>
         <property>
-          <name>!pdf.skip</name>
+          <!--name>pdf.skip</name-->
+          <name>pdf.exec</name>
         </property>
       </activation>
       <build>
@@ -402,7 +403,8 @@
       <id>linkcheck</id>
       <activation>
         <property>
-          <name>!linkcheck.skip</name>
+          <!--name>linkcheck.skip</name-->
+          <name>linkcheck.exec</name>
         </property>
       </activation>
       <reporting>
