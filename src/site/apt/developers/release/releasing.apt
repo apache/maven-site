@@ -350,7 +350,11 @@ http://maven.apache.org/shared/maven-XXX
  If this is a shared component release, update the version number for the
  component on the <src/site/apt/shared/index.apt> page.
 
- Commit your changes.
+ Commit your changes and then deploy the site.
+
++-----+
+mvn site-deploy
++-----+
 
  [[14]] Update JIRA
 
