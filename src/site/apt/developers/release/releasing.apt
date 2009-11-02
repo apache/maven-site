@@ -149,6 +149,10 @@ mvn release:prepare
 
  <<Note:>> Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
 
+ <<Note:>> If you're located in Europe then <<<release:prepare>>> may fail with 'Unable to tag SCM' and
+ '{{{http://www.apache.org/dev/version-control.html#out-of-sync}svn: No such revision X}}'. Wait 10 seconds and run
+ <<<mvn release:prepare>>> again.
+
  [[4]] Stage the release for a vote
 
 +-----+
