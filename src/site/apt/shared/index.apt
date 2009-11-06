@@ -32,7 +32,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-reporting-impl/} <<<maven-reporting-impl>>>}}             | 2.0.4.2      | 2009-07-23        | Abstract classes to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-impl/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
-| {{{/shared/maven-runtime/} <<<maven-runtime>>>}}                           | 1.0-alpha-1  | 2008-06-02        | Maven Runtime allows introspection of Maven project metadata at runtime. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-runtime/}SVN}}
+| {{{/shared/maven-runtime/} <<<maven-runtime>>>}}                           | 1.0-alpha-2  | 2008-11-06        | Maven Runtime allows introspection of Maven project metadata at runtime. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-runtime/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
 | {{{/shared/maven-shared-jar/} <<<maven-shared-jar>>>}}                     | 1.0          | 2007-07-11        | Utilities that help identify the contents of a JAR, including Java class analysis and Maven metadata analysis. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-jar/}SVN}}
 *----------------------------------------------------------------------------+--------------+-------------------+----------------+------------------------+
