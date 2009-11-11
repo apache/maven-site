@@ -117,7 +117,7 @@ Available Plugins
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Tools>>                                                 |            |              |            | <<These are miscellaneous tools available through Maven by default.>> | |
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                | B          | 2.2          | 2009-07-19 | Generate an Ant build file for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ant-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANT}JIRA}}
+| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                | B          | 2.3          | 2009-11-11 | Generate an Ant build file for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ant-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANT}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}          | B          |1.3          | 2008-10-11 | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
