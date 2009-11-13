@@ -35,7 +35,7 @@ Download Maven ${currentStableVersion}
    You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
    hours to reach all mirrors.
 
-   Maven ${currentStableVersion} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
+   Maven is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
    We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{./guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
@@ -56,10 +56,12 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
-
-  You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
+| Documentation | {{{./maven-site-1.0-site.jar} single JAR}} {{{./apache-maven.pdf} PDF}} | | |
+*-------------------------+---------+----------+-----------+
 
 * {Maven ${current20xVersion}}
+
+  This is an older, but stable version of Maven for projects that require Maven 2.0.x.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
@@ -73,15 +75,21 @@ Download Maven ${currentStableVersion}
 | Release Notes           | {{{./docs/${current20xVersion}/release-notes.html} ${current20xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
-* {Maven Documentation}
+* {Maven ${currentDevelopmentVersion}}
 
-  You could download the current documentation, i.e. this website, as:
+  Unstable preview releases of Maven 3 are also available.
 
-  * a {{{./maven-site-1.0-site.jar}single jar}} file;
-
-  * a {{{./apache-maven.pdf}PDF}} file.
-
-  []
+*-------------------------+---------+----------+-----------+
+|                         | Mirrors | Checksum | Signature |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.md5} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.asc} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz} apache-maven-${currentDevelopmentVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz.md5} apache-maven-${currentDevelopmentVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz.asc} apache-maven-${currentDevelopmentVersion}-bin.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip} apache-maven-${currentDevelopmentVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip.md5} apache-maven-${currentDevelopmentVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip.asc} apache-maven-${currentDevelopmentVersion}-bin.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+| Release Notes           | {{{./docs/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
+*-------------------------+---------+----------+-----------+
 
 * {Maven Ant Tasks}
 
