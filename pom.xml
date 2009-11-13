@@ -268,8 +268,12 @@
 
   <properties>
     <current20xVersion>2.0.10</current20xVersion>
-    <current21xVersion>2.1.0</current21xVersion>
-    <current22xVersion>2.2.1</current22xVersion>
+    <current20xReleaseDate>18 Feb 2009</current20xReleaseDate>
+    <currentStableVersion>2.2.1</currentStableVersion>
+    <currentStableReleaseDate>11 August 2009</currentStableReleaseDate>
+    <currentDevelopmentVersion>3.0-alpha-3</currentDevelopmentVersion>
+    <currentDevelopmentReleaseDate>13 November 2009</currentDevelopmentReleaseDate>
+    <releasedVersions>2.2.1,2.2.0,2.1.0,2.0.10,2.0.9,2.0.8,2.0.7,2.0.6,2.0.5,2.0.4,2.0.3,2.0.2,2.0.1,2.0</releasedVersions>
   </properties>
 
   <build>

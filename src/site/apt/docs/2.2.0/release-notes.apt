@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven ${current22xVersion}
+Release Notes - Maven 2.2.0
  ------
 Brett Porter
 Jason van Zyl
@@ -29,17 +29,17 @@ John Casey
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Maven ${current22xVersion}
+Maven 2.2.0
 
-  The Apache Maven team would like to announce the release of Maven ${current22xVersion}.
+  The Apache Maven team would like to announce the release of Maven 2.2.0.
 
-  Maven ${current22xVersion} is {{{./download.html} available for download}}.
+  Maven 2.2.0 is {{{../../download.html} available for download}}.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
-  See the {{{./plugins/index.html} Plugin List}} for more information.
+  See the {{{../../plugins/index.html} Plugin List}} for more information.
 
   We hope you enjoy using Maven! If you have any questions, please consult:
 
@@ -47,57 +47,6 @@ Maven ${current22xVersion}
 
     * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
     
-* 2.2.1 Release Notes
-
-  Maven 2.2.1 aims to correct several critical regressions related to the selection of the HttpClient-based Wagon implementation for HTTP/HTTPS transfers in Maven 2.2.0. 
-  The new release reverts this selection, reinstating the Sun-based - or <<<lightweight>>> - Wagon implementation as the default for this sort of traffic. However, 
-  Maven 2.2.1 goes a step further to provide a means of selecting which <<<provider>>> - or implementation - the user wishes to use for a particular transfer protocol. 
-  More information on providers can be found in our {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}}.
-  
-  In addition, Maven 2.2.1 addresses some long-standing problems related to injecting custom lifecycle mappings and artifact handlers. These custom components are now correctly loaded
-  regardless of whether they come from a plugin with the extensions flag enabled, or from a pure build extension. In addition, custom artifact handlers now will be used to configure
-  the attributes of the main project artifact in addition to any artifacts related to dependencies or project attachments created during the build.
-  
-  The full list of changes can be found in our {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&styleName=Html&version=15328}issue management system}}, and is reproduced below.
-  
-** Complete list of issues fixed in 2.2.1
-
-*** Bug
-
-      * MNG-3265 - maven-model Extension.equals causes NPE when any field is uninitialized
-
-      * MNG-3506 - Custom ArtifactHandler not resolved for project when an additional plugin with extensions is defined in parent pom
-
-      * MNG-3753 - ArtifactResolverDiagnoser.diagnose() fails with NPE if nested IOException has no detail message
-
-      * MNG-4189 - Maven not picking up specific timestamped version dependency when a later timestamped version was downloaded and already present in the local repository
-
-      * MNG-4218 - NPE in AbstractArtifactResolutionException if DefaultArtifactResolver.resolveTransitively is interrupted
-
-      * MNG-4228 - [regression] Authorization failed: Not authorized by proxy.
-
-      * MNG-4235 - [regression] Maven 2.2.0 produces invalid checksums during deployment to secured HTTP repo
-
-      * MNG-4236 - [regression] http wagon uploads files twice with Maven 2.2.0 when preemptive auth is disabled (default setting)
-
-      * MNG-4238 - Custom ArtifactHandler provided by build extension isn't used for project artifact
-
-      * MNG-4240 - Direct dependencies with scope == provided will not have their transitive dependencies resolved for compiling and testing
-
-      * MNG-4270 - ArtifactHandler, LifecycleMapping from plugin dependency is not used when plugin extensions are enabled
-
-      * MNG-4275 - [regression] Direct relocations no longer log at WARNING level : MNG-3380 conflicts with MNG-1689
-
-*** Improvement
-
-      * MNG-4254 - Support selection of wagon implementation for a particular protocol
-
-      * MNG-4279 - wagon provider selection should fail gracefully and use protocol for roleHint if protocol-provider roleHint isn't available.
-
-*** Task
-
-      * MNG-4290 - Update guide-http-settings to reflect the fact that sun-based http has been restored as the default for the http/s wagons.
-
 * 2.2.0 Release Notes
 
   Maven 2.2.0 contains a few important changes that justify the version upgrade, instead of simply naming it 2.1.1. First, the Java requirement for Maven 2.2.0 has been upgraded to 1.5 or later. This upgrade was planned for 2.1.0, but that release still contained binaries that were compatible with JDK 1.4. In addition, due to some serious flaws in the version-expression POM transformation included in 2.1.0, this feature has been removed for the time being. Finally, some new default execution IDs have been added to Maven to enable the separation of configuration for plugins bound by the default lifecycle mappings, and for those invoked directly from the command line. All of these issues have been described below with their associated JIRA tickets.
@@ -115,13 +64,13 @@ Maven ${current22xVersion}
 ** Noteworthy changes and improvements
 
     * MNG-3401 - Starting in Maven 2.2.0, goals invoked directly from the command line can be configured in the POM separately from other plugin invocations using a special executionId called <<<default-cli>>>. Where previously, all configurations for command-line goals had to go in the plugin-level configuration, Maven 2.2.0 allows command-line-specific configurations to be separated into their own <<<\<execution\>>>>. For more information, see the {{{./guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
-
+    
     * MNG-3203 - Similar to MNG-3401, previous to Maven 2.2.0 it was impossible to separate configurations for different goals from a single plugin that were bound to the lifecycle by the default mappings for a given packaging. Beginning in Maven 2.2.0, it is possible to separate configurations for <<<compiler:compile>>> from those for <<<compiler:testCompile>>> using executions with IDs <<<default-compile>>> and <<<default-testCompile>>> respectively. In the case of the compiler plugin, this allows the separation of include and exclude patterns that are applied during the two compiler activities in the <<<jar>>> build. For more information, see the {{{./guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
-
+    
     * MNG-4179 - <<Regression:>> In Maven 2.1.0, artifact downloads hang when a transfer failure occurred. This has been corrected.
-
+  
     * MNG-4184 - <<Regression:>> Maven 2.1.0 failed with a cyclic dependency in cases where a dependency for a report plugin is build as part of the current reactor. This has been corrected.
-
+  
     * MNG-4167 - <<Regression:>> Version-expression resolution for POMs in Maven 2.1.0 took place as a transformation phase during artifact installation and deployment. However, this caused the deployed POM to be different from the one signed by the GPG plugin. Because of this and other use-case problems, version-expression resolution has been removed from Maven 2.2.0 pending a more comprehensive design review. MNG-4223 provides tracking for this review.
 
     * MNG-4140 - <<Regression:>> Version-expression resolution for POMs in Maven 2.1.0 was too aggressive, replacing not only version expressions in artifact coordinates, but also in plugin configurations and POM properties. As mentioned above, version-expression resolution has been removed pending further review.
@@ -131,76 +80,72 @@ Maven ${current22xVersion}
 *** Sub-task
 
     * MNG-4144 - document escape character for curly braces in clear-text passwords for settings.xml password security
-
+    
     * MNG-4145 - switch to released versions of plexus-sec-dispatcher (and by ext. plexus-cipher) once they're available
 
 *** Bug
 
     * MNG-2258 - Wrong execution order of plugins in same phase
-
+    
     * MNG-3401 - Plugin parameters must be specified outside an execution block when they are invoked from the command line
-
+    
     * MNG-3553 - cannot resolve dependency with scope import
-
+    
     * MNG-3776 - Namespace misspelled in settings.xml
-
+    
     * MNG-4074 - cyclic reference with 2.1.0-RC1 that doesn't occur with 2.0.10
-
+    
     * MNG-4082 - Encryption is triggered if passwords merely contain curly braces
-
+    
     * MNG-4126 - regression Properties defined in profiles.xml of parent are not inherited during multimodule build
-
+    
     * MNG-4137 - NPE in DefaultLIfecycleExecutor when run from within Hudson builds
-
+    
     * MNG-4140 - Properties incorrectly replaced in pom
-
+    
     * MNG-4146 - password security doesn't work with custom password providers
-
+    
     * MNG-4147 - very long passwords cause LightweightHTTP wagon to line-wrap the Base64-encoded Authorization header
-
+    
     * MNG-4165 - http session cookies rejected with non-lightweight http wagon (maybe with lightweight one too)
-
+    
     * MNG-4166 - Problem parsing command-line options in release:perform
-
+    
     * MNG-4167 - version-expression transformation interferes with plugins like GPG
-
+    
     * MNG-4168 - String index out of range: 43807
-
+    
     * MNG-4179 - regression Artifact download hangs upon transfer failure
-
+    
     * MNG-4184 - regression maven2.1 fails with cyclic dependency in case of extension/dependency for report-plugin to reactor-project
-
+    
     * MNG-4207 - Plugins that use ArtifactResolver with http repositories AND depend on log4j run into ExceptionInInitializerError
-
+    
     * MNG-4213 - preemptive auth in non-lightweight http wagon causes Unauthorized responses from some servers
-
+    
     * MNG-4219 - update plexus-utils to avoid leaking processes in CommandLineUtils.getSystemEnvars()
 
 *** Improvement
 
     * MNG-2979 - Cross module dependencies for multi-module site
-
+    
     * MNG-3203 - maven should execute compiler:compile and :test-compile in separate executions, to allow separate configuration
-
+    
     * MNG-3834 - Improve error message when dependency with classifier is missing version
-
+    
     * MNG-4210 - Remove log4j configuration warning
 
 *** Task
 
     * MNG-4143 - Update Java requirement to 1.5
-
+    
     * MNG-4169 - Remove invocation of maven-plugin-plugin:updatePluginRegistry from default lifecycle bindings
 
 *** Wish
-
+ 
     * MNG-4139 - avoid the schema location in generated maven-metadata*.xml
 
 
 * Release notes for earlier versions
 
-    * {{{./release-notes-2.1.x.html}Maven ${current21xVersion} Release Notes}}
-
-    * {{{./release-notes-2.0.x.html}Maven ${current20xVersion} Release Notes}}
-
-    * {{{./release-notes-older.html}Release Notes for earlier versions}}
+    * {{{../../release-notes-older.html}Release Notes for earlier versions}}
