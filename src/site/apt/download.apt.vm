@@ -1,5 +1,5 @@
  ------
-Download Maven ${current22xVersion}
+Download Maven
  ------
 Brett Porter
 Jason van Zyl
@@ -35,7 +35,7 @@ Download Maven ${current22xVersion}
    You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
    hours to reach all mirrors.
 
-   Maven ${current22xVersion} is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
+   Maven is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
    We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{./guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
 
@@ -55,9 +55,11 @@ Download Maven ${current22xVersion}
 | Release Notes           | {{{./release-notes.html} ${current22xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
-  You could also download the current documentation, i.e. this website, as a {{{./maven-site-1.0-site.jar}single jar}} file.
+  You could also download the current documentation, i.e. this website, as a {{{Maven_Documentation}JAR or PDF}}.
 
 * {Maven ${current21xVersion}}
+
+  This is an older, but stable version of Maven for projects that require Maven to run on JDK 1.4.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
@@ -73,6 +75,8 @@ Download Maven ${current22xVersion}
 
 * {Maven ${current20xVersion}}
 
+  This is an older, but stable version of Maven for projects that require Maven 2.0.x.
+
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
@@ -83,6 +87,26 @@ Download Maven ${current22xVersion}
 | Maven ${current20xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.zip} apache-maven-${current20xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.md5} apache-maven-${current20xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.asc} apache-maven-${current20xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./release-notes-2.0.x.html} ${current20xVersion}}} | | |
+*-------------------------+---------+----------+-----------+
+
+* {Maven ${currentDevelopmentVersion}}
+
+  Unstable preview releases of Maven 3 are also available.
+
+*-------------------------+---------+----------+-----------+
+|                         | Mirrors | Checksum | Signature |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (tar.bz2)     | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.md5} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.asc} apache-maven-${currentDevelopmentVersion}-bin.tar.bz2.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz} apache-maven-${currentDevelopmentVersion}-bin.tar.gz}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz.md5} apache-maven-${currentDevelopmentVersion}-bin.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.tar.gz.asc} apache-maven-${currentDevelopmentVersion}-bin.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip} apache-maven-${currentDevelopmentVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip.md5} apache-maven-${currentDevelopmentVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${currentDevelopmentVersion}-bin.zip.asc} apache-maven-${currentDevelopmentVersion}-bin.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (Source tar.gz)      | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/source/apache-maven-${currentDevelopmentVersion}-src.tar.gz} apache-maven-${currentDevelopmentVersion}-src.tar.gz}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.tar.gz.md5} apache-maven-${currentDevelopmentVersion}-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.tar.gz.asc} apache-maven-${currentDevelopmentVersion}-src.tar.gz.asc}} |
+*-------------------------+---------+----------+-----------+
+| Maven ${currentDevelopmentVersion} (Source zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip} apache-maven-${currentDevelopmentVersion}-src.zip}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip.md5} apache-maven-${currentDevelopmentVersion}-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip.asc} apache-maven-${currentDevelopmentVersion}-src.zip.asc}} |
+*-------------------------+---------+----------+-----------+
+| Release Notes           | {{{./release-notes-3.0.x.html} ${currentDevelopmentVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
 * {Maven Documentation}
