@@ -72,15 +72,5 @@ maven-2.2.0$ mvn site-deploy -Preporting
 
  <<Note:>> It will take an hour or so to sync.
 
- [[5]] Update the current ref symlink to point the last Maven release
-
- * Connect you to <people.apache.org> and go to </www/maven.apache.org/ref/> folder.
-
- * Create a symlink from <2.2.0> folder to <current> if it is the newest stable release of Maven:
-
-+-----+
-ref$ ln -s 2.2.0/ ./current
-+-----+
-
  []
 
