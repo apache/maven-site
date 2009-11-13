@@ -1,0 +1,355 @@
+ -----
+ Releasing A Maven Project
+ -----
+ Jason van Zyl
+ -----
+ 2009-03-22
+ -----
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+Releasing a Maven-based project at Apache
+
+  All Maven-based projects take similar steps to release at the ASF.
+  
+* {Prerequisites}
+
+ Be sure that:
+
+  * you have all Maven servers defined in your settings.xml. For more information, please refer to
+  {{{../committer-settings.html}Committer settings}}.
+
+  * you have created your GPG keys. For more information, please refer to {{{./pmc-gpg-keys.html}Making GPG Keys}}.
+
+  * you have a GPG client installed and on your shell's path. See {{{http://www.gnupg.org/}http://www.gnupg.org/}}.
+
+  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.tigris.org/}http://subversion.tigris.org/}}.
+
+  * you have JDK 5 installed and on your shell's path.
+
+  * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable MAVEN_OPTS=-Xmx512m
+
+  * you must use Maven 2.2.1, as Maven 2.0.x cannot deploy over SCP to the ASF, and Maven 2.1.0 and 2.2.0 produce
+    incorrect GPG signatures and checksums respectively.
+
+  []
+
+ Formerly, a <<<release>>> profile was required in the <<<$\{user.home\}/.m2/settings.xml>>> to define the staging
+ repository. As of inheritance from the Apache parent POM version 5, a repository manager will automatically handle
+ staging (see below for details). Hence, configuration of <<<deploy.altRepository>>> is no longer necessary and
+ should be removed from your existing <<<release>>> profile.
+
+ Here's what your <<<release>>> profile might look like in your <<<$\{user.home\}/.m2/settings.xml>>>:
+
++-----+
+<settings>
+  ...
+  <profiles>
+    <profile>
+      <id>apache-release</id>
+      <properties>
+        <gpg.passphrase> <!-- YOUR KEY PASSPHRASE --> </gpg.passphrase>
+      </properties>
+    </profile>
+  </profiles>
+  ...
+</settings>
++-----+
+
+ Everything that you need to release has been configured in the POM all ASF projects should inherit from. The release plugin configuration being used is the following:
+
+%{snippet|id=release-plugin-configuration|url=http://svn.apache.org/repos/asf/maven/pom/trunk/asf/pom.xml}
+
+ And the profile being used for releases is the following:
+
+%{snippet|id=release-profile|url=http://svn.apache.org/repos/asf/maven/pom/trunk/asf/pom.xml}
+
+* Before Release
+
+ [[1]] Prepare your POMs for release:
+
+   [[a]] Make sure there are <<no>> snapshots in the POMs to be released.
+
+   [[b]] Check that your POMs will not lose content when they are rewritten
+         during the release process.
+
+     * Verify that all <<<pom.xml>>> files have an SCM definition.
+
+     * <<<mvn release:prepare -DdryRun=true>>>
+
+     * Diff the original file <<<pom.xml>>> with the one called
+       <<<pom.xml.tag>>> to see if the license or any other info has been
+       removed. This has been known to happen if the starting
+       <<<\<project\>>>> tag is <<not>> on a single line.
+       The only things that should be different between these files are the
+       <<<\<version\>>>> and <<<\<scm\>>>> elements. Any other changes, you
+       must backport yourself to the original <<<pom.xml>>> file and commit
+       before proceeding with the release.
+
+     []
+
+ [[2]] Publish a snapshot:
+
++-----+
+>mvn deploy
+...
+[INFO] [deploy:deploy]
+[INFO] Retrieving previous build number from apache.snapshots.https
+...
++-----+
+
+ If you experience an error during deployment like a HTTP 401 check your settings for the required server entries
+ as outlined in the {{{Prerequisites}Prerequisites}}.
+
+ <<Note:>> Be sure that the generated artifacts respect the
+ {{{http://www.apache.org/dev/release.html#distribute-raw-artifact}Apache release rules}}: NOTICE and LICENSE files
+ should be present in
+ the META-INF directory within the jar. For <<<-sources>>> artifacts, be sure that your POM does <<not>> use the
+ maven-source-plugin:2.0.3 which is broken. The recommended version at this time is 2.0.4.
+
+ <<Note:>> You should verify the deployment under Maven Snapshot repository on Apache.
+
++-----+
+https://repository.apache.org/content/repositories/snapshots/...
++-----+
+
+ [[3]] Prepare the release
+
++-----+
+mvn release:clean
+mvn release:prepare
++-----+
+
+ <<Note:>> Preparing the release will create the new tag in SVN, automatically checking in on your behalf.
+
+ <<Note:>> If you're located in Europe then <<<release:prepare>>> may fail with 'Unable to tag SCM' and
+ '{{{http://www.apache.org/dev/version-control.html#out-of-sync}svn: No such revision X}}'. Wait 10 seconds and run
+ <<<mvn release:prepare>>> again.
+
+ [[4]] Stage the release for a vote
+
++-----+
+mvn release:perform
++-----+
+
+ The release will automatically be inserted into a temporary staging repository for you. See the Nexus
+ {{{http://www.sonatype.com/books/nexus-book/reference/staging.html} staging documentation}} for full details.
+
+ [[5]] Close the staging repository
+
+ Login to <<<{{https://repository.apache.org}}>>> using your Apache SVN credentials. Click on "Staging". Then click
+ on "org.apache.maven" in the list of repositories. In the panel below you should see an open repository that is linked
+ to your username and ip. Right click on this repository and select "Close". This will close the repository from future
+ deployments and make it available for others to view. If you are staging multiple releases together, skip this step
+ until you have staged everything.
+
+ See the image below for details.
+
+[../../images/Close_Repo.png] Closing the repository
+
+ [[6]] Verify the Staged artifacts
+
+ If you click on your repository, a tree view will appear below. You can then browse the
+ contents to ensure the artifacts are as you expect them. Pay particular attention to the existence of <<<*.asc>>> (signature)
+ files. If the you don't like the content of the repository, right click
+ your repository and choose "Drop". You can then rollback your release and repeat the process.
+
+ Note the repository URL, you will need this in your vote email.
+
+[../../images/Validate_Artifacts.png] Validating the artifacts
+
+ [[7]] Stage the latest documentation
+ 
+ If your project uses Maven to generate documentation and it is not included as part of
+ the release process, stage it now for inclusion in the release vote. For Maven projects,
+ refer to the specific instructions for the project you are releasing.
+ 
+ [[8]] Propose a vote on the dev list with the closed issues, the issues left,
+ the staging repository and the staging site. For instance:
+
++-----+
+To: "Maven Developers List" <dev@maven.apache.org>
+Subject: [VOTE] Release Maven XXX plugin version Y.Z
+
+Hi,
+
+We solved N issues:
+http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=XXX&styleName=Html&version=XXX
+
+There are still a couple of issues left in JIRA:
+http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=XXX&status=1
+
+Staging repo:
+https://repository.apache.org/content/repositories/maven-staging-[YOUR REPOSITORY ID]/
+
+Staging site:
+http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
+
+Guide to testing staged releases:
+http://maven.apache.org/guides/development/guide-testing-releases.html
+
+Vote open for 72 hours.
+
+[ ] +1
+[ ] +0
+[ ] -1
+
++-----+
+
+ To get the JIRA release notes link, browse to the plugin's JIRA page, select the <Road Map> link,
+ and use the link to <Release Notes> that is next to the version being released.
+
+ To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Preset Filters>
+ on the right, use the link for <Outstanding> issues.
+
+ [[9]] Check the vote results
+
+ Copied from {{{http://www.apache.org/foundation/voting.html}Votes on Package Releases}}.
+
++-----+
+Votes on whether a package is ready to be released follow a format similar to majority approval
+-- except that the decision is officially determined solely by whether at least three
++1 votes were registered. Releases may not be vetoed. Generally the community will table the
+vote to release if anyone identifies serious problems, but in most cases the ultimate decision,
+once three or more positive votes have been garnered, lies with the individual serving as
+release manager. The specifics of the process may vary from project to project, but the
+'minimum of three +1 votes' rule is universal.
++-----+
+
+  The list of binding voters is available at {{http://people.apache.org/~jim/projects.html#maven-pmc}} (or corresponding group for your project).
+
+  Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
+
++-----+
+To: "Maven Developers List" <dev@maven.apache.org>
+CC: "Maven Project Management Committee List" <private@maven.apache.org>
+Subject: [RESULT] [VOTE] Release Maven XXX plugin version Y.Z
+
+Hi,
+The vote has passed with the following result :
+
++1 (binding): <<list of names>>
++1 (non binding): <<list of names>>
+
+I will promote the artifacts to the central repo.
++-----+
+
+  If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as
+  described above.
+
+ [[10]] Promote the release
+
+ Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
+ be available to all users.
+
+ Login to <<<{{https://repository.apache.org}}>>> with your Apache SVN credentials. Click on "Staging" and then on the repository with id "maven-staging". Find your
+ closed staging repository, right click on it and choose "Promote". Select the "Releases" repository and click
+ "Promote".
+
+ See image below.
+
+[../../images/Promote.png] Promote the artifacts
+
+ Next click on "Repositories", select the "Releases" repository and validate that your artifacts exist as you
+ expect them.
+
+ [[11]] Deploy the current website
+ 
+   As above, deploy the web site if appropriate and update the project site for the
+   new release.
+
+ [[12]] Update JIRA
+
+ Go to Admin section in JIRA for the project and mark
+ the <<<Y.Z>>> version as released. Create version <<<Y.Z+1>>>, if that hasn't already
+ been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+
+ [[13]] Create an announcement. For instance, for Maven:
+
+ <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
+ the email to announce@maven.apache.org will bounce.
+
++-----+
+From: YOUR_APACHE_USERNAME@apache.org
+To: announce@maven.apache.org, users@maven.apache.org
+Cc: dev@maven.apache.org
+Subject: [ANN] Maven XXX Plugin Y.Z Released
+
+The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
+
+This plugin (insert short description of the plugin's purpose).
+
+http://maven.apache.org/plugins/maven-XXX-plugin/
+
+You should specify the version in your project's plugin configuration:
+
+<plugin>
+ <groupId>org.apache.maven.plugins</groupId>
+ <artifactId>maven-XXX-plugin</artifactId>
+ <version>Y.Z</version>
+</plugin>
+
+Release Notes - Maven 2.x XXX Plugin - Version Y.Z
+
+(Copy Here Release Notes in Text Format from JIRA)
+
+Enjoy,
+
+-The Maven team
+
++-----+
+
+ [[14]] Add the release to the next board report, in the private subversion area.
+
+ This is a PMC activity.  If you are not a PMC member then email the Developer's
+ list with a request to update this file for your release.
+
+ [[15]] Celebrate :o)
+
+Trouble Shooting
+
+* mvn release:prepare "commit failed" during <<<Prepare the release>>>
+
+  If you get an error message similar to:
+
++-----+
+    [INFO] Unable to tag SCM
+    Provider message:
+    The svn tag command failed.
+    Command output:
+    svn: Commit failed (details follow):
+    svn: File '/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/src/main/java/org/apache/maven/plugin/eclipse/EclipsePlugin.java' already exists
++-----+
+
+  Then the resolution is to use a Subversion client 1.6+ and to run <<<svn update>>>.
+
+* mvn release:prepare "commit failed" during <<<Prepare the release>>>
+
+  If you get an error message similar to:
+
++-----+
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Unable to tag SCM
+Provider message:
+The svn tag command failed.
+Command output:
+svn: Path 'https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7' already exists
++-----+
+
+  Then the resolution is to delete the tag using <<<svn del -m "re-releasing build" <svn path>>>>
