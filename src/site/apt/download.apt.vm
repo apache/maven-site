@@ -56,8 +56,6 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
-| Documentation | {{{./maven-site-1.0-site.jar} single JAR}} {{{./apache-maven.pdf} PDF}} | | |
-*-------------------------+---------+----------+-----------+
 
 * {Maven ${current20xVersion}}
 
@@ -90,6 +88,16 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
 *-------------------------+---------+----------+-----------+
+
+* {Maven Documentation}
+
+  You could download the current documentation, i.e. this website, as:
+
+  * a {{{./maven-site-1.0-site.jar}single jar}} file;
+
+  * a {{{./apache-maven.pdf}PDF}} file.
+
+  []
 
 * {Maven Ant Tasks}
 
