@@ -185,6 +185,8 @@ Available Plugins
 *-------------------------------------------------------------------------------+----------------------------------+
 || <<Plugin>> (see {{{http://mojo.codehaus.org/plugins.html}complete list with version}}) || <<Description>>
 *-------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>| Build signatures of APIs (JDK for example) and checks your classes against them.
+*-------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}  | Attach extra artifacts and source folders to build.
 *-------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}              | Generate sources from an XSD using Castor.
@@ -198,6 +200,8 @@ Available Plugins
 | {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                    | Executes SQL scripts from files or inline.
 *-------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | Generate a list of tasks based on tags in your code.
+*-------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/versions-maven-plugin/} <<<versions>>>}}          | Manage versions of your project, its modules, dependencies and plugins.
 *-------------------------------------------------------------------------------+----------------------------------+
 
 ** At code.google.com
