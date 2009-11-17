@@ -182,27 +182,27 @@ Available Plugins
   the {{{http://repository.codehaus.org/org/codehaus/mojo/}<<<org/codehaus/mojo>>>}} subfolder. Here are a few
   common ones:
 
-*-------------------------------------------------------------------------------+----------------------------------+
+*---------------------------------------------------------------------------------+----------------------------------+
 || <<Plugin>> (see {{{http://mojo.codehaus.org/plugins.html}complete list with version}}) || <<Description>>
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>| Build signatures of APIs (JDK for example) and checks your classes against them.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}  | Attach extra artifacts and source folders to build.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}              | Generate sources from an XSD using Castor.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}              | Generate sources from a JavaCC grammer.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}            | Generate a report on code metrics using JDepend.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}} | Compiles C and C++ code with native compilers.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                    | Executes SQL scripts from files or inline.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}            | Generate a list of tasks based on tags in your code.
-*-------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/versions-maven-plugin/} <<<versions>>>}}          | Manage versions of your project, its modules, dependencies and plugins.
-*-------------------------------------------------------------------------------+----------------------------------+
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammer.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}}   | Compiles C and C++ code with native compilers.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                      | Executes SQL scripts from files or inline.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}              | Generate a list of tasks based on tags in your code.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/versions-maven-plugin/} <<<versions>>>}}            | Manage versions of your project, its modules, dependencies and plugins.
+*---------------------------------------------------------------------------------+----------------------------------+
 
 ** At code.google.com
 
