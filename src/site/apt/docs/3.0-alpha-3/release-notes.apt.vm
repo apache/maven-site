@@ -30,7 +30,7 @@ Maven 3.0-alpha-3
 
   The Apache Maven team would like to announce the release of Maven 3.0-alpha-3.
 
-  Maven 3.0-alpha-3 is {{{./download.html} available for download}} from the 'preview' section.
+  Maven 3.0-alpha-3 is {{{../../download.html} available for download}} from the 'preview' section.
 
   Maven is a software project management and comprehension tool. Based on the concept of a project object model
   (POM), Maven can manage a project's build, reporting and documentation from a central place.
@@ -39,7 +39,7 @@ Maven 3.0-alpha-3
   to implement many highly demanded features.
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
-  See the {{{./plugins/index.html} Plugin List}} for more information.
+  See the {{{../../plugins/index.html} Plugin List}} for more information.
 
   We hope you enjoy using Maven! If you have any questions, please consult:
 
