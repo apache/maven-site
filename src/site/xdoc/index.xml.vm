@@ -38,17 +38,16 @@ under the License.
 <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006660305041243700248%3Ahyqtfwsewpm"></script>
 <!-- Google CSE Search Box Ends -->
 
-      <h5>Get Maven ${current22xVersion}</h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: 11 August 2009</span>
+      <h5>Get Maven ${currentStableVersion}</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: ${currentStableReleaseDate}</span>
       <p>
         <a href="download.html">
-          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current22xVersion}"/>
-          Maven ${current22xVersion}
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentStableVersion}"/>
+          Maven ${currentStableVersion}
         </a>
-        <small>(2.8Mb)</small>
         <span style="font-size: smaller">
           <br/>
-          <a href="release-notes.html">Release Notes</a>,
+          <a href="docs/${currentStableVersion}/release-notes.html">Release Notes</a>,
           <a href="download.html#Requirements">System Requirements</a>,
           <a href="download.html#Installation">Installation Instructions</a>
         </span>
@@ -67,27 +66,16 @@ under the License.
           <a href="ant-tasks/index.html">Documentation</a>
         </span>
       </p>
-      <h5>Older Releases</h5>
-      <p>
-        <a href="download.html#Maven_${current21xVersion}">
-          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current21xVersion}"/>
-          Maven ${current21xVersion}
-        </a>
-        <small>(2.8Mb)</small>
-        <span style="font-size: smaller">
-          <br/>
-          <a href="release-notes-2.1.x.html">Release Notes</a>
-        </span>
-      </p>
+      <h5>Older Release</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: ${current20xReleaseDate}</span>
       <p>
         <a href="download.html#Maven_${current20xVersion}">
           <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${current20xVersion}"/>
           Maven ${current20xVersion}
         </a>
-        <small>(2.0Mb)</small>
         <span style="font-size: smaller">
           <br/>
-          <a href="release-notes-2.0.x.html">Release Notes</a>
+          <a href="docs/${current20xVersion}/release-notes.html">Release Notes</a>
         </span>
       </p>
 

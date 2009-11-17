@@ -262,14 +262,20 @@
   <distributionManagement>
     <site>
       <id>apache.website</id>
-      <url>scp://people.apache.org/www/maven.apache.org/</url>
+      <url>${site.deploy.url}</url>
     </site>
   </distributionManagement>
 
   <properties>
     <current20xVersion>2.0.10</current20xVersion>
-    <current21xVersion>2.1.0</current21xVersion>
-    <current22xVersion>2.2.1</current22xVersion>
+    <current20xReleaseDate>18 Feb 2009</current20xReleaseDate>
+    <currentStableVersion>2.2.1</currentStableVersion>
+    <currentStableReleaseDate>11 August 2009</currentStableReleaseDate>
+    <currentDevelopmentVersion>3.0-alpha-3</currentDevelopmentVersion>
+    <currentDevelopmentReleaseDate>13 November 2009</currentDevelopmentReleaseDate>
+    <releasedVersions>2.2.1,2.2.0,2.1.0,2.0.10,2.0.9,2.0.8,2.0.7,2.0.6,2.0.5,2.0.4,2.0.3,2.0.2,2.0.1,2.0</releasedVersions>
+    <developmentVersions>3.0-alpha-3</developmentVersions>
+    <site.deploy.url>scp://people.apache.org/www/maven.apache.org/</site.deploy.url>
     <currentDevelopmentVersion>3.0-alpha-3</currentDevelopmentVersion>
   </properties>
 
@@ -281,6 +287,14 @@
           <artifactId>maven-site-plugin</artifactId>
           <version>2.0.1</version>
           <!-- <version>2.1-SNAPSHOT</version> -->
+          <dependencies>
+            <!-- remove once we use a site-plugin that uses this version or above -->
+            <dependency>
+              <groupId>org.codehaus.plexus</groupId>
+              <artifactId>plexus-velocity</artifactId>
+              <version>1.1.8</version>
+            </dependency>
+          </dependencies>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
