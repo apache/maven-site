@@ -1,7 +1,6 @@
 ErrorDocument 404 /errors/404.html
 
-Redirect /ref/current http://maven.apache.org/ref/${current22xVersion}
-Redirect /ref/current-2.1.x http://maven.apache.org/ref/${current21xVersion}
+Redirect /ref/current http://maven.apache.org/ref/${currentStableVersion}
 Redirect /ref/current-2.0.x http://maven.apache.org/ref/${current20xVersion}
 
 Redirect Permanent /ant-tasks.html http://maven.apache.org/ant-tasks/index.html

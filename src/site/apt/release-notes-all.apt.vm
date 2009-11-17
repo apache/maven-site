@@ -28,7 +28,7 @@ Brian Fox
 
 Release Notes
 
-#foreach ($v in $developmentVersions.split(","))
+#foreach ($v in $releasedVersions.split(","))
 #parse("docs/$v/release-notes.txt")
 #end
 
