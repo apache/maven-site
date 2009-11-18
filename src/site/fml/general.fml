@@ -84,7 +84,7 @@
     </faq>
 
     <faq id="using-ant-tasks">
-      <question>How can I use Ant tasks in Maven 2?</question>
+      <question>How can I use Ant tasks in a Maven build?</question>
       <answer>
         <p>
           There are currently 2 alternatives:
@@ -101,6 +101,16 @@
             <a href="http://maven.apache.org/plugins/maven-antrun-plugin/index.html">AntRun plugin</a>.
           </li>
         </ul>
+      </answer>
+    </faq>
+
+    <faq id="maven-ant-tasks">
+      <question>How can I use Maven features in an Ant build?</question>
+      <answer>
+        <p>
+          The <a href="http://maven.apache.org/ant-tasks/index.html">Maven Ant Tasks</a> allow many of the features of 
+          Maven, such as dependency management and repository deployment, to be used in an Ant build. 
+        </p>
       </answer>
     </faq>
 
