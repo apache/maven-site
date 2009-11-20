@@ -29,7 +29,7 @@ Releasing Maven
   
 * Producing Release Candidates
 
-  For non-alpha/beta releases, release candidates are produced beofre the actual
+  For non-alpha/beta releases, release candidates are produced before the actual
   release.
   
   To produce a release candidate, follow the first seven steps only from the following
