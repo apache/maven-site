@@ -27,6 +27,24 @@ under the License.
   </properties>
   <body>
     <section name="Books on Maven">
+    
+<div style="float: left; margin-right: 5em;">
+<a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><img src="images/books/pearson_apache_maven_fr.jpg" title="Apache Maven - en Français" /></a>
+</div>
+
+      <div style="min-height: 220px">
+        <p><a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><strong>Apache Maven (en Français)</strong></a></p>
+        <ul>
+          <li><strong>Covers: </strong>Maven 2 and above</li>
+          <li><strong>Published: </strong> Pearson (November 20, 2009)</li>
+          <li><strong>Authors: </strong>
+<a href="http://blog.loof.fr/">Nicolas De loof</a>, 
+<a href="http://blog.aheritier.net/">Arnaud Héritier</a>
+          </li>
+          <li><strong>Buy the Book:</strong> <a href="http://www.pearson.fr/livre/index.cfm?gcoi=27440100730370">Pearson</a>, <a href="http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X/wwwdeveloppec-21?tag=citofgamonlco-20">Amazon</a>, <a href="http://livre.fnac.com/a2748495/Nicolas-de-Loof-Apache-Maven?PID=1&amp;Mn=-1&amp;Mu=-13&amp;Ra=-1&amp;To=0&amp;Nu=1&amp;Fr=0">FNAC</a></li>
+        </ul>
+      </div>    
+    
 <div style="float: left; margin-right: 5em;">
 <a href="http://www.packtpub.com/apache-maven-2-effective-implementations/book"><img src="images/books/apache_maven_2_effective_implementation.jpg" title="Apache Maven 2: Effective Implementation" /></a>
 </div>
