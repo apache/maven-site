@@ -207,7 +207,9 @@ mvn groupId:artifactId:goal -Denvironment=test
 </profiles>
 +---+
 
-  <<Note>>: The tags <<<\<exists\>>>> and <<<\<missing\>>>> could be interpolated with some patterns like <<<$\{user.home\}>>>.
+  As of Maven 2.0.9, the tags <<<\<exists\>>>> and <<<\<missing\>>>> could be interpolated. Supported variables are
+  system properties like <<<$\{user.home\}>>> and enviroment variables like <<<$\{env.HOME\}>>>. Please note that
+  properties defined in the POM itself are not available for interpolation here.
 
   Profiles can also be active by default using a configuration like the following:
 
