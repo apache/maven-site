@@ -101,20 +101,6 @@ Download Maven ${currentStableVersion}
 
   []
 
-* {Maven Ant Tasks}
-
-  Detailed information about the Maven Ant tasks can be found on the {{{http://maven.apache.org/ant-tasks}project site}}.
-
-*-------------------------+---------+----------+-----------+
-|                         | Mirrors | Checksum | Signature |
-*-------------------------+---------+----------+-----------+
-| Maven Ant Tasks 2.0.10      | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/maven-ant-tasks-2.0.10.jar} maven-ant-tasks-2.0.10.jar}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.10.jar.md5} maven-ant-tasks-2.0.10.jar.md5}} | {{{http://www.apache.org/dist/maven/binaries/maven-ant-tasks-2.0.10.jar.asc} maven-ant-tasks-2.0.10.jar.asc}} |
-*-------------------------+---------+----------+-----------+
-| Sources (zip)               | {{{http://www.apache.org/dyn/closer.cgi/maven/source/maven-ant-tasks-2.0.10-src.zip} maven-ant-tasks-2.0.10-src.zip}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.md5} maven-ant-tasks-2.0.10-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.zip.asc} maven-ant-tasks-2.0.10-src.zip.asc}} |
-*-------------------------+---------+----------+-----------+
-| Sources (tar.gz)             | {{{http://www.apache.org/dyn/closer.cgi?path=/maven/source/maven-ant-tasks-2.0.10-src.tar.gz} maven-ant-tasks-2.0.10-src.tar.gz}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.md5} maven-ant-tasks-2.0.10-src.tar.gz.md5}} | {{{http://www.apache.org/dist/maven/source/maven-ant-tasks-2.0.10-src.tar.gz.asc} maven-ant-tasks-2.0.10-src.tar.gz.asc}} |
-*-------------------------+---------+----------+-----------+
-
 * Previous Releases
 
   All previous releases of Maven can be found in the {{{http://archive.apache.org/dist/maven/binaries/}archives}}.
