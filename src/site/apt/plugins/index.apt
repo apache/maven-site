@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2009-12-09
+ 2009-12-21
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -71,7 +71,7 @@ Available Plugins
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-resources-plugin/} <<<resources>>>}}    | B          | 2.4          | 2009-08-25 | Copy the resources to the output directory for including in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRESOURCES}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-site-plugin/} <<<site>>>}}              | B          | 2.0.1        | 2009-07-14 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
+| {{{/plugins/maven-site-plugin/} <<<site>>>}}              | B          | 2.1          | 2009-12-21 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-surefire-plugin/} <<<surefire>>>}}      | B          | 2.4.3        | 2008-05-14 | Run the Junit tests in an isolated classloader. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
