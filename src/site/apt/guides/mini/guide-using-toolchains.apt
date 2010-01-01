@@ -51,7 +51,8 @@ Guide to Using Toolchains
 
 * Using Toolchains in Your Project
 
-  There are two essential components that you need to configure in order to use toolchains. These are the <<<maven-toolchains-plugin>>>
+  There are two essential components that you need to configure in order to use toolchains. These are the
+  <<<{{{http://maven.apache.org/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>>
   and the <<<toolchains.xml>>> file.
 
   The <<<maven-toolchains-plugin>>> is the one that sets the toolchain to be used by the toolchain-aware plugins in your project.
