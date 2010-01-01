@@ -87,7 +87,7 @@ Guide to Using Toolchains
         </jdk>
       </toolchains>
     </configuration>
-  <plugin>
+  </plugin>
   ...
 </plugins>
 -----
