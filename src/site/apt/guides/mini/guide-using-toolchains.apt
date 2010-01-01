@@ -33,7 +33,7 @@ Guide to Using Toolchains
 
   The Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build,
   without the need to configure them. With toolchains, a project can now be built using a specific version of JDK independent
-  from the one Maven is running with. (Think how JDK versions can be set in IDEs like Idea, Netbeans and Eclipse)  
+  from the one Maven is running with. (Think how JDK versions can be set in IDEs like Idea, Netbeans and Eclipse)
 
   Toolchains would only work in Maven 2.0.9 and higher versions. For more details about it's design and implementation,
   please see {{{http://docs.codehaus.org/display/MAVEN/Toolchains}Toolchains}}.
@@ -43,11 +43,11 @@ Guide to Using Toolchains
 
   [[1]] <<<maven-compiler-plugin-2.1-SNAPSHOT>>>
 
-  [[2]] <<<maven-javadoc-plugin-2.5-SNAPSHOT>>>
+  [[2]] <<<maven-javadoc-plugin-2.5>>>
 
   [[3]] <<<maven-surefire-plugin-2.5-SNAPSHOT>>>
 
-  [[4]] <<<exec-maven-plugin-1.1.1-SNAPSHOT>>> (Codehaus MOJO)
+  [[4]] <<<exec-maven-plugin-1.1.1>>> (Codehaus MOJO)
 
 * Using Toolchains in Your Project
 
@@ -69,7 +69,7 @@ Guide to Using Toolchains
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-toolchains-plugin</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <executions>
       <execution>
         <phase>validate</phase>
