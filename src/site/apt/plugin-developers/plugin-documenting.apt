@@ -43,4 +43,4 @@ mvn docck:check
 
 References
 
- * {{{http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Documentation}Maven Plugin Documentation}}
+ * {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Documentation}Maven Plugin Documentation}}
