@@ -83,10 +83,10 @@ Reader reader = new FileReader( javaFile );
 
   To save the user from configuring each plugin individually, conventions have been established that allow a user to
   centrally configure the file encoding per POM. Plugin developers should respect these conventions whereever possible:
-  
+
   * {{{http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding}Source File Encoding}}
-  
-  * {{{http://docs.codehaus.org/display/MAVEN/Reporting+Encoding+Configuration}Report Output Encoding}}
+
+  * {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Reporting+Encoding+Configuration}Report Output Encoding}}
 
   []
 
@@ -128,7 +128,7 @@ System.out.println( url.getPath() );
 > /C:/temp/foo%20bar+foo
 
 System.out.println( URLDecoder.decode( url.getPath(), "UTF-8" ) );
-> /C:/temp/foo bar foo 
+> /C:/temp/foo bar foo
 +---
 
   First of all, please note that
@@ -180,12 +180,12 @@ File path = new File( new URI( url.toExternalForm() ) );
   The remaining source of frustration is the conversion from <<<URL>>> to <<<URI>>>. As already said, the <<<URL>>>
   class accepts malformed URLs which will make the constructor of <<<URI>>> throw an exception. And indeed, class
   loaders from Sun JREs up to Java 1.4 will deliver malformed URLs when queried for a resource. Likewise, the class
-  loaders employed by Maven 2.x deliver malformed resource URLs regardless of the JRE version (see  
+  loaders employed by Maven 2.x deliver malformed resource URLs regardless of the JRE version (see
   {{{http://jira.codehaus.org/browse/MNG-3607}MNG-3607}}).
 
   For all these reasons, it is recommended to use
   <<<{{{http://commons.apache.org/io/api-release/org/apache/commons/io/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
-  from Commons IO or 
+  from Commons IO or
   <<<{{{http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
   from a recent Plexus Utilities.
 
@@ -231,7 +231,7 @@ if ( "info".equals( debugLevel.toLowerCase() ) )
   is provided as the fallback/default language in the base resource bundle. Due to the lookup strategy performed by
   <<<{{{http://java.sun.com/javase/6/docs/api/java/util/ResourceBundle.html#getBundle(java.lang.String,%20java.util.Locale,%20java.lang.ClassLoader)}ResourceBundle.getBundle()}}>>>,
   one must always provide a dedicated resource bundle for this default language, too. This bundle should be empty
-  because it inherits the strings via the parent chain from the base bundle, but it must exist. 
+  because it inherits the strings via the parent chain from the base bundle, but it must exist.
 
   The following example illustrates this requirement. Imagine the broken resource bundle family shown below which is
   intended to provide localization for English, German and French:
@@ -375,7 +375,7 @@ if ( !file.isAbsolute() )
   Many Maven plugins can get this resolution automatically if they declare their affected mojo parameters of type
   <<<java.io.File>>> instead of <<<java.lang.String>>>. This subtle difference in parameter types will trigger a
   feature known as <path translation>, i.e. the Maven core will automatically resolve relative paths when it pumps the
-  XML configuration into a mojo. 
+  XML configuration into a mojo.
 
 * {Determining the Output Directory for a Site Report}
 
@@ -421,7 +421,7 @@ public MyReportMojo extends AbstractMavenReport
   controlled. In the first case, the parameter <<<outputDirectory>>> from the mojo itself is used. In the second case
   however, the Maven Site Plugin takes over control and will set the output directory according to its own configuration
   by calling <<<MavenReport.setReportOutputDirectory()>>> on the reports being generated.
-  
+
   Therefore, developers should always use <<<MavenReport.getReportOutputDirectory()>>> if they need to query the
   effective output directory for the report. The implementation of <<<AbstractMavenReport.getOutputDirectory()>>>
   is only intended as a fallback in case the mojo is not run as part of the site generation.
@@ -463,7 +463,7 @@ public MyMojo extends AbstractMojo
   is shared with the plugin class realm. This effectively prevented plugins from using another/newer version of
   <<<plexus-utils>>>. This has been solved starting with Maven 2.0.6 by shading (most of) the classes from
   <<<plexus-utils>>> (see {{{http://jira.codehaus.org/browse/MNG-2892}MNG-2892}}).
-  
+
   In short, plugins that strictly require a newer version of <<<plexus-utils>>> also require Maven 2.0.6 as a minimum.
   Hence, a POM snippet for a Maven plugin like shown below is misleading:
 
@@ -481,7 +481,7 @@ public MyMojo extends AbstractMojo
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-utils</artifactId>
       <version>1.5.6</version>
-    </dependency>    
+    </dependency>
   </dependencies>
   ...
 </project>

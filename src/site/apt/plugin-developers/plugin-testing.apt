@@ -107,7 +107,7 @@ public class YourMojoTest
 }
 +-----+
 
- For more information, please refer to {{{http://docs.codehaus.org/display/MAVEN/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
+ For more information, please refer to {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
 
 Integration/Functional testing
 
@@ -115,7 +115,7 @@ Integration/Functional testing
 
  maven-verifier tests are run using JUnit or TestNG, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.  It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it.
 
- Maven itself uses maven-verifier to run its core integration tests.  For more information, please refer to {{{http://docs.codehaus.org/display/MAVEN/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
+ Maven itself uses maven-verifier to run its core integration tests.  For more information, please refer to {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
 
 +-----+
 public class TrivialMavenVerifierTest extends TestCase
