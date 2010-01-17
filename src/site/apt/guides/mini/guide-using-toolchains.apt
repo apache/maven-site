@@ -38,14 +38,13 @@ Guide to Using Toolchains
   Toolchains would only work in Maven 2.0.9 and higher versions. For more details about it's design and implementation,
   please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
 
-  Below are the plugins which are toolchain-aware, meaning they can be used with toolchains. Please note that these are
-  still SNAPSHOT versions and are not yet released.
+  Below are the plugins which are toolchain-aware, meaning they can be used with toolchains:
 
   [[1]] <<<maven-compiler-plugin-2.1>>>
 
   [[2]] <<<maven-javadoc-plugin-2.5>>>
 
-  [[3]] <<<maven-surefire-plugin-2.5-SNAPSHOT>>>
+  [[3]] <<<maven-surefire-plugin-2.5>>>
 
   [[4]] <<<exec-maven-plugin-1.1.1>>> (Codehaus MOJO)
 
@@ -142,6 +141,3 @@ Guide to Using Toolchains
 -----
 
   Note that you can configure as many toolchains as you want in your <<<toolchains.xml>>> file.
-
-
-
