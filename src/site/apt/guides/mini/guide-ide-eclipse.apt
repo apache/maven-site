@@ -3,7 +3,7 @@
  ------
  Bernd Mau, mau@hhla.de
  ------
- 28 October 2005
+ 2010-01-21
  ------
 
 Guide to using Eclipse with Maven 2.x
@@ -82,7 +82,7 @@ but not recommended.  Actually, the only reason for a
 checkout and edit the parent POM without checking out the whole
 project. The following sample shows how to handle maven multiple
 module projects with eclipse while keeping the
-{{{http://maven.apache.org/guides/mini/guide-multi-module.html}recommended
+{{{http://maven.apache.org/guides/mini/guide-multiple-modules.html}recommended
 hierachical project layout}}.
 
 
