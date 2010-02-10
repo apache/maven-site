@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2010-02-03
+ 2010-02-10
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -147,7 +147,7 @@ Available Plugins
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}          | B+R        | 2.5.1        | 2009-10-08 | Create a Maven plugin descriptor for any Mojo's found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-release-plugin/} <<<release>>>}}        | B          | 2.0-beta-9   | 2009-03-28 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
+| {{{/plugins/maven-release-plugin/} <<<release>>>}}        | B          | 2.0          | 2010-02-10 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}        | B          | 1.0          | 2008-09-27 | Build a subset of interdependent projects in a reactor | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-reactor-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREACTOR}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
