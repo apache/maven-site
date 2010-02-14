@@ -101,12 +101,13 @@ http://maven.apache.org/shared/maven-XXX
 
 * Updating the Maven site
 
- Check out the maven site project: <<<https://svn.apache.org/repos/asf/maven/site/trunk>>>
+ Check out the maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
+ changes if already checked out.
 
- Update the version number for the component on the <src/site/apt/shared/index.apt> page.
+ Update the version number for the component on the <<<src/site/apt/shared/index.apt>>> page.
 
  Commit your changes and then deploy the site.
 
 +-----+
-mvn site-deploy
+mvn clean site-deploy
 +-----+

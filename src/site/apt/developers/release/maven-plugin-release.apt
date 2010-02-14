@@ -101,13 +101,14 @@ http://maven.apache.org/plugins/maven-XXX-plugin
 
 * Updating the Maven site
 
- Check out the maven site project: <<<https://svn.apache.org/repos/asf/maven/site/trunk>>>
+ Check out the maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
+ changes if already checked out.
 
- Update the version number for the plugin on the <src/site/apt/plugins/index.apt> page.
+ Update the version number for the plugin on the <<<src/site/apt/plugins/index.apt>>> page.
 
  Commit your changes and then deploy the site.
 
 +-----+
-mvn site-deploy
+mvn clean site-deploy
 +-----+
 
