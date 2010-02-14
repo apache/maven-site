@@ -134,5 +134,5 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
  Commit your changes and then deploy the main Maven site checked out earlier.
 
 +-----+
-mvn site-deploy
+mvn clean site-deploy
 +-----+
