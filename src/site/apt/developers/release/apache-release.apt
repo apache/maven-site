@@ -152,7 +152,7 @@ mvn release:perform
 
  [[5]] Close the staging repository
 
- Login to <<<{{https://repository.apache.org}}>>> using your Apache SVN credentials. Click on "Staging". Then click
+ Login to <<<{{https://repository.apache.org}}>>> using your Apache LDAP credentials. Click on "Staging". Then click
  on "maven" in the list of repositories. In the panel below you should see an open repository that is linked
  to your username and ip. Right click on this repository and select "Close". This will close the repository from future
  deployments and make it available for others to view. If you are staging multiple releases together, skip this step
