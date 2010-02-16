@@ -258,7 +258,7 @@ I will promote the artifacts to the central repo.
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- Login to <<<{{https://repository.apache.org}}>>> with your Apache SVN credentials. Click on "Staging" and then on the repository with id "maven-staging". Find your
+ Login to <<<{{https://repository.apache.org}}>>> again. Click on "Staging" and then on the repository with id "maven-staging". Find your
  closed staging repository, right click on it and choose "Promote". Select the "Releases" repository and click
  "Promote".
 
