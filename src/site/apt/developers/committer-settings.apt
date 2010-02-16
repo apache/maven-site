@@ -33,8 +33,10 @@ Introduction
 Enable Apache Servers
 
  Maven uses several servers configuration to deploy snapshots, releases and documentation on the Apache servers.
- You need to tell to Maven what your Apache username is. Please note that some servers use your SVN credentials
- while others use your SSH credentials.
+ You need to tell to Maven what your Apache username is. Please note that the servers now use your LDAP credentials,
+ which may differ from your old SVN credentials. They can be aligned at {{https://svn.apache.org/change-password}}.
+
+ <<It is highly recommended to use Maven's {{{../guides/mini/guide-encryption.html} password encryption capabilities}} for your passwords>>.
 
 +-----+
 <settings>
@@ -43,26 +45,26 @@ Enable Apache Servers
     <!-- To publish a snapshot of some part of Maven -->
     <server>
       <id>apache.snapshots.https</id>
-      <username> <!-- YOUR APACHE SVN USERNAME --> </username>
-      <password> <!-- YOUR APACHE SVN PASSWORD --> </password>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
+      <password> <!-- YOUR APACHE LDAP PASSWORD --> </password>
     </server>
     <!-- To publish a website of some part of Maven -->
     <server>
       <id>apache.website</id>
-      <username> <!-- YOUR APACHE SSH USERNAME --> </username>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
     </server>
     <!-- To stage a release of some part of Maven -->
     <server>
       <id>apache.releases.https</id>
-      <username> <!-- YOUR APACHE SVN USERNAME --> </username>
-      <password> <!-- YOUR APACHE SVN PASSWORD --> </password>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
+      <password> <!-- YOUR APACHE LDAP PASSWORD --> </password>
     </server>
     <!-- To stage a website of some part of Maven -->
     <server>
       <id>stagingSite</id> <!-- must match hard-coded repository identifier in site:stage-deploy -->
-      <username> <!-- YOUR APACHE SSH USERNAME --> </username>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
     </server>
