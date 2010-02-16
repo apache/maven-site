@@ -82,6 +82,7 @@ Guide to relocation
 
 +----+
 <project>
+  <modelVersion>4.0.0</modelVersion>
   <groupId>bar</groupId>
   <artifactId>foo</artifactId>
   <version>1.0</version>
