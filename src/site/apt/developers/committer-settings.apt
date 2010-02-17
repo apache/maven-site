@@ -34,7 +34,7 @@ Enable Apache Servers
 
  Maven uses several servers configuration to deploy snapshots, releases and documentation on the Apache servers.
  You need to tell to Maven what your Apache username is. Please note that the servers now use your LDAP credentials,
- which may differ from your old SVN credentials. They can be aligned at {{https://svn.apache.org/change-password}}.
+ which may differ from your old SVN credentials.
 
  <<It is highly recommended to use Maven's {{{../guides/mini/guide-encryption.html} password encryption capabilities}} for your passwords>>.
 

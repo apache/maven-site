@@ -152,7 +152,7 @@ mvn release:perform
 
  [[5]] Close the staging repository
 
- Login to <<<{{https://repository.apache.org}}>>> using your Apache LDAP credentials {{{#a1}[1]}}. Click on "Staging". Then click
+ Login to <<<{{https://repository.apache.org}}>>> using your Apache LDAP credentials. Click on "Staging". Then click
  on "maven" in the list of repositories. In the panel below you should see an open repository that is linked
  to your username and ip. Right click on this repository and select "Close". This will close the repository from future
  deployments and make it available for others to view. If you are staging multiple releases together, skip this step
@@ -354,11 +354,4 @@ svn: Path 'https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plu
 +-----+
 
   Then the resolution is to delete the tag using <<<svn del -m "re-releasing build" <svn path>>>>
-
-=========================
-
-  <Footnotes>
-
-  \[{1}\] Your LDAP password may not necessarily be your previous Subversion password. You can align them at
-          {{https://svn.apache.org/change-password}}.
 
