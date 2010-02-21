@@ -530,10 +530,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   <groupId>org.codehaus.mojo</groupId>
   <artifactId>my-parent</artifactId>
   <version>2.0</version>
+  <packaging>pom</packaging>
 
   <modules>
-    <module>my-project<module>
-    <module>another-project<module>
+    <module>my-project</module>
+    <module>another-project</module>
   </modules>
 </project>
 +-----------------------------+
