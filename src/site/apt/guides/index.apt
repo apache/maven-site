@@ -140,6 +140,10 @@ Documentation
 
  * {{{./mini/guide-encryption.html} Encrypting passwords in settings.xml}}
 
+ * {{{./mini/guide-http-settings.html} Guide to HTTP Connection Settings}}
+
+ * {{{./mini/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
+
 
 ** Testing
 

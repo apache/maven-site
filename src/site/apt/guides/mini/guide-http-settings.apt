@@ -24,7 +24,7 @@ Advanced Configuration of the HttpClient HTTP Wagon
   
   <<However>>, starting in <<Maven 2.2.1>> you have a choice: you can use the default wagon implementation for a given
   protocol, or you can select an alternative wagon <<<provider>>> you'd like to use on a per-protocol basis. 
-  For more information, see the {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
+  For more information, see the {{{./guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
 
 *Introduction
 
@@ -362,6 +362,6 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
     
     [[2]] {{{http://hc.apache.org/httpclient-3.x/preference-api.html}HttpClient preference architecture and configuration guide}}
     
-    [[3]] {{{http://maven.apache.org/guides/mini/guide-wagon-providers.html}Guide to Wagon Providers}}
+    [[3]] {{{./guide-wagon-providers.html}Guide to Wagon Providers}}
     
     []
