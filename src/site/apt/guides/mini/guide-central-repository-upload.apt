@@ -123,6 +123,11 @@ Guide to uploading artifacts to the Central Repository
 
 +----+
 
+* PGP Signature
+
+ When people download artifacts from Central Maven repository, they might want to validate that these artifacts have valid PGP signatures that can be verified against a public key server. If there is no signatures, then users have no guarantee that they are downloading the original artifact.
+
+ To improve the quality of the Central Maven repository, we require you to provide PGP signatures for all your artifacts (all files except checksums), and distribute your public key to a key server like hkp://pgp.mit.edu . If you are not familiar with PGP, please read this blog: {{{http://www.sonatype.com/people/2010/01/how-to-generate-pgp-signatures-with-maven/}How to Generate PGP Signatures with Maven}}.
 
 * FAQ and common mistakes
 
