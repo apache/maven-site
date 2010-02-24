@@ -19,8 +19,6 @@ Building a Project with Maven
 
   * {{{Quick_Start} Quick Start}} - Get started building the project quickly
 
-  * {{{./cookbook/index.html} Cookbook}} - Examples of how to perform other common tasks on a Maven-built project
-
   * {{{../users/index.html} Use Maven}} - Learn how to use Maven on your own project
 
 ~~TODO: command line reference?
