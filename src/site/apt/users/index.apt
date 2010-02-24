@@ -19,8 +19,6 @@ Maven Users Centre
 
   * {{{../guides/getting-started/index.html} Getting Started Tutorial}} - An in depth tutorial once you've learned the basics
 
-  * {{{./cookbook/index.html} Build Cookbook}} - Examples for how to add functionality to your build
-
   * {{{./getting-help.html} Getting Help}} - How to get help with Maven
 
 ~~TODO: old getting started guide should become a beginners trail, and remove content covered in the 5 minute tutorial
