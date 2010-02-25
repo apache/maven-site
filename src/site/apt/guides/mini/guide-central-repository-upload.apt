@@ -212,8 +212,8 @@ mvn source:jar javadoc:jar repository:bundle-create
 +----+
 pom.xml
 foo-1.0.jar (or whatever artifact is referred to in the pom.xml)
-foo-1.0-sources.jar (optional, jar containing java sources)
-foo-1.0-javadoc.jar (optional, jar containing javadocs)
+foo-1.0-sources.jar 
+foo-1.0-javadoc.jar 
 
 +----+
 
@@ -222,8 +222,8 @@ foo-1.0-javadoc.jar (optional, jar containing javadocs)
 
 +----+
 ${artifactId}-${version}.jar
-${artifactId}-${version}-sources.jar  (optional)
-${artifactId}-${version}-javadoc.jar  (optional)
+${artifactId}-${version}-sources.jar  
+${artifactId}-${version}-javadoc.jar
 
 +----+
 
