@@ -54,7 +54,8 @@ Releasing Maven
   
     * {{{apache-release.html} Releasing a Maven-based project at Apache}}
 
-  When staging the site, there you first need to update the release notes.
+  Below describes the additional steps that need to be taken at the points where the website are updated
+  in those instructions.
   
 ** Updating the Release Notes and web site
 
@@ -116,9 +117,6 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 
   The files may need to be renamed from those given in the repository.
 
-  Next, any superceded releases should be removed from the above locations (after
-  confirming that they exist in /www/archive.apache.org/dist/maven).
-
 ** Deploy the current references
 
   The source code references need to be deployed before deploying the web site
@@ -136,3 +134,14 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 +-----+
 mvn clean site-deploy
 +-----+
+
+** Remove Old Versions
+
+  Next, any superceded releases should be removed from the above locations (after
+  confirming that they exist in /www/archive.apache.org/dist/maven).
+
+** Proceed with Announcement 
+
+  You can now proceed with the steps outlined after deploying the website on 
+  {{{apache-release.html} Releasing a Maven-based project at Apache}}
+
