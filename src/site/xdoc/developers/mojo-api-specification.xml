@@ -67,7 +67,7 @@ under the License.
         and its
         derivatives. It also guarantees that the Mojo will have access to the
         standard Maven user-feedback mechanism,
-        <code>org.apache.maven.monitor.logging.Log</code>
+        <code>org.apache.maven.plugin.logging.Log</code>
         , so the Mojo can
         communicate important events to the console or other log sink.<!-- Using the
         Plugin/Mojo API will give that Mojo access to the Maven-integrated Log,
@@ -108,7 +108,7 @@ under the License.
         <ul>
           <li>
             <code>
-              void setLog( org.apache.maven.monitor.logging.Log )
+              void setLog( org.apache.maven.plugin.logging.Log )
             </code>
             <p>Inject a standard Maven logging mechanism to allow this Mojo
               to communicate events and feedback to the user.</p>
@@ -151,7 +151,7 @@ under the License.
         <ul>
           <li>
             <code>
-              public void setLog( org.apache.maven.monitor.logging.Log )
+              public void setLog( org.apache.maven.plugin.logging.Log )
             </code>
             <p>
               <b>[IMPLEMENTED]</b>
@@ -183,7 +183,7 @@ under the License.
           </li>
         </ul>
       </subsection>
-      <subsection name="org.apache.maven.monitor.logging.Log">
+      <subsection name="org.apache.maven.plugin.logging.Log">
         <p>This interface supplies the API for providing feedback to the user
           from the Mojo, using standard Maven channels. There should be no big
           surprises here, although you may notice that the methods accept
