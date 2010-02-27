@@ -35,6 +35,11 @@ Download Maven ${currentStableVersion}
    You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
    hours to reach all mirrors.
 
+   In order to guard against corrupted downloads/installations, it is highly recommended to
+   {{{http://www.apache.org/dev/release-signing#verifying-signature}verify the signature}}
+   of the release bundles against the public {{{http://www.apache.org/dist/maven/KEYS}KEYS}} used by the Apache Maven
+   developers.
+
    Maven is distributed under the {{{http://maven.apache.org/license.html} Apache License, version 2.0}}.
 
    We <<strongly>> encourage our users to configure a Maven repository mirror closer to their location, please read {{{./guides/mini/guide-mirror-settings.html} How to Use Mirrors for Repositories}}.
