@@ -101,7 +101,6 @@
         <item name="Configuring Maven" ref="/guides/mini/guide-configuring-maven.html" />
         <item name="Mirror Settings" ref="/guides/mini/guide-mirror-settings.html" />
         <item name="Deployment and Security Settings" ref="/guides/mini/guide-deployment-security-settings.html" />
-        <item name="Embedding Maven 2.x" ref="/guides/mini/guide-embedding-m2.html" />
         <item name="Generating Sources" ref="/guides/mini/guide-generating-sources.html" />
         <item name="Working with Manifests" ref="/guides/mini/guide-manifest.html" />
         <item name="Maven Classloading" ref="/guides/mini/guide-maven-classloading.html" />

@@ -110,8 +110,6 @@ Documentation
 
  * {{{./mini/guide-deployment-security-settings.html}Deployment and Security Settings}}
 
- * {{{./mini/guide-embedding-m2.html}Embedding Maven 2.x}}
-
  * {{{./mini/guide-generating-sources.html}Generating Sources}}
 
  * {{{./mini/guide-manifest.html}Working with Manifests}}
