@@ -8,7 +8,7 @@
 
   This release was extensively screened for regressions with Release Candidates but several things are worth noting.
 
-  * MNG-3974 - The mirror syntax order did not match the documentation. In 2.0.9, the last mirror that matched a repository would win. The correct behavior in 2.0.10 is the first match wins. Using the syntax that lets you exclude a repository from a match (*,!notthisone,thisone), it should always be possible to ensure your matching is deterministic regardless of order. See the settings {{{./settings.html#Mirrors}specification}} for more information.
+  * MNG-3974 - The mirror syntax order did not match the documentation. In 2.0.9, the last mirror that matched a repository would win. The correct behavior in 2.0.10 is the first match wins. Using the syntax that lets you exclude a repository from a match (*,!notthisone,thisone), it should always be possible to ensure your matching is deterministic regardless of order. See the settings {{{/settings.html#Mirrors}specification}} for more information.
   
   * MNG-3424 - in 2.0.9 we made the dependency order deterministic using linkedHashMaps, in 2.0.10, the rest of the hashMaps in the pom model have been replaced with linkedHashMaps. This may cause subtle changes in the ordering of executions or other processing since 2.0.9. The fix would be to reorder the elements that cause problems, and know that it will be predictable from now on.
 

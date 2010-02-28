@@ -6,7 +6,7 @@
 
 ** Changes that may affect existing builds
 
-    * MNG-4143 - Starting in 2.2.0, Maven will run only on Java 1.5 and later. You can still build projects for JDK1.4 and earlier using the approach documented in the  {{{./guides/mini/guide-building-jdk14-on-jdk15.html}Guide to Building JDK 1.4 Projects on JDK 1.5}}.
+    * MNG-4143 - Starting in 2.2.0, Maven will run only on Java 1.5 and later. You can still build projects for JDK1.4 and earlier using the approach documented in the  {{{/guides/mini/guide-building-jdk14-on-jdk15.html}Guide to Building JDK 1.4 Projects on JDK 1.5}}.
 
     * MNG-3401 - Executions with an id equal to <<<default->>><phase> (where <phase> is a valid lifecycle phase) may have unexpected results as it will be merged into the default lifecycle.
 
@@ -14,9 +14,9 @@
 
 ** Noteworthy changes and improvements
 
-    * MNG-3401 - Starting in Maven 2.2.0, goals invoked directly from the command line can be configured in the POM separately from other plugin invocations using a special executionId called <<<default-cli>>>. Where previously, all configurations for command-line goals had to go in the plugin-level configuration, Maven 2.2.0 allows command-line-specific configurations to be separated into their own <<<\<execution\>>>>. For more information, see the {{{./guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
+    * MNG-3401 - Starting in Maven 2.2.0, goals invoked directly from the command line can be configured in the POM separately from other plugin invocations using a special executionId called <<<default-cli>>>. Where previously, all configurations for command-line goals had to go in the plugin-level configuration, Maven 2.2.0 allows command-line-specific configurations to be separated into their own <<<\<execution\>>>>. For more information, see the {{{/guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
     
-    * MNG-3203 - Similar to MNG-3401, previous to Maven 2.2.0 it was impossible to separate configurations for different goals from a single plugin that were bound to the lifecycle by the default mappings for a given packaging. Beginning in Maven 2.2.0, it is possible to separate configurations for <<<compiler:compile>>> from those for <<<compiler:testCompile>>> using executions with IDs <<<default-compile>>> and <<<default-testCompile>>> respectively. In the case of the compiler plugin, this allows the separation of include and exclude patterns that are applied during the two compiler activities in the <<<jar>>> build. For more information, see the {{{./guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
+    * MNG-3203 - Similar to MNG-3401, previous to Maven 2.2.0 it was impossible to separate configurations for different goals from a single plugin that were bound to the lifecycle by the default mappings for a given packaging. Beginning in Maven 2.2.0, it is possible to separate configurations for <<<compiler:compile>>> from those for <<<compiler:testCompile>>> using executions with IDs <<<default-compile>>> and <<<default-testCompile>>> respectively. In the case of the compiler plugin, this allows the separation of include and exclude patterns that are applied during the two compiler activities in the <<<jar>>> build. For more information, see the {{{/guides/mini/guide-default-execution-ids.html}Guide to Default Execution IDs}}.
     
     * MNG-4179 - <<Regression:>> In Maven 2.1.0, artifact downloads hang when a transfer failure occurred. This has been corrected.
   
