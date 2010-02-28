@@ -32,3 +32,5 @@ RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apac
 RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/int$1
 
 Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html http://maven.apache.org/guides/development/guide-testing-development-plugins.html
+
+Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/doxia/references/apt-format.html
