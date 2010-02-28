@@ -49,6 +49,8 @@ Documentation
 
  * {{{./introduction/introduction-to-dependency-mechanism.html}The Dependency Mechanism}}
 
+ * {{{./introduction/introduction-to-optional-and-excludes-dependencies.html} Optional Dependencies and Dependency Exclusions}}
+
 ** Plugins
 
  * {{{./introduction/introduction-to-plugins.html}Plugin Development}}
@@ -58,6 +60,8 @@ Documentation
  * {{{./introduction/introduction-to-plugin-registry.html}The Plugin Registry}}
 
  * {{{./introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix Resolution}}
+
+ * {{{./introduction/introduction-to-plugin-resolution.html} Introduction to Maven Plugin Resolution}}
 
  * {{{./plugin/guide-ant-plugin-development.html}Developing Ant Plugins}}
 
@@ -141,6 +145,10 @@ Documentation
  * {{{./mini/guide-http-settings.html} Guide to HTTP Connection Settings}}
 
  * {{{./mini/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
+
+ * {{{./mini/guide-building-jdk14-on-jdk15.html} Guide to Building JDK 1.4 Projects Using JDK 1.5}}
+
+ * {{{./mini/guide-default-execution-ids.html} Guide to Configuring Default Mojo Executions}}
 
 
 ** Testing
