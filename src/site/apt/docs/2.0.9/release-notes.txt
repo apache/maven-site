@@ -21,13 +21,13 @@
 
     * MNG-3286 - The inherited field in a plugin execution block is now functioning correctly. Previously you could only dis-inherit an entire plugin configuration.
 
-    * MNG-3220 - There is now a new scope for importing managed dependencies. See {{{http://docs.codehaus.org/display/MAVEN/Importing+Managed+Dependencies}here}} and {{{./guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies}here}} for details. Please note that the use of this scope will break backwards compatibility with older Maven versions. If you use this, you should use the maven-enforcer-plugin to require a minimum maven version of 2.0.9
+    * MNG-3220 - There is now a new scope for importing managed dependencies. See {{{http://docs.codehaus.org/display/MAVEN/Importing+Managed+Dependencies}here}} and {{{/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies}here}} for details. Please note that the use of this scope will break backwards compatibility with older Maven versions. If you use this, you should use the maven-enforcer-plugin to require a minimum maven version of 2.0.9
     
     * MNG-3394 - plugin versions specified in pluginManagement are now properly overriden by build.plugin.version specification.
 
     * MNG-3415 - Transmission errors when downloading artifacts should not corrupt the local repository metadata. Hopefully this means the end of "delete your local repo" as a debug step.
     
-    * MNG-3461 - There is a new, more flexible way to define mirror settings. See the settings {{{./settings.html#Mirrors}specification}} for more information.
+    * MNG-3461 - There is a new, more flexible way to define mirror settings. See the settings {{{/settings.html#Mirrors}specification}} for more information.
 
 ** Plugin Versions defined in the 2.0.9 super pom:
 

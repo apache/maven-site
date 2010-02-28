@@ -62,8 +62,6 @@ mvn clean install
   Maven can do more than just build software - it can assist with testing, run web applications and produce reports on
   projects, as well as any number of other tasks provided by plug-ins.
 
-  To try some other tasks, see the {{{./cookbook/index.html} Cookbook for Running Maven}}.
-
 ** When Things go Wrong
 
   The following are some common problems when building with Maven, and how to resolve them.
