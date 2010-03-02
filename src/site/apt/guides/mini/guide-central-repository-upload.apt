@@ -172,6 +172,8 @@ Guide to uploading artifacts to the Central Repository
   * {{{http://codehaus.org/customs/selection.html}Codehaus}} (open to Codehaus Projects)
   
   * {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype Forge}} (open to any OSS Project)
+  
+  * {{{http://www.fusesource.org/forge/}Fusesource Forge}} (Focused on FUSE related projects)
 
  []
 {Manual upload of artifacts}
