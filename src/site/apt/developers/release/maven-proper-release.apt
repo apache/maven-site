@@ -26,41 +26,41 @@
 Releasing Maven
 
   Maven differs slightly in its release process due to several extra steps.
-  
+
 * Producing Release Candidates
 
   For non-alpha/beta releases, release candidates are produced before the actual
   release.
-  
+
   To produce a release candidate, follow the first seven steps only from the following
   procedure:
 
     * {{{apache-release.html} Releasing a Maven-based project at Apache}}
 
   The version used should be the eventual version with -RC1, -RC2, etc. appended.
-  
+
   After producing the RC, request that the developers test the release on the list.
   If a regression is found, a new release candidate is rolled.
-  
+
   After a reasonable time without regressions found, a wider audience may be polled
   if the release manager desires (for example, users@).
-  
+
   Once happy with a release candidate, the full release is performed, with the final
   version in place.
-  
-* Producing the Release    
 
-  To produce a final release, the same process as for standard projects is followed: 
-  
+* Producing the Release
+
+  To produce a final release, the same process as for standard projects is followed:
+
     * {{{apache-release.html} Releasing a Maven-based project at Apache}}
 
   Below describes the additional steps that need to be taken at the points where the website are updated
   in those instructions.
-  
+
 ** Updating the Release Notes and web site
 
   Checkout {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
-  
+
   Note that release notes can be created and checked in, but other changes
   should not be checked in as it can be deployed 'live' at any time.
 
@@ -87,7 +87,7 @@ Releasing Maven
    [[1]] From the site checkout, stage the site (replacing $USER and $VERSION):
 
 +------+
-mvn site:stage-deploy -DstagingSiteURL=scp://people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION
+mvn -Preporting site:stage-deploy -DstagingSiteURL=scp://people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION
 +------+
 
    <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
@@ -102,7 +102,7 @@ http://people.apache.org/~USER/staged-sites/maven-VERSION
    upload it manually:
 
 +------+
-mvn site:stage
+mvn -Preporting site:stage
 scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION USER@people.apache.org:/home/$USER/public_html/staged-sites/maven-$VERSION
 +------+
 
@@ -110,9 +110,9 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 
   In addition to promoting the repository, the release archives should be copied to
   the following locations:
-  
+
     * people.apache.org:/www/www.apache.org/dist/maven/binaries - apache-maven-$VERSION-bin.tar.gz, apache-maven-$VERSION-bin.tar.bz2, apache-maven-$VERSION-bin.zip, corresponding checksums (md5 and sha1) and signatures (asc)
-    
+
     * people.apache.org:/www/www.apache.org/dist/maven/source - apache-maven-$VERSION-src.tar.gz, apache-maven-$VERSION-src.tar.bz2, apache-maven-$VERSION-src.zip, corresponding checksums (md5 and sha1) and signatures (asc)
 
   The files may need to be renamed from those given in the repository.
@@ -121,7 +121,7 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 
   The source code references need to be deployed before deploying the web site
   with the new version.
-  
+
   This is described in {{{../website/deploy-maven-current-ref.html} Deploying the Current References}}.
 
 ** Deploying the release website
@@ -132,7 +132,7 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
  Commit your changes and then deploy the main Maven site checked out earlier.
 
 +-----+
-mvn clean site-deploy
+mvn -Preporting clean site-deploy
 +-----+
 
 ** Remove Old Versions
@@ -140,8 +140,8 @@ mvn clean site-deploy
   Next, any superceded releases should be removed from the above locations (after
   confirming that they exist in /www/archive.apache.org/dist/maven).
 
-** Proceed with Announcement 
+** Proceed with Announcement
 
-  You can now proceed with the steps outlined after deploying the website on 
+  You can now proceed with the steps outlined after deploying the website on
   {{{apache-release.html} Releasing a Maven-based project at Apache}}
 
