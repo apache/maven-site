@@ -20,7 +20,7 @@ Skins
 *-------------------------------------------------------------------+--------------+------------------+
 | {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.0          | You get this skin if you don't specify a skin.
 *-------------------------------------------------------------------+--------------+------------------+
-| {{{/skins/maven-stylus-skin/} <<<Maven Stylus Skin>>>}}           | 1.1          | The skin used for the website of Maven itself.
+| {{{/skins/maven-stylus-skin/} <<<Maven Stylus Skin>>>}}           | 1.2          | The skin used for the website of Maven itself.
 *-------------------------------------------------------------------+--------------+------------------+
 
   To use one of these skins in your project, you use the <<<skin>>> element of the
