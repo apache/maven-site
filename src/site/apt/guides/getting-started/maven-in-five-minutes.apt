@@ -35,7 +35,7 @@ OS name: "windows 2003" version: "5.2" arch: "x86" Family: "windows"
   On your command line, execute the following Maven goal:
 
 -------
-mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
 -------
 
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
@@ -43,7 +43,7 @@ mvn archetype:create -DgroupId=com.mycompany.app -DartifactId=my-app
   execute the command a couple of times before it succeeds. This is because the remote server may time out before
   your downloads are complete. Don't worry, there are ways to fix that.>
 
-  You will notice that the <create> goal created a directory with the same name given as the
+  You will notice that the <generate> goal created a directory with the same name given as the
   artifactId. Change into that directory.
 
 -------
@@ -104,10 +104,10 @@ my-app
 
 ** What did I just do?
 
-  You executed the Maven goal <archetype:create>, and passed in various parameters to that goal.
+  You executed the Maven goal <archetype:generate>, and passed in various parameters to that goal.
   The prefix <archetype> is the {{{../../plugins/index.html}plugin}} that contains the goal. If you are familiar with
   {{{http://ant.apache.org}Ant}}, you
-  may concieve of this as similar to a task. This goal created a simple project based upon an archetype.
+  may conceive of this as similar to a task. This goal created a simple project based upon an archetype.
   Suffice it to say for now that a <plugin> is a collection
   of <goals> with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with
   various jboss items".
@@ -131,7 +131,7 @@ mvn package
 [INFO] ------------------------------------------------------------------------
 -------
 
-  Unlike the first command executed (<archetype:create>) you may notice the second is simply
+  Unlike the first command executed (<archetype:generate>) you may notice the second is simply
   a single word - <package>. Rather than a goal, this is a <phase>. A phase is a step in the
   {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
   sequence of phases. When a phase is given, Maven will execute every phase in the sequence
