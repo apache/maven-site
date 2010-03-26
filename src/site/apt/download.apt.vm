@@ -80,7 +80,9 @@ Download Maven ${currentStableVersion}
 
 * {Maven ${currentDevelopmentVersion}}
 
-  Unstable preview releases of Maven 3 are also available.
+  Unstable preview releases of Maven 3 are also available. You should check the
+  {{{http://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html} compatibility notes}}
+  before using this version.
 
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
