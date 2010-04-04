@@ -45,7 +45,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-users</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/users@maven.apache.org/</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven---Users-f178.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Users-f178.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.users</otherArchive>
       </otherArchives>
     </mailingList>
@@ -57,7 +57,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-dev</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/dev@maven.apache.org/</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven-Developers-f179.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven-Developers-f179.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.dev</otherArchive>
       </otherArchives>
     </mailingList>
@@ -68,7 +68,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-issues/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/issues@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven---Issues-f15573.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Issues-f15573.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.issues</otherArchive>
       </otherArchives>
     </mailingList>
@@ -79,7 +79,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-commits</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/commits@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven---Commits-f15575.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Commits-f15575.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.commits</otherArchive>
       </otherArchives>
     </mailingList>
@@ -93,7 +93,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-doxia-dev/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/doxia-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Doxia---dev-f11816.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Doxia---dev-f11816.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.doxia-dev</otherArchive>
       </otherArchives>
     </mailingList>
@@ -105,7 +105,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-doxia-users/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/doxia-users@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Doxia---Users-f14483.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Doxia---Users-f14483.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.doxia-users</otherArchive>
       </otherArchives>
     </mailingList>
@@ -197,7 +197,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-wagon-users/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/wagon-users@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Wagon---Users-f13870.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Wagon---Users-f13870.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.wagon-users</otherArchive>
       </otherArchives>
     </mailingList>
@@ -209,7 +209,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-wagon-dev/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/wagon-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Wagon---Dev-f13871.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Wagon---Dev-f13871.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.wagon-dev</otherArchive>
       </otherArchives>
     </mailingList>
@@ -232,7 +232,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-announce/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/announce@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven-Announcements-f15617.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven-Announcements-f15617.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.announce</otherArchive>
       </otherArchives>
     </mailingList>
@@ -243,7 +243,7 @@
       <archive>http://mail-archives.apache.org/mod_mbox/maven-notifications/</archive>
       <otherArchives>
         <otherArchive>http://www.mail-archive.com/notifications@maven.apache.org</otherArchive>
-        <otherArchive>http://www.nabble.com/Maven---Notifications-f15574.html</otherArchive>
+        <otherArchive>http://old.nabble.com/Maven---Notifications-f15574.html</otherArchive>
         <otherArchive>http://markmail.org/list/org.apache.maven.notifications</otherArchive>
       </otherArchives>
     </mailingList>
