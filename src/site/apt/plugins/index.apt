@@ -61,7 +61,7 @@ Available Plugins
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Core plugins>>                                          |            |              |            | <<Plugins corresponding to default core phases (ie. clean, compile). They may have muliple goals as well.>> | |
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-clean-plugin/} <<<clean>>>}}            | B          | 2.4          | 2010-01-15 | Clean up after the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-clean-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCLEAN}JIRA}}
+| {{{/plugins/maven-clean-plugin/} <<<clean>>>}}            | B          | 2.4.1        | 2010-05-12 | Clean up after the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-clean-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCLEAN}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}      | B          | 2.3          | 2010-04-16 | Compiles Java sources. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-compiler-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCOMPILER}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
