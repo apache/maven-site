@@ -3,7 +3,7 @@
  -----
  Dennis Lundberg
  -----
- 2010-05-12
+ 2010-05-30
  -----
 
 Shared Components
@@ -22,7 +22,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-dependency-tree/} <<<maven-dependency-tree>>>}}           | 1.2          | 2008-09-02        | Maven Dependency Tree constructs a tree model of a Maven project's dependencies. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-tree/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13264}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.2          | 2009-12-13        | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13263}JIRA}}
+| {{{/shared/maven-doxia-tools/} <<<maven-doxia-tools>>>}}                   | 1.2.1        | 2010-05-30        | Assists in using {{{http://maven.apache.org/doxia/}Doxia}} for site generation and report creation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-doxia-tools/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13263}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-filtering/} <<<maven-filtering>>>}}                       | 1.0-beta-4   | 2010-02-21        | Components for filtering resources. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-filtering/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13380}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
