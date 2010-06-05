@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  -----
- 2010-02-10
+ 2010-06-05
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -107,9 +107,9 @@ Available Plugins
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-docck-plugin/} <<<docck>>>}}            | B          | 1.0          | 2008-11-16 | Documentation checker plugin. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-docck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOCCK}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}        | B+R        | 2.7        | 2010-05-04 | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
+| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}        | B+R        | 2.7          | 2010-05-04 | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-jxr-plugin/} <<<jxr>>>}}                | R          | 2.1          | 2007-04-05 | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
+| {{{/plugins/maven-jxr-plugin/} <<<jxr>>>}}                | R          | 2.2          | 2010-06-05 | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                | B+R        | 2.5          | 2010-05-04 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
 *-----------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
