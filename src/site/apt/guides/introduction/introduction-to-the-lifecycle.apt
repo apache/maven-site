@@ -181,9 +181,10 @@ mvn clean dependency:copy-dependencies package
   complete list of goal-to-build-phase bindings of some of the packaging types, refer to the
   {{{Lifecycle_Reference}Lifecycle Reference}}).
 
-  Note that for some packaging types to be available, you may also need to include a particular plugin in your
-  <<<\<build\>>>> section of your POM (as described in the next section). One example of a plugin that requires this is the
-  Plexus plugin, which provides a <<<plexus-application>>> and <<<plexus-service>>> packaging.
+  Note that for some packaging types to be available, you may also need to include a particular plugin in the
+  <<<\<build\>>>> section of your POM and specify <<<\<extensions\>true\</extensions\>>>> for that plugin.
+  One example of a plugin that requires this is the Plexus plugin, which provides a <<<plexus-application>>> and
+  <<<plexus-service>>> packaging.
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
@@ -213,12 +214,14 @@ mvn clean dependency:copy-dependencies package
  <plugin>
    <groupId>org.codehaus.modello</groupId>
    <artifactId>modello-maven-plugin</artifactId>
-   <version>1.0-alpha-18</version>
+   <version>1.4</version>
    <executions>
      <execution>
        <configuration>
-         <model>maven.mdo</model>
-         <modelVersion>4.0.0</modelVersion>
+         <models>
+           <model>src/main/mdo/maven.mdo</model>
+         </models>
+         <version>4.0.0</version>
        </configuration>
        <goals>
          <goal>java</goal>
@@ -246,13 +249,13 @@ mvn clean dependency:copy-dependencies package
 ...
  <plugin>
    <groupId>com.mycompany.example</groupId>
-   <artifactId>maven-touch-plugin</artifactId>
+   <artifactId>display-maven-plugin</artifactId>
    <version>1.0</version>
    <executions>
      <execution>
        <phase>process-test-resources</phase>
        <goals>
-         <goal>timestamp</goal>
+         <goal>time</goal>
        </goals>
      </execution>
    </executions>
