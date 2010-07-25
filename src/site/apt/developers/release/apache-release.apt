@@ -107,7 +107,7 @@ release manager. The specifics of the process may vary from project to project, 
 'minimum of three +1 votes' rule is universal.
 +-----+
 
-  The list of binding voters is available at {{http://people.apache.org/~jim/projects.html#maven-pmc}} (or corresponding group for your project).
+  The list of binding voters is available at {{http://people.apache.org/committers-by-project.html#maven-pmc}} (or corresponding group for your project).
 
   Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
 
