@@ -103,7 +103,7 @@ Vote open for 72 hours.
  To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
 
- [[4]] Check the vote results
+* Check the vote results
 
  Copied from {{{http://www.apache.org/foundation/voting.html}Votes on Package Releases}}.
 
