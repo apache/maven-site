@@ -39,6 +39,6 @@ Releasing A Maven Project
   
   The above links all provide specific information for those types of releases, but they all refer back to the common documentation:
   
-  * {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
+  * {{{maven-project-release-procedure.html} Maven Project Common Release procedure}}
   
   []
