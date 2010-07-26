@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-7-25
+ 2010-07-26
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -47,11 +47,11 @@ Performing a Maven Project Release
   
   If you started here, you may first want to review one of the following documents that cover the specifics of various types of releases we have in the Maven Project:
   
-  * {{{maven-plugin-release.html} Releasing a Maven plugin project}}
+  * {{{./maven-plugin-release.html} Releasing a Maven plugin project}}
   
-  * {{{maven-shared-release.html} Releasing a Maven shared component or subproject}}
+  * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}}
   
-  * {{{maven-core-release.html} Releasing Maven Core}}
+  * {{{./maven-core-release.html} Releasing Maven Core}}
   
 * Stage the Release
 

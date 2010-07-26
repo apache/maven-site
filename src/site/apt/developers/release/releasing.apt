@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2009-03-22
+ 2010-07-26
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -31,14 +31,14 @@ Releasing A Maven Project
  The steps involved are similar for any Apache project, with more specifics for Maven plugins, shared libraries, and
  Maven itself. The steps involved, and the relevant documents for each, are listed below.
   
-  * {{{maven-plugin-release.html} Releasing a Maven plugin project}}
+  * {{{./maven-plugin-release.html} Releasing a Maven plugin project}}
   
-  * {{{maven-shared-release.html} Releasing a Maven shared component or subproject}}
+  * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}}
   
-  * {{{maven-core-release.html} Releasing Maven Core}}
+  * {{{./maven-core-release.html} Releasing Maven Core}}
   
   The above links all provide specific information for those types of releases, but they all refer back to the common documentation:
   
-  * {{{maven-project-release-procedure.html} Maven Project Common Release procedure}}
+  * {{{./maven-project-release-procedure.html} Maven Project Common Release procedure}}
   
   []
