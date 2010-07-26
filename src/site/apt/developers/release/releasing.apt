@@ -30,13 +30,15 @@ Releasing A Maven Project
  
  The steps involved are similar for any Apache project, with more specifics for Maven plugins, shared libraries, and
  Maven itself. The steps involved, and the relevant documents for each, are listed below.
-
-  * {{{apache-release.html} Releasing a Maven-based project at Apache}}
   
   * {{{maven-plugin-release.html} Releasing a Maven plugin project}}
   
   * {{{maven-shared-release.html} Releasing a Maven shared component or subproject}}
   
-  * {{{maven-proper-release.html} Releasing Maven itself}}
+  * {{{maven-core-release.html} Releasing Maven Core}}
+  
+  The above links all provide specific information for those types of releases, but they all refer back to the common documentation:
+  
+  * {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
   
   []

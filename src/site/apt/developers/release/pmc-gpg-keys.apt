@@ -158,4 +158,4 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
  by copying the same you appended in the text field and submit.
  You can ensure by searching your email in key search engine.
 
- You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
+ You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}} and {{{https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven} How to Generate PGP Signatures With Maven}}

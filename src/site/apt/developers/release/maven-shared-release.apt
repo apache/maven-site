@@ -28,7 +28,7 @@ Releasing A Maven Shared Component
   Releasing a Maven component is much the same as any other Maven project. The following
   guide walks through most of the steps:
 
-    * {{{apache-release.html} Releasing a Maven-based project at Apache}}
+    * {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
   
   Note that components have particular conventions for deploying the project site.
   When encountered in the release process above, perform the following steps:
