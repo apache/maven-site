@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2009-03-22
+ 2010-07-26
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -35,7 +35,7 @@ Releasing Maven
   To produce a release candidate, follow the first seven steps only from the following
   procedure:
 
-    * {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
+    * {{{./maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
 
   The version used should be the eventual version with -RC1, -RC2, etc. appended.
 
@@ -52,7 +52,7 @@ Releasing Maven
 
   To produce a final release, the same process as for standard projects is followed:
 
-    * {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
+    * {{{./maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
 
   Below describes the additional steps that need to be taken at the points where the website are updated
   in those instructions.
@@ -143,5 +143,5 @@ mvn -Preporting clean site-deploy
 ** Proceed with Announcement
 
   You can now proceed with the steps outlined after deploying the website on
-  {{{maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
+  {{{./maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
 

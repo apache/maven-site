@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2009-03-22
+ 2010-07-26
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -28,7 +28,7 @@ Releasing A Maven Plugin
   Releasing a Maven plugin is much the same as any other Maven project. The following
   guide walks through most of the steps:
 
-    * {{{maven-project-release-procedure.html} Maven Project Common Release procedure}}
+    * {{{./maven-project-release-procedure.html} Maven Project Common Release procedure}}
   
   Note that plugins have particular conventions for deploying the project site.
   When encountered in the release process above, perform the following steps:
