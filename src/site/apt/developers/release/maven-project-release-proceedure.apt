@@ -23,9 +23,9 @@
 ~~ specific language governing permissions and limitations
 ~~ under the License.
 
-Releasing a Maven-based project at Apache
+Performing a Maven Project Release
 
-  All Maven-based projects take similar steps to release at the ASF.
+  This document covers the common release proceedures used by the Maven team to perform releases.
   
 * {Prerequisites}
 
@@ -43,6 +43,16 @@ Releasing a Maven-based project at Apache
 
   []
 
+* Before you begin
+  
+  If you started here, you may first want to review one of the following documents that cover the specifics of various types of releases we have in the Maven Project:
+  
+  * {{{maven-plugin-release.html} Releasing a Maven plugin project}}
+  
+  * {{{maven-shared-release.html} Releasing a Maven shared component or subproject}}
+  
+  * {{{maven-core-release.html} Releasing Maven Core}}
+  
 * Stage the Release
 
  [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#stage-maven}Staging a Maven release}}. 
