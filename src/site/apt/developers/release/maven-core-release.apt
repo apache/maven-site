@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-07-26
+ 2010-07-27
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -35,7 +35,7 @@ Releasing Maven
   To produce a release candidate, follow the first seven steps only from the following
   procedure:
 
-    * {{{./maven-project-release-proceedure.html} Maven Project Common Release Proceedure}}
+    * {{{./maven-project-release-procedure.html} Maven Project Common Release Procedure}}
 
   The version used should be the eventual version with -RC1, -RC2, etc. appended.
 
