@@ -55,7 +55,7 @@ Performing a Maven Project Release
   
 * Stage the Release
 
- [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#stage-maven}Staging a Maven release}}. 
+ [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
 
  [[2]] Stage the latest documentation
  
