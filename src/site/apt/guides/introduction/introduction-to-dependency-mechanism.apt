@@ -129,9 +129,9 @@ Introduction to the Dependency Mechanism
 *----------+------------+----------+----------+------+
 | compile  | compile(*) |    -     | runtime  |  -
 *----------+------------+----------+----------+------+
-| provided | provided   | provided | provided |  -
+| provided | provided   |    -     | provided |  -
 *----------+------------+----------+----------+------+
-| runtime  | runtime    |    -     | runtime  |  _
+| runtime  | runtime    |    -     | runtime  |  -
 *----------+------------+----------+----------+------+
 | test     | test       |    -     | test     |  -
 *----------+------------+----------+----------+------+
