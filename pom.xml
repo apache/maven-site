@@ -414,7 +414,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-linkcheck-plugin</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>1.0</version>
             <configuration>
               <excludedLinks>
                 <excludedLink>**/archetype/*</excludedLink>
