@@ -284,16 +284,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>2.0.1</version>
-          <!-- <version>2.1.1</version> -->
-          <dependencies>
-            <!-- remove once we use maven-site-plugin 2.1.1 -->
-            <dependency>
-              <groupId>org.codehaus.plexus</groupId>
-              <artifactId>plexus-velocity</artifactId>
-              <version>1.1.8</version>
-            </dependency>
-          </dependencies>
+          <version>2.1.1</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
