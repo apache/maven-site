@@ -25,11 +25,7 @@ under the License.
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
   name="Maven">
   <version position="none" />
-  <skin>
-    <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-stylus-skin</artifactId>
-    <version>1.2</version>
-  </skin>
+
   <body>
     <breadcrumbs>
       <!-- TODO: This breadcrumb should be removed when it has been solved in the parent -->
