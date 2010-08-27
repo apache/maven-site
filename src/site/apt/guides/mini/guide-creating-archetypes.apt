@@ -29,11 +29,13 @@ Guide to Creating Archetypes
  []
 
  Note: this mini-guide has been written for
- {{{http://maven.apache.org/plugins/maven-archetype-plugin-1.0-alpha-7/}archetype plugin version 1.0.x}}.
+ {{{http://maven.apache.org/plugins/maven-archetype-plugin-1.0-alpha-7/}archetype plugin version 1.0.x}},
+ with its {{{http://maven.apache.org/archetype/archetype-common/archetype.html}old archetype descriptor}}
+ (stored in <<<archetype.xml>>> file).
  {{{http://maven.apache.org/archetype/maven-archetype-plugin/}Archetype plugin 2.0.x}} is a new generation
  that fully supports archetypes created for 1.0.x, and adds a
- {{{http://maven.apache.org/archetype/archetype-common/archetype.html}new archetype descriptor}}: it's
- more fexible, has more features, but the basis si absolutely the same.
+ {{{http://maven.apache.org/archetype/archetype-common/archetype-descriptor.html}new archetype descriptor}}
+ (stored in <<<archetype-metadata.xml>>> file): it's more flexible, has more features, but the basis is absolutely the same.
 
 
  To create an archetype follow these steps:
