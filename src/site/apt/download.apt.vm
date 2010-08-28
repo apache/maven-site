@@ -60,7 +60,7 @@ Download Maven ${currentStableVersion}
 | Release Notes           | {{{./docs/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
-  You could also download the current documentation, i.e. this website, as a {{{Maven_Documentation}JAR or PDF}}.
+  You can also download the current documentation, i.e. this website, as a {{{Maven_Documentation}JAR or PDF}}.
 
 * {Maven ${current20xVersion}}
 
@@ -100,7 +100,7 @@ Download Maven ${currentStableVersion}
 
 * {Maven Documentation}
 
-  You could download the current documentation, i.e. this website, as:
+  You can download the current documentation, i.e. this website, as:
 
   * a {{{./maven-site-1.0-site.jar}single jar}} file;
 
@@ -126,7 +126,7 @@ Download Maven ${currentStableVersion}
 
 * {Installation} Instructions
 
-  <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed. More precisely,
+  <Maven is a Java tool, so you must have {{{http://www.oracle.com/technetwork/java/}Java}} installed in order to proceed. More precisely,
   you need a Java Development Kit (JDK), the Java Runtime Environment (JRE) is not sufficient.>
 
   Additional optional installation steps are listed after the platform specific instructions.
