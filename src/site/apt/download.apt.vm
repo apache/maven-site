@@ -59,7 +59,7 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
-| Release Reference Documentation | {{{./ref/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
+| Release Reference Documentation | {{{./ref/${currentStableVersion}/} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
   You can also download the current documentation, i.e. this website, as a {{{Maven_Documentation}JAR or PDF}}.
@@ -79,7 +79,7 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${current20xVersion}/release-notes.html} ${current20xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
-| Release Reference Documentation | {{{./ref/${current20xVersion}/release-notes.html} ${current20xVersion}}} | | |
+| Release Reference Documentation | {{{./ref/${current20xVersion}/} ${current20xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
 * {Maven ${currentDevelopmentVersion}}
@@ -101,7 +101,7 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
 *-------------------------+---------+----------+-----------+
-| Release Reference Documentation | {{{./ref/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
+| Release Reference Documentation | {{{./ref/${currentDevelopmentVersion}/} ${currentDevelopmentVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
 * {Maven Documentation}
