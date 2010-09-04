@@ -12,6 +12,7 @@ Redirect Permanent /guides/mini/guide-ibiblio-upload.html http://maven.apache.or
 Redirect Permanent /faq.html http://maven.apache.org/general.html
 Redirect Permanent /developers/release/pmc-release-process.html http://maven.apache.org/developers/release/releasing.html
 Redirect Permanent /development-process.html http://maven.apache.org/maven-1.x/development-process.html
+Redirect Permanent /welcome-to-new-committers.html http://maven.apache.org/developers/welcome-to-new-committers.html
 
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html http://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html
