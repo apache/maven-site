@@ -3,7 +3,7 @@
  ------
  Jason van Zyl
  ------
- 12 October 2005
+ 2010-09-05
  ------
 
 Introduction to the Standard Directory Layout
@@ -37,6 +37,8 @@ Introduction to the Standard Directory Layout
 | src/site                 | Site 
 *--------------------------+-----------------------------------------------+
 | LICENSE.txt              | Project's license
+*--------------------------+-----------------------------------------------+
+| NOTICE.txt               | Notices and attributions required by libraries that the project depends on
 *--------------------------+-----------------------------------------------+
 | README.txt               | Project's readme
 *--------------------------+-----------------------------------------------+
