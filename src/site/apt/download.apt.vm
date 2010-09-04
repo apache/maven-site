@@ -5,7 +5,7 @@ Brett Porter
 Jason van Zyl
 John Casey
  ------
-30 June 2009
+2010-09-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -59,6 +59,8 @@ Download Maven ${currentStableVersion}
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
 *-------------------------+---------+----------+-----------+
+| Release Reference Documentation | {{{./ref/${currentStableVersion}/release-notes.html} ${currentStableVersion}}} | | |
+*-------------------------+---------+----------+-----------+
 
   You can also download the current documentation, i.e. this website, as a {{{Maven_Documentation}JAR or PDF}}.
 
@@ -76,6 +78,8 @@ Download Maven ${currentStableVersion}
 | Maven ${current20xVersion} (zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/binaries/apache-maven-${current20xVersion}-bin.zip} apache-maven-${current20xVersion}-bin.zip}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.md5} apache-maven-${current20xVersion}-bin.zip.md5}} | {{{http://www.apache.org/dist/maven/binaries/apache-maven-${current20xVersion}-bin.zip.asc} apache-maven-${current20xVersion}-bin.zip.asc}} |
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${current20xVersion}/release-notes.html} ${current20xVersion}}} | | |
+*-------------------------+---------+----------+-----------+
+| Release Reference Documentation | {{{./ref/${current20xVersion}/release-notes.html} ${current20xVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
 * {Maven ${currentDevelopmentVersion}}
@@ -96,6 +100,8 @@ Download Maven ${currentStableVersion}
 | Maven ${currentDevelopmentVersion} (Source zip)         | {{{http://www.apache.org/dyn/closer.cgi/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip} apache-maven-${currentDevelopmentVersion}-src.zip}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip.md5} apache-maven-${currentDevelopmentVersion}-src.zip.md5}} | {{{http://www.apache.org/dist/maven/source/apache-maven-${currentDevelopmentVersion}-src.zip.asc} apache-maven-${currentDevelopmentVersion}-src.zip.asc}} |
 *-------------------------+---------+----------+-----------+
 | Release Notes           | {{{./docs/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
+*-------------------------+---------+----------+-----------+
+| Release Reference Documentation | {{{./ref/${currentDevelopmentVersion}/release-notes.html} ${currentDevelopmentVersion}}} | | |
 *-------------------------+---------+----------+-----------+
 
 * {Maven Documentation}
