@@ -117,7 +117,7 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 
   To configure a mirror of a given repository, you provide it in your settings file, giving the new repository its own
   <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a mirror
-  of. For example, the <<<id>>> of the main Maven repository included by default is <<<central>>>, so to use an Australian
+  of. For example, the <<<id>>> of the main Maven repository included by default is <<<central>>>, so to use a Spanish
   mirror, you would configure the following:
 
 -------------
@@ -125,9 +125,9 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
   ...
   <mirrors>
    <mirror>
-      <id>planetmirror</id>
-      <name>Australian Mirror of http://repo1.maven.org/maven2/</name>
-      <url>http://public.planetmirror.com/maven2/</url>
+      <id>cica.es</id>
+      <name>Spanish Mirror of http://repo1.maven.org/maven2/</name>
+      <url>http://ftp.cica.es/mirrors/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   ...
