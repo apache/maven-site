@@ -10,7 +10,7 @@ Introduction to Build Profiles
 
   Maven 2.0 goes to great lengths to ensure that builds are portable. Among
   other things, this means allowing build configuration inside the POM,
-  avoiding <<all>> filesystem references (in inhertiance, dependencies, and
+  avoiding <<all>> filesystem references (in inheritance, dependencies, and
   other places), and leaning much more heavily on the local repository to
   store the metadata needed to make this possible.
 
@@ -43,15 +43,20 @@ Introduction to Build Profiles
 
   * Per User
 
-    - Defined in the Maven-settings <<<(%USER_HOME%/.m2/settings.xml)>>>.
+    - Defined in the {{{http://maven.apache.org/ref/2.2.1/maven-settings/settings.html} Maven-settings}}
+    <<<(%USER_HOME%/.m2/settings.xml)>>>.
 
   * Global
 
-    - Defined in the global maven-settings <<<(%M2_HOME%/conf/settings.xml)>>>.
+    - Defined in the {{{http://maven.apache.org/ref/2.2.1/maven-settings/settings.html} global Maven-settings}}
+    <<<(%M2_HOME%/conf/settings.xml)>>>.
 
   * Profile descriptor
 
-    - a descriptor located in project basedir <<<(profiles.xml)>>>
+    - a descriptor located in
+    {{{http://maven.apache.org/ref/2.2.1/maven-profile/profiles.html}project basedir <<<(profiles.xml)>>>}}
+    (deprecated in Maven 3.0: see
+    {{{https://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html#Maven3.xCompatibilityNotes-profiles.xml} Maven 3 compatibility notes}})
 
 * How can a profile be triggered? How does this vary according to the type of profile being used?
 
@@ -94,7 +99,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 +---+
 
   Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
-  everytime a project use it.
+  every time a project use it.
 
   Profiles can be automatically triggered based on the detected state of
   the build environment. These triggers are specified via an <<<\<activation\>>>>
@@ -102,7 +107,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
   prefix-matching of the JDK version, the presence of a system property or
   the value of a system property. Here are some examples.
 
-  The follwing configuration will trigger the profile when the JDK's
+  The following configuration will trigger the profile when the JDK's
   version starts with "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"):
 
 +---+
@@ -139,13 +144,13 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
   <profile>
     <activation>
       <os>
-      <name>Windows XP</name>
-      <family>Windows</family>
-      <arch>x86</arch>
-      <version>5.1.2600</version>
-    </os>
-  </activation>
-  ...
+        <name>Windows XP</name>
+        <family>Windows</family>
+        <arch>x86</arch>
+        <version>5.1.2600</version>
+      </os>
+    </activation>
+    ...
   </profile>
 </profiles>
 +---+
@@ -208,7 +213,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 
   As of Maven 2.0.9, the tags <<<\<exists\>>>> and <<<\<missing\>>>> could be interpolated. Supported variables are
-  system properties like <<<$\{user.home\}>>> and enviroment variables like <<<$\{env.HOME\}>>>. Please note that
+  system properties like <<<$\{user.home\}>>> and environment variables like <<<$\{env.HOME\}>>>. Please note that
   properties defined in the POM itself are not available for interpolation here.
 
   Profiles can also be active by default using a configuration like the following:
