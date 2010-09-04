@@ -15,33 +15,33 @@ Introduction to the Standard Directory Layout
  Maven. Please try to conform to this structure as much as possible; however, if you can't these settings can
  be overridden via the project descriptor.
 
-*--------------------------+-----------------------------------------------+
-| src/main/java            | Application/Library sources
-*--------------------------+-----------------------------------------------+
-| src/main/resources       | Application/Library resources
-*--------------------------+-----------------------------------------------+
-| src/main/filters         | Resource filter files
-*--------------------------+-----------------------------------------------+
-| src/main/assembly        | Assembly descriptors
-*--------------------------+-----------------------------------------------+
-| src/main/config          | Configuration files
-*--------------------------+-----------------------------------------------+
-| src/main/webapp          | Web application sources
-*--------------------------+-----------------------------------------------+
-| src/test/java            | Test sources
-*--------------------------+-----------------------------------------------+
-| src/test/resources       | Test resources
-*--------------------------+-----------------------------------------------+
-| src/test/filters         | Test resource filter files
-*--------------------------+-----------------------------------------------+
-| src/site                 | Site 
-*--------------------------+-----------------------------------------------+
-| LICENSE.txt              | Project's license
-*--------------------------+-----------------------------------------------+
-| NOTICE.txt               | Notices and attributions required by libraries that the project depends on
-*--------------------------+-----------------------------------------------+
-| README.txt               | Project's readme
-*--------------------------+-----------------------------------------------+
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/java>>>            | Application/Library sources
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/resources>>>       | Application/Library resources
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/filters>>>         | Resource filter files
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/assembly>>>        | Assembly descriptors
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/config>>>          | Configuration files
+*--------------------------------+-----------------------------------------------+
+| <<<src/main/webapp>>>          | Web application sources
+*--------------------------------+-----------------------------------------------+
+| <<<src/test/java>>>            | Test sources
+*--------------------------------+-----------------------------------------------+
+| <<<src/test/resources>>>       | Test resources
+*--------------------------------+-----------------------------------------------+
+| <<<src/test/filters>>>         | Test resource filter files
+*--------------------------------+-----------------------------------------------+
+| <<<src/site>>>                 | Site 
+*--------------------------------+-----------------------------------------------+
+| <<<LICENSE.txt>>>              | Project's license
+*--------------------------------+-----------------------------------------------+
+| <<<NOTICE.txt>>>               | Notices and attributions required by libraries that the project depends on
+*--------------------------------+-----------------------------------------------+
+| <<<README.txt>>>               | Project's readme
+*--------------------------------+-----------------------------------------------+
 
  At the top level files descriptive of the project: a <<<pom.xml>>> file (and any properties,
  <<<maven.xml>>> or <<<build.xml>>> if using Ant). In addition, there are textual documents meant
