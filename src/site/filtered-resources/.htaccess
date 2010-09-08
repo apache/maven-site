@@ -36,7 +36,7 @@ RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apac
 RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/int$1
 
 RedirectMatch ^/plugins/maven-site-plugin-2.x/(.*)$ /plugins/maven-site-plugin/$1
-RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+and+site+plugin
+RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ http://maven.apache.org/plugins/maven-site-plugin-3.0-beta-2/
 
 Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html http://maven.apache.org/guides/development/guide-testing-development-plugins.html
 
