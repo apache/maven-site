@@ -20,56 +20,11 @@ Guide to uploading artifacts to the Central Repository
  Only releases can be uploaded to the central repository, that means files that won't change and that only depend on other files
  already released and available in the repository.
 
- There are some requirements for the minimal information in the POMs that are in the central repository. At least these must be present:
+ There are some requirements for the minimal information in the POMs that are in the central repository. The updated list of requirements can be found {{{https://docs.sonatype.org/display/Repository/Central+Sync+Requirements}here}}.
 
- * modelVersion
+{Choosing your coordinates}
 
- * groupId
-
- * artifactId
-
- * packaging
-
- * name
-
- * version
-
- * description
-
- * url
-
- * licenses
-
- * scm url
-
- * dependencies
-
- []
-
-* groupId
-
- The <<<groupId>>> will identify your project uniquely across all
- projects, so we need to enforce a naming schema. For projects with artifacts already uploaded to the Central Repository it can
- be equal to the one used previously, but for new projects it has to follow the package name rules, which
- means that has to be at least as a domain name you control, and you can create as many subgroups
- as you want.
- There are a lot of poorly defined package names so you <<must provide proof that you control the domain>> that
- matches the groupId. Provide proof means that the project is hosted at that domain or it's owned by a member,
- in that case you must give the link to the registrar database (whois) where the owner is listed and the page
- in the project web where the owner is associated with the project.
- eg. If you use a com.sun.xyz package name we expect that the project is hosted at http://xyz.sun.com.
-
- Look at {{{http://java.sun.com/docs/books/jls/third_edition/html/packages.html#7.7}
- More information about package names}}. Check also the guide about
- {{{./guide-naming-conventions.html}Maven naming conventions}}.
-
- Examples:
-
- * www.springframework.org -> org.springframework
-
- * oness.sf.net -> net.sf.oness
-
- []
+ Picking the appropriate coordinates for your project is important. See the guidelines {{{https://docs.sonatype.org/display/Repository/Choosing+your+Coordinates}here}}.
 
 * Explanation
 
@@ -127,17 +82,17 @@ Guide to uploading artifacts to the Central Repository
 
  When people download artifacts from Central Maven repository, they might want to validate that these artifacts have valid PGP signatures that can be verified against a public key server. If there is no signatures, then users have no guarantee that they are downloading the original artifact.
 
- To improve the quality of the Central Maven repository, we require you to provide PGP signatures for all your artifacts (all files except checksums), and distribute your public key to a key server like hkp://pgp.mit.edu . If you are not familiar with PGP, please read this blog: {{{http://www.sonatype.com/people/2010/01/how-to-generate-pgp-signatures-with-maven/}How to Generate PGP Signatures with Maven}}.
+ To improve the quality of the Central Maven repository, we require you to provide PGP signatures for all your artifacts (all files except checksums), and distribute your public key to a key server like hkp://pgp.mit.edu . Read {{{https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven}How to Generate PGP Signatures with Maven}} for more information.
 
 * FAQ and common mistakes
 
  * I have other <<<repositories>>> or <<<pluginRepositories>>> listed in my POM, is that a problem?
 
- Yes, the central repository must be self contained, which means that all your dependencies must already be in the central repository.
- You need to remove the <<<repositories>>> and <<<pluginRepositories>>> entries and make sure your project still builds when your local repository cache is empty.
+ At present, this won't preclude your project from being included, but we do strongly encourage making sure all your dependencies are included in Central. If you rely on sketchy repositories that have junk in them or disappear, it just creates havok for downstream users. Try to keep your dependencies among reliable repos like Central, Jboss, etc.
 
- The only exception allowed is when a dependency can not be distributed from the central repository due to the license. In that case only the POM for that
- dependency is required, listing where the dependency can be downloaded from.
+ * What about artifacts that can't be distributed because of their license?
+ 
+ In that case only the POM for that dependency is required, listing where the dependency can be downloaded from.
  {{{http://repo1.maven.org/maven2/javax/activation/activation/1.0.2/activation-1.0.2.pom}See an example}}.
 
  * I have a patched version of the foo project developed at foo.com, what <<<groupId>>> should I use?
@@ -174,169 +129,10 @@ Guide to uploading artifacts to the Central Repository
   * {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype Forge}} (open to any OSS Project)
   
   * {{{http://www.fusesource.org/forge/}Fusesource Forge}} (Focused on FUSE related projects)
+  
+  * {{{http://www.nuiton.org}Nuiton.org}}
 
  []
 {Manual upload of artifacts}
 
- Note that this manual process is time consuming and <<will only be accepted for a limited number of requests>>. If you want to upload frequently read the
- section above about approved Forges.
-
- <<Estimated process time is FOUR WEEKS>>. If you want to use the manual process, that is the estimated time to process <<if no problems are detected>>.
- It means that for each version you release and want to upload to the central repository you will have to wait that time. If a problem is detected, it will
- be noted in the JIRA issue and <<you will wait again>> until the next time the issues are processed.
-
-* Step 1: Create an upload bundle
-
- Use the {{{http://maven.apache.org/plugins/maven-repository-plugin/}repository plugin}} provided with the standard Maven distribution to create an upload bundle:
-
-+----+
-mvn repository:bundle-create
-
-+----+
-
- The bundle will be created in your <<<target>>> directory with the name:
- <<<$\{project.artifactId\}-$\{project.version\}-bundle.jar>>>
-
- If you want to include a jar with java sources in your upload (recommended, unless your license doesn't
- allow sources to be redistributed) the command to run is:
-
-+----+
-mvn source:jar javadoc:jar repository:bundle-create
-+----+
-
- <<Note:>> Plugin versions before 2.1 suffer from a bug ({{{http://jira.codehaus.org/browse/MREPOSITORY-11}MREPOSITORY-11}})
- in <<<repository:bundle-create>>> that required manual addition of the javadoc jar to the bundle jar, so be sure to
- use a recent version of the plugin.
-
- If you are not using Maven as your build system, and want something
- uploaded to the Central Repository then you just need to make a bundle jar manually. Please use the <<<jar>>> executable,
- not <<<zip>>>, <<<pkzip>>> or equivalent. The bundle should have the following content:
-
-+----+
-pom.xml
-foo-1.0.jar (or whatever artifact is referred to in the pom.xml)
-foo-1.0-sources.jar 
-foo-1.0-javadoc.jar 
-
-+----+
-
- The names of the jar files inside the bundle must be built from the
- \<artifactId\> and \<version\> in the <<<pom.xml>>> file, like this:
-
-+----+
-${artifactId}-${version}.jar
-${artifactId}-${version}-sources.jar  
-${artifactId}-${version}-javadoc.jar
-
-+----+
-
- <<Note:>> the bundle will be read by a script, so it must follow the above format.
-
- []
-
- Be sure to always check previous versions of the POMs in the repository to use the information
- already there as a base.
-
- []
-
-* Step 2: Posting the request
-
- Post your request to {{{http://jira.codehaus.org/secure/CreateIssue.jspa?pid=10367&issuetype=5}JIRA}}.
- Make sure that the project is "Maven Upload Requests" and the issue type is "Wish".
- In the Description field, you must write the URL to the upload bundle.
- If you're uploading more than one bundle please add all the URLs under the same issue.
- Then leave a blank line and provide the following information:
-
-~~ TODO Should the URL be in the Description or the "Bundle URL" field?
-
- * A URL where the project can be found.
-
- * If you are one of its developers, a URL where your name or email can be found inside the project site.
-
- []
-
- This will speed up the uploading process.
-
- You can place any additional comments in the following paragraph. So the Description field might look like:
-
-+----+
-http://wiggle.sourceforge.net/downloads/wiggle-1.0-bundle.jar
-
-http://wiggle.sourceforge.net
-http://wiggle.sourceforge.net/team-list.html
-
-I'm a developer in wiggle, please upload!
-
-+----+
-
- or
-
-+----+
-http://wiggle.sourceforge.net/downloads/wiggle-1.0-bundle.jar
-
-http://wiggle.sourceforge.net
-http://wiggle.sourceforge.net/team-list.html
-
-I'm a developer in wiggle, and want to use the org.wiggle groupId
-I own wiggle.org domain, you can see my name in
-http://reports.internic.net/cgi/whois?whois_nic=wiggle.org&type=domain
-or you can see the project web page in www.wiggle.org
-
-+----+
-
-* Manual process FAQ and common mistakes
-
- * I use parent POMs. How do I include them in the bundle?
-
- You can't. You need to use the automated synchronization process noted above.
-
- * I want to upload several bundles. Do I need to create a JIRA issue for each one?
-
- No, please ignore the Bundle URL field in this case. Just put the URLs of all the bundles in the Description or Comments fields of one single JIRA issue.
-
- []
-
-
-{For Maven developers}
-
-
- The scripts to make the upload to the repository are at
- <<<https://svn.apache.org/repos/asf/maven/repository-tools/trunk>>> in the <<<src/bin>>> directory.
-
- Those scripts are checked out to repo1.maven.org in the directory <<</home/maven/bin>>>, so
- after logging in as the user <<<maven>>> you can go to the directory <<<bin/bundle-upload>>> and run
-
-+----+
-./deploy-bundle bundle_URL [groupId] [version] [classifier]
-+----+
-
-  That script will download the bundle, decompress it and show the POM. You have to make sure that the POM is correct.
-  The script uses the command <<<less>>> to show the POM. Use the <<<space>>> key to step through it to the end. The press the <<<q>>> key to proceed. After that a summary with <<<groupId>>>, <<<artifactId>>> and <<<version>>> will be shown, and whether or not the
-  group already exists. This is useful as we have to be careful creating new groups, making sure they follow
-  the conventions and that they don't already exist with another name. If the POM is not correct or there's any doubt
-  the upload must be aborted with <<<Ctrl-C>>>, and a comment posted in the upload request in JIRA. If there's no response from
-  the reporter within one month the request will be closed as "Incomplete".
-
-  If <<<groupId>>> and <<<version>>> are not specified in the command line, the script will try to get the values from the POM.
-  It won't work if the POM extends another POM and those elements are not present in the POM included in the bundle.
-
-  Things to remember:
-
-  * All the dependencies have to already be present in the central repository.
-
-  * If there are no dependencies it's suspicious, and the reporter must be asked if that's correct. Do that in an issue comment in JIRA.
-
-  * Parent POMs have to already be present in the central repository.
-
-  * All the minimal information previously mentioned has to be in the POM.
-
-  * POMs must include at least as much information as previous versions, and the dependencies shouldn't change too much.
-
-  * While checking a previous version, also check if it was relocated. If so ask the reporter to update the bundle with the
-    new information.
-
-  * GroupIds have to follow the previously stated naming conventions.
-
-  * Upload requests for popular projects require you to be extremely careful (javax.* groups, spring, hibernate, ...).
-
-  []
+ See {{{https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+Maven+Central}here}} for information about the new process to get artifacts loaded into Central. The new process is mostly automated with turnaround time averaging 1 Business day.
