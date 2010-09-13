@@ -510,6 +510,22 @@ under the License.
           </td>
         </tr>
         <tr>
+          <td>requiresDependencyCollection</td>
+          <td>@requiresDependencyCollection &lt;requiredClassPath&gt;</td>
+          <td>No</td>
+          <td>
+            Flags this mojo as requiring information about the dependencies that would make up the specified class path.
+            As the name suggests, this annotation is similar to <code>@requiresDependencyResolution</code> and supports
+            the same values for <i>&lt;requiredClassPath&gt;</i>. The important difference is that this annotation will
+            not resolve the files for the dependencies, i.e. the artifacts associated with a Maven project can lack a
+            file. As such, this annotation is meant for mojos that only want to analyze the set of transitive
+            dependencies, in particular during early lifecycle phases where full dependency resolution might fail due to
+            projects which haven't been built yet. A mojo may use both this annotation and <code>@requiresDependencyResolution</code>
+            at the same time. The resolution state of any dependency that is collected but not requested to be resolved
+            is undefined. Since Maven 3.0.
+          </td>
+        </tr>
+        <tr>
           <td>requiresDirectInvocation</td>
           <td>@requiresDirectInvocation &lt;true|false&gt;</td>
           <td>No. Default: <code>false</code></td>
