@@ -454,12 +454,57 @@ under the License.
         </tr>
         <tr>
           <td>requiresDependencyResolution</td>
-          <td>@requiresDependencyResolution &lt;requiredScope&gt;</td>
+          <td>@requiresDependencyResolution &lt;requiredClassPath&gt;</td>
           <td>No</td>
-          <td>Flags this Mojo as requiring the dependencies in the specified scope (or an implied scope)
-            to be resolved before it can execute. Currently supports <code>compile</code>,
-              <code>runtime</code>, and <code>test</code> scopes. If this annotation is present but no scope
-              is specified, the scope defaults to <code>runtime</code>.
+          <td>
+            Flags this Mojo as requiring the dependencies in the specified class path to be resolved before it can
+            execute. The matrix below illustrates which values for <i>&lt;requiredClassPath&gt;</i> (first column) are
+            supported and which dependency scopes (first row) they will request to resolve:
+            <table>
+              <tr>
+                <td></td>
+                <td>system</td>
+                <td>provided</td>
+                <td>compile</td>
+                <td>runtime</td>
+                <td>test</td>
+              </tr>
+              <tr>
+                <td><code>compile</code></td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>-</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><code>runtime</code></td>
+                <td>-</td>
+                <td>-</td>
+                <td>X</td>
+                <td>X</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><code>compile+runtime</code> (since Maven 3.0)</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>-</td>
+              </tr>
+              <tr>
+                <td><code>test</code></td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+                <td>X</td>
+              </tr>
+            </table>
+            If this annotation is present but no scope is specified, the scope defaults to <code>runtime</code>. If
+            the annotation is not present at all, the mojo must not make any assumptions about the artifacts associated
+            with a Maven project.
           </td>
         </tr>
         <tr>
