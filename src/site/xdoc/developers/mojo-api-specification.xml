@@ -486,6 +486,17 @@ under the License.
           <td>No. Default: <code>false</code></td>
           <td>Flags this Mojo to require reports.</td>
         </tr>
+        <tr>
+          <td>threadSafe</td>
+          <td>@threadSafe &lt;true|false&gt;</td>
+          <td>No. Default: <code>false</code></td>
+          <td>
+            Marks this mojo as being thread-safe, i.e. the mojo safely supports concurrent execution during parallel builds.
+            Mojos without this annotation will make Maven output a warning when used during a parallel build session.
+            The short-hand notation <code>@threadSafe</code> without a tag value is equivalent to <code>@threadSafe true</code>.
+            Since Maven 3.0.
+          </td>
+        </tr>
 
         <!-- Autodetect -->
         <tr>
