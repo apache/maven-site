@@ -484,7 +484,7 @@ under the License.
           <td>requiresReports</td>
           <td>@requiresReports &lt;true|false&gt;</td>
           <td>No. Default: <code>false</code></td>
-          <td>Flags this Mojo to require reports.</td>
+          <td>Flags this Mojo to require reports. Unsupported since Maven 3.0.</td>
         </tr>
         <tr>
           <td>threadSafe</td>
