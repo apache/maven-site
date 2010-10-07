@@ -37,21 +37,6 @@ under the License.
 </form>
 <script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006660305041243700248%3Ahyqtfwsewpm"></script>
 <!-- Google CSE Search Box Ends -->
-      <h5>Try Maven 3.x </h5>
-      <span style="display: block; text-align: right; font-size: smaller">Released: ${currentDevelopmentReleaseDate}</span>
-      <p>Maven 3.0 is coming soon, so try out the latest release and be sure to provide feedback.</p>
-	  <p>
-        <a href="download.html">
-          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentDevelopmentVersion}"/>
-          Maven ${currentDevelopmentVersion}
-        </a>
-        <span style="font-size: smaller">
-          <br/>
-          <a href="docs/${currentDevelopmentVersion}/release-notes.html">Release Notes</a>,
-          <a href="download.html#Requirements">System Requirements</a>,
-          <a href="download.html#Installation">Installation Instructions</a>
-        </span>
-      </p>	  
       <h5>Get Maven ${currentStableVersion}</h5>
       <span style="display: block; text-align: right; font-size: smaller">Released: ${currentStableReleaseDate}</span>
       <p>
