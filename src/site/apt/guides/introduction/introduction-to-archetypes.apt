@@ -43,7 +43,7 @@ mvn archetype:generate
 
 * Provided Archetypes
 
-  Maven provides several Achetype artifacts:
+  Maven provides several Archetype artifacts:
 
 *-----------------------------+----------------+
 || Archetype ArtifactIds      || Description   ||
