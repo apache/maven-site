@@ -18,9 +18,9 @@ Introduction to Repositories
  build artifacts that you have not yet released.
 
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
- <<<file://>>> and <<<http://>>>. These repositories might be a truely remote repository
+ <<<file://>>> and <<<http://>>>. These repositories might be a truly remote repository
  set up by a third party to provide their artifacts for downloading (for example,
- {{{http://repo1.maven.org/maven2/}repo1.maven.org}} houses Maven's central repository).
+ {{{http://repo1.maven.org/maven2/}repo1.maven.org}} and {{{http://uk.maven.org/maven2/}uk.maven.org}} house Maven's central repository).
  Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
@@ -67,22 +67,7 @@ Introduction to Repositories
  repository (or for a <<<SNAPSHOT>>>, when the remote repository contains one that is newer).
  By default, Maven will download from the {{{http://repo1.maven.org/maven2/}central}} repository.
 
- To override this, you need to specify a <<<repositories>>> element as follows:
-
-+----+
-
-<project>
-  ...
-  <repositories>
-    <repository>
-      <id>my-internal-site</id>
-      <url>http://myserver/repo</url>
-    </repository>
-  </repositories>
-  ...
-</project>
-
-+----+
+ To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}
 
  You can set this in your <<<settings.xml>>> file to globally use a certain mirror, however
  note that it is common for a project to customise the repository in their <<<pom.xml>>>
@@ -93,7 +78,7 @@ Introduction to Repositories
 
 ** Using Mirrors for the Central Repository
 
- Like any server, the central repository sometimes goes down. If this happens you can make
+ There are several official Central repositories geographically distributed. You can make
  changes to your <<<settings.xml>>> file to use one or more mirrors. Instructions for this can be
  found in the guide {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}.
 

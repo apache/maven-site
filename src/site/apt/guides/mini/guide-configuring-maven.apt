@@ -105,39 +105,10 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 
   Repositories can be declared inside a project, which means that if you have your own custom repositories, those
   sharing your project easily get the right settings out of the box. However, you may want to use an alternative
-  mirror for a particular repository without changing the project files.
+  mirror for a particular repository without changing the project files. Refer to {{{./guide-mirror-settings.html} Guide to Mirror Settings}}
+  for more details.
 
-  Some reasons to use a mirror are:
-
-   * There is a synchronized mirror on the internet that is geographically closer and faster
-
-   * You want to replace a particular repository with your own internal repository which you have greater control over
-
-   * You want to run maven-proxy to provide a local cache to a mirror and need to use its URL instead
-
-  To configure a mirror of a given repository, you provide it in your settings file, giving the new repository its own
-  <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a mirror
-  of. For example, the <<<id>>> of the main Maven repository included by default is <<<central>>>, so to use a Spanish
-  mirror, you would configure the following:
-
--------------
-<settings>
-  ...
-  <mirrors>
-   <mirror>
-      <id>cica.es</id>
-      <name>Spanish Mirror of http://repo1.maven.org/maven2/</name>
-      <url>http://ftp.cica.es/mirrors/maven2</url>
-      <mirrorOf>central</mirrorOf>
-    </mirror>
-  ...
-  </mirrors>
-  ...
-</settings>
--------------
-
-  More info about mirrors is available in the {{{./guide-mirror-settings.html}Guide to Mirror Settings}}.
-
+ 
 * Profiles
 
  Repository configuration can also be put into a profile. You can have multiple
