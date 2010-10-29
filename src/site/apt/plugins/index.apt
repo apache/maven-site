@@ -37,7 +37,9 @@ Available Plugins
   element from the POM.
 
   * <<Reporting plugins>> will be executed during the site generation and they should be configured in the
-  <<<\<reporting/\>>>> element from the POM.
+  <<<\<reporting/\>>>> element from the POM. Because the result of a Reporting plugin is part of the generated site,
+  Reporting plugins should be both internationalized and localized. You can read more about the
+  {{{./localization.html}localization of our plugins}} and how you can help.
 
   []
 
