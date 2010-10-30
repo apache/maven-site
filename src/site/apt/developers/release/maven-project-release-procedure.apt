@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-07-26
+ 2010-10-30
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -70,7 +70,7 @@ Performing a Maven Project Release
 
 +-----+
 To: "Maven Developers List" <dev@maven.apache.org>
-Subject: [VOTE] Release Maven XXX plugin version Y.Z
+Subject: [VOTE] Release Maven XXX Plugin version Y.Z
 
 Hi,
 
@@ -124,7 +124,7 @@ release manager. The specifics of the process may vary from project to project, 
 +-----+
 To: "Maven Developers List" <dev@maven.apache.org>
 CC: "Maven Project Management Committee List" <private@maven.apache.org>
-Subject: [RESULT] [VOTE] Release Maven XXX plugin version Y.Z
+Subject: [RESULT] [VOTE] Release Maven XXX Plugin version Y.Z
 
 Hi,
 The vote has passed with the following result :
@@ -176,9 +176,9 @@ http://maven.apache.org/plugins/maven-XXX-plugin/
 You should specify the version in your project's plugin configuration:
 
 <plugin>
- <groupId>org.apache.maven.plugins</groupId>
- <artifactId>maven-XXX-plugin</artifactId>
- <version>Y.Z</version>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-XXX-plugin</artifactId>
+  <version>Y.Z</version>
 </plugin>
 
 Release Notes - Maven 2.x XXX Plugin - Version Y.Z
