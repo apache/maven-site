@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-10-30
+ 2010-11-09
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -31,7 +31,7 @@ Performing a Maven Project Release
 
  Be sure that:
 
-  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.tigris.org/}http://subversion.tigris.org/}}.
+  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.apache.org/}http://subversion.apache.org/}}.
 
   * you have JDK 5 installed and on your shell's path.
 
