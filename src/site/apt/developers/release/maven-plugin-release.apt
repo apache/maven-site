@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-07-26
+ 2010-11-25
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -67,10 +67,11 @@ scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-p
 +------+
 
    [[2]] Verify/change folder permissions to 0775 and files permissions to 0664. Log on to <<<people.apache.org>>> and
-   change to the directory above the staging directory. That would be <<</www/maven.apache.org/plugins>>> for a plugin.
+   change to the directory above the staging directory.
    Then run these commands:
 
 +------+
+cd /www/maven.apache.org/plugins
 find . -type d -exec chmod a+rx,g+w {} \;
 find . -type f -exec chmod 664 {} \;
 +------+
