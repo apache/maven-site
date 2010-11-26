@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven 2.0.7
+Release Notes - Maven 2.x
  ------
 Brian Fox
  ------
@@ -26,12 +26,13 @@ Brian Fox
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Maven 2.0.7
+Release Notes - Maven 2.x
 
-#parse("release-notes.txt")
+#foreach ($v in $versions2x.split(","))
+#parse("docs/$v/release-notes.txt")
+#end
 
-* Complete release notes
 
-    * See {{{../../release-notes-2.x.html}complete release notes for 2.x}}
+* Complete Release Notes
 
-    * See {{{../../release-notes-all.html}complete release notes for all versions}}
+    * See {{{./release-notes-all.html}complete release notes for all versions}}
