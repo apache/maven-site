@@ -1,0 +1,66 @@
+* Maven 3.0.1 Release Notes
+
+  Maven 3.0.1 is a maintenance release to address various regressions/bugs and to deliver other minor improvements.
+  The new version 3.0.1 is a recommended update for anybody currently using Maven 3.0.
+  
+  The full list of changes can be found in our
+  {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=16331}issue management system}},
+  and is reproduced below.
+
+** Known Incompatibilities with Maven 2
+
+  Please refer to the following {{{http://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html} compatibility notes}}
+  before reporting any issues regarding changed build behavior in Maven 3.x.
+
+** Release Notes - Maven - Version 3.0.1 (since 3.0 only)
+
+** Bug
+
+    * [MNG-4850] - [regression] several elements of server configuration in settings.xml are not honoured
+
+    * [MNG-4858] - NullPointerException if goal name is malformed
+
+    * [MNG-4864] - npe when transferring artifacts
+
+    * [MNG-4866] - DefaultLegacySupport leaks MavenSession instances in some cases
+
+    * [MNG-4867] - incorrect namespace in settings.xml
+
+    * [MNG-4874] - The <latestVersion> value isn't updated for local installs
+
+    * [MNG-4877] - Regression: Deploy to SCP with privateKey fails - privateKey and passphrase gets lost
+
+    * [MNG-4883] - [regression] Dependency resolution does not fail for artifact with over-constrained version ranges
+
+    * [MNG-4884] - Guice provision errors
+
+    * [MNG-4892] - Use of --log-file doesn't capture all output, e.g. from maven-antrun-plugin
+
+    * [MNG-4895] - Plugins depending on 3rd party JARs that contain the Maven API can't be configured/run due to type incompatibilities
+
+    * [MNG-4900] - "Unresolveable build extension" when using shade plugin and repositories in profile
+
+** Improvement
+
+    * [MNG-4860] - Allow management of project building request kept inside MavenProject instances
+
+    * [MNG-4891] - Improve robustness of snapshot dependency resolution in case a remote repo accidently uses the id "local"
+
+    * [MNG-4896] - Help for -pl option does not include use of comma-sep, also more than one -pl does not work or complain
+
+    * [MNG-4904] - Make MavenExecutionResult.getTopologicallySortedProjects() return empty list instead of null
+
+    * [MNG-4907] - Wrong error message when relativePath wrong
+
+    * [MNG-4909] - Emit warning when dependency with scope import but inproper type is declared
+
+    * [MNG-4910] - Use BeanConfigurator for configuration sub-elements
+
+** Task
+
+    * [MNG-4902] - Update default plugin versions
+
+    * [MNG-4903] - Update to Wagon 1.0-beta-7
+
+
+
