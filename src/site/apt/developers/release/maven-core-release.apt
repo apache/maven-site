@@ -64,11 +64,11 @@ Releasing Maven
   Note that release notes can be created and checked in, but other changes
   should not be checked in as it can be deployed 'live' at any time.
 
-    * For 2.0.x: update the <<<releasedVersions>>>, <<<current20xVersion>>> and <<<current20xReleaseDate>>> properties in <<<pom.xml>>>
+    * For 2.0.x: update the <<<versions2x>>>, <<<current20xVersion>>> and <<<current20xReleaseDate>>> properties in <<<pom.xml>>>
 
-    * For 2.2.x: update the <<<releasedVersions>>>, <<<currentStableVersion>>> and <<<currentStableReleaseDate>>> properties in <<<pom.xml>>>
+    * For 2.2.x: update the <<<versions2x>>>, <<<current22xVersion>>> and <<<current22xReleaseDate>>> properties in <<<pom.xml>>>
 
-    * For 3.x-alpha/beta: update the <<<developmentVersions>>> and <<<currentDevelopmentVersion>>> properties in <<<pom.xml>>>
+    * For 3.x: update the <<<versions3x>>>, <<<currentStableVersion>>> and <<<currentStableReleaseDate>>> properties in <<<pom.xml>>>
 
   Next, create the release notes:
 
