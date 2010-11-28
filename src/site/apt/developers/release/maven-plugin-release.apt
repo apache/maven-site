@@ -94,7 +94,7 @@ mvn site-deploy -Preporting
  To review the site, wait for the files to arrive at
 
 +-----+
-http://maven.apache.org/plugins/maven-XXX-plugin
+http://maven.apache.org/plugins/maven-XXX-plugin/
 +-----+
 
  The wait is necessary to allow the site to be
