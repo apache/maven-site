@@ -196,7 +196,13 @@ Enjoy,
  This is a PMC activity.  If you are not a PMC member then email the Developer's
  list with a request to update this file for your release.
 
- [[6]] Celebrate :o)
+ [[6]] If releasing the Apache Parent POM, notify release-discuss@apache.org
+
+ Several projects follow this list, and should be made aware of changes to the common parent.
+ This might also be a step to take if other shared resources are released, or if plugin releases are
+ of particular interest to that group.
+
+ [[7]] Celebrate :o)
 
 
 
