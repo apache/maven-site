@@ -296,6 +296,30 @@
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>check-site-inheritance</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <phase>site</phase>
+            <configuration>
+              <rules>
+                <requireFilesExist>
+                  <message>Generated site should have inherited the correct skin from the parent</message>
+                  <!-- check assumes you've run with "clean" -->
+                  <files>
+                    <file>${project.build.directory}/site/images/apache-maven-project-2.png</file>
+                  </files>
+                </requireFilesExist>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
