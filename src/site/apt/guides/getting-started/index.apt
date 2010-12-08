@@ -1100,6 +1100,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  (although you can log in using another ssh client by typing in the username and password).
  You might want to switch to public key authentication in this case.
 
+ Care should be taken if using passwords in <<<settings.xml>>>. For more information, see {{{../mini/guide-encryption.html} Password Encryption}}.
+
 * {How do I create documentation?}
 
  To get you jump started with Maven's documentation system you can use the archetype mechanism to generate a site

@@ -195,7 +195,7 @@ mvn jetty:run
   
 ** {Password Encryption}
 
- A new feature - server password and passphrase encryption has been added to 2.1.x and 3.0 trunks. See details  
+ A new feature - server password and passphrase encryption has been added to 2.1.0+. See details  
  {{{./guides/mini/guide-encryption.html}on this page}}
 
 * {Mirrors}
