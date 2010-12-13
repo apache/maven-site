@@ -114,17 +114,17 @@ Guide to uploading artifacts to the Central Repository
 
  []
  
-{Approved Forges}
+{Approved Repository Hosting}
 
- Instead of maintaining your own repository rsync feed, we now encourage projects to use an approved Forge that provides repository hosting. (Not all of them require code to be hosted at the same Forge) The aggregation of projects into single larger feeds will allow us to sync faster and more often, and the checks provided by approved Forges increases the quality of metadata for everyone. 
+ Instead of maintaining your own repository rsync feed, we now encourage projects to use an approved repository hosting location. Not all of them require code to be hosted at the same location. The aggregation of projects into single larger feeds will allow us to sync faster and more often, and ensuring these locations perform sufficient checks increases the quality of metadata for everyone. 
  
  
 
- Currently approved Forges:
+ Currently approved repository hosting locations:
  
-  * {{{http://incubator.apache.org/}Apache}} (open to Apache Projects)
+  * {{{http://www.apache.org/}Apache Software Foundation}} (for all Apache projects)
   
-  * {{{http://codehaus.org/customs/selection.html}Codehaus}} (open to Codehaus Projects)
+  * {{{http://www.codehaus.org/}Codehaus}} (for Codehaus projects)
   
   * {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype Forge}} (open to any OSS Project)
   
@@ -135,4 +135,4 @@ Guide to uploading artifacts to the Central Repository
  []
 {Manual upload of artifacts}
 
- See {{{https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+Maven+Central}here}} for information about the new process to get artifacts loaded into Central. The new process is mostly automated with turnaround time averaging 1 Business day.
+ See {{{https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+Maven+Central}here}} for information about the new process to get artifacts loaded into Central. The new process is mostly automated with turnaround time averaging 1 business day.

@@ -8,9 +8,10 @@
 
 Guide to add, improve or fix metadata in the Central Maven 2 repository
 
- There are artifacts in the repository that don't have POMs. They come from the Maven 1 repositories of our
- partners (Apache Software Foundation, Codehaus,...). We know it but can't do anything unless you provide
- a POM for it or you ask the project in question to add the POM when they add the artifacts.
+ There are artifacts in the repository that don't have POMs. They come from projects with repositories that have
+ been synced into central without extra checks (particularly historical ones that were in Maven 1 format). We
+ know about the problems but can't do anything unless you provide a POM for it or you ask the project in
+ question to add the POM when they add the artifacts.
 
  We don't change dependencies in POMs already in the repository anymore as builds need to be reproducible.
  Same applies to POMs that don't exist. We can only add a POM with no dependencies, because doing any other way
