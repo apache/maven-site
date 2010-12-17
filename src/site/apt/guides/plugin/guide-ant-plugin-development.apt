@@ -2,8 +2,9 @@
  Guide to Developing Ant Plugins
  ---
  John Casey
+ Dennis Lundberg
  -----
- 09 January 2006
+ 2010-12-17
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -31,7 +32,7 @@
 
 Developing Ant Plugins for Maven 2.x
 
-*WARNING
+*Warning
 
   <<The documentation below assumes that you have updated your locally cached
   cached copy of the maven-plugin-plugin. To update your copy, you will need to
@@ -58,7 +59,7 @@ mvn -U clean install
   
   As of the 2.0.1 release, Maven supports Ant-driven plugins. These plugins
   allow the invocation of Ant targets (specified in scripts embedded in the
-  plugin jar) at specific points in the build lifecycle. They can also inject
+  plugin JAR) at specific points in the build lifecycle. They can also inject
   parameter values into the Ant project instances when a target is called.
   
 *Conventions
@@ -352,24 +353,24 @@ hello.mojos.xml:
 
   You'll notice several differences from the old version of the mapping document.
   First, we've added <<requiresProject="true">> to the mojo declaration. This tells
-  Maven that our mojo requires a valid project before it can execute...in our case, 
+  Maven that our mojo requires a valid project before it can execute. In our case, 
   we need a project so we can determine the correct <<projectName>> to use. Next,
   we've added two parameter declarations to our mojo mapping; one for <<name>> and
   another for <<projectName>>.
   
-  The <<name>> parameter declaration provides an expression attribute...this
+  The <<name>> parameter declaration provides an expression attribute. This
   allows the user to specify <<<-Dname=somename>>> on the command line. Otherwise,
   the only way to configure this parameter would be through a <<<\<configuration/\>>>>
   element within the plugin specification in the user's POM. Note that this
   parameter is required to have a value before our mojo can execute.
   
   The <<projectName>> parameter declaration provides two other interesting items.
-  First, it specifies a defaultValue attribute, which specifies an expression to
+  First, it specifies a <<<defaultValue>>> attribute, which specifies an expression to
   be evaluated against Maven's current build state in order to extract the parameter's
-  value. Second, it specifies a readonly attribute, which means the user cannot
+  value. Second, it specifies a <<<readonly>>> attribute, which means the user cannot
   directly configure this parameter - either via command line or configuration
   within the POM. It can only be modified by modifying the build state referenced
-  in the defaultValue...in our case, the name element of the POM. Also note that
+  in the <<<defaultValue>>>. In our case, the name element of the POM. Also note that
   this parameter is declared to be required before our mojo can execute.
 
 **Rebuild It and Run It
@@ -408,8 +409,8 @@ mvn -Dname=John hello:hello
   If you're familiar with Ant, you're probably familiar with the common usage
   pattern of defining multiple build types within a single build script. For
   instance, you might have a build type for cleaning the project, another for
-  producing the application jar file, and yet another for producing the full
-  distribution including javadocs, etc.
+  producing the application JAR file, and yet another for producing the full
+  distribution including Javadocs, etc.
   
   The concept is pretty simple. Discrete chunks of the build process are separated
   into targets within the script. These targets can reference one another in
@@ -448,8 +449,7 @@ one-two.build.xml:
 
 **Map the Mojos
 
-  Next, we'll modify our original mapping document to map these two new mojos
-  instead of the old one:
+  Next, we'll add new mapping document to map these two new mojos:
   
 +---+
 one-two.mojos.xml:
@@ -557,7 +557,7 @@ test-project/pom.xml:
       <plugin>
         <groupId>org.myproject.plugins</groupId>
         <artifactId>hello-plugin</artifactId>
-        <version>1.0</version>
+        <version>1.0-SNAPSHOT</version>
         
         <configuration>
           <name>John</name>
@@ -597,13 +597,13 @@ mvn validate
 
   It's worth mentioning that Ant-driven plugins can just as easily contain
   multiple Ant build scripts. Simply follow the naming rules - naming each
-  A.build.xml, B.build.xml, C.build.xml, etc. for example - and be sure to
+  <<<A.build.xml>>>, <<<B.build.xml>>>, <<<C.build.xml>>>, etc. for example - and be sure to
   provide a mapping document to correspond to each build script that contains
   a mojo (other build scripts may be contained in the plugin, and referenced 
   by one of these; they don't need mapping documents). So, for the above examples
-  (assuming they all contained mojo targets), you'd need: A.mojos.xml, B.mojos.xml,
-  and C.mojos.xml. If C.build.xml was referenced by A and B, but didn't contain
-  mojo targets, then you don't need a C.mojos.xml for obvious reasons.
+  (assuming they all contained mojo targets), you'd need: <<<A.mojos.xml>>>, <<<B.mojos.xml>>>,
+  and <<<C.mojos.xml>>>. If <<<C.build.xml>>> was referenced by A and B, but didn't contain
+  mojo targets, then you don't need a <<<C.mojos.xml>>> for obvious reasons.
 
 *Advanced Usage
 
