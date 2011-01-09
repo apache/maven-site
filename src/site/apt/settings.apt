@@ -74,6 +74,16 @@ Settings Reference
 </settings>
 +------------------------------------+
 
+  The contents of the <<<settings.xml>>> can be interpolated using the following expressions:
+  
+  [[1]] <<<$\{user.home\}>>> and all other system properties <(since Maven 3.0)>
+  
+  [[2]] <<<$\{env.HOME\}>>> etc. for environment variables
+
+  []
+
+  Note that properties defined in profiles within the <<<settings.xml>>> cannot be used for interpolation.
+  
 {Settings Details}
 
 * {Simple Values}
