@@ -27,7 +27,7 @@ Releasing Maven
 
   Maven differs slightly in its release process due to several extra steps.
 
-* Producing Release Candidates
+* Produce Release Candidates
 
   For non-alpha/beta releases, release candidates are produced before the actual
   release.
@@ -48,7 +48,7 @@ Releasing Maven
   Once happy with a release candidate, the full release is performed, with the final
   version in place.
 
-* Producing the Release
+* Produce the Release
 
   To produce a final release, the same process as for standard projects is followed:
 
@@ -57,7 +57,11 @@ Releasing Maven
   Below describes the additional steps that need to be taken at the points where the website are updated
   in those instructions.
 
-** Updating the Release Notes and web site
+** Update the DOAP Information
+
+   Edit {{https://svn.apache.org/repos/asf/maven/maven-3/trunk/doap_Maven.rdf}} to list the new release.
+
+** Update the Release Notes and Web Site
 
   Checkout {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
 
@@ -80,7 +84,7 @@ Releasing Maven
 
   Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to /ref/.
 
-** Staging the latest documentation
+** Stage the Latest Documentation
 
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
@@ -106,7 +110,7 @@ mvn -Preporting site:stage
 scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION USER@people.apache.org:/home/$USER/public_html/staged-sites/maven-$VERSION
 +------+
 
-** Additional release steps
+** Add New Version to ASF Distribution Directory
 
   In addition to promoting the repository, the release archives should be copied to
   the following locations:
@@ -117,16 +121,16 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 
   The files may need to be renamed from those given in the repository.
 
-** Deploy the current references
+** Deploy the Current References
 
-  The source code references need to be deployed before deploying the web site
+  The source code references and API docs need to be deployed before deploying the web site
   with the new version.
 
   This is described in {{{../website/deploy-maven-current-ref.html} Deploying the Current References}}.
 
-** Deploying the release website
+** Deploying the Release Website
 
- Once both of the above have synced to the main site and a suitable number of mirors,
+ Once both of the above have synced to the main site and a suitable number of mirrors,
  proceed to update the web site and produce the announcement.
 
  Commit your changes and then deploy the main Maven site checked out earlier.
@@ -135,7 +139,7 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 mvn -Preporting clean site-deploy
 +-----+
 
-** Remove Old Versions
+** Remove Old Versions from ASF Distribution Directory
 
   Next, any superceded releases should be removed from the above locations (after
   confirming that they exist in /www/archive.apache.org/dist/maven).
