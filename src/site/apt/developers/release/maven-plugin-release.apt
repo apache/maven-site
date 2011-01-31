@@ -44,7 +44,7 @@ Releasing A Maven Plugin
 
 +------+
 cd target/checkout
-mvn site:stage-deploy -Preporting
+mvn site site:stage-deploy -Preporting
 +------+
 
    <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
@@ -62,7 +62,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
    upload it manually:
 
 +------+
-mvn site:stage -Preporting
+mvn site site:stage -Preporting
 scp -r target/staging/people.apache.org/www/maven.apache.org/plugins/maven-XXX-plugin YOUR_APACHE_USERNAME@people.apache.org:/www/maven.apache.org/plugins/maven-XXX-plugin-Y.Z
 +------+
 
