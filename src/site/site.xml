@@ -28,7 +28,6 @@ under the License.
 
   <body>
     <breadcrumbs>
-      <!-- TODO: This breadcrumb should be removed when it has been solved in the parent -->
       <item name="Maven" href="http://maven.apache.org/index.html"/>
     </breadcrumbs>
 
