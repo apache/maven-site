@@ -134,7 +134,7 @@ public class GreetingMojo extends AbstractMojo
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>sample.plugin</groupId>
-  <artifactId>maven-hello-plugin</artifactId>
+  <artifactId>hello-maven-plugin</artifactId>
   <packaging>maven-plugin</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Sample Parameter-less Maven Plugin</name>
@@ -170,7 +170,7 @@ public class GreetingMojo extends AbstractMojo
 
   The most direct means of executing your new plugin is to specify the
   plugin goal directly on the command line.  To do this, you need to
-  configure the <<<maven-hello-plugin>>> plugin in you project:
+  configure the <<<hello-maven-plugin>>> plugin in you project:
 
 +----+
 ...
@@ -178,7 +178,7 @@ public class GreetingMojo extends AbstractMojo
     <plugins>
       <plugin>
         <groupId>sample.plugin</groupId>
-        <artifactId>maven-hello-plugin</artifactId>
+        <artifactId>hello-maven-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
       </plugin>
     </plugins>
@@ -193,7 +193,7 @@ mvn groupID:artifactID:version:goal
 +----+
 
   For example, to run the simple mojo in the sample plugin, you would enter
-  "<<<mvn sample.plugin:maven-hello-plugin:1.0-SNAPSHOT:sayhi>>>" on the
+  "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
   command line.
 
   <<Tips>>: <<<version>>> is not requiered to run a standalone goal.
@@ -204,7 +204,7 @@ mvn groupID:artifactID:version:goal
 
   * If you need to run the latest version of a plugin installed in your local
   repository, you can omit its version number. So just use
-  "<<<mvn sample.plugin:maven-hello-plugin:sayhi>>>" to run your plugin.
+  "<<<mvn sample.plugin:hello-maven-plugin:sayhi>>>" to run your plugin.
 
   * You can assign a shortened prefix to your plugin, such as <<<mvn hello:sayhi>>>.
     This is done automatically if you follow the convention of using
@@ -238,7 +238,7 @@ mvn groupID:artifactID:version:goal
     <plugins>
       <plugin>
         <groupId>sample.plugin</groupId>
-        <artifactId>maven-hello-plugin</artifactId>
+        <artifactId>hello-maven-plugin</artifactId>
         <version>1.0-SNAPSHOT</version>
         <executions>
           <execution>
@@ -265,7 +265,7 @@ mvn groupID:artifactID:version:goal
 +---+
 mvn archetype:create \
   -DgroupId=sample.plugin \
-  -DartifactId=maven-hello-plugin \
+  -DartifactId=hello-maven-plugin \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-mojo
 +---+
@@ -317,7 +317,7 @@ mvn archetype:create \
 +-----+
 <plugin>
   <groupId>sample.plugin</groupId>
-  <artifactId>maven-hello-plugin</artifactId>
+  <artifactId>hello-maven-plugin</artifactId>
   <version>1.0-SNAPSHOT</version>
   <configuration>
     <greeting>Welcome</greeting>
