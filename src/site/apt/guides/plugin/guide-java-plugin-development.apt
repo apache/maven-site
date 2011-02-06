@@ -206,13 +206,12 @@ mvn groupID:artifactID:version:goal
   repository, you can omit its version number. So just use
   "<<<mvn sample.plugin:maven-hello-plugin:sayhi>>>" to run your plugin.
 
-  * The "<<<maven-$name-plugin>>>" and "<<<$name-maven-plugin>>>" artifactId
-  patterns are treated in a special way. If no plugin matches the artifactId
-  specified on the command line, Maven will try expanding the artifactId to these
-  patterns in that order. So in the case of our example, you can use
-  "<<<mvn sample.plugin:hello:sayhi>>>" to run your plugin.  Note: these 2
-  patterns are used respectively by the official Maven 2 plugins and the Mojo
-  project plugins.
+  * You can assign a shortened prefix to your plugin, such as <<<mvn hello:sayhi>>>.
+    This is done automatically if you follow the convention of using
+    <<<${prefix}-maven-plugin>>> (or <<<maven-${prefix}-plugin>>> if the plugin is
+    part of the Apache Maven project). You may also assign one through additional
+    configuration - for more information see
+    {{{../introduction/introduction-to-plugin-prefix-mapping.html} Introduction to Plugin Prefix Mapping}}.
 
   * Finally, you can also add your plugin's groupId to the list of groupIds
   searched by default.  To do this, you need to add the following to
