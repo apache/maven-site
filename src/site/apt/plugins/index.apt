@@ -198,6 +198,8 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
 *---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://mojo.codehaus.org/clirr-maven-plugin/} <<<clirr>>>}}                  | Compare binaries or sources for compatibility using Clirr |
+*---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammer.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
