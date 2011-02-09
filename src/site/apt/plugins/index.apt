@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2011-01-29
+ 2011-02-09
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -118,7 +118,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 2.5          | 2010-05-04 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R |   2.3.1 | 2010-12-21 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
+| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 2.3.1 | 2010-12-21 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R    | 2.7.2        | 2011-01-25 | Generate a report based on the results of unit tests. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -150,7 +150,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | 1.1          | 2009-12-13 | Generate a PDF version of your project's documentation. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pdf-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPDF}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}             | B+R        | 2.6          | 2010-05-05 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
+| {{{/plugins/maven-plugin-plugin/} <<<plugin>>>}}             | B+R        | 2.7          | 2011-02-09 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-release-plugin/} <<<release>>>}}           | B          | 2.1          | 2010-10-08 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
