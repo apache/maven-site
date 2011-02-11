@@ -12,7 +12,7 @@ Overview
 
 Issue Tracking
 
- Issues, bugs, and feature requests should be submitted to the following issue tracking systems depending projects.
+ Issues, bugs, and feature requests should be submitted to the following issue tracking systems depending on which project is involved.
 
 * Maven Project
 
@@ -47,3 +47,7 @@ Issue Tracking
 ** Wagon
 
  {{{http://jira.codehaus.org/browse/WAGON}http://jira.codehaus.org/browse/WAGON}}
+
+* Central Repository
+
+ {{{https://issues.sonatype.org/browse/MVNCENTRAL}https://issues.sonatype.org/browse/MVNCENTRAL}}
