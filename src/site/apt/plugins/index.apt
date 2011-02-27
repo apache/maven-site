@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2011-02-09
+ 2011-02-27
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -74,7 +74,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-install-plugin/} <<<install>>>}}           | B          | 2.3.1        | 2010-05-21 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINSTALL}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-resources-plugin/} <<<resources>>>}}       | B          | 2.4.3        | 2010-05-21 | Copy the resources to the output directory for including in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRESOURCES}JIRA}}
+| {{{/plugins/maven-resources-plugin/} <<<resources>>>}}       | B          | 2.5          | 2011-02-27 | Copy the resources to the output directory for including in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRESOURCES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin/} <<<site>>>}} for Maven 2     | B          | 2.2          | 2010-11-28 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -130,7 +130,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | 2.0          | 2010-10-28 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | 2.2          | 2010-10-11 | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
+| {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | 2.2.1        | 2011-02-27 | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 2.2          | 2011-02-22 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -156,7 +156,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.0          | 2008-09-27 | Build a subset of interdependent projects in a reactor | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-reactor-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREACTOR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.1          | 2009-09-22 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
+| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.2          | 2011-02-27 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.3.1        | 2010-07-21 | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
