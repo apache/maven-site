@@ -8,7 +8,7 @@
 
 Guide to Moving from Maven 1.x to Maven 2.x
 
- This document is intended to be continously updated from the mail list archives.
+ This document is intended to be continuously updated from the mail list archives.
  For an only slightly out-of-date reference with concrete examples,
  check out Vincent Massol's
  {{{http://blogs.codehaus.org/people/vmassol/archives/001170_javazone_2005.html}JavaZone2005 presentation}}.
