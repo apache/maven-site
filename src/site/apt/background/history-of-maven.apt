@@ -54,7 +54,7 @@ History of Maven by Jason van Zyl
  the Gump model would be a good idea so I took a look. After taking a look at the descriptors I noted that Gump
  pretty much allowed any project to do whatever it wanted in terms of directory structure, use of JARs in CVS,
  multiple artifacts per project, documentation splayed everywhere, and several other things that made no sense to me
- as Gump was not trying to standardize anything at the time but trying to continously integrate anything it could
+ as Gump was not trying to standardize anything at the time but trying to continuously integrate anything it could
  get its hands on. My goals were different and I wanted to make an
  {{{http://www.oreillynet.com/pub/a/network/2005/08/30/ruby-rails-david-heinemeier-hansson.html}opinionated}} piece
  of software and I preferred the notion of convention over configuration. I wanted a project's infrastructure to
@@ -68,11 +68,11 @@ History of Maven by Jason van Zyl
  of Xerces laying around which is a waste of space, every time the version of Xerces changed
  I had to update the copies of Xerces in each of the projects, but more importantly without some declarative statement of
  your dependencies there is no way you could perform any analysis. People tend to miss the point entirely regarding
- a declaritive dependency use. People say it's so easy just to store their dependencies in an SCM but try decomposing
- your big crappy build into components to encourage resuse and ease of maintenace, or try to analyse what you might
+ a declarative dependency use. People say it's so easy just to store their dependencies in an SCM but try decomposing
+ your big crappy build into components to encourage reuse and ease of maintenance, or try to analyze what you might
  need at runtime between all your different apps with commons dependencies in the graph and you're shit out of luck.
- The true power of declaritive dependencies lies not in the fact that you can save a few bytes of disk space, though
- it can really add up if you're not careful, but in the analsys that can be performed. Once you have a decent graph
+ The true power of declarative dependencies lies not in the fact that you can save a few bytes of disk space, though
+ it can really add up if you're not careful, but in the analysis that can be performed. Once you have a decent graph
  all sorts of things are possible. Back to history: so now that declarative dependencies existed it needed to
  be easier ...
 

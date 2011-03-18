@@ -160,7 +160,7 @@
           Everything in m2 is a plugin so for doing any sort of custom work like
           that you will need to make a plugin. This 1) greatly reduces the
           complexity within m2 because we only deal with proper plugins. The
-          maven.xml file in m1 was a psuedo plugin essentially and greatly
+          maven.xml file in m1 was a pseudo plugin essentially and greatly
           complicated the internals and 2) it promotes the sharing of your work
           right from the get go. To start with you'll probably write a plugin that
           is only applicable to your specific requirements, or your team's work,
@@ -181,7 +181,7 @@
     <faq id="convert">
       <question>How do I convert from Maven 1.x to Maven 2.x?</question>
       <answer>
-        This is dicussed in <a href="http://maven.apache.org/guides/mini/guide-m1-m2.html">Guide to Moving from Maven 1.x to Maven 2.x</a>.
+        This is discussed in <a href="http://maven.apache.org/guides/mini/guide-m1-m2.html">Guide to Moving from Maven 1.x to Maven 2.x</a>.
       </answer>
     </faq>
   </part>
