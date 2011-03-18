@@ -23,7 +23,7 @@ Philosophy of Maven
  the commensurate degree of frustration among team members. A natural effect when processes don't work
  in the same way for everyone.
 
- Maven was borne of the very practical desire to make several projects at Apache work in the same way. So that developers
+ Maven was born of the very practical desire to make several projects at Apache work in the same way. So that developers
  could freely move between these projects, knowing clearly how they all worked by understanding how one of them
  worked. If a developer spent time understanding how one project built it was intended that they would not have
  to go through this process again when they moved on to the next project. The same idea extends to testing,
