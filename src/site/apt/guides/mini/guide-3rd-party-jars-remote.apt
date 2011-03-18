@@ -28,7 +28,7 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
   -Dpackaging=<type-of-packaging> \
   -Dfile=<path-to-file> \
   -DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \
-  -Durl=<url-of-the-repositor-to-deploy>
+  -Durl=<url-of-the-repository-to-deploy>
 +----+
 
 * Deploying a 3rd party JAR with a generic POM
@@ -41,7 +41,7 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
 -DgeneratePom=false
 +----+
 
-* Deploying a 3rd party JAR with a customed POM
+* Deploying a 3rd party JAR with a customized POM
 
   If a POM is already existing for the 3rd Party JAR and you want to deploy
   it together with the JAR we should use the <<<pomFile>>> argument of the
@@ -51,7 +51,7 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
 mvn deploy:deploy-file -DpomFile=<path-to-pom> \
   -Dfile=<path-to-file> \
   -DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \
-  -Durl=<url-of-the-repositor-to-deploy>
+  -Durl=<url-of-the-repository-to-deploy>
 +----+
 
   Note that <<<groupId>>>, <<<artifactId>>>, <<<version>>> and <<<packaging>>>
