@@ -196,7 +196,7 @@ mvn groupID:artifactID:version:goal
   "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
   command line.
 
-  <<Tips>>: <<<version>>> is not requiered to run a standalone goal.
+  <<Tips>>: <<<version>>> is not required to run a standalone goal.
 
 *** Shortening the Command Line
 

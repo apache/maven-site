@@ -114,20 +114,20 @@ src/
 
  [[3]] It configures the JAR plugin to create an "attached" JAR with the "test" classifier.
 
- To activate this profile execute <<<mvn -Ptest install>>>  and maven will execute the steps in the profile
+ To activate this profile execute <<<mvn -Ptest install>>>  and Maven will execute the steps in the profile
    in addition to the normal steps. From this build you will get two artifacts, "foo-1.0.jar" and "foo-1.0-test.jar".
    These two jars will identical.  
 
 Caveats
 
    * Currently Maven 2 doesn't allow a project build to only produce attached artifacts. (i.e. it has to produce a
-   "main" artifact as well) This results in two equal JARs beeing packaged and installed. The JAR plugin probably
+   "main" artifact as well) This results in two equal JARs being packaged and installed. The JAR plugin probably
    should also get improved support for this use case to that two different output directories will be used as the
    basis for building the JAR.
 
    * The usage of the delete task might seem a bit odd but is required to make sure that the copy task actually will
    copy the file. The copy task will look at the timestamps of the source and destination files, only when copying the
-   files it won't know that the actualy source file might be different than the last time it was executed.
+   files it won't know that the actually source file might be different than the last time it was executed.
 
    * After the build the test configuration will be in target/classes and won't be overridden because the resources
    plugin uses the same timestamp checking, so you should always do a clean after executing Maven with a profile.
