@@ -112,7 +112,7 @@ Sections
 
 +-----+
 
-mvn archetype:create \
+mvn archetype:generate \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DgroupId=com.mycompany.app \
   -DartifactId=my-app
@@ -233,7 +233,7 @@ my-app
 
 * {How do I compile my application sources?}
 
- Change to the directory where pom.xml is created by archetype:create and execute the following command to compile
+ Change to the directory where pom.xml is created by archetype:generate and execute the following command to compile
  your application sources:
 
 +-----+
@@ -1109,7 +1109,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 +----+
 
-mvn archetype:create \
+mvn archetype:generate \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-site \
   -DgroupId=com.mycompany.app \
@@ -1126,7 +1126,7 @@ mvn archetype:create \
   simple web application:
 
 -------------------
-mvn archetype:create \
+mvn archetype:generate \
     -DarchetypeGroupId=org.apache.maven.archetypes \
     -DarchetypeArtifactId=maven-archetype-webapp \
     -DgroupId=com.mycompany.app \

@@ -60,7 +60,7 @@ Guide to Creating Archetypes
 
   All you need to specify is a <<<groupId>>>, <<<artifactId>>> and
   <<<version>>>. These three parameters will be needed later for invoking the
-  archetype via <<<archetype:create>>> from the commandline.
+  archetype via <<<archetype:generate>>> from the commandline.
 
 * 2. Create the archetype descriptor
 
@@ -88,7 +88,7 @@ Guide to Creating Archetypes
  archetype <<<pom.xml>>>.
 
  An optional <<<\<allowPartial\>true\</allowPartial\>>>> tag makes it possible
- to run the <<<archetype:create>>> even on existing projects.
+ to run the <<<archetype:generate>>> even on existing projects.
 
  The <<<\<sources\>>>>, <<<\<resources\>>>>, <<<\<testSources\>>>>, <<<\<testResources\>>>> and
  <<<\<siteResources\>>>> tags represent the different sections of the project:
@@ -148,7 +148,7 @@ archetype
  <<<pom.xml>>>. Any <<<pom.xml>>> will do, just don't forget to the set
  <<<artifactId>>> and <<<groupId>>> as variables  ( <<<$\{artifactId\}>>> /
  <<<$\{groupId\}>>> ). Both variables will be initialized from the commandline
- when calling <<<archetype:create>>>.
+ when calling <<<archetype:generate>>>.
 
  An example for a prototype <<<pom.xml>>> is:
 
@@ -199,7 +199,7 @@ mvn install
 
 +----+
 
-mvn archetype:create                                    \
+mvn archetype:generate                                  \
   -DarchetypeGroupId=<archetype-groupId>                \
   -DarchetypeArtifactId=<archetype-artifactId>          \
   -DarchetypeVersion=<archetype-version>                \
@@ -218,7 +218,7 @@ mvn archetype:create                                    \
  simply use
 
 +------+
-mvn archetype:create
+mvn archetype:generate
   -DgroupId=[your project's group id]
   -DartifactId=[your project's artifact id]
   -DarchetypeArtifactId=maven-archetype-archetype

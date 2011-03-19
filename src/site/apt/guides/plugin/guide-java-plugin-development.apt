@@ -263,7 +263,7 @@ mvn groupID:artifactID:version:goal
   {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
 
 +---+
-mvn archetype:create \
+mvn archetype:generate \
   -DgroupId=sample.plugin \
   -DartifactId=hello-maven-plugin \
   -DarchetypeGroupId=org.apache.maven.archetypes \

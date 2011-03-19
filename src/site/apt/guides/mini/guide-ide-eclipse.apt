@@ -101,7 +101,7 @@ above}}.
 workspace and create a new maven project using the archetype plugin.
 
 +----+
-mvn archetype:create -DgroupId=guide.ide.eclipse -DartifactId=guide-ide-eclipse
+mvn archetype:generate -DgroupId=guide.ide.eclipse -DartifactId=guide-ide-eclipse
 +----+
 
  [[1]] Create a new simple project <guide-ide-eclipse> inside the
@@ -125,9 +125,9 @@ directory and create some modules.
 
 +----+
 cd guide-ide-eclipse
-mvn archetype:create -DgroupId=guide.ide.eclipse -DartifactId=guide-ide-eclipse-site
-mvn archetype:create -DgroupId=guide.ide.eclipse.core -DartifactId=guide-ide-eclipse-core
-mvn archetype:create -DgroupId=guide.ide.eclipse.module1 -DartifactId=guide-ide-eclipse-module1
+mvn archetype:generate -DgroupId=guide.ide.eclipse -DartifactId=guide-ide-eclipse-site
+mvn archetype:generate -DgroupId=guide.ide.eclipse.core -DartifactId=guide-ide-eclipse-core
+mvn archetype:generate -DgroupId=guide.ide.eclipse.module1 -DartifactId=guide-ide-eclipse-module1
 +----+
 
  [[1]] Add the newly created modules to your parent pom.
