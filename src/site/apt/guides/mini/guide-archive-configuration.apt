@@ -8,7 +8,7 @@
 
 Guide to Configuring Archive Plugins
 
- Many Java archive generating plugins accept the <<<archive>>> configuration element to customise the generation of the archive.
+ Many Java archive generating plugins accept the <<<archive>>> configuration element to customize the generation of the archive.
  In the standard Maven Plugins, this includes the <<<jar>>>, <<<war>>>, <<<ejb>>>, <<<ear>>> and <<<assembly>>> plugins.
 
 * Disabling Maven Meta Information

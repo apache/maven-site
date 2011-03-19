@@ -1,18 +1,18 @@
     ------
-    Guide to Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
+    Guide to Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
     ------
-    Rapha�l Pi�roni
+    Raphaël Piéroni
     ------
     Mon Aug 9 2005
     ------
 
-Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
+Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
-    This mini guide explain by examples howto use Maven 2 in Netbeans IDE.
+    This mini guide explain by examples how to use Maven 2 in Netbeans IDE.
 
     To use Maven 2 in Netbeans you have to follow these steps:
 
-        * {{{RetreiveCreate_the_Maven_2_project}Retreive/Create the Maven 2 project.}}
+        * {{{RetreiveCreate_the_Maven_2_project}Retrieve/Create the Maven 2 project.}}
 
         * {{{Launch_Maven_2_in_command_line_using_the_netbeans-freeform_plugin}Launch Maven 2 in command line using the netbeans-freeform plugin.}}
 
@@ -28,7 +28,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 
 
-* {Retreive/Create the Maven 2 project}
+* {Retrieve/Create the Maven 2 project}
 
     This guide assume the project is created using the archetype plugin. 
     You can also checkout the Maven 2 project using your versionning system.
@@ -100,10 +100,10 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Launch Maven 2 in command line using the netbeans-freeform plugin}
 
-    After having retreived the Maven 2 project, you have to eneable the project to 
+    After having retrieved the Maven 2 project, you have to enable the project to 
     be seen as a Netbeans 4.0, 4.1 or 5.0 project using the Netbeans Freeform project type.
 
-    To eneable the project, use the netbeans-freeform plugin for Maven 2.
+    To enable the project, use the netbeans-freeform plugin for Maven 2.
 
 -------------------
 [maven-user@mini-guide demoquickstart]$ mvn netbeans-freeform:generate-netbeans-project
