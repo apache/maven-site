@@ -34,12 +34,12 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
     You can also checkout the Maven 2 project using your versionning system.
 
 -------------------
-[maven-user@mini-guide examples]$ mvn archetype:create -DarchetypeArtifactId=maven-archetype-quickstart -DartifactId=demoquickstart -DgroupId=demoquickstart
+[maven-user@mini-guide examples]$ mvn archetype:generate -DarchetypeArtifactId=maven-archetype-quickstart -DartifactId=demoquickstart -DgroupId=demoquickstart
 
 [INFO] Searching repository for plugin with prefix: 'archetype'.
 [INFO] ----------------------------------------------------------------------------
 [INFO] Building Maven Default Project
-[INFO]    task-segment: [archetype:create] (aggregator-style)
+[INFO]    task-segment: [archetype:generate] (aggregator-style)
 [INFO] ----------------------------------------------------------------------------
 [INFO] Setting property: classpath.resource.loader.class => 'org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader'.
 [INFO] Setting property: resource.loader => 'classpath'.
@@ -71,7 +71,7 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 [INFO] Velocimacro : autoload off  : VM system will not automatically reload global library macros
 [INFO] Velocimacro : initialization complete.
 [INFO] Velocity successfully started.
-[INFO] [archetype:create]
+[INFO] [archetype:generate]
 [INFO] Defaulting package to group ID: demoquickstart
 [INFO] artifact org.apache.maven.archetypes:maven-archetype-quickstart: checking for updates from central
 [INFO] ----------------------------------------------------------------------------
@@ -84,7 +84,6 @@ Using maven 2 in Netbeans 4.0 (4.1 and 5.0)
 [INFO] Parameter: version, Value: 1.0-SNAPSHOT
 [INFO] Parameter: artifactId, Value: demoquickstart
 [INFO] ResourceManager : found archetype-resources/pom.xml with loader org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader
-[INFO] ********************* End of debug info from resources from generated POM ***********************
 [INFO] ResourceManager : found archetype-resources/src/main/java/App.java with loader org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader
 [INFO] ResourceManager : found archetype-resources/src/test/java/AppTest.java with loader org.codehaus.plexus.velocity.ContextClassLoaderResourceLoader
 [INFO] Archetype created in dir: /demos/demoquickstart
