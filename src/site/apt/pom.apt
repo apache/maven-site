@@ -341,13 +341,13 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<type>>:\
   Corresponds to the dependant artifact's <<<packaging>>> type. This defaults to <<<jar>>>. While it usually represents
   the extension on the filename of the dependency, that is not always the case. A type can be mapped to a
-  different extension and a classifier. The type often correspongs to the packaging used, though this is
+  different extension and a classifier. The type often corresponds to the packaging used, though this is
   also not always the case. Some examples are <<<jar>>>, <<<ejb-client>>> and <<<test-jar>>>. New types can be
   defined by plugins that set <<<extensions>>> to true, so this is not a complete list.
 
   * <<scope>>:\
   This element refers to the classpath of the task at hand (compiling and runtime, testing, etc.) as well as
-  how to limit the transitivity of a depedency. There are five scopes available:
+  how to limit the transitivity of a dependency. There are five scopes available:
 
     * <<compile>> - this is the default scope, used if none is specified. Compile dependencies are available in all
       classpaths. Furthermore, those dependencies are propagated to dependent projects.
@@ -355,11 +355,14 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
     * <<provided>> - this is much like compile, but indicates you expect the JDK or a container to provide it at
       runtime. It is only available on the compilation and test classpath, and is not transitive.
 
-    * <<runtime>> - this scope indicates that the dependency is not required for compilation, but is for execution. It is in the runtime and test classpaths, but not the compile classpath.
+    * <<runtime>> - this scope indicates that the dependency is not required for compilation, but is for execution.
+      It is in the runtime and test classpaths, but not the compile classpath.
 
-    * <<test>> - this scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases.
+    * <<test>> - this scope indicates that the dependency is not required for normal use of the application, and
+      is only available for the test compilation and execution phases.
 
-    * <<system>> - this scope is similar to <<<provided>>> except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.
+    * <<system>> - this scope is similar to <<<provided>>> except that you have to provide the JAR which contains
+      it explicitly. The artifact is always available and is not looked up in a repository.
 
   * <<systemPath>>:\
   is used <only> if the the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
@@ -1746,7 +1749,7 @@ mvn help:active-profiles
   extensions as it does in the top level of the POM. Reguardless of in which environment the project
   is built, some values will remain constant, such as the directory structure of the source code.
   <If you find your project needing to keep two sets of code for different environments, it may be
-  prudent to investigate refactoring the project into two or more seperate projects.>
+  prudent to investigate refactoring the project into two or more separate projects.>
 
 {Final}
 
