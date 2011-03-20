@@ -15,10 +15,10 @@ Guide to add, improve or fix metadata in the Central Maven 2 repository
 
  We don't change dependencies in POMs already in the repository anymore as builds need to be reproducible.
  Same applies to POMs that don't exist. We can only add a POM with no dependencies, because doing any other way
- would break previous builds that were using that project.
+ would break previous builds that were using that artifact.
  
- An alternative is to create a new version with the fixes. If the broken project is org.foo/bar/1.0 you can
- provide a fixed POM,JAR,... under org.foo/bar/1.0-1 (add a comment to the POM explaining what is being fixed
+ An alternative is to create a new version with the fixes. If the broken artifact is <<<org.foo/bar/1.0>>> you can
+ provide a fixed POM,JAR,... under <<<org.foo/bar/1.0-1>>> (add a comment to the POM explaining what is being fixed
  and why). See {{{./guide-central-repository-upload.html}Maven Repository Upload}} for the instructions to
  get this new version in the repository.
 
