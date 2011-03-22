@@ -15,7 +15,7 @@ Eclipse plugins for Maven
 
 The Maven Integration for Eclipse (m2eclipse, Eclipse m2e)
 
-  {{{http://m2eclipse.codehaus.org/}The Maven Integration for Eclipse}} is the first and most mature of the projects aimed at integrating 
+  {{{http://www.eclipse.org/m2e/}The Maven Integration for Eclipse}} is the first and most mature of the projects aimed at integrating 
   Maven within the Eclipse IDE. It is released under the EPL 1.0 license.
   
   Features include:
@@ -38,14 +38,6 @@ The Maven Integration for Eclipse (m2eclipse, Eclipse m2e)
    
    []
 
-  For installation instructions, see the {{{http://m2eclipse.codehaus.org/}m2eclipse website}}. For the most recent list of features, see the 
-  {{{http://docs.codehaus.org/display/M2ECLIPSE/New+and+Noteworthy}New and Noteworthy}} page on the 
-  {{{http://docs.codehaus.org/display/M2ECLIPSE}m2eclipse wiki}}.
-
-  Currently, this project is being {{{http://eclipse.org/m2e/}incubated at Eclipse}}. Subscribe to the Eclipse
-  {{{news://news.eclipse.org:119/eclipse.technology.m2e}eclipse.technology.m2e}} newsgroup or use the 
-  {{{http://www.eclipse.org/newsportal/thread.php?group=eclipse.technology.m2e}web interface}} to stay up-to-date with 
-  the latest progress.
   
 Eclipse Integration for Apache Maven (Eclipse IAM), formerly Q for Eclipse
 
@@ -66,5 +58,9 @@ Eclipse Integration for Apache Maven (Eclipse IAM), formerly Q for Eclipse
   * or at the {{{http://www.eclipse.org/newsportal/thread.php?group=eclipse.technology.iam}web interface}}
 
   []
+  
+  \
+  \
+  Eclipse is a trademark of The {{{http://www.eclipse.org}Eclipse Foundation}}.  
 
 
