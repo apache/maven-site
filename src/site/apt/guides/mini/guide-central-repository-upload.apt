@@ -144,7 +144,8 @@ Guide to uploading artifacts to the Central Repository
 
 * {Other Projects}
 
- {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype OSS Repository}} is a special approved repository provided
+ The easiest way to upload another project is to use the
+ {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype OSS Repository}}, which is an approved repository provided
  by Sonatype for <any> OSS Project that want to get their artifacts into Central Repository.
 
  The service is proposed in two variants:
