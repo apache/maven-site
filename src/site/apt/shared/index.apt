@@ -4,7 +4,7 @@
  Dennis Lundberg
  John Casey
  -----
- 2011-02-24
+ 2011-05-02
  -----
 
 Shared Components
@@ -20,6 +20,8 @@ Shared Components
 | {{{/shared/maven-artifact-resolver/} <<<maven-artifact-resolver>>>}}       | 1.0          | 2009-09-22        | Resolve dependency artifacts for one or more projects. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-artifact-resolver/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14048}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-common-artifact-filters/} <<<maven-common-artifact-filters>>>}}  | 1.3   | 2010-10-04        | Used to filter lists of Artifact instances. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-common-artifact-filters/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13269}JIRA}}
+*----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
+| {{{/shared/maven-dependency-analyzer/} <<<maven-dependency-analyzer>>>}}   | 1.1          | 2009-01-10        | Maven Dependency Analyzer component. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-analyzer/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13265}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-dependency-tree/} <<<maven-dependency-tree>>>}}           | 1.2          | 2008-09-02        | Maven Dependency Tree constructs a tree model of a Maven project's dependencies. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-dependency-tree/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13264}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
