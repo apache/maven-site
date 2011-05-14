@@ -23,3 +23,5 @@ Maven Repository Centre
   * {{{../guides/mini/guide-central-repository-upload.html} Guide to uploading artifacts}} - How to get things uploaded to the repository
 
 ~~TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc).
+
+[./maven-repositories.png]
