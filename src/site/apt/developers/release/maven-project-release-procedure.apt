@@ -156,10 +156,31 @@ I will promote the artifacts to the central repo.
  the <<<Y.Z>>> version as released. Create version <<<Y.Z+1>>>, if that hasn't already
  been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
- [[4]] Create an announcement. For instance, for Maven:
+ [[4]] Create an announcement.
 
- <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
- the email to announce@maven.apache.org will bounce.
+   [[a]] Using Maven Changes Plugin
+
+   For a plugin release you can let Maven Changes Plugin generate and send the
+   announcement for you. First make sure that you have configured the necessary
+   properties in your {{{../committer-settings.html}committer settings}}.
+
++------+
+cd target/checkout
+mvn changes:announcement-mail -Papache-release
++------+
+
+   If your SMTP server requires authentication you need to add the command line
+   options for it:
+ 
++------+
+cd target/checkout
+mvn changes:announcement-mail -Dchanges.username=<SMTP-USERNAME> -Dchanges.password=<SMTP-PASSWORD> -Papache-release
++------+
+
+   [[b]] Manually
+    
+   <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
+   the email to announce@maven.apache.org will bounce.
 
 +-----+
 From: YOUR_APACHE_USERNAME@apache.org
@@ -190,6 +211,8 @@ Enjoy,
 -The Maven team
 
 +-----+
+
+   []
 
  [[5]] Add the release to the next board report, in the private subversion area.
 
