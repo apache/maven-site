@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2011-05-19
+ 2011-05-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -76,7 +76,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-resources-plugin/} <<<resources>>>}}       | B          | 2.5          | 2011-02-27 | Copy the resources to the output directory for including in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRESOURCES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-site-plugin/} <<<site>>>}} for Maven 2     | B          | 2.2          | 2010-11-28 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
+| {{{/plugins/maven-site-plugin/} <<<site>>>}} for Maven 2     | B          | 2.3          | 2011-05-23 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin-3.x/} <<<site>>>}} for Maven 3 | B          | 3.0-beta-3   | 2010-10-18 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/branches/maven-site-plugin-3.x/}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -104,7 +104,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}       | R          | 2.2          | 2010-05-28 | Generate a list of recent changes from your SCM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGELOG}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.4          | 2011-01-29 | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
+| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.5          | 2011-05-23 | Generate a report from issue tracking or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.6          | 2010-09-25 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
