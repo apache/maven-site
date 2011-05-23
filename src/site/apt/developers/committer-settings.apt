@@ -2,8 +2,9 @@
  Developers centre - Committer Settings
  ------
  Vincent Siveton
+ Dennis Lundberg
  ------
- October 2006
+ 2011-05-23
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -30,7 +31,7 @@ Introduction
 
  This document is intended to set up the Maven committer settings, i.e. the <<<$\{user.home\}/.m2/settings.xml>>>.
 
-Enable Apache Servers
+* Enable Apache Servers
 
  Maven uses several servers configuration to deploy snapshots, releases and documentation on the Apache servers.
  You need to tell to Maven what your Apache username is. Please note that the servers now use your LDAP credentials,
@@ -40,7 +41,7 @@ Enable Apache Servers
 
 +-----+
 <settings>
-...
+  ...
   <servers>
     <!-- To publish a snapshot of some part of Maven -->
     <server>
@@ -74,3 +75,25 @@ Enable Apache Servers
 +-----+
 
  You also need to be a member of the group <<<apcvs>>> and <<<maven>>> on <<<people.apache.org>>>.
+
+ 
+* Enable sending announcement e-mails
+
+ To be able to send out announcements of Maven releases you need to add a couple
+ of properties to the <<<apache-release>>> profile.
+
++-----+
+<settings>
+  ...
+  <profiles>
+    <profile>
+      <id>apache-release</id>
+      <properties>
+        <apache.availid> <!-- YOUR APACHE LDAP USERNAME --> </apache.availid>
+        <smtp.host> <!-- YOUR SMTP SERVER --> </smtp.host>
+      </properties>
+    </profile>
+    ...
+  </profiles>
+</settings>
++-----+
