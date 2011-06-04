@@ -2,8 +2,9 @@
  Maven SVN Convention
  ------
  Vincent Siveton
+ Dennis Lundberg
  ------
- 2008-07-03
+ 2011-06-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -39,23 +40,26 @@ Maven SVN Convention
 
 * {Commit Message Template}
 
-  Commits should have a message that follows this template:
+  Commits should be focused on one issue at a time, because that makes it easier
+  for others to review the commit.
+
+  A commit message should use this template:
 
 +-----+
-[issue1, issue2] <<comment>>
-Submitted by: (when it was a patch, put that persons name there)
+[ISSUE-1] <<Summary field from JIRA>>
+Submitted by: <<Name of non-committer>>
 
-o some comments
+o Comments
 +-----+
 
   Where:
 
-  * <<issue>> can be omitted if there was no relevant JIRA issue, though it is strongly encouraged to create one for
+  * <<ISSUE-1>> can be omitted if there was no relevant JIRA issue, though you are strongly encouraged to create one for
   significant changes.
 
   * <<Submitted by>> only needs to be specified when a patch is being applied for a non-committer.
 
-  * <<comments>> some words about the commits.
+  * <<Comments>> some optional words about the solution.
 
   []
 
@@ -65,7 +69,7 @@ eg:
 [MNG-1456] Added the foo to the bar
 Submitted by: Baz Bazman
 
-o applied without change
+o Applied without change
 +-----+
 
 * Apply User Patch
