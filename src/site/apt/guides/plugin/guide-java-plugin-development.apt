@@ -208,7 +208,7 @@ mvn groupID:artifactID:version:goal
 
   * You can assign a shortened prefix to your plugin, such as <<<mvn hello:sayhi>>>.
     This is done automatically if you follow the convention of using
-    <<<${prefix}-maven-plugin>>> (or <<<maven-${prefix}-plugin>>> if the plugin is
+    <<<$\{prefix\}-maven-plugin>>> (or <<<maven-$\{prefix\}-plugin>>> if the plugin is
     part of the Apache Maven project). You may also assign one through additional
     configuration - for more information see
     {{{../introduction/introduction-to-plugin-prefix-mapping.html} Introduction to Plugin Prefix Mapping}}.
