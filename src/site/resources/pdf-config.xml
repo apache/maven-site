@@ -1,0 +1,24 @@
+<xsl:stylesheet
+  version="1.0"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format">
+
+<xsl:attribute-set name="figure.graphics">
+    <xsl:attribute name="content-width">scale-down-to-fit</xsl:attribute>
+    <xsl:attribute name="content-height">scale-down-to-fit</xsl:attribute>
+    <xsl:attribute name="width">100%</xsl:attribute>
+    <xsl:attribute name="height">100%</xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="base.pre.style">
+    <xsl:attribute name="font-family">monospace</xsl:attribute>
+    <xsl:attribute name="wrap-option">no-wrap</xsl:attribute>
+    <xsl:attribute name="keep-together">auto</xsl:attribute>
+    <xsl:attribute name="white-space-collapse">false</xsl:attribute>
+</xsl:attribute-set>
+
+<xsl:attribute-set name="body.pre" use-attribute-sets="base.pre.style">
+    <xsl:attribute name="font-size">9pt</xsl:attribute>
+</xsl:attribute-set>
+
+</xsl:stylesheet>
