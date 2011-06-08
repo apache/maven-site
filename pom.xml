@@ -84,145 +84,6 @@
       </otherArchives>
     </mailingList>
 
-    <!-- duplication from doxia - temporary until they inherit properly -->
-    <mailingList>
-      <name>Doxia Developer List</name>
-      <post>doxia-dev@maven.apache.org</post>
-      <subscribe>doxia-dev-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>doxia-dev-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-doxia-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/doxia-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://old.nabble.com/Doxia---dev-f11816.html</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.doxia-dev</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Doxia User List</name>
-      <post>doxia-users@maven.apache.org</post>
-      <subscribe>doxia-users-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>doxia-users-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-doxia-users/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/doxia-users@maven.apache.org</otherArchive>
-        <otherArchive>http://old.nabble.com/Doxia---Users-f14483.html</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.doxia-users</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Doxia Commits List</name>
-      <subscribe>doxia-commits-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>doxia-commits-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-doxia-commits/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/doxia-commits@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.doxia-commits</otherArchive>
-      </otherArchives>
-    </mailingList>
-
-    <!-- duplication from scm - temporary until they inherit properly -->
-    <mailingList>
-      <name>SCM Developer List</name>
-      <subscribe>scm-dev-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>scm-dev-unsubscribe@maven.apache.org</unsubscribe>
-      <post>scm-dev@maven.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-scm-dev</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/scm-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.scm-dev</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>SCM User List</name>
-      <subscribe>scm-users-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>scm-users-unsubscribe@maven.apache.org</unsubscribe>
-      <post>scm-users@maven.apache.org</post>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-scm-users</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/scm-users@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.scm-users</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>SCM Commits List</name>
-      <subscribe>scm-commits-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>scm-commits-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-scm-commits</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/scm-commits@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.scm-commits</otherArchive>
-      </otherArchives>
-    </mailingList>
-
-    <!-- duplication from surefire - temporary until they inherit properly -->
-    <mailingList>
-      <name>Surefire User List</name>
-      <post>surefire-users@maven.apache.org</post>
-      <subscribe>surefire-users-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>surefire-users-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-users/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/surefire-users@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-users</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Surefire Developer List</name>
-      <post>surefire-dev@maven.apache.org</post>
-      <subscribe>surefire-dev-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>surfire-dev-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/surefire-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-dev</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Surefire Commits List</name>
-      <subscribe>surefire-commits-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>surefire-commits-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-surefire-commits/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/surefire-commits@maven.apache.org</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.surefire-commits</otherArchive>
-      </otherArchives>
-    </mailingList>
-
-    <!-- duplication from wagon - temporary until they inherit properly -->
-    <mailingList>
-      <name>Wagon User List</name>
-      <post>wagon-users@maven.apache.org</post>
-      <subscribe>wagon-users-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>wagon-users-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-wagon-users/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/wagon-users@maven.apache.org</otherArchive>
-        <otherArchive>http://old.nabble.com/Wagon---Users-f13870.html</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.wagon-users</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Wagon Developer List</name>
-      <post>wagon-dev@maven.apache.org</post>
-      <subscribe>wagon-dev-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>wagon-dev-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-wagon-dev/</archive>
-      <otherArchives>
-        <otherArchive>http://www.mail-archive.com/wagon-dev@maven.apache.org</otherArchive>
-        <otherArchive>http://old.nabble.com/Wagon---Dev-f13871.html</otherArchive>
-        <otherArchive>http://markmail.org/list/org.apache.maven.wagon-dev</otherArchive>
-      </otherArchives>
-    </mailingList>
-    <mailingList>
-      <name>Wagon Commits List</name>
-      <subscribe>wagon-commits-subscribe@maven.apache.org</subscribe>
-      <unsubscribe>wagon-commits-unsubscribe@maven.apache.org</unsubscribe>
-      <archive>http://mail-archives.apache.org/mod_mbox/maven-wagon-commits/</archive>
-      <otherArchives>
-        <otherArchive>http://markmail.org/list/org.apache.maven.wagon-commits</otherArchive>
-      </otherArchives>
-    </mailingList>
-
     <!-- duplication from parent pom - temporary until they inherit properly -->
     <mailingList>
       <name>Maven Announcements List</name>
@@ -255,10 +116,12 @@
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
     <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
   </scm>
+
   <issueManagement>
     <system>jira</system>
     <url>http://jira.codehaus.org/browse/MNGSITE</url>
   </issueManagement>
+
   <distributionManagement>
     <site>
       <id>apache.website</id>
