@@ -787,6 +787,124 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   values within a <<<configuration>>> element are never explicitly required by the POM schema, but a plugin goal
   has every right to require configuration values.
 
+  If your POM declares a parent, it will inherit plugin configuration from either the 
+  <<build/plugins>> or <<pluginManagement>> sections of the parent. 
+
+  To illustrate, consider the following fragment from a parent POM:
+
++-----------------------------------------------+
+<plugin>
+<groupId>my.group</groupId>
+<artifactId>my-plugin</artifactId>
+<configuration>
+  <items>
+    <item>parent-1</item>
+    <item>parent-2</item>
+  </items>
+  <properties>
+    <parentKey>parent</parentKey>
+  </properties>
+</configuration>
+</plugin>
++-----------------------------------------------+
+
+  And consider the following plugin configuration from a project that uses that parent
+  as its parent:
+
++-----------------------------------------------+
+<plugin>
+<groupId>my.group</groupId>
+<artifactId>my-plugin</artifactId>
+<configuration>
+  <items>
+    <item>child-1</item>
+  </items>
+  <properties>
+    <childKey>child</childKey>
+  </properties>
+</configuration>
++-----------------------------------------------+
+
+  The default behavior is to merge the content of the <<configuration>>
+  element according to element name. If the child POM has a particular
+  element, that value becomes the effective value. if the child POM
+  does not have an element, but the parent does, the parent value
+  becomes the effective value. Note that this is purely an operation on XML;
+  no code or configuration of the plugin itself is involved. Only the 
+  elements, not their values, are involved.
+
+  Applying those rules to the example, Maven comes up with:
+
++-----------------------------------------------+
+<plugin>
+<groupId>my.group</groupId>
+<artifactId>my-plugin</artifactId>
+<configuration>
+  <items>
+    <item>child-1</item>
+  </items>
+  <properties>
+    <childKey>child</childKey>
+    <parentKey>parent</parentKey>
+  </properties>
+</configuration>
++-----------------------------------------------+
+
+  You can control how child POMs inherit configuration from parent POMs by adding attributes
+  to the children of the <<configuration>> element. The attributes are <<<combine.children>>> and
+  <<<combine.self>>>. Use these attributes in a child POM to control how Maven combines 
+  plugin configuration from the parent with the explicit configuration in the child.
+
+  Here is the child configuration with illustrations of the two attributes:
+
++-----------------------------------------------+
+<configuration>
+  <items combine.children="append">
+    <!-- combine.children="merge" is the default -->
+    <item>child-1</item>
+  </items>
+  <properties combine.self="override">
+    <!-- combine.self="merge" is the default -->
+    <childKey>child</childKey>
+  </properties>
+</configuration>
++-----------------------------------------------+
+
+  Now, the effective result is the following:
+
++-----------------------------------------------+
+<configuration>
+  <items combine.children="append">
+    <item>parent-1</item>
+    <item>parent-2</item>
+    <item>child-1</item>
+  </items>
+  <properties combine.self="override">
+    <childKey>child</childKey>
+  </properties>
+</configuration>
++-----------------------------------------------+
+
+  <<combine.children="append">> results in the
+  concatenation of parent and child elements, in that order. 
+  <<combine.self="override">>, on the other hand, completely
+  suppresses parent configuration. You cannot use both
+  both <<combine.self="override">>
+  and <<combine.children="append">> on an element; if you try,
+  <override> will prevail.
+
+  Note that these attributes only apply to the configuration element
+  they are declared on, and are not propagated to nested elements. That
+  is if the content of an <item> element from the child POM was a complex
+  structure instead of text, its sub-elements would still be
+  subject to the default merge strategy unless they were themselves
+  marked with attributes.
+
+  The combine.* attributes are inherited from parent to child POMs.
+  Take care when adding those attributes 
+  a parent POM as this might affect child or
+  grand-child POMs.
+
   * <<dependencies>>:
   Dependencies are seen a lot within the POM, and are an element under all plugins element blocks.
   The dependencies have the same structure and function as under that base build.
