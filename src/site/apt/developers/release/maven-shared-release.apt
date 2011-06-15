@@ -83,9 +83,12 @@ find . -type f -exec chmod 664 {} \;
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check
  out the tag (or go to <<<target/checkout>>>)
 
+You will need to have your people.apache.org credentials in your settings.xml, and you may have to 
+explicitly specify the server ID on the command line to persuade maven to use them.
+
 +-----+
 cd target/checkout
-mvn site-deploy -Preporting
+mvn site-deploy -Preporting -DstagingRepositoryId=apache.website
 +-----+
 
   <<Note:>> You can not just copy the documentation from the staging site above into the released documentation as the links are not identical.
