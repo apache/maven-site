@@ -821,7 +821,7 @@ under the License.
        templates.</p>
       <ol>
         <li>Download <a href="./maven.xml">this file</a>,
-          and place it in $USER_HOME/.IntelliJIdea/config/templates</li>
+          and place it in <code>$USER_HOME/.IntelliJIdea/config/templates</code></li>
         <li>(re)startup IntelliJ IDEA (templates are loaded on startup)</li>
         <li>add the following list to Settings -> IDE -> Errors -> General
           -> Unknown javadoc tags -> Additional javadoc tags
@@ -842,15 +842,15 @@ under the License.
           ]
         </li>
         <li>Plexus Project (Plexus container) [
-          <a href="http://plexus.codehaus.org">link</a>
+          <a href="http://plexus.codehaus.org/plexus-containers/">link</a>
           ]
         </li>
-        <li>Maven Plugin Descriptor API [
-          <a href="http://maven.apache.org/ref/current/maven-plugin-descriptor/apidocs/index.html">link</a>
+        <li>Maven Plugin API [
+          <a href="http://maven.apache.org/ref/current/maven-plugin-api/apidocs/index.html">link</a>
           ]
         </li>
         <li>MojoDescriptor API [
-          <a href="http://maven.apache.org/ref/current/maven-plugin-descriptor/apidocs/org/apache/maven/plugin/descriptor/MojoDescriptor.html">link</a>
+          <a href="http://maven.apache.org/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/MojoDescriptor.html">link</a>
           ]
         </li>
       </ul>
