@@ -5,6 +5,8 @@
  -----
  2010-11-25
  -----
+ Updated: 18 June 2011 bimargulies
+ -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
 ~~ or more contributor license agreements.  See the NOTICE file
@@ -58,7 +60,8 @@ http://maven.apache.org/shared/maven-XXX-Y.Z/
 +-----+
 
    Some developers have {{{http://www.nabble.com/site%3Astage-deploy-asks-for-a-password--tt15582961s177.html}
-   reported problems}} with the <<<site:stage-deploy>>> goal.  In that case, you can stage the site locally and
+   reported problems}} with the <<<site:stage-deploy>>> goal. See the discussion of settings.xml below 
+   for one possible solution. If that doesn't work, you can stage the site locally and
    upload it manually:
 
 +------+
@@ -83,8 +86,20 @@ find . -type f -exec chmod 664 {} \;
  <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check
  out the tag (or go to <<<target/checkout>>>)
 
-You will need to have your people.apache.org credentials in your settings.xml, and you may have to 
-explicitly specify the server ID on the command line to persuade maven to use them.
+ You will need to have your people.apache.org credentials in your settings.xml, and you may have to 
+ explicitly specify the server ID on the command line to persuade maven to use them. 
+
+ Due to an apparent problem with the site plugin, passwords don't work reliably for this purpose. SSH keys do.
+ As per the doc for settings.xml, Maven ignores a private key in settings.xml if it sees a password. So, to
+ deploy a site, you should make sure that your settings.xml contains something like:
+
++----------------+
+    <server>
+      <id>apache.website</id>
+      <username>mortimerqsnerd</username>
+      <privateKey>${user.home}/.ssh/id_rsa</privateKey>
+    </server>
++----------------+
 
 +-----+
 cd target/checkout
