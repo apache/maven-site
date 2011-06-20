@@ -86,6 +86,8 @@ Developers Conventions
 
   * {{{../../developers/conventions/svn.html}Maven SVN Convention}}
 
+  * {{{../../developers/release/releasing.html}Releasing a maven project}}
+
   []
 
 Resources for committers
