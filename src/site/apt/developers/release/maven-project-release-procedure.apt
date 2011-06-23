@@ -214,6 +214,11 @@ Enjoy,
 
    []
 
+ [[6]] Update the version tracking in JIRA.
+
+ In the relevant project, go to Administration, then Versions. Make sure that the next release is defined,
+ and mark the release that you just released 'released'.
+
  [[5]] Add the release to the next board report, in the private subversion area.
 
  This is a PMC activity.  If you are not a PMC member then email the Developer's
