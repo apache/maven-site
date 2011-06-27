@@ -91,7 +91,7 @@ Releasing Maven
    [[1]] From the site checkout, stage the site (replacing $USER and $VERSION):
 
 +------+
-mvn -Preporting site:stage-deploy -DstagingSiteURL=scp://people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION
+mvn -Preporting site site:stage-deploy -DstagingSiteURL=scp://people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION
 +------+
 
    <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
@@ -106,7 +106,7 @@ http://people.apache.org/~USER/staged-sites/maven-VERSION
    upload it manually:
 
 +------+
-mvn -Preporting site:stage
+mvn -Preporting site site:stage
 scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION USER@people.apache.org:/home/$USER/public_html/staged-sites/maven-$VERSION
 +------+
 
