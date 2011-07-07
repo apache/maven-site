@@ -22,9 +22,12 @@ mvn --version
   It should print out your installed version of Maven, for example:
 
 ------
-Maven version: 2.0.8
-Java version: 1.5.0_12
-OS name: "windows 2003" version: "5.2" arch: "x86" Family: "windows"
+Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100)
+Maven home: D:\apache-maven-3.0.3\bin\..
+Java version: 1.6.0_25, vendor: Sun Microsystems Inc.
+Java home: E:\Program Files\Java\jdk1.6.0_25\jre
+Default locale: nl_NL, platform encoding: Cp1252
+OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 ------
 
   Depending upon your network setup, you may require extra configuration. Check out the
@@ -95,7 +98,7 @@ my-app
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.8.2</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -126,7 +129,7 @@ mvn package
 [INFO] BUILD SUCCESSFUL
 [INFO] ------------------------------------------------------------------------
 [INFO] Total time: 2 seconds
-[INFO] Finished at: Thu Oct 05 21:16:04 CDT 2006
+[INFO] Finished at: Thu Jul 07 21:34:52 CEST 2011
 [INFO] Final Memory: 3M/6M
 [INFO] ------------------------------------------------------------------------
 -------
