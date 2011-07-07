@@ -46,17 +46,18 @@ Building Maven
   All of the source code for Maven and its related libraries is in {{{http://subversion.tigris.org/} Subversion}}.
   You can {{{http://svn.apache.org/viewvc/maven/} browse the repository}}, or checkout specific modules directly.
 
-  To build Maven 2.2 (the current stable branch), you need the <<<maven-2.2.x>>> branch of the <<<maven-2>>> module. To check that out, run the command:
-
--------------------
-svn co https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
--------------------
-
-  To build Maven 3.0 (unstable development branch), you need the <<<trunk>>> of the <<<maven-3>>> module. To
-  check that out, run the command:
+  To build Maven 3 (the current stable branch), you need the <<<trunk>>> of the <<<maven-3>>> module. 
+  To check that out, run the command:
 
 -------------------
 svn co https://svn.apache.org/repos/asf/maven/maven-3/trunk/ maven-3
+-------------------
+
+  To build Maven 2, you need the <<<maven-2.2.x>>> branch of the <<<maven-2>>> module. 
+  To check that out, run the command:
+
+-------------------
+svn co https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
 -------------------
 
   Alternatively, you can check out all Maven projects in one directory using:
