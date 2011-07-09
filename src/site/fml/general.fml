@@ -62,8 +62,7 @@
       <question>How do I list available plugins?</question>
       <answer>
         <p>
-          The "Available Plugins" page lists them,
-          and provides additional information to browse the Maven 2 repository.
+          The "Available Plugins" page lists them and provides additional information.
           See <a href="http://maven.apache.org/plugins/">http://maven.apache.org/plugins</a>
         </p>
       </answer>
@@ -73,8 +72,9 @@
       <question>How do I determine what version of a plugin I am using?</question>
       <answer>
         <p>
-          You can use the Maven Help Plugin's <code>describe</code> goal. For example, to find out the version
-          of the install plugin:
+          You can use the <a href="/plugins/maven-help-plugin/">Maven Help Plugin</a>'s
+          <a href="/plugins/maven-help-plugin/describe-mojo.html"><code>describe</code></a> goal.
+          For example, to find out the version of the install plugin:
         </p>
         <source>mvn -Dplugin=install help:describe</source>
         <p>
@@ -98,7 +98,7 @@
           </li>
           <li>
             If you have very small amounts of Ant script specific to your project, you can use the
-            <a href="http://maven.apache.org/plugins/maven-antrun-plugin/index.html">AntRun plugin</a>.
+            <a href="/plugins/maven-antrun-plugin/index.html">AntRun plugin</a>.
           </li>
         </ul>
       </answer>
@@ -108,7 +108,7 @@
       <question>How can I use Maven features in an Ant build?</question>
       <answer>
         <p>
-          The <a href="http://maven.apache.org/ant-tasks/index.html">Maven Ant Tasks</a> allow many of the features of 
+          The <a href="/ant-tasks/index.html">Maven Ant Tasks</a> allow many of the features of 
           Maven, such as dependency management and repository deployment, to be used in an Ant build. 
         </p>
       </answer>
@@ -129,7 +129,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.0.2</version>
+        <version>2.3.2</version>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
@@ -166,7 +166,7 @@
           The source code can be found in <a href="source-repository.html">our subversion repository</a>.
         </p>
         <p>
-          For more information, see <a href="guides/development/guide-building-m2.html">Building Maven 2.0</a>.
+          For more information, see <a href="/guides/development/guide-building-m2.html">Building Maven 2.0</a>.
         </p>
       </answer>
     </faq>
@@ -176,7 +176,7 @@
       <answer>
         <p>
           You most probably need to configure Maven to use a proxy. Please see the information on
-          <a href="guides/mini/guide-proxies.html">Configuring a proxy</a> for information on how to configure your proxy
+          <a href="/guides/mini/guide-proxies.html">Configuring a proxy</a> for information on how to configure your proxy
           for Maven.
         </p>
       </answer>
@@ -186,12 +186,12 @@
       <question>I have a jar that I want to put into my local repository. How can I copy it in?</question>
       <answer>
         <p>
-          If you understand the layout of the maven repository, you can copy the jar directly into where it
+          If you understand the layout of the Maven repository, you can copy the jar directly into where it
           is meant to go. Maven will find this file next time it is run.
         </p>
 
         <p>
-          If you are not confident about the layout of the maven repository, then you can
+          If you are not confident about the layout of the Maven repository, then you can
           adapt the following command to load in your jar file, all on one line.
         </p>
 
@@ -211,7 +211,7 @@ Where: <path-to-file>  the path to the file to load
        <packaging>     the packaging of the file e.g. jar
      ]]></source>
         <p>
-          This should load in the file into the maven repository, renaming it as needed.
+          This should load in the file into the Maven repository, renaming it as needed.
         </p>
       </answer>
     </faq>
@@ -246,7 +246,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         Add the parameter <code>-Dmaven.test.skip=true</code> or <code>-DskipTests=true</code> in the command line,
         depending on whether you want to skip test compilation and execution or only execution. See the example
-        <a href="http://maven.apache.org/plugins/maven-surefire-plugin/examples/skipping-test.html">Skipping Tests</a>
+        <a href="/plugins/maven-surefire-plugin/examples/skipping-test.html">Skipping Tests</a>
         in the Surefire Plugin's documentation for more details.
       </answer>
     </faq>
@@ -270,7 +270,7 @@ Where: <path-to-file>  the path to the file to load
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
-    <version>2.0-beta-6</version>
+    <version>2.3</version>
     <configuration>
       <outputEncoding>UTF-8</outputEncoding>
     </configuration>
@@ -358,7 +358,7 @@ Where: <path-to-file>  the path to the file to load
 
         <p>
           You need to update your settings.xml file using the
-          <a href="guides/development/guide-testing-development-plugins.html">
+          <a href="/guides/development/guide-testing-development-plugins.html">
           Guide to Plugin Snapshot Repositories</a>
         </p>
       </answer>
@@ -368,8 +368,8 @@ Where: <path-to-file>  the path to the file to load
       <question>Where are the Maven XSD schemas?</question>
       <answer>
         <p>
-          The Maven XSD is located <a href="http://maven.apache.org/xsd/maven-4.0.0.xsd">here</a> and the Maven
-          Settings XSD is located <a href="http://maven.apache.org/xsd/settings-1.0.0.xsd">here</a>.
+          The Maven XSD is located <a href="/xsd/maven-4.0.0.xsd">here</a> and the Maven
+          Settings XSD is located <a href="/xsd/settings-1.0.0.xsd">here</a>.
         </p>
         <p>
           Your favorite IDE probably supports XSD schema's for pom.xml and settings.xml editing. You need to
@@ -398,7 +398,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         <p>
           We have compiled a list of available resources on the
-          <a href="users/getting-help.html">getting help page</a>
+          <a href="/users/getting-help.html">getting help page</a>
         </p>
       </answer>
     </faq>
