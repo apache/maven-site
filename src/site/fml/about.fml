@@ -46,6 +46,21 @@
       </answer>
     </faq>
 
+    <faq id="m3-goals">
+      <question>Tell me about the goals of Maven 3.0</question>
+      <answer>
+        <p>
+          Maven 3.0 is an important internal improvement with following goals:
+        </p>
+        <ul>
+          <li>Backward compatibility</li>
+          <li>Performance improvement</li>
+          <li>Parallel builds</li>
+          <li>Better error and integrity reporting</li>
+        </ul>
+      </answer>
+    </faq>
+
     <faq id="get-involved">
       <question>Can I get involved?</question>
       <answer>
@@ -58,8 +73,8 @@
           join the project.
         </p>
         <p>
-          For instructions on checking out and building Maven 2.0, see
-          <a href="./guides/development/guide-building-m2.html">Building Maven 2.0</a>
+          For instructions on checking out and building Maven 2 and 3, see
+          <a href="./guides/development/guide-building-m2.html">Building Maven</a>
           .
         </p>
         <p>
@@ -102,10 +117,10 @@
     </faq>
 
     <faq id="get-help">
-      <question>Where do I get help with Maven 2.0?</question>
+      <question>Where do I get help with Maven 2 &amp; 3?</question>
       <answer>
         <p>
-          Help for both Maven 1.0 and Maven 2.0 can be obtained by subscribing and posting to the
+          Help for both Maven 1.0 and Maven 2 &amp; 3 can be obtained by subscribing and posting to the
           <a href="http://maven.apache.org/mail-lists.html">Maven Users List</a>.
         </p>
         <p>
