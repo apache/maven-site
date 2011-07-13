@@ -28,10 +28,10 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Developing Maven 2
+Developing Maven
 
- This document describes how to get started into developing Maven 2 itself. There is a separate page describing how
- to {{{./guide-building-m2.html}building Maven 2}}.
+ This document describes how to get started into developing Maven itself. There is a separate page describing how
+ to {{{./guide-building-m2.html}building Maven}}.
 
 * Finding some work to do
 
@@ -133,13 +133,13 @@ And remember, your contributions are always welcome!
 
 * Related Projects
 
- Maven 2 has a few dependencies on other projects.
+ Maven has a few dependencies on other projects.
 
  * <<Plexus>>
 
  Plexus is a full-fledged container supporting different kinds of component lifecycles. It's native lifecycle
  is like any other modern IoC container, using field injection of both requirements and configuration. All
- core Maven 2 functionality are Plexus components.
+ core Maven functionality are Plexus components.
 
  You can {{{http://plexus.codehaus.org}read more about Plexus}}.
 
