@@ -84,31 +84,33 @@ svn: Can't open file 'XXX': The system cannot find the path specified.
 
   Other modules you might be interested in related to Maven development are:
 
-    * <<<plugins/trunk>>> - The sources of the Maven plugins. These can be individually installed, or built together.
+    * <<<core-integration-testing/trunk>>> - {{{/core-its/}Maven Core Integration Tests}}, to deeply test your Maven build.
 
-    * <<<plugin-tools/trunk>>> - Set of tools for Maven plugins like test harness.
+    * <<<plugins/trunk>>> - The sources of the {{{/plugins/}Maven plugins}}. These can be individually installed, or built together.
+
+    * <<<plugin-tools/trunk>>> - {{{/plugin-tools/}Set of tools for Maven plugins}} like test harness.
 
     * <<<release/trunk>>> - Release manager and plugin.
 
     * <<<site/trunk>>> - The Maven website.
 
-    * <<<skins/trunk>>> - Skins for generated site used by site plugin.
+    * <<<skins/trunk>>> - {{{/skins/}Skins}} for generated site used by site plugin.
 
     * Some Maven sub projects
 
-      * <<<wagon/trunk>>> - Maven Wagon, used by the artifact code and others for providing the transport layer to
+      * <<<wagon/trunk>>> - {{{/wagon/}Maven Wagon}}, used by the artifact code and others for providing the transport layer to
         get and put artifacts in a repository.
 
-      * <<<scm/trunk>>> - Maven SCM, a generic API to communicate with various different SCM providers, used by
+      * <<<scm/trunk>>> - {{{/scm/}Maven SCM}}, a generic API to communicate with various different SCM providers, used by
         Continuum and the release and SCM plugins.
 
-      * <<<doxia/trunk>>> - The Doxia site generation library used by several report plugins and site plugin.
+      * <<<doxia/trunk>>> - The {{{/doxia/}Doxia}} site generation library used by several report plugins and site plugin.
 
-      * <<<surefire/trunk>>> - The Surefire test runner.
+      * <<<surefire/trunk>>> - The {{/surefire/}Surefire}} test runner.
 
       []
 
-    * <<<shared/trunk>>> - Collection of shared libraries like file/path handling.
+    * <<<shared/trunk>>> - {{{/shared/}Collection of shared libraries}} like file/path handling.
 
     * <<<sandbox/trunk>>> - Sandbox codes.
 
