@@ -118,7 +118,7 @@ POM Reference
 * {Quick Overview}
 
   This is a listing of the elements directly under the POM's project element. Notice that <<<modelVersion>>>
-  contains 4.0.0. That is currently the only supported POM version for Maven 2, and is always required.
+  contains 4.0.0. That is currently the only supported POM version for both Maven 2 & 3, and is always required.
 
 +--------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -192,7 +192,7 @@ POM Reference
 
 * {Maven Coordinates}
 
-  The POM defined above is the minimum that Maven 2 will allow. <<<groupId:artifactId:version>>> are all
+  The POM defined above is the minimum that both Maven 2 & 3 will allow. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version need not be explicitly defined if they are inherited
   from a parent - more on inheritance later). The three fields act much like an address and timestamp
   in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects.
@@ -494,7 +494,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   Similar to the inheritance of objects in object oriented programming, POMs that extend
   a parent POM inherit certain values from that parent. Moreover, just as Java objects
   ultimately inherit from <<<java.lang.Object>>>, all Project Object Models inherit from
-  a base Super POM. The snippet below is the Super POM for Maven 2.0.x.
+  a base Super POM. The snippet below is the Super POM for Maven 2.2.0.
 
 %{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/maven-2/tags/maven-2.2.0/maven-project/src/main/resources/org/apache/maven/project/pom-4.0.0.xml}
 
@@ -1514,7 +1514,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <prerequisites>
-    <maven>2.0.4</maven>
+    <maven>2.0.6</maven>
   </prerequisites>
   ...
 </project>
@@ -1530,7 +1530,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 * {Repositories}
 
   Repositories are collections of artifacts which adhere to the Maven repository directory
-  layout. In order to be a Maven 2 repository artifact, a POM file must live within the structure
+  layout. In order to be a Maven repository artifact, a POM file must live within the structure
   <<<$BASE_REPO/groupId/artifactId/version/artifactId-version.pom>>>. <<<$BASE_REPO>>> can be
   local (file structure) or remote (base URL); the remaining layout will be the same. Repositories
   exist as a place to collect and store artifacts. Whenever a project has a dependency upon an
@@ -1593,7 +1593,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<layout>>:
   In the above description of repositories, it was mentioned that they all follow a common layout. This
-  is mostly correct. Maven 2 has a default layout for its repositories; however, Maven 1.x had a different
+  is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3; however, Maven 1.x had a different
   layout. Use this element to specify which if it is <<<default>>> or <<<legacy>>>.
 
 * {Plugin Repositories}
@@ -1614,7 +1614,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
@@ -1647,7 +1647,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
     This could just as easily have been called synched. This means that this artifact has been synched with a partner repository.
 
     * <<deployed>>:
-    By far the most common status, meaning that this artifact was deployed from a Maven 2 instance. This is what you get when you manually deploy using the command-line deploy phase.
+    By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
 
     * <<verified>>:
     This project has been verified, and should be considered finalized.
@@ -1817,7 +1817,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
         </os>
         <property>
           <name>mavenVersion</name>
-          <value>2.0.3</value>
+          <value>2.0.6</value>
         </property>
         <file>
           <exists>${basedir}/file2.properties</exists>
@@ -1872,7 +1872,7 @@ mvn help:active-profiles
 
 {Final}
 
-  The Maven 2 POM is big. However, its size is also a testament to its versatility. The ability
+  The Maven POM is big. However, its size is also a testament to its versatility. The ability
   to abstract all of the aspects of a project into a single artifact is powerful, to say the least.
   Gone are the days of dozens of disparate build scripts and scattered documentation concerning each
   individual project. Along with Maven's other stars that make up the Maven galaxy - a well defined
