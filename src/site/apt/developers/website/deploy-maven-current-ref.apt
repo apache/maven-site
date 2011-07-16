@@ -28,14 +28,14 @@
 
 Introduction
 
- This document gives step-by-step instructions for deploying the Maven current references.
+ This document gives step-by-step instructions for deploying the {{{/ref/current/}Maven current references}}.
  The primary audience is Maven PMC.
 
 Prerequisite
 
  Be sure that:
 
- * you have all Maven servers defined in your settings.xml. For more information, please refer to
+ * you have all Maven servers defined in your <<<settings.xml>>>. For more information, please refer to
  {{{../committer-settings.html}Committer settings}}.
 
  * you have created your GPG keys. For more information, please refer to {{{../release/pmc-gpg-keys.html}Making GPG Keys}}.
@@ -68,9 +68,14 @@ maven-2.2.0$ mvn site:stage -Preporting -DstagingDirectory=/tmp/maven-2.2.0
 maven-2.2.0$ mvn site-deploy -Preporting
 +-----+
 
- It will create a new folder <2.2.0> in </www/maven.apache.org/ref/> on the Apache server.
+ It will create a new folder <2.2.0> in <{{{/ref/}/www/maven.apache.org/ref/}}> on the Apache server.
 
- <<Note:>> It will take an hour or so to sync.
+ <<Note:>> It will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
 
  []
 
+Information on <<<{{/ref/current}}>>> mecanism
+
+  The redirection from <<<{{/ref/current}}>>> to actual Maven version reference is done through
+  <<<{{{http://svn.apache.org/viewvc/maven/site/trunk/src/site/filtered-resources/.htaccess?view=markup}.htaccess}}>>>
+  published in site.
