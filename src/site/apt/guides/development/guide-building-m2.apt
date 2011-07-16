@@ -43,7 +43,7 @@ Building Maven
 
 * Checking out the sources
 
-  All of the source code for Maven and its related libraries is in {{{http://subversion.tigris.org/} Subversion}}.
+  All of the source code for Maven and its related libraries is in {{{http://subversion.apache.org/} Subversion}}.
   You can {{{http://svn.apache.org/viewvc/maven/} browse the repository}}, or checkout specific modules directly.
 
   To build Maven 3 (the current stable branch), you need the <<<trunk>>> of the <<<maven-3>>> module. 

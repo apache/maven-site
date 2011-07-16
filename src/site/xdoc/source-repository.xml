@@ -29,7 +29,7 @@ under the License.
   <body>
     <section name="Source Repository">
       <p>
-        Maven projects use <a href="http://subversion.tigris.org/">Subversion</a> to manage their source code.
+        Maven projects use <a href="http://subversion.apache.org/">Subversion</a> to manage their source code.
         Instructions on Subversion use can be found in the online book
         <a href="http://svnbook.red-bean.com/">Version Control with Subversion</a>.
       </p>
