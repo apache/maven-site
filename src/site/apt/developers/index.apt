@@ -63,6 +63,8 @@ Maven Developer Centre
 
   * {{{./retirement-plan-plugins.html}Retirement Plan for Plugins}}
 
+  * {{{./dependency-policies.html}Maven Dependency Policies}}
+
   []
 
 * Developers Conventions
