@@ -27,6 +27,9 @@ under the License.
   <version position="none" />
 
   <body>
+    <breadcrumbs>
+      <item name="Maven"  href="http://maven.apache.org/index.html" />
+    </breadcrumbs>
 
     <menu name="Main">
       <item name="Welcome" href="/index.html"/>

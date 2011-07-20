@@ -27,7 +27,6 @@
     <relativePath>../pom/maven/pom.xml</relativePath>
   </parent>
 
-  <groupId>org.apache.maven</groupId>
   <artifactId>maven-site</artifactId>
   <version>1.0</version>
   <packaging>pom</packaging>
@@ -157,11 +156,6 @@
       <plugins>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-site-plugin</artifactId>
-          <version>2.2</version>
-        </plugin>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pdf-plugin</artifactId>
           <version>1.1</version>
         </plugin>
@@ -219,9 +213,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <outputEncoding>UTF-8</outputEncoding>
-        </configuration>
         <executions>
           <execution>
             <id>jar</id>
