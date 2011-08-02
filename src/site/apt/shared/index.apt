@@ -4,7 +4,7 @@
  Dennis Lundberg
  John Casey
  -----
- 2011-05-09
+ 2011-08-02
  -----
 
 Shared Components
@@ -37,7 +37,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-reporting-api/} <<<maven-reporting-api>>>}}               | 3.0          | 2010-05-12        | API to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-api/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14413}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-reporting-exec/} <<<maven-reporting-exec>>>}}             | 1.0          | 2011-07-09        | API to manage report plugin executions with Maven 3. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-exec/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14716}JIRA}}
+| {{{/shared/maven-reporting-exec/} <<<maven-reporting-exec>>>}}             | 1.0.1        | 2011-08-02        | API to manage report plugin executions with Maven 3. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-exec/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14716}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-reporting-impl/} <<<maven-reporting-impl>>>}}             | 2.1          | 2010-05-12        | Abstract classes to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-impl/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13274}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
