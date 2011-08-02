@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-11-09
+ 2011-07-19
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -160,7 +160,7 @@ I will promote the artifacts to the central repo.
 
    [[a]] Using Maven Changes Plugin
 
-   For a plugin release you can let Maven Changes Plugin generate and send the
+   If you are releasing a plugin or a shared component you can let Maven Changes Plugin generate and send the
    announcement for you. First make sure that you have configured the necessary
    properties in your {{{../committer-settings.html}committer settings}}.
 
