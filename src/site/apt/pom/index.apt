@@ -3,7 +3,7 @@
  -----
  Hervé Boutemy
  -----
- 2011-08-10
+ 2011-08-19
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -35,9 +35,9 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./asf/} <<<ASF>>>}}                       | 10           | 2011-08-10 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./maven/} <<<Maven>>>}}                   | 20           | 2011-06-15 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
+| {{{./maven/} <<<Maven>>>}}                   | 21           | 2011-08-19 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./maven-plugins/} <<<Maven plugins>>>}}   | 21           | 2011-06-18 | Maven plugins configuration. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-plugins/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314501}JIRA}}
+| {{{./maven-plugins/} <<<Maven plugins>>>}}   | 22           | 2011-08-19 | Maven plugins configuration. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-plugins/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314501}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./maven-shared-commonents/} <<<Maven Shared Components>>>}} | 16 | 2011-02-15 | Maven shared components. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-components/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314801}JIRA}}
+| {{{./maven-shared-commonents/} <<<Maven Shared Components>>>}} | 17 | 2011-08-19 | Maven shared components. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-components/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314801}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
