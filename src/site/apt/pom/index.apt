@@ -39,5 +39,5 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./maven-plugins/} <<<Maven plugins>>>}}   | 22           | 2011-08-19 | Maven plugins configuration. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-plugins/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314501}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./maven-shared-commonents/} <<<Maven Shared Components>>>}} | 17 | 2011-08-19 | Maven shared components. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-components/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314801}JIRA}}
+| {{{./maven-shared-components/} <<<Maven Shared Components>>>}} | 17 | 2011-08-19 | Maven shared components. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-components/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314801}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
