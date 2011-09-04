@@ -35,7 +35,7 @@ Performing a Maven Project Release
 
   * you have JDK 5 installed and on your shell's path.
 
-  * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable MAVEN_OPTS=-Xmx512m
+  * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable <<<MAVEN_OPTS=-Xmx512m>>>
 
   * you must use Maven 2.2.1+, as Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.
   
@@ -150,10 +150,10 @@ I will promote the artifacts to the central repo.
    As above, deploy the web site if appropriate and update the project site for the
    new release.
 
- [[3]] Update JIRA
+ [[3]] Update the version tracking in JIRA
 
- Go to Admin section in JIRA for the project and mark
- the <<<Y.Z>>> version as released. Create version <<<Y.Z+1>>>, if that hasn't already
+ In the relevant project, go to Administration, then Versions. Mark
+ the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
  been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
  [[4]] Create an announcement.
@@ -213,11 +213,6 @@ Enjoy,
 +-----+
 
    []
-
- [[6]] Update the version tracking in JIRA.
-
- In the relevant project, go to Administration, then Versions. Make sure that the next release is defined,
- and mark the release that you just released 'released'.
 
  [[5]] Add the release to the next board report, in the private subversion area.
 
