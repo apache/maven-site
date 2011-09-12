@@ -29,6 +29,20 @@ under the License.
     <section name="Books on Maven">
     
 <div style="float: left; margin-right: 5em;">
+<a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book"><img src="images/books/apache_maven_3_0_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
+</div>
+
+    <div style="min-height: 220px">
+      <p><a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book"><strong>Apache Maven 3.0 Cookbook</strong></a></p>
+      <ul>
+        <li><strong>Covers: </strong>Maven 3</li>
+        <li><strong>Published: </strong> Packt Publishing (August 2011)</li>
+        <li><strong>Authors: </strong> Srirangan</li>
+        <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book">Packt</a>, <a href="http://www.amazon.com/Apache-Maven-3-Cookbook-Srirangan/dp/1849512442/ref=sr_1_1?ie=UTF8&amp;qid=1315861966&amp;sr=8-1">Amazon</a></li>
+      </ul>
+    </div>    
+
+<div style="float: left; margin-right: 5em;">
 <a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><img src="images/books/pearson_apache_maven_fr.png" title="Apache Maven - en Français" /></a>
 </div>
 
