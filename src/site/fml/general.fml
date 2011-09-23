@@ -431,6 +431,7 @@ Where: <path-to-file>  the path to the file to load
           You could use the following search engines:
         </p>
         <ul>
+          <li><a href="http://search.maven.org/">http://search.maven.org</a></li>
           <li><a href="http://repository.apache.org">http://repository.apache.org</a></li>
           <li><a href="http://www.artifact-repository.org/">http://www.artifact-repository.org</a></li>
           <li><a href="http://mvnrepository.com">http://mvnrepository.com</a></li>
