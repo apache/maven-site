@@ -226,7 +226,7 @@ Documentation
 
  * {{{http://maven.apache.org/ref/current/maven-artifact/apidocs/}Maven Artifact}}
 
- * {{{http://maven.apache.org/ref/current/maven-reporting/maven-reporting-api/apidocs/}Maven Reporting}}
+ * {{{http://maven.apache.org/shared/maven-reporting-api/apidocs/}Maven Reporting}}
 
  * {{{http://maven.apache.org/ref/current/maven-plugin-api/apidocs/}Maven Plugin API}}
 
