@@ -84,7 +84,7 @@ Introduction to the Dependency Mechanism
 
 * {Dependency Scope}
 
- Dependency scope is used to limit the transitivity of a depedency, and also to affect the classpath used for
+ Dependency scope is used to limit the transitivity of a dependency, and also to affect the classpath used for
  various build tasks.
 
  There are 6 scopes available:
@@ -415,7 +415,7 @@ Introduction to the Dependency Mechanism
 
  The examples in the previous section describe how to specify managed dependencies through inheritence. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
- To accomodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a
+ To accommodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a
  pom artifact as a dependency with a scope of "import".
 
  Project B:
@@ -558,7 +558,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- In the example above Z imports the managed dependencies from both X and Y. However, both X and Y contain depedency a. Here,
+ In the example above Z imports the managed dependencies from both X and Y. However, both X and Y contain dependency a. Here,
  version 1.1 of a would be used since X is declared first and a is not declared in Z's dependencyManagement.
 
  This process is recursive. For example, if X imports another pom, Q, when Z is processed it will simply appear that all
@@ -739,7 +739,7 @@ Introduction to the Dependency Mechanism
      Attempting to do that will result in the build failing since it won't be able to locate the pom.
 
  * Never declare the pom importing a pom as the parent (or grandparent, etc) of the target pom.
-   There is no way to resolve the cicularity and an exception will be thrown.
+   There is no way to resolve the circularity and an exception will be thrown.
      
  * When referring to artifacts whose poms have transitive dependencies the project will need to specify versions
      of those artifacts as managed dependencies. Not doing so will result in a build failure since the
