@@ -52,6 +52,20 @@ Performing a Maven Project Release
   * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}}
   
   * {{{./maven-core-release.html} Releasing Maven Core}}
+
+* Consider updating the parent versions
+
+  If the item you are planning to release is not using the most recent version of its parent,
+  consider taking this opportunity to update to it.
+
+* Make sure that site compilation and publication works
+
+  Particularly if you update the parent (but sometimes under other circumstances),
+  the site compilation process may fail, or reveal a conspicuous error, 
+  or deploy to the wrong location. It is stressful and time-consuming
+  to discover this *after* you stage a release and then try to follow
+  the procedure to deploy the site for review. So you may find it more
+  pleasant to check out the state of the site before you start.
   
 * Stage the Release
 
