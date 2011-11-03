@@ -120,7 +120,7 @@
       </item>
 
       <item name="Eclipse Integration" ref="/eclipse-plugin.html"/>
-      <item name="Netbeans Integration" ref="/netbeans-module.html"/>
+      <item name="NetBeans Integration" ref="/netbeans-module.html"/>
     </item>
 
     <!-- Plugin Dev Documentation -->

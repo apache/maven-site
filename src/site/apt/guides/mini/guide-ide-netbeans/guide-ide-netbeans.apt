@@ -1,22 +1,22 @@
     ------
-    Guide to Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
+    Guide to Using Maven 2 in NetBeans 4.0 (4.1 and 5.0)
     ------
     Raphaël Piéroni
     ------
     Mon Aug 9 2005
     ------
 
-Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
+Using Maven 2 in NetBeans 4.0 (4.1 and 5.0)
 
-    This mini guide explain by examples how to use Maven 2 in Netbeans IDE.
+    This mini guide explain by examples how to use Maven 2 in NetBeans IDE.
 
-    To use Maven 2 in Netbeans you have to follow these steps:
+    To use Maven 2 in NetBeans you have to follow these steps:
 
         * {{{RetreiveCreate_the_Maven_2_project}Retrieve/Create the Maven 2 project.}}
 
         * {{{Launch_Maven_2_in_command_line_using_the_netbeans-freeform_plugin}Launch Maven 2 in command line using the netbeans-freeform plugin.}}
 
-        * {{{Open_the_project_with_Netbeans}Open the project with Netbeans.}}
+        * {{{Open_the_project_with_NetBeans}Open the project with NetBeans.}}
 
         * {{{Build_the_project_and_launch_other_Maven_goals}Build the project and launch other Maven goals.}}
 
@@ -101,7 +101,7 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 * {Launch Maven 2 in command line using the netbeans-freeform plugin}
 
     After having retrieved the Maven 2 project, you have to enable the project to 
-    be seen as a Netbeans 4.0, 4.1 or 5.0 project using the Netbeans Freeform project type.
+    be seen as a NetBeans 4.0, 4.1 or 5.0 project using the NetBeans Freeform project type.
 
     To enable the project, use the netbeans-freeform plugin for Maven 2.
 
@@ -130,11 +130,11 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
     The netbeans-freeform plugin creates one directory and three files by reading the Maven 2 project descriptor:
 
-        * The <<<nbproject>>> directory holds the Netbeans project descriptor. 
+        * The <<<nbproject>>> directory holds the NetBeans project descriptor. 
         
-        * The <<<<project.xml>>> file is the Netbeans Freeform project descriptor. 
+        * The <<<<project.xml>>> file is the NetBeans Freeform project descriptor. 
 
-        * The <<<mavencall.xml>>> holds the Ant calls which execute Maven 2, as Netbeans uses Ant as its build tool. 
+        * The <<<mavencall.xml>>> holds the Ant calls which execute Maven 2, as NetBeans uses Ant as its build tool. 
 
         * The <<<project.properties>>> files holds the two properties: <<<local.repository>>> 
         which is the absolute path to the Maven 2 local repository and <<<project.directory>>> 
@@ -142,9 +142,9 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 
 
-* {Open the project with Netbeans}
+* {Open the project with NetBeans}
 
-    Now that the Maven 2 project is eneabled for use in Netbeans, open your Netbeans IDE.
+    Now that the Maven 2 project is eneabled for use in NetBeans, open your NetBeans IDE.
     Then open the project (Ctrl+Maj+O). 
 
     Here is the <Open Project> window.
@@ -169,13 +169,13 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Build the project and launch other Maven goals}
 
-    It is now time to try the first execution of Maven 2 from within Netbeans. 
-    Try the <Build Main Project> Netbeans action (F11).
+    It is now time to try the first execution of Maven 2 from within NetBeans. 
+    Try the <Build Main Project> NetBeans action (F11).
     You see the Maven 2 execution of the <<<package>>> lifecycle goal.
 
 [Run_Build_Main_Project.png] Run Build Main Project
 
-    You can also call the <Clean Project> Netbeans action which is mapped to the <<<clean>>> Maven2 goal.
+    You can also call the <Clean Project> NetBeans action which is mapped to the <<<clean>>> Maven2 goal.
 
 [Run_Clean_Main_Project.png] Run Clean Main Project
 
@@ -183,7 +183,7 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Edit properties of the plugin}
 
-    Now you can add some additionnal views in your <Projects> window in Netbeans. 
+    Now you can add some additionnal views in your <Projects> window in NetBeans. 
     Like an additionnal goal in the context menu.    
 
 -------------------
@@ -231,7 +231,7 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Refresh the project view}
 
-    To refresh the Project view in Netbeans accordingly to the new configuration added to the Maven 2 project descriptor.
+    To refresh the Project view in NetBeans accordingly to the new configuration added to the Maven 2 project descriptor.
     Just right-clic the project in the Projects window and choose the <Refresh Project> action.
 
 [Refresh_Project.png] Refresh Project
@@ -244,7 +244,7 @@ Using Maven 2 in Netbeans 4.0 (4.1 and 5.0)
 
 * {Build the Maven 2 site}
 
-    You can call The <Generate Javadoc for Project> Netbeans action which is mapped to the <<<site>>> Maven 2 goal, 
+    You can call The <Generate Javadoc for Project> NetBeans action which is mapped to the <<<site>>> Maven 2 goal, 
     here in the Maven site archetype.
 
 [Generate_Site.png] Generate Site
