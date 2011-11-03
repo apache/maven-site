@@ -44,7 +44,7 @@ under the License.
 
     <menu name="IDE Integration">
       <item name="Eclipse" href="/eclipse-plugin.html"/>
-      <item name="Netbeans" href="/netbeans-module.html"/>
+      <item name="NetBeans" href="/netbeans-module.html"/>
     </menu>
 
     <menu name="About Maven">
