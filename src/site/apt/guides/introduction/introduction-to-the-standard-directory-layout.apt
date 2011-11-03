@@ -26,6 +26,8 @@ Introduction to the Standard Directory Layout
 *--------------------------------+-----------------------------------------------+
 | <<<src/main/config>>>          | Configuration files
 *--------------------------------+-----------------------------------------------+
+| <<<src/main/scripts>>>         | Application/Library scripts
+*--------------------------------+-----------------------------------------------+
 | <<<src/main/webapp>>>          | Web application sources
 *--------------------------------+-----------------------------------------------+
 | <<<src/test/java>>>            | Test sources
