@@ -195,7 +195,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 
   As of Maven 3.0, profiles in the POM can also be activated based on properties from active profiles from the
-  <<<setttings.xml>>>.
+  <<<settings.xml>>>.
 
   <<Note>>: Environment variables like <<<FOO>>> are available as properties of the form <<<env.FOO>>>. Further note
   that environment variable names are normalized to all upper-case on Windows.
