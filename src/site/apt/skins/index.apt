@@ -3,7 +3,7 @@
  -----
  Dennis Lundberg
  -----
- 2010-03-14
+ 2011-11-23
  -----
 
 Skins
@@ -21,6 +21,8 @@ Skins
 | {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.0          | You get this skin if you don't specify a skin.
 *-------------------------------------------------------------------+--------------+------------------+
 | {{{/skins/maven-stylus-skin/} <<<Maven Stylus Skin>>>}}           | 1.3          | The skin used for the website of Maven itself.
+*-------------------------------------------------------------------+--------------+------------------+
+| {{{/skins/maven-fluido-skin/} <<<Maven Stylus Skin>>>}}           | 1.0-SNAPSHOT | Skin based on bootstrap css
 *-------------------------------------------------------------------+--------------+------------------+
 
   To use one of these skins in your project, you use the <<<skin>>> element of the
