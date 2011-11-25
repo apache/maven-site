@@ -32,6 +32,9 @@ Releasing Maven
   For non-alpha/beta releases, release candidates are produced before the actual
   release.
 
+  Copy the binaries and src-tar.gz with their md5/asc to http://people.apache.org/builds/maven/$VERSION.
+
+
   To produce a release candidate, follow the first seven steps only from the following
   procedure:
 
