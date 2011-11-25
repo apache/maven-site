@@ -115,9 +115,9 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
   In addition to promoting the repository, the release archives should be copied to
   the following locations:
 
-    * people.apache.org:/www/www.apache.org/dist/maven/binaries - apache-maven-$VERSION-bin.tar.gz, apache-maven-$VERSION-bin.tar.bz2, apache-maven-$VERSION-bin.zip, corresponding checksums (md5 and sha1) and signatures (asc)
+    * people.apache.org:/www/www.apache.org/dist/maven/binaries - apache-maven-$VERSION-bin.tar.gz, apache-maven-$VERSION-bin.zip, corresponding checksums (md5 and sha1) and signatures (asc)
 
-    * people.apache.org:/www/www.apache.org/dist/maven/source - apache-maven-$VERSION-src.tar.gz, apache-maven-$VERSION-src.tar.bz2, apache-maven-$VERSION-src.zip, corresponding checksums (md5 and sha1) and signatures (asc)
+    * people.apache.org:/www/www.apache.org/dist/maven/source - apache-maven-$VERSION-src.tar.gz, apache-maven-$VERSION-src.zip, corresponding checksums (md5 and sha1) and signatures (asc)
 
   The files may need to be renamed from those given in the repository.
 
