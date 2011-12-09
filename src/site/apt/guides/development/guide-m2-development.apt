@@ -56,6 +56,41 @@ Developing Maven
  When you find a issue you would like to work on add a comment in the issue log so the core developers and other
  people looking for work know that someone is already working on it.
 
+* Where's the source?
+
+  You'll need to check out two trees from subversion:
+
+  * {{{https://svn.apache.org/repos/asf/maven/maven-3/trunk}https://svn.apache.org/repos/asf/maven/maven-3/trunk}}
+  The trunk for the core of Maven-3.
+
+  * {{{https://svn.apache.org/repos/asf/maven/core-integration-testing/trunk}https://svn.apache.org/repos/asf/maven/core-integration-testing/trunk}} The corresponding integration test set.
+
+  []
+
+* Don't forget tests!
+
+  You will find many unit tests in the maven-3 tree. If at all possible, create or modify a unit test to demonstrate
+  the problem, and then validate your fix.
+
+  If the problem case can't be set up in the unit tests, add an integration test.
+
+  Before submitting a patch, in any case, you should run all of the tests. Proceed as follows:
+
++-------------------------------------------------------------+
+export M2_HOME=/place-to-put-test-maven-root
+cd maven-3-trunk
+ant all
+cd ../core-integration-testing
+mvn -Prun-its
++-------------------------------------------------------------+
+
+  To run a single test, change the last command line to:
+
++-------------------------------------------------------------+
+mvn -Dtest=yourit -Prun-its
++-------------------------------------------------------------+
+
+
 * {Creating and submitting a patch}
 
  When you have either completed an issue or just want some feedback on the work you have done, create a patch
