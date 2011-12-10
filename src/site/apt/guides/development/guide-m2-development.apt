@@ -74,14 +74,15 @@ Developing Maven
 
   If the problem case can't be set up in the unit tests, add an integration test.
 
-  Before submitting a patch, in any case, you should run all of the tests. Proceed as follows:
+  Before submitting a patch, in any case, you should run all of the integration tests. The tests require an empty local repository.
 
 +-------------------------------------------------------------+
 export M2_HOME=/place-to-put-test-maven-root
 cd maven-3-trunk
 ant all
 cd ../core-integration-testing
-mvn -Prun-its
+rm -rf ~/.m2/repository
+mvn -Prun-its -B -U clean install
 +-------------------------------------------------------------+
 
   To run a single test, change the last command line to:
