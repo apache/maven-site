@@ -77,12 +77,11 @@ Developing Maven
   Before submitting a patch, in any case, you should run all of the integration tests. The tests require an empty local repository.
 
 +-------------------------------------------------------------+
-export M2_HOME=/place-to-put-test-maven-root
 cd maven-3-trunk
-ant all
+M2_HOME=/place-to-put-test-maven-root ant all
 cd ../core-integration-testing
-rm -rf ~/.m2/repository
-mvn -Prun-its -B -U clean install
+rm -rf /tmp/it.repo
+/place-to-put-test-maven-roo/bin/mvn -Prun-its -B -U clean install -Dmaven.repo.local=/tmp/it.repo -Dmaven.home=/place-to-put-test-maven-root
 +-------------------------------------------------------------+
 
   To run a single test, change the last command line to:
