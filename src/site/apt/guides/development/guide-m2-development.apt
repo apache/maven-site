@@ -87,7 +87,8 @@ rm -rf /tmp/it.repo
   To run a single test, change the last command line to:
 
 +-------------------------------------------------------------+
-mvn -Dtest=yourit -Prun-its
+cd ../core-integration-testing/core-it-suite
+[whatever]/mvn -Dtest=yourit [other options]
 +-------------------------------------------------------------+
 
 
