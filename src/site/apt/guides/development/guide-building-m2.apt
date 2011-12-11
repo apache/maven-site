@@ -133,7 +133,7 @@ svn propget svn:externals
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
 
-  To do this, run from the <<<components>>> or <<<maven-2.2.x>>> directory:
+  To do this, run from the <<<maven-3>>> or <<<maven-2.2.x>>> directory:
 
 ----
 mvn install
@@ -153,7 +153,7 @@ mvn install -Prun-its
   If you do not have Maven installed, you can use
   {{{http://ant.apache.org}Apache Ant}} to build Maven.
 
-  Once you have checked out the code, change into the <<<components>>> or <<<maven-2.2.x>>> directory that was created.
+  Once you have checked out the code, change into the <<<maven-3>>> or <<<maven-2.2.x>>> directory that was created.
 
   Set the M2_HOME environment variable to the location that should contain
   Maven. This directory <<must>> be named after the Maven version you want to
