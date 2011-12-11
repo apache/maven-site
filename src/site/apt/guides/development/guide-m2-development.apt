@@ -223,10 +223,14 @@ And remember, your contributions are always welcome!
  Maven SCM (Source Control Management) is an reusable API which is independent of Maven itself and it is used by the
  SCM related Maven Plugins. The core part of Maven itself doesn't depend on Maven SCM.
 
+ You can {{{http://maven.apache.org/scm/}read more about Scm}}.
+
 ** Maven Wagon
 
  Maven Wagon is also a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
  API to download and upload artifacts and artifact metadata and the site plug-in uses it to publish the site.
+
+ You can {{{http://maven.apache.org/wagon/}read more about Wagon}}.
 
 * {Further Links}
 
