@@ -3,7 +3,7 @@ Release Notes - Maven 3.0.4
  ------
 Olivier Lamy
  ------
-2011-11-25
+2011-12-12
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -37,6 +37,19 @@ Maven 3.0.4
 
   Maven 3 aims to ensure backward compatibility with Maven 2, improve usability, increase performance, allow safe embedding, and pave the way
   to implement many highly demanded features.
+
+  <<NOTE:>> Maven 3.0.4 has a new default Http Wagon based on Apache HttpClient 4.1.2. You must read various available settings
+   documented {{{http://maven.apache.org/guides/mini/guide-http-settings.html}here}}.
+
+  Some enhancements are now included by default:
+
+  * http(s) connection pool.
+
+  * default preemptive authentication support.
+
+  * a default read timeout configured to 60s.
+
+  []
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
   See the {{{../../plugins/index.html} Plugin List}} for more information.
