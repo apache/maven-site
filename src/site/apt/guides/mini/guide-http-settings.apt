@@ -26,6 +26,20 @@ Advanced Configuration of the HttpClient HTTP Wagon
   protocol, or you can select an alternative wagon <<<provider>>> you'd like to use on a per-protocol basis. 
   For more information, see the {{{./guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
 
+**Maven 3.0.4
+
+  With 3.0.4, the default wagon http(s) is now the HttpClient based on {{{http://hc.apache.org/httpcomponents-client-ga}Apache Http Client 4.1.2}}.
+  There is now a http connection pooling to prevent reopening http(s) to remote server for each requests.
+  This pool feature is configurable with some parameters \[4\].
+
+  This new defaut wagon comes with some default configuration:
+
+  * http(s) connection pool: default to 20.
+
+  * readTimeout: default to 60s (see section <<<Read time out>>> below)
+
+  * default Preemptive Authentication.
+
 *Introduction
 
   Using the HttpClient-based HTTP wagon, you have a lot more control over the
@@ -356,6 +370,28 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   parameter. If you need to separate timeout preferences according to HTTP method, you can use one more like that
   specified directly above.
 
+** Read time out
+
+  With Wagon 2.0 and Apache Maven 3.0.4, a default timeout of 60s comes by default.
+  If you want to change this value, you can add the following setup in your settings:
+
++---+
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <httpConfiguration>
+          <put>
+            <readTimeout>120000</readTimeout> <!-- milliseconds -->
+          </put>
+        </httpConfiguration>
+      </configuration>
+    </server>
+  </servers>
+</settings>
++---+
+
 *Resources
 
     [[1]] {{{http://hc.apache.org/httpclient-3.x/}HttpClient website}}
@@ -363,5 +399,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
     [[2]] {{{http://hc.apache.org/httpclient-3.x/preference-api.html}HttpClient preference architecture and configuration guide}}
     
     [[3]] {{{./guide-wagon-providers.html}Guide to Wagon Providers}}
+
+    [[4]] {{{http://maven.apache.org/wagon/wagon-providers/wagon-http/}Wagon Http}}
     
     []
