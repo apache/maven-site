@@ -58,7 +58,7 @@ Advanced Configuration of the HttpClient HTTP Wagon
 
   * http(s) connection pool: default to 20.
 
-  * readTimeout: default to 60s (see section <<<Read time out>>> below)
+  * readTimeout: default to 1800000ms (~30 minutes) (see section <<<Read time out>>> below)
 
   * default Preemptive Authentication.
 
