@@ -394,7 +394,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
 ** Read time out
 
-  With Wagon 2.0 and Apache Maven 3.0.4, a default timeout of 60s comes by default.
+  With Wagon 2.0 and Apache Maven 3.0.4, a default timeout of 30 minutes comes by default.
   If you want to change this value, you can add the following setup in your settings:
 
 +---+
