@@ -47,7 +47,7 @@ Maven 3.0.4
 
   * default preemptive authentication support.
 
-  * a default read timeout configured to 60s.
+  * a default read timeout configured to 30 minutes.
 
   []
 
