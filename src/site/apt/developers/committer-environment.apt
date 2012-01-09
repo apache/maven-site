@@ -70,7 +70,7 @@ Setting up SSH public/private keys
  By default, SSH (Secure Shell) asks you to enter your password each time, i.e.:
 
 +-----+
->ssh vsiveton@apache.org
+>ssh YOUR_APACHE_USERNAME@people.apache.org
 Password:
 +-----+
 
@@ -78,40 +78,44 @@ Password:
  You need to execute the following on your development machine:
 
 +-----+
-> ssh-keygen -t dsa
+> cd ~/.ssh
+> ssh-keygen -t dsa -f YOUR_APACHE_USERNAME@apache.org -C YOUR_APACHE_USERNAME@apache.org
 Generating public/private dsa key pair.
-Enter file in which to save the key (~/.ssh/id_dsa): (just type return)
 Enter passphrase (empty for no passphrase): (just type return)
 Enter same passphrase again: (just type return)
-Your identification has been saved in ~/.ssh/id_dsa
-Your public key has been saved in ~/.ssh/id_dsa.pub
+Your identification has been saved in YOUR_APACHE_USERNAME@apache.org.
+Your public key has been saved in YOUR_APACHE_USERNAME@apache.org.pub.
 The key fingerprint is:
-ec:06:c7:44:9e:a6:2c:c0:8a:87:04:07:a0:5b:94:d2 YOUR_MACHINE_USERNAME @ YOUR_MACHINE_DOMAIN
+0c:16:c7:44:9e:a6:2c:c0:8a:87:04:07:a0:5b:94:d2 YOUR_APACHE_USERNAME@apache.org
 +-----+
 
- Then, paste the content of the local <<<~/.ssh/id_dsa.pub>>> file into the file
+ Then, paste the content of the local <<<~/.ssh/YOUR_APACHE_USERNAME.pub>>> file into the file
  <<</home/YOUR_APACHE_USERNAME/.ssh/authorized_keys>>> on the Apache remote host.
 
  <<Note>>: under Cygwin, it is located at <<<\{cygwin.install.path\}\home\YOUR_MACHINE_USERNAME\.ssh>>>. You need
  to copy the content of <<<\{cygwin.install.path\}\home\YOUR_MACHINE_USERNAME\.ssh>>> into
  <<<C:\Documents and Settings\YOUR_MACHINE_USERNAME\.ssh>>> for Maven.
 
+ You also need to modify the <<<~/.ssh/config>>> to use this identity file when communicating with *.apache.org
+
++-----+
+Host *.apache.org
+User=YOUR_APACHE_USERNAME
+IdentityFile=~/.ssh/YOUR_APACHE_USERNAME@apache.org
++-----+
+
  To test the installation, try to log in again on Apache. You should not be asked for your password any more.
 
 +-----+
->ssh vsiveton@apache.org
-Last login: Tue Oct 10 03:50:10 2006 from ipXXX-XXX-XXX-XXX
+ > ssh YOUR_APACHE_USERNAME@people.apache.org
 Copyright (c) 1980, 1983, 1986, 1988, 1990, 1991, 1993, 1994
-        The Regents of the University of California.  All rights reserved.
+	The Regents of the University of California.  All rights reserved.
 
-FreeBSD 6.1-RELEASE (SMP-turbo) #0: Thu May 11 11:50:25 PDT 2006
+FreeBSD 8.2-RELEASE-p4 (GENERIC) #1 r226043: Wed Oct  5 18:45:41 UTC 2011
 
-This is an Apache Software Foundation server.
-For more information, see http://www.apache.org/dev/
-
-Time to change your password? Type "passwd" and follow the prompts.
-                -- Dru <genesis@istar.ca>
--bash-2.05b$
+This is minotaur.apache.org (a.k.a. people.apache.org). 
+...
+YOUR_APACHE_USERNAME@minotaur:~$
 +-----+
 
 Useful software
