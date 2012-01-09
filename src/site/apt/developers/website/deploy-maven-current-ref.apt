@@ -74,8 +74,8 @@ maven-2.2.0$ mvn site-deploy -Preporting
 
  []
 
-Information on <<<{{/ref/current}}>>> mecanism
+Information on <<<{{/ref/current}}>>> mechanism
 
   The redirection from <<<{{/ref/current}}>>> to actual Maven version reference is done through
   <<<{{{http://svn.apache.org/viewvc/maven/site/trunk/src/site/filtered-resources/.htaccess?view=markup}.htaccess}}>>>
-  published in site.
+  published in site. 
