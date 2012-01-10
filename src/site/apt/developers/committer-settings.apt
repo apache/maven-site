@@ -53,6 +53,11 @@ Introduction
     <server>
       <id>apache.website</id>
       <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
+      <!-- Either
+      <password>...</password>
+      or
+      <privateKey>...</privateKey>
+      ---> 
       <filePermissions>664</filePermissions>
       <directoryPermissions>775</directoryPermissions>
     </server>
