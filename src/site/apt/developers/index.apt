@@ -90,8 +90,10 @@ Maven Developer Centre
 
   []
 
-* Deploy Maven references
+* Maven Website
 
+  * {{{./website/deploy-maven-website.html}Deploy Maven Website}}
+  
   * {{{./website/deploy-maven-current-ref.html}Deploy Maven Current References}}
 
   []
