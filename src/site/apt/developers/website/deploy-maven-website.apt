@@ -3,7 +3,7 @@
  ------
  Barrie Treloar
  ------
- Jan 2012
+ 2012-01-10
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -29,7 +29,6 @@
 Introduction
 
  This document gives step-by-step instructions for deploying the Maven website {{{http://maven.apache.org}http://maven.apache.org}}.
- The primary audience is Maven PMC.
 
 Prerequisite
 
@@ -63,10 +62,10 @@ site$ mvn site:stage -DstagingDirectory=/tmp/maven-website
  [[4]] Deploy to people.apache.org
 
 +-----+
-site $ mvn site-deploy 
+site$ mvn site-deploy 
 +-----+
 
- It will copy the site to the <site.deploy.url> which is currently defined in the pom.xml as <scp://people.apache.org/www/maven.apache.org/>
+ It will copy the site to the <site.deploy.url> which is currently defined in the <<<pom.xml>>> as <scp://people.apache.org/www/maven.apache.org/>
 
  <<Note:>> It will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
 
