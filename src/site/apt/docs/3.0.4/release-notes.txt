@@ -12,7 +12,7 @@
   Please refer to the following {{{http://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html} compatibility notes}}
   before reporting any issues regarding changed build behavior in Maven 3.x.
 
-** Release Notes - Maven - Version 3.0.4 (since 3.0.2 only)
+** Release Notes - Maven - Version 3.0.4 (since 3.0.3 only)
 
 ** Bug
 
@@ -45,6 +45,12 @@
     * [MNG-5165] - Problem with scp transport (wagon-maven-plugin 1.0-beta-3, Maven 2.2.1, Ubuntu 11.04)
 
     * [MNG-5192] - prevent ConcurrentModificationException in parallel mode -Tx when project have errors
+
+    * [MNG-5221] - Default version of m-site-p does not work (no reports)
+
+    * [MNG-5225] - The default version of the maven-site-plugin as defined in the site-lifecycle must be 3.x
+
+    * [MNG-5224] - REGRESSION: Injected Settings in a Mojo are missing the profiles from settings.xml
 
 
 ** Improvement
