@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2011-08-02
+ 2012-01-16
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -86,7 +86,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Packaging types / tools>>                                  |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.6          | 2011-06-16 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.7          | 2012-01-16 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | 2.3          | 2010-09-18 | Build an EJB (and optional client) from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ejb-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEJB}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
