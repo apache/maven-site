@@ -17,33 +17,33 @@ Localization of Plugins
   progress of Maven Site Plugin and Maven Project Info Reports Plugin on
   {{{http://maven.apache.org/plugins/maven-site-plugin/i18n.html}the Site Plugin site}}.
 
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-|| Reporting Plugin    || de || es || fr || nl || pt_BR || sv || l10n report                                                                 || SVN
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Changelog            | OK  | -   | -   | -   | -      | OK  | {{{/plugins/maven-changelog-plugin/l10n-status.html}l10n report}}            | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Changes              | OK  | -   | OK  | -   | OK     | OK  | {{{/plugins/maven-changes-plugin/l10n-status.html}l10n report}}              | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Checkstyle           | OK  | -   | OK  | -   | OK     | OK  | {{{/plugins/maven-checkstyle-plugin/l10n-status.html}l10n report}}           | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Dependency           | OK  | -   | -   | -   | OK     | OK  | {{{/plugins/maven-dependency-plugin/l10n-status.html}l10n report}}           | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| DOAP                 | OK  | OK  | OK  | -   | -      | -   | {{{/plugins/maven-doap-plugin/l10n-status.html}l10n report}}                 | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Javadoc              | OK  | -   | OK  | OK  | -      | OK  | {{{/plugins/maven-javadoc-plugin/l10n-status.html}l10n report}}              | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| JXR                  | OK  | -   | OK  | -   | -      | OK  | {{{/plugins/maven-jxr-plugin/l10n-status.html}l10n report}}                  | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| PMD                  | OK  | -   | OK  | -   | -      | OK  | {{{/plugins/maven-pmd-plugin/l10n-status.html}l10n report}}                  | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Plugin               | OK  | -   | OK  | -   | -      | OK  | {{{/plugins/maven-plugin-plugin/l10n-status.html}l10n report}}               | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Project Info Reports | OK  | OK  | OK  | OK  | OK     | OK  | {{{/plugins/maven-project-info-reports-plugin/l10n-status.html}l10n report}} | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Surefire report      | OK  | -   | -   | -   | -      | OK  | {{{/plugins/maven-surefire-report-plugin/l10n-status.html}l10n report}}      | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
-| Site                 | OK  | OK  | OK  | OK  | OK     | OK  | {{{/plugins/maven-site-plugin/l10n-status.html}l10n report}}                 | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/src/main/resources/}SVN}}
-*----------------------+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+|| Reporting Plugin    || de || es || fr || it || nl || pt_BR || sv || l10n report                                                                 || SVN
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Changelog            | OK  | -   | -   | -   | -   | -      | OK  | {{{/plugins/maven-changelog-plugin/l10n-status.html}l10n report}}            | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Changes              | OK  | -   | OK  | -   | -   | OK     | OK  | {{{/plugins/maven-changes-plugin/l10n-status.html}l10n report}}              | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Checkstyle           | OK  | -   | OK  | -   | -   | OK     | OK  | {{{/plugins/maven-checkstyle-plugin/l10n-status.html}l10n report}}           | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Dependency           | OK  | -   | -   | -   | -   | OK     | OK  | {{{/plugins/maven-dependency-plugin/l10n-status.html}l10n report}}           | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| DOAP                 | OK  | OK  | OK  | -   | -   | -      | -   | {{{/plugins/maven-doap-plugin/l10n-status.html}l10n report}}                 | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Javadoc              | OK  | -   | OK  | -   | OK  | -      | OK  | {{{/plugins/maven-javadoc-plugin/l10n-status.html}l10n report}}              | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| JXR                  | OK  | -   | OK  | -   | -   | -      | OK  | {{{/plugins/maven-jxr-plugin/l10n-status.html}l10n report}}                  | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| PMD                  | OK  | -   | OK  | -   | -   | -      | OK  | {{{/plugins/maven-pmd-plugin/l10n-status.html}l10n report}}                  | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Plugin               | OK  | -   | OK  | -   | -   | -      | OK  | {{{/plugins/maven-plugin-plugin/l10n-status.html}l10n report}}               | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Project Info Reports | OK  | OK  | OK  | OK  | OK  | OK     | OK  | {{{/plugins/maven-project-info-reports-plugin/l10n-status.html}l10n report}} | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Surefire report      | OK  | -   | -   | -   | -   | -      | OK  | {{{/plugins/maven-surefire-report-plugin/l10n-status.html}l10n report}}      | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-report-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
+| Site                 | OK  | OK  | OK  | OK  | OK  | OK     | OK  | {{{/plugins/maven-site-plugin/l10n-status.html}l10n report}}                 | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/src/main/resources/}SVN}}
+*----------------------+-----+-----+-----+-----+-----+--------+-----+------------------------------------------------------------------------------+------+
 
   Is your favourite plugin missing a localization for your language? Please help
   us expand the language support by following the instructions below.
