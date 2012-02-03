@@ -46,8 +46,8 @@ Available Plugins
 
 * Supported By The Maven Project
 
-  To see the most up-to-date list browse the Maven repository at {{http://repo1.maven.org/maven2/}}, specifically
-  the {{{http://repo1.maven.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subfolder.
+  To see the most up-to-date list browse the Maven repository at {{http://repo.maven.apache.org/maven2/}}, specifically
+  the {{{http://repo.maven.apache.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subfolder.
   <(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)>
 
   ~~ TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins.
