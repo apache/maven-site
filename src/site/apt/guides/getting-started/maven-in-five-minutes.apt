@@ -15,20 +15,20 @@ Maven in 5 Minutes
   First, {{{../../download.html}download Maven}} and follow the {{{../../download.html#Installation}installation instructions}}.
   After that, type the following in a terminal or in a command prompt:
 
-------
++-----+
 mvn --version
-------
++-----+
 
   It should print out your installed version of Maven, for example:
 
-------
++-----+
 Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100)
 Maven home: D:\apache-maven-3.0.3\bin\..
 Java version: 1.6.0_25, vendor: Sun Microsystems Inc.
 Java home: E:\Program Files\Java\jdk1.6.0_25\jre
 Default locale: nl_NL, platform encoding: Cp1252
 OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
-------
++-----+
 
   Depending upon your network setup, you may require extra configuration. Check out the
   {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
@@ -37,9 +37,9 @@ OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 
   On your command line, execute the following Maven goal:
 
--------
++-----+
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
--------
++-----+
 
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
   the most recent artifacts (plugin jars and other files) into your local repository. You may also need to
@@ -49,14 +49,14 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
   You will notice that the <generate> goal created a directory with the same name given as the
   artifactId. Change into that directory.
 
--------
++-----+
 cd my-app
--------
++-----+
 
   Under this directory you will notice the following
   {{{../introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
 
--------
++-----+
 my-app
 |-- pom.xml
 `-- src
@@ -72,28 +72,31 @@ my-app
                 `-- mycompany
                     `-- app
                         `-- AppTest.java
--------
++-----+
 
-  The src/main/java directory contains the project source code, the src/test/java directory contains
-  the test source, and the pom.xml is the project's Project Object Model, or POM.
+  The <<<src/main/java>>> directory contains the project source code, the <<<src/test/java>>> directory contains
+  the test source, and the <<<pom.xml>>> file is the project's Project Object Model, or POM.
 
 ** The POM
 
-  The pom.xml file is the core of a project's configuration in Maven. It is a single configuration
+  The <<<pom.xml>>> file is the core of a project's configuration in Maven. It is a single configuration
   file that contains the majority of information required to build a project in just the way you want.
   The POM is huge and can be daunting in its complexity, but it is not necessary to understand all
   of the intricacies just yet to use it effectively. This project's POM is:
 
-------
++-----+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
-  <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
   <name>Maven Quick Start Archetype</name>
   <url>http://maven.apache.org</url>
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -103,7 +106,7 @@ my-app
     </dependency>
   </dependencies>
 </project>
-------
++-----+
 
 ** What did I just do?
 
@@ -117,13 +120,13 @@ my-app
 
 ** Build the Project
 
--------
++-----+
 mvn package
--------
++-----+
 
   The command line will print out various actions, and end with the following:
 
--------
++-----+
  ...
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESSFUL
@@ -132,7 +135,7 @@ mvn package
 [INFO] Finished at: Thu Jul 07 21:34:52 CEST 2011
 [INFO] Final Memory: 3M/6M
 [INFO] ------------------------------------------------------------------------
--------
++-----+
 
   Unlike the first command executed (<archetype:generate>) you may notice the second is simply
   a single word - <package>. Rather than a goal, this is a <phase>. A phase is a step in the
@@ -157,15 +160,15 @@ mvn package
 
   You may test the newly compiled and packaged JAR with the following command:
 
--------
++-----+
 java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
--------
++-----+
 
   Which will print the quintessential:
 
--------
++-----+
 Hello World!
--------
++-----+
 
 * Running Maven Tools
 
@@ -207,18 +210,18 @@ Hello World!
 
   An interesting thing to note is that phases and goals may be executed in sequence.
 
-------
++-----+
 mvn clean dependency:copy-dependencies package
-------
++-----+
 
   This command will clean the project, copy dependencies, and package the project (executing all phases up to
   <package>, of course).
 
 ** Generating the Site
 
-------
++-----+
 mvn site
-------
++-----+
 
   This phase generates a site based upon information on the project's pom. You can look at the
   documentation generated under <<<target/site>>>.
@@ -228,4 +231,3 @@ mvn site
   We hope this quick overview has piqued your interest in the versitility of Maven. Note that this is a very
   truncated quick-start guide. Now you are ready for more comprehensive details concerning
   the actions you have just performed. Check out the {{{./index.html}Maven Getting Started Guide}}.
-
