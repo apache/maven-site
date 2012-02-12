@@ -61,7 +61,7 @@
           <area shape="rect" coords="544,87,621,119"  alt="java.net" href="http://download.java.net/maven/2/" />
           <area shape="rect" coords="627,87,693,119"  alt="JBoss"    href="http://repository.jboss.org/maven2/" />
           <area shape="rect" coords="384,247,445,284" alt="index"    href="/maven-indexer/" />
-          <area shape="rect" coords="173,313,304,346" alt="repo1"    href="http://repo1.maven.org/maven2/" />
+          <area shape="rect" coords="173,313,304,346" alt="repo"     href="http://repo.maven.apache.org/maven2/" />
           <area shape="rect" coords="332,344,372,376" alt="uk"       href="http://uk.maven.org/maven2/" />
           <area shape="rect" coords="389,344,459,376" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
           <area shape="rect" coords="305,313,523,391" alt="mirrors"  href="http://docs.codehaus.org/display/MAVENUSER/Mirrors+Repositories" />
