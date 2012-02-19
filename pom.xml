@@ -180,7 +180,7 @@
                   <message>Generated site should have inherited the correct skin from the parent</message>
                   <!-- check assumes you've run with "clean" -->
                   <files>
-                    <file>${project.build.directory}/site/images/apache-maven-project-2.png</file>
+                    <file>${project.reporting.outputDirectory}/images/apache-maven-project-2.png</file>
                   </files>
                 </requireFilesExist>
               </rules>
@@ -200,7 +200,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/target/site</outputDirectory>
+              <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
               <resources>
                 <resource>
                   <directory>src/site/filtered-resources</directory>
