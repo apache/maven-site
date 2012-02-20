@@ -1,4 +1,0 @@
-RedirectMatch permanent (.*)/developers/committer-testing-plugins.html $1/plugin-developers/plugin-testing.html
-RedirectMatch permanent (.*)/developers/committer-documentation-plugins.html $1/plugin-developers/plugin-documenting.html
-RedirectMatch permanent (.*)/developers/release/maven-proper-release.html $1/developers/release/maven-core-release.html
-RedirectMatch permanent (.*)/developers/release/apache-release.html http://www.apache.org/dev/publishing-maven-artifacts.html
