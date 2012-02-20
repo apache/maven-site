@@ -1,0 +1,2 @@
+RedirectMatch permanent (.*)/developers/committer-testing-plugins.html $1/plugin-developers/plugin-testing.html
+RedirectMatch permanent (.*)/developers/committer-documentation-plugins.html $1/plugin-developers/plugin-documenting.html

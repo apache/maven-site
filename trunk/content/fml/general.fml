@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/FML/1.0"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  title="Frequently Asked Technical Questions">
+  <part id="faq">
+    <faq id="encoding-warning">
+      <question>How do I prevent "[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!"</question>
+      <answer>
+        <p>
+          This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to
+          use a specific file encoding. So eliminating the warning is simply a matter of finding out what plugin emits it
+          and how to configure the file encoding for it. For plugins that follow our guideline for
+          <a href="http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding">source file encoding</a>,
+          this is as easy as adding the following property to your POM (or one of its parent POMs):
+        </p>
+        <source><![CDATA[<project>
+  ...
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  ...
+</project>]]></source>
+      </answer>
+    </faq>
+
+    <faq id="scope-provided">
+      <question>How do I prevent including JARs in WEB-INF/lib? I need a "compile only" scope!</question>
+      <answer>
+        <p>
+          The scope you should use for this is
+          <code>provided</code>. This indicates to Maven that the dependency will be
+          provided at run time by its container or the JDK, for example.
+        </p>
+        <p>
+          Dependencies with this scope will not be passed on transitively, nor will they be bundled in an package such
+          as a WAR, or included in the runtime classpath.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="available-plugins">
+      <question>How do I list available plugins?</question>
+      <answer>
+        <p>
+          The "Available Plugins" page lists them and provides additional information.
+          See <a href="http://maven.apache.org/plugins/">http://maven.apache.org/plugins</a>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="plugin-version">
+      <question>How do I determine what version of a plugin I am using?</question>
+      <answer>
+        <p>
+          You can use the <a href="/plugins/maven-help-plugin/">Maven Help Plugin</a>'s
+          <a href="/plugins/maven-help-plugin/describe-mojo.html"><code>describe</code></a> goal.
+          For example, to find out the version of the install plugin:
+        </p>
+        <source>mvn -Dplugin=install help:describe</source>
+        <p>
+          Note that you must give the plugin prefix as the argument to plugin, not it's artifact ID.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="using-ant-tasks">
+      <question>How can I use Ant tasks in a Maven build?</question>
+      <answer>
+        <p>
+          There are currently 2 alternatives:
+        </p>
+        <ul>
+          <li>
+            For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct
+            the Ant tasks using the
+            <a href="http://ant.apache.org/manual/antexternal.html">instructions given in the Ant
+              documentation</a>
+          </li>
+          <li>
+            If you have very small amounts of Ant script specific to your project, you can use the
+            <a href="/plugins/maven-antrun-plugin/index.html">AntRun plugin</a>.
+          </li>
+        </ul>
+      </answer>
+    </faq>
+
+    <faq id="maven-ant-tasks">
+      <question>How can I use Maven features in an Ant build?</question>
+      <answer>
+        <p>
+          The <a href="/ant-tasks/index.html">Maven Ant Tasks</a> allow many of the features of 
+          Maven, such as dependency management and repository deployment, to be used in an Ant build. 
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="Compiling-J2SE-5">
+      <question>How do I set up Maven so it will compile with a target and source JVM of my choice?</question>
+      <answer>
+        <p>
+          You must configure the source and target parameters in your pom. For example, to set the source and
+          target JVM to 1.5, you should have in your pom:
+        </p>
+        <source><![CDATA[
+  ...
+  <build>
+  ...
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.3.2</version>
+        <configuration>
+          <source>1.5</source>
+          <target>1.5</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  ...
+  </build>
+  ...]]></source>
+      </answer>
+    </faq>
+
+    <faq id="dir-struct">
+      <question>Is it possible to create my own directory structure?</question>
+      <answer>
+        <p>
+          Absolutely yes!
+        </p>
+        <p>
+          By configuring &lt;sourceDirectory&gt;, &lt;resources&gt; and other elements of
+          the &lt;build&gt; section.
+        </p>
+        <p>
+          In addition, you may need to change the plugin configuration if you are
+          not using plugin defaults for their files/directories.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="m2-source-code">
+      <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.</question>
+      <answer>
+        <p>
+          The source code can be found in <a href="source-repository.html">our subversion repository</a>.
+        </p>
+        <p>
+          For more information, see <a href="/guides/development/guide-building-m2.html">Building Maven 2.0</a>.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="proxy-needed">
+      <question>Maven can't seem to download the dependencies. Is my installation correct?</question>
+      <answer>
+        <p>
+          You most probably need to configure Maven to use a proxy. Please see the information on
+          <a href="/guides/mini/guide-proxies.html">Configuring a proxy</a> for information on how to configure your proxy
+          for Maven.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="importing-jars">
+      <question>I have a jar that I want to put into my local repository. How can I copy it in?</question>
+      <answer>
+        <p>
+          If you understand the layout of the Maven repository, you can copy the jar directly into where it
+          is meant to go. Maven will find this file next time it is run.
+        </p>
+
+        <p>
+          If you are not confident about the layout of the Maven repository, then you can
+          adapt the following command to load in your jar file, all on one line.
+        </p>
+
+        <source><![CDATA[
+mvn install:install-file
+  -Dfile=<path-to-file>
+  -DgroupId=<group-id>
+  -DartifactId=<artifact-id>
+  -Dversion=<version>
+  -Dpackaging=<packaging>
+  -DgeneratePom=true
+
+Where: <path-to-file>  the path to the file to load
+       <group-id>      the group that the file should be registered under
+       <artifact-id>   the artifact name for the file
+       <version>       the version of the file
+       <packaging>     the packaging of the file e.g. jar
+     ]]></source>
+        <p>
+          This should load in the file into the Maven repository, renaming it as needed.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="unsubscribing-from-mailing-lists">
+      <question>How do I unsubscribe from Maven mailing lists?</question>
+      <answer>
+        <p>
+        To unsubscribe from a Maven mailing list you simply send a message to
+        <source>[mailing-list]-unsubscribe@maven.apache.org</source>
+        </p>
+        <p>
+        So, if you have subscribed to <code>users@maven.apache.org</code> then you would
+        send a message to <code>users-unsubscribe@maven.apache.org</code> in order to
+        get off the list.
+        People tend to have problems when they subscribe with one address and
+        attempt to unsubscribe with another. So make sure that you are using the
+        same address when unsubscribing that you used to subscribe before
+        asking for help.
+        </p>
+        <p>
+        If you find you still cannot get off a list then
+        send a message to <code>[mailing-list]-help@maven.apache.org</code>. These
+        instructions are also appended to every message sent out on a maven mailing
+        list ...
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="skip-test">
+      <question>How do I skip the tests?</question>
+      <answer>
+        Add the parameter <code>-Dmaven.test.skip=true</code> or <code>-DskipTests=true</code> in the command line,
+        depending on whether you want to skip test compilation and execution or only execution. See the example
+        <a href="/plugins/maven-surefire-plugin/examples/skipping-test.html">Skipping Tests</a>
+        in the Surefire Plugin's documentation for more details.
+      </answer>
+    </faq>
+
+    <faq id="run-one-test">
+      <question>How can I run a single unit test?</question>
+      <answer>
+        Use the parameter <code>-Dtest=MyTest</code> at the command line.
+        NB: do not specify the entire package (org.apache.x.y.MyTest)
+      </answer>
+    </faq>
+
+    <faq id="special-characters-site">
+      <question>Handle special characters in site</question>
+      <answer>
+        <p>Configure your ide to use the correct encoding. With eclipse, add
+        <code>-Dfile.encoding=ISO-8859-1</code> in eclipse.ini file</p>
+        <p>Configure the output encoding in your pom
+      <source><![CDATA[
+  ...
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-site-plugin</artifactId>
+    <version>2.3</version>
+    <configuration>
+      <outputEncoding>UTF-8</outputEncoding>
+    </configuration>
+  </plugin>
+  ...]]></source>
+        </p>
+        <p>
+          Configure the file encoding use by mvn.
+          add to MAVEN_OPTS the encoding (same as the ide).
+          This can be made with adding <code>MAVEN_OPTS="-Dfile.encoding=ISO-8859-1"</code> in $HOME/.profile
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="tools-jar-dependency">
+      <question>How do I include <code>tools.jar</code> in my dependencies?</question>
+      <answer>
+        <p>
+          The following code includes <code>tools.jar</code> for JDKs on Windows, Linux and Solaris (it is already
+          included in the runtime for Mac OS X and some free JDKs).
+        </p>
+        <source><![CDATA[
+...
+  <profiles>
+    <profile>
+      <id>default-tools.jar</id>
+      <activation>
+        <property>
+          <name>java.vendor</name>
+          <value>Sun Microsystems Inc.</value>
+        </property>
+      </activation>
+      <dependencies>
+        <dependency>
+          <groupId>com.sun</groupId>
+          <artifactId>tools</artifactId>
+          <version>1.4.2</version>
+          <scope>system</scope>
+          <systemPath>${java.home}/../lib/tools.jar</systemPath>
+        </dependency>
+      </dependencies>
+    </profile>
+  </profiles>
+  ...]]></source>
+     </answer>
+    </faq>
+
+    <faq id="test-property-name">
+      <question>Maven compiles my test classes but doesn't run them?</question>
+      <answer>
+        <p>
+          Tests are run by the surefire plugin.  The surefire plugin can be configured to run certain test classes and
+          you may have unintentionally done so by specifying a value to ${test}.
+
+          Check your settings.xml and pom.xml for a property named "test" which would like this:
+        </p>
+        <source><![CDATA[
+  ...
+  <properties>
+    <property>
+      <name>test</name>
+      <value>some-value</value>
+     </property>
+  </properties>
+  ...]]></source>
+        <p>
+          or
+        </p>
+        <source><![CDATA[
+  ...
+  <properties>
+    <test>some-value</test>
+  </properties>
+  ...]]></source>
+      </answer>
+    </faq>
+
+    <faq id="snapshot-artifacts">
+      <question>Where are Maven SNAPSHOT artifacts?</question>
+      <answer>
+        <p>
+          If you are trying to build a development version of Maven or plugins,
+          you may need to access the maven snapshot repositories.
+        </p>
+
+        <p>
+          You need to update your settings.xml file using the
+          <a href="/guides/development/guide-testing-development-plugins.html">
+          Guide to Plugin Snapshot Repositories</a>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="maven-xsd">
+      <question>Where are the Maven XSD schemas?</question>
+      <answer>
+        <p>
+          The Maven XSD is located <a href="/xsd/maven-4.0.0.xsd">here</a> and the Maven
+          Settings XSD is located <a href="/xsd/settings-1.0.0.xsd">here</a>.
+        </p>
+        <p>
+          Your favorite IDE probably supports XSD schema's for pom.xml and settings.xml editing. You need to
+          specify the following:
+        <source>
+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+
+  ...
+&lt;/project&gt;</source>
+        <source>
+&lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+  ...
+&lt;/settings&gt;</source>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="getting-help">
+      <question>Maven doesn't work, how do I get help?</question>
+      <answer>
+        <p>
+          We have compiled a list of available resources on the
+          <a href="/users/getting-help.html">getting help page</a>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="How_to_produce_execution_debug_output_or_error_messages">
+      <question>How to produce execution debug output or error messages?</question>
+      <answer>
+        <p>
+          You could call Maven with <i>-X</i> parameter or <i>-e</i> parameter. For more information,
+          run:
+          <source>mvn --help</source>
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="What_is_a_Mojo">
+      <question>What is a Mojo?</question>
+      <answer>
+        <p>
+          A mojo is a <b>M</b>aven plain <b>O</b>ld <b>J</b>ava <b>O</b>bject. Each mojo is an executable
+          <i>goal</i> in Maven, and a plugin is a distribution of one or more related mojos.
+        </p>
+      </answer>
+    </faq>
+
+    <faq id="How_to_find_dependencies">
+      <question>How to find dependencies on public Maven repositories?</question>
+      <answer>
+        <p>
+          You could use the following search engines:
+        </p>
+        <ul>
+          <li><a href="http://search.maven.org/">http://search.maven.org</a></li>
+          <li><a href="http://repository.apache.org">http://repository.apache.org</a></li>
+          <li><a href="http://www.artifact-repository.org/">http://www.artifact-repository.org</a></li>
+          <li><a href="http://mvnrepository.com">http://mvnrepository.com</a></li>
+          <li><a href="http://www.mvnbrowser.com">http://www.mvnbrowser.com</a></li>
+          <li><a href="http://www.jarvana.com">http://www.jarvana.com</a></li>
+        </ul>
+      </answer>
+    </faq>
+  </part>
+</faqs>

@@ -1,0 +1,245 @@
+ -----
+ Releasing A Maven Project
+ -----
+ Jason van Zyl
+ -----
+ 2011-07-19
+ -----
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+Performing a Maven Project Release
+
+  This document covers the common release procedures used by the Maven team to perform releases.
+  
+* {Prerequisites}
+
+ Be sure that:
+
+  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.apache.org/}http://subversion.apache.org/}}.
+
+  * you have JDK 5 installed and on your shell's path.
+
+  * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable <<<MAVEN_OPTS=-Xmx512m>>>
+
+  * you must use Maven 2.2.1+, as Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.
+  
+  * follow the environment configuration steps outlined at: {{{http://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
+
+  []
+
+* Before you begin
+  
+  If you started here, you may first want to review one of the following documents that cover the specifics of various types of releases we have in the Maven Project:
+  
+  * {{{./maven-plugin-release.html} Releasing a Maven plugin project}}
+  
+  * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}}
+  
+  * {{{./maven-core-release.html} Releasing Maven Core}}
+
+* Consider updating the parent versions
+
+  If the item you are planning to release is not using the most recent version of its parent,
+  consider taking this opportunity to update to it.
+
+* Make sure that site compilation and publication works
+
+  Particularly if you update the parent (but sometimes under other circumstances),
+  the site compilation process may fail, or reveal a conspicuous error, 
+  or deploy to the wrong location. It is stressful and time-consuming
+  to discover this *after* you stage a release and then try to follow
+  the procedure to deploy the site for review. So you may find it more
+  pleasant to check out the state of the site before you start.
+  
+* Stage the Release
+
+ [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
+
+ [[2]] Stage the latest documentation
+ 
+ If your project uses Maven to generate documentation and it is not included as part of
+ the release process, stage it now for inclusion in the release vote. For Maven projects,
+ refer to the specific instructions for the project you are releasing.
+ 
+* Call the vote
+ 
+ Propose a vote on the dev list with the closed issues, the issues left,
+ the staging repository and the staging site. For instance:
+
++-----+
+To: "Maven Developers List" <dev@maven.apache.org>
+Subject: [VOTE] Release Maven XXX Plugin version Y.Z
+
+Hi,
+
+We solved N issues:
+http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=XXX&styleName=Html&version=XXX
+
+There are still a couple of issues left in JIRA:
+http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=XXX&status=1
+
+Staging repo:
+https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
+
+Staging site:
+http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
+
+Guide to testing staged releases:
+http://maven.apache.org/guides/development/guide-testing-releases.html
+
+Vote open for 72 hours.
+
+[ ] +1
+[ ] +0
+[ ] -1
+
++-----+
+
+ To get the JIRA release notes link, browse to the plugin's JIRA page, select the <Road Map> link,
+ and use the link to <Release Notes> that is next to the version being released.
+
+ To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Preset Filters>
+ on the right, use the link for <Outstanding> issues.
+
+* Check the vote results
+
+ Copied from {{{http://www.apache.org/foundation/voting.html}Votes on Package Releases}}.
+
++-----+
+Votes on whether a package is ready to be released follow a format similar to majority approval
+-- except that the decision is officially determined solely by whether at least three
++1 votes were registered. Releases may not be vetoed. Generally the community will table the
+vote to release if anyone identifies serious problems, but in most cases the ultimate decision,
+once three or more positive votes have been garnered, lies with the individual serving as
+release manager. The specifics of the process may vary from project to project, but the
+'minimum of three +1 votes' rule is universal.
++-----+
+
+  The list of binding voters is available at {{http://people.apache.org/committers-by-project.html#maven-pmc}} (or corresponding group for your project).
+
+  Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
+
++-----+
+To: "Maven Developers List" <dev@maven.apache.org>
+CC: "Maven Project Management Committee List" <private@maven.apache.org>
+Subject: [RESULT] [VOTE] Release Maven XXX Plugin version Y.Z
+
+Hi,
+The vote has passed with the following result :
+
++1 (binding): <<list of names>>
++1 (non binding): <<list of names>>
+
+I will promote the artifacts to the central repo.
++-----+
+
+  If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as
+  described in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#drop}Dropping a Repo}}.
+
+* Promote the release
+
+ Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
+ be available to all users.
+
+ [[1]]See {{{http://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
+
+ [[2]] Deploy the current website
+ 
+   As above, deploy the web site if appropriate and update the project site for the
+   new release.
+
+ [[3]] Update the version tracking in JIRA
+
+ In the relevant project, go to Administration, then Versions. Mark
+ the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
+ been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+
+ [[4]] Create an announcement.
+
+   [[a]] Using Maven Changes Plugin
+
+   If you are releasing a plugin or a shared component you can let Maven Changes Plugin generate and send the
+   announcement for you. First make sure that you have configured the necessary
+   properties in your {{{../committer-settings.html}committer settings}}.
+
++------+
+cd target/checkout
+mvn changes:announcement-mail -Papache-release
++------+
+
+   If your SMTP server requires authentication you need to add the command line
+   options for it:
+ 
++------+
+cd target/checkout
+mvn changes:announcement-mail -Dchanges.username=<SMTP-USERNAME> -Dchanges.password=<SMTP-PASSWORD> -Papache-release
++------+
+
+   [[b]] Manually
+    
+   <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
+   the email to announce@maven.apache.org will bounce.
+
++-----+
+From: YOUR_APACHE_USERNAME@apache.org
+To: announce@maven.apache.org, users@maven.apache.org
+Cc: dev@maven.apache.org
+Subject: [ANN] Maven XXX Plugin Y.Z Released
+
+The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
+
+This plugin (insert short description of the plugin's purpose).
+
+http://maven.apache.org/plugins/maven-XXX-plugin/
+
+You should specify the version in your project's plugin configuration:
+
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-XXX-plugin</artifactId>
+  <version>Y.Z</version>
+</plugin>
+
+Release Notes - Maven 2.x XXX Plugin - Version Y.Z
+
+(Copy Here Release Notes in Text Format from JIRA)
+
+Enjoy,
+
+-The Maven team
+
++-----+
+
+   []
+
+ [[5]] Add the release to the next board report, in the private subversion area.
+
+ This is a PMC activity.  If you are not a PMC member then email the Developer's
+ list with a request to update this file for your release.
+
+ [[6]] If releasing the Apache Parent POM, notify release-discuss@apache.org
+
+ Several projects follow this list, and should be made aware of changes to the common parent.
+ This might also be a step to take if other shared resources are released, or if plugin releases are
+ of particular interest to that group.
+
+ [[7]] Celebrate :o)
+
+
+

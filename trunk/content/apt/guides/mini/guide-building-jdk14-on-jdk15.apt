@@ -1,0 +1,109 @@
+ ------
+ Guide to Building JDK 1.4 Projects Using JDK 1.5
+ ------
+ John Casey
+ ------
+ 2009-08-02
+ ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Guide to Building JDK 1.4 Projects Using JDK 1.5
+
+  Since Maven 2.2.0 requires Java 1.5 to execute, users who still require their projects to run on Java 1.4 or older
+  will need to make some adjustments.
+
+  Ideally, you could solve this problem by using JDK 1.4 to compile and test your project, by providing the appropriate
+  {{{./guide-using-toolchains.html}toolchains}} configuration. However, the current release of the {{{/plugins/maven-compiler-plugin}compiler plugin}}
+  (2.0.2) isn't toolchains-capable yet, so constructing a bullet-proof build using Maven 2.2.0 to target a Java platform older than 1.5
+  requires some more exotic configuration.
+
+*First Step: <<<Source>>> and <<<Target>>> Configurations
+
+  The first step to supporting JDKs older than 1.5 in your build is already done for you: setting the <<<source>>> and <<<target>>> API versions
+  in the configuration for the compiler plugin. Since JDK 1.5+ can still generate class files that are compliant with older JDKs, using this
+  default compiler-plugin setting will render project artifacts that are technically compatible with JVMs older than 1.5.
+
+  This is great, until someone sneaks a <<<String.contains( "foo" )>>> into the codebase. If that happens, your project will still build
+  successfully, and generate 1.4-compatible binaries. But try to execute your code in a 1.4 JVM, and you'll understand why the compiler
+  configuration alone isn't enough. To construct a build process targeting JVM 1.4 when the build tool requires JVM 1.5+, while still ensuring
+  the result of that build is safe to run on the 1.4 JVM, we need to use a tool that can verify the compatibility of our project code
+  against a given Java API specification version.
+
+*Enter the Animal Sniffer
+
+  Fortunately, there is a project at dev.java.net called {{{https://animal-sniffer.dev.java.net/signature-checker.html}Animal Sniffer}}
+  that does exactly what we need. This project can verify the compatibility of a codebase against a whole range of Java APIs. Even better,
+  it provides a Maven 2.x plugin to give users an easy way to integrate these checks into their build. To verify that your
+  codebase complies with JDK 1.4 API, you simply tell the animal sniffer plugin to use:
+
++---+
+<signature>
+  <groupId>org.jvnet.animal-sniffer</groupId>
+  <artifactId>java1.4</artifactId>
+  <version>1.0</version>
+</signature>
++---+
+
+*Sample Configuration
+
+  Putting it all together, the following example shows how you can be certain your project will run on the 1.4 JVM:
+
++---+
+<build>
+  <pluginManagement>
+    <plugins>
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>2.0.2</version>
+        <configuration>
+          <source>1.4</source>
+          <target>1.4</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </pluginManagement>
+
+  <plugins>
+    <plugin>
+      <groupId>org.jvnet</groupId>
+      <artifactId>animal-sniffer</artifactId>
+      <version>1.2</version>
+      <executions>
+        <execution>
+          <id>check-java-version</id>
+          <phase>compile</phase>
+          <goals>
+            <goal>check</goal>
+          </goals>
+          <configuration>
+            <signature>
+              <groupId>org.jvnet.animal-sniffer</groupId>
+              <artifactId>java1.4</artifactId>
+              <version>1.0</version>
+            </signature>
+          </configuration>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
++---+

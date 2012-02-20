@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
+  name="Maven">
+  <version position="none" />
+
+  <body>
+    <breadcrumbs>
+      <item name="Maven"  href="http://maven.apache.org/index.html" />
+    </breadcrumbs>
+
+    <menu name="Main">
+      <item name="Welcome" href="/index.html"/>
+    </menu>
+    <menu name="Get Maven">
+      <item name="Download" href="/download.html"/>
+      <item name="Release Notes (${currentStableVersion})" href="/docs/${currentStableVersion}/release-notes.html"/>
+      <item name="Release Notes (${current22xVersion})" href="/docs/${current22xVersion}/release-notes.html"/>
+      <item name="Release Notes (${current20xVersion})" href="/docs/${current20xVersion}/release-notes.html"/>
+      <item name="License" href="/license.html"/>
+    </menu>
+
+    <menu name="IDE Integration">
+      <item name="Eclipse" href="/eclipse-plugin.html"/>
+      <item name="NetBeans" href="/netbeans-module.html"/>
+    </menu>
+
+    <menu name="About Maven">
+      <item name="What is Maven?" href="/what-is-maven.html"/>
+      <item name="Features" href="/maven-features.html"/>
+      <item name="FAQ (official)" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
+      <item name="FAQ (unofficial)" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1"/>
+      <item name="Powered By" href="/powered-by-m2.html"/>
+    </menu>
+
+    <menu name="Documentation">
+      <item name="Maven Plugins" href="/plugins/index.html" />
+      <item name="Index (category)" href="/guides/index.html" />
+      <item name="Running Maven" href="/run-maven/index.html" />
+      <item name="User Centre" href="/users/index.html" collapse="true">
+        <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html" />
+        <item name="Getting Started Guide" href="/guides/getting-started/index.html" />
+        <!--
+        <item name="Build Cookbook" href="/users/cookbook/index.html"/>
+        -->
+        <item name="Getting Help" href="/users/getting-help.html"/>
+        <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
+        <item name="POM Reference" href="/pom.html" />
+      </item>
+      <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
+        <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
+        <item name="Mojo API" href="/developers/mojo-api-specification.html" />
+        <item name="Maven API" href="/ref/current/index.html"/>
+      </item>
+      <item name="Maven Repository Centre" href="/repository/index.html" collapse="true">
+      </item>
+      <item name="Maven Developer Centre" href="/developers/index.html"/>
+      <item name="Books and Resources" href="/articles.html" />
+      <item name="Wiki" href="http://docs.codehaus.org/display/MAVENUSER/Home" />
+    </menu>
+
+    <menu name="Community">
+      <item name="Community Overview" href="/community.html"/>
+      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
+      <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
+      <item name="Getting Help" href="/users/getting-help.html" />
+      <item name="Issue Tracking" href="/issue-tracking.html" />
+      <item name="Source Repository" href="/source-repository.html" />
+      <item name="The Maven Team" href="/team-list.html" />
+    </menu>
+  </body>
+</project>

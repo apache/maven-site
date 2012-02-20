@@ -1,0 +1,143 @@
+ ------
+ Guide to Using Toolchains
+ ------
+ Maria Odea Ching
+ ------
+ 25 July 2008
+ ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+
+Guide to Using Toolchains
+
+* What is Toolchains?
+
+  The Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build,
+  without the need to configure them. With toolchains, a project can now be built using a specific version of JDK independent
+  from the one Maven is running with. (Think how JDK versions can be set in IDEs like Idea, NetBeans and Eclipse)
+
+  Toolchains would only work in Maven 2.0.9 and higher versions. For more details about it's design and implementation,
+  please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
+
+  Below are the plugins which are toolchain-aware, meaning they can be used with toolchains:
+
+  [[1]] <<<maven-compiler-plugin-2.1>>>
+
+  [[2]] <<<maven-javadoc-plugin-2.5>>>
+
+  [[3]] <<<maven-surefire-plugin-2.5>>>
+
+  [[4]] <<<exec-maven-plugin-1.1.1>>> (Codehaus MOJO)
+
+* Using Toolchains in Your Project
+
+  There are two essential components that you need to configure in order to use toolchains. These are the
+  <<<{{{http://maven.apache.org/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>>
+  and the <<<toolchains.xml>>> file.
+
+  The <<<maven-toolchains-plugin>>> is the one that sets the toolchain to be used by the toolchain-aware plugins in your project.
+  For example, you want to use a different JDK version to build your project. You can configure the version you want to use
+  via this plugin as shown in the <<<pom.xml>>> below.
+
+-----
+<plugins>
+ ...
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-compiler-plugin</artifactId>
+    <version>2.1</version>
+  </plugin>
+  <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-toolchains-plugin</artifactId>
+    <version>1.0</version>
+    <executions>
+      <execution>
+        <phase>validate</phase>
+        <goals>
+          <goal>toolchain</goal>
+        </goals>
+      </execution>
+    </executions>
+    <configuration>
+      <toolchains>
+        <jdk>
+          <version>1.5</version>
+          <vendor>sun</vendor>
+        </jdk>
+      </toolchains>
+    </configuration>
+  </plugin>
+  ...
+</plugins>
+-----
+
+  As you can see in the example above, a JDK toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun" is to be used. Now how
+  does the plugin know where this JDK is installed? This is where the <<<toolchains.xml>>> file comes in.
+
+  The <<<toolchains.xml>>> file (see below) is the configuration file where you set the installation paths of your toolchains.
+  This file should be put in your <<<${user.home}/.m2>>> directory. When the <<<maven-toolchains-plugin>>> executes, the <<<maven-toolchain>>> component
+  used by the plugin would look for the <<<toolchains.xml>>> file, read it and look for the matching toolchain configured in the
+  plugin. In our example, that would be a JDK toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun". Once a match is found,
+  the plugin then sets the toolchain to be used in the MavenSession. As you can see in our <<<toolchains.xml>>> below, there is indeed a JDK
+  toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun" configured. So when the <<<maven-compiler-plugin>>> we've
+  configured in our <<<pom.xml>>> above executes, it would see that a JDK toolchain is set in the MavenSession and would thereby use
+  that toolchain (that would be the JDK installed at <<</path/to/jdk/1.5>>> for our example) to compile the sources.
+
+-----
+<?xml version="1.0" encoding="UTF8"?>
+<toolchains>
+  <toolchain>
+     <type>jdk</type>
+     <provides>
+         <version>1.5</version>
+	 <vendor>sun</vendor>
+	 <id>default</id>
+     </provides>
+     <configuration>
+        <jdkHome>/path/to/jdk/1.5</jdkHome>
+     </configuration>
+  </toolchain>
+  <toolchain>
+     <type>jdk</type>
+     <provides>
+         <version>1.6</version>
+	 <vendor>sun</vendor>
+	 <id>ide</id>
+     </provides>
+     <configuration>
+        <jdkHome>/path/to/jdk/1.6</jdkHome>
+     </configuration>
+  </toolchain>
+  <toolchain>
+     <type>netbeans</type>
+     <provides>
+         <version>5.5</version>
+     </provides>
+     <configuration>
+         <installDir>/path/to/netbeans/5.5</installDir>
+     </configuration>
+  </toolchain>
+</toolchains>
+-----
+
+  Note that you can configure as many toolchains as you want in your <<<toolchains.xml>>> file.

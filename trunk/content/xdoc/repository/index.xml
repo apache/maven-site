@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+
+<!--
+/*
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+-->
+
+<document>
+
+  <properties>
+    <title>Repository Centre</title>
+    <author email="brett_AT_apache_DOT_org">Brett Porter</author>
+    <author email="hboutemy_AT_apache_DOT_org">Hervé Boutemy</author>
+  </properties>
+
+  <body>
+
+    <section name="Maven Repository Centre">
+
+      <p>This documentation centre is for those that need to use or contribute to the Maven repository. This includes those
+    that need dependencies for their own build, notice errors in the repository metadata, or projects that wish to have
+    their releases added to the Maven repository.</p>
+
+<!-- TODO: tasks as buttons?
+     TODO: concepts
+     -->
+
+      <ul>
+        <li><a href="../project-faq.html">Maintaining your Metadata</a> - Information for third-party projects</li>
+
+        <li><a href="../guides/mini/guide-maven-evangelism.html">Guide to Maven Evangelism</a> - Helping to improve
+        the metadata of the dependencies you use</li>
+
+        <li><a href="../guides/mini/guide-central-repository-upload.html">Guide to uploading artifacts</a> - How to
+        get things uploaded to the repository</li>
+      </ul>
+
+<!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->
+
+      <p>
+        <img src="maven-repositories.png" width="735" height="591" border="0" usemap="#map" />
+
+        <map name="map">
+          <area shape="rect" coords="192,87,277,119"  alt="Apache"   href="http://repository.apache.org/content/groups/public/" />
+          <area shape="rect" coords="283,87,387,119"  alt="Codehaus" href="http://repository.codehaus.org/" />
+          <area shape="rect" coords="392,87,478,119"  alt="OSSRH"    href="http://nexus.sonatype.org/oss-repository-hosting.html" />
+          <area shape="rect" coords="544,87,621,119"  alt="java.net" href="http://download.java.net/maven/2/" />
+          <area shape="rect" coords="627,87,693,119"  alt="JBoss"    href="http://repository.jboss.org/maven2/" />
+          <area shape="rect" coords="384,247,445,284" alt="index"    href="/maven-indexer/" />
+          <area shape="rect" coords="173,313,304,346" alt="repo"     href="http://repo.maven.apache.org/maven2/" />
+          <area shape="rect" coords="332,344,372,376" alt="uk"       href="http://uk.maven.org/maven2/" />
+          <area shape="rect" coords="389,344,459,376" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
+          <area shape="rect" coords="305,313,523,391" alt="mirrors"  href="http://docs.codehaus.org/display/MAVENUSER/Mirrors+Repositories" />
+          <area shape="rect" coords="260,536,345,569" alt="Maven"    href="/what-is-maven.html" />
+          <area shape="rect" coords="347,567,463,589" alt="local repository"              href="/guides/mini/guide-configuring-maven.html" />
+          <area shape="rect" coords="434,450,625,482" alt="Repository Manager"            href="/repository-management.html" />
+          <area shape="rect" coords="354,493,491,530" alt="settings.xml &lt;mirrorOf&gt;" href="/guides/mini/guide-mirror-settings.html" />
+          <area shape="rect" coords="204,451,279,498" alt="central (default)"             href="/guides/introduction/introduction-to-the-pom.html" />
+          <area shape="rect" coords="0,1,734,85"      alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
+          <area shape="rect" coords="484,534,621,574" alt="pom.xml &lt;repository&gt;"    href="/guides/mini/guide-multiple-repositories.html" />
+        </map>
+      </p>
+    </section>
+  </body>
+</document>

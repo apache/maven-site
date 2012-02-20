@@ -1,0 +1,152 @@
+ ------
+ Guide to Mirror Settings
+ ------
+ Jason van Zyl
+ Brian Fox
+ ------
+ 2008-09-01
+ ------
+
+Using Mirrors for Repositories
+
+ Repositories are declared inside a project, which means that if you have your own custom repositories, those sharing
+ your project easily get the right settings out of the box. However, you may want to use an alternative mirror
+ for a particular repository without changing the project files.
+
+ Some reasons to use a mirror are:
+
+    * There is a synchronized mirror on the internet that is geographically closer and faster
+
+    * You want to replace a particular repository with your own internal repository which you have greater control over
+
+    * You want to run a repository manager to provide a local cache to a mirror and need to use its URL instead
+
+    []
+
+ To configure a mirror of a given repository, you provide it in your settings file (<<<$\{user.home\}/.m2/settings.xml>>>),
+ giving the new repository its
+ own <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a
+ mirror of. For example, the ID of the main Maven Central US repository included by default is <<<central>>>, so to use
+ the European Central instance, you would configure the following:
+
++-----+
+<settings>
+  ...
+  <mirrors>
+    <mirror>
+      <id>UK</id>
+      <name>UK Central</name>
+      <url>http://uk.maven.org/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+  ...
+</settings>
++-----+
+
+  Note that there can be at most one mirror for a given repository. In other words, you cannot map a single
+  repository to a group of mirrors that all define the same <<<\<mirrorOf\>>>> value. Maven will not aggregate the
+  mirrors but simply picks the first match. If you want to provide a combined view of several repositories, use a
+  {{{../../repository-management.html}repository manager}} instead.
+
+ The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
+ Model Website}}.
+
+ <<Note>>: The official Maven 2 repository is at <<<http://repo1.maven.org/maven2>>> hosted in the US, or <<<http://uk.maven.org/maven2>>> hosted in the UK. 
+ 
+ A list of known mirrors is available in the {{{http://repo1.maven.org/maven2/.meta/repository-metadata.xml}Repository Metadata}}. These 
+mirrors may not have the same contents and we don't support them in any way.
+
+Using A Single Repository
+
+  You can force Maven to use a single repository by having it mirror all repository requests. The repository must
+  contain all of the desired artifacts, or be able to proxy the requests to other repositories. This setting is most
+  useful when using an internal company repository with the Maven Repository Manager to proxy external requests.
+
+  To achieve this, set <<<mirrorOf>>> to <<<*>>>.
+
+  <<Note:>> This feature is only available in Maven 2.0.5+.
+
++-----+
+<settings>
+  ...
+  <mirrors>
+    <mirror>
+      <id>internal-repository</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://repo.mycompany.com/proxy</url>
+      <mirrorOf>*</mirrorOf>
+    </mirror>
+  </mirrors>
+  ...
+</settings>
++-----+
+
+Advanced Mirror Specification
+
+  A single mirror can handle multiple repositories when used in conjunction with a repository manager.
+
+  The syntax as of Maven 2.0.9:
+
+ * <<<\*>>> matches all repo ids.
+
+ * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used in conjunction
+  with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
+
+ * multiple repositories may be specified using a comma as the delimiter
+
+ * an exclamation mark may be used in conjunction with one of the above wildcards to exclude a repository id
+
+ []
+
+  The position of wildcards within a comma separated list of repository identifiers is not important as the wildcards
+  defer to further processing and explicit includes or excludes stop the processing, overruling any wildcard match.
+
+  When you use the advanced syntax and configure multiple mirrors, keep in mind that their declaration order matters.
+  When Maven looks for a mirror of some repository, it first checks for a mirror whose <<<\<mirrorOf\>>>> exactly
+  matches the repository identifier. If no direct match is found, Maven picks the first mirror declaration that matches
+  according to the rules above (if any). Hence, you may influence match order by changing the order of the definitions
+  in the <<<settings.xml>>>
+
+ Examples:
+
+ *  <<<\*>>> = everything
+
+ *  <<<external:\*>>> = everything not on the localhost and not file based.
+
+ *  <<<repo,repo1>>> = repo or repo1
+
+ *  <<<\*,!repo1>>> = everything except repo1
+
+ []
+
+ <<Note:>> This feature is only available in Maven 2.0.9+.
+
++-----+
+<settings>
+  ...
+  <mirrors>
+    <mirror>
+      <id>internal-repository</id>
+      <name>Maven Repository Manager running on repo.mycompany.com</name>
+      <url>http://repo.mycompany.com/proxy</url>
+      <mirrorOf>external:*,!foo</mirrorOf>
+    </mirror>
+    <mirror>
+      <id>foo-repository</id>
+      <name>Foo</name>
+      <url>http://repo.mycompany.com/foo</url>
+      <mirrorOf>foo</mirrorOf>
+    </mirror>
+  </mirrors>
+  ...
+</settings>
++-----+
+
+Creating Your Own Mirror
+
+  The central repository is over 180 GB and growing. To save us bandwidth and you time,
+  mirroring the entire central repository is not allowed. (Doing so will get you automatically banned) Instead, we suggest you setup a
+  {{{../../repository-management.html}repository manager}} as a proxy.
+
+  If you really want to become an official mirror, contact us at {{{https://issues.sonatype.org/browse/MVNCENTRAL}MVNCENTRAL}} with your location and we'll work to get you setup.

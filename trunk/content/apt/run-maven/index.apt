@@ -1,0 +1,113 @@
+ -----
+ Running Maven
+ -----
+ Brett Porter
+ -----
+ 3 November 2006
+ -----
+
+Building a Project with Maven
+
+  This document centre is for those that have the source code to a project that builds with Maven, and would like to
+  know how to use Maven to build it (or perform other common tasks).
+
+  The documents here are also helpful to new Maven users.
+
+~~TODO: tasks as buttons?
+
+  * {{{../download.html} Download and Install Maven}} - Download the latest version of Maven and install it
+
+  * {{{Quick_Start} Quick Start}} - Get started building the project quickly
+
+  * {{{../users/index.html} Use Maven}} - Learn how to use Maven on your own project
+
+~~TODO: command line reference?
+
+* {Quick Start}
+
+** Configuring Maven
+
+  Maven will run with sensible defaults, so you can get right into it. However, if you are operating under a
+  restricted environment or behind a firewall, you might need to prepare to run Maven, as it requires write access to
+  the home directory (<<<~/.m2>>> on Unix/Mac OS X and <<<C:\Documents and Settings\username\.m2>>> on Windows) and
+  network access to download binary dependencies.
+
+   * {{{../guides/mini/guide-configuring-maven.html} Configuring Maven}}
+
+   * {{{../guides/mini/guide-proxies.html} Configuring a HTTP Proxy}}
+
+** Building a Project
+
+  The vast majority of Maven-built projects can be built with the following command:
+
+----
+mvn clean install
+----
+
+  This command tells Maven to build all the modules, and to install it in the <local repository>. The local repository
+  is created in your home directory (or alternative location that you created it), and is the location that all
+  downloaded binaries and the projects you built are stored.
+
+  That's it! If you look in the <<<target>>> subdirectory, you should find the build output and the final library or
+  application that was being built.
+
+  <<Note:>> Some projects have multiple modules, so the library or application you are looking for may be in a module
+  subdirectory.
+
+  While this will build most projects and Maven encourages this standard convention, builds can be customisable. If this
+  does not suffice, please consult the project's documentation.
+
+** More than just the Build
+
+  Maven can do more than just build software - it can assist with testing, run web applications and produce reports on
+  projects, as well as any number of other tasks provided by plug-ins.
+
+** When Things go Wrong
+
+  The following are some common problems when building with Maven, and how to resolve them.
+
+*** Missing Dependencies
+
+  A missing dependency presents with an error like the following:
+
++-----+
+[INFO] Failed to resolve artifact.
+
+Missing:
+----------
+1) jnuit:junit:jar:3.8.1
+
+  Try downloading the file manually from the project website.
+
+  Then, install it using the command:
+      mvn install:install-file -DgroupId=jnuit -DartifactId=junit \
+          -Dversion=3.8.1 -Dpackaging=jar -Dfile=/path/to/file
+
+  Path to dependency:
+        1) org.apache.maven:maven:pom:2.1-SNAPSHOT
+        2) jnuit:junit:jar:3.8.1
+
+----------
+1 required artifact is missing.
+
+for artifact:
+  org.apache.maven:maven:pom:2.1-SNAPSHOT
+
+from the specified remote repositories:
+  central (http://repo1.maven.org/maven2)
++-----+
+
+  To resolve this issue, it depends on what the dependency is and why it is missing. The most common cause is because
+  it can not be redistributed from the repository and must be manually installed using the instructions given in the
+  message. This is most common with some older JARs from Sun (usually <<<javax.*>>> group IDs), and is further
+  documented in the {{{../guides/mini/guide-coping-with-sun-jars.html} Guide to Coping with Sun JARs}}.
+
+  You can check the list of repositories at the end of the error to ensure that the expected ones are listed - it may
+  be that the project requires an alternative repository that has not been declared properly or is not accessible with
+  your Maven configuration.
+
+  In other cases, it may be an incorrectly declared dependency (like the typo in the example above) which the project
+  would need to fix, like a compilation error.
+
+  ~~TODO: compilation errors
+  ~~TODO: what are other common problems?

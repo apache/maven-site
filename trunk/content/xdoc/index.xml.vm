@@ -1,0 +1,229 @@
+<?xml version="1.0"?>
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<document>
+  <properties>
+    <title>Welcome to Apache Maven</title>
+    <author email="brett@apache.org">Brett Porter</author>
+    <author email="jason@sonatype.com">Jason van Zyl</author>
+  </properties>
+  <body>
+
+    <!-- TODO: news? -->
+    <section name=""> <!-- valid xdoc needs at least a section -->
+    <div id="downloadbox">
+    <h5>Search Maven Sites</h5>
+<!-- Google CSE Search Box Begins  -->
+<form action="http://www.google.com/cse" id="searchbox_006660305041243700248:hyqtfwsewpm">
+  <input type="hidden" name="cx" value="006660305041243700248:hyqtfwsewpm" />
+  <input type="text" name="q" size="25" />
+  <input type="submit" name="sa" value="Search" />
+</form>
+<script type="text/javascript" src="http://www.google.com/coop/cse/brand?form=searchbox_006660305041243700248%3Ahyqtfwsewpm"></script>
+<!-- Google CSE Search Box Ends -->
+      <h5>Get Maven ${currentStableVersion}</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: ${currentStableReleaseDate}</span>
+      <p>
+        <a href="download.html">
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven ${currentStableVersion}"/>
+          Maven ${currentStableVersion}
+        </a>
+        <span style="font-size: smaller">
+          <br/>
+          <a href="docs/${currentStableVersion}/release-notes.html">Release Notes</a>,
+          <a href="download.html#Requirements">System Requirements</a>,
+          <a href="download.html#Installation">Installation Instructions</a>
+        </span>
+      </p>
+      <h5>ApacheCon NA 2011</h5>
+      <p>
+        <a href="http://www.apache.org/events/current-event.html" title="ApacheCon" class="poweredBy">
+          <img class="poweredBy"  alt="ApacheCon" src="http://www.apache.org/events/current-event-125x125.png"    />
+        </a>
+      </p>
+      <h5>Get Maven Ant Tasks</h5>
+      <span style="display: block; text-align: right; font-size: smaller">Released: ${currentAntTasksReleaseDate}</span>
+      <p>
+        <a href="ant-tasks/download.html">
+          <img src="images/folder-open.gif" border="0" alt="" title="Download Maven Tasks for Ant ${currentAntTasksVersion}"/>
+          Maven Tasks for Ant ${currentAntTasksVersion}
+        </a>
+        <span style="font-size: smaller">
+          <br/>
+          <a href="ant-tasks/release-notes.html">Release Notes</a>,
+          <a href="ant-tasks/index.html">Documentation</a>
+        </span>
+      </p>
+
+      <!-- TODO: we should use the SSI instead, but two things prevent it: a) the SSI's aren't working on apache.org yet so I can't test it; b) SSI's get eliminated from xdoc. For some reason even inside CDATA they are escaped. -->
+<!--
+      <h5>ApacheCon NA 2010</h5>
+      <iframe src="http://www.apache.org/ads/bannerbar.html" style="margin-left: -13px; margin-top: -3px; padding: 0" frameborder="0" scrolling="no" width="247" height="70"></iframe>
+      <ul><li><a href="http://na.apachecon.com/c/acna2010/sessions/628">Maven full-day training</a></li>
+      <li><a href="http://wiki.apache.org/apachecon/ApacheMeetupsNa10">Proposed Maven Meetup</a></li></ul>
+-->
+      <h5>Looking for Artifacts?</h5>
+      <p><a href="http://repository.sonatype.org">Search Central</a> and other Public Repositories.</p>
+      <h5>Looking for Repository Managers?</h5>
+      <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
+      <h5>Looking for CI Servers?</h5>
+      <p><a href="http://maven.apache.org/continuous-integration.html">Take a look</a> at the CI Servers available from the community.</p>
+      <h5>Looking for Code Quality Management tools?</h5>
+      <p><a href="http://maven.apache.org/code-quality-management.html">Take a look</a> at the Code Quality Management platforms available from the community.</p>
+
+      <h5>Supporting Maven</h5>
+      <p>We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank the sponsors of the Apache Software Foundation</a> for their support and assistance. To support the ASF, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.</p>
+    </div>
+    </section>
+
+    <section name="Welcome to Apache Maven">
+
+      <!-- TODO: I reckon it's time for a new description -->
+      <p>
+        Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
+        (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+      </p>
+      <p>
+        If you think that Maven could help your project, you can find out more information about in the "About Maven"
+        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a>,
+        a <a href="maven-features.html">list of some of its main features</a>, and a set of <a href="general.html">frequently
+        asked questions about what Maven is</a>.
+      </p>
+      <h3>Learning about Maven</h3>
+      <p>
+        <!-- TODO: this could be the big button type thing instead of a list of links -->
+        This site is separated into the following sections, depending on how you'd like to use Maven:
+      </p>
+      <!-- TODO: use CSS -->
+      <ul>
+        <li>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="run-maven/index.html">Run Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those needing to build a project that uses Maven
+          </span>
+        </li>
+        <li>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="users/index.html">Use Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those wanting to use Maven to build their project, including a "10 minute test" that gives a
+            practical overview of Maven's main features in just 10 minutes
+          </span>
+        </li>
+        <li>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="plugin-developers/index.html">Write Maven Plugins</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who may or may not be using Maven, but want to provide a plugin for shared
+            functionality or to accompany their own product or toolset
+          </span>
+        </li>
+        <li>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="repository/index.html">Improve the Maven Repository</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who may or may not use, but are interested in getting project metadata into the
+            repository
+          </span>
+        </li>
+        <li>
+          <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+            <a href="developers/index.html">Develop Maven</a>
+          </span>
+          <span style="display: block; margin-bottom: 0.5em">
+            Information for those who are currently developers, or who are interested
+            in contributing to the Maven project itself
+          </span>
+        </li>
+      </ul>
+      <p>
+        Each guide is divided into a number of trails to get you started on a particular topic, and includes a
+        reference area and a "cookbook" of common examples.
+      </p>
+      <p>
+        You can access the guides at any time from the left navigation.
+      </p>
+      <h3>Documentation Index</h3>
+      <p>
+        If you are looking for a quick reference, you can use the <a href="guides/index.html">documentation index.</a>
+<!-- TODO
+        If you are looking for a quick reference, you can use the documentation index. It is available in both
+        <a href="todo.html">alphabetical</a> and <a href="todo.html">categorical</a> listing formats.
+-->
+      </p>
+      <h3>Plugins</h3>
+<!-- TODO
+      <p>
+        Maven functionality is provided by plugins. For an explanation of how plugins work, and basic information on how
+        to use a plugin, see the <a href="todo.html">introduction to plugins</a> in the Users Centre.
+      </p>
+-->
+      <p>
+        For detailed information on just some of the plugins available for Maven, see the
+        <a href="plugins/index.html">plugin list</a>.
+      </p>
+<!-- TODO: Should these be here, or just in the user centre?
+      <h3>Converting from a different Build System</h3>
+      <p>
+        If you are currently using a different build system, there are options for converting from that to Maven 2
+        either partially or completely. These guides also give an overview of the differences between Maven and the
+        other build system. The following guides are available in the Users Centre:
+      </p>
+      <ul>
+        <li><a href="todo.html">Converting from Ant to Maven 2</a></li>
+        <li><a href="todo.html">Converting from Maven 1.x to Maven 2</a></li>
+        <li><a href="todo.html">Adding Maven 2 to an IDE based build</a></li>
+      </ul>
+-->
+      <h3>How to Get Support</h3>
+      <p>
+        Support for Maven is available in a variety of different forms.
+      </p>
+      <p>
+        To get started, search the documentation, the <a href="http://docs.codehaus.org/display/MAVENUSER">wiki</a>,
+        <a href="issue-tracking.html">issue tracker</a>, or the <a href="mail-lists.html">mailing list archives</a> to
+        see if the problem has been solved or reported before.
+      </p>
+      <p>
+        If the problem has not been reported before, the recommended way to get help is to
+        subscribe to the <a href="mail-lists.html">Maven Users Mailing list</a>. Many other users and Maven developers
+        will answer your questions there, and the answer will be archived for others in the future.
+      </p>
+      <p>
+        You can also reach the Maven developers on <a href="community.html">IRC</a>.
+      </p>
+
+      <h3>How can I help?</h3>
+      <p>
+        Maven is an open source community and welcomes contributions. If you'd like to get involved, see the
+        <a href="guides/development/guide-helping.html">Guide to helping with Maven</a>.
+      </p>
+      <p>
+        Maven is a part of the Apache Software Foundation. We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank
+        the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
+        foundation, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.
+      </p>
+    </section>
+  </body>
+</document>
