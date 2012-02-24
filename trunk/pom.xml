@@ -280,7 +280,9 @@
                   <goal>pdf</goal>
                 </goals>
                 <configuration>
-                  <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+                  <outputDirectory>${project.reporting.outputDirectory}</outputDirectory> 
+                  <siteDirectory>${basedir}/content</siteDirectory>
+                  <docDescriptor>${basedir}/content/pdf.xml</docDescriptor>
                 </configuration>
               </execution>
             </executions>
