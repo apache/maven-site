@@ -12,6 +12,7 @@
   archetype/maven-archetype-bundles
   archiva
   core-its
+# TODO: see how to manage Doxia, which has its own sub-site independendant from code
   doxia
   embedder
   enforcer
