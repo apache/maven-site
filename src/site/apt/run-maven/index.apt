@@ -94,7 +94,7 @@ for artifact:
   org.apache.maven:maven:pom:2.1-SNAPSHOT
 
 from the specified remote repositories:
-  central (http://repo1.maven.org/maven2)
+  central (http://repo.maven.apache.org/maven2)
 +-----+
 
   To resolve this issue, it depends on what the dependency is and why it is missing. The most common cause is because

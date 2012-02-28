@@ -20,7 +20,7 @@ Introduction to Repositories
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
  <<<file://>>> and <<<http://>>>. These repositories might be a truly remote repository
  set up by a third party to provide their artifacts for downloading (for example,
- {{{http://repo1.maven.org/maven2/}repo1.maven.org}} and {{{http://uk.maven.org/maven2/}uk.maven.org}} house Maven's central repository).
+ {{{http://repo.maven.apache.org/maven2/}repo.maven.apache.org}} and {{{http://uk.maven.org/maven2/}uk.maven.org}} house Maven's central repository).
  Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
@@ -65,7 +65,7 @@ Introduction to Repositories
 
  Downloading in Maven is triggered by a project declaring a dependency that is not present in the local
  repository (or for a <<<SNAPSHOT>>>, when the remote repository contains one that is newer).
- By default, Maven will download from the {{{http://repo1.maven.org/maven2/}central}} repository.
+ By default, Maven will download from the {{{http://repo.maven.apache.org/maven2/}central}} repository.
 
  To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}
 
@@ -119,7 +119,7 @@ Internal Repositories
 * Setting up the Internal Repository
 
  To set up an internal repository just requires that you have a place to put it, and then start copying
- required artifacts there using the same layout as in a remote repository such as {{{http://repo1.maven.org/maven2/}repo1.maven.org}}.
+ required artifacts there using the same layout as in a remote repository such as {{{http://repo.maven.apache.org/maven2/}repo.maven.apache.org}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
  of data there and doing so will get you banned. You can use a program such as those described on the {{{../../repository-management.html}Repository Management}} page to

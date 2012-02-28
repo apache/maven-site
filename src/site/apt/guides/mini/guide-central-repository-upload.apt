@@ -107,7 +107,7 @@ Guide to uploading artifacts to the Central Repository
  * What about artifacts that can't be distributed because of their license?
  
  In that case only the POM for that dependency is required, listing where the dependency can be downloaded from.
- {{{http://repo1.maven.org/maven2/javax/activation/activation/1.0.2/activation-1.0.2.pom}See an example}}.
+ {{{http://repo.maven.apache.org/maven2/javax/activation/activation/1.0.2/activation-1.0.2.pom}See an example}}.
 
  * I have a patched version of the foo project developed at foo.com, what <<<groupId>>> should I use?
 

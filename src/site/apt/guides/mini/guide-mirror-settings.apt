@@ -52,9 +52,9 @@ Using Mirrors for Repositories
  The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
  Model Website}}.
 
- <<Note>>: The official Maven 2 repository is at <<<http://repo1.maven.org/maven2>>> hosted in the US, or <<<http://uk.maven.org/maven2>>> hosted in the UK. 
+ <<Note>>: The official Maven 2 repository is at <<<http://repo.maven.apache.org/maven2>>> hosted in the US, or <<<http://uk.maven.org/maven2>>> hosted in the UK. 
  
- A list of known mirrors is available in the {{{http://repo1.maven.org/maven2/.meta/repository-metadata.xml}Repository Metadata}}. These 
+ A list of known mirrors is available in the {{{http://repo.maven.apache.org/maven2/.meta/repository-metadata.xml}Repository Metadata}}. These 
 mirrors may not have the same contents and we don't support them in any way.
 
 Using A Single Repository

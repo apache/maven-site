@@ -248,7 +248,7 @@ mvn jetty:run
 
   * <<mirrorOf>>:
   The <<<id>>> of the repository that this is a mirror of. For example, to point to a mirror
-  of the Maven <<<central>>> repository (<<<{{http://repo1.maven.org/maven2/}}>>>), set this element to
+  of the Maven <<<central>>> repository (<<<{{http://repo.maven.apache.org/maven2/}}>>>), set this element to
   <<<central>>>. More advanced mappings like <<<repo1,repo2>>> or <<<*,!inhouse>>> are also possible. This must not
   match the mirror <<<id>>>.
 
