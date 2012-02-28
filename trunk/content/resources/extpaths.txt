@@ -66,6 +66,7 @@
   plugins/maven-checkstyle-plugin-2.7
   plugins/maven-checkstyle-plugin-2.8
   plugins/maven-checkstyle-plugin-2.9
+  plugins/maven-checkstyle-plugin-2.9.1
   plugins/maven-clean-plugin
   plugins/maven-clean-plugin-2.3
   plugins/maven-clean-plugin-2.4
