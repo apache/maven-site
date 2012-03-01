@@ -230,8 +230,8 @@
               <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
             </configuration>
           </execution>
-        </executions>
-      </plugin-->
+        </executions-->
+      </plugin>
     </plugins>
   </build>
 
