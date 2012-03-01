@@ -219,7 +219,7 @@
         <configuration>
           <siteDirectory>${basedir}/content</siteDirectory>
         </configuration>
-        <executions>
+        <!--executions>
           <execution>
             <id>jar</id>
             <phase>site</phase>
@@ -231,7 +231,7 @@
             </configuration>
           </execution>
         </executions>
-      </plugin>
+      </plugin-->
     </plugins>
   </build>
 
