@@ -1,5 +1,6 @@
 # directories in /www/maven.apache.org/ but not in any svn tree: dtd, project, xsd
 # space indentation = directories not yet committed to svn production tree
+
   ant-tasks
   ant-tasks-2.0.10
   ant-tasks-2.1.2
