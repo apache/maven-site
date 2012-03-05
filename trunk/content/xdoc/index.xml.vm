@@ -96,7 +96,7 @@ under the License.
 <p>This text was edited and published through <a href="https://cms.apache.org/maventest/">the CMS web interface</a> and its bookmarklet to discover the source file. Great!</p>
       <!-- TODO: I reckon it's time for a new description -->
       <p>
-        Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
+        Apache Maven is THE software project management and comprehension tool. Based on the concept of a project object model
         (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
       </p>
       <p>
