@@ -32,4 +32,6 @@ Examples
 
   * {{{./injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
 
+  * {{{./maven-3-lifecycle-extensions.html}Maven 3 lifecycle extensions}}
+
   []

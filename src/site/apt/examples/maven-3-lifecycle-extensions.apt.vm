@@ -1,0 +1,144 @@
+  ---
+  Example: Maven 3 lifecycle extension
+  ---
+  Olivier Lamy
+  ---
+  2012-03-07
+  ---
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Example: Using Maven 3 lifecycle extension
+
+* Lifecyle Participation
+
+  You can extends the class <<<org.apache.maven.AbstractMavenLifecycleParticipant>>> see {{{http://maven.apache.org/ref/current/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html}javadoc}}.
+
+
+* Build your extension
+
+  Create a Maven project with a dependency on org.apache.maven:maven-core:${currentStableVersion} and other dependencies :
+
++---+
+    <groupId>org.apache.maven.extensions</groupId>
+    <artifactId>beer-maven-lifecycle</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>3.0.4</version>
+    </dependency>
+
+    <!-- dependency for plexus annotation -->
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-component-annotations</artifactId>
+      <version>1.5.5</version>
+      <exclusions>
+        <exclusion>
+          <groupId>junit</groupId>
+          <artifactId>junit</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
++---+
+
+  Create your extension class
+
++---+
+// your extension must be a "Plexus" component so mark it with the annotation
+@Component( role = AbstractMavenLifecycleParticipant.class, hint = "beer")
+public class BeerMavenLifecycleParticipant extends AbstractMavenLifecycleParticipant
+{
+
+    @Override
+    public void afterSessionStart( MavenSession session )
+        throws MavenExecutionException
+    {
+      // start the beer machine
+    }
+
+
+    @Override
+    public void afterProjectsRead( MavenSession session )
+        throws MavenExecutionException
+    {
+      // ask a beer to the machine
+    }
+
+}
++---+
+
+  Generate plexus metadatas during building your extension jar
+
++---+
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+        <version>1.5.5</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      ...
+    </plugins>
+    ...
+  </build>
++---+
+
+* Use your extension in your build(s)
+
+  You have two ways to use your extension within your builds:
+
+  * add your extension jar in $M2_HOME/lib/ext.
+
+  * add it as a build extension in your pom.
+
+  []
+
+  <<NOTE>>: if you use a build extension mechanism the method <<<afterSessionStart>>> <<won't be called>>
+
+  Use a extension in your project, declare as it in your pom:
+
++---+
+   <build>
+     ...
+     <extensions>
+       ...
+       <extension>
+         <groupId>org.apache.maven.extensions</groupId>
+         <artifactId>beer-maven-lifecycle</artifactId>
+         <version>1.0-SNAPSHOT</version>
+       </extension>
+       ...
+     </extensions>
+    ...
+   </build>
++---+
