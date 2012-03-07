@@ -46,4 +46,6 @@ Plugin Developers Centre
 
   * {{{../examples/injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
 
+  * {{{../examples/maven-3-lifecycle-extensions.html}Maven 3 lifecycle extensions}}
+
   []
