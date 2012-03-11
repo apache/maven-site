@@ -30,43 +30,6 @@ Introduction
 
  This document gives step-by-step instructions for deploying the Maven website {{{http://maven.apache.org}http://maven.apache.org}}.
 
-Prerequisite
-
- Be sure that:
-
- * you have all Maven servers defined in your <<<settings.xml>>>. For more information, please refer to
- {{{../committer-settings.html}Committer settings}}.
-
-Deploy Maven Website
-
- [[1]] Do a fresh check out of the Maven site, for example:
-
-+-----+
-$ svn checkout https://svn.apache.org/repos/asf/maven/site site
-+-----+
-
- [[2]] Execute the site goal
-
-+-----+
-site$ mvn site 
-+-----+
-
- [[3]] Verify the documentation before deploying
-
- You could also use the <stage> goal of the Maven Site Plugin to verify the site output. For instance:
-
-+-----+
-site$ mvn site:stage -DstagingDirectory=/tmp/maven-website
-+-----+
-
- [[4]] Deploy to people.apache.org
-
-+-----+
-site$ mvn site-deploy 
-+-----+
-
- It will copy the site to the <site.deploy.url> which is currently defined in the <<<pom.xml>>> as <scp://people.apache.org/www/maven.apache.org/>
-
- <<Note:>> It will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
-
- []
+ The Maven website is managed by {{{https://blogs.apache.org/infra/entry/the_asf_cms}ASF Content Management System}} into
+ {{{https://cms.apache.org/maventest/}maventest}}: you can edit sources
+ either directly into Maven site svn or through the CMS web ui, then the site staging and publication is done with the CMS.
