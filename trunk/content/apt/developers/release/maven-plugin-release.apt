@@ -57,6 +57,8 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maventest/latest/p
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
+   [[2]] declare the directory in {{{http://maventest.apache.org/extpaths.txt}extpaths.txt}} using the CMS, through the bookmarklet.
+
 * Deploying the release website
 
   After the release has passed, the site needs to be uploaded.
