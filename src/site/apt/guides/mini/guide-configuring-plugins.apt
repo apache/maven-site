@@ -99,8 +99,8 @@ Guide to Configuring Plug-ins
 
 * {Generic Configuration}
 
- Maven plugins (build and reporting) are configured by specifying a <<<\<configuration/\>>>> element where the child elements of the
- <<<\<configuration/\>>>> element are mapped to fields, or setters, inside your Mojo (remember that a plug-in consists of
+ Maven plugins (build and reporting) are configured by specifying a <<<\<configuration\>>>> element where the child elements of the
+ <<<\<configuration\>>>> element are mapped to fields, or setters, inside your Mojo (remember that a plug-in consists of
  one or more Mojos where a Mojo maps to a goal). Say, for example, we had a Mojo that performed a query against
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
@@ -169,7 +169,7 @@ public class MyQueryMojo
  the type of the field and determining if a suitable mapping is possible.
 
   For mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be
-  configured via system properties instead of a <<<\<configuration/\>>>> section in the POM. The plugin documentation
+  configured via system properties instead of a <<<\<configuration\>>>> section in the POM. The plugin documentation
   for those parameters will list an <expression> that denotes the system properties for the configuration. In the
   mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
   be specified by the system property <<<query.url>>> as shown below:
@@ -200,7 +200,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
 *** {Mapping Simple Objects}
 
-  Mapping simple types, like Boolean or Integer, is very simple. The <<<\<configuration/\>>>> element might look like
+  Mapping simple types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
   the following:
 
 +----+
@@ -385,9 +385,9 @@ public class MyAnimalMojo
 
 * {Configuring Build Plugins}
 
-  The following is only to configure Build plugins in the <<<\<build/\>>>> element.
+  The following is only to configure Build plugins in the <<<\<build\>>>> element.
 
-** {Using the <<<\<executions/\>>>> Tag}
+** {Using the <<<\<executions\>>>> Tag}
 
   You can also configure a mojo using the <<<\<executions\>>>> tag. This is most commonly used for mojos that are
   intended to participate in some phases of the {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}.
@@ -578,12 +578,12 @@ public class MyBindedQueryMojo
   outside of the executions section, it will apply globally to all invocations
   of the plugin.
 
-** {Using the <<<\<dependencies/\>>>> Tag}
+** {Using the <<<\<dependencies\>>>> Tag}
 
   You could configure the dependencies of the Build plugins, commonly to use a more recent dependency version.
 
   For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version
-  when running this plugin, you need to add <<<\<dependencies/\>>>> element like the following:
+  when running this plugin, you need to add <<<\<dependencies\>>>> element like the following:
 
 +----+
 <project>
@@ -614,10 +614,10 @@ public class MyBindedQueryMojo
 </project>
 +----+
 
-** {Using the <<<\<inherited/\>>>> Tag In Build Plugins}
+** {Using the <<<\<inherited\>>>> Tag In Build Plugins}
 
   By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could uses
-  the <<<\<inherited/\>>>> tag:
+  the <<<\<inherited\>>>> tag:
 
 +----+
 <project>
@@ -640,23 +640,23 @@ public class MyBindedQueryMojo
 
 * {Configuring Reporting Plugins}
 
-  The following is only to configure Reporting plugins in the <<<\<reporting/\>>>> element.
+  The following is only to configure Reporting plugins in the <<<\<reporting\>>>> element.
 
-** {Using the <<<\<reporting/\>>>> Tag VS <<<\<build/\>>>> Tag}
+** {Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}
 
-  Configuring a reporting plugin in the \<reporting/\> or \<build/\> elements in the pom have <<NOT>> the same behavior!
+  Configuring a reporting plugin in the \<reporting\> or \<build\> elements in the pom does <<NOT>> have the same behavior!
 
-  [<<<mvn site>>>] It uses <<only>> the parameters defined in the \<configuration/\> element of each reporting Plugin
-  specified in the \<reporting/\> element, i.e. <<<site>>> always <<ignores>> the parameters defined in the
-  \<configuration/\> element of each plugin specified in \<build/\>.
+  [<<<mvn site>>>] It uses <<only>> the parameters defined in the \<configuration\> element of each reporting Plugin
+  specified in the \<reporting\> element, i.e. <<<site>>> always <<ignores>> the parameters defined in the
+  \<configuration\> element of each plugin specified in \<build\>.
 
-  [<<<mvn aplugin:areportgoal>>>] It uses <<firstly>> the parameters defined in the \<configuration/\> element of each
-  reporting Plugin specified in the \<reporting/\> element; if a parameter is not found, it will look up to a parameter
-  defined in the \<configuration/\> element of each plugin specified in \<build/\>.
+  [<<<mvn aplugin:areportgoal>>>] It uses <<firstly>> the parameters defined in the \<configuration\> element of each
+  reporting Plugin specified in the \<reporting\> element; if a parameter is not found, it will look up to a parameter
+  defined in the \<configuration\> element of each plugin specified in \<build\>.
 
   []
 
-** {Using the <<<\<reportSets/\>>>> Tag}
+** {Using the <<<\<reportSets\>>>> Tag}
 
   You can configure a reporting plugin using the <<<\<reportSets\>>>> tag. This is most commonly used to generate
   reports selectively when running <<<mvn site>>>. The following will generate only the project team report.
@@ -700,9 +700,9 @@ public class MyBindedQueryMojo
 
   []
 
-** {Using the <<<\<inherited/\>>>> Tag In Reporting Plugins}
+** {Using the <<<\<inherited\>>>> Tag In Reporting Plugins}
 
-  Similar to the build plugins, to break the inheritance, you could uses the <<<\<inherited/\>>>> tag:
+  Similar to the build plugins, to break the inheritance, you can use the <<<\<inherited\>>>> tag:
 
 +----+
 <project>
