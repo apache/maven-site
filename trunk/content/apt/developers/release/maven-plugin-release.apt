@@ -72,7 +72,14 @@ svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/cont
        rm maven-XXX-plugin cp maven-XXX-plugin-Y.Z maven-XXX-plugin
 +-------+
 
-  [[b]] change symlink: TODO find an easy way to change a symlink created in svn, like https://svn.apache.org/repos/infra/websites/production/maventest/content/ant-tasks
+  [[b]] create/change symlink
+
++-------+
+svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
+       put =(printf "link maven-XXX-plugin-Y.Z") maven-XXX-plugin \
+       propset svn:special '*' maven-XXX-plugin
++-------+
+~~ see http://subversion.tigris.org/issues/show_bug.cgi?id=4142 for expected improvements
 
   []
 
