@@ -68,7 +68,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 
   TODO: make choice between multiple solutions:
 
-  [[a]] svn copy
+  [[a]] svn copy (joes thinks this choice is a bad idea)
 
 +-------+
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
