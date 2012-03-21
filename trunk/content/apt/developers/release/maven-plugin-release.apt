@@ -44,6 +44,9 @@ Releasing A Maven Plugin
    [[1]] Stage the documentation for the current release version (not the new snapshot).
 
 +------+
+joes writes: DO NOT USE production/maventest/latest for storing random stuff in SVN.
+If you MUST do this, use staging/maventest/latest .
+
 cd target/checkout
 mvn site-deploy -Preporting
 svn cp https://svn.apache.org/repos/infra/websites/production/maventest/latest/plugins/maven-XXX-plugin \
