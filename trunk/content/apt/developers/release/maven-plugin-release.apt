@@ -62,29 +62,23 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 
    [[2]] declare the directory in {{{/extpaths.txt}extpaths.txt}} using the CMS, through the bookmarklet.
 
-* Deploying the release website
+* Publishing the release website
 
-  After the release has passed, the site needs to be uploaded.
-
-  TODO: make choice between multiple solutions:
-
-  [[a]] svn copy (joes thinks this choice is a bad idea)
-
-+-------+
-svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
-       rm maven-XXX-plugin cp maven-XXX-plugin-Y.Z maven-XXX-plugin
-+-------+
-
-  [[b]] create/change symlink
+  After the release has passed, the site needs to be updated to point to the new release:
 
 +-------+
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
        put =(printf "link maven-XXX-plugin-Y.Z") maven-XXX-plugin \
        propset svn:special '*' maven-XXX-plugin
 +-------+
-~~ see http://subversion.tigris.org/issues/show_bug.cgi?id=4142 for expected improvements
 
-  []
+  Notice that {{{http://subversion.tigris.org/issues/show_bug.cgi?id=4142}an issue has been opened}} to add direct
+  symlink support to svnmucc, so the previous command should be in a near future:
+
++-------+
+svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
+       symlink maven-XXX-plugin maven-XXX-plugin-Y.Z
++-------+
 
 * Updating the Maven site
 
