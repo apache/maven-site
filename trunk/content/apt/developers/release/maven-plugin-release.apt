@@ -39,17 +39,14 @@ Releasing A Maven Plugin
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The plugin parent POM will be configured (TODO) to publish the documentation in Apache svn
-  https://svn.apache.org/repos/infra/websites/production/maventest/latest (directory name to be discussed to match the intent).
+  https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest.
 
    [[1]] Stage the documentation for the current release version (not the new snapshot).
 
 +------+
-joes writes: DO NOT USE production/maventest/latest for storing random stuff in SVN.
-If you MUST do this, use staging/maventest/latest .
-
 cd target/checkout
 mvn site-deploy -Preporting
-svn cp https://svn.apache.org/repos/infra/websites/production/maventest/latest/plugins/maven-XXX-plugin \
+svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest \
        https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
 +------+
 
@@ -60,7 +57,7 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maventest/latest/p
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
-   [[2]] declare the directory in {{{/extpaths.txt}extpaths.txt}} using the CMS, through the bookmarklet.
+   [[2]] declare the <<<plugins/maven-XXX-plugin-Y.Z>>> directory in {{{/extpaths.txt}extpaths.txt}} using the CMS, through the bookmarklet.
 
 * Publishing the release website
 
