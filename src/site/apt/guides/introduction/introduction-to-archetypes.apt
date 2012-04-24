@@ -71,6 +71,8 @@ mvn archetype:generate
 | maven-archetype-webapp      | An archetype which contains a sample Maven Webapp project. |
 *-----------------------------+----------------+
 
+  For more information on these archetypes, please refer the {{{http://maven.apache.org/archetype/maven-archetype-bundles/}Maven Archetypes page}}.
+
 * What makes up an Archetype?
 
  Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of
