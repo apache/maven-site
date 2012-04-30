@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2012-04-26
+ 2012-04-30
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -78,7 +78,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin-2.x/} <<<site>>>}} for Maven 2 | B          | 2.4          | 2012-04-26 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/branches/maven-site-plugin-2.x/}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-site-plugin/} <<<site>>>}} for Maven 2 & 3 | B          | 3.0          | 2011-08-02 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
+| {{{/plugins/maven-site-plugin/} <<<site>>>}} for Maven 2 & 3 | B          | 3.1          | 2012-04-30 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-surefire-plugin/} <<<surefire>>>}}         | B          | 2.12         | 2012-02-01 | Run the JUnit unit tests in an isolated classloader. | {{{http://svn.apache.org/repos/asf/maven/surefire/trunk/maven-surefire-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
