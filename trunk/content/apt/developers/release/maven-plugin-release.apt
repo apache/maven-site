@@ -45,7 +45,9 @@ Releasing A Maven Plugin
 
 +------+
 cd target/checkout
-mvn site-deploy -Preporting
+#mvn site-deploy -Preporting
+mvn -Preporting site site:stage scm-publish:publish-scm \
+    -Dscmpublish.pubScmUrl=https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest
 svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest \
        https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
 +------+
@@ -64,6 +66,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
   After the release has passed, the site needs to be updated to point to the new release:
 
 +-------+
+# just tested but could not make the following command work
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
        put =(printf "link maven-XXX-plugin-Y.Z") maven-XXX-plugin \
        propset svn:special '*' maven-XXX-plugin
@@ -83,7 +86,7 @@ svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/cont
 
 * idea to be developped if sufficient people is interested
 
-  Instead of doing command line svn and svnmucc operations and extpaths.txt edits, the staging/release operations could be available
+  Instead of doing command line svn and svnmucc operations and extpaths.txt edits, the staging/release operations could be automated
   as web ui like following:
 
   * http://cms.apache.org/maventest/release/plugins/maven-xxx-plugin-X.Y could display a page proposing to <<stage the release
