@@ -43,12 +43,12 @@ ant-tasks-2.1.3
   plugins/maven-archetype-plugin-2.0-alpha-4
   plugins/maven-assembly-plugin
   plugins/maven-assembly-plugin-2.1
-  plugins/maven-assembly-plugin-2.2
-  plugins/maven-assembly-plugin-2.2.1
-  plugins/maven-assembly-plugin-2.2.2
   plugins/maven-assembly-plugin-2.2-beta-1
   plugins/maven-assembly-plugin-2.2-beta-4
   plugins/maven-assembly-plugin-2.2-beta-5
+  plugins/maven-assembly-plugin-2.2
+  plugins/maven-assembly-plugin-2.2.1
+  plugins/maven-assembly-plugin-2.2.2
   plugins/maven-changelog-plugin
   plugins/maven-changelog-plugin-2.2
   plugins/maven-changes-plugin
@@ -59,7 +59,6 @@ ant-tasks-2.1.3
   plugins/maven-changes-plugin-2.4
   plugins/maven-changes-plugin-2.5
   plugins/maven-changes-plugin-2.6
-  plugins/maven-changes-plugin/xsd
   plugins/maven-checkstyle-plugin
   plugins/maven-checkstyle-plugin-2.2
   plugins/maven-checkstyle-plugin-2.3
@@ -94,7 +93,6 @@ plugins/maven-doap-plugin
 plugins/maven-doap-plugin-latest
 plugins/maven-doap-plugin-1.0
 plugins/maven-doap-plugin-1.1
-  plugins/maven-doap-plugin-1.1
   plugins/maven-docck-plugin
   plugins/maven-docck-plugin-1.0
   plugins/maven-ear-plugin
@@ -120,9 +118,6 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-enforcer-plugin
   plugins/maven-enforcer-plugin-1.0.1
   plugins/maven-failsafe-plugin
-  plugins/maven-failsafe-plugin-2.10
-  plugins/maven-failsafe-plugin-2.11
-  plugins/maven-failsafe-plugin-2.12
   plugins/maven-failsafe-plugin-2.5
   plugins/maven-failsafe-plugin-2.6
   plugins/maven-failsafe-plugin-2.7
@@ -131,6 +126,9 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-failsafe-plugin-2.8
   plugins/maven-failsafe-plugin-2.8.1
   plugins/maven-failsafe-plugin-2.9
+  plugins/maven-failsafe-plugin-2.10
+  plugins/maven-failsafe-plugin-2.11
+  plugins/maven-failsafe-plugin-2.12
   plugins/maven-gpg-plugin
   plugins/maven-gpg-plugin-1.0
   plugins/maven-gpg-plugin-1.1
@@ -205,9 +203,9 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-rar-plugin
   plugins/maven-reactor-plugin
   plugins/maven-release-plugin
-  plugins/maven-release-plugin-2.0
   plugins/maven-release-plugin-2.0-beta-8
   plugins/maven-release-plugin-2.0-beta-9
+  plugins/maven-release-plugin-2.0
   plugins/maven-release-plugin-2.1
   plugins/maven-release-plugin-2.2
   plugins/maven-release-plugin-2.2.1
@@ -234,17 +232,17 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-shade-plugin-1.4
   plugins/maven-shade-plugin-1.5
   plugins/maven-site-plugin
-  plugins/maven-site-plugin-2.0
-  plugins/maven-site-plugin-2.0.1
   plugins/maven-site-plugin-2.0-beta-5
   plugins/maven-site-plugin-2.0-beta-7
+  plugins/maven-site-plugin-2.0
+  plugins/maven-site-plugin-2.0.1
   plugins/maven-site-plugin-2.1
   plugins/maven-site-plugin-2.1.1
   plugins/maven-site-plugin-2.2
   plugins/maven-site-plugin-2.3
-  plugins/maven-site-plugin-3.0
   plugins/maven-site-plugin-3.0-beta-2
   plugins/maven-site-plugin-3.0-beta-3
+  plugins/maven-site-plugin-3.0
   plugins/maven-source-plugin
   plugins/maven-source-plugin-2.1
   plugins/maven-source-plugin-2.1.1
@@ -253,9 +251,6 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-stage-plugin-1.0-alpha-1
   plugins/maven-stage-plugin-1.0-alpha-2
   plugins/maven-surefire-plugin
-  plugins/maven-surefire-plugin-2.10
-  plugins/maven-surefire-plugin-2.11
-  plugins/maven-surefire-plugin-2.12
   plugins/maven-surefire-plugin-2.5
   plugins/maven-surefire-plugin-2.6
   plugins/maven-surefire-plugin-2.7
@@ -264,11 +259,11 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-surefire-plugin-2.8
   plugins/maven-surefire-plugin-2.8.1
   plugins/maven-surefire-plugin-2.9
+  plugins/maven-surefire-plugin-2.10
+  plugins/maven-surefire-plugin-2.11
+  plugins/maven-surefire-plugin-2.12
   plugins/maven-surefire-plugin-backup
   plugins/maven-surefire-report-plugin
-  plugins/maven-surefire-report-plugin-2.10
-  plugins/maven-surefire-report-plugin-2.11
-  plugins/maven-surefire-report-plugin-2.12
   plugins/maven-surefire-report-plugin-2.5
   plugins/maven-surefire-report-plugin-2.6
   plugins/maven-surefire-report-plugin-2.7
@@ -276,15 +271,18 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-surefire-report-plugin-2.7.2
   plugins/maven-surefire-report-plugin-2.8
   plugins/maven-surefire-report-plugin-2.9
+  plugins/maven-surefire-report-plugin-2.10
+  plugins/maven-surefire-report-plugin-2.11
+  plugins/maven-surefire-report-plugin-2.12
   plugins/maven-toolchains-plugin
   plugins/maven-toolchains-plugin-1.0
   plugins/maven-verifier-plugin
   plugins/maven-verifier-plugin-1.0
   plugins/maven-war-plugin
-  plugins/maven-war-plugin-2.1
-  plugins/maven-war-plugin-2.1.1
   plugins/maven-war-plugin-2.1-alpha-2
   plugins/maven-war-plugin-2.1-beta-1
+  plugins/maven-war-plugin-2.1
+  plugins/maven-war-plugin-2.1.1
   plugins/maven-war-plugin-2.2
   plugins-sandbox
   plugin-testing
