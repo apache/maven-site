@@ -237,17 +237,20 @@ plugins/maven-remote-resources-plugin-1.3
   plugins/maven-shade-plugin-1.4
   plugins/maven-shade-plugin-1.5
   plugins/maven-site-plugin
-  plugins/maven-site-plugin-2.0-beta-5
-  plugins/maven-site-plugin-2.0-beta-7
-  plugins/maven-site-plugin-2.0
-  plugins/maven-site-plugin-2.0.1
-  plugins/maven-site-plugin-2.1
-  plugins/maven-site-plugin-2.1.1
-  plugins/maven-site-plugin-2.2
-  plugins/maven-site-plugin-2.3
-  plugins/maven-site-plugin-3.0-beta-2
-  plugins/maven-site-plugin-3.0-beta-3
-  plugins/maven-site-plugin-3.0
+plugins/maven-site-plugin-latest
+plugins/maven-site-plugin-2.0-beta-5
+plugins/maven-site-plugin-2.0-beta-7
+plugins/maven-site-plugin-2.0
+plugins/maven-site-plugin-2.0.1
+plugins/maven-site-plugin-2.1
+plugins/maven-site-plugin-2.1.1
+plugins/maven-site-plugin-2.2
+plugins/maven-site-plugin-2.3
+plugins/maven-site-plugin-2.4
+plugins/maven-site-plugin-3.0-beta-2
+plugins/maven-site-plugin-3.0-beta-3
+plugins/maven-site-plugin-3.0
+plugins/maven-site-plugin-3.1
   plugins/maven-source-plugin
   plugins/maven-source-plugin-2.1
   plugins/maven-source-plugin-2.1.1
