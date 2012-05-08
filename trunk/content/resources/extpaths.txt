@@ -53,13 +53,15 @@ plugins/maven-antrun-plugin-1.7
   plugins/maven-changelog-plugin
   plugins/maven-changelog-plugin-2.2
   plugins/maven-changes-plugin
-  plugins/maven-changes-plugin-2.0
-  plugins/maven-changes-plugin-2.1
-  plugins/maven-changes-plugin-2.2
-  plugins/maven-changes-plugin-2.3
-  plugins/maven-changes-plugin-2.4
-  plugins/maven-changes-plugin-2.5
-  plugins/maven-changes-plugin-2.6
+plugins/maven-changes-plugin-latest
+plugins/maven-changes-plugin-2.0
+plugins/maven-changes-plugin-2.1
+plugins/maven-changes-plugin-2.2
+plugins/maven-changes-plugin-2.3
+plugins/maven-changes-plugin-2.4
+plugins/maven-changes-plugin-2.5
+plugins/maven-changes-plugin-2.6
+plugins/maven-changes-plugin-2.7
   plugins/maven-checkstyle-plugin
   plugins/maven-checkstyle-plugin-2.2
   plugins/maven-checkstyle-plugin-2.3
