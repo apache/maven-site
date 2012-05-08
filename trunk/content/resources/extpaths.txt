@@ -204,13 +204,15 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-rar-plugin
   plugins/maven-reactor-plugin
   plugins/maven-release-plugin
-  plugins/maven-release-plugin-2.0-beta-8
-  plugins/maven-release-plugin-2.0-beta-9
-  plugins/maven-release-plugin-2.0
-  plugins/maven-release-plugin-2.1
-  plugins/maven-release-plugin-2.2
-  plugins/maven-release-plugin-2.2.1
-  plugins/maven-release-plugin-2.2.2
+plugins/maven-release-plugin-latest
+plugins/maven-release-plugin-2.0-beta-8
+plugins/maven-release-plugin-2.0-beta-9
+plugins/maven-release-plugin-2.0
+plugins/maven-release-plugin-2.1
+plugins/maven-release-plugin-2.2
+plugins/maven-release-plugin-2.2.1
+plugins/maven-release-plugin-2.2.2
+plugins/maven-release-plugin-2.3
   plugins/maven-remote-resources-plugin
 plugins/maven-remote-resources-plugin-latest
 plugins/maven-remote-resources-plugin-1.1
