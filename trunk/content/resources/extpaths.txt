@@ -194,10 +194,11 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-plugin-plugin-2.9
   plugins/maven-plugins-21
   plugins/maven-pmd-plugin
-  plugins/maven-pmd-plugin-2.5
-  plugins/maven-pmd-plugin-2.6
-  plugins/maven-pmd-plugin-2.7
-  plugins/maven-pmd-plugin-2.7.1
+plugins/maven-pmd-plugin-latest
+plugins/maven-pmd-plugin-2.5
+plugins/maven-pmd-plugin-2.6
+plugins/maven-pmd-plugin-2.7
+plugins/maven-pmd-plugin-2.7.1
   plugins/maven-project-info-reports-plugin
   plugins/maven-project-info-reports-plugin-2.1
   plugins/maven-project-info-reports-plugin-2.1.1
