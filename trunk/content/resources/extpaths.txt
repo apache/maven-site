@@ -212,9 +212,11 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-release-plugin-2.2.1
   plugins/maven-release-plugin-2.2.2
   plugins/maven-remote-resources-plugin
-  plugins/maven-remote-resources-plugin-1.1
-  plugins/maven-remote-resources-plugin-1.2
-  plugins/maven-remote-resources-plugin-1.2.1
+plugins/maven-remote-resources-plugin-latest
+plugins/maven-remote-resources-plugin-1.1
+plugins/maven-remote-resources-plugin-1.2
+plugins/maven-remote-resources-plugin-1.2.1
+plugins/maven-remote-resources-plugin-1.3
   plugins/maven-repository-plugin
   plugins/maven-repository-plugin-2.3
   plugins/maven-repository-plugin-2.3.1
