@@ -96,6 +96,7 @@ http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=XXX&status=1
 
 Staging repo:
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
+https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/[PATH-TO]-source-release.zip
 
 Staging site:
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
