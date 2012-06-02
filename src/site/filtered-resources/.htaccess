@@ -55,6 +55,7 @@ RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ http://maven.apache.org
 RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ http://maven.apache.org/plugin-tools/maven-plugin-plugin/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
+RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ http://maven.apache.org/plugin-tools/$1
 
 RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/$1
 RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
