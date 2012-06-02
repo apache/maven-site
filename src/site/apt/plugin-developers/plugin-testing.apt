@@ -59,7 +59,7 @@ Unit Tests
 
 * maven-plugin-testing-harness
 
- The {{{https://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
+ The {{{/plugin-testing/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
  is explicitly intended to test the <<<org.apache.maven.reporting.AbstractMavenReport#execute()>>> implementation.
 
  In general, you need to include <<<maven-plugin-testing-harness>>> as dependency, and create a *MojoTest (by convention)
