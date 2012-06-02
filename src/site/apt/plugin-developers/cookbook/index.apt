@@ -44,6 +44,8 @@ Maven Plugins Cookbook
 
   * {{{./generate-assembly.html}How to generate assembly?}}
 
+  * {{{./plexus-plugin-upgrade.html}How to upgrade from Plexus javadoc tags to Plexus Java annotations?}}
+
   []
 
 * Other Resources

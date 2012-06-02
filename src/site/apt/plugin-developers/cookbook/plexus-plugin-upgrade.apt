@@ -1,0 +1,159 @@
+ -----
+ Cookbook - How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations
+ -----
+ Hervé Boutemy
+ -----
+ 2012-06-02
+ -----
+
+Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
+
+* Summary
+
+  This recipe describes how to upgrade from Plexus Javadoc Tags to Plexus Java Annotations, in 2 steps:
+
+  [[1]] replace the deprecated {{{http://plexus.codehaus.org/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}}
+  with its successor: {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}},
+
+  [[2]] update sources with {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/}Java Annotations for Plexus}}.
+
+  []
+
+* Prerequisite Plugins
+
+  Here is the list of the plugins used:
+
+*--------------------------------------------------------------------------------------------------------------+--------------+
+|| <<Plugin>>                                                                                                  || <<Version>>
+*--------------------------------------------------------------------------------------------------------------+--------------+
+| {{{http://plexus.codehaus.org/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}}                               | 1.3.8
+*--------------------------------------------------------------------------------------------------------------+--------------+
+| {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}} | 1.5.5
+*--------------------------------------------------------------------------------------------------------------+--------------+
+
+* Equivalence Table
+
+*---------*---------------------------------------------------------------------------------------------------------*--------------*
+||        || {{{http://plexus.codehaus.org/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}}                         || {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}}
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+||        | {{{http://plexus.codehaus.org/plexus-maven-plugin/plugin-info.html}plugin info}}                        | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/plugin-info.html}plugin info}}
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+|| latest | 1.3.8                                                                                                   | 1.5.5
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+|| phase  | process-sources                                                                                         | process-classes
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+|| goals  | {{{http://plexus.codehaus.org/plexus-maven-plugin/descriptor-mojo.html}<<<descriptor>>>}}               | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/generate-metadata-mojo.html}<<<generate-metadata>>>}}
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+||        | {{{http://plexus.codehaus.org/plexus-maven-plugin/merge-descriptors-mojo.html}<<<merge-descriptors>>>}} | see <<<staticMetadataDirectory>>> parameter \
+||        |                                                                                                         | default: <<<$\{basedir}/src/main/resources/META-INF/plexus>>>
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+||        | {{{http://plexus.codehaus.org/plexus-maven-plugin/test-descriptors-mojo.html}<<<test-descriptors>>>}}   | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/generate-test-metadata-mojo.html}<<<generate-test-metadata>>>}}
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+||        | {{{http://plexus.codehaus.org/plexus-maven-plugin/merge-test-descriptors-mojo.html}<<<merge-test-descriptors>>>}} | see <<<testStaticMetadataDirectory>>> parameter \
+||        |                                                                                                         | default: <<<$\{basedir}/src/test/resources/META-INF/plexus>>>
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+|| source annotations | javadoc tags: \
+||        |                                                                                                         | javadoc tags + {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/}<<<plexus-component-annotations>>>}} Java 5 annotations:\
+||        |  <<<@plexus.component>>>, <<<@plexus.requirement>>>, <<<@plexus.configuration>>> \
+||        |                                                                                                         | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Component.html}<<<@Component>>>}},
+||        |                                                                                                         | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Requirement.html}<<<@Requirement>>>}},
+||        |                                                                                                         | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Configuration.html}<<<@Configuration>>>}},
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
+
+
+* Recipe
+
+** Plugin Configuration
+
+ In your <<<pom.xml>>>, replace <<<plexus-maven-plugin>>> configuration:
+
++---------+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-maven-plugin</artifactId>
+        <version>1.3.8</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>descriptor</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+  </build>
+</project>
++---------+
+
+ with corresponding <<<plexus-component-metadata>>> configuration:
+
++---------+
+<project>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.plexus</groupId>
+        <artifactId>plexus-component-metadata</artifactId>
+        <version>1.5.5</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>generate-metadata</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+  </build>
+</project>
++---------+
+
+ If <<<merge-descriptors>>> is used, move the handwritten xml file to <<<$\{basedir}/src/main/resources/META-INF/plexus>>>.
+
+** Replacing Plexus Javadoc Tags with Plexus Java 5 Annotations
+
+ In your <<<pom.xml>>>, add <<<plexus-component-annotations>>> dependency:
+
++---------+
+<project>
+  <dependencies>
+    <dependency>
+      <groupId>org.codehaus.plexus</groupId>
+      <artifactId>plexus-component-annotations</artifactId>
+      <version>1.5.5</version>
+    </dependency>
+  </dependencies>
+</project>
++---------+
+
+ In your java sources, replace javadoc tags:
+
++---------+
+/**
+ * @plexus.component role="foo.MyComponent" role-hint="hint-value"
+ */
+public class MyComponentImplementation
+    implements MyComponent
+{
+    /**
+     * @plexus.requirement
+     */
+    private InjectedComponent;
+}
++---------+
+
+ with corresponding Java 5 annotations
+
++---------+
+import org.codehaus.plexus.component.annotations.Component;
+import org.codehaus.plexus.component.annotations.Requirement;
+
+@Component( role = MyComponent.class, hint = "hint-value" )
+public class MyComponentImplementation
+    implements MyComponent
+{
+    @Requirement
+    private InjectedComponent;
+}
++---------+
