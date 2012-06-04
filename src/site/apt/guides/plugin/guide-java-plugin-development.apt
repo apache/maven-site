@@ -71,7 +71,7 @@ public class GreetingMojo extends AbstractMojo
 {
     public void execute() throws MojoExecutionException
     {
-        getLog().info("Hello, world.");
+        getLog().info( "Hello, world." );
     }
 }
 +---+
@@ -133,11 +133,14 @@ public class GreetingMojo extends AbstractMojo
 +----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>sample.plugin</groupId>
   <artifactId>hello-maven-plugin</artifactId>
-  <packaging>maven-plugin</packaging>
   <version>1.0-SNAPSHOT</version>
+  <packaging>maven-plugin</packaging>
+
   <name>Sample Parameter-less Maven Plugin</name>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
@@ -189,7 +192,7 @@ public class GreetingMojo extends AbstractMojo
   And, you need to specify a fully-qualified goal in the form of:
 
 +----+
-mvn groupID:artifactID:version:goal
+mvn groupId:artifactId:version:goal
 +----+
 
   For example, to run the simple mojo in the sample plugin, you would enter
