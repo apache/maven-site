@@ -31,6 +31,10 @@ under the License.
   <head>
     <title>Page Not Found</title>
     <base href="http://maven.apache.org/errors" />
+    <!-- need to import styles by hand since the generated html has them relative and before the base tag -->
+    <link rel="stylesheet" href="http://maven.apache.org/css/maven-base.css" type="text/css" />
+    <link rel="stylesheet" href="http://maven.apache.org/css/maven-theme.css" type="text/css" />
+    <link rel="stylesheet" href="http://maven.apache.org/css/site.css" type="text/css" />
   </head>
 
   <body>
