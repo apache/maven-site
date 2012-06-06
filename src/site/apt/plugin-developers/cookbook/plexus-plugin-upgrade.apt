@@ -48,9 +48,9 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 |         | {{{http://plexus.codehaus.org/plexus-maven-plugin/merge-descriptors-mojo.html}<<<merge-descriptors>>>}} | see <<<staticMetadataDirectory>>> parameter \
 |         |                                                                                                         | default: <<<$\{basedir}/src/main/resources/META-INF/plexus>>>
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
-|         | {{{http://plexus.codehaus.org/plexus-maven-plugin/test-descriptors-mojo.html}<<<test-descriptors>>>}}   | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/generate-test-metadata-mojo.html}<<<generate-test-metadata>>>}}
+|         | {{{http://plexus.codehaus.org/plexus-maven-plugin/test-descriptor-mojo.html}<<<test-descriptor>>>}}     | {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/generate-test-metadata-mojo.html}<<<generate-test-metadata>>>}}
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
-|         | {{{http://plexus.codehaus.org/plexus-maven-plugin/merge-test-descriptors-mojo.html}<<<merge-test-descriptors>>>}} | see <<<testStaticMetadataDirectory>>> parameter \
+|         | {{{http://plexus.codehaus.org/plexus-maven-plugin/test-merge-descriptors-mojo.html}<<<test-merge-descriptors>>>}} | see <<<testStaticMetadataDirectory>>> parameter \
 |         |                                                                                                         | default: <<<$\{basedir}/src/test/resources/META-INF/plexus>>>
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
 || source annotations | javadoc tags: \
