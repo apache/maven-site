@@ -1230,7 +1230,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 +-------------------------+
 <licenses>
   <license>
-    <name>Apache 2</name>
+    <name>The Apache Software License, Version 2.0</name>
     <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
     <distribution>repo</distribution>
     <comments>A business-friendly OSS license</comments>
