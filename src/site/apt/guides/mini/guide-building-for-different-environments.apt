@@ -24,8 +24,7 @@ Building For Different Environments with Maven 2
   
   
   This example assume the use of the
-     {{{../introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}. Also available
-     for download is a {{{http://www.codehaus.org/~trygvis/static/2006/simpleenvironment.tar.gz} fully-working example project}}.
+     {{{../introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}.
   
 ----
 pom.xml
@@ -47,9 +46,7 @@ src/
  * <<<environment.prod.properties>>> - This is basically the same as the test variant and will be used in the
    production environment.
 
- In the project descriptor, you need to configure the different profiles. Only the test profile is showed here, see the
-   {{{http://www.codehaus.org/~trygvis/static/2006/simpleenvironment.tar.gz} accompanying source code}} for the full
-   pom.xml.
+ In the project descriptor, you need to configure the different profiles. Only the test profile is showed here.
 
 ----
  <profiles>
@@ -141,8 +138,4 @@ Resources
    [[1]] {{{../introduction/introduction-to-profiles.html}Introduction to Build Profiles}}
 
    [[2]] {{{../introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}
-
-   [[3]] {{{http://www.codehaus.org/~trygvis/static/2006/simpleenvironment.tar.gz} The accompanying source code}}
-
- ~~{{{http://blogs.codehaus.org/mt-tb.cgi?__mode=view&entry_id=1296}TrackBack}}
 
