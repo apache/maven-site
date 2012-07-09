@@ -51,6 +51,8 @@ Download Maven ${currentStableVersion}
    before using this version to avoid surprises. While Maven 3 aims to be backward-compatible with Maven 2.x to the
    extent possible, there are still a few significant changes.
 
+   <<NOTE>> Following links will list to you various available mirrors. <<DO NOT USE>> those links directly.
+
 *-------------------------+---------+----------+-----------+
 |                         | Mirrors | Checksum | Signature |
 *-------------------------+---------+----------+-----------+
