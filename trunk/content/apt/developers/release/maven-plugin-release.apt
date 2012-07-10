@@ -65,6 +65,8 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 
   After the release has passed, the site needs to be updated to point to the new release:
 
+TODO: choose between htaccess rewrite rule and following svn symlink:
+
 +-------+
 # just tested but could not make the following command work
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
