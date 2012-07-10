@@ -51,6 +51,7 @@ RedirectMatch permanent ^/archiva(.*)$ http://archiva.apache.org$1
 RedirectMatch permanent ^/continuum(.*)$ http://continuum.apache.org$1
 RedirectMatch permanent ^/maven-archetype/(.*)$ /archetype/$1
 RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ http://maven.apache.org/archetype/maven-archetype-plugin/$1
+#RedirectMatch permanent ^/plugins/maven-enforcer-plugin/(.*)$ http://maven.apache.org/enforcer/maven-enforcer-plugin/$1
 RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ http://maven.apache.org/scm/maven-scm-plugin/$1
 RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ http://maven.apache.org/plugin-tools/maven-plugin-plugin/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
