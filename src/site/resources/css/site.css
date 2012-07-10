@@ -1,0 +1,38 @@
+a.externalLink, a.externalLink:link, a.externalLink:visited, a.externalLink:active, a.externalLink:hover {
+  background: none;
+  padding-right: 0;
+}
+
+body ul {
+  list-style-type: square;
+}
+
+#downloadbox {
+  float: right;
+  margin-left: 2em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+  border: 1px solid #999;
+  background-color: #eee;
+  width: 17.5em;
+}
+
+#downloadbox h5 {
+  color: #000;
+  margin: 0;
+  border-bottom: 1px solid #aaaaaa;
+  font-size: smaller;
+  padding: 0;
+  margin-top: 1em;
+}
+
+#downloadbox p {
+  margin-top: 1em;
+  margin-bottom: 0;
+}
+
+#downloadbox li {
+  text-indent: inherit;
+}
+

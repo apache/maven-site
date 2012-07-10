@@ -22,7 +22,7 @@ Skins
 *-------------------------------------------------------------------+--------------+------------------+
 | {{{/skins/maven-stylus-skin/} <<<Maven Stylus Skin>>>}}           | 1.4          | The skin used for the website of Maven itself.
 *-------------------------------------------------------------------+--------------+------------------+
-| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.2.2        | Skin based on bootstrap css
+| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.2.1        | Skin based on bootstrap css
 *-------------------------------------------------------------------+--------------+------------------+
 
   To use one of these skins in your project, you use the <<<skin>>> element of the

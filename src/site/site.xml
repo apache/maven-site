@@ -20,23 +20,11 @@ under the License.
 -->
 
 
-<project xmlns="http://maven.apache.org/DECORATION/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.1.0 http://maven.apache.org/xsd/decoration-1.1.0.xsd"
+<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd"
   name="Maven">
   <version position="none" />
-
-  <skin>
-    <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-fluido-skin</artifactId>
-    <version>1.0</version>
-  </skin>
-
-  <custom>
-    <fluidoSkin>
-      <topBarEnabled>true</topBarEnabled>
-      <sideBarEnabled>false</sideBarEnabled>
-    </fluidoSkin>
-  </custom>
 
   <body>
     <breadcrumbs>
@@ -57,6 +45,14 @@ under the License.
     <menu name="IDE Integration">
       <item name="Eclipse" href="/eclipse-plugin.html"/>
       <item name="NetBeans" href="/netbeans-module.html"/>
+    </menu>
+
+    <menu name="About Maven">
+      <item name="What is Maven?" href="/what-is-maven.html"/>
+      <item name="Features" href="/maven-features.html"/>
+      <item name="FAQ (official)" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
+      <item name="FAQ (unofficial)" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1"/>
+      <item name="Powered By" href="/powered-by-m2.html"/>
     </menu>
 
     <menu name="Documentation">
@@ -94,10 +90,5 @@ under the License.
       <item name="Source Repository" href="/source-repository.html" />
       <item name="The Maven Team" href="/team-list.html" />
     </menu>
-
-    <footer>
-      <div class="row span16">Apache Maven, Apache, the Apache feather logo, and the Apache Maven project logos are trademarks of The Apache Software Foundation.
-      All other marks mentioned may be trademarks or registered trademarks of their respective owners.</div>
-    </footer>
   </body>
 </project>
