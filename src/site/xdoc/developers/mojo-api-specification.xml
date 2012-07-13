@@ -326,6 +326,9 @@ under the License.
         <b>someOtherElement (@annotation &lt;rawAnnotationValue&gt;)</b>
         .
       </p>
+      <p><b>NOTE:</b> since maven-plugin-plugin 3.0 is now possible to use java1.5 annotations.
+        See <a href="http://maven.apache.org/plugin-tools/maven-plugin-plugin/examples/using-annotations.html">Using annotations.</a>
+      </p>
       <p>The plugin descriptor must be provided in a jar resource with the
         path:
         <code>META-INF/maven/plugin.xml</code>
