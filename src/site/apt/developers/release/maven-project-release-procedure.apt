@@ -171,7 +171,20 @@ I will promote the artifacts to the central repo.
  the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
  been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
- [[4]] Create an announcement.
+ [[4]] Wait for everything to sync
+
+   [[a]] Sync to Maven Central
+
+     The sync into central staging from repository.apache.org occurs every 4 hours. 
+     There is a separate hourly schedule that runs which pushes from staging to the other central machines, and then updates the indexes.
+
+   [[b]] Sync to Maven Website
+
+     Until the svnpubsub work is complete, the deployment of the Maven website will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
+
+   []
+
+ [[5]] Create an announcement.
 
    [[a]] Using Maven Changes Plugin
 
