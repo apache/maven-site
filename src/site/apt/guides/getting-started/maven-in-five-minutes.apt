@@ -10,7 +10,8 @@ Maven in 5 Minutes
 
 * Installation
 
-  <Maven is a Java tool, so you must have {{{http://java.sun.com}Java}} installed in order to proceed.>
+  <Maven is a Java tool, so you must have {{{http://www.oracle.com/technetwork/java/javase/downloads/index.html}Java}}
+ installed in order to proceed.>
 
   First, {{{../../download.html}download Maven}} and follow the {{{../../download.html#Installation}installation instructions}}.
   After that, type the following in a terminal or in a command prompt:
@@ -32,6 +33,9 @@ OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 
   Depending upon your network setup, you may require extra configuration. Check out the
   {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
+
+  <<If you are using Windows, you should look at>> {{{./windows-prerequisites.html}Windows Prerequisites}}
+  <<to ensure that you are prepared to use Maven on Windows.>>
 
 * Creating a Project
 

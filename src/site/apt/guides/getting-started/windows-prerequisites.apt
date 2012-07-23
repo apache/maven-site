@@ -1,0 +1,44 @@
+ ----
+ Maven on Windows
+ -----
+ Benson Margulies
+ -----
+ July 2012
+ -----
+
+Maven on Windows
+
+  Maven is a command-line tool for building Java (and other) programs. The Maven project provides a simple ZIP 
+  file containing a precompiled version of Maven for your convenience. There is no installer. It's up to you
+  to set up your prerequisites and environment to run Maven on Windows.
+
+* Spaces in Pathnames
+
+  Maven, like many cross-platform tools, can encounter problems when there are space characters in important pathnames.
+  The instructions below will remind you of this for several particular items.
+
+* Prerequisites
+
+  Maven is written in Java (and primarily used to build Java programs). Thus, the major prerequisite is the Java SDK.
+  You need to install the Java SDK (e.g. from {{http://www.oracle.com/technetwork/java/javase/downloads/index.html}
+  Oracle's download site}}, and you should install it to a pathname without spaces, such as <<<c:\j2se1.6>>>.
+
+  Once Java is installed, you must ensure that the commands from the Java SDK are in your PATH environment variable.
+  Running, for example,
+
++-------+
+java -version
++-------+
+
+  must show the right version number.
+
+* Maven Unpacked
+
+  You need to unpack the Maven distribution. Don't unpack it in the middle of your source code; pick some location
+  (with no spaces in the path!) and unpack it there. Let's assume that the path is <<<c:\mvn3.0.4>>>.
+
+* Maven in PATH
+
+  You run Maven by invoking a command-line tool: <<<mvn.bat>>> from the <<<bin>>> directory of the Maven. To do this conveniently,
+  <<<c:\mvn3.0.4\bin>>> must be in your PATH, just like the J2SE SDK commands. You can add directories to your PATH
+  in the control panel; the details vary by Windows version.
