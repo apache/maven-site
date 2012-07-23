@@ -8,6 +8,12 @@
 
 Maven in 5 Minutes
 
+* Prerequisites
+
+  You must have an understanding of how to install software on your computer.
+  If you do not know how to do this, please ask someone at your office, school, etc 
+  or pay someone to explain this to you. The Maven mailing lists are not the best place to ask for this advice.
+
 * Installation
 
   <Maven is a Java tool, so you must have {{{http://www.oracle.com/technetwork/java/javase/downloads/index.html}Java}}
@@ -39,6 +45,7 @@ OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 
 * Creating a Project
 
+  You will need somewhere for your project to reside, create a directory somewhere and start a shell in that directory.
   On your command line, execute the following Maven goal:
 
 +-----+
