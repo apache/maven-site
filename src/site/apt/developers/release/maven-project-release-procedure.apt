@@ -55,8 +55,8 @@ Performing a Maven Project Release
 
 * Consider updating the parent versions
 
-  If the item you are planning to release is not using the most recent version of its parent,
-  consider taking this opportunity to update to it.
+  If the item you are planning to release is not using the most recent version of its parent
+  (see {{{../../pom/}parent POMs}} index), consider taking this opportunity to update to it.
 
 * Make sure that site compilation and publication works
 
