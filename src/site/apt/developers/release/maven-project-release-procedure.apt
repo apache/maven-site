@@ -66,6 +66,10 @@ Performing a Maven Project Release
   to discover this *after* you stage a release and then try to follow
   the procedure to deploy the site for review. So you may find it more
   pleasant to check out the state of the site before you start.
+
+  <Notice:> site publication should be done with Maven 2.2.1 and not Maven 3 because of incompatibilities
+  with <<<maven-project-info-reports-plugin>>> (see {{{http://jira.codehaus.org/browse/MPIR-244}MPIR-244}}
+  and {{{http://jira.codehaus.org/browse/MPIR-237}MPIR-237}}).
   
 * Stage the Release
 
