@@ -51,14 +51,14 @@ under the License.
           <a href="download.html#Installation">Installation Instructions</a>
         </span>
       </p>
-<!--
-      <h5>ApacheCon NA 2011</h5>
+
+      <h5>ApacheCon EU 2012</h5>
       <p>
         <a href="http://www.apache.org/events/current-event.html" title="ApacheCon" class="poweredBy">
           <img class="poweredBy"  alt="ApacheCon" src="http://www.apache.org/events/current-event-125x125.png"    />
         </a>
       </p>
--->
+
       <h5>Get Maven Ant Tasks</h5>
       <span style="display: block; text-align: right; font-size: smaller">Released: ${currentAntTasksReleaseDate}</span>
       <p>
