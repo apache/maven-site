@@ -63,3 +63,8 @@ RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ /plugins/maven-site-plugin/$
 Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html http://maven.apache.org/guides/development/guide-testing-development-plugins.html
 
 Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/doxia/references/apt-format.html
+
+Options +FollowSymlinks
+RewriteEngine on
+
+RewriteRule ^/plugins/maven-x-plugin/(.*) /plugins/maven-x-plugin-1.5/$1 [L]
