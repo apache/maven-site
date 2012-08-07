@@ -67,4 +67,4 @@ Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/do
 Options +FollowSymlinks
 RewriteEngine on
 
-RewriteRule ^/plugins/maven-x-plugin/(.*) /plugins/maven-x-plugin-1.5/$1 [L]
+RewriteRule ^/plugins/maven-clean-plugin/(.*) /plugins/maven-clean-plugin-2.5/$1 [L]
