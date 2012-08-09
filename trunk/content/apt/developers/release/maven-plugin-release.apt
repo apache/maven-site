@@ -45,9 +45,10 @@ Releasing A Maven Plugin
 
 +------+
 cd target/checkout
-#mvn site-deploy -Preporting
+
 mvn -Preporting site site:stage scm-publish:publish-scm \
     -Dscmpublish.pubScmUrl=https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest
+
 svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest \
        https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
 +------+
@@ -63,36 +64,25 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 
 * Publishing the release website
 
-  After the release has passed, the site needs to be updated to point to the new release:
-
-TODO: choose between htaccess rewrite rule and following svn symlink:
-
-+-------+
-# just tested but could not make the following command work
-svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
-       put =(printf "link maven-XXX-plugin-Y.Z") maven-XXX-plugin \
-       propset svn:special '*' maven-XXX-plugin
-+-------+
-
-  Notice that {{{http://subversion.tigris.org/issues/show_bug.cgi?id=4142}an issue has been opened}} to add direct
-  symlink support to svnmucc, so the previous command should be in a near future:
+  After the release has passed, the site needs to be updated to point to the new release: edit the content/filtered-resources/.htaccess file
+  (locally or with the CMS) to update rewrite rule
 
 +-------+
-svnmucc -U https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins \
-       symlink maven-XXX-plugin maven-XXX-plugin-Y.Z
+RewriteRule ^plugins/maven-XXX-plugin/(.*)$ /plugins/maven-XXX-plugin-Y.Z/$1 [L]
 +-------+
+
 
 * Updating the Maven site
 
- Use the CMS to update {{{/plugins/}the plugins page}}, made easy with the bookmarklet.
+ Use the CMS to update {{{/plugins/}the plugins page}}, made easy with the CMS bookmarklet.
 
 * idea to be developped if sufficient people is interested
 
-  Instead of doing command line svn and svnmucc operations and extpaths.txt edits, the staging/release operations could be automated
+  Instead of doing command line svn and extpaths.txt + .htaccess edits, the staging/release operations could be automated
   as web ui like following:
 
   * http://cms.apache.org/maventest/release/plugins/maven-xxx-plugin-X.Y could display a page proposing to <<stage the release
-  documentation>> (doing svn command and extpaths.txt edit)
+  documentation>> (doing svn command and .htaccess edit)
 
   * next time this page is displayed, with the content already available in svn, the page could propose 2 different actions:
   <<drop the staged documentation>> (with extpaths.txt removal) or <<publish the release website>>.
