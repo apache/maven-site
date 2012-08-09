@@ -64,7 +64,6 @@ Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html h
 
 Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/doxia/references/apt-format.html
 
-Options +FollowSymlinks
 RewriteEngine on
 
-RewriteRule ^/plugins/maven-clean-plugin/(.*)$ /plugins/maven-clean-plugin-2.5/$1 [L]
+RewriteRule ^plugins/maven-clean-plugin/(.*)$ /plugins/maven-clean-plugin-2.5/$1 [L]
