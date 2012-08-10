@@ -66,7 +66,8 @@ http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 * Publishing the release website
 
   After the release has passed, the site needs to be updated to point to the new release: edit the content/filtered-resources/.htaccess file
-  (locally or with the CMS) to update rewrite rule
+  (locally or
+  {{{https://cms.apache.org/redirect?uri=http://maventest.apache.org/filtered-resources/.htaccess&action=edit}with the CMS}}) to update rewrite rule
 
 +-------+
 RewriteRule ^plugins/maven-XXX-plugin/(.*)$ /plugins/maven-XXX-plugin-Y.Z/$1 [L]
