@@ -47,7 +47,7 @@ Releasing A Maven Plugin
 cd target/checkout
 
 mvn -Preporting site site:stage scm-publish:publish-scm \
-    -Dscmpublish.pubScmUrl=https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest
+    -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest
 
 svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest \
        https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
