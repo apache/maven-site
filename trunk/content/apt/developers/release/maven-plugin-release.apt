@@ -76,7 +76,7 @@ RewriteRule ^plugins/maven-XXX-plugin/(.*)$ /plugins/maven-XXX-plugin-Y.Z/$1 [L]
 
 * Updating the Maven site
 
- Use the CMS to update {{{/plugins/}the plugins page}}, made easy with the CMS bookmarklet.
+ Use the CMS to update {{{/plugins/}the plugins page}}, made easy with {{{https://cms.apache.org/#bookmark}the CMS bookmarklet}}.
 
 * idea to be developped if sufficient people is interested
 
