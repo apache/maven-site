@@ -60,7 +60,8 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/
 http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
 +-----+
 
-   [[2]] declare the <<<plugins/maven-XXX-plugin-Y.Z>>> directory in {{{/extpaths.txt}extpaths.txt}} using the CMS, through the bookmarklet.
+   [[2]] declare the <<<plugins/maven-XXX-plugin-Y.Z>>> directory in {{{/extpaths.txt}extpaths.txt}}, locally or
+   {{{https://cms.apache.org/redirect?uri=http://maventest.apache.org/extpaths.txt&action=edit}with the CMS}}.
 
 * Publishing the release website
 
