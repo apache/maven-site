@@ -50,7 +50,7 @@ plugins/maven-antrun-plugin-1.7
   plugins/maven-assembly-plugin-2.2.2
   plugins/maven-changelog-plugin
   plugins/maven-changelog-plugin-2.2
-  plugins/maven-changes-plugin
+plugins/maven-changes-plugin-latest
 plugins/maven-changes-plugin-2.0
 plugins/maven-changes-plugin-2.1
 plugins/maven-changes-plugin-2.2
