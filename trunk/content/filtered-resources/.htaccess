@@ -72,6 +72,7 @@ RewriteRule ^plugins/maven-checkstyle-plugin/(.*)$ /plugins/maven-checkstyle-plu
 RewriteRule ^plugins/maven-clean-plugin/(.*)$ /plugins/maven-clean-plugin-2.5/$1 [L]
 RewriteRule ^plugins/maven-compiler-plugin/(.*)$ /plugins/maven-compiler-plugin-2.4/$1 [L]
 RewriteRule ^plugins/maven-doap-plugin/(.*)$ /plugins/maven-doap-plugin-1.1/$1 [L]
+RewriteRule ^plugins/maven-javadoc-plugin/(.*)$ /plugins/maven-javadoc-plugin-2.8.1/$1 [L]
 RewriteRule ^plugins/maven-pmd-plugin/(.*)$ /plugins/maven-pmd-plugin-2.7.1/$1 [L]
 RewriteRule ^plugins/maven-release-plugin/(.*)$ /plugins/maven-release-plugin-2.3/$1 [L]
 RewriteRule ^plugins/maven-remote-resources-plugin/(.*)$ /plugins/maven-remote-resources-plugin-1.3/$1 [L]
