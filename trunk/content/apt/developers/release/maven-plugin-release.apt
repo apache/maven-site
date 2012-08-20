@@ -41,31 +41,37 @@ Releasing A Maven Plugin
   The plugin parent POM will be configured (TODO) to publish the documentation in Apache svn
   https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest.
 
-   [[1]] Stage the documentation for the current release version (not the new snapshot).
+  Stage the documentation for the current release version (not the new snapshot).
 
 +------+
 cd target/checkout
 
 mvn -Preporting site site:stage scm-publish:publish-scm \
-    -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest
-
-svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest \
-       https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
+    -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging
 +------+
 
    <<Note:>> You should verify the deployment of the site on the Maven website
    (you need to wait {{{http://www.apache.org/dev/cms.html#svnpubsub}snvpubsub}}), which should be a matter of seconds.
 
 +-----+
-http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
+http://maven.apache.org/plugins/maven-XXX-plugin-staging/
 +-----+
-
-   [[2]] declare the <<<plugins/maven-XXX-plugin-Y.Z>>> directory in {{{/extpaths.txt}extpaths.txt}}, locally or
-   {{{https://cms.apache.org/redirect?uri=http://maventest.apache.org/extpaths.txt&action=edit}with the CMS}}.
 
 * Publishing the release website
 
-  After the release has passed, the site needs to be updated to point to the new release: edit the content/filtered-resources/.htaccess file
+  After the release has passed, the site needs to be updated:
+
+    [[1]] cut the new release
++------+
+svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging \
+       https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
++------+
+
+    [[2]] declare the <<<plugins/maven-XXX-plugin-Y.Z>>> directory in {{{/extpaths.txt}extpaths.txt}}, locally or
+   {{{https://cms.apache.org/redirect?uri=http://maventest.apache.org/extpaths.txt&action=edit}with the CMS}}.
+
+
+    [[3]] edit the content/filtered-resources/.htaccess file
   (locally or
   {{{https://cms.apache.org/redirect?uri=http://maventest.apache.org/filtered-resources/.htaccess&action=edit}with the CMS}}) to update rewrite rule
 
