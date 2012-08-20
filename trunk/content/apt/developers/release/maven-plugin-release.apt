@@ -4,7 +4,7 @@
  Jason van Zyl
  Hervé Boutemy
  -----
- 2012-03-12
+ 2012-08-21
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -38,16 +38,16 @@ Releasing A Maven Plugin
 
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
-  The plugin parent POM will be configured (TODO) to publish the documentation in Apache svn
-  https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging.
+  The plugin parent POM will be configured to publish the documentation in Apache svn
+  https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging (TODO: configure pubScmUrl)
 
   Stage the documentation for the current release version (not the new snapshot).
 
 +------+
 cd target/checkout
 
-mvn -Preporting site site:stage scm-publish:publish-scm \
-    -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging
+mvn -Preporting site site:stage scm-publish:publish-scm
+# waiting for POM configuration, add -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging
 +------+
 
    <<Note:>> You should verify the deployment of the site on the Maven website
@@ -79,6 +79,18 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/
 +-------+
 RewriteRule ^plugins/maven-XXX-plugin/(.*)$ /plugins/maven-XXX-plugin-Y.Z/$1 [L]
 +-------+
+
+
+* (alternative) Publishing the release website without maintaining versioned history
+
+  Publish the documentation for the current release version.
+
++------+
+cd target/checkout
+
+mvn -Preporting site site:stage scm-publish:publish-scm
+# waiting for POM configuration, add -Dscmpublish.pubScmUrl=scm:svn:https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin
++------+
 
 
 * Updating the Maven site
