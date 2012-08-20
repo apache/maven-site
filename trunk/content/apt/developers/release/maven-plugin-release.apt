@@ -39,7 +39,7 @@ Releasing A Maven Plugin
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The plugin parent POM will be configured (TODO) to publish the documentation in Apache svn
-  https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-latest.
+  https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging.
 
   Stage the documentation for the current release version (not the new snapshot).
 
@@ -62,6 +62,7 @@ http://maven.apache.org/plugins/maven-XXX-plugin-staging/
   After the release has passed, the site needs to be updated:
 
     [[1]] cut the new release
+
 +------+
 svn cp https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-staging \
        https://svn.apache.org/repos/infra/websites/production/maventest/content/plugins/maven-XXX-plugin-Y.Z
