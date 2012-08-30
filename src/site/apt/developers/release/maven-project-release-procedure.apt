@@ -192,14 +192,17 @@ I will promote the artifacts to the central repo.
 
    [[a]] Using Maven Changes Plugin
 
-   If you are releasing a plugin or a shared component you can let Maven Changes Plugin generate and send the
-   announcement for you. First make sure that you have configured the necessary
+   If you are releasing a plugin or a shared component you can let Maven Changes Plugin generate and eventually even
+   send the announcement for you. First make sure that you have configured the necessary
    properties in your {{{../committer-settings.html}committer settings}}.
 
 +------+
 cd target/checkout
 mvn changes:announcement-mail -Papache-release
 +------+
+
+   Even if mail send fails, generated annoucement is available in <<<target/annoucement>>> (see <<<annoucement.vm>>>):
+   you can use it as a base for sending the mail manually.
 
    If your SMTP server requires authentication you need to add the command line
    options for it:
