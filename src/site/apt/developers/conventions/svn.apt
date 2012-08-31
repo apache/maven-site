@@ -107,7 +107,7 @@ $ svn revert -R .
 $ svn propset svn:ignore -F ~/bin/svnignore .
 ---
 
- An example svnignore file:
+ A typical svnignore file:
 
 ---
 target
@@ -115,6 +115,9 @@ target
 *.log
 .classpath
 .project
+.settings
+.wtpmodules
+.idea
 *.ipr
 *.iws
 *.iml
