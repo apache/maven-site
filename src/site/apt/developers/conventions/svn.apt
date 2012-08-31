@@ -121,4 +121,6 @@ target
 *.ipr
 *.iws
 *.iml
+.git
+.gitignores
 ---
