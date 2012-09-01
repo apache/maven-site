@@ -287,7 +287,6 @@ plugins/maven-surefire-plugin-2.12
 plugins/maven-surefire-plugin-2.12.1
 plugins/maven-surefire-plugin-2.12.2
 plugins/maven-surefire-plugin-2.12.3
-plugins/maven-surefire-plugin-backup
 plugins/maven-surefire-report-plugin
 plugins/maven-surefire-report-plugin-2.5
 plugins/maven-surefire-report-plugin-2.6
