@@ -331,11 +331,7 @@ plugins/maven-surefire-report-plugin-2.12.3
   pom/skins
   ref
   sandbox
-  scm
-  scm-1.4
-  scm-1.5
-  scm-1.6
-  scm-1.7
+scm
   shared/file-management
   shared/maven-archiver
   shared/maven-archiver-2.4.1
