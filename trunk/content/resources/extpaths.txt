@@ -124,20 +124,21 @@ plugins/maven-doap-plugin-1.1
   plugins/maven-enforcer-plugin
   plugins/maven-enforcer-plugin-1.0.1
   plugins/maven-enforcer-plugin-1.1
-  plugins/maven-failsafe-plugin
-  plugins/maven-failsafe-plugin-2.5
-  plugins/maven-failsafe-plugin-2.6
-  plugins/maven-failsafe-plugin-2.7
-  plugins/maven-failsafe-plugin-2.7.1
-  plugins/maven-failsafe-plugin-2.7.2
-  plugins/maven-failsafe-plugin-2.8
-  plugins/maven-failsafe-plugin-2.8.1
-  plugins/maven-failsafe-plugin-2.9
-  plugins/maven-failsafe-plugin-2.10
-  plugins/maven-failsafe-plugin-2.11
-  plugins/maven-failsafe-plugin-2.12
-  plugins/maven-failsafe-plugin-2.12.1
-  plugins/maven-failsafe-plugin-2.12.2
+plugins/maven-failsafe-plugin
+plugins/maven-failsafe-plugin-2.5
+plugins/maven-failsafe-plugin-2.6
+plugins/maven-failsafe-plugin-2.7
+plugins/maven-failsafe-plugin-2.7.1
+plugins/maven-failsafe-plugin-2.7.2
+plugins/maven-failsafe-plugin-2.8
+plugins/maven-failsafe-plugin-2.8.1
+plugins/maven-failsafe-plugin-2.9
+plugins/maven-failsafe-plugin-2.10
+plugins/maven-failsafe-plugin-2.11
+plugins/maven-failsafe-plugin-2.12
+plugins/maven-failsafe-plugin-2.12.1
+plugins/maven-failsafe-plugin-2.12.2
+plugins/maven-failsafe-plugin-2.12.3
   plugins/maven-gpg-plugin
   plugins/maven-gpg-plugin-1.0
   plugins/maven-gpg-plugin-1.1
@@ -271,34 +272,36 @@ plugins/maven-site-plugin-3.1
   plugins/maven-stage-plugin
   plugins/maven-stage-plugin-1.0-alpha-1
   plugins/maven-stage-plugin-1.0-alpha-2
-  plugins/maven-surefire-plugin
-  plugins/maven-surefire-plugin-2.5
-  plugins/maven-surefire-plugin-2.6
-  plugins/maven-surefire-plugin-2.7
-  plugins/maven-surefire-plugin-2.7.1
-  plugins/maven-surefire-plugin-2.7.2
-  plugins/maven-surefire-plugin-2.8
-  plugins/maven-surefire-plugin-2.8.1
-  plugins/maven-surefire-plugin-2.9
-  plugins/maven-surefire-plugin-2.10
-  plugins/maven-surefire-plugin-2.11
-  plugins/maven-surefire-plugin-2.12
-  plugins/maven-surefire-plugin-2.12.1
-  plugins/maven-surefire-plugin-2.12.2
-  plugins/maven-surefire-plugin-backup
-  plugins/maven-surefire-report-plugin
-  plugins/maven-surefire-report-plugin-2.5
-  plugins/maven-surefire-report-plugin-2.6
-  plugins/maven-surefire-report-plugin-2.7
-  plugins/maven-surefire-report-plugin-2.7.1
-  plugins/maven-surefire-report-plugin-2.7.2
-  plugins/maven-surefire-report-plugin-2.8
-  plugins/maven-surefire-report-plugin-2.9
-  plugins/maven-surefire-report-plugin-2.10
-  plugins/maven-surefire-report-plugin-2.11
-  plugins/maven-surefire-report-plugin-2.12
-  plugins/maven-surefire-report-plugin-2.12.1
-  plugins/maven-surefire-report-plugin-2.12.2
+plugins/maven-surefire-plugin
+plugins/maven-surefire-plugin-2.5
+plugins/maven-surefire-plugin-2.6
+plugins/maven-surefire-plugin-2.7
+plugins/maven-surefire-plugin-2.7.1
+plugins/maven-surefire-plugin-2.7.2
+plugins/maven-surefire-plugin-2.8
+plugins/maven-surefire-plugin-2.8.1
+plugins/maven-surefire-plugin-2.9
+plugins/maven-surefire-plugin-2.10
+plugins/maven-surefire-plugin-2.11
+plugins/maven-surefire-plugin-2.12
+plugins/maven-surefire-plugin-2.12.1
+plugins/maven-surefire-plugin-2.12.2
+plugins/maven-surefire-plugin-2.12.3
+plugins/maven-surefire-plugin-backup
+plugins/maven-surefire-report-plugin
+plugins/maven-surefire-report-plugin-2.5
+plugins/maven-surefire-report-plugin-2.6
+plugins/maven-surefire-report-plugin-2.7
+plugins/maven-surefire-report-plugin-2.7.1
+plugins/maven-surefire-report-plugin-2.7.2
+plugins/maven-surefire-report-plugin-2.8
+plugins/maven-surefire-report-plugin-2.9
+plugins/maven-surefire-report-plugin-2.10
+plugins/maven-surefire-report-plugin-2.11
+plugins/maven-surefire-report-plugin-2.12
+plugins/maven-surefire-report-plugin-2.12.1
+plugins/maven-surefire-report-plugin-2.12.2
+plugins/maven-surefire-report-plugin-2.12.3
   plugins/maven-toolchains-plugin
   plugins/maven-toolchains-plugin-1.0
   plugins/maven-verifier-plugin
@@ -412,10 +415,10 @@ plugins/maven-site-plugin-3.1
   skins/maven-stylus-skin-1.1
   skins/maven-stylus-skin-1.4
   skins/maven-stylus-skin-1.5
-  surefire
-  surefire-2.10
-  surefire-2.8.1
-  surefire-2.9
+surefire
+surefire-2.10
+surefire-2.8.1
+surefire-2.9
 wagon
 wagon-1.0
 wagon-1.0-beta-7
