@@ -416,9 +416,9 @@ plugins/maven-site-plugin-3.1
   surefire-2.10
   surefire-2.8.1
   surefire-2.9
-  wagon
-  wagon-1.0
-  wagon-1.0-beta-7
-  wagon-2.0
-  wagon-2.1
-  wagon-2.2
+wagon
+wagon-1.0
+wagon-1.0-beta-7
+wagon-2.0
+wagon-2.1
+wagon-2.2
