@@ -15,7 +15,7 @@ maven-archetype-bundles
 core-its
 enforcer
 jxr
-  maven-1.x
+maven-1.x
 maven-indexer
   maven-release
   plugins/maven-acr-plugin
