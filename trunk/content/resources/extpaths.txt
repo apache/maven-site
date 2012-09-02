@@ -14,8 +14,8 @@ archetype-2.2
 # TBD: maven-archetype-bundles into /archetype will require manipulation when publishing /archetype
   archetype/maven-archetype-bundles
   core-its
-  enforcer
-  jxr
+enforcer
+jxr
   maven-1.x
 maven-indexer
 maven-indexer-4.1.2
