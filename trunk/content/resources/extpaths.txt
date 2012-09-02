@@ -11,8 +11,7 @@ archetype
 archetype-2.0-alpha-5
 archetype-2.1
 archetype-2.2
-# TBD: maven-archetype-bundles into /archetype will require manipulation when publishing /archetype
-  archetype/maven-archetype-bundles
+maven-archetype-bundles
   core-its
 enforcer
 jxr
