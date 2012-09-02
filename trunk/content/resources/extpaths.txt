@@ -12,7 +12,7 @@ archetype-2.0-alpha-5
 archetype-2.1
 archetype-2.2
 maven-archetype-bundles
-  core-its
+core-its
 enforcer
 jxr
   maven-1.x
