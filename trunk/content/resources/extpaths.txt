@@ -178,7 +178,7 @@ plugins/maven-patch-plugin
 plugins/maven-patch-plugin-1.1
 plugins/maven-patch-plugin-1.1.1
 plugins/maven-patch-tracker-plugin
-plugins/maven-plugin-plugin plugins
+plugins/maven-plugin-plugin
 plugins/maven-pdf-plugin
 plugins/maven-pdf-plugin-1.0
 plugins/maven-pdf-plugin-1.1
