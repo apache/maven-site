@@ -55,7 +55,7 @@ plugins/maven-changes-plugin-2.4
 plugins/maven-changes-plugin-2.5
 plugins/maven-changes-plugin-2.6
 plugins/maven-changes-plugin-2.7
-  plugins/maven-changes-plugin-2.7.1
+plugins/maven-changes-plugin-2.7.1
 plugins/maven-checkstyle-plugin-latest
 plugins/maven-checkstyle-plugin-2.2
 plugins/maven-checkstyle-plugin-2.3
@@ -73,14 +73,15 @@ plugins/maven-clean-plugin-2.4.1
 plugins/maven-clean-plugin-2.5
   plugins/maven-clover-plugin
   plugins/maven-clover-plugin/2.4
+plugins/maven-compiler-plugin
 plugins/maven-compiler-plugin-latest
 plugins/maven-compiler-plugin-2.1
 plugins/maven-compiler-plugin-2.2
 plugins/maven-compiler-plugin-2.3.1
 plugins/maven-compiler-plugin-2.3.2
 plugins/maven-compiler-plugin-2.4
-  plugins/maven-compiler-plugin-2.5
-  plugins/maven-compiler-plugin-2.5.1
+plugins/maven-compiler-plugin-2.5
+plugins/maven-compiler-plugin-2.5.1
   plugins/maven-dependency-plugin
   plugins/maven-dependency-plugin-2.1
   plugins/maven-dependency-plugin-2.3
