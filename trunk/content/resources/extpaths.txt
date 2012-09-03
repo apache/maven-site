@@ -79,11 +79,12 @@ plugins/maven-compiler-plugin-2.3.2
 plugins/maven-compiler-plugin-2.4
 plugins/maven-compiler-plugin-2.5
 plugins/maven-compiler-plugin-2.5.1
-  plugins/maven-dependency-plugin
-  plugins/maven-dependency-plugin-2.1
-  plugins/maven-dependency-plugin-2.3
-  plugins/maven-dependency-plugin-2.4
-  plugins/maven-dependency-plugin-2.5
+plugins/maven-dependency-plugin
+plugins/maven-dependency-plugin-2.1
+plugins/maven-dependency-plugin-2.3
+plugins/maven-dependency-plugin-2.4
+plugins/maven-dependency-plugin-2.5
+plugins/maven-dependency-plugin-2.5.1
   plugins/maven-deploy-plugin
   plugins/maven-deploy-plugin-2.4
   plugins/maven-deploy-plugin-2.5
