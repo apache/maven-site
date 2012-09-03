@@ -174,7 +174,6 @@ plugins/maven-javadoc-plugin-2.8
 plugins/maven-javadoc-plugin-2.8.1
   plugins/maven-jxr-plugin
   plugins/maven-jxr-plugin-2.2
-  plugins/maven-jxr-plugin-2.4-SNAPSHOT
   plugins/maven-linkcheck-plugin
   plugins/maven-linkcheck-plugin-1.0
   plugins/maven-linkcheck-plugin-1.0.1
