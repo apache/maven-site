@@ -309,10 +309,6 @@ plugins/maven-surefire-report-plugin-2.12.3
   plugins-sandbox
   plugin-testing
 plugin-tools
-plugin-tools-2.4.3
-plugin-tools-2.5.1
-plugin-tools-2.8
-plugin-tools-2.9
 plugin-tools-3.0
 plugin-tools-3.1
   pom/asf
