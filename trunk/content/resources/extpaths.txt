@@ -17,7 +17,7 @@ enforcer
 jxr
 maven-1.x
 maven-indexer
-  maven-release
+maven-release
   plugins/maven-acr-plugin
   plugins/maven-acr-plugin-1.0
   plugins/maven-antlr-plugin
@@ -218,8 +218,8 @@ plugins/maven-release-plugin-2.2
 plugins/maven-release-plugin-2.2.1
 plugins/maven-release-plugin-2.2.2
 plugins/maven-release-plugin-2.3
-  plugins/maven-release-plugin-2.3.1
-  plugins/maven-release-plugin-2.3.2
+plugins/maven-release-plugin-2.3.1
+plugins/maven-release-plugin-2.3.2
 plugins/maven-remote-resources-plugin-latest
 plugins/maven-remote-resources-plugin-1.1
 plugins/maven-remote-resources-plugin-1.2
