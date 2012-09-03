@@ -5,7 +5,7 @@ ant-tasks
 ant-tasks-2.0.10
 ant-tasks-2.1.2
 ant-tasks-2.1.3
-  apache-resource-bundles/apache-source-release-assembly-descriptor
+apache-resource-bundles
 archetype
 archetype-2.0-alpha-5
 archetype-2.1
@@ -182,7 +182,6 @@ plugins/maven-plugin-plugin
 plugins/maven-pdf-plugin
 plugins/maven-pdf-plugin-1.0
 plugins/maven-pdf-plugin-1.1
-  plugins/maven-plugins-21
 plugins/maven-pmd-plugin-latest
 plugins/maven-pmd-plugin-2.5
 plugins/maven-pmd-plugin-2.6
@@ -303,19 +302,18 @@ plugin-testing
 plugin-tools
 plugin-tools-3.0
 plugin-tools-3.1
-  pom/asf
-  pom/asf-10
-  pom/asf-11
-  pom/maven
-  pom/maven-21
-  pom/maven-22
-  pom/maven-plugins
-  pom/maven-plugins-22
-  pom/maven-plugins-23
-  pom/maven-shared-components
-  pom/maven-shared-components-17
-  pom/maven-shared-components-18
-  pom/skins
+pom/asf
+pom/asf-10
+pom/asf-11
+pom/maven
+pom/maven-21
+pom/maven-plugins
+pom/maven-plugins-22
+pom/maven-plugins-23
+pom/maven-shared-components
+pom/maven-shared-components-17
+pom/maven-shared-components-18
+pom/skins
 ref
   sandbox
 scm
