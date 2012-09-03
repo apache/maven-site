@@ -109,13 +109,13 @@ plugins/maven-eclipse-plugin-2.6
 plugins/maven-eclipse-plugin-2.7
 plugins/maven-eclipse-plugin-2.8
 plugins/maven-eclipse-plugin-2.9
-  plugins/maven-ejb-plugin
-  plugins/maven-ejb-plugin-2.2
-  plugins/maven-ejb-plugin-2.2.1
-  plugins/maven-ejb-plugin-2.3
-  plugins/maven-enforcer-plugin
-  plugins/maven-enforcer-plugin-1.0.1
-  plugins/maven-enforcer-plugin-1.1
+plugins/maven-ejb-plugin
+plugins/maven-ejb-plugin-2.2
+plugins/maven-ejb-plugin-2.2.1
+plugins/maven-ejb-plugin-2.3
+plugins/maven-enforcer-plugin
+plugins/maven-enforcer-plugin-1.0.1
+plugins/maven-enforcer-plugin-1.1
 plugins/maven-failsafe-plugin
 plugins/maven-failsafe-plugin-2.5
 plugins/maven-failsafe-plugin-2.6
@@ -131,17 +131,17 @@ plugins/maven-failsafe-plugin-2.12
 plugins/maven-failsafe-plugin-2.12.1
 plugins/maven-failsafe-plugin-2.12.2
 plugins/maven-failsafe-plugin-2.12.3
-  plugins/maven-gpg-plugin
-  plugins/maven-gpg-plugin-1.0
-  plugins/maven-gpg-plugin-1.1
-  plugins/maven-gpg-plugin-1.2
-  plugins/maven-gpg-plugin-1.3
-  plugins/maven-gpg-plugin-1.4
-  plugins/maven-help-plugin
-  plugins/maven-help-plugin-2.1
-  plugins/maven-help-plugin-2.1.1
-  plugins/maven-idea-plugin
-  plugins/maven-idea-plugin-2.2
+plugins/maven-gpg-plugin
+plugins/maven-gpg-plugin-1.0
+plugins/maven-gpg-plugin-1.1
+plugins/maven-gpg-plugin-1.2
+plugins/maven-gpg-plugin-1.3
+plugins/maven-gpg-plugin-1.4
+plugins/maven-help-plugin
+plugins/maven-help-plugin-2.1
+plugins/maven-help-plugin-2.1.1
+plugins/maven-idea-plugin
+plugins/maven-idea-plugin-2.2
   plugins/maven-install-plugin
   plugins/maven-install-plugin-2.3
   plugins/maven-install-plugin-2.3.1
