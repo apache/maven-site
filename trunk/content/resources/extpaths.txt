@@ -345,7 +345,7 @@ shared/maven-filtering-1.0-alpha-1
 shared/maven-filtering-1.0-beta-2
 shared/maven-filtering-1.0-beta-4
 shared/maven-filtering-1.1
-shared/maven-invoker/
+shared/maven-invoker
 shared/maven-invoker-2.0.11
 shared/maven-jarsigner
 shared/maven-model-converter
