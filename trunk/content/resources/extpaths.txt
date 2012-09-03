@@ -316,7 +316,7 @@ plugin-tools-3.1
   pom/maven-shared-components-17
   pom/maven-shared-components-18
   pom/skins
-  ref
+ref
   sandbox
 scm
   shared/file-management
