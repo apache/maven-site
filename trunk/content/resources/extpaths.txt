@@ -188,17 +188,18 @@ plugins/maven-pmd-plugin-2.5
 plugins/maven-pmd-plugin-2.6
 plugins/maven-pmd-plugin-2.7
 plugins/maven-pmd-plugin-2.7.1
-  plugins/maven-project-info-reports-plugin
-  plugins/maven-project-info-reports-plugin-2.1
-  plugins/maven-project-info-reports-plugin-2.1.1
-  plugins/maven-project-info-reports-plugin-2.1.2
-  plugins/maven-project-info-reports-plugin-2.2
-  plugins/maven-project-info-reports-plugin-2.3
-  plugins/maven-project-info-reports-plugin-2.3.1
-  plugins/maven-project-info-reports-plugin-2.4
-  plugins/maven-project-info-reports-plugin-2.5
-  plugins/maven-rar-plugin
-  plugins/maven-reactor-plugin
+plugins/maven-project-info-reports-plugin
+plugins/maven-project-info-reports-plugin-2.1
+plugins/maven-project-info-reports-plugin-2.1.1
+plugins/maven-project-info-reports-plugin-2.1.2
+plugins/maven-project-info-reports-plugin-2.2
+plugins/maven-project-info-reports-plugin-2.3
+plugins/maven-project-info-reports-plugin-2.3.1
+plugins/maven-project-info-reports-plugin-2.4
+plugins/maven-project-info-reports-plugin-2.5
+plugins/maven-project-info-reports-plugin-2.5.1
+plugins/maven-rar-plugin
+plugins/maven-reactor-plugin
 plugins/maven-release-plugin-latest
 plugins/maven-release-plugin-2.0-beta-8
 plugins/maven-release-plugin-2.0-beta-9
@@ -215,14 +216,15 @@ plugins/maven-remote-resources-plugin-1.1
 plugins/maven-remote-resources-plugin-1.2
 plugins/maven-remote-resources-plugin-1.2.1
 plugins/maven-remote-resources-plugin-1.3
-  plugins/maven-repository-plugin
-  plugins/maven-repository-plugin-2.3
-  plugins/maven-repository-plugin-2.3.1
-  plugins/maven-resources-plugin
-  plugins/maven-resources-plugin-2.4.1
-  plugins/maven-resources-plugin-2.4.2
-  plugins/maven-resources-plugin-2.4.3
-  plugins/maven-resources-plugin-2.5
+plugins/maven-repository-plugin
+plugins/maven-repository-plugin-2.3
+plugins/maven-repository-plugin-2.3.1
+plugins/maven-resources-plugin
+plugins/maven-resources-plugin-2.4.1
+plugins/maven-resources-plugin-2.4.2
+plugins/maven-resources-plugin-2.4.3
+plugins/maven-resources-plugin-2.5
+plugins/maven-resources-plugin-2.6
 plugins/maven-shade-plugin-latest
 plugins/maven-shade-plugin-1.2.1
 plugins/maven-shade-plugin-1.2.2
@@ -233,8 +235,8 @@ plugins/maven-shade-plugin-1.3.3
 plugins/maven-shade-plugin-1.4
 plugins/maven-shade-plugin-1.5
 plugins/maven-shade-plugin-1.6
-  plugins/maven-shade-plugin-1.7
-  plugins/maven-shade-plugin-1.7.1
+plugins/maven-shade-plugin-1.7
+plugins/maven-shade-plugin-1.7.1
 plugins/maven-site-plugin-latest
 plugins/maven-site-plugin-2.0-beta-5
 plugins/maven-site-plugin-2.0-beta-7
