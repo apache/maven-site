@@ -68,8 +68,6 @@ plugins/maven-clean-plugin-2.3
 plugins/maven-clean-plugin-2.4
 plugins/maven-clean-plugin-2.4.1
 plugins/maven-clean-plugin-2.5
-  plugins/maven-clover-plugin
-  plugins/maven-clover-plugin/2.4
 plugins/maven-compiler-plugin
 plugins/maven-compiler-plugin-latest
 plugins/maven-compiler-plugin-2.1
