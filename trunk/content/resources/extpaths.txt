@@ -299,7 +299,7 @@ plugins/maven-war-plugin-2.1
 plugins/maven-war-plugin-2.1.1
 plugins/maven-war-plugin-2.2
   plugins-sandbox
-  plugin-testing
+plugin-testing
 plugin-tools
 plugin-tools-3.0
 plugin-tools-3.1
