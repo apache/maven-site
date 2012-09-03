@@ -7,7 +7,6 @@ ant-tasks-2.1.2
 ant-tasks-2.1.3
 apache-resource-bundles
 archetype
-archetype-2.0-alpha-5
 archetype-2.1
 archetype-2.2
 maven-archetype-bundles
@@ -237,8 +236,6 @@ plugins/maven-shade-plugin-1.6
 plugins/maven-shade-plugin-1.7
 plugins/maven-shade-plugin-1.7.1
 plugins/maven-site-plugin-latest
-plugins/maven-site-plugin-2.0-beta-5
-plugins/maven-site-plugin-2.0-beta-7
 plugins/maven-site-plugin-2.0
 plugins/maven-site-plugin-2.0.1
 plugins/maven-site-plugin-2.1
@@ -246,8 +243,6 @@ plugins/maven-site-plugin-2.1.1
 plugins/maven-site-plugin-2.2
 plugins/maven-site-plugin-2.3
 plugins/maven-site-plugin-2.4
-plugins/maven-site-plugin-3.0-beta-2
-plugins/maven-site-plugin-3.0-beta-3
 plugins/maven-site-plugin-3.0
 plugins/maven-site-plugin-3.1
 plugins/maven-source-plugin
@@ -256,7 +251,6 @@ plugins/maven-source-plugin-2.1.1
 plugins/maven-source-plugin-2.1.2
 plugins/maven-source-plugin-2.2
 plugins/maven-stage-plugin
-plugins/maven-stage-plugin-1.0-alpha-1
 plugins/maven-stage-plugin-1.0-alpha-2
 plugins/maven-surefire-plugin
 plugins/maven-surefire-plugin-2.5
@@ -292,8 +286,6 @@ plugins/maven-toolchains-plugin-1.0
 plugins/maven-verifier-plugin
 plugins/maven-verifier-plugin-1.0
 plugins/maven-war-plugin
-plugins/maven-war-plugin-2.1-alpha-2
-plugins/maven-war-plugin-2.1-beta-1
 plugins/maven-war-plugin-2.1
 plugins/maven-war-plugin-2.1.1
 plugins/maven-war-plugin-2.2
