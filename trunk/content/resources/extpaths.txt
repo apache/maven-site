@@ -90,24 +90,25 @@ plugins/maven-deploy-plugin-2.7
 plugins/maven-doap-plugin-latest
 plugins/maven-doap-plugin-1.0
 plugins/maven-doap-plugin-1.1
-  plugins/maven-docck-plugin
-  plugins/maven-docck-plugin-1.0
-  plugins/maven-ear-plugin
-  plugins/maven-ear-plugin-2.3.2
-  plugins/maven-ear-plugin-2.4
-  plugins/maven-ear-plugin-2.4.1
-  plugins/maven-ear-plugin-2.4.2
-  plugins/maven-ear-plugin-2.5
-  plugins/maven-ear-plugin-2.6
-  plugins/maven-ear-plugin-2.7
-  plugins/maven-eclipse-plugin
-  plugins/maven-eclipse-plugin-2.4
-  plugins/maven-eclipse-plugin-2.5
-  plugins/maven-eclipse-plugin-2.5.1
-  plugins/maven-eclipse-plugin-2.6
-  plugins/maven-eclipse-plugin-2.7
-  plugins/maven-eclipse-plugin-2.8
-  plugins/maven-eclipse-plugin-2.9
+plugins/maven-docck-plugin
+plugins/maven-docck-plugin-1.0
+plugins/maven-ear-plugin
+plugins/maven-ear-plugin-2.3.2
+plugins/maven-ear-plugin-2.4
+plugins/maven-ear-plugin-2.4.1
+plugins/maven-ear-plugin-2.4.2
+plugins/maven-ear-plugin-2.5
+plugins/maven-ear-plugin-2.6
+plugins/maven-ear-plugin-2.7
+plugins/maven-ear-plugin-2.8
+plugins/maven-eclipse-plugin
+plugins/maven-eclipse-plugin-2.4
+plugins/maven-eclipse-plugin-2.5
+plugins/maven-eclipse-plugin-2.5.1
+plugins/maven-eclipse-plugin-2.6
+plugins/maven-eclipse-plugin-2.7
+plugins/maven-eclipse-plugin-2.8
+plugins/maven-eclipse-plugin-2.9
   plugins/maven-ejb-plugin
   plugins/maven-ejb-plugin-2.2
   plugins/maven-ejb-plugin-2.2.1
