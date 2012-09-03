@@ -182,7 +182,7 @@ plugins/maven-plugin-plugin
 plugins/maven-pdf-plugin
 plugins/maven-pdf-plugin-1.0
 plugins/maven-pdf-plugin-1.1
-plugins/maven-plugins-21
+  plugins/maven-plugins-21
 plugins/maven-pmd-plugin-latest
 plugins/maven-pmd-plugin-2.5
 plugins/maven-pmd-plugin-2.6
