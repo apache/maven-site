@@ -314,7 +314,7 @@ pom/maven-shared-components-17
 pom/maven-shared-components-18
 pom/skins
 ref
-  sandbox
+sandbox
 scm
   shared/file-management
   shared/maven-archiver
