@@ -169,25 +169,20 @@ plugins/maven-javadoc-plugin-2.8
 plugins/maven-javadoc-plugin-2.8.1
 plugins/maven-jxr-plugin
 plugins/maven-jxr-plugin-2.2
-  plugins/maven-linkcheck-plugin
-  plugins/maven-linkcheck-plugin-1.0
-  plugins/maven-linkcheck-plugin-1.0.1
-  plugins/maven-linkcheck-plugin-1.1
-  plugins/maven-one-plugin
-  plugins/maven-patch-plugin
-  plugins/maven-patch-plugin-1.1
-  plugins/maven-patch-plugin-1.1.1
-  plugins/maven-patch-tracker-plugin
-  plugins/maven-pdf-plugin
-  plugins/maven-pdf-plugin-1.0
-  plugins/maven-pdf-plugin-1.1
-  plugins/maven-plugin-plugin-2.4.3
-  plugins/maven-plugin-plugin-2.5.1
-  plugins/maven-plugin-plugin-2.6
-  plugins/maven-plugin-plugin-2.7
-  plugins/maven-plugin-plugin-2.8
-  plugins/maven-plugin-plugin-2.9
-  plugins/maven-plugins-21
+plugins/maven-linkcheck-plugin
+plugins/maven-linkcheck-plugin-1.0
+plugins/maven-linkcheck-plugin-1.0.1
+plugins/maven-linkcheck-plugin-1.1
+plugins/maven-one-plugin
+plugins/maven-patch-plugin
+plugins/maven-patch-plugin-1.1
+plugins/maven-patch-plugin-1.1.1
+plugins/maven-patch-tracker-plugin
+plugins/maven-plugin-plugin plugins
+plugins/maven-pdf-plugin
+plugins/maven-pdf-plugin-1.0
+plugins/maven-pdf-plugin-1.1
+plugins/maven-plugins-21
 plugins/maven-pmd-plugin-latest
 plugins/maven-pmd-plugin-2.5
 plugins/maven-pmd-plugin-2.6
