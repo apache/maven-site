@@ -34,6 +34,10 @@
   <name>Apache Maven Site</name>
   <url>http://maven.apache.org/</url>
 
+  <prerequisites>
+    <maven>3.0</maven>
+  </prerequisites>
+
   <!-- repeated here so that maven-site is not appended -->
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
@@ -164,7 +168,7 @@
         <artifactId>maven-project-info-reports-plugin</artifactId>
         <reportSets>
           <reportSet>
-            <reports>
+            <reports><!-- expecting reports replace inherited, which is ok with M3 but not M2: see MSITE-596 -->
               <report>cim</report>
               <!-- <report>issue-tracking</report> -->
               <report>mailing-list</report>
