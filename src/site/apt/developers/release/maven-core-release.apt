@@ -2,8 +2,9 @@
  Releasing Maven
  -----
  Jason van Zyl
+ Olivier Lamy
  -----
- 2010-07-27
+ 2012-09-11
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -25,15 +26,27 @@
 
 Releasing Maven
 
-  Maven differs slightly in its release process due to several extra steps.
+  Maven differs slightly in its release process due to several extra steps and this need to be publish via Apache svnpubsub.
+
+  The goal is to commit candidate release to svn tree https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION.
+  Then once the vote passed svn move to https://dist.apache.org/repos/dist/release/maven/maven-3/$VERSION.
+
+  The tree directory is:
+
+  * https://dist.apache.org/repos/dist/release/maven/maven-3/$VERSION/binaries
+
+  * https://dist.apache.org/repos/dist/release/maven/maven-3/$VERSION/source
+
+  []
 
 * Produce Release Candidates
 
   For non-alpha/beta releases, release candidates are produced before the actual
   release.
 
-  Copy the binaries and src-tar.gz with their md5/asc to http://people.apache.org/builds/maven/$VERSION.
+  Checkout https://dist.apache.org/repos/dist/dev/maven/maven-3 then create the necessary directory tree.
 
+  Copy the binaries and src-tar.gz with their md5/asc to the created directories.
 
   To produce a release candidate, follow the first seven steps only from the following
   procedure:
@@ -115,14 +128,9 @@ scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/mave
 
 ** Add New Version to ASF Distribution Directory
 
-  In addition to promoting the repository, the release archives should be copied to
-  the following locations:
+  In addition to promoting the repository, the release archives should be moved to the release svnpubsub tree :
 
-    * people.apache.org:/www/www.apache.org/dist/maven/binaries - apache-maven-$VERSION-bin.tar.gz, apache-maven-$VERSION-bin.zip, corresponding checksums (md5 and sha1) and signatures (asc)
-
-    * people.apache.org:/www/www.apache.org/dist/maven/source - apache-maven-$VERSION-src.tar.gz, apache-maven-$VERSION-src.zip, corresponding checksums (md5 and sha1) and signatures (asc)
-
-  The files may need to be renamed from those given in the repository.
+    * svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
 
 ** Deploy the Current References
 
