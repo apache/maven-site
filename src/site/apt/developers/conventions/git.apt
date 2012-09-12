@@ -30,6 +30,10 @@ Maven Git Convention
 
  This document describes how developers should use Git, our SCM.
 
+* Git migration
+
+ ETA of git migration is here: {{https://cwiki.apache.org/confluence/display/MAVEN/Git+Migration}}
+
 * Git Configuration
 
  TODO
