@@ -78,6 +78,8 @@ Maven Developer Centre
 
   * {{{./conventions/svn.html}Maven SVN Convention}}
 
+  * {{{./conventions/git.html}Maven Git Convention}}
+
   []
 
  <<Note>>: If you cannot find your answers here, feel free to ask the {{{mailto:dev@maven.apache.org}Maven Developer List}}.
