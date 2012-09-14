@@ -5,7 +5,7 @@
  Jason van Zyl
  Dennis Lundberg
  -----
- 2012-04-30
+ 2012-09-14
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -158,11 +158,13 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.0          | 2008-09-27 | Build a subset of interdependent projects in a reactor | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-reactor-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREACTOR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.3        | 2012-05-11 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
+| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.3          | 2012-05-11 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.3.1        | 2010-07-21 | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.8          | 2012-09-08 | Generate a SCM for the current project. | {{{http://svn.apache.org/repos/asf/maven/scm/trunk/maven-scm-plugin}SVN}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 1.0-beta-1   | 2012-09-14 | Publish your Maven website to a scm location. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-scm-publish-plugin/}SVN}} | TODO
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-source-plugin/} <<<source>>>}}             | B          | 2.2          | 2012-08-06 | Build a JAR of sources for use in IDEs and distribution to the repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-source-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSOURCES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
