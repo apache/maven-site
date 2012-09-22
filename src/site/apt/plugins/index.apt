@@ -239,7 +239,7 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://www.triemax.com/products/jalopy/manual/plugin-maven.html} <<<jalopy>>>}} | {{{http://www.triemax.com/}Triemax}} | Use Jalopy to format your source code.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{http://incubator.apache.org/rat/} <<<rat>>>}}                           | {{{http://incubator.apache.org/}Apache Incubator Project}} | Release Audit Tool (RAT) to verify files.
+| {{{http://creadur.apache.org/rat/} <<<rat>>>}}                             | {{{http://creadur.apache.org/}Apache Creadur Project}} | Release Audit Tool (RAT) to verify files.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://geronimo.apache.org/maven/genesis/plugins/tools-maven-plugin/index.html} <<<Genesis Plugins>>>}} | {{{http://geronimo.apache.org/}Apache Geronimo Project}} | Verify legal files in artifacts.
 *----------------------------------------------------------------------------+----------------+-----------------------+
