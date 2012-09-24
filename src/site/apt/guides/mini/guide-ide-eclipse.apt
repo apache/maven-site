@@ -30,11 +30,12 @@ mvn -Declipse.workspace=<path-to-eclipse-workspace> eclipse:add-maven-repo
 
 +----+
 
+ Restart your Eclipse IDE (if you already have it open) for this change
+to take effect.
+
  You can also define a new classpath variable inside eclipse: From the
 menu bar, select Window > Preferences.  Select the Java > Build Path >
 Classpath Variables page.
-
- <<Issue:>> The command does not work. Aside from it should not require a POM.
 
 * {Maven as an external tool}
 
@@ -49,8 +50,6 @@ can refer to <maven_exec> in the location field. Furhtermore refer to
 <project_loc> as the working directory and specify the maven goals of
 your choice as arguments, e.g. <eclipse:eclipse>. For further
 information please refer to the eclipse help.
-
- <<Issue:>> Would be nice, if the plugin generates the variable and a runner.
 
 
 * {Simple Project}
@@ -117,9 +116,6 @@ the packaging of your parent project to <pom>
   <packaging>pom</packaging>
 +----+
 
- <<Issue:>> mvn eclipse:eclipse may should generate a simple
-<.project>-file for pom types.
-
  [[1]] From the command line change to the <guide-ide-eclipse> project
 directory and create some modules.
 
@@ -183,8 +179,6 @@ target
 will automatically generate a new simple <.project>-file when you
 check out the project from the repository.
 
- <<Issue:>> Plugin should optionally generate the <.cvsignore>-files.
-
  []
 
  From now on you have different options to proceed. If you are working
@@ -206,10 +200,6 @@ module (see also {{{Maven_as_an_external_tool}Maven as an external
 tool}}). Of course all referenced artifacts have to be available from
 your maven repository.
 
- <<Issue:>> The maven-eclipse-plugin should optionally generate
-project dependencies for those modules which are available in the
-workspace.
-
 ** {Flat Project Layout}
 
  It is possible to move the parent POM in its own directory on the
@@ -229,5 +219,4 @@ same level with the referenced modules.
 +----+
  []
 
- <<Issue:>> The release plugin does not support the flat structure
-({{{http://jira.codehaus.org/browse/MRELEASE-6}MRELEASE-6}})
+
