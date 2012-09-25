@@ -780,7 +780,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   Extensions are covered later in this document.
 
   * <<inherited>>:
-  <<<true>>> or <<<false>>>, whether or not this plugin configuration should apply to POMs which inherit from this one.
+  <<<true>>> or <<<false>>>, whether or not this plugin configuration should apply to POMs which inherit from this one.  Default value is <<<true>>>.
 
   * <<configuration>>:
   This is specific to the individual plugin. Without going too in depth into the mechanics of how plugins work,
