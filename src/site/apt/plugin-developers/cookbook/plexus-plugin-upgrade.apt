@@ -12,8 +12,10 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 
   This recipe describes how to upgrade from Plexus Javadoc Tags to Plexus Java Annotations, in 2 steps:
 
-  [[1]] replace the deprecated {{{http://plexus.codehaus.org/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}}
-  with its successor: {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}},
+  [[1]] replace the deprecated {{{http://plexus.codehaus.org/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}},
+  which only supports Plexus Javadoc Tags, with its successor:
+  {{{http://plexus.codehaus.org/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}},
+  which support both Plexus Javadoc Tags and Plexus Java Annotations,
 
   [[2]] update sources with {{{http://plexus.codehaus.org/plexus-containers/plexus-component-annotations/}Java Annotations for Plexus}}.
 
