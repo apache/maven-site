@@ -39,7 +39,7 @@ Performing a Maven Project Release
 
   * you must use Maven 2.2.1+, as Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.
   
-  * follow the environment configuration steps outlined at: {{{http://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
+  * follow Apache environment configuration steps outlined at: {{{http://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
 
   []
 
@@ -158,7 +158,7 @@ I will promote the artifacts to the central repo.
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- [[1]]See {{{http://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
+ [[1]] See {{{http://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
 
  [[2]] Deploy the current website
  
@@ -188,8 +188,8 @@ I will promote the artifacts to the central repo.
 
    [[a]] Using Maven Changes Plugin
 
-   If you are releasing a plugin or a shared component you can let Maven Changes Plugin generate and eventually even
-   send the announcement for you. First make sure that you have configured the necessary
+   If you are releasing a plugin or a shared component you can let Maven Changes Plugin <<generate>>, and eventually even
+   <<send>>, the announcement for you. First make sure that you have configured the necessary
    properties in your {{{../committer-settings.html}committer settings}}.
 
 +------+
@@ -257,6 +257,3 @@ Enjoy,
  of particular interest to that group.
 
  [[7]] Celebrate :o)
-
-
-
