@@ -67,10 +67,6 @@ Performing a Maven Project Release
   the procedure to deploy the site for review. So you may find it more
   pleasant to check out the state of the site before you start.
 
-  <Notice:> site publication should be done with Maven 2.2.1 and not Maven 3 because of incompatibilities
-  with <<<maven-project-info-reports-plugin>>> (see {{{http://jira.codehaus.org/browse/MPIR-244}MPIR-244}}
-  and {{{http://jira.codehaus.org/browse/MPIR-237}MPIR-237}}).
-  
 * Stage the Release
 
  [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
