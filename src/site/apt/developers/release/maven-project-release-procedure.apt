@@ -53,6 +53,10 @@ Performing a Maven Project Release
   
   * {{{./maven-core-release.html} Releasing Maven Core}}
 
+  * {{{./parent-pom-release.html} Releasing a parent POM}}
+
+  []
+
 * Consider updating the parent versions
 
   If the item you are planning to release is not using the most recent version of its parent

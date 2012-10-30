@@ -1,0 +1,85 @@
+ -----
+ Releasing A Parent POM
+ -----
+ Hervé Boutemy
+ -----
+ 2012-10-29
+ -----
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+Releasing A Parent POM
+
+  Releasing a Parent POM is much the same as any other Maven project. The following
+  guide walks through most of the steps:
+
+    * {{{./maven-project-release-procedure.html} Maven Project Common Release procedure}}
+  
+  Note that Parent POMs have particular conventions for managing and deploying the project site.
+
+* Rationale
+
+  To be able to publish a documentation of the parent POM without affecting released POM and <<<site.xml>>>,
+  parent POM projects have a specific structure, with the addition of <<<site-pom.xml>>> and <<<src/site-docs>>>
+  provind <<<mvn -f site-pom.xml site>>>:
+
++----+
+|-- pom.xml
+|-- site-pom.xml
+`-- src
+    |-- site
+    |   `-- site.xml
+    `-- site-docs
+        |-- apt
+        |   `-- index.apt
+        `-- site.xml
++----+
+
+  And the <<<index.apt>>> page not only contains instructions about the content of the parent POM, but
+  it maintains an historic of pom releases links and diffs.
+
+  Each specific step is done to maintain <<<site-pom.xml>>> and <<<index.apt>>> in sync with the release being realeased.
+
+* Stage the release
+
+  Before staging the release with usual procedure, you need to update <<<site-pom.xml>>> and <<<index.apt>>> to
+  take the future release into account:
+
+  [[1]] update <<<site-pom.xml>>> parent pom version to match the version being released,
+
+  [[2]] update <<<src/site-docs/index.apt>>>: add a line in the history of <<<pom.xml>>> for the future version, referring
+  to the future svn release tag and date. Hint: in the diff link, value for <<<r2>>> parameter is easily found by
+  following previous version link and copying revision number.
+
+  []
+
+  Once these modifications are done, you can follow standard staging steps taking care to use the <<<site-pom.xml>>> pom,
+  with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is generated.
+
+* Updating the Maven site
+
+ Check out the maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
+ changes if already checked out.
+
+ Update the version number for the parent POM on the <<<src/site/apt/pom/index.apt>>> page.
+
+ Commit your changes and then deploy the site.
+
++-----+
+mvn clean site-deploy
++-----+

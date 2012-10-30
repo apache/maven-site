@@ -37,6 +37,8 @@ Releasing A Maven Project
   
   * {{{./maven-core-release.html} Releasing Maven Core}}
   
+  * {{{./parent-pom-release.html} Releasing a parent POM}}
+  
   []
 
   The above links all provide specific information for those types of releases, but they all refer back to the common documentation:
