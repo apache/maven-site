@@ -2,8 +2,9 @@
  Releasing A Parent POM
  -----
  Hervé Boutemy
+ Dennis Lundberg
  -----
- 2012-10-29
+ 2012-11-01
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -70,6 +71,40 @@ Releasing A Parent POM
 
   Once these modifications are done, you can follow standard staging steps taking care to use the <<<site-pom.xml>>> pom,
   with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is generated.
+
+* Staging the latest documentation
+
+  Once the release is prepared, but before the release vote, the site needs to be staged.
+
+  The parent POMs are configured to stage the documentation in a "versioned" directory
+  such as <<</pom/asf-X>>>.
+
+   [[1]] Stage the documentation for the current release version (not the new snapshot).
+
++------+
+cd target/checkout
+mvn -f site-pom.xml site site:stage-deploy
++------+
+
+   <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
+   versions will fail due to <<<com.jcraft.jsch.JSchException: Algorithm negotiation fail>>>.
+
+   <<Note:>> You should verify the deployment of the site on the Maven website
+   (you need to wait {{{http://www.apache.org/dev/project-site.html}the sync}}).
+
++-----+
+http://maven.apache.org/pom/asf-X/
++-----+
+
+   [[2]] Verify/change folder permissions to 0775 and files permissions to 0664. Log on to <<<people.apache.org>>> and
+   change to the directory above the staging directory.
+   Then run these commands:
+
++------+
+cd /www/maven.apache.org/pom
+find . -type d -exec chmod a+rx,g+w {} \;
+find . -type f -exec chmod 664 {} \;
++------+
 
 * Updating the Maven site
 
