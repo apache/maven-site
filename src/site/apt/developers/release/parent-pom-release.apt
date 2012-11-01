@@ -35,9 +35,9 @@ Releasing A Parent POM
 
 * Rationale
 
-  To be able to publish a documentation of the parent POM without affecting released POM and <<<site.xml>>>,
+  To be able to publish a documentation for the parent POM without affecting released POM and <<<site.xml>>>,
   parent POM projects have a specific structure, with the addition of <<<site-pom.xml>>> and <<<src/site-docs>>>
-  provind <<<mvn -f site-pom.xml site>>>:
+  provide <<<mvn -f site-pom.xml site>>>:
 
 +----+
 |-- pom.xml
@@ -52,24 +52,24 @@ Releasing A Parent POM
 +----+
 
   And the <<<index.apt>>> page not only contains instructions about the content of the parent POM, but
-  it maintains an historic of pom releases links and diffs.
+  it maintains a history of POM releases links and diffs.
 
-  Each specific step is done to maintain <<<site-pom.xml>>> and <<<index.apt>>> in sync with the release being realeased.
+  Each specific step is done to maintain <<<site-pom.xml>>> and <<<index.apt>>> in sync with the release being released.
 
 * Stage the release
 
   Before staging the release with usual procedure, you need to update <<<site-pom.xml>>> and <<<index.apt>>> to
   take the future release into account:
 
-  [[1]] update <<<site-pom.xml>>> parent pom version to match the version being released,
+  [[1]] update <<<site-pom.xml>>> parent POM version to match the version being released,
 
   [[2]] update <<<src/site-docs/index.apt>>>: add a line in the history of <<<pom.xml>>> for the future version, referring
-  to the future svn release tag and date. Hint: in the diff link, value for <<<r2>>> parameter is easily found by
-  following previous version link and copying revision number.
+  to the future svn release tag and date. Hint: in the diff link, the value for the <<<r2>>> parameter is easily found by
+  following the previous version's link and copying revision number.
 
   []
 
-  Once these modifications are done, you can follow standard staging steps taking care to use the <<<site-pom.xml>>> pom,
+  Once these modifications are done, you can follow standard staging steps taking care to use the <<<site-pom.xml>>> POM,
   with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is generated.
 
 * Staging the latest documentation
@@ -108,7 +108,7 @@ find . -type f -exec chmod 664 {} \;
 
 * Updating the Maven site
 
- Check out the maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
+ Check out the Maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
  changes if already checked out.
 
  Update the version number for the parent POM on the <<<src/site/apt/pom/index.apt>>> page.
