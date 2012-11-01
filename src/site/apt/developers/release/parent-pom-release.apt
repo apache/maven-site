@@ -106,6 +106,30 @@ find . -type d -exec chmod a+rx,g+w {} \;
 find . -type f -exec chmod 664 {} \;
 +------+
 
+* Deploying the release website
+
+  After the release has passed, the site needs to be uploaded.
+
+ <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check
+ out the tag (or go to <<<target/checkout>>>)
+
++-----+
+cd target/checkout
+mvn -f site-pom.xml site-deploy
++-----+
+
+  <<Note:>> You can not just copy the documentation from the staging site above into the released documentation as the links are not identical.
+  See the email thread {{http://www.nabble.com/forum/ViewPost.jtp?post=24018250&framed=y}}
+
+ To review the site, wait for the files to arrive at
+
++-----+
+http://maven.apache.org/pom/asf/
++-----+
+
+ The wait is necessary to allow the site to be
+ {{{http://www.apache.org/dev/project-site.html}rsync'ed into production}}.
+
 * Updating the Maven site
 
  Check out the Maven site project from <<<https://svn.apache.org/repos/asf/maven/site/trunk>>> or pull the latest
