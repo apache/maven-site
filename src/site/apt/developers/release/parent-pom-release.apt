@@ -106,6 +106,22 @@ find . -type d -exec chmod a+rx,g+w {} \;
 find . -type f -exec chmod 664 {} \;
 +------+
 
+* Call the vote
+
+  In the vote, instead of providing links to JIRA, the parent POMs should include a link to the SVN changes since the
+  last release:
+
++-----+
+...
+Hi,
+
+Changes since the last release:
+http://svn.apache.org/viewvc/maven/pom/tags/<TAG>/pom.xml?r1=HEAD&r2=<REVISION-OF-LAST-RELEASE>&diff_format=h
+
+Staging repo:
+...
++-----+
+
 * Deploying the release website
 
   After the release has passed, the site needs to be uploaded.
