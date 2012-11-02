@@ -166,6 +166,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
+        <version>2.6-SNAPSHOT</version>
         <reportSets>
           <reportSet>
             <reports><!-- expecting reports replace inherited, which is ok with M3 but not M2: see MSITE-596 -->
