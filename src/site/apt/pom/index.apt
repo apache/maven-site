@@ -2,8 +2,9 @@
  Parent POMs
  -----
  Hervé Boutemy
+ Dennis Lundberg
  -----
- 2012-08-08
+ 2012-11-04
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -33,7 +34,7 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 || <<POM>>                                     || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                       | 11           | 2012-08-08 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
+| {{{./asf/} <<<ASF>>>}}                       | 12           | 2012-11-04 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./maven/} <<<Maven>>>}}                   | 22           | 2012-08-08 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
