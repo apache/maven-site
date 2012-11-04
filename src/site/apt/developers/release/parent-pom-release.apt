@@ -77,7 +77,7 @@ Releasing A Parent POM
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The parent POMs are configured to stage the documentation in a "versioned" directory
-  such as <<</pom/asf-X>>>.
+  such as <<</pom/XXX-Y>>>.
 
    [[1]] Stage the documentation for the current release version (not the new snapshot).
 
@@ -93,7 +93,7 @@ mvn -f site-pom.xml site site:stage-deploy
    (you need to wait {{{http://www.apache.org/dev/project-site.html}the sync}}).
 
 +-----+
-http://maven.apache.org/pom/asf-X/
+http://maven.apache.org/pom/XXX-Y/
 +-----+
 
    [[2]] Verify/change folder permissions to 0775 and files permissions to 0664. Log on to <<<people.apache.org>>> and
@@ -140,7 +140,7 @@ mvn -f site-pom.xml site-deploy
  To review the site, wait for the files to arrive at
 
 +-----+
-http://maven.apache.org/pom/asf/
+http://maven.apache.org/pom/XXX/
 +-----+
 
  The wait is necessary to allow the site to be
