@@ -78,11 +78,13 @@ POM Reference
 
     [[4]] {{{SCM}SCM}}
 
-    [[5]] {{{Repositories}Repositories}}
+    [[5]] {{{Prerequisites}Prerequisites}}
 
-    [[6]] {{{Plugin_Repositories}Plugin Repositories}}
+    [[6]] {{{Repositories}Repositories}}
 
-    [[7]] {{{Distribution_Management}Distribution Management}}
+    [[7]] {{{Plugin_Repositories}Plugin Repositories}}
+
+    [[8]] {{{Distribution_Management}Distribution Management}}
 
       [[1]] {{{Repository}Repository}}
 
@@ -90,7 +92,7 @@ POM Reference
 
       [[3]] {{{Relocation}Relocation}}
 
-    [[8]] {{{Profiles}Profiles}}
+    [[9]] {{{Profiles}Profiles}}
 
       [[1]] {{{Activation}Activation}}
 
@@ -1510,6 +1512,14 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<url>>:
   A publicly browsable repository. For example, via ViewCVS.
 
+* {Prerequisites}
+
+  The POM may have certain prerequisites in order to execute correctly. For example,
+  perhaps there was a fix in Maven 2.0.3 that you need in order to deploy using sftp.
+  Here is where you give the prerequisites to building. If these are not met, Maven will
+  fail the build before even starting. The only element that exists as a prerequisite in
+  POM 4.0 is the maven element, which takes a minimum version number.
+
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1522,13 +1532,6 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   ...
 </project>
 +-------------------------+
-
-  * <<prerequisites>>:
-  The POM may have certain prerequisites in order to execute correctly. For example,
-  perhaps there was a fix in Maven 2.0.3 that you need in order to deploy using sftp.
-  Here is where you give the prerequisites to building. If these are not met, Maven will
-  fail the build before even starting. The only element that exists as a prerequisite in
-  POM 4.0 is the maven element, which takes a minimum version number.
 
 * {Repositories}
 
