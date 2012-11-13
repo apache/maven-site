@@ -1,3 +1,21 @@
+<!---
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
 # Maven 3 logging with SLF4J
 
 The standard Maven distribution, from Maven 3.1 onward, uses the [SLF4J API][1] for logging combined with the [SLF4J Simple][1] implementation. Looking at the distribution you will see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and `slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
@@ -91,9 +109,10 @@ org.slf4j.simpleLogger.warnLevelString=WARNING
 
 ## Changing the SLF4J implementation
 
-If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR from <code>lib</code> directory and replacing it with one of the alternative implementations, like [Logback][3]. The [m2e][4] project uses [SLF4J][1] with  [Logback][3], for example. 
+If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR from <code>lib</code> directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. The [m2e][5] project uses [SLF4J][1] with [Logback][4], for example. 
 
 [1]: http://slf4j.org
 [2]: http://www.slf4j.org/api/org/slf4j/impl/SimpleLogger.html
-[3]: http://logback.qos.ch
-[4]: http://eclipse.org/m2e/
+[3]: http://logging.apache.org/log4j/2.x/slf4j-impl/
+[4]: http://logback.qos.ch
+[5]: http://eclipse.org/m2e/
