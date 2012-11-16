@@ -16,9 +16,13 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-# Maven 3 logging with SLF4J
+# Maven 3.1.x logging with SLF4J
 
-The standard Maven distribution, from Maven 3.1 onward, uses the [SLF4J API][1] for logging combined with the [SLF4J Simple][1] implementation. Looking at the distribution you will see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and `slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
+We have reached the decision that SLF4J is the best option for a logging API. SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect, it's the de facto standard and it's pointless to try and remake another one. SLF4J is used by many prominent Java OSS projects including 15 Apache projects already.
+
+There are many implementations to choose from, including Logback and Log4J. All the hard work has been done. All the bridges and funnels for other systems function well which allows others to use whatever logging implementation they like in their components while still being able to have integrated logging.
+
+The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][1] for logging combined with the [SLF4J Simple][1] implementation. Looking at the distribution you will see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and `slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
 
 <pre>
 m2
