@@ -48,44 +48,44 @@ m2
 
 To configure logging with the [SLF4J Simple][2], you can edit the properties in the `${MAVEN_HOME}/conf/logging/simplelogger.properties` file.
 
-<table class="table">
-<tr>
+<table border="0" class="bodyTable">
+<tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>logFile</b></code></td>
 <td>The output target which can be the path to a file, or the special values "System.out" and "System.err". Default is "System.err".</td>
 </tr>
-<tr>
+<tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>defaultLogLevel</b></code></td>
 <td>Default log level for all instances of SimpleLogger. Must be one of ("trace", "debug", "info", "warn", or "error"). If not specified, defaults to "info".</td>
 </tr>
-<tr>
+<tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>log.a.b.c</b></code></td>
 <td>Logging detail level for a SimpleLogger instance named "a.b.c". Right-side value must be one of "trace", "debug", "info", "warn", or "error". When a SimpleLogger named "a.b.c" is initialized, its level is assigned from this property. If unspecified, the level of nearest parent logger will be used, and if none is set, then the value specified by org.slf4j.simpleLogger.defaultLogLevel will be used.</td>
 </tr>
-<tr>
+<tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>showDateTime</b></code></td>
 <td>Set to true if you want the current date and time to be included in output messages. Default is true</td>
 </tr>
-<tr>
+<tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>dateTimeFormat</b></code></td>
 <td>The date and time format to be used in the output messages. The pattern describing the date and time format is defined by SimpleDateFormat. If the format is not specified or is invalid, the number of milliseconds since start up will be output.</td>
 </tr>
-<tr>
+<tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>showThreadName</b></code></td>
 <td>Set to true if you want to output the current thread name. Defaults to true.</td>
 </tr>
-<tr>
+<tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>showLogName</b></code></td>
 <td>Set to true if you want the Logger instance name to be included in output messages. Defaults to true.</td>
 </tr>
-<tr>
+<tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>showShortLogName</b></code></td>
 <td>Set to true if you want the last component of the name to be included in output messages. Defaults to false.</td>
 </tr>
-<tr>
+<tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>levelInBrackets</b></code></td>
 <td>Should the level string be output in brackets? Defaults to false.</td>
 </tr>
-<tr>
+<tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>warnLevelString</b></code></td>
 <td>The string value output for the warn level. Defaults to WARN.</td>
 </tr>
