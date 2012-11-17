@@ -16,7 +16,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-# Maven 3.1.x logging with SLF4J
+# Maven 3.1.x logging
 
 We have reached the decision that [SLF4J][1] is the best option for a logging API. SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect, it's the de facto standard and it's pointless to try and remake another one. SLF4J is used by many prominent Java OSS projects including 15 Apache projects already.
 
@@ -108,11 +108,10 @@ org.slf4j.simpleLogger.warnLevelString=WARNING
 
 ## Changing the SLF4J implementation
 
-If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR from <code>lib</code> directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. The [m2e][5] project uses [SLF4J][1] with [Logback][4], for example. 
+If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR from <code>lib</code> directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. 
 
 [1]: http://slf4j.org
 [2]: http://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
 [3]: http://logging.apache.org/log4j/2.x/slf4j-impl/
 [4]: http://logback.qos.ch
-[5]: http://eclipse.org/m2e/
 |6]: http://slf4j.org/apidocs/
