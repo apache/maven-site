@@ -18,11 +18,20 @@ under the License.
 -->
 # Maven 3.1.x logging
 
-We have reached the decision that [SLF4J][1] is the best option for a logging API. SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect, it's the de facto standard and it's pointless to try and remake another one. SLF4J is used by many prominent Java OSS projects including 15 Apache projects already.
+We have reached the decision that [SLF4J][1] is the best option for a logging API.
+SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect,
+it's the de facto standard and it's pointless to try and remake another one.
+SLF4J is used by many prominent Java OSS projects including 15 Apache projects already.
 
-There are many implementations to choose from, including [Logback][4] and [Log4j2][3]. All the hard work has been done. All the bridges and funnels for other systems function well, which allows others to use whatever logging implementation they like in their components while still being able to have integrated logging.
+There are many implementations to choose from, including [Logback][4] and [Log4j2][3].
+All the hard work has been done. All the bridges and funnels for other systems function well,
+which allows others to use whatever logging implementation they like in their components
+while still being able to have integrated logging.
 
-The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][5] for logging combined with the [SLF4J Simple][2] implementation. Looking at the distribution you will see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and `slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
+The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][5] for logging
+combined with the [SLF4J Simple][2] implementation. Looking at the distribution you will
+see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and
+`slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
 
 <div class="source"><pre>
 m2
@@ -46,20 +55,26 @@ m2
 
 ## Configuring logging 
 
-To configure logging with the [SLF4J Simple][2], you can edit the properties in the `${MAVEN_HOME}/conf/logging/simplelogger.properties` file.
+To configure logging with the [SLF4J Simple][2], you can edit the properties in the
+`${MAVEN_HOME}/conf/logging/simplelogger.properties` file.
 
 <table border="0" class="bodyTable">
 <tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>logFile</b></code></td>
-<td>The output target which can be the path to a file, or the special values "System.out" and "System.err". Default is "System.err".</td>
+<td>The output target which can be the path to a file, or the special values "System.out" and "System.err".
+Default is "System.err".</td>
 </tr>
 <tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>defaultLogLevel</b></code></td>
-<td>Default log level for all instances of SimpleLogger. Must be one of ("trace", "debug", "info", "warn", or "error"). If not specified, defaults to "info".</td>
+<td>Default log level for all instances of SimpleLogger. Must be one of ("trace", "debug", "info",
+"warn", or "error"). If not specified, defaults to "info".</td>
 </tr>
 <tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>log.a.b.c</b></code></td>
-<td>Logging detail level for a SimpleLogger instance named "a.b.c". Right-side value must be one of "trace", "debug", "info", "warn", or "error". When a SimpleLogger named "a.b.c" is initialized, its level is assigned from this property. If unspecified, the level of nearest parent logger will be used, and if none is set, then the value specified by org.slf4j.simpleLogger.defaultLogLevel will be used.</td>
+<td>Logging detail level for a SimpleLogger instance named "a.b.c". Right-side value must be one of "trace",
+"debug", "info", "warn", or "error". When a SimpleLogger named "a.b.c" is initialized, its level is assigned
+from this property. If unspecified, the level of nearest parent logger will be used, and if none is set,
+then the value specified by org.slf4j.simpleLogger.defaultLogLevel will be used.</td>
 </tr>
 <tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>showDateTime</b></code></td>
@@ -67,7 +82,9 @@ To configure logging with the [SLF4J Simple][2], you can edit the properties in 
 </tr>
 <tr class="b">
 <td><code>org.slf4j.simpleLogger.<b>dateTimeFormat</b></code></td>
-<td>The date and time format to be used in the output messages. The pattern describing the date and time format is defined by SimpleDateFormat. If the format is not specified or is invalid, the number of milliseconds since start up will be output.</td>
+<td>The date and time format to be used in the output messages. The pattern describing the date and
+time format is defined by SimpleDateFormat. If the format is not specified or is invalid, the number
+of milliseconds since start up will be output.</td>
 </tr>
 <tr class="a">
 <td><code>org.slf4j.simpleLogger.<b>showThreadName</b></code></td>
@@ -108,7 +125,8 @@ org.slf4j.simpleLogger.warnLevelString=WARNING
 
 ## Changing the SLF4J implementation
 
-If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR from <code>lib</code> directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. 
+If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR
+from `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. 
 
 [1]: http://slf4j.org
 [2]: http://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
