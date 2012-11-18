@@ -4,7 +4,7 @@
  Dennis Lundberg
  John Casey
  -----
- 2012-04-09
+ 2012-11-19
  -----
 
 Shared Components
@@ -53,5 +53,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-jarsigner/} <<<maven-jarsigner>>>}}                       | 1.0          | 2011-11-21        | This component provides some utilities to sign/verify jars/files in your Mojos. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-jarsigner/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15255}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-shared-utils/} <<<maven-shared-utils>>>}}                    | 0.1          | 2012-11-01        | Utilities functions for use within maven                  | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-utils/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15606}JIRA}}
+| {{{/shared/maven-shared-utils/} <<<maven-shared-utils>>>}}                 | 0.1          | 2012-11-01        | Utilities functions for use within maven. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-utils/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15606}JIRA}}
+*----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
+| {{{/shared/maven-shared-incremental/} <<<maven-shared-incremental>>>}}     | 1.0          | 2012-11-19        | Various utility classes and plexus components for supporting incremental build functionality in maven plugins. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-incremental/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15606}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
