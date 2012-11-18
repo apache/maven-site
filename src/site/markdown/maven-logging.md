@@ -18,6 +18,9 @@ under the License.
 -->
 # Maven 3.1.x logging
 
+Maven 2.x and 3.0.x use [Plexus logging API][6] with basic Maven implementation writing
+to stdout.
+
 We have reached the decision that [SLF4J][1] is the best option for a logging API.
 SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect,
 it's the de facto standard and it's pointless to try and remake another one.
@@ -29,9 +32,12 @@ which allows others to use whatever logging implementation they like in their co
 while still being able to have integrated logging.
 
 The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][5] for logging
-combined with the [SLF4J Simple][2] implementation. Looking at the distribution you will
+combined with the [SLF4J Simple][2] implementation. Future versions may use a more advanced
+implementation, but we chose to start simple.
+
+Looking at the distribution you will
 see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and
-`slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation.
+`slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation:
 
 <div class="source"><pre>
 m2
@@ -133,3 +139,4 @@ from `lib` directory and replacing it with one of the alternative implementation
 [3]: http://logging.apache.org/log4j/2.x/slf4j-impl/
 [4]: http://logback.qos.ch
 [5]: http://slf4j.org/apidocs/
+[6]: http://plexus.codehaus.org/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
