@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2011-07-19
+ 2012-11-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -223,7 +223,7 @@ To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
 Subject: [ANN] Maven XXX Plugin Y.Z Released
 
-The Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
+The Apache Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
 
 This plugin (insert short description of the plugin's purpose).
 
@@ -243,7 +243,7 @@ Release Notes - Maven 2.x XXX Plugin - Version Y.Z
 
 Enjoy,
 
--The Maven team
+-The Apache Maven team
 
 +-----+
 
