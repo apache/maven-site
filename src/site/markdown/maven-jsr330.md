@@ -14,11 +14,11 @@ If you are interested the background of moving from Plexus to Guice and JSR-330 
 
 When you use JSR-330 in Maven plugins or extensions there are two things need to setup in your build. First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations in your plugins and extensions. Second you need to setup the `sisu-maven-plugin` to index the JSR-330 components you want made available to Maven. The `sisu-maven-plugin` creates its index in `META-INF/sisu/javax.inject.Named`. If you take a look in that file you will see something like the following:
 
-<pre>
+```
 org.apache.maven.lifecycle.profiler.LifecycleProfiler
 org.apache.maven.lifecycle.profiler.internal.DefaultSessionProfileRenderer
 org.apache.maven.lifecycle.profiler.internal.DefaultTimer
-</pre>
+```
 
 Enumerating the implementations means that no classpath scanning is required to find them which keeps Maven's startup time fast. Note that our container is configured by default to only use the index. While this keeps things fast, if you use JSR-330 components in dependencies that do not contain an index those implementations will currently not be discovered. This is a compromise that is reasonable given Maven is a command-line tool where startup speed is important.
 
@@ -78,7 +78,7 @@ Let's take a look at an example extension. We'll take a look at the POM, and a l
 
 So, as mentioned, we have the `javax.inject` dependency and the `sisu-maven-plugin` configured to create the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` it will automatically get picked up by the core. In the case of example we have an implementation of an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
 
-<pre>
+```
 package org.apache.maven.lifecycle.profiler;
 
 import javax.inject.Inject;
@@ -167,7 +167,7 @@ public class LifecycleProfiler extends AbstractEventSpy {
     }
   }
 }
-</pre>
+```
 
 ## How to use JSR330 in plugins
 
@@ -261,7 +261,7 @@ Let's take a look at an example plugin. The POM is setup in a similar way to an 
 
 Now let's take a look at the plugin code. You'll notice that we're using constructor injection which makes testing a lot easier. If you want to test your `Jsr330Component` you do not need the container to instantiate the `Mojo`. In this simple case you can actually test this plugin without using the plugin testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplies testing. 
 
-<pre>
+```
 package org.apache.maven.plugins;
 
 import javax.inject.Inject;
@@ -288,7 +288,7 @@ public class Jsr330Mojo extends AbstractMojo {
     component.hello();
   }
 }
-</pre>
+```
 
 If you want to look at this example project you can find the code [here][jsr330-plugin] on Github.
 
