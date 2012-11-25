@@ -2,7 +2,12 @@
 
 ## Why JSR-330?
 
-Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus] so the intent of using [JSR-330][jsr330] is to replace a custom DI mechansism with something standard. The implementation Maven uses is based on Guice 3.x which directly supports JSR-330. If you are using Plexus annotations and APIs currently there is no rush switch and no big bang conversions are necessary. Plexus, JSR-330 and Guice APIs all happily co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components written using the Plexus APIs and those APIs will be supported forever. 
+Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus] so the intent of using
+[JSR-330][jsr330] is to replace a custom DI mechansism with something standard. The implementation Maven
+uses is based on Guice 3.x which directly supports JSR-330. If you are using Plexus annotations and APIs currently,
+there is no rush switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
+co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components
+written using the Plexus APIs and those APIs will be supported forever. 
 
 If you are interested the background of moving from Plexus to Guice and JSR-330 you can refer to the following articles:
 
@@ -12,7 +17,11 @@ If you are interested the background of moving from Plexus to Guice and JSR-330 
 
 ## How to use JSR-330
 
-When you use JSR-330 in Maven plugins or extensions there are two things need to setup in your build. First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations in your plugins and extensions. Second you need to setup the `sisu-maven-plugin` to index the JSR-330 components you want made available to Maven. The `sisu-maven-plugin` creates its index in `META-INF/sisu/javax.inject.Named`. If you take a look in that file you will see something like the following:
+When you use JSR-330 in Maven plugins or extensions, there are two things need to setup in your build.
+First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations
+in your plugins and extensions. Second you need to setup the `sisu-maven-plugin` to index the JSR-330 components
+you want made available to Maven. The `sisu-maven-plugin` creates its index in `META-INF/sisu/javax.inject.Named`.
+If you take a look in that file you will see something like the following:
 
 ```
 org.apache.maven.lifecycle.profiler.LifecycleProfiler
@@ -20,11 +29,19 @@ org.apache.maven.lifecycle.profiler.internal.DefaultSessionProfileRenderer
 org.apache.maven.lifecycle.profiler.internal.DefaultTimer
 ```
 
-Enumerating the implementations means that no classpath scanning is required to find them which keeps Maven's startup time fast. Note that our container is configured by default to only use the index. While this keeps things fast, if you use JSR-330 components in dependencies that do not contain an index those implementations will currently not be discovered. This is a compromise that is reasonable given Maven is a command-line tool where startup speed is important.
+Enumerating the implementations means that no classpath scanning is required to find them, which keeps Maven's
+startup time fast. Note that our container is configured by default to only use the index. While this keeps things fast,
+if you use JSR-330 components in dependencies that do not contain an index, those implementations will currently
+not be discovered. This is a compromise that is reasonable given Maven is a command-line tool where startup speed
+is important.
 
 ## How to use JSR330 in extensions
  
-Let's take a look at an example extension. We'll take a look at the POM, and a little bit of the implementation so you can get an idea of how JSR-330 extensions work. Really it's just a simple JSR-330 components. If you want to look at the full implementation you can find it [here][tesla-profiler] on Github. Ok so let's take a look at the POM:
+Let's take a look at an example extension. We'll take a look at the POM, and a little bit of the implementation
+so you can get an idea of how JSR-330 extensions work. Really it's just a simple JSR-330 components.
+If you want to look at the full implementation, you can find it [here][tesla-profiler] on Github.
+
+Ok so let's take a look at the POM:
  
 ```
 <?xml version="1.0"?>
@@ -76,7 +93,10 @@ Let's take a look at an example extension. We'll take a look at the POM, and a l
 </project>
 ```
 
-So, as mentioned, we have the `javax.inject` dependency and the `sisu-maven-plugin` configured to create the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` it will automatically get picked up by the core. In the case of example we have an implementation of an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
+So, as mentioned, we have the `javax.inject` dependency and the `sisu-maven-plugin` configured to create
+the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext`,
+it will automatically get picked up by the core. In the case of example, we have an implementation of
+an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
 
 ```
 package org.apache.maven.lifecycle.profiler;
@@ -171,7 +191,9 @@ public class LifecycleProfiler extends AbstractEventSpy {
 
 ## How to use JSR330 in plugins
 
-Let's take a look at an example plugin. The POM is setup in a similar way to an extension, but we add a dependency for the `maven-plugin-api` and the `maven-plugin-annotations` to extend the `AbstractMojo` and use the Java5 plugin annotations in our example.
+Let's take a look at an example plugin. The POM is setup in a similar way to an extension, but we add a dependency
+for the `maven-plugin-api` and the `maven-plugin-annotations` to extend the `AbstractMojo` and use
+the Java5 plugin annotations in our example.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -259,7 +281,11 @@ Let's take a look at an example plugin. The POM is setup in a similar way to an 
 </project>
 ```
 
-Now let's take a look at the plugin code. You'll notice that we're using constructor injection which makes testing a lot easier. If you want to test your `Jsr330Component` you do not need the container to instantiate the `Mojo`. In this simple case you can actually test this plugin without using the plugin testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplies testing. 
+Now let's take a look at the plugin code. You'll notice that we're using constructor injection
+which makes testing a lot easier. If you want to test your `Jsr330Component`, you do not need the container
+to instantiate the `Mojo`. In this simple case, you can actually test this plugin without using the plugin
+testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire
+everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplies testing. 
 
 ```
 package org.apache.maven.plugins;
