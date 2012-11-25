@@ -218,7 +218,7 @@ the Java5 plugin annotations in our example.
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <mavenVersion>3.0.4</mavenVersion>
-    <mavenPluginPluginVersion>3.1</mavenPluginPluginVersion>
+    <mavenPluginPluginVersion>3.2</mavenPluginPluginVersion>
   </properties>
 
   <dependencies>
@@ -304,26 +304,31 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 
-@Mojo(name = "hello", defaultPhase = LifecyclePhase.VALIDATE, requiresProject = false)
-public class Jsr330Mojo extends AbstractMojo {
+@Mojo( name = "hello", defaultPhase = LifecyclePhase.VALIDATE, requiresProject = false )
+public class Jsr330Mojo
+    extends AbstractMojo
+{
 
-  private Jsr330Component component;
-  
-  @Inject
-  public Jsr330Mojo(Jsr330Component component) {
-    this.component = component;    
-  }
-  
-  public void execute() throws MojoExecutionException {    
-    //
-    // Say hello to the world, my little constructor injected component!
-    //
-    component.hello();
-  }
+    private Jsr330Component component;
+
+    @Inject
+    public Jsr330Mojo( Jsr330Component component )
+    {
+        this.component = component;    
+    }
+
+    public void execute()
+        throws MojoExecutionException
+    {    
+        //
+        // Say hello to the world, my little constructor injected component!
+        //
+        component.hello();
+    }
 }
 ```
 
-If you want to look at this example project you can find the code [here][jsr330-plugin] on Github.
+If you want to look at this example project, you can find the code [in Maven Core ITs][jsr330-plugin].
 
 [tesla-profiler]: https://github.com/tesla/tesla-profiler
 [p2g1]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-1-why-guice/
@@ -334,7 +339,7 @@ If you want to look at this example project you can find the code [here][jsr330-
 [sisu]: http://eclipse.org/sisu/
 [plexus]: http://plexus.codehaus.org/
 [plexus-container]: http://plexus.codehaus.org/plexus-containers/
-[jsr330-plugin]: https://github.com/tesla/maven-jsr330-plugin
+[jsr330-plugin]: http://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
 [guice]: http://code.google.com/p/google-guice/
 [sisu-maven-plugin]: http://sonatype.github.com/sisu-maven-plugin/
 [MNG-5343]: http://jira.codehaus.org/browse/MNG-5343
