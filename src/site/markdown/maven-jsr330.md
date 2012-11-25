@@ -4,7 +4,7 @@
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
 [JSR-330][jsr330] is to replace a custom DI mechanism with something standard. The implementation Maven
-uses - since 3.0-beta-3 - is based on Guice 3.x, which directly supports JSR-330.
+uses - since 3.0-beta-3 - is based on [Guice 3.x][guice], which directly supports JSR-330.
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
@@ -25,7 +25,7 @@ If you are interested the background of moving from Plexus to Guice and JSR-330,
 
 When you use JSR-330 in Maven plugins or extensions, there are two things need to setup in your build.
 First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations
-in your plugins and extensions. Second you need to setup the `sisu-maven-plugin` to index the JSR-330 components
+in your plugins and extensions. Second you need to setup the [`sisu-maven-plugin`][sisu-maven-plugin] to index the JSR-330 components
 you want made available to Maven. The `sisu-maven-plugin` creates its index in `META-INF/sisu/javax.inject.Named`.
 If you take a look in that file you will see something like the following:
 
@@ -334,3 +334,5 @@ If you want to look at this example project you can find the code [here][jsr330-
 [plexus]: http://plexus.codehaus.org/
 [plexus-container]: http://plexus.codehaus.org/plexus-containers/
 [jsr330-plugin]: https://github.com/tesla/maven-jsr330-plugin
+[guice]: http://code.google.com/p/google-guice/
+[sisu-maven-plugin]: http://sonatype.github.com/sisu-maven-plugin/
