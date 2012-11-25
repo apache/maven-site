@@ -2,14 +2,16 @@
 
 ## Why JSR-330?
 
-Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus] so the intent of using
+Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
 [JSR-330][jsr330] is to replace a custom DI mechansism with something standard. The implementation Maven
-uses is based on Guice 3.x which directly supports JSR-330. If you are using Plexus annotations and APIs currently,
+uses is based on Guice 3.x which directly supports JSR-330.
+
+If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
 co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components
 written using the Plexus APIs and those APIs will be supported forever. 
 
-If you are interested the background of moving from Plexus to Guice and JSR-330 you can refer to the following articles:
+If you are interested the background of moving from Plexus to Guice and JSR-330, you can refer to the following articles:
 
 - [Plexus to Guice Part 1][p2g1]
 - [Plexus to Guice Part 2][p2g2]
@@ -325,5 +327,6 @@ If you want to look at this example project you can find the code [here][jsr330-
 [dagger]: http://square.github.com/dagger/
 [jsr330]: http://www.jcp.org/en/jsr/detail?id=330
 [sisu]: http://eclipse.org/sisu/
-[plexus]: http://plexus.codehaus.org
+[plexus]: http://plexus.codehaus.org/
+[plexus-container]: http://plexus.codehaus.org/plexus-containers/
 [jsr330-plugin]: https://github.com/tesla/maven-jsr330-plugin
