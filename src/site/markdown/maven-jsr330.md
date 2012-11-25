@@ -4,7 +4,7 @@
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
 [JSR-330][jsr330] is to replace a custom DI mechansism with something standard. The implementation Maven
-uses is based on Guice 3.x which directly supports JSR-330.
+uses since 3.0-beta-3 is based on Guice 3.x, which directly supports JSR-330.
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
