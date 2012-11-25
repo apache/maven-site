@@ -139,14 +139,20 @@ svn propget svn:externals
 mvn install
 ----
 
-  Optionally, you can use the following to run the full (long) suite of integration tests:
-
-----
-mvn install -Prun-its
-----
+  Optionally, you can use the following to run the full (long) suite of integration tests; see below.
 
   The assemblies will be created in <<<apache-maven/target>>> for Maven 2.0.x or <<<maven-distribution>>> for Maven 2.1,
   and can be unzipped to the location where you'd like Maven installed.
+
+** Running the full integration tests
+
+   Before checking in a change or submitting a patch, it's a good idea to run the integration tests. These live in 
+   their own directory in subversion, as noted above: <<<core-integration-testing/trunk>>>. Using your local build
+   of Maven, run:
+
+---
+mvn install -Prun-its
+---
 
 ** Building Maven Without Maven Installed
 
