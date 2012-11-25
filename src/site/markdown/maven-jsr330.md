@@ -3,13 +3,17 @@
 ## Why JSR-330?
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
-[JSR-330][jsr330] is to replace a custom DI mechansism with something standard. The implementation Maven
-uses since 3.0-beta-3 is based on Guice 3.x, which directly supports JSR-330.
+[JSR-330][jsr330] is to replace a custom DI mechanism with something standard. The implementation Maven
+uses - since 3.0-beta-3 - is based on Guice 3.x, which directly supports JSR-330.
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
 co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components
-written using the Plexus APIs and those APIs will be supported forever. 
+written using the Plexus APIs, particularly components and plugins compatible with Maven 2,
+then those APIs will be supported forever, or at least until Maven fully drops Maven 2 support. 
+
+If you want to use JSR-330 or Guice APIs, you must understand that your code won't be compatible with Maven 2
+but only with Maven 3 (the exact minimum version is 3.0-beta-3).
 
 If you are interested the background of moving from Plexus to Guice and JSR-330, you can refer to the following articles:
 
