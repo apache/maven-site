@@ -12,8 +12,9 @@ co-exist within Maven's core and you can choose to use JSR-330 when you wish. Th
 written using the Plexus APIs, particularly components and plugins compatible with Maven 2,
 then those APIs will be supported forever, or at least until Maven fully drops Maven 2 support. 
 
-If you want to use JSR-330 or Guice APIs, you must understand that your code won't be compatible with Maven 2
-but only with Maven 3 (the exact minimum version is 3.0-beta-3).
+If you want to use JSR-330, you must understand that your code won't be compatible with Maven 2 or 3.0.x
+but only with Maven 3.1: even if JSR-330 is available in core since Maven 3.0-beta-3, it was made available to plugins and
+extensions only in Maven 3.1 (see [MNG-5343][MNG-5343] for more details).
 
 If you are interested the background of moving from Plexus to Guice and JSR-330, you can refer to the following articles:
 
@@ -336,3 +337,4 @@ If you want to look at this example project you can find the code [here][jsr330-
 [jsr330-plugin]: https://github.com/tesla/maven-jsr330-plugin
 [guice]: http://code.google.com/p/google-guice/
 [sisu-maven-plugin]: http://sonatype.github.com/sisu-maven-plugin/
+[MNG-5343]: http://jira.codehaus.org/browse/MNG-5343
