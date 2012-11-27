@@ -22,8 +22,8 @@ Maven 2.x and 3.0.x use [Plexus logging API][6] with basic Maven implementation 
 to stdout.
 
 We have reached the decision that [SLF4J][1] is the best option for a logging API.
-SLF4J has reached a certain level of Ubiquity and while SLF4J may not be perfect,
-it's the de facto standard and it's pointless to try and remake another one.
+SLF4J has reached a certain level of ubiquity and while SLF4J may not be perfect,
+it\'s the de facto standard and it\'s pointless to try and remake another one.
 SLF4J is used by many prominent Java OSS projects including 15 Apache projects already.
 
 There are many implementations to choose from, including [Logback][4] and [Log4j2][3].
@@ -36,8 +36,8 @@ combined with the [SLF4J Simple][2] implementation. Future versions may use a mo
 implementation, but we chose to start simple.
 
 Looking at the distribution you will
-see the following layout where the `simplelogger.properties`, `slf4j-api-1.7.2-jar` and
-`slf4j-simple-1.7.2.jar` specifically relate to the SLF4J implementation:
+see the following layout where the `simplelogger.properties`, `slf4j-api-x.y.z-jar` and
+`slf4j-simple-x.y.z.jar` specifically relate to the SLF4J implementation:
 
 <div class="source"><pre>
 m2
@@ -54,15 +54,16 @@ m2
 │   └── settings.xml
 └── lib
     ├── ...
-    ├── slf4j-api-1.7.2.jar
-    ├── slf4j-simple-1.7.2.jar
+    ├── slf4j-api-x.y.z.jar
+    ├── slf4j-simple-x.y.z.jar
     └── ...
 </pre></div>
 
 ## Configuring logging 
 
 To configure logging with the [SLF4J Simple][2], you can edit the properties in the
-`${MAVEN_HOME}/conf/logging/simplelogger.properties` file.
+`${MAVEN_HOME}/conf/logging/simplelogger.properties` file. The following table lists
+the available configuration properties along with the SLF4J Simple defaults.
 
 <table border="0" class="bodyTable">
 <tr class="b">
@@ -114,7 +115,7 @@ of milliseconds since start up will be output.</td>
 </tr>
 </table>
 
-The default configuration looks like the following:
+The default configuration for Maven looks like the following:
 
 <div class="source"><pre>
 # Default Maven logging configuration
@@ -132,11 +133,11 @@ org.slf4j.simpleLogger.warnLevelString=WARNING
 ## Changing the SLF4J implementation
 
 If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR
-from `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. 
+from the `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4]. 
 
 [1]: http://slf4j.org
 [2]: http://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
-[3]: http://logging.apache.org/log4j/2.x/slf4j-impl/
+[3]: http://logging.apache.org/log4j/2.x/log4j-slf4j-impl/
 [4]: http://logback.qos.ch
 [5]: http://slf4j.org/apidocs/
 [6]: http://plexus.codehaus.org/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
