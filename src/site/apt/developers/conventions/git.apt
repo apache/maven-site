@@ -123,3 +123,62 @@ $ git checkout .
  TODO .gitignore
 
 
+
+* power-git checkout
+
+ This checkout is typical for highly experienced git users, and may serve as inspiration for others; as usual the
+ best way to learn is by doing. Sample shown for maven-surefire
+
+ Go to https://github.com/apache/maven-surefire and fork surefire to your own github account.
+
+ Starting with nothing (no existing clone)
+
+---
+git clone https://github.com/<youraccount>/maven-surefire.git
+git remote add apache https://git-wip-us.apache.org/repos/asf/maven-surefire.git
+git remote add asfgithub https://github.com/apache/maven-surefire.git
+git config --add remote.asfgithub.fetch "+refs/pull/*/head:refs/remotes/asfgithub/pr/*"
+git fetch --all
+---
+ (You may consider adding --global to the git config statement above to always fetch
+ pull requests for any remote named "asfgithub")
+
+ In this setup, running "git push" will normally push to your personal github account.
+ Furthermore, all pull requests from github are also fetched to your local clone, use
+
+---
+gitk --all
+---
+
+ to try to make some sense of it all. This is an important command to understand! (gitk may need to be installed additionally)
+
+
+ If you're working on the master branch, you can do stuff like this:
+
+---
+git push # your github account
+git push apache # the authorative apache repo
+---
+
+ To merge a pull request
+
+---
+git merge pr/10 # merge pull request number 10 from asf@github into master
+git push apache # upload to apache
+---
+
+ Or if you're comfortable with rebasing;
+
+---
+git checkout pr/10
+git rebase apache/master
+git push apache
+---
+
+
+
+
+
+
+
+
