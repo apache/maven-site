@@ -160,6 +160,9 @@ git push # your github account
 git push apache # the authorative apache repo
 ---
 
+ Using your github account as a storage for half-finished work is excellent if you switch between multiple computers,
+ always push to github before leaving your current computer and start by pulling at the next computer.
+
  To merge a pull request
 
 ---
@@ -170,6 +173,7 @@ git push apache # upload to apache
  Or if you're comfortable with rebasing;
 
 ---
+
 git checkout pr/10
 git rebase apache/master
 git push apache
