@@ -29,18 +29,16 @@ under the License.
   <body>
     <section name="Source Repository">
       <p>
-        Maven projects use <a href="http://subversion.apache.org/">Subversion</a> to manage their source code.
-        Instructions on Subversion use can be found in the online book
-        <a href="http://svnbook.red-bean.com/">Version Control with Subversion</a>.
+        Maven projects use <a href="http://git-scm.com/">Git</a> or <a href="http://subversion.apache.org/">Subversion</a> to manage their source code.
+        Instructions on Subversion use can be found in the online book <a href="http://svnbook.red-bean.com/">Version Control with Subversion</a>.
+        Instructions on Git use can be found in the online book <a href="http://git-scm.com/book/">Pro Git</a>.
       </p>
       <subsection name="Web Access">
         <p>
-          The following list shows the links to the online source repositories for the various development branches of
-          the Maven core:
+          The git repository for maven contains a master branch which is the current development version. There is also a
+          branch for maven-2.2.X.
         </p>
-        <source>
-<a href="http://svn.apache.org/viewvc/maven/maven-2/branches/maven-2.2.x">http://svn.apache.org/viewvc/maven/maven-2/branches/maven-2.2.x</a>&#xA0;<!-- protected space to force line break -->
-<a href="http://svn.apache.org/viewvc/maven/maven-3/trunk">http://svn.apache.org/viewvc/maven/maven-3/trunk</a></source>
+        <source> <a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source>
         <p>
           The source repositories for the various plugins are listed in the documentation of the respective plugin,
           reachable via the <a href="plugins/index.html">plugin index</a>.
@@ -51,23 +49,17 @@ under the License.
       </subsection>
       <subsection name="Anonymous Access">
         <p>
-          The source can be checked out anonymously from SVN with one of these commands depending on the development
-          line you are looking for:
+          Both subversion and git repositories may be cloned with either http or https. Only read-only access is available
+          for http checkouts.
         </p>
-        <source>
-$ svn checkout http://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout http://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3
-$ svn checkout http://svn.apache.org/repos/asf/maven/site/trunk</source>
+        <source> $ svn checkout http://svn.apache.org/repos/asf/maven/site/trunk</source>
       </subsection>
       <subsection name="Developer Access">
         <p>
-          Everyone can access the Subversion repository via HTTP, but committers must checkout the Subversion
-          repository via HTTPS to gain write access:
+          Everyone can access Subversion repositories via HTTP, but committers must checkout Subversion
+          repositories via HTTPS to gain write access:
         </p>
-        <source>
-$ svn checkout https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout https://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3
-$ svn checkout https://svn.apache.org/repos/asf/maven/site/trunk</source>
+        <source> $ svn checkout https://svn.apache.org/repos/asf/maven/site/trunk</source>
         <p>
           To commit changes to the repository, execute the following command to commit your changes (<code>svn</code> will
           prompt you for your password):
@@ -81,8 +73,6 @@ $ svn commit --username your-username -m "A message"</source>
           repository, you can try to access it via the developer connection:
         </p>
         <source>
-$ svn checkout https://svn.apache.org/repos/asf/maven/maven-2/branches/maven-2.2.x maven-2.2.x
-$ svn checkout https://svn.apache.org/repos/asf/maven/maven-3/trunk maven-3
 $ svn checkout https://svn.apache.org/repos/asf/maven/site/trunk</source>
       </subsection>
       <subsection name="Access through a Proxy">
