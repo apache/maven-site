@@ -26,6 +26,7 @@ under the License.
   name="Maven">
   <version position="none" />
 
+  <!-- must work with inheritence but for some reasons not ??  -->
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-stylus-skin</artifactId>
