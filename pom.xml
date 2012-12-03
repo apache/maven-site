@@ -94,6 +94,9 @@
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
           <version>3.2</version>
+          <configuration>
+            <siteDirectory>${basedir}/content</siteDirectory>
+          </configuration>
           <dependencies><!-- TODO remove when upgrading m-site-p to 3.3 -->
             <dependency>
               <groupId>org.apache.maven.doxia</groupId>
@@ -218,6 +221,8 @@
                 </goals>
                 <configuration>
                   <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+                  <siteDirectory>${basedir}/content</siteDirectory>
+                  <docDescriptor>${basedir}/content/pdf.xml</docDescriptor>
                 </configuration>
               </execution>
             </executions>

@@ -26,6 +26,12 @@ under the License.
   name="Maven">
   <version position="none" />
 
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-stylus-skin</artifactId>
+    <version>1.5</version>
+  </skin>
+
   <body>
     <breadcrumbs>
       <item name="Maven"  href="http://maven.apache.org/index.html" />
