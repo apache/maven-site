@@ -207,7 +207,7 @@ plugins/maven-project-info-reports-plugin-2.6
 plugins/maven-rar-plugin
 plugins/maven-rar-plugin-2.3
 plugins/maven-reactor-plugin
-plugins/maven-release-plugin-latest
+plugins/maven-release-plugin
 plugins/maven-release-plugin-2.0-beta-8
 plugins/maven-release-plugin-2.0-beta-9
 plugins/maven-release-plugin-2.0
