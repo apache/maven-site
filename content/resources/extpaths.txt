@@ -208,8 +208,6 @@ plugins/maven-rar-plugin
 plugins/maven-rar-plugin-2.3
 plugins/maven-reactor-plugin
 plugins/maven-release-plugin
-plugins/maven-release-plugin-2.0-beta-8
-plugins/maven-release-plugin-2.0-beta-9
 plugins/maven-release-plugin-2.0
 plugins/maven-release-plugin-2.1
 plugins/maven-release-plugin-2.2
@@ -237,8 +235,6 @@ plugins/maven-scm-publish-plugin
 plugins/maven-scm-publish-plugin-1.0-beta-1
 plugins/maven-scm-publish-plugin-1.0-beta-2
 plugins/maven-shade-plugin
-plugins/maven-shade-plugin-1.2.1
-plugins/maven-shade-plugin-1.2.2
 plugins/maven-shade-plugin-1.3
 plugins/maven-shade-plugin-1.3.1
 plugins/maven-shade-plugin-1.3.2
@@ -266,13 +262,7 @@ plugins/maven-source-plugin-2.1.1
 plugins/maven-source-plugin-2.1.2
 plugins/maven-source-plugin-2.2
 plugins/maven-stage-plugin
-plugins/maven-stage-plugin-1.0-alpha-2
 plugins/maven-surefire-plugin
-plugins/maven-surefire-plugin-2.5
-plugins/maven-surefire-plugin-2.6
-plugins/maven-surefire-plugin-2.7
-plugins/maven-surefire-plugin-2.7.1
-plugins/maven-surefire-plugin-2.7.2
 plugins/maven-surefire-plugin-2.8
 plugins/maven-surefire-plugin-2.8.1
 plugins/maven-surefire-plugin-2.9
@@ -391,11 +381,9 @@ skins/maven-stylus-skin-1.4
 skins/maven-stylus-skin-1.5
 surefire
 surefire-2.10
-surefire-2.8.1
 surefire-2.9
 wagon
 wagon-1.0
-wagon-1.0-beta-7
 wagon-2.0
 wagon-2.1
 wagon-2.2
