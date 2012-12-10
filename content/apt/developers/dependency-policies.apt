@@ -42,6 +42,7 @@ Maven Dependency Policies
   not have a Subversion URL starting with 
   <<<https://svn.apache.org/repo/asf/maven/>>> then this page does not apply
   to you.
+  Or git repositories starting with: https://git-wip-us.apache.org/repos/asf/maven*
 
 * Background
 
