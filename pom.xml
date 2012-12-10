@@ -148,7 +148,7 @@
               <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
               <resources>
                 <resource>
-                  <directory>src/site/filtered-resources</directory>
+                  <directory>${basedir}/content/filtered-resources</directory>
                   <filtering>true</filtering>
                 </resource>
               </resources>
