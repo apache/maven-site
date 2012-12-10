@@ -22,7 +22,7 @@ plugins/maven-ant-plugin
 plugins/maven-ant-plugin-2.1
 plugins/maven-ant-plugin-2.2
 plugins/maven-ant-plugin-2.3
-plugins/maven-antrun-plugin-latest
+plugins/maven-antrun-plugin
 plugins/maven-antrun-plugin-1.2
 plugins/maven-antrun-plugin-1.3
 plugins/maven-antrun-plugin-1.4
@@ -52,7 +52,7 @@ plugins/maven-changes-plugin-2.6
 plugins/maven-changes-plugin-2.7
 plugins/maven-changes-plugin-2.7.1
 plugins/maven-changes-plugin-2.8
-plugins/maven-checkstyle-plugin-latest
+plugins/maven-checkstyle-plugin
 plugins/maven-checkstyle-plugin-2.2
 plugins/maven-checkstyle-plugin-2.3
 plugins/maven-checkstyle-plugin-2.4
@@ -62,7 +62,7 @@ plugins/maven-checkstyle-plugin-2.7
 plugins/maven-checkstyle-plugin-2.8
 plugins/maven-checkstyle-plugin-2.9
 plugins/maven-checkstyle-plugin-2.9.1
-plugins/maven-clean-plugin-latest
+plugins/maven-clean-plugin
 plugins/maven-clean-plugin-2.3
 plugins/maven-clean-plugin-2.4
 plugins/maven-clean-plugin-2.4.1
@@ -88,7 +88,7 @@ plugins/maven-deploy-plugin-2.4
 plugins/maven-deploy-plugin-2.5
 plugins/maven-deploy-plugin-2.6
 plugins/maven-deploy-plugin-2.7
-plugins/maven-doap-plugin-latest
+plugins/maven-doap-plugin
 plugins/maven-doap-plugin-1.0
 plugins/maven-doap-plugin-1.1
 plugins/maven-docck-plugin
@@ -188,7 +188,7 @@ plugins/maven-pdf-plugin
 plugins/maven-pdf-plugin-1.0
 plugins/maven-pdf-plugin-1.1
 plugins/maven-pdf-plugin-1.2
-plugins/maven-pmd-plugin-latest
+plugins/maven-pmd-plugin
 plugins/maven-pmd-plugin-2.5
 plugins/maven-pmd-plugin-2.6
 plugins/maven-pmd-plugin-2.7
