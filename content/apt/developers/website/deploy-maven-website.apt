@@ -40,13 +40,23 @@ Introduction
 
  []
 
-Prerequisite
+How it works
 
- Be sure that:
+  At least how a user understand that.
 
- * you have all Maven servers defined in your <<<settings.xml>>>. For more information, please refer to
- {{{../committer-settings.html}Committer settings}}.
+  All the content is located here https://svn.apache.org/repos/infra/websites/production/maven/content/ then synced to lives machines.
 
+  For parts edited/build with CMS, two buildbot jobs build the content via using Maven site plugin:
+
+  * {{{http://ci.apache.org/builders/maven-site-staging}http://ci.apache.org/builders/maven-site-staging}}
+
+  * {{{http://ci.apache.org/builders/maven-doxia-site-staging}http://ci.apache.org/builders/maven-doxia-site-staging}}
+
+  []
+
+  Other parts can committed to the content source tree.
+  
+  As CMS will delete non build content, they must be ignored with adding paths in extpaths.txt file (located in site and doxia-site in path content/resources)
 
 * Modify Maven Website with CMS UI
 
