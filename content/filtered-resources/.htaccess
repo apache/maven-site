@@ -57,6 +57,7 @@ RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ http://maven.apache.
 #RedirectMatch permanent ^/plugins/maven-failsafe-plugin/(.*)$ http://maven.apache.org/surefire/maven-failsafe-plugin/$1
 #RedirectMatch permanent ^/plugins/maven-surefire-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-plugin/$1
 #RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-report-plugin/$1
+RedirectMatch permanent ^/surefire(.*)$ http://maven.apache.org/surefires/surefire$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
 RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ http://maven.apache.org/plugin-tools/$1
