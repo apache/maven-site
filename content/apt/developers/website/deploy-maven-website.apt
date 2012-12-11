@@ -3,7 +3,7 @@
  ------
  Barrie Treloar
  ------
- 2012-01-10
+ 2012-12-11
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -30,7 +30,7 @@ Introduction
 
  This document gives step-by-step instructions for deploying the Maven website {{{http://maven.apache.org}http://maven.apache.org}}.
 
- Since 10th Decemeber 2012, the main website use CMS mechanism. (see {{{https://cms.apache.org}https://cms.apache.org}}).
+ Since 10th Decemeber 2012, the main website use CMS mechanism. (see {{{https://cms.apache.org/maven}https://cms.apache.org/maven}}).
 
  You can edit pages in two ways:
 
