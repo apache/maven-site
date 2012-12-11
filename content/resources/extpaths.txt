@@ -374,6 +374,7 @@ skins/maven-application-skin
 skins/maven-stylus-skin
 skins/maven-stylus-skin-1.4
 skins/maven-stylus-skin-1.5
+surefires
 surefire
 surefire-2.10
 surefire-2.9
