@@ -15,6 +15,7 @@ enforcer
 jxr
 maven-1.x
 maven-indexer
+plugins-archives
 plugins/maven-acr-plugin
 plugins/maven-acr-plugin-1.0
 plugins/maven-ant-plugin
@@ -310,6 +311,7 @@ release
 ref
 sandbox
 scm
+shared-archives
 shared/maven-archiver
 shared/maven-archiver-2.5
 shared/maven-artifact-resolver
