@@ -90,7 +90,6 @@ shared/maven-downloader
 shared/maven-doxia-tools
 shared/maven-enforcer-rule-api
 shared/maven-filtering
-shared/maven-dependency-analyzer-1.3
 shared/maven-shared-utils
 shared/maven-invoker
 shared/maven-jarsigner
