@@ -90,7 +90,6 @@ shared/maven-downloader
 shared/maven-doxia-tools
 shared/maven-enforcer-rule-api
 shared/maven-filtering
-shared/maven-shared-utils
 shared/maven-invoker
 shared/maven-jarsigner
 shared/maven-shared-incremental
@@ -109,8 +108,8 @@ shared/maven-script-interpreter
 shared/maven-shared-io
 shared/maven-shared-jar
 shared/maven-shared-resources
-shared/maven-test-tools
 shared/maven-shared-utils
+shared/maven-test-tools
 shared/maven-verifier
 skins-archives
 skins/maven-classic-skin
