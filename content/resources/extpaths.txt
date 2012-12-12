@@ -76,6 +76,7 @@ pom/maven-plugins
 pom/maven-shared-components
 pom/skins
 release
+release-archives
 ref
 sandbox
 scm
