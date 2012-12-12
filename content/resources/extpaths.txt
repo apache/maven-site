@@ -70,6 +70,7 @@ plugins/maven-verifier-plugin
 plugins/maven-war-plugin
 plugin-testing
 plugin-tools
+plugin-tools-archives
 plugin-tools-3.0
 plugin-tools-3.1
 pom-archives
