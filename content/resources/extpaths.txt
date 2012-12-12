@@ -15,7 +15,6 @@ enforcer
 jxr
 maven-1.x
 maven-indexer
-maven-release
 plugins/maven-acr-plugin
 plugins/maven-acr-plugin-1.0
 plugins/maven-ant-plugin
