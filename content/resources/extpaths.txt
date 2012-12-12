@@ -4,7 +4,6 @@
 
 ant-tasks
 ant-tasks-archives
-ant-tasks-2.1.3
 apache-resource-bundles
 archetype
 archetype-archives
