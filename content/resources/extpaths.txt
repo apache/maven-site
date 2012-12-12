@@ -124,7 +124,3 @@ surefire-2.9
 surefire-2.13-SNAPSHOT
 wagon
 wagon-archives
-wagon-1.0
-wagon-2.0
-wagon-2.1
-wagon-2.2
