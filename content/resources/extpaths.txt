@@ -308,6 +308,7 @@ pom/maven-shared-components
 pom/maven-shared-components-17
 pom/maven-shared-components-18
 pom/skins
+release
 ref
 sandbox
 scm
