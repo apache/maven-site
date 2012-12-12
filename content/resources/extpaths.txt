@@ -119,8 +119,5 @@ skins/maven-application-skin
 skins/maven-stylus-skin
 surefire-archives
 surefire
-surefire-2.10
-surefire-2.9
-surefire-2.13-SNAPSHOT
 wagon
 wagon-archives
