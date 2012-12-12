@@ -336,6 +336,7 @@ shared/maven-shared-io
 shared/maven-shared-jar
 shared/maven-shared-resources
 shared/maven-test-tools
+shared/maven-shared-utils
 shared/maven-verifier
 skins-archives
 skins/maven-classic-skin
