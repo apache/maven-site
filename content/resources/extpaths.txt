@@ -1,5 +1,6 @@
 # directories in /www/maven.apache.org/ but not in any svn tree: dtd, project, xsd
 # space indentation = directories not yet committed to svn production tree
+# please use alphabetical order !!
 
 ant-tasks
 ant-tasks-2.0.10
@@ -14,6 +15,8 @@ enforcer
 jxr
 maven-1.x
 maven-indexer
+maven-release
+maven-release-archives
 plugins-archives
 plugins/maven-acr-plugin
 plugins/maven-ant-plugin
@@ -75,8 +78,6 @@ pom/maven
 pom/maven-plugins
 pom/maven-shared-components
 pom/skins
-release
-release-archives
 ref
 sandbox
 scm
