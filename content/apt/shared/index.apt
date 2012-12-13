@@ -57,3 +57,5 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-shared-incremental/} <<<maven-shared-incremental>>>}}     | 1.0          | 2012-11-19        | Various utility classes and plexus components for supporting incremental build functionality in maven plugins. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-incremental/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15650}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
+
+  Archived version of shared libraries are located here {{{http://maven.apache.org/shared-archives/}http://maven.apache.org/shared-archives/}} 
