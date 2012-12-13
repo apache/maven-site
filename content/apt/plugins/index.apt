@@ -183,6 +183,8 @@ Available Plugins
   \* <<B>>uild or <<R>>eporting plugin
 
   There are also some sandbox plugins into our {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}source repository}}.
+  
+  Previous archived versions of plugins are located {{{http://maven.apache.org/plugins-archives/}http://maven.apache.org/plugins-archives/}}. 
 
 * Outside The Maven Land
 
