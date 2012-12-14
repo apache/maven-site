@@ -1,3 +1,4 @@
+IndexOptions +SuppressIcon
 ErrorDocument 404 /errors/404.html
 
 Redirect Permanent /release-notes.html http://maven.apache.org/release-notes-all.html
