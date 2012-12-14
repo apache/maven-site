@@ -60,7 +60,7 @@ RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ http://mave
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
 RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ http://maven.apache.org/plugin-tools/$1
-RedirectMatch permanent ^/.+-archives/images/(.*)$ http://maven.apache.org/images/$1
+RedirectMatch permanent ^/[^/]+-archives/([^/\d]+/.*)$ http://maven.apache.org/$1
 
 RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/$1
 RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
