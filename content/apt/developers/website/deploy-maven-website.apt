@@ -88,6 +88,6 @@ site$ mvn site
 
 Publish content
 
-  * Verify staging content has been build with buildbot job {{{http://ci.apache.org/builders/maven-site-staging}http://ci.apache.org/builders/maven-site-staging}}
+  * Verify staging content has been build with buildbot job {{http://ci.apache.org/builders/maven-site-staging}} and {{http://maven.staging.apache.org/plugins/}} 
 
-  * Build finish, publish modifications using {{{https://cms.apache.org/maven/publish}https://cms.apache.org/maven/publish}}
+  * Build finish, publish modifications using {{https://cms.apache.org/maven/publish}}
