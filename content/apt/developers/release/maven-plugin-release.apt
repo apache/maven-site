@@ -42,7 +42,7 @@ Releasing A Maven Plugin
   The plugin parent POM is configured to stage the documentation in a "versioned" directory
   such as <<</plugins-archives/maven-XXX-plugin-Y.Z>>>.
 
-   [[1]] Stage the documentation for the current release version (not the new snapshot).
+  Stage the documentation for the current release version (not the new snapshot).
 
 +------+
 cd target/checkout
