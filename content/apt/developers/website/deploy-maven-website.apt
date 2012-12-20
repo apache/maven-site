@@ -81,7 +81,7 @@ $ svn checkout https://svn.apache.org/repos/asf/maven/site site
  [[2]] Execute the site goal
 
 +-----+
-site$ mvn site 
+mvn site 
 +-----+
 
  [[3]] Verify the documentation before committing
