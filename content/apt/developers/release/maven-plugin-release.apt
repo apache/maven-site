@@ -35,6 +35,8 @@ Releasing A Maven Plugin
   
 * Staging the latest documentation
 
+  <<Due to svnpubsub/CMS this documentation may be not up to date>>
+
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The plugin parent POM is configured to stage the documentation in a "versioned" directory
@@ -112,4 +114,3 @@ http://maven.apache.org/plugins/maven-XXX-plugin/
 +-----+
 mvn clean site-deploy
 +-----+
-
