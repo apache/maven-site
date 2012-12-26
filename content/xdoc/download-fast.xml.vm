@@ -113,19 +113,19 @@ under the License.
         <tbody>
           <tr>
             <td>Maven ${currentStableVersion} (Binary tar.gz)</td>
-            <td><a href="[preferred]/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
           </tr>
           <tr>
             <td>Maven ${currentStableVersion} (Binary zip)  </td>
-            <td><a href="[preferred]/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.md5">apache-maven-${currentStableVersion}-bin.zip.md5</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
           </tr>
           <tr>
             <td>Maven ${currentStableVersion} (Source tar.gz)</td>
-            <td><a href="http://[preferred]/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
+            <td><a href="http://[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.md5">apache-maven-${currentStableVersion}-src.tar.gz.md5</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a></td>
           </tr>
@@ -169,19 +169,19 @@ under the License.
           <tbody>
             <tr>
               <td>Maven ${current22xVersion} (Binary tar.gz)</td>
-              <td><a href="[preferred]/maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.tar.gz">apache-maven-${current22xVersion}-bin.tar.gz</a></td>
+              <td><a href="[preferred]maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.tar.gz">apache-maven-${current22xVersion}-bin.tar.gz</a></td>
               <td><a href="http://www.apache.org/dist//maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.tar.gz.md5">apache-maven-${current22xVersion}-bin.tar.gz.md5</a></td>
               <td><a href="http://www.apache.org/dist//maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.tar.gz.asc">apache-maven-${current22xVersion}-bin.tar.gz.asc</a></td>
             </tr>
             <tr>
               <td>Maven ${current22xVersion} (Binary zip)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.zip">apache-maven-${current22xVersion}-bin.zip</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.zip">apache-maven-${current22xVersion}-bin.zip</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.zip.md5">apache-maven-${current22xVersion}-bin.zip.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/binaries/apache-maven-${current22xVersion}-bin.zip.asc">apache-maven-${current22xVersion}-bin.zip.asc</a></td>
             </tr>
             <tr>
               <td>Maven ${current22xVersion} (Source tar.gz)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.tar.gz">apache-maven-${current22xVersion}-src.tar.gz</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.tar.gz">apache-maven-${current22xVersion}-src.tar.gz</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.tar.gz.md5">apache-maven-${current22xVersion}-src.tar.gz.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.tar.gz.asc">apache-maven-${current22xVersion}-src.tar.gz.asc</a></td>
             </tr>
@@ -223,25 +223,25 @@ under the License.
           <tbody>
             <tr>
               <td>Maven ${current20xVersion} (Binary tar.gz)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.tar.gz">apache-maven-${current20xVersion}-bin.tar.gz</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.tar.gz">apache-maven-${current20xVersion}-bin.tar.gz</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.tar.gz.md5">apache-maven-${current20xVersion}-bin.tar.gz.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.tar.gz.asc">apache-maven-${current20xVersion}-bin.tar.gz.asc</a></td>
             </tr>
             <tr>
               <td>Maven ${current20xVersion} (Binary zip)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.zip">apache-maven-${current20xVersion}-bin.zip</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.zip">apache-maven-${current20xVersion}-bin.zip</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.zip.md5">apache-maven-${current20xVersion}-bin.zip.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/binaries/apache-maven-${current20xVersion}-bin.zip.asc">apache-maven-${current20xVersion}-bin.zip.asc</a></td>
             </tr>
             <tr>
               <td>Maven ${current20xVersion} (Source tar.gz)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.tar.gz">apache-maven-${current20xVersion}-src.tar.gz</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.tar.gz">apache-maven-${current20xVersion}-src.tar.gz</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.tar.gz.md5">apache-maven-${current20xVersion}-src.tar.gz.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.tar.gz.asc">apache-maven-${current20xVersion}-src.tar.gz.asc</a></td>
             </tr>
             <tr>
               <td>Maven ${current20xVersion} (Source zip)</td>
-              <td><a href="http://[preferred]/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.zip">apache-maven-${current20xVersion}-src.zip</a></td>
+              <td><a href="http://[preferred]maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.zip">apache-maven-${current20xVersion}-src.zip</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.zip.md5">apache-maven-${current20xVersion}-src.zip.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current20xVersion}/source/apache-maven-${current20xVersion}-src.zip.asc">apache-maven-${current20xVersion}-src.zip.asc</a></td>
             </tr>
