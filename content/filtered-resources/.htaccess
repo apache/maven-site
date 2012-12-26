@@ -2,6 +2,7 @@ IndexOptions +SuppressIcon
 ErrorDocument 404 /errors/404.html
 
 Redirect Permanent /release-notes.html http://maven.apache.org/release-notes-all.html
+Redirect Permanent /download.html http://maven.apache.org/download-fast.cgi
 
 Redirect /ref/current http://maven.apache.org/ref/${currentStableVersion}
 Redirect /ref/current-2.0.x http://maven.apache.org/ref/${current20xVersion}
