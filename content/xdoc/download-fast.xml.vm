@@ -266,8 +266,8 @@ under the License.
        <p>
          You can download the current documentation, i.e. this website, as:
          <ul>
-           <li>a <a href="./maven-site-1.0-site.jar}single jar">file;</a></li>
-           <li>a <a href="./apache-maven.pdf}PDF">file.</a></li>
+           <li>a <a href="./maven-site-1.0-site.jar">single jar file;</a></li>
+           <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
          </ul>
        </p>
       </subsection>
