@@ -187,7 +187,7 @@ under the License.
             </tr>
             <tr>
               <td>Maven ${current22xVersion} (Source zip)</td>
-              <td><a href="http://www.apache.org/dyn/closer.cgi/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.zip">apache-maven-${current22xVersion}-src.zip</a></td>
+              <td><a href="[preferred]maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.zip">apache-maven-${current22xVersion}-src.zip</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.zip.md5">apache-maven-${current22xVersion}-src.zip.md5</a></td>
               <td><a href="http://www.apache.org/dist/maven/maven-2/${current22xVersion}/source/apache-maven-${current22xVersion}-src.zip.asc">apache-maven-${current22xVersion}-src.zip.asc</a></td>
             </tr>
