@@ -157,6 +157,27 @@ I will promote the artifacts to the central repo.
   If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as
   described in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#drop}Dropping a Repo}}.
 
+* Copy the source release to the Apache Distribution Area
+
+  The official Apache release is the 'source-release' bundle. All releases must be copied to the official 
+  release area. The release area is maintained with svnsubpub. To deliver a release, you add it to 
+  the subversion repository for the dist area.
+
+  The Maven dist area is https://dist.apache.org/repos/dist/release/maven. In here, you will
+  find a series of subdirectories (plugins, scm, etc, etc.) Add the release, its signatures, and corresponding
+  MD5 files. For example:
+
++--------+
+wagon/wagon-2.2-source-release.zip
+wagon/wagon-2.2-source-release.zip.asc
+wagon/wagon-2.2-source-release.zip.asc.md5
+wagon/wagon-2.2-source-release.zip.md5
++--------+
+
+  You should also run 'svn rm' as needed to clear out older releases.  As per {{{http://www.apache.org/dev/release.html#where-do-releases-go}the policy}},
+  only the latest release on a branch should stay in the main dist areas. So long as the previous release is at least a day old, the automatic archiver
+  will have copied it to the archive.
+
 * Promote the release
 
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
