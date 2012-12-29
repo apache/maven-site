@@ -46,6 +46,12 @@ under the License.
         <p>The sources for this site are available in a separate location:</p>
         <source>
 <a href="http://svn.apache.org/viewvc/maven/site/trunk">http://svn.apache.org/viewvc/maven/site/trunk</a></source>
+        <p>Other projects can be found in various svn paths:</p>
+        <source>
+          plugins: http://svn.apache.org/repos/asf/maven/plugins/trunk/
+          shared libraries: http://svn.apache.org/repos/asf/maven/shared/trunk/
+          See various sub projects in svn: http://svn.apache.org/repos/asf/maven/
+        </source>
       </subsection>
       <subsection name="Anonymous Access">
         <p>
