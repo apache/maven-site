@@ -69,7 +69,7 @@ RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ http://maven.ap
 RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
 RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/int$1
 
-RedirectMatch ^/plugins/maven-site-plugin-2.x/(.*)$ /plugins/maven-site-plugin-2.4/$1
+RedirectMatch ^/plugins/maven-site-plugin-2.x/(.*)$ /plugins-archives/maven-site-plugin-2.4//1
 RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ /plugins/maven-site-plugin/$1
 
 Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html http://maven.apache.org/guides/development/guide-testing-development-plugins.html
