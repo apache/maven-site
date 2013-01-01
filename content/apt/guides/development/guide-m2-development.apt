@@ -61,9 +61,9 @@ Developing Maven
   You'll need to clone two git repositories:
 
   * {{{https://git-wip-us.apache.org/repos/asf/maven.git}https://git-wip-us.apache.org/repos/asf/maven.git}}
-  The canonical repository for the core of Maven.
+  The canonical repository for {{{/ref/curent}the core of Maven}}.
 
-  * {{{https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}} The corresponding integration test set.
+  * {{{https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}} The corresponding {{{/core-its}integration test set}}.
 
   []
 
