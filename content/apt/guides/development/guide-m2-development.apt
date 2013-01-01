@@ -58,12 +58,12 @@ Developing Maven
 
 * Where's the source?
 
-  You'll need to check out two trees from subversion:
+  You'll need to clone two git repositories:
 
-  * {{{https://svn.apache.org/repos/asf/maven/maven-3/trunk}https://svn.apache.org/repos/asf/maven/maven-3/trunk}}
-  The trunk for the core of Maven-3.
+  * {{{https://git-wip-us.apache.org/repos/asf/maven.git}https://git-wip-us.apache.org/repos/asf/maven.git}}
+  The canonical repository for the core of Maven.
 
-  * {{{https://svn.apache.org/repos/asf/maven/core-integration-testing/trunk}https://svn.apache.org/repos/asf/maven/core-integration-testing/trunk}} The corresponding integration test set.
+  * {{{https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}} The corresponding integration test set.
 
   []
 
@@ -79,7 +79,7 @@ Developing Maven
   Ant version 1.8+ is recommended.
 
 +-------------------------------------------------------------+
-cd maven-3-trunk
+cd maven
 export M2_HOME=/place-to-put-test-maven-root
 ant all  (or with -Dmaven.home=/place-to-put-test-maven-root )
 cd ../core-integration-testing
