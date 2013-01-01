@@ -82,7 +82,7 @@ Developing Maven
 cd maven
 export M2_HOME=/place-to-put-test-maven-root
 ant all  (or with -Dmaven.home=/place-to-put-test-maven-root )
-cd ../core-integration-testing
+cd ../maven-integration-testing
 rm -rf /tmp/it.repo
 /place-to-put-test-maven-root/bin/mvn -Prun-its -B -U clean install -Dmaven.repo.local=/tmp/it.repo -Dmaven.home=/place-to-put-test-maven-root
 +-------------------------------------------------------------+
@@ -90,7 +90,7 @@ rm -rf /tmp/it.repo
   To run a single test, change the last command line to:
 
 +-------------------------------------------------------------+
-cd ../core-integration-testing/core-it-suite
+cd ../maven-integration-testing/core-it-suite
 [whatever]/mvn -Dtest=yourit [other options]
 +-------------------------------------------------------------+
 
