@@ -65,15 +65,31 @@ under the License.
             </tr>
           </table>
         </p>
+        <p>
+          The components in Subversion are:
+          <table>
+            <tr>
+              <td>Apache Maven Plugins</td><td><a href="https://svn.apache.org/repos/asf/maven/plugins">
+              https://svn.apache.org/repos/asf/maven/plugins/</a></td>
+            </tr>
+            <tr>
+            <td>Shared components: maven-artifact-resolver, maven-reporting-impl, 
+              maven-common-artifact-filters, maven-shared-components</td>
+            <td>
+              <a href="https://svn.apache.org/repos/asf/maven/shared/">
+              https://svn.apache.org/repos/asf/maven/shared/</a>
+            </td>
+            </tr>
+            <tr>
+              <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><a href="https://svn.apache.org/repos/asf/maven">
+              https://svn.apache.org/repos/asf/maven</a>
+              </td>
+            </tr>
+          </table>
+        </p>
         <p>The sources for this site are available in a separate location:</p>
         <source>
-<a href="http://svn.apache.org/viewvc/maven/site/trunk">http://svn.apache.org/viewvc/maven/site/trunk</a></source>
-        <p>Other projects can be found in various svn paths:</p>
-        <source>
-          plugins: http://svn.apache.org/repos/asf/maven/plugins/trunk/
-          shared libraries: http://svn.apache.org/repos/asf/maven/shared/trunk/
-          Other sub-projects in svn: http://svn.apache.org/repos/asf/maven/
-        </source>
+<a href="https://svn.apache.org/repos/asf/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
       </subsection>
       <subsection name="Anonymous Access">
         <p>
