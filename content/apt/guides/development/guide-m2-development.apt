@@ -58,7 +58,7 @@ Developing Maven
 
 * Where's the source?
 
-   See {{{/source-repository.html}}http://maven.apache.prg/source-repository.html} for information.
+   See {{{/source-repository.html}http://maven.apache.prg/source-repository.html}} for information.
    The Maven project uses a GIT for some things, and Subversion for others, and this 
    page tracks the situation.
  
