@@ -58,13 +58,10 @@ Developing Maven
 
 * Where's the source?
 
-  You'll need to clone two git repositories:
-
-  * {{{https://git-wip-us.apache.org/repos/asf/maven.git}https://git-wip-us.apache.org/repos/asf/maven.git}}
-  The canonical repository for {{{/ref/current}the core of Maven}}.
-
-  * {{{https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git}} The corresponding {{{/core-its}integration test set}}.
-
+   See {{{/source-repository.html}}http://maven.apache.prg/source-repository.html} for information.
+   The Maven project uses a GIT for some things, and Subversion for others, and this 
+   page tracks the situation.
+ 
   []
 
 * Don't forget tests!
@@ -189,7 +186,18 @@ And remember, your contributions are always welcome!
 
  You can {{{http://modello.codehaus.org}read more about Modello}}.
 
- * <<Surefire>>
+ * <<Mojo>>
+
+ "Mojo" is really two things when it comes to Maven. It is both Maven's plug-in API but also a separate Codehaus
+ project hosting these plugins.
+
+ {{{http://mojo.codehaus.org}The Mojo Project}} is a plugin forge for non-core Maven plugins. There is also a lower bar for becoming a part of the project.
+
+  []
+
+* Sub Projects
+
+ ** Maven Surefire
 
  Surefire is a testing framework. It can run regular JUnit tests so you won't have to change anything in your code to
  use it. It support scripting tests in BeanShell and Jython and has special "batteries" for writing acceptance and
@@ -197,7 +205,7 @@ And remember, your contributions are always welcome!
 
  You can {{{http://maven.apache.org/surefire/}read more about Surefire}}.
 
- * <<Doxia>>
+ ** Maven Doxia
 
  Doxia is Maven's documentation engine. It has a sink and parser API that can be used to plug in support for input
  and output documents.
@@ -205,18 +213,6 @@ And remember, your contributions are always welcome!
  You can read more about {{{http://maven.apache.org/doxia/}Doxia}} and the currently supported
  {{{http://maven.apache.org/doxia/references/index.html}document formats}}.
 
- * <<Mojo>>
-
- "Mojo" is really two things when it comes to Maven. It is both Maven's plug-in API but also a separate Codehaus
- project hosting these plugins.
-
- {{{http://mojo.codehaus.org}The Mojo Project}} is a plugin forge for all non-core Maven plugins. As we try to keep
- the Mojos as independent of Maven as possible to increase their reuse we try to keep them a bit away from Maven
- itself. There is also a lower bar for becoming a part of the project.
-
-  []
-
-* Sub Projects
 
 ** Maven SCM
 
