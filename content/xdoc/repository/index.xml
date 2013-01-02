@@ -37,10 +37,6 @@
 
       <ul>
         <li><a href="../project-faq.html">Maintaining your Metadata</a> - Information for third-party projects</li>
-
-        <li><a href="../guides/mini/guide-maven-evangelism.html">Guide to Maven Evangelism</a> - Helping to improve
-        the metadata of the dependencies you use</li>
-
         <li><a href="../guides/mini/guide-central-repository-upload.html">Guide to uploading artifacts</a> - How to
         get things uploaded to the repository</li>
       </ul>
