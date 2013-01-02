@@ -3,8 +3,9 @@
  ------
  Bob Allison
  Vincent Siveton
+ Olivier Lamy
  ------
- 2009-08-26
+ 2013-01-02
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -62,11 +63,13 @@ package sample.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.apache.maven.plugins.annotations.Mojo;
 
 /**
  * Says "Hi" to the user.
- * @goal sayhi
+ *
  */
+@Mojo( name = "sayhi")
 public class GreetingMojo extends AbstractMojo
 {
     public void execute() throws MojoExecutionException
@@ -80,9 +83,7 @@ public class GreetingMojo extends AbstractMojo
     infrastructure required to implement a mojo except for the
     <<<execute>>> method.
 
-  * The comment line starting with "<<<@goal>>>"
-    is an example of an annotation.  This annotation is required, but
-    there are a number of annotations which can be used to control how and
+  * The annotation "<<<@Mojo>>>" is required and control how and
     when the mojo is executed.
 
   * The <<<execute>>> method can throw two exceptions:
@@ -295,19 +296,18 @@ mvn archetype:generate \
 +-----+
     /**
      * The greeting to display.
-     *
-     * @parameter expression="${sayhi.greeting}" default-value="Hello World!"
      */
+    @Parameter( property = "sayhi.greeting", defaultValue = "Hello World!" )
     private String greeting;
 +-----+
 
   The portion before the annotations is the description of the
   parameter.  The <<<parameter>>> annotation identifies
-  the variable as a mojo parameter.  The <<<default-value>>>
+  the variable as a mojo parameter.  The <<<defaultValue>>>
   parameter of the annotation defines the default value for the variable.  This value can
   include expressions which reference the project, such as
   "<<<$\{project.version\}>>>" (more can be found in the
-  "Parameter Expressions" document). The <<<expression>>> parameter can be used to allow configuration
+  "Parameter Expressions" document). The <<<property>>> parameter can be used to allow configuration
   of the mojo parameter from the command line by referencing a system property that the user sets
   via the <<<-D>>> option.
 
@@ -351,9 +351,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My boolean.
-     *
-     * @parameter
      */
+    @Parameter
     private boolean myBoolean;
 +-----+
 
@@ -374,9 +373,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Integer.
-     *
-     * @parameter
      */
+    @Parameter
     private Integer myInteger;
 +-----+
 
@@ -396,9 +394,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Double.
-     *
-     * @parameter
      */
+    @Parameter
     private Double myDouble;
 +-----+
 
@@ -420,9 +417,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Date.
-     *
-     * @parameter
      */
+    @Parameter
     private Date myDate;
 +-----+
 
@@ -441,9 +437,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My File.
-     *
-     * @parameter
      */
+    @Parameter
     private File myFile;
 +-----+
 
@@ -462,9 +457,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My URL.
-     *
-     * @parameter
      */
+    @Parameter
     private URL myURL;
 +-----+
 
@@ -513,9 +507,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Array.
-     *
-     * @parameter
      */
+    @Parameter
     private String[] myArray;
 +-----+
 
@@ -535,9 +528,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My List.
-     *
-     * @parameter
      */
+    @Parameter
     private List myList;
 +-----+
 
@@ -561,9 +553,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Map.
-     *
-     * @parameter
      */
+    @Parameter
     private Map myMap;
 +-----+
 
@@ -584,9 +575,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Properties.
-     *
-     * @parameter
      */
+    @Parameter
     private Properties myProperties;
 +-----+
 
@@ -611,9 +601,8 @@ mvn archetype:generate \
 +-----+
     /**
      * My Object.
-     *
-     * @parameter
      */
+    @Parameter
     private MyObject myObject;
 +-----+
 
@@ -638,19 +627,13 @@ mvn archetype:generate \
 public class MyQueryMojo
     extends AbstractMojo
 {
-    /**
-     * @parameter property="url"
-     */
+    @Parameter(property="url")
     private String _url;
 
-    /**
-     * @parameter property="timeout"
-     */
+    @Parameter(property="timeout")
     private int _timeout;
 
-    /**
-     * @parameter property="options"
-     */
+    @Parameter(property="options")
     private String[] _options;
 
     public void setUrl( String url )
