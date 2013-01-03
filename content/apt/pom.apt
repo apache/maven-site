@@ -1822,8 +1822,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
           <version>5.1.2600</version>
         </os>
         <property>
-          <name>mavenVersion</name>
-          <value>2.0.6</value>
+          <name>sparrow-type</name>
+          <value>African</value>
         </property>
         <file>
           <exists>${basedir}/file2.properties</exists>
