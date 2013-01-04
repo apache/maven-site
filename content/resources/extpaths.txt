@@ -13,6 +13,7 @@ enforcer
 jxr
 maven-1.x
 maven-indexer
+maven-indexer-archives
 maven-release
 maven-release-archives
 plugins-archives
