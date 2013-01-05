@@ -1853,7 +1853,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
-  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to ${basedir}, System properties and request properties.
+  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{basedir\}>>>), System properties and request properties.
 
   []
 
