@@ -1,5 +1,7 @@
 ErrorDocument 404 /errors/404.html
 
+RedirectMatch permanent ^/(.*)$ http://maven.apache.org/$1
+
 Redirect Permanent /release-notes.html http://maven.apache.org/release-notes-all.html
 
 Redirect /ref/current http://maven.apache.org/ref/${currentStableVersion}
