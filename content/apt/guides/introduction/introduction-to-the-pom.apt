@@ -492,7 +492,7 @@ Introduction to the POM
 *** Special Variables
 
 *-----------------------------------+--------------------------------------+
-| <<<basedir>>>                     | The directory that the current project resides in. |
+| <<<project.basedir>>>             | The directory that the current project resides in. |
 *-----------------------------------+--------------------------------------+
 | <<<project.baseUri>>>             | The directory that the current project resides in, represented as an URI. <Since Maven 2.1.0> |
 *-----------------------------------+--------------------------------------+
