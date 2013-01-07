@@ -43,8 +43,11 @@ Building Maven
 
 * Checking out the sources
 
-  All of the source code for Maven and its related libraries is in {{{http://subversion.apache.org/} Subversion}}.
-  You can {{{http://svn.apache.org/viewvc/maven/} browse the repository}}, or checkout specific modules directly.
+  All of the source code for Maven and its related libraries is in managed in the ASF source code
+  repositories. Current development of the core of Maven, and some other components, are in git.
+  Other pieces (and older versions) are in Subversion. For details, see
+  {{{http://maven.apache.org/source-repository.html}http://maven.apache.org/source-repository.html}}.
+
 
   To build Maven 3 (the current stable branch), you need the <<<trunk>>> of the <<<maven-3>>> module. 
   To check that out, run the command:
@@ -223,4 +226,3 @@ Main targets:
 
 Default target: all
 +--------+
-
