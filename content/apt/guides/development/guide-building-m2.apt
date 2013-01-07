@@ -60,21 +60,6 @@ git clone https://git-wip-us.apache.org/repos/asf/maven.git maven
 git checkout maven-2.2.x
 -------------------
 
-  Alternatively, you can check out all Maven projects in one directory using:
-
--------------------
-svn co https://svn.apache.org/repos/asf/maven/trunks maven
--------------------
-
-  <<Note>>: For Windows users, the checkout could be not complete with the following message:
-
--------------------
-svn: Can't open file 'XXX': The system cannot find the path specified.
--------------------
-
-  The problem is that while Windows allows filenames up to 256 characters the maximum path length it allows is 260 characters.
-  You will be able to check it out to the root directory without problem.
-
 ** Other Modules
 
   Other modules you might be interested in related to Maven development are:
