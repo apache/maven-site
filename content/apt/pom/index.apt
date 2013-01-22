@@ -4,7 +4,7 @@
  Hervé Boutemy
  Dennis Lundberg
  -----
- 2012-11-04
+ 2013-01-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -34,9 +34,9 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 || <<POM>>                                     || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                       | 12           | 2012-11-04 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
+| {{{./asf/} <<<ASF>>>}}                       | 13           | 2013-01-21 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./maven/} <<<Maven>>>}}                   | 22           | 2012-08-08 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
+| {{{./maven/} <<<Maven>>>}}                   | 23           | 2013-01-21 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./maven-plugins/} <<<Maven Plugins>>>}}   | 23           | 2012-08-08 | Maven plugins configuration. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-plugins/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314501}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
