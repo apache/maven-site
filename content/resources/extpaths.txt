@@ -79,6 +79,7 @@ pom/skins
 ref
 sandbox
 scm
+scm-archives
 shared-archives
 shared/maven-archiver
 shared/maven-artifact-resolver
