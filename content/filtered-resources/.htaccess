@@ -11,6 +11,7 @@ Redirect Permanent /maven-v4_0_0.xsd http://maven.apache.org/xsd/maven-4.0.0.xsd
 
 Redirect Permanent /ant-tasks.html http://maven.apache.org/ant-tasks/index.html
 Redirect Permanent /ant-tasks-release-notes.html http://maven.apache.org/ant-tasks/release-notes.html
+RedirectMatch ^/ant-tasks/(.*)$ http://maven.apache.org/ant-tasks-archives/ant-tasks-current/$1
 
 Redirect Permanent /guides/mini/guide-ibiblio-upload.html http://maven.apache.org/guides/mini/guide-central-repository-upload.html
 Redirect Permanent /faq.html http://maven.apache.org/general.html
