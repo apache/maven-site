@@ -151,9 +151,9 @@ Documentation
  * {{{./mini/guide-default-execution-ids.html} Guide to Configuring Default Mojo Executions}}
 
 
-** Testing
+~~ ** Testing
 
- * {{{./mini/guide-attached-tests.html}Reusable Test JARs}}
+~~ * {{{./mini/guide-attached-tests.html}Reusable Test JARs}}
 
 ** Maven Tools and IDE Integration
 
