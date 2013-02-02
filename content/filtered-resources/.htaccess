@@ -66,6 +66,7 @@ RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven
 RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
 RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ http://maven.apache.org/plugin-tools/$1
 RedirectMatch permanent ^/[^/]+-archives/([^/\d]+/.*)$ http://maven.apache.org/$1
+RedirectMatch permanent ^/ref/3.1-SNAPSHOT/(.*)$ http://maven.apache.org/ref/3-latest/$1
 
 RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/$1
 RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ http://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
