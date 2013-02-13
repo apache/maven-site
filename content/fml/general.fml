@@ -129,7 +129,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>2.3.2</version>
+        <version>2.5.1</version>
         <configuration>
           <source>1.5</source>
           <target>1.5</target>
@@ -270,7 +270,7 @@ Where: <path-to-file>  the path to the file to load
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
-    <version>2.3</version>
+    <version>3.2</version>
     <configuration>
       <outputEncoding>UTF-8</outputEncoding>
     </configuration>
