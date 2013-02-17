@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2012-11-23
+ 2013-02-17
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -103,7 +103,7 @@ https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/[PATH-TO]-source-release.zip
 
 Staging site:
-http://maven.apache.org/plugins/maven-XXX-plugin-Y.Z/
+http://maven.apache.org/plugins-archives/maven-XXX-plugin-Y.Z/
 
 Guide to testing staged releases:
 http://maven.apache.org/guides/development/guide-testing-releases.html

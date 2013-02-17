@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2010-11-25
+ 2013-02-17
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -44,7 +44,7 @@ Releasing A Maven Plugin
 
 +------+
 cd target/checkout
-mvn site site:deploy -Preporting
+mvn site-deploy -Preporting
 +------+
 
    <<Note:>> You should verify the deployment of the site on the Maven website.
