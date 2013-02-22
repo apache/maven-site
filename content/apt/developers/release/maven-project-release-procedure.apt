@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2013-02-17
+ 2013-02-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -205,7 +205,7 @@ wagon/wagon-2.2-source-release.zip.md5
 
    [[b]] Sync to Maven Website
 
-     Until the svnpubsub work is complete, the deployment of the Maven website will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
+     If the project you are releasing doesn't yet use svnpubsub for site deployment, the deployment of the Maven website will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
 
    []
 
@@ -222,8 +222,8 @@ cd target/checkout
 mvn changes:announcement-mail -Papache-release
 +------+
 
-   Even if mail send fails, generated annoucement is available in <<<target/annoucement>>> (see <<<annoucement.vm>>>):
-   you can use it as a base for sending the mail manually.
+   If sending the mail should fail, the generated annoucement is available in <<<target/annoucement>>> (see <<<annoucement.vm>>>)
+   and you can use it as a base for sending the mail manually.
 
    If your SMTP server requires authentication you need to add the command line
    options for it:
