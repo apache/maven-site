@@ -85,7 +85,7 @@ Guide to Maven Classloading
  
  Plugins can inspect their effective runtime class path via the expressions <<<$\{plugin.artifacts\}>>> or
  <<<$\{plugin.artifactMap\}>>> to have a list or map, respectively, of resolved artifacts injected from the
- <<<{{{http://maven.apache.org/ref/current/maven-plugin-descriptor/apidocs/org/apache/maven/plugin/descriptor/PluginDescriptor.html}PluginDescriptor}}>>>.
+ <<<{{{http://maven.apache.org/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/PluginDescriptor.html}PluginDescriptor}}>>>.
 
  Please note that the plugin classloader does neither contain the
  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_dependency}dependencies}}
