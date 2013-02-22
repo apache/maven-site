@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2013-02-17
+ 2013-02-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -75,5 +75,5 @@ http://maven.apache.org/plugins/maven-XXX-plugin/
 
  See {{{../website/deploy-maven-website.html}Deploy Maven website}}
 
- Update the version number for the plugin on the <<<src/site/apt/plugins/index.apt>>> page.
+ Update the version number for the plugin on the <<<content/apt/plugins/index.apt>>> page.
 
