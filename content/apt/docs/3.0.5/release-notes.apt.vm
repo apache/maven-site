@@ -1,5 +1,5 @@
  ------
-Release Notes - Maven 3.0.4
+Release Notes - Apache Maven 3.0.5
  ------
 Olivier Lamy
  ------
@@ -39,8 +39,6 @@ Maven 3.0.5
   to implement many highly demanded features.
 
   Apache Maven 3.0.5 is a maintenance release.
-
-
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
   See the {{{../../plugins/index.html} Plugin List}} for more information.
