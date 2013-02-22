@@ -6,7 +6,7 @@
  Dennis Lundberg
  Olivier Lamy
  -----
- 2012-12-13
+ 2013-02-22
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -107,7 +107,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.8          | 2012-09-14 | Generate a report from an issue tracker or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.9.1        | 2012-02-25 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
+| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.10         | 2013-02-22 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | 1.1          | 2011-01-15 | Generate a Description of a Project (DOAP) file from a POM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOAP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -119,11 +119,11 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-linkcheck-plugin/} <<<linkcheck>>>}}       | R          | 1.1          | 2010-11-13 | Generate a Linkcheck report of your project's documentation. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-linkcheck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MLINKCHECK}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 3.0        | 2013-02-15 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
+| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 3.0          | 2013-02-15 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 2.6   | 2012-10-28 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R    | 2.13         | 2012-12-27 | Generate a report based on the results of unit tests. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 2.13         | 2012-12-27 | Generate a report based on the results of unit tests. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Tools>>                                                    |            |              |            | <<These are miscellaneous tools available through Maven by default.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -137,7 +137,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 2.6          | 2012-11-25 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}         | B          | 1.2        | 2012-12-03 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{http://svn.apache.org/repos/asf/maven/enforcer/trunk/maven-enforcer-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MENFORCER}JIRA}}
+| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | 1.2          | 2012-12-03 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{http://svn.apache.org/repos/asf/maven/enforcer/trunk/maven-enforcer-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MENFORCER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                   | B          | 1.4          | 2011-08-24 | Create signatures for the artifacts and poms. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-gpg-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MGPG}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
