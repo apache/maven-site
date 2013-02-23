@@ -45,7 +45,7 @@ Releasing A Maven Shared Component
 
 +------+
 cd target/checkout
-mvn site site:deploy -Preporting
+mvn site site-deploy -Preporting
 +-----+
 
   deployed to http://maven.apache.org/shared-archives/maven-XXX-Y.Z/
@@ -65,9 +65,9 @@ mvn site-deploy -Preporting -Psite-release
   Or 
 
 +-----+
-csvn rm https://svn.apache.org/repos/infra/websites/production/maven/content/shared/maven-XXX
+svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/shared/maven-XXX
 svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/shared-archives/maven-XXX-Y.Z \ 
-           https://svn.apache.org/repos/infra/websites/production/maven/content/plugins/maven-
+           https://svn.apache.org/repos/infra/websites/production/maven/content/shared/maven-XXX
 +-----+
 
  To review the site, wait for the files to arrive at
