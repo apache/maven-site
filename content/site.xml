@@ -47,6 +47,7 @@ under the License.
       <item name="Release Notes (${current22xVersion})" href="/docs/${current22xVersion}/release-notes.html"/>
       <item name="Release Notes (${current20xVersion})" href="/docs/${current20xVersion}/release-notes.html"/>
       <item name="License" href="/license.html"/>
+      <item name="Security" href="/security.html"/>
     </menu>
 
     <menu name="IDE Integration">
