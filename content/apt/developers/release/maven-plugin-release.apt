@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2013-02-22
+ 2013-02-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -65,6 +65,14 @@ cd target/checkout
 mvn site-deploy -Preporting -Psite-release
 +-----+
 
+  An other (faster) way:
+
++-----+
+svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/plugins/maven-XXX-plugin
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/plugins-archives/maven-XXX-plugin-Y.Z \ 
+           https://svn.apache.org/repos/infra/websites/production/maven/content/plugins/maven-XXX-plugin
++-----+
+
  To review the site, wait for the files to arrive at
 
 +-----+
@@ -76,4 +84,3 @@ http://maven.apache.org/plugins/maven-XXX-plugin/
  See {{{../website/deploy-maven-website.html}Deploy Maven website}}
 
  Update the version number for the plugin on the <<<content/apt/plugins/index.apt>>> page.
-
