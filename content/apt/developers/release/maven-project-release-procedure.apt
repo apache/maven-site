@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2013-02-22
+ 2013-02-23
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -170,7 +170,6 @@ I will promote the artifacts to the central repo.
 +--------+
 wagon/wagon-2.2-source-release.zip
 wagon/wagon-2.2-source-release.zip.asc
-wagon/wagon-2.2-source-release.zip.asc.md5
 wagon/wagon-2.2-source-release.zip.md5
 +--------+
 
