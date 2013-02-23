@@ -31,7 +31,7 @@ Security Vulnerabilities
   For more information about reporting vulnerabilities, see the
   {{{http://www.apache.org/security/} Apache Security Team}} page.
 
-* CVE-2013-0253 Apache Maven
+* CVE-2013-0253 Apache Maven 3.0.4
 
   Severity: Medium
 
