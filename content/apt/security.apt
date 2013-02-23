@@ -55,5 +55,4 @@ Security Vulnerabilities
   All users are recommended to upgrade to {{{./download.cgi} Apache Maven 3.0.5}} and Apache
   Maven Wagon 2.4.
 
-   Credit
-  This issue was identified by Graham Leggett
+   Credit: This issue was identified by Graham Leggett
