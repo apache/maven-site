@@ -150,7 +150,7 @@ under the License.
         </tbody>
       </table>
 
-      <p>You can also download the current documentation, i.e. this website, as a <a href="#Maven_Documentation">JAR or PDF</a>.</p>
+      <p>You can also <a href="#Maven_Documentation">download the current documentation</a>, i.e. this website.</p>
 
 
       <subsection name="Maven ${current22xVersion}">
@@ -266,8 +266,10 @@ under the License.
        <p>
          You can download the current documentation, i.e. this website, as:
          <ul>
-           <li>a <a href="./maven-site-1.0-site.jar">single jar file;</a></li>
+           <li>a <a href="./maven-site-1.0-site.jar">single jar file</a></li>
+<!-- not currently generated on the CMS due to the profile
            <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
+-->
          </ul>
        </p>
       </subsection>
