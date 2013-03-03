@@ -1,0 +1,765 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://maven.apache.org/DOCUMENT/1.0.0" targetNamespace="http://maven.apache.org/DOCUMENT/1.0.0">
+  <xs:element name="document" type="DocumentModel">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">Describes the overall document model.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="DocumentModel">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">Describes the overall document model.</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="meta" type="DocumentMeta">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The Meta information properties.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="toc" type="DocumentTOC">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The TOC (Table of Contents) information properties.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="cover" type="DocumentCover">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The meta data to construct a cover page for the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+    <xs:attribute name="outputName" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The name of the generated document, without extension.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DocumentTOC">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">A Table Of Content for the document.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="item" type="DocumentTOCItem" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            TOC item.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The name to use for the Table of Contents.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="depth" type="xs:int" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            Specifies up to which level toc items are included by default.
+            Defaults to 0 which means all entries are included. A depth of 1
+            means only top-level elements, 2 includes one level of sub-items, etc.
+            This may be overridden for individual entries by using the collapse
+            attribute of the corresponding toc item.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DocumentTOCItem">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">A menu item.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="item" type="DocumentTOCItem" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+           A table of content item containing sub-items.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute name="name" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The name to use for the toc.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="ref" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The ref to use for the item.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="collapse" type="xs:boolean" default="false">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+           Whether to show any child elements of a TOCItem, overriding
+           the depth given in DocumentTOC. By default, all children
+           are expanded up to the depth given in DocumentTOC.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DocumentCover">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">Contains meta-data information for the document cover page.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="coverTitle" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The title to appear on the cover.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="coverSubTitle" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            a sub-title to appear on the cover.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="coverVersion" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The version of the project that appears on the cover page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="coverType" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The type of the document. This might be used on the cover page to
+            specify the type of information contained in the document
+            (eg &apos;User Guide&apos;, &apos;Manual&apos;, etc.).
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="coverDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The date to appear on the cover.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="author" type="DocumentAuthor" maxOccurs="unbounded">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The authors that appear on the cover page.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="projectName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the project.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="projectLogo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The location of an image file that represents the project logo.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="companyName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the entity that is responsible for the content of the
+            document, or a copyright holder.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="companyLogo" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The location of an image file that represents the company logo.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentAuthor">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">An author the document.</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="firstName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             The first name of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="lastName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The last name of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="initials" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             The initials of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="title" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             The title of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="position" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             The position of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="email" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The email address of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="phoneNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The telephone number of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="faxNumber" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The fax number of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="companyName" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the company that employs the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="street" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             The street name of the address of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="city" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The city name of the address of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="postalCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The postal code of the address of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="country" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The country of the address of the author.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="state" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The state or province of the address of the author, if applicable.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="DocumentMeta">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">
+        &lt;p&gt;
+          Metadata is general information about a document.
+        &lt;/p&gt;
+
+        &lt;p&gt;
+          The metadata elements used here were mostly inspired by the
+          &lt;a href=&quot;http://docs.oasis-open.org/office/v1.1/&quot;&gt;Open Document Format Specification v. 1.1&lt;/a&gt;,
+          which in turn borrows heavily upon the metadata standards developed by the
+          &lt;a href=&quot;http://www.dublincore.org&quot;&gt;Dublin Core Metadata Initiative&lt;/a&gt;.
+        &lt;/p&gt;
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="title" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The title of the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="author" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            A shortcut for the unique author of the document, usually as a String of &quot;firstName lastName&quot;. For
+            more authors, you could use the &lt;authors/&gt; tag.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="authors">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The authors of the document. The names of the entities that
+            are primarily responsible for the content of the document.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="author" minOccurs="0" maxOccurs="unbounded" type="DocumentAuthor"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="subject" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The subject of the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="keywords" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Keywords for the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="keyWords">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            A keyword pertaining to the document. The metadata can contain any
+            number of keyword elements, each element specifying one keyword.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="keyWord" minOccurs="0" maxOccurs="unbounded" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element minOccurs="0" name="pageSize" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The pagesize of the document.
+            At least &quot;US&quot;, &quot;USLetter&quot; and &quot;A4&quot; should be supported.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="generator" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             A string that identifies the application or tool that was
+             used to create or last modify the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="description" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+             A brief description of the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="initialCreator" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the person who created the document initially.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="creator" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the person who last modified the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="printedBy" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The name of the person who last printed the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="creationDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The date and time when the document was created initially.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="date" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The date and time when the document was last modified.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="printDate" type="xs:dateTime">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The date and time when the document was last printed.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="template" type="DocumentTemplate">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            A template that was used to create the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="hyperlinkBehaviour" type="DocumentHyperlinkBehaviour">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The hyperlink-behaviour element specifies the default behavior
+            for hyperlinks in the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="language" type="xs:string" default="en-US">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The default language of the document. The language is represented by
+            a two or three letter Language Code taken from the ISO 639 standard,
+            optionally followed by a hyphen (-) and a two-letter Country Code
+            taken from the ISO 3166 standard.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="editingCycles" type="xs:long" default="0">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The number of editing cycles the document has been through.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="editingDuration" type="xs:long" default="0">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The total time spent editing the document.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="documentStatistic" type="DocumentStatistic">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            The statistics of the document, for example, the page count,
+            word count, etc.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="confidential" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            whether the content of the document is in some sense confidential.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="draft" type="xs:boolean" default="false">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            whether the content of the document is in some sense preliminary.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DocumentTemplate">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">A template that was used to create the document.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="href" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The location of the document template.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="title" type="xs:string">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The name of the document template.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="date" type="xs:dateTime">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The date and time when the template was last modified, prior
+            to being used to create the current document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DocumentStatistic">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">Statistical attributes of the document.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="pageCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of pages in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="tableCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of tabels in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="drawCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of drawings in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="imageCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of images in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="objectCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of objects in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="oleObjectCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of ole-objects in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="paragraphCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of paragraphs in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="wordCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of words in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="characterCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of characters in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="rowCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of rows in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="frameCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of frames in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="sentenceCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of sentences in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="syllableCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of syllables in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+    <xs:attribute name="nonWhitespaceCharacterCount" type="xs:long" default="0">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            The number of non-whitespace-characters in the document.
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+  <xs:complexType name="DocumentHyperlinkBehaviour">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">Specifies the default behavior for hyperlinks in the document.</xs:documentation>
+    </xs:annotation>
+    <xs:attribute name="targetFrame" type="xs:string" default="_self">
+      <xs:annotation>
+        <xs:documentation source="version">1.0.0</xs:documentation>
+        <xs:documentation source="description">
+            the name of the default target frame.
+            &lt;p&gt;
+              Specifies the name of the default target frame in which to display
+              a document referenced by a hyperlink.
+            &lt;/p&gt;
+
+            &lt;p&gt;
+              This attribute can have one of the following values:
+            &lt;/p&gt;
+
+            &lt;dl&gt;
+              &lt;dd&gt;_self&lt;/dd&gt;
+              &lt;dt&gt;
+                The referenced document replaces the content
+                of the current frame.
+              &lt;/dt&gt;
+
+              &lt;dd&gt;_blank&lt;/dd&gt;
+              &lt;dt&gt;
+                The referenced document is displayed in a new frame.
+              &lt;/dt&gt;
+
+              &lt;dd&gt;_parent&lt;/dd&gt;
+              &lt;dt&gt;
+                The referenced document is displayed in the parent frame
+                of the current frame.
+              &lt;/dt&gt;
+
+              &lt;dd&gt;_top&lt;/dd&gt;
+              &lt;dt&gt;
+                The referenced document is displayed in the topmost frame,
+                that is the frame that contains the current frame as a child
+                or descendent but is not contained within another frame.
+              &lt;/dt&gt;
+
+              &lt;dd&gt;A frame name&lt;/dd&gt;
+              &lt;dt&gt;
+                The referenced document is displayed in the named frame.
+                If the named frame does not exist, a new frame with that
+                name is created.
+              &lt;/dt&gt;
+            &lt;/dl&gt;
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
+  </xs:complexType>
+</xs:schema>

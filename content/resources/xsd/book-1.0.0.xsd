@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns="http://maven.apache.org/BOOK/1.0.0" targetNamespace="http://maven.apache.org/BOOK/1.0.0">
+  <xs:element name="book" type="BookModel">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">
+        Describes the book layout and packaging.
+      </xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="BookModel">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+      <xs:documentation source="description">
+        Describes the book layout and packaging.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the id of this book. This is a symbolic name for a
+            particular book from this project.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="title" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the title of this book.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="author" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the author of this book.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="date" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the date of this book.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="chapters">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies a collection of chapters.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="chapter" minOccurs="0" maxOccurs="unbounded" type="Chapter"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="Chapter">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the id of this chapter. This is a symbolic name for a
+            particular chapter.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="title" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the title of this chapter.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="sections">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies a collection of sections.
+          </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="section" minOccurs="0" maxOccurs="unbounded" type="Section"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+  <xs:complexType name="Section">
+    <xs:annotation>
+      <xs:documentation source="version">1.0.0</xs:documentation>
+    </xs:annotation>
+    <xs:all>
+      <xs:element minOccurs="0" name="id" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the id of this section. This is a symbolic name for a
+            particular section.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="title" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the title of this section.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="file" type="xs:string">
+        <xs:annotation>
+          <xs:documentation source="version">1.0.0</xs:documentation>
+          <xs:documentation source="description">
+            Specifies the file of this section.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:all>
+  </xs:complexType>
+</xs:schema>
