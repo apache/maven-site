@@ -3,7 +3,7 @@
  -----
  Jason van Zyl
  -----
- 2013-02-23
+ 2013-03-06
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -165,7 +165,8 @@ I will promote the artifacts to the central repo.
 
   The Maven dist area is https://dist.apache.org/repos/dist/release/maven. In here, you will
   find a series of subdirectories (plugins, scm, etc, etc.) Add the release, its signatures, and corresponding
-  MD5 files. For example:
+  MD5 files. Currently this need to be in maven-pmc group. ( See {{{https://issues.apache.org/jira/browse/INFRA-5945}https://issues.apache.org/jira/browse/INFRA-5945}} )  
+  For example:
 
 +--------+
 wagon/wagon-2.2-source-release.zip
