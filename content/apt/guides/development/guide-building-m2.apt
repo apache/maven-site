@@ -89,7 +89,7 @@ git checkout maven-2.2.x
 
       * <<<doxia/trunk>>> - The {{{/doxia/}Doxia}} site generation library used by several report plugins and site plugin.
 
-      * <<<surefire/trunk>>> - The {{/surefire/}Surefire}} test runner. git clone https://git-wip-us.apache.org/repos/asf/maven-surefire.git
+      * <<<surefire/trunk>>> - The {{{/surefire/}Surefire}} test runner. git clone https://git-wip-us.apache.org/repos/asf/maven-surefire.git
 
       []
 
