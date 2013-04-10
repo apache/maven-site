@@ -30,7 +30,7 @@ Introduction
 
  This document gives step-by-step instructions for deploying the Maven website {{{http://maven.apache.org}http://maven.apache.org}}.
 
- Since 10th Decemeber 2012, the main website use CMS mechanism. (see {{{https://cms.apache.org/maven}https://cms.apache.org/maven}}).
+ Since 10th December 2012, the main website use CMS mechanism. (see {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}).
 
  You can edit pages in two ways:
 
@@ -60,7 +60,7 @@ How it works
 
 * Modify Maven Website with CMS UI
 
-  * Go to {{{https://cms.apache.org/maven}https://cms.apache.org/maven}}.
+  * Go to {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}.
 
   * Click link "Get maven Working Copy"
 
