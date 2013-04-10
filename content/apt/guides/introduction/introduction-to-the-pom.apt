@@ -322,7 +322,7 @@ Introduction to the POM
 +-----+
 
  In the revised com.mycompany.app:my-app:1, the packaging section and the modules sections were added. For
- the packaging, it's value was set to "pom", and for the modules section, we have the element
+ the packaging, its value was set to "pom", and for the modules section, we have the element
  <<<\<module\>my-module\</module\>>>>. The value of <<<\<module\>>>> is the relative path from the com.mycompany.app:my-app:1
  to com.mycompany.app:my-module:1's POM (<by practice, we use the module's artifactId as the module directory's name>).
 
