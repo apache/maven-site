@@ -110,28 +110,11 @@ Eric Redmond)
           <li><strong>Authors:</strong>
             John Casey,
             <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            <a href="http://blogs.exist.com/bporter">Brett Porter</a>,
+            <a href="http://brettporter.wordpress.com/">Brett Porter</a>,
             <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
           </li>
           <li><strong>Read Online:</strong> <a href="http://www.maestrodev.com/better-build-maven">http://www.maestrodev.com/better-build-maven</a></li>
         </ul>
-      </div>
-
-<div style="float: left; margin-right: 5em;">
-      <img src="images/books/developer_notebook.gif" title="Maven: A Developer's Notebook" />
-</div>
-      <div style="min-height: 220px">
-        <p><a href="http://www.oreilly.com/catalog/mavenadn/"><strong>Maven: A Developer's Notebook</strong></a></p>
-
-        <ul>
-          <li><strong>Covers:</strong>Maven 1.0.2</li>
-          <li><strong>Published:</strong> O'Reilly (July 2005)</li>
-          <li><strong>Authors:</strong>
-            <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            <a href="http://www.oreillynet.com/pub/au/1738">Tim O'Brien</a>
-          </li>
-        </ul>
-
       </div>
     </section>
 
