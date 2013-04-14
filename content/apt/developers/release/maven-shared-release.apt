@@ -48,7 +48,7 @@ cd target/checkout
 mvn site site-deploy -Preporting
 +-----+
 
-  deployed to {{{http://maven.apache.org/shared-archives/}}}maven-XXX-Y.Z/
+  deployed to {{{http://maven.apache.org/shared-archives/}http://maven.apache.org/shared-archives/}}maven-XXX-Y.Z/
 
 * Deploying the release website
 
