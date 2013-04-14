@@ -39,7 +39,7 @@ Releasing A Maven Shared Component
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The shared component parent POM is configured to stage the documentation in a "versioned" directory
-  such as <<</shared/maven-XXX-Y.Z>>>.
+  such as <<</shared-archives/maven-XXX-Y.Z>>>.
 
    [[1]] Stage the documentation for the current release version (not the new snapshot).
 
@@ -48,7 +48,7 @@ cd target/checkout
 mvn site site-deploy -Preporting
 +-----+
 
-  deployed to http://maven.apache.org/shared-archives/maven-XXX-Y.Z/
+  deployed to {{{http://maven.apache.org/shared-archives/}}}maven-XXX-Y.Z/
 
 * Deploying the release website
 
