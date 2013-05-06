@@ -198,7 +198,7 @@ wagon/wagon-2.2-source-release.zip.md5
 
  [[4]] Wait for everything to sync
 
-   [[a]] Sync to Maven Central
+   [[a]] Sync to {{{http://repo.maven.apache.org/maven2/org/apache/maven/}Maven Central}}
 
      The sync into central staging from repository.apache.org occurs every 4 hours. 
      There is a separate hourly schedule that runs which pushes from staging to the other central machines, and then updates the indexes.
