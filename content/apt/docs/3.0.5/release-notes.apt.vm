@@ -38,7 +38,7 @@ Apache Maven 3.0.5
   Maven 3 aims to ensure backward compatibility with Maven 2, improve usability, increase performance, allow safe embedding, and pave the way
   to implement many highly demanded features.
 
-  Apache Maven 3.0.5 is a maintenance release to fix a security issue CVE-2013-0253 Apache Maven 3.0.4 see {{{/security.html} Security page}}
+  Apache Maven 3.0.5 is a maintenance release to fix a security issue {{{http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0253} CVE-2013-0253}} Apache Maven 3.0.4 see {{{/security.html} Security page}}
 
   The core release is independent of the plugins available. Further releases of plugins will be made separately.
   See the {{{../../plugins/index.html} Plugin List}} for more information.
