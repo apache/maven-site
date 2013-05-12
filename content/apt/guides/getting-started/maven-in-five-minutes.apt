@@ -29,10 +29,10 @@ mvn --version
   It should print out your installed version of Maven, for example:
 
 +-----+
-Apache Maven 3.0.3 (r1075438; 2011-02-28 18:31:09+0100)
-Maven home: D:\apache-maven-3.0.3\bin\..
+Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 14:51:28+0100)
+Maven home: D:\apache-maven-3.0.5\bin\..
 Java version: 1.6.0_25, vendor: Sun Microsystems Inc.
-Java home: E:\Program Files\Java\jdk1.6.0_25\jre
+Java home: C:\Program Files\Java\jdk1.6.0_25\jre
 Default locale: nl_NL, platform encoding: Cp1252
 OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 +-----+
