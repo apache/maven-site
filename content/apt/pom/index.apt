@@ -44,3 +44,5 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./skins/} <<<Skins>>>}}                   | 7            | 2012-01-18 | Skins configuration.         | {{{http://svn.apache.org/repos/asf/maven/skins/trunk/maven-skins/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12317104}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/apache-resource-bundles/} <<<Apache Resource Bundles>>>}}  | 4 | 2012-07-03 | A set of resources to help you building Java resources compliant with Apache rules. | {{{http://svn.apache.org/repos/asf/maven//resources/trunk/apache-resource-bundles/}SVN}} | -
+*----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
