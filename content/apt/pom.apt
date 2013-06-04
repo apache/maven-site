@@ -1325,7 +1325,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   can wear many hats, a single person can take on multiple <<<roles>>>.
 
   * <<timezone>>:
-  A numerical offset in hours from GMT where the developer lives.
+  A numerical offset in hours from GMT where the developer lives or a valid {{{http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/i18n/client/constants/TimeZoneConstants.html}time zone id}} like "America/Montreal" (UTC-05:00) or "Europe/Paris" (UTC+01:00). 
 
   * <<properties>>:
   This element is where any other properties about the person goes. For example, a link to a personal
@@ -1355,7 +1355,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
       <roles>
         <role>tester</role>
       </roles>
-      <timezone>-5</timezone>
+      <timezone>America/Vancouver</timezone>
       <properties>
         <gtalk>some.name@gmail.com</gtalk>
       </properties>
