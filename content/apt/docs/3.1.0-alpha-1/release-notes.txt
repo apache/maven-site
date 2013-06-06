@@ -1,6 +1,6 @@
 * Maven 3.1.0-alpha-1 Release Notes
 
-  Maven 3.1.0-alpha-1 is the first release of the 3.1.x series
+  Maven 3.1.0-alpha-1 is the first release of the 3.1.x series.
   
   The full list of changes can be found in our
   {{{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=18967}issue management system}},
@@ -12,15 +12,18 @@
 
   The use of SLF4J in the core for logging. You can read more about it in the {{{http://maven.apache.org/maven-logging.html}Maven and SLF4J}} document.
 
-  The switch in the core from Sonatype Aether {{{http://eclipse.org/aether}Eclipse Aether}}.
+  The switch in the core from Sonatype Aether to {{{http://eclipse.org/aether}Eclipse Aether}}.
 
 ** Known Incompatibilities with Maven 3
 
   The significant change in Eclipse Aether with respect to API changes and package relocation will likely cause issues with plugins that directly depend on Aether.
-  We are aware of the potential issues in the Maven Site Plugin, Maven Dependency Plugin, the Maven Shade Plugin and have made attempt to fix these issues but this
-  is a significant change and is likely to cause issues in any plugin that depends on the now deprecated Sonatype Aether.
+  We are aware of the issues in the Maven Site Plugin, the Maven Dependency Plugin, the Maven Shade Plugin and have fixed them in recent releases. But this
+  is a significant change and is likely to cause issues in any plugin that depends on the now deprecated Sonatype Aether. 
 
-** Release Notes - Maven - Version 3.1.0-alpha-1 (since 3.0.2 only)
+  We maintain a {{{https://cwiki.apache.org/confluence/display/MAVEN/AetherClassNotFound}list of affected plugins with fixed version}}:
+  please report if you find another plugin not yet in this list.
+
+** Release Notes - Maven - Version 3.1.0-alpha-1 (since 3.0.5 only)
 
 ** Bug
 
