@@ -47,6 +47,8 @@ Maven 3.1.0-alpha-1
 
     * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
     
+    * the reference documentation: {{http://maven.apache.org/ref/3.1.0-alpha-1/}}
+
 #parse("release-notes.txt")
 
 * Complete Release Notes
