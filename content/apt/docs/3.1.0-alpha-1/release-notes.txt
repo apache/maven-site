@@ -17,9 +17,10 @@
 ** Known Incompatibilities with Maven 3
 
   The significant change in Eclipse Aether with respect to API changes and package relocation will likely cause issues with plugins that directly depend on Aether.
-  We are aware of the issues in the Maven Site Plugin, the Maven Dependency Plugin, the Maven Shade Plugin and have fixed them in recent releases. But this
-  is a significant change and is likely to cause issues in any plugin that depends on the now deprecated Sonatype Aether. In the external plugin ecosystem it is known
-  that the Android Maven Plugin is also affected due to its direct use of Sonatype Aether. The Android Maven Plugin developers are aware of this issue and will release
+  We are aware of the issues in the Maven Site Plugin, the Maven Dependency Plugin, the Maven Shade Plugin and Maven Project Info Reports Plugin,
+  and have fixed them in recent releases. But this
+  is a significant change and is likely to cause issues in any plugin that depends on the now deprecated Sonatype Aether. In the external plugin ecosystem, it is known
+  that Tycho, the Android Maven Plugin and the NetBeans Module Plugin are also affected: the plugin developers are aware of this issue and will release
   a new version of the plugin to address this issue.
 
 
