@@ -112,6 +112,12 @@ under the License.
         </thead>
         <tbody>
           <tr>
+            <td>Maven 3.1.0-alpha-1 (Binary tar.gz)</td>
+            <td><a href="[preferred]maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
+          </tr>
+          <tr>
             <td>Maven ${currentStableVersion} (Binary tar.gz)</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
             <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
