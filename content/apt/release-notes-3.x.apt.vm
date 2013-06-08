@@ -30,6 +30,8 @@ Release Notes - Maven 3.x
 
 #foreach ($v in $versions3x.split(","))
 #parse("docs/$v/release-notes.txt")
+
+
 #end
 
 
