@@ -27,7 +27,7 @@ under the License.
     <author>John Casey</author>
   </properties>
   <body>
-    <section name="Download Apache Maven ${currentStableVersion}">
+    <section name="Download Apache Maven ${current31xVersion}">
 
       <p>Maven is distributed in several formats for your convenience. Use a source archive if you intend to build Maven
       yourself. Otherwise, simply pick a ready-made binary distribution and follow the installation instructions given
