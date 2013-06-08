@@ -58,6 +58,7 @@
   </distributionManagement>
 
   <properties>
+    <current31xVersion>3.1.0-alpha-1</current31xVersion>
     <current20xVersion>2.0.11</current20xVersion>
     <current20xReleaseDate>25 Feb 2010</current20xReleaseDate>
     <current22xVersion>2.2.1</current22xVersion>

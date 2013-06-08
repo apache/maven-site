@@ -112,10 +112,66 @@ under the License.
         </thead>
         <tbody>
           <tr>
-            <td>Maven 3.1.0-alpha-1 (Binary tar.gz)</td>
-            <td><a href="[preferred]maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/3.1.0-alpha-1/binaries/apache-maven-3.1.0-alpha-1-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
+            <td>${current31xVersion} (Binary tar.gz)</td>
+            <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current31xVersion}-bin.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.md5">apache-maven-${current31xVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.asc">apache-maven-${current31xVersion}-bin.tar.gz.asc</a></td>
+          </tr>
+          <tr>
+            <td>Maven ${current31xVersion} (Binary tar.gz)</td>
+            <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current31xVersion}-bin.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.md5">apache-maven-${current31xVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.asc">apache-maven-${current31xVersion}-bin.tar.gz.asc</a></td>
+          </tr>
+          <tr>
+            <td>Maven ${current31xVersion} (Binary zip)  </td>
+            <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip">apache-maven-${current31xVersion}-bin.zip</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.md5">apache-maven-${current31xVersion}-bin.zip.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.asc">apache-maven-${current31xVersion}-bin.zip.asc</a></td>
+          </tr>
+          <tr>
+            <td>Maven ${current31xVersion} (Source tar.gz)</td>
+            <td><a href="[preferred]maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz">apache-maven-${current31xVersion}-src.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.md5">apache-maven-${current31xVersion}-src.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.asc">apache-maven-${current31xVersion}-src.tar.gz.asc</a></td>
+          </tr>
+          <tr>
+            <td>Maven ${current31xVersion} (Source zip) </td>
+            <td><a href="[preferred]/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip">apache-maven-${current31xVersion}-src.zip</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.md5">apache-maven-${current31xVersion}-src.zip.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.asc">apache-maven-${current31xVersion}-src.zip.asc</a></td>
+          </tr>
+          <tr>
+            <td>Release Notes</td>
+            <td><a href="./docs/${current31xVersion}/release-notes.html">${current31xVersion}</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Release Reference Documentation</td>
+            <td><a href="./ref/${current31xVersion}/">${current31xVersion}</a></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <subsection name="Maven ${currentStableVersion}">
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Link</th>
+            <th>Checksum</th>
+            <th>Signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Maven 3.0.5 (Binary tar.gz)</td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
           </tr>
           <tr>
             <td>Maven ${currentStableVersion} (Binary tar.gz)</td>
@@ -155,6 +211,7 @@ under the License.
           </tr>
         </tbody>
       </table>
+      </subsection>
 
       <p>You can also <a href="#Maven_Documentation">download the current documentation</a>, i.e. this website.</p>
 
