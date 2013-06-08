@@ -30,6 +30,8 @@ Release Notes
 
 #foreach ($v in $versions3x.split(","))
 #parse("docs/$v/release-notes.txt")
+
+
 #end
 
 #foreach ($v in $versions2x.split(","))
