@@ -339,6 +339,9 @@ under the License.
       <subsection name="Previous Releases">
         <p>All previous releases of Maven can be found in the  <a href="http://archive.apache.org/dist/maven/binaries/">archives</a>.</p>
       </subsection>
+      <subsection name="All sources">
+        <p>All sources (plugins, shared librairies, scm, indexer etc..) can be downloaded from <a href="http://www.us.apache.org/dist/maven/">http://www.us.apache.org/dist/maven/</a></p>
+      </subsection>
       <subsection name="System Requirements">
         <p>
           <table>
