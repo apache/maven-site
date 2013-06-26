@@ -162,7 +162,7 @@ I will promote the artifacts to the central repo.
 
   The official Apache release is the 'source-release' bundle. All releases must be copied to {{{http://www.apache.org/dist/maven/}the official 
   release area}}. The release area is maintained with svnsubpub. To deliver a release, you add it to 
-  {{{https://dist.apache.org/repos/dist/release/maven}the subversion repository for the dist area}.
+  {{{https://dist.apache.org/repos/dist/release/maven}the subversion repository for the dist area}}.
 
   The Maven dist area is {{{https://dist.apache.org/repos/dist/release/maven}}}. In here, you will
   find a series of subdirectories (plugins, scm, etc.) Add the release, its signature, and corresponding
