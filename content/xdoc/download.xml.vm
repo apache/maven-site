@@ -100,7 +100,10 @@ under the License.
         </p>
 
       </subsection>
-
+      <subsection name="Maven ${current31xVersion}">
+        
+      <p>This is the future of Maven (alpha status).</p>  
+      
       <table>
         <thead>
           <tr>
@@ -111,12 +114,6 @@ under the License.
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>${current31xVersion} (Binary tar.gz)</td>
-            <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current31xVersion}-bin.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.md5">apache-maven-${current31xVersion}-bin.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.asc">apache-maven-${current31xVersion}-bin.tar.gz.asc</a></td>
-          </tr>
           <tr>
             <td>Maven ${current31xVersion} (Binary tar.gz)</td>
             <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current31xVersion}-bin.tar.gz</a></td>
@@ -155,8 +152,12 @@ under the License.
           </tr>
         </tbody>
       </table>
-
+      </subsection>
+      
       <subsection name="Maven ${currentStableVersion}">
+        
+      <p>This is the current stable version of Maven.</p>
+        
       <table>
         <thead>
           <tr>
@@ -167,12 +168,6 @@ under the License.
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Maven 3.0.5 (Binary tar.gz)</td>
-            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
-          </tr>
           <tr>
             <td>Maven ${currentStableVersion} (Binary tar.gz)</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
