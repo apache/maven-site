@@ -244,7 +244,7 @@ mvn changes:announcement-mail -Dchanges.username=<SMTP-USERNAME> -Dchanges.passw
 From: YOUR_APACHE_USERNAME@apache.org
 To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
-Subject: [ANN] Maven XXX Plugin Y.Z Released
+Subject: [ANN] Apache Maven XXX Plugin Y.Z Released
 
 The Apache Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
 
