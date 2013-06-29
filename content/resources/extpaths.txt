@@ -10,6 +10,7 @@ archetype-archives
 maven-archetype-bundles
 core-its
 enforcer
+enforcer-archives
 jxr
 maven-1.x
 maven-indexer
