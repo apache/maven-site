@@ -32,9 +32,11 @@ community, we present the following as one such way.
 Please do not take offence if you disagree with this
 categorisation. It is important to remember that we are
 a *community* not a *clique* so you are entitled to disagree
-with others in the community. (Note that the right to disagree
-comes with a responsibility not to deliberately cause offence
-or discord.)
+with others in the community. 
+
+*Note:* the right to disagree with other people's opinions
+comes with the responsibility not to deliberately cause offence
+or discord.
 
 ## Informal roles
 
