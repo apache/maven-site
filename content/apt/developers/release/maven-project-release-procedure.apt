@@ -105,6 +105,12 @@ https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/[P
 Staging site:
 http://maven.apache.org/plugins-archives/maven-XXX-plugin-Y.Z/
 
+Sources: 
+http://svn.apache.org/viewvc/maven/plugins/tags/maven-XXXX-plugin-Y.Z/ (rev. 0000000)
+
+KEYS: 
+http://svn.apache.org/repos/asf/maven/project/KEYS
+
 Guide to testing staged releases:
 http://maven.apache.org/guides/development/guide-testing-releases.html
 
