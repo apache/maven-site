@@ -145,7 +145,7 @@ may decide that they want to become an active committer again
 by informing the [project management committee][3]. The current
 policy is that committer role reinstatement is automatic.
 
-### [Project Management Committee][http://www.apache.org/foundation/how-it-works.html#pmc-members]
+### [Project Management Committee](http://www.apache.org/foundation/how-it-works.html#pmc-members)
 
 The Project Management Committee as a whole is the entity that 
 controls the project. Membership of the Project Management Committee 
@@ -174,7 +174,7 @@ The Project Management Committee has the following responsibilities:
 * Voting on release artifacts.
 * <!-- TODO: get the rest of these -->
 
-### [Project Management Chair][http://www.apache.org/foundation/how-it-works.html#pmc-chair]
+### [Project Management Chair](http://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
 For various legal reasons, there are certain things that the Apache 
 Software Foundation can only delegate to an officer of the foundation.
