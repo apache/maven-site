@@ -88,7 +88,7 @@ Performing a Maven Project Release
 
 +-----+
 To: "Maven Developers List" <dev@maven.apache.org>
-Subject: [VOTE] Release Maven XXX Plugin version Y.Z
+Subject: [VOTE] Release Apache Maven XXX Plugin version Y.Z
 
 Hi,
 
@@ -143,7 +143,7 @@ release manager. The specifics of the process may vary from project to project, 
 +-----+
 To: "Maven Developers List" <dev@maven.apache.org>
 CC: "Maven Project Management Committee List" <private@maven.apache.org>
-Subject: [RESULT] [VOTE] Release Maven XXX Plugin version Y.Z
+Subject: [RESULT] [VOTE] Release Apache Maven XXX Plugin version Y.Z
 
 Hi,
 
@@ -246,7 +246,7 @@ To: announce@maven.apache.org, users@maven.apache.org
 Cc: dev@maven.apache.org
 Subject: [ANN] Apache Maven XXX Plugin Y.Z Released
 
-The Apache Maven team is pleased to announce the release of the Maven XXX Plugin, version Y.Z
+The Apache Maven team is pleased to announce the release of the Apache Maven XXX Plugin, version Y.Z
 
 This plugin (insert short description of the plugin's purpose).
 
