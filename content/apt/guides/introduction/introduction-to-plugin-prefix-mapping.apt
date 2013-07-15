@@ -55,7 +55,7 @@ Introduction to Plugin Prefix Resolution
   "maven" or "plugin" surrounded by dashes in the plugin's artifact ID. The
   conventional artifact ID formats to use are:
 
-    * <<<maven-$\{prefix\}-plugin>>> - for plugins from the Apache Maven project
+    * <<<maven-$\{prefix\}-plugin>>> - for plugins from the Apache Maven project (you <<must not>> use this naming pattern for your plugin, see {{{../plugin/guide-java-plugin-development.html#Plugin_Naming_Convention_and_Apache_Maven_Trademark}this note for more informations}})
 
     * <<<$\{prefix\}-maven-plugin>>> - for plugins from other sources
 
