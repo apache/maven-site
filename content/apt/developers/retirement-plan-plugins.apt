@@ -3,7 +3,7 @@
  ------
  Dennis Lundberg
  ------
- 2010-12-30
+ 2013-07-20
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -28,7 +28,9 @@
 
 Retirement Plan for Plugins
 
-  [[1]] Propose a vote on the dev-list to retire a plugin. The vote should be
+* Decide to retire
+
+  Propose a vote on the dev-list to retire a plugin. The vote should be
   open for the standard 72 hours to allow people to voice their opinions. Send a
   cc to the users-list. Standard Apache voting rules apply. Only PMC votes are
   binding.
@@ -36,21 +38,97 @@ Retirement Plan for Plugins
   The vote must contain one or more options on how to retire the plugin. There
   are multiple scenarios available. Here are a couple that have been suggested:
 
-    * Move to retired area in svn
+    [[A]] Move to our retired area in svn
 
-    * Move to mojo.codehaus.org, apache-extras.org or another forge
+    [[A]] Move to another Apache project
+
+    [[A]] Move to mojo.codehaus.org, apache-extras.org or another forge
 
     []
 
-  [[1]] Make one final release of the plugin before it is retired. This allows
-  us to make a clean break. The final release must remove the
-  "Source Repository" report from the site, since the SCM URLs will be changed
-  when the plugin is retired. A prominent notice must be placed on the front
-  page of the plugin's site, informing that the plugin is retired. If the plugin
-  is moved elsewhere, that should also be posted on the plugin's site. The
-  person who wants to retire a plugin is the one who does the final release.
+  Here's a template for scenario A that can be used for the vote email:
+
++-----
+To: "Maven Developers List" <dev@maven.apache.org>
+Cc: "Maven Users List" <users@maven.apache.org>
+Subject: [VOTE] Retire Maven Foo Plugin
+
+Hi,
+
+A paragraph giving the reasons why the plugin should be retired. Make a note of
+how long it has been since the latest release.
+
+I therefor propose that we retire maven-foo-plugin.
+
+If this vote is successful I will make one final release of the plugin, making
+it clear on the plugin site that it has been retired. After that the source code
+will be moved into the "retired" area in Subversion.
+
+The process for retiring a plugin is described here:
+http://maven.apache.org/developers/retirement-plan-plugins.html
+
+The vote is open for 72 hours.
+
+[ ] +1 Yes, it's about time
+[ ] -1 No, because...
++-----
+
+  If the vote passes, make one final release of the plugin before it is
+  retired. This allows us to make a clean break. The person who wants to retire
+  a plugin is the one who does the final release. Below you will find the extra
+  steps that you need to follow when retiring a plugin, in addition to our
+  standard release process.
+
+* Make the final release
+
+  [[1]] Create an issue in JIRA with the issue type "Task" and the summary
+  "Retire this plugin", and schedule it for the final release.
+
+  [[1]] Add the description
+  "This is the final version of this plugin. It has been retired."
+  to the final version in JIRA.
+
+  [[1]] Add a prominent notice on the front page of the plugin's site,
+  informing that the plugin is retired. If the plugin is moved elsewhere,
+  that should also be added to the plugin's site. (Add notice templates)
+
+  [[1]] The final release must remove the "Source Repository" report from the
+  site, since the SCM URLs will be changed when the plugin is retired.
+
+  Currently this is not possible because all reports are inherited from the
+  parent. Here are two possible work-arounds, that unfortunately only work for
+  scenario A:
+
+    * Change the SCM URL:s in the <<<pom.xml>>> of the checkout directory before
+    you deploy the site
+
+    * Specify the command line parameters <<<anonymousConnection>>>,
+    <<<developerConnection>>> and <<<webAccessUrl>>>, pointing to the new svn
+    location when you deploy the site
+
+    []
+
+  [[1]] Go ahead with the standard release process, making sure that you follow
+  the exceptions mentioned above regarding the site deployment.
+
+* Clean up after the release
+
+  [[1]] Remove the plugin from the <<<\<modules\>>>> section of the plugins aggregator POM.
+
+  [[1]] Remove any jobs from Continuous Integration servers like Jenkins.
+  Plugins normally don't have separate jobs, but check anyway just to make sure.
+
+  [[1]] Move the source code in Subversion. Where to depends on which scenario
+  was decided on.
+
+  [[1]] Put the JIRA project in read-only mode. (How to do this?)
+
+  [[1]] Update the plugins page, by moving Maven Foo Plugin to under the
+  "Retired" heading (does not exist yet). Remove the SVN and JIRA links and add
+  the date of retirement.
 
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
-  should do if they would like to help with the continued development of the
-  plugin.
+  should do if they would like to continue development of the plugin.
+
+~~ Insert template for retirement email here
