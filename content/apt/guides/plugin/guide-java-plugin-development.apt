@@ -33,13 +33,13 @@ Introduction
   This guide is intended to assist users in developing Java plugins for
   Maven 2.0.
 
-* Important Notice : {Plugin Naming Convention and Apache Maven Trademark}
+* Important Notice: {Plugin Naming Convention and Apache Maven Trademark}
 
-  You will typically name your plugin <<<yourplugin-maven-plugin>>>.
+  You will typically name your plugin <<<<yourplugin>-maven-plugin>>>.
 
-  Calling it <<<maven-yourplugin-plugin>>> (note "Maven" is at the beginning 
+  Calling it <<<maven-<yourplugin>-plugin>>> (note "Maven" is at the beginning 
   of the plugin name) is <<strongly discouraged>> since it's a 
-  <<<reserved naming pattern for official Apache Maven plugins>>>.
+  <<reserved naming pattern for official Apache Maven plugins>>.
   Using this pattern is an infringement of the Apache Maven Trademark.
 
 * Your First Plugin
