@@ -56,10 +56,9 @@ Introduction
   contains a number of similar mojos is likely to use an abstract
   superclass for the mojos to consolidate code common to all mojos.
 
-  When processing the source tree to find mojos, the class
-  <<<org.apache.maven.tools.plugin.extractor.java.JavaMojoDescriptorExtractor>>>
-  looks for classes with a "<<<goal>>>" annotation on the class.  Any class
-  with this annotation are included in the plugin configuration file.
+  When processing the source tree to find mojos, {{{/plugin-tools/} <<<plugin-tools>>>}}
+  looks for classes with either <<<@Mojo>>> Java 5 annotation or "<<<goal>>>" javadoc annotation.
+  Any class with this annotation are included in the plugin configuration file.
 
 *** A Simple Mojo
 
@@ -163,7 +162,7 @@ public class GreetingMojo extends AbstractMojo
 
 ** Build Goals
 
-  There are few goals which are defined with the Maven plugin
+  There are few goals which are defined with the <<<maven-plugin>>>
   packaging as part of a standard build lifecycle:
 
 *-------------+----------------------------------------------------+
