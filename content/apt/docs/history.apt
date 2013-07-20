@@ -46,7 +46,7 @@ Maven Releases History
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E} announce}},
   {{{./3.0.4/release-notes.html} release notes}}
 
-  * 04-03-2011 3.0.3 {{{/ref/3.0.3/} reference documentation}},
+  * 2011-03-04 3.0.3 {{{/ref/3.0.3/} reference documentation}},
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E} announce}},
   {{{./3.0.3/release-notes.html} release notes}}
 
@@ -124,7 +124,7 @@ Maven Releases History
   * 2007-02-16 2.0.5 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200702.mbox/%3C0DC020CD-0334-4106-B99E-DEC7B477AC72%40apache.org%3E} announce}},
   {{{./2.0.5/release-notes.html} release notes}}
 
-  * 11-04-2006 2.0.4 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E} announce}},
+  * 2006-04-11 2.0.4 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E} announce}},
   {{{./2.0.4/release-notes.html} release notes}}
 
   * 2006-03-28 2.0.3 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200603.mbox/%3C44294FB6.6070509%40apache.org%3E} announce}},
