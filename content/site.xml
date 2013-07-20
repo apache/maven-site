@@ -45,6 +45,7 @@ under the License.
       <item name="Download" href="/download.html"/>
       <item name="Releases History" href="/docs/history.html"/>
       <item name="Release Notes (${currentStableVersion})" href="/docs/${currentStableVersion}/release-notes.html"/>
+      <item name="Release Notes (${current30xVersion})" href="/docs/${current30xVersion}/release-notes.html"/>
       <item name="Release Notes (${current22xVersion})" href="/docs/${current22xVersion}/release-notes.html"/>
       <item name="Release Notes (${current20xVersion})" href="/docs/${current20xVersion}/release-notes.html"/>
       <item name="License" href="http://www.apache.org/licenses/"/>
