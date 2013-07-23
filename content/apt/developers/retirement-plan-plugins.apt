@@ -73,6 +73,25 @@ The vote is open for 72 hours.
 [ ] -1 No, because...
 +-----
 
+  If the vote is successful, post the result to the dev list and cc the PMC and
+  users list. For instance:
+
++-----
+To: "Maven Developers List" <dev@maven.apache.org>
+Cc: "Maven Users List" <users@maven.apache.org>
+CC: "Maven Project Management Committee List" <private@maven.apache.org>
+Subject: [RESULT] [VOTE] Retire Maven Foo Plugin
+
+Hi,
+
+The vote has passed with the following result:
+
++1 (binding): <<list of names>>
++1 (non binding): <<list of names>>
+
+I will continue with the steps required to retire this plugin.
++-----
+
   If the vote passes, make one final release of the plugin before it is
   retired. This allows us to make a clean break. The person who wants to retire
   a plugin is the one who does the final release. Below you will find the extra
@@ -82,31 +101,31 @@ The vote is open for 72 hours.
 * Make the final release
 
   [[1]] Create an issue in JIRA with the issue type "Task" and the summary
-  "Retire this plugin", and schedule it for the final release.
+  "Retire this plugin", and schedule it for the final release. If the plugin
+  includes a JIRA report in the generated site, you will need to close this
+  issue before you make the release.
 
   [[1]] Add the description
   "This is the final version of this plugin. It has been retired."
   to the final version in JIRA.
 
   [[1]] Add a prominent notice on the front page of the plugin's site,
-  informing that the plugin is retired. If the plugin is moved elsewhere,
-  that should also be added to the plugin's site. (Add notice templates)
+  informing that the plugin is retired. Suggested text:
 
-  [[1]] The final release must remove the "Source Repository" report from the
-  site, since the SCM URLs will be changed when the plugin is retired.
++-----
+Note: This plugin is retired. It is no longer maintained.
++-----
 
-  Currently this is not possible because all reports are inherited from the
-  parent. Here are two possible work-arounds, that unfortunately only work for
-  scenario A:
+  If the plugin is moved elsewhere, that should also be added to the plugin's
+  site. Suggested text:
 
-    * Change the SCM URL:s in the <<<pom.xml>>> of the checkout directory before
-    you deploy the site
++-----
+Note: This plugin has retired from the Apache Maven project,
+but has moved to the <Organization> <Project> project.
++-----
 
-    * Specify the command line parameters <<<anonymousConnection>>>,
-    <<<developerConnection>>> and <<<webAccessUrl>>>, pointing to the new svn
-    location when you deploy the site
-
-    []
+  [[1]] Add " (RETIRED)" at the end of <<<\<project\>>>>/<<<\<name\>>>> in the
+  plugin's <<<pom.xml>>>. This will show up on every page of the generated site.
 
   [[1]] Go ahead with the standard release process, making sure that you follow
   the exceptions mentioned above regarding the site deployment.
@@ -120,6 +139,8 @@ The vote is open for 72 hours.
 
   [[1]] Move the source code in Subversion. Where to depends on which scenario
   was decided on.
+
+  [[1]] Change the SCM URLs in the <<<pom.xml>>> to point to the new location.
 
   [[1]] Put the JIRA project in read-only mode. (How to do this?)
 
