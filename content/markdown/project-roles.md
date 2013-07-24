@@ -176,6 +176,29 @@ The Project Management Committee has the following responsibilities:
 * Voting on release artifacts.
 * <!-- TODO: get the rest of these -->
 
+#### Standards for Community Commitment
+
+In the spirit of supporting the health of our community, Project
+Management Committee members refrain from actions that subvert the
+functioning of the committee itself.
+
+First, Project Management Committee members should not maintain long-running 
+forks of Maven code outside of the project itself. Making significant
+changes to Maven code outside of the project displays a lack of 
+investment in the community. Additionally, attempting to re-integrate 
+a large number of code changes in bulk overwhelms the ability of 
+volunteers in the community to review (and potentially veto) the 
+changes. This effectively thwarts the policing function of the 
+PMC.
+
+Second, Project Management Committee members should not divert
+work on redesigning, reimplementing, or improving Maven code to 
+alternative projects outside of this community for the purposes of 
+reintroducing them as replacement for existing Maven code. While there 
+is a danger here of falling into a Not Invented Here mentality, new projects 
+created by Maven PMC members strictly to replace Maven code should not be 
+allowed.
+
 ### [Project Management Chair](http://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
 For various legal reasons, there are certain things that the Apache 
