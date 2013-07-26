@@ -33,8 +33,6 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-jarsigner/} <<<maven-jarsigner>>>}}                       | 1.0          | 2011-11-21        | This component provides some utilities to sign/verify jars/files in your Mojos. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-jarsigner/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15255}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.2          | 2007-08-22        | Converts between version 3.0.0 and version 4.0.0 models. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-model-converter/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13272}JIRA}}
-*----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-reporting-api/} <<<maven-reporting-api>>>}}               | 3.0          | 2010-05-12        | API to manage report generation. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-api/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14413}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-reporting-exec/} <<<maven-reporting-exec>>>}}             | 1.1          | 2013-04-18        | API to manage report plugin executions with Maven 3. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-reporting-exec/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14716}JIRA}}
@@ -58,4 +56,12 @@ Shared Components
 | {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.4          | 2012-12-21        | Used to run Maven builds as part of tests. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-verifier/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13281}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 
-  Archived version of shared libraries are located here {{{http://maven.apache.org/shared-archives/}http://maven.apache.org/shared-archives/}} 
+  Archived version of shared libraries are located here {{{http://maven.apache.org/shared-archives/}http://maven.apache.org/shared-archives/}}
+
+* Retired
+
+*----------------------------------------------------------------------------+--------------+-------------------+------------------+
+|| <<Shared Component>>                                                      || <<Version>> || <<Retired Date>> || <<Description>>
+*----------------------------------------------------------------------------+--------------+-------------------+------------------+
+| {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.3          | 2013-07-26        | Converts between version 3.0.0 and version 4.0.0 models.
+*----------------------------------------------------------------------------+--------------+-------------------+------------------+
