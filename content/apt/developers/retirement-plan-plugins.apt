@@ -3,7 +3,7 @@
  ------
  Dennis Lundberg
  ------
- 2013-07-20
+ 2013-07-26
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -130,6 +130,13 @@ but has moved to the <Organization> <Project> project.
   [[1]] Go ahead with the standard release process, making sure that you follow
   the exceptions mentioned above regarding the site deployment.
 
+  [[1]] When updating the plugins page, move Maven Foo Plugin to under the
+  "Retired" heading. Remove the SVN and JIRA links and add
+  the date of retirement.
+
+  [[1]] When updating the version in JIRA, do not add Y.Z+1 and make sure you
+  remove any future versions.
+
 * Clean up after the release
 
   [[1]] Remove the plugin from the <<<\<modules\>>>> section of the plugins aggregator POM.
@@ -142,11 +149,9 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Change the SCM URLs in the <<<pom.xml>>> to point to the new location.
 
-  [[1]] Put the JIRA project in read-only mode. (How to do this?)
+  [[1]] Add " (RETIRED)" at the end of the project name in JIRA.
 
-  [[1]] Update the plugins page, by moving Maven Foo Plugin to under the
-  "Retired" heading (does not exist yet). Remove the SVN and JIRA links and add
-  the date of retirement.
+  [[1]] Put the JIRA project in read-only mode. (How to do this?)
 
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
