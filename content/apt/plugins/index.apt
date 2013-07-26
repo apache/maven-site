@@ -178,14 +178,20 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2012-02-14 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-idea-plugin/} <<<idea>>>}}                 | B          | 2.2          | 2008-08-08 | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules) | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-idea-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MIDEA}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
 
   There are also some sandbox plugins into our {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}source repository}}.
   
   Previous archived versions of plugins are located {{{http://maven.apache.org/plugins-archives/}http://maven.apache.org/plugins-archives/}}. 
+
+* Retired
+
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+|| <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+| {{{/plugins/maven-idea-plugin/} <<<idea>>>}}                 | B          | 2.2.1        | 2013-07-26        | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 
 * Outside The Maven Land
 
