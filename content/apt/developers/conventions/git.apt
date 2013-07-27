@@ -79,8 +79,10 @@ o Applied without change
 
 * Edit Commit Message
 
+to edit last commit comment:
+
 ---
- git commit --amend to edit last commit comment
+$ git commit --amend -m "new comment"
 ---
 
 * Workflow
@@ -180,7 +182,6 @@ git checkout pr/10
 git rebase apache/master
 git push apache
 ---
-
 
 
 
