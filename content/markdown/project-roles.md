@@ -119,6 +119,8 @@ Maven and Maven plugins,
 * Help curate bug reports by identifying duplicate reports, or
 related issues.
 
+We wrote [a guide for contributors](/guides/development/guide-helping.html).
+
 Keep up the contributions, you are a critical member of our 
 community. If we like what we see, we may even ask you to 
 consider taking a formal role in our project.
@@ -131,7 +133,8 @@ These are those people who have been given write access to the
 Apache Maven code repository and have a signed 
 [Contributor License Agreement (CLA)][4] on file with the ASF.
 
-The Apache Maven project uses a Commit then Review policy.
+The Apache Maven project uses a Commit then Review policy and has
+[a number of conventions][5] which should be followed.
 
 Committers are responsible for ensuring that every file they 
 commit is covered by a valid CLA. 
@@ -174,6 +177,7 @@ The Project Management Committee has the following responsibilities:
 * Proposing active contributors for committership,
 * Binding votes in project decisions,
 * Voting on release artifacts,
+* Ensure [Developers Conventions][5] are followed, or updated/improved if necessary,
 * <!-- TODO: get the rest of these -->
 
 #### Standards for Community Commitment
@@ -217,3 +221,4 @@ Committee as a whole that is responsible for the direction of the project.
   [2]: mailto:users@maven.apache.org
   [3]: mailto:private@maven.apache.org
   [4]: http://www.apache.org/licenses/#clas
+  [5]: /developers/index.html#Developers_Conventions
