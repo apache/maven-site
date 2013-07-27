@@ -50,7 +50,7 @@ It would be great if the lurkers would come out of the shadows
 and make themselves visible, but every community needs its
 lurkers, so if you are a lurker sulking about on the fringes
 of the Apache Maven project, know that you are a valued member
-of our community. If you ever feel the need to change your role
+of our community. If you ever feel the need to change your role,
 we will welcome you with open arms… (and if we don't welcome you
 with open arms, please advise the [Project management committee][3]
 who are responsible for ensuring that the community is a healthy
@@ -61,21 +61,21 @@ one)
 People who use Maven, but do not actively join the community.
 This does not include people who are: subscribed to one of the
 Maven mailing lists; active in a Maven user community (e.g. 
-something like [stackoverflow][1]; submitting bug reports; etc.
+something like [stackoverflow][1]; submitting bug reports; etc.).
 
 Maybe Apache Maven is the perfect product for you and does
 exactly what you need and want, and you never have a need
 to ask questions about how to use Maven as it is immediately
-obvious to you how one is supposed to use Maven… if that is the
-case could you please consider taking a more active role in 
-our community as Maven is none of the above to our minds
+obvious to you how one is supposed to use Maven… If that is the
+case, could you please consider taking a more active role in 
+our community, as Maven is none of the above to our minds
 and you might have a point of view that we have missed.
 
 If you do have issues with Maven (we all have issues with it
-so there is nothing wrong in having issues with Maven) please
+so there is nothing wrong in having issues with Maven), please
 let us know:
 
-* Submitting bug reports is the best way to let us know about bugs
+* Submitting bug reports is the best way to let us know about bugs,
 * Asking questions on the [Users Mailing List][2] is the best way
 get answers to questions.
 
@@ -89,15 +89,15 @@ community.
 ### Users
 
 People who use Maven and have joined the community. This includes people who have:
-* Submitted a bug report
-* Asked a question on the [Maven user list][2]
+* Submitted a bug report,
+* Asked a question on the [Maven user list][2],
 * Joined one of the other Maven user communities.
 
-We hope your bug report has received some attention, if it
-hasn't why don't you see if you can fix the issue yourself
+We hope your bug report has received some attention. If it
+hasn't, why don't you see if you can fix the issue yourself
 and submit a patch?
 
-We hope your question was answered, if it hasn't think of 
+We hope your question was answered. If it hasn't, think of 
 all the other users who's questions sit unanswered, how many
 of them do you know an answer for (even if only a partial
 answer)? Why don't you respond to their questions with the
@@ -113,9 +113,9 @@ Maven user community and subscribe to the [Maven user list][2]?
 People who use Maven, have joined the Maven community and contribute 
 back to the community. This includes people who:
 * Submit reports of the results of testing proposed releases of
-Maven and Maven plugins
-* Answer questions on the [Maven user list][2] (or even other Maven user communities)
-* Submit patches to resolve reported bugs in Maven or Maven plugins hosted at Apache.
+Maven and Maven plugins,
+* Answer questions on the [Maven user list][2] (or even other Maven user communities),
+* Submit patches to resolve reported bugs in Maven or Maven plugins hosted at Apache,
 * Help curate bug reports by identifying duplicate reports, or
 related issues.
 
@@ -142,7 +142,7 @@ If a committer decides that they cannot currently continue with
 the responsibilities of a committer, they may elect to go 
 emeritus. 
 
-At any time an emeritus committer for the Apache Maven project
+At any time, an emeritus committer for the Apache Maven project
 may decide that they want to become an active committer again
 by informing the [project management committee][3]. The current
 policy is that committer role reinstatement is automatic.
@@ -151,7 +151,7 @@ policy is that committer role reinstatement is automatic.
 
 The Project Management Committee as a whole is the entity that 
 controls the project. Membership of the Project Management Committee 
-is decided by the board of the Apache Software Foundation based on
+is decided by the board of the Apache Software Foundation, based on
 nominations from the Project Management Committee.
 
 It is a long standing tradition of the Apache Maven Project that 
@@ -161,7 +161,7 @@ any of those committers would be suitable candidates to
 recommend to the board for inclusion on the PMC. It should be
 noted that this is simply a tradition and not a right. There
 are significant responsibilities that accompany the PMC role
-and as such if a person is not demonstrating those responsibilities 
+and as such, if a person is not demonstrating those responsibilities,
 they may not be nominated or their nomination
 may be rejected by the board. Such decisions are not a 
 reflection of the technical competence of the person, and 
@@ -171,9 +171,9 @@ are kept confidential.
 
 The Project Management Committee has the following responsibilities:
 
-* Proposing active contributors for committership.
-* Binding votes in project decisions.
-* Voting on release artifacts.
+* Proposing active contributors for committership,
+* Binding votes in project decisions,
+* Voting on release artifacts,
 * <!-- TODO: get the rest of these -->
 
 #### Standards for Community Commitment
