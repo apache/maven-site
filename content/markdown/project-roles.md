@@ -174,11 +174,31 @@ are kept confidential.
 
 The Project Management Committee has the following responsibilities:
 
-* Proposing active contributors for committership,
-* Binding votes in project decisions,
-* Voting on release artifacts,
-* Ensure [Developers Conventions][5] are followed, or updated/improved if necessary,
-* <!-- TODO: get the rest of these -->
+* Active management of those projects identified by the resolution of the Board
+  of Directors of the Apache Foundation;
+* Ensure the project remains a healthy top-level project of the Apache Foundation
+  (if a PMC member wants the project to be hosted elsewhere they should resign
+  from the PMC stating their reason - if the PMC shrinks beyond the minimal viable
+  size then as a result of a desire by the bulk of the PMC to move the project 
+  elsewhere, the Board of the Apache Foundation will take that into account
+  when moving the project into the Foundation's Attic)
+* Prepare reports as required by the Board of the Apache Foundation and
+  ensure those reports are ready for presentation by the PMC Chair in a timely
+  manner;
+* Defend the trademarks belonging to the project;
+* Proposing active contributors for committership;
+* Ensure that votes in the community are used as a tool to establish consensus
+  and not a weapon to disenfranchise or alienate a minority of the community;
+* Binding votes in project decisions;
+* Ensure that code committed to the project is either committed under a valid CLA
+  or is code that was contributed with a clear indication that the Apache License
+  applied (i.e. small patches submitted to the issue tracker or to the mailing list
+  are assumed to be submitted with the intent of being covered by the Apache
+  License unless the submitter clearly marks those patches as not being covered)
+* Ensure that third part dependencies shipped as part of the project's releases
+  are covered by a compatible license.
+* Voting on release artifacts;
+* Ensure [Developers Conventions][5] are followed, or updated/improved if necessary;
 
 #### Standards for Community Commitment
 
@@ -186,22 +206,77 @@ In the spirit of supporting the health of our community, Project
 Management Committee members refrain from actions that subvert the
 functioning of the committee itself.
 
-First, Project Management Committee members should not maintain long-running 
-forks of Maven code outside of the project itself. Making significant
-changes to Maven code outside of the project displays a lack of 
-investment in the community. Additionally, attempting to re-integrate 
-a large number of code changes in bulk overwhelms the ability of 
-volunteers in the community to review (and potentially veto) the 
-changes. This effectively thwarts the policing function of the 
-PMC.
+#### Promotion of other projects
 
-Second, Project Management Committee members should not divert
-work on redesigning, reimplementing, or improving Maven code to 
-alternative projects outside of this community for the purposes of 
-reintroducing them as replacement for existing Maven code. While there 
-is a danger here of falling into a Not Invented Here mentality, new projects 
-created by Maven PMC members strictly to replace Maven code should not be 
-allowed.
+The Apache Foundation currently does not have a policy requiring projects to
+cross-promote. For example Subversion is an Apache project, yet projects
+are free to choose from Subversion and GIT (a non-Apache project) for source 
+control.
+
+When considering integration of technologies within Maven, there is
+thus no requirement that other Apache projects be picked over non-Apache projects.
+
+The primary requirements for picking technologies to integrate with Maven
+are thus:
+
+* A compatible license, i.e. Category A or Category B
+* A good technical fit
+* A strong preference on behalf of the portion of the community that
+  will be doing the integration.
+
+Where a PMC member is advocating a specific technology, they should declare
+any interest / involvement that they have in that technology or a competing 
+technology - irrespective of whether the project is an Apache project or a 
+project hosted elsewhere.
+
+PMC members with a stated interest / involvement should try to abstain from 
+making binding votes in either direction with respect to the relevant
+technology choices.
+
+#### Forks of the project codebase
+
+All code that gets released by the community should have sufficient opertunity
+for review both:
+
+* By the PMC, to check the legal responsibilities delegated by
+  the Board; and
+* By the committers (which includes the PMC), to check that the technical
+  direction and quality is in line with the consensus roadmap.
+
+It is self evident that the opertunity for review is much greater if the code
+is committed to the project's source control as early as possible. Similarly
+small commits are easier to review than large commits.
+
+There is nothing inherently wrong with maintaining a fork of the Maven 
+codebase outside of the Apache Foundation. Individual developers can have
+their own style of working and may prefer to work in a fork so that they
+can throw away failed experiments with less visibility (though it could be
+argued that the visibility of such failed experiments can be valuable 
+documentation for others). As soon as changes in that 
+fork are identified which should be brought back to the project those
+changes should be introduced into at least a branch hosted on the Apache Maven
+source control in order to facilitate the easier review by the community.
+
+The PMC should encourage by example the early committing of changes from a 
+fork back to Apache Maven source control. 
+
+Similarly, if a fork is being hosted elsewhere in order to get contributions
+from other talented individuals, the PMC members should endevour to bring
+those individuals and their tallent to the project as committers.
+
+Finally, where a fork is hosted outside of Apache hardware, there is less
+traceability of the code provenance, for example GIT commits can be squashed 
+and history re-written to mask or otherwise hide the source of contributions.
+This does not mean that code coming from an external fork inherently has
+such issues, instead it means that the requirements for review and verification
+of provenance grow exponentially when dealing with large sets of changes 
+originating from a long running fork hosted outside of Apache foundation
+source control. Anybody maintaining a long running fork should be aware
+of the risk that review obligations may grow above the time capabilities
+of the PMC and committers such that when they eventually decide to try and
+bring the changes in their fork back to the Apache Maven project their 
+contribution may end up being rejected on the basis of the review of a
+large set of changes being too difficult/timeconsuming.
 
 ### [Project Management Chair](http://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
@@ -216,6 +291,14 @@ This person then becomes the interface between the board and
 the project management committee. They do not have any other
 additional gravitas in the project, it is the Project Management 
 Committee as a whole that is responsible for the direction of the project.
+
+If things break down and there is no consensus and there is no clear
+ability to reach any conclusion *and* it is in the interest of the
+foundation because damage is done and the board expects the chair
+to act as an officier of the foundation and clean things up, then the chair
+can act as an ultimate decision maker, however, by this point the
+board of the foundation must already be well aware of the situation and
+should be actively monitoring the chair.
 
   [1]: http://stackoverflow.com/questions/tagged/maven
   [2]: mailto:users@maven.apache.org
