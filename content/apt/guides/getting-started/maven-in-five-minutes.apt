@@ -217,7 +217,7 @@ Hello World!
 
   Phases are actually mapped to underlying goals. The specific goals executed per phase is dependant upon the
   packaging type of the project. For example, <package> executes <jar:jar> if the project type is a JAR, and
-  <war:war> is the project type is - you guessed it - a WAR.
+  <war:war> if the project type is - you guessed it - a WAR.
 
   An interesting thing to note is that phases and goals may be executed in sequence.
 
@@ -239,6 +239,6 @@ mvn site
 
 * Conclusion
 
-  We hope this quick overview has piqued your interest in the versitility of Maven. Note that this is a very
+  We hope this quick overview has piqued your interest in the versatility of Maven. Note that this is a very
   truncated quick-start guide. Now you are ready for more comprehensive details concerning
   the actions you have just performed. Check out the {{{./index.html}Maven Getting Started Guide}}.
