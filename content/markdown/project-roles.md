@@ -195,7 +195,7 @@ The Project Management Committee has the following responsibilities:
   applied (i.e. small patches submitted to the issue tracker or to the mailing list
   are assumed to be submitted with the intent of being covered by the Apache
   License unless the submitter clearly marks those patches as not being covered)
-* Ensure that third part dependencies shipped as part of the project's releases
+* Ensure that third party dependencies shipped as part of the project's releases
   are covered by a compatible license.
 * Voting on release artifacts;
 * Ensure [Developers Conventions][5] are followed, or updated/improved if necessary;
@@ -219,7 +219,7 @@ thus no requirement that other Apache projects be picked over non-Apache project
 The primary requirements for picking technologies to integrate with Maven
 are thus:
 
-* A compatible license, i.e. Category A or Category B
+* A [compatible license][6], i.e. [Category A][7] or [Category B][8]
 * A good technical fit
 * A strong preference on behalf of the portion of the community that
   will be doing the integration.
@@ -241,9 +241,10 @@ for review both:
 * By the PMC, to check the legal responsibilities delegated by
   the Board; and
 * By the committers (which includes the PMC), to check that the technical
-  direction and quality is in line with the consensus roadmap.
+  direction and quality is in line with the consensus roadmap (where such a
+  roadmap has been agreed).
 
-It is self evident that the opertunity for review is much greater if the code
+It is self evident that the opportunity for review is much greater if the code
 is committed to the project's source control as early as possible. Similarly
 small commits are easier to review than large commits.
 
@@ -262,7 +263,7 @@ fork back to Apache Maven source control.
 
 Similarly, if a fork is being hosted elsewhere in order to get contributions
 from other talented individuals, the PMC members should endevour to bring
-those individuals and their tallent to the project as committers.
+those individuals and their talent to the project as committers.
 
 Finally, where a fork is hosted outside of Apache hardware, there is less
 traceability of the code provenance, for example GIT commits can be squashed 
@@ -305,3 +306,6 @@ should be actively monitoring the chair.
   [3]: mailto:private@maven.apache.org
   [4]: http://www.apache.org/licenses/#clas
   [5]: /developers/index.html#Developers_Conventions
+  [6]: http://www.apache.org/legal/3party.html
+  [7]: http://www.apache.org/legal/3party.html#category-a
+  [8]: http://www.apache.org/legal/3party.html#category-b
