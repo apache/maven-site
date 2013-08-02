@@ -192,7 +192,7 @@ mvn archetype:generate \
 
   []
 
- For a complete reference of what elements are available for use in the POM please refer to our {{{../../maven-model/maven.html}POM Reference}}.
+ For a complete reference of what elements are available for use in the POM please refer to our {{{/ref/current/maven-model/maven.html}POM Reference}}.
  Now let's get back to the project at hand.
 
  After the archetype generation of your first project you will also notice that the following directory structure
@@ -225,7 +225,7 @@ my-app
  Maven convention and to learn more about it you can read our
  {{{../introduction/introduction-to-the-standard-directory-layout.html}Introduction to the Standard Directory Layout}}.
 
- Now that we have a POM, some application sources, and some test sources you are probably asking ...
+ Now that we have a POM, some application sources, and some test sources you are probably asking...
 
 * {How do I compile my application sources?}
 
@@ -263,14 +263,14 @@ Compiling 1 source file to <dir>/my-app/target/classes
 +-----+
 
  The first time you execute this (or any other) command, Maven will need to download all the plugins and related
- dependencies it needs to fulfill the command.  From a clean installation of Maven this can take quite a while (in
+ dependencies it needs to fulfill the command.  From a clean installation of Maven, this can take quite a while (in
  the output above, it took almost 4 minutes).  If you execute the command again, Maven will now have what it needs,
  so it won't need to download anything new and will be able to execute the command much more quickly.
 
  As you can see from the output, the compiled classes were placed in <<<$\{basedir\}/target/classes>>>, which is
  another standard convention employed by Maven. So, if you're a keen observer, you'll notice that by using the
- standard conventions the POM above is very small and you haven't had to tell Maven explicitly where any of
- your sources are or where the output should go. By following the standard Maven conventions you can get
+ standard conventions, the POM above is very small and you haven't had to tell Maven explicitly where any of
+ your sources are or where the output should go. By following the standard Maven conventions, you can get
  a lot done with very little effort! Just as a casual comparison, let's take a look at what you might have had to do
  in {{{http://ant.apache.org}Ant}} to accomplish the same {{{../../ant/build-a1.xml}thing}}.
 
@@ -675,15 +675,15 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  to add this to our pom.xml in order to override that default value and set <<<filtering>>> to true.
 
  To reference a property defined in your pom.xml, the property name uses the names of the XML elements that define the value,
- with "pom" being allowed as an alias for the project (root) element.  So $\{pom.name\} refers to the name of the project,
- $\{pom.version\} refers to the version of the project, $\{pom.build.finalName\} refers to the final name of the file created
+ with "pom" being allowed as an alias for the project (root) element.  So <<<$\{pom.name\}>>> refers to the name of the project,
+ <<<$\{pom.version\}>>> refers to the version of the project, <<<$\{pom.build.finalName\}>>> refers to the final name of the file created
  when the built project is packaged, etc.  Note that some elements of the POM have default values, so don't need to be explicitly
- defined in your pom.xml for the values to be available here.  Similarly, values in the user's settings.xml can be referenced
- using property names beginning with "settings" (for example, $\{settings.localRepository\} refers to the path of the user's
+ defined in your <<<pom.xml>>> for the values to be available here.  Similarly, values in the user's <<<settings.xml>>> can be referenced
+ using property names beginning with "settings" (for example, <<<$\{settings.localRepository\}>>> refers to the path of the user's
  local repository).
 
- To continue our example, let's add a couple of properties to the application.properties file (which we put in the
- src/main/resources directory) whose values will be supplied when the resource is filtered:
+ To continue our example, let's add a couple of properties to the <<<application.properties>>> file (which we put in the
+ <<<src/main/resources>>> directory) whose values will be supplied when the resource is filtered:
 
 +----+
 # application.properties
@@ -698,7 +698,7 @@ application.version=${pom.version}
 mvn process-resources
 +----+
 
- and the application.properties file under target/classes (and will eventually go into the jar) looks like this:
+ and the <<<application.properties>>> file under <<<target/classes>>> (and will eventually go into the jar) looks like this:
 
 +----+
 # application.properties
@@ -707,14 +707,14 @@ application.version=1.0-SNAPSHOT
 +----+
 
  To reference a property defined in an external file, all you need to do is add a reference to this external file in your pom.xml.
- First, let's create our external properties file and call it src/main/filters/filter.properties:
+ First, let's create our external properties file and call it <<<src/main/filters/filter.properties>>>:
 
 +----+
 # filter.properties
 my.filter.value=hello!
 +----+
 
- Next, we'll add a reference to this new file in the pom.xml:
+ Next, we'll add a reference to this new file in the <<<pom.xml>>>:
 
 +----+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -754,7 +754,7 @@ my.filter.value=hello!
 </project>
 +----+
 
- Then, if we add a reference to this property in the application.properties file:
+ Then, if we add a reference to this property in the <<<application.properties>>> file:
 
 +----+
 # application.properties
@@ -765,7 +765,7 @@ message=${my.filter.value}
 
  the next execution of the <<<mvn process-resources>>> command will put our new property value into <<<application.properties>>>.
  As an alternative to defining the my.filter.value property in an external file, you could also have defined it in the <<<properties>>>
- section of your pom.xml and you'd get the same effect (notice I don't need the references to <<<src/main/filters/filter.properties>>> either):
+ section of your <<<pom.xml>>> and you'd get the same effect (notice I don't need the references to <<<src/main/filters/filter.properties>>> either):
 
 +----+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -806,9 +806,9 @@ message=${my.filter.value}
 </project>
 +----+
 
- Filtering resources can also get values from system properties; either the system properties built into Java (like java.version or
- user.home) or properties defined on the command line using the standard Java -D parameter.  To continue the example, let's change
- our application.properties file to look like this:
+ Filtering resources can also get values from system properties; either the system properties built into Java (like <<<java.version>>> or
+ <<<user.home>>>) or properties defined on the command line using the standard Java -D parameter.  To continue the example, let's change
+ our <<<application.properties>>> file to look like this:
 
 +----+
 # application.properties
@@ -817,7 +817,7 @@ command.line.prop=${command.line.prop}
 +----+
 
  Now, when you execute the following command (note the definition of the command.line.prop property on the command line), the
- application.properties file will contain the values from the system properties.
+ <<<application.properties>>> file will contain the values from the system properties.
 
 +----+
 mvn process-resources "-Dcommand.line.prop=hello again"
@@ -862,9 +862,9 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 +----+
 
  For each external dependency, you'll need to define at least 4 things: groupId, artifactId, version, and scope.  The groupId,
- artifactId, and version are the same as those given in the pom.xml for the project that built that dependency.  The scope
+ artifactId, and version are the same as those given in the <<<pom.xml>>> for the project that built that dependency.  The scope
  element indicates how your project uses that dependency, and can be values like <<<compile>>>, <<<test>>>, and <<<runtime>>>.
- For more information on everything you can specify for a dependency, see the {{{../../../maven-model/maven.html}Project Descriptor Reference}}.
+ For more information on everything you can specify for a dependency, see the {{{/ref/current/maven-model/maven.html}Project Descriptor Reference}}.
  ~~DJ: Does this link work? I can't find the document.
  For more information about the dependency mechanism as a whole, see
  {{{../introduction/introduction-to-dependency-mechanism.html}Introduction to Dependency Mechanism}}.
