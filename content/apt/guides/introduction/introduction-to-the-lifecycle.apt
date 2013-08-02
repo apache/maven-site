@@ -115,16 +115,16 @@ mvn clean install
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-**  {A Build Phase is Made Up of Goals}
+**  {A Build Phase is Made Up of Plugin Goals}
 
   However, even though a build phase is responsible for a specific step in the build lifecycle, the manner in which it
-  carries out those responsibilities may vary. And this is done by declaring the goals bound to those build phases.
+  carries out those responsibilities may vary. And this is done by declaring the plugin goals bound to those build phases.
 
-  A goal represents a specific task (finer than a build phase) which contributes to the building and managing of a
+  A plugin goal represents a specific task (finer than a build phase) which contributes to the building and managing of a
   project. It may be bound to zero or more build phases. A goal not bound to any build phase could be executed outside of
   the build lifecycle by direct invocation. The order of execution depends on the order in which the goal(s) and the build phase(s) are
-  invoked. For example, consider the command below. The <<<clean>>> and <<<package>>> arguments are build phases while the
-  <<<dependency:copy-dependencies>>> is a goal.
+  invoked. For example, consider the command below. The <<<clean>>> and <<<package>>> arguments are build phases, while the
+  <<<dependency:copy-dependencies>>> is a goal (of a plugin).
 
 ------
 mvn clean dependency:copy-dependencies package
@@ -193,7 +193,7 @@ mvn clean dependency:copy-dependencies package
   The second way to add goals to phases is to configure plugins in your project. Plugins are artifacts that provide
   goals to Maven. Furthermore, a plugin may have one or more goals wherein each goal represents a capability of that
   plugin. For example, the Compiler plugin has two goals: <<<compile>>> and <<<testCompile>>>. The former
-  compiles the source code of your main code, while the later compiles the source code of your test code.
+  compiles the source code of your main code, while the latter compiles the source code of your test code.
 
   As you will see in the later sections, plugins can contain information that indicates which lifecycle phase to bind a
   goal to. Note that adding the plugin on its own is not enough information - you must also specify the goals you want
@@ -346,7 +346,7 @@ mvn clean dependency:copy-dependencies package
 
 * {Built-in Lifecycle Bindings}
 
-  Some phases have goals binded to them by default. And for the default lifecycle, these bindings depend on
+  Some phases have goals bound to them by default. And for the default lifecycle, these bindings depend on
   the packaging value. Here are some of the goal-to-build-phase bindings.
 
 ** Clean Lifecycle Bindings
@@ -378,7 +378,7 @@ mvn clean dependency:copy-dependencies package
 ** Default Lifecycle Bindings - Packaging <<<ear>>>
 
 *-------------------------------+--------------------------------------------------------------------------------------+
-| <<<generate-resources>>>      | <<<ear:generateApplicationXml>>>
+| <<<generate-resources>>>      | <<<ear:generate-application-xml>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<process-resources>>>       | <<<resources:resources>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
@@ -406,7 +406,7 @@ mvn clean dependency:copy-dependencies package
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<package>>>                 | <<<jar:jar>>>  <and>  <<<plugin:addPluginArtifactMetadata>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
-| <<<install>>>                 | <<<install:install>>>  <and>  <<<plugin:updateRegistry>>>
+| <<<install>>>                 | <<<install:install>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
 | <<<deploy>>>                  | <<<deploy:deploy>>>
 *-------------------------------+--------------------------------------------------------------------------------------+
@@ -431,8 +431,16 @@ mvn clean dependency:copy-dependencies package
 
 ** References
 
- The full Maven lifecycle is defined by the file <<<components.xml>>> in the module <<<maven-core>>> and viewable from SVN in the branches for
- {{{http://svn.apache.org/repos/asf/maven/maven-2/tags/maven-2.2.0/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.2.0}}
- and {{{http://svn.apache.org/repos/asf/maven/maven-3/trunk/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 3.0.x}}.
+ The full Maven lifecycle is defined by the file <<<components.xml>>> in the module <<<maven-core>>> and viewable from SVN in the branch for
+ {{{http://svn.apache.org/repos/asf/maven/maven-2/tags/maven-2.2.1/maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 2.2.1}}
+ and Git for {{{https://git-wip-us.apache.org/repos/asf?p=maven.git;a=blob;f=maven-core/src/main/resources/META-INF/plexus/components.xml}Maven 3.x}}.
+
+ In Maven 2.x, default lifecycle bindings were included in <<<components.xml>>>, but in Maven 3.x, they are defined in a separate
+ <<<{{{https://git-wip-us.apache.org/repos/asf?p=maven.git;a=blob;f=maven-core/src/main/resources/META-INF/plexus/default-bindings.xml}default-bindings.xml}}>>>
+ descriptor.
+
+ See {{{/ref/current/maven-core/lifecycles.html}Lifecycles Reference}} and
+ {{{/ref/current/maven-core/default-bindings.html}Plugin Bindings for default Lifecycle Reference}} for latest documentation taken directly from
+ source code.
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
