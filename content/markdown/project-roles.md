@@ -19,7 +19,7 @@ under the License.
 # Apache Maven Project Roles
 
 The Apache Maven project is not just the software it produces.
-The Apache Foundation has a phrase: “Community over code” which
+The Apache Foundation has a phrase: "Community over code" which
 is about how it is the community that grows around a project
 that is the most important thing.
 
@@ -89,6 +89,7 @@ community.
 ### Users
 
 People who use Maven and have joined the community. This includes people who have:
+
 * Submitted a bug report,
 * Asked a question on the [Maven user list][2],
 * Joined one of the other Maven user communities.
@@ -112,6 +113,7 @@ Maven user community and subscribe to the [Maven user list][2]?
 
 People who use Maven, have joined the Maven community and contribute 
 back to the community. This includes people who:
+
 * Submit reports of the results of testing proposed releases of
 Maven and Maven plugins,
 * Answer questions on the [Maven user list][2] (or even other Maven user communities),
@@ -235,7 +237,7 @@ technology choices.
 
 #### Forks of the project codebase
 
-All code that gets released by the community should have sufficient opertunity
+All code that gets released by the community should have sufficient opportunity
 for review both:
 
 * By the PMC, to check the legal responsibilities delegated by
