@@ -39,8 +39,9 @@ Introduction
 
   Calling it <<<maven-<yourplugin>-plugin>>> (note "Maven" is at the beginning 
   of the plugin name) is <<strongly discouraged>> since it's a 
-  <<reserved naming pattern for official Apache Maven plugins>>.
-  Using this pattern is an infringement of the Apache Maven Trademark.
+  <<reserved naming pattern for official Apache Maven plugins maintained by the Apache Maven team>> 
+  with groupId <<<org.apache.maven.plugins>>>.
+  Using this naming pattern is an infringement of the Apache Maven Trademark.
 
 * Your First Plugin
 
