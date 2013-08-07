@@ -46,7 +46,7 @@ under the License.
       <p></p>We <b>strongly</b> encourage our users to configure a Maven repository mirror closer to their location, please read <a href="./guides/mini/guide-mirror-settings.html">How to Use Mirrors for Repositories</a>.</p>
 
       <p>Be sure to check the
-      <a href="http://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html">compatibility notes</a>
+      <a href="https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes">compatibility notes</a>
       before using this version to avoid surprises. While Maven 3 aims to be backward-compatible with Maven 2.x to the
       extent possible, there are still a few significant changes.
       </p>
