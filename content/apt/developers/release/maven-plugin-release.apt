@@ -83,4 +83,4 @@ http://maven.apache.org/plugins/maven-XXX-plugin/
 
  See {{{../website/deploy-maven-website.html}Deploy Maven website}}
 
- Update the version number for the plugin on the <<<content/apt/plugins/index.apt>>> page.
+ Update the version number and release date for the plugin on the <<<content/apt/plugins/index.apt>>> page.

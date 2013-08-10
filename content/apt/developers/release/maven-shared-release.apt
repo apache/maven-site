@@ -76,4 +76,8 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/shar
 http://maven.apache.org/shared/maven-XXX/
 +-----+
 
- 
+* Updating the Maven site
+
+ See {{{../website/deploy-maven-website.html}Deploy Maven website}}
+
+ Update the version number and release date for the shared component on the <<<content/apt/shared/index.apt>>> page.
