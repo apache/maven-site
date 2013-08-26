@@ -206,6 +206,8 @@ The Project Management Committee has the following responsibilities:
   are covered by a compatible license.
 * Voting on release artifacts;
 * Ensure [Developers Conventions][5] are followed, or updated/improved if necessary;
+* Knows and respects the goals and processes of the community and helps educate 
+  newer members about them.
 
 #### Standards for Community Commitment
 
