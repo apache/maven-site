@@ -141,6 +141,11 @@ The Apache Maven project uses a Commit then Review policy and has
 Committers are responsible for ensuring that every file they 
 commit is covered by a valid CLA. 
 
+Committers who would like to become PMC members should try to find
+ways to demonstrate the responsibilities listed in the PMC Members
+section in order to make it easier for PMC members to decide
+that the committer is ready for the responsibility.
+
 ### Emeritus committers
 
 If a committer decides that they cannot currently continue with 
