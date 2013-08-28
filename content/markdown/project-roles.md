@@ -263,12 +263,12 @@ their own style of working and may prefer to work in a fork so that they
 can throw away failed experiments with less visibility (though it could be
 argued that the visibility of such failed experiments can be valuable 
 documentation for others). As soon as changes in that 
-fork are identified which should be brought back to the project those
-changes should be introduced into at least a branch hosted on the Apache Maven
-source control in order to facilitate the easier review by the community.
-
-The PMC should encourage by example the early committing of changes from a 
-fork back to Apache Maven source control. 
+fork are identified (by the people maintaining the fork) which should be 
+brought back to the project those changes should be introduced into at 
+least a branch hosted on the Apache Maven source control in order to 
+facilitate the easier review by the community. The PMC should encourage 
+by example the early committing of such changes from a fork (that they 
+are involved in maintaining)  back to Apache Maven source control. 
 
 Similarly, if a fork is being hosted elsewhere in order to get contributions
 from other talented individuals, the PMC members should endevour to bring
