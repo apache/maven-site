@@ -251,6 +251,8 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://geronimo.apache.org/maven/genesis/plugins/tools-maven-plugin/index.html} <<<Genesis Plugins>>>}} | {{{http://geronimo.apache.org/}Apache Geronimo Project}} | Verify legal files in artifacts.
 *----------------------------------------------------------------------------+----------------+-----------------------+
+| {{{http://tomcat.apache.org/maven-plugin.html} <<<Apache Tomcat>>>}}| {{{http://tomcat.apache.org/maven-plugin.html}Apache Tomcat Project}} | Run an Apache Tomcat container for rapid webapp development.
+*----------------------------------------------------------------------------+----------------+-----------------------+
 
 * Resources
 
