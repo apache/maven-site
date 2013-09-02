@@ -8,7 +8,7 @@
 
 Introduction to Build Profiles
 
-  Maven 2.0 goes to great lengths to ensure that builds are portable. Among
+  Apache Maven 2.0 goes to great lengths to ensure that builds are portable. Among
   other things, this means allowing build configuration inside the POM,
   avoiding <<all>> filesystem references (in inheritance, dependencies, and
   other places), and leaning much more heavily on the local repository to
