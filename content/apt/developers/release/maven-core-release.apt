@@ -26,10 +26,12 @@
 
 Releasing Maven
 
-  Maven differs slightly in its release process due to several extra steps and this need to be publish via Apache svnpubsub.
+  Maven differs slightly in its release process due to several extra steps.
 
-  The goal is to commit candidate release to svn tree https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION.
-  Then once the vote passed svn move to https://dist.apache.org/repos/dist/release/maven/maven-3/$VERSION.
+  The goal is to commit candidate release to svn tree
+  {{{https://dist.apache.org/repos/dist/dev/maven/maven-3}https://dist.apache.org/repos/dist/dev/maven/maven-3}}/$VERSION.
+  Then once the vote passed, svn move to
+  {{{https://dist.apache.org/repos/dist/release/maven/maven-3}https://dist.apache.org/repos/dist/release/maven/maven-3}}/$VERSION.
 
   The tree directory is:
 
@@ -75,7 +77,7 @@ Releasing Maven
 
 ** Update the DOAP Information
 
-   Edit {{https://svn.apache.org/repos/asf/maven/maven-3/trunk/doap_Maven.rdf}} to list the new release.
+   Edit {{https://github.com/apache/maven/blob/master/doap_Maven.rdf}} to list the new release.
 
 ** Update the Release Notes and Web Site
 
@@ -98,57 +100,47 @@ Releasing Maven
 
     * create docs/$version/release-notes.apt.vm (see other versions for an example)
 
-  Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to /ref/.
+  Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to
+  {{{/ref}/ref/}}.
 
 ** Stage the Latest Documentation
 
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
-   [[1]] From the site checkout, stage the site (replacing $USER and $VERSION):
-
-+------+
-mvn -Preporting site site:stage-deploy -DstagingSiteURL=scp://people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION
-+------+
-
-   <<Note:>> It requires Maven 2.1.0 or higher to successfully deploy to <<<people.apache.org>>> via SSH. Older Maven
-   versions will fail due to <<<com.jcraft.jsch.JSchException: Algorithm negotiation fail>>>.
-
-+-----+
-http://people.apache.org/~USER/staged-sites/maven-VERSION
-+-----+
-
-   Some developers have {{{http://www.nabble.com/site%3Astage-deploy-asks-for-a-password--tt15582961s177.html}
-   reported problems}} with the <<<site:stage-deploy>>> goal.  In that case, you can stage the site locally and
-   upload it manually:
+  From the release checkout, stage the site:
 
 +------+
 mvn -Preporting site site:stage
-scp -r target/staging/people.apache.org/home/$USER/public_html/staged-sites/maven-$VERSION USER@people.apache.org:/home/$USER/public_html/staged-sites/maven-$VERSION
+mvn scm-publish:publish-scm
 +------+
+
+  This will publish the site in {{{/ref/3-LATEST}/ref/3-LATEST}}.
 
 ** Add New Version to ASF Distribution Directory
 
-  In addition to promoting the repository, the release archives should be moved to the release svnpubsub tree :
+  In addition to promoting the repository, the release archives should be moved to the release svnpubsub tree:
 
-    * svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
++------+
+svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
++------+
 
-** Deploy the Current References
+** Deploy the Current Reference
 
   The source code references and API docs need to be deployed before deploying the web site
   with the new version.
 
-  This is described in {{{../website/deploy-maven-current-ref.html} Deploying the Current References}}.
+  This consists in copying in website svn tree the /ref/3-LATEST directory to /ref/$VERSION.
+
++------+
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/ref/3-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/ref/$VERSION
++------+
 
 ** Deploying the Release Website
 
  Once both of the above have synced to the main site and a suitable number of mirrors,
  proceed to update the web site and produce the announcement.
 
- Commit your changes and then deploy the main Maven site checked out earlier.
-
-+-----+
-mvn -Preporting clean site-deploy
-+-----+
+ Commit your changes and then {{{../website/deploy-maven-website.html}deploy the main Maven site}}.
 
 ** Remove Old Versions from ASF Distribution Directory
 
