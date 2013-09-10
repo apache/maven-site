@@ -28,25 +28,30 @@
 
 Introduction
 
- This document gives step-by-step instructions for deploying the Maven website {{{http://maven.apache.org}http://maven.apache.org}}.
+ This document gives step-by-step instructions for deploying the Maven {{{http://maven.apache.org}http://maven.apache.org}}
+ and Doxia {{{http://maven.apache.org/doxia}http://maven.apache.org/doxia}} websites.
 
- Since 10th December 2012, the main website use CMS mechanism. (see {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}).
+ Since 10th December 2012, the main website use CMS mechanism: see {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}
+ and {{{https://cms.apache.org/maven-doxia/}https://cms.apache.org/maven-doxia/}}.
 
- You can edit pages in two ways:
+ You can edit source trees ({{{https://svn.apache.org/repos/asf/maven/site/trunk/content/}Maven}} and
+ {{{https://svn.apache.org/repos/asf/maven/doxia/site/trunk/content/}Doxia}}) in two ways:
 
- * use the CMS UI.
+ * use the CMS UI,
 
- * checkout the content locally and modify manually.
+ * checkout the content locally, modify locally and check-in.
 
  []
 
 How it works
 
-  At least how a user understand that.
+  At least how a user understands that.
 
-  All the content is located here https://svn.apache.org/repos/infra/websites/production/maven/content/ then synced to lives machines.
+  All the HTML content is located in svn ({{{https://svn.apache.org/repos/infra/websites/production/maven/content/}Maven}}
+  and {{{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}Doxia}}) then synced to lives machines.
 
-  For parts edited/build with CMS, two buildbot jobs build the content via using Maven site plugin:
+  When the content source tree is modified in svn (either locally or with CMS UI), two buildbot jobs build the content,
+  using Maven site plugin:
 
   * {{{http://ci.apache.org/builders/maven-site-staging}http://ci.apache.org/builders/maven-site-staging}}
 
@@ -54,8 +59,6 @@ How it works
 
   []
 
-  Other parts can committed to the content source tree.
-  
   As CMS will delete non build content, they must be ignored with adding paths in extpaths.txt file (located in site and doxia-site in path content/resources)
 
 * Modify Maven Website with CMS UI
@@ -66,25 +69,25 @@ How it works
 
   * Now navigate to the content you want to modify.
 
-  * Once you have modified the content, you can now commit with the button "Submit".
+  * Once you have modified the content, you can commit with the button "Submit".
 
   []
 
 * Modify Maven Website with a local copy
 
- [[1]] Do a fresh check out of the Maven site, for example:
+ Do a fresh check out of the Maven site, for example:
 
 +-----+
 $ svn checkout https://svn.apache.org/repos/asf/maven/site site
 +-----+
 
- [[2]] Execute the site goal
+ Once you have modified the content, you can commit with <<<svn ci>>>.
+
+ You can generate the site to verify the documentation before committing:
 
 +-----+
 mvn site 
 +-----+
-
- [[3]] Verify the documentation before committing
 
 Publish content
 
