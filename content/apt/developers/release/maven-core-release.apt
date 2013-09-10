@@ -135,6 +135,12 @@ svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dis
 svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/ref/3-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/ref/$VERSION
 +------+
 
+* Information on <<<{{/ref/current}}>>> mechanism
+
+  The redirection from <<<{{/ref/current}}>>> to actual Maven version reference is done through
+  <<<{{{http://svn.apache.org/viewvc/maven/site/trunk/src/site/filtered-resources/.htaccess?view=markup}.htaccess}}>>>
+  published in site. 
+
 ** Deploying the Release Website
 
  Once both of the above have synced to the main site and a suitable number of mirrors,
