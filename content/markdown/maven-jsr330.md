@@ -334,12 +334,11 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [p2g1]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-1-why-guice/
 [p2g2]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-2-the-guiceplexus-bridge-and-custom-bean-injection/
 [p2g3]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-3-creating-a-guice-bean-extension-layer/
-[dagger]: http://square.github.com/dagger/
 [jsr330]: http://www.jcp.org/en/jsr/detail?id=330
 [sisu]: http://eclipse.org/sisu/
 [plexus]: http://plexus.codehaus.org/
 [plexus-container]: http://plexus.codehaus.org/plexus-containers/
 [jsr330-plugin]: http://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
 [guice]: http://code.google.com/p/google-guice/
-[sisu-maven-plugin]: http://sonatype.github.com/sisu-maven-plugin/
+[sisu-maven-plugin]: http://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: http://jira.codehaus.org/browse/MNG-5343
