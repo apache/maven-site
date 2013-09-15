@@ -49,25 +49,25 @@ Building Maven
   {{{http://maven.apache.org/source-repository.html}http://maven.apache.org/source-repository.html}}.
 
 
-  To build Maven 3 (the current stable branch), you need the <<<trunk>>> of the <<<maven-3>>> module. 
+  To build Maven 3 (the current stable branch), you need the <<<HEAD>>> of the <<<maven>>> module. 
   To check that out, run the command:
 
--------------------
++-----------------+
 git clone https://git-wip-us.apache.org/repos/asf/maven.git maven
--------------------
++-----------------+
 
-  To build Maven 2, you need the <<<maven-2.2.x>>> branch . 
-  To check that out, run the command:
+  To build Maven 2, you need the <<<maven-2.2.x>>> branch.
+  To check that out from a cloned repository, run the command:
 
--------------------
++-----------------+
 git checkout maven-2.2.x
--------------------
++-----------------+
 
 ** Other Modules
 
   Other modules you might be interested in related to Maven development are:
 
-    * <<<core-integration-testing/trunk>>> - git clone https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git
+    * <<<maven-integration-testing>>> - <<<git clone https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git>>>
 
     * <<<plugins/trunk>>> - The sources of the {{{/plugins/}Maven plugins}}. These can be individually installed, or built together.
 
@@ -85,11 +85,11 @@ git checkout maven-2.2.x
         get and put artifacts in a repository. git clone https://git-wip-us.apache.org/repos/asf/maven-wagon.git
 
       * <<<scm>>> - {{{/scm/}Maven SCM}}, a generic API to communicate with various different SCM providers, used by
-        Continuum and the release and SCM plugins. git clone https://git-wip-us.apache.org/repos/asf/maven-scm.git
+        Continuum and the release and SCM plugins. <<<git clone https://git-wip-us.apache.org/repos/asf/maven-scm.git>>>
 
       * <<<doxia/trunk>>> - The {{{/doxia/}Doxia}} site generation library used by several report plugins and site plugin.
 
-      * <<<surefire/trunk>>> - The {{{/surefire/}Surefire}} test runner. git clone https://git-wip-us.apache.org/repos/asf/maven-surefire.git
+      * <<<surefire/trunk>>> - The {{{/surefire/}Surefire}} test runner. <<<git clone https://git-wip-us.apache.org/repos/asf/maven-surefire.git>>>
 
       []
 
