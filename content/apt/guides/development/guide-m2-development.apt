@@ -58,7 +58,7 @@ Developing Maven
 
 * Where's the source?
 
-   See {{{/source-repository.html}http://maven.apache.prg/source-repository.html}} for information.
+   See {{{/source-repository.html}http://maven.apache.org/source-repository.html}} for information.
    The Maven project uses a GIT for some things, and Subversion for others, and this 
    page tracks the situation.
  
@@ -188,10 +188,11 @@ And remember, your contributions are always welcome!
 
  * <<Mojo>>
 
- "Mojo" is really two things when it comes to Maven. It is both Maven's plug-in API but also a separate Codehaus
- project hosting these plugins.
+ "Mojo" is really two things when it comes to Maven: it is both {{{/ref/current/maven-plugin-api/}Maven's plug-in API}}
+ but also {{{http://mojo.codehaus.org}a separate Codehaus project}} hosting a lot of plugins.
 
- {{{http://mojo.codehaus.org}The Mojo Project}} is a plugin forge for non-core Maven plugins. There is also a lower bar for becoming a part of the project.
+ {{{http://mojo.codehaus.org}The Mojo Project}} is a plugin forge for non-core Maven plugins.
+ There is also a lower bar for becoming a part of the project.
 
   []
 
