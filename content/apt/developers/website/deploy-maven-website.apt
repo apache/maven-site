@@ -125,7 +125,8 @@ mvn -Preporting site
 mvn site:stage
 +----------+
 
- [[4]] stage the reference documentation to website production svn area: (TODO: explanations on configuration in pom to xxx-LATEST)
+ [[4]] stage the reference documentation to website production svn area, using
+ {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to xxx-LATEST)
 
 +----------+
 mvn scm-publish:publish-scm
