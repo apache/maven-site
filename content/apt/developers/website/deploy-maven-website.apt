@@ -29,21 +29,22 @@
 
 Introduction
 
- This document gives step-by-step instructions for deploying the Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
+ This document gives step-by-step instructions for deploying the main Maven {{{http://maven.apache.org}http://maven.apache.org}} website
+ and components reference documentation.
 
 Overview
 
- Since 10th December 2012, the main website use Apache CMS + svnpubsub mechanisms:
+ Since 10th December 2012, the overall website uses svnpubsub mechanism and the main website uses Apache CMS:
 
 [website-overview.png] Website mechanisms overview
 
-How website publication works
+How main website publication works
 
- Maven website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
+ Maven main website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
 
  [[1]] edit source content in one of the following ways:
 
-   [[a]] use the CMS UI through your web browser: {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}:
+   [[a]] use the CMS UI through your web browser: {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}
 
      * Go to {{https://cms.apache.org/maven/}}.
 
@@ -59,19 +60,19 @@ How website publication works
 
    []
 
- [[2]] after source tree is modified in svn, a Buildbot job is triggered: {{http://ci.apache.org/builders/maven-site-staging}}:
+ [[2]] after source tree is modified in svn, a Buildbot job is triggered: {{http://ci.apache.org/builders/maven-site-staging}}
 
-   [[1]] it builds the HTML site using Maven site plugin: <<<mvn site>>>,
+   [[1]] it builds the HTML site using {{{/plugins/maven-site-plugin}maven-site-plugin}}: <<<mvn site>>>,
 
-   [[2]] it publishes generated content to staging svn area: {{https://svn.apache.org/repos/infra/websites/staging/maven/trunk/content/}}.
+   [[2]] it publishes generated HTML content to CMS staging svn area: {{https://svn.apache.org/repos/infra/websites/staging/maven/trunk/content/}}.
 
-   [[3]] svnpubsub mecanism transfers svn staging content to live staging site: {{http://maven.staging.apache.org}},
+   [[3]] svnpubsub mecanism transfers svn CMS staging content to live CMS staging site: {{http://maven.staging.apache.org}},
 
    []
 
  [[3]] if everything is good, publish modifications using CMS publish: {{https://cms.apache.org/maven/publish}}
 
-   [[1]] CMS copies staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}},
+   [[1]] CMS copies CMS staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}},
 
    [[2]] as previous operation will delete content not built from website source, CMS re-adds content identified in {{{http://maven.apache.org/extpaths.txt}<<<extpaths.txt>>>}},
 
@@ -102,30 +103,30 @@ How website publication works
 
 How components reference documentation publication works
 
- Components don't use CMS: components reference documentation are generated from full sources, with both handwritten content (like Maven site)
- and generated content from sources (javadoc, test results, ...).
+ Components don't use CMS: components reference documentation are generated from full sources, with both handwritten content (like Maven main site)
+ and generated content from sources (javadoc, unit-test results, integration test results...).
 
  To publish component reference documentation:
 
- [[1]] build the component:
+ [[0]] prerequisite: eventually build the component if it has not been done previously, or some build or integration reports may miss information:
 
 +----------+
 mvn -Prun-its install
 +----------+
 
- [[2]] build the reference documentation:
+ [[1]] build the reference documentation:
 
 +----------+
 mvn -Preporting site
 +----------+
 
- [[3]] if the component has multiple modules, locally stage the site:
+ [[2]] if the component has multiple modules, locally stage the site:
 
 +----------+
 mvn site:stage
 +----------+
 
- [[4]] stage the reference documentation to website production svn area, using
+ [[3]] stage the reference documentation to website production svn area, using
  {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to xxx-LATEST)
 
 +----------+
@@ -139,3 +140,9 @@ mvn scm-publish:publish-scm
  []
 
  When doing a release, previous xxx-LATEST content needs to be archived to versioned directory and replace current content (TODO: explanations).
+ This is done with svn operations on website production svn area:
+
++----------+
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version
++----------+
+ 
