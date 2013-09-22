@@ -71,7 +71,7 @@ How website publication works
 
  [[3]] if everything is good, publish modifications using CMS publish: {{https://cms.apache.org/maven/publish}}
 
-   [[1]] CMS copies staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/trunk/content/}},
+   [[1]] CMS copies staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}},
 
    [[2]] as previous operation will delete content not built from website source, CMS re-adds content identified in {{{http://maven.apache.org/extpaths.txt}<<<extpaths.txt>>>}},
 
@@ -93,7 +93,7 @@ How website publication works
 
  * CMS publish: {{https://cms.apache.org/maven-doxia/publish}}
 
- * production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/trunk/content/}}
+ * production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}}
 
  * live production site: {{http://maven.apache.org/doxia}}
 
@@ -135,6 +135,7 @@ mvn scm-publish:publish-scm
  svnpubsub mecanism transfers svn production content to live production site
 
    []
+
  []
 
  When doing a release, previous xxx-LATEST content needs to be archived to versioned directory and replace current content (TODO: explanations).
