@@ -4,7 +4,7 @@
  Barrie Treloar
  Hervé Boutemy
  ------
- 2013-09-22
+ 2013-09-23
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -34,15 +34,17 @@ Introduction
 
 Overview
 
- Since 10th December 2012, the overall website uses svnpubsub mechanism and the main website uses Apache CMS:
+ Since December 2012, the overall website uses svnpubsub mechanism and the main website uses Apache CMS:
 
 [website-overview.png] Website mechanisms overview
 
+
 How main website publication works
 
- Maven main website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
+ Maven main website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree
+ stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
 
- [[1]] edit source content in one of the following ways:
+ [[1]] <<edit source content>> in one of the following ways:
 
    [[a]] use the CMS UI through your web browser: {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}
 
@@ -60,7 +62,7 @@ How main website publication works
 
    []
 
- [[2]] after source tree is modified in svn, a Buildbot job is triggered: {{http://ci.apache.org/builders/maven-site-staging}}
+   after source tree is modified in svn, a Buildbot job is triggered: {{http://ci.apache.org/builders/maven-site-staging}}
 
    [[1]] it builds the HTML site using {{{/plugins/maven-site-plugin}maven-site-plugin}}: <<<mvn site>>>,
 
@@ -70,7 +72,7 @@ How main website publication works
 
    []
 
- [[3]] if everything is good, publish modifications using CMS publish: {{https://cms.apache.org/maven/publish}}
+ [[2]] if everything is good, <<publish modifications>> using CMS publish: {{https://cms.apache.org/maven/publish}}
 
    [[1]] CMS copies CMS staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}},
 
@@ -96,7 +98,7 @@ How main website publication works
 
  * production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}}
 
- * live production site: {{http://maven.apache.org/doxia}}
+ * live production site: {{http://maven.apache.org/doxia}}, with its {{{http://maven.apache.org/doxia/extpaths.txt}<<<extpaths.txt>>>}}
 
  []
 
