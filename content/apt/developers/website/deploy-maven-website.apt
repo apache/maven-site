@@ -98,20 +98,19 @@ How Doxia website publication works
 
  Doxia uses the exact same mecanisms:
 
- * svn source tree: {{https://svn.apache.org/repos/asf/maven/doxia/site/trunk}}
+ * you can edit {{https://svn.apache.org/repos/asf/maven/doxia/site/trunk}svn source tree}} either locally or
+ through {{https://cms.apache.org/maven-doxia/}CMS UI}},
 
- * CMS UI: {{https://cms.apache.org/maven-doxia/}}
+ * {{http://ci.apache.org/builders/maven-doxia-site-staging}a Buildbot job}} builds the site and updates 
+ {{https://svn.apache.org/repos/infra/websites/staging/maven-doxia/trunk/content/}website staging svn area}},
 
- * Buildbot job: {{http://ci.apache.org/builders/maven-doxia-site-staging}}
+ * svnpubsub published to {{http://maven-doxia.staging.apache.org}live staging site}},
 
- * staging svn area: {{https://svn.apache.org/repos/infra/websites/staging/maven-doxia/trunk/content/}}
+ * if everything is good, <<publish modifications>> using {{{https://cms.apache.org/maven-doxia/publish}CMS publish}} action,
 
- * live staging site: {{http://maven-doxia.staging.apache.org}}
+ * CMS copies CMS staging svn area content to {{{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}website production svn area}},
 
- * CMS publish: {{https://cms.apache.org/maven-doxia/publish}}
-
- * production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}}
-
- * live production site: {{http://maven.apache.org/doxia}}, with its {{{http://maven.apache.org/doxia/extpaths.txt}<<<extpaths.txt>>>}}
+ * svnpubsub mecanism transfers svn production content to live production site: {{http://maven.apache.org/doxia}},
+ with its {{{http://maven.apache.org/doxia/extpaths.txt}<<<extpaths.txt>>>}}
 
  []
