@@ -4,7 +4,7 @@
  Hervé Boutemy
  Dennis Lundberg
  -----
- 2013-01-22
+ 2013-09-29
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -46,3 +46,5 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/apache-resource-bundles/} <<<Apache Resource Bundles>>>}}  | 4 | 2012-07-03 | A set of resources to help you building Java resources compliant with Apache rules. | {{{http://svn.apache.org/repos/asf/maven//resources/trunk/apache-resource-bundles/}SVN}} | -
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
+
+ Parent POMs reference documentations are {{{../pom-archives/}archived here}}.

@@ -58,7 +58,7 @@ Shared Components
 | {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.4          | 2012-12-21        | Used to run Maven builds as part of tests. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-verifier/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13281}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 
-  Archived version of shared libraries are located here {{{http://maven.apache.org/shared-archives/}http://maven.apache.org/shared-archives/}}
+  Archived version of shared libraries reference documentations are {{{../shared-archives/}located here}}.
 
 * Retired
 
