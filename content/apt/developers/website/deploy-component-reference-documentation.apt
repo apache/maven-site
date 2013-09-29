@@ -1,0 +1,105 @@
+ ------
+ Deploy Maven Component Reference Documentation
+ ------
+ Barrie Treloar
+ Hervé Boutemy
+ ------
+ 2013-09-23
+ ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Introduction
+
+ This document gives step-by-step instructions for deploying 
+ Maven components reference documentation inside the Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
+
+ See {{{./index.html}Maven website introduction}} for instructions on the whole website publication.
+
+
+Overview
+
+ Since December 2012, the overall website uses svnpubsub mechanism:
+
+[component-reference-documentation.png] Components reference documentation mechanisms overview
+
+
+How components reference documentation publication works
+
+ Components don't use CMS: components reference documentation are versioned and generated from full sources, with both handwritten content (like Maven main site)
+ and generated content from sources (javadoc, unit-test results, integration test results...).
+
+
+* Staging component reference documentation
+
+ To publish component reference documentation:
+
+ [[0]] prerequisite: eventually build the component if it has not been done previously, or some build or integration reports may miss information:
+
++----------+
+mvn -Prun-its install
++----------+
+
+ [[1]] build the reference documentation:
+
++----------+
+mvn -Preporting site
++----------+
+
+ [[2]] if the component has multiple modules, locally stage the site:
+
++----------+
+mvn site:stage
++----------+
+
+ [[3]] stage the reference documentation to website production svn area, using
+ {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to xxx-LATEST)
+
++----------+
+mvn scm-publish:publish-scm
++----------+
+
+ svnpubsub mecanism transfers svn production content to live production site
+
+   []
+
+ []
+
+
+* Publishing versioned component reference documentation
+
+ When doing a release, previous xxx-LATEST content needs to be archived to versioned directory and replace current content.
+ This is done with svn operations on website production svn area:
+
++----------+
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version
+svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx
++----------+
+
+ Or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}svnmucc command}}:
+
++----------+
+svnmucc -U https://svn.apache.org/repos/infra/websites/production/maven/content \
+  cp HEAD .../xxx-LATEST .../xxx-$version \
+  rm .../xxx \
+  cp HEAD .../xxx-$version .../xxx
++----------+

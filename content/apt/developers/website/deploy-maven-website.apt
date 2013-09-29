@@ -1,5 +1,5 @@
  ------
- Deploy Maven Website
+ Deploy Maven Main Website
  ------
  Barrie Treloar
  Hervé Boutemy
@@ -29,14 +29,16 @@
 
 Introduction
 
- This document gives step-by-step instructions for deploying the main Maven {{{http://maven.apache.org}http://maven.apache.org}} website
- and components reference documentation.
+ This document gives step-by-step instructions for deploying the main Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
+
+ See {{{./index.html}Maven website introduction}} for instructions on the whole website publication.
+
 
 Overview
 
  Since December 2012, the overall website uses svnpubsub mechanism and the main website uses Apache CMS:
 
-[website-overview.png] Website mechanisms overview
+[main-website.png] Main website mechanisms overview
 
 
 How main website publication works
@@ -44,9 +46,12 @@ How main website publication works
  Maven main website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree
  stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
 
- [[1]] <<edit source content>> in one of the following ways:
 
-   [[a]] use the CMS UI through your web browser: {{{https://cms.apache.org/maven/}https://cms.apache.org/maven/}}
+* Edit source content
+
+ You can edit source content in 2 ways:
+
+   [[1]] use {{{https://cms.apache.org/maven/}the CMS UI}} through your web browser: 
 
      * Go to {{https://cms.apache.org/maven/}}.
 
@@ -58,31 +63,40 @@ How main website publication works
 
      []
 
-   [[b]] checkout the source content locally, modify it with your favorite text editor, eventually test the result (<<<mvn site>>>), then check-in source modifications.
+   [[2]] checkout the source content locally, modify it with your favorite text editor, eventually test the result (<<<mvn site>>>), then check-in source modifications.
 
    []
 
-   after source tree is modified in svn, a Buildbot job is triggered: {{http://ci.apache.org/builders/maven-site-staging}}
+
+* Publish site content
+
+ After source tree is modified in svn, {{{http://ci.apache.org/builders/maven-site-staging}a Buildbot job}} is triggered: 
 
    [[1]] it builds the HTML site using {{{/plugins/maven-site-plugin}maven-site-plugin}}: <<<mvn site>>>,
 
-   [[2]] it publishes generated HTML content to CMS staging svn area: {{https://svn.apache.org/repos/infra/websites/staging/maven/trunk/content/}}.
+   [[2]] it publishes generated HTML content to {{{https://svn.apache.org/repos/infra/websites/staging/maven/trunk/content/}CMS staging svn area}},
 
    [[3]] svnpubsub mecanism transfers svn CMS staging content to live CMS staging site: {{http://maven.staging.apache.org}},
 
    []
 
- [[2]] if everything is good, <<publish modifications>> using CMS publish: {{https://cms.apache.org/maven/publish}}
+ If everything is good, <<publish modifications>> using {{{https://cms.apache.org/maven/publish}CMS publish}} action.
 
-   [[1]] CMS copies CMS staging svn area content to production svn area: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}},
+ Under the hood:
 
-   [[2]] as previous operation will delete content not built from website source, CMS re-adds content identified in {{{http://maven.apache.org/extpaths.txt}<<<extpaths.txt>>>}},
+   [[1]] CMS copies CMS staging svn area content to {{{https://svn.apache.org/repos/infra/websites/production/maven/content/}website production svn area}},
+
+   [[2]] as previous operation will delete content not built from website source (mainly component reference documentation),
+   CMS re-adds content identified in {{{http://maven.apache.org/extpaths.txt}<<<extpaths.txt>>>}},
 
    [[3]] svnpubsub mecanism transfers svn production content to live production site: {{http://maven.apache.org}}.
 
  []
 
- Notice Doxia uses the exact same mecanisms:
+
+How Doxia website publication works
+
+ Doxia uses the exact same mecanisms:
 
  * svn source tree: {{https://svn.apache.org/repos/asf/maven/doxia/site/trunk}}
 
@@ -101,50 +115,3 @@ How main website publication works
  * live production site: {{http://maven.apache.org/doxia}}, with its {{{http://maven.apache.org/doxia/extpaths.txt}<<<extpaths.txt>>>}}
 
  []
-
-
-How components reference documentation publication works
-
- Components don't use CMS: components reference documentation are generated from full sources, with both handwritten content (like Maven main site)
- and generated content from sources (javadoc, unit-test results, integration test results...).
-
- To publish component reference documentation:
-
- [[0]] prerequisite: eventually build the component if it has not been done previously, or some build or integration reports may miss information:
-
-+----------+
-mvn -Prun-its install
-+----------+
-
- [[1]] build the reference documentation:
-
-+----------+
-mvn -Preporting site
-+----------+
-
- [[2]] if the component has multiple modules, locally stage the site:
-
-+----------+
-mvn site:stage
-+----------+
-
- [[3]] stage the reference documentation to website production svn area, using
- {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to xxx-LATEST)
-
-+----------+
-mvn scm-publish:publish-scm
-+----------+
-
- svnpubsub mecanism transfers svn production content to live production site
-
-   []
-
- []
-
- When doing a release, previous xxx-LATEST content needs to be archived to versioned directory and replace current content (TODO: explanations).
- This is done with svn operations on website production svn area:
-
-+----------+
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version
-+----------+
- 
