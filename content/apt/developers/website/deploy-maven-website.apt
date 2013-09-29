@@ -67,9 +67,6 @@ How main website publication works
 
    []
 
-
-* Publish site content
-
  After source tree is modified in svn, {{{http://ci.apache.org/builders/maven-site-staging}a Buildbot job}} is triggered: 
 
    [[1]] it builds the HTML site using {{{/plugins/maven-site-plugin}maven-site-plugin}}: <<<mvn site>>>,
@@ -79,6 +76,9 @@ How main website publication works
    [[3]] svnpubsub mecanism transfers svn CMS staging content to live CMS staging site: {{http://maven.staging.apache.org}},
 
    []
+
+
+* Publish site content
 
  If everything is good, <<publish modifications>> using {{{https://cms.apache.org/maven/publish}CMS publish}} action.
 
