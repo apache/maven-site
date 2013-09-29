@@ -98,13 +98,13 @@ How Doxia website publication works
 
  Doxia uses the exact same mecanisms:
 
- * you can edit {{https://svn.apache.org/repos/asf/maven/doxia/site/trunk}svn source tree}} either locally or
- through {{https://cms.apache.org/maven-doxia/}CMS UI}},
+ * you can edit {{{https://svn.apache.org/repos/asf/maven/doxia/site/trunk}svn source tree}} either locally or
+ through {{{https://cms.apache.org/maven-doxia/}CMS UI}},
 
- * {{http://ci.apache.org/builders/maven-doxia-site-staging}a Buildbot job}} builds the site and updates 
- {{https://svn.apache.org/repos/infra/websites/staging/maven-doxia/trunk/content/}website staging svn area}},
+ * {{{http://ci.apache.org/builders/maven-doxia-site-staging}a Buildbot job}} builds the site and updates 
+ {{{https://svn.apache.org/repos/infra/websites/staging/maven-doxia/trunk/content/}website staging svn area}},
 
- * svnpubsub published to {{http://maven-doxia.staging.apache.org}live staging site}},
+ * svnpubsub published to {{{http://maven-doxia.staging.apache.org}live staging site}},
 
  * if everything is good, <<publish modifications>> using {{{https://cms.apache.org/maven-doxia/publish}CMS publish}} action,
 
