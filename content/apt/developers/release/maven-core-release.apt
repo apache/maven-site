@@ -4,7 +4,7 @@
  Jason van Zyl
  Olivier Lamy
  -----
- 2012-09-11
+ 2013-10-13
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -94,11 +94,13 @@ Releasing Maven
 
   Next, create the release notes:
 
-    * create docs/$version
+    * create <<<docs/$version>>>
 
-    * populate docs/$version/release-notes.txt from JIRA
+    * populate <<<docs/$version/release-notes.txt>>> from JIRA
 
-    * create docs/$version/release-notes.apt.vm (see other versions for an example)
+    * create <<<docs/$version/release-notes.apt.vm>>> (see other versions for an example)
+
+  Next, update release history <<<docs/history.apt>>>.
 
   Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to
   {{{/ref}/ref/}}.
