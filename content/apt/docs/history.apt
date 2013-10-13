@@ -31,6 +31,10 @@ Maven Releases History
 
 * Maven 3
 
+  * 2013-10-04 3.1.1 {{{/ref/3.1.1/} reference documentation}},
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/201310.mbox/%3CFDE8A119-BD71-4FF4-948D-EAE138C371C4%40tesla.io%3E} announce}},
+  {{{./3.1.1/release-notes.html} release notes}}
+
   * 2013-07-15 3.1.0 {{{/ref/3.1.0/} reference documentation}},
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E} announce}},
   {{{./3.1.0/release-notes.html} release notes}}
