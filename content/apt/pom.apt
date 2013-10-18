@@ -418,6 +418,35 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 </project>
 +-----------------------------+
 
+  It is also sometimes useful to clip a dependency's transitive dependencies. A dependency may have incorrectly
+  specified scopes, or dependencies that conflict with other dependencies in your project. Using wildcard excludes makes it easy to exclude all a dependencies
+  transitive dependencies. In the case below you may be working with the maven-embedder and you want to manage
+  the dependencies you use yourself, so you clip all the transitive dependencies:
+
++-----------------------------+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-embedder</artifactId>
+      <version>3.1.0</version>
+      <exclusions>
+        <exclusion>
+          <groupId>*</groupId>
+          <artifactId>*</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    ...
+  </dependencies>
+  ...
+</project>
++-----------------------------+
+
   * <<exclusions>>:
   Exclusions contain one or more <<<exclusion>>> elements, each containing a <<<groupId>>> and
   <<<artifactId>>> denoting a dependency to exclude. Unlike <<<optional>>>, which may or may not
