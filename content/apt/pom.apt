@@ -419,7 +419,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 +-----------------------------+
 
   It is also sometimes useful to clip a dependency's transitive dependencies. A dependency may have incorrectly
-  specified scopes, or dependencies that conflict with other dependencies in your project. Using wildcard excludes makes it easy to exclude all a dependencies
+  specified scopes, or dependencies that conflict with other dependencies in your project. Using wildcard excludes makes it easy to exclude all a dependency's
   transitive dependencies. In the case below you may be working with the maven-embedder and you want to manage
   the dependencies you use yourself, so you clip all the transitive dependencies:
 
