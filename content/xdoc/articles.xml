@@ -116,7 +116,9 @@ Eric Redmond)
           <li><strong>Read Online:</strong> <a href="http://www.maestrodev.com/better-build-maven">http://www.maestrodev.com/better-build-maven</a></li>
         </ul>
       </div>
-      
+<div style="float: left; margin-right: 5em;">
+      <img src="images/books/getting_started.png" title="Getting started with Apache Maven" />
+</div>
 <div style="float: left; margin-right: 5em;">
 <a href="http://www.packtpub.com/getting-started-with-apache-maven/video"></a>
 </div>
