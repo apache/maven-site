@@ -43,17 +43,17 @@ under the License.
     </div>    
 
 <div style="float: left; margin-right: 5em;">
-<a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><img src="images/books/pearson_apache_maven_fr.png" title="Apache Maven - en Français" /></a>
+<a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><img src="images/books/pearson_apache_maven_fr.png" title="Apache Maven - en Franï¿½ais" /></a>
 </div>
 
       <div style="min-height: 220px">
-        <p><a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><strong>Apache Maven (en Français)</strong></a></p>
+        <p><a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><strong>Apache Maven (en Franï¿½ais)</strong></a></p>
         <ul>
           <li><strong>Covers: </strong>Maven 2 and above</li>
           <li><strong>Published: </strong> Pearson (November 20, 2009)</li>
           <li><strong>Authors: </strong>
 <a href="http://blog.loof.fr/">Nicolas De loof</a>, 
-<a href="http://blog.aheritier.net/">Arnaud Héritier</a>
+<a href="http://blog.aheritier.net/">Arnaud Hï¿½ritier</a>
           </li>
           <li><strong>Buy the Book:</strong> <a href="http://www.pearson.fr/livre/index.cfm?gcoi=27440100730370">Pearson</a>, <a href="http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X/wwwdeveloppec-21?tag=citofgamonlco-20">Amazon</a>, <a href="http://livre.fnac.com/a2748495/Nicolas-de-Loof-Apache-Maven?PID=1&amp;Mn=-1&amp;Mu=-13&amp;Ra=-1&amp;To=0&amp;Nu=1&amp;Fr=0">FNAC</a></li>
         </ul>
@@ -116,6 +116,23 @@ Eric Redmond)
           <li><strong>Read Online:</strong> <a href="http://www.maestrodev.com/better-build-maven">http://www.maestrodev.com/better-build-maven</a></li>
         </ul>
       </div>
+      
+
+<div style="float: left; margin-right: 5em;">
+<a href="http://www.packtpub.com/getting-started-with-apache-maven/video"></a>
+</div>
+
+      <div style="min-height: 220px">
+        <p><a href="http://www.packtpub.com/getting-started-with-apache-maven/video"><strong>Getting Started with Apache Maven [Video]</strong></a></p>
+        <ul>
+          <li><strong>Covers: </strong>Maven 2.2.1, and above</li>
+          <li><strong>Published: </strong> Packt Publishing (September 30, 2013)</li>
+          <li><strong>Authors: </strong><a>Russell Gold</a>
+          </li>
+          <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/getting-started-with-apache-maven/video">Packt</a></li>
+        </ul>
+      </div>      
+      
     </section>
 
     <section name="Miscellaneous on Maven">
@@ -160,8 +177,8 @@ Eric Redmond)
           </tr>
           <tr>
             <td><a href="http://msaitozen.googlepages.com/maven2.x_dokuman.pdf">Maven 2.x (in Turkish)</a></td>
-            <td>Anadolu Üniversitesi</td>
-            <td>Mustafa Sait Özen</td>
+            <td>Anadolu ï¿½niversitesi</td>
+            <td>Mustafa Sait ï¿½zen</td>
             <td>August 2007</td>
           </tr>
           <tr>
@@ -216,7 +233,7 @@ Eric Redmond)
           <tr>
             <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
             <td></td>
-            <td>Maurício Linhares</td>
+            <td>Maurï¿½cio Linhares</td>
             <td>7 July 2006</td>
           </tr>
           -->
@@ -253,7 +270,7 @@ Eric Redmond)
           <tr>
             <td><a href="http://metaware-inc.wiki.mailxmail.com/AntMaven">Descripcion tecnica de Maven (in Spanish)</a></td>
             <td>Metaware Inc</td>
-            <td>Juan Pablo Santos Rodríguez</td>
+            <td>Juan Pablo Santos Rodrï¿½guez</td>
             <td>13 March 2006</td>
           </tr>
           <tr>
