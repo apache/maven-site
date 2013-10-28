@@ -60,7 +60,7 @@ Advanced Configuration of the HttpClient HTTP Wagon
 
   * readTimeout: default to 1800000ms (~30 minutes) (see section <<<Read time out>>> below)
 
-  * default Preemptive Authentication.
+  * default Preemptive Authentication only with PUT (GET doesn't use anymore default Preemptive Authentication)
 
 *Introduction
 
