@@ -318,7 +318,7 @@ under the License.
         that is required for each Mojo specification to be valid, as well as
         requirements for the overall plugin descriptor itself.</p>
       <p>NOTE: In the following discussion, bolded items are the descriptor's
-        element name along with a Javadoc annotation (if applicable) supporting
+        element name along with a Mojo Javadoc tag (if applicable) supporting
         that piece of the plugin descriptor. A couple of examples are:
         <b>someElement
           (@annotation parameterName="parameterValue")</b>
@@ -326,9 +326,11 @@ under the License.
         <b>someOtherElement (@annotation &lt;rawAnnotationValue&gt;)</b>
         .
       </p>
-      <p><b>NOTE:</b> since maven-plugin-plugin 3.0, it is now possible to use java1.5 annotations.
-        See <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">supported annotations</a> and
-        <a href="/plugin-tools/maven-plugin-plugin/examples/using-annotations.html">Using annotations</a>.
+      <p><b>NOTE:</b> since maven-plugin-plugin 3.0, it is now possible to use
+        <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">Maven Plugin Tools Java 5 Annotations</a> equivalent
+        to <a href="/plugin-tools/maven-plugin-tools-java/index.html">Mojo Javadoc tags</a>.
+        See
+        <a href="/plugin-tools/maven-plugin-plugin/examples/using-annotations.html">Using annotations documentation</a>.
       </p>
       <p>The plugin descriptor must be provided in a jar resource with the
         path:
@@ -377,7 +379,7 @@ under the License.
         <!-- Annotations listed by specific, autodetect and Javadoc, all alphabetical -->
         <tr>
           <th>Descriptor Element</th>
-          <th>Annotation</th>
+          <th>Mojo Javadoc tag</th>
           <th>Required?</th>
           <th>Notes</th>
         </tr>
@@ -406,7 +408,6 @@ under the License.
               <li>@execute phase=&quot;&lt;phaseName&gt;&quot;
                 lifecycle=&quot;&lt;lifecycleId&gt;&quot;</li>
               <li>@execute phase=&quot;&lt;phaseName&gt;&quot;</li>
-
               <li>@execute goal=&quot;&lt;goalName&gt;&quot;</li>
             </ul>
           </td>
@@ -624,7 +625,7 @@ under the License.
         <!-- Annotations listed by specific, autodetect and Javadoc, all alphabetical -->
         <tr>
           <th>Descriptor Element</th>
-          <th>Annotation</th>
+          <th>Mojo Javadoc tag</th>
           <th>Required?</th>
           <th>Notes</th>
         </tr>
@@ -652,20 +653,25 @@ under the License.
         </tr>
         <tr>
           <td>configuration</td>
-          <td>@parameter expression=&quot;${aSystemProperty}&quot;
-            default-value=&quot;${anExpression}&quot;</td>
+          <td>maven-plugin-plugin 2.x: <code>@parameter expression=&quot;${aSystemProperty}&quot;
+            default-value=&quot;${anExpression}&quot;</code><br /><br />
+            maven-plugin-plugin 3.x: <code>@parameter property=&quot;aSystemProperty&quot;
+            default-value=&quot;${anExpression}&quot;</code></td>
           <td>No</td>
-          <td>Specifies the expressions used to calculate the value to be injected into this parameter of
-            the Mojo at buildtime. The expression given by <code>default-value</code> is commonly used to refer to
+          <td><p>Specifies the expressions used to calculate the value to be injected into this parameter of
+            the Mojo at buildtime.</p>
+            <p>The expression given by <code>default-value</code> is commonly used to refer to
             specific elements in the POM, such as <code>${project.resources}</code>, which refers to the list of
             resources meant to accompany the classes in the resulting JAR file. Of course, the default value need not
             be an expression but can also be a simple constant like <code>true</code> or <code>1.5</code>. And for
             parameters of type <code>String</code> one can mix expressions with literal values, e.g.
-            <code>${project.artifactId}-${project.version}-special</code>. The system property given by <code>expression</code>
-            enables users to override the default value from the command line via <code>-DaSystemProperty=value</code>.
-            <i>NOTE: If neither <code>default-value</code> nor <code>expression</code> are specified, the parameter can
-            only be configured from the POM. The use of '${' and '}' is required to delimit actual expressions
-            which may be evaluated.</i>
+            <code>${project.artifactId}-${project.version}-special</code>.</p>
+            <p>The system property given by <code>property</code> in maven-plugin-plugin 3.x or <code>expression</code>
+            in maven-plugin-plugin 2.x
+            enables users to override the default value from the command line via <code>-DaSystemProperty=value</code>.</p>
+            <p><i>NOTE: If neither <code>default-value</code> nor <code>property</code> or <code>expression</code> are specified,
+            the parameter can only be configured from the POM. The use of '${' and '}' in default value is required to delimit actual expressions
+            which may be evaluated.</i></p>
           </td>
         </tr>
         <tr>
