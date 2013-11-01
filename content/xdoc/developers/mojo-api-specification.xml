@@ -337,8 +337,8 @@ under the License.
         See
         <a href="/plugin-tools/maven-plugin-plugin/examples/using-annotations.html">Using annotations documentation</a>.
       </p>
-      <p>The plugin descriptor must be provided in a jar resource with the
-        path:
+      <p>The plugin descriptor (see <a href="/ref/current/maven-plugin-api/plugin.html">descriptor reference</a>)
+        must be provided in a jar resource with the path:
         <code>META-INF/maven/plugin.xml</code>, and it must contain the following:
       </p>
       <table>
@@ -348,26 +348,26 @@ under the License.
           <th>Notes</th>
         </tr>
         <tr>
-          <td>mojos</td>
+          <td><code>mojos</code></td>
           <td>Yes</td>
           <td>Descriptors for each Mojo provided by the plugin, each inside a
-            <b>mojo</b>
+            <b><code>mojo</code></b>
             sub-element. Mojo descriptors are covered in detail
             below. Obviously, a plugin without any declared Mojos doesn't
             make sense, so the
-            <b>mojos</b>
+            <b><code>mojos</code></b>
             element is required, along with
             at least one
-            <b>mojo</b>
+            <b><code>mojo</code></b>
             sub-element.
           </td>
         </tr>
         <tr>
-          <td>dependencies</td>
+          <td><code>dependencies</code></td>
           <td>Yes</td>
           <td>A set of dependencies which the plugin requires in order to
             function. Each dependency is provided inside a
-            <b>dependency</b>
+            <b><code>dependency</code></b>
             sub-element. Dependency specifications are covered below. Since
             all plugins must have a dependency on
             <code>maven-plugin-api</code>
@@ -389,15 +389,15 @@ under the License.
           <th>Notes</th>
         </tr>
         <tr>
-          <td>aggregator</td>
-          <td>@aggregator</td>
+          <td><code>aggregator</code></td>
+          <td><code>@aggregator</code></td>
           <td>No</td>
           <td>Flags this Mojo to run it in a multi module way, i.e. aggregate the build with the set of
             projects listed as modules.</td>
         </tr>
         <tr>
-          <td>configurator</td>
-          <td>@configurator &lt;roleHint&gt;</td>
+          <td><code>configurator</code></td>
+          <td><code>@configurator &lt;roleHint&gt;</code></td>
           <td>No</td>
           <td>The configurator type to use when injecting parameter values into this Mojo. The value is
             normally deduced from the Mojo's implementation language, but can be specified to allow a
@@ -407,13 +407,13 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>execute</td>
+          <td><code>execute</code></td>
           <td>
             <ul>
-              <li>@execute phase=&quot;&lt;phaseName&gt;&quot;
-                lifecycle=&quot;&lt;lifecycleId&gt;&quot;</li>
-              <li>@execute phase=&quot;&lt;phaseName&gt;&quot;</li>
-              <li>@execute goal=&quot;&lt;goalName&gt;&quot;</li>
+              <li><code>@execute phase=&quot;&lt;phaseName&gt;&quot;
+                lifecycle=&quot;&lt;lifecycleId&gt;&quot;</code></li>
+              <li><code>@execute phase=&quot;&lt;phaseName&gt;&quot;</code></li>
+              <li><code>@execute goal=&quot;&lt;goalName&gt;&quot;</code></li>
             </ul>
           </td>
           <td>No</td>
@@ -425,35 +425,35 @@ under the License.
             <a href="../guides/introduction/introduction-to-the-lifecycle.html">build lifecycle</a>.</td>
         </tr>
         <tr>
-          <td>executionStrategy</td>
-          <td>@executionStrategy &lt;strategy&gt;</td>
+          <td><code>executionStrategy</code></td>
+          <td><code>@executionStrategy &lt;strategy&gt;</code></td>
           <td>No</td>
           <td>Specify the execution strategy. <i>NOTE: Currently supports <b>once-per-session</b>,
             <b>always</b>.</i>
           </td>
         </tr>
         <tr>
-          <td>goal</td>
-          <td>@goal &lt;goalName&gt;</td>
+          <td><code>goal</code></td>
+          <td><code>@goal &lt;goalName&gt;</code></td>
           <td>Yes</td>
           <td>The name for the Mojo that users will reference from the command line to execute the Mojo
             directly, or inside a POM in order to provide Mojo-specific configuration.</td>
         </tr>
         <tr>
-          <td>inheritByDefault</td>
-          <td>@inheritByDefault &lt;true|false&gt;</td>
+          <td><code>inheritByDefault</code></td>
+          <td><code>@inheritByDefault &lt;true|false&gt;</code></td>
           <td>No. Default: <code>true</code></td>
           <td>Specify that the Mojo is inherited.</td>
         </tr>
         <tr>
-          <td>instantiationStrategy </td>
-          <td>@instantiationStrategy  &lt;per-lookup&gt;</td>
+          <td><code>instantiationStrategy</code></td>
+          <td><code>@instantiationStrategy  &lt;per-lookup&gt;</code></td>
           <td>No. Default: <code>per-lookup</code></td>
           <td>Specify the instantiation strategy.</td>
         </tr>
         <tr>
-          <td>phase</td>
-          <td>@phase &lt;phaseName&gt;</td>
+          <td><code>phase</code></td>
+          <td><code>@phase &lt;phaseName&gt;</code></td>
           <td>No</td>
           <td>
             Defines a default phase to bind a mojo execution to if the user does not explicitly set a phase in the POM.
@@ -463,8 +463,8 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>requiresDependencyResolution</td>
-          <td>@requiresDependencyResolution &lt;requiredClassPath&gt;</td>
+          <td><code>requiresDependencyResolution</code></td>
+          <td><code>@requiresDependencyResolution &lt;requiredClassPath&gt;</code></td>
           <td>No</td>
           <td>
             Flags this Mojo as requiring the dependencies in the specified class path to be resolved before it can
@@ -518,8 +518,8 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>requiresDependencyCollection</td>
-          <td>@requiresDependencyCollection &lt;requiredClassPath&gt;</td>
+          <td><code>requiresDependencyCollection</code></td>
+          <td><code>@requiresDependencyCollection &lt;requiredClassPath&gt;</code></td>
           <td>No</td>
           <td>
             Flags this mojo as requiring information about the dependencies that would make up the specified class path.
@@ -534,32 +534,32 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>requiresDirectInvocation</td>
-          <td>@requiresDirectInvocation &lt;true|false&gt;</td>
+          <td><code>requiresDirectInvocation</code></td>
+          <td><code>@requiresDirectInvocation &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
           <td>Flags this Mojo to be invoke directly.</td>
         </tr>
         <tr>
-          <td>requiresOnline</td>
-          <td>@requiresOnline &lt;true|false&gt;</td>
+          <td><code>requiresOnline</code></td>
+          <td><code>@requiresOnline &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
           <td>Flags this Mojo to require online mode for its operation.</td>
         </tr>
         <tr>
-          <td>requiresProject</td>
-          <td>@requiresProject &lt;true|false&gt;</td>
+          <td><code>requiresProject</code></td>
+          <td><code>@requiresProject &lt;true|false&gt;</code></td>
           <td>No. Default: <code>true</code></td>
           <td>Flags this Mojo to run inside of a project.</td>
         </tr>
         <tr>
-          <td>requiresReports</td>
-          <td>@requiresReports &lt;true|false&gt;</td>
+          <td><code>requiresReports</code></td>
+          <td><code>@requiresReports &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
           <td>Flags this Mojo to require reports. Unsupported since Maven 3.0.</td>
         </tr>
         <tr>
-          <td>threadSafe</td>
-          <td>@threadSafe &lt;true|false&gt;</td>
+          <td><code>threadSafe</code></td>
+          <td><code>@threadSafe &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
           <td>
             Marks this mojo as being thread-safe, i.e. the mojo safely supports concurrent execution during parallel builds.
@@ -571,7 +571,7 @@ under the License.
 
         <!-- Autodetect -->
         <tr>
-          <td>description</td>
+          <td><code>description</code></td>
           <td>none (detected)</td>
           <td>No</td>
           <td>The description of this Mojo's functionality. <i>Using the toolset, this will be the
@@ -581,13 +581,13 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>implementation</td>
+          <td><code>implementation</code></td>
           <td>none (detected)</td>
           <td>Yes</td>
           <td>The Mojo's fully-qualified class name (or script path in the case of non-Java Mojos).</td>
         </tr>
         <tr>
-          <td>language</td>
+          <td><code>language</code></td>
           <td>none (detected)</td>
           <td>No. Default: <code>java</code></td>
           <td>The implementation language for this Mojo (Java, beanshell, etc.).</td>
@@ -595,16 +595,16 @@ under the License.
 
         <!-- Javadoc -->
         <tr>
-          <td>deprecated</td>
-          <td>@deprecated &lt;deprecated-text&gt;</td>
+          <td><code>deprecated</code></td>
+          <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
           <td>No</td>
           <td>Specify the version when the Mojo was deprecated to the API. Similar to Javadoc deprecated.
             This will trigger a warning when a user tries to configure a parameter
             marked as deprecated.</td>
         </tr>
         <tr>
-          <td>since</td>
-          <td>@since &lt;since-text&gt;</td>
+          <td><code>since</code></td>
+          <td><code>@since &lt;since-text&gt;</code></td>
           <td>No</td>
           <td>Specify the version when the Mojo was added to the API. Similar to Javadoc since.</td>
         </tr>
@@ -635,16 +635,16 @@ under the License.
           <th>Notes</th>
         </tr>
         <tr>
-          <td>alias</td>
-          <td>@parameter alias=&quot;myAlias&quot;</td>
+          <td><code>alias</code></td>
+          <td><code>@parameter alias=&quot;myAlias&quot;</code></td>
           <td>No</td>
           <td>Specifies an alias which can be used to configure this parameter from the POM. This is
             primarily useful to improve user-friendliness, where Mojo field names are not intuitive to
             the user or are otherwise not conducive to configuration via the POM.</td>
         </tr>
         <tr>
-          <td>configuration</td>
-          <td>@component role=&quot;...&quot; roleHint=&quot;...&quot;</td>
+          <td><code>configuration</code></td>
+          <td><code>@component role=&quot;...&quot; roleHint=&quot;...&quot;</code></td>
           <td>No</td>
           <td>Populates the field with an instance of a Plexus component. This is like declaring a
             <i>requirement</i> in a Plexus component. The default requirement will have a role equal
@@ -657,10 +657,10 @@ under the License.
               expression=&quot;${component.yourpackage.YourComponentClass#roleHint}&quot;</code>. </td>
         </tr>
         <tr>
-          <td>configuration</td>
-          <td>maven-plugin-plugin 2.x: <code>@parameter expression=&quot;${aSystemProperty}&quot;
+          <td><code>configuration</code></td>
+          <td>maven-plugin-plugin 2.x:<br /><code>@parameter expression=&quot;${aSystemProperty}&quot;
             default-value=&quot;${anExpression}&quot;</code><br /><br />
-            maven-plugin-plugin 3.x: <code>@parameter property=&quot;aSystemProperty&quot;
+            maven-plugin-plugin 3.x:<br /><code>@parameter property=&quot;aSystemProperty&quot;
             default-value=&quot;${anExpression}&quot;</code></td>
           <td>No</td>
           <td><p>Specifies the expressions used to calculate the value to be injected into this parameter of
@@ -680,8 +680,8 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>editable</td>
-          <td>@readonly</td>
+          <td><code>editable</code></td>
+          <td><code>@readonly</code></td>
           <td>No</td>
           <td>Specifies that this parameter cannot be configured directly by the user (as in the case of
             POM-specified configuration). This is useful when you want to force the user to use common
@@ -695,8 +695,8 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>required</td>
-          <td>@required</td>
+          <td><code>required</code></td>
+          <td><code>@required</code></td>
           <td>No</td>
           <td>Whether this parameter is required for the Mojo to function. This is used to validate the
             configuration for a Mojo before it is injected, and before the Mojo is executed from some
@@ -707,7 +707,7 @@ under the License.
 
         <!-- Autodetect -->
         <tr>
-          <td>description</td>
+          <td><code>description</code></td>
           <td>none (detected)</td>
           <td>No</td>
           <td>The description of this parameter's use inside the Mojo. <i>Using the toolset, this is
@@ -717,7 +717,7 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>name</td>
+          <td><code>name</code></td>
           <td>none (detected)</td>
           <td>Yes</td>
           <td>The name of the parameter, to be used in configuring this parameter from the Mojo's
@@ -726,7 +726,7 @@ under the License.
           </td>
         </tr>
         <tr>
-          <td>type</td>
+          <td><code>type</code></td>
           <td>none (detected)</td>
           <td>Yes</td>
           <td>The Java type for this parameter. This is used to validate the result of any expressions
@@ -738,16 +738,16 @@ under the License.
 
         <!-- Javadoc -->
         <tr>
-          <td>deprecated</td>
-          <td>@deprecated &lt;deprecated-text&gt;</td>
+          <td><code>deprecated</code></td>
+          <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
           <td>No</td>
           <td>Specify the version when the Mojo was deprecated to the API. Similar to Javadoc deprecated.
             This will trigger a warning when a user tries to configure a parameter
             marked as deprecated.</td>
         </tr>
         <tr>
-          <td>since</td>
-          <td>@since &lt;since-text&gt;</td>
+          <td><code>since</code></td>
+          <td><code>@since &lt;since-text&gt;</code></td>
           <td>No</td>
           <td>Specify the version when the Mojo was added to the API. Similar to Javadoc since.</td>
         </tr>
