@@ -56,18 +56,18 @@ under the License.
       <p>While this will satisfy the requirements for execution as a Mojo
         inside Maven, it is recommended that Mojos implement
          --> Basically, these Mojo requirements are embodied by the
-        <code>org.apache.maven.plugin.Mojo</code>
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code></a>
         interface, which the Mojo
         must implement (or else extend its abstract base class counterpart
-        <code>org.apache.maven.plugin.AbstractMojo</code>
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html"><code>org.apache.maven.plugin.AbstractMojo</code></a>
         ). This interface
         guarantees the correct execution contract for the Mojo: no parameters,
         void return type, and a throws clause that allows only
-        <code>org.apache.maven.plugin.MojoExecutionException</code>
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html"><code>org.apache.maven.plugin.MojoExecutionException</code></a>
         and its
         derivatives. It also guarantees that the Mojo will have access to the
         standard Maven user-feedback mechanism,
-        <code>org.apache.maven.plugin.logging.Log</code>
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>
         , so the Mojo can
         communicate important events to the console or other log sink.<!-- Using the
         Plugin/Mojo API will give that Mojo access to the Maven-integrated Log,
@@ -75,11 +75,15 @@ under the License.
       </p>
       <p>As mentioned before, each Plugin - or packaged set of Mojos - must
         provide a descriptor called
-        <code>plugin.xml</code>
+        <a href="/ref/current/maven-plugin-api/plugin.html"><code>plugin.xml</code></a>
         under the path
         <code>META-INF/maven</code>
         inside the Plugin jar file. Fortunately,
-        Maven also provides a set of Javadoc annotations and tools to generate
+        Maven also provides a set of Javadoc annotations
+        (named <a href="/plugin-tools/maven-plugin-tools-java/index.html">Mojo Javadoc Tags</a>),
+        Java 5 annotations
+        (named <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">Maven Plugin Tools Java5 Annotations</a>)
+        and tools (named <a href="/plugin-tools/">plugin-tools</a>) to generate
         this descriptor, so developers don't have to worry about directly
         authoring or maintaining a separate XML metadata file.
       </p>
@@ -87,6 +91,7 @@ under the License.
         will document these features (the API, along with the annotations)
         which are considered the best practice for developing Mojos.</p>
     </section>
+
     <section name="API Documentation">
       <subsection name="org.apache.maven.plugin.Mojo">
         <p>This interface forms the contract required for Mojos to interact
