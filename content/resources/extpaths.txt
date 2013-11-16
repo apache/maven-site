@@ -82,6 +82,7 @@ sandbox
 scm
 scm-archives
 shared-archives
+shared/file-management
 shared/maven-archiver
 shared/maven-artifact-resolver
 shared/maven-common-artifact-filters
