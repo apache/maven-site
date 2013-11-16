@@ -94,6 +94,7 @@ shared/maven-filtering
 shared/maven-invoker
 shared/maven-jarsigner
 shared/maven-shared-incremental
+shared/maven-mapping
 shared/maven-model-converter
 shared/maven-osgi
 shared/maven-plugin-helper
