@@ -38,7 +38,7 @@ Releasing A Maven Plugin
   Once the release is prepared, but before the release vote, the site needs to be staged.
 
   The plugin parent POM is configured to stage the documentation in a "versioned" directory
-  such as <<</plugins-archives/maven-XXX-plugin-Y.Z>>>.
+  such as <<</plugins-archives/maven-XXX-plugin-LATEST>>>.
 
   Stage the documentation for the current release version (not the new snapshot).
 
@@ -50,26 +50,16 @@ mvn site-deploy -Preporting
    <<Note:>> You should verify the deployment of the site on the Maven website.
 
 +-----+
-http://maven.apache.org/plugins-archives/maven-XXX-plugin-Y.Z/
+http://maven.apache.org/plugins-archives/maven-XXX-plugin-LATEST/
 +-----+
 
 * Deploying the release website
 
-  After the release has passed, the site needs to be uploaded.
-
- <<Note:>> Be sure to generate and deploy the site using the same version of the release. Typically, you need to check
- out the tag (or go to <<<target/checkout>>>)
-
-+-----+
-cd target/checkout
-mvn site-deploy -Preporting -Psite-release
-+-----+
-
-  An other (faster) way:
+  After the release has passed, the site needs to be copied.
 
 +-----+
 svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/plugins/maven-XXX-plugin
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/plugins-archives/maven-XXX-plugin-Y.Z \ 
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/plugins-archives/maven-XXX-plugin-LATEST \ 
            https://svn.apache.org/repos/infra/websites/production/maven/content/plugins/maven-XXX-plugin
 +-----+
 
