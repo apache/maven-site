@@ -52,7 +52,7 @@ mvn site site-deploy -Preporting
 
 * Deploying the release website
 
-  After the release has passed, the site needs to be uploaded.
+  After the release has passed, the site needs to be copied.
 
 +-----+
 svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/shared/maven-XXX
