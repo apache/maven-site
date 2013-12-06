@@ -153,6 +153,7 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 +-----+
 
  You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
+ You also need to add your key using {{https://id.apache.org}} or add it to {{https://dist.apache.org/repos/dist/release/maven/KEYS}}(svn).
 
  You also need to upload your key to the public server: {{http://pgp.mit.edu/}}
  by copying the same you appended in the text field and submit.
