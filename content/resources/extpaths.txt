@@ -69,6 +69,7 @@ plugins/maven-toolchains-plugin
 plugins/maven-verifier-plugin
 plugins/maven-war-plugin
 plugin-testing
+plugin-testing-archives
 plugin-tools
 plugin-tools-archives
 pom-archives
