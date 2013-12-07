@@ -82,7 +82,7 @@ mvn site:stage
 +----------+
 
  [[3]] stage the reference documentation to website production svn area, using
- {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to xxx-LATEST)
+ {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to yyy-LATEST)
 
 +----------+
 mvn scm-publish:publish-scm
@@ -124,3 +124,18 @@ svnmucc -U https://svn.apache.org/repos/infra/websites/production/maven/content 
   rm xxx/yyy \
   cp HEAD xxx-archives/yyy-$version xxx/yyy
 +----------+
+
+* Updating index page in the Maven site
+
+ Some component types have an index page refering to each components of the same type. This is the case for
+ plugins (see {{{/plugins/}index}}), shared (see {{{/shared/}index}}), poms (see {{{/pom/}index}}) and
+ skins (see {{{/skins/}index}}).
+
+ Update the version number and release date for the component in the <<<content/apt/xxx/index.apt>>> page.
+
+ See {{{../website/deploy-maven-website.html}Deploy Maven website}} for more in-depth instructions on main
+ site content editing.
+
+ <<Notice>>: if you forget about updating the index page, dist-tool has a
+ {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-check-index-page.html}report run daily}}
+ that will gently send a failure notification on notifications@maven.a.o.
