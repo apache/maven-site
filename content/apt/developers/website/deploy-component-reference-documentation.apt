@@ -95,12 +95,12 @@ mvn scm-publish:publish-scm
  []
 
  <<Notice>>: to avoid published content do disappear when Maven main content si published (see
- {{{./deploy-maven-website.html}documentation}} for more details), check that the <<</yyy-archives>>> path
+ {{{./deploy-maven-website.html}documentation}} for more details), check that the <<</xxx-archives>>> path
  is properly declared in {{{/extpaths.txt}<<<extpaths.txt>>>}}.
 
 * Publishing versioned component reference documentation
 
- When doing a release, xxx-LATEST content staged in previous section needs:
+ When doing a release, yyy-LATEST content staged in previous section needs:
 
  [[1]] to be archived to versioned directory before a newer revision is published into -LATEST,
 
@@ -116,7 +116,7 @@ svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/
 svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-$version https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/yyy
 +----------+
 
- or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}svnmucc command}}:
+ or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}<<<svnmucc>>> command}}:
 
 +----------+
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maven/content \
