@@ -32,7 +32,7 @@ Introduction
  This document gives step-by-step instructions for deploying 
  Maven components reference documentation inside the Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
 
- See {{{./index.html}Maven website introduction}} for instructions on the whole website publication.
+ See {{{./index.html}Maven website introduction}} for instructions on the whole website publication (main site content + components).
 
 
 Overview
@@ -45,14 +45,25 @@ Overview
 How components reference documentation publication works
 
  Components don't use CMS: components reference documentation are versioned and generated from full sources, with both handwritten content (like Maven main site)
- and generated content from sources (javadoc, unit-test results, integration test results...).
+ and content generated from sources (javadoc, unit-test results, integration test results...).
 
 
 * Staging component reference documentation
 
+ Reference documentation of a component is staged in <<<http://maven.apache.org/xxx-archives/yyy-LATEST>>>, where <<<yyy>>> is the
+ component name and <<<xxx>>> can be:
+
+ * the component type, like <<<shared>>>, <<<plugins>>>, <<<skins>>>, ... (see
+ {{/shared-archives}}, {{/plugins-archives}}, {{/skins/archives}})
+
+ * the component name for standalone components, like <<<archetype>>>, <<<plugin-tools>>>, <<<surefire>>>, <<<wagon>>>, ...
+ (see {{/archetype-archives}}, {{/plugin-tools-archives}}, {{/surefire-archives}}, {{/wagon-archives}})
+
+ []
+
  To publish component reference documentation:
 
- [[0]] prerequisite: eventually build the component if it has not been done previously, or some build or integration reports may miss information:
+ [[0]] prerequisite: eventually build the component if it has not been done previously, or some reports may miss build or integration information:
 
 +----------+
 mvn -Prun-its install
@@ -83,23 +94,33 @@ mvn scm-publish:publish-scm
 
  []
 
+ <<Notice>>: to avoid published content do disappear when Maven main content si published (see
+ {{{./deploy-maven-website.html}documentation}} for more details), check that the <<</yyy-archives>>> path
+ is properly declared in {{{/extpaths.txt}<<<extpaths.txt>>>}}.
 
 * Publishing versioned component reference documentation
 
- When doing a release, previous xxx-LATEST content needs to be archived to versioned directory and replace current content.
- This is done with svn operations on website production svn area:
+ When doing a release, xxx-LATEST content staged in previous section needs:
+
+ [[1]] to be archived to versioned directory before a newer revision is published into -LATEST,
+
+ [[2]] to replace the actual component reference documentation.
+
+ []
+
+ This is done with operations on website production svn area, either with <<<svn>>> command:
 
 +----------+
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version
-svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx-$version https://svn.apache.org/repos/infra/websites/production/maven/content/.../xxx
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-$version
+svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/yyy
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-$version https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/yyy
 +----------+
 
- Or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}svnmucc command}}:
+ or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}svnmucc command}}:
 
 +----------+
 svnmucc -U https://svn.apache.org/repos/infra/websites/production/maven/content \
-  cp HEAD .../xxx-LATEST .../xxx-$version \
-  rm .../xxx \
-  cp HEAD .../xxx-$version .../xxx
+  cp HEAD xxx-archives/yyy-LATEST xxx-archives/yyy-$version \
+  rm xxx/yyy \
+  cp HEAD xxx-archives/yyy-$version xxx/yyy
 +----------+
