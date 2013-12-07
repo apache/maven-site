@@ -75,11 +75,7 @@ Performing a Maven Project Release
 
  [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
 
- [[2]] Stage the latest documentation
- 
- If your project uses Maven to generate documentation and it is not included as part of
- the release process, stage it now for inclusion in the release vote. For Maven projects,
- refer to the specific instructions for the project you are releasing.
+ [[2]] Stage the latest documentation as explained in {{{../website/deploy-component-reference-documentation.html}deploying Maven components reference documentation}}.
  
 * Call the vote
  
