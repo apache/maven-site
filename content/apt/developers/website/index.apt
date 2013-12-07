@@ -41,6 +41,8 @@ Introduction
  the whole site content accessible at {{{http://maven.apache.org}http://maven.apache.org}} is stored
  in a dedicated site publication svn: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}}.
 
+ See {{{http://www.apache.org/dev/cms}CMS documentation}} for more information on the rationale behind the switch
+ from "scp to people.apache.org + (find+rsync)" to svnpubsub.
 
 How website publication works
 
