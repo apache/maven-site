@@ -35,9 +35,9 @@ Releasing A Parent POM
 
 * Rationale
 
-  To be able to publish a documentation for the parent POM without affecting released POM and <<<site.xml>>>,
+  To be able to publish a documentation for the parent POM without affecting released <<<pom.xml>>> and <<<site.xml>>>,
   parent POM projects have a specific structure, with the addition of <<<site-pom.xml>>> and <<<src/site-docs>>>
-  provide <<<mvn -f site-pom.xml site>>>:
+  to provide <<<mvn -f site-pom.xml site>>> with useful documentation content:
 
 +----+
 |-- pom.xml
@@ -63,19 +63,17 @@ Releasing A Parent POM
 
   [[1]] update <<<site-pom.xml>>> parent POM version to match the version being released,
 
-  [[2]] update <<<src/site-docs/index.apt>>>: add a line in the history of <<<pom.xml>>> for the future version, referring
-  to the future svn release tag and date. Hint: in the diff link, the value for the <<<r2>>> parameter is easily found by
-  following the previous version's link and copying revision number.
+  [[2]] update <<<src/site-docs/index.apt>>>: add a line in the history of <<<pom.xml>>> for the version being released, referring
+  to the future svn release tag and date.
+ 
+  <<Hint>>: in the diff link, the value for the <<<r2>>> parameter is easily found by
+  following the previous version's link and copying its revision number.
 
   []
 
-  Once these modifications are done, you can follow standard staging steps taking care to use the <<<site-pom.xml>>> POM,
-  with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is generated.
-
-* Staging the latest documentation
-
-  Instructions for staging latest documentation are the same as {{{../website/deploy-component-reference-documentation.html}standard component}},
-  with the addition of <<<-f site-pom.xml>>>.
+  Once these modifications are done, you can follow {{{../website/deploy-component-reference-documentation.html}standard component documentation staging steps}},
+  taking care to use the <<<site-pom.xml>>> POM, with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is
+  generated or published.
 
   Then the only difference is with commands to stage the site:
 
@@ -88,7 +86,7 @@ mvn -f site-pom.xml scm-publish:publish-scm
 * Call the vote
 
   In the vote, instead of providing links to JIRA, the parent POMs should include a link to the SVN changes since the
-  last release:
+  last release (the link previously added to <<<src/site-docs/index.apt>>>):
 
 +-----+
 ...
