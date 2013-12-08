@@ -110,11 +110,29 @@ mvn scm-publish:publish-scm
 
  This is done with operations on website production svn area, either with <<<svn>>> command:
 
+ * Unix:
+
 +----------+
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-$version
-svn rm https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/yyy
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/xxx-archives/yyy-$version https://svn.apache.org/repos/infra/websites/production/maven/content/xxx/yyy
+SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
+
+svn cp $SVNPUBSUB/xxx-archives/yyy-LATEST $SVNPUBSUB/xxx-archives/yyy-$version
+
+svn rm $SVNPUBSUB/xxx/yyy
+svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy
 +----------+
+
+ * Windows:
+
++----------+
+set SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
+
+svn cp %SVNPUBSUB%/xxx-archives/yyy-LATEST %SVNPUBSUB%/xxx-archives/yyy-$version
+
+svn rm %SVNPUBSUB%/xxx/yyy
+svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy
++----------+
+
+ []
 
  or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}<<<svnmucc>>> command}}:
 
