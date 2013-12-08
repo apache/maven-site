@@ -12,6 +12,7 @@ core-its
 enforcer
 enforcer-archives
 jxr
+jxr-archives
 maven-1.x
 maven-indexer
 maven-indexer-archives
