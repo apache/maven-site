@@ -47,10 +47,6 @@ Performing a Maven Project Release
   
   If you started here, you may first want to review one of the following documents that cover the specifics of various types of releases we have in the Maven Project:
   
-  * {{{./maven-plugin-release.html} Releasing a Maven plugin project}}
-  
-  * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}}
-  
   * {{{./maven-core-release.html} Releasing Maven Core}}
 
   * {{{./parent-pom-release.html} Releasing a parent POM}}
