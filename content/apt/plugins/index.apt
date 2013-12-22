@@ -86,7 +86,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.0          | 2010-01-30 | Useful for integration tests - verifies the existence of certain conditions. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-verifier-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MVERIFIER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<Packaging types / tools>>                                  |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
+| <<Packaging types/tools>>                                    |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.9          | 2013-11-30 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
