@@ -72,16 +72,13 @@ mvn -Prun-its install
  [[1]] build the reference documentation:
 
 +----------+
-mvn -Preporting site
+mvn -Preporting site site:stage
 +----------+
 
- [[2]] if the component has multiple modules, locally stage the site:
+ Notice: <<<site:stage>>> is really necessary only for multi-modules components, but added inconditionnally in these instructions
+ to keep them as straightforward as possible.
 
-+----------+
-mvn site:stage
-+----------+
-
- [[3]] stage the reference documentation to website production svn area, using
+ [[2]] stage the reference documentation to website production svn area, using
  {{{/plugins/maven-scm-publish-plugin}maven-scm-publish-plugin}}: (TODO: explanations on configuration in pom to yyy-LATEST)
 
 +----------+
