@@ -98,7 +98,7 @@ Source release checksum(s):
 [NAME-OF]-source-release.zip sha1: [SHA1SUM]
 
 Staging site:
-http://maven.apache.org/plugins-archives/maven-XXX-plugin-Y.Z/
+http://maven.apache.org/plugins-archives/maven-XXX-plugin-LATEST/
 
 Guide to testing staged releases:
 http://maven.apache.org/guides/development/guide-testing-releases.html
