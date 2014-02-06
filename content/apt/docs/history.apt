@@ -31,146 +31,192 @@ Maven Releases History
 
 * Maven 3
 
-  * 2013-10-04 3.1.1 {{{/ref/3.1.1/} reference documentation}},
+  * 2013-10-04 3.1.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201310.mbox/%3CFDE8A119-BD71-4FF4-948D-EAE138C371C4%40tesla.io%3E} announce}},
-  {{{./3.1.1/release-notes.html} release notes}}
+  {{{./3.1.1/release-notes.html} release notes}},
+  {{{/ref/3.1.1/} reference documentation}}
 
-  * 2013-07-15 3.1.0 {{{/ref/3.1.0/} reference documentation}},
+  * 2013-07-15 3.1.0
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E} announce}},
-  {{{./3.1.0/release-notes.html} release notes}}
+  {{{./3.1.0/release-notes.html} release notes}},
+  {{{/ref/3.1.0/} reference documentation}}
 
-  * 2013-06-10 3.1.0-alpha-1 {{{http://mail-archives.apache.org/mod_mbox/maven-users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E} announce}},
+  * 2013-06-10 3.1.0-alpha-1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E} announce}},
   {{{./3.1.0-alpha-1/release-notes.html} release notes}}
 
-  * 2013-02-23 3.0.5 {{{/ref/3.0.5/} reference documentation}},
+  * 2013-02-23 3.0.5
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E} announce}},
-  {{{./3.0.5/release-notes.html} release notes}}
+  {{{./3.0.5/release-notes.html} release notes}},
+  {{{/ref/3.0.5/} reference documentation}}
 
-  * 2012-01-20 3.0.4 {{{/ref/3.0.4/} reference documentation}},
+  * 2012-01-20 3.0.4
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E} announce}},
-  {{{./3.0.4/release-notes.html} release notes}}
+  {{{./3.0.4/release-notes.html} release notes}},
+  {{{/ref/3.0.4/} reference documentation}}
 
-  * 2011-03-04 3.0.3 {{{/ref/3.0.3/} reference documentation}},
+  * 2011-03-04 3.0.3
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E} announce}},
-  {{{./3.0.3/release-notes.html} release notes}}
+  {{{./3.0.3/release-notes.html} release notes}},
+  {{{/ref/3.0.3/} reference documentation}}
 
-  * 2011-01-12 3.0.2 {{{/ref/3.0.2/} reference documentation}},
+  * 2011-01-12 3.0.2
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201101.mbox/%3C4D2E1D75.6090008%40apache.org%3E} announce}},
-  {{{./3.0.2/release-notes.html} release notes}}
+  {{{./3.0.2/release-notes.html} release notes}},
+  {{{/ref/3.0.2/} reference documentation}}
 
-  * 2010-11-26 3.0.1 {{{/ref/3.0.1/} reference documentation}},
+  * 2010-11-26 3.0.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201011.mbox/%3C4CF03B77.4090508%40apache.org%3E} announce}},
-  {{{./3.0.1/release-notes.html} release notes}}
+  {{{./3.0.1/release-notes.html} release notes}},
+  {{{/ref/3.0.1/} reference documentation}}
 
-  * 2010-10-08 3.0 {{{/ref/3.0/} reference documentation}},
+  * 2010-10-08 3.0
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201010.mbox/%3C4CAF1861.4030006%40apache.org%3E} announce}},
-  {{{./3.0/release-notes.html} release notes}}
+  {{{./3.0/release-notes.html} release notes}},
+  {{{/ref/3.0/} reference documentation}}
 
-  * 2010-09-02 3.0-beta-3 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201009.mbox/%3C4C802845.6070709%40apache.org%3E} announce}},
+  * 2010-09-02 3.0-beta-3
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201009.mbox/%3C4C802845.6070709%40apache.org%3E} announce}},
   {{{./3.0-beta-3/release-notes.html} release notes}}
 
-  * 2010-08-10 3.0-beta-2 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201008.mbox/%3C4C61C9A6.7040704%40apache.org%3E} announce}},
+  * 2010-08-10 3.0-beta-2
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201008.mbox/%3C4C61C9A6.7040704%40apache.org%3E} announce}},
   {{{./3.0-beta-2/release-notes.html} release notes}}
 
-  * 2010-04-23 3.0-beta-1 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201004.mbox/%3C4BD19B35.80501%40apache.org%3E} announce}},
+  * 2010-04-23 3.0-beta-1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201004.mbox/%3C4BD19B35.80501%40apache.org%3E} announce}},
   {{{./3.0-beta-1/release-notes.html} release notes}}
 
-  * 2010-04-14 3.0-alpha-7 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201003.mbox/%3C4B9D1589.7000502%40apache.org%3E} announce}},
+  * 2010-04-14 3.0-alpha-7
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201003.mbox/%3C4B9D1589.7000502%40apache.org%3E} announce}},
   {{{./3.0-alpha-7/release-notes.html} release notes}}
 
-  * 2010-01-10 3.0-alpha-6 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201001.mbox/%3C4B49EE7E.9030703%40apache.org%3E} announce}},
+  * 2010-01-10 3.0-alpha-6
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201001.mbox/%3C4B49EE7E.9030703%40apache.org%3E} announce}},
   {{{./3.0-alpha-6/release-notes.html} release notes}}
 
-  * 2009-11-27 3.0-alpha-5 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4B0FAA1C.3060900%40apache.org%3E} announce}},
+  * 2009-11-27 3.0-alpha-5
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4B0FAA1C.3060900%40apache.org%3E} announce}},
   {{{./3.0-alpha-5/release-notes.html} release notes}}
 
-  * 2009-11-17 3.0-alpha-4 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4B0284D0.9080202%40apache.org%3E} announce}},
+  * 2009-11-17 3.0-alpha-4
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4B0284D0.9080202%40apache.org%3E} announce}},
   {{{./3.0-alpha-4/release-notes.html} release notes}}
 
-  * 2009-11-13 3.0-alpha-3 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4AFD52A3.80707%40apache.org%3E} announce}},
+  * 2009-11-13 3.0-alpha-3
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200911.mbox/%3C4AFD52A3.80707%40apache.org%3E} announce}},
   {{{./3.0-alpha-3/release-notes.html} release notes}}
 
   []
 
 * Maven 2
 
-  * 2009-11-08 2.2.1 {{{/ref/2.2.1/} reference documentation}},
+  * 2009-11-08 2.2.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E} announce}},
-  {{{./2.2.1/release-notes.html} release notes}}
+  {{{./2.2.1/release-notes.html} release notes}},
+  {{{/ref/2.2.1/} reference documentation}}
 
-  * 2009-06-30 2.2.0 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200906.mbox/%3C4A4A8FC8.8040801%40apache.org%3E} announce}},
+  * 2009-06-30 2.2.0
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200906.mbox/%3C4A4A8FC8.8040801%40apache.org%3E} announce}},
   {{{./2.2.0/release-notes.html} release notes}}
 
-  * 2009-03-22 2.1.0 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E} announce}},
+  * 2009-03-22 2.1.0
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E} announce}},
   {{{./2.1.0/release-notes.html} release notes}}
 
-  * 2008-09-19 2.1.0-M1 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200809.mbox/%3C48D31DA2.4000604%40apache.org%3E} announce}}
+  * 2008-09-19 2.1.0-M1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200809.mbox/%3C48D31DA2.4000604%40apache.org%3E} announce}}
 
-  * 2010-02-26 2.0.11 {{{/ref/2.0.11/} reference documentation}},
+  * 2010-02-26 2.0.11
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201002.mbox/%3C16924806-34B2-404B-A22B-0B76D4F9DD07%40apache.org%3E} announce}},
-  {{{./2.0.11/release-notes.html} release notes}}
+  {{{./2.0.11/release-notes.html} release notes}},
+  {{{/ref/2.0.11/} reference documentation}}
 
-  * 2009-02-18 2.0.10 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200902.mbox/%3C6d8f35410902180648r14fc7a53waaec9a36166403cf%40mail.gmail.com%3E} announce}},
+  * 2009-02-18 2.0.10
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200902.mbox/%3C6d8f35410902180648r14fc7a53waaec9a36166403cf%40mail.gmail.com%3E} announce}},
   {{{./2.0.10/release-notes.html} release notes}}
 
-  * 2008-04-10 2.0.9 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200804.mbox/%3C6d8f35410804100743x6085e96cv72101712cdbec434%40mail.gmail.com%3E} announce}},
+  * 2008-04-10 2.0.9
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200804.mbox/%3C6d8f35410804100743x6085e96cv72101712cdbec434%40mail.gmail.com%3E} announce}},
   {{{./2.0.9/release-notes.html} release notes}}
 
-  * 2007-11-27 2.0.8 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200711.mbox/%3C6d8f35410711271426u7945c8b1w2e4778aa5651861f%40mail.gmail.com%3E} announce}},
+  * 2007-11-27 2.0.8
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200711.mbox/%3C6d8f35410711271426u7945c8b1w2e4778aa5651861f%40mail.gmail.com%3E} announce}},
   {{{./2.0.8/release-notes.html} release notes}}
 
-  * 2007-06-21 2.0.7 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200706.mbox/%3C3B5AF748-95CA-4B2B-ABFB-5053BE4EAC90%40maven.org%3E} announce}},
+  * 2007-06-21 2.0.7
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200706.mbox/%3C3B5AF748-95CA-4B2B-ABFB-5053BE4EAC90%40maven.org%3E} announce}},
   {{{./2.0.7/release-notes.html} release notes}}
 
-  * 2007-04-01 2.0.6 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200704.mbox/%3CA42EA48C-AB89-449F-B6A1-F73D8B3617D9%40maven.org%3E} announce}},
+  * 2007-04-01 2.0.6
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200704.mbox/%3CA42EA48C-AB89-449F-B6A1-F73D8B3617D9%40maven.org%3E} announce}},
   {{{./2.0.6/release-notes.html} release notes}}
 
-  * 2007-02-16 2.0.5 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200702.mbox/%3C0DC020CD-0334-4106-B99E-DEC7B477AC72%40apache.org%3E} announce}},
+  * 2007-02-16 2.0.5
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200702.mbox/%3C0DC020CD-0334-4106-B99E-DEC7B477AC72%40apache.org%3E} announce}},
   {{{./2.0.5/release-notes.html} release notes}}
 
-  * 2006-04-11 2.0.4 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E} announce}},
+  * 2006-04-11 2.0.4
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E} announce}},
   {{{./2.0.4/release-notes.html} release notes}}
 
-  * 2006-03-28 2.0.3 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200603.mbox/%3C44294FB6.6070509%40apache.org%3E} announce}},
+  * 2006-03-28 2.0.3
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200603.mbox/%3C44294FB6.6070509%40apache.org%3E} announce}},
   {{{./2.0.3/release-notes.html} release notes}}
 
-  * 2006-01-17 2.0.2 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200601.mbox/%3C43CC4C09.8050800%40maven.org%3E} announce}},
+  * 2006-01-17 2.0.2
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200601.mbox/%3C43CC4C09.8050800%40maven.org%3E} announce}},
   {{{./2.0.2/release-notes.html} release notes}}
 
-  * 2005-12-13 2.0.1 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200512.mbox/%3C439E0738.6030109%40commonjava.org%3E} announce}},
+  * 2005-12-13 2.0.1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200512.mbox/%3C439E0738.6030109%40commonjava.org%3E} announce}},
   {{{./2.0.1/release-notes.html} release notes}}
 
-  * 2005-10-20 2.0 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200510.mbox/%3C4356C7AF.6080901%40apache.org%3E} announce}},
+  * 2005-10-20 2.0
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200510.mbox/%3C4356C7AF.6080901%40apache.org%3E} announce}},
   {{{./2.0/release-notes.html} release notes}}
 
   []
 
 * Maven 1
 
-  * 2013-04-18 eol {{{/maven-1.x-eol.html} announce}}
+  * 2013-04-18 eol
+  {{{/maven-1.x-eol.html} announce}}
 
-  * 2007-06-25 1.1 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E} announce}}
+  * 2007-06-25 1.1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E} announce}}
 
-  * 2007-05-12 1.1-RC-1 {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200705.mbox/%3C262c6c680705120121i5a2c1372v1a2824a4f22e496%40mail.gmail.com%3E} announce}}
+  * 2007-05-12 1.1-RC-1
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200705.mbox/%3C262c6c680705120121i5a2c1372v1a2824a4f22e496%40mail.gmail.com%3E} announce}}
 
-  * 2006-08-01 1.1-beta-3 {{{/maven-1.x/news.html} announce}}
+  * 2006-08-01 1.1-beta-3
+  {{{/maven-1.x/news.html} announce}}
 
-  * 2005-09-12 1.1-beta-2 {{{http://mail-archives.apache.org/mod_mbox/maven-users/200509.mbox/%3C4325192D.6090404%40apache.org%3E} announce}}
+  * 2005-09-12 1.1-beta-2
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/200509.mbox/%3C4325192D.6090404%40apache.org%3E} announce}}
 
-  * 2004-12-07 1.0.2 {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20041207.1} announce}}
+  * 2004-12-07 1.0.2
+  {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20041207.1} announce}}
 
-  * 2004-11-11 1.0.1 {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20041111.1} announce}}
+  * 2004-11-11 1.0.1
+  {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20041111.1} announce}}
 
-  * 2004-07-13 1.0 {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20040713.1} announce}}
+  * 2004-07-13 1.0
+  {{{http://jakarta.apache.org/site/news/elsewhere-2004-2ndHalf.html#20040713.1} announce}}
 
-  * 2004-03-24 1.0-RC2 {{{http://jakarta.apache.org/site/news/elsewhere-2004-1stHalf.html#20040324.1} announce}}
+  * 2004-03-24 1.0-RC2
+  {{{http://jakarta.apache.org/site/news/elsewhere-2004-1stHalf.html#20040324.1} announce}}
 
-  * 2003-09-29 1.0-RC1 {{{http://jakarta.apache.org/site/news/elsewhere-2003.html#20030929.1} announce}}
+  * 2003-09-29 1.0-RC1
+  {{{http://jakarta.apache.org/site/news/elsewhere-2003.html#20030929.1} announce}}
 
-  * 2003-07-14 1.0-beta-10 {{{http://jakarta.apache.org/site/news/elsewhere-2003.html#20030714.1} announce}}
+  * 2003-07-14 1.0-beta-10
+  {{{http://jakarta.apache.org/site/news/elsewhere-2003.html#20030714.1} announce}}
 
-  * 2002-04-11 1.0-beta-3 {{{http://jakarta.apache.org/site/news/news-2002.html#0411.1} announce}}
+  * 2002-04-11 1.0-beta-3
+  {{{http://jakarta.apache.org/site/news/news-2002.html#0411.1} announce}}
 
-  * 2002-03-30 1.0-beta-2 {{{http://jakarta.apache.org/site/news/news-2002.html#0330.1} announce}}
+  * 2002-03-30 1.0-beta-2
+  {{{http://jakarta.apache.org/site/news/news-2002.html#0330.1} announce}}
 
   []
