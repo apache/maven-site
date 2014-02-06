@@ -53,8 +53,7 @@ Feature Summary
    central JAR repository much like Perl's CPAN. This allows users
    of Maven to reuse JARs across projects and encourages communication
    between projects to ensure that backward compatibility issues are
-   dealt with. We are collaborating with the folks at {{{http://www.ibiblio.org}Ibiblio}} who have graciously
-   allowed the central repository to live on their servers.
+   dealt with.
 
  []
 
