@@ -59,9 +59,6 @@
 
   <properties>
     <current20xVersion>2.0.11</current20xVersion>
-    <current20xReleaseDate>25 Feb 2010</current20xReleaseDate>
-    <current22xVersion>2.2.1</current22xVersion>
-    <current22xReleaseDate>11 August 2009</current22xReleaseDate>
     <currentStableVersion>3.1.1</currentStableVersion>
     <current31xVersion>3.1.1</current31xVersion>
     <current30xVersion>3.0.5</current30xVersion>
