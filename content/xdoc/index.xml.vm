@@ -21,7 +21,7 @@ under the License.
   <properties>
     <title>Welcome to Apache Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
-    <author email="jason@sonatype.com">Jason van Zyl</author>
+    <author email="jason@takari.io">Jason van Zyl</author>
   </properties>
   <body>
 
@@ -81,7 +81,7 @@ under the License.
       <li><a href="http://wiki.apache.org/apachecon/ApacheMeetupsNa10">Proposed Maven Meetup</a></li></ul>
 -->
       <h5>Looking for Artifacts?</h5>
-      <p><a href="http://repository.sonatype.org">Search Central</a> and other Public Repositories.</p>
+      <p><a href="http://search.maven.org">Search Central</a> and other Public Repositories.</p>
       <h5>Looking for Repository Managers?</h5>
       <p><a href="http://maven.apache.org/repository-management.html">Take a look</a> at the Repository Managers available from the community.</p>
       <h5>Looking for CI Servers?</h5>

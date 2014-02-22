@@ -27,7 +27,7 @@ under the License.
     <author>John Casey</author>
   </properties>
   <body>
-    <section name="Download Apache Maven ${current31xVersion}">
+    <section name="Download Apache Maven ${currentStableVersion}">
 
       <p>Maven is distributed in several formats for your convenience. Use a source archive if you intend to build Maven
       yourself. Otherwise, simply pick a ready-made binary distribution and follow the installation instructions given
@@ -157,6 +157,59 @@ under the License.
 
       <p>You can also <a href="#Maven_Documentation">download the current documentation</a>, i.e. this website.</p>
 
+      <subsection name="Maven ${current31xVersion}">
+
+        <p>This is a stable version 3.0.x of Maven for projects that can't upgrade to Maven 3.1 yet.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Link</th>
+              <th>Checksum</th>
+              <th>Signature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maven ${current31xVersion} (Binary tar.gz)</td>
+              <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current30xVersion}-bin.tar.gz</a></td>
+              <td><a href="http://www.apache.org/dist//maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.md5">apache-maven-${current30xVersion}-bin.tar.gz.md5</a></td>
+              <td><a href="http://www.apache.org/dist//maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.asc">apache-maven-${current30xVersion}-bin.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current31xVersion} (Binary zip)</td>
+              <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip">apache-maven-${current30xVersion}-bin.zip</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.md5">apache-maven-${current30xVersion}-bin.zip.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.asc">apache-maven-${current30xVersion}-bin.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current31xVersion} (Source tar.gz)</td>
+              <td><a href="[preferred]maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz">apache-maven-${current30xVersion}-src.tar.gz</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.md5">apache-maven-${current30xVersion}-src.tar.gz.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-2/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.asc">apache-maven-${current30xVersion}-src.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current31xVersion} (Source zip)</td>
+              <td><a href="[preferred]maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip">apache-maven-${current30xVersion}-src.zip</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.md5">apache-maven-${current30xVersion}-src.zip.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.asc">apache-maven-${current30xVersion}-src.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Release Notes</td>
+              <td><a href="./docs/${current31xVersion}/release-notes.html">${current31xVersion}</a></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Release Reference Documentation</td>
+              <td><a href="./ref/${current31xVersion}/">${current31xVersion}</a></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </subsection>
 
       <subsection name="Maven ${current30xVersion}">
 
