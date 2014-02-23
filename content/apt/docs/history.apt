@@ -31,15 +31,15 @@ Maven Releases History
 
 * Maven 3
 
-  * 2014-02-21 3.2.1
+  * <<2014-02-21 3.2.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201402.mbox/UPDATE_WHEN_ANNOUNCED} announce}},
   {{{./3.2.1/release-notes.html} release notes}},
-  {{{/ref/3.2.1/} reference documentation}}
+  {{{/ref/3.2.1/} reference documentation}}>>
 
-  * 2013-10-04 3.1.1
+  * <<2013-10-04 3.1.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201310.mbox/%3CFDE8A119-BD71-4FF4-948D-EAE138C371C4%40tesla.io%3E} announce}},
   {{{./3.1.1/release-notes.html} release notes}},
-  {{{/ref/3.1.1/} reference documentation}}
+  {{{/ref/3.1.1/} reference documentation}}>>
 
   * 2013-07-15 3.1.0
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E} announce}},
@@ -50,10 +50,10 @@ Maven Releases History
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E} announce}},
   {{{./3.1.0-alpha-1/release-notes.html} release notes}}
 
-  * 2013-02-23 3.0.5
+  * <<2013-02-23 3.0.5
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E} announce}},
   {{{./3.0.5/release-notes.html} release notes}},
-  {{{/ref/3.0.5/} reference documentation}}
+  {{{/ref/3.0.5/} reference documentation}}>>
 
   * 2012-01-20 3.0.4
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E} announce}},
@@ -116,9 +116,9 @@ Maven Releases History
 
 * Maven 2
 
-  * 2014-02-18 End of Life
+  * <<2014-02-18 End of Life
   {{{/maven-2.x-eol.html} EoL notes}},
-  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E} announce}}
+  {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E} announce}}>>
 
   * 2009-11-08 2.2.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E} announce}},
@@ -189,8 +189,8 @@ Maven Releases History
 
 * Maven 1
 
-  * 2013-04-18 eol
-  {{{/maven-1.x-eol.html} announce}}
+  * <<2013-04-18 End of Life
+  {{{/maven-1.x-eol.html} EoL announce}}>>
 
   * 2007-06-25 1.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E} announce}}
