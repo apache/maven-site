@@ -159,7 +159,7 @@ under the License.
 
       <subsection name="Maven ${current31xVersion}">
 
-        <p>This is a stable version 3.0.x of Maven for projects that can't upgrade to Maven 3.1 yet.</p>
+        <p>This is a stable version 3.1.x of Maven.</p>
 
         <table>
           <thead>
@@ -213,7 +213,7 @@ under the License.
 
       <subsection name="Maven ${current30xVersion}">
 
-        <p>This is a stable version 3.0.x of Maven for projects that can't upgrade to Maven 3.1 yet.</p>
+        <p>This is a stable version 3.0.x of Maven for projects that can't upgrade to Maven 3.2 yet.</p>
 
         <table>
           <thead>
