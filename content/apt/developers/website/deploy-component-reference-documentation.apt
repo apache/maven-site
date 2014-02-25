@@ -134,10 +134,11 @@ svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy
  or with {{{http://svnbook.red-bean.com/en/1.8/svn.ref.svnmucc.re.html}<<<svnmucc>>> command}}:
 
 +----------+
-svnmucc -U https://svn.apache.org/repos/infra/websites/production/maven/content \
+svnmucc -m "Publish yyy $version documentation" \
+  -U https://svn.apache.org/repos/infra/websites/production/maven/content \
   cp HEAD xxx-archives/yyy-LATEST xxx-archives/yyy-$version \
   rm xxx/yyy \
-  cp HEAD xxx-archives/yyy-$version xxx/yyy
+  cp HEAD xxx-archives/yyy-LATEST xxx/yyy
 +----------+
 
 * Updating index page in the Maven site
