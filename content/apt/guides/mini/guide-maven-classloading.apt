@@ -45,7 +45,8 @@ Guide to Maven Classloading
  
  The second classloader down the graph contains the core requirements of Maven. More precisely, the core classloader
  has the libraries in <<<$\{maven.home\}/lib>>>. In general these are just Maven libraries, e.g. instances of
- <<<{{{http://maven.apache.org/ref/current/maven-project/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
+       
+ <<<{{{http://maven.apache.org/ref/current/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  belong to this classloader.
  We hope to further separate these in the future to just be Maven APIs and have 
  the implementations selected at runtime as required by the system.
@@ -90,7 +91,7 @@ Guide to Maven Classloading
  Please note that the plugin classloader does neither contain the
  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_dependency}dependencies}}
  of the current project nor its build output. Instead, plugins can query the project's compile, runtime and test class path from the 
- <<<{{{http://maven.apache.org/ref/current/maven-project/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
+ <<<{{{http://maven.apache.org/ref/current/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  in combination with the mojo annotation <<<requiresDependencyResolution>>> from the
  {{{http://maven.apache.org/developers/mojo-api-specification.html}Mojo API Specification}}. For instance, flagging a
  mojo with <<<@requiresDependencyResolution runtime>>> enables it to query the runtime class path of the current project
