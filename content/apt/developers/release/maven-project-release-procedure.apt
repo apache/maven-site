@@ -186,7 +186,7 @@ wagon/wagon-2.2-source-release.zip.md5
  
    As above, deploy the web site if appropriate and update the project site for the
    new release. See 
-  {{{https://maven.apache.org/developers/website/deploy-component-reference-documentation.html#Publishing_versioned_component_reference_documentation}}Publishing versioned component reference documentation}.
+  {{{https://maven.apache.org/developers/website/deploy-component-reference-documentation.html#Publishing_versioned_component_reference_documentation}Publishing versioned component reference documentation}}.
   Note that not all projects follow these conventions exactly.
 
  [[3]] Update the version tracking in JIRA
