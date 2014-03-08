@@ -3,7 +3,7 @@
  ------
  Jason van Zyl
  ------
- 2010-09-05
+ 2014-03-09
  ------
 
 Introduction to the Standard Directory Layout
@@ -22,8 +22,6 @@ Introduction to the Standard Directory Layout
 *--------------------------------+-----------------------------------------------+
 | <<<src/main/filters>>>         | Resource filter files
 *--------------------------------+-----------------------------------------------+
-| <<<src/main/assembly>>>        | Assembly descriptors
-*--------------------------------+-----------------------------------------------+
 | <<<src/main/config>>>          | Configuration files
 *--------------------------------+-----------------------------------------------+
 | <<<src/main/scripts>>>         | Application/Library scripts
@@ -35,6 +33,8 @@ Introduction to the Standard Directory Layout
 | <<<src/test/resources>>>       | Test resources
 *--------------------------------+-----------------------------------------------+
 | <<<src/test/filters>>>         | Test resource filter files
+*--------------------------------+-----------------------------------------------+
+| <<<src/assembly>>>             | Assembly descriptors
 *--------------------------------+-----------------------------------------------+
 | <<<src/site>>>                 | Site 
 *--------------------------------+-----------------------------------------------+
