@@ -75,7 +75,7 @@ mvn -Prun-its install
 mvn -Preporting site site:stage
 +----------+
 
- Notice: <<<site:stage>>> is really necessary only for multi-modules components, but added inconditionnally in these instructions
+ Notice: <<<site:stage>>> is really necessary only for multi-modules components, but added unconditionally in these instructions
  to keep them as straightforward as possible.
 
  [[2]] stage the reference documentation to website production svn area, using
@@ -85,13 +85,13 @@ mvn -Preporting site site:stage
 mvn scm-publish:publish-scm
 +----------+
 
- svnpubsub mecanism transfers svn production content to live production site
+ svnpubsub mechanism transfers svn production content to live production site
 
    []
 
  []
 
- <<Notice>>: to avoid published content do disappear when Maven main content si published (see
+ <<Notice>>: to avoid published content do disappear when Maven main content is published (see
  {{{./deploy-maven-website.html}documentation}} for more details), check that the <<</xxx-archives>>> path
  is properly declared in {{{/extpaths.txt}<<<extpaths.txt>>>}}.
 
@@ -112,10 +112,10 @@ mvn scm-publish:publish-scm
 +----------+
 SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
 
-svn cp $SVNPUBSUB/xxx-archives/yyy-LATEST $SVNPUBSUB/xxx-archives/yyy-$version
+svn cp $SVNPUBSUB/xxx-archives/yyy-LATEST $SVNPUBSUB/xxx-archives/yyy-$version -m "Archive versioned site."
 
-svn rm $SVNPUBSUB/xxx/yyy
-svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy
+svn rm $SVNPUBSUB/xxx/yyy -m "Remove old site."
+svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy -m "Publish new site."
 +----------+
 
  * Windows:
@@ -123,10 +123,10 @@ svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy
 +----------+
 set SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
 
-svn cp %SVNPUBSUB%/xxx-archives/yyy-LATEST %SVNPUBSUB%/xxx-archives/yyy-$version
+svn cp %SVNPUBSUB%/xxx-archives/yyy-LATEST %SVNPUBSUB%/xxx-archives/yyy-$version -m "Archive versioned site."
 
-svn rm %SVNPUBSUB%/xxx/yyy
-svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy
+svn rm %SVNPUBSUB%/xxx/yyy -m "Remove old site."
+svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy -m "Publish new site."
 +----------+
 
  []
