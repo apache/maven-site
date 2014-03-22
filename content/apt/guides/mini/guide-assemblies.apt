@@ -84,11 +84,11 @@ Guide to creating assemblies
 +----+
 
  You can use a manually defined assembly descriptor as mentioned before but it is simpler to use the 
- {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#bin}pre-defined assembly descriptor bin}
+ {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#bin}pre-defined assembly descriptor bin}}
  in such cases.
 
  How to use such pre-defined assembly descriptors is described in the 
- {{{http://maven.apache.org/plugins/maven-assembly-plugin/usage.html#Configuration}}documentation of maven-assembly-plugin}.
+ {{{http://maven.apache.org/plugins/maven-assembly-plugin/usage.html#Configuration}documentation of maven-assembly-plugin}}.
 
 +----+
 <assembly 
@@ -130,7 +130,7 @@ Guide to creating assemblies
 +----+
 
   If you like to create a source distribution package the best solution is to use the
-  {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#src}pre-defined assembly descriptor src}
+  {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#src}pre-defined assembly descriptor src}}
   for such purposes.
 
 +----+
@@ -170,5 +170,3 @@ mvn assembly:single
 
   But the best solution is to create such distribution package within the 
   life-cycle.
-
-
