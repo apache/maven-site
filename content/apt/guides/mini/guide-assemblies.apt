@@ -8,12 +8,11 @@
 
 Guide to creating assemblies
 
- The assembly mechanism in Maven 2.x provides an easy way to create distributions using a assembly descriptor
+ The assembly mechanism in Maven provides an easy way to create distributions using a assembly descriptor
  and dependency information found in you POM. In order to use the assembly plug-in you need to configure the
  assembly plug-in in your POM and it might look like the following:
 
 +----+
-
 <project>
   <parent>
     <artifactId>maven</artifactId>
@@ -31,17 +30,16 @@ Guide to creating assemblies
         <artifactId>maven-assembly-plugin</artifactId>
         <version>2.4</version>
         <configuration>
-          <descriptor>src/main/assembly/dep.xml</descriptor>
+          <descriptor>src/assembly/dep.xml</descriptor>
         </configuration>
       </plugin>
     </plugins>
   </build>
   ...
 </project>
-
 +----+
 
- You'll notice that the assembly descriptor is located in <<<$\{basedir\}/src/main/assembly>>> which is the
+ You'll notice that the assembly descriptor is located in <<<$\{project.basedir\}/src/assembly>>> which is the
  {{{../introduction/introduction-to-the-standard-directory-layout.html}standard}} location for assembly
  descriptors.
 
@@ -51,8 +49,9 @@ Guide to creating assemblies
  use.
 
 +----+
-
-<assembly>
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
   <id>bin</id>
   <formats>
     <format>tar.gz</format>
@@ -61,6 +60,8 @@ Guide to creating assemblies
   </formats>
   <fileSets>
     <fileSet>
+      <directory>${project.basedir}</directory>
+      <outputDirectory>/</outputDirectory>
       <includes>
         <include>README*</include>
         <include>LICENSE*</include>
@@ -68,21 +69,34 @@ Guide to creating assemblies
       </includes>
     </fileSet>
     <fileSet>
-      <directory>target</directory>
-      <outputDirectory></outputDirectory>
+      <directory>${project.build.directory}</directory>
+      <outputDirectory>/</outputDirectory>
       <includes>
         <include>*.jar</include>
       </includes>
     </fileSet>
+    <fileSet>
+      <directory>${project.build.directory}/site</directory>
+      <outputDirectory>docs</outputDirectory>
+    </fileSet>
   </fileSets>
 </assembly>
-
 +----+
 
+ You can use a manually defined assembly descriptor as mentioned before but it is simpler to use the 
+ {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#bin}pre-defined assembly descriptor bin}
+ in such cases.
+
+ How to use such pre-defined assembly descriptors is described in the 
+ {{{http://maven.apache.org/plugins/maven-assembly-plugin/usage.html#Configuration}}documentation of maven-assembly-plugin}.
 
 +----+
+<assembly 
+  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 
+  http://maven.apache.org/xsd/assembly-1.1.2.xsd">
 
-<assembly>
   <!-- TODO: a jarjar format would be better -->
   <id>dep</id>
   <formats>
@@ -115,9 +129,14 @@ Guide to creating assemblies
 
 +----+
 
-+----+
+  If you like to create a source distribution package the best solution is to use the
+  {{{http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html#src}pre-defined assembly descriptor src}
+  for such purposes.
 
-<assembly>
++----+
+<assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
   <id>src</id>
   <formats>
     <format>tar.gz</format>
@@ -126,27 +145,30 @@ Guide to creating assemblies
   </formats>
   <fileSets>
     <fileSet>
+      <directory>${project.basedir}</directory>
       <includes>
         <include>README*</include>
         <include>LICENSE*</include>
         <include>NOTICE*</include>
         <include>pom.xml</include>
       </includes>
+      <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
     <fileSet>
-      <directory>src</directory>
+      <directory>${project.build.sourceDirectory}/src</directory>
+      <useDefaultExcludes>true</useDefaultExcludes>
     </fileSet>
   </fileSets>
 </assembly>
-
 +----+
 
-+----+
-
-mvn assembly:assembly
+  You can now create the defined distribution packages via command line like this:
 
 +----+
-
-
-
+mvn assembly:single
 +----+
+
+  But the best solution is to create such distribution package within the 
+  life-cycle.
+
+
