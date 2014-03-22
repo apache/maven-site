@@ -31,7 +31,7 @@ The Maven Community
 
 ** Developers
 
-  For Maven developers, commiters, PMC: there is a {{{./developers/index.html}Developers Guide}}.
+  For Maven developers, committers, PMC: there is a {{{./developers/index.html}Developers Guide}}.
 
 * Being a Good Maven Citizen
 
@@ -42,8 +42,7 @@ The Maven Community
 ** Be a Kind Public Repository User
 
   The best thing that a user can do is to set up their own remote repository mirror containing the
-  projects needed. There are several tools to make this simpler, such as
-  {{{http://nexus.sonatype.org/}Nexus}} or {{{http://maven.apache.org/archiva/}Archiva}}. This
+  projects needed: this is called a {{{.//repository-management.html}repository manager}}. This
   reduces strain on the Maven central repository, and allows new users to get acquainted with Maven
   easier and quicker. This is especially important for power-users and corporations. The incentive
   behind this is, controlling your own servers can give you desired level of security and
@@ -54,21 +53,6 @@ The Maven Community
 
   Please take only the jars you need. We understand this is may entail more work,
   but grabbing all 9+ Gigs of binaries really kills our servers.
-
-** Host a Mirror
-
-  As an extention to the previous statement, if you have access to a large data repository with
-  lots of bandwidth, please consider becomming a mirror for the Maven central repository.
-
-  As you can imagine, thousands of users downloading can put quite a strain on one server.
-  If you wish to be a mirror, please file a request in the {{{http://jira.codehaus.org/browse/MPA}Maven Project Administration}}
-  JIRA project.
-
-** Host a Public Repository
-
-  If you have any projects that you wish others to use, host them on your own public repository. That
-  way, your users can simply add your repository to their own project repo list, and viola! Maven
-  can keep you and your users in synch, growing your user-base due simply to its new-found ease of use.
 
 * User Gathering Spots
 
@@ -81,4 +65,5 @@ The Maven Community
 
 ** IRC (Internet Relay Chat)
 
-  Log into the <<<#maven>>> IRC channel on <<<irc.codehaus.org>>> or  {{{http://irc.codehaus.org}with web irc client }}
+  Log into the <<<#maven>>> IRC channel on <<<irc.codehaus.org>>> with your favorite IRC client
+  or {{{http://irc.codehaus.org}with web IRC client}}.
