@@ -38,7 +38,7 @@ Introduction to the POM
 
     []
 
-  * {{{./introduction-to-the-pom.html#Project_Interpolation}Project Interpolation and Expressions}}
+  * {{{./introduction-to-the-pom.html#Project_Interpolation}Project Interpolation and Variables}}
 
     * {{{./introduction-to-the-pom.html#Available_Variables}Available Variables}}
 
