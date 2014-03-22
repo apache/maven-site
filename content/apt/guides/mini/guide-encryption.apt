@@ -216,3 +216,24 @@ jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
   and settings security file. Keep this file secure (or stored separately) if you expect the
   possibility that the <<<settings.xml>>> file may be retrieved.
 
+** Password Escaping on different platforms
+
+  On some platforms it might be neccessary to quote your password based on the content of your
+  password in particular having special characters like <<<%>>>, <<<!>>>, <<<$>>> etc. in there. 
+  For example on Windows you have to be carefull about things like the following:
+
+  The following example will not work on Windows:
+
++----+
+mvn.bat --encrypt-master-password a!$%^b
++----+
+  
+  whereas the following will work on Windows:
+
++----+
+mvn.bat --encrypt-master-password "a!$%^b"
++----+
+
+  If you are on a linux/unix platform you should use single quotes for the above 
+  master password otherwise you will be astonished that the usage of the master-password
+  will not work (caused by the dollar sign and furthermore the exclamation mark).
