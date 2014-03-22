@@ -96,7 +96,7 @@
           <artifactId>maven-site-plugin</artifactId>
           <version>3.3</version>
           <configuration>
-            <siteDirectory>${basedir}/content</siteDirectory>
+            <siteDirectory>${project.basedir}/content</siteDirectory>
           </configuration>
           <dependencies>
             <dependency>
@@ -148,7 +148,7 @@
               <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/content/filtered-resources</directory>
+                  <directory>${project.basedir}/content/filtered-resources</directory>
                   <filtering>true</filtering>
                 </resource>
               </resources>
@@ -223,8 +223,8 @@
                 </goals>
                 <configuration>
                   <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
-                  <siteDirectory>${basedir}/content</siteDirectory>
-                  <docDescriptor>${basedir}/content/pdf.xml</docDescriptor>
+                  <siteDirectory>${project.basedir}/content</siteDirectory>
+                  <docDescriptor>${project.basedir}/content/pdf.xml</docDescriptor>
                 </configuration>
               </execution>
             </executions>

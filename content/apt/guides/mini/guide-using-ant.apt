@@ -69,8 +69,8 @@ Guide to using Ant with Maven
             <configuration>
               <tasks>
                 <exec
-                  dir="${basedir}"
-                  executable="${basedir}/src/main/sh/do-something.sh"
+                  dir="${project.basedir}"
+                  executable="${project.basedir}/src/main/sh/do-something.sh"
                   failonerror="true">
                   <arg line="arg1 arg2 arg3 arg4" />
                 </exec>

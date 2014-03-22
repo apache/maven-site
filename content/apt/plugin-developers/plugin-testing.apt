@@ -261,7 +261,7 @@ public class TrivialMavenVerifierTest extends TestCase
         <artifactId>maven-it-plugin</artifactId>
         <version>1.0-alpha-1-SNAPSHOT</version>
         <configuration>
-          <integrationTestsDirectory>${basedir}/src/it</integrationTestsDirectory>
+          <integrationTestsDirectory>${project.basedir}/src/it</integrationTestsDirectory>
           <includes>
             <include>**/pom.xml</include>
           </includes>
@@ -290,12 +290,12 @@ public class TrivialMavenVerifierTest extends TestCase
               <goal>install-file</goal>
             </goals>
             <configuration>
-              <file>${basedir}/target/maven-XXX-plugin-1.0-SNAPSHOT.jar</file>
+              <file>${project.build.directory}/maven-XXX-plugin-1.0-SNAPSHOT.jar</file>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-XXX-plugin</artifactId>
               <version>1.0-it-SNAPSHOT</version> <!-- IT SNAPSHOT -->
               <packaging>maven-plugin</packaging>
-              <pomFile>${basedir}/pom.xml</pomFile>
+              <pomFile>${project.basedir}/pom.xml</pomFile>
             </configuration>
           </execution>
         </executions>
@@ -337,7 +337,7 @@ public class TrivialMavenVerifierTest extends TestCase
 ...
   <reporting>
     <outputDirectory>
-      ${basedir}/../../../../../target/it/it1/target/site
+      ${project.basedir}/../../../../../target/it/it1/target/site
     </outputDirectory>
     <plugins>
       <plugin>
