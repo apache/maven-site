@@ -2,8 +2,9 @@
  Password Encryption
  -----
  Oleg Gusakov
+ Robert Scholte
  -----
- 2009-08-01
+ 2014-03-23
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -73,7 +74,8 @@
 mvn --encrypt-master-password <password>
 +------------------------------------+
 
- <Note:> This will not prompt for a password, so it must be typed on the command-line in plaintext. See {{{Tips}Tips}} below for more information.
+ <Note:> Since Maven 3.2.1 the password is an optional argument. If not provided, Maven will prompt for the password. 
+         Earlier versions of Maven will not prompt for a password, so it must be typed on the command-line in plaintext. See {{{Tips}Tips}} below for more information.
 
  This command will produce an encrypted version of the password, something like
 
@@ -99,7 +101,9 @@ mvn --encrypt-master-password <password>
 mvn --encrypt-password <password>
 +------------------------------------+
 
- This command will produce an encrypted version of it, something like
+  <Note:>Just like <<<--encrypt-master-password>>> the password argument is optional since Maven 3.2.1.
+  
+  This command will produce an encrypted version of it, something like
 
 +------------------------------------+
 {COQLCE6DU6GtcS5P=}
