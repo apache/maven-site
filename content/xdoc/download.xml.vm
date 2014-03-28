@@ -306,7 +306,7 @@ under the License.
         </p>
       </subsection>
 
-      <subsection name="Installation Instructions">
+      <subsection name="Installation Instructions" id="Installation">
         <p>
           <i>Maven is a Java tool, so you must have <a href="http://www.oracle.com/technetwork/java/">Java</a> installed in order to proceed. More precisely,
           you need a Java Development Kit (JDK), the Java Runtime Environment (JRE) is not sufficient.</i>
