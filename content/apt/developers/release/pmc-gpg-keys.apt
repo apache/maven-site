@@ -168,6 +168,6 @@ uid                  Vincent Siveton <vsiveton@apache.org>
 sub   2048g/D2814A59 2006-10-10
 +-----+
 
- Go to {{https://id.apache.org}}, log in and fill {{OpenPGP Public Key Primary Fingerprint:}} with the value of {{Key fingerprint}}.
+ Go to {{https://id.apache.org}}, log in and fill <<<OpenPGP Public Key Primary Fingerprint:>>> with the value of <<<Key fingerprint>>>.
 
  You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}} and {{{https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven} How to Generate PGP Signatures With Maven}}
