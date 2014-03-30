@@ -92,11 +92,11 @@ The vote has passed with the following result:
 I will continue with the steps required to retire this plugin.
 +-----
 
-  If the vote passes, make one final release of the plugin before it is
+  If the vote passes, make one final release of the plugin (with its own standard 72h vote on source release) before it is
   retired. This allows us to make a clean break. The person who wants to retire
   a plugin is the one who does the final release. Below you will find the extra
-  steps that you need to follow when retiring a plugin, in addition to our
-  standard release process.
+  steps that you need to follow when retiring a plugin, in addition to
+  {{{./release/maven-project-release-procedure.html}}our standard release process}.
 
 * Make the final release
 
@@ -127,8 +127,8 @@ but has moved to the <Organization> <Project> project.
   [[1]] Add " (RETIRED)" at the end of <<<\<project\>>>>/<<<\<name\>>>> in the
   plugin's <<<pom.xml>>>. This will show up on every page of the generated site.
 
-  [[1]] Go ahead with the standard release process, making sure that you follow
-  the exceptions mentioned above regarding the site deployment.
+  [[1]] Go ahead with {{{./release/maven-project-release-procedure.html}}the standard release process},
+  making sure that you follow the exceptions mentioned above regarding the site deployment.
 
   [[1]] When updating the plugins page, move Maven Foo Plugin to under the
   "Retired" heading. Remove the SVN and JIRA links and add
@@ -141,10 +141,10 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Remove the plugin from the <<<\<modules\>>>> section of the plugins aggregator POM.
 
-  [[1]] Remove any jobs from Continuous Integration servers like Jenkins.
+  [[1]] Remove any jobs from Continuous Integration servers like {{{http://builds.apache.org/}}ASF Jenkins farm}.
   Plugins normally don't have separate jobs, but check anyway just to make sure.
 
-  [[1]] Move the source code in Subversion. Where to depends on which scenario
+  [[1]] Move the source code in Subversion. <Where to> depends on which scenario
   was decided on.
 
   [[1]] Change the SCM URLs in the <<<pom.xml>>> to point to the new location.
