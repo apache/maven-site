@@ -283,7 +283,7 @@ under the License.
       <subsection name="All sources">
         <p>All sources (plugins, shared librairies, scm, indexer etc..) can be downloaded from <a href="http://www.apache.org/dist/maven/">http://www.apache.org/dist/maven/</a></p>
       </subsection>
-      <subsection name="System Requirements">
+      <subsection name="System Requirements" id="Requirements">
         <p>
           <table>
             <tr>
@@ -296,11 +296,13 @@ under the License.
             </tr>
             <tr>
               <td><b>Disk</b></td>
-              <td>No minimum requirement. Approximately 100MB will be used for your local repository, however this will vary depending on usage and can be removed and redownloaded at any time.</td>
+              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, additional disk space will
+              be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
+              least 500MB.</td>
             </tr>
             <tr>
               <td><b>Operating System</b></td>
-              <td>No minimum requirement. On Windows, Windows NT and above or Cygwin is required for the startup scripts. Tested on Windows XP, Fedora Core and Mac OS X.</td>
+              <td>No minimum requirement. Start up scripts are included as shell scripts and Windows batch files.</td>
             </tr>
           </table>
         </p>
@@ -313,7 +315,7 @@ under the License.
 
           Additional optional installation steps are listed after the platform specific instructions.
         </p>
-        <subsection name="Windows 2000/XP">
+        <subsection name="Windows">
           <ol>
           <li>Unzip the distribution archive, i.e. <i>apache-maven-${currentStableVersion}-bin.zip</i> to the directory you wish to install Maven ${currentStableVersion}.
           These instructions assume you chose <i>C:\Program Files\Apache Software Foundation</i>.
@@ -324,7 +326,7 @@ under the License.
           selecting the "Advanced" tab, and the "Environment Variables" button, then adding the <i>M2_HOME</i>
           variable in the user variables with the value
           <tt>C:\Program Files\Apache Software Foundation\apache-maven-${currentStableVersion}</tt>. Be sure to omit any quotation marks around the path
-          even if it contains spaces. <b>Note</b>: For Maven &nbsp; 2.0.9, also be sure that the <tt>M2_HOME</tt>
+          even if it contains spaces. <b>Note</b>: For Maven 2.0.9, also be sure that the <tt>M2_HOME</tt>
           doesn't have a '\' as last character.
           </li>
 
@@ -337,7 +339,7 @@ under the License.
           Maven available in the command line.</li>
 
           <li>In the same dialog, make sure that <tt>JAVA_HOME</tt> exists in your user variables or in the system variables and it is set to the location of your JDK,
-          e.g. <tt>C:\Program Files\Java\jdk1.5.0_02</tt> and that <tt>%JAVA_HOME%\bin</tt> is in your <tt>Path</tt> environment variable.</li>
+          e.g. <tt>C:\Program Files\Java\jdk1.7.0_51</tt> and that <tt>%JAVA_HOME%\bin</tt> is in your <tt>Path</tt> environment variable.</li>
 
           <li>Open a <i>new</i> command prompt (Winkey + R then type <tt>cmd</tt>) and run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
           </ol>
@@ -360,7 +362,7 @@ under the License.
         <li>Add <tt>M2</tt> environment variable to your path, e.g. <tt>export PATH=$M2:$PATH</tt>.</li>
 
         <li>Make sure that <tt>JAVA_HOME</tt> is set to the location of your JDK, e.g.
-        <tt>export JAVA_HOME=/usr/java/jdk1.5.0_02</tt> and that <tt>$JAVA_HOME/bin</tt> is in your <tt>PATH</tt> environment variable.</li>
+        <tt>export JAVA_HOME=/usr/java/jdk1.7.0_51</tt> and that <tt>$JAVA_HOME/bin</tt> is in your <tt>PATH</tt> environment variable.</li>
 
         <li>Run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
         </ol>
