@@ -117,7 +117,7 @@ Maven Releases History
 * Maven 2
 
   * <<2014-02-18 End of Life
-  {{{/maven-2.x-eol.html} EoL notes}},
+  {{{./../maven-2.x-eol.html} EoL notes}},
   {{{http://mail-archives.apache.org/mod_mbox/maven-announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E} announce}}>>
 
   * 2009-11-08 2.2.1
