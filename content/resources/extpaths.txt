@@ -4,7 +4,6 @@
 
 ant-tasks
 ant-tasks-archives
-apache-resource-bundles
 archetype
 archetype-archives
 maven-archetype-bundles
