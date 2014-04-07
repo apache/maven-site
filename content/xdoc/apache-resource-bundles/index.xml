@@ -49,11 +49,11 @@
             <configuration>
               <resourceBundles>
                 <!-- Will generate META-INF/DEPENDENCIES META-INF/LICENSE META-INF/NOTICE -->
-                <resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:${apache-jar-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-jar-resource-bundle:1.5-SNAPSHOT</resourceBundle>
                 <!-- Will generate META-INF/DEPENDENCIES.txt META-INF/LICENSE.txt META-INF/NOTICE.txt -->
-                <resourceBundle>org.apache.apache.resources:apache-jar-txt-resource-bundle:${apache-jar-txt-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-jar-txt-resource-bundle:1.5-SNAPSHOT</resourceBundle>
                 <!-- Will generate META-INF/DISCLAIMER  -->
-                <resourceBundle>org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:${apache-incubator-disclaimer-resource-bundle-version}</resourceBundle>
+                <resourceBundle>org.apache.apache.resources:apache-incubator-disclaimer-resource-bundle:1.2-SNAPSHOT</resourceBundle>
               </resourceBundles>
             </configuration>
           </execution>
@@ -71,7 +71,7 @@
           <dependency>
             <groupId>org.apache.apache.resources</groupId>
             <artifactId>apache-source-release-assembly-descriptor</artifactId>
-            <version>${apache-source-release-assembly-descriptor-version}</version>
+            <version>1.0.5-SNAPSHOT</version>
           </dependency>
         </dependencies>
         <executions>
