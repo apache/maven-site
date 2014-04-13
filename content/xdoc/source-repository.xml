@@ -60,10 +60,13 @@ under the License.
               <td>Apache Maven SCM</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-scm.git">https://git-wip-us.apache.org/repos/asf/maven-scm.git</a></td>
             </tr>
             <tr>
-              <td>Apache Maven Wagon</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></td>
+              <td>Apache Maven Plugin Testing</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git">https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git</a></td>
             </tr>
             <tr>
               <td>Apache Maven Surefire</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-surefire.git">https://git-wip-us.apache.org/repos/asf/maven-surefire.git</a></td>
+            </tr>
+            <tr>
+              <td>Apache Maven Wagon</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></td>
             </tr>
           </table>
         </p>
