@@ -86,8 +86,8 @@ public class YourMojoTest
     /**
      * @see junit.framework.TestCase#setUp()
      */
-    protected void setUp() throws Exception {
-
+    protected void setUp() throws Exception
+    {
         // required for mojo lookups to work
         super.setUp();
     }
@@ -100,7 +100,7 @@ public class YourMojoTest
         File testPom = new File( getBasedir(),
           "src/test/resources/unit/basic-test/basic-test-plugin-config.xml" );
 
-        YourMojo mojo = (YourMojo) lookupMojo ( "yourGoal", testPom );
+        YourMojo mojo = (YourMojo) lookupMojo( "yourGoal", testPom );
 
         assertNotNull( mojo );
     }
@@ -120,7 +120,7 @@ Integration/Functional testing
 +-----+
 public class TrivialMavenVerifierTest extends TestCase
 {
-    public void testMyPlugin ()
+    public void testMyPlugin()
         throws Exception
     {
         // Check in your dummy Maven project in /src/test/resources/...
