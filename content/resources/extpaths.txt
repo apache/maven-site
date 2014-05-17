@@ -1,7 +1,4 @@
-# directories in /www/maven.apache.org/ but not in any svn tree: dtd, project, xsd
-# space indentation = directories not yet committed to svn production tree
 # please use alphabetical order !!
-
 ant-tasks
 ant-tasks-archives
 archetype
