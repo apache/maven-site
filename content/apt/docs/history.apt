@@ -31,6 +31,11 @@ Maven Releases History
 
 * Maven 3
 
+  * <<2014-06-25 3.2.2
+  {{{http://mail-archives.apache.org/mod_mbox/maven-users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E} announce}},
+  {{{./3.2.2/release-notes.html} release notes}},
+  {{{/ref/3.2.2/} reference documentation}}>>
+
   * <<2014-02-21 3.2.1
   {{{http://mail-archives.apache.org/mod_mbox/maven-users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E} announce}},
   {{{./3.2.1/release-notes.html} release notes}},

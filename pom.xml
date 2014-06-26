@@ -58,9 +58,9 @@
   </distributionManagement>
 
   <properties>
-    <currentStableVersion>3.2.1</currentStableVersion>
-    <currentStableReleaseDate>21 February 2014</currentStableReleaseDate>
-    <current32xVersion>3.2.1</current32xVersion>
+    <currentStableVersion>3.2.2</currentStableVersion>
+    <currentStableReleaseDate>25 June 2014</currentStableReleaseDate>
+    <current32xVersion>3.2.2</current32xVersion>
     <current31xVersion>3.1.1</current31xVersion>
     <current30xVersion>3.0.5</current30xVersion>
     <current20xVersion>2.0.11</current20xVersion>
