@@ -104,7 +104,7 @@ Now when you use create plugins that strictly use annotation processing to gener
     </pluginManagement>
 ```
 
-This is no longer required and can be omitted when you version 3.2+ of the maven-plugin-plugin.
+This is no longer required and can be omitted when you use version 3.2+ of the maven-plugin-plugin.
 
 ### ${maven.build.timestamp} should use UTC instead of local timezone (or be configurable) ([MNG-5452][MNG-5452])
 
