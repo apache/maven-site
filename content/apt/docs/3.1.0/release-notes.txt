@@ -1,0 +1,167 @@
+* Maven 3.1.0 Release Notes
+
+  Maven 3.1.0 is the first official release of the 3.1.x series.
+  
+  The full list of changes can be found in our
+  {{{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=18967}issue management system}},
+  and is reproduced below.
+
+** Major Changes
+
+  The use of JSR330 in the core for extensions and in Maven plugins. You can read more about it in the {{{http://maven.apache.org/maven-jsr330.html}Maven and JSR330}} document.
+
+  The use of SLF4J in the core for logging. You can read more about it in the {{{http://maven.apache.org/maven-logging.html}Maven and SLF4J}} document.
+
+  The switch in the core from Sonatype Aether to {{{http://eclipse.org/aether}Eclipse Aether}}.
+
+** Known Incompatibilities with Maven 3.0.x
+
+  The significant change in Eclipse Aether with respect to API changes and package relocation will likely cause issues with plugins that directly depend on Aether.
+  We are aware of the issues in the Maven Site Plugin, the Maven Dependency Plugin, the Maven Shade Plugin and the Maven Project Info Reports Plugin,
+  and have fixed them in recent releases. But this
+  is a significant change and is likely to cause issues in any plugin that depends on the now deprecated Sonatype Aether. In the external plugin ecosystem, it is known
+  that Tycho, the Android Maven Plugin and the NetBeans Module Plugin are also affected: the plugin developers are aware of this issue and will release
+  a new version of the plugin to address it.
+
+  We maintain a {{{https://cwiki.apache.org/confluence/display/MAVEN/AetherClassNotFound}list of affected plugins with fixed version}}:
+  please report if you find another plugin not yet in this list.
+
+** Release Notes - Maven - Version 3.1.0 (since 3.0.5 only)
+
+** Bug
+
+    * [MNG-3131] - Error message is misleading if a missing plugin parameter is of a type like List
+
+    * [MNG-5016] - A mirror's layout setting should default to 'default' since thats' the only layout supported lay in maven 3
+
+    * [MNG-5206] - plexus container never disposed
+
+    * [MNG-5208] - Parallel (-T option) multi module build fires wrong "project failed event"
+
+    * [MNG-5209] - MavenProject.getTestClasspathElements can return null elements
+
+    * [MNG-5212] - DefaultPluginDescriptorCache does not retain pluginDescriptor dependencies
+
+    * [MNG-5214] - Dependency resolution substitutes g:a:v:jar for j:a:v:something-else when something-else isn't in the reactor
+
+    * [MNG-5233] - ArtifactMetadataRetrievalException from org.apache.maven.artifact.metadata is not anymore binary compatible.
+
+    * [MNG-5258] - localRepository in settings.xml does not handle ~ as home.dir
+
+    * [MNG-5261] - upgrade wagon version to 2.3 to fix issues with redirect
+
+    * [MNG-5270] - README.bootstrap.txt says "Ant 1.6.5 or later" BUT 1.8 or later is needed
+
+    * [MNG-5280] - Inconsistent order of repositories and pluginRepositories from profiles in settings (regression Maven 3)
+
+    * [MNG-5289] - -Dmaven.repo.local not honored
+
+    * [MNG-5312] - MavenProject.getParent intolerably slow when import scope used heavily
+
+    * [MNG-5313] - Unnecessary DefaultModelBuilder.build overload
+
+    * [MNG-5314] - DefaultModelValidator misuses String.matches
+
+    * [MNG-5336] - Descriptor Reference for settings.xml is incorrect
+
+    * [MNG-5387] - Add ability to replace an artifact in mid-build
+
+    * [MNG-5390] - mvn -rf (no argument) results in NPE
+
+    * [MNG-5395] - logger name for plugins should not be DefaultMavenPluginManager
+
+    * [MNG-5396] - logger name for execution events should not be MavenCli
+
+    * [MNG-5398] - scriptSourceDirectory in superpom is not prefixed with ${project.basedir}/
+
+    * [MNG-5403] - tar.gz release artifacts have wrong permissions on directories
+
+    * [MNG-5418] - Can't activate a profile by checking for the presence of a file in ${myProperty}
+
+    * [MNG-5430] - use wagon 2.4
+
+    * [MNG-5444] - ModelSource API is not sufficient to resolve project hierachies
+
+    * [MNG-5445] - Missing PathTranslator @Requirement in org.apache.maven.project.interpolation.StringSearchModelInterpolator
+
+    * [MNG-5456] - Maven skips modules and reports success if parallel build encounters java.lang.Error
+
+    * [MNG-5477] - "malformed POM" warning issued when no version in reporting section
+
+** Improvement
+
+    * [MNG-4505] - use slf4j to control various logging frameworks
+
+    * [MNG-5181] - New resolution from local repository is very confusing
+
+    * [MNG-5239] - Maven integration developers would like to be able to override the maven logging appender.
+
+    * [MNG-5245] - upgrade default plugins versions
+
+    * [MNG-5338] - Accept a directory with -f/--file
+
+    * [MNG-5350] - improve @threadSafe error message: tell which goal
+
+    * [MNG-5399] - Upgrade version of maven-release-plugin in superpom to 2.3.2
+
+    * [MNG-5400] - Upgrade version of maven-dependency-plugin in superpom to 2.5
+
+    * [MNG-5402] - Better build number for git
+
+    * [MNG-5480] - document in POM descriptor reference how urls are interpolated from parent
+
+    * [MNG-5482] - Catch NoClassDefFoundError org/sonatype/aether
+
+** New Feature
+
+    * [MNG-519] - Timestamps on messages
+
+    * [MNG-5306] - for IDE embedding have ways of collecting model problems without failing the process
+
+    * [MNG-5343] - Allow the use of JSR330 annotation in Maven extensions and plugins
+
+    * [MNG-5344] - Allow the SLF4J loggers to be @Injected
+
+    * [MNG-5354] - Integrate Eclipse Aether 0.9.0.M2
+
+    * [MNG-5380] - Cannot preserve whitespace in Maven plugin configuration
+
+    * [MNG-5381] - Restore MavenSession.getRepositoryCache()
+
+    * [MNG-5382] - Add an IT for @Inject used in plugins
+
+    * [MNG-5386] - Dispose of ClassRealms after invocation to prevent out of Permgen errors
+
+    * [MNG-5388] - Restore embedded integration tests
+
+    * [MNG-5391] - Update the default WAR plugin version to avoid version 2.3
+
+    * [MNG-5393] - Look at Sonar's use of SLF4J and Logback
+
+    * [MNG-5397] - Use SLF4J for logging
+
+    * [MNG-5407] - Change MavenITmng1830ShowVersionTest to account for SHA1 as version
+
+** Task
+
+    * [MNG-5279] - add CLI options to documentation
+
+    * [MNG-5365] - Replace Aether's deprecated ConfigurationProperties with ConfigUtils
+
+    * [MNG-5372] - remove classes that were added during Maven 3 alpha and beta but were deprecated before 3.0 final release
+
+    * [MNG-5373] - Document the usage and benefits of JSR330
+
+    * [MNG-5374] - Fix transfer listener after the JSR330 merge
+
+    * [MNG-5375] - Document use of SLF4J
+
+    * [MNG-5376] - Account for changes between the Apple and Oracle JDKs on OSX
+
+    * [MNG-5453] - Update Maven 3 build to use Eclipse/Sisu
+
+** Wish
+
+    * [MNG-5370] - separate artifact-handlers configuration from plugin bindings to default lifecycle
+
+    * [MNG-5461] - rename _maven.repositories tracking file to _remote.repositories

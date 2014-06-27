@@ -1,0 +1,83 @@
+* Maven 3.0.3 Release Notes
+
+  Maven 3.0.3 is a maintenance release to address various regressions/bugs and to deliver other minor improvements.
+  The new version 3.0.3 is a recommended update for anybody currently using Maven 3.0.x.
+  
+  The full list of changes can be found in our
+  {{{http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=17061}issue management system}},
+  and is reproduced below.
+
+** Known Incompatibilities with Maven 2
+
+  Please refer to the following {{{http://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html} compatibility notes}}
+  before reporting any issues regarding changed build behavior in Maven 3.x.
+
+** Release Notes - Maven - Version 3.0.3 (since 3.0.2 only)
+
+** Bug
+
+    * [MNG-4551] - List parameter in a mojo has strange behaviour
+
+    * [MNG-4956] - Cygwin mvn script modifies CLASSPATH environment variable
+
+    * [MNG-4962] - MavenProject.getParent fails to build when parent POM, in reactor, references BOM also in reactor
+
+    * [MNG-4963] - [regression] Parent POM not downloaded when settings define global mirror and one snapshot repo but no other release repository
+
+    * [MNG-4973] - [regression] Build extensions are invisible to plugins in multi module build
+
+    * [MNG-4975] - [regression] plugin executions injected from profile run before instead of after existing executions in the POM
+
+    * [MNG-4982] - [regression] Cycle between transitive dependencies causes bad effective dependency scope
+
+    * [MNG-4987] - [regression] LATEST, RELEASE or SNAPSHOT version picked from wrong repository when resolution order does not match timestamp order
+
+    * [MNG-4990] - RepositorySystem#resolve(request) uses two different local repositories
+
+    * [MNG-4991] - LegacyRepositorySystem#injectProxy(repositories, proxies) doesn't evaluate non-proxy hosts
+
+    * [MNG-5000] - [regression] child distributionManagment.site.url not correct in a flat directory layout when child's artifactId doesn't match its module name
+
+    * [MNG-5003] - MavenPluginManager serves m2e partially initialized mojo descriptors in some cases
+
+    * [MNG-5005] - bin/mvn contains platform specific echo when on Mac OSX and JAVA_VERSION envvar is set
+
+    * [MNG-5006] - [regression] Resolution of parent POMs for dependency using version range does not consider all configured repositories
+
+    * [MNG-5009] - StackOverflowError in DefaultProjectBuilder.build when <module> points at current aggregator POM
+
+    * [MNG-5014] - [regression] MavenProject.getParent().isExecutionRoot() not properly set
+
+    * [MNG-5019] - [regression] String-based component lookups performed by report mojos fail with ClassCastException
+
+    * [MNG-5023] - Wrong calculation of Build Total time
+
+** Improvement
+
+    * [MNG-3575] - Allow hexadecimal parameters
+
+    * [MNG-4971] - Display maven home in version info
+
+    * [MNG-4984] - Simplify drop in of 3rd party extensions for Maven core
+
+    * [MNG-4988] - API to calculate execution plan without full mojo execution configuration
+
+    * [MNG-4992] - Allow to configure plugin parameters of type java.util.Properties just like a map
+
+    * [MNG-5011] - Allow to configure array/collection type plugin parameters via system properties
+
+    * [MNG-5012] - Allow to configure array-typed plugin parameters from expressions yielding collections and vice versa
+
+    * [MNG-5013] - Allow to condense configuration of plugin parameter beans that commonly require only one value
+
+    * [MNG-5020] - JAVA_HOME auto discovery
+
+    * [MNG-5028] - Obey generics in plugin collection parameters when populating them
+
+    * [MNG-5033] - Allow to inline collection/array items within plugin configuration
+
+** Task
+
+    * [MNG-5024] - Update default plugin versions
+
+
