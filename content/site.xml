@@ -47,6 +47,7 @@ under the License.
       <item name="Release Notes (${currentStableVersion})" href="/docs/${currentStableVersion}/release-notes.html"/>
       <item name="Release Notes (${current31xVersion})" href="/docs/${current31xVersion}/release-notes.html"/>
       <item name="Release Notes (${current30xVersion})" href="/docs/${current30xVersion}/release-notes.html"/>
+      <item name="All Release Notes" href="/release-notes-all.html"/>
       <item name="License" href="http://www.apache.org/licenses/"/>
       <item name="Security" href="/security.html"/>
     </menu>
