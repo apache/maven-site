@@ -15,8 +15,15 @@ Features include:
 - Quick fixes in the Java editor for looking up required dependencies/jars by the class or package name
 - Integration with other Eclipse tools, such as WTP, AJDT, Mylyn, Subclipse and others.
 
+M2E dynamically integrates with your Maven projects with Eclipse while you make changes in the IDE. As you change dependencies, or configurations of Maven plugins in your POMs M2E, will synchronize the Eclipse workspace with those changes.
+
+## Maven Eclipse Plugin (m-e-p)
+
+The [maven-eclipse-plugin][mep] can be run from the command line to produce a static Eclipse configuration. If you make changes to your Maven POMs then you need to generate your Eclipse project files again. Note that M2E and m-e-p are not compatible, and the M2E team specifically looks like m-e-p generated files and will disable M2E support for those projects.
+
 Eclipse is a trademark of The [Eclipse Foundation][eclipse]  
 
 [m2e]: http://www.eclipse.org/m2e/
 [eclipse]: {http://www.eclipse.org
+[mep]: http://maven.apache.org/plugins/maven-eclipse-plugin/
 
