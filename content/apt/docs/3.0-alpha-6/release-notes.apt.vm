@@ -47,7 +47,9 @@ Maven 3.0-alpha-6
 
     * the maven-user mailing list: {{http://maven.apache.org/mail-lists.html}}
     
-#parse("release-notes.txt")
+* Issue Summary
+  
+  {{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=15996}}
 
 * Complete Release Notes
 

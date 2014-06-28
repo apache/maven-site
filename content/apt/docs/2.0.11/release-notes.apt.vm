@@ -48,8 +48,10 @@ Maven 2.0.11
 
     * Maven Dashboard: {{http://docs.codehaus.org/display/MAVEN/Home}}
 
-#parse("release-notes.txt")
-
+* Issue Summary
+  
+  {{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=14118}}
+  
 * Complete release notes
 
     * See {{{../../release-notes-2.x.html}complete release notes for 2.x}}

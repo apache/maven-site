@@ -27,5 +27,8 @@ Brett Porter
 
 Maven 2.0
 
-#parse("release-notes.txt")
+* Issue Summary
+  
+  {{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=11703}}
+
 

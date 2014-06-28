@@ -28,7 +28,9 @@ Brian Fox
 
 Maven 2.0.9
 
-#parse("release-notes.txt")
+* Issue Summary
+  
+  {{https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&version=13801}}
 
 * Complete release notes
 

@@ -50,8 +50,6 @@ Maven 2.0.10
 
     * Maven Dashboard: {{http://docs.codehaus.org/display/MAVEN/Home}}
 
-#parse("release-notes.txt")
-
 * Complete release notes
 
     * See {{{../../release-notes-2.x.html}complete release notes for 2.x}}
