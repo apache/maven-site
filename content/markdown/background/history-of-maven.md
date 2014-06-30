@@ -1,4 +1,4 @@
- # History of Maven 
+# History of Maven 
 
 <!--
  Allow front-matter here eventually. Just copy Jekyll
