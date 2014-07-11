@@ -179,7 +179,9 @@
         <version>2.7</version>
         <reportSets>
           <reportSet>
-            <reports><!-- expecting reports replace inherited, which is ok with M3 but not M2: see MSITE-596 -->
+            <reports><!-- expecting reports replace inherited -->
+              <!-- which was ok with M3 until 3.0.3 but not M2 nor M3.0.4+: see MSITE-596/MNG-5155 -->
+              <!-- needs a workaround (skip=true for default reportSet and this as a new reportSet?) -->
               <report>cim</report>
               <!-- <report>issue-tracking</report> -->
               <report>mailing-list</report>
