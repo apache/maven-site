@@ -196,11 +196,12 @@
               <skip>false</skip>
             </configuration>
             <reports>
-              <report>index</report>
-              <report>cim</report>
-              <report>mailing-list</report>
-              <report>license</report>
+              <report>index</report>          <!-- xdoc/index.xml.vm -->
               <report>project-team</report>
+              <report>mailing-list</report>
+              <report>scm</report>            <!-- xdoc/source-repository.xml -->
+              <report>issue-tracking</report> <!-- markdown/issue-tracking.md -->
+              <report>cim</report>
             </reports>
           </reportSet>
         </reportSets>
