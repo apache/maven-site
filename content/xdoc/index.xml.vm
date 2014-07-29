@@ -226,6 +226,15 @@ under the License.
         the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
         foundation, see the <a href="http://www.apache.org/foundation/sponsorship.html">sponsorship</a> page.
       </p>
+
+      <h3>Archived Releases</h3>
+      <p>
+        Maven 1.x and Maven 2.x have now reached their end of life. The following documentation is archived:
+      </p>
+      <ul>
+        <li><a href="archives/maven-1.x/index.html">Archived documentation for Maven 1.x</a></li>
+        <li><a href="archives/maven-2.x/index.html">Archived documentation for Maven 2.x</a></li>
+      </ul>
     </section>
   </body>
 </document>
