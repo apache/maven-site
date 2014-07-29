@@ -9,7 +9,7 @@ enforcer
 enforcer-archives
 jxr
 jxr-archives
-maven-1.x
+archives/maven-1.x
 maven-indexer
 maven-indexer-archives
 maven-release
