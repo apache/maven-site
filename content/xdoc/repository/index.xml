@@ -49,7 +49,7 @@
         <map name="map">
           <area shape="rect" coords="192,87,277,119"  alt="Apache"   href="http://repository.apache.org/content/groups/public/" />
           <area shape="rect" coords="283,87,387,119"  alt="Codehaus" href="http://repository.codehaus.org/" />
-          <area shape="rect" coords="392,87,478,119"  alt="OSSRH"    href="http://nexus.sonatype.org/oss-repository-hosting.html" />
+          <area shape="rect" coords="392,87,478,119"  alt="OSSRH"    href="http://central.sonatype.org/pages/ossrh-guide.html" />
           <area shape="rect" coords="544,87,621,119"  alt="java.net" href="http://download.java.net/maven/2/" />
           <area shape="rect" coords="627,87,693,119"  alt="JBoss"    href="http://repository.jboss.org/maven2/" />
           <area shape="rect" coords="384,247,445,284" alt="index"    href="/maven-indexer/" />
