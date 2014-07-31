@@ -188,7 +188,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-one-plugin/} <<<one>>>}}                   | B          | 1.3          | 2013-07-30        | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
-| {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.0          | 2014-03-24        | Build a subset of interdependent projects in a reactor (Maven 2 only).
+| {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.1          | 2014-03-24        | Build a subset of interdependent projects in a reactor (Maven 2 only).
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 
 * Outside The Maven Land
