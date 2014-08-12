@@ -9,14 +9,11 @@
     2.  [POM Relationships](#POM_Relationships)
         1.  [Dependencies](#Dependencies)
             1.  [Exclusions](#Exclusions)
-
         2.  [Inheritance](#Inheritance)
             1.  [The Super POM](#The_Super_POM)
             2.  [Dependency Management](#Dependency_Management)
-
         3.  [Aggregation (or Multi-Module)](#Aggregation)
             1.  [Inheritance v. Aggregation](#Inheritance_v)
-
     3.  [Properties](#Properties)
 
 3.  [Build Settings](#Build_Settings)
