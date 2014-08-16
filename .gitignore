@@ -3,4 +3,5 @@
 *.ipr
 target
 .idea
-
+.svn
+.DS_Store
