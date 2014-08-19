@@ -3,6 +3,12 @@
 Maven projects use [JIRA](http://www.atlassian.com/software/jira) a
 J2EE-based, issue tracking and project management application.
 
+## Issue Tracking Account
+
+<!-- this paragraph is necessary until http://jira.codehaus.org/browse/HAUS-2323 is fixed -->
+
+You'll need an account to create issues or comment: use [Codehaus Xircles Signup](http://xircles.codehaus.org/signup).
+
 ## Issue Tracking
 
 Issues, bugs, and feature requests should be submitted to the following
