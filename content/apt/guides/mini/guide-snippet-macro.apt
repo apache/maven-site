@@ -3,7 +3,7 @@
  ------
  Wendy Smoak
  ------
- 2006-11-20
+ 2014-08-20
  ------      
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -26,6 +26,8 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
+~~ @todo dennisl: We should drop this document and refer to the macros page in the Doxia site
+
 Guide to the Snippet Macro
 
  When generating your project website with Maven, you have the option of
@@ -40,10 +42,9 @@ Guide to the Snippet Macro
  
  To include snippets of source code in your documentation, first add comments
  in the source document surrounding the lines you want to include, and then
- refer to the snippet by its id in the documentation file.
- 
- Each snippet must be assigned an id, and the id must be unique within the
- source document.
+ refer to the snippet by its id in the documentation file. Each snippet must be
+ assigned an id, and the id must be unique within the source document. The id
+ parameter is not required if you want to include the entire file.
  
  Following are examples of snippets in various source documents, as well
  as the corresponding macros in the APT documentation format.
