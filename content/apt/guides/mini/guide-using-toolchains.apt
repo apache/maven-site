@@ -40,13 +40,13 @@ Guide to Using Toolchains
 
   Below are the plugins which are toolchain-aware, meaning they can be used with toolchains:
 
-  [[1]] <<<maven-compiler-plugin-3.1>>>
+  [[1]] <<<maven-compiler-plugin>>>, starting with 2.1,
 
-  [[2]] <<<maven-javadoc-plugin-2.9.1>>>
+  [[2]] <<<maven-javadoc-plugin>>>, starting with 2.5,
 
-  [[3]] <<<maven-surefire-plugin-2.17>>>
+  [[3]] <<<maven-surefire-plugin>>>, starting with 2.5,
 
-  [[4]] <<<exec-maven-plugin-1.3.2>>> (Codehaus MOJO)
+  [[4]] <<<exec-maven-plugin>>> (Codehaus MOJO), starting with 1.1.1.
 
 * Using Toolchains in Your Project
 
