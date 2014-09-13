@@ -20,13 +20,18 @@
   -->
 <document>
   <properties>
-    <title>Apache Maven Resource Bundles</title>
+    <title>Apache Resource Bundles</title>
     <author>Olivier Lamy</author>
   </properties>
 
   <body>
-    <section name="Apache Maven Resource Bundles">
-      <p>This project is a set of resources to help you building Java resources compliant with Apache rules.</p>
+    <section name="Apache Resource Bundles">
+      <p>This project is a set of resources to help you build Java resources compliant with Apache rules.</p>
+
+      <p>
+        If you find bugs in the resource bundles please report them in
+        <a href="https://issues.apache.org/jira/browse/MASFRES/">JIRA</a>.
+      </p>
 
       <section name="JAR Resource Bundle and Incubator Disclaimer Resource Bundle">
         <p>
