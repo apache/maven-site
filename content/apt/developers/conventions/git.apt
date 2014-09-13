@@ -154,7 +154,7 @@ gitk --all
 
  to try to make some sense of it all. This is an important command to understand! (gitk may need to be installed additionally)
 
-gitk also has a quite excellent context menu that is far more context sensitive than most people realize at first impression. Right-clicking on a commit in a github pull-request will allow you to cherry-pick straight in the gui.
+ gitk also has a quite excellent context menu that is far more context sensitive than most people realize at first impression. Right-clicking on a commit in a github pull-request will allow you to cherry-pick straight in the gui.
 
 
  If you're working on the master branch, you can do stuff like this:
