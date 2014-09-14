@@ -155,6 +155,3 @@ svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/ref/
 
   You can now proceed with the steps outlined after deploying the website on
   {{{./maven-project-release-procedure.html} Maven Project Common Release Procedure}}
-
-  <<Note:>> For Maven core releases, the announcement is additionally sent to <<<announce@apache.org>>>. This is best done as
-  a separate message to avoid cross-posting replies.
