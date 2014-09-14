@@ -86,6 +86,8 @@ Developers Conventions
 
   * {{{../../developers/conventions/svn.html}Maven SVN Convention}}
 
+  * {{{../../developers/conventions/git.html}Maven GIT Convention}}
+
   * {{{../../developers/release/index.html}Releasing a maven project}}
 
   []
