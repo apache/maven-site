@@ -40,7 +40,7 @@ Maven Git Convention
 ** For contributors who are not committers
 
   Apache git repositories are at
-  <<git://git.apache.org>>>. However, the ASF
+<  <<git://git.apache.org>>>. However, the ASF
   uses clones on github.com to make it easier for people to contribute
   changes via pull requests.
 
@@ -65,6 +65,8 @@ Maven Git Convention
   [[5]] Make a pull request to pull your changes to the offical clone.
   Add a link to your pull request to the JIRA. Committers will take it
   from here.
+
+  [[]]
 
 ** For committers
 
@@ -106,7 +108,7 @@ Submitted by: Baz Bazman
 o Applied without change
 +-----+
 
-*** Apply User Patch
+* Apply User Patch
 
  To keep the history of contributions clear, 
  The committer should usually apply the patch without any <<major>>
@@ -175,7 +177,7 @@ $ git checkout .
 
 
 
-*** power-git checkout
+** power-git checkout
 
  This checkout is typical for highly experienced git users, and may serve as inspiration for others; as usual the
  best way to learn is by doing. Sample shown for maven-surefire
