@@ -9,6 +9,7 @@
     2.  [POM Relationships](#POM_Relationships)
         1.  [Dependencies](#Dependencies)
             1.  [Exclusions](#Exclusions)
+
         2.  [Inheritance](#Inheritance)
             1.  [The Super POM](#The_Super_POM)
             2.  [Dependency Management](#Dependency_Management)
