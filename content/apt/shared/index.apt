@@ -57,7 +57,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.5          | 2013-12-06        | Used to run Maven builds as part of tests. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-verifier/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13281}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{scm} <<<maven-scm>>>}}                                                   | 1.9.2        | 2014-09-17        | Generic API to SCM systems.               | {{{git://git.apache.org/maven-scm.git}GIT}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
+| {{{/scm/} <<<maven-scm>>>}}                                                   | 1.9.2        | 2014-09-17        | Generic API to SCM systems.               | {{{git://git.apache.org/maven-scm.git}GIT}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 
 
