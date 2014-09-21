@@ -6,8 +6,9 @@
  Dennis Lundberg
  Olivier Lamy
  Benson Margulies
+ Karl-Heinz Marbaise
  -----
- 2014-09-20
+ 2014-09-21
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -136,7 +137,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | 2.4.1        | 2014-07-30 | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 2.8          | 2013-05-18 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
+| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 2.9          | 2014-09-18 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | 1.3.1        | 2013-07-12 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{http://svn.apache.org/repos/asf/maven/enforcer/trunk/maven-enforcer-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MENFORCER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
