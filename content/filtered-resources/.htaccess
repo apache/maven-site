@@ -21,6 +21,7 @@ Redirect Permanent /welcome-to-new-committers.html http://maven.apache.org/devel
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html http://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/multi-module-config.html
+Redirect Permanent /plugins/maven-jxr-plugin/ http://maven.apache.org/jxr/index.html
 
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
