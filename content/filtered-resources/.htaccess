@@ -21,7 +21,6 @@ Redirect Permanent /welcome-to-new-committers.html http://maven.apache.org/devel
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html http://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html http://maven.apache.org/plugins/maven-checkstyle-plugin/examples/multi-module-config.html
-Redirect Permanent /plugins/maven-jxr-plugin/ http://maven.apache.org/jxr/index.html
 
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
@@ -45,10 +44,11 @@ RedirectMatch permanent ^/continuum(.*)$ http://continuum.apache.org$1
 RedirectMatch permanent ^/maven-archetype/(.*)$ /archetype/$1
 RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ http://maven.apache.org/archetype/maven-archetype-plugin/$1
 RedirectMatch permanent ^/plugins/maven-enforcer-plugin/(.*)$ http://maven.apache.org/enforcer/maven-enforcer-plugin/$1
-RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ http://maven.apache.org/scm/maven-scm-plugin/$1
-RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ http://maven.apache.org/plugin-tools/maven-plugin-plugin/$1
 RedirectMatch permanent ^/plugins/maven-failsafe-plugin/(.*)$ http://maven.apache.org/surefire/maven-failsafe-plugin/$1
+RedirectMatch Permanent ^/plugins/maven-jxr-plugin/(.*)$ http://maven.apache.org/jxr/maven-jxr-plugin/$1
+RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ http://maven.apache.org/plugin-tools/maven-plugin-plugin/$1
 RedirectMatch permanent ^/plugins/maven-release-plugin/(.*)$ http://maven.apache.org/maven-release/maven-release-plugin/$1
+RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ http://maven.apache.org/scm/maven-scm-plugin/$1
 RedirectMatch permanent ^/plugins/maven-surefire-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-plugin/$1
 RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-report-plugin/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
