@@ -482,6 +482,50 @@ mvn archetype:generate \
   used as the value to be assigned to the parameter.  For <<<char>>> and
   <<<Character>>> parameters, only the first character of the text is used.
 
+*** Enums
+
+  Enumeration type parameters can also be used. First you need to define
+  your enumeration type and afterwards you can use the enumeration type
+  in the parameter definition:
+
++-----+
+    public enum Color {
+      GREEN,
+      RED,
+      BLUE
+    }
+
+    /**
+     * My Enum
+     */
+    @Parameter
+    private Color myColor;
++-----+
+
+  So lets have a look like you can use such enumeration in your pom configuration:
+
++-----+
+<myColor>GREEN</myColor>
++-----+
+
+  You can also use elements from the enumeration type as defaultValues like the
+  following:
+
++-----+
+    public enum Color {
+      GREEN,
+      RED,
+      BLUE
+    }
+
+    /**
+     * My Enum
+     */
+    @Parameter(defaultValue = "GREEN")
+    private Color myColor;
++-----+
+
+
 ** Parameter Types With Multiple Values
 
   Listed below are the various types of composite objects which can be used as
@@ -507,43 +551,6 @@ mvn archetype:generate \
 
   Once the type for the element is defined, the text in the XML file is
   converted to the appropriate type of object
-
-*** Enums
-
-  Enumeration type parameters can also be used. First you need to define
-  your enumeration type and afterwards you can use the enumeration type
-  in the parameter definition:
-
-+-----+
-    public enum Color {
-      GREEN,
-      RED,
-      BLUE
-    }
-
-    /**
-     * My Enum
-     */
-    @Parameter
-    private Color myColor;
-+-----+
-
-  You can also use elements from the enumeration type as defaultValues like the
-  following:
-
-+-----+
-    public enum Color {
-      GREEN,
-      RED,
-      BLUE
-    }
-
-    /**
-     * My Enum
-     */
-    @Parameter(defaultValue = "GREEN")
-    private Color myColor;
-+-----+
 
 
 *** Arrays
