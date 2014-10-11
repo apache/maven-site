@@ -508,6 +508,44 @@ mvn archetype:generate \
   Once the type for the element is defined, the text in the XML file is
   converted to the appropriate type of object
 
+*** Enums
+
+  Enumeration type parameters can also be used. First you need to define
+  your enumeration type and afterwards you can use the enumeration type
+  in the parameter definition:
+
++-----+
+    public enum Color {
+      green,
+      rot,
+      blue
+    }
+
+    /**
+     * My Enum
+     */
+    @Parameter
+    private Color myColor;
++-----+
+
+  You can also use elements from the enumeration type as defaultValues like the
+  following:
+
++-----+
+    public enum Color {
+      green,
+      rot,
+      blue
+    }
+
+    /**
+     * My Enum
+     */
+    @Parameter(defaultValue = "green")
+    private Color myColor;
++-----+
+
+
 *** Arrays
 
   Array type parameters are configured by specifying the parameter multiple
