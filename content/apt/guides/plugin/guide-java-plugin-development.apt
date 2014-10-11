@@ -516,9 +516,9 @@ mvn archetype:generate \
 
 +-----+
     public enum Color {
-      green,
-      red,
-      blue
+      GREEN,
+      RED,
+      BLUE
     }
 
     /**
@@ -533,15 +533,15 @@ mvn archetype:generate \
 
 +-----+
     public enum Color {
-      green,
-      red,
-      blue
+      GREEN,
+      RED,
+      BLUE
     }
 
     /**
      * My Enum
      */
-    @Parameter(defaultValue = "green")
+    @Parameter(defaultValue = "GREEN")
     private Color myColor;
 +-----+
 
