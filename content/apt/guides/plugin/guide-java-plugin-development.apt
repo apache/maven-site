@@ -517,7 +517,7 @@ mvn archetype:generate \
 +-----+
     public enum Color {
       green,
-      rot,
+      red,
       blue
     }
 
@@ -534,7 +534,7 @@ mvn archetype:generate \
 +-----+
     public enum Color {
       green,
-      rot,
+      red,
       blue
     }
 
