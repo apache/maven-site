@@ -269,10 +269,10 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
         <httpConfiguration>
           <put>
             <params>
-              <param>
+              <property>
                 <name>http.authentication.preemptive</name>
                 <value>%b,true</value>
-              </param>
+              </property>
             </params>
           </put>
         </httpConfiguration>
