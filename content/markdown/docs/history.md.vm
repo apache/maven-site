@@ -21,7 +21,7 @@
  NOTE: For help with the syntax of this file, see:
  http://maven.apache.org/doxia/references/apt-format.html
 -->
-#set ( $archive = 'http://mail-archives.apache.org/mod_mbox' )
+#set ( $archive = 'http://mail-archives.apache.org/mod_mbox/maven-' )
 #macro ( release $date $version $announce $bold )
 #if( $bold.equals( "true" ) )
 #set ( $b = '<b>' )
@@ -32,7 +32,7 @@
 #end
 <tr><td>$b$date$b_</td><td>$b$version$b_</td><td>
 #if( !$announce.startsWith( "http://" ) )
-#set ( $announceLink = "$archive/$announce" )
+#set ( $announceLink = "$archive$announce" )
 #else
 #set ( $announceLink = $announce )
 #end
@@ -53,26 +53,26 @@ Date format is: YYYY-MM-DD
 <h3><a name="Maven_3">Maven 3</a></h3>
 <table>
 
-#release( "2014-08-17" "3.2.3" "maven-users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" )
-#release( "2014-06-25" "3.2.2" "maven-users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" )
-#release( "2014-02-21" "3.2.1" "maven-users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" )
-#release( "2013-10-04" "3.1.1" "maven-announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" )
-#release( "2013-07-15" "3.1.0" "maven-users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" )
-#release( "2013-06-10" "3.1.0-alpha-1" "maven-users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" )
-#release( "2013-02-23" "3.0.5" "maven-announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" )
-#release( "2012-01-20" "3.0.4" "maven-users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E" "" )
-#release( "2011-03-04" "3.0.3" "maven-announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E" "" )
-#release( "2011-01-12" "3.0.2" "maven-announce/201101.mbox/%3C4D2E1D75.6090008%40apache.org%3E" "" )
-#release( "2010-11-26" "3.0.1" "maven-announce/201011.mbox/%3C4CF03B77.4090508%40apache.org%3E" "" )
-#release( "2010-10-08" "3.0" "maven-announce/201010.mbox/%3C4CAF1861.4030006%40apache.org%3E" "" )
-#release( "2010-09-02" "3.0-beta-3" "maven-announce/201009.mbox/%3C4C802845.6070709%40apache.org%3E" "" )
-#release( "2010-08-10" "3.0-beta-2" "maven-announce/201008.mbox/%3C4C61C9A6.7040704%40apache.org%3E" "" )
-#release( "2010-04-23" "3.0-beta-1" "maven-announce/201004.mbox/%3C4BD19B35.80501%40apache.org%3E" "" )
-#release( "2010-04-14" "3.0-alpha-7" "maven-announce/201003.mbox/%3C4B9D1589.7000502%40apache.org%3E" "" )
-#release( "2010-01-10" "3.0-alpha-6" "maven-announce/201001.mbox/%3C4B49EE7E.9030703%40apache.org%3E" "" )
-#release( "2009-11-27" "3.0-alpha-5" "maven-announce/200911.mbox/%3C4B0FAA1C.3060900%40apache.org%3E" "" )
-#release( "2009-11-17" "3.0-alpha-4" "maven-announce/200911.mbox/%3C4B0284D0.9080202%40apache.org%3E" "" )
-#release( "2009-11-13" "3.0-alpha-3" "maven-announce/200911.mbox/%3C4AFD52A3.80707%40apache.org%3E" "" )
+#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" )
+#release( "2014-06-25" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" )
+#release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" )
+#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" )
+#release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" )
+#release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" )
+#release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" )
+#release( "2012-01-20" "3.0.4" "users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E" "" )
+#release( "2011-03-04" "3.0.3" "announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E" "" )
+#release( "2011-01-12" "3.0.2" "announce/201101.mbox/%3C4D2E1D75.6090008%40apache.org%3E" "" )
+#release( "2010-11-26" "3.0.1" "announce/201011.mbox/%3C4CF03B77.4090508%40apache.org%3E" "" )
+#release( "2010-10-08" "3.0" "announce/201010.mbox/%3C4CAF1861.4030006%40apache.org%3E" "" )
+#release( "2010-09-02" "3.0-beta-3" "announce/201009.mbox/%3C4C802845.6070709%40apache.org%3E" "" )
+#release( "2010-08-10" "3.0-beta-2" "announce/201008.mbox/%3C4C61C9A6.7040704%40apache.org%3E" "" )
+#release( "2010-04-23" "3.0-beta-1" "announce/201004.mbox/%3C4BD19B35.80501%40apache.org%3E" "" )
+#release( "2010-04-14" "3.0-alpha-7" "announce/201003.mbox/%3C4B9D1589.7000502%40apache.org%3E" "" )
+#release( "2010-01-10" "3.0-alpha-6" "announce/201001.mbox/%3C4B49EE7E.9030703%40apache.org%3E" "" )
+#release( "2009-11-27" "3.0-alpha-5" "announce/200911.mbox/%3C4B0FAA1C.3060900%40apache.org%3E" "" )
+#release( "2009-11-17" "3.0-alpha-4" "announce/200911.mbox/%3C4B0284D0.9080202%40apache.org%3E" "" )
+#release( "2009-11-13" "3.0-alpha-3" "announce/200911.mbox/%3C4AFD52A3.80707%40apache.org%3E" "" )
 
 </table>
 
@@ -80,25 +80,25 @@ Date format is: YYYY-MM-DD
 <table>
 <tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td>
 <b><a href="../maven-2.x-eol.html">EoL notes</a>,
-<a href="$archive/maven-announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E">announce</a></b>
+<a href="${archive}announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E">announce</a></b>
 </td></tr>
 
-#release( "2009-11-08" "2.2.1" "maven-announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" )
-#release( "2009-06-30" "2.2.0" "maven-announce/200906.mbox/%3C4A4A8FC8.8040801%40apache.org%3E" "" )
-#release( "2009-03-22" "2.1.0" "maven-announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E" "" )
-#release( "2008-09-19" "2.1.0-M1" "maven-announce/200809.mbox/%3C48D31DA2.4000604%40apache.org%3E" "" )
-#release( "2010-02-26" "2.0.11" "maven-announce/201002.mbox/%3C16924806-34B2-404B-A22B-0B76D4F9DD07%40apache.org%3E" "" )
-#release( "2009-02-18" "2.0.10" "maven-announce/200902.mbox/%3C6d8f35410902180648r14fc7a53waaec9a36166403cf%40mail.gmail.com%3E" "" )
-#release( "2008-04-10" "2.0.9" "maven-announce/200804.mbox/%3C6d8f35410804100743x6085e96cv72101712cdbec434%40mail.gmail.com%3E" "" )
-#release( "2007-11-27" "2.0.8" "maven-announce/200711.mbox/%3C6d8f35410711271426u7945c8b1w2e4778aa5651861f%40mail.gmail.com%3E" "" )
-#release( "2007-06-21" "2.0.7" "maven-users/200706.mbox/%3C3B5AF748-95CA-4B2B-ABFB-5053BE4EAC90%40maven.org%3E" "" )
-#release( "2007-04-01" "2.0.6" "maven-users/200704.mbox/%3CA42EA48C-AB89-449F-B6A1-F73D8B3617D9%40maven.org%3E" "" )
-#release( "2007-02-16" "2.0.5" "maven-announce/200702.mbox/%3C0DC020CD-0334-4106-B99E-DEC7B477AC72%40apache.org%3E" "" )
-#release( "2006-04-11" "2.0.4" "maven-announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E" "" )
-#release( "2006-03-28" "2.0.3" "maven-announce/200603.mbox/%3C44294FB6.6070509%40apache.org%3E" "" )
-#release( "2006-01-17" "2.0.2" "maven-users/200601.mbox/%3C43CC4C09.8050800%40maven.org%3E" "" )
-#release( "2005-12-13" "2.0.1" "maven-users/200512.mbox/%3C439E0738.6030109%40commonjava.org%3E" "" )
-#release( "2005-10-20" "2.0" "maven-users/200510.mbox/%3C4356C7AF.6080901%40apache.org%3E" "" )
+#release( "2009-11-08" "2.2.1" "announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" )
+#release( "2009-06-30" "2.2.0" "announce/200906.mbox/%3C4A4A8FC8.8040801%40apache.org%3E" "" )
+#release( "2009-03-22" "2.1.0" "announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E" "" )
+#release( "2008-09-19" "2.1.0-M1" "announce/200809.mbox/%3C48D31DA2.4000604%40apache.org%3E" "" )
+#release( "2010-02-26" "2.0.11" "announce/201002.mbox/%3C16924806-34B2-404B-A22B-0B76D4F9DD07%40apache.org%3E" "" )
+#release( "2009-02-18" "2.0.10" "announce/200902.mbox/%3C6d8f35410902180648r14fc7a53waaec9a36166403cf%40mail.gmail.com%3E" "" )
+#release( "2008-04-10" "2.0.9" "announce/200804.mbox/%3C6d8f35410804100743x6085e96cv72101712cdbec434%40mail.gmail.com%3E" "" )
+#release( "2007-11-27" "2.0.8" "announce/200711.mbox/%3C6d8f35410711271426u7945c8b1w2e4778aa5651861f%40mail.gmail.com%3E" "" )
+#release( "2007-06-21" "2.0.7" "users/200706.mbox/%3C3B5AF748-95CA-4B2B-ABFB-5053BE4EAC90%40maven.org%3E" "" )
+#release( "2007-04-01" "2.0.6" "users/200704.mbox/%3CA42EA48C-AB89-449F-B6A1-F73D8B3617D9%40maven.org%3E" "" )
+#release( "2007-02-16" "2.0.5" "announce/200702.mbox/%3C0DC020CD-0334-4106-B99E-DEC7B477AC72%40apache.org%3E" "" )
+#release( "2006-04-11" "2.0.4" "announce/200604.mbox/%3C443AF37E.5000105%40apache.org%3E" "" )
+#release( "2006-03-28" "2.0.3" "announce/200603.mbox/%3C44294FB6.6070509%40apache.org%3E" "" )
+#release( "2006-01-17" "2.0.2" "users/200601.mbox/%3C43CC4C09.8050800%40maven.org%3E" "" )
+#release( "2005-12-13" "2.0.1" "users/200512.mbox/%3C439E0738.6030109%40commonjava.org%3E" "" )
+#release( "2005-10-20" "2.0" "users/200510.mbox/%3C4356C7AF.6080901%40apache.org%3E" "" )
 
 </table>
 
@@ -113,10 +113,10 @@ Date format is: YYYY-MM-DD
 <tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td>
 <b><a href="../maven-1.x-eol.html">EoL announce</a></b>
 </td></tr>
-#announce( "2007-06-25" "1.1" "maven-announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E" )
-#announce( "2007-05-12" "1.1-RC-1" "maven-announce/200705.mbox/%3C262c6c680705120121i5a2c1372v1a2824a4f22e496%40mail.gmail.com%3E" )
+#announce( "2007-06-25" "1.1" "announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E" )
+#announce( "2007-05-12" "1.1-RC-1" "announce/200705.mbox/%3C262c6c680705120121i5a2c1372v1a2824a4f22e496%40mail.gmail.com%3E" )
 <tr><td>2006-08-01</td><td>1.1-beta-3</td><td><a href="/maven-1.x/news.html">announce</a></td></tr>
-#announce( "2005-09-12" "1.1-beta-2" "maven-users/200509.mbox/%3C4325192D.6090404%40apache.org%3E" )
+#announce( "2005-09-12" "1.1-beta-2" "users/200509.mbox/%3C4325192D.6090404%40apache.org%3E" )
 #jakarta( "2004-12-07" "1.0.2" "elsewhere-2004-2ndHalf.html#20041207.1" )
 #jakarta( "2004-11-11" "1.0.1" "elsewhere-2004-2ndHalf.html#20041111.1" )
 #jakarta( "2004-07-13" "1.0" "elsewhere-2004-2ndHalf.html#20040713.1" )
