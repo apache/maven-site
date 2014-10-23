@@ -18,7 +18,6 @@ plugins-archives
 plugins/maven-acr-plugin
 plugins/maven-ant-plugin
 plugins/maven-antrun-plugin
-plugins/maven-archetype-plugin
 plugins/maven-assembly-plugin
 plugins/maven-changelog-plugin
 plugins/maven-changes-plugin
@@ -32,8 +31,6 @@ plugins/maven-docck-plugin
 plugins/maven-ear-plugin
 plugins/maven-eclipse-plugin
 plugins/maven-ejb-plugin
-plugins/maven-enforcer-plugin
-plugins/maven-failsafe-plugin
 plugins/maven-gpg-plugin
 plugins/maven-help-plugin
 plugins/maven-idea-plugin
@@ -42,17 +39,14 @@ plugins/maven-invoker-plugin
 plugins/maven-jar-plugin
 plugins/maven-jarsigner-plugin
 plugins/maven-javadoc-plugin
-plugins/maven-jxr-plugin
 plugins/maven-linkcheck-plugin
 plugins/maven-one-plugin
 plugins/maven-patch-plugin
-plugins/maven-plugin-plugin
 plugins/maven-pdf-plugin
 plugins/maven-pmd-plugin
 plugins/maven-project-info-reports-plugin
 plugins/maven-rar-plugin
 plugins/maven-reactor-plugin
-plugins/maven-release-plugin
 plugins/maven-remote-resources-plugin
 plugins/maven-repository-plugin
 plugins/maven-resources-plugin
@@ -61,7 +55,6 @@ plugins/maven-shade-plugin
 plugins/maven-site-plugin
 plugins/maven-source-plugin
 plugins/maven-stage-plugin
-plugins/maven-surefire-plugin
 plugins/maven-toolchains-plugin
 plugins/maven-verifier-plugin
 plugins/maven-war-plugin
