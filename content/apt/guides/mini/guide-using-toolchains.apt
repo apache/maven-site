@@ -3,7 +3,7 @@
  ------
  Maria Odea Ching
  ------
- 2008-07-25
+ 2014-10-30
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -32,29 +32,35 @@ Guide to Using Toolchains
 * What is Toolchains?
 
   The Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build,
-  without the need to configure them. With toolchains, a project can now be built using a specific version of JDK independent
-  from the one Maven is running with. (Think how JDK versions can be set in IDEs like Idea, NetBeans and Eclipse)
+  without the need to configure them in each plugin nor in every <<<pom.xml>>>, or forcing a precise location among every
+  machine building the project.
 
-  Toolchains would only work in Maven 2.0.9 and higher versions. For more details about it's design and implementation,
+  With Maven Toolchains, a project can now be built using a specific version of JDK independent
+  from the one Maven is running with. Think how JDK versions can be set in IDEs like Idea, NetBeans and Eclipse, or how you can
+  build with an older JDK from Maven running with a recent one.
+
+  Toolchains will only work in Maven 2.0.9 and higher versions. For more details about its design and implementation,
   please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
 
-  Below are the plugins which are toolchain-aware, meaning they can be used with toolchains:
+  Below are some plugins which are JDK-toolchain-aware, meaning they can use any JDK configured with toolchains:
 
-  [[1]] <<<maven-compiler-plugin>>>, starting with 2.1,
+  [[1]] <<<{{{/plugins/maven-compiler-plugin/}maven-compiler-plugin}}>>>, starting with 2.1,
 
-  [[2]] <<<maven-javadoc-plugin>>>, starting with 2.5,
+  [[2]] <<<{{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}>>>, starting with 2.5,
 
-  [[3]] <<<maven-surefire-plugin>>>, starting with 2.5,
+  [[3]] <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>, starting with 2.5,
 
-  [[4]] <<<exec-maven-plugin>>> (Codehaus MOJO), starting with 1.1.1.
+  [[4]] <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>> (Codehaus MOJO), starting with 1.1.1.
+
+  []
 
 * Using Toolchains in Your Project
 
   There are two essential components that you need to configure in order to use toolchains:
 
-  [[1]] the <<<{{{/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>>,
+  [[1]] the <<<{{{/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>> in your project POM,
 
-  [[2]] the <<<{{{/ref/current/maven-core/toolchains.html}toolchains.xml}}>>> file.
+  [[2]] the <<<{{{/ref/current/maven-core/toolchains.html}toolchains.xml}}>>> file on the building machine.
 
   []
 
