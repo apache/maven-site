@@ -50,15 +50,20 @@ Guide to Using Toolchains
 
 * Using Toolchains in Your Project
 
-  There are two essential components that you need to configure in order to use toolchains. These are the
-  <<<{{{http://maven.apache.org/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>>
-  and the <<<toolchains.xml>>> file.
+  There are two essential components that you need to configure in order to use toolchains:
+
+  [[1]] the <<<{{{/plugins/maven-toolchains-plugin/}maven-toolchains-plugin}}>>>,
+
+  [[2]] the <<<{{{/ref/current/maven-core/toolchains.html}toolchains.xml}}>>> file.
+
+  []
 
   The <<<maven-toolchains-plugin>>> is the one that sets the toolchain to be used by the toolchain-aware plugins in your project.
-  For example, you want to use a different JDK version to build your project. You can configure the version you want to use
-  via this plugin as shown in the <<<pom.xml>>> below.
 
------
+  For example, you want to use a different JDK version to build your project than the version used to run Maven, you can configure
+  the version you want to use via this plugin as shown in the <<<pom.xml>>> below:
+
++-----+
 <plugins>
  ...
   <plugin>
@@ -89,55 +94,55 @@ Guide to Using Toolchains
   </plugin>
   ...
 </plugins>
------
++-----+
 
   As you can see in the example above, a JDK toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun" is to be used. Now how
   does the plugin know where this JDK is installed? This is where the <<<toolchains.xml>>> file comes in.
 
   The <<<toolchains.xml>>> file (see below) is the configuration file where you set the installation paths of your toolchains.
   This file should be put in your <<<${user.home}/.m2>>> directory. When the <<<maven-toolchains-plugin>>> executes, the <<<maven-toolchain>>> component
-  used by the plugin would look for the <<<toolchains.xml>>> file, read it and look for the matching toolchain configured in the
+  used by the plugin would look for the <<<toolchains.xml>>> file, reads it and looks for the matching toolchain configured in the
   plugin. In our example, that would be a JDK toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun". Once a match is found,
   the plugin then sets the toolchain to be used in the MavenSession. As you can see in our <<<toolchains.xml>>> below, there is indeed a JDK
   toolchain with <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun" configured. So when the <<<maven-compiler-plugin>>> we've
   configured in our <<<pom.xml>>> above executes, it would see that a JDK toolchain is set in the MavenSession and would thereby use
   that toolchain (that would be the JDK installed at <<</path/to/jdk/1.5>>> for our example) to compile the sources.
 
------
++-----+
 <?xml version="1.0" encoding="UTF8"?>
 <toolchains>
   <toolchain>
-     <type>jdk</type>
-     <provides>
-         <version>1.5</version>
-	 <vendor>sun</vendor>
-	 <id>default</id>
-     </provides>
-     <configuration>
-        <jdkHome>/path/to/jdk/1.5</jdkHome>
-     </configuration>
+    <type>jdk</type>
+    <provides>
+      <version>1.5</version>
+      <vendor>sun</vendor>
+      <id>default</id>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/jdk/1.5</jdkHome>
+    </configuration>
   </toolchain>
   <toolchain>
-     <type>jdk</type>
-     <provides>
-         <version>1.6</version>
-	 <vendor>sun</vendor>
-	 <id>ide</id>
-     </provides>
-     <configuration>
-        <jdkHome>/path/to/jdk/1.6</jdkHome>
-     </configuration>
+    <type>jdk</type>
+    <provides>
+      <version>1.6</version>
+      <vendor>sun</vendor>
+      <id>ide</id>
+    </provides>
+    <configuration>
+      <jdkHome>/path/to/jdk/1.6</jdkHome>
+    </configuration>
   </toolchain>
   <toolchain>
-     <type>netbeans</type>
-     <provides>
-         <version>5.5</version>
-     </provides>
-     <configuration>
-         <installDir>/path/to/netbeans/5.5</installDir>
-     </configuration>
+    <type>netbeans</type>
+    <provides>
+      <version>5.5</version>
+    </provides>
+    <configuration>
+      <installDir>/path/to/netbeans/5.5</installDir>
+    </configuration>
   </toolchain>
 </toolchains>
------
++-----+
 
   Note that you can configure as many toolchains as you want in your <<<toolchains.xml>>> file.
