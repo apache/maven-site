@@ -159,7 +159,9 @@ under the License.
 
       <subsection name="Maven ${current31xVersion}">
 
-        <p>This is a stable version 3.1.x of Maven.</p>
+        <p>This is a stable version 3.1.x of Maven with Java 5 requirement, for projects that can't upgrade to Maven 3.2 yet.</p>
+        <p>Notice that <b>Maven Toolchains</b> provide a way for a project to be built using a specific version of JDK independent
+        from the one Maven is running with: see <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a></p>
 
         <table>
           <thead>
