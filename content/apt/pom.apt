@@ -1873,7 +1873,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   will match. Ranges are also supported as of Maven 2.1. See the {{{http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
 
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above. See the {{{http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html}maven-enforcer-plugin}} for more details about OS values.
+  The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{http://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
 
 
   * <<property>>:
