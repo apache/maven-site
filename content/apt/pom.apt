@@ -1888,7 +1888,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
-  activated explicitly through the command line via a comma separated list after the <<<-P>>> flag (e.g. <<<-P test>>>).
+  activated explicitly through the command line via a comma separated list after the <<<-P>>> flag (e.g. <<<-P codecoverage>>>).
 
   <To see which profile will activate in a certain build, use the> <<<maven-help-plugin>>>.
 
