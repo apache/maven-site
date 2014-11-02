@@ -2,8 +2,9 @@
  Guide to Using Toolchains
  ------
  Maria Odea Ching
+ Dennis Lundberg
  ------
- 2014-10-30
+ 2014-11-02
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -99,7 +100,6 @@ Guide to Using Toolchains
     <version>1.0</version>
     <executions>
       <execution>
-        <phase>validate</phase>
         <goals>
           <goal>toolchain</goal>
         </goals>
