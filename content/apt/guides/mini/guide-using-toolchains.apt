@@ -39,6 +39,8 @@ Guide to Using Toolchains
   from the one Maven is running with. Think how JDK versions can be set in IDEs like Idea, NetBeans and Eclipse, or how you can
   build with an older JDK from Maven running with a recent one.
 
+** Prerequisites
+
   Toolchains will only work in Maven 2.0.9 and higher versions. For more details about its design and implementation,
   please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
 
