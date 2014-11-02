@@ -36,7 +36,7 @@ Guide to Using Toolchains
   machine building the project.
 
   With Maven Toolchains, a project can now be built using a specific version of JDK independent
-  from the one Maven is running with. Think how JDK versions can be set in IDEs like Idea, NetBeans and Eclipse, or how you can
+  from the one Maven is running with. Think how JDK versions can be set in IDEs like IDEA, NetBeans and Eclipse, or how you can
   build with an older JDK from Maven running with a recent one.
 
 ** Prerequisites
@@ -46,17 +46,19 @@ Guide to Using Toolchains
 
   Below are some plugins which are JDK-toolchain-aware, meaning they can use any JDK configured with toolchains:
 
-  [[1]] <<<{{{/plugins/maven-compiler-plugin/}maven-compiler-plugin}}>>>, starting with 2.1,
-
-  [[2]] <<<{{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}>>>, starting with 2.5,
-
-  [[3]] <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>, starting with 2.5,
-
-  [[4]] <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>> (Codehaus MOJO), starting with 1.1.1.
-
-  [[5]] <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>> (Codehaus MOJO), starting with 1.4.
-
-  []
+*--------------------------------------------------------------------------------+--------------------+----------------+
+|| <<Plugin>>                                                                    || <<Starting with>> || <<Hosted at>>
+*--------------------------------------------------------------------------------+--------------------+----------------+
+| <<<{{{/plugins/maven-compiler-plugin/}maven-compiler-plugin}}>>>               | 2.1                | Apache Maven
+*--------------------------------------------------------------------------------+--------------------+----------------+
+| <<<{{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}>>>                 | 2.5                | Apache Maven
+*--------------------------------------------------------------------------------+--------------------+----------------+
+| <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>               | 2.5                | Apache Maven
+*--------------------------------------------------------------------------------+--------------------+----------------+
+| <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>       | 1.1.1              | Codehaus MOJO
+*--------------------------------------------------------------------------------+--------------------+----------------+
+| <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>> | 1.4                | Codehaus MOJO
+*--------------------------------------------------------------------------------+--------------------+----------------+
 
 * Using Toolchains in Your Project
 
