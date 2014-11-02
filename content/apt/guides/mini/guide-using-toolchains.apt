@@ -54,6 +54,8 @@ Guide to Using Toolchains
 
   [[4]] <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>> (Codehaus MOJO), starting with 1.1.1.
 
+  [[5]] <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>> (Codehaus MOJO), starting with 1.4.
+
   []
 
 * Using Toolchains in Your Project
