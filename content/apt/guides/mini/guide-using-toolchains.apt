@@ -139,7 +139,6 @@ Guide to Using Toolchains
     <provides>
       <version>1.5</version>
       <vendor>sun</vendor>
-      <id>default</id>
     </provides>
     <configuration>
       <jdkHome>/path/to/jdk/1.5</jdkHome>
@@ -150,7 +149,6 @@ Guide to Using Toolchains
     <provides>
       <version>1.6</version>
       <vendor>sun</vendor>
-      <id>ide</id>
     </provides>
     <configuration>
       <jdkHome>/path/to/jdk/1.6</jdkHome>
