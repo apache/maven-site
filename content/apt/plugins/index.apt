@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2014-09-28
+ 2014-11-04
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -73,7 +73,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}             | B          | 2.8.2        | 2014-08-27 | Deploy the built artifact to the remote repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-deploy-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEPLOY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 2.17         | 2014-03-16 | Run the JUnit integration tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 2.18         | 2014-11-04 | Run the JUnit integration tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-install-plugin/} <<<install>>>}}           | B          | 2.5.2        | 2014-08-27 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINSTALL}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -81,7 +81,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin/} <<<site>>>}}                 | B          | 3.4          | 2014-07-07 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 2.17         | 2014-03-16 | Run the JUnit unit tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 2.18         | 2014-11-04 | Run the JUnit unit tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.0          | 2010-01-30 | Useful for integration tests - verifies the existence of certain conditions. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-verifier-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MVERIFIER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -125,7 +125,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 2.7   | 2013-05-16 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 2.17         | 2014-03-16 | Generate a report based on the results of unit tests. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 2.18         | 2014-11-04 | Generate a report based on the results of unit tests. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Tools>>                                                    |            |              |            | <<These are miscellaneous tools available through Maven by default.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
