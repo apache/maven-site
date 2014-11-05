@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2014-11-04
+ 2014-11-05
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -117,7 +117,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | 2.10.1       | 2014-09-27 | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | 2.4          | 2013-12-10 | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
+| {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | 2.5          | 2014-11-02 | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-linkcheck-plugin/} <<<linkcheck>>>}}       | R          | 1.2          | 2014-10-08 | Generate a Linkcheck report of your project's documentation. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-linkcheck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MLINKCHECK}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
