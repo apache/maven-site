@@ -45,31 +45,33 @@ Guide to Using Toolchains
   Toolchains will only work in Maven 2.0.9 and higher versions. For more details about its design and implementation,
   please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
 
-  Below are some plugins which are JDK-toolchain-aware, meaning they can use any JDK configured with toolchains:
+  Below are some plugins which are toolchain-aware, with the toolchain-type used:
 
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-|| <<Plugin>>                                                                                  || <<Starting with>>  || <<Hosted at>>
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{/plugins/maven-compiler-plugin/}maven-compiler-plugin}}>>>                             | 2.1                 | Apache Maven
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{/plugins/maven-jarsigner-plugin/}maven-jarsigner-plugin}}>>>                           | 1.3                 | Apache Maven
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}>>>                               | 2.5                 | Apache Maven
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>                             | 2.5                 | Apache Maven
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/}animal-sniffer-maven-plugin}}>>> | 1.3                 | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/cassandra-maven-plugin/}cassandra-maven-plugin}}>>>           | 0.7.0-1             | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                     | 1.1.1               | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/jasperreports-maven-plugin/}jasperreports-maven-plugin}}>>>   | 1.0-beta-3-SNAPSHOT | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                   | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>>               | 1.4                 | Codehaus Mojo
-*----------------------------------------------------------------------------------------------+---------------------+----------------+
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+|| Toolchain type || <<Plugin>>                                                                                  || <<Starting with>>  || <<Hosted at>>
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{/plugins/maven-compiler-plugin/}maven-compiler-plugin}}>>>                             | 2.1                 | Apache Maven
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{/plugins/maven-jarsigner-plugin/}maven-jarsigner-plugin}}>>>                           | 1.3                 | Apache Maven
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}>>>                               | 2.5                 | Apache Maven
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>                             | 2.5                 | Apache Maven
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/}animal-sniffer-maven-plugin}}>>> | 1.3                 | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/cassandra-maven-plugin/}cassandra-maven-plugin}}>>>           | 0.7.0-1             | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                     | 1.1.1               | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/jasperreports-maven-plugin/}jasperreports-maven-plugin}}>>>   | 1.0-beta-3-SNAPSHOT | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                   | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| jdk             | <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>>               | 1.4                 | Codehaus Mojo
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
+| protobuf        | <<<{{{http://sergei-ivanov.github.io/maven-protoc-plugin/examples/protobuf-toolchain.html}maven-protoc-plugin}}>>> | 0.3.2 | github
+*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 
 * Using Toolchains in Your Project
 
