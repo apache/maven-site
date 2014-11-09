@@ -36,9 +36,9 @@ Guide to Using Toolchains
   without the need to configure them in each plugin nor in every <<<pom.xml>>>, or forcing a precise location among every
   machine building the project.
 
-  With Maven Toolchains, a project can now be built using a specific version of JDK independent
+  With Maven Toolchains applied to JDK toolchain, a project can now be built using a specific version of JDK independent
   from the one Maven is running with. Think how JDK versions can be set in IDEs like IDEA, NetBeans and Eclipse, or how you can
-  build with an older JDK from Maven running with a recent one.
+  compile with an older JDK from Maven running with a recent one.
 
 ** Prerequisites
 
