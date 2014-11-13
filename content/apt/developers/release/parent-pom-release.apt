@@ -63,7 +63,7 @@ Releasing A Parent POM
 
   [[1]] update <<<site-pom.xml>>> parent POM version to match the version being released,
 
-  [[2]] update <<<src/site-docs/index.apt>>>: add a line in the history of <<<pom.xml>>> for the version being released, referring
+  [[2]] update <<<src/site-docs/index.apt.vm>>>: add a line in the history of <<<pom.xml>>> for the version being released, referring
   to the future svn release tag and date.
  
   <<Hint>>: in the diff link, the value for the <<<r2>>> parameter is easily found by
