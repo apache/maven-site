@@ -167,7 +167,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0-alpha-2  | 2009-07-14 | Assists with release staging and promotion. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSTAGE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.0          | 2009-11-01 | Allows to share configuration across plugins. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-toolchains-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MTOOLCHAINS}JIRA}}
+| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-12 | Allows to share configuration across plugins. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-toolchains-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MTOOLCHAINS}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<IDEs>>                                                     |            |              |            | <<Plugins that simplify integration with integrated developer environments.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
