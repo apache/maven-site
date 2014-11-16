@@ -4,7 +4,7 @@
  Jason van Zyl
  Brian Fox
  ------
- 2010-01-18
+ 2014-11-16
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -41,12 +41,12 @@ Guide to uploading artifacts to the Central Repository
  already released and available in the repository.
 
  There are some requirements for the minimal information in the POMs that are in the central repository.
- The updated list of requirements can be found {{{https://docs.sonatype.org/display/Repository/Central+Sync+Requirements}here}}.
+ The updated list of requirements can be found {{{http://central.sonatype.org/pages/requirements.html}here}}.
 
 {Choosing your coordinates}
 
  Picking the appropriate coordinates for your project is important. See the guidelines
- {{{https://docs.sonatype.org/display/Repository/Choosing+your+Coordinates}here}}.
+ {{{http://central.sonatype.org/pages/choosing-your-coordinates.html}here}}.
 
 * Explanation
 
@@ -84,7 +84,7 @@ Guide to uploading artifacts to the Central Repository
   </licenses>
 
   <scm>
-    <url>http://svn.apache.org/viewcvs.cgi/maven</url>
+    <url>http://svn.apache.org/viewvc/maven</url>
   </scm>
 
   <dependencies>
@@ -165,16 +165,8 @@ Guide to uploading artifacts to the Central Repository
 * {Other Projects}
 
  The easiest way to upload another project is to use the
- {{{http://nexus.sonatype.org/oss-repository-hosting.html}Sonatype OSS Repository}}, which is an approved repository provided
+ {{{http://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}}, which is an approved repository provided
  by Sonatype for <any> OSS Project that want to get their artifacts into Central Repository.
-
- The service is proposed in two variants:
-
-  * {{{https://docs.sonatype.org/display/Repository/Sonatype+OSS+Maven+Repository+Usage+Guide}Maven repository hosting service}}:
-  You can deploy snapshots, stage releases, and promote your releases so they will be published to Central Repository
-
-  * {{{https://docs.sonatype.org/display/Repository/Uploading+3rd-party+Artifacts+to+Maven+Central}Manual upload of artifacts}}:
-  The process is mostly automated with turnaround time averaging 1 business day.
 
 * {Explanations}
 
