@@ -1,4 +1,4 @@
-# Release Notes - Maven 3.2.2
+# Release Notes &#x2013; Maven 3.2.2
 
 <!-- 
  Licensed to the Apache Software Foundation (ASF) under one
@@ -110,6 +110,10 @@ This is no longer required and can be omitted when you use version 3.2+ of the m
 
 This provides a standard way creating a build time stamp, and allows better interoperability with systems that also employ UTC for timestamps like Eclipse Tycho.
 
+### ${maven.build.timestamp} uses incorrect ISO datetime separator ([MNG-5647][MNG-5647])
+
+The default format has been changed to standard ISO 8601 (`yyyy-MM-dd'T'HH:mm:ss'Z'`) to make it predictable for parsers.
+
 ## Complete Release Notes
 
 See [complete release notes for all versions][5]
@@ -124,5 +128,6 @@ See [complete release notes for all versions][5]
 [MNG-5346]: https://jira.codehaus.org/browse/MNG-5346
 [MNG-5452]: https://jira.codehaus.org/browse/MNG-5452
 [MNG-5639]: https://jira.codehaus.org/browse/MNG-5639
+[MNG-5647]: https://jira.codehaus.org/browse/MNG-5647
 
 [mvel]: http://mvel.codehaus.org
