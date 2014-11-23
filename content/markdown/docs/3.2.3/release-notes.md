@@ -1,4 +1,4 @@
-# Release Notes - Maven 3.2.3
+# Release Notes &#x2013; Maven 3.2.3
 
 <!-- 
  Licensed to the Apache Software Foundation (ASF) under one
