@@ -25,6 +25,10 @@ under the License.
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.3.0 http://maven.apache.org/xsd/decoration-1.3.0.xsd"
   name="Maven">
   <version position="none" />
+  <bannerLeft>
+    <name>Apache Maven</name>
+    <href>http://maven.apache.org</href>
+  </bannerLeft>
 
   <!-- must work with inheritence but for some reasons not ??  -->
   <skin>
