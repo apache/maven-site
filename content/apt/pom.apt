@@ -1356,7 +1356,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<timezone>>:
   A valid time zone ID like <<<America/New_York>>> or <<<Europe/Berlin>>>, or a numerical offset in hours
   (and fraction) from UTC where the developer lives, e.g., <<<-5>>> or <<<+1>>>. Time zone IDs are highly
-  preferred because they are not affected by DST and time zone changes. Refer to the
+  preferred because they are not affected by DST and time zone shifts. Refer to the
   {{{http://www.iana.org/time-zones}IANA}} for the official time zone database and a listing in
   {{{http://en.wikipedia.org/wiki/List_of_tz_database_time_zones}Wikipedia}}.
 
