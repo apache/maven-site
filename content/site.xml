@@ -63,6 +63,7 @@ under the License.
       <item name="FAQ (official)" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
       <item name="FAQ (unofficial)" href="http://docs.codehaus.org/display/MAVENUSER/FAQs-1"/>
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
+      <item name="Support and Training" href="/support-and-training.html"/>
     </menu>
 
     <menu name="Documentation">
