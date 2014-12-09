@@ -15,6 +15,8 @@ There aren't any hard and fast rules about what is acceptable but please keep yo
 
 Remember to add you company to both sections if you provide support and training.
 
+**Please note entries are listed in Alpha order of company names.**
+
 ## Support
 
 ## Training
