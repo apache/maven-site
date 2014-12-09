@@ -1322,19 +1322,19 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   ...
   <developers>
     <developer>
-      <id>eric</id>
-      <name>Eric</name>
-      <email>eredmond@codehaus.org</email>
-      <url>http://eric.propellors.net</url>
-      <organization>Codehaus</organization>
-      <organizationUrl>http://mojo.codehaus.org</organizationUrl>
+      <id>jdoe</id>
+      <name>John Doe</name>
+      <email>jdoe@example.com<email>
+      <url>http://www.example.com/jdoe</url>
+      <organization>ACME</organization>
+      <organizationUrl>http://www.example.com</organizationUrl>
       <roles>
         <role>architect</role>
         <role>developer</role>
       </roles>
-      <timezone>-6</timezone>
+      <timezone>America/New_York</timezone>
       <properties>
-        <picUrl>http://tinyurl.com/prv4t</picUrl>
+        <picUrl>http://www.example.com/jdoe/pic</picUrl>
       </properties>
     </developer>
   </developers>
@@ -1354,7 +1354,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   can wear many hats, a single person can take on multiple <<<roles>>>.
 
   * <<timezone>>:
-  A numerical offset in hours from GMT where the developer lives or a valid {{{http://google-web-toolkit.googlecode.com/svn/javadoc/2.0/com/google/gwt/i18n/client/constants/TimeZoneConstants.html}time zone id}} like "America/Montreal" (UTC-05:00) or "Europe/Paris" (UTC+01:00). 
+  A valid time zone ID like <<<America/New_York>>> or <<<Europe/Berlin>>>, or a numerical offset in hours
+  (and fraction) from UTC where the developer lives, e.g., <<<-5>>> or <<<+1>>>. Time zone IDs are highly
+  preferred because they are not affected by DST and time zone changes. Refer to the
+  {{{http://www.iana.org/time-zones}IANA}} for the official time zone database and a listing in
+  {{{http://en.wikipedia.org/wiki/List_of_tz_database_time_zones}Wikipedia}}.
 
   * <<properties>>:
   This element is where any other properties about the person goes. For example, a link to a personal
