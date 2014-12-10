@@ -20,3 +20,10 @@ Remember to add you company to both sections if you provide support and training
 ## Support
 
 ## Training
+
+### Web Age Solutions
+
+![Web Age Solutions](http://www.webagesolutions.com/graphics/new_logo.gif)  
+[Web Age Solutions]( http://www.webagesolutions.com/training/continuous_integration/) offers training to introduce students to the theory and practice behind Apache Maven, and give the tools to build and manage software projects using Maven, Nexus, Artifactory, and Jenkins
+
+There are several options for training, including traditional classroom courses, live virtual courses, and soon, online video training.
