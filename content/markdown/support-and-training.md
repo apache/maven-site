@@ -6,7 +6,7 @@ The ASF does not endorse any of the organisations listed on this page nor any se
 
 If you would like to add your company to this page, feel free to do so. You will need to create a patch or a pull request:
 
-* [Attach a patch in a Jira issue](http://jira.codehaus.org/browse/MSITE)
+* [Attach a patch in a Jira issue](http://jira.codehaus.org/browse/MNGSITE)
 * [Create a pull request](https://github.com/apache/maven-site)
 
 The page to modify is: content/markdown/support-and-training.md
