@@ -41,6 +41,9 @@ Releasing Maven
 
   []
 
+  Note that the policy for failed releases is to move forward with a new version. The tag that produced the failed released is
+  left in place for posterity. So if the release of, say, 3.2.4 fails then we move forward with 3.2.5.
+
 * Produce Release Candidates
 
   For non-alpha/beta releases, release candidates are produced before the actual
@@ -54,7 +57,7 @@ Releasing Maven
   procedure:
 
     * {{{./maven-project-release-procedure.html} Maven Project Common Release Procedure}}
-
+ 
   The version used should be the eventual version with -RC1, -RC2, etc. appended.
 
   After producing the RC, request that the developers test the release on the list.
