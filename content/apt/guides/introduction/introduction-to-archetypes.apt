@@ -62,8 +62,6 @@ mvn archetype:generate
 *-----------------------------+----------------+
 | maven-archetype-quickstart  | An archetype which contains a sample Maven project. |
 *-----------------------------+----------------+
-| maven-archetype-simple      | An archetype which contains a simple Maven project. |
-*-----------------------------+----------------+
 | maven-archetype-site        | An archetype which contains a sample Maven site which demonstrates some of the supported document types like APT, XDoc, and FML and demonstrates how to i18n your site. |
 *-----------------------------+----------------+
 | maven-archetype-site-simple | An archetype which contains a sample Maven site. |
