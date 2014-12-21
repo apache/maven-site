@@ -7,8 +7,10 @@ mentioned around the Maven community:
 
 -   [Apache Continuum](http://continuum.apache.org/)
 -   [Bamboo (Atlassian)](http://www.atlassian.com/software/bamboo/)
+-   [BuildHive (CouldBees)](https://buildhive.cloudbees.com/)
+-   [CODESHIP](https://codeship.com/)
 -   [Cruise Control](http://cruisecontrol.sourceforge.net/)
--   [Hudson](https://hudson.dev.java.net)
+-   [Hudson](http://hudson-ci.org/)
 -   [Jenkins](http://jenkins-ci.org/)
 -   [TeamCity (JetBrains)](http://www.jetbrains.com/teamcity/)
-
+-   [Travis](https://travis-ci.org/)
