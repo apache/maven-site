@@ -7,48 +7,29 @@ J2EE-based, issue tracking and project management application.
 
 <!-- this paragraph is necessary until http://jira.codehaus.org/browse/HAUS-2323 is fixed -->
 
-You'll need an account to create issues or comment: use [Codehaus Xircles Signup](http://xircles.codehaus.org/signup).
+You'll need an account to create new or comment existing issues: use [Codehaus Xircles Signup](http://xircles.codehaus.org/signup) to create such account.
 
 ## Issue Tracking
 
 Issues, bugs, and feature requests should be submitted to the following
-issue tracking systems depending on which project is involved.
+issue tracking systems depending on which project is involved:
 
-### Maven Project
+* Maven Project: <http://jira.codehaus.org/browse/MNG>
 
-<http://jira.codehaus.org/browse/MNG>
+* Maven Website Project: <http://jira.codehaus.org/browse/MNGSITE>
 
-### Maven Website Project
+* Maven Project Administration: <http://jira.codehaus.org/browse/MPA>
 
-<http://jira.codehaus.org/browse/MNGSITE>
+* Maven Plugins Projects: Please refer you to the [Available Plugins](./plugins/index.html) page
 
-### Maven Project Administration
+or which Maven sub-project:
 
-<http://jira.codehaus.org/browse/MPA>
+* Doxia: <http://jira.codehaus.org/browse/DOXIA>
 
-### Maven Plugins Projects
+* JXR <http://jira.codehaus.org/browse/JXR>
 
-Please refer you to the [Available Plugins](./plugins/index.html) page.
+* SCM: <http://jira.codehaus.org/browse/SCM>
 
-### Maven Sub Projects
+* Wagon: <http://jira.codehaus.org/browse/WAGON>
 
-#### Doxia
-
-<http://jira.codehaus.org/browse/DOXIA>
-
-#### JXR
-
-<http://jira.codehaus.org/browse/JXR>
-
-#### SCM
-
-<http://jira.codehaus.org/browse/SCM>
-
-#### Wagon
-
-<http://jira.codehaus.org/browse/WAGON>
-
-### Central Repository
-
-<https://issues.sonatype.org/browse/MVNCENTRAL>
-
+* Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>
