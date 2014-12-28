@@ -228,7 +228,7 @@ public class MyMojo
 
 ** {POM Code Convention}
 
- The team has {{{http://www.nabble.com/-Proposal--Pom-Code-Style-(WAS-svn-commit%3A-r670264----maven-plugins-trunk-maven-site-plugin-pom.xml)-td18083228.html}voted}}
+ The team has {{{http://maven.40175.n5.nabble.com/Proposal-Pom-Code-Style-WAS-svn-commit-r670264-maven-plugins-trunk-maven-site-plugin-pom-xml-td210642.html#a210643}voted}}
  during the end of June 2008 to follow a specific POM convention to ordering POM elements.
  The consequence of this vote is that the {{{http://maven.apache.org/ref/current/maven-model/maven.html}Maven project descriptor}}
  is <<no more>> considered as the reference for the ordering.
@@ -294,8 +294,9 @@ public class MyMojo
 
     []
 
- <<Note>>: The team plans to create a Maven plugin with reorder and reformat goals
- (See {{{http://jira.codehaus.org/browse/MOJO-928}MOJO-928}}).
+ <<Note>>: There existing two alternativs to change order of a pom file
+ {{{http://mojo.codehaus.org/tidy-maven-plugin/}Tidy Maven Plugin}} or the
+ {{{https://code.google.com/p/sortpom/}maven-sortpom-plugin}}. 
 
 ** {XDOC Code Convention}
 
