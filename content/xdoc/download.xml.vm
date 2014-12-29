@@ -280,10 +280,11 @@ under the License.
        </p>
       </subsection>
       <subsection name="Previous Releases">
-        <p>All previous releases of Maven can be found in the  <a href="http://archive.apache.org/dist/maven/binaries/">archives</a>.</p>
+        <p>All previous releases of Maven can be found in the  <a href="http://archive.apache.org/dist/maven/maven-3/">archives</a>
+        (or <a href="http://archive.apache.org/dist/maven/binaries/">legacy archives</a> for versions before 3.0.4).</p>
       </subsection>
       <subsection name="All sources">
-        <p>All sources (plugins, shared librairies, scm, indexer etc..) can be downloaded from <a href="http://www.apache.org/dist/maven/">http://www.apache.org/dist/maven/</a></p>
+        <p>All sources (plugins, shared librairies, scm, indexer etc..) can be downloaded from <a href="[preferred]/maven/">http://www.apache.org/dist/maven/</a></p>
       </subsection>
       <subsection name="System Requirements" id="Requirements">
         <p>
