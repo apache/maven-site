@@ -3,8 +3,9 @@
  ------
  Jason van Zyl
  Brian Fox
+ Robert Scholte
  ------
- 2008-09-01
+ 2015-01-02
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -29,7 +30,9 @@
 
 Using Mirrors for Repositories
 
- Repositories are declared inside a project, which means that if you have your own custom repositories, those sharing
+ With {{{http://maven.apache.org/guides/introduction/introduction-to-repositories.html}Repositories}} you specify from
+ which locations you want to <download> certain artifacts, such as dependencies and maven-plugins.
+ Repositories can be declared inside a project, which means that if you have your own custom repositories, those sharing
  your project easily get the right settings out of the box. However, you may want to use an alternative mirror
  for a particular repository without changing the project files.
 
