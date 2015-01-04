@@ -4,7 +4,7 @@
  Brett Porter
  Jason van Zyl
  ------
- 2012-12-20
+ 2015-01-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -34,7 +34,7 @@ Building Maven
   Building Maven yourself is for one of two reasons:
 
     * to try out a bleeding edge feature or bugfix (issues can be found in
-      {{{http://jira.codehaus.org/browse/MNG} JIRA}}),
+      {{{/issue-tracking.html} JIRA}}),
 
     * to fix a problem you are having and submit a patch to the developers team.
 
@@ -48,181 +48,72 @@ Building Maven
   Other pieces (and older versions) are in Subversion. For details, see
   {{{http://maven.apache.org/source-repository.html}http://maven.apache.org/source-repository.html}}.
 
-
-  To build Maven 3 (the current stable branch), you need the <<<HEAD>>> of the <<<maven>>> module. 
-  To check that out, run the command:
-
-+-----------------+
-git clone https://git-wip-us.apache.org/repos/asf/maven.git maven
-+-----------------+
-
-  To build Maven 2, you need the <<<maven-2.2.x>>> branch.
-  To check that out from a cloned repository, run the command:
-
-+-----------------+
-git checkout maven-2.2.x
-+-----------------+
-
-** Other Modules
-
-  Other modules you might be interested in related to Maven development are:
-
-    * <<<maven-integration-testing>>> - <<<git clone https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git>>>
-
-    * <<<plugins/trunk>>> - The sources of the {{{/plugins/}Maven plugins}}. These can be individually installed, or built together.
-
-    * <<<plugin-tools/trunk>>> - {{{/plugin-tools/}Set of tools for Maven plugins}} like test harness.
-
-    * <<<release/trunk>>> - Release manager and plugin.
-
-    * <<<site/trunk>>> - The Maven website.
-
-    * <<<skins/trunk>>> - {{{/skins/}Skins}} for generated site used by site plugin.
-
-    * Some Maven sub projects
-
-      * <<<wagon>>> - {{{/wagon/}Maven Wagon}}, used by the artifact code and others for providing the transport layer to
-        get and put artifacts in a repository. git clone https://git-wip-us.apache.org/repos/asf/maven-wagon.git
-
-      * <<<scm>>> - {{{/scm/}Maven SCM}}, a generic API to communicate with various different SCM providers, used by
-        Continuum and the release and SCM plugins. <<<git clone https://git-wip-us.apache.org/repos/asf/maven-scm.git>>>
-
-      * <<<doxia/trunk>>> - The {{{/doxia/}Doxia}} site generation library used by several report plugins and site plugin.
-
-      * <<<surefire/trunk>>> - The {{{/surefire/}Surefire}} test runner. <<<git clone https://git-wip-us.apache.org/repos/asf/maven-surefire.git>>>
-
-      []
-
-    * <<<shared/trunk>>> - {{{/shared/}Collection of shared libraries}} like file/path handling.
-
-    * <<<sandbox/trunk>>> - Sandbox codes.
-
-    * {{{http://svn.plexus.codehaus.org/plexus/} Plexus}} - the IoC container used by Maven.
-
-    []
-
-  If you're {{{http://svn.apache.org/viewvc/maven/trunks/}looking at the <<<trunks>>> directory with ViewVC}},
-  there is seemingly nothing there. We use {{{http://svnbook.red-bean.com/en/1.0/ch07s03.html}externals definitions}}
-  to link together all the trunks into one logical location for convenience. If you want to see what is being
-  linked into one logical location you can use the following command:
-
--------------------
-svn propget svn:externals
--------------------
-
 * Building Maven
+
+** Building a Maven Plugin or Component
+
+  Building a Maven plugin or component is like any Maven build:
+
++-----+
+mvn install
++-----+
+
+  Before submitting a patch, it is advised to run the integration tests, which are available in a profile:
+
++-----+
+mvn -Prun-its install
++-----+
 
 ** Building Maven With Maven Installed
 
   If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
 
-  To do this, run from the <<<maven-3>>> or <<<maven-2.2.x>>> directory:
+  To do this, run from the source directory:
 
-----
++-----+
 mvn install
-----
++-----+
 
-  Optionally, you can use the following to run the full (long) suite of integration tests; see below.
-
-  The assemblies will be created in <<<apache-maven/target>>> for Maven 2.0.x or <<<maven-distribution>>> for Maven 2.1,
-  and can be unzipped to the location where you'd like Maven installed.
-
-** Running the full integration tests
-
-   Before checking in a change or submitting a patch, it's a good idea to run the integration tests. These live in 
-   their own directory in subversion, as noted above: <<<core-integration-testing/trunk>>>. Using your local build
-   of Maven, run:
-
----
-mvn install -Prun-its
----
+  The assemblies will be created in <<<maven-distribution>>>, and can be unzipped to the location where you'd like Maven installed.
 
 ** Building Maven Without Maven Installed
 
-  If you do not have Maven installed, you can use
-  {{{http://ant.apache.org}Apache Ant}} to build Maven.
+  If you do not have Maven installed, you can use {{{http://ant.apache.org}Apache Ant}} to build Maven.
 
-  Once you have checked out the code, change into the <<<maven-3>>> or <<<maven-2.2.x>>> directory that was created.
+  Once you have checked out the code, change into the directory that was created.
 
-  Set the M2_HOME environment variable to the location that should contain
-  Maven. This directory <<must>> be named after the Maven version you want to
-  build and install, for example <<</usr/local/maven-2.2-SNAPSHOT>>>.
+  Set the <<<M2_HOME>>> environment variable to the location that should contain Maven.
+  This directory <<must>> be named after the Maven version you want to
+  build and install, for example <<</usr/local/maven-3.2.x-SNAPSHOT>>>.
 
-----
-export M2_HOME=/usr/local/maven-2.2-SNAPSHOT
++-----+
+export M2_HOME=/usr/local/maven-3.2.x-SNAPSHOT
 PATH=$M2_HOME/bin:$PATH
-----
++-----+
 
   or
 
-----
-set M2_HOME=c:\maven-2.2-SNAPSHOT
++-----+
+set M2_HOME=c:\maven-3.2.x-SNAPSHOT
 set PATH=%M2_HOME%\bin;%PATH%
-----
++-----+
 
   From this, run the <<<ant>>> command:
 
-----
++-----+
 ant
-----
++-----+
 
   This will download dependencies, build Maven, and install it into the
   directory you specified as <<<M2_HOME>>> above.
 
-  If you have any problems or get any failures during the run, please report them to the
-  {{{../../mail-lists.html} Maven Developers List}}.
+** Running the full Maven core integration tests
 
-  For more information, consult the project help in the Ant build file.
+   Before checking in a change or submitting a patch to Maven core, it is required to run the integration tests.
+   These live in their own git repository. Using your local build of Maven, run:
 
-----
-ant -projecthelp
-----
++-----+
+mvn install -Prun-its
++-----+
 
-  The result is included here for convenience:
-
-+--------+
-Buildfile: build.xml
-
-    The first time you build Maven from source, you have to build Maven without
-    Maven. This Ant script builds a minimal Maven, just enough to re-launch
-    Maven again in this directory and generate an installation assembly. Then we
-    extract the assembly and re-run the Maven build one more time, this time
-    with the full generated Maven.
-
-    To run this script, you must set the M2_HOME environment variable or the
-    maven.home property to the location that should contain Maven. This
-    directory *must* be named after the maven version you want to install, e.g.
-    /usr/local/maven-2.1-SNAPSHOT.
-
-    You can set the maven.repo.local property to specify a custom location for
-    your local repository for the bootstrap process.
-
-Main targets:
-
- classpath-pre     constructs a classpath reference containing our dependencies,
-                   and verifies that all files are present
-
- clean-bootstrap   cleans up generated bootstrap classes
-
- compile-boot      compiles the bootstrap sources
-
- extract-assembly  extracts the maven assembly into maven.home
-
- generate-sources  generates Java sources from Modello mdo model files
-
- maven-assembly    generates the Maven installation assembly using the bootstrap
-                   Maven
-
- maven-compile     compiles Maven using the bootstrap Maven, skipping automated
-                   tests
-
- pull              copies all required dependencies from the Maven remote
-                   repository into your local repository.  Set the 'skip.pull'
-                   property to skip this step, but only if you're sure you
-                   already have all of the dependencies downloaded to
-                   your local repository
-
- run-full-maven    runs the full extracted Maven, now with tests
-
-Default target: all
-+--------+
+   Consult {{{/core-its/core-it-suite/}Core IT Suite documentation}} for more options.
