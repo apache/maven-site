@@ -5,7 +5,7 @@
  Trygve Laugstol
  Brett Porter
  ------
- 2008-07-04
+ 2015-01-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -215,14 +215,14 @@ And remember, your contributions are always welcome!
  {{{http://maven.apache.org/doxia/references/index.html}document formats}}.
 
 
-** Maven SCM
+ ** Maven SCM
 
  Maven SCM (Source Control Management) is an reusable API which is independent of Maven itself and it is used by the
  SCM related Maven Plugins. The core part of Maven itself doesn't depend on Maven SCM.
 
  You can {{{http://maven.apache.org/scm/}read more about Scm}}.
 
-** Maven Wagon
+ ** Maven Wagon
 
  Maven Wagon is also a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
  API to download and upload artifacts and artifact metadata and the site plug-in uses it to publish the site.
