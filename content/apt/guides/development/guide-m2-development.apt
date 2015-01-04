@@ -31,16 +31,20 @@
 Developing Maven
 
  This document describes how to get started into developing Maven itself. There is a separate page describing how
- to {{{./guide-building-m2.html}building Maven}}.
+ to {{{./guide-building-m2.html}build Maven}}.
 
 * Finding some work to do
 
- First of all you need something to work on! Unless you have found a particular issue you would like to work on
+ First of all you need something to work on! Issues can be found in
+ {{{/issue-tracking.html}several JIRA projects}}.
+ 
+ Unless you already have found a particular issue you would like to work on,
  the Maven team has categorized a few issues that we could use <your> help to solve them.
 
  JIRA has RSS feeds available if you'd like to include those in your favorite feed aggregator.
-
+ 
  We categorize the issues in three different categories:
+~~ TODO for each Jira project? or only core? is it still relevant?
 
  * <<{{{http://jira.codehaus.org/secure/IssueNavigator.jspa?pid=10500&resolutionIds=-1&customfield_10010=Novice&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true}Novice}}>>: No previous exposure to the code needed.
    <({{{http://jira.codehaus.org/secure/IssueNavigator.jspa?view=rss&pid=10500&resolutionIds=-1&customfield_10010=Novice&sorter/field=priority&sorter/order=ASC&sorter/field=issuekey&sorter/order=ASC&tempMax=25&reset=true&decorator=none}rss feed}})>
@@ -65,6 +69,7 @@ Developing Maven
   []
 
 * Don't forget tests!
+~~ TODO move details to guide-building-m2.apt, keep only principles here
 
   You will find many unit tests in the maven-3 tree. If at all possible, create or modify a unit test to demonstrate
   the problem, and then validate your fix.
