@@ -13,6 +13,8 @@ Redirect Permanent /ant-tasks.html http://maven.apache.org/ant-tasks/index.html
 Redirect Permanent /ant-tasks-release-notes.html http://maven.apache.org/ant-tasks/release-notes.html
 
 Redirect Permanent /guides/mini/guide-ibiblio-upload.html http://maven.apache.org/guides/mini/guide-central-repository-upload.html
+Redirect Permanent /guides/development/guide-m2-development.html http://maven.apache.org/guides/guides/development/guide-maven-development.html
+Redirect Permanent /guides/development/guide-building-m2.html http://maven.apache.org/guides/guides/development/guide-building-maven.html
 Redirect Permanent /faq.html http://maven.apache.org/general.html
 Redirect Permanent /developers/release/pmc-release-process.html http://maven.apache.org/developers/release/releasing.html
 Redirect Permanent /development-process.html http://maven.apache.org/archives/maven-1.x/development-process.html

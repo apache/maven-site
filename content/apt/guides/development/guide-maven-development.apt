@@ -31,7 +31,7 @@
 Developing Maven
 
  This document describes how to get started into developing Maven itself. There is a separate page describing how
- to {{{./guide-building-m2.html}build Maven}}.
+ to {{{./guide-building-maven.html}build Maven}}.
 
 * Finding some work to do
 
@@ -69,7 +69,7 @@ Developing Maven
   []
 
 * Don't forget tests!
-~~ TODO move details to guide-building-m2.apt, keep only principles here
+~~ TODO move details to guide-building-maven.apt, keep only principles here
 
   You will find many unit tests in the maven-3 tree. If at all possible, create or modify a unit test to demonstrate
   the problem, and then validate your fix.

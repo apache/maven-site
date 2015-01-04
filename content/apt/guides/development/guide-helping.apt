@@ -35,9 +35,9 @@ Guide to helping with Maven
 
  * Report bugs, feature requests and other issues in the {{{../../issue-tracking.html}issue tracking}} application.
 
- * {{{./guide-building-m2.html} Build Maven}} for yourself, in order to fix bugs.
+ * {{{./guide-building-maven.html} Build Maven}} for yourself, in order to fix bugs.
 
- * {{{./guide-m2-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find, or that others have filed)
+ * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find, or that others have filed)
 
  * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mail-lists.html} mailing list}} for release votes
 

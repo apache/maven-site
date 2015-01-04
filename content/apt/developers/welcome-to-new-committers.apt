@@ -51,7 +51,7 @@ Guide for new Maven committers
 
  Here are the documents that pertain to Maven specifically:
 
- * {{{http://maven.apache.org/guides/development/guide-m2-development.html}Guide to Maven 2 development}}
+ * {{{http://maven.apache.org/guides/development/guide-maven-development.html}Guide to Maven development}}
 
  []
 

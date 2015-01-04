@@ -146,5 +146,4 @@ mvn -Papache <phase|goal>
 
 * How do I make changes to the source and test development versions of the plugins?
 
-  For information on this, see the {{{./guide-m2-development.html}Guide to Maven 2.0 Development}}.
-
+  For information on this, see the {{{./guide-maven-development.html}Guide to Maven Development}}.

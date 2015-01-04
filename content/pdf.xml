@@ -139,8 +139,8 @@
 
     <!-- Dev Documentation -->
     <item name="Maven Developer Centre" ref="/developers/index.html">
-      <item name="Developing Maven 2" ref="/guides/development/guide-m2-development.html"/>
-      <item name="Building Maven 2" ref="/guides/development/guide-building-m2.html"/>
+      <item name="Developing Maven" ref="/guides/development/guide-maven-development.html"/>
+      <item name="Building Maven" ref="/guides/development/guide-building-maven.html"/>
 
       <!-- Committer -->
       <item name="Committer Environment" ref="/developers/committer-environment.html"/>

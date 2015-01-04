@@ -160,13 +160,13 @@
     </faq>
 
     <faq id="m2-source-code">
-      <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.</question>
+      <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven site.</question>
       <answer>
         <p>
           The source code can be found in <a href="source-repository.html">our subversion repository</a>.
         </p>
         <p>
-          For more information, see <a href="/guides/development/guide-building-m2.html">Building Maven 2.0</a>.
+          For more information, see <a href="/guides/development/guide-building-maven.html">Building Maven</a>.
         </p>
       </answer>
     </faq>

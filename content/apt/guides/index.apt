@@ -168,9 +168,9 @@ Documentation
 
 * Development Guides
 
- * {{{./development/guide-building-m2.html}Building Maven from Scratch}}
+ * {{{./development/guide-building-maven.html}Building Maven from Scratch}}
 
- * {{{./development/guide-m2-development.html}Developing Maven}}
+ * {{{./development/guide-maven-development.html}Developing Maven}}
 
  * {{{./development/guide-plugin-documentation.html}The Plugin Documentation Standard}}
 
