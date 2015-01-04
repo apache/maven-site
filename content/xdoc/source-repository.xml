@@ -37,8 +37,8 @@ under the License.
       </p>
       <subsection name="Maven Core">
         <p>
-          The git repository for maven contains a master branch which is the current development version. There is also a
-          branch for maven-2.2.X.
+          The git repository for Maven contains a master branch which is the current development version. There is also a
+          branch for maven-2.2.X or maven-3.0.x.
         </p>
         <source> <a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source>
         <p>The integration tests for the Maven core have their own repository:
@@ -57,19 +57,19 @@ under the License.
           The components in git are:
           <table>
             <tr>
-              <td>Apache Maven Indexer</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-indexer.git">https://git-wip-us.apache.org/repos/asf/maven-indexer.git</a></td>
+              <td><a href="/maven-indexer/">Apache Maven Indexer</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-indexer.git">https://git-wip-us.apache.org/repos/asf/maven-indexer.git</a></td>
             </tr>
             <tr>
-              <td>Apache Maven Plugin Testing</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git">https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git</a></td>
+              <td><a href="/plugin-testing/">Apache Maven Plugin Testing</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git">https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git</a></td>
             </tr>
             <tr>
-              <td>Apache Maven SCM</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-scm.git">https://git-wip-us.apache.org/repos/asf/maven-scm.git</a></td>
+              <td><a href="/scm/">Apache Maven SCM</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-scm.git">https://git-wip-us.apache.org/repos/asf/maven-scm.git</a></td>
             </tr>
             <tr>
-              <td>Apache Maven Surefire</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-surefire.git">https://git-wip-us.apache.org/repos/asf/maven-surefire.git</a></td>
+              <td><a href="/surefire/">Apache Maven Surefire</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-surefire.git">https://git-wip-us.apache.org/repos/asf/maven-surefire.git</a></td>
             </tr>
             <tr>
-              <td>Apache Maven Wagon</td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></td>
+              <td><a href="/wagon/">Apache Maven Wagon</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></td>
             </tr>
           </table>
         </p>
@@ -78,29 +78,28 @@ under the License.
           <source><a href="https://svn.apache.org/repos/asf/maven/trunks/">https://svn.apache.org/repos/asf/maven/trunks/</a></source>
         </p>
         <p>
-          In more details, the components in Subversion are:
+          You can also check out every component separately. The components in Subversion are:
           <table>
             <tr>
-              <td>Apache Maven Plugins</td>
-              <td><a href="https://svn.apache.org/repos/asf/maven/plugins">
+              <td><a href="/plugins/">Apache Maven Plugins</a></td>
+              <td><a href="https://svn.apache.org/repos/asf/maven/plugins/">
               https://svn.apache.org/repos/asf/maven/plugins/</a></td>
             </tr>
             <tr>
-              <td>Shared components: maven-artifact-resolver, maven-reporting-impl, 
-              maven-common-artifact-filters, maven-shared-components
+              <td><a href="/shared/">Shared components</a>: maven-artifact-resolver, maven-reporting-impl, 
+              maven-common-artifact-filters, maven-shared-components,...
               </td>
-              <td>
-                <a href="https://svn.apache.org/repos/asf/maven/shared/">
+              <td><a href="https://svn.apache.org/repos/asf/maven/shared/">
               https://svn.apache.org/repos/asf/maven/shared/</a>
               </td>
             </tr>
             <tr>
-              <td>Release (Release api and plugin</td>
+              <td><a href="/maven-release/">Release</a> (Release api and plugin)</td>
               <td><a href="https://svn.apache.org/repos/asf/maven/release/">https://svn.apache.org/repos/asf/maven/release/</a></td>
             </tr>
             <tr>
-              <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><a href="https://svn.apache.org/repos/asf/maven">
-              https://svn.apache.org/repos/asf/maven</a>
+              <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><a href="https://svn.apache.org/repos/asf/maven/">
+              https://svn.apache.org/repos/asf/maven/</a>
               </td>
             </tr>
           </table>
