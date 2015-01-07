@@ -113,7 +113,7 @@ Guide to uploading artifacts to the Central Repository
 
  To improve the quality of the Central Maven repository, we require you to provide PGP signatures for all your artifacts (all
  files except checksums), and distribute your public key to a key server like {{{http://pgp.mit.edu}http://pgp.mit.edu}}. Read
- {{{https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven}How to Generate PGP Signatures with Maven}}
+ {{{http://central.sonatype.org/pages/working-with-pgp-signatures.html}Working with PGP Signatures}}
  for more information.
 
 * FAQ and common mistakes
