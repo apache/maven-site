@@ -86,8 +86,7 @@ Sections
 * {How can Maven benefit my development process?}
 
  Maven can provide benefits for your build process by employing standard conventions and practices to accelerate your development
- cycle while at the same time helping you achieve a higher rate of success. For a more detailed look at how
- Maven can help you with your development process please refer to {{{../../benefits-of-using-maven.html}The Benefits of Using Maven}}.
+ cycle while at the same time helping you achieve a higher rate of success.
 
  Now that we have covered a little bit of the history and purpose of Maven let's get into some real examples to
  get you up and running with Maven!
