@@ -257,7 +257,7 @@ You should specify the version in your project's plugin configuration:
   <version>Y.Z</version>
 </plugin>
 
-Release Notes - Maven 2.x XXX Plugin - Version Y.Z
+Release Notes - Maven XXX Plugin - Version Y.Z
 
 (Copy Here Release Notes in Text Format from JIRA)
 
