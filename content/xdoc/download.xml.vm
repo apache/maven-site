@@ -100,11 +100,11 @@ under the License.
         </p>
 
       </subsection>
-      
+
       <subsection name="Maven ${currentStableVersion}">
-        
+
       <p>This is the current stable version of Maven.</p>
-        
+
       <table>
         <thead>
           <tr>
@@ -326,24 +326,18 @@ under the License.
           The subdirectory <tt>apache-maven-${currentStableVersion}</tt> will be created from the archive.
           </li>
 
-          <li>Add the <tt>M2_HOME</tt> environment variable by opening up the system properties (WinKey + Pause),
-          selecting the "Advanced" tab, and the "Environment Variables" button, then adding the <i>M2_HOME</i>
+          <li>Add the unpacked distribution's <tt>bin</tt> directory
+          to your user <i>PATH</i> environment variable  by opening up the system properties (WinKey + Pause),
+          selecting the "Advanced" tab, and the "Environment Variables" button, then adding or selecting the <i>PATH</i>
           variable in the user variables with the value
-          <tt>C:\Program Files\Apache Software Foundation\apache-maven-${currentStableVersion}</tt>. Be sure to omit any quotation marks around the path
-          even if it contains spaces. <b>Note</b>: For Maven 2.0.9, also be sure that the <tt>M2_HOME</tt>
-          doesn't have a '\' as last character.
+          <tt>C:\Program Files\Apache Software Foundation\apache-maven-${currentStableVersion}\bin</tt>.
           </li>
-
-          <li>In the same dialog, add the <tt>M2</tt> environment variable in the user variables with the value <tt>%M2_HOME%\bin</tt>.</li>
 
           <li><b>Optional</b>: In the same dialog, add the <tt>MAVEN_OPTS</tt> environment variable in the user variables to specify JVM properties, e.g. the value
           <tt>-Xms256m -Xmx512m</tt>. This environment variable can be used to supply extra options to Maven.</li>
 
-          <li>In the same dialog, update/create the <tt>Path</tt> environment variable in the user variables and prepend the value <tt>%M2%</tt> to add
-          Maven available in the command line.</li>
-
           <li>In the same dialog, make sure that <tt>JAVA_HOME</tt> exists in your user variables or in the system variables and it is set to the location of your JDK,
-          e.g. <tt>C:\Program Files\Java\jdk1.7.0_51</tt> and that <tt>%JAVA_HOME%\bin</tt> is in your <tt>Path</tt> environment variable.</li>
+          e.g. <tt>C:\Program Files\Java\jdk1.7.0_51</tt>.</li>
 
           <li>Open a <i>new</i> command prompt (Winkey + R then type <tt>cmd</tt>) and run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
           </ol>
@@ -355,18 +349,15 @@ under the License.
         These instructions assume you chose <tt>/usr/local/apache-maven</tt>. The subdirectory <tt>apache-maven-${currentStableVersion}</tt> will
         be created from the archive.</li>
 
-        <li>In a command terminal, add the <tt>M2_HOME</tt> environment variable, e.g. <tt>export M2_HOME=/usr/local/apache-maven/apache-maven-${currentStableVersion}</tt>.
+        <li>In a command terminal, add unpacked distribution's <tt>bin</tt> to your <i>PATH</i> environment variable,
+        e.g. <tt>export PATH=$PATH:/usr/local/apache-maven/apache-maven-${currentStableVersion}/bin</tt>.
         </li>
-
-        <li>Add the <tt>M2</tt> environment variable, e.g. <tt>export M2=$M2_HOME/bin</tt>.</li>
 
         <li><b>Optional</b>: Add the <tt>MAVEN_OPTS</tt> environment variable to specify JVM properties, e.g. <tt>export MAVEN_OPTS="-Xms256m -Xmx512m"</tt>.
         This environment variable can be used to supply extra options to Maven.</li>
 
-        <li>Add <tt>M2</tt> environment variable to your path, e.g. <tt>export PATH=$M2:$PATH</tt>.</li>
-
         <li>Make sure that <tt>JAVA_HOME</tt> is set to the location of your JDK, e.g.
-        <tt>export JAVA_HOME=/usr/java/jdk1.7.0_51</tt> and that <tt>$JAVA_HOME/bin</tt> is in your <tt>PATH</tt> environment variable.</li>
+        <tt>export JAVA_HOME=/usr/java/jdk1.7.0_51</tt> .</li>
 
         <li>Run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
         </ol>
