@@ -28,7 +28,7 @@
 
 Configuring a proxy
 
- You can configure a proxy to use for some or all of your HTTP requests in Maven 2.0. The username and password are only
+ You can configure a proxy to use for some or all of your HTTP requests with Maven. The username and password are only
  required if your proxy requires basic authentication (note that later releases may support storing your passwords in
  a secured keystore - in the mean time, please ensure your settings.xml file (usually $\{user.home\}/.m2/settings.xml) is secured with permissions
  appropriate for your operating system).
@@ -43,13 +43,14 @@ Configuring a proxy
   .
   <proxies>
    <proxy>
+      <id>example-proxy</id>
       <active>true</active>
       <protocol>http</protocol>
-      <host>proxy.somewhere.com</host>
+      <host>proxy.example.com</host>
       <port>8080</port>
       <username>proxyuser</username>
       <password>somepassword</password>
-      <nonProxyHosts>www.google.com|*.somewhere.com</nonProxyHosts>
+      <nonProxyHosts>www.google.com|*.example.com</nonProxyHosts>
     </proxy>
   </proxies>
   .
@@ -58,7 +59,7 @@ Configuring a proxy
 
 +----+
 
- Please note that urrently NTLM proxies are not supported as they have not been tested. You may be able to use the
+ Please note that currently NTLM proxies are not supported as they have not been tested. You may be able to use the
  relevant system properties on JDK 1.4+ to make this work.
 
 * Resources
