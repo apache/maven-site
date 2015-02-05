@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2014-11-05
+ 2015-02-05
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -109,7 +109,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.11         | 2014-09-28 | Generate a report from an issue tracker or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.13         | 2014-09-18 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
+| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.14         | 2015-02-05 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | 1.1          | 2011-01-15 | Generate a Description of a Project (DOAP) file from a POM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOAP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
