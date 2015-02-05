@@ -5,7 +5,7 @@
  John Casey
  Karl Heinz Marbaise
  -----
- 2015-01-21
+ 2015-02-05
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -72,7 +72,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-shared-jar/} <<<maven-shared-jar>>>}}                     | 1.1          | 2010-05-12        | Utilities that help identify the contents of a JAR, including Java class analysis and Maven metadata analysis. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-jar/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/13279}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-shared-resources/} <<<maven-shared-resources>>>}}         | 1            | 2011-05-07        | This is a collection of templates that are specific to the Maven project. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-resources/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14715}JIRA}}
+| {{{/shared/maven-shared-resources/} <<<maven-shared-resources>>>}}         | 2            | 2015-02-05        | This is a collection of templates that are specific to the Maven project. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-resources/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/14715}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-shared-utils/} <<<maven-shared-utils>>>}}                 | 0.7          | 2014-10-17        | Utilities functions for use within maven. | {{{http://svn.apache.org/repos/asf/maven/shared/trunk/maven-shared-utils/}SVN}} | {{{http://jira.codehaus.org/browse/MSHARED/component/15606}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
