@@ -57,6 +57,9 @@ under the License.
           The components in git are:
           <table>
             <tr>
+              <td><a href="/archetype/">Apache Maven Archetype</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-archetype.git">https://git-wip-us.apache.org/repos/asf/maven-archetype.git</a></td>
+            </tr>
+            <tr>
               <td><a href="/maven-indexer/">Apache Maven Indexer</a></td><td><a href="https://git-wip-us.apache.org/repos/asf/maven-indexer.git">https://git-wip-us.apache.org/repos/asf/maven-indexer.git</a></td>
             </tr>
             <tr>
