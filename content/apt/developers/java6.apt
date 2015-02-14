@@ -59,4 +59,52 @@ Java 6 in Plugins and Shared Components
   {{{http://svn.apache.org/viewvc/maven/plugins/trunk/maven-checkstyle-plugin/src/site/apt/index.apt.vm?r1=1650811&r2=1652771&pathrev=1658048}example}}.
   We need to use the variable $\{javaVersion\} here, because
   $\{maven.compiler.source\} does not work in a site.
-  
+
+* In the POM
+
+  Make sure these 3 properties are defined, either in the project or in a
+  parent:
+
+  * javaVersion=1.6
+
+  * maven.compiler.source=$\{javaVersion\}
+
+  * maven.compiler.target=$\{javaVersion\}
+
+  []
+
+  Here is a list plugins that are defined in a parent, and that already makes
+  use of the above mentioned properties. So it should be enough to just make
+  sure that the effective-pom looks ok.
+
+  * <<<maven-compiler-plugin>>> is defined in <<<maven-parent>>>, see
+    {{{http://svn.apache.org/viewvc/maven/pom/tags/maven-parent-26/pom.xml?view=markup#l842}example}}
+
+  * <<<maven-enforcer-plugin>>> and the <<<enforceBytecodeVersion>>> rule is defined in
+    <<<maven-parent>>>, see
+    {{{http://svn.apache.org/viewvc/maven/pom/tags/maven-parent-26/pom.xml?view=markup#l946}example}}
+
+  * <<<maven-pmd-plugin>>> is defined in <<<maven-parent>>>, see
+    {{{http://svn.apache.org/viewvc/maven/pom/tags/maven-parent-26/pom.xml?view=markup#l1069}example}}
+
+  []
+
+  These plugins that are not defined in a parent, so you might need
+  to configure the Java version for them in the plugin/component 
+
+~~ TODO The links in the following bullets should be changed to point to a tag, once maven-checkstyle-plugin has been released 
+
+  * <<<animal-sniffer-maven-plugin>>> is only defined in selected plugins, see
+    {{{http://svn.apache.org/viewvc/maven/plugins/trunk/maven-checkstyle-plugin/pom.xml?view=markup#l307}example in <<<maven-checkstyle-plugin>>>}}.
+    We should move it to maven-parent.
+
+  * <<<buildhelper-maven-plugin>>> is used to create the signature for
+    animal-sniffer and is only defined in selected plugins, see
+    {{{http://svn.apache.org/viewvc/maven/plugins/trunk/maven-checkstyle-plugin/pom.xml?view=markup#l295}example in <<<maven-checkstyle-plugin>>>}}.
+    We should move it to maven-parent.
+
+  * <<<maven-plugin-plugin>>> is only defined in selected plugins, see
+    {{{http://svn.apache.org/viewvc/maven/plugins/trunk/maven-checkstyle-plugin/pom.xml?view=markup#l370}example in <<<maven-checkstyle-plugin>>>}}.
+    We should move it to maven-plugins parent.
+
+  []
