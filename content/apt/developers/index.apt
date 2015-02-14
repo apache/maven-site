@@ -4,7 +4,7 @@
  Vincent Siveton
  Brett Porter
  ------
- 2008-07-03
+ 2015-02-14
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -62,6 +62,8 @@ Maven Developer Centre
   * {{{./committer-settings.html}Committer Settings}}
 
   * {{{./java5.html}Java 5 in Plugins and Components}}
+  
+  * {{{./java6.html}Java 6 in Plugins and Shared Components}}
 
   * {{{./retirement-plan-plugins.html}Retirement Plan for Plugins}}
 

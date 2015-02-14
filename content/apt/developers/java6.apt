@@ -1,0 +1,62 @@
+ ------
+ Java 6 in Plugins and Shared Components
+ ------
+ Dennis Lundberg
+ ------
+ 2015-02-14
+ ------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Java 6 in Plugins and Shared Components
+
+  When you want to start using Java 6 features in a plugin, or a shared component,
+  the process described here must be used as decided by the Maven PMC.
+  
+  A plugin/component can start using Java 6 features and/or dependencies when the need
+  arises. If there are issues that have already been fixed, but not yet released,
+  the current trunk of the plugin/component must be released first, targeting Java 5.
+  In the announcement for such a final Java 5 version of the plugin/component, we inform
+  the users that this is the last version that will work with Java 5.
+
+* In JIRA
+
+  When a plugin/component decides to switch to Java 6, you should set
+  the description field for the versions in JIRA for the plugin/component, so that it
+  is clear which version works with which version of Java.
+  Mark the last Java 5 compatible version with "Last version to work with Java 5",
+  see {{{http://jira.codehaus.org/browse/MCHECKSTYLE/fixforversion/20631}example}}.
+  Mark the first version that requires Java 6 "This version requires Java 6",
+  see {{{http://jira.codehaus.org/browse/MCHECKSTYLE/fixforversion/20762}example}}.
+
+  Create an issue "Require Java 6" and schedule it for the first Java 6
+  version, see {{{http://jira.codehaus.org/browse/MCHECKSTYLE-277}example}}.
+  Reference this issue when you check in the code changes (see below) into
+  version control
+
+* On the plugin/component site
+
+  Specify the Java requirements in <<<index.apt.vm>>>: "This plugin/component requires Java
+  $\{javaVersion\}.", see
+  {{{http://svn.apache.org/viewvc/maven/plugins/trunk/maven-checkstyle-plugin/src/site/apt/index.apt.vm?r1=1650811&r2=1652771&pathrev=1658048}example}}.
+  We need to use the variable $\{javaVersion\} here, because
+  $\{maven.compiler.source\} does not work in a site.
+  
