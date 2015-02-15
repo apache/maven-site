@@ -29,11 +29,13 @@ under the License.
   <body>
     <section name="Source Repository">
       <p>
-        Maven projects use <a href="http://git-scm.com/">Git</a> or <a href="http://subversion.apache.org/">Subversion</a> to manage their source code.
+        Maven projects use <a href="http://git-scm.com/">Git</a> or <a href="http://subversion.apache.org/">Subversion</a> to manage their source code:
+        decisions to stay with Subversion or move to Git are tracked on <a href="https://cwiki.apache.org/confluence/display/MAVEN/Git+Migration">Maven's Wiki</a>.
+      </p>
+      <p>
         Instructions on Subversion use can be found in the online book <a href="http://svnbook.red-bean.com/">Version Control with Subversion</a>.
         Instructions on Git use can be found in the online book <a href="http://git-scm.com/book/">Pro Git</a>.
-        Instructions for using the Apache Software Foundation Git repositories are at
-        <a href="https://git-wip-us.apache.org/">https://git-wip-us.apache.org</a>.
+        Instructions for using the Apache Software Foundation Git repositories are at <a href="https://git-wip-us.apache.org/">https://git-wip-us.apache.org</a>.
       </p>
       <subsection name="Maven Core">
         <p>
