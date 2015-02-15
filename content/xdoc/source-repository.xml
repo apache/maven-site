@@ -43,14 +43,14 @@ under the License.
           branch for maven-2.2.X or maven-3.0.x.
         </p>
         <source> <a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source>
-        <p>The integration tests for the Maven core have their own repository:
+        <p>The <a href="/core-its/">integration tests for the Maven core</a> have their own repository:
           <source><a href="https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git">https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git</a></source>
         </p>
       </subsection>
       <subsection name="Other Components">
         <p>
           The source repositories for the various plugins are in Subversion, listed in the documentation of the respective plugin,
-          reachable via the <a href="plugins/index.html">plugin index</a>.
+          reachable via the <a href="/plugins/index.html">plugin index</a>.
         </p>
         <p>
           There are also many shared components and subsystems with their own source repositories, some in Subversion, some in Git.
