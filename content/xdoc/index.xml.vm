@@ -186,19 +186,6 @@ under the License.
         For detailed information on just some of the plugins available for Maven, see the
         <a href="plugins/index.html">plugin list</a>.
       </p>
-<!-- TODO: Should these be here, or just in the user centre?
-      <h3>Converting from a different Build System</h3>
-      <p>
-        If you are currently using a different build system, there are options for converting from that to Maven 2
-        either partially or completely. These guides also give an overview of the differences between Maven and the
-        other build system. The following guides are available in the Users Centre:
-      </p>
-      <ul>
-        <li><a href="todo.html">Converting from Ant to Maven 2</a></li>
-        <li><a href="todo.html">Converting from Maven 1.x to Maven 2</a></li>
-        <li><a href="todo.html">Adding Maven 2 to an IDE based build</a></li>
-      </ul>
--->
       <h3>How to Get Support</h3>
       <p>
         Support for Maven is available in a variety of different forms.
