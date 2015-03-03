@@ -1,0 +1,169 @@
+ -----
+ End Of Life of Maven 2.x
+ -----
+ Karl-Heinz Marbaise
+ -----
+ 2015-03-03
+ -----
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ http://maven.apache.org/doxia/references/apt-format.html
+
+End Of Life Apache Maven 2.x
+
+  The Apache Maven Project Team would like to inform you that the Apache
+  Maven 2.x has reached its end of life and is no longer supported.
+
+  Apache Maven 2.x had its last release - version 2.2.1 - in November
+  2009.
+
+  This means:
+
+  * security vulnerability reports will not be checked against the 2.x branch
+  * the 2.x download pages will be removed.
+  * the latest 2.x release will be removed from the mirror system
+  * the links to any 2.x specific documentation will be moved to
+    [http://maven.apache.org/archives/maven-2.x/](./archives/maven-2.x/index.html).
+
+  []
+
+* List Of Plugins Which Support Maven 2.x
+
+~~ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+~~ The release dates in this table must follow the ISO-8601 standard: yyyy-MM-dd
+~~ See http://maven.apache.org/guides/development/guide-documentation-style.html
+~~ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+|| <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Release Date>> || <<Description>> || <<Documentation Reference>>
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| <<Core plugins>>                                             |            |              |            | <<Plugins corresponding to default core phases (ie. clean, compile). They may have multiple goals as well.>> | |
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-clean-plugin/} <<<clean>>>}}               | B          | 2.6.1        | 2014-10-26 | Clean up after the build. | {{{http://maven.apache.org/plugins-archives/maven-clean-plugin-2.6.1}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}         | B          | 3.2          | 2014-10-08 | Compiles Java sources. | {{{http://maven.apache.org/plugins-archives/maven-compiler-plugin-3.2}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}             | B          | 2.8.2        | 2014-08-27 | Deploy the built artifact to the remote repository. | {{{http://maven.apache.org/plugins-archives/maven-deploy-plugin-2.8.2}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 2.18.1       | 2014-12-28 | Run the JUnit integration tests in an isolated classloader. | {{{http://maven.apache.org/surefire-archives/surefire-2.18.1/maven-failsafe-plugin/}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-install-plugin/} <<<install>>>}}           | B          | 2.5.2        | 2014-08-27 | Install the built artifact into the local repository. | {{{http://maven.apache.org/plugins-archives/maven-install-plugin-2.5.2}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-resources-plugin/} <<<resources>>>}}       | B          | 2.7          | 2014-09-29 | Copy the resources to the output directory for including in the JAR. | {{{http://maven.apache.org/plugins-archives/maven-resources-plugin-2.7}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-site-plugin/} <<<site>>>}}                 | B          | 2.4          | 2012-04-03 | Generate a site for the current project. | {{{http://maven.apache.org/plugins-archives/maven-site-plugin-2.4/}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 2.18.1       | 2014-12-28 | Run the JUnit unit tests in an isolated classloader. | {{{http://maven.apache.org/surefire-archives/surefire-2.18.1/maven-surefire-plugin/}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.0          | 2010-01-30 | Useful for integration tests - verifies the existence of certain conditions. | {{{http://maven.apache.org/plugins-archives/maven-verifier-plugin-1.0}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| <<Packaging types/tools>>                                    |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.10         | 2014-12-31 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEAR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | 2.5          | 2015-01-12 | Build an EJB (and optional client) from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ejb-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MEJB}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-jar-plugin/} <<<jar>>>}}                   | B          | 2.5          | 2014-06-19 | Build a JAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-jar-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-rar-plugin/} <<<rar>>>}}                   | B          | 2.4          | 2014-09-08 | Build a RAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-rar-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRAR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-war-plugin/} <<<war>>>}}                   | B          | 2.6          | 2015-01-08 | Build a WAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-war-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MWAR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-acr-plugin/} <<<app-client/acr>>>}}        | B          | 1.1          | 2014-09-02 | Build a JavaEE application client from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-acr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MACR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}               | B          | 2.3          | 2014-05-02 | Build an Uber-JAR from the current project, including dependencies. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-shade-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSHADE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-source-plugin/} <<<source>>>}}             | B          | 2.4          | 2014-10-07 | Build a source-JAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-source-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSOURCES}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| <<Reporting plugins>>                                        |            |              |            | <<Plugins which generate reports, are configured as reports in the POM and run under the site generation lifecycle.>> | |
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-changelog-plugin/} <<<changelog>>>}}       | R          | 2.3          | 2014-06-24 | Generate a list of recent changes from your SCM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changelog-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGELOG}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.11         | 2014-09-28 | Generate a report from an issue tracker or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHANGES}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.14         | 2015-02-05 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MCHECKSTYLE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | 1.1          | 2011-01-15 | Generate a Description of a Project (DOAP) file from a POM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOAP}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | 1.0          | 2008-11-16 | Documentation checker plugin. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-docck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDOCCK}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | 2.10.1       | 2014-09-27 | Generate Javadoc for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-javadoc-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJAVADOC}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | 2.5          | 2014-11-02 | Generate a source cross reference. | {{{http://svn.apache.org/repos/asf/maven/jxr/trunk/maven-jxr-plugin}SVN}} | {{{http://jira.codehaus.org/browse/JXR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-linkcheck-plugin/} <<<linkcheck>>>}}       | R          | 1.2          | 2014-10-08 | Generate a Linkcheck report of your project's documentation. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-linkcheck-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MLINKCHECK}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 3.4          | 2015-02-03 | Generate a PMD report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPMD}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 2.8   | 2015-01-05 | Generate standard project reports. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPIR}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | 2.18.1       | 2014-12-28 | Generate a report based on the results of unit tests. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{http://jira.codehaus.org/browse/SUREFIRE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| <<Tools>>                                                    |            |              |            | <<These are miscellaneous tools available through Maven by default.>> | |
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                   | B          | 2.4          | 2014-12-15 | Generate an Ant build file for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ant-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANT}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}             | B          | 1.8          | 2014-12-26 | Run a set of ant tasks from a phase of the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-antrun-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MANTRUN}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | 2.2          | 2011-11-19 | Generate a skeleton project structure from an archetype. | {{{http://svn.apache.org/repos/asf/maven/archetype/trunk/archetype-plugin}SVN}} | {{{http://jira.codehaus.org/browse/ARCHETYPE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | 2.5.3        | 2014-12-17 | Build an assembly (distribution) of sources and/or binaries. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-assembly-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MASSEMBLY}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | 2.10         | 2015-01-27 | Dependency manipulation (copy, unpack) and analysis. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-dependency-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MDEP}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | 1.4          | 2015-01-29 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | {{{http://svn.apache.org/repos/asf/maven/enforcer/trunk/maven-enforcer-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MENFORCER}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                   | B          | 1.6          | 2015-01-19 | Create signatures for the artifacts and poms. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-gpg-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MGPG}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-help-plugin/} <<<help>>>}}                 | B          | 2.2          | 2013-02-23 | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPH}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}           | B+R        | 1.9          | 2014-06-28 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-jarsigner-plugin/} <<<jarsigner>>>}}       | B          | 1.4          | 2014-01-21 | Signs or verifies project artifacts. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-jarsigner-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MJARSIGNER}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | 1.1.1        | 2010-01-06 | Use the gnu patch tool to apply patch files to source code. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-patch-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPATCH}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | 1.3          | 2014-02-16 | Generate a PDF version of your project's documentation. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pdf-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPDF}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugin-tools/maven-plugin-plugin/} <<<plugin>>>}}        | B+R        | 3.4          | 2015-01-04 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR. | {{{http://svn.apache.org/repos/asf/maven/plugin-tools/trunk/maven-plugin-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MPLUGIN}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-release-plugin/} <<<release>>>}}           | B          | 2.5.1          | 2014-09-22 | Release the current project - updating the POM and tagging in the SCM. | {{{http://svn.apache.org/repos/asf/maven/release/trunk/maven-release-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRELEASE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.5          | 2013-08-14 | Copy remote resources to the output directory for inclusion in the artifact. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-remote-resources-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MRRESOURCES}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.4          | 2015-02-22 | Plugin to help with repository-based tasks. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-repository-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MREPOSITORY}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.9.2        | 2014-09-17 | Execute SCM commands for the current project. | {{{https://git-wip-us.apache.org/repos/asf/maven-scm.git }GIT}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 1.1          | 2014-05-18 | Publish your Maven website to a scm location. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-scm-publish-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/MSCMPUB}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | Assists with release staging and promotion. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSTAGE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-12 | Allows to share configuration across plugins. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-toolchains-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MTOOLCHAINS}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| <<IDEs>>                                                     |            |              |            | <<Plugins that simplify integration with integrated developer environments.>> | |
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2012-02-14 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+
+  \* <<B>>uild or <<R>>eporting plugin
+
+
+  []
