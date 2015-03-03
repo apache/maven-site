@@ -15,5 +15,12 @@ This means:
 -   the links to any 2.x specific documentation will be moved to
     [http://maven.apache.org/archives/maven-2.x/](./archives/maven-2.x/index.html).
 
+## The List Of Plugins Which Support Maven 2.x
+
+| Plugin                | Version                         |
+| --------------------- |:-------------------------------:|
+| Maven War Plugin      | [2.6](http://maven.apache.org/plugins-archives/maven-war-plugin-2.6) |
+
+
 The Apache Maven Team.
 
