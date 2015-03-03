@@ -54,6 +54,11 @@ End Of Life Apache Maven 2.x
 ~~ See http://maven.apache.org/guides/development/guide-documentation-style.html
 ~~ - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
+  This list contains the list of plugins which support Maven 2.x which means
+  if you have to use Maven 2 this list is the reference to the available plugins.
+
+  NOTE: Currently not finished nor complete the list.
+
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Release Date>> || <<Description>> || <<Documentation Reference>>
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
