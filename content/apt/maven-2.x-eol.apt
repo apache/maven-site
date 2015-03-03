@@ -37,8 +37,11 @@ End Of Life Apache Maven 2.x
   This means:
 
   * security vulnerability reports will not be checked against the 2.x branch
+
   * the 2.x download pages will be removed.
+
   * the latest 2.x release will be removed from the mirror system
+
   * the links to any 2.x specific documentation will be moved to
     [http://maven.apache.org/archives/maven-2.x/](./archives/maven-2.x/index.html).
 
