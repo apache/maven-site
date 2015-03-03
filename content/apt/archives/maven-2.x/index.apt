@@ -43,5 +43,6 @@ This is the Maven 2 Graveyard
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.0          | 2008-09-27 | Build a subset of interdependent projects in a reactor | 2014-03-24 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
+  \* <<B>>uild or <<R>>eporting plugin
 
   []
