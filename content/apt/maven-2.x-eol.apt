@@ -158,18 +158,18 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.4          | 2015-02-22 | Plugin to help with repository-based tasks. | {{{http://maven.apache.org/plugins-archives/maven-repository-plugin-2.4}Doc}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.9.2        | 2014-09-17 | Execute SCM commands for the current project. | {{{https://git-wip-us.apache.org/repos/asf/maven-scm.git }GIT}} | {{{http://jira.codehaus.org/browse/SCM}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 1.1          | 2014-05-18 | Publish your Maven website to a scm location. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-scm-publish-plugin/}SVN}} | {{{http://jira.codehaus.org/browse/MSCMPUB}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | Assists with release staging and promotion. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-stage-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MSTAGE}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-12 | Allows to share configuration across plugins. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-toolchains-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MTOOLCHAINS}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.9.2        | 2014-09-17 | Execute SCM commands for the current project. | {{{http://maven.apache.org/scm-archives/scm-1.9.2}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
+| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 1.1          | 2014-05-18 | Publish your Maven website to a scm location. | {{{http://maven.apache.org/plugins-archives/maven-scm-publish-plugin-1.1}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
+| {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | Assists with release staging and promotion. | {{{http://maven.apache.org/plugins-archives/maven-stage-plugin-1.0}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
+| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-11 | Allows to share configuration across plugins. | {{{http://maven.apache.org/plugins-archives/maven-toolchains-plugin-1.1}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | <<IDEs>>                                                     |            |              |            | <<Plugins that simplify integration with integrated developer environments.>> | |
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2012-02-14 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MECLIPSE}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2012-02-14 | Generate an Eclipse project file for the current project. | {{{http://maven.apache.org/plugins-archives/maven-eclipse-plugin-2.9}Doc}}
+*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
 
