@@ -57,7 +57,7 @@ End Of Life Apache Maven 2.x
   This list contains the list of plugins with the last version that supports Maven 2.x, which means
   if you have to use Maven 2, this list is the reference to the last version of plugins you can use.
 
-  NOTE: Currently not finished nor complete list.
+  NOTE: If you find plugins which are not mentioned or issues please report on the users mailing list.
 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Release Date>> || <<Description>> || <<Documentation Reference>>
