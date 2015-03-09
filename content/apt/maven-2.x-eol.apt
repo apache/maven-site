@@ -88,7 +88,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | {{{/plugins-archives/maven-ear-plugin-2.10}<<2.5>>}}             | 2015-01-12 | Build an EJB (and optional client) from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-jar-plugin/} <<<jar>>>}}                   | B          | {{{/plugins-archives/maven-jar-plugin-2.5}<<2.5>>}}              | 2014-06-19 | Build a JAR from the current project.
+| {{{/plugins/maven-jar-plugin/} <<<jar>>>}}                   | B          | {{{/plugins-archives/maven-jar-plugin-2.6}<<2.6>>}}              | 2015-03-09 | Build a JAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-rar-plugin/} <<<rar>>>}}                   | B          | {{{/plugins-archives/maven-rar-plugin-2.4}<<2.4>>}}              | 2014-09-08 | Build a RAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
@@ -146,7 +146,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-jarsigner-plugin/} <<<jarsigner>>>}}       | B          | {{{/plugins-archives/maven-jarsigner-plugin-1.4}<<1.4>>}}        | 2014-01-21 | Signs or verifies project artifacts. 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | {{{/plugins-archives/maven-patch-plugin-1.1.1}<<1.1.1>>}}        | 2010-01-06 | Use the gnu patch tool to apply patch files to source code.
+| {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | {{{/plugins-archives/maven-patch-plugin-1.2}<<1.2>>}}        | 2015-03-09 | Use the gnu patch tool to apply patch files to source code.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | {{{/plugins-archives/maven-pdf-plugin-1.3}<<1.3>>}}              | 2014-02-16 | Generate a PDF version of your project's documentation.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
