@@ -96,7 +96,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-acr-plugin/} <<<app-client/acr>>>}}        | B          | {{{/plugins-archives/maven-acr-plugin-1.1}<<1.1>>}}              | 2014-09-02 | Build a JavaEE application client from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}               | B          | {{{/plugins-archives/maven-shade-plugin-2.3}<<2.3>>}}            | 2014-05-02 | Build an Uber-JAR from the current project, including dependencies.
+| {{{/plugins/maven-shade-plugin/} <<<shade>>>}}               | B          | {{{/plugins-archives/maven-shade-plugin-1.7.1}<<1.7.1>>}}        | 2012-06-27 | Build an Uber-JAR from the current project, including dependencies.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-source-plugin/} <<<source>>>}}             | B          | {{{/plugins-archives/maven-source-plugin-2.4}<<2.4>>}}           | 2014-10-07 | Build a source-JAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
@@ -160,7 +160,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | {{{/scm-archives/scm-1.9.2}<<1.9.2>>}}                           | 2014-09-17 | Execute SCM commands for the current project. 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | {{{/plugins-archives/maven-scm-publish-plugin-1.1}<<1.1>>}}      | 2014-05-18 | Publish your Maven website to a scm location.
+| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | <<1.0-beta-2>>                                                   | 2012-11-01 | Publish your Maven website to a scm location.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | {{{/plugins-archives/maven-stage-plugin-1.0}<<1.0>>}}            | 2015-03-03 | Assists with release staging and promotion.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
