@@ -114,7 +114,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | {{{/plugins-archives/maven-javadoc-plugin-2.10.1}<<2.10.1>>}}    | 2014-09-27 | Generate Javadoc for the project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | {{{/jxr-archives/maven-jxr-plugin-2.5}<<2.5>>}}                  | 2014-11-02 | Generate a source cross reference.
+| {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | {{{/jxr-archives/jxr-2.5/maven-jxr-plugin}<<2.5>>}}              | 2014-11-02 | Generate a source cross reference.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-linkcheck-plugin/} <<<linkcheck>>>}}       | R          | {{{/plugins-archives/maven-linkcheck-plugin-1.2}<<1.2>>}}        | 2014-10-08 | Generate a Linkcheck report of your project's documentation.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
@@ -122,7 +122,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | {{{/plugins-archives/maven-project-info-reports-plugin-2.8}<<2.8>>}} | 2015-01-05 | Generate standard project reports.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | {{{/surefire-archives/maven-surefire-report-plugin-2.18.1}<<2.18.1>>}} | 2014-12-28 | Generate a report based on the results of unit tests.
+| {{{/surefire/maven-surefire-report-plugin/} <<<surefire-report>>>}} | R   | {{{/surefire-archives/surefire-2.18.1/maven-surefire-report-plugin}<<2.18.1>>}} | 2014-12-28 | Generate a report based on the results of unit tests.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | <<Tools>>                                                    |            |              |            | <<These are miscellaneous tools available through Maven by default.>> |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
@@ -136,7 +136,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | {{{/plugins-archives/maven-dependency-plugin-2.10}<<2.10>>}}     | 2015-01-27 | Dependency manipulation (copy, unpack) and analysis.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | {{{/enforcer-archives/maven-enforcer-plugin-1.4}<<1.4>>}}        | 2015-01-29 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
+| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | {{{/enforcer-archives/enforcer-1.4/maven-enforcer-plugin}<<1.4>>}}        | 2015-01-29 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                   | B          | {{{/plugins-archives/maven-gpg-plugin-1.6}<<1.6>>}}              | 2015-01-19 | Create signatures for the artifacts and poms.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
