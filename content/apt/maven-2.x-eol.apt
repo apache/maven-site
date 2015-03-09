@@ -130,7 +130,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}             | B          | {{{/plugins-archives/maven-antrun-plugin-1.8}<<1.8>>}}           | 2014-12-26 | Run a set of ant tasks from a phase of the build.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | {{{/archetype-archives/maven-archetype-plugin-2.2}<<2.2>>}}      | 2011-11-19 | Generate a skeleton project structure from an archetype.
+| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | {{{/archetype-archives/maven-archetype-plugin-2.2/maven-archetype-plugin}<<2.2>>}} | 2011-11-19 | Generate a skeleton project structure from an archetype.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | {{{/plugins-archives/maven-assembly-plugin-2.5.3}<<2.5.3>>}}     | 2014-12-17 | Build an assembly (distribution) of sources and/or binaries.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
@@ -158,9 +158,9 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | {{{/plugins-archives/maven-repository-plugin-2.4}<<2.4>>}}       | 2015-02-22 | Plugin to help with repository-based tasks.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | {{{/scm-archives/scm-1.9.2}<<1.9.2>>}}                           | 2014-09-17 | Execute SCM commands for the current project. 
+| {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | {{{/scm-archives/scm-1.9.2/maven-scm-plugin/}<<1.9.2>>}}         | 2014-09-17 | Execute SCM commands for the current project. 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | <<1.0-beta-2>>                                                   | 2012-11-01 | Publish your Maven website to a scm location.
+| {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | {{{/plugins-archives/maven-scm-publish-plugin-1.0-beta-2/}<<1.0-beta-2>>}} | 2012-11-01 | Publish your Maven website to a scm location.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | {{{/plugins-archives/maven-stage-plugin-1.0}<<1.0>>}}            | 2015-03-03 | Assists with release staging and promotion.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
