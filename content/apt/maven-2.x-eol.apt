@@ -144,7 +144,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}           | B+R        | {{{/plugins-archives/maven-invoker-plugin-1.9}<<1.9>>}}          | 2014-06-28 | Run a set of Maven projects and verify the output.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-jarsigner-plugin/} <<<jarsigner>>>}}       | B          | {{{/plugins-archives/maven-jarsigner-plugin-1.4}<<1.4>>}}        | 2014-01-21 | Signs or verifies project artifacts. 
+| {{{/plugins/maven-jarsigner-plugin/} <<<jarsigner>>>}}       | B          | {{{/plugins-archives/maven-jarsigner-plugin-1.4}<<1.4>>}}        | 2015-01-21 | Signs or verifies project artifacts. 
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | {{{/plugins-archives/maven-patch-plugin-1.2}<<1.2>>}}        | 2015-03-09 | Use the gnu patch tool to apply patch files to source code.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
