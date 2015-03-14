@@ -41,7 +41,7 @@ Guide to using attached tests
      <plugin>
        <groupId>org.apache.maven.plugins</groupId>
        <artifactId>maven-jar-plugin</artifactId>
-       <version>2.2</version>
+       <version>2.6</version>
        <executions>
          <execution>
            <goals>
@@ -101,9 +101,3 @@ mvn deploy
 
 +----+
 
- Note that previous editions of this guide suggested to use <<<\<classifier\>tests\</classifier\>>>> instead of
- <<<\<type\>test-jar\</type\>>>>. While this currently works for some cases, it does not properly work during a
- reactor build of the test JAR module and any consumer if a lifecycle phase prior to <<<install>>> is invoked. In such
- a scenario, Maven will not resolve the test JAR from the output of the reactor build but from the local/remote
- repository. Apparently, the JAR from the repositories could be outdated or completely missing, causing a build
- failure (cf. {{{http://jira.codehaus.org/browse/MNG-2045}MNG-2045}}).

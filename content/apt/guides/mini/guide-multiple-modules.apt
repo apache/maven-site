@@ -2,8 +2,9 @@
  Guide to Working with Multiple Modules
  ------
  Brett Porter
+ Karl Heinz Marbaise
  ------
- 2009-02-04
+ 2015-03-13
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -64,8 +65,6 @@ Guide to Working with Multiple Modules
 
   The following command line switches are available:
 
-    * <<<-r>>> - ignore the modules declared in the current project, and instead build the list of projects listed after the <<<-r>>> switch (which may include wildcards)
-
     * <<<--resume-from>>> - resumes a reactor the specified project (e.g. when it fails in the middle)
 
     * <<<--also-make>>> - build the specified projects, and any of their dependencies in the reactor
@@ -79,11 +78,6 @@ Guide to Working with Multiple Modules
     * <<<--non-recursive>>> - do not use a reactor build, even if the current project declares modules and just build the project in the current directory
 
   Refer to the Maven command line interface reference for more information on these switches.
-
-** The Reactor Plugin
-
-  For versions of Maven prior to Maven 2.1, or for additional capabilities with the reactor such as building only the modules with SCM changes, the Reactor plugin can be used to further customize the execution of the projects.
-  For information on how to use this, refer to the {{{/plugins/maven-reactor-plugin/index.html} Reactor Plugin documentation}}.
 
 * More information
 
