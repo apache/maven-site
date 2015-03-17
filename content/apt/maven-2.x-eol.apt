@@ -112,7 +112,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | {{{/plugins-archives/maven-docck-plugin-1.0}<<1.0>>}}            | 2008-11-16 | Documentation checker plugin.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | {{{/plugins-archives/maven-javadoc-plugin-2.10.1}<<2.10.1>>}}    | 2014-09-27 | Generate Javadoc for the project.
+| {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | {{{/plugins-archives/maven-javadoc-plugin-2.10.2}<<2.10.2>>}}    | 2015-03-17 | Generate Javadoc for the project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/jxr/maven-jxr-plugin/} <<<jxr>>>}}                       | R          | {{{/jxr-archives/jxr-2.5/maven-jxr-plugin}<<2.5>>}}              | 2014-11-02 | Generate a source cross reference.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
