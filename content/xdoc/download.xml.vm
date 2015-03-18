@@ -291,7 +291,7 @@ under the License.
           <table>
             <tr>
               <td><b>JDK</b></td>
-              <td>Maven 3.2 requires JDK 1.6 or above, while Maven 3.0/3.1 requires JDK 1.5 or above (this is to execute Maven - it still allows you to build against 1.3 and prior JDK's:
+              <td>Maven 3.3 requires JDK 1.7 or above, Maven 3.2 requires JDK 1.6 or above, while Maven 3.0/3.1 requires JDK 1.5 or above (this is to execute Maven - it still allows you to build against 1.3 and prior JDK's:
               see our <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a>)</td>
             </tr>
             <tr>
