@@ -24,7 +24,9 @@
 
 ## Maven 3.3.1
 
-The Apache Maven team would like to announce the release of Maven 3.3.1.
+The Apache Maven team would like to announce the release of Maven 3.3.1. Many thanks for Karl Heinz Marbaise for writing up the most complete release notes which you can find here:
+
+<http://blog.soebes.de/blog/2015/03/17/apache-maven-3-dot-3-1-features/>
 
 Maven 3.3.1 is [available for download][0].
 
