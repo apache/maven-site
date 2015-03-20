@@ -106,7 +106,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | {{{/plugins-archives/maven-changes-plugin-2.11}<<2.11>>}}        | 2014-09-28 | Generate a report from an issue tracker or a change document.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | {{{/plugins-archives/maven-checkstyle-plugin-2.14}<<2.14>>}}     | 2015-02-05 | Generate a Checkstyle report.
+| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | {{{/plugins-archives/maven-checkstyle-plugin-2.14}<<2.15>>}}     | 2015-03-20 | Generate a Checkstyle report.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | {{{/plugins-archives/maven-doap-plugin-1.2}<<1.2>>}}             | 2015-03-17 | Generate a Description of a Project (DOAP) file from a POM.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
