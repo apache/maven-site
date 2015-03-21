@@ -57,12 +57,12 @@ Date format is: YYYY-MM-DD
 <h3><a name="Maven_3">Maven 3</a></h3>
 <table>
 
-#release( "2015-03-20" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "true" "JDK 7" "1" )
-#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "JDK 6" "4" )
+#release( "2015-03-20" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "true" "Java 7" "1" )
+#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "4" )
 #release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
 #release( "2014-06-25" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
 #release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
-#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "" "JDK 5" "17" )
+#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "" "Java 5" "17" )
 #release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" "" "" )
 #release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" "" "" )
 #release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" "" "" )
@@ -90,9 +90,9 @@ Date format is: YYYY-MM-DD
 </td><td></td>
 </tr>
 
-#release( "2009-11-08" "2.2.1" "announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" "JDK 5" "2" )
+#release( "2009-11-08" "2.2.1" "announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" "Java 5" "2" )
 #release( "2009-06-30" "2.2.0" "announce/200906.mbox/%3C4A4A8FC8.8040801%40apache.org%3E" "" "" "" )
-#release( "2009-03-22" "2.1.0" "announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E" "" "JDK 1.4" "14" )
+#release( "2009-03-22" "2.1.0" "announce/200903.mbox/%3C49C59EC1.7090706%40apache.org%3E" "" "Java 1.4" "14" )
 #release( "2008-09-19" "2.1.0-M1" "announce/200809.mbox/%3C48D31DA2.4000604%40apache.org%3E" "" "" "" )
 #release( "2010-02-26" "2.0.11" "announce/201002.mbox/%3C16924806-34B2-404B-A22B-0B76D4F9DD07%40apache.org%3E" "" "" "" )
 #release( "2009-02-18" "2.0.10" "announce/200902.mbox/%3C6d8f35410902180648r14fc7a53waaec9a36166403cf%40mail.gmail.com%3E" "" "" "" )
