@@ -57,6 +57,7 @@ Date format is: YYYY-MM-DD
 <h3><a name="Maven_3">Maven 3</a></h3>
 <table>
 
+#release( "2015-03-20" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "true" "JDK 7" "1" )
 #release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "JDK 6" "4" )
 #release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
 #release( "2014-06-25" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
