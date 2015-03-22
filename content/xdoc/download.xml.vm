@@ -157,6 +157,62 @@ under the License.
 
       <p>You can also <a href="#Maven_Documentation">download the current documentation</a>, i.e. this website.</p>
 
+      <subsection name="Maven ${current32xVersion}">
+
+        <p>This is a stable version 3.2.x of Maven with Java 6 requirement, for projects that can't upgrade to Maven 3.3 yet.</p>
+        <p>Notice that <b>Maven Toolchains</b> provide a way for a project to be built using a specific version of JDK independent
+        from the one Maven is running with: see <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a></p>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Link</th>
+              <th>Checksum</th>
+              <th>Signature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Maven ${current32xVersion} (Binary tar.gz)</td>
+              <td><a href="[preferred]maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz">apache-maven-${current32xVersion}-bin.tar.gz</a></td>
+              <td><a href="http://www.apache.org/dist//maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz.md5">apache-maven-${current32xVersion}-bin.tar.gz.md5</a></td>
+              <td><a href="http://www.apache.org/dist//maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz.asc">apache-maven-${current32xVersion}-bin.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current32xVersion} (Binary zip)</td>
+              <td><a href="[preferred]maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip">apache-maven-${current32xVersion}-bin.zip</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip.md5">apache-maven-${current32xVersion}-bin.zip.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip.asc">apache-maven-${current32xVersion}-bin.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current32xVersion} (Source tar.gz)</td>
+              <td><a href="[preferred]maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz">apache-maven-${current32xVersion}-src.tar.gz</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz.md5">apache-maven-${current32xVersion}-src.tar.gz.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-2/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz.asc">apache-maven-${current32xVersion}-src.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Maven ${current32xVersion} (Source zip)</td>
+              <td><a href="[preferred]maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip">apache-maven-${current32xVersion}-src.zip</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip.md5">apache-maven-${current32xVersion}-src.zip.md5</a></td>
+              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip.asc">apache-maven-${current32xVersion}-src.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Release Notes</td>
+              <td><a href="./docs/${current32xVersion}/release-notes.html">${current32xVersion}</a></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>Release Reference Documentation</td>
+              <td><a href="./ref/${current32xVersion}/">${current32xVersion}</a></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </subsection>
+
       <subsection name="Maven ${current31xVersion}">
 
         <p>This is a stable version 3.1.x of Maven with Java 5 requirement, for projects that can't upgrade to Maven 3.2 yet.</p>
