@@ -23,7 +23,7 @@ POM Reference
 
       [[1]] {{{Dependencies}Dependencies}}
 
-        [[1]] {{{Dependency_Version_Specification}Dependency Version Specification}}
+        [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
 
         [[2]] {{{Exclusions}Exclusions}}
 
@@ -313,7 +313,7 @@ POM Reference
 
     * <<groupId>>, <<artifactId>>: directly the corresponding coordinates of the dependency,
 
-    * <<version>>: a <<dependency version specification>>, ie requirement, that will be used to compute the dependency's effective version.
+    * <<version>>: a <<dependency version requirement specification>>, that will be used to compute the dependency's effective version.
 
   Since the dependency is described by Maven coordinates, you may be thinking:
   "This means that my project can only depend upon Maven artifacts!" The answer is, "Of course, but that's a
@@ -399,9 +399,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   In the shortest terms, <<<optional>>> lets other projects know that, when you use this project, you
   do not require this dependency in order to work correctly.
 
-*** {Dependency Version Specification}
+*** {Dependency Version Requirement Specification}
 
-  Version specifications used for dependencies' <<<version>>> element have the following syntax:
+  Dependencies' <<<version>>> element define version requirements, used to compute effective dependency
+  version. Version requirements have the following syntax:
 
   * <<<1.0>>>: "Soft" requirement on 1.0 (just a recommendation, if it matches all other ranges for the dependency)
 
