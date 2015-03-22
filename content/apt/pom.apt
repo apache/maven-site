@@ -23,7 +23,9 @@ POM Reference
 
       [[1]] {{{Dependencies}Dependencies}}
 
-        [[1]] {{{Exclusions}Exclusions}}
+        [[1]] {{{Dependency_Version_Specification}Dependency Version Specification}}
+
+        [[2]] {{{Exclusions}Exclusions}}
 
       [[2]] {{{Inheritance}Inheritance}}
 
@@ -303,8 +305,17 @@ POM Reference
 +-----------------+
 
   * <<groupId>>, <<artifactId>>, <<version>>:\
-  These elements are self-explanatory, and you will see them often. This trinity represents the coordinate
-  of a specific project in time, demarcating it as a dependency of this project. You may be thinking:
+  You will see these elements often. This trinity is used to compute the Maven coordinate
+  of a specific project in time, demarcating it as a dependency of this project. The purpose
+  of this computation is to select a version that matches all the dependency declarations
+  (due to transitive dependencies, there can be multiple dependency declarations for the
+  same artifact). The values should be:
+
+    * <<groupId>>, <<artifactId>>: directly the corresponding coordinates of the dependency,
+
+    * <<version>>: a <<dependency version specification>>, ie requirement, that will be used to compute the dependency's effective version.
+
+  Since the dependency is described by Maven coordinates, you may be thinking:
   "This means that my project can only depend upon Maven artifacts!" The answer is, "Of course, but that's a
   good thing." This forces you to depend solely on dependencies that Maven can manage. There are times,
   unfortunately, when a project cannot be downloaded from the central Maven repository. For example, a project
@@ -387,6 +398,26 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   In the shortest terms, <<<optional>>> lets other projects know that, when you use this project, you
   do not require this dependency in order to work correctly.
+
+*** {Dependency Version Specification}
+
+  Version specifications used for dependencies' <<<version>>> element have the following syntax:
+
+  * <<<1.0>>>: "Soft" requirement on 1.0 (just a recommendation, if it matches all other ranges for the dependency)
+
+  * <<<[1.0]>>>: "Hard" requirement on 1.0
+
+  * <<<(,1.0]>>>: x \<= 1.0
+
+  * <<<[1.2,1.3]>>>: 1.2 \<= x \<= 1.3
+
+  * <<<[1.0,2.0)>>>: 1.0 \<= x \< 2.0
+
+  * <<<[1.5,)>>>: x \>= 1.5
+
+  * <<<(,1.0],[1.2,)>>>: x \<= 1.0 or x \>= 1.2; multiple sets are comma-separated
+
+  * <<<(,1.1),(1.1,)>>>: this excludes 1.1 (for example if it is known not to work in combination with this library)
 
 *** {Exclusions}
 
