@@ -30,7 +30,11 @@
 #set ( $b = '' )
 #set ( $b_ = '' )
 #end
-<tr><td>$b$date$b_</td><td>$b$version$b_</td><td>
+<tr><td>$b$date$b_</td><td>$b$version$b_</td>
+#if( $jdk.length() > 0 )
+<td rowspan="$rowspan">$jdk</td>
+#end
+<td>
 #if( !$announce.startsWith( "http://" ) )
 #set ( $announceLink = "$archive$announce" )
 #else
@@ -44,9 +48,6 @@ $b<a href="$announceLink">announce</a>
 , <a href="/ref/$version/">reference documentation</a>
 #end
 $b_</td>
-#if( $jdk.length() > 0 )
-<td rowspan="$rowspan">$jdk</td>
-#end
 </tr>
 #end
 
@@ -84,10 +85,10 @@ Date format is: YYYY-MM-DD
 
 <h3><a name="Maven_2">Maven 2</a></h3>
 <table>
-<tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td>
+<tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td></td><td>
 <b><a href="../maven-2.x-eol.html">EoL notes</a>,
 <a href="${archive}announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E">announce</a></b>
-</td><td></td>
+</td>
 </tr>
 
 #release( "2009-11-08" "2.2.1" "announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" "Java 5" "2" )
