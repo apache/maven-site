@@ -73,4 +73,4 @@ Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/do
 RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
 
 # test of extpaths.txt replacement
-Alias /core-its-htaccess /www/maven.apache.org/components/core-its
+#Alias /core-its-htaccess /www/maven.apache.org/components/core-its
