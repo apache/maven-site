@@ -71,3 +71,6 @@ Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html h
 Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/doxia/references/apt-format.html
 
 RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
+
+# test of extpaths.txt replacement
+Alias /core-its-htaccess /www/maven.apache.org/components/core-its
