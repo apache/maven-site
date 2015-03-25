@@ -74,4 +74,4 @@ RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
 
 # test of extpaths.txt replacement
 RewriteEngine on
-RewriteRule /core-its-htaccess/(.*)  /www/maven.apache.org/components/core-its/$1
+RewriteRule /core-its-htaccess/(.*)$  /www/maven.apache.org/components/core-its/$1
