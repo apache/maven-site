@@ -52,7 +52,7 @@ Subversion Configuration
 * IntelliJ IDEA 4.5+
 
  Download <<<{{{./maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
- <<<~/.IntelliJIDEA/config/codestyles>>> then restart IDEA. On Windows, try
+ <<<~~/Library/Preferences/IntelliJIdeaxx/codestyles>>> then restart IDEA (with xx your idea version). On Windows, try
  <<<C:\Documents and Settings\\<username\>\.IntelliJIDEA\config\codestyles>>>
 
  After this, restart IDEA and open the settings to select the new code style.
