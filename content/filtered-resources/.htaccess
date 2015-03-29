@@ -75,3 +75,9 @@ RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
 # test of extpaths.txt replacement
 RewriteEngine on
 RewriteRule ^core-its-htaccess(.*)$ /components/core-its$1 [L]
+
+# test of generic extpaths.txt replacement: if file is not found in maven-site, look into components
+RewriteCond %{REQUEST_URI} !^/components/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ /components/$1 [L]
