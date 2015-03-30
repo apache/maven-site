@@ -87,3 +87,9 @@ RewriteCond %{REQUEST_URI} ^/components/
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule /components/(.*) $1/ [R]
+
+# hask: in case of /component/foo/ (with trailing /), do /foo/ redirect
+RewriteCond %{REQUEST_URI} ^/components/
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} /$
+RewriteRule /components/(.*) $1 [R]
