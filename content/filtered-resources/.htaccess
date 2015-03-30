@@ -80,4 +80,10 @@ RewriteRule ^core-its-htaccess(.*)$ /components/core-its$1 [L]
 RewriteCond %{REQUEST_URI} !^/components/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /components/$1 [L]
+RewriteRule ^(.*)$ /components/$1
+
+# in case of directory without trailing /, do the redirect or httpd will do it to /components/foo/
+RewriteCond %{REQUEST_URI} ^/components/
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule /components/(.*) $1/ [R]
