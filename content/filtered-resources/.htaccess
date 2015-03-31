@@ -72,17 +72,15 @@ Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/do
 
 RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
 
-# test of extpaths.txt replacement
 RewriteEngine on
-RewriteRule ^core-its-htaccess(.*)$ /components/core-its$1 [L]
 
-# test of generic extpaths.txt replacement: if file is not found in maven-site, look into components
+# if file is not found in maven-site, look into components
 RewriteCond %{REQUEST_URI} !^/components/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ /components/$1 [C]
 
-# in case of directory without trailing /, do the redirect or httpd will do it to /components/foo/
+# in case of directory without trailing /, do the redirect or httpd will do a redirect from /foo to /components/foo/
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^components/(.*) $1/ [R]
