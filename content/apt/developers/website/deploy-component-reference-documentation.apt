@@ -4,7 +4,7 @@
  Barrie Treloar
  Hervé Boutemy
  ------
- 2013-09-23
+ 2015-03-30
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -91,9 +91,8 @@ mvn scm-publish:publish-scm
 
  []
 
- <<Notice>>: to avoid published content do disappear when Maven main content is published (see
- {{{./deploy-maven-website.html}documentation}} for more details), check that the <<</xxx-archives>>> path
- is properly declared in {{{/extpaths.txt}<<<extpaths.txt>>>}}.
+ <<Notice>>: content is in fact published to <<</components>>> directory, and rewrite rules in <<<.htaccess>>> detect
+ files not found in main site to try <<</components>>> content instead.
 
 * Publishing versioned component reference documentation
 
@@ -110,7 +109,7 @@ mvn scm-publish:publish-scm
  * Unix:
 
 +----------+
-SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
+SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/components
 
 svn cp $SVNPUBSUB/xxx-archives/yyy-LATEST $SVNPUBSUB/xxx-archives/yyy-$version -m "Archive versioned site."
 
@@ -121,7 +120,7 @@ svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy -m "Publish new s
  * Windows:
 
 +----------+
-set SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/content
+set SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/components
 
 svn cp %SVNPUBSUB%/xxx-archives/yyy-LATEST %SVNPUBSUB%/xxx-archives/yyy-$version -m "Archive versioned site."
 
@@ -135,7 +134,7 @@ svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy -m "Publish new
 
 +----------+
 svnmucc -m "Publish yyy $version documentation" \
-  -U https://svn.apache.org/repos/infra/websites/production/maven/content \
+  -U https://svn.apache.org/repos/infra/websites/production/maven/components \
   cp HEAD xxx-archives/yyy-LATEST xxx-archives/yyy-$version \
   rm xxx/yyy \
   cp HEAD xxx-archives/yyy-LATEST xxx/yyy

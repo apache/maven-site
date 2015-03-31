@@ -4,7 +4,7 @@
  Barrie Treloar
  Hervé Boutemy
  ------
- 2013-09-23
+ 2015-03-30
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -86,10 +86,7 @@ How main website publication works
 
    [[1]] CMS copies CMS staging svn area content to {{{https://svn.apache.org/repos/infra/websites/production/maven/content/}website production svn area}},
 
-   [[2]] as previous operation will delete content not built from website source (mainly component reference documentation),
-   CMS re-adds content identified in {{{http://maven.apache.org/extpaths.txt}<<<extpaths.txt>>>}},
-
-   [[3]] svnpubsub mecanism transfers svn production content to live production site: {{http://maven.apache.org}}.
+   [[2]] svnpubsub mecanism transfers svn production content to live production site: {{http://maven.apache.org}}.
 
  []
 
