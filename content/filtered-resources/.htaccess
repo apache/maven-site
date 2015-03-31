@@ -78,7 +78,7 @@ RewriteEngine on
 RewriteCond %{REQUEST_URI} !^/components/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /components/$1 [C]
+RewriteRule ^(.*)$ components/$1 [C]
 
 # in case of directory without trailing /, do the redirect or httpd will do a redirect from /foo to /components/foo/
 RewriteCond %{REQUEST_FILENAME} -d
