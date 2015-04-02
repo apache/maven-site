@@ -1,7 +1,9 @@
-*.iml
-*.iws
-*.ipr
+.classpath
+.project
+nbactions.xml
+.settings
 target
+test-output
+*.iml
 .idea
 .svn
-.DS_Store
