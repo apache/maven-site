@@ -4,9 +4,10 @@
  Brett Porter
  ------
  2006-06-16
+ 2015-04-04
  ------
 
- ~~ Copyright 2006 The Apache Software Foundation.
+ ~~ Copyright 2015 The Apache Software Foundation.
  ~~
  ~~ Licensed under the Apache License, Version 2.0 (the "License");
  ~~ you may not use this file except in compliance with the License.
@@ -43,14 +44,14 @@ Introduction to the Build Lifecycle
 
 * {Build Lifecycle Basics}
 
-  Maven 2.0 is based around the central concept of a build lifecycle. What this means is that the process for building
+  Maven is based around the central concept of a build lifecycle. What this means is that the process for building
   and distributing a particular artifact (project) is clearly defined.
 
   For the person building a project, this means that it is only necessary to learn a small set of commands to build any
   Maven project, and the {{{./introduction-to-the-pom.html}POM}} will ensure they get the results they desired.
 
-  There are three built-in build lifecycles: default, clean and site. The default lifecycle handles your project
-  deployment, the clean lifecycle handles project cleaning, while the site lifecycle handles the creation of your
+  There are three built-in build lifecycles: default, clean and site. The <<<default>>> lifecycle handles your project
+  deployment, the <<<clean>>> lifecycle handles project cleaning, while the <<<site>>> lifecycle handles the creation of your
   project's site documentation.
 
 **  {A Build Lifecycle is Made Up of Phases}
@@ -58,7 +59,7 @@ Introduction to the Build Lifecycle
   Each of these build lifecycles is defined by a different list of build phases, wherein a build phase represents a
   stage in the lifecycle.
 
-  For example, the default lifecycle has the following build phases (for a complete list of the build phases, refer
+  For example, the default lifecycle comprises of the following phases (for a complete list of the lifecycle phases, refer
   to the {{{Lifecycle_Reference}Lifecycle Reference}}):
 
     * <<<validate>>> - validate the project is correct and all necessary information is available
@@ -80,8 +81,9 @@ Introduction to the Build Lifecycle
     * <<<deploy>>> - done in an integration or release environment, copies the final package to the remote repository
       for sharing with other developers and projects.
 
-  These build phases (plus the other build phases not shown here) are executed sequentially to complete the default
-  lifecycle. Given the build phases above, this means that when the default lifecycle is used, Maven will first validate
+  These lifecycle phases (plus the other lifecycle phases not shown here) are executed sequentially 
+  to complete the <<<default>>> lifecycle. 
+  Given the lifecycle phases above, this means that when the default lifecycle is used, Maven will first validate
   the project, then will try to compile the sources, run those against the tests, package the binaries (e.g. jar), run
   integration tests against that package, verify the package, install the verifed package to the local repository,
   then deploy the installed package in a specified environment.
@@ -99,7 +101,8 @@ mvn deploy
 mvn integration-test
 -------
 
-  will do every build phase before it (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), before executing <<<integration-test>>>.
+  will do every life cycle phase before it (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), before 
+  executing <<<integration-test>>>.
 
   There are more commands that are part of the lifecycle, which will be discussed in the following sections.
 
@@ -138,9 +141,12 @@ mvn clean dependency:copy-dependencies package
 
   Furthermore, a build phase can also have zero or more goals bound to it. If a build phase has no goals bound to it,
   that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals
+~~~
+~~~ Check if the following is true for Maven 3...
   (<Note: In Maven 2.0.5 and above, multiple goals bound to a phase are executed in the same order as they are declared in the
   POM, however multiple instances of the same plugin are not supported. Multiple instances of the same plugin are grouped to execute together and ordered in
   Maven 2.0.11 and above>).
+~~~
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
@@ -176,7 +182,8 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                 | <<<deploy:deploy>>>
 *------------------------------+---------------------------------------------------------------------------------------+
 
-  This is an almost standard set of bindings; however, some packagings handle them differently. For example, a project
+  This is an almost {{{/ref/current/maven-core/default-bindings.html}standard set of bindings}}; 
+  however, some packagings handle them differently. For example, a project
   that is purely metadata (packaging value is <<<pom>>>) only binds goals to the <<<install>>> and <<<deploy>>> phases (for a
   complete list of goal-to-build-phase bindings of some of the packaging types, refer to the
   {{{Lifecycle_Reference}Lifecycle Reference}}).
@@ -214,7 +221,7 @@ mvn clean dependency:copy-dependencies package
  <plugin>
    <groupId>org.codehaus.modello</groupId>
    <artifactId>modello-maven-plugin</artifactId>
-   <version>1.4</version>
+   <version>1.8.1</version>
    <executions>
      <execution>
        <configuration>
