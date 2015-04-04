@@ -6,4 +6,4 @@ target
 test-output
 *.iml
 .idea
-.svn
+.svn/*
