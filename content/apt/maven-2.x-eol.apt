@@ -110,7 +110,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | {{{/plugins-archives/maven-doap-plugin-1.2}<<1.2>>}}             | 2015-03-17 | Generate a Description of a Project (DOAP) file from a POM.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | {{{/plugins-archives/maven-docck-plugin-1.0}<<1.0>>}}            | 2008-11-16 | Documentation checker plugin.
+| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | {{{/plugins-archives/maven-docck-plugin-1.1}<<1.1>>}}            | 2015-04-03 | Documentation checker plugin.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | {{{/plugins-archives/maven-javadoc-plugin-2.10.2}<<2.10.2>>}}    | 2015-03-17 | Generate Javadoc for the project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
