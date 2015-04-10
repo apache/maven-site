@@ -54,7 +54,7 @@ How components reference documentation publication works
  component name and <<<xxx>>> can be:
 
  * the component type, like <<<shared>>>, <<<plugins>>>, <<<skins>>>, ... (see
- {{/shared-archives/}}, {{/plugins-archives/}}, {{/skins/archives/}})
+ {{/shared-archives/}}, {{/plugins-archives/}}, {{/skins-archives/}})
 
  * the component name for standalone components, like <<<archetype>>>, <<<plugin-tools>>>, <<<surefire>>>, <<<wagon>>>, ...
  (see {{/archetype-archives/}}, {{/plugin-tools-archives/}}, {{/surefire-archives/}}, {{/wagon-archives/}})
@@ -64,6 +64,8 @@ How components reference documentation publication works
  To publish component reference documentation:
 
  [[0]] prerequisite: eventually build the component if it has not been done previously, or some reports may miss build or integration information:
+
+ Notice: In cases where you have prepared a release you can simple change into <<<target/checkout>>> folder and continue with 2.
 
 +----------+
 mvn -Prun-its install

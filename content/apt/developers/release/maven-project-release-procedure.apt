@@ -2,8 +2,9 @@
  Releasing A Maven Project
  -----
  Jason van Zyl
+ Karl Heinz Marbaise
  -----
- 2014-03-12
+ 2015-04-10
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -85,10 +86,10 @@ Subject: [VOTE] Release Apache Maven XXX Plugin version Y.Z
 Hi,
 
 We solved N issues:
-http://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=XXX&styleName=Html&version=XXX
+https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=XXXXXX&version=YYYYYYY
 
 There are still a couple of issues left in JIRA:
-http://jira.codehaus.org/secure/IssueNavigator.jspa?reset=true&pid=XXX&status=1
+https://issues.apache.org/jira/issues/?jql=project%20%3D%20XXXXXXXXXX%20AND%20status%20%3D%20Open%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC
 
 Staging repo:
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
