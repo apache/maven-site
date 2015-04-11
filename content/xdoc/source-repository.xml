@@ -79,35 +79,34 @@ under the License.
           </table>
         </p>
         <p>
-          Everything in Subversion can be checked-out from a single entry point, referencing each part <a href="http://svn.apache.org/viewvc/maven/trunks/">through svn:externals</a>
-          <source><a href="https://svn.apache.org/repos/asf/maven/trunks/">https://svn.apache.org/repos/asf/maven/trunks/</a></source>
+          Everything in Subversion can be checked-out from a single entry point, referencing each part through svn:externals
+          <source><a href="http://svn.apache.org/viewvc/maven/trunks/">https://svn.apache.org/repos/asf/maven/trunks/</a></source>
         </p>
         <p>
           You can also check out every component separately. The components in Subversion are:
           <table>
             <tr>
               <td><a href="/plugins/">Apache Maven Plugins</a></td>
-              <td><source><a href="https://svn.apache.org/repos/asf/maven/plugins/">https://svn.apache.org/repos/asf/maven/plugins/</a>                                         </source></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/plugins/">https://svn.apache.org/repos/asf/maven/plugins/</a>                                         </source></td>
             </tr>
             <tr>
               <td><a href="/shared/">Shared components</a>
               </td>
-              <td><source><a href="https://svn.apache.org/repos/asf/maven/shared/">https://svn.apache.org/repos/asf/maven/shared/</a></source>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/shared/">https://svn.apache.org/repos/asf/maven/shared/</a></source>
               </td>
             </tr>
             <tr>
               <td><a href="/maven-release/">Release</a> (Release api and plugin)</td>
-              <td><source><a href="https://svn.apache.org/repos/asf/maven/release/">https://svn.apache.org/repos/asf/maven/release/</a></source></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/release/">https://svn.apache.org/repos/asf/maven/release/</a></source></td>
             </tr>
             <tr>
-              <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><source><a href="https://svn.apache.org/repos/asf/maven/">https://svn.apache.org/repos/asf/maven/</a></source>
+              <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><source><a href="https://svn.apache.org/viewvc/maven/">https://svn.apache.org/repos/asf/maven/</a></source>
               </td>
             </tr>
           </table>
         </p>
         <p>The sources for this site are available in a separate location:</p>
-        <source>
-<a href="https://svn.apache.org/repos/asf/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
+        <source><a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
       </subsection>
       <subsection name="Anonymous Access">
         <p>
@@ -121,7 +120,7 @@ under the License.
           Everyone can access Subversion repositories via HTTP, but committers must checkout Subversion
           repositories via HTTPS to gain write access:
         </p>
-        <source> $ svn checkout https://svn.apache.org/repos/asf/maven/site/trunk</source>
+	<source>$ svn checkout <a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
         <p>
           To commit changes to the repository, execute the following command to commit your changes (<code>svn</code> will
           prompt you for your password):
@@ -134,8 +133,7 @@ $ svn commit --username your-username -m "A message"</source>
           For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion
           repository, you can try to access it via the developer connection:
         </p>
-        <source>
-$ svn checkout https://svn.apache.org/repos/asf/maven/site/trunk</source>
+	<source>$ svn checkout <a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
       </subsection>
       <subsection name="Access through a Proxy">
         <p>
