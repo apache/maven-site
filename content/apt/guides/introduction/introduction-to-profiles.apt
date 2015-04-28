@@ -97,8 +97,9 @@ Introduction to Build Profiles
   Profiles can be explicitly specified using the <<<-P>>> CLI option.
 
   This option takes an argument that is a comma-delimited list of
-  profile-ids to use. When this option is specified, no profiles other
-  than those specified in the option argument will be activated.
+  profile-ids to use. When this option is specified, the profile(s) specified in the option
+  argument will be activated in addition to any profiles which are activated by their activation
+  configuration or the <<<\<activeProfiles\>>>> section in <<<settings.xml>>>.
 
 +---+
 mvn groupId:artifactId:goal -P profile-1,profile-2
