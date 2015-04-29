@@ -132,7 +132,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | {{{/archetype-archives/maven-archetype-plugin-2.3/maven-archetype-plugin}<<2.3>>}} | 2015-03-13 | Generate a skeleton project structure from an archetype.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | {{{/plugins-archives/maven-assembly-plugin-2.5.3}<<2.5.3>>}}     | 2014-12-17 | Build an assembly (distribution) of sources and/or binaries.
+| {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | {{{/plugins-archives/maven-assembly-plugin-2.5.4}<<2.5.4>>}}     | 2015-04-27 | Build an assembly (distribution) of sources and/or binaries.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | {{{/plugins-archives/maven-dependency-plugin-2.10}<<2.10>>}}     | 2015-01-27 | Dependency manipulation (copy, unpack) and analysis.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
