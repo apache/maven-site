@@ -35,7 +35,7 @@ Parent POMs
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 || <<POM>>                                     || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                       | 16           | 2014-11-13 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
+| {{{./asf/} <<<ASF>>>}}                       | 17           | 2015-04-24 | ASF wide configuration.      | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/asf/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{./maven/} <<<Maven>>>}}                   | 26           | 2014-11-13 | Maven wide configuration.    | {{{http://svn.apache.org/repos/asf/maven/pom/trunk/maven/}SVN}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
 *----------------------------------------------+--------------+------------+------------------+------------------------+--------------------+
