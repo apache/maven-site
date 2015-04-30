@@ -152,7 +152,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugin-tools/maven-plugin-plugin/} <<<plugin>>>}}        | B+R        | {{{/plugins-archives/maven-plugin-plugin-3.4/}<<3.4>>}}           | 2015-01-04 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-release-plugin/} <<<release>>>}}           | B          | {{{/plugins-archives/maven-release-plugin-2.5.2/}<<2.5.2>>}}      | 2015-04-18 | Release the current project - updating the POM and tagging in the SCM.
+| {{{/plugins/maven-release-plugin/} <<<release>>>}}           | B          | {{{/maven-release-archives/maven-release-2.5.2/maven-release-plugin/}<<2.5.2>>}}      | 2015-04-18 | Release the current project - updating the POM and tagging in the SCM.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | {{{/plugins-archives/maven-remote-resources-plugin-1.5/}<<1.5>>}} | 2013-08-14 | Copy remote resources to the output directory for inclusion in the artifact.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
