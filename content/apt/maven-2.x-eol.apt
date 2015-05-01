@@ -130,7 +130,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-antrun-plugin/} <<<antrun>>>}}             | B          | {{{/plugins-archives/maven-antrun-plugin-1.8/}<<1.8>>}}           | 2014-12-26 | Run a set of ant tasks from a phase of the build.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | {{{/archetype-archives/maven-archetype-plugin-2.3/maven-archetype-plugin/}<<2.3>>}} | 2015-03-13 | Generate a skeleton project structure from an archetype.
+| {{{/archetype/maven-archetype-plugin/} <<<archetype>>>}}     | B          | {{{/archetype-archives/archetype-2.3/maven-archetype-plugin/}<<2.3>>}} | 2015-03-05 | Generate a skeleton project structure from an archetype.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-assembly-plugin/} <<<assembly>>>}}         | B          | {{{/plugins-archives/maven-assembly-plugin-2.5.4/}<<2.5.4>>}}     | 2015-04-27 | Build an assembly (distribution) of sources and/or binaries.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
