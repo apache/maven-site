@@ -12,8 +12,6 @@ issue tracking systems depending on which project is involved:
 
 * Maven Website Project: <https://issues.apache.org/jira/browse/MNGSITE>
 
-* Maven Project Administration: <https://issues.apache.org/jira/browse/MPA>
-
 * Maven Plugins Projects: Please refer you to the [Available Plugins](./plugins/index.html) page
 
 or which Maven sub-project:
