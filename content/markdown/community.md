@@ -21,12 +21,6 @@ explained in a better way or you simply miss things
 do not hesitate to contact the maven community via
 the users mailing list and tell us about it.
 
-~~ Must be checked, cause the FAQ in wiki is out of date.
-~~ Apart from the shutdown of codehaus.
-~~ Documentation is currently a very high priority for the Maven community.
-~~ DPlease help out where ever you can, specifically in the work-in-progress
-~~ D[FAQ Wiki](http://docs.codehaus.org/display/MAVENUSER/FAQs).
-
 #### Help Log Defects in JIRA
 
 Just as any other healthy project requires a quick turn-around on
