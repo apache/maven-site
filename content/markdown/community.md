@@ -16,9 +16,16 @@ effort.
 
 #### Commit Questions or Answers to the Maven User FAQ
 
-Documentation is currently a very high priority for the Maven community.
-Please help out where ever you can, specifically in the work-in-progress
-[FAQ Wiki](http://docs.codehaus.org/display/MAVENUSER/FAQs).
+If you find things which are not correct or could be
+explained in a better way or you simply miss things
+do not hesitate to contact the maven community via
+the users mailing list and tell us about it.
+
+~~ Must be checked, cause the FAQ in wiki is out of date.
+~~ Apart from the shutdown of codehaus.
+~~ Documentation is currently a very high priority for the Maven community.
+~~ DPlease help out where ever you can, specifically in the work-in-progress
+~~ D[FAQ Wiki](http://docs.codehaus.org/display/MAVENUSER/FAQs).
 
 #### Help Log Defects in JIRA
 
@@ -53,7 +60,7 @@ said, keep the following sentiment in mind:
 *DO NOT wget THE ENTIRE REPOSITORY!*
 
 Please take only the jars you need. We understand this is may entail
-more work, but grabbing all 9+ Gigs of binaries really kills our
+more work, but grabbing more than 1,7 TiB of binaries really kills our
 servers.
 
 ### User Gathering Spots
@@ -69,6 +76,6 @@ Maven things.
 
 #### IRC (Internet Relay Chat)
 
-Log into the `#maven` IRC channel on `irc.codehaus.org` with your
-favorite IRC client or [with web IRC client](http://irc.codehaus.org).
+Log into the `#maven` IRC channel on `irc.freenode.net` with your
+favorite IRC client or [with web IRC chat](https://webchat.freenode.net/).
 
