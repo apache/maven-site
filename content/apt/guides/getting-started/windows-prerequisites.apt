@@ -55,12 +55,12 @@ java -version
 * Maven Unpacked
 
   You need to unpack the Maven distribution. Don't unpack it in the middle of your source code; pick some location
-  (with no spaces in the path!) and unpack it there. Let's assume that the path is <<<c:\mvn3.0.4>>>.
+  (with no spaces in the path!) and unpack it there. Let's assume that the path is <<<c:\apache-maven-3.0.5>>>.
 
 * Maven in PATH
 
   You run Maven by invoking a command-line tool: <<<mvn.bat>>> from the <<<bin>>> directory of the Maven. To do this conveniently,
-  <<<c:\mvn3.0.4\bin>>> must be in your PATH, just like the J2SE SDK commands. You can add directories to your PATH
+  <<<c:\apache-maven-3.0.5\bin>>> must be in your PATH, just like the J2SE SDK commands. You can add directories to your PATH
   in the control panel; the details vary by Windows version.
 
 * Firewalls and Anti-virus

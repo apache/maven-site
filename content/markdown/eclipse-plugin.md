@@ -24,6 +24,6 @@ The [maven-eclipse-plugin][mep] can be run from the command line to produce a st
 Eclipse is a trademark of The [Eclipse Foundation][eclipse]  
 
 [m2e]: http://www.eclipse.org/m2e/
-[eclipse]: {http://www.eclipse.org
+[eclipse]: http://www.eclipse.org
 [mep]: http://maven.apache.org/plugins/maven-eclipse-plugin/
 
