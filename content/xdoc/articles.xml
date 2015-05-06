@@ -314,12 +314,6 @@ Eric Redmond)
             <td>7 September 2005</td>
           </tr>
           <tr>
-            <td><a href="https://sydneyjug.dev.java.net/files/documents/922/15554/sjug20050601.pdf">Maven 2.0 and Continuum SJUG Presentation</a></td>
-            <td></td>
-            <td>Brett Porter</td>
-            <td>1 June 2005</td>
-          </tr>
-          <tr>
             <td><a href="http://www-128.ibm.com/developerworks/opensource/library/os-maven/index.html">Exploiting Maven in Eclipse</a></td>
             <td>developerWorks</td>
             <td>Gilles Dodinet</td>
@@ -330,12 +324,6 @@ Eric Redmond)
             <td>developerWorks</td>
             <td>Hinrich Boog</td>
             <td>30 March 2005</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.codehaus.org/~vmassol/blog/Maven%201.0%20-%2020041216.ppt">Maven 1.0 Javapolis Presentation</a></td>
-            <td></td>
-            <td>Vincent Massol</td>
-            <td>16 December 2004</td>
           </tr>
           <tr>
             <td><a href="http://www.oracle.com/technology/pub/articles/masterj2ee/j2ee_wk2.html">Master and Commander by Julien Dubois</a></td>
@@ -361,52 +349,7 @@ Eric Redmond)
             <td>Eric Pugh</td>
             <td>17 March 2004</td>
           </tr>
-          <tr>
-            <td><a href="http://www.theserverside.com/tt/articles/article.tss?l=MavenMagic">Maven Magic - a tutorial on Maven and J2EE projects.</a></td>
-            <td>TheServerSide</td>
-            <td>Srikanth Shenoy</td>
-            <td>November 2003</td>
-          </tr>
-          <!--
-          <tr>
-            <td><a href="http://www.jdocentral.com/JDO_Articles_20031117.html">JDO Meets Maven</a></td>
-            <td>JDOCentral</td>
-            <td>Andy Jefferson</td>
-            <td>17 November 2003</td>
-          </tr>
-          -->
-          <tr>
-            <td><a href="http://www.onjava.com/pub/a/onjava/2003/10/22/maven.html">Developing with Maven by Rob Herbst</a></td>
-            <td>OnJava</td>
-            <td>Rob Herbst</td>
-            <td>22 October 2003</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.devx.com/java/Article/17204">Apache Maven Simplifies the Java Build Process Even More Than Ant</a></td>
-            <td>DevX</td>
-            <td>Dave Ford</td>
-            <td>2 September 2003</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.pivolis.com/pdf/J2EE_projects_Maven_V1.1.pdf">Building J2EE applications with Maven (Slides from TheServerSide Symposium)</a></td>
-            <td>TheServerSide</td>
-            <td>Vincent Massol</td>
-            <td>27 June 2003</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.javaworld.com/javaworld/jw-10-2002/jw-1011-maven.html">Maven ties together tools for better code management</a></td>
-            <td>JavaWorld</td>
-            <td>Jeff Linwood</td>
-            <td>11 October 2002</td>
-          </tr>
-          <!--
-          <tr>
-            <td><a href="http://www.javausergroup.at/events/maven.pdf">The Stairway to Maven</a></td>
-            <td></td>
-            <td>Siegfried GOSCHL</td>
-            <td>26 June 2002</td>
-          </tr>
-          -->
+
           <tr>
             <td><a href="http://wiki.astrogrid.org/bin/view/Astrogrid/MakingWarWithMaven">How to get Maven to build your web service into a WAR on AstroGrid</a></td>
             <td>Astrogrid</td>
