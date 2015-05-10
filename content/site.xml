@@ -26,13 +26,32 @@ under the License.
   name="Maven">
   <version position="none" />
 
-  <!-- must work with inheritence but for some reasons not ??  -->
+  <bannerLeft>
+    <src>http://maven.apache.org/images/apache-maven-project.png</src>
+    <href>http://www.apache.org/</href>
+  </bannerLeft>
+
+  <bannerRight>
+    <src>http://maven.apache.org/images/maven-logo-black-on-white.png</src>
+    <href>http://maven.apache.org/</href>
+  </bannerRight>
   <skin>
     <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-stylus-skin</artifactId>
-    <version>1.5</version>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.4</version>
   </skin>
 
+  <custom>
+    <fluidoSkin>
+      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+      <googlePlusOne />
+      <googleSearch>
+        <sitesearch/>
+      </googleSearch>
+    </fluidoSkin>
+  </custom>
+
+  
   <body>
     <breadcrumbs>
       <item name="Maven"  href="http://maven.apache.org/index.html" />
