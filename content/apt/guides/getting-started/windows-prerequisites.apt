@@ -40,8 +40,7 @@ Maven on Windows
 * Prerequisites
 
   Maven is written in Java (and primarily used to build Java programs). Thus, the major prerequisite is the Java SDK.
-  You need to install the Java SDK (e.g. from {{http://www.oracle.com/technetwork/java/javase/downloads/index.html}}
-  Oracle's download site}, and you should install it to a pathname without spaces, such as <<<c:\j2se1.6>>>.
+  You need to install the Java SDK (e.g. from {{{http://www.oracle.com/technetwork/java/javase/downloads/index.html}Oracle's download site}}), and you should install it to a pathname without spaces, such as <<<c:\j2se1.6>>>.
 
   Once Java is installed, you must ensure that the commands from the Java SDK are in your PATH environment variable.
   Running, for example,
