@@ -32,9 +32,10 @@ under the License.
     <title>Page Not Found</title>
     <base href="http://maven.apache.org/errors" />
     <!-- need to import styles by hand since the generated html has them relative and before the base tag -->
-    <link rel="stylesheet" href="http://maven.apache.org/css/maven-base.css" type="text/css" />
-    <link rel="stylesheet" href="http://maven.apache.org/css/maven-theme.css" type="text/css" />
-    <link rel="stylesheet" href="http://maven.apache.org/css/site.css" type="text/css" />
+    <link rel="stylesheet" href="http://maven.apache.org/css/apache-maven-fluido-1.4.min.css" />
+    <link rel="stylesheet" href="http://maven.apache.org/css/site.css" />
+    <link rel="stylesheet" href="http://maven.apache.org/css/print.css" media="print" />
+    <script type="text/javascript" src="http://maven.apache.org/js/apache-maven-fluido-1.4.min.js" />
   </head>
 
   <body>
