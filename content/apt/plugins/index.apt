@@ -196,18 +196,20 @@ Available Plugins
 
 ** At codehaus.org
 
-  There are also {{{http://mojo.codehaus.org/plugins.html}many plug-ins}} available at the {{{http://mojo.codehaus.org} Mojo}} project at Codehaus.
+  Due to the shutdown of codehaus.org {{{http://www.mojohaus.org/}all plugins are under transition}}
+  to the new location. This means that currently some of the links might be invalid.
 
-  To see the most up-to-date list, browse the Codehaus repository at {{http://nexus.codehaus.org/}}, specifically
-  the {{{http://nexus.codehaus.org/content/repositories/releases/org/codehaus/mojo/}<<<org/codehaus/mojo>>>}} subfolder of the releases-repository.
+  There are also {{{http://www.mojohaus.org/plugins.html}many plug-ins}} available at 
+  the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
+
   Here are a few common ones:
 
 *---------------------------------------------------------------------------------+----------------------------------+
-|| <<Plugin>> (see {{{http://mojo.codehaus.org/plugins.html}complete list with version}}) || <<Description>>
+|| <<Plugin>> (see {{{http://www.mojohaus.org/plugins.html}complete list with version}}) || <<Description>>
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
+| {{{http://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
 *---------------------------------------------------------------------------------+----------------------------------+
@@ -215,15 +217,15 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammar.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
+| {{{http://www.mojohaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}}   | Compiles C and C++ code with native compilers.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                      | Executes SQL scripts from files or inline.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/taglist-maven-plugin/} <<<taglist>>>}}              | Generate a list of tasks based on tags in your code.
+| {{{http://www.mojohaus.org/taglist-maven-plugin/} <<<taglist>>>}}              | Generate a list of tasks based on tags in your code.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/versions-maven-plugin/} <<<versions>>>}}            | Manage versions of your project, its modules, dependencies and plugins.
+| {{{http://www.mojohaus.org/versions-maven-plugin/} <<<versions>>>}}            | Manage versions of your project, its modules, dependencies and plugins.
 *---------------------------------------------------------------------------------+----------------------------------+
 
 ** At code.google.com
@@ -238,7 +240,7 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 || <<Plugin>>                                                                || <<Maintainer>> || <<Description>>
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{http://cargo.codehaus.org/Maven2+plugin} <<<cargo>>>}}                  | {{{http://cargo.codehaus.org/}Cargo Project}} | Start/stop/configure J2EE containers and deploy to them.
+| {{{https://codehaus-cargo.github.io/} <<<cargo>>>}}                  | {{{https://codehaus-cargo.github.io/}Cargo Project}} | Start/stop/configure J2EE containers and deploy to them.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://confluence.atlassian.com/display/CLOVER/Clover-for-Maven+2} <<<clover>>>}} | {{{http://www.atlassian.com/software/clover/}Atlassian Clover}} | Generate a Clover report.
 *----------------------------------------------------------------------------+----------------+-----------------------+
