@@ -168,7 +168,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | <<IDEs>>                                                     |            |              |            | <<Plugins that simplify integration with integrated developer environments.>> |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | {{{/plugins-archives/maven-eclipse-plugin-2.9/}<<2.9>>}}          | 2012-02-14 | Generate an Eclipse project file for the current project.
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | {{{/plugins-archives/maven-eclipse-plugin-2.10/}<<2.10>>}}          | 2015-05-28 | Generate an Eclipse project file for the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
