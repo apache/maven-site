@@ -196,8 +196,8 @@ Available Plugins
 
 ** At codehaus.org
 
-  Due to the shutdown of codehaus.org {{{http://www.mojohaus.org/}all plugins are under transition}}
-  to the new location. This means that currently some of the links might be invalid.
+  <<<Due to the shutdown of codehaus.org {{{http://www.mojohaus.org/}all plugins are under transition}}
+  to the new location. This means that currently some of the links might be invalid.>>>
 
   There are also {{{http://www.mojohaus.org/plugins.html}many plug-ins}} available at 
   the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
@@ -221,7 +221,7 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}}   | Compiles C and C++ code with native compilers.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/sql-maven-plugin/} <<<sql>>>}}                      | Executes SQL scripts from files or inline.
+| {{{http://www.mojohaus.org/sql-maven-plugin/} <<<sql>>>}}                      | Executes SQL scripts from files or inline.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/taglist-maven-plugin/} <<<taglist>>>}}              | Generate a list of tasks based on tags in your code.
 *---------------------------------------------------------------------------------+----------------------------------+
