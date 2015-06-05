@@ -121,13 +121,13 @@ See [complete release notes for all versions][5]
 [0]: ../../download.html
 [1]: ../../plugins/index.html
 [2]: http://maven.apache.org/
-[4]: https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&amp;version=20042
+[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330186
 [5]: ../../release-notes-all.html
-[MNG-2199]: https://jira.codehaus.org/browse/MNG-2199
-[MNG-4565]: https://jira.codehaus.org/browse/MNG-4565
-[MNG-5346]: https://jira.codehaus.org/browse/MNG-5346
-[MNG-5452]: https://jira.codehaus.org/browse/MNG-5452
-[MNG-5639]: https://jira.codehaus.org/browse/MNG-5639
-[MNG-5647]: https://jira.codehaus.org/browse/MNG-5647
+[MNG-2199]: https://issues.apache.org/jira/browse/MNG-2199
+[MNG-4565]: https://issues.apache.org/jira/browse/MNG-4565
+[MNG-5346]: https://issues.apache.org/jira/browse/MNG-5346
+[MNG-5452]: https://issues.apache.org/jira/browse/MNG-5452
+[MNG-5639]: https://issues.apache.org/jira/browse/MNG-5639
+[MNG-5647]: https://issues.apache.org/jira/browse/MNG-5647
 
 [mvel]: http://mvel.codehaus.org

@@ -53,5 +53,5 @@ See [complete release notes for all versions][5]
 [0]: ../../download.html
 [1]: ../../plugins/index.html
 [2]: http://maven.apache.org/
-[4]: https://jira.codehaus.org/secure/ReleaseNote.jspa?projectId=10500&amp;version=21013
+[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330193
 [5]: ../../release-notes-all.html
