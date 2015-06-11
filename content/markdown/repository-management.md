@@ -114,14 +114,3 @@ demands of large enterprises with the pro edition. Find out more details
 on the [website](http://links.sonatype.com/products/nexus/pro/home)} or
 by using the [trial
 version](http://links.sonatype.com/products/nexus/pro/trial).
-
-### Other resources
-
--   [Free book from Sonatype - Repository Management with
-    Nexus](http://links.sonatype.com/products/nexus/oss/docs)
--   [Maven Concepts
-    Repositories](http://docs.codehaus.org/display/MAVENUSER/Maven+Concepts+Repositories)
-    from Maven wiki
--   [Continuously updated Feature
-    matrix.](http://docs.codehaus.org/display/MAVENUSER/Maven+Repository+Manager+Feature+Matrix)
-
