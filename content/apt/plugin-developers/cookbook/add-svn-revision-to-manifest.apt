@@ -2,8 +2,9 @@
  Cookbook - How To Add SVN Revision To A JAR Manifest
  -----
  Vincent Siveton
+ Karl Heinz Marbase
  -----
- 2008-01-01
+ 2015-06-12
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -39,9 +40,9 @@ Cookbook: How To Add SVN Revision To A JAR Manifest?
 *-----------------------------------------------------------+--------------+
 || <<Plugin>>                                               || <<Version>>
 *-----------------------------------------------------------+--------------+
-| {{{../../plugins/maven-jar-plugin/} <<<jar>>>}}           | 2.2
+| {{{../../plugins/maven-jar-plugin/} <<<jar>>>}}           | 2.6
 *-----------------------------------------------------------+--------------+
-| {{{http://mojo.codehaus.org/buildnumber-maven-plugin/} <<<buildnumber>>>}} | 1.0-beta-1
+| {{{http://www.mojohaus.org/buildnumber-maven-plugin/} <<<buildnumber>>>}} | 1.3
 *-----------------------------------------------------------+--------------+
 
 * Sample Generated Manifest
@@ -59,7 +60,7 @@ SCM-Revision: 613393
 
 ** Configuring Mojo Buildnumber Plugin
 
-  We configure this plugin as suggested in the {{{http://mojo.codehaus.org/buildnumber-maven-plugin/usage.html}Mojo Buildnumber Plugin usage}} page.
+  We configure this plugin as suggested in the {{{http://www.mojohaus.org/buildnumber-maven-plugin/usage.html}Mojo Buildnumber Plugin usage}} page.
 
 %{snippet|id=buildnumber|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision/pom.xml}
 
@@ -89,6 +90,6 @@ mvn package
 
   * {{{../../plugins/maven-jar-plugin/} Maven Jar Plugin}}
 
-  * {{{http://mojo.codehaus.org/buildnumber-maven-plugin/} Mojo Buildnumber Maven Plugin}}
+  * {{{http://www.mojohaus.org/buildnumber-maven-plugin/} Mojo Buildnumber Maven Plugin}}
 
   []

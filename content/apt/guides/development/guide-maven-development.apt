@@ -194,9 +194,9 @@ And remember, your contributions are always welcome!
  * <<Mojo>>
 
  "Mojo" is really two things when it comes to Maven: it is both {{{/ref/current/maven-plugin-api/}Maven's plug-in API}}
- but also {{{http://mojo.codehaus.org}a separate Codehaus project}} hosting a lot of plugins.
+ but also {{{http://www.mojohaus.org}a separate Mojohaus project}} hosting a lot of plugins.
 
- {{{http://mojo.codehaus.org}The Mojo Project}} is a plugin forge for non-core Maven plugins.
+ {{{http://www.mojohaus.org}The MojoHaus Project}} is a plugin forge for non-core Maven plugins.
  There is also a lower bar for becoming a part of the project.
 
   []

@@ -295,7 +295,7 @@ public class MyMojo
     []
 
  <<Note>>: There existing two alternativs to change order of a pom file
- {{{http://mojo.codehaus.org/tidy-maven-plugin/}Tidy Maven Plugin}} or the
+ {{{http://www.mojohaus.org/tidy-maven-plugin/}Tidy Maven Plugin}} or the
  {{{https://code.google.com/p/sortpom/}maven-sortpom-plugin}}. 
 
 ** {XDOC Code Convention}

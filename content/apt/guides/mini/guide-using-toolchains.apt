@@ -3,8 +3,9 @@
  ------
  Maria Odea Ching
  Dennis Lundberg
+ Karl Heinz Marbaise
  ------
- 2014-11-02
+ 2015-06-12
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -62,11 +63,9 @@ Guide to Using Toolchains
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 | jdk             | <<<{{{http://mojo.codehaus.org/cassandra-maven-plugin/}cassandra-maven-plugin}}>>>           | 0.7.0-1             | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://mojo.codehaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                     | 1.1.1               | Codehaus Mojo
+| jdk             | <<<{{{http://www.mojohaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                     | 1.1.1               | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://mojo.codehaus.org/jasperreports-maven-plugin/}jasperreports-maven-plugin}}>>>   | 1.0-beta-3-SNAPSHOT | Codehaus Mojo
-*-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://mojo.codehaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                   | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
+| jdk             | <<<{{{http://www.mojohaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                   | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 | jdk             | <<<{{{http://mojo.codehaus.org/keytool-maven-plugin/}keytool-maven-plugin}}>>>               | 1.4                 | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+

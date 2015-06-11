@@ -69,7 +69,7 @@ mvn site
  
  * <<<\<description\>>>> - project description, an overview of what the plugin can do
  
- * <<<\<url\>>>> - the site of the plugin, normally <maven.apache.org> or <mojo.codehaus.org>
+ * <<<\<url\>>>> - the site of the plugin, normally <maven.apache.org> or <org.mojohaus>
  
  * <<<\<prerequisites\>>>> - the minimum version of Maven required to use this plugin
   
