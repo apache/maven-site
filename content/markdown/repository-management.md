@@ -87,7 +87,7 @@ proxying, security access management, build artifact storage, delivery,
 browsing, indexing and usage reporting, extensible scanning
 functionality... and many more!
 
-### [Artifactory](http://www.jfrog.org/sites/artifactory/latest/)
+### [Artifactory](http://www.jfrog.org/sites/artifactory/latest/){:rel=nofollow}
 
 Artifactory is a Maven 2 enterprise repository. It offers advanced
 proxying, caching and security facilities to provide a robust,
@@ -99,18 +99,18 @@ developers. Artifactory exposes a robust artifacts management platform
 using rich Ajax web UI and can be run out-of-the-box with a simple
 "unzip and launch".
 
-### [Sonatype Nexus (previously Proximity)](http://nexus.sonatype.org)
+### [Sonatype Nexus (previously Proximity)](http://nexus.sonatype.org){:rel=nofollow}
 
 Sonatype Nexus is the repository manager used as the input channel for
-the [Central Repository](http://search.maven.org) running the Sonatype
+the [Central Repository](http://search.maven.org){:rel=nofollow} running the Sonatype
 Open Source Repository Hosting OSSRH service. Nexus is available in an
 open source as well as a commercial edition and runs [large
-enterprise](http://www.sonatype.com/about/customers) as well as open
+enterprise](http://www.sonatype.com/about/customers){:rel=nofollow} as well as open
 source forge sites such as
-[JBoss](https://repository.jboss.org/nexus/index.html) or
+[JBoss](https://repository.jboss.org/nexus/index.html){:rel=nofollow} or
 [Apache](https://repository.apache.org/). It provides robust features
 and performance with the open source version and scales to the high
 demands of large enterprises with the pro edition. Find out more details
-on the [website](http://links.sonatype.com/products/nexus/pro/home)} or
+on the [website](http://links.sonatype.com/products/nexus/pro/home){:rel=nofollow} or
 by using the [trial
-version](http://links.sonatype.com/products/nexus/pro/trial).
+version](http://links.sonatype.com/products/nexus/pro/trial){:rel=nofollow}.
