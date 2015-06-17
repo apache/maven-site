@@ -99,7 +99,7 @@ developers. Artifactory exposes a robust artifacts management platform
 using rich Ajax web UI and can be run out-of-the-box with a simple
 "unzip and launch".
 
-### [Sonatype Nexus (previously Proximity)](http://nexus.sonatype.org)
+### [Sonatype Nexus](http://nexus.sonatype.org)
 
 Sonatype Nexus is the repository manager used as the input channel for
 the [Central Repository](http://search.maven.org) running the Sonatype

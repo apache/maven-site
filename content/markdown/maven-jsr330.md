@@ -337,8 +337,8 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [jsr330]: http://www.jcp.org/en/jsr/detail?id=330
 [sisu]: http://eclipse.org/sisu/
 [plexus]: http://plexus.codehaus.org/
-[plexus-container]: http://plexus.codehaus.org/plexus-containers/
+[plexus-container]: https://github.com/sonatype/plexus-containers
 [jsr330-plugin]: http://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
 [guice]: http://code.google.com/p/google-guice/
 [sisu-maven-plugin]: http://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
-[MNG-5343]: http://jira.codehaus.org/browse/MNG-5343
+[MNG-5343]: http://issues.apache.org/jira/browse/MNG-5343

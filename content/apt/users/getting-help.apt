@@ -2,8 +2,10 @@
  Getting Help
  -----
  Dennis Lundberg
+ Karl Heinz Marbaise
  -----
  2007-07-24
+ 2015-06-17
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -68,7 +70,7 @@ Getting Help
 
   First of all you need to create an account in JIRA. This is so that we can
   communicate with you while we work together on the issue. Go to the
-  {{{http://xircles.codehaus.org/signup}sign up form}} to create an
+  {{{https://issues.apache.org/jira/secure/Dashboard.jspa}sign up link}} to create an
   account if you don't already have one.
 
 **Where?

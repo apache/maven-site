@@ -28,10 +28,9 @@
       <answer>
         <p>
           This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to
-          use a specific file encoding. So eliminating the warning is simply a matter of finding out what plugin emits it
-          and how to configure the file encoding for it. For plugins that follow our guideline for
-          <a href="http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding">source file encoding</a>,
-          this is as easy as adding the following property to your POM (or one of its parent POMs):
+          use a specific file encoding. So eliminating the warning is simply a matter of finding out which plugin emits it
+          and how to configure the file encoding for it. This is as easy as adding the following property to 
+          your POM (or one of its parent POMs):
         </p>
         <source><![CDATA[<project>
   ...

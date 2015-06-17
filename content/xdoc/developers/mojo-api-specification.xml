@@ -851,11 +851,11 @@ under the License.
         information.</p>
       <ul>
         <li>QDox Project (Javadoc annotations) [
-          <a href="http://qdox.codehaus.org">link</a>
+          <a href="https://github.com/paul-hammant/qdox">link</a>
           ]
         </li>
         <li>Plexus Project (Plexus container) [
-          <a href="http://plexus.codehaus.org/plexus-containers/">link</a>
+          <a href="https://github.com/sonatype/plexus-containers/">link</a>
           ]
         </li>
         <li>Maven Plugin API [

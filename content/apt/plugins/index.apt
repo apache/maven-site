@@ -197,7 +197,8 @@ Available Plugins
 ** At codehaus.org
 
   <<<Due to the shutdown of codehaus.org {{{http://www.mojohaus.org/}all plugins are under transition}}
-  to the new location. This means that currently some of the links might be invalid.>>>
+  to the new location. This means that currently some of the links might be invalid. We are continiously
+  cleaning up the links.>>>
 
   There are also {{{http://www.mojohaus.org/plugins.html}many plug-ins}} available at 
   the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
@@ -211,7 +212,7 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
+| {{{http://www.mojohaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/clirr-maven-plugin/} <<<clirr>>>}}                  | Compare binaries or sources for compatibility using Clirr |
 *---------------------------------------------------------------------------------+----------------------------------+
@@ -219,7 +220,9 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/maven-native/native-maven-plugin/} <<<native>>>}}   | Compiles C and C++ code with native compilers.
+| {{{http://maven-nar.github.io/} <<<nar-maven-plugin>>>}}                       | Compiles C, C++, Fortran for different architectures.
+*---------------------------------------------------------------------------------+----------------------------------+
+| {{{http://www.mojohaus.org/maven-native/native-maven-plugin/} <<<native>>>}}   | Compiles C and C++ code with native compilers.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/sql-maven-plugin/} <<<sql>>>}}                      | Executes SQL scripts from files or inline.
 *---------------------------------------------------------------------------------+----------------------------------+
