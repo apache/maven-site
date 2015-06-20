@@ -86,7 +86,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | {{{/plugins-archives/maven-ear-plugin-2.10/}<<2.10>>}}            | 2014-12-31 | Generate an EAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | {{{/plugins-archives/maven-ejb-plugin-2.5/}<<2.5>>}}             | 2015-01-12 | Build an EJB (and optional client) from the current project.
+| {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | {{{/plugins-archives/maven-ejb-plugin-2.5.1/}<<2.5.1>>}}          | 2015-06-20 | Build an EJB (and optional client) from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-jar-plugin/} <<<jar>>>}}                   | B          | {{{/plugins-archives/maven-jar-plugin-2.6/}<<2.6>>}}              | 2015-03-09 | Build a JAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
