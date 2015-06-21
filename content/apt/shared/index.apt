@@ -5,7 +5,7 @@
  John Casey
  Karl Heinz Marbaise
  -----
- 2015-02-05
+ 2015-06-21
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -84,10 +84,3 @@ Shared Components
 
   Archived version of shared libraries reference documentations are {{{../shared-archives/}located here}}.
 
-* Retired
-
-*----------------------------------------------------------------------------+--------------+-------------------+------------------+
-|| <<Shared Component>>                                                      || <<Version>> || <<Retired Date>> || <<Description>>
-*----------------------------------------------------------------------------+--------------+-------------------+------------------+
-| {{{/shared/maven-model-converter/} <<<maven-model-converter>>>}}           | 2.3          | 2013-07-26        | Converts between version 3.0.0 and version 4.0.0 models.
-*----------------------------------------------------------------------------+--------------+-------------------+------------------+
