@@ -1,116 +1,43 @@
-## Why do I need a Repository Manager?
+## Best Practice - Using a Repository Manager
 
-Maven Repository managers serve two purposes: they act as highly
-configurable proxies between your organization and the public Maven
-repositories and they also provide an organization with a deployment
-destination for your own generated artifacts.
+A repository manager is a dedicated server application designed to manage
+repositories of binary components. The usage of a repository manager is 
+considered an essential best practice for any significant usage of Maven.
 
-Proxying a Maven repository brings a number of benefits. Proxying speeds
-up builds throughout your organization by installing a local cache for
-all artifacts from the Central Maven repository. If a developer in your
-organization needs to download version 2.5 of the Spring Framework and
-you are using a Maven Repository Manager, the dependencies (and the
-dependency's dependencies) only need to be downloaded from the remote
-repository once. With a high-speed connection to the Internet this might
-seem like a minor concern, but if you are constantly asking your
-developers to download hundreds of megabytes of third-party
-dependencies, the real cost savings are going to be the time it takes
-Maven to check for new versions of dependencies and to download
-dependencies. Serving Maven dependencies from a local repository can
-save you hundreds of requests over HTTP, and, in very large
-multi-project builds, this can shave minutes from a build.
 
-If your project is relying on a number of SNAPSHOT dependencies, Maven
-will need to check for updated version of these snapshots. Depending on
-the configuration of your remote repositories, Maven will check for
-SNAPSHOT updates periodically, or it might be checking for SNAPSHOT
-updates on every build. When Maven checks for a snapshot update it needs
-to interrogate the remote repository for the latest version of the
-SNAPSHOT dependency. Depending on your connection to the public Internet
-and the load on the central Maven repository, a SNAPSHOT update can add
-seconds to your project's build for each SNAPSHOT update. When you host
-a local repository proxy with a repository manager, your repository
-manager is going to check for SNAPSHOT updates on a regular schedule,
-and your applications will be able to interact with a local repository.
-If you develop software with a lot of SNAPSHOT dependencies, using a
-local repository manager can often shave minutes from a large
-multi-module project build, your 5-10 second SNAPSHOT update checks
-against the public central repository are going to execute in hundreds
-of milliseconds (or less).
+### Purpose
 
-In addition to the simple savings in time and bandwidth, a repository
-manager provides an organization with control over what is downloaded by
-Maven. You can include or exclude specific artifacts from the public
-repository, and having this level of control over what is downloaded
-from the central Maven repository is a prerequisite for organizations
-which need strict control over what dependencies are used throughout an
-organization. An organization which wants to standardize on a specific
-version of a dependency like Hibernate or Spring can enforce this
-standardization by only providing access to a specific version of an
-artifact in a repository manager. Other organizations might be concerned
-with making sure that every external dependency has a license compatible
-with the legal standards of that organization. If a corporation is
-producing a application which is distributed, they might want to make
-sure that no one inadvertently adds a dependency on a third-party
-library which is covered under a copy-left license like the GPL.
-Repository managers provide for the level of control that an
-organization needs to make sure that overall architecture and policy can
-be enforced.
+A repository manager serves these essential purposes:
 
-Aside from the benefits of mediating access to remote repositories, a
-repository manager also provides something essential to full adoption of
-Maven. Unless you expect every member of your organization to download
-and build every single internal project, you will want to provide a
-mechanism for developers and departments to share both SNAPSHOT and
-releases for internal project artifacts. A Maven repository manager
-provides your organization with such a deployment target. Once you
-install a Maven repository manager, you can start using Maven to deploy
-snapshots and releases to a custom repository managed by the repository
-manager. Over time, this central deployment point for internal projects
-becomes the fabric for collaboration between different development
-teams.
+* act as dedicated proxy server for public Maven repositories
+* provide repositories as a deployment destination for your Maven project 
+outputs
 
-## The List of Repository Managers
+### Benefits and Features
 
-The Following is a list of the known Maven repository managers and
-listed in alphabetical order:
+Using a repository manager provides the following benefits and features:
 
-### [Apache Archiva](http://archiva.apache.org/)
+* significantly reduced number of downloads off remote repositories, saving time
+and bandwidth resulting in increased build performance
+* improved build stability due to reduced reliance on external repositories
+* increased performance for interaction with remote SNAPSHOT repositories
+* potential for control of consumed and provided artifacts
+* creates a central storage and access to artifacts and meta data about them 
+exposing build outputs to consumer such as other projects and developers, but 
+also QA or operations teams or even customers 
+* provides an effective platform for exchanging binary artifacts within 
+your organization and beyond without the need for building artifact from source
 
-Apache Archiva is an extensible repository management software that
-helps taking care of your own personal or enterprise-wide build artifact
-repository. It is the perfect companion for build tools such as Maven,
-Continuum, and ANT.
+### Available Repository Managers
 
-Archiva offers several capabilities, amongst which remote repository
-proxying, security access management, build artifact storage, delivery,
-browsing, indexing and usage reporting, extensible scanning
-functionality... and many more!
+The following list of open source and commercial repository managers are known 
+to support the repository format used by Maven. Please refer to the respective 
+linked web sites for further information about repository management in general 
+and the features provided by these products.
 
-### [Artifactory](http://www.jfrog.org/sites/artifactory/latest/)
+* <a href="http://archiva.apache.org/" target="_blank" rel="nofollow">Apache Archiva</a> (open source)
+* <a href="http://www.jfrog.com/open-source" target="_blank" rel="nofollow">JFrog Artifactory Open Source</a> (open source)
+* <a href="http://www.jfrog.com/artifactory/" target="_blank" rel="nofollow">JFrog Artifactory Pro</a> (commercial)
+* <a href="http://www.sonatype.org/nexus/go/" target="_blank" rel="nofollow">Sonatype Nexus OSS</a> (open source)
+* <a href="http://links.sonatype.com/products/nexus/pro/home" target="_blank" rel="nofollow">Sonatype Nexus Pro</a> (commercial)
 
-Artifactory is a Maven 2 enterprise repository. It offers advanced
-proxying, caching and security facilities to provide a robust,
-reproducible and independent build environment when using Maven.
-Artifactory is being used by clients ranging from small startup teams to
-international corporate teams employing distributed development, thus
-improving the development experience for tens of thousands of
-developers. Artifactory exposes a robust artifacts management platform
-using rich Ajax web UI and can be run out-of-the-box with a simple
-"unzip and launch".
-
-### [Sonatype Nexus](http://nexus.sonatype.org)
-
-Sonatype Nexus is the repository manager used as the input channel for
-the [Central Repository](http://search.maven.org) running the Sonatype
-Open Source Repository Hosting OSSRH service. Nexus is available in an
-open source as well as a commercial edition and runs [large
-enterprise](http://www.sonatype.com/about/customers) as well as open
-source forge sites such as
-[JBoss](https://repository.jboss.org/nexus/index.html) or
-[Apache](https://repository.apache.org/). It provides robust features
-and performance with the open source version and scales to the high
-demands of large enterprises with the pro edition. Find out more details
-on the [website](http://links.sonatype.com/products/nexus/pro/home) or
-by using the [trial
-version](http://links.sonatype.com/products/nexus/pro/trial).
