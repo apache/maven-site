@@ -59,24 +59,13 @@ under the License.
 
     <menu name="Main">
       <item name="Welcome" href="/index.html"/>
-    </menu>
-    <menu name="Get Maven">
       <item name="Download" href="/download.html"/>
-      <item name="Releases History" href="/docs/history.html"/>
-      <item name="Release Notes (${currentStableVersion})" href="/docs/${currentStableVersion}/release-notes.html"/>
-      <item name="Release Notes (${current32xVersion})" href="/docs/${current32xVersion}/release-notes.html"/>
-      <item name="Release Notes (${current31xVersion})" href="/docs/${current31xVersion}/release-notes.html"/>
-      <item name="Release Notes (${current30xVersion})" href="/docs/${current30xVersion}/release-notes.html"/>
-      <item name="All Release Notes" href="/release-notes-all.html"/>
-      <item name="License" href="http://www.apache.org/licenses/"/>
-      <item name="Security" href="/security.html"/>
+      <item name="Install" href="/install.html"/>
+      <item name="Configure" href="/configure.html"/>
+      <item name="Run" href="/run.html"/>
+      <item name="IDE Integration" href="/ide.html"/>
     </menu>
-
-    <menu name="IDE Integration">
-      <item name="Eclipse" href="/eclipse-plugin.html"/>
-      <item name="NetBeans" href="/netbeans-module.html"/>
-    </menu>
-
+ 
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
@@ -108,6 +97,8 @@ under the License.
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html"/>
       <item name="Books and Resources" href="/articles.html" />
+      <item name="License" href="http://www.apache.org/licenses/"/>
+      <item name="Security" href="/security.html"/>
     </menu>
 
     <menu name="Community">

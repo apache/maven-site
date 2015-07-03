@@ -50,7 +50,7 @@ under the License.
       <ul>
         <li>
           <span style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-            <a href="run-maven/index.html">Run Maven</a>
+            <a href="run.html">Run Maven</a>
           </span>
           <span style="display: block; margin-bottom: 0.5em">
             Information for those needing to build a project that uses Maven

@@ -25,43 +25,20 @@ under the License.
     <author>Brett Porter</author>
     <author>Jason van Zyl</author>
     <author>John Casey</author>
+    <author>Manfred Moser</author>
   </properties>
   <body>
-    <section name="Download Apache Maven ${currentStableVersion}">
+    <section name="Downloading Apache Maven ${currentStableVersion}">
 
-      <p>Maven is distributed in several formats for your convenience. Use a source archive if you intend to build Maven
-      yourself. Otherwise, simply pick a ready-made binary distribution and follow the installation instructions given
-      at the end of this document.</p>
-
-      <p>You will be prompted for a mirror - if the file is not found on yours, please be patient, as it may take 24
-      hours to reach all mirrors.<p/>
-
-      <p>In order to guard against corrupted downloads/installations, it is highly recommended to
-      <a href="http://www.apache.org/dev/release-signing#verifying-signature">verify the signature</a>
-      of the release bundles against the public <a href="http://www.apache.org/dist/maven/KEYS">KEYS</a> used by the Apache Maven
-      developers.</p>
-
-      <p>Maven is distributed under the <a href="http://www.apache.org/licenses/">Apache License, version 2.0</a>.</p>
-
-      <p></p>We <b>strongly</b> encourage our users to configure a Maven repository mirror closer to their location, please read <a href="/guides/mini/guide-mirror-settings.html">How to Use Mirrors for Repositories</a>.</p>
-
-      <p>If you're upgrading from Maven 2.x, be sure to check the
-      <a href="https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes">Maven 3.x compatibility notes</a>
-      before using this version to avoid surprises: while Maven 3 aims to be backward-compatible with Maven 2.x to the
-      extent possible, there are still a few significant changes.
-      </p>
-
-      <a name="mirror"/>
-      <subsection name="Mirror">
-
-        <p>
+      <p>Apache Maven ${currentStableVersion} is the latest release and recommended version for all users.</p>
+      <p>
           [if-any logo]
           <a href="[link]">
             <img align="right" src="[logo]" border="0"
                  alt="logo"/>
           </a>
           [end]
-          The currently selected mirror is
+          The currently selected download mirror is
           <b>[preferred]</b>.
           If you encounter a problem with this mirror,
           please select another mirror.
@@ -69,6 +46,10 @@ under the License.
           <i>backup</i>
           mirrors
           (at the end of the mirrors list) that should be available.
+            You may also consult the
+          <a href="http://www.apache.org/mirrors/">complete list of
+            mirrors.</a>
+        
         </p>
 
         <form action="[location]" method="get" id="SelectMirror">
@@ -92,263 +73,15 @@ under the License.
           </select>
           <input type="submit" value="Change"/>
         </form>
-
-        <p>
-          You may also consult the
-          <a href="http://www.apache.org/mirrors/">complete list of
-            mirrors.</a>
-        </p>
-
-      </subsection>
-
-      <subsection name="Maven ${currentStableVersion}">
-
-      <p>This is the current stable version of Maven.</p>
-
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Link</th>
-            <th>Checksum</th>
-            <th>Signature</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Maven ${currentStableVersion} (Binary tar.gz)</td>
-            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
-          </tr>
-          <tr>
-            <td>Maven ${currentStableVersion} (Binary zip)  </td>
-            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.md5">apache-maven-${currentStableVersion}-bin.zip.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
-          </tr>
-          <tr>
-            <td>Maven ${currentStableVersion} (Source tar.gz)</td>
-            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.md5">apache-maven-${currentStableVersion}-src.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a></td>
-          </tr>
-          <tr>
-            <td>Maven ${currentStableVersion} (Source zip) </td>
-            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip">apache-maven-${currentStableVersion}-src.zip</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.md5">apache-maven-${currentStableVersion}-src.zip.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.asc">apache-maven-${currentStableVersion}-src.zip.asc</a></td>
-          </tr>
-          <tr>
-            <td>Release Notes</td>
-            <td><a href="./docs/${currentStableVersion}/release-notes.html">${currentStableVersion}</a></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>Release Reference Documentation</td>
-            <td><a href="./ref/${currentStableVersion}/">${currentStableVersion}</a></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-      </subsection>
-
-      <p>You can also <a href="#Maven_Documentation">download the current documentation</a>, i.e. this website.</p>
-
-      <subsection name="Maven ${current32xVersion}">
-
-        <p>This is a stable version 3.2.x of Maven with Java 6 requirement, for projects that can't upgrade to Maven 3.3 yet.</p>
-        <p>Notice that <b>Maven Toolchains</b> provide a way for a project to be built using a specific version of JDK independent
-        from the one Maven is running with: see <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a></p>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Link</th>
-              <th>Checksum</th>
-              <th>Signature</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Maven ${current32xVersion} (Binary tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz">apache-maven-${current32xVersion}-bin.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz.md5">apache-maven-${current32xVersion}-bin.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.tar.gz.asc">apache-maven-${current32xVersion}-bin.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current32xVersion} (Binary zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip">apache-maven-${current32xVersion}-bin.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip.md5">apache-maven-${current32xVersion}-bin.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/binaries/apache-maven-${current32xVersion}-bin.zip.asc">apache-maven-${current32xVersion}-bin.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current32xVersion} (Source tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz">apache-maven-${current32xVersion}-src.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz.md5">apache-maven-${current32xVersion}-src.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.tar.gz.asc">apache-maven-${current32xVersion}-src.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current32xVersion} (Source zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip">apache-maven-${current32xVersion}-src.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip.md5">apache-maven-${current32xVersion}-src.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current32xVersion}/source/apache-maven-${current32xVersion}-src.zip.asc">apache-maven-${current32xVersion}-src.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Release Notes</td>
-              <td><a href="./docs/${current32xVersion}/release-notes.html">${current32xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Release Reference Documentation</td>
-              <td><a href="./ref/${current32xVersion}/">${current32xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </subsection>
-
-      <subsection name="Maven ${current31xVersion}">
-
-        <p>This is a stable version 3.1.x of Maven with Java 5 requirement, for projects that can't upgrade to Maven 3.2 yet.</p>
-        <p>Notice that <b>Maven Toolchains</b> provide a way for a project to be built using a specific version of JDK independent
-        from the one Maven is running with: see <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a></p>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Link</th>
-              <th>Checksum</th>
-              <th>Signature</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Maven ${current31xVersion} (Binary tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz">apache-maven-${current31xVersion}-bin.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.md5">apache-maven-${current31xVersion}-bin.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.tar.gz.asc">apache-maven-${current31xVersion}-bin.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current31xVersion} (Binary zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip">apache-maven-${current31xVersion}-bin.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.md5">apache-maven-${current31xVersion}-bin.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/binaries/apache-maven-${current31xVersion}-bin.zip.asc">apache-maven-${current31xVersion}-bin.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current31xVersion} (Source tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz">apache-maven-${current31xVersion}-src.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.md5">apache-maven-${current31xVersion}-src.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.tar.gz.asc">apache-maven-${current31xVersion}-src.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current31xVersion} (Source zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip">apache-maven-${current31xVersion}-src.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.md5">apache-maven-${current31xVersion}-src.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current31xVersion}/source/apache-maven-${current31xVersion}-src.zip.asc">apache-maven-${current31xVersion}-src.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Release Notes</td>
-              <td><a href="./docs/${current31xVersion}/release-notes.html">${current31xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Release Reference Documentation</td>
-              <td><a href="./ref/${current31xVersion}/">${current31xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </subsection>
-
-      <subsection name="Maven ${current30xVersion}">
-
-        <p>This is a stable version 3.0.x of Maven for projects that can't upgrade to Maven 3.2 yet.</p>
-
-        <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Link</th>
-              <th>Checksum</th>
-              <th>Signature</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Maven ${current30xVersion} (Binary tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.tar.gz">apache-maven-${current30xVersion}-bin.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.tar.gz.md5">apache-maven-${current30xVersion}-bin.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist//maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.tar.gz.asc">apache-maven-${current30xVersion}-bin.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current30xVersion} (Binary zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.zip">apache-maven-${current30xVersion}-bin.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.zip.md5">apache-maven-${current30xVersion}-bin.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/binaries/apache-maven-${current30xVersion}-bin.zip.asc">apache-maven-${current30xVersion}-bin.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current30xVersion} (Source tar.gz)</td>
-              <td><a href="[preferred]maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.tar.gz">apache-maven-${current30xVersion}-src.tar.gz</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.tar.gz.md5">apache-maven-${current30xVersion}-src.tar.gz.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.tar.gz.asc">apache-maven-${current30xVersion}-src.tar.gz.asc</a></td>
-            </tr>
-            <tr>
-              <td>Maven ${current30xVersion} (Source zip)</td>
-              <td><a href="[preferred]maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.zip">apache-maven-${current30xVersion}-src.zip</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.zip.md5">apache-maven-${current30xVersion}-src.zip.md5</a></td>
-              <td><a href="http://www.apache.org/dist/maven/maven-3/${current30xVersion}/source/apache-maven-${current30xVersion}-src.zip.asc">apache-maven-${current30xVersion}-src.zip.asc</a></td>
-            </tr>
-            <tr>
-              <td>Release Notes</td>
-              <td><a href="./docs/${current30xVersion}/release-notes.html">${current30xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td>Release Reference Documentation</td>
-              <td><a href="./ref/${current30xVersion}/">${current30xVersion}</a></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
-      </subsection>
-
-      <a name="Maven_Documentation"/>
-      <subsection name="Maven Documentation">
-       <p>
-         You can download the current documentation, i.e. this website, as:
-         <ul>
-           <li>a <a href="./maven-site-1.0-site.jar">single jar file</a></li>
-<!-- not currently generated on the CMS due to the profile
-           <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
--->
-         </ul>
-       </p>
-      </subsection>
-      <subsection name="Previous Releases">
-        <p>All previous releases of Maven can be found in the  <a href="http://archive.apache.org/dist/maven/maven-3/">archives</a>
-        (or <a href="http://archive.apache.org/dist/maven/binaries/">legacy archives</a> for versions before 3.0.4).</p>
-      </subsection>
-      <subsection name="All sources">
-        <p>All sources (plugins, shared librairies, scm, indexer etc..) can be downloaded from <a href="[preferred]/maven/">http://www.apache.org/dist/maven/</a></p>
-      </subsection>
+      
+      <a name="Requirements"/>
       <subsection name="System Requirements" id="Requirements">
         <p>
           <table>
             <tr>
-              <td><b>JDK</b></td>
-              <td>Maven 3.3 requires JDK 1.7 or above, Maven 3.2 requires JDK 1.6 or above, while Maven 3.0/3.1 requires JDK 1.5 or above (this is to execute Maven - it still allows you to build against 1.3 and prior JDK's:
-              see our <a href="/guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a>)</td>
+              <td><b>Java Development Kit (JDK)</b></td>
+              <td>Maven 3.3 requires JDK 1.7 or above to execute - it still allows you to build against 1.3 and other JDK versions
+              <a href="/guides/mini/guide-using-toolchains.html">by Using Toolchains</a></td>
             </tr>
             <tr>
               <td><b>Memory</b></td>
@@ -368,96 +101,72 @@ under the License.
         </p>
       </subsection>
 
-      <subsection name="Installation Instructions" id="Installation">
-        <p>
-          <i>Maven is a Java tool, so you must have <a href="http://www.oracle.com/technetwork/java/">Java</a> installed in order to proceed. More precisely,
-          you need a Java Development Kit (JDK), the Java Runtime Environment (JRE) is not sufficient.</i>
-
-          Additional optional installation steps are listed after the platform specific instructions.
-        </p>
-        <subsection name="Windows">
-          <ol>
-          <li>Unzip the distribution archive, i.e. <i>apache-maven-${currentStableVersion}-bin.zip</i> to the directory you wish to install Maven ${currentStableVersion}.
-          These instructions assume you chose <i>C:\Program Files\Apache Software Foundation</i>.
-          The subdirectory <tt>apache-maven-${currentStableVersion}</tt> will be created from the archive.
-          </li>
-
-          <li>Add the unpacked distribution's <tt>bin</tt> directory
-          to your user <i>PATH</i> environment variable  by opening up the system properties (WinKey + Pause),
-          selecting the "Advanced" tab, and the "Environment Variables" button, then adding or selecting the <i>PATH</i>
-          variable in the user variables with the value
-          <tt>C:\Program Files\Apache Software Foundation\apache-maven-${currentStableVersion}\bin</tt>.
-          </li>
-
-          <li><b>Optional</b>: In the same dialog, add the <tt>MAVEN_OPTS</tt> environment variable in the user variables to specify JVM properties, e.g. the value
-          <tt>-Xms256m -Xmx512m</tt>. This environment variable can be used to supply extra options to Maven.</li>
-
-          <li>In the same dialog, make sure that <tt>JAVA_HOME</tt> exists in your user variables or in the system variables and it is set to the location of your JDK,
-          e.g. <tt>C:\Program Files\Java\jdk1.7.0_51</tt>.</li>
-
-          <li>Open a <i>new</i> command prompt (Winkey + R then type <tt>cmd</tt>) and run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
-          </ol>
-        </subsection>
-      </subsection>
-      <subsection name="Unix-based Operating Systems (Linux, Solaris and Mac OS X)">
-        <ol>
-        <li>Extract the distribution archive, i.e. <tt>apache-maven-${currentStableVersion}-bin.tar.gz</tt> to the directory you wish to install Maven ${currentStableVersion}.
-        These instructions assume you chose <tt>/usr/local/apache-maven</tt>. The subdirectory <tt>apache-maven-${currentStableVersion}</tt> will
-        be created from the archive.</li>
-
-        <li>In a command terminal, add unpacked distribution's <tt>bin</tt> to your <i>PATH</i> environment variable,
-        e.g. <tt>export PATH=$PATH:/usr/local/apache-maven/apache-maven-${currentStableVersion}/bin</tt>.
-        </li>
-
-        <li><b>Optional</b>: Add the <tt>MAVEN_OPTS</tt> environment variable to specify JVM properties, e.g. <tt>export MAVEN_OPTS="-Xms256m -Xmx512m"</tt>.
-        This environment variable can be used to supply extra options to Maven.</li>
-
-        <li>Make sure that <tt>JAVA_HOME</tt> is set to the location of your JDK, e.g.
-        <tt>export JAVA_HOME=/usr/java/jdk1.7.0_51</tt> .</li>
-
-        <li>Run <tt>mvn --version</tt> to verify that it is correctly installed.</li>
-        </ol>
-      </subsection>
-
-      <subsection name="Optional configuration">
-
-        <p>Maven will work for most tasks with the above configuration, however if you have any environmental specific configuration outside of individual
-        projects then you will need to configure settings. The following sections refer to what is available.</p>
-
-
-        <subsection name="Settings">
-
-        Maven has a settings file located in the Maven installation and/or user home directory that configure environmental specifics such as:
-
-        <ul>
-          <li>HTTP proxy server</li>
-
-          <li>repository manager location</li>
-
-          <li>server authentication and passwords</li>
-
-          <li>other configuration properties</li>
-        </ul>
-          For information on this file, see the <a href="./settings.html">Settings reference</a>
-        </subsection>
-
-        <subsection name="Security">
-          <p>
-          As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
-          both server passwords and the master password, see the <a href="./guides/mini/guide-encryption.html">Guide to Password Encryption</a>.
-        </p>
-        </subsection>
-
-        <subsection name="Toolchains">
-          <p>
-            As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with.
-            For more information, see the <a href="./guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a>.
-          </p>
-        </subsection>
-
-
+      <subsection name="Files">
+      <p>Maven is distributed in several formats for your convenience. Simply pick a 
+      ready-made binary distribution archive and follow the <a href="./install.html">
+      installation instructions.</a>
+      Use a source archive if you intend to build Maven yourself.</p>
+      <p>
+      In order to guard against corrupted downloads/installations, it is highly recommended to
+      <a href="http://www.apache.org/dev/release-signing#verifying-signature">verify the signature</a>
+      of the release bundles against the public <a href="http://www.apache.org/dist/maven/KEYS">KEYS</a> used by the Apache Maven
+      developers.</p>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Link</th>
+            <th>Checksum</th>
+            <th>Signature</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Binary tar.gz archive</td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
+          </tr>
+          <tr>
+            <td>Binary zip archive</td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.md5">apache-maven-${currentStableVersion}-bin.zip.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
+          </tr>
+          <tr>
+            <td>Source tar.gz archive</td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.md5">apache-maven-${currentStableVersion}-src.tar.gz.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a></td>
+          </tr>
+          <tr>
+            <td>Source zip archive </td>
+            <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip">apache-maven-${currentStableVersion}-src.zip</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.md5">apache-maven-${currentStableVersion}-src.zip.md5</a></td>
+            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.asc">apache-maven-${currentStableVersion}-src.zip.asc</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <ul>
+        <li><a href="./docs/${currentStableVersion}/release-notes.html">Release Notes</a></li>
+        <li><a href="./ref/${currentStableVersion}/">Reference Documentation</a></li>
+        <li><a href="./maven-site-1.0-site.jar">Apache Maven Website As Documentation Archive</a></li>
+        <!-- not currently generated on the CMS due to the profile, probably also badly formattted
+           <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
+        -->
+        <li><a href="[preferred]/maven/">All sources (plugins, shared libraries,...) available at http://www.apache.org/dist/maven/</a></li>
+        <li>Distributed under the <a href="http://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+      </ul>
       </subsection>
 
+      <subsection name="Previous Releases">
+        <p>It is strongly recommended to use the latest release version of Apache Maven to take advantage of newest features and bug fixes.</p>
+        
+        <p>If you still want to use an old version you can find more information in the
+        <a href="./docs/history.html">Maven Releases History</a> and can download files from 
+        the  <a href="http://archive.apache.org/dist/maven/maven-3/">archives</a> for versions 3.0.4+
+        and <a href="http://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
+      </subsection>
     </section>
   </body>
 </document>

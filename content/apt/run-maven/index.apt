@@ -28,36 +28,6 @@
 
 Building a Project with Maven
 
-  This document centre is for those that have the source code to a project that builds with Maven, and would like to
-  know how to use Maven to build it (or perform other common tasks).
-
-  The documents here are also helpful to new Maven users.
-
-~~TODO: tasks as buttons?
-
-  * {{{../download.html} Download and Install Maven}} - Download the latest version of Maven and install it
-
-  * {{{Quick_Start} Quick Start}} - Get started building the project quickly
-
-  * {{{../users/index.html} Use Maven}} - Learn how to use Maven on your own project
-
-~~TODO: command line reference?
-
-* {Quick Start}
-
-** Configuring Maven
-
-  Maven will run with sensible defaults, so you can get right into it. However, if you are operating under a
-  restricted environment or behind a firewall, you might need to prepare to run Maven, as it requires write access to
-  the home directory (<<<~/.m2>>> on Unix/Mac OS X and <<<C:\Documents and Settings\username\.m2>>> on Windows) and
-  network access to download binary dependencies.
-
-   * {{{../guides/mini/guide-configuring-maven.html} Configuring Maven}}
-
-   * {{{../guides/mini/guide-proxies.html} Configuring a HTTP Proxy}}
-
-** Building a Project
-
   The vast majority of Maven-built projects can be built with the following command:
 
 ----
@@ -77,16 +47,16 @@ mvn clean install
   While this will build most projects and Maven encourages this standard convention, builds can be customisable. If this
   does not suffice, please consult the project's documentation.
 
-** More than just the Build
+* More than just the Build
 
   Maven can do more than just build software - it can assist with testing, run web applications and produce reports on
   projects, as well as any number of other tasks provided by plug-ins.
 
-** When Things go Wrong
+* When Things go Wrong
 
   The following are some common problems when building with Maven, and how to resolve them.
 
-*** Missing Dependencies
+** Missing Dependencies
 
   A missing dependency presents with an error like the following:
 
@@ -129,5 +99,3 @@ from the specified remote repositories:
   In other cases, it may be an incorrectly declared dependency (like the typo in the example above) which the project
   would need to fix, like a compilation error.
 
-  ~~TODO: compilation errors
-  ~~TODO: what are other common problems?

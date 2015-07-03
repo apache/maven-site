@@ -30,9 +30,8 @@ your organization and beyond without the need for building artifact from source
 
 ### Available Repository Managers
 
-The following list of open source and commercial repository managers are known 
-to support the repository format used by Maven. Please refer to the respective 
-linked web sites for further information about repository management in general 
+The following list (alphabetical order) of open source and commercial repository
+ managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 
 and the features provided by these products.
 
 * <a href="http://archiva.apache.org/" target="_blank" rel="nofollow">Apache Archiva</a> (open source)

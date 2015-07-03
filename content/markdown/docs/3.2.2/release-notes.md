@@ -122,7 +122,7 @@ See [complete release notes for all versions][5]
 [1]: ../../plugins/index.html
 [2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330186
-[5]: ../../release-notes-all.html
+[5]: ../../docs/history.html
 [MNG-2199]: https://issues.apache.org/jira/browse/MNG-2199
 [MNG-4565]: https://issues.apache.org/jira/browse/MNG-4565
 [MNG-5346]: https://issues.apache.org/jira/browse/MNG-5346
