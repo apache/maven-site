@@ -258,6 +258,10 @@ You should specify the version in your project's plugin configuration:
   <version>Y.Z</version>
 </plugin>
 
+You can download the appropriate sources etc. from the download page:
+
+http://maven.apache.org/plugins/maven-XXX-plugin/download.cgi
+
 Release Notes - Maven XXX Plugin - Version Y.Z
 
 (Copy Here Release Notes in Text Format from JIRA)
