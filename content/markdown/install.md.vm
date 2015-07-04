@@ -14,7 +14,7 @@ Detailed steps are:
 
 or
 
-    tar xfvz apache-maven-${currentStableVersion}-bin.zip
+    tar -zxf apache-maven-${currentStableVersion}-bin.tar.gz
 
 Alternatively use your preferred archive extraction tool.
 
