@@ -84,7 +84,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | <<Packaging types/tools>>                                    |            |              |            | <<These plugins relate to packaging respective artifact types.>> |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | {{{/plugins-archives/maven-ear-plugin-2.10/}<<2.10>>}}            | 2014-12-31 | Generate an EAR from the current project.
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | {{{/plugins-archives/maven-ear-plugin-2.10.1/}<<2.10.1>>}}            | 2015-06-27 | Generate an EAR from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | {{{/plugins-archives/maven-ejb-plugin-2.5.1/}<<2.5.1>>}}          | 2015-06-20 | Build an EJB (and optional client) from the current project.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
