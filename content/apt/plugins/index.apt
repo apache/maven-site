@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2015-06-20
+ 2015-07-04
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -145,7 +145,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-help-plugin/} <<<help>>>}}                 | B          | 2.2          | 2013-02-23 | Get information about the working environment for the project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-help-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MPH}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}           | B+R        | 1.10         | 2015-04-03 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
+| {{{/plugins/maven-invoker-plugin/} <<<invoker>>>}}           | B+R        | 2.0.0         | 2015-06-27 | Run a set of Maven projects and verify the output. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-invoker-plugin}SVN}} | {{{http://jira.codehaus.org/browse/MINVOKER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jarsigner-plugin/} <<<jarsigner>>>}}       | B          | 1.4          | 2015-01-21 | Signs or verifies project artifacts. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-jarsigner-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MJARSIGNER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+

@@ -1,7 +1,7 @@
 ## The Maven Community
 
 Maven, like any other opensource project, relies heavily on the efforts
-of the entire user community to be ever vigilent for improvements,
+of the entire user community to be ever vigilant for improvements,
 logging of defects, communicating use-cases, generating documentation,
 and being wary of other users in need. This is a quick guide outlining
 what members of the Maven community may do to make the system work
