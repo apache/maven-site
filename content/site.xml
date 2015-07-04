@@ -60,6 +60,7 @@ under the License.
     <menu name="Main">
       <item name="Welcome" href="/index.html"/>
       <item name="Download" href="/download.html"/>
+      <item name="License" href="http://www.apache.org/licenses/"/>
       <item name="Install" href="/install.html"/>
       <item name="Configure" href="/configure.html"/>
       <item name="Run" href="/run.html"/>
@@ -97,7 +98,6 @@ under the License.
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html"/>
       <item name="Books and Resources" href="/articles.html" />
-      <item name="License" href="http://www.apache.org/licenses/"/>
       <item name="Security" href="/security.html"/>
     </menu>
 
