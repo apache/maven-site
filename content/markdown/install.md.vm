@@ -32,7 +32,8 @@ the `PATH` environment variable
     OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 
 
-## Windows Tips
+Windows Tips
+-----
 
 * Check environment variable value e.g.
 
@@ -48,7 +49,8 @@ The same dialog can be used to set `JAVA_HOME` to the location of your JDK, e.g.
 
 * Open a new command prompt (Winkey + R then type `cmd`) and run `mvn -v` to verify the installation.
 
-## Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
+Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
+-----
 
 * Check environment variable value
 
