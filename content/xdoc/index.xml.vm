@@ -54,7 +54,7 @@ under the License.
           <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="run.html">Run</a> Maven
         </th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-          <a href="configure.html">Configure</a>, <a href="users/index.html">Use</a> Maven
+          <a href="configure.html">Configure</a>, <a href="users/index.html">Use</a> Maven and <a href="plugins/index.html">Maven Plugins</a>
         </th>
       </tr>
       <tr>
@@ -62,7 +62,8 @@ under the License.
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
             Information for those wanting to use Maven to build their project, including a "10 minute test" that gives a
-            practical overview of Maven's main features in just 10 minutes
+            practical overview of Maven's main features in just 10 minutes and <a href="plugins/index.html">plugin list</a>
+            for more information on each plugin
         </td>
       </tr>
       <tr>
