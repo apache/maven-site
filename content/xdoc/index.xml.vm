@@ -41,7 +41,6 @@ under the License.
         a <a href="maven-features.html">list of some of its main features</a>, and a set of <a href="general.html">frequently
         asked questions about what Maven is</a>.
       </p>
-      <h3>Learning about Maven</h3>
       <p>
         <!-- TODO: this could be the big button type thing instead of a list of links -->
         This site is separated into the following sections, depending on how you'd like to use Maven:
