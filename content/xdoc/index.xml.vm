@@ -84,11 +84,15 @@ under the License.
       </tr>
       <tr>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Contribute</th>
-        <th colspan="2" style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">Develop Maven</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="guides/development/guide-helping.html">Help Maven</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">Develop Maven</a></th>
       </tr>
       <tr>
         <td></td>
-        <td colspan="2">
+        <td>
+            Information if you'd like to get involved: Maven is an open source community and welcomes contributions.
+        </td>
+        <td>
             Information for those who are currently developers, or who are interested
             in contributing to the Maven project itself
         </td>
@@ -100,26 +104,9 @@ under the License.
       </p>
       <p>
         You can access the guides at any time from the left navigation.
+        If you are looking for a quick reference, you can use the <a href="guides/index.html">documentation index</a>.
       </p>
-      <h3>Documentation Index</h3>
-      <p>
-        If you are looking for a quick reference, you can use the <a href="guides/index.html">documentation index.</a>
-<!-- TODO
-        If you are looking for a quick reference, you can use the documentation index. It is available in both
-        <a href="todo.html">alphabetical</a> and <a href="todo.html">categorical</a> listing formats.
--->
-      </p>
-      <h3>Plugins</h3>
-<!-- TODO
-      <p>
-        Maven functionality is provided by plugins. For an explanation of how plugins work, and basic information on how
-        to use a plugin, see the <a href="todo.html">introduction to plugins</a> in the Users Centre.
-      </p>
--->
-      <p>
-        For detailed information on just some of the plugins available for Maven, see the
-        <a href="plugins/index.html">plugin list</a>.
-      </p>
+
       <h3>How to Get Support</h3>
       <p>
         Support for Maven is available in a variety of different forms.
@@ -139,11 +126,6 @@ under the License.
         You can also reach the Maven developers on <a href="community.html">IRC</a>.
       </p>
 
-      <h3>How can I help?</h3>
-      <p>
-        Maven is an open source community and welcomes contributions. If you'd like to get involved, see the
-        <a href="guides/development/guide-helping.html">Guide to helping with Maven</a>.
-      </p>
       <p>
         Maven is a part of the Apache Software Foundation. We'd like to <a href="http://www.apache.org/foundation/thanks.html">thank
         the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
