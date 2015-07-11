@@ -50,8 +50,12 @@ under the License.
       <table>
       <tr>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Use</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="run.html">Run Maven</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="users/index.html">Use Maven</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+          <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="run.html">Run</a> Maven
+        </th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+          <a href="configure.html">Configure</a>, <a href="users/index.html">Use</a> Maven
+        </th>
       </tr>
       <tr>
         <td></td>
