@@ -43,22 +43,25 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 Bugs
 ----
 
+ * The Cygwin Shell related handling of the `MAVEN_PROJECTBASEDIR` has been fixed
+   with [MNG-5812][MNG-5812].
+
+ * The new scripts to call Maven had introduced a bug related to the handling of the
+   `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
+
  * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the 
    `${maven.projectBasedir}/.mvn` folder of the project. There you can use the `maven.config` 
    file to store command line options instead of repeating them every time you call maven.
    In cases where the given file has been empty Maven ended with a failure. This has been fixed
    with [MNG-5816][MNG-5816].
 
- * The new scripts to call Maven had introduced a bug related to the handling of the
-   `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
-
- * The Cygwin Shell related handling of the `MAVEN_PROJECTBASEDIR` has been fixed
-   with [MNG-5812][MNG-5812].
-
  * The handling of the relativePath in a parent has been fixed related to the case
    that the parent has the same groupId:artifactId but a different version. In this
    case the resolution must be done against the repository.
    This has been fixed by [MNG-5840][MNG-5840].
+
+ * In cases where you start Maven in the root of a windows drive maven will fail.
+   This has been fixed by [MNG-5796][MNG-5796]. 
 
 Improvement
 -----------
@@ -81,3 +84,4 @@ See [complete release notes for all versions][5]
 [MNG-5813]: https://issues.apache.org/jira/browse/MNG-5813
 [MNG-5816]: https://issues.apache.org/jira/browse/MNG-5816
 [MNG-5840]: https://issues.apache.org/jira/browse/MNG-5840
+[MNG-5796]: https://issues.apache.org/jira/browse/MNG-5796
