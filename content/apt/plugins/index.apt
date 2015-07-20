@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2015-07-06
+ 2015-07-20
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -109,7 +109,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-changes-plugin/} <<<changes>>>}}           | B+R        | 2.11         | 2014-09-28 | Generate a report from an issue tracker or a change document. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-changes-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCHANGES}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.15         | 2015-03-20 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCHECKSTYLE}JIRA}}
+| {{{/plugins/maven-checkstyle-plugin/} <<<checkstyle>>>}}     | B+R        | 2.16         | 2015-07-20 | Generate a Checkstyle report. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-checkstyle-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCHECKSTYLE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | 1.2          | 2015-03-17 | Generate a Description of a Project (DOAP) file from a POM. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-doap-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MDOAP}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
