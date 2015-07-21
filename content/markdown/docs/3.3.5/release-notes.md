@@ -20,11 +20,11 @@
  http://maven.apache.org/doxia/references/apt-format.html
 -->
 
-# Release Notes &#x2013; Maven 3.3.4
+# Release Notes &#x2013; Maven 3.3.5
 
-The Apache Maven team would like to announce the release of Maven 3.3.4.
+The Apache Maven team would like to announce the release of Maven 3.3.5.
 
-Maven 3.3.4 is [available for download][0].
+Maven 3.3.5 is [available for download][0].
 
 Maven is a software project management and comprehension tool. Based on the concept of a project object model
 (POM), Maven can manage a project's build, reporting and documentation from a central place.
@@ -38,7 +38,7 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 - the web site: [http://maven.apache.org/](http://maven.apache.org/)
 - the maven-user mailing list: [http://maven.apache.org/mail-lists.html](http://maven.apache.org/mail-lists.html)
-- the reference documentation: [http://maven.apache.org/ref/3.3.4/](http://maven.apache.org/ref/3.3.4/)
+- the reference documentation: [http://maven.apache.org/ref/3.3.5/](http://maven.apache.org/ref/3.3.5/)
 
 Bugs
 ----
@@ -66,7 +66,7 @@ Bugs
 Improvement
 -----------
 
- * Maven 3.3.4 has been enhanced to support mapping phases to goals with custom configurations.
+ * Maven 3.3.5 has been enhanced to support mapping phases to goals with custom configurations.
 
 
 The full list of changes can be found in our [issue management system][4].
