@@ -4,8 +4,10 @@
  Jason van Zyl
  Trent Rosenbaum
  Vincent Massol
+ Karl Heinz Marbaise
  -----
  2006-10-07
+ 2015-07-31
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -108,7 +110,7 @@ mvn release:prepare \
       ...
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5</version>
+        <version>2.5.2</version>
         <configuration>
           ...
           <tagBase>
@@ -146,7 +148,7 @@ mvn release:prepare \
       ...
       <plugin>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5</version>
+        <version>2.5.2</version>
         <configuration>
           ...
           <tagBase>
