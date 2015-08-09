@@ -68,27 +68,27 @@ mvn archetype:generate
 *-----------------------------+----------------+
 || Archetype ArtifactIds      || Description   ||
 *-----------------------------+----------------+
-| maven-archetype-archetype   | An archetype which contains a sample archetype. |
+| maven-archetype-archetype   | An archetype to generate a sample archetype project. |
 *-----------------------------+----------------+
-| maven-archetype-j2ee-simple | An archetype which contains a simplifed sample J2EE application. |
+| maven-archetype-j2ee-simple | An archetype to generate a simplifed sample J2EE application. |
 *-----------------------------+----------------+
-| maven-archetype-mojo        | An archetype which contains a sample a sample Maven plugin. |
+| maven-archetype-mojo        | An archetype to generate a sample a sample Maven plugin. |
 *-----------------------------+----------------+
-| maven-archetype-plugin      | An archetype which contains a sample Maven plugin. |
+| maven-archetype-plugin      | An archetype to generate a sample Maven plugin. |
 *-----------------------------+----------------+
-| maven-archetype-plugin-site | An archetype which contains a sample Maven plugin site. |
+| maven-archetype-plugin-site | An archetype to generate a sample Maven plugin site. |
 *-----------------------------+----------------+
-| maven-archetype-portlet     | An archetype which contains a sample JSR-268 Portlet. |
+| maven-archetype-portlet     | An archetype to generate a sample JSR-268 Portlet. |
 *-----------------------------+----------------+
-| maven-archetype-quickstart  | An archetype which contains a sample Maven project. |
+| maven-archetype-quickstart  | An archetype to generate a sample Maven project. |
 *-----------------------------+----------------+
-| maven-archetype-simple      | An archetype which contains a simple Maven project. |
+| maven-archetype-simple      | An archetype to generate a simple Maven project. |
 *-----------------------------+----------------+
-| maven-archetype-site        | An archetype which contains a sample Maven site which demonstrates some of the supported document types like APT, XDoc, and FML and demonstrates how to i18n your site. |
+| maven-archetype-site        | An archetype to generate a sample Maven site which demonstrates some of the supported document types like APT, XDoc, and FML and demonstrates how to i18n your site. |
 *-----------------------------+----------------+
-| maven-archetype-site-simple | An archetype which contains a sample Maven site. |
+| maven-archetype-site-simple | An archetype to generate a sample Maven site. |
 *-----------------------------+----------------+
-| maven-archetype-webapp      | An archetype which contains a sample Maven Webapp project. |
+| maven-archetype-webapp      | An archetype to generate a sample Maven Webapp project. |
 *-----------------------------+----------------+
 
   For more information on these archetypes, please refer to the {{{/archetypes/index.html}Maven Archetype Bundles page}}.
