@@ -59,7 +59,7 @@ What is Archetype?
 mvn archetype:generate
 +---+
 
-  Please refer to {{{http://maven.apache.org/plugins/maven-archetype-plugin/usage.html}Archetype Plugin Page}}.
+  Please refer to {{{/archetype/maven-archetype-plugin/usage.html}Archetype Plugin Page}}.
 
 * Provided Archetypes
 
@@ -91,7 +91,7 @@ mvn archetype:generate
 | maven-archetype-webapp      | An archetype which contains a sample Maven Webapp project. |
 *-----------------------------+----------------+
 
-  For more information on these archetypes, please refer the {{{http://maven.apache.org/archetype/index.html}Maven Archetypes page}}.
+  For more information on these archetypes, please refer the {{{/archetypes/index.html}Maven Archetype Bundles page}}.
 
 * What makes up an Archetype?
 
