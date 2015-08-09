@@ -40,3 +40,4 @@ and the features provided by these products.
 * <a href="http://www.sonatype.org/nexus/go/" target="_blank" rel="nofollow">Sonatype Nexus OSS</a> (open source)
 * <a href="http://links.sonatype.com/products/nexus/pro/home" target="_blank" rel="nofollow">Sonatype Nexus Pro</a> (commercial)
 
+[Continuously updated by the maintainers of Archiva, Artifactory and Sonatype feature comparison matrix.](https://binary-repositories-comparison.github.io/)
