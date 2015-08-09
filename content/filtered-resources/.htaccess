@@ -43,6 +43,7 @@ RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /archives/maven-1.x/plugins/$1
 RedirectMatch permanent ^/repository-manager/(.*)$ http://archiva.apache.org/$1
 RedirectMatch permanent ^/archiva(.*)$ http://archiva.apache.org$1
 RedirectMatch permanent ^/continuum(.*)$ http://continuum.apache.org$1
+RedirectMatch permanent ^/archetype/maven-archetype-bundles/(.*)$ /archetypes/$1
 RedirectMatch permanent ^/maven-archetype/(.*)$ /archetype/$1
 RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ http://maven.apache.org/archetype/maven-archetype-plugin/$1
 RedirectMatch permanent ^/plugins/maven-enforcer-plugin/(.*)$ http://maven.apache.org/enforcer/maven-enforcer-plugin/$1
