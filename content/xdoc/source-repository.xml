@@ -87,17 +87,17 @@ under the License.
           <table>
             <tr>
               <td><a href="/plugins/">Apache Maven Plugins</a></td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/plugins/">https://svn.apache.org/repos/asf/maven/plugins/</a>                                         </source></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/plugins/trunk/">https://svn.apache.org/repos/asf/maven/plugins/trunk/</a>                                         </source></td>
             </tr>
             <tr>
               <td><a href="/shared/">Shared components</a>
               </td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/shared/">https://svn.apache.org/repos/asf/maven/shared/</a></source>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/shared/trunk/">https://svn.apache.org/repos/asf/maven/shared/trunk/</a></source>
               </td>
             </tr>
             <tr>
               <td><a href="/maven-release/">Release</a> (Release api and plugin)</td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/release/">https://svn.apache.org/repos/asf/maven/release/</a></source></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/release/trunk/">https://svn.apache.org/repos/asf/maven/release/trunk/</a></source></td>
             </tr>
             <tr>
               <td>A variety of other subsystems (including obsolete trees replaced by git)</td><td><source><a href="https://svn.apache.org/viewvc/maven/">https://svn.apache.org/repos/asf/maven/</a></source>
