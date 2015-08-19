@@ -30,7 +30,7 @@
 Introduction
 
  This document gives step-by-step instructions for deploying 
- Maven components reference documentation inside the Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
+ Maven components reference documentation inside the Maven {{{http://maven.apache.org/}http://maven.apache.org/}} website.
 
  See {{{./index.html}Maven website introduction}} for instructions on the whole website publication (main site content + components).
 
@@ -50,11 +50,11 @@ How components reference documentation publication works
 
 * Staging component reference documentation
 
- Reference documentation of a component is staged in <<<http://maven.apache.org/xxx-archives/yyy-LATEST>>>, where <<<yyy>>> is the
+ Reference documentation of a component is staged in <<<http://maven.apache.org/xxx-archives/yyy-LATEST/>>>, where <<<yyy>>> is the
  component name and <<<xxx>>> can be:
 
  * the component type, like <<<shared>>>, <<<plugins>>>, <<<skins>>>, ... (see
- {{/shared-archives/}}, {{/plugins-archives/}}, {{/skins-archives/}})
+ {{/shared-archives/}}, {{/plugins-archives/}}, {{/plugin-tools-archives/}}, {{/pom-archives/}}, {{/scm-archives/}}, {{/skins-archives/}}, {{/surefire-archives/}}, ...)
 
  * the component name for standalone components, like <<<archetype>>>, <<<plugin-tools>>>, <<<surefire>>>, <<<wagon>>>, ...
  (see {{/archetype-archives/}}, {{/plugin-tools-archives/}}, {{/surefire-archives/}}, {{/wagon-archives/}})
@@ -95,7 +95,7 @@ mvn scm-publish:publish-scm
 
  <<Notice>>: content is in fact published to {{/components/}} directory,
  and rewrite rules in <<<.htaccess>>> detect files not found in main site to try
- {{/components/}} content instead.
+ {{/components/}} content instead (see {{{https://issues.apache.org/jira/browse/MPOM-80}MPOM-80}}.
 
 * Publishing versioned component reference documentation
 
