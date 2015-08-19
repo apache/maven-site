@@ -54,10 +54,10 @@ How components reference documentation publication works
  component name and <<<xxx>>> can be:
 
  * the component type, like <<<shared>>>, <<<plugins>>>, <<<skins>>>, ... (see
- {{/shared-archives/}}, {{/plugins-archives/}}, {{/plugin-tools-archives/}}, {{/pom-archives/}}, {{/scm-archives/}}, {{/skins-archives/}}, {{/surefire-archives/}}, ...)
+ {{/shared-archives/}}, {{/plugins-archives/}}, {{/pom-archives/}}, {{/skins-archives/}})
 
  * the component name for standalone components, like <<<archetype>>>, <<<plugin-tools>>>, <<<surefire>>>, <<<wagon>>>, ...
- (see {{/archetype-archives/}}, {{/plugin-tools-archives/}}, {{/surefire-archives/}}, {{/wagon-archives/}})
+ (see {{/archetype-archives/}}, {{/archetypes-archives/}}, {{/plugin-tools-archives/}}, {{/scm-archives/}}, {{/surefire-archives/}}, {{/wagon-archives/}})
 
  []
 
@@ -95,7 +95,7 @@ mvn scm-publish:publish-scm
 
  <<Notice>>: content is in fact published to {{/components/}} directory,
  and rewrite rules in <<<.htaccess>>> detect files not found in main site to try
- {{/components/}} content instead (see {{{https://issues.apache.org/jira/browse/MPOM-80}MPOM-80}}.
+ {{/components/}} content instead (see {{{https://issues.apache.org/jira/browse/MPOM-80}MPOM-80}}).
 
 * Publishing versioned component reference documentation
 
