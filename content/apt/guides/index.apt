@@ -83,10 +83,6 @@ Documentation
 
 ** Upgrading
 
- * {{{./mini/guide-m1-m2.html}From Maven 1.x to Maven 2.x}}
-
- * {{{./mini/guide-using-m1-repos-with-m2.html}Using Maven 1.x repositories with Maven 2.x}}
-
  * {{{./mini/guide-relocation.html}Relocation of Artifacts}}
 
 ** Repositories
