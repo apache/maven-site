@@ -6,6 +6,7 @@ Redirect Permanent /download.html /download.cgi
 RedirectMatch permanent ^/(.*)/download.html$ http://maven.apache.org/$1/download.cgi
 
 Redirect /ref/current http://maven.apache.org/ref/${currentStableVersion}
+Redirect /ref/current/ http://maven.apache.org/ref/${currentStableVersion}
 
 Redirect Permanent /maven-v4_0_0.xsd http://maven.apache.org/xsd/maven-4.0.0.xsd
 
