@@ -27,13 +27,13 @@ under the License.
   <version position="none" />
 
   <bannerLeft>
-    <src>http://maven.apache.org/images/apache-maven-project.png</src>
-    <href>http://www.apache.org/</href>
+    <src>https://maven.apache.org/images/apache-maven-project.png</src>
+    <href>https://www.apache.org/</href>
   </bannerLeft>
 
   <bannerRight>
-    <src>http://maven.apache.org/images/maven-logo-black-on-white.png</src>
-    <href>http://maven.apache.org/</href>
+    <src>https://maven.apache.org/images/maven-logo-black-on-white.png</src>
+    <href>https://maven.apache.org/</href>
   </bannerRight>
   <skin>
     <groupId>org.apache.maven.skins</groupId>
@@ -46,7 +46,7 @@ under the License.
       <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
       <googlePlusOne />
       <googleSearch>
-        <sitesearch>maven.apache.org</sitesearch>
+        <sitesearch>https://maven.apache.org</sitesearch>
       </googleSearch>
     </fluidoSkin>
   </custom>
