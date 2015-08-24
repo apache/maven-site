@@ -98,12 +98,12 @@ under the License.
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html"/>
       <item name="Books and Resources" href="/articles.html" />
-      <item name="Security" href="/security.html"/>
+      <item name="Security" href="/security.html" />
     </menu>
 
     <menu name="Community">
-      <item name="Community Overview" href="/community.html"/>
-      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
+      <item name="Community Overview" href="/community.html" />
+      <item name="How to Contribute" href="/guides/development/guide-helping.html" />
       <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
       <item name="Getting Help" href="/users/getting-help.html" />
       <item name="Issue Tracking" href="/issue-tracking.html" />
