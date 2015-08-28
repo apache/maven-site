@@ -136,7 +136,7 @@ End Of Life Apache Maven 2.x
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-dependency-plugin/} <<<dependency>>>}}     | B+R        | {{{/plugins-archives/maven-dependency-plugin-2.10/}<<2.10>>}}     | 2015-01-27 | Dependency manipulation (copy, unpack) and analysis.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
-| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | {{{/enforcer-archives/enforcer-1.4/maven-enforcer-plugin/}<<1.4>>}}        | 2015-01-29 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
+| {{{/enforcer/maven-enforcer-plugin/} <<<enforcer>>>}}        | B          | {{{/enforcer-archives/enforcer-1.4.1/maven-enforcer-plugin/}<<1.4.1>>}}        | 2015-08-23 | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
 | {{{/plugins/maven-gpg-plugin/} <<<gpg>>>}}                   | B          | {{{/plugins-archives/maven-gpg-plugin-1.6/}<<1.6>>}}              | 2015-01-19 | Create signatures for the artifacts and poms.
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+
