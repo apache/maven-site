@@ -42,8 +42,6 @@ Introduction to the Standard Directory Layout
 *--------------------------------+-----------------------------------------------+
 | <<<src/main/filters>>>         | Resource filter files
 *--------------------------------+-----------------------------------------------+
-| <<<src/main/config>>>          | Configuration files
-*--------------------------------+-----------------------------------------------+
 | <<<src/main/webapp>>>          | Web application sources
 *--------------------------------+-----------------------------------------------+
 | <<<src/test/java>>>            | Test sources
@@ -86,4 +84,3 @@ Introduction to the Standard Directory Layout
 
  If there are other contributing sources to the artifact build, they would be under other subdirectories: for
  example <<<src/main/antlr>>> would contain Antlr grammar definition files.
-
