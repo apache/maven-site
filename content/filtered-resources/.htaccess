@@ -74,6 +74,9 @@ Redirect Permanent /guides/mini/guide-apt-format.html http://maven.apache.org/do
 
 RedirectMatch ^/maven-1.x/(.*)$ http://maven.apache.org/archives/maven-1.x/$1
 
+# avoid /components/directory/: redirect to /directory/
+RedirectMatch ^/components/(.*/)$ /$1
+
 RewriteEngine on
 
 # if file is not found in maven-site, look into components
