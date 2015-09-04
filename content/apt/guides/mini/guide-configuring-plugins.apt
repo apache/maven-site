@@ -162,7 +162,7 @@ public class MyQueryMojo
 +----+
 
  As you can see the elements in the configuration match the names of the fields in the Mojo. The configuration
- mechanism Maven employs is very similar to the way {{{http://xstream.codehaus.org}XStream}} works where elements
+ mechanism Maven employs is very similar to the way {{{http://x-stream.github.io/}XStream}} works where elements
  in XML are mapped to objects. So from the example above you can see that the mapping is pretty straight forward the
  <<<url>>> element maps to the <<<url>>> field, the <<<timeout>>> element maps to the <<<timeout>>> field and the
  <<<options>>> element maps to the <<<options>>> field. The mapping mechanism can deal with arrays by inspecting
