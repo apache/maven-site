@@ -150,11 +150,11 @@ Guide to uploading artifacts to the Central Repository
 
   * {{{http://www.apache.org/}Apache Software Foundation}} (for all Apache projects)
 
-  * {{{http://www.codehaus.org/}Codehaus}} (for Codehaus projects)
-
   * {{{http://www.fusesource.org/forge/}FuseSource Forge}} (focused on FUSE related projects)
 
   * {{{http://www.nuiton.org}Nuiton.org}}
+
+  * {{{http://central.sonatype.org/pages/ossrh-guide.html}Sonatype OSSRH (OSS Repository Hosting)}} (for any OSS project)
 
  []
 
