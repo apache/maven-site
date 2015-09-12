@@ -154,8 +154,6 @@ Guide to uploading artifacts to the Central Repository
 
   * {{{http://www.nuiton.org}Nuiton.org}}
 
-  * {{{http://central.sonatype.org/pages/ossrh-guide.html}Sonatype OSSRH (OSS Repository Hosting)}} (for any OSS project)
-
  []
 
  Automatic publication will be provided for Forges that provide hosting services for OSS projects and other large project repositories
