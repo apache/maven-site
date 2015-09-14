@@ -103,9 +103,9 @@ writer.write( xmlContent );
 +---
 
   To ease the correct processing of XML files, developers are encouraged to use
-  <<<{{{http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/ReaderFactory.html#newXmlReader(java.io.File)}ReaderFactory.newXmlReader()}}>>>
+  <<<{{{http://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/ReaderFactory.html#newXmlReader(java.io.File)}ReaderFactory.newXmlReader()}}>>>
   and
-  <<<{{{http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/WriterFactory.html#newXmlWriter(java.io.File)}WriterFactory.newXmlWriter()}}>>>
+  <<<{{{http://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/WriterFactory.html#newXmlWriter(java.io.File)}WriterFactory.newXmlWriter()}}>>>
   from the Plexus Utilities.
 
 * {Converting between URLs and Filesystem Paths}
@@ -186,7 +186,7 @@ File path = new File( new URI( url.toExternalForm() ) );
   For all these reasons, it is recommended to use
   <<<{{{http://commons.apache.org/io/api-release/org/apache/commons/io/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
   from Commons IO or
-  <<<{{{http://plexus.codehaus.org/plexus-utils/apidocs/org/codehaus/plexus/util/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
+  <<<{{{http://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
   from a recent Plexus Utilities.
 
 * {Handling Strings Case-insensitively}
@@ -213,7 +213,7 @@ if ( "info".equals( debugLevel.toLowerCase() ) )
     logger.info( message );
 +---
 
-  For case-insensitive string comparisions which should be locale-insensitive, the method
+  For case-insensitive string comparisons which should be locale-insensitive, the method
   <<<{{{http://java.sun.com/javase/6/docs/api/java/lang/String.html#equalsIgnoreCase(java.lang.String)}String.equalsIgnoreCase()}}>>>
   should be used instead. If only a substring like a prefix/suffix should be compared, the method
   <<<{{{http://java.sun.com/javase/6/docs/api/java/lang/String.html#regionMatches(boolean,%20int,%20java.lang.String,%20int,%20int)}String.regionMatches()}}>>>

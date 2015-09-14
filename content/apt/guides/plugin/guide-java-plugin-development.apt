@@ -731,9 +731,9 @@ public class MyQueryMojo
 
     [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
 
-    [[3]] {{{http://plexus.codehaus.org/}Plexus}}: The IoC container used by Maven.
+    [[3]] {{{http://codehaus-plexus.github.io/}Plexus}}: The IoC container used by Maven.
 
-    [[4]] {{{http://plexus.codehaus.org/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
+    [[4]] {{{http://codehaus-plexus.github.io/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
 
     [[5]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
 

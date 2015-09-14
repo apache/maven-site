@@ -336,7 +336,7 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [p2g3]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-3-creating-a-guice-bean-extension-layer/
 [jsr330]: http://www.jcp.org/en/jsr/detail?id=330
 [sisu]: http://eclipse.org/sisu/
-[plexus]: http://plexus.codehaus.org/
+[plexus]: http://codehaus-plexus.github.io/
 [plexus-container]: https://github.com/sonatype/plexus-containers
 [jsr330-plugin]: http://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
 [guice]: http://code.google.com/p/google-guice/

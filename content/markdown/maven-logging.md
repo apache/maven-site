@@ -140,5 +140,5 @@ See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 [3]: http://logging.apache.org/log4j/2.x/log4j-slf4j-impl/
 [4]: http://logback.qos.ch
 [5]: http://slf4j.org/apidocs/
-[6]: http://plexus.codehaus.org/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
+[6]: http://codehaus-plexus.github.io/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
 [7]: http://www.slf4j.org/manual.html#swapping
