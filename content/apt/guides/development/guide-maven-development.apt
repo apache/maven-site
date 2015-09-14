@@ -189,7 +189,7 @@ And remember, your contributions are always welcome!
  Modello is a simple tool for representing an object model and generate code and resources from the model. Maven is
  using Modello to generate all Java objects, XML readers and writers, XML Schema and HTML documentation.
 
- You can {{{http://modello.codehaus.org}read more about Modello}}.
+ You can {{{http://codehaus-plexus.github.io/modello/}read more about Modello}}.
 
  * <<Mojo>>
 
