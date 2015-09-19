@@ -1,46 +1,91 @@
 ## Preparing Component Release Documentation
 
-<!-- TODO add javascript to make this dynamic:
-1. select a component category to display index page, archives and list content (sorted by 
-2. select a component to update instructions to publish release documentation
---> 
+select component category, then type artifact id and version to generate svn commands:
 
 <table>
 <tr><td>
 <h2>Component category</h2>
 <ul>
-<li><a href="#core">core</a></li>
-<li><a href="#shared">shared components</a></li>
-<li><a href="#plugins">plugins</a></li>
-<li><a href="#pom">poms</a></li>
-<li><a href="#skins">skins</a></li>
-<li><a href="#others">others</a></li>
+<li><a href="?core">core</a></li>
+<li><a href="?shared">shared components</a></li>
+<li><a href="?plugins">plugins</a></li>
+<li><a href="?pom">poms</a></li>
+<li><a href="?skins">skins</a></li>
+<li><a href="?others">others</a></li>
 </ul>
  
 </td><td>
 
-<h2>plugins content</h2>
+<h2>Component information</h2>
 
-<ul>
-<li>maven-javadoc-plugin: <a href="/plugins/maven-javadoc-plugin/">current</a> / <a href="/plugins-archives/maven-javadoc-plugin-LATEST/">LATEST</a></li>
-<li>...</li>
-</ul>
+artifact id: <input type="text" name="artifactId" id="artifactId"></input><br/>
+version: <input type="text" name="version" id="version"></input><br/>
+<button onclick="instructions()">Publish instructions</button>
+
 </td></tr>
 
 <tr><td colspan="2">
-instructions to publish maven-javadoc-plugin 1.9 release documentation
-<pre>svnmucc -m "Publish maven-javadoc-plugin 1.9 documentation" \
+instructions to publish component release documentation
+<pre id="svnmucc">svnmucc -m "Publish ${artifactId} ${version} documentation" \
   -U https://svn.apache.org/repos/infra/websites/production/maven/components \
-  cp HEAD plugins-archives/maven-javadoc-plugin-LATEST plugins-archives/maven-javadoc-plugin-1.9 \
-  rm plugins/maven-javadoc-plugin \
-  cp HEAD plugins-archives/maven-javadoc-plugin-LATEST plugins/maven-javadoc-plugin</pre>
+  cp HEAD ${category}-archives/${artifactId}-LATEST ${category}-archives/${artifactId}-${version} \
+  rm ${category}/${artifactId} \
+  cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
 <tr><td>category index page<br/>
-<iframe src="/plugins/" width="100%" height="300px"></iframe>
+<iframe id="index-page" src="" width="100%" height="300px"></iframe>
 </td>
 <td>archives directory<br/>
-<iframe src="/plugins-archives/?C=M;O=D" width="100%" height="300px"></iframe>
+<iframe id="archives" src="" width="100%" height="300px"></iframe>
 </td>
 </tr>
 </table>
+
+<script type="text/javascript"><![CDATA[
+function selectCategory(index, archive) {
+  indexPage.setAttribute('src', 'http://maven.apache.org/' + index);
+  archives.setAttribute('src', 'http://maven.apache.org/' + archive + '?C=M;O=D');
+}
+var category = document.location.search.substr(1);
+var indexPage = document.getElementById('index-page');
+var archives = document.getElementById('archives');
+if (category == "core") {
+  selectCategory('docs/history.html', 'ref/');
+} else if (category == "others") {
+  selectCategory('', 'components/');
+} else if (category != "") {
+  selectCategory(category + '/', category+'-archives/');
+}
+var svnmuccTemplate = document.getElementById('svnmucc').innerHTML;
+
+function escapeRegExp(string) {
+    return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+}
+function replaceAll(string, find, replace) {
+  return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+}
+
+function instructions() {
+  var category = document.location.search.substr(1);
+  var artifactId = document.getElementById('artifactId').value;
+  var version = document.getElementById('version').value;
+  var svnmucc = svnmuccTemplate;
+  if (category == "others") {
+    // category directory is based on artifactId
+    svnmucc = replaceAll(svnmucc, '${category}/${artifactId}', '${artifactId}');
+    category = artifactId;
+  }
+  if (category == "core") {
+    artifactId = "Maven";
+    svnmucc = svnmucc.substr(0, svnmucc.indexOf("  rm "))
+    svnmucc = replaceAll(svnmucc, '${artifactId}-LATEST', '3-LATEST');
+    svnmucc = replaceAll(svnmucc, '${category}-archives', 'ref');
+    svnmucc = replaceAll(svnmucc, '${artifactId}-${version}', '${version}');
+  }
+  svnmucc = replaceAll(svnmucc, '${category}', category);
+  svnmucc = replaceAll(svnmucc, '${artifactId}', artifactId);
+  svnmucc = replaceAll(svnmucc, '${version}', version);
+  document.getElementById('svnmucc').innerHTML = svnmucc;
+}
+//]]></script>

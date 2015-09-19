@@ -143,6 +143,9 @@ svnmucc -m "Publish yyy $version documentation" \
   cp HEAD xxx-archives/yyy-LATEST xxx/yyy
 +----------+
 
+ You can also use {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}}
+ to prepare svnmucc command line.
+
 * Updating index page in the Maven site
 
  Some component types have an index page refering to each components of the same type. This is the case for
