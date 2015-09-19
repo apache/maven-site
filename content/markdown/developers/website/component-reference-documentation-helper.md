@@ -46,18 +46,8 @@ instructions to publish component release documentation
 function selectCategory(index, archive) {
   indexPage.setAttribute('src', 'http://maven.apache.org/' + index);
   archives.setAttribute('src', 'http://maven.apache.org/' + archive + '?C=M;O=D');
+  instructions();
 }
-var category = document.location.search.substr(1);
-var indexPage = document.getElementById('index-page');
-var archives = document.getElementById('archives');
-if (category == "core") {
-  selectCategory('docs/history.html', 'ref/');
-} else if (category == "others") {
-  selectCategory('', 'components/');
-} else if (category != "") {
-  selectCategory(category + '/', category+'-archives/');
-}
-var svnmuccTemplate = document.getElementById('svnmucc').innerHTML;
 
 function escapeRegExp(string) {
     return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
@@ -74,18 +64,35 @@ function instructions() {
   if (category == "others") {
     // category directory is based on artifactId
     svnmucc = replaceAll(svnmucc, '${category}/${artifactId}', '${artifactId}');
-    category = artifactId;
+    svnmucc = replaceAll(svnmucc, '${category}', '${artifactId}');
   }
   if (category == "core") {
     artifactId = "Maven";
     svnmucc = svnmucc.substr(0, svnmucc.indexOf("  rm "))
     svnmucc = replaceAll(svnmucc, '${artifactId}-LATEST', '3-LATEST');
     svnmucc = replaceAll(svnmucc, '${category}-archives', 'ref');
-    svnmucc = replaceAll(svnmucc, '${artifactId}-${version}', '${version}');
+    svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}');
   }
   svnmucc = replaceAll(svnmucc, '${category}', category);
-  svnmucc = replaceAll(svnmucc, '${artifactId}', artifactId);
-  svnmucc = replaceAll(svnmucc, '${version}', version);
+  if (artifactId) {
+    svnmucc = replaceAll(svnmucc, '${artifactId}', artifactId);
+  }
+  if (version) {
+    svnmucc = replaceAll(svnmucc, '${version}', version);
+  }
   document.getElementById('svnmucc').innerHTML = svnmucc;
+}
+
+var category = document.location.search.substr(1);
+var svnmuccTemplate = document.getElementById('svnmucc').innerHTML;
+
+var indexPage = document.getElementById('index-page');
+var archives = document.getElementById('archives');
+if (category == "core") {
+  selectCategory('docs/history.html', 'ref/');
+} else if (category == "others") {
+  selectCategory('', 'components/');
+} else if (category != "") {
+  selectCategory(category + '/', category+'-archives/');
 }
 //]]></script>
