@@ -33,7 +33,7 @@ instructions to publish component release documentation
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
-<tr><td>category index page<br/>
+<tr><td><a href="" id="link-index-page" target="_blank">category index page</a><br/>
 <iframe id="index-page" src="" width="100%" height="300px"></iframe>
 </td>
 <td>archives directory<br/>
@@ -44,7 +44,13 @@ instructions to publish component release documentation
 
 <script type="text/javascript"><![CDATA[
 function selectCategory(index, archive) {
-  indexPage.setAttribute('src', 'http://maven.apache.org/' + index);
+  var indexPage = document.getElementById('index-page');
+  var linkIndexPage = document.getElementById('link-index-page');
+  var archives = document.getElementById('archives');
+  var indexUrl = index ? ('http://maven.apache.org/' + index) : '';
+  indexPage.setAttribute('src', indexUrl);
+  linkIndexPage.setAttribute('href', indexUrl);
+  linkIndexPage.style.display = index ? "initial":"none";
   archives.setAttribute('src', 'http://maven.apache.org/' + archive + '?C=M;O=D');
   instructions();
 }
@@ -71,7 +77,7 @@ function instructions() {
     svnmucc = svnmucc.substr(0, svnmucc.indexOf("  rm "))
     svnmucc = replaceAll(svnmucc, '${artifactId}-LATEST', '3-LATEST');
     svnmucc = replaceAll(svnmucc, '${category}-archives', 'ref');
-    svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}');
+    svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}\n\n');
   }
   svnmucc = replaceAll(svnmucc, '${category}', category);
   if (artifactId) {
@@ -86,8 +92,6 @@ function instructions() {
 var category = document.location.search.substr(1);
 var svnmuccTemplate = document.getElementById('svnmucc').innerHTML;
 
-var indexPage = document.getElementById('index-page');
-var archives = document.getElementById('archives');
 if (category == "core") {
   selectCategory('docs/history.html', 'ref/');
 } else if (category == "others") {
