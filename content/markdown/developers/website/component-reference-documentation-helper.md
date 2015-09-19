@@ -4,7 +4,7 @@ select component category, then type artifact id and version to generate svn com
 
 <table>
 <tr><td>
-<h2>Component category</h2>
+<h3>Component category</h3>
 <ul>
 <li><a href="?core">core</a></li>
 <li><a href="?shared">shared components</a></li>
@@ -16,7 +16,7 @@ select component category, then type artifact id and version to generate svn com
  
 </td><td>
 
-<h2>Component information</h2>
+<h3>Component information</h3>
 
 artifact id: <input type="text" name="artifactId" id="artifactId"></input><br/>
 version: <input type="text" name="version" id="version"></input><br/>
@@ -24,8 +24,8 @@ version: <input type="text" name="version" id="version"></input><br/>
 
 </td></tr>
 
-<tr><td colspan="2">
-instructions to publish component release documentation
+<tr><td colspan="3">
+<h3>instructions to publish component release documentation</h3>
 <pre id="svnmucc">svnmucc -m "Publish ${artifactId} ${version} documentation" \
   -U https://svn.apache.org/repos/infra/websites/production/maven/components \
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}-archives/${artifactId}-${version} \
@@ -33,7 +33,7 @@ instructions to publish component release documentation
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
-<tr><td><a href="" id="link-index-page" target="_blank" style="display:none">edit category index page through CMS</a><br/>
+<tr><td colspan="2"><a href="" id="link-index-page" target="_blank" style="display:none">edit category index page through CMS</a><br/>
 <iframe id="index-page" src="" width="100%" height="300px"></iframe>
 </td>
 <td>archives directory<br/>
