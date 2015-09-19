@@ -33,7 +33,7 @@ instructions to publish component release documentation
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
-<tr><td><a href="" id="link-index-page" target="_blank">edit category index page through CMS</a><br/>
+<tr><td><a href="" id="link-index-page" target="_blank" style="display:none">edit category index page through CMS</a><br/>
 <iframe id="index-page" src="" width="100%" height="300px"></iframe>
 </td>
 <td>archives directory<br/>
