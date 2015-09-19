@@ -33,7 +33,7 @@ instructions to publish component release documentation
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
-<tr><td><a href="" id="link-index-page" target="_blank">category index page</a><br/>
+<tr><td><a href="" id="link-index-page" target="_blank">edit category index page through CMS</a><br/>
 <iframe id="index-page" src="" width="100%" height="300px"></iframe>
 </td>
 <td>archives directory<br/>
@@ -49,7 +49,7 @@ function selectCategory(index, archive) {
   var archives = document.getElementById('archives');
   var indexUrl = index ? ('http://maven.apache.org/' + index) : '';
   indexPage.setAttribute('src', indexUrl);
-  linkIndexPage.setAttribute('href', indexUrl);
+  linkIndexPage.setAttribute('href', 'https://cms.apache.org/redirect?uri='+escape(indexUrl));
   linkIndexPage.style.display = index ? "initial":"none";
   archives.setAttribute('src', 'http://maven.apache.org/' + archive + '?C=M;O=D');
   instructions();
