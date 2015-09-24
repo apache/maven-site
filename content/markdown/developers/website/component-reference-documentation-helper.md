@@ -18,7 +18,7 @@ select component category, then type artifact id and version to generate svn com
 
 <h3>Component information</h3>
 
-artifact id: <input type="text" name="artifactId" id="artifactId"></input><br/>
+directory (~artifact id): <input type="text" name="artifactId" id="artifactId"></input><br/>
 version: <input type="text" name="version" id="version"></input><br/>
 <button onclick="instructions()">Publish instructions</button>
 
