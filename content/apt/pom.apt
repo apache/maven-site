@@ -1,10 +1,10 @@
  ----
  POM Reference
  -----
- Eric Redmond
+ Eric Redmond, et al.
  Karl Heinz Marbaise
  -----
- 2008-01-02
+ 2015-10-13
  -----
 
 POM Reference
@@ -577,9 +577,17 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   <<<junit:junit:4.0>>>, then POMs inheriting from this one can set their dependency giving
   the <<<groupId>>>=<<<junit>>> and <<<artifactId>>>=<<<junit>>> only, then Maven will fill in
   the <<<version>>> set by the parent. The benefits of this method are obvious. Dependency
-  details can be set in one central location, which will propagate to all inheriting POMs. In
-  addition, the version and scope of artifacts which are incorporated from transitive dependencies
-  may also be controlled by specifying them in a dependency management section.
+  details can be set in one central location, which will propagate to all inheriting POMs. 
+
+  Note that the version and scope of artifacts which are incorporated from transitive dependencies
+  are also controlled by version specifications in a dependency management section. This can lead
+  to unexpected consequences. Consider a case in which your project uses two dependences,
+  <<<dep1>>> and <<<dep2>>>. <<<dep2>>> in turn also uses <<<dep1>>>, and requires
+  a particular minimum version to function. If you then use <<<dependencyManagement>>>
+  to specify an older version, <<<dep2>>> will be forced to use the older version, and fail.
+  So, you must be careful to check the entire dependency tree to avoid this problem;
+  <<<mvn dependency:tree>>> is helpful.
+
 
 ** {Aggregation} (or Multi-Module)
 
