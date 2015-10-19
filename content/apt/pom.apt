@@ -830,7 +830,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.0</version>
+        <version>2.6</version>
         <extensions>false</extensions>
         <inherited>true</inherited>
         <configuration>
@@ -1078,7 +1078,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.2</version>
+          <version>2.6</version>
           <executions>
             <execution>
               <id>pre-process-classes</id>
