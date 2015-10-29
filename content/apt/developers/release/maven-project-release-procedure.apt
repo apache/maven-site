@@ -120,19 +120,19 @@ Vote open for 72 hours.
 
 * Check the vote results
 
- Copied from {{{http://www.apache.org/foundation/voting.html}Votes on Package Releases}}.
+ Copied from {{{http://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
 
 +-----+
-Votes on whether a package is ready to be released follow a format similar to majority approval
--- except that the decision is officially determined solely by whether at least three
-+1 votes were registered. Releases may not be vetoed. Generally the community will table the
-vote to release if anyone identifies serious problems, but in most cases the ultimate decision,
-once three or more positive votes have been garnered, lies with the individual serving as
-release manager. The specifics of the process may vary from project to project, but the
-'minimum of three +1 votes' rule is universal.
+Votes on whether a package is ready to be released use majority approval
+-- i.e. at least three PMC members must vote affirmatively for release,
+and there must be more positive than negative votes. Releases may not be vetoed.
+Generally the community will cancel the release vote if anyone identifies serious problems,
+but in most cases the ultimate decision, lies with the individual serving as release manager.
+The specifics of the process may vary from project to project,
+but the 'minimum quorum of three +1 votes' rule is universal.
 +-----+
 
-  The list of binding voters is available at {{http://people.apache.org/committers-by-project.html#maven-pmc}} (or corresponding group for your project).
+  The list of PMC members is available at {{http://people.apache.org/committers-by-project.html#maven-pmc}}.
 
   Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
 
@@ -145,8 +145,9 @@ Hi,
 
 The vote has passed with the following result:
 
-+1 (binding): <<list of names>>
-+1 (non binding): <<list of names>>
++1 : <<list of names>>
+
+PMC quorum: ...
 
 I will promote the artifacts to the central repo.
 +-----+
