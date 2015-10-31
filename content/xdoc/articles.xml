@@ -29,6 +29,20 @@ under the License.
     <section name="Books on Maven">
     
 <div style="float: left; margin-right: 5em;">
+<a href="https://www.packtpub.com/application-development/apache-maven-cookbook"><img src="images/books/apache_maven_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
+</div>
+
+    <div style="min-height: 220px">
+      <p><a href="https://www.packtpub.com/application-development/apache-maven-cookbook"><strong>Apache Maven Cookbook</strong></a></p>
+      <ul>
+        <li><strong>Covers: </strong>Maven 3</li>
+        <li><strong>Published: </strong> Packt Publishing (August 2015)</li>
+        <li><strong>Authors: </strong> Raghuram Bharathan</li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/apache-maven-cookbook">Packt</a>, <a href="http://www.amazon.com/Apache-Maven-Cookbook-Raghuram-Bharathan/dp/1785286129/ref=sr_1_1">Amazon</a></li>
+      </ul>
+    </div>    
+
+<div style="float: left; margin-right: 5em;">
 <a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book"><img src="images/books/apache_maven_3_0_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
 </div>
 
