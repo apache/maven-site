@@ -32,7 +32,7 @@ Guide to Creating Archetypes
  very simple artifact, that contains the project prototype you wish to create.
  An archetype is made up of:
 
- * an {{{http://maven.apache.org/archetype/archetype-common/archetype.html}archetype descriptor}}
+ * an {{{http://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
   (<<<archetype.xml>>> in directory:
    <<<src/main/resources/META-INF/maven/>>>). It lists all the files that will be
    contained in the archetype and categorizes them so they can be processed
@@ -52,9 +52,9 @@ Guide to Creating Archetypes
  {{{http://maven.apache.org/plugins/maven-archetype-plugin-1.0-alpha-7/}archetype plugin version 1.0.x}},
  with its {{{http://maven.apache.org/archetype/archetype-common/archetype.html}old archetype descriptor}}
  (stored in <<<archetype.xml>>> file).
- {{{http://maven.apache.org/archetype/maven-archetype-plugin/}Archetype plugin 2.0.x}} is a new generation
+ {{{http://maven.apache.org/archetype/maven-archetype-plugin/}Archetype plugin 2.x}} is a new generation
  that fully supports archetypes created for 1.0.x, and adds a
- {{{http://maven.apache.org/archetype/archetype-common/archetype-descriptor.html}new archetype descriptor}}
+ {{{http://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}new archetype descriptor}}
  (stored in <<<archetype-metadata.xml>>> file): it's more flexible, has more features, but the basis is absolutely the same.
 
 
@@ -84,7 +84,7 @@ Guide to Creating Archetypes
 
 * 2. Create the archetype descriptor
 
- The {{{http://maven.apache.org/archetype/archetype-common/archetype.html}archetype descriptor}}
+ The {{{http://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
  is a file called <<<archetype.xml>>> which must be
  located in the <<<src/main/resources/META-INF/maven/>>> directory. An example of an archetype
  descriptor can be found in the quickstart archetype:
