@@ -39,8 +39,8 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 - the reference documentation: [http://maven.apache.org/ref/3.3.9/](http://maven.apache.org/ref/3.3.9/)
 
 
-Reporter and Contributors of this release
------------------------------------------
+Reporters and Contributors of this release
+------------------------------------------
 
 Bugs:
 
