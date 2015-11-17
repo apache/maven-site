@@ -41,8 +41,6 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 Improvements
 ------------
 
- * Maven 3.3.9 has been enhanced to support mapping phases to goals with custom configurations.
-
  * The par lifecycle has been removed from the default life cycle bindings and the maven-ejb3-plugin
    has been removed from default bindings, cause it does not exist [MNG-5892][MNG-5892], [MNG-5894][MNG-5894].
 
