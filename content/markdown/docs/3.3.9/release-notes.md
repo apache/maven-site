@@ -38,6 +38,35 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 - the maven-user mailing list: [http://maven.apache.org/mail-lists.html](http://maven.apache.org/mail-lists.html)
 - the reference documentation: [http://maven.apache.org/ref/3.3.9/](http://maven.apache.org/ref/3.3.9/)
 
+
+Reporter and Contributors of this release
+-----------------------------------------
+
+ * [MNG-5297] - contributor: Joseph Walton
+ * [MNG-5721] - reporter/contributor Martin Schäf
+ * [MNG-5786] - reporter Stephan Schroevers
+ * [MNG-5787] - reporter Christian Schlichtherle
+ * [MNG-5796] - reporter Brandon Enochs
+ * [MNG-5812] - contributor tssp
+ * [MNG-5816] - contributor tssp
+ * [MNG-5858] - contributor Dave Syer
+ * [MNG-5877] - contributor Joseph Walton; reporter Anders Forsell
+ * [MNG-5882] - contributor Ben Caradoc-Davies
+ * [MNG-5884] - contributor Stephen Kitt
+ * [MNG-5886] - reporter Shubham Chaurasia
+ * [MNG-5891] - reporter Keith Turner
+ * [MNG-5898] - reporter Jonathan Radon
+
+Improvements:
+
+ * [MNG-5805] - contributor Anton Tanasenko
+ * [MNG-5844] - contributor Tang Xinye)
+ * [MNG-5871] - make url inheritance algorithm more visible
+ * [MNG-5923] - reporter/contributor: Stuart McCulloch
+ * [MNG-5924] - reporter/contributor: Stuart McCulloch
+
+Many thanks to all reporters and contributors and for their time and support.
+
 Improvements
 ------------
 
@@ -139,32 +168,6 @@ Task
 ----
 
  * Update Modello site url[MNG-5887][MNG-5887].  
-
-Reporter and Contributors of this release
------------------------------------------
-
- * [MNG-5297] - contributor: Joseph Walton
- * [MNG-5721] - reporter/contributor Martin Schäf
- * [MNG-5786] - reporter Stephan Schroevers
- * [MNG-5787] - reporter Christian Schlichtherle
- * [MNG-5796] - reporter Brandon Enochs
- * [MNG-5812] - contributor tssp
- * [MNG-5816] - contributor tssp
- * [MNG-5858] - contributor Dave Syer
- * [MNG-5877] - contributor Joseph Walton; reporter Anders Forsell
- * [MNG-5882] - contributor Ben Caradoc-Davies
- * [MNG-5884] - contributor Stephen Kitt
- * [MNG-5886] - reporter Shubham Chaurasia
- * [MNG-5891] - reporter Keith Turner
- * [MNG-5898] - reporter Jonathan Radon
-
-Improvements:
-
- * [MNG-5805] - contributor Anton Tanasenko
- * [MNG-5844] - contributor Tang Xinye)
- * [MNG-5871] - make url inheritance algorithm more visible
- * [MNG-5923] - reporter/contributor: Stuart McCulloch
- * [MNG-5924] - reporter/contributor: Stuart McCulloch
 
 
 The full list of changes can be found in our [issue management system][4].
