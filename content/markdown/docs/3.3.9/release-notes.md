@@ -108,8 +108,8 @@ Bugs
  * In cases where you start Maven in the root of a windows drive Maven will fail.
    This has been fixed by [MNG-5796][MNG-5796]. 
 
- * The <prerequisites> elements is intended for [buildtime checking but not for
-   runtime checks][MNG-4840] which should be left to [maven-enforcer-plugin][maven-enforcer-plugin]. 
+ * The `<prerequisites>` elements is intended for [buildtime checking but not for runtime checks][MNG-4840] 
+   which should be left to [maven-enforcer-plugin][maven-enforcer-plugin]. 
    This has not been documented accordingly. This has been done with [MNG-5297][MNG-5297].
 
  * In situations like this: `mvn -Dtest=\"anton\" clean package` the trailing quote
@@ -141,6 +141,33 @@ Task
 ----
 
  * Update Modello site url[MNG-5887][MNG-5887].  
+
+Reporter and Contributors of this release
+-----------------------------------------
+
+ * [MNG-5297] - contributor: Joseph Walton
+ * [MNG-5721] - reporter/contributor Martin Schäf
+ * [MNG-5786] - reporter Stephan Schroevers
+ * [MNG-5787] - reporter Christian Schlichtherle
+ * [MNG-5796] - reporter Brandon Enochs
+ * [MNG-5812] - contributor tssp
+ * [MNG-5816] - contributor tssp
+ * [MNG-5858] - contributor Dave Syer
+ * [MNG-5877] - contributor Joseph Walton; reporter Anders Forsell
+ * [MNG-5882] - contributor Ben Caradoc-Davies
+ * [MNG-5884] - contributor Stephen Kitt
+ * [MNG-5886] - reporter Shubham Chaurasia
+ * [MNG-5891] - reporter Keith Turner
+ * [MNG-5898] - reporter Jonathan Radon
+
+Improvements:
+
+ * [MNG-5805] - contributor Anton Tanasenko
+ * [MNG-5844] - contributor Tang Xinye)
+ * [MNG-5871] - make url inheritance algorithm more visible
+ * [MNG-5923] - reporter/contributor: Stuart McCulloch
+ * [MNG-5924] - reporter/contributor: Stuart McCulloch
+
 
 The full list of changes can be found in our [issue management system][4].
 
