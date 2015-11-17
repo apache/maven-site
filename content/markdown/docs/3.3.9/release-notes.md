@@ -92,7 +92,7 @@ Improvements
 
  * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
 
- * Update used modello version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
+ * Update used [modello](http://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
 
  * Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
 
@@ -179,7 +179,7 @@ See [complete release notes for all versions][5]
 [0]: ../../download.html
 [1]: ../../plugins/index.html
 [2]: http://maven.apache.org/
-[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12332076
+[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12333074
 [5]: ../../docs/history.html
 [maven-enforcer-plugin]: http://maven.apache.org/enforcer/maven-enforcer-plugin/
 [maven-resources-plugin]: http://maven.apache.org/enforcer/maven-resources-plugin/
@@ -205,6 +205,7 @@ See [complete release notes for all versions][5]
 [MNG-5882]: https://issues.apache.org/jira/browse/MNG-5882
 [MNG-5884]: https://issues.apache.org/jira/browse/MNG-5884
 [MNG-5886]: https://issues.apache.org/jira/browse/MNG-5886
+[MNG-5887]: https://issues.apache.org/jira/browse/MNG-5887
 [MNG-5888]: https://issues.apache.org/jira/browse/MNG-5888
 [MNG-5891]: https://issues.apache.org/jira/browse/MNG-5891
 [MNG-5892]: https://issues.apache.org/jira/browse/MNG-5892
