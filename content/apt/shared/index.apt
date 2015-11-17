@@ -5,7 +5,7 @@
  John Casey
  Karl Heinz Marbaise
  -----
- 2015-10-14
+ 2015-10-19
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -30,6 +30,7 @@
 
 Shared Components
 
+The shared components are currently under transition to Maven 3.X only components.
 
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 || <<Shared Component>>                                                      || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>> |
