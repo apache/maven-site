@@ -60,7 +60,7 @@ Reporter and Contributors of this release
 Improvements:
 
  * [MNG-5805] - contributor Anton Tanasenko
- * [MNG-5844] - contributor Tang Xinye)
+ * [MNG-5844] - contributor Tang Xinye
  * [MNG-5871] - make url inheritance algorithm more visible
  * [MNG-5923] - reporter/contributor: Stuart McCulloch
  * [MNG-5924] - reporter/contributor: Stuart McCulloch
@@ -154,7 +154,7 @@ Bugs
  * Broken link of 'Building Maven' in README.md has been fixed by [MNG-5886][MNG-5886].
 
  * maven-aether-provider/maven-compat does not always generate snapshot versions using Gregorian calendar year 
-   (contributor Joseph Walton; reporter Anders Forsell) fixed in [MNG-5877][MNG-5877] 
+   fixed in [MNG-5877][MNG-5877] 
 
  * Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891] 
 
@@ -167,7 +167,7 @@ Bugs
 Task
 ----
 
- * Update Modello site url[MNG-5887][MNG-5887].  
+ * Update Modello site url [MNG-5887][MNG-5887].  
 
 
 The full list of changes can be found in our [issue management system][4].
