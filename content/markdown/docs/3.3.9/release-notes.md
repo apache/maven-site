@@ -42,6 +42,8 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 Reporter and Contributors of this release
 -----------------------------------------
 
+Bugs:
+
  * [MNG-5297] - contributor: Joseph Walton
  * [MNG-5721] - reporter/contributor Martin Schäf
  * [MNG-5786] - reporter Stephan Schroevers
