@@ -116,7 +116,7 @@ Bugs
    is stripped away which could cause problems. This has been fixed with [MNG-5681][MNG-5681].
 
  * Possible NullPointerException in org.apache.maven.repository.MetadataResolutionResult 
-   has been fixed with [MNG-5721]. (reporter/contributor Martin Schäf ).
+   has been fixed with [MNG-5721].
 
  * There had been several issues with the `mvn` script which are for example
    wrong locating the `.mvn` folder, nonportable shell constructs, wrongly setting
