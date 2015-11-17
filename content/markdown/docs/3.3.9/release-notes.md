@@ -155,7 +155,8 @@ Bugs
 
  * Broken link of 'Building Maven' in README.md has been fixed by [MNG-5886][MNG-5886].
 
- * maven-aether-provider/maven-compat does not always generate snapshot versions using Gregorian calendar year 
+ * [maven-aether-provider][maven-aether-provider]/[maven-compat][maven-compat] 
+   does not always generate snapshot versions using Gregorian calendar year 
    fixed in [MNG-5877][MNG-5877] 
 
  * Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891] 
@@ -169,7 +170,7 @@ Bugs
 Task
 ----
 
- * Update Modello site url [MNG-5887][MNG-5887].  
+ * Update [Modello site url](http://codehaus-plexus.github.io/modello/) [MNG-5887][MNG-5887].
 
 
 The full list of changes can be found in our [issue management system][4].
@@ -185,6 +186,8 @@ See [complete release notes for all versions][5]
 [5]: ../../docs/history.html
 [maven-enforcer-plugin]: http://maven.apache.org/enforcer/maven-enforcer-plugin/
 [maven-resources-plugin]: http://maven.apache.org/enforcer/maven-resources-plugin/
+[maven-aether-provider]: http://maven.apache.org/ref/3.3.9/maven-aether-provider/
+[maven-compat]: http://maven.apache.org/ref/3.3.9/maven-compat/
 [MNG-4840]: https://issues.apache.org/jira/browse/MNG-4840
 [MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
 [MNG-5649]: https://issues.apache.org/jira/browse/MNG-5649
