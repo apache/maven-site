@@ -34,9 +34,9 @@ See the [PluginList][1] for more information.
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [http://maven.apache.org/](http://maven.apache.org/)
-- the maven-user mailing list: [http://maven.apache.org/mail-lists.html](http://maven.apache.org/mail-lists.html)
-- the reference documentation: [http://maven.apache.org/ref/3.3.9/](http://maven.apache.org/ref/3.3.9/)
+- the web site: [http://maven.apache.org/](/)
+- the maven-user mailing list: [http://maven.apache.org/mail-lists.html](/mail-lists.html)
+- the reference documentation: [http://maven.apache.org/ref/3.3.9/](/ref/3.3.9/)
 
 
 Reporters and Contributors of this release
@@ -72,16 +72,17 @@ Many thanks to all reporters and contributors and for their time and support.
 Improvements
 ------------
 
- * The par lifecycle has been removed from the default life cycle bindings and the maven-ejb3-plugin
+ * The `par` lifecycle has been removed from the default life cycle bindings and the maven-ejb3-plugin
    has been removed from default bindings, cause it does not exist [MNG-5892][MNG-5892], [MNG-5894][MNG-5894].
 
  * The default bindings defined two different versions for the [maven-resources-plugin][maven-resources-plugin]
    which has been fixed by [MNG-5893][MNG-5893].
 
- * Switch to official Guice 4.0, Upgrade to Eclipse/Sisu 0.3.2 has been done with 
-   [MNG-5923][MNG-5923] and [MNG-5924][MNG-5924].
+ * Switch to official [Guice](https://github.com/google/guice/wiki/Motivation) 4.0, upgrade to
+   [Eclipse/Sisu](https://www.eclipse.org/sisu/) 0.3.2 has been done with [MNG-5923][MNG-5923] and [MNG-5924][MNG-5924].
  
- * Several areas of Maven Core have been changed to use Commons Lang's Validate to intercept invalid 
+ * Several areas of Maven Core have been changed to use
+   [Commons Lang](https://commons.apache.org/proper/commons-lang/)'s Validate to intercept invalid 
    input [MNG-5649][MNG-5649].
 
  * Upgrade Java minimum version prerequisite from Java 6 to Java 7 [MNG-5780][MNG-5780].
@@ -90,25 +91,26 @@ Improvements
 
  * Disallow the programmatic injection of project dependencies [MNG-5818][MNG-5818].
 
- * Close IO Streams in finally or try-with-resource statement [MNG-5844][MNG-5844].
+ * Close IO streams in finally or try-with-resource statement [MNG-5844][MNG-5844].
 
  * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
 
- * Update used [modello](http://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
+ * Update used [Modello](http://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
 
  * Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
 
  * Use canonical name for UTC timezone [MNG-5906][MNG-5906].  
 
- * Upgrade maven-parent to version 27 [MNG-5911][MNG-5911].
+ * Upgrade [maven-parent](/pom/maven/) to version 27 [MNG-5911][MNG-5911].
 
- * Upgrade Wagon version to 2.10 [MNG-5915][MNG-5915].
+ * Upgrade [Wagon](/wagon/) version to 2.10 [MNG-5915][MNG-5915].
 
- * Upgraded to plexus-components 1.6 that uses asm 5.x [MNG-5921][MNG-5921].
+ * Upgraded to [plexus-component-*](http://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
+   [asm](http://asm.ow2.org/) 5.x [MNG-5921][MNG-5921].
 
- * Upgrade plexus-utils to 3.0.22 to support combine.id as configuration attribute for Map merging [MNG-5922][MNG-5922].  
+ * Upgrade [plexus-utils](http://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
 
- * Update animal-sniffer-maven-plugin to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
+ * Update [animal-sniffer-maven-plugin](http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
 
 
 Bugs
@@ -184,10 +186,10 @@ See [complete release notes for all versions][5]
 [2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12333074
 [5]: ../../docs/history.html
-[maven-enforcer-plugin]: http://maven.apache.org/enforcer/maven-enforcer-plugin/
-[maven-resources-plugin]: http://maven.apache.org/enforcer/maven-resources-plugin/
-[maven-aether-provider]: http://maven.apache.org/ref/3.3.9/maven-aether-provider/
-[maven-compat]: http://maven.apache.org/ref/3.3.9/maven-compat/
+[maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
+[maven-resources-plugin]: /enforcer/maven-resources-plugin/
+[maven-aether-provider]: /ref/3.3.9/maven-aether-provider/
+[maven-compat]: /ref/3.3.9/maven-compat/
 [MNG-4840]: https://issues.apache.org/jira/browse/MNG-4840
 [MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
 [MNG-5649]: https://issues.apache.org/jira/browse/MNG-5649
