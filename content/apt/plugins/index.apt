@@ -171,10 +171,6 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-12 | Allows to share configuration across plugins. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-toolchains-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| <<IDEs>>                                                     |            |              |            | <<Plugins that simplify integration with integrated developer environments.>> | |
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.10         | 2015-05-27 | Generate an Eclipse project file for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-eclipse-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MECLIPSE}JIRA}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
 
@@ -186,6 +182,8 @@ Available Plugins
 
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2015-10-07        | Generate an Eclipse project files for the current project.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-idea-plugin/} <<<idea>>>}}                 | B          | 2.2.1        | 2013-07-26        | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
