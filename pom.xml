@@ -41,7 +41,7 @@
   <scm>
     <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
-    <url>http://svn.apache.org/viewcvs.cgi/maven/site/trunk/</url>
+    <url>http://svn.apache.org/viewvc/maven/site/trunk/</url>
   </scm>
 
   <issueManagement>
@@ -90,12 +90,11 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pdf-plugin</artifactId>
-          <version>1.1</version>
+          <version>1.3</version>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.4</version>
           <configuration>
             <siteDirectory>${project.basedir}/content</siteDirectory>
           </configuration>
@@ -132,8 +131,7 @@
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
-            <id>copy-resources</id>
-            <!-- here the phase you need -->
+            <id>copy-filtered-resources</id>
             <phase>pre-site</phase>
             <goals>
               <goal>copy-resources</goal>
@@ -195,7 +193,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.8</version>
         <reportSets>
           <reportSet><!-- don't execute inherited reports, since some are useless and cannot be removed -->
             <configuration>
