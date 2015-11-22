@@ -183,7 +183,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
-| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.9          | 2015-10-07        | Generate an Eclipse project files for the current project.
+| {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.10         | 2015-10-07        | Generate an Eclipse project files for the current project.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-idea-plugin/} <<<idea>>>}}                 | B          | 2.2.1        | 2013-07-26        | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
