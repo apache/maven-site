@@ -55,6 +55,7 @@ RedirectMatch permanent ^/plugins/maven-release-plugin/(.*)$ http://maven.apache
 RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ http://maven.apache.org/scm/maven-scm-plugin/$1
 RedirectMatch permanent ^/plugins/maven-surefire-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-plugin/$1
 RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ http://maven.apache.org/surefire/maven-surefire-report-plugin/$1
+RedirectMatch permanent ^/shared/maven-doxia-tools/(.*)$ /doxia/doxia-tools/doxia-integration-tools/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
 RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ http://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
 RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ http://maven.apache.org/plugin-tools/$1
