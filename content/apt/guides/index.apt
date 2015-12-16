@@ -57,13 +57,7 @@ Documentation
 
  * {{{./mini/guide-configuring-plugins.html}Configuring Plug-ins}}
 
- * {{{./introduction/introduction-to-plugin-registry.html}The Plugin Registry}}
-
  * {{{./introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix Resolution}}
-
- * {{{./introduction/introduction-to-plugin-resolution.html} Introduction to Maven Plugin Resolution}}
-
- * {{{./plugin/guide-ant-plugin-development.html}Developing Ant Plugins}}
 
  * {{{./plugin/guide-java-plugin-development.html}Developing Java Plugins}}
 
