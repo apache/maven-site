@@ -29,7 +29,7 @@
 Using Extensions
 
  Extensions are used to enable 
- {{{Wagon providers}http://maven.apache.org/wagon/wagon-providers/}}, used for the transport 
+ {{{../../wagon/wagon-providers/}Wagon providers}}, used for the transport 
  of artifact between repositories, and plug-ins which provide lifecycle enhancements.
 
 * Wagon providers
