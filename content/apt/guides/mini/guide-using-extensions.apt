@@ -28,8 +28,9 @@
 
 Using Extensions
 
- Extensions are used to enable Wagon providers, used for the transport of artifact between repositories, and plug-ins
- which provide lifecycle enhancements.
+ Extensions are used to enable 
+ {{{Wagon providers}http://maven.apache.org/wagon/wagon-providers/}}, used for the transport 
+ of artifact between repositories, and plug-ins which provide lifecycle enhancements.
 
 * Wagon providers
 
@@ -42,7 +43,7 @@ Using Extensions
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
          <artifactId>wagon-ftp</artifactId>
-         <version>1.0-beta-2</version>
+         <version>2.10</version>
       </extension>
     </extensions>
   </build>
@@ -50,10 +51,6 @@ Using Extensions
 </project>
 
 +----+
-
- <Note:> Wagon 1.0-beta-3+ requires Maven 2.1.0 or above. For Maven 2.0.10 and earlier, use Wagon 1.0-beta-2.
-
- <Note:> Some Wagons require JDK 5.0 to operate correctly.
 
 * Plug-ins which provide lifecycle enhancements
 
@@ -64,9 +61,8 @@ Using Extensions
   <build>
     <plugins>
       <plugin>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-maven-plugin</artifactId>
-        <version>1.1-alpha-8-SNAPSHOT</version>
+        <groupId>org.apache.felix</groupId>
+        <artifactId>maven-bundle-plugin</artifactId>
         <extensions>true</extensions>
         <configuration>
           ...
