@@ -49,15 +49,15 @@ Skins
   To use one of these skins in your project, you use the <<<skin>>> element of the
   {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}site descriptor}}.
   This is a regular artifact or dependency-like element. For example, to use the
-  Maven Classic Skin, you would include the this in your <<<site.xml>>> file:
+  Maven Fluido Skin, you would include the this in your <<<site.xml>>> file:
 
 +-----+
 <project>
   ...
   <skin>
     <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-classic-skin</artifactId>
-    <version>1.1</version>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.4</version>
   </skin>
   ...
 </project>
