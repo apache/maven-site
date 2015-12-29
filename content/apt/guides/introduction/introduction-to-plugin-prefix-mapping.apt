@@ -52,7 +52,7 @@ Introduction to Plugin Prefix Resolution
   In order to give users a convenient prefix with which to reference your plugin
   a prefix must be associated with your plugin when it is built. By default, Maven
   will make a guess at the plugin-prefix to be used, by removing any instances of
-  "maven" or "plugin" surrounded by dashes in the plugin's artifact ID. The
+  "maven" or "plugin" surrounded by hyphens in the plugin's artifact ID. The
   conventional artifact ID formats to use are:
 
     * <<<maven-$\{prefix\}-plugin>>> - for official plugins maintained by the Apache Maven team itself (you <<must not>> use this naming pattern for your plugin, see {{{../plugin/guide-java-plugin-development.html#Plugin_Naming_Convention_and_Apache_Maven_Trademark}this note for more informations}})
