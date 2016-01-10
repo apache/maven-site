@@ -38,7 +38,7 @@ Developing Maven
  First of all you need something to work on! Issues can be found in
  {{{/issue-tracking.html}several JIRA projects}}.
 
- * <<{{{https://issues.apache.org/jira/issues/?jql=project%20%3D%20MNG%20AND%20status%20%3D%20Open%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC}JIRA Issues}} 
+ * <<{{{https://issues.apache.org/jira/issues/?jql=project%20%3D%20MNG%20AND%20status%20%3D%20Open%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC}JIRA Issues}}>>
 
  []
 
