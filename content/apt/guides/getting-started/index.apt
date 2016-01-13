@@ -491,15 +491,15 @@ mvn eclipse:eclipse
   code is stable or unchanging. Conversely, the code in a 'release' version (any version value without the suffix <<<SNAPSHOT>>>)
   is unchanging.
 
-  In other words, a SNAPSHOT version is the 'development' version before the final 'release' version .
+  In other words, a SNAPSHOT version is the 'development' version before the final 'release' version.
   The SNAPSHOT is "older" than its release.
 
-  During the {{{../../plugins/maven-release-plugin/}release}} process, a version of <<x.x-SNAPSHOT>> changes to
-  <<x.x>>. The release process also increments the development version to <<x.(x+1)-SNAPSHOT>>.
+  During the {{{../../plugins/maven-release-plugin/}release}} process, a version of <<x.y-SNAPSHOT>> changes to
+  <<x.y>>. The release process also increments the development version to <<x.(y+1)-SNAPSHOT>>.
   For example, version <<1.0-SNAPSHOT>> is released as version <<1.0>>, and the new development version is
   version <<1.1-SNAPSHOT>>.
 
-* {How do I use plug-ins?}
+* {How do I use plugins?}
 
   Whenever you want to customise the build for a Maven project, this is done by adding or reconfiguring plugins.
 
