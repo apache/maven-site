@@ -20,7 +20,7 @@ incredibly important but the value of a project lies in the application being de
 generally neglected and tends to fall apart when you need it to work most like when you need to prepare a release or when
 more then a couple of people are working on the project. In Jakarta land four years ago it was rare that a Ant build
 worked out of the box. Mind you many Turbine developers suffered as I tried to get Maven working which is something I regret,
-but I figure how do new projects start and survive if someone doesn's suffer. I figured it was for their own good
+but I figure how do new projects start and survive if someone doesn't suffer. I figured it was for their own good
 (I've been known to have an opinion or two) and after much gnashing of teeth I think Maven has finally come of age.
 It reminds me of one of my favourite quotes from Ralph Johnson and Don Roberts in Patterns for Evolving Frameworks:
 
