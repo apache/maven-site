@@ -153,6 +153,11 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Put the JIRA project in read-only mode. (How to do this?)
 
+  [[1]] Comment the {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool.conf.html}dist-tool configuration} entry.
+
+  [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
+  (history remains available in {{{http://archive.apache.org/dist/maven/}archive}}).
+  
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
   should do if they would like to continue development of the plugin.
