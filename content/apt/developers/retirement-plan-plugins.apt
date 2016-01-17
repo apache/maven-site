@@ -153,7 +153,7 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Put the JIRA project in read-only mode. (How to do this? Probably require JIRA admin karma: ask Brian Fox)
 
-  [[1]] Comment the {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool.conf.html}dist-tool configuration} entry.
+  [[1]] Comment the {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool.conf.html}dist-tool configuration}} entry.
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
   (history remains available in {{{http://archive.apache.org/dist/maven/}archive}}).
