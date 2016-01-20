@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2015-12-17
+ 2016-01-20
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -69,11 +69,11 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-clean-plugin/} <<<clean>>>}}               | B          | 3.0.0        | 2015-10-22 | Clean up after the build. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-clean-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCLEAN}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}         | B          | 3.3          | 2015-03-26 | Compiles Java sources. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-compiler-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCOMPILER}JIRA}}
+| {{{/plugins/maven-compiler-plugin/} <<<compiler>>>}}         | B          | 3.5          | 2016-01-20 | Compiles Java sources. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-compiler-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MCOMPILER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-deploy-plugin/} <<<deploy>>>}}             | B          | 2.8.2        | 2014-08-27 | Deploy the built artifact to the remote repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-deploy-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MDEPLOY}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 2.19.1         | 2016-01-03 | Run the JUnit integration tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-failsafe-plugin/} <<<failsafe>>>}}        | B          | 2.19.1       | 2016-01-03 | Run the JUnit integration tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-install-plugin/} <<<install>>>}}           | B          | 2.5.2        | 2014-08-27 | Install the built artifact into the local repository. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MINSTALL}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
@@ -81,15 +81,15 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-site-plugin/} <<<site>>>}}                 | B          | 3.4          | 2014-07-07 | Generate a site for the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-site-plugin/}SVN}} | {{{https://issues.apache.org/jira/browse/MSITE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 2.19.1         | 2016-01-03 | Run the JUnit unit tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}JIRA}}
+| {{{/surefire/maven-surefire-plugin/} <<<surefire>>>}}        | B          | 2.19.1       | 2016-01-03 | Run the JUnit unit tests in an isolated classloader. | {{{https://git-wip-us.apache.org/repos/asf/maven-surefire.git}GIT}} | {{{https://issues.apache.org/jira/browse/SUREFIRE}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-verifier-plugin/} <<<verifier>>>}}         | B          | 1.1          | 2015-04-14 | Useful for integration tests - verifies the existence of certain conditions. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-verifier-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MVERIFIER}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | <<Packaging types/tools>>                                    |            |              |            | <<These plugins relate to packaging respective artifact types.>> | |
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.10.1         | 2015-06-27 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MEAR}JIRA}}
+| {{{/plugins/maven-ear-plugin/} <<<ear>>>}}                   | B          | 2.10.1       | 2015-06-27 | Generate an EAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ear-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MEAR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | 2.5.1          | 2015-06-20 | Build an EJB (and optional client) from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ejb-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MEJB}JIRA}}
+| {{{/plugins/maven-ejb-plugin/} <<<ejb>>>}}                   | B          | 2.5.1        | 2015-06-20 | Build an EJB (and optional client) from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-ejb-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MEJB}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jar-plugin/} <<<jar>>>}}                   | B          | 2.6          | 2015-03-09 | Build a JAR from the current project. | {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-jar-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MJAR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
