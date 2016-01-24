@@ -138,7 +138,7 @@ mvn -B archetype:generate \
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -516,7 +516,7 @@ mvn eclipse:eclipse
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-compiler-plugin</artifactId>
-      <version>2.5.1</version>
+      <version>3.3</version>
       <configuration>
         <source>1.5</source>
         <target>1.5</target>
@@ -527,7 +527,7 @@ mvn eclipse:eclipse
 ...
 +----+
 
-  You'll notice that all plugins in Maven 2.0 look much like a dependency - and in some ways they are.
+  You'll notice that all plugins in Maven look much like a dependency - and in some ways they are.
   This plugin will be automatically downloaded and used - including a specific version if you request it
   (the default is to use the latest available).
 
@@ -681,7 +681,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -763,7 +763,7 @@ my.filter.value=hello!
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -814,7 +814,7 @@ message=${my.filter.value}
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -882,7 +882,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -987,7 +987,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -1030,7 +1030,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -1140,7 +1140,7 @@ mvn archetype:generate \
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -1162,7 +1162,7 @@ mvn clean package
 
 * {How do I build more than one project at once?}
 
-  The concept of dealing with multiple modules is built in to Maven 2.0.
+  The concept of dealing with multiple modules is built in to Maven.
   In this section, we will show how to build the WAR above, and include the previous JAR as well in one step.
 
   Firstly, we need to add a parent <<<pom.xml>>> file in the directory above the other two, so it should look like this:
@@ -1263,7 +1263,7 @@ $ jar tvf my-webapp/target/my-webapp-1.0-SNAPSHOT.war
   on the classpath to any code in the WAR (none in this case), it makes sure the JAR is always built before the
   WAR, and it indicates to the WAR plugin to include the JAR in its library directory.
 
-  You may have noticed that <<<junit-3.8.1.jar>>> was a dependency, but didn't end up in the WAR. The
+  You may have noticed that <<<junit-4.11.jar>>> was a dependency, but didn't end up in the WAR. The
   reason for this is the <<<\<scope\>test\</scope\>>>> element - it is only required for testing,
   and so is not included in the web application as the compile time dependency <<<my-app>>> is.
 
