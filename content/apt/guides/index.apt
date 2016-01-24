@@ -145,7 +145,7 @@ Documentation
 
 ** Maven Tools and IDE Integration
 
- * {{{./mini/guide-bash-m2-completion.html}Maven 2.x Auto-Completion Using BASH}}
+ * {{{./mini/guide-bash-m2-completion.html}Maven Auto-Completion Using BASH}}
 
 * Development Guides
 
