@@ -39,12 +39,12 @@ under the License.
   
   <body>
     <breadcrumbs>
-      <item name="Maven"  href="http://maven.apache.org/index.html" />
+      <item name="Maven"  href="https://maven.apache.org/index.html" />
     </breadcrumbs>
 
     <menu name="Main">
       <item name="Welcome" href="/index.html"/>
-      <item name="License" href="http://www.apache.org/licenses/"/>
+      <item name="License" href="https://www.apache.org/licenses/"/>
       <item name="Download" href="/download.html"/>
       <item name="Install" href="/install.html"/>
       <item name="Configure" href="/configure.html"/>

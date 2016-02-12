@@ -159,8 +159,8 @@
     <coverSubTitle>Current version</coverSubTitle>
     <coverType>User Guide</coverType>
     <projectName>${project.name}</projectName>
-    <projectLogo>http://maven.apache.org/images/maventxt_logo_200.gif</projectLogo>
+    <projectLogo>https://maven.apache.org/images/maventxt_logo_200.gif</projectLogo>
     <companyName>The Apache Software Foundation</companyName>
-    <companyLogo>http://www.apache.org/images/asf_logo_wide.png</companyLogo>
+    <companyLogo>https://www.apache.org/images/asf_logo_wide.png</companyLogo>
   </cover>
 </document>
