@@ -287,7 +287,7 @@ POM Reference
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
@@ -431,7 +431,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
@@ -460,7 +460,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
@@ -495,7 +495,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.mojo</groupId>
@@ -531,7 +531,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -550,8 +550,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   local and then remote repositories.
 
   To see inheritance in action, just have a look at the
-  {{{http://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
-  {{{http://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's. 
+  {{{https://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
+  {{{https://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's. 
 
 *** {The Super POM}
 
@@ -560,7 +560,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   ultimately inherit from <<<java.lang.Object>>>, all Project Object Models inherit from
   a base Super POM. The snippet below is the Super POM for Maven 3.0.4.
 
-%{snippet|id=superpom|url=http://svn.apache.org/repos/asf/maven/maven-3/tags/maven-3.0.4/maven-model-builder/src/main/resources/org/apache/maven/model/pom-4.0.0.xml}
+%{snippet|id=superpom|url=https://svn.apache.org/repos/asf/maven/maven-3/tags/maven-3.0.4/maven-model-builder/src/main/resources/org/apache/maven/model/pom-4.0.0.xml}
 
   You can take a look at how the Super POM affects your Project Object Model by creating a
   minimal <<<pom.xml>>> and executing on the command line: <<<mvn help:effective-pom>>>
@@ -600,7 +600,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.mojo</groupId>
@@ -620,15 +620,15 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   such that dependencies are always build before dependent modules.
 
   To see aggregation in action, just have a look at the
-  {{{http://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
-  {{{http://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
+  {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
+  {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
 
 *** A final note on {Inheritance v}. Aggregation
 
   Inheritance and aggregation create a nice dynamic to control builds through a single,
   high-level POM. You will often see projects that are both parents and aggregators.
   For example, the entire maven core runs through a single base POM
-  {{{http://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
+  {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
   so building the Maven project can be executed by a single command: <<<mvn compile>>>.
   However, although both POM projects, an aggregator project and a parent project are not
   one in the same and should not be confused. A POM project may be inherited from - but does
@@ -689,7 +689,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <!-- "Project Build" contains more elements than just the BaseBuild set -->
   <build>...</build>
@@ -761,7 +761,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <build>
     ...
     <resources>
@@ -823,7 +823,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <build>
     ...
     <plugins>
@@ -1004,7 +1004,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     <plugins>
@@ -1069,7 +1069,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1108,7 +1108,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1139,7 +1139,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -1169,7 +1169,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1208,7 +1208,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
     <outputDirectory>${basedir}/target/site</outputDirectory>
@@ -1245,7 +1245,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
     <plugins>
@@ -1306,7 +1306,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <licenses>
   <license>
     <name>Apache License, Version 2.0</name>
-    <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     <distribution>repo</distribution>
     <comments>A business-friendly OSS license</comments>
   </license>
@@ -1336,7 +1336,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <organization>
     <name>Codehaus Mojo</name>
@@ -1359,7 +1359,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <developers>
     <developer>
@@ -1398,8 +1398,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   A valid time zone ID like <<<America/New_York>>> or <<<Europe/Berlin>>>, or a numerical offset in hours
   (and fraction) from UTC where the developer lives, e.g., <<<-5>>> or <<<+1>>>. Time zone IDs are highly
   preferred because they are not affected by DST and time zone shifts. Refer to the
-  {{{http://www.iana.org/time-zones}IANA}} for the official time zone database and a listing in
-  {{{http://en.wikipedia.org/wiki/List_of_tz_database_time_zones}Wikipedia}}.
+  {{{https://www.iana.org/time-zones}IANA}} for the official time zone database and a listing in
+  {{{https://en.wikipedia.org/wiki/List_of_tz_database_time_zones}Wikipedia}}.
 
   * <<properties>>:
   This element is where any other properties about the person goes. For example, a link to a personal
@@ -1417,7 +1417,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <contributors>
     <contributor>
@@ -1453,7 +1453,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <issueManagement>
     <system>Bugzilla</system>
@@ -1479,7 +1479,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <ciManagement>
     <system>continuum</system>
@@ -1508,7 +1508,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <mailingLists>
     <mailingList>
@@ -1548,7 +1548,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <scm>
     <connection>scm:svn:http://127.0.0.1/svn/my-project</connection>
@@ -1598,7 +1598,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <prerequisites>
     <maven>2.0.6</maven>
@@ -1619,14 +1619,14 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The repository elements within a POM specify those alternate repositories to search.
 
   The repository is one of the most powerful features of the Maven community. The default central Maven
-  repository lives on {{http://repo.maven.apache.org/maven2/}}. Another source for artifacts not yet in iBiblio
+  repository lives on {{https://repo.maven.apache.org/maven2/}}. Another source for artifacts not yet in iBiblio
   is the Codehaus snapshots repo.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <repositories>
     <repository>
@@ -1696,7 +1696,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -1744,7 +1744,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     <repository>
@@ -1792,7 +1792,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -1817,7 +1817,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -1853,7 +1853,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -1881,7 +1881,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -1915,10 +1915,10 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. Ranges are also supported as of Maven 2.1. See the {{{http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
+  will match. Ranges are also supported as of Maven 2.1. See the {{{https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
 
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{http://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
+  The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
 
 
   * <<property>>:
