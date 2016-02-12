@@ -25,7 +25,7 @@
 ~~ under the License.
 
 ~~ NOTE: For help with the syntax of this file, see:
-~~ http://maven.apache.org/doxia/references/apt-format.html
+~~ https://maven.apache.org/doxia/references/apt-format.html
 
 Maven Developer Centre
 
@@ -104,9 +104,9 @@ Maven Developer Centre
 
 * Others Resources
 
-  * {{{http://www.apache.org/dev/}ASF Development Infrastructure Information}}
+  * {{{https://www.apache.org/dev/}ASF Development Infrastructure Information}}
 
-  * {{{http://www.apache.org/foundation/}About the Apache Software Foundation}}
+  * {{{https://www.apache.org/foundation/}About the Apache Software Foundation}}
 
   []
 

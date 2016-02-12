@@ -24,7 +24,7 @@
 ~~ under the License.
 
 ~~ NOTE: For help with the syntax of this file, see:
-~~ http://maven.apache.org/doxia/references/apt-format.html
+~~ https://maven.apache.org/doxia/references/apt-format.html
 
 Retirement Plan for Plugins
 
@@ -65,7 +65,7 @@ it clear on the plugin site that it has been retired. After that the source code
 will be moved into the "retired" area in Subversion.
 
 The process for retiring a plugin is described here:
-http://maven.apache.org/developers/retirement-plan-plugins.html
+https://maven.apache.org/developers/retirement-plan-plugins.html
 
 The vote is open for 72 hours.
 
@@ -141,7 +141,7 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Remove the plugin from the <<<\<modules\>>>> section of the plugins aggregator POM.
 
-  [[1]] Remove any jobs from Continuous Integration servers like {{{http://builds.apache.org/}ASF Jenkins farm}}.
+  [[1]] Remove any jobs from Continuous Integration servers like {{{https://builds.apache.org/}ASF Jenkins farm}}.
   Plugins normally don't have separate jobs, but check anyway just to make sure.
 
   [[1]] Move the source code in Subversion. <Where to> depends on which scenario
@@ -156,7 +156,7 @@ but has moved to the <Organization> <Project> project.
   [[1]] Comment the {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool.conf.html}dist-tool configuration}} entry.
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
-  (history remains available in {{{http://archive.apache.org/dist/maven/}archive}}).
+  (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce@m.a.o and users@m.a.o mailing lists. Explain to people what they

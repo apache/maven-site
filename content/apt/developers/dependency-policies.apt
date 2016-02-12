@@ -24,7 +24,7 @@
 ~~ under the License.
 
 ~~ NOTE: For help with the syntax of this file, see:
-~~ http://maven.apache.org/doxia/references/apt-format.html
+~~ https://maven.apache.org/doxia/references/apt-format.html
 
 Maven Dependency Policies
 
@@ -55,7 +55,7 @@ Maven Dependency Policies
   core Maven distribution and all the other components.
 
   The core Maven distribution is the binary and source distributions made
-  available from the http://maven.apache.org/download page. 
+  available from the https://maven.apache.org/download page. 
 
 * Applicability
 
@@ -65,9 +65,9 @@ Maven Dependency Policies
 
   All dependencies which are included in the Core Maven Distribution must either:
 
-    * be licensed under a {{{http://www.apache.org/legal/resolved.html#category-a}Category A license}}; or
+    * be licensed under a {{{https://www.apache.org/legal/resolved.html#category-a}Category A license}}; or
 
-    * be licensed under a {{{http://www.apache.org/legal/resolved.html#category-b}Category B license}} and
+    * be licensed under a {{{https://www.apache.org/legal/resolved.html#category-b}Category B license}} and
       approved by a majority vote of the Apache Maven PMC.
 
   Votes for Category B licenses will be held on the dev@maven.apache.org mailing list. A majority of the PMC

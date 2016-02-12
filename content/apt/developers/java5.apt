@@ -24,7 +24,7 @@
 ~~ under the License.
 
 ~~ NOTE: For help with the syntax of this file, see:
-~~ http://maven.apache.org/doxia/references/apt-format.html
+~~ https://maven.apache.org/doxia/references/apt-format.html
 
 Java 5 in Plugins and Components
 
@@ -40,5 +40,5 @@ Java 5 in Plugins and Components
   When a plugin, or other component, decides to switch to Java 5, you should use
   the description field in JIRA to label the versions for the plugin, so that it
   is clear which version runs on which version of Java. See
-  {{{http://jira.codehaus.org/browse/MCHANGES#selectedTab=com.atlassian.jira.plugin.system.project%3Aversions-panel}Maven Changes Plugin}}
+  {{{https://issues.apache.org/jira/browse/MCHANGES#selectedTab=com.atlassian.jira.plugin.system.project%3Aversions-panel}Maven Changes Plugin}}
   for an example.
