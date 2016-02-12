@@ -47,14 +47,14 @@
         <img src="maven-repositories.png" width="668" height="555" border="0" usemap="#map" />
 
         <map name="map">
-          <area shape="rect" coords="191,63,271,94"   alt="Apache"   href="http://repository.apache.org/content/groups/public/" />
+          <area shape="rect" coords="191,63,271,94"   alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
           <area shape="rect" coords="276,63,374,94"   alt="Codehaus" href="http://repository.codehaus.org/" />
-          <area shape="rect" coords="378,63,459,94"   alt="OSSRH"    href="http://central.sonatype.org/pages/ossrh-guide.html" />
+          <area shape="rect" coords="378,63,459,94"   alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
           <area shape="rect" coords="485,276,558,307" alt="java.net" href="http://download.java.net/maven/2/" />
           <area shape="rect" coords="564,276,626,307" alt="JBoss"    href="http://repository.jboss.org/maven2/" />
           <area shape="rect" coords="283,234,331,264" alt="index"    href="/maven-indexer/" />
           <area shape="rect" coords="69,234,182,265"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
-          <area shape="rect" coords="55,292,180,326"  alt="repo"     href="http://repo.maven.apache.org/maven2/" />
+          <area shape="rect" coords="55,292,180,326"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
           <area shape="rect" coords="211,293,357,339" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
           <area shape="rect" coords="162,501,243,534" alt="Maven"    href="/what-is-maven.html" />
           <area shape="rect" coords="244,531,353,552" alt="local repository"              href="/guides/mini/guide-configuring-maven.html" />

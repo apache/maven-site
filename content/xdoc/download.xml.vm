@@ -47,7 +47,7 @@ under the License.
           mirrors
           (at the end of the mirrors list) that should be available.
             You may also consult the
-          <a href="http://www.apache.org/mirrors/">complete list of
+          <a href="https://www.apache.org/mirrors/">complete list of
             mirrors.</a>
         
         </p>
@@ -108,8 +108,8 @@ under the License.
       Use a source archive if you intend to build Maven yourself.</p>
       <p>
       In order to guard against corrupted downloads/installations, it is highly recommended to
-      <a href="http://www.apache.org/dev/release-signing#verifying-signature">verify the signature</a>
-      of the release bundles against the public <a href="http://www.apache.org/dist/maven/KEYS">KEYS</a> used by the Apache Maven
+      <a href="https://www.apache.org/dev/release-signing#verifying-signature">verify the signature</a>
+      of the release bundles against the public <a href="https://www.apache.org/dist/maven/KEYS">KEYS</a> used by the Apache Maven
       developers.</p>
       <table>
         <thead>
@@ -124,26 +124,26 @@ under the License.
           <tr>
             <td>Binary tar.gz archive</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.md5">apache-maven-${currentStableVersion}-bin.tar.gz.md5</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
           </tr>
           <tr>
             <td>Binary zip archive</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.md5">apache-maven-${currentStableVersion}-bin.zip.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.md5">apache-maven-${currentStableVersion}-bin.zip.md5</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
           </tr>
           <tr>
             <td>Source tar.gz archive</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.md5">apache-maven-${currentStableVersion}-src.tar.gz.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.md5">apache-maven-${currentStableVersion}-src.tar.gz.md5</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a></td>
           </tr>
           <tr>
             <td>Source zip archive </td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip">apache-maven-${currentStableVersion}-src.zip</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.md5">apache-maven-${currentStableVersion}-src.zip.md5</a></td>
-            <td><a href="http://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.asc">apache-maven-${currentStableVersion}-src.zip.asc</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.md5">apache-maven-${currentStableVersion}-src.zip.md5</a></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.asc">apache-maven-${currentStableVersion}-src.zip.asc</a></td>
           </tr>
         </tbody>
       </table>
@@ -154,8 +154,8 @@ under the License.
         <!-- not currently generated on the CMS due to the profile, probably also badly formattted
            <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
         -->
-        <li><a href="[preferred]/maven/">All sources (plugins, shared libraries,...) available at http://www.apache.org/dist/maven/</a></li>
-        <li>Distributed under the <a href="http://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+        <li><a href="[preferred]/maven/">All sources (plugins, shared libraries,...) available at https://www.apache.org/dist/maven/</a></li>
+        <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
       </ul>
       </subsection>
 
@@ -164,8 +164,8 @@ under the License.
         
         <p>If you still want to use an old version you can find more information in the
         <a href="./docs/history.html">Maven Releases History</a> and can download files from 
-        the  <a href="http://archive.apache.org/dist/maven/maven-3/">archives</a> for versions 3.0.4+
-        and <a href="http://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
+        the  <a href="https://archive.apache.org/dist/maven/maven-3/">archives</a> for versions 3.0.4+
+        and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
       </subsection>
     </section>
   </body>
