@@ -20,7 +20,7 @@
 
 <faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/FML/1.0"
-  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 https://maven.apache.org/xsd/fml-1.0.xsd"
   title="Information for Maven 1.0 Users">
   <part id="maven1">
     <faq id="changed">
@@ -90,7 +90,7 @@
         <p>
           If you do use Maven 1.0, and would like to upgrade in the future, you should carefully consider following some
           of the
-          <a href="http://maven.apache.org/maven-1.x/using/bestpractices.html">Best Practices</a>
+          <a href="https://maven.apache.org/maven-1.x/using/bestpractices.html">Best Practices</a>
           listed. These will make your project a lot easier to migrate in the future.
         </p>
         <p>
@@ -110,7 +110,7 @@
         <p>
           Support for Maven 1.0.2 has been discontinued with the release of Maven 1.1.
           While significant new features will not be added to the
-          <a href="http://maven.apache.org/maven-1.x/">Maven 1.x</a> core
+          <a href="https://maven.apache.org/maven-1.x/">Maven 1.x</a> core
           (such as transitive dependencies), bugfixes and support continue and the
           repository is still available.
         </p>
@@ -135,7 +135,7 @@
       </question>
       <answer>
         <p>Taken from
-          <a href="http://mail-archives.apache.org/mod_mbox/maven-users/200504.mbox/%3c1113788711.5625.30.camel@172.16.1.36%3e">
+          <a href="https://mail-archives.apache.org/mod_mbox/maven-users/200504.mbox/%3c1113788711.5625.30.camel@172.16.1.36%3e">
             this post to the Maven User's List</a>:
         </p>
         <blockquote>
@@ -163,7 +163,7 @@
     <faq id="convert">
       <question>How do I convert from Maven 1.x to Maven 2.x or 3.x?</question>
       <answer>
-        This is discussed in <a href="http://maven.apache.org/guides/mini/guide-m1-m2.html">Guide to Moving from Maven 1.x to Maven 2.x</a>
+        This is discussed in <a href="https://maven.apache.org/guides/mini/guide-m1-m2.html">Guide to Moving from Maven 1.x to Maven 2.x</a>
         (Maven 3.x is mostly equivalent to Maven 2.x).
       </answer>
     </faq>

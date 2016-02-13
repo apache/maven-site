@@ -20,7 +20,7 @@
 
 <faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/FML/1.0"
-  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 https://maven.apache.org/xsd/fml-1.0.xsd"
   title="Frequently Asked Technical Questions">
   <part id="faq">
     <faq id="encoding-warning">
@@ -62,7 +62,7 @@
       <answer>
         <p>
           The "Available Plugins" page lists them and provides additional information.
-          See <a href="http://maven.apache.org/plugins/">http://maven.apache.org/plugins</a>
+          See <a href="https://maven.apache.org/plugins/">https://maven.apache.org/plugins</a>
         </p>
       </answer>
     </faq>
@@ -92,7 +92,7 @@
           <li>
             For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct
             the Ant tasks using the
-            <a href="http://ant.apache.org/manual/antexternal.html">instructions given in the Ant
+            <a href="https://ant.apache.org/manual/antexternal.html">instructions given in the Ant
               documentation</a>
           </li>
           <li>
@@ -377,7 +377,7 @@ Where: <path-to-file>  the path to the file to load
 &lt;project xmlns="http://maven.apache.org/POM/4.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+                      https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 
   ...
 &lt;/project&gt;</source>
@@ -385,7 +385,7 @@ Where: <path-to-file>  the path to the file to load
 &lt;settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd"&gt;
   ...
 &lt;/settings&gt;</source>
         </p>
@@ -430,9 +430,9 @@ Where: <path-to-file>  the path to the file to load
           You could use the following search engines:
         </p>
         <ul>
-          <li><a href="http://search.maven.org/">http://search.maven.org</a></li>
-          <li><a href="http://repository.apache.org">http://repository.apache.org</a></li>
-          <li><a href="http://mvnrepository.com">http://mvnrepository.com</a></li>
+          <li><a href="https://search.maven.org/">https://search.maven.org</a></li>
+          <li><a href="https://repository.apache.org">https://repository.apache.org</a></li>
+          <li><a href="https://mvnrepository.com">https://mvnrepository.com</a></li>
         </ul>
       </answer>
     </faq>

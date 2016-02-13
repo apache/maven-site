@@ -20,7 +20,7 @@
 
 <faqs xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xmlns="http://maven.apache.org/FML/1.0"
-  xsi:schemaLocation="http://maven.apache.org/FML/1.0 http://maven.apache.org/xsd/fml-1.0.xsd"
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0 https://maven.apache.org/xsd/fml-1.0.xsd"
   title="About Maven 2.0">
   <part id="about">
     <faq id="m2-goals">
@@ -79,7 +79,7 @@
         </p>
         <p>
           For more information, please see
-          <a href="http://maven.apache.org/guides/development/guide-helping.html">How to Help</a>
+          <a href="https://maven.apache.org/guides/development/guide-helping.html">How to Help</a>
           .
         </p>
       </answer>
@@ -121,15 +121,13 @@
       <answer>
         <p>
           Help for both Maven 1.0 and Maven 2 &amp; 3 can be obtained by subscribing and posting to the
-          <a href="http://maven.apache.org/mail-lists.html">Maven Users List</a>.
+          <a href="https://maven.apache.org/mail-lists.html">Maven Users List</a>.
         </p>
         <p>
-          You can also join us on IRC (Internet Relay Chat) at <code>irc.codehaus.org</code>
-          on <code>#maven</code>. This is available both
-          over <a href="irc://irc.codehaus.org/#maven">IRC</a>
-          and <a href="http://irc.codehaus.org/">HTTP</a>
+          You can also join us on IRC (Internet Relay Chat) at <code>irc.freenode.net</code>
+          on <code>#maven</code>. 
+          over <a href="irc://irc.freenode.net/#maven">IRC</a>
           for those behind firewalls (enter <code>#maven</code> in the <i>Channel</i> box).
-          You could also browse the IRC logs <a href="http://dev.rectang.com/logs/codehaus/%23maven/">here</a>.
         </p>
       </answer>
     </faq>
