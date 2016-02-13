@@ -43,12 +43,12 @@ Java 6 in Plugins and Shared Components
   the description field for the versions in JIRA for the plugin/component, so that it
   is clear which version works with which version of Java.
   Mark the last Java 5 compatible version with "Last version to work with Java 5",
-  see {{{issues.apache.org/jira/browse/MCHECKSTYLE/fixforversion/20631}example}}.
+  see {{{https://issues.apache.org/jira/browse/MCHECKSTYLE/fixforversion/20631}example}}.
   Mark the first version that requires Java 6 "This version requires Java 6",
-  see {{{issues.apache.org/jira/browse/MCHECKSTYLE/fixforversion/20762}example}}.
+  see {{{https://issues.apache.org/jira/browse/MCHECKSTYLE/fixforversion/20762}example}}.
 
   Create an issue "Require Java 6" and schedule it for the first Java 6
-  version, see {{{issues.apache.org/jira/browse/MCHECKSTYLE-277}example}}.
+  version, see {{{https://issues.apache.org/jira/browse/MCHECKSTYLE-277}example}}.
   Reference this issue when you check in the code changes (see below) into
   version control
 
