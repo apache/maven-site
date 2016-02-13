@@ -204,7 +204,7 @@ annotations in our example.
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.apache.maven.plugins</groupId>
@@ -213,7 +213,7 @@ annotations in our example.
   <packaging>maven-plugin</packaging>
 
   <name>maven-jsr330-plugin Maven Plugin</name>
-  <url>http://maven.apache.org</url>
+  <url>https://maven.apache.org</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -331,14 +331,14 @@ public class Jsr330Mojo
 If you want to look at this example project, you can find the code [in Maven Core ITs][jsr330-plugin].
 
 [tesla-profiler]: https://github.com/tesla/tesla-profiler
-[p2g1]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-1-why-guice/
-[p2g2]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-2-the-guiceplexus-bridge-and-custom-bean-injection/
-[p2g3]: http://www.sonatype.com/people/2010/01/from-plexus-to-guice-3-creating-a-guice-bean-extension-layer/
-[jsr330]: http://www.jcp.org/en/jsr/detail?id=330
-[sisu]: http://eclipse.org/sisu/
-[plexus]: http://codehaus-plexus.github.io/
+[p2g1]: https://www.sonatype.com/people/2010/01/from-plexus-to-guice-1-why-guice/
+[p2g2]: https://www.sonatype.com/people/2010/01/from-plexus-to-guice-2-the-guiceplexus-bridge-and-custom-bean-injection/
+[p2g3]: https://www.sonatype.com/people/2010/01/from-plexus-to-guice-3-creating-a-guice-bean-extension-layer/
+[jsr330]: https://www.jcp.org/en/jsr/detail?id=330
+[sisu]: https://eclipse.org/sisu/
+[plexus]: https://codehaus-plexus.github.io/
 [plexus-container]: https://github.com/sonatype/plexus-containers
-[jsr330-plugin]: http://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
-[guice]: http://code.google.com/p/google-guice/
-[sisu-maven-plugin]: http://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
-[MNG-5343]: http://issues.apache.org/jira/browse/MNG-5343
+[jsr330-plugin]: https://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
+[guice]: https://code.google.com/p/google-guice/
+[sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
+[MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343

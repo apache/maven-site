@@ -1,6 +1,6 @@
 ## Overview
 
-Maven projects use [JIRA](http://www.atlassian.com/software/jira) a
+Maven projects use [JIRA](https://www.atlassian.com/software/jira) a
 J2EE-based, issue tracking and project management application.
 
 ## Issue Tracking

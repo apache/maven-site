@@ -51,7 +51,7 @@ Here is an overview of the top elements under `settings`:
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       <localRepository/>
       <interactiveMode/>
       <usePluginRegistry/>
@@ -85,7 +85,7 @@ system that are active full-time.
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       <localRepository>${user.home}/.m2/repository</localRepository>
       <interactiveMode>true</interactiveMode>
       <usePluginRegistry>false</usePluginRegistry>
@@ -120,7 +120,7 @@ not provided in the command line. This list automatically contains
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <pluginGroups>
         <pluginGroup>org.mortbay.jetty</pluginGroup>
@@ -145,7 +145,7 @@ information should exist on the build server in the `settings.xml`.
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <servers>
         <server>
@@ -192,7 +192,7 @@ page](./guides/mini/guide-encryption.html)
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <mirrors>
         <mirror>
@@ -214,7 +214,7 @@ page](./guides/mini/guide-encryption.html)
     URL.
 -   **mirrorOf**: The `id` of the repository that this is a mirror of.
     For example, to point to a mirror of the Maven `central` repository
-    (`http://repo.maven.apache.org/maven2/`), set this element to
+    (`https://repo.maven.apache.org/maven2/`), set this element to
     `central`. More advanced mappings like `repo1,repo2` or `*,!inhouse`
     are also possible. This must not match the mirror `id`.
 
@@ -226,7 +226,7 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <proxies>
         <proxy>
@@ -280,7 +280,7 @@ certain circumstances; those circumstances are specified via an
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <profiles>
         <profile>
@@ -317,11 +317,11 @@ all are required at once.
     version number that matches the prefix given. In the above example,
     `1.5.0_06` will match. Ranges are also supported as of Maven 2.1.
     See the
-    [maven-enforcer-plugin](http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
+    [maven-enforcer-plugin](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
     for more details about supported ranges.
 -   **os**: The `os` element can define some operating system specific
     properties shown above. See the
-    [maven-enforcer-plugin](http://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html)
+    [maven-enforcer-plugin](https://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html)
     for more details about OS values.
 -   **property**: The `profile` will activate if Maven detects a
     property (a value which can be dereferenced within the POM by
@@ -369,7 +369,7 @@ all accessible from the `settings.xml` file:
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <profiles>
         <profile>
@@ -398,7 +398,7 @@ artifact.
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <profiles>
         <profile>
@@ -469,7 +469,7 @@ Maven can find new plugins.
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                          http://maven.apache.org/xsd/settings-1.0.0.xsd">
+                          https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <activeProfiles>
         <activeProfile>env-test</activeProfile>

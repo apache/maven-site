@@ -34,9 +34,9 @@ The following list (alphabetical order) of open source and commercial repository
  managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 
 and the features provided by these products.
 
-* <a href="http://archiva.apache.org/" target="_blank" rel="nofollow">Apache Archiva</a> (open source)
-* <a href="http://www.jfrog.com/open-source" target="_blank" rel="nofollow">JFrog Artifactory Open Source</a> (open source)
-* <a href="http://www.jfrog.com/artifactory/" target="_blank" rel="nofollow">JFrog Artifactory Pro</a> (commercial)
-* <a href="http://www.sonatype.org/nexus/go/" target="_blank" rel="nofollow">Sonatype Nexus OSS</a> (open source)
-* <a href="http://links.sonatype.com/products/nexus/pro/home" target="_blank" rel="nofollow">Sonatype Nexus Pro</a> (commercial)
+* <a href="https://archiva.apache.org/" target="_blank" rel="nofollow">Apache Archiva</a> (open source)
+* <a href="https://www.jfrog.com/open-source" target="_blank" rel="nofollow">JFrog Artifactory Open Source</a> (open source)
+* <a href="https://www.jfrog.com/artifactory/" target="_blank" rel="nofollow">JFrog Artifactory Pro</a> (commercial)
+* <a href="https://www.sonatype.org/nexus/go/" target="_blank" rel="nofollow">Sonatype Nexus OSS</a> (open source)
+* <a href="https://links.sonatype.com/products/nexus/pro/home" target="_blank" rel="nofollow">Sonatype Nexus Pro</a> (commercial)
 

@@ -1,6 +1,6 @@
 ## Introduction
 
-Maven, a [Yiddish word](http://en.wikipedia.org/wiki/Maven) meaning
+Maven, a [Yiddish word](https://en.wikipedia.org/wiki/Maven) meaning
 *accumulator of knowledge*, was originally started as an attempt to
 simplify the build processes in the Jakarta Turbine project. There were
 several projects each with their own Ant build files that were all

@@ -129,7 +129,7 @@ consider taking a formal role in our project.
 
 ## Formal roles
 
-### [Committers](http://www.apache.org/foundation/how-it-works.html#committers)
+### [Committers](https://www.apache.org/foundation/how-it-works.html#committers)
 
 These are those people who have been given write access to the
 Apache Maven code repository and have a signed 
@@ -157,7 +157,7 @@ may decide that they want to become an active committer again
 by informing the [project management committee][3]. The current
 policy is that committer role reinstatement is automatic.
 
-### [Project Management Committee](http://www.apache.org/foundation/how-it-works.html#pmc-members)
+### [Project Management Committee](https://www.apache.org/foundation/how-it-works.html#pmc-members)
 
 The Project Management Committee as a whole is the entity that 
 controls the project. Membership of the Project Management Committee 
@@ -288,7 +288,7 @@ bring the changes in their fork back to the Apache Maven project their
 contribution may end up being rejected on the basis of the review of a
 large set of changes being too difficult/timeconsuming.
 
-### [Project Management Chair](http://www.apache.org/foundation/how-it-works.html#pmc-chair)
+### [Project Management Chair](https://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
 For various legal reasons, there are certain things that the Apache 
 Software Foundation can only delegate to an officer of the foundation.
@@ -310,11 +310,11 @@ can act as an ultimate decision maker, however, by this point the
 board of the foundation must already be well aware of the situation and
 should be actively monitoring the chair.
 
-  [1]: http://stackoverflow.com/questions/tagged/maven
+  [1]: https://stackoverflow.com/questions/tagged/maven
   [2]: mailto:users@maven.apache.org
   [3]: mailto:private@maven.apache.org
-  [4]: http://www.apache.org/licenses/#clas
+  [4]: https://www.apache.org/licenses/#clas
   [5]: /developers/index.html#Developers_Conventions
-  [6]: http://www.apache.org/legal/3party.html
-  [7]: http://www.apache.org/legal/3party.html#category-a
-  [8]: http://www.apache.org/legal/3party.html#category-b
+  [6]: https://www.apache.org/legal/3party.html
+  [7]: https://www.apache.org/legal/3party.html#category-a
+  [8]: https://www.apache.org/legal/3party.html#category-b

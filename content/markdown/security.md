@@ -6,7 +6,7 @@ you should upgrade to an Apache Maven version where that vulnerability
 has been fixed.
 
 For more information about reporting vulnerabilities, see the [Apache
-Security Team](http://www.apache.org/security/) page.
+Security Team](https://www.apache.org/security/) page.
 
 ### CVE-2013-0253 Apache Maven 3.0.4
 
@@ -25,7 +25,7 @@ certificate checking, including: host name verification , date validity,
 and certificate chain. Not validating the certificate introduces the
 possibility of a man-in-the-middle attack.
 
-[CVE-2013-0253](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0253)
+[CVE-2013-0253](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2013-0253)
 
 All users are recommended to upgrade to [Apache Maven
 3.0.5](./download.cgi) and Apache Maven Wagon 2.4.

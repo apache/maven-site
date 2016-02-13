@@ -14,8 +14,8 @@ This means:
 -   the 1.x branch in svn will move from /maven/maven-1/ to
     /maven/archives/maven-1/
 -   the links to the 1.x documentation will be moved from
-    http://maven.apache.org/maven-1.x/ to
-    http://maven.apache.org/archives/maven-1.x/
+    https://maven.apache.org/maven-1.x/ to
+    https://maven.apache.org/archives/maven-1.x/
 
 The Apache Maven Team.
 
