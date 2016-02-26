@@ -330,7 +330,7 @@ mvn archetype:generate \
 
 ** Configuring Parameters in a Project
 
-  Configuring the parameter values for a plugin is done in a Maven 2
+  Configuring the parameter values for a plugin is done in a Maven
   project within the <<<pom.xml>>> file as part of defining the
   plugin in the project.  An example of configuring a plugin:
 
