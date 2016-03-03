@@ -703,8 +703,8 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  to add this to our pom.xml in order to override that default value and set <<<filtering>>> to true.
 
  To reference a property defined in your pom.xml, the property name uses the names of the XML elements that define the value,
- with "pom" being allowed as an alias for the project (root) element.  So <<<$\{pom.name\}>>> refers to the name of the project,
- <<<$\{pom.version\}>>> refers to the version of the project, <<<$\{pom.build.finalName\}>>> refers to the final name of the file created
+ with "pom" being allowed as an alias for the project (root) element.  So <<<$\{project.name\}>>> refers to the name of the project,
+ <<<$\{project.version\}>>> refers to the version of the project, <<<$\{project.build.finalName\}>>> refers to the final name of the file created
  when the built project is packaged, etc.  Note that some elements of the POM have default values, so don't need to be explicitly
  defined in your <<<pom.xml>>> for the values to be available here.  Similarly, values in the user's <<<settings.xml>>> can be referenced
  using property names beginning with "settings" (for example, <<<$\{settings.localRepository\}>>> refers to the path of the user's
@@ -715,8 +715,8 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 
 +----+
 # application.properties
-application.name=${pom.name}
-application.version=${pom.version}
+application.name=${project.name}
+application.version=${project.version}
 +----+
 
  With that in place, you can execute the following command (process-resources is the build lifecycle phase where the resources are
@@ -786,8 +786,8 @@ my.filter.value=hello!
 
 +----+
 # application.properties
-application.name=${pom.name}
-application.version=${pom.version}
+application.name=${project.name}
+application.version=${project.version}
 message=${my.filter.value}
 +----+
 
