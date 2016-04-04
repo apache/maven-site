@@ -241,3 +241,18 @@ mvn.bat --encrypt-master-password "a!$%^b"
   If you are on a linux/unix platform you should use single quotes for the above 
   master password otherwise you will be astonished that the usage of the master-password
   will not work (caused by the dollar sign and furthermore the exclamation mark).
+
+** Prompting for Password
+
+  In Maven before version 3.2.1 you have to give the password on command line which
+  means you might need to escape your password etc. and might cause problems
+  related to the history funcitonality of your command line processor.
+
+  Starting with Maven 3.2.1 the password is an optional argument which means if you omit
+  the password you will be prompted for the password which can prevent many problems
+  with escaping the password and history issues as well. 
+
+  So we strongly recomment to use Maven 3.2.1 and above to prevent problems with 
+  escaping special characters and of course security issues related to bash
+  history or environment issues in relationship with the password.
+
