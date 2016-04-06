@@ -11,6 +11,9 @@ select component category, then type artifact id and version to generate svn com
 <li><a href="?plugins">plugins</a></li>
 <li><a href="?pom">poms</a></li>
 <li><a href="?skins">skins</a></li>
+<li><a href="?doxia">Doxia</a></li>
+<li><a href="?doxia-sitetools">Doxia Sitetools</a></li>
+<li><a href="?doxia-tools">Doxia Tools</a></li>
 <li><a href="?others">others</a></li>
 </ul>
  
@@ -67,17 +70,23 @@ function instructions() {
   var artifactId = document.getElementById('artifactId').value;
   var version = document.getElementById('version').value;
   var svnmucc = svnmuccTemplate;
-  if (category == "others") {
-    // category directory is based on artifactId
-    svnmucc = replaceAll(svnmucc, '${category}/${artifactId}', '${artifactId}');
-    svnmucc = replaceAll(svnmucc, '${category}', '${artifactId}');
-  }
   if (category == "core") {
     artifactId = "Maven";
     svnmucc = svnmucc.substr(0, svnmucc.indexOf("  rm "))
     svnmucc = replaceAll(svnmucc, '${artifactId}-LATEST', '3-LATEST');
     svnmucc = replaceAll(svnmucc, '${category}-archives', 'ref');
     svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}\n\n');
+  }
+  if (category.indexOf("doxia") == 0) {
+    svnmucc = replaceAll(svnmucc, 'maven/components', 'maven-doxia/content');
+    if (category != "doxia-tools") {
+      document.getElementById('artifactId').value = category;
+    }
+  }
+  if (category == "others" || category == "doxia" || category == "doxia-sitetools") {
+    // category directory is based on artifactId
+    svnmucc = replaceAll(svnmucc, '${category}/${artifactId}', '${artifactId}');
+    svnmucc = replaceAll(svnmucc, '${category}', '${artifactId}');
   }
   svnmucc = replaceAll(svnmucc, '${category}', category);
   if (artifactId) {
@@ -94,6 +103,8 @@ var svnmuccTemplate = document.getElementById('svnmucc').innerHTML;
 
 if (category == "core") {
   selectCategory('docs/history.html', 'ref/');
+} else if (category.indexOf("doxia") == 0) {
+  selectCategory('doxia/' + category + '/', 'doxia/' + category + '-archives/');
 } else if (category == "others") {
   selectCategory('', 'components/');
 } else if (category != "") {
