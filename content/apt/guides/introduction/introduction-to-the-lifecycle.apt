@@ -71,22 +71,19 @@ Introduction to the Build Lifecycle
 
     * <<<package>>> - take the compiled code and package it in its distributable format, such as a JAR.
 
-    * <<<integration-test>>> - process and deploy the package if necessary into an environment where integration tests
-      can be run
-
-    * <<<verify>>> - run any checks to verify the package is valid and meets quality criteria
+    * <<<verify>>> - run any checks on results of integration tests to ensure quality criteria are met
 
     * <<<install>>> - install the package into the local repository, for use as a dependency in other projects locally
 
-    * <<<deploy>>> - done in an integration or release environment, copies the final package to the remote repository
+    * <<<deploy>>> - done in the build environment, copies the final package to the remote repository
       for sharing with other developers and projects.
 
   These lifecycle phases (plus the other lifecycle phases not shown here) are executed sequentially 
   to complete the <<<default>>> lifecycle. 
   Given the lifecycle phases above, this means that when the default lifecycle is used, Maven will first validate
   the project, then will try to compile the sources, run those against the tests, package the binaries (e.g. jar), run
-  integration tests against that package, verify the package, install the verifed package to the local repository,
-  then deploy the installed package in a specified environment.
+  integration tests against that package, verify the integration tests, install the verified package to the local 
+  repository, then deploy the installed package to a remote repository.
 
   To do all those, you only need to call the last build phase to be executed, in this case, <<<deploy>>>:
 
