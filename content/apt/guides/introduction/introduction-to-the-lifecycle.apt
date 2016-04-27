@@ -71,50 +71,40 @@ Introduction to the Build Lifecycle
 
     * <<<package>>> - take the compiled code and package it in its distributable format, such as a JAR.
 
-    * <<<integration-test>>> - process and deploy the package if necessary into an environment where integration tests
-      can be run
-
-    * <<<verify>>> - run any checks to verify the package is valid and meets quality criteria
+    * <<<verify>>> - run any checks on results of integration tests to ensure quality criteria are met
 
     * <<<install>>> - install the package into the local repository, for use as a dependency in other projects locally
 
-    * <<<deploy>>> - done in an integration or release environment, copies the final package to the remote repository
+    * <<<deploy>>> - done in the build environment, copies the final package to the remote repository
       for sharing with other developers and projects.
 
   These lifecycle phases (plus the other lifecycle phases not shown here) are executed sequentially 
   to complete the <<<default>>> lifecycle. 
   Given the lifecycle phases above, this means that when the default lifecycle is used, Maven will first validate
   the project, then will try to compile the sources, run those against the tests, package the binaries (e.g. jar), run
-  integration tests against that package, verify the package, install the verifed package to the local repository,
-  then deploy the installed package in a specified environment.
+  integration tests against that package, verify the integration tests, install the verified package to the local 
+  repository, then deploy the installed package to a remote repository.
 
-  To do all those, you only need to call the last build phase to be executed, in this case, <<<deploy>>>:
+  <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
--------
-mvn deploy
--------
+** {Usual Command Line Calls}
 
-  That is because if you call a build phase, it will execute not only that build phase, but also every build phase
-  prior to the called build phase. Thus, doing
-
--------
-mvn integration-test
--------
-
-  will do every life cycle phase before it (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), before 
-  executing <<<integration-test>>>.
-
-  There are more commands that are part of the lifecycle, which will be discussed in the following sections.
-
-  It should also be noted that the same command can be used in a multi-module scenario (i.e. a project with one or more
-  subprojects). For example:
-
+ In a development environment, use the following call to build and install artifacts into the local repository.
 ------
-mvn clean install
+mvn install
 ------
 
-  This command will traverse into all of the subprojects and run <<<clean>>>, then <<<install>>> (including all of
-  the prior steps).
+  This command executes each default life cycle phase in order (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), 
+  before executing <<<install>>.  You only need to call the last build phase to be executed, in this case, <<<install>>>:
+
+ In a build environment, use the following call to cleanly build and deploy artifacts into the shared repository.
+------
+mvn clean deploy
+------
+
+  The same command can be used in a multi-module scenario (i.e. a project with one or more subprojects). Maven  
+  traverses into every subproject and executes <<<clean>>>, then executes <<<deploy>>> (including all of
+  the prior build phase steps).
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
@@ -133,9 +123,9 @@ mvn clean install
 mvn clean dependency:copy-dependencies package
 ------
 
-  If this were to be executed, the <<<clean>>> phase will be executed first (meaning it will run all preceeding phases of the clean lifecycle,
+  If this were to be executed, the <<<clean>>> phase will be executed first (meaning it will run all preceding phases of the clean lifecycle,
   plus the <<<clean>>> phase itself), and then the <<<dependency:copy-dependencies>>> goal, before finally executing the
-  <<<package>>> phase (and all its preceeding build phases of the default lifecycle).
+  <<<package>>> phase (and all its preceding build phases of the default lifecycle).
 
   Moreover, if a goal is bound to one or more build phases, that goal will be called in all those phases.
 
@@ -147,6 +137,23 @@ mvn clean dependency:copy-dependencies package
   POM, however multiple instances of the same plugin are not supported. Multiple instances of the same plugin are grouped to execute together and ordered in
   Maven 2.0.11 and above>).
 ~~~
+
+  <{{{./introduction-to-the-lifecycle.html}[top]}}.>
+
+** {Some Phases Are Not Usually Called From the Command Line}
+
+ The phases named with hyphenated-words (<<<pre-*>>>, <<<post-*>>>, or <<<process-*>>>) are not usually directly
+ called from the command line. These phases sequence the build, producing intermediate results that are not useful outside
+ the build. In the case of invoking <<<integration-test>>>, the environment may be left in a hanging state.
+
+ Code coverage tools such as Jacoco and execution container plugins such as Tomcat, Cargo, and Docker bind goals to the
+ <<<pre-integration-test>> phase to prepare the integration test container environment. These plugins also bind goals
+ to the <<<post-itegration-test>>> phase to collect coverage statistics or decommission the integration test container.
+
+ Failsafe and code coverage plugins bind goals to <<<integration-test>>> and <<<verify>>> phases. The net result is
+ test and coverage reports are available after the <<<verify>>> phase.  If <<integration-test>> were to be called from the
+ command line, no reports are generated.  Worse is that the integration test container environment is left in a hanging
+ state; the Tomcat webserver or Docker instance is left running, and maven may not even terminate by itself.
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
