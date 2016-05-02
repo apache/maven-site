@@ -26,7 +26,7 @@
 
   <body>
     <section name="Apache Resource Bundles">
-      <p>This project is a set of resources to help you build Java resources compliant with Apache rules.</p>
+      <p>Maven project provides a set of resources to help you build Java resources compliant with Apache rules.</p>
 
       <p>
         If you find bugs in the resource bundles please report them in
@@ -35,7 +35,7 @@
 
       <section name="JAR Resource Bundle and Incubator Disclaimer Resource Bundle">
         <p>
-          To generate in your jar:
+          To generate following content in your jar:
           <ul>
             <li><code>META-INF/DEPENDENCIES</code></li>
             <li><code>META-INF/LICENSE</code></li>
