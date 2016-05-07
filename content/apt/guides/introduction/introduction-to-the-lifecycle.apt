@@ -90,14 +90,16 @@ Introduction to the Build Lifecycle
 ** {Usual Command Line Calls}
 
  In a development environment, use the following call to build and install artifacts into the local repository.
+
 ------
 mvn install
 ------
 
   This command executes each default life cycle phase in order (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), 
-  before executing <<<install>>.  You only need to call the last build phase to be executed, in this case, <<<install>>>:
+  before executing <<<install>>>.  You only need to call the last build phase to be executed, in this case, <<<install>>>:
 
  In a build environment, use the following call to cleanly build and deploy artifacts into the shared repository.
+
 ------
 mvn clean deploy
 ------
@@ -151,7 +153,7 @@ mvn clean dependency:copy-dependencies package
  to the <<<post-itegration-test>>> phase to collect coverage statistics or decommission the integration test container.
 
  Failsafe and code coverage plugins bind goals to <<<integration-test>>> and <<<verify>>> phases. The net result is
- test and coverage reports are available after the <<<verify>>> phase.  If <<integration-test>> were to be called from the
+ test and coverage reports are available after the <<<verify>>> phase.  If <<<integration-test>>> were to be called from the
  command line, no reports are generated.  Worse is that the integration test container environment is left in a hanging
  state; the Tomcat webserver or Docker instance is left running, and Maven may not even terminate by itself.
 
