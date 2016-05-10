@@ -150,7 +150,7 @@ mvn clean dependency:copy-dependencies package
 
  Code coverage tools such as Jacoco and execution container plugins such as Tomcat, Cargo, and Docker bind goals to the
  <<<pre-integration-test>>> phase to prepare the integration test container environment. These plugins also bind goals
- to the <<<post-itegration-test>>> phase to collect coverage statistics or decommission the integration test container.
+ to the <<<post-integration-test>>> phase to collect coverage statistics or decommission the integration test container.
 
  Failsafe and code coverage plugins bind goals to <<<integration-test>>> and <<<verify>>> phases. The net result is
  test and coverage reports are available after the <<<verify>>> phase.  If <<<integration-test>>> were to be called from the
