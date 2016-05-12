@@ -74,38 +74,7 @@ mvn -Prun-its install
 mvn install
 +-----+
 
-  The assemblies will be created in <<<maven-distribution>>>, and can be unzipped to the location where you'd like Maven installed.
-
-** Building Maven Without Maven Installed
-
-  If you do not have Maven installed, you can use {{{http://ant.apache.org}Apache Ant}} to build Maven.
-
-  Once you have checked out the code, change into the directory that was created.
-
-  Set the <<<M2_HOME>>> environment variable to the location that should contain Maven.
-  This directory <<must>> be named after the Maven version you want to
-  build and install, for example <<</usr/local/maven-3.2.x-SNAPSHOT>>>.
-
-+-----+
-export M2_HOME=/usr/local/maven-3.2.x-SNAPSHOT
-PATH=$M2_HOME/bin:$PATH
-+-----+
-
-  or
-
-+-----+
-set M2_HOME=c:\maven-3.2.x-SNAPSHOT
-set PATH=%M2_HOME%\bin;%PATH%
-+-----+
-
-  From this, run the <<<ant>>> command:
-
-+-----+
-ant
-+-----+
-
-  This will download dependencies, build Maven, and install it into the
-  directory you specified as <<<M2_HOME>>> above.
+  The assemblies will be created in <<<apache-maven>>>, and can be unzipped to the location where you'd like Maven installed.
 
 ** Running the full Maven core integration tests
 
