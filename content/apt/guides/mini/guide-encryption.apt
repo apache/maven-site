@@ -228,13 +228,13 @@ jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
   The following example will not work on Windows:
 
 +----+
-mvn.bat --encrypt-master-password a!$%^b
+mvn --encrypt-master-password a!$%^b
 +----+
   
   whereas the following will work on Windows:
 
 +----+
-mvn.bat --encrypt-master-password "a!$%^b"
+mvn --encrypt-master-password "a!$%^b"
 +----+
 
   If you are on a linux/unix platform you should use single quotes for the above 
