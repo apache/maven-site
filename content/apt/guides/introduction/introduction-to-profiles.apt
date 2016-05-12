@@ -69,7 +69,7 @@ Introduction to Build Profiles
   * Global
 
     - Defined in the {{{http://maven.apache.org/ref/2.2.1/maven-settings/settings.html} global Maven-settings}}
-    <<<(%M2_HOME%/conf/settings.xml)>>>.
+    <<<($\{maven.home\}/conf/settings.xml)>>>.
 
   * Profile descriptor
 

@@ -117,7 +117,7 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
 
   You have two ways to use your extension within your builds:
 
-  * add your extension jar in $M2_HOME/lib/ext.
+  * add your extension jar in <<<$\{maven.home\}/lib/ext>>>.
 
   * add it as a build extension in your pom.
 

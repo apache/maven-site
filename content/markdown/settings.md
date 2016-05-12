@@ -31,7 +31,7 @@ authentication information.
 
 There are two locations where a `settings.xml` file may live:
 
--   The Maven install: `$M2_HOME/conf/settings.xml`
+-   The Maven install: `${maven.home}/conf/settings.xml`
 -   A user's install: `${user.home}/.m2/settings.xml`
 
 The former `settings.xml` are also called global settings, the latter

@@ -37,7 +37,7 @@ Guide to deploying 3rd party JARs to remote repository
  maven-deploy-plugin.
 
  First, the wagon-provider(wagon-ftp, wagon-file, etc..) must be placed to
- your %M2_HOME%/lib.
+ your <<<$\{maven.home\}/lib>>>.
 
  Then execute the command:
 
