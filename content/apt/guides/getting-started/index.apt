@@ -359,7 +359,7 @@ mvn package
  You can now take a look in the <<<$\{basedir\}/target>>> directory and you will see the generated JAR file.
 
  Now you'll want to install the artifact you've generated (the JAR file) in your local repository
- (<<<~/.m2/repository>>> is the default location). For more information on repositories you can refer to our
+ (<<<$\{user.home\}/.m2/repository>>> is the default location). For more information on repositories you can refer to our
  {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}} but let's move on to installing our artifact!
  To do so execute the following command:
 
@@ -898,7 +898,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  {{{../introduction/introduction-to-dependency-mechanism.html}Introduction to Dependency Mechanism}}.
 
  With this information about a dependency, Maven will be able to reference the dependency when it builds the project.  Where does
- Maven reference the dependency from?  Maven looks in your local repository (<<<~/.m2/repository>>> is the default location) to find
+ Maven reference the dependency from?  Maven looks in your local repository (<<<$\{user.home\}/.m2/repository>>> is the default location) to find
  all dependencies.  In a {{{How_do_I_create_a_JAR_and_install_it_in_my_local_repository}previous section}}, we installed the artifact
  from our project (my-app-1.0-SNAPSHOT.jar) into the local repository.  Once it's installed there, another project can reference that jar
  as a dependency simply by adding the dependency information to its pom.xml:

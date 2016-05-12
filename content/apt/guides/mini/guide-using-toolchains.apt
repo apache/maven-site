@@ -123,7 +123,7 @@ Guide to Using Toolchains
   does the plugin know where this JDK is installed? This is where the <<<toolchains.xml>>> file comes in.
 
   The <<<toolchains.xml>>> file (see below) is the configuration file where you set the installation paths of your toolchains.
-  This file should be put in your <<<${user.home}/.m2>>> directory. When the <<<maven-toolchains-plugin>>> executes, it looks for the <<<toolchains.xml>>> file,
+  This file should be put in your <<<$\{user.home\}/.m2>>> directory. When the <<<maven-toolchains-plugin>>> executes, it looks for the <<<toolchains.xml>>> file,
   reads it and looks for a toolchain matching the toolchains requirements configured in the plugin. In our example, that would be a JDK toolchain with
   <<<\<version\>>>> "1.5" and <<<\<vendor\>>>> "sun". Once a match is found,
   the plugin then stores the toolchain to be used in the MavenSession. As you can see in our <<<toolchains.xml>>> below, there is indeed a JDK

@@ -127,7 +127,7 @@ mvn somePrefix:goal
   groupId locations for plugin-prefix mappings.
 
   As it turns out, this is simple. In the Maven settings file (per-user:
-  <<<~/.m2/settings.xml>>>; global: <<<$\{maven.home\}/conf/settings.xml>>>), you can
+  <<<$\{user.home\}/.m2/settings.xml>>>; global: <<<$\{maven.home\}/conf/settings.xml>>>), you can
   provide a custom <<pluginGroups>> section, listing the plugin groupIds you
   want to search (each groupId goes in its own <<pluginGroup>> sub-element).
   For example, if my project uses a Modello model file, I might have the

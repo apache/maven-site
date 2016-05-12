@@ -60,7 +60,7 @@ Setting up Multiple Repositories
  {{{../introduction/introduction-to-the-pom.html#Super_POM}Super POM}}.
 
  The other way you can specify the use of multiple repositories by creating a profile in
- your <<<~/.m2/settings.xml>>> file like the following:
+ your <<<$\{user.home\}/.m2/settings.xml>>> file like the following:
 
 +----+
 

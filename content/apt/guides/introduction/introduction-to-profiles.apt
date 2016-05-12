@@ -408,7 +408,7 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
 </project>
 +---+
 
-  Now, in your local <<<~/.m2/settings.xml>>>, you have:
+  Now, in your local <<<$\{user.home\}/.m2/settings.xml>>>, you have:
 
 +---+
 <settings>

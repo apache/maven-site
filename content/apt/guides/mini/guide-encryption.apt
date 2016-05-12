@@ -54,7 +54,7 @@
 
  The implemented solution adds the following capabilities:
 
-   * authorized users have an additional <<<settings-security.xml>>> file in their <<<~/.m2>>> folder
+   * authorized users have an additional <<<settings-security.xml>>> file in their <<<$\{user.home\}/.m2>>> folder
 
       ** this file either contains encrypted <<master password>>, used to encrypt other passwords
 
@@ -82,7 +82,7 @@ mvn --encrypt-master-password <password>
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
 +------------------------------------+
 
- Store this password in the <<<~/.m2/settings-security.xml>>>; it should look like
+ Store this password in the <<<$\{user.home\}/.m2/settings-security.xml>>>; it should look like
 
 +------------------------------------+
 <settingsSecurity>
@@ -168,7 +168,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
  in the file <<</Volumes/mySecureUsb/secure/settings-security.xml>>>
 
- And then I create <<<~/.m2/settings-security.xml>>> with the following content:
+ And then I create <<<$\{user.home\}/.m2/settings-security.xml>>> with the following content:
 
 +------------------------------------+
 <settingsSecurity>
