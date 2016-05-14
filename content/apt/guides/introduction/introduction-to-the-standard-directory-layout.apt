@@ -40,8 +40,8 @@ Introduction to the Standard Directory Layout
 *-----------------------------------+-----------------------------------------------+
 | <<<src/main/resources>>>          | Application/Library resources
 *-----------------------------------+-----------------------------------------------+
-| <<<src/main/filtered-resources>>> | Application/Library resources which are filtered. 
-|                                   | (Starting with Maven 3.4.0 not yet released.)
+| <<<src/main/resources-filtered>>> | Application/Library resources which are filtered. 
+|                                   | (Starting with Maven 3.4.0, not yet released.)
 *-----------------------------------+-----------------------------------------------+
 | <<<src/main/filters>>>            | Resource filter files
 *-----------------------------------+-----------------------------------------------+
@@ -51,8 +51,8 @@ Introduction to the Standard Directory Layout
 *-----------------------------------+-----------------------------------------------+
 | <<<src/test/resources>>>          | Test resources
 *-----------------------------------+-----------------------------------------------+
-| <<<src/test/filtered-resources>>> | Test resources which are filtered by default.
-|                                   | (Starting with Maven 3.4.0 not yet released.)
+| <<<src/test/resources-filtered>>> | Test resources which are filtered by default.
+|                                   | (Starting with Maven 3.4.0, not yet released.)
 *-----------------------------------+-----------------------------------------------+
 | <<<src/test/filters>>>            | Test resource filter files
 *-----------------------------------+-----------------------------------------------+
