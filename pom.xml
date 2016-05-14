@@ -31,7 +31,7 @@
   <packaging>pom</packaging>
 
   <name>Apache Maven Site</name>
-  <url>http://maven.apache.org/</url>
+  <url>https://maven.apache.org/</url>
 
   <prerequisites>
     <maven>3.0</maven>
@@ -39,9 +39,9 @@
 
   <!-- repeated here so that maven-site is not appended -->
   <scm>
-    <connection>scm:svn:http://svn.apache.org/repos/asf/maven/site/trunk/</connection>
+    <connection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</connection>
     <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
-    <url>http://svn.apache.org/viewvc/maven/site/trunk/</url>
+    <url>https://svn.apache.org/viewvc/maven/site/trunk/</url>
   </scm>
 
   <issueManagement>
@@ -64,25 +64,15 @@
   </properties>
 
   <repositories>
-    <repository>
+    <repository><!-- useful to resolve parent pom when it is a SNAPSHOT -->
       <id>apache.snapshots</id>
       <name>Apache Snapshot Repository</name>
-      <url>http://repository.apache.org/snapshots</url>
+      <url>https://repository.apache.org/snapshots</url>
       <releases>
         <enabled>false</enabled>
       </releases>
     </repository>
   </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>apache.snapshots</id>
-      <name>Apache Snapshot Repository</name>
-      <url>http://repository.apache.org/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-    </pluginRepository>
-  </pluginRepositories>
 
   <build>
     <pluginManagement>

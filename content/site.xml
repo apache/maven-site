@@ -44,7 +44,6 @@ under the License.
   
   <body>
     <breadcrumbs>
-      <item name="Apache" href="http://www.apache.org/" /><!-- TODO remove when parent site.xml refers to https -->
       <item name="Maven"  href="https://maven.apache.org/index.html" />
     </breadcrumbs>
 
