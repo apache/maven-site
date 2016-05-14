@@ -35,41 +35,47 @@ Introduction to the Standard Directory Layout
  Maven. Please try to conform to this structure as much as possible; however, if you can't these settings can
  be overridden via the project descriptor.
 
-*--------------------------------+-----------------------------------------------+
-| <<<src/main/java>>>            | Application/Library sources
-*--------------------------------+-----------------------------------------------+
-| <<<src/main/resources>>>       | Application/Library resources
-*--------------------------------+-----------------------------------------------+
-| <<<src/main/filters>>>         | Resource filter files
-*--------------------------------+-----------------------------------------------+
-| <<<src/main/webapp>>>          | Web application sources
-*--------------------------------+-----------------------------------------------+
-| <<<src/test/java>>>            | Test sources
-*--------------------------------+-----------------------------------------------+
-| <<<src/test/resources>>>       | Test resources
-*--------------------------------+-----------------------------------------------+
-| <<<src/test/filters>>>         | Test resource filter files
-*--------------------------------+-----------------------------------------------+
-| <<<src/it>>>                   | Integration Tests (primarily for plugins)
-*--------------------------------+-----------------------------------------------+
-| <<<src/assembly>>>             | Assembly descriptors
-*--------------------------------+-----------------------------------------------+
-| <<<src/site>>>                 | Site
-*--------------------------------+-----------------------------------------------+
-| <<<LICENSE.txt>>>              | Project's license
-*--------------------------------+-----------------------------------------------+
-| <<<NOTICE.txt>>>               | Notices and attributions required by libraries that the project depends on
-*--------------------------------+-----------------------------------------------+
-| <<<README.txt>>>               | Project's readme
-*--------------------------------+-----------------------------------------------+
+*-----------------------------------+-----------------------------------------------+
+| <<<src/main/java>>>               | Application/Library sources
+*-----------------------------------+-----------------------------------------------+
+| <<<src/main/resources>>>          | Application/Library resources
+*-----------------------------------+-----------------------------------------------+
+| <<<src/main/filtered-resources>>> | Application/Library resources which are filtered. 
+|                                   | (Starting with Maven 3.4.0 not yet released.)
+*-----------------------------------+-----------------------------------------------+
+| <<<src/main/filters>>>            | Resource filter files
+*-----------------------------------+-----------------------------------------------+
+| <<<src/main/webapp>>>             | Web application sources
+*-----------------------------------+-----------------------------------------------+
+| <<<src/test/java>>>               | Test sources
+*-----------------------------------+-----------------------------------------------+
+| <<<src/test/resources>>>          | Test resources
+*-----------------------------------+-----------------------------------------------+
+| <<<src/test/filtered-resources>>> | Test resources which are filtered by default.
+|                                   | (Starting with Maven 3.4.0 not yet released.)
+*-----------------------------------+-----------------------------------------------+
+| <<<src/test/filters>>>            | Test resource filter files
+*-----------------------------------+-----------------------------------------------+
+| <<<src/it>>>                      | Integration Tests (primarily for plugins)
+*-----------------------------------+-----------------------------------------------+
+| <<<src/assembly>>>                | Assembly descriptors
+*-----------------------------------+-----------------------------------------------+
+| <<<src/site>>>                    | Site
+*-----------------------------------+-----------------------------------------------+
+| <<<LICENSE.txt>>>                 | Project's license
+*-----------------------------------+-----------------------------------------------+
+| <<<NOTICE.txt>>>                  | Notices and attributions required by libraries that the project depends on
+*-----------------------------------+-----------------------------------------------+
+| <<<README.txt>>>                  | Project's readme
+*-----------------------------------+-----------------------------------------------+
 
- At the top level files descriptive of the project: a <<<pom.xml>>> file (and any properties,
- <<<maven.xml>>> or <<<build.xml>>> if using Ant). In addition, there are textual documents meant
- for the user to be able to read immediately on receiving the source: <<<README.txt>>>,
- <<<LICENSE.txt>>>, etc.
+
+ At the top level files descriptive of the project: a <<<pom.xml>>> file 
+ In addition, there are textual documents meant for the user to be able to 
+ read immediately on receiving the source: <<<README.txt>>>, <<<LICENSE.txt>>>, etc.
 
  There are just two subdirectories of this structure: <<<src>>> and <<<target>>>. The only other
- directories that would be expected here are metadata like <<<CVS>>> or <<<.svn>>>, and any
+ directories that would be expected here are metadata like <<<CVS>>>, <<<.git>>> or <<<.svn>>>, and any
  subprojects in a multiproject build (each of which would be laid out as above).
 
  The <<<target>>> directory is used to house all output of the build.
