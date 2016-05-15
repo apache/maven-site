@@ -226,7 +226,7 @@ mvn exec:java@second-cli
 
 So now you can define more than one configuration for command line executions.
    
- * The Maven team has decided to [drop support for Win9x in launch scripts](https://jira.codehaus.org/browse/MNG-5776)
+ * The Maven team has decided to [drop support for Win9x in launch scripts](https://issues.apache.org/jira/browse/MNG-5776)
    at long last. Yeah.
 
 
@@ -241,10 +241,10 @@ and migrated afterwards to the Apache Maven project](http://blog.soebes.de/blog/
 [5]: ../../docs/history.html
 
 [maven-toolchains-plugin]: http://maven.apache.org/plugins/maven-toolchains-plugin/
-[MNG-3891]: https://jira.codehaus.org/browse/MNG-3891
-[MNG-5745]: https://jira.codehaus.org/browse/MNG-5745
-[MNG-5754]: https://jira.codehaus.org/browse/MNG-5754
-[MNG-5771]: https://jira.codehaus.org/browse/MNG-5771
-[MNG-5767]: https://jira.codehaus.org/browse/MNG-5767
-[MNG-5768]: https://jira.codehaus.org/browse/MNG-5768
-[MNG-5780]: https://jira.codehaus.org/browse/MNG-5780
+[MNG-3891]: https://issues.apache.org/jira/browse/MNG-3891
+[MNG-5745]: https://issues.apache.org/jira/browse/MNG-5745
+[MNG-5754]: https://issues.apache.org/jira/browse/MNG-5754
+[MNG-5771]: https://issues.apache.org/jira/browse/MNG-5771
+[MNG-5767]: https://issues.apache.org/jira/browse/MNG-5767
+[MNG-5768]: https://issues.apache.org/jira/browse/MNG-5768
+[MNG-5780]: https://issues.apache.org/jira/browse/MNG-5780

@@ -181,7 +181,7 @@ File path = new File( new URI( url.toExternalForm() ) );
   class accepts malformed URLs which will make the constructor of <<<URI>>> throw an exception. And indeed, class
   loaders from Sun JREs up to Java 1.4 will deliver malformed URLs when queried for a resource. Likewise, the class
   loaders employed by Maven 2.x deliver malformed resource URLs regardless of the JRE version (see
-  {{{http://jira.codehaus.org/browse/MNG-3607}MNG-3607}}).
+  {{{https://issues.apache.org/jira/browse/MNG-3607}MNG-3607}}).
 
   For all these reasons, it is recommended to use
   <<<{{{http://commons.apache.org/io/api-release/org/apache/commons/io/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
@@ -462,7 +462,7 @@ public MyMojo extends AbstractMojo
   Up to Maven 2.0.5, version 1.1 of the artifact <<<plexus-utils>>> was included in the Maven core class loader which
   is shared with the plugin class realm. This effectively prevented plugins from using another/newer version of
   <<<plexus-utils>>>. This has been solved starting with Maven 2.0.6 by shading (most of) the classes from
-  <<<plexus-utils>>> (see {{{http://jira.codehaus.org/browse/MNG-2892}MNG-2892}}).
+  <<<plexus-utils>>> (see {{{https://issues.apache.org/jira/browse/MNG-2892}MNG-2892}}).
 
   In short, plugins that strictly require a newer version of <<<plexus-utils>>> also require Maven 2.0.6 as a minimum.
   Hence, a POM snippet for a Maven plugin like shown below is misleading:
