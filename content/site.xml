@@ -29,7 +29,7 @@ under the License.
   <skin><!-- TODO remove when CMS doesn't have any issue with parent site.xml download... -->
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-fluido-skin</artifactId>
-    <version>1.5</version>
+    <version>1.6-SNAPSHOT</version>
   </skin>
 
   <custom>
