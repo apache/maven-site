@@ -68,7 +68,7 @@ Guide to generating sources
  {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
  and will eventually hit the <<<generate-sources>>> phase and see you have a plugin configured that
  wants to participate in that phase and the ANTLR4 Maven Plugin is executed with
- your given configuration. Furthermore during the compile you can observer that
+ your given configuration. Furthermore during the compile you can observe that
  all the generated code (from your grammar files) will automatically being compiled 
  without supplemental configuration.
 
