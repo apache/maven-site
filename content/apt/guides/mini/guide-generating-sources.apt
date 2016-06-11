@@ -2,8 +2,10 @@
  Guide to generating Sources
  ------
  Jason van Zyl
+ Karl Heinz Marbaise
  ------
  2005-10-12
+ 2016-06-11
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -29,15 +31,12 @@
 Guide to generating sources
 
  Let's run though a short example to try and help. To generate sources you must first have a plugin that
- participates in the <<<generate-sources>>> phase like the Antlr plugin:
+ participates in the <<<generate-sources>>> phase 
+ like the {{{http://www.antlr.org/api/maven-plugin/latest/}ANTLR4 Maven Plugin}}.
 
-%{snippet|id=generate-sources-0|url=http://svn.codehaus.org/mojo/trunk/mojo/antlr-maven-plugin/src/main/java/org/codehaus/mojo/antlr/AntlrPlugin.java}
-
- The first two lines say "I want to be fit into the generate-sources
- phase and my 'handle' is generate".
-
- So this is all fine and dandy, we have a plugin that wants to generate some sources from a Antlr grammar but how
- do we use it. You need to specify that you want to use it in your POM:
+ So this is all fine and dandy, we have a plugin that wants to generate some
+ sources from a Antlr4 grammar but how do we use it. You need to specify that
+ you want to use it in your POM:
 
 +----+
 
@@ -46,16 +45,14 @@ Guide to generating sources
   <build>
     <plugins>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-antlr-plugin</artifactId>
-        <version>2.0-beta-1</version>
-        <configuration>
-          <grammars>java.g</grammars>
-        </configuration>
+        <groupId>org.antlr</groupId>
+        <artifactId>antlr4-maven-plugin</artifactId>
+        <version>4.5.3</version>
         <executions>
           <execution>
+            <id>antlr</id>
             <goals>
-              <goal>generate</goal>
+              <goal>antlr4</goal>
             </goals>
           </execution>
         </executions>
@@ -67,8 +64,14 @@ Guide to generating sources
 
 +----+
 
- If you then type "mvn compile" Maven will walk through the {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
+ If you then type <<<mvn compile>>> Maven will walk through the 
+ {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
  and will eventually hit the <<<generate-sources>>> phase and see you have a plugin configured that
- wants to participate in that phase and the Antlr plugin is executed with
- your given configuration.
+ wants to participate in that phase and the ANTLR4 Maven Plugin is executed with
+ your given configuration. Furthermore during the compile you can observer that
+ all the generated code (from your grammar files) will automatically being compiled 
+ without supplemental configuration.
+
+
+ []
 
