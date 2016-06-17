@@ -4,7 +4,7 @@
  Eric Redmond, et al.
  Karl Heinz Marbaise
  -----
- 2015-10-13
+ 2016-06-17
  -----
 
 POM Reference
@@ -374,7 +374,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
       It is in the runtime and test classpaths, but not the compile classpath.
 
     * <<test>> - this scope indicates that the dependency is not required for normal use of the application, and
-      is only available for the test compilation and execution phases.
+      is only available for the test compilation and execution phases. It is not transitive.
 
     * <<system>> - this scope is similar to <<<provided>>> except that you have to provide the JAR which contains
       it explicitly. The artifact is always available and is not looked up in a repository.

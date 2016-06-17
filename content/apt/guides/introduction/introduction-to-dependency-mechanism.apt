@@ -3,8 +3,10 @@
  ------
  Brett Porter
  Trygve Laugstol
+ Karl Heinz Marbaise
  ------
  2005-10-12
+ 2016-06-17
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -125,7 +127,7 @@ Introduction to the Dependency Mechanism
 
  * <<test>>\
    This scope indicates that the dependency is not required for normal use of the application, and
-   is only available for the test compilation and execution phases.
+   is only available for the test compilation and execution phases. This scope is not transitive.
 
  * <<system>>\
    This scope is similar to <<<provided>>> except that you have to provide the JAR
@@ -767,6 +769,8 @@ Introduction to the Dependency Mechanism
      keeps the versions of artifacts from changing from one build to the next).
 
 * {System Dependencies}
+
+ <<<Important note: This is marked deprecated.>>>
 
  Dependencies with the scope <system> are always available and are not looked
  up in repository. They are usually used to tell Maven about dependencies which
