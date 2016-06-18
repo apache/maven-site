@@ -4,7 +4,7 @@
  Jason van Zyl
  Karl Heinz Marbaise
  -----
- 2015-04-10
+ 2016-06-18
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -32,7 +32,7 @@ Performing a Maven Project Release
 
  Be sure that:
 
-  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{http://subversion.apache.org/}http://subversion.apache.org/}}.
+  * you have a Subversion 1.5+ client installed and on your shell's path. See {{{https://subversion.apache.org/}https://subversion.apache.org/}}.
 
   * you have JDK 5 installed and on your shell's path.
 
@@ -40,7 +40,7 @@ Performing a Maven Project Release
 
   * you must use Maven 2.2.1+, as Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.
   
-  * follow Apache environment configuration steps outlined at: {{{http://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
+  * follow Apache environment configuration steps outlined at: {{{https://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
 
   []
 
@@ -70,7 +70,7 @@ Performing a Maven Project Release
 
 * Stage the Release
 
- [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
+ [[1]] Follow the release preparation, staging and closing the repository steps outlined in {{{https://www.apache.org/dev/publishing-maven-artifacts.html#staging-maven}Staging a Maven release}}. 
 
  [[2]] Stage the latest documentation as explained in {{{../website/deploy-component-reference-documentation.html}deploying Maven components reference documentation}}.
  
@@ -99,10 +99,10 @@ Source release checksum(s):
 [NAME-OF]-source-release.zip sha1: [SHA1SUM]
 
 Staging site:
-http://maven.apache.org/plugins-archives/maven-XXX-plugin-LATEST/
+https://maven.apache.org/plugins-archives/maven-XXX-plugin-LATEST/
 
 Guide to testing staged releases:
-http://maven.apache.org/guides/development/guide-testing-releases.html
+https://maven.apache.org/guides/development/guide-testing-releases.html
 
 Vote open for 72 hours.
 
@@ -120,7 +120,7 @@ Vote open for 72 hours.
 
 * Check the vote results
 
- Copied from {{{http://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
+ Copied from {{{https://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
 
 +-----+
 Votes on whether a package is ready to be released use majority approval
@@ -132,7 +132,7 @@ The specifics of the process may vary from project to project,
 but the 'minimum quorum of three +1 votes' rule is universal.
 +-----+
 
-  The list of PMC members is available at {{http://people.apache.org/committers-by-project.html#maven-pmc}}.
+  The list of PMC members is available at {{https://people.apache.org/committers-by-project.html#maven-pmc}}.
 
   Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
 
@@ -153,11 +153,11 @@ I will promote the artifacts to the central repo.
 +-----+
 
   If the vote is unsuccessful, the process will need to be restarted. Be sure to drop your staging repository as
-  described in {{{http://www.apache.org/dev/publishing-maven-artifacts.html#drop}Dropping a Repo}}.
+  described in {{{https://www.apache.org/dev/publishing-maven-artifacts.html#drop}Dropping a Repo}}.
 
 * Copy the source release to the Apache Distribution Area
 
-  The official Apache release is the 'source-release' bundle. All releases must be copied to {{{http://www.apache.org/dist/maven/}the official 
+  The official Apache release is the 'source-release' bundle. All releases must be copied to {{{https://www.apache.org/dist/maven/}the official 
   release area}}. The release area is maintained with svnsubpub. To deliver a release, you add it to 
   {{{https://dist.apache.org/repos/dist/release/maven}the subversion repository for the dist area}}: add the release, its signature, and corresponding
   MD5 files. Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}https://issues.apache.org/jira/browse/INFRA-5945}}).
@@ -170,7 +170,7 @@ wagon/wagon-2.2-source-release.zip.asc
 wagon/wagon-2.2-source-release.zip.md5
 +--------+
 
-  You should also run 'svn rm' as needed to clear out older releases.  As per {{{http://www.apache.org/dev/release.html#where-do-releases-go}the policy}},
+  You should also run 'svn rm' as needed to clear out older releases.  As per {{{https://www.apache.org/dev/release.html#where-do-releases-go}the policy}},
   only the latest release on a branch should stay in the main dist areas. So long as the previous release is at least a day old, the automatic archiver
   will have copied it to the archive.
 
@@ -182,7 +182,7 @@ wagon/wagon-2.2-source-release.zip.md5
  Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
  be available to all users.
 
- [[1]] See {{{http://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
+ [[1]] See {{{https://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
 
  [[2]] Deploy the current website
  
@@ -200,14 +200,14 @@ wagon/wagon-2.2-source-release.zip.md5
 
  [[4]] Wait for everything to sync
 
-   [[a]] Sync to {{{http://repo.maven.apache.org/maven2/org/apache/maven/}Maven Central}}
+   [[a]] Sync to {{{https://repo.maven.apache.org/maven2/org/apache/maven/}Maven Central}}
 
      The sync into central staging from repository.apache.org occurs every 4 hours. 
      There is a separate hourly schedule that runs which pushes from staging to the other central machines, and then updates the indexes.
 
    [[b]] Sync to Maven Website
 
-     If the project you are releasing doesn't yet use svnpubsub for site deployment, the deployment of the Maven website will {{{http://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
+     If the project you are releasing doesn't yet use svnpubsub for site deployment, the deployment of the Maven website will {{{https://www.apache.org/dev/release-publishing.html#sync-delay}take an hour or so to sync}}.
 
    []
 
@@ -250,7 +250,7 @@ The Apache Maven team is pleased to announce the release of the Apache Maven XXX
 
 This plugin (insert short description of the plugin's purpose).
 
-http://maven.apache.org/plugins/maven-XXX-plugin/
+https://maven.apache.org/plugins/maven-XXX-plugin/
 
 You should specify the version in your project's plugin configuration:
 
@@ -262,7 +262,7 @@ You should specify the version in your project's plugin configuration:
 
 You can download the appropriate sources etc. from the download page:
 
-http://maven.apache.org/plugins/maven-XXX-plugin/download.cgi
+https://maven.apache.org/plugins/maven-XXX-plugin/download.cgi
 
 Release Notes - Maven XXX Plugin - Version Y.Z
 
