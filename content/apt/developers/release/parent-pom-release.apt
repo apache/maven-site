@@ -93,7 +93,7 @@ mvn -f site-pom.xml scm-publish:publish-scm
 Hi,
 
 Changes since the last release:
-http://svn.apache.org/viewvc/maven/pom/tags/<TAG>/pom.xml?r1=HEAD&r2=<REVISION-OF-LAST-RELEASE>&diff_format=h
+https://svn.apache.org/viewvc/maven/pom/tags/<TAG>/pom.xml?r1=HEAD&r2=<REVISION-OF-LAST-RELEASE>&diff_format=h
 
 Staging repo:
 ...

@@ -176,7 +176,7 @@ public class TrivialMavenVerifierTest extends TestCase
          * The verifier also supports beanshell scripts for
          * verification of more complex scenarios. There are
          * plenty of examples in the core-it tests here:
-         * http://svn.apache.org/repos/asf/maven/core-integration-testing/trunk
+         * https://svn.apache.org/repos/asf/maven/core-integration-testing/trunk
          */
     }
 +-----+
@@ -189,7 +189,7 @@ public class TrivialMavenVerifierTest extends TestCase
  to invoke Maven and to provide some BeanShell/Groovy tests. Tests written in
  this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
 
- You can take a look at the {{{http://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/}maven-install-plugin}}
+ You can take a look at the {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/}maven-install-plugin}}
  how there are integration tests are written.
 
 +-----+

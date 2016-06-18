@@ -84,7 +84,7 @@ Guide to uploading artifacts to the Central Repository
   </licenses>
 
   <scm>
-    <url>http://svn.apache.org/viewvc/maven</url>
+    <url>https://svn.apache.org/viewvc/maven</url>
   </scm>
 
   <dependencies>

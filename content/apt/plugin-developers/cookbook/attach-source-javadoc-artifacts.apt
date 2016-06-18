@@ -64,13 +64,13 @@ attach-source-javadoc
 
   We execute the <<<{{{../../plugins/maven-source-plugin/jar-mojo.html}source:jar}}>>> goal from the source plugin during the <<<package>>> phase.
 
-%{snippet|id=source|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc/pom.xml}
+%{snippet|id=source|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc/pom.xml}
 
 ** Configuring Maven Javadoc Plugin
 
   Same thing for the <<<{{{../../plugins/maven-javadoc-plugin/jar-mojo.html}javadoc:jar}}>>> goal from the javadoc plugin.
 
-%{snippet|id=javadoc|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc/pom.xml}
+%{snippet|id=javadoc|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc/pom.xml}
 
 ** Running Maven
 
@@ -86,7 +86,7 @@ mvn package
 
 * Resources
 
-  * Source code: {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc}http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc}}
+  * Source code: {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc}https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/attach-source-javadoc}}
 
   * {{{../../plugins/maven-javadoc-plugin/} Maven Javadoc Plugin}}
 

@@ -64,18 +64,18 @@ attach-source-javadoc
   To generate an assembly, we need to configure an assembly descriptor called <<<bin.xml>>> in the <<<src/assembly>>> directory.
   Firstly, we specify the wanted formats, i.e.
 
-%{snippet|id=formats|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/src/assembly/bin.xml}
+%{snippet|id=formats|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/src/assembly/bin.xml}
 
   And the wanted files sets, i.e.
 
-%{snippet|id=fileSets|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/src/assembly/bin.xml}
+%{snippet|id=fileSets|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/src/assembly/bin.xml}
 
 ** Configuring Maven Assembly Plugin
 
   We execute the <<<{{{../../plugins/maven-assembly-plugin/single-mojo.html}assembly:single}}>>> goal from the Assembly plugin during the
   <<<package>>> phase.
 
-%{snippet|id=assembly|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/pom.xml}
+%{snippet|id=assembly|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly/pom.xml}
 
 ** Running Maven
 
@@ -87,7 +87,7 @@ mvn package
 
 * Resources
 
-  * Source code: {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly}http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly}}
+  * Source code: {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly}https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-assembly}}
 
   * {{{../../plugins/maven-assembly-plugin/}Maven Assembly Plugin }}
 

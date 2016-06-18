@@ -62,13 +62,13 @@ SCM-Revision: 613393
 
   We configure this plugin as suggested in the {{{http://www.mojohaus.org/buildnumber-maven-plugin/usage.html}Mojo Buildnumber Plugin usage}} page.
 
-%{snippet|id=buildnumber|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision/pom.xml}
+%{snippet|id=buildnumber|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision/pom.xml}
 
 ** Configuring Maven Jar Plugin
 
   The last configuration is to customize the default Manifest with a new entry for the SCM revision.
 
-%{snippet|id=jar|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision/pom.xml}
+%{snippet|id=jar|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision/pom.xml}
 
 ** Running Maven
 
@@ -86,7 +86,7 @@ mvn package
 
 * Resources
 
-  * Source code: {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision}http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision}}
+  * Source code: {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision}https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-svn-revision}}
 
   * {{{../../plugins/maven-jar-plugin/} Maven Jar Plugin}}
 

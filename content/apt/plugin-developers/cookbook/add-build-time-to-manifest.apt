@@ -71,7 +71,7 @@ Build-Time: ${build.time}
   The value $\{build.time\} from the <<<MANIFEST.MF>>> will be filtering by Maven due to the \<filtering\> element.
   The value is taken from the file <<<$\{basedir\}/target/filter.properties>>>, listed by the \<filter\> element, i.e.
 
-%{snippet|id=pom|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
+%{snippet|id=pom|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
 
 ** Configuring Maven Antrun Plugin
 
@@ -79,13 +79,13 @@ Build-Time: ${build.time}
   {{{http://ant.apache.org/manual/CoreTasks/tstamp.html}\<tstamp\>}} and
   {{{http://ant.apache.org/manual/CoreTasks/echo.html}\<echo\>}}.
 
-%{snippet|id=antrun|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
+%{snippet|id=antrun|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
 
 ** Configuring Maven Jar Plugin
 
   The last configuration is to set the <<<defaultManifestFile>>> to <<<true>>> to enable it.
 
-%{snippet|id=jar|url=http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
+%{snippet|id=jar|url=https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time/pom.xml}
 
 ** Running Maven
 
@@ -101,7 +101,7 @@ mvn package
 
 * Resources
 
-  * Source code: {{{http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time}http://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time}}
+  * Source code: {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time}https://svn.apache.org/repos/asf/maven/sandbox/trunk/site/cookbook/generate-build-time}}
 
   * {{{../../plugins/maven-antrun-plugin/} Maven Antrun Plugin}}
 
