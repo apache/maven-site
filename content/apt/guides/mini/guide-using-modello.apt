@@ -29,7 +29,7 @@
 
 Guide to using Modello
 
- {{{http://codehaus-plexus.github.io/modello/}Modello}} is a tool for generating resources from a simple model. From a
+ {{{https://codehaus-plexus.github.io/modello/}Modello}} is a tool for generating resources from a simple model. From a
  simple model you can generate things like:
 
  * Java sources

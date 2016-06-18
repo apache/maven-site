@@ -47,7 +47,7 @@ Developing Maven
 
 * Where's the source?
 
-   See {{{/source-repository.html}http://maven.apache.org/source-repository.html}} for information.
+   See {{{/source-repository.html}https://maven.apache.org/source-repository.html}} for information.
    The Maven project uses a Git for some things, and Subversion for others, and this 
    page tracks the situation.
  
@@ -148,14 +148,14 @@ And remember, your contributions are always welcome!
  is like any other modern IoC container, using field injection of both requirements and configuration. All
  core Maven functionality are Plexus components.
 
- You can {{{http://codehaus-plexus.github.io/}read more about Plexus}}.
+ You can {{{https://codehaus-plexus.github.io/}read more about Plexus}}.
 
  * <<Modello>>
 
  Modello is a simple tool for representing an object model and generate code and resources from the model. Maven is
  using Modello to generate all Java objects, XML readers and writers, XML Schema and HTML documentation.
 
- You can {{{http://codehaus-plexus.github.io/modello/}read more about Modello}}.
+ You can {{{https://codehaus-plexus.github.io/modello/}read more about Modello}}.
 
  * <<Mojo>>
 
