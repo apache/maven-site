@@ -82,7 +82,7 @@ The shared components are currently under transition to Maven 3.X only component
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.6          | 2015-06-24        | Used to run Maven builds as part of tests. | {{{https://svn.apache.org/repos/asf/maven/shared/trunk/maven-verifier/}SVN}} | {{{https://issues.apache.org/jira/browse/MSHARED/component/13281}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/scm/} <<<maven-scm>>>}}                                                | 1.9.4        | 2015-04-01        | Generic API to SCM systems.               | {{{git://git.apache.org/maven-scm.git}GIT}} | {{{https://issues.apache.org/jira/browse/SCM}JIRA}}
+| {{{/scm/} <<<maven-scm>>>}}                                                | 1.9.5        | 2016-07-01        | Generic API to SCM systems.               | {{{git://git.apache.org/maven-scm.git}GIT}} | {{{https://issues.apache.org/jira/browse/SCM}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 
 
