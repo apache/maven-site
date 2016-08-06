@@ -131,7 +131,7 @@ Guide to Using Toolchains
   configured in our <<<pom.xml>>> above executes, it will see that a JDK toolchain is set in the MavenSession and will thereby use
   that toolchain (that would be the JDK installed at <<</path/to/jdk/1.5>>> for our example) to compile the sources.
 
-  Starting with {{{./docs/3.3.1/release-notes.html}Maven 3.3.1}} you can put the <<<toolchains.xml>>> 
+  Starting with {{{/docs/3.3.1/release-notes.html}Maven 3.3.1}} you can put the <<<toolchains.xml>>> 
   file wherever you like by using the <<<--global-toolchains file>>> option but it is recommended to 
   locate it into <<<$\{user.home\}/.m2/>>>. 
 
