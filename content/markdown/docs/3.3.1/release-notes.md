@@ -69,6 +69,9 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 * Maven has been improved to read the `toolchains.xml` file [during initialization][MNG-5754] instead
   of waiting till [maven-toolchains-plugin][maven-toolchains-plugin] will read it.
 
+* Maven has a new option to handle global toolchains file `-gt file` or `--global-toolchains file`
+  in the spirit of global settings file[MNG-3891][MNG-3891].
+
 ### Core Extensions
 
 * Core Extension mechanism has [been improved][MNG-5771] to make 
