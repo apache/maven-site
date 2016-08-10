@@ -176,7 +176,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-  The profile below will activate the profile when the system property "debug" is specified
+  The profile below will be activated when the system property "debug" is specified
   with any value:
 
 +---+
@@ -185,6 +185,39 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
     <activation>
       <property>
         <name>debug</name>
+      </property>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+  
+  The following profile will be activated when the system property "debug" is not defined
+  at all:
+
++---+
+<profiles>
+  <profile>
+    <activation>
+      <property>
+        <name>!debug</name>
+      </property>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+  
+  The following profile will be activated when the system property "debug" is defined
+  with a value which is not "true".
+
++---+
+<profiles>
+  <profile>
+    <activation>
+      <property>
+        <name>debug</name>
+        <value>!true</value>
       </property>
     </activation>
     ...
