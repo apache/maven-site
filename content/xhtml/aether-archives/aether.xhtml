@@ -10,7 +10,7 @@
 <tr><th></th><th>current Eclipse</th><th>plan at Apache Maven for Maven 3.x</th></tr>
 <tr><th>Name</th>
     <td>Aether</td>
-    <td><b>Artifact Resolver</b></td></tr>
+    <td><b>Maven Artifact Resolver</b></td></tr>
 <tr><th>Site</th>
     <td><a href="https://projects.eclipse.org/projects/technology.aether">https://projects.eclipse.org/projects/technology.aether</a></td>
     <td>https://maven.apache.org/resolver/<br/>temporary <a href="http://maven.apache.org/aether-archives/aether-LATEST/">https://maven.apache.org/aether-archives/aether-LATEST/</a></td></tr>
@@ -18,10 +18,11 @@
     <td><pre><a href="http://git.eclipse.org/c/aether/aether-core.git/">aether-core.git</a>
 <a href="http://git.eclipse.org/c/aether/aether-ant.git/">aether-ant.git</a>
 <a href="http://git.eclipse.org/c/aether/aether-demo.git/">aether-demo.git</a></pre></td>
-    <td><a href="https://issues.apache.org/jira/browse/MNG-6008">MNG-6008</a><br/><code>maven-resolver.git</code><br/>temporary <code><a href="https://git-wip-us.apache.org/repos/asf?p=maven-aether.git">maven-aether.git</a></code></td></tr>
+    <td><a href="https://issues.apache.org/jira/browse/MNG-6008">MNG-6008</a> one unique git repo with 3 independant <b>master</b>, <b>ant-tasks</b> and <b>demo</b> branches<br/>
+        <code>maven-resolver.git</code> (temporary <code><a href="https://git-wip-us.apache.org/repos/asf?p=maven-aether.git">maven-aether.git</a></code>)</td></tr>
 <tr><th>central groupId</th>
     <td><pre><a href="https://repo.maven.apache.org/maven2/org/eclipse/aether/">org.eclipse.aether</a></pre></td>
-    <td><pre><a href="https://repo.maven.apache.org/maven2/org/apache/maven/artifact/">org.apache.maven.artifact</a>.resolver</pre></td></tr>
+    <td><pre><a href="https://repo.maven.apache.org/maven2/org/apache/maven/">org.apache.maven</a>.resolver</pre></td></tr>
 <tr><th>artifactIds</th>
     <td><pre>aether
 aether-api
@@ -29,12 +30,12 @@ aether-impl
 aether-spi
 aether-util
 aether-transport-*</pre></td>
-    <td><pre>resolver
-resolver-api
-resolver-impl
-resolver-spi
-resolver-util
-resolver-transport-*</pre></td></tr>
+    <td><pre>maven-resolver
+maven-resolver-api
+maven-resolver-impl
+maven-resolver-spi
+maven-resolver-util
+maven-resolver-transport-*</pre></td></tr>
 <tr><th>OSGi Bundles</th>
     <td><pre>org.eclipse.aether.api
 org.eclipse.aether.impl
