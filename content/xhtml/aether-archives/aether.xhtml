@@ -1,0 +1,102 @@
+<html>
+<body>
+<h1>Aether import plan to Maven: WIP</h1>
+
+<h2>IP Clearance</h2>
+<p>Tracked on <a href="http://incubator.apache.org/ip-clearance/maven-aether.html">Incubator IP Clearance </a> and through <a href="https://issues.apache.org/jira/browse/MNG-6007">MNG-6007</a>.</p>
+
+<h2>Code integration</h2>
+<table border="1">
+<tr><th></th><th>current Eclipse</th><th>plan at Apache Maven for Maven 3.x</th></tr>
+<tr><th>Name</th>
+    <td>Aether</td>
+    <td><b>Artifact Resolver</b></td></tr>
+<tr><th>Site</th>
+    <td><a href="https://projects.eclipse.org/projects/technology.aether">https://projects.eclipse.org/projects/technology.aether</a></td>
+    <td>https://maven.apache.org/resolver/<br/>temporary <a href="http://maven.apache.org/aether-archives/aether-LATEST/">https://maven.apache.org/aether-archives/aether-LATEST/</a></td></tr>
+<tr><th>SCM repo</th>
+    <td><pre><a href="http://git.eclipse.org/c/aether/aether-core.git/">aether-core.git</a>
+<a href="http://git.eclipse.org/c/aether/aether-ant.git/">aether-ant.git</a>
+<a href="http://git.eclipse.org/c/aether/aether-demo.git/">aether-demo.git</a></pre></td>
+    <td><a href="https://issues.apache.org/jira/browse/MNG-6008">MNG-6008</a><br/><code>maven-resolver.git</code><br/>temporary <code><a href="https://git-wip-us.apache.org/repos/asf?p=maven-aether.git">maven-aether.git</a></code></td></tr>
+<tr><th>central groupId</th>
+    <td><pre><a href="https://repo.maven.apache.org/maven2/org/eclipse/aether/">org.eclipse.aether</a></pre></td>
+    <td><pre><a href="https://repo.maven.apache.org/maven2/org/apache/maven/artifact/">org.apache.maven.artifact</a>.resolver</pre></td></tr>
+<tr><th>artifactIds</th>
+    <td><pre>aether
+aether-api
+aether-impl
+aether-spi
+aether-util
+aether-transport-*</pre></td>
+    <td><pre>resolver
+resolver-api
+resolver-impl
+resolver-spi
+resolver-util
+resolver-transport-*</pre></td></tr>
+<tr><th>OSGi Bundles</th>
+    <td><pre>org.eclipse.aether.api
+org.eclipse.aether.impl
+org.eclipse.aether....</pre></td>
+    <td>no OSGi bundles in Apache Maven</td></tr>
+<tr><th>P2 repo</th>
+    <td><a href="http://download.eclipse.org/aether/aether-core/releases/">http://download.eclipse.org/aether/aether-core/releases/</a>
+<br/><a href="http://download.eclipse.org/aether/maven-aether-provider/releases/">http://download.eclipse.org/aether/maven-aether-provider/releases/</a></td>
+    <td>no P2 repo</td></tr>
+<tr><th>API java packages</th>
+    <td><pre><a href="http://download.eclipse.org/aether/aether-core/1.0.0/apidocs/">org.eclipse.aether...</a></pre></td>
+    <td><b>Keep packages in Maven 3.x to maintain compatibility for some plugins or extensions using Aether API.</b></td></tr>
+<tr><th>Impl java packages</th>
+    <td><pre>org.eclipse.aether.impl.*
+org.eclipse.aether.internal.*</pre></td>
+    <td>Same as API, even if nobody should rely on impl...</td></tr>
+<tr><th>SPI java packages</th>
+    <td><pre>org.eclipse.aether.spi.*</pre></td>
+    <td>Same as API (is it really used outside?)</td></tr>
+<tr><th>Util java packages</th>
+    <td><pre>org.eclipse.aether.util.*</pre></td>
+    <td>Same as API (is it really used outside?)</td></tr>
+<tr><th>Transport java packages</th>
+    <td><pre>org.eclipse.aether.transport.*</pre></td>
+    <td>Same as API (is it really used outside?)</td></tr>
+<tr><th>Ant Tasks</th>
+    <td>Aether Ant Tasks</td>
+    <td>Maven Artifact Resolver Ant Tasks</td></tr>
+<tr><th>Maven Provider (in core)</th>
+    <td><a href="http://maven.apache.org/ref/3.3.9/maven-aether-provider/">Maven Aether Provider</a></td>
+    <td>Maven Resolver Provider</td></tr>
+</table>
+
+<h2>Versions history</h2>
+<table border="1">
+<tr><th><a href="https://projects.eclipse.org/projects/technology.aether">Aether version</a></th>
+    <th><a href="http://maven.apache.org/docs/history.html">used in which Maven version</a></th></tr>
+<tr><td>Sonatype Aether 1.2</td>
+    <td><pre>2010-09-02 <a href="https://repo.maven.apache.org/maven2/org/apache/maven/maven-aether-provider/">3.0-beta-3</a></pre></td></tr>
+<tr><td>Sonatype Aether 1.7</td>
+    <td><pre>2010-10-08 <a href="http://maven.apache.org/ref/3.0/apache-maven/dependencies.html">3.0</a></pre></td></tr>
+<tr><td>Sonatype Aether 1.8</td>
+    <td><pre>2010-11-26 <a href="http://maven.apache.org/ref/3.0.1/apache-maven/dependencies.html">3.0.1</a></pre></td></tr>
+<tr><td>Sonatype Aether 1.9</td>
+    <td><pre>2011-01-12 <a href="http://maven.apache.org/ref/3.0.2/apache-maven/dependencies.html">3.0.2</a></pre></td></tr>
+<tr><td>Sonatype Aether 1.11</td>
+    <td><pre>2011-03-04 <a href="http://maven.apache.org/ref/3.0.3/apache-maven/dependencies.html">3.0.3</a></pre></td></tr>
+<tr><td>Sonatype Aether 1.13.1</td>
+    <td><pre>2012-01-20 <a href="http://maven.apache.org/ref/3.0.4/apache-maven/dependencies.html">3.0.4</a>
+2013-02-23 <a href="http://maven.apache.org/ref/3.0.5/apache-maven/dependencies.html">3.0.5</a></pre></td></tr>
+<tr><td>Eclipse Aether 0.9.0.M2</td>
+    <td><pre>2013-07-15 <a href="http://maven.apache.org/ref/3.1.0/apache-maven/dependencies.html">3.1.0</a>
+2013-10-04 <a href="http://maven.apache.org/ref/3.1.1/apache-maven/dependencies.html">3.1.1</a>
+2014-02-21 <a href="http://maven.apache.org/ref/3.2.1/apache-maven/dependencies.html">3.2.1</a>
+2014-06-26 <a href="http://maven.apache.org/ref/3.2.2/apache-maven/dependencies.html">3.2.2</a>
+2014-08-17 <a href="http://maven.apache.org/ref/3.2.3/apache-maven/dependencies.html">3.2.3</a></pre></td></tr>
+<tr><td>Eclipse Aether 1.0.0.v20140518</td>
+    <td><pre>2014-12-20 <a href="http://maven.apache.org/ref/3.2.5/apache-maven/dependencies.html">3.2.5</a></pre></td></tr>
+<tr><td>Eclipse Aether 1.0.2.v20150114</td>
+    <td><pre>2015-03-18 <a href="http://maven.apache.org/ref/3.3.1/apache-maven/dependencies.html">3.3.1</a>
+2015-04-28 <a href="http://maven.apache.org/ref/3.3.3/apache-maven/dependencies.html">3.3.3</a>
+2015-11-14 <a href="http://maven.apache.org/ref/3.3.9/apache-maven/dependencies.html">3.3.9</a></pre></td></tr>
+</table>
+</body>
+</html>
