@@ -510,20 +510,64 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   to a set of lifecycle stages. For example, if packaging is <<<jar>>>, then the
   <<<package>>> phase will execute the <<<jar:jar>>> goal. If the packaging is <<<pom>>>,
   the goal executed will be <<<site:attach-descriptor>>>. Now we may add values to the
-  parent POM, which will be inherited by its children. The elements in the parent POM
-  that are inherited by its children are:
+  parent POM, which will be inherited by its children. Most elements from the parent POM
+  are inherited by its children, including:
+
+    * groupId
+
+    * version
+
+    * description
+
+    * url
+
+    * inceptionYear
+
+    * organization
+
+    * licenses
+
+    * developers
+
+    * contributors
+
+    * mailingLists
+
+    * scm
+
+    * issueManagement
+
+    * ciManagement
+
+    * properties
+
+    * dependencyManagement
 
     * dependencies
 
-    * developers and contributors
+    * repositories
 
-    * plugin lists
+    * pluginRepositories
 
-    * reports lists
+    * build
 
-    * plugin executions with matching ids
+      * plugin executions with matching ids
 
-    * plugin configuration
+      * plugin configuration
+
+      * etc.
+
+    * reporting
+
+    * profiles
+
+  Notable elements which are <<<not>>> inherited include:
+
+    * artifactId
+
+    * name
+
+    * prerequisites
 
     []
 
