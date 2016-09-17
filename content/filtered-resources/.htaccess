@@ -9,6 +9,7 @@ Redirect /ref/current/ https://maven.apache.org/ref/${currentStableVersion}/
 Redirect /ref/current https://maven.apache.org/ref/${currentStableVersion}/
 
 Redirect Permanent /maven-v4_0_0.xsd https://maven.apache.org/xsd/maven-4.0.0.xsd
+Redirect Permanent /aether-archives/aether.html https://maven.apache.org/aether.html
 
 Redirect Permanent /ant-tasks.html https://maven.apache.org/ant-tasks/index.html
 Redirect Permanent /ant-tasks-release-notes.html https://maven.apache.org/ant-tasks/release-notes.html
