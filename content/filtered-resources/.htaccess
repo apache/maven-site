@@ -9,7 +9,6 @@ Redirect /ref/current/ https://maven.apache.org/ref/${currentStableVersion}/
 Redirect /ref/current https://maven.apache.org/ref/${currentStableVersion}/
 
 Redirect Permanent /maven-v4_0_0.xsd https://maven.apache.org/xsd/maven-4.0.0.xsd
-Redirect Permanent /aether-archives/aether.html https://maven.apache.org/aether.html
 
 Redirect Permanent /ant-tasks.html https://maven.apache.org/ant-tasks/index.html
 Redirect Permanent /ant-tasks-release-notes.html https://maven.apache.org/ant-tasks/release-notes.html
@@ -41,6 +40,7 @@ RedirectMatch ^/maven-repository-metadata/(.*)$ /ref/${currentStableVersion}/mav
 RedirectMatch ^/maven-settings/(.*)$ /ref/${currentStableVersion}/maven-settings/$1
 RedirectMatch ^/maven-settings-builder/(.*)$ /ref/${currentStableVersion}/maven-settings-builder/$1
 RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /archives/maven-1.x/plugins/$1
+RedirectMatch permanent ^/aether-archives/(.*)$ /aether.html
 
 RedirectMatch permanent ^/repository-manager/(.*)$ https://archiva.apache.org/$1
 RedirectMatch permanent ^/archiva(.*)$ https://archiva.apache.org$1
