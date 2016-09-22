@@ -208,8 +208,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
   
-  The following profile will be activated when the system property "debug" is defined
-  with a value which is not "true".
+  The following profile will be activated when the system property "debug" is not defined, 
+  or is defined with a value which is not "true".
 
 +---+
 <profiles>
@@ -223,6 +223,13 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
     ...
   </profile>
 </profiles>
++---+
+
+  To activate this you would type one of those on the command line:
+
++---+
+mvn groupId:artifactId:goal
+mvn groupId:artifactId:goal -Ddebug=false
 +---+
 
   The next example will trigger the profile when the system property
