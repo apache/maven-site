@@ -36,7 +36,7 @@ Guide to Creating Archetypes
  very simple artifact, that contains the project prototype you wish to create.
  An archetype is made up of:
 
- * an {{{archetype-archives/archetype-2.1/archetype-common/archetype.html}archetype descriptor}}
+ * an {{{/archetype-archives/archetype-2.1/archetype-common/archetype.html}archetype descriptor}}
   (<<<archetype.xml>>> in directory:
    <<<src/main/resources/META-INF/maven/>>>). It lists all the files that will be
    contained in the archetype and categorizes them so they can be processed
