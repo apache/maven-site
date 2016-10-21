@@ -1,29 +1,29 @@
 IndexOptions +SuppressIcon
 ErrorDocument 404 /errors/404.html
 
-Redirect Permanent /release-notes.html https://maven.apache.org/docs/history.html
+Redirect Permanent /release-notes.html /docs/history.html
 Redirect Permanent /download.html /download.cgi
-RedirectMatch permanent ^/(.*)/download.html$ https://maven.apache.org/$1/download.cgi
+RedirectMatch permanent ^/(.*)/download.html$ /$1/download.cgi
 
-Redirect /ref/current/ https://maven.apache.org/ref/${currentStableVersion}/
-Redirect /ref/current https://maven.apache.org/ref/${currentStableVersion}/
+Redirect /ref/current/ /ref/${currentStableVersion}/
+Redirect /ref/current /ref/${currentStableVersion}/
 
-Redirect Permanent /maven-v4_0_0.xsd https://maven.apache.org/xsd/maven-4.0.0.xsd
+Redirect Permanent /maven-v4_0_0.xsd /xsd/maven-4.0.0.xsd
 
-Redirect Permanent /ant-tasks.html https://maven.apache.org/ant-tasks/index.html
-Redirect Permanent /ant-tasks-release-notes.html https://maven.apache.org/ant-tasks/release-notes.html
+Redirect Permanent /ant-tasks.html /ant-tasks/index.html
+Redirect Permanent /ant-tasks-release-notes.html /ant-tasks/release-notes.html
 
-Redirect Permanent /guides/mini/guide-ibiblio-upload.html https://maven.apache.org/guides/mini/guide-central-repository-upload.html
-Redirect Permanent /guides/development/guide-m2-development.html https://maven.apache.org/guides/development/guide-maven-development.html
-Redirect Permanent /guides/development/guide-building-m2.html https://maven.apache.org/guides/development/guide-building-maven.html
-Redirect Permanent /faq.html https://maven.apache.org/general.html
-Redirect Permanent /developers/release/pmc-release-process.html https://maven.apache.org/developers/release/releasing.html
-Redirect Permanent /development-process.html https://maven.apache.org/archives/maven-1.x/development-process.html
-Redirect Permanent /welcome-to-new-committers.html https://maven.apache.org/developers/welcome-to-new-committers.html
+Redirect Permanent /guides/mini/guide-ibiblio-upload.html /guides/mini/guide-central-repository-upload.html
+Redirect Permanent /guides/development/guide-m2-development.html /guides/development/guide-maven-development.html
+Redirect Permanent /guides/development/guide-building-m2.html /guides/development/guide-building-maven.html
+Redirect Permanent /faq.html /general.html
+Redirect Permanent /developers/release/pmc-release-process.html /developers/release/releasing.html
+Redirect Permanent /development-process.html /archives/maven-1.x/development-process.html
+Redirect Permanent /welcome-to-new-committers.html /developers/welcome-to-new-committers.html
 
-Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
-Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html https://maven.apache.org/plugins/maven-checkstyle-plugin/usage.html
-Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html https://maven.apache.org/plugins/maven-checkstyle-plugin/examples/multi-module-config.html
+Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
+Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
+Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
 
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
@@ -47,36 +47,36 @@ RedirectMatch permanent ^/archiva(.*)$ https://archiva.apache.org$1
 RedirectMatch permanent ^/continuum(.*)$ https://continuum.apache.org$1
 RedirectMatch permanent ^/archetype/maven-archetype-bundles/(.*)$ /archetypes/$1
 RedirectMatch permanent ^/maven-archetype/(.*)$ /archetype/$1
-RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ https://maven.apache.org/archetype/maven-archetype-plugin/$1
-RedirectMatch permanent ^/plugins/maven-enforcer-plugin/(.*)$ https://maven.apache.org/enforcer/maven-enforcer-plugin/$1
-RedirectMatch permanent ^/plugins/maven-failsafe-plugin/(.*)$ https://maven.apache.org/surefire/maven-failsafe-plugin/$1
-RedirectMatch Permanent ^/plugins/maven-jxr-plugin/(.*)$ https://maven.apache.org/jxr/maven-jxr-plugin/$1
-RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ https://maven.apache.org/plugin-tools/maven-plugin-plugin/$1
-RedirectMatch permanent ^/plugins/maven-release-plugin/(.*)$ https://maven.apache.org/maven-release/maven-release-plugin/$1
-RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ https://maven.apache.org/scm/maven-scm-plugin/$1
-RedirectMatch permanent ^/plugins/maven-surefire-plugin/(.*)$ https://maven.apache.org/surefire/maven-surefire-plugin/$1
-RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ https://maven.apache.org/surefire/maven-surefire-report-plugin/$1
+RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ /archetype/maven-archetype-plugin/$1
+RedirectMatch permanent ^/plugins/maven-enforcer-plugin/(.*)$ /enforcer/maven-enforcer-plugin/$1
+RedirectMatch permanent ^/plugins/maven-failsafe-plugin/(.*)$ /surefire/maven-failsafe-plugin/$1
+RedirectMatch Permanent ^/plugins/maven-jxr-plugin/(.*)$ /jxr/maven-jxr-plugin/$1
+RedirectMatch permanent ^/plugins/maven-plugin-plugin/(.*)$ /plugin-tools/maven-plugin-plugin/$1
+RedirectMatch permanent ^/plugins/maven-release-plugin/(.*)$ /maven-release/maven-release-plugin/$1
+RedirectMatch permanent ^/plugins/maven-scm-plugin/(.*)$ /scm/maven-scm-plugin/$1
+RedirectMatch permanent ^/plugins/maven-surefire-plugin/(.*)$ /surefire/maven-surefire-plugin/$1
+RedirectMatch permanent ^/plugins/maven-surefire-report-plugin/(.*)$ /surefire/maven-surefire-report-plugin/$1
 RedirectMatch permanent ^/pom/maven-(.*)$ /pom/maven/maven-$1
 RedirectMatch permanent ^/pom/skins(.*)$ /pom/maven/maven-skins$1
 RedirectMatch permanent ^/shared/maven-doxia-tools/(.*)$ /doxia/doxia-tools/doxia-integration-tools/$1
-RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ https://maven.apache.org/plugin-testing/maven-plugin-testing-harness/$1
-RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ https://maven.apache.org/plugin-testing/maven-plugin-testing-tools/$1
-RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ https://maven.apache.org/plugin-tools/$1
-RedirectMatch permanent ^/[^/]+-archives/([^/\dLATES]+/.*)$ https://maven.apache.org/$1
-RedirectMatch permanent ^/ref/3.1-SNAPSHOT/(.*)$ https://maven.apache.org/ref/3-LATEST/$1
+RedirectMatch permanent ^/shared/maven-plugin-testing-harness/(.*)$ /plugin-testing/maven-plugin-testing-harness/$1
+RedirectMatch permanent ^/shared/maven-plugin-testing-tools/(.*)$ /plugin-testing/maven-plugin-testing-tools/$1
+RedirectMatch permanent ^/shared/maven-plugin-tools/(.*)$ /plugin-tools/$1
+RedirectMatch permanent ^/[^/]+-archives/([^/\dLATES]+/.*)$ /$1
+RedirectMatch permanent ^/ref/3.1-SNAPSHOT/(.*)$ /ref/3-LATEST/$1
 
-RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ https://maven.apache.org/plugins/maven-clover-plugin/2.4/$1
-RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ https://maven.apache.org/plugins/maven-clover-plugin/2.4/ins$1
-RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ https://maven.apache.org/plugins/maven-clover-plugin/2.4/int$1
+RedirectMatch permanent ^/plugins/maven-clover-plugin/([^2i].+)$ /plugins/maven-clover-plugin/2.4/$1
+RedirectMatch permanent ^/plugins/maven-clover-plugin/ins(.+)$ /plugins/maven-clover-plugin/2.4/ins$1
+RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ /plugins/maven-clover-plugin/2.4/int$1
 
 RedirectMatch ^/plugins/maven-site-plugin-2.x/(.*)$ /plugins-archives/maven-site-plugin-2.4/$1
 RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ /plugins/maven-site-plugin/$1
 
-Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html https://maven.apache.org/guides/development/guide-testing-development-plugins.html
+Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html /guides/development/guide-testing-development-plugins.html
 
-Redirect Permanent /guides/mini/guide-apt-format.html https://maven.apache.org/doxia/references/apt-format.html
+Redirect Permanent /guides/mini/guide-apt-format.html /doxia/references/apt-format.html
 
-RedirectMatch ^/maven-1.x/(.*)$ https://maven.apache.org/archives/maven-1.x/$1
+RedirectMatch ^/maven-1.x/(.*)$ /archives/maven-1.x/$1
 
 RewriteEngine on
 
