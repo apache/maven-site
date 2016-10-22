@@ -42,9 +42,6 @@ RedirectMatch ^/maven-settings-builder/(.*)$ /ref/${currentStableVersion}/maven-
 RedirectMatch ^/maven-1.x/plugins-sandbox/(.*)$ /archives/maven-1.x/plugins/$1
 RedirectMatch permanent ^/aether-archives/(.*)$ /aether.html
 
-RedirectMatch permanent ^/repository-manager/(.*)$ https://archiva.apache.org/$1
-RedirectMatch permanent ^/archiva(.*)$ https://archiva.apache.org$1
-RedirectMatch permanent ^/continuum(.*)$ https://continuum.apache.org$1
 RedirectMatch permanent ^/archetype/maven-archetype-bundles/(.*)$ /archetypes/$1
 RedirectMatch permanent ^/maven-archetype/(.*)$ /archetype/$1
 RedirectMatch permanent ^/plugins/maven-archetype-plugin/(.*)$ /archetype/maven-archetype-plugin/$1
