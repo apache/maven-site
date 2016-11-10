@@ -38,7 +38,7 @@ Available Skins
 *-------------------------------------------------------------------+--------------+----------------------+------------------+
 | {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.2          | [3.5,)               |You get this skin if you don't specify any skin.
 *-------------------------------------------------------------------+--------------+----------------------+------------------+
-| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.5          | [3.5,)               |Skin based on Bootstrap CSS.
+| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.6          | [3.5,)               |Skin based on Bootstrap CSS.
 *-------------------------------------------------------------------+--------------+----------------------+------------------+
 
   To use one of these skins in your project, you use the <<<skin>>> element of the
