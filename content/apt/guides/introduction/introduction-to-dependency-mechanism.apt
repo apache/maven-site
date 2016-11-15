@@ -135,9 +135,10 @@ Introduction to the Dependency Mechanism
    looked up in a repository.
 
  * <<import>> <(only available in Maven 2.0.9 or later)>\
-   This scope is only used on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It indicates that the specified
-   POM should be replaced with the dependencies in that POM's <<<\<dependencyManagement\>>>> section. Since they are replaced,
-   dependencies with a scope of <<<import>>> do not actually participate in limiting the transitivity of a dependency.
+   This scope is only supported on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It
+   indicates the dependency to be replaced with the effective list of dependencies in the specified POM's
+   <<<\<dependencyManagement\>>>> section. Since they are replaced, dependencies with a scope of <<<import>>> do not
+   actually participate in limiting the transitivity of a dependency.
 
  []
 
