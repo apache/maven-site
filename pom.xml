@@ -165,6 +165,9 @@
             </goals>
             <configuration>
               <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
+              <archiveExcludes>
+                <archiveExclude>*.jar</archiveExclude>
+              </archiveExcludes>
             </configuration>
           </execution>
         </executions>
