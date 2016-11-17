@@ -33,10 +33,6 @@
   <name>Apache Maven Site</name>
   <url>https://maven.apache.org/</url>
 
-  <prerequisites>
-    <maven>3.0</maven>
-  </prerequisites>
-
   <!-- repeated here so that maven-site is not appended -->
   <scm>
     <connection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</connection>
