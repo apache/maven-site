@@ -663,7 +663,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   available as POM properties, such as <<<$\{java.home\}>>>.
 
   [[5]]  <<<x>>>: Set within a <<<\<properties /\>>>> element in the POM. The value of
-  <<<\<properties\>\<someVar\>value\</someVar\>\</properies\>>>> may be used as <<<$\{someVar\}>>>.
+  <<<\<properties\>\<someVar\>value\</someVar\>\</properties\>>>> may be used as <<<$\{someVar\}>>>.
 
   []
 
