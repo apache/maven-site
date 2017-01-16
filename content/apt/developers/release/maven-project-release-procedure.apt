@@ -195,7 +195,7 @@ wagon/wagon-2.2-source-release.zip.md5
   or {{{../website/component-reference-documentation-helper.html}Component Reference Documentation Helper}}.
   Note that not all projects follow these conventions exactly.
 
-  In case there's an overview table with version (e.g. {{{http://maven.apache.org/plugins/index.html}plugins}} and {{{https://maven.apache.org/shared/index.html}shared}} update it via {{https://cms.apache.org/}}
+  In case there's an overview table with version (e.g. {{{http://maven.apache.org/plugins/index.html}plugins}} and {{{https://maven.apache.org/shared/index.html}shared}}) update it via {{https://cms.apache.org/}}.
 
  [[3]] Update the version tracking in JIRA
 
