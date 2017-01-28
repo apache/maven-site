@@ -10,6 +10,7 @@ select component category, then type artifact id and version to generate svn com
 <li><a href="?shared">shared components</a></li>
 <li><a href="?plugins">plugins</a></li>
 <li><a href="?pom">poms</a></li>
+<li><a href="?resolver">resolver</a></li>
 <li><a href="?skins">skins</a></li>
 <li><a href="?doxia">Doxia</a></li>
 <li><a href="?doxia-sitetools">Doxia Sitetools</a></li>
@@ -83,7 +84,7 @@ function instructions() {
       document.getElementById('artifactId').value = category;
     }
   }
-  if (category == "others" || category == "doxia" || category == "doxia-sitetools") {
+  if (category == "resolver" || category == "others" || category == "doxia" || category == "doxia-sitetools") {
     // category directory is based on artifactId
     svnmucc = replaceAll(svnmucc, '${category}/${artifactId}', '${artifactId}');
     svnmucc = replaceAll(svnmucc, '${category}', '${artifactId}');
