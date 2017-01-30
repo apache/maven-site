@@ -224,7 +224,8 @@ mvn archetype:generate                                  \
 +----+
 
  Once you are happy with the state of your archetype, you can deploy (or submit
- it to ibiblio) it as any other artifact and the archetype will then be
+ it to {{{/guides/mini/guide-central-repository-upload.html}Maven Central}}) 
+ it as any other artifact and the archetype will then be
  available to any user of Maven.
 
 * Alternative way to start creating your Archetype
