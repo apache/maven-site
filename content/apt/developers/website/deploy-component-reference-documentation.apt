@@ -99,7 +99,7 @@ mvn scm-publish:publish-scm
 
 * Publishing versioned component reference documentation
 
- When doing a release, yyy-LATEST content staged in previous section needs:
+ When doing a release, <<<yyy-LATEST>>> content staged in previous section needs:
 
  [[1]] to be archived to versioned directory before a newer revision is published into -LATEST,
 
@@ -107,7 +107,12 @@ mvn scm-publish:publish-scm
 
  []
 
- This is done with operations on website production svn area, either with <<<svn>>> command:
+ This is done with operations on website production svn area: you can use
+ {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
+ easily prepare svnmucc command line.
+ 
+ 
+ If you prefer to do everything by hand from command templates, you can do either with <<<svn>>> command:
 
  * Unix:
 
@@ -142,9 +147,6 @@ svnmucc -m "Publish yyy $version documentation" \
   rm xxx/yyy \
   cp HEAD xxx-archives/yyy-LATEST xxx/yyy
 +----------+
-
- You can also use {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}}
- to prepare svnmucc command line.
 
 * Updating index page in the Maven site
 
