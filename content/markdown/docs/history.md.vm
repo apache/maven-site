@@ -35,14 +35,22 @@
 <td rowspan="$rowspan">$jdk</td>
 #end
 <td>
+#if( !$announce.equals( "" ) )
 #if( !$announce.startsWith( "http://" ) )
 #set ( $announceLink = "$archive$announce" )
 #else
 #set ( $announceLink = $announce )
 #end
+#end
+#if( !$announce.equals( "" ) )
 $b<a href="$announceLink">announce</a>
 #if( !$version.equals( "2.1.0-M1" ) )
 , <a href="./$version/release-notes.html">release notes</a>
+#end
+#else
+#if( !$version.equals( "2.1.0-M1" ) )
+$b<a href="./$version/release-notes.html">release notes</a>
+#end
 #end
 #if( $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
 , <a href="/ref/$version/">reference documentation</a>
@@ -63,6 +71,7 @@ Date format is: YYYY-MM-DD
 <td>Links</td>
 </tr>
 
+#release( "2017-02-28" "3.5.0-alpha-1" "" "" "Java 7" "1" )
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "Java 7" "3" )
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )
