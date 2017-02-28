@@ -56,11 +56,10 @@ Note that release notes can be created and checked in, but other changes should 
 
 Next, create the release notes:
 
-- create `docs/$version`
-- populate `docs/$version/release-notes.txt` from JIRA
-- create `docs/$version/release-notes.apt.vm` (see other versions for an example)
+- create `content/markdown/docs/$version`
+- create `content/markdowndocs/$version/release-notes.md` (see other versions for an example)
 
-Next, update release history `docs/history.apt`.
+Next, update release history `content/markdown/docs/history.md.vm`.
 
 Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to [/ref/](/ref).
 
