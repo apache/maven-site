@@ -92,7 +92,7 @@ The source code references and API docs need to be deployed before deploying the
 This consists in copying in website svn tree the /ref/3-LATEST directory to /ref/`$VERSION`.
 
 ```
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/content/ref/3-LATEST https://svn.apache.org/repos/infra/websites/production/maven/content/ref/$VERSION
+svn cp https://svn.apache.org/repos/infra/websites/production/maven/components/ref/3-LATEST https://svn.apache.org/repos/infra/websites/production/maven/components/ref/$VERSION
 ```
 
 ### Information on `/ref/current` mechanism
