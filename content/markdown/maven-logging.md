@@ -113,6 +113,9 @@ of milliseconds since start up will be output.</td>
 </tr>
 </table>
 
+Every entry in this file can be overriden via commandline arguments by passing it with the `-D` flag. 
+E.g. `-Dorg.slf4j.simpleLogger.showThreadName=true` will add the thread name to every logging line.
+
 The default configuration for Maven looks like the following:
 
 <div class="source"><pre>
