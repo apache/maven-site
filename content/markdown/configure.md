@@ -24,7 +24,7 @@ The following guides contain further information to specific configuration aspec
 
 * [Recommended Best Practice - Using a Repository Manager](./repository-management.html)
 * [Documentation for settings.xml](./settings.html)
-* [Configuring the logging](.maven-logging.html)
+* [Configuring the logging](./maven-logging.html)
 * [Configuring a HTTP Proxy](./guides/mini/guide-proxies.html)
 * [Configuring a repository mirror](./guides/mini/guide-mirror-settings.html)
 * [Various Tips for Configuring Maven](./guides/mini/guide-configuring-maven.html)
