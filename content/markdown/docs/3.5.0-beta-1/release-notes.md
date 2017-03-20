@@ -132,7 +132,7 @@ Thank you also for your time and feedback.
    has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. It is very important to
    know if you are using the previously named properties for a version in your 
    pom you have to use [flatten-maven-plugin] if you like to do an `mvn install` 
-   or `mvn deploy`.
+   or `mvn deploy` more details can be found at [Maven CI Friendly](/maven-ci-friendly.html).
 
  * The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
 
