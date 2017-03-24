@@ -1,6 +1,6 @@
 # Maven Releases History
 
-<!-- 
+<!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
  distributed with this work for additional information
@@ -71,7 +71,8 @@ Date format is: YYYY-MM-DD
 <td>Links</td>
 </tr>
 
-#release( "2017-02-28" "3.5.0-alpha-1" "announce/201703.mbox/%3CCA%2BnPnMyDmF7KAB_W89bkVjNTmpHQtv3reFA0Xm3cpYHtW1fKaA%40mail.gmail.com%3E" "" "Java 7" "4" )
+#release( "2017-03-24" "3.5.0-beta-1" "announce/201703.mbox/..." "" "Java 7" "5" )
+#release( "2017-02-28" "3.5.0-alpha-1" "announce/201703.mbox/%3CCA%2BnPnMyDmF7KAB_W89bkVjNTmpHQtv3reFA0Xm3cpYHtW1fKaA%40mail.gmail.com%3E" "" "" "" )
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "" "" )
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )

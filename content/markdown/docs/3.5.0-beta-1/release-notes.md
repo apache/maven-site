@@ -48,6 +48,11 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 The following issues were identified during release testing of this _BETA_ release but have not been deemed as release blockers:
 
+* [MNG-6190] maven-resolver-provider's `DefaultArtifactDescriptorReader` has mismatched constructor and initService methods (this issue does not affect normal usage of Maven)
+* [MNG-6191] `mvn -f` complains about illegal `readlink` option under macOS
+* [MNG-6192] The distribution zip file has unordered entries and some tools - most notably Maven wrapper - will fail to unzip the distribution
+
+
 ## Why not Maven 3.4.0?
 
 After Maven 3.3.9 was released, the Eclipse Aether project was retired and the code base was migrated to the Apache Maven project.
@@ -128,10 +133,10 @@ Thank you also for your time and feedback.
  * Replaced Eclipse Aether with [Maven Resolver][maven-resolver]
    [MNG-6110], [MNG-6140].
 
- * Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}` 
+ * Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}`
    has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. It is very important to
-   know if you are using the previously named properties for a version in your 
-   pom you have to use [flatten-maven-plugin] if you like to do an `mvn install` 
+   know if you are using the previously named properties for a version in your
+   pom you have to use [flatten-maven-plugin] if you like to do an `mvn install`
    or `mvn deploy` more details can be found at [Maven CI Friendly](/maven-ci-friendly.html).
 
  * The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
@@ -210,5 +215,8 @@ See [complete release notes for all versions][5]
 [MNG-6182]: https://issues.apache.org/jira/browse/MNG-6182
 [MNG-6183]: https://issues.apache.org/jira/browse/MNG-6183
 [MNG-6189]: https://issues.apache.org/jira/browse/MNG-6189
+[MNG-6190]: https://issues.apache.org/jira/browse/MNG-6190
+[MNG-6191]: https://issues.apache.org/jira/browse/MNG-6191
+[MNG-6192]: https://issues.apache.org/jira/browse/MNG-6192
 
 [flatten-maven-plugin]: http://www.mojohaus.org/flatten-maven-plugin/
