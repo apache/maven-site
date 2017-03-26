@@ -186,6 +186,7 @@ See [complete release notes for all versions][5]
 
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507
 [MNG-5607]: https://issues.apache.org/jira/browse/MNG-5607
+[MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
 [MNG-5815]: https://issues.apache.org/jira/browse/MNG-5815
 [MNG-5823]: https://issues.apache.org/jira/browse/MNG-5823
 [MNG-5836]: https://issues.apache.org/jira/browse/MNG-5836
@@ -203,8 +204,11 @@ See [complete release notes for all versions][5]
 [MNG-6057]: https://issues.apache.org/jira/browse/MNG-6057
 [MNG-6078]: https://issues.apache.org/jira/browse/MNG-6078
 [MNG-6090]: https://issues.apache.org/jira/browse/MNG-6090
+[MNG-6092]: https://issues.apache.org/jira/browse/MNG-6092
 [MNG-6093]: https://issues.apache.org/jira/browse/MNG-6093
+[MNG-6110]: https://issues.apache.org/jira/browse/MNG-6110
 [MNG-6115]: https://issues.apache.org/jira/browse/MNG-6115
+[MNG-6140]: https://issues.apache.org/jira/browse/MNG-6140
 [MNG-6170]: https://issues.apache.org/jira/browse/MNG-6170
 [MNG-6173]: https://issues.apache.org/jira/browse/MNG-6173
 [MNG-6176]: https://issues.apache.org/jira/browse/MNG-6176
