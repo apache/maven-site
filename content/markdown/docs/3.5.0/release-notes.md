@@ -87,6 +87,7 @@ The following members of the Maven community provided valuable feedback during t
 *  Raphael Ackermann
 *  Elliot Metsger
 *  Chas Honton
+*  Dennis Kieselhorst
 
 Thank you for your time and feedback.
 
