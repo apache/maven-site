@@ -45,20 +45,14 @@ Example: Using Maven 3 lifecycle extension
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
-      <version>3.0.4</version>
+      <version>${currentStableVersion}</version>
     </dependency>
 
     <!-- dependency for plexus annotation -->
     <dependency>
       <groupId>org.codehaus.plexus</groupId>
       <artifactId>plexus-component-annotations</artifactId>
-      <version>1.5.5</version>
-      <exclusions>
-        <exclusion>
-          <groupId>junit</groupId>
-          <artifactId>junit</artifactId>
-        </exclusion>
-      </exclusions>
+      <version>1.7.1</version>
     </dependency>
 +---+
 
@@ -98,7 +92,7 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
       <plugin>
         <groupId>org.codehaus.plexus</groupId>
         <artifactId>plexus-component-metadata</artifactId>
-        <version>1.5.5</version>
+        <version>1.7.1</version>
         <executions>
           <execution>
             <goals>
