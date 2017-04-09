@@ -138,44 +138,34 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
  
  
  
-       <subsection name="Optional configuration">
+* Optional configuration
 
-        <p>Maven will work for most tasks with the above configuration, however if you have any environmental specific configuration outside of individual
-        projects then you will need to configure settings. The following sections refer to what is available.</p>
-
-
-        <subsection name="Settings">
-
-        Maven has a settings file located in the Maven installation and/or user home directory that configure environmental specifics such as:
-
-        <ul>
-          <li>HTTP proxy server</li>
-
-          <li>repository manager location</li>
-
-          <li>server authentication and passwords</li>
-
-          <li>other configuration properties</li>
-        </ul>
-          For information on this file, see the <a href="./settings.html">Settings reference</a>
-        </subsection>
-
-        <subsection name="Security">
-          <p>
-          As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
-          both server passwords and the master password, see the <a href="./guides/mini/guide-encryption.html">Guide to Password Encryption</a>.
-        </p>
-        </subsection>
-
-        <subsection name="Toolchains">
-          <p>
-            As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with.
-            For more information, see the <a href="./guides/mini/guide-using-toolchains.html">Guide to Using Toolchains</a>.
-          </p>
-        </subsection>
+  Maven will work for most tasks with the above configuration, however if you have any environmental specific configuration outside of individual
+  projects then you will need to configure settings. The following sections refer to what is available.
 
 
-      </subsection>
- 
- 
- 
+** Settings
+
+  Maven has a settings file located in the Maven installation and/or user home directory that configure environmental specifics such as:
+
+  * HTTP proxy server
+
+  * repository manager location
+
+  * server authentication and passwords
+
+  * other configuration properties
+
+  []
+
+  For information on this file, see the {{{./settings.html}Settings reference}}
+
+** Security
+
+  As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
+  both server passwords and the master password, see the {{{./guides/mini/guide-encryption.html}Guide to Password Encryption}}.
+
+** Toolchains
+
+  As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with.
+  For more information, see the {{{./guides/mini/guide-using-toolchains.html}Guide to Using Toolchains}}.
