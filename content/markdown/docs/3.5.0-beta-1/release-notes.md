@@ -182,7 +182,7 @@ See [complete release notes for all versions][5]
 [maven-resources-plugin]: /enforcer/maven-resources-plugin/
 [maven-aether-provider]: /ref/3.5.0-alpha-1/maven-aether-provider/
 [maven-compat]: /ref/3.5.0-alpha-1/maven-compat/
-[maven-resolver]: /maven.apache.org/resolver/
+[maven-resolver]: /resolver/
 
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507
 [MNG-5607]: https://issues.apache.org/jira/browse/MNG-5607
