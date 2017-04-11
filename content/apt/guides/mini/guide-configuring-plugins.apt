@@ -570,13 +570,21 @@ public class MyBindedQueryMojo
 
   Now, <<<MyBindedQueryMojo>>> default phase which is package has been overrided by
   install phase.
-
-  <<Note:>> Configurations inside the <<<\<executions\>>>> tag differ from those that are outside
-  <<<\<executions\>>>> in that they cannot be used from a direct command line
-  invocation. Instead they are only applied when the lifecycle phase they are
-  bound to are invoked.  Alternatively, if you move a configuration section
-  outside of the executions section, it will apply globally to all invocations
+  
+  <<Note:>> Configurations inside the <<<\<executions\>>>> tag used to differ from those that are outside
+  <<<\<executions\>>>> in that they could not be used from a direct command line
+  invocation because they were only applied when the lifecycle phase they were
+  bound to was invoked. So you had to move a configuration section
+  outside of the executions section to apply it globally to all invocations
   of the plugin.
+  Since Maven 3.3.1 this is not the case anymore as you can specify on the command-line
+  the execution-id for direct plugin goal invocation. Hence if you want to
+  run the above plugin and it's specific execution1's configuration from the
+  command-line, you can execute:
+
++----+
+mvn myqyeryplugin:queryMojo@execution1
++----+
 
 ** {Using the <<<\<dependencies\>>>> Tag}
 
