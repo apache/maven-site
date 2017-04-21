@@ -38,7 +38,7 @@ see the following layout where the `simplelogger.properties`, `slf4j-api-x.y.z-j
 `slf4j-simple-x.y.z.jar` specifically relate to the SLF4J implementation:
 
 <div class="source"><pre>
-m2
+apache-maven-3.x.y
 ├── LICENSE.txt
 ├── NOTICE.txt
 ├── README.txt
@@ -60,76 +60,13 @@ m2
 ## Configuring logging 
 
 To configure logging with the [SLF4J Simple][2], you can edit the properties in the
-`${MAVEN_HOME}/conf/logging/simplelogger.properties` file. The following table lists
-the available configuration properties along with the SLF4J Simple defaults.
-
-<table border="0" class="bodyTable">
-<tr class="b">
-<td><code>org.slf4j.simpleLogger.<b>logFile</b></code></td>
-<td>The output target which can be the path to a file, or the special values "System.out" and "System.err".
-Default is "System.err".</td>
-</tr>
-<tr class="a">
-<td><code>org.slf4j.simpleLogger.<b>defaultLogLevel</b></code></td>
-<td>Default log level for all instances of SimpleLogger. Must be one of ("trace", "debug", "info",
-"warn", or "error"). If not specified, defaults to "info".</td>
-</tr>
-<tr class="b">
-<td><code>org.slf4j.simpleLogger.<b>log.a.b.c</b></code></td>
-<td>Logging detail level for a SimpleLogger instance named "a.b.c". Right-side value must be one of "trace",
-"debug", "info", "warn", or "error". When a SimpleLogger named "a.b.c" is initialized, its level is assigned
-from this property. If unspecified, the level of nearest parent logger will be used, and if none is set,
-then the value specified by org.slf4j.simpleLogger.defaultLogLevel will be used.</td>
-</tr>
-<tr class="a">
-<td><code>org.slf4j.simpleLogger.<b>showDateTime</b></code></td>
-<td>Set to true if you want the current date and time to be included in output messages. Default is true</td>
-</tr>
-<tr class="b">
-<td><code>org.slf4j.simpleLogger.<b>dateTimeFormat</b></code></td>
-<td>The date and time format to be used in the output messages. The pattern describing the date and
-time format is defined by SimpleDateFormat. If the format is not specified or is invalid, the number
-of milliseconds since start up will be output.</td>
-</tr>
-<tr class="a">
-<td><code>org.slf4j.simpleLogger.<b>showThreadName</b></code></td>
-<td>Set to true if you want to output the current thread name. Defaults to true.</td>
-</tr>
-<tr class="b">
-<td><code>org.slf4j.simpleLogger.<b>showLogName</b></code></td>
-<td>Set to true if you want the Logger instance name to be included in output messages. Defaults to true.</td>
-</tr>
-<tr class="a">
-<td><code>org.slf4j.simpleLogger.<b>showShortLogName</b></code></td>
-<td>Set to true if you want the last component of the name to be included in output messages. Defaults to false.</td>
-</tr>
-<tr class="b">
-<td><code>org.slf4j.simpleLogger.<b>levelInBrackets</b></code></td>
-<td>Should the level string be output in brackets? Defaults to false.</td>
-</tr>
-<tr class="a">
-<td><code>org.slf4j.simpleLogger.<b>warnLevelString</b></code></td>
-<td>The string value output for the warn level. Defaults to WARN.</td>
-</tr>
-</table>
+`${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation
+for details.
 
 Every entry in this file can be overriden via commandline arguments by passing it with the `-D` flag. 
 E.g. `-Dorg.slf4j.simpleLogger.showThreadName=true` will add the thread name to every logging line.
 
-The default configuration for Maven looks like the following:
-
-<div class="source"><pre>
-# Default Maven logging configuration
-#
-org.slf4j.simpleLogger.defaultLogLevel=info
-org.slf4j.simpleLogger.showDateTime=false
-org.slf4j.simpleLogger.showThreadName=false
-org.slf4j.simpleLogger.showLogName=false
-org.slf4j.simpleLogger.logFile=System.out
-org.slf4j.simpleLogger.levelInBrackets=true
-org.slf4j.simpleLogger.log.Sisu=info
-org.slf4j.simpleLogger.warnLevelString=WARNING
-</pre></div>
+The default configuration for Maven is listed [here][8].
 
 ## Changing the SLF4J implementation
 
@@ -145,3 +82,4 @@ See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 [5]: http://slf4j.org/apidocs/
 [6]: https://codehaus-plexus.github.io/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
 [7]: http://www.slf4j.org/manual.html#swapping
+[8]: https://git-wip-us.apache.org/repos/asf?p=maven.git;a=blob;f=apache-maven/src/conf/logging/simplelogger.properties;h=eb3d0496d2817cb254d961e788c9847eb1a7d45b;hb=HEAD
