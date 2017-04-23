@@ -50,7 +50,7 @@
           <area shape="rect" coords="261,76,350,109"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
           <area shape="rect" coords="373,75,463,109"  alt="OSSRH"    href="http://central.sonatype.org/pages/ossrh-guide.html" />
           <area shape="rect" coords="590,323,659,357" alt="JBoss"    href="http://repository.jboss.org/maven2/" />
-          <area shape="rect" coords="315,269,434,313" alt="index"    href="/maven-indexer/" />
+          <area shape="rect" coords="315,269,434,313" alt="central index" href="./central-index.html" />
           <area shape="rect" coords="12,270,225,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
           <area shape="rect" coords="63,343,203,379"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
           <area shape="rect" coords="321,352,394,386" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
