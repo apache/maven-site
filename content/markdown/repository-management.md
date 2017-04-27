@@ -35,6 +35,7 @@ The following list (alphabetical order) of open source and commercial repository
 and the features provided by these products.
 
 * <a href="https://archiva.apache.org/" target="_blank" rel="nofollow">Apache Archiva</a> (open source)
+* <a href="https://www.cloudrepo.io" target="_blank" rel="nofollow">CloudRepo</a> (commercial)
 * <a href="https://www.jfrog.com/open-source" target="_blank" rel="nofollow">JFrog Artifactory Open Source</a> (open source)
 * <a href="https://www.jfrog.com/artifactory/" target="_blank" rel="nofollow">JFrog Artifactory Pro</a> (commercial)
 * <a href="https://www.sonatype.org/nexus/go/" target="_blank" rel="nofollow">Sonatype Nexus OSS</a> (open source)
