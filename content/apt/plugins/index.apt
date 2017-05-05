@@ -8,7 +8,7 @@
  Benson Margulies
  Karl-Heinz Marbaise
  -----
- 2017-05-02
+ 2017-05-05
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -123,7 +123,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-linkcheck-plugin/} <<<linkcheck>>>}}       | R          | 1.2          | 2014-10-08 | Generate a Linkcheck report of your project's documentation. | {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-linkcheck-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MLINKCHECK}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 3.7          | 2016-10-08 | Generate a PMD report. | {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MPMD}JIRA}}
+| {{{/plugins/maven-pmd-plugin/} <<<pmd>>>}}                   | B+R        | 3.8          | 2017-05-05 | Generate a PMD report. | {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-pmd-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MPMD}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-project-info-reports-plugin/} <<<project-info-reports>>>}} | R | 2.9   | 2016-03-01 | Generate standard project reports. | {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-project-info-reports-plugin}SVN}} | {{{https://issues.apache.org/jira/browse/MPIR}JIRA}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
