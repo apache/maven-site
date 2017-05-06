@@ -118,6 +118,10 @@ Vote open for at least 72 hours.
  To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
 
+ The vote is open for at least 72 hours means, that you need to wait at least 72 hours before proceeding.
+ This gives others time to test your release and check that everything is good. If you have received after that
+ not enough +1 votes to reach the quorum, this doesn't mean, the vote failed. It just takes a bit longer.
+
 * Check the vote results
 
  Copied from {{{https://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
@@ -161,6 +165,7 @@ I will promote the artifacts to the central repo.
   release area}}. The release area is maintained with svnsubpub. To deliver a release, you add it to 
   {{{https://dist.apache.org/repos/dist/release/maven}the subversion repository for the dist area}}: add the release, its signature, and corresponding
   MD5 files. Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}https://issues.apache.org/jira/browse/INFRA-5945}}).
+  If you are not PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you.
 
   For example:
 
@@ -202,6 +207,9 @@ wagon/wagon-2.2-source-release.zip.md5
  In the relevant project, go to Administration, then Versions. Mark
  the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
  been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+
+ Note: Currently this requires to be in the maven-pmc group. So, if you don't see the Administration option in JIRA, kindly ask <private@maven.apache.org> to do this step for you.
+
 
  [[4]] Wait for everything to sync
 
