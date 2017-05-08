@@ -73,6 +73,76 @@ mvn -Drevision=2.0.0-SNAPSHOT clean package
  
   Of cource you can use the `.mvn/maven.config` file for this.
 
+  A note about the used properties. You can only use those named
+  `${revision}`, `${sha1}` and/or `${changelist}` and not other
+  named properties like this:
+
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>18</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-parent</artifactId>
+  <name>First CI Friendly</name>
+  <version>${revision}</version>
+  ...
+  <properties>
+    <revision>1.0.0-${buildNumber}-SNAPSHOT</revision>
+  </properties>
+</project>
+```
+
+  The above example will *not work as expeced*. If you like
+  to have more flexibility you can use a combination of the
+  different properties like this:
+
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>18</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-parent</artifactId>
+  <name>First CI Friendly</name>
+  <version>${revision}${sha1}${changelist}</version>
+  ...
+  <properties>
+    <revision>1.3.1</revision>
+    <changelist>-SNAPSHOT</changelist>
+    <sha1/>
+  </properties>
+</project>
+```
+
+  If you like to make a version `2.0.0-SNAPSHOT` this can
+  simply being achieved by using this:
+
+```
+mvn -Drevision=2.0.0 clean package
+```
+
+  Another usage example can be do make a release which can be
+  done via (version 1.3.1):
+
+```
+mvn -Dchangelist= clean package
+```
+
+  Or if you like to make a release with another version:
+
+```
+mvn -Drevision=2.7.8 -Dchangelist= clean package
+```
+
+  Please read until the end of this documentation!
+
 ## Multi Module Setup
 
   So now let us take a look into a situation where we have a multi module
