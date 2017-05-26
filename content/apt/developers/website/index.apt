@@ -50,7 +50,9 @@ How website publication works
 
  * {{{./deploy-maven-website.html}deploying the main Maven website}},
 
- * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}}.
+ * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
+ eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
+ easily prepare svnmucc command line.
 
  []
 
