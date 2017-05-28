@@ -62,7 +62,7 @@
       <answer>
         <p>
           The "Available Plugins" page lists them and provides additional information.
-          See <a href="https://maven.apache.org/plugins/">https://maven.apache.org/plugins</a>
+          See <a href="/plugins/">https://maven.apache.org/plugins</a>
         </p>
       </answer>
     </faq>
@@ -113,14 +113,26 @@
       </answer>
     </faq>
 
-    <faq id="Compiling-J2SE-5">
+    <faq id="Compiling-Java-7">
       <question>How do I set up Maven so it will compile with a target and source JVM of my choice?</question>
       <answer>
         <p>
           You must configure the source and target parameters in your pom. For example, to set the source and
-          target JVM to 1.5, you should have in your pom:
+          target JVM to 7, you should have in your pom:
         </p>
-        <source><![CDATA[
+        <source><![CDATA[<project>
+  ...
+  <properties>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
+  </properties>
+  ...
+</project>]]></source>
+        <p>
+          Or if a parent pom overrides for compiler plugin default values and you can't fix it,
+          you'll have to explicitely force the values in the compiler plugin configuration:
+        </p>
+        <source><![CDATA[<project>
   ...
   <build>
   ...
@@ -130,14 +142,15 @@
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.3</version>
         <configuration>
-          <source>1.5</source>
-          <target>1.5</target>
+          <source>1.7</source>
+          <target>1.7</target>
         </configuration>
       </plugin>
     </plugins>
   ...
   </build>
-  ...]]></source>
+  ...
+</project>]]></source>
       </answer>
     </faq>
 
@@ -148,8 +161,8 @@
           Absolutely yes!
         </p>
         <p>
-          By configuring &lt;sourceDirectory&gt;, &lt;resources&gt; and other elements of
-          the &lt;build&gt; section.
+          By configuring <code>&lt;sourceDirectory&gt;</code>, <code>&lt;resources&gt;</code> and other elements of
+          the <code>&lt;build&gt;</code> section.
         </p>
         <p>
           In addition, you may need to change the plugin configuration if you are
@@ -162,7 +175,7 @@
       <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven site.</question>
       <answer>
         <p>
-          The source code can be found in <a href="source-repository.html">our subversion repository</a>.
+          The source code can be found in <a href="source-repository.html">our subversion and git repositories</a>.
         </p>
         <p>
           For more information, see <a href="/guides/development/guide-building-maven.html">Building Maven</a>.
@@ -245,8 +258,8 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         Add the parameter <code>-Dmaven.test.skip=true</code> or <code>-DskipTests=true</code> in the command line,
         depending on whether you want to skip test compilation and execution or only execution. See the example
-        <a href="/plugins/maven-surefire-plugin/examples/skipping-test.html">Skipping Tests</a>
-        in the Surefire Plugin's documentation for more details.
+        <a href="/plugins/maven-surefire-plugin/examples/skipping-tests.html">Skipping Tests</a>
+        in <a href="/plugins/maven-surefire-plugin/">the Surefire Plugin's documentation</a> for more details.
       </answer>
     </faq>
 
@@ -261,25 +274,34 @@ Where: <path-to-file>  the path to the file to load
     <faq id="special-characters-site">
       <question>Handle special characters in site</question>
       <answer>
-        <p>Configure your ide to use the correct encoding. With eclipse, add
+        <p>Configure your ide to use the correct encoding. With Eclipse, add
         <code>-Dfile.encoding=ISO-8859-1</code> in eclipse.ini file</p>
-        <p>Configure the output encoding in your pom
-      <source><![CDATA[
+        <p>Configure the reporting output encoding in your pom
+      <source><![CDATA[<project>
+  ...
+  <properties>
+    <project.reporting.outputDirectory>UTF-8</project.reporting.outputDirectory>
+  </properties>
+  ...
+</project>]]></source>
+        or if default encoding is overridden in a parent pom that you can't change, configure the site plugin explicitely:
+      <source><![CDATA[<project>
   ...
   <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-site-plugin</artifactId>
-    <version>3.2</version>
+    <version>3.6</version>
     <configuration>
       <outputEncoding>UTF-8</outputEncoding>
     </configuration>
   </plugin>
-  ...]]></source>
+  ...
+<project>]]></source>
         </p>
         <p>
           Configure the file encoding use by mvn.
           add to MAVEN_OPTS the encoding (same as the ide).
-          This can be made with adding <code>MAVEN_OPTS="-Dfile.encoding=ISO-8859-1"</code> in $HOME/.profile
+          This can be made with adding <code>MAVEN_OPTS="-Dfile.encoding=ISO-8859-1"</code> in <code>$HOME/.profile</code>
         </p>
       </answer>
     </faq>
@@ -291,7 +313,7 @@ Where: <path-to-file>  the path to the file to load
           The following code includes <code>tools.jar</code> for JDKs on Windows, Linux and Solaris (it is already
           included in the runtime for Mac OS X and some free JDKs).
         </p>
-        <source><![CDATA[
+        <source><![CDATA[<project>
 ...
   <profiles>
     <profile>
@@ -313,7 +335,8 @@ Where: <path-to-file>  the path to the file to load
       </dependencies>
     </profile>
   </profiles>
-  ...]]></source>
+  ...
+</project>]]></source>
      </answer>
     </faq>
 
@@ -321,12 +344,13 @@ Where: <path-to-file>  the path to the file to load
       <question>Maven compiles my test classes but doesn't run them?</question>
       <answer>
         <p>
-          Tests are run by the surefire plugin.  The surefire plugin can be configured to run certain test classes and
+          Tests are run by <a href="/surefire/maven-surefire-plugin/">the surefire plugin</a>.
+          The surefire plugin can be configured to run certain test classes and
           you may have unintentionally done so by specifying a value to ${test}.
 
           Check your settings.xml and pom.xml for a property named "test" which would like this:
         </p>
-        <source><![CDATA[
+        <source><![CDATA[<project>
   ...
   <properties>
     <property>
@@ -334,16 +358,18 @@ Where: <path-to-file>  the path to the file to load
       <value>some-value</value>
      </property>
   </properties>
-  ...]]></source>
+  ...
+</project>]]></source>
         <p>
           or
         </p>
-        <source><![CDATA[
+        <source><![CDATA[<project>
   ...
   <properties>
     <test>some-value</test>
   </properties>
-  ...]]></source>
+  ...
+</project>]]></source>
       </answer>
     </faq>
 
@@ -352,7 +378,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         <p>
           If you are trying to build a development version of Maven or plugins,
-          you may need to access the maven snapshot repositories.
+          you may need to access the Maven snapshot repositories.
         </p>
 
         <p>
@@ -418,7 +444,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         <p>
           A mojo is a <b>M</b>aven plain <b>O</b>ld <b>J</b>ava <b>O</b>bject. Each mojo is an executable
-          <i>goal</i> in Maven, and a plugin is a distribution of one or more related mojos.
+          <i>goal</i> in Maven, and a Maven plugin is a distribution of one or more related mojos.
         </p>
       </answer>
     </faq>
