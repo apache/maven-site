@@ -32,7 +32,7 @@ Feature Summary
 
  * Simple project setup that follows best practices - get a new project or module started in seconds
  
- * Consistent usage across all projects means no ramp up time for new developers coming onto a project
+ * Consistent usage across all projects - means no ramp up time for new developers coming onto a project
 
  * Superior dependency management including automatic updating, dependency closures (also known as transitive dependencies)
 
@@ -61,7 +61,7 @@ Feature Summary
 
  * Release management and distribution publication:
    Without much additional configuration, Maven will integrate with your source control
-   system such as CVS and manage the release of a project based on a certain tag.
+   system (such as Subversion or Git) and manage the release of a project based on a certain tag.
    It can also publish this to a distribution location for use by other projects.
    Maven is able to publish individual outputs such as a JAR, an archive including other
    dependencies and documentation, or as a source distribution.
