@@ -48,11 +48,12 @@ How website publication works
 
  Instructions on how to publish website content are split in separate documents:
 
- * {{{./deploy-maven-website.html}deploying the main Maven website}},
+ * {{{./deploy-maven-website.html}deploying the main Maven website}}, using {{{https://cms.apache.org/maven/}CMS}} at least
+ for publish step,
 
  * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
  eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
- easily prepare svnmucc command line.
+ easily prepare <<<svnmucc>>> command line.
 
  []
 
