@@ -280,7 +280,7 @@ Where: <path-to-file>  the path to the file to load
       <source><![CDATA[<project>
   ...
   <properties>
-    <project.reporting.outputDirectory>UTF-8</project.reporting.outputDirectory>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   ...
 </project>]]></source>

@@ -683,7 +683,21 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   Properties are the last required piece in understanding POM basics. Maven properties
   are value placeholder, like properties in Ant. Their values are accessible anywhere
-  within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property.
+  within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property. Or they can be used by plugins
+  as default values, for example:
+
++-----------------------+
+<project>
+  ...
+  <properties>
+    <maven.compiler.source>1.7<maven.compiler.source>
+    <maven.compiler.target>1.7<maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+  </properties>
+  ...
+</project>
++-----------------------+
 
   They come in five different styles:
 
