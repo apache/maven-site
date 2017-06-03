@@ -38,4 +38,26 @@ Central Index
   You can use {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-core/apidocs/}Maven Indexer API}}
   (see {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-examples/}examples}}) to use
   this index with a dedicated API, or use {{{http://lucene.apache.org/}Apache Lucene}} indexes browsers like
-  {{{https://github.com/DmitryKey/luke}Luke}} or {{{https://github.com/flaxsearch/marple}Marple}}.
+  {{{https://github.com/DmitryKey/luke}Luke}} or {{{https://github.com/flaxsearch/marple}Marple}} after
+  unpacking the index (see {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/}<<<-u>>> CLI option}}).
+
+* Digging Into Central Index with Luke
+
+  * download {{{https://repo.maven.apache.org/maven2/.index/}the Central index: <<<nexus-maven-repository-index.gz>>>}}
+  
+  * download {{{https://repo.maven.apache.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar}Maven Indexer CLI}}
+    and unpack the index to raw Lucene index directory:
+
++----+
+java -jar indexer-cli-5.1.1.jar -u nexus-maven-repository-index.gz -d central-lucene-index
++----+
+
+  * download and extract {{{https://github.com/DmitryKey/luke/releases/download/luke-4.10.4/luke-with-deps.tar.gz}Luke binary tarball}}
+    and launch it on the Central index with Lucene format:
+
++----+
+luke.sh -ro -index central-lucene-index
++----+
+
+    You need an old Luke version using an old Lucene version, since Maven Indexer 5.5.1 uses Lucene 3.6.2:
+    for this tutorial, we chose Luke version 4.10.4, but you may choose another version.
