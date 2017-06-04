@@ -46,10 +46,10 @@ Central Index
   * download {{{https://repo.maven.apache.org/maven2/.index/}the Central index: <<<nexus-maven-repository-index.gz>>>}}
   
   * download {{{https://repo.maven.apache.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar}Maven Indexer CLI}}
-    and unpack the index to raw Lucene index directory:
+    and {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/}unpack}} the index to raw Lucene index directory:
 
 +----+
-java -jar indexer-cli-5.1.1.jar -u nexus-maven-repository-index.gz -d central-lucene-index
+java -jar indexer-cli-5.1.1.jar --unpack nexus-maven-repository-index.gz --destination central-lucene-index
 +----+
 
   * download and extract {{{https://github.com/DmitryKey/luke/releases/download/luke-4.10.4/luke-with-deps.tar.gz}Luke binary tarball}}
