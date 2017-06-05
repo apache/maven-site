@@ -29,7 +29,8 @@
 Central Index
 
   Central repository provides {{{https://repo.maven.apache.org/maven2/.index/}an index}} that is updated weekly as
-  full and incremental.
+  full (<<<nexus-maven-repository-index.gz>>>) and incremental (<<<nexus-maven-repository-index.<n>.gz>>> +
+  <<<nexus-maven-repository-index.properties>>>).
 
   This index is build using {{{/maven-indexer/}Maven Indexer}}: see
   {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-core/}LATEST indexer-core documentation}} for more
