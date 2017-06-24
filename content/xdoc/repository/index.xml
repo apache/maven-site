@@ -22,23 +22,23 @@
 <document>
 
   <properties>
-    <title>Repository Centre</title>
+    <title>Maven Central Repository</title>
     <author email="brett_AT_apache_DOT_org">Brett Porter</author>
     <author email="hboutemy_AT_apache_DOT_org">Hervé Boutemy</author>
   </properties>
 
   <body>
 
-    <section name="Maven Repository Centre">
+    <section name="Maven Central Repository">
 
-      <p>This documentation centre is for those that need to use or contribute to the Maven repository. This includes those
+      <p>This documentation is for those that need to use or contribute to the Maven central repository. This includes those
     that need dependencies for their own build or projects that wish to have
-    their releases added to the Maven repository.</p>
+    their releases added to the Maven central repository, even if they don't use Maven as their build tool.</p>
 
       <ul>
         <li><a href="../project-faq.html">Maintaining your Metadata</a> - Information for third-party projects</li>
         <li><a href="../guides/mini/guide-central-repository-upload.html">Guide to uploading artifacts</a> - How to
-        get things uploaded to the repository</li>
+        get things uploaded to the central repository</li>
       </ul>
 
 <!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->

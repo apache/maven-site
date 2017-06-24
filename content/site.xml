@@ -84,7 +84,7 @@ under the License.
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Maven API" href="/ref/current/index.html"/>
       </item>
-      <item name="Maven Repository Centre" href="/repository/index.html" collapse="true">
+      <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html"/>
       <item name="Books and Resources" href="/articles.html" />

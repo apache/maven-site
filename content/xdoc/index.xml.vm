@@ -68,17 +68,17 @@ under the License.
       <tr>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Extend</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="plugin-developers/index.html">Write Maven Plugins</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">Improve the Maven Repository</a></th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">Improve the Maven Central Repository</a></th>
       </tr>
       <tr>
         <td></td>
         <td>
-            Information for those who may or may not be using Maven, but want to provide a plugin for shared
+            Information for those who want to provide a Maven plugin for shared
             functionality or to accompany their own product or toolset
         </td>
         <td>
-            Information for those who may or may not use, but are interested in getting project metadata into the
-            repository
+            Information for those who may or may not use Maven, but are interested in getting project metadata into the
+            <a href="repository/index.html">central repository</a>
         </td>
       </tr>
       <tr>
