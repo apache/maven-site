@@ -637,8 +637,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   A project with modules is known as a multimodule, or aggregator project. Modules are projects
   that this POM lists, and are executed as a group. An <<<pom>>> packaged project may
-  aggregate the build of a set of projects by listing them as modules, which are relative
-  directories to those projects.
+  aggregate the build of a set of projects by listing them as modules, which are relative paths to the 
+  directories or the POM files of those projects.
 
 +-----------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -655,6 +655,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   <modules>
     <module>my-project</module>
     <module>another-project</module>
+    <module>third-project/pom-example.xml</module>
   </modules>
 </project>
 +-----------------------------+
