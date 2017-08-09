@@ -32,7 +32,7 @@ All users are recommended to upgrade to [Apache Maven
 
 Credit: This issue was identified by Graham Leggett
 
-### CVE-2012-6153
+### CVE-2012-6153 Apache Maven Wagon :: WebDAV Provider
 
 Severity: Medium
 
