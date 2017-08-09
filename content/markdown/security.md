@@ -32,3 +32,24 @@ All users are recommended to upgrade to [Apache Maven
 
 Credit: This issue was identified by Graham Leggett
 
+### CVE-2012-6153
+
+Severity: Medium
+
+Vendor: The Apache Software Foundation
+
+Versions Affected:
+
+-   Apache Maven Wagon WebDAV Provider 2.12 and earlier
+
+Description: http/conn/ssl/AbstractVerifier.java in Apache Commons HttpClient 
+before 4.2.3 does not properly verify that the server hostname matches a 
+domain name in the subject's Common Name (CN) or subjectAltName field of the 
+X.509 certificate, which allows man-in-the-middle attackers to spoof SSL 
+servers via a certificate with a subject that specifies a common name in a 
+field that is not the CN field.
+
+[CVE-2012-6153](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6153)
+
+Users of this provider are recommended to upgrade to [Apache Maven Wagon :: 
+WebDAV Provider 3.0.0](./download.cgi)
