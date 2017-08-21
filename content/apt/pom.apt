@@ -25,7 +25,11 @@ POM Reference
 
         [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
 
-        [[2]] {{{Exclusions}Exclusions}}
+        [[2]] {{{Version Order Specification}Version Order Specification}}
+
+        [[3]] {{{Version Order Testing}Version Order Testing}}
+
+        [[4]] {{{Exclusions}Exclusions}}
 
       [[2]] {{{Inheritance}Inheritance}}
 
@@ -419,6 +423,101 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<<(,1.0],[1.2,)>>>: x \<= 1.0 or x \>= 1.2; multiple sets are comma-separated
 
   * <<<(,1.1),(1.1,)>>>: this excludes 1.1 (for example if it is known not to work in combination with this library)
+
+*** {Version Order Specification}:
+
+  The maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
+  The separator is recorded and will have effect on the order. A transition between digits and characters is equivalent to hypen.
+  Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
+  with "<<<.>>>" or "<<<->>>" prefixes.
+
+  Splitting and Replacing Examples:
+
+  * <<<1-1.foo-bar1baz-.1>>> -> <<<1-1.foo-bar-1-baz-0.1>>>
+
+  []
+
+  Then, starting from the end of the version, the trailing "null" values (<<<0>>>, <<<"">>>, "<<<final>>>", "<<<ga>>>") are trimmed. This process is repeated at each remaining hypen from end to start.
+
+  Trimming Examples:
+
+  * <<<1.0.0>>> -> <<<1>>>
+
+  * <<<1.ga>>> -> <<<1>>>
+
+  * <<<1.final -> <<<1>>>
+
+  * <<<1.0>>> -> <<<1>>>
+
+  * <<<1.>>> -> <<<1>>>
+
+  * <<<1->>> -> <<<1>>>
+
+  * <<<1.0.0-foo.0.0>>> -> <<<1-foo>>>
+
+  * <<<1.0.0-0.0.0>>> -> <<<1>>>
+
+  []
+
+  The version order is the <<<lexicographical order>>> on this sequence of prefixed tokens, the shorter one
+  padded with enough "null" values with matching prefix to have the same length as the longer one. Padded "null" values depend on the prefix of the other version: 0 for '.', "" for '-'.
+  The prefixed token order is:
+
+  * if the prefix is the same, then compare the token:
+
+    * Numeric tokens have the natural order.
+
+    * Non-numeric ("qualifiers") tokens have the alphabetical order, except for the following tokens which come first in this order:
+
+    "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
+
+        * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
+
+  * else "<<<.qualifier>>>" \< "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+
+  []
+
+  End Result Examples:
+
+  * "<<<1>>>" \< "<<<1.1>>>" (number padding)
+
+  * "<<<1-snapshot>>>" \< "<<<1>>>" \< "<<<1-sp>>>" (qualifer padding)
+
+  * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
+
+  * "<<<1.foo>>>" \< "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+
+  * "<<<1.ga>>>"  = "<<<1-ga>>>"  = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
+
+  * "<<<1-sp>>>"   \> "<<<1-ga>>>"
+
+  * "<<<1-sp.1>>>"  \> "<<<1-ga.1>>>"
+
+  * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
+
+  * "<<<1-a1>>>"  = "<<<1-alpha-1>>>"
+
+  Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
+
+*** {Version Order Testing}:
+
+    The maven distribution includes a tool to check version order. It was used to produce the examples in the previous paragraphs. Feel free to run it yourself when in doubt. You can run it like this:
+
+----------------------------------------
+java -jar ${MAVEN_HOME}/lib/maven-artifact-3.3.9.jar [versions...]
+----------------------------------------
+
+    example:
+
+----------------------------------------
+$ java -jar ./lib/maven-artifact-3.3.9.jar  1 2 1.1
+Display parameters as parsed by Maven (in canonical form) and comparison result:
+1. 1 == 1
+   1 \< 2
+2. 2 == 2
+   2 \> 1.1
+3. 1.1 == 1.1
+----------------------------------------
 
 *** {Exclusions}
 
