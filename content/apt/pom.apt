@@ -1523,7 +1523,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
     <developer>
       <id>jdoe</id>
       <name>John Doe</name>
-      <email>jdoe@example.com<email>
+      <email>jdoe@example.com</email>
       <url>http://www.example.com/jdoe</url>
       <organization>ACME</organization>
       <organizationUrl>http://www.example.com</organizationUrl>
