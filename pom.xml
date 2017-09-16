@@ -48,6 +48,7 @@
   <properties>
     <currentStableVersion>3.5.0</currentStableVersion>
     <currentStableReleaseDate>2017-04-07</currentStableReleaseDate>
+    <currentStableVersionDetails>ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T21:39:06+02:00</currentStableVersionDetails>
     <current35xVersion>3.5.0</current35xVersion>
     <current33xVersion>3.3.9</current33xVersion>
     <current32xVersion>3.2.5</current32xVersion>
