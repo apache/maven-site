@@ -31,7 +31,7 @@ the `PATH` environment variable
     Default locale: en_US, platform encoding: UTF-8
     OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 
-Note: The values in the first line within the parentheses differ from maven version to maven version.
+Note: The values in the first line within the parenthesis differ from maven version to maven version.
 
 Windows Tips
 -----
