@@ -24,13 +24,14 @@ the `PATH` environment variable
 * Confirm with `mvn -v` in a new shell. The result should look similar to
 
 
-    Apache Maven 3.3.3 (7994120775791599e205a5524ec3e0dfe41d4a06; 2015-04-22T04:57:37-07:00)
-    Maven home: /opt/apache-maven-3.3.3
+    Apache Maven ${currentStableVersion} (ff8f5e7444045639af65f6095c62210b5713f426; 2017-04-03T21:39:06+02:00)
+    Maven home: /opt/apache-maven-${currentStableVersion}
     Java version: 1.8.0_45, vendor: Oracle Corporation
     Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre
     Default locale: en_US, platform encoding: UTF-8
     OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 
+Note: The values in the first line within the parentheses differ from maven version to maven version.
 
 Windows Tips
 -----
