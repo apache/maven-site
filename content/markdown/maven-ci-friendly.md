@@ -196,7 +196,7 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 
   If you like to install or deploy artifacts by using the above setup you **have to use**
   the [flatten-maven-plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts 
-  in your repository which will not be cosumable by older Maven versions. Such kind of setup
+  in your repository which will not be cosumable by Maven anymore. Such kind of setup
   will look like this:
 
 
