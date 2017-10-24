@@ -51,6 +51,7 @@ under the License.
       <item name="Welcome" href="/index.html"/>
       <item name="License" href="https://www.apache.org/licenses/"/>
       <item name="Download" href="/download.html"/>
+      <item name="Release notes" href="/release-notes-all.html"/>
       <item name="Install" href="/install.html"/>
       <item name="Configure" href="/configure.html"/>
       <item name="Run" href="/run.html"/>
@@ -60,6 +61,7 @@ under the License.
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
+      <item name="History" href="/docs/history.html"/>
       <item name="FAQ" href="/general.html"/> <!-- TODO: check this is for non-users, not a technical FAQ -->
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
       <item name="Support and Training" href="/support-and-training.html"/>
@@ -93,6 +95,7 @@ under the License.
 
     <menu name="Community">
       <item name="Community Overview" href="/community.html" />
+      <item name="Project Roles" href="/project-roles.html" />
       <item name="How to Contribute" href="/guides/development/guide-helping.html" />
       <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
       <item name="Getting Help" href="/users/getting-help.html" />
