@@ -122,6 +122,14 @@ under the License.
               <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></source></td>
               <td><a href="https://github.com/apache/maven-wagon/">(GitHub mirror)</a></td>
             </tr>
+            <tr>
+              <th>Parent POMs</th>
+            </tr>
+            <tr>
+              <td><a href="/pom/asf/">Apache Parent POM</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-apache-parent.git">https://gitbox.apache.org/repos/asf/maven-apache-parent.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-apache-parent/">(GitHub mirror)</a></td>
+            </tr>
           </table>
         </p>
 
