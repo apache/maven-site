@@ -130,6 +130,11 @@ under the License.
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-apache-parent.git">https://gitbox.apache.org/repos/asf/maven-apache-parent.git</a></source></td>
               <td><a href="https://github.com/apache/maven-apache-parent/">(GitHub mirror)</a></td>
             </tr>
+            <tr>
+              <td><a href="/pom/maven/">Apache Maven Parent POMs</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-parent.git">https://gitbox.apache.org/repos/asf/maven-parent.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-parent/">(GitHub mirror)</a></td>
+            </tr>
           </table>
         </p>
 
