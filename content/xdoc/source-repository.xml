@@ -135,6 +135,19 @@ under the License.
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-parent.git">https://gitbox.apache.org/repos/asf/maven-parent.git</a></source></td>
               <td><a href="https://github.com/apache/maven-parent/">(GitHub mirror)</a></td>
             </tr>
+            <tr>
+              <th>Skins</th>
+            </tr>
+            <tr>
+              <td><a href="/skins/maven-default-skin/">Apache Maven Default Skin</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-default-skin.git">https://gitbox.apache.org/repos/asf/maven-default-skin.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-default-skin/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
+              <td><a href="/skins/maven-fluido-skin/">Apache Maven Fluido Skin</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-fluido-skin.git">https://gitbox.apache.org/repos/asf/maven-fluido-skin.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-fluido-skin/">(GitHub mirror)</a></td>
+            </tr>
           </table>
         </p>
 
