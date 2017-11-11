@@ -145,7 +145,7 @@ Guide to Testing Staged Releases
   run the build with the following command:
 
 ----
-mvn clean install -Pstaged-releases
+mvn verify -Pstaged-releases
 ----
 
   Note that the same conditions apply as above about cleaning out the local repository to prevent pollution of your local build
