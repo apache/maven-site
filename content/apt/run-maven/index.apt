@@ -31,12 +31,10 @@ Building a Project with Maven
   The vast majority of Maven-built projects can be built with the following command:
 
 ----
-mvn clean install
+mvn verify
 ----
 
-  This command tells Maven to build all the modules, and to install it in the <local repository>. The local repository
-  is created in your home directory (or alternative location that you created it), and is the location that all
-  downloaded binaries and the projects you built are stored.
+  This command tells Maven to build all the modules, and to check if all integration tests succeeded (when any was defined)
 
   That's it! If you look in the <<<target>>> subdirectory, you should find the build output and the final library or
   application that was being built.
@@ -84,7 +82,7 @@ for artifact:
   org.apache.maven:maven:pom:2.1-SNAPSHOT
 
 from the specified remote repositories:
-  central (http://repo.maven.apache.org/maven2)
+  central (https://repo.maven.apache.org/maven2)
 +-----+
 
   To resolve this issue, it depends on what the dependency is and why it is missing. The most common cause is because
@@ -99,3 +97,10 @@ from the specified remote repositories:
   In other cases, it may be an incorrectly declared dependency (like the typo in the example above) which the project
   would need to fix, like a compilation error.
 
+** Inconsistent output
+
+  Most plugins are optimized to know if they have to execute their task. In some cases the output can be polluted from
+  a previous build and the end result is not what you exected. In such rare situations you can call the goal <<<clean>>
+  which means: remove the output directory.
+  You can also call it as <<<mvn clean verify>>> which means: first clean up the output directory, next build the project
+  and verify the outcome.
