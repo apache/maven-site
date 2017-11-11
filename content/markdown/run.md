@@ -31,7 +31,7 @@ and deploying it to a repository manager could be done with
 
 Just creating the package and installing it in the local repository for re-use from other projects can be done with
 
-    mvn clean install
+    mvn verify
 
 This is the most common build invocation for a Maven project.
 
