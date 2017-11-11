@@ -100,7 +100,7 @@ from the specified remote repositories:
 ** Inconsistent output
 
   Most plugins are optimized to know if they have to execute their task. In some cases the output can be polluted from
-  a previous build and the end result is not what you exected. In such rare situations you can call the goal <<<clean>>
+  a previous build and the end result is not what you exected. In such rare situations you can call the goal <<<clean>>>
   which means: remove the output directory.
   You can also call it as <<<mvn clean verify>>> which means: first clean up the output directory, next build the project
   and verify the outcome.
