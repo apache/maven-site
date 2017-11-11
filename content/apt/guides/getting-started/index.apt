@@ -451,27 +451,6 @@ mvn clean
 
   This will remove the <<<target>>> directory with all the build data before starting so that it is fresh.
 
-  Perhaps you'd like to generate an IntelliJ IDEA descriptor for the project?
-
-+----+
-mvn idea:idea
-+----+
-
-  This can be run over the top of a previous IDEA project - it will update the settings rather than starting fresh.
-
-  If you are using Eclipse IDE, just call:
-
-+----+
-mvn eclipse:eclipse
-+----+
-
-  ~~TODO: need a sidebar notation for notes like this
-
-  <<Note:>> some familiar goals from Maven 1.0 are still there - such as <<<jar:jar>>>, but they might
-  not behave like you'd expect. Presently, <<<jar:jar>>> will not recompile sources - it will simply just
-  create a JAR from the <<<target/classes>>> directory, under the assumption everything else had already
-  been done.
-
 * {What is a SNAPSHOT version?}
 
   Notice the value of the <<version>> tag in the <<<pom.xml>>> file shown below has the suffix: <<<-SNAPSHOT>>>.
@@ -1270,9 +1249,3 @@ $ jar tvf my-webapp/target/my-webapp-1.0-SNAPSHOT.war
   The final step was to include a parent definition. This is different to the <<<extend>>> element you
   may be familiar with from Maven 1.0: this ensures that the POM can always be located even if the project
   is distributed separately from its parent by looking it up in the repository.
-
-  You might like to generate your IDEA workspace again from the top level directory...
-
-+----+
-mvn idea:idea
-+----+
