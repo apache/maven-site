@@ -77,7 +77,7 @@ Configuring Maven
   <<<-Dmaven.artifact.threads>>>. For example, to only download single artifacts at a time:
 
 ----
-mvn -Dmaven.artifact.threads=1 clean install
+mvn -Dmaven.artifact.threads=1 verify
 ----
 
   You may wish to set this option permanently, in which case you can use the <<<MAVEN_OPTS>>> environment variable. For example:
