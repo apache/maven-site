@@ -1155,7 +1155,7 @@ mvn archetype:generate \
   and try:
 
 +----+
-mvn clean package
+mvn package
 +----+
 
   You'll see <<<target/my-webapp.war>>> is built, and that all the normal steps were executed.
@@ -1234,7 +1234,7 @@ mvn clean package
   Now, try it... from the top level directory, run:
 
 +----+
-mvn clean install
+mvn verify
 +----+
 
   The WAR has now been created in <<<my-webapp/target/my-webapp.war>>>, and the JAR is included:
@@ -1270,10 +1270,6 @@ $ jar tvf my-webapp/target/my-webapp-1.0-SNAPSHOT.war
   The final step was to include a parent definition. This is different to the <<<extend>>> element you
   may be familiar with from Maven 1.0: this ensures that the POM can always be located even if the project
   is distributed separately from its parent by looking it up in the repository.
-
-  Unlike Maven 1.0, it is not required that you run <<<install>>> to successfully perform these steps - you can run
-  <<<package>>> on its own and the artifacts in the reactor will be used from the target directories instead of the
-  local repository.
 
   You might like to generate your IDEA workspace again from the top level directory...
 
