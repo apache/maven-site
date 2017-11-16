@@ -45,14 +45,14 @@ Introduction
 
 * Your First Plugin
 
-  In this section we will build a simple plugin which takes no parameters
+  In this section we will build a simple plugin with one goal which takes no parameters
   and simply displays a message on the screen when run.  Along the way, we
   will cover the basics of setting up a project to create a plugin, the
-  minimal contents of a Java mojo, and a couple ways to execute the mojo.
+  minimal contents of a Java mojo which will define goal code, and a couple ways to execute the mojo.
 
 ** Your First Mojo
 
-  At its simplest, a Java mojo consists simply of a single class.  There is
+  At its simplest, a Java mojo consists simply of a single class representing one plugin's goal.  There is
   no requirement for multiple classes like EJBs, although a plugin which
   contains a number of similar mojos is likely to use an abstract
   superclass for the mojos to consolidate code common to all mojos.
@@ -729,7 +729,7 @@ public class MyQueryMojo
 
     [[1]] {{{../../developers/mojo-api-specification.html}Mojo Documentation}}: Mojo API, Mojo annotations
 
-    [[2]] {{{http://maven.apache.org/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
+    [[2]] {{{/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
 
     [[3]] {{{https://codehaus-plexus.github.io/}Plexus}}: The IoC container used by Maven.
 
