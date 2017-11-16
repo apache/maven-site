@@ -169,14 +169,15 @@ public class GreetingMojo extends AbstractMojo
 </project>
 +----+
 
-** Build Goals
+** Building a Plugin
 
-  There are few goals which are defined with the <<<maven-plugin>>>
-  packaging as part of a standard build lifecycle:
+  There are few plugins goals bound to the standard build lifecycle
+  defined with the <<<maven-plugin>>> packaging:
 
 *-------------+----------------------------------------------------+
-|<<<compile>>>|Compiles the Java code for the plugin and builds the|
-|             |plugin descriptor                                   |
+|<<<compile>>>|Compiles the Java code for the plugin               |
+*-------------+----------------------------------------------------+
+|<<<process-classes>>>|Extracts data to build the plugin descriptor|
 *-------------+----------------------------------------------------+
 |<<<test>>>   |Runs the plugin's unit tests                        |
 *-------------+----------------------------------------------------+
@@ -186,6 +187,9 @@ public class GreetingMojo extends AbstractMojo
 *-------------+----------------------------------------------------+
 |<<<deploy>>> |Deploys the plugin jar to the remote repository     |
 *-------------+----------------------------------------------------+
+
+  For more details, you can look at
+  {{{/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_maven-plugin_packaging} detailed bindings for <<<maven-plugin>>> packaging}}.
 
 ** Executing Your First Mojo
 
