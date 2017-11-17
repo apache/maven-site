@@ -42,7 +42,7 @@ Plugin Developers Centre
 
   * {{{../guides/plugin/guide-java-plugin-development.html} Your First Mojo}} - Learn how to write your first plugin
 
-  * {{{../guides/plugin/guide-java-report-plugin-development.html} Your First Mojo}} - Learn how to write your first reporting plugin
+  * {{{../guides/plugin/guide-java-report-plugin-development.html} Your First Report Mojo}} - Learn how to write your first reporting plugin
 
   * {{{./plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
 
