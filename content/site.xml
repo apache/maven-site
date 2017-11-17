@@ -82,8 +82,9 @@ under the License.
         <item name="POM Reference" href="/pom.html" />
       </item>
       <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
-        <item name="Introduction to Plugin Development" href="/guides/introduction/introduction-to-plugins.html" />
+        <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html" />
         <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
+        <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Maven API" href="/ref/current/index.html"/>
       </item>

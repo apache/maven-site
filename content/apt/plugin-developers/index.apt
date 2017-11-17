@@ -28,7 +28,7 @@
 
 Plugin Developers Centre
 
-  This documentation centre is for those that are developing Maven plugins. This might be for your own build, or as
+  This documentation centre is for those who are developing Maven plugins. This might be for your own build, or as
   an accompaniment to your third party tool.
 
 ~~TODO: callout
@@ -41,6 +41,8 @@ Plugin Developers Centre
   * {{{../guides/introduction/introduction-to-plugins.html} Introduction to Plugin Development}} - Introduction to concepts
 
   * {{{../guides/plugin/guide-java-plugin-development.html} Your First Mojo}} - Learn how to write your first plugin
+
+  * {{{../guides/plugin/guide-java-report-plugin-development.html} Your First Mojo}} - Learn how to write your first reporting plugin
 
   * {{{./plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
 
