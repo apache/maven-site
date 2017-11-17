@@ -1,5 +1,5 @@
  ------
- Introduction to Maven 2.0 Plugin Development
+ Introduction to Maven Plugin Development
  ------
  John Casey
  ------
@@ -26,7 +26,7 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Introduction to Maven 2.0 Plugin Development
+Introduction to Maven Plugin Development
 
   Maven consists of a core engine which provides basic project-processing
   capabilities and build-process management, and a host of plugins which are
@@ -48,10 +48,10 @@ Introduction to Maven 2.0 Plugin Development
   can be customized through a set of unique parameters which are exposed by a
   description of each plugin goal (or Mojo).
 
-  One of the simplest plugins in Maven 2.0 is the Clean Plugin.  The
+  One of the simplest plugins in Maven is the Clean Plugin.  The
   {{{../../plugins/maven-clean-plugin/}Maven
   Clean plugin}} (maven-clean-plugin) is responsible for removing the target
-  directory of a Maven 2 project.  When you run "mvn clean", Maven 2 executes
+  directory of a Maven project.  When you run "mvn clean", Maven executes
   the "clean" goal as defined in the Clean plug-in, and the target directory
   is removed.  The Clean plugin
   {{{../../plugins/maven-clean-plugin/clean-mojo.html}defines
@@ -60,11 +60,14 @@ Introduction to Maven 2.0 Plugin Development
 
 * What is a Mojo (<And Why the H--- is it Named 'Mojo'>)?
 
-  A Mojo is really just a goal in Maven 2, and plug-ins consist of
+  A Mojo is really just a goal in Maven, and plug-ins consist of
   any number of goals (Mojos).  Mojos can be defined as annotated Java classes or
   Beanshell script.  A Mojo specifies
   metadata about a goal: a goal name, which phase of the lifecycle it fits into,
   and the parameters it is expecting.
+
+  Mojo term was introduced in Maven 2 as a complete rework on how to write plugins
+  (see below for more details on Maven 1.x plugins comparison).
 
   MOJO is a play on POJO (Plain-old-Java-object), substituting "Maven" for
   "Plain".  Mojo is also an iteresting word (see {{{http://www.answers.com/mojo&r=67}definition}}).
@@ -81,7 +84,7 @@ Introduction to Maven 2.0 Plugin Development
 
 Resources
 
-    [[1]] {{{../plugin/guide-java-plugin-development.html}Plugin development guide}}
+    [[1]] {{{/plugin-developers/index.html}Plugin Development Center}}
 
     [[2]] {{{../mini/guide-configuring-plugins.html}Configuring plugins}}
 

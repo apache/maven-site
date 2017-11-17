@@ -177,7 +177,7 @@ public class GreetingMojo extends AbstractMojo
 *-------------+----------------------------------------------------+
 |<<<compile>>>|Compiles the Java code for the plugin               |
 *-------------+----------------------------------------------------+
-|<<<process-classes>>>|Extracts data to build the plugin descriptor|
+|<<<process-classes>>>|Extracts data to build the {{{/ref/current/maven-plugin-api/plugin.html}plugin descriptor}}|
 *-------------+----------------------------------------------------+
 |<<<test>>>   |Runs the plugin's unit tests                        |
 *-------------+----------------------------------------------------+
