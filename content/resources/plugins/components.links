@@ -1,6 +1,6 @@
 # links property file for Ant's symlink task in pom.xml:
 # links to components in https://maven.apache.org/components
-maven-acr-plugin../components/plugins/maven-acr-plugin
+maven-acr-plugin=../components/plugins/maven-acr-plugin
 maven-ant-plugin=../components/plugins/maven-ant-plugin
 maven-antrun-plugin=../components/plugins/maven-antrun-plugin
 maven-assembly-plugin=../components/plugins/maven-assembly-plugin
