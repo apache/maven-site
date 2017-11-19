@@ -75,6 +75,8 @@ Redirect Permanent /guides/mini/guide-apt-format.html /doxia/references/apt-form
 
 RedirectMatch ^/maven-1.x/(.*)$ /archives/maven-1.x/$1
 
+# rewrite rules for /components: see http://maven.apache.org/developers/website/
+# should not be useful any more since symlinks have been created in http://svn.apache.org/r1815743 and http://svn.apache.org/r1815745
 RewriteEngine on
 
 # if file is not found in maven-site, look into components
