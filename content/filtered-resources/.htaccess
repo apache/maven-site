@@ -74,18 +74,3 @@ Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html /
 Redirect Permanent /guides/mini/guide-apt-format.html /doxia/references/apt-format.html
 
 RedirectMatch ^/maven-1.x/(.*)$ /archives/maven-1.x/$1
-
-# rewrite rules for /components: see http://maven.apache.org/developers/website/
-# should not be useful any more since symlinks have been created in http://svn.apache.org/r1815743 and http://svn.apache.org/r1815745
-RewriteEngine on
-
-# if file is not found in maven-site, look into components
-RewriteCond %{REQUEST_URI} !^/components/
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ /components/$1 [C]
-
-# in case of directory without trailing /, do the redirect or httpd will do a redirect from /foo to /components/foo/
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !/$
-RewriteRule components/(.*) /$1/ [R]
