@@ -1,0 +1,35 @@
+# links property file for Ant's symlink task in pom.xml:
+# links to components in https://maven.apache.org/components
+file-management=../components/shared/file-management
+maven-archiver=../components/shared/maven-archiver
+maven-artifact-resolver=../components/shared/maven-artifact-resolver
+maven-artifact-transfer=../components/shared/maven-artifact-transfer
+maven-common-artifact-filters=../components/shared/maven-common-artifact-filters
+maven-dependency-analyzer=../components/shared/maven-dependency-analyzer
+maven-dependency-tree=../components/shared/maven-dependency-tree
+maven-downloader=../components/shared/maven-downloader
+maven-doxia-tools=../components/shared/maven-doxia-tools
+maven-enforcer-rule-api=../components/shared/maven-enforcer-rule-api
+maven-filtering=../components/shared/maven-filtering
+maven-invoker=../components/shared/maven-invoker
+maven-jarsigner=../components/shared/maven-jarsigner
+maven-mapping=../components/shared/maven-mapping
+maven-model-converter=../components/shared/maven-model-converter
+maven-osgi=../components/shared/maven-osgi
+maven-plugin-helper=../components/shared/maven-plugin-helper
+maven-plugin-testing-harness=../components/shared/maven-plugin-testing-harness
+maven-plugin-testing-tools=../components/shared/maven-plugin-testing-tools
+maven-plugin-tools=../components/shared/maven-plugin-tools
+maven-reporting-api=../components/shared/maven-reporting-api
+maven-reporting-exec=../components/shared/maven-reporting-exec
+maven-reporting-impl=../components/shared/maven-reporting-impl
+maven-repository-builder=../components/shared/maven-repository-builder
+maven-runtime=../components/shared/maven-runtime
+maven-script-interpreter=../components/shared/maven-script-interpreter
+maven-shared-incremental=../components/shared/maven-shared-incremental
+maven-shared-io=../components/shared/maven-shared-io
+maven-shared-jar=../components/shared/maven-shared-jar
+maven-shared-resources=../components/shared/maven-shared-resources
+maven-shared-utils=../components/shared/maven-shared-utils
+maven-test-tools=../components/shared/maven-test-tools
+maven-verifier=../components/shared/maven-verifier

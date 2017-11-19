@@ -1,0 +1,7 @@
+# links property file for Ant's symlink task in pom.xml:
+# links to components in https://maven.apache.org/components
+asf=../components/pom/asf
+maven-plugins=../components/pom/maven-plugins
+maven-shared-components=../components/pom/maven-shared-components
+maven=../components/pom/maven
+skins=../components/pom/skins

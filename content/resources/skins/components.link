@@ -1,0 +1,7 @@
+# links property file for Ant's symlink task in pom.xml:
+# links to components in https://maven.apache.org/components
+maven-application-skin=../components/skins/maven-application-skin
+maven-classic-skin=../components/skins/maven-classic-skin
+maven-default-skin=../components/skins/maven-default-skin
+maven-fluido-skin=../components/skins/maven-fluido-skin
+maven-stylus-skin=../components/skins/maven-stylus-skin
