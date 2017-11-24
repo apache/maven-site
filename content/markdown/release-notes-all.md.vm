@@ -24,13 +24,14 @@
 
 ## Release Notes
 
+ See [Maven Releases History](docs/history.html) for more friendly view.
+
+ Release notes list:
+
 #foreach ($v in $versions3x.split(","))
-[Release notes for Maven $v](docs/$v/release-notes.html)
-
+* [Release notes for Maven $v](docs/$v/release-notes.html)
 #end
-
 #foreach ($v in $versions2x.split(","))
-[Release notes for Maven $v](docs/$v/release-notes.html)
-
+* [Release notes for Maven $v](docs/$v/release-notes.html)
 #end
 
