@@ -71,8 +71,8 @@ Date format is: YYYY-MM-DD
 <td>Links</td>
 </tr>
 
-#release( "2017-10-24" "3.5.2" "announce/201710.mbox/%3CCA%2BnPnMyzJ1%3DtTQ_%3DsAKnj95_2PjiE4ArUQkysyJrW%2Bpz5MEWcA%40mail.gmail.com%3E" "true" "Java 7" "6" )
-#release( "2017-04-07" "3.5.0" "announce/201704.mbox/%3CCA%2BnPnMz9C8uo0WseJjbdVtC7Sh%3DKM5uvWcOjBfW5r-WRYfMXWw%40mail.gmail.com%3E" "" "" "6" )
+#release( "2017-10-24" "3.5.2" "announce/201710.mbox/%3CCA%2BnPnMyzJ1%3DtTQ_%3DsAKnj95_2PjiE4ArUQkysyJrW%2Bpz5MEWcA%40mail.gmail.com%3E" "true" "Java 7" "7" )
+#release( "2017-04-07" "3.5.0" "announce/201704.mbox/%3CCA%2BnPnMz9C8uo0WseJjbdVtC7Sh%3DKM5uvWcOjBfW5r-WRYfMXWw%40mail.gmail.com%3E" "" "" "" )
 #release( "2017-03-24" "3.5.0-beta-1" "announce/201703.mbox/%3CCA%2BnPnMz1zeTkXn_2b%3DPgBDm61PLTM43zZ5fgvOSNvTqwEkfS_A%40mail.gmail.com%3E" "" "" "" )
 #release( "2017-02-28" "3.5.0-alpha-1" "announce/201703.mbox/%3CCA%2BnPnMyDmF7KAB_W89bkVjNTmpHQtv3reFA0Xm3cpYHtW1fKaA%40mail.gmail.com%3E" "" "" "" )
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "" "" )
