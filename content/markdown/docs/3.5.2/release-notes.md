@@ -28,13 +28,13 @@ Maven 3.5.2 is [available for download][0].
 
 Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central place.
 
-The core release is independent of the plugins available. Further releases of plugins will be made separately. See the [PluginList][1] for more information.
+The core release is independent of the plugins available. Further releases of plugins will be made separately. See the [plugins list][1] for more information.
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [http://maven.apache.org/][2]
-- the maven-user mailing list: [http://maven.apache.org/mail-lists.html][3]
-- the reference documentation: [http://maven.apache.org/ref/3.5.1/][4]
+- the web site: [https://maven.apache.org/][2]
+- the maven-user mailing list: [https://maven.apache.org/mail-lists.html][3]
+- the reference documentation: [https://maven.apache.org/ref/3.5.2/][4]
 
 ## Reporters and Contributors of this release
 
@@ -115,13 +115,13 @@ The full list of changes as well as detailed descriptions of same can be found i
 
 See [complete release notes for all versions][7]
 
-[0]: ../../download.html
-[1]: ../../plugins/index.html
+[0]: /download.html
+[1]: /plugins/index.html
 [2]: https://maven.apache.org/
 [3]: /mail-lists.html
 [4]: /ref/3.5.2/
 [6]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12338964&amp;styleName=Text
-[7]: ../../docs/history.html
+[7]: /docs/history.html
 [MNG-5457]: https://issues.apache.org/jira/browse/MNG-5457
 [MNG-5935]: https://issues.apache.org/jira/browse/MNG-5935
 [MNG-6025]: https://issues.apache.org/jira/browse/MNG-6025
