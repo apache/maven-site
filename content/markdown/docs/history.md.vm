@@ -30,11 +30,11 @@
 #set ( $b = '' )
 #set ( $b_ = '' )
 #end
-<tr><td>$b$date$b_</td><td>$b$version$b_</td>
+<tr><td>$b$date$b_</td><td>$b$version$b_</td>##
 #if( $jdk.length() > 0 )
-<td rowspan="$rowspan">$jdk</td>
+<td rowspan="$rowspan">$jdk</td>##
 #end
-<td>
+<td>##
 #if( !$announce.equals( "" ) )
 #if( !$announce.startsWith( "http://" ) )
 #set ( $announceLink = "$archive$announce" )
@@ -43,18 +43,18 @@
 #end
 #end
 #if( !$announce.equals( "" ) )
-$b<a href="$announceLink">announce</a>
+$b<a href="$announceLink">announce</a>##
 #if( !$version.equals( "2.1.0-M1" ) )
-, <a href="./$version/release-notes.html">release notes</a>
+, <a href="./$version/release-notes.html">release notes</a>##
 #end
 #else
 #if( !$version.equals( "2.1.0-M1" ) )
-$b<a href="./$version/release-notes.html">release notes</a>
+$b<a href="./$version/release-notes.html">release notes</a>##
 #end
 #end
 #if( $version.startsWith( "3.5.0" ) || $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
-, <a href="/ref/$version/">reference documentation</a>
-#end
+, <a href="/ref/$version/">reference documentation</a>##
+#end##
 $b_</td>
 </tr>
 #end
