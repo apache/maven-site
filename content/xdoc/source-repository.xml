@@ -175,14 +175,17 @@ under the License.
               <td><a href="https://github.com/apache/maven-shared/">(GitHub mirror)</a></td>
             </tr>
             <tr>
+              <td>the Maven site (this site)</td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/site/trunk/">https://svn.apache.org/repos/asf/maven/site/trunk/</a></source></td>
+              <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
               <td>A variety of other subsystems (including obsolete trees replaced by git)</td>
               <td><source><a href="https://svn.apache.org/viewvc/maven/">https://svn.apache.org/repos/asf/maven/</a></source></td>
               <td></td>
             </tr>
           </table>
         </p>
-        <p>The sources for this site are available in a separate location:</p>
-        <source><a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
       </subsection>
 
       <subsection name="Anonymous Access">
