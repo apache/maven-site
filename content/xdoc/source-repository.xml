@@ -73,6 +73,11 @@ under the License.
               <td><a href="https://github.com/apache/maven-resolver/">(GitHub mirror)</a></td>
             </tr>
             <tr>
+              <td><a href="/resolver-ant-tasks/">Apache Maven Artifact Resolver Ant Tasks</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-resolver-ant-tasks.git">https://gitbox.apache.org/repos/asf/maven-resolver-ant-tasks.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-resolver-ant-tasks/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
               <td><a href="https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/">Apache Maven Distribution Checking Tool</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-dist-tool.git">https://gitbox.apache.org/repos/asf/maven-dist-tool.git</a></source></td>
               <td><a href="https://github.com/apache/maven-dist-tool/">(GitHub mirror)</a></td>
