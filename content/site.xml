@@ -24,7 +24,7 @@ under the License.
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
   name="Maven">
   <version position="none" />
-  <edit>https://github.com/apache/maven-site/tree/trunk/</edit>
+  <edit>https://github.com/apache/maven-site/tree/trunk</edit>
 
   <skin><!-- TODO remove when CMS doesn't have any issue with parent site.xml download... -->
     <groupId>org.apache.maven.skins</groupId>
