@@ -516,16 +516,6 @@ under the License.
           You can also check out every component separately. The components in Subversion are:
           <table>
             <tr>
-              <td><a href="/plugins/">Apache Maven Plugins</a></td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/plugins/trunk/">https://svn.apache.org/repos/asf/maven/plugins/trunk/</a>                                         </source></td>
-              <td><a href="https://github.com/apache/maven-plugins/">(GitHub mirror)</a></td>
-            </tr>
-            <tr>
-              <td><a href="/shared/">Shared components</a></td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/shared/trunk/">https://svn.apache.org/repos/asf/maven/shared/trunk/</a></source></td>
-              <td><a href="https://github.com/apache/maven-shared/">(GitHub mirror)</a></td>
-            </tr>
-            <tr>
               <td>the Maven site (this site)</td>
               <td><source><a href="https://svn.apache.org/viewvc/maven/site/trunk/">https://svn.apache.org/repos/asf/maven/site/trunk/</a></source></td>
               <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
