@@ -40,27 +40,35 @@ under the License.
 
       <subsection name="Maven Core">
         <p>
-          The git repository for Maven contains a master branch which is the current development version. There is also a
-          branch for maven-2.2.X or maven-3.0.x.
-        </p>
-        <source> <a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source>
-        <p>The <a href="/core-its/">integration tests for the Maven core</a> have their own repository:
-          <source><a href="https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git">https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git</a></source>
+          The Git repository for <a href="/ref/current/">Maven</a> contains a master branch which is the current development version. There is also a
+          branch for maven-2.2.X or maven-3.0.x. In addition, the <a href="/core-its/">integration tests for the Maven core</a> have their own repository.
+          <table>
+            <tr>
+              <td><a href="/ref/current/">Apache Maven</a></td>
+              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source></td>
+              <td><a href="https://github.com/apache/maven/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
+              <td><a href="/core-its/">Apache Maven Core ITs</a></td>
+              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git">https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-integration-testing/">(GitHub mirror)</a></td>
+            </tr>
+          </table>
         </p>
       </subsection>
 
       <subsection name="Other Components">
         <p>
-          The source repositories for the various plugins are in Subversion, listed in the documentation of the respective plugin,
+          The source repositories for the various plugins are in Git, listed in the documentation of the respective plugin,
           reachable via the <a href="/plugins/index.html">plugin index</a>.
         </p>
         <p>
-          There are also many shared components and subsystems with their own source repositories, some in Subversion, some in Git.
+          There are also many shared components and subsystems with their own source repositories, mainly in Git, some in Subversion.
         </p>
 
         <h4>Components in Git</h4>
         <p>
-          The components in git are:
+          The components in Git are:
           <table>
             <tr>
               <td><a href="/archetype/">Apache Maven Archetype</a></td>
