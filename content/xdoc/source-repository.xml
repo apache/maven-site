@@ -48,7 +48,7 @@ under the License.
           and an additional Git repository for tool's manifest: 
           <table>
             <tr>
-              <td>Apache Maven full source code</td>
+              <td>Apache Maven <a href="https://github.com/apache/maven-sources/blob/master/default.xml">full source code</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-sources.git">https://gitbox.apache.org/repos/asf/maven-sources.git</a></source></td>
               <td><a href="https://github.com/apache/maven-sources/">(GitHub mirror)</a></td>
             </tr>
