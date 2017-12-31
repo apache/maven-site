@@ -556,6 +556,11 @@ repo start master --all</pre>
               <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
             </tr>
             <tr>
+              <td><a href="/archetypes/">Maven Archetypes</a></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/archetypes/trunk/">https://svn.apache.org/repos/asf/maven/archetypes/trunk/</a></source></td>
+              <td><a href="https://github.com/apache/maven-archetypes/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
               <td>Maven Sandbox</td>
               <td><source><a href="https://svn.apache.org/viewvc/maven/sandbox/trunk/">https://svn.apache.org/repos/asf/maven/sandbox/trunk/</a></source></td>
               <td><a href="https://github.com/apache/maven-sandbox/">(GitHub mirror)</a></td>
