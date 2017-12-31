@@ -33,13 +33,13 @@ Available Skins
   The following table lists skins that are available for you to use in your
   Maven generated site.
 
-*-------------------------------------------------------------------+--------------+----------------------+------------------+
-|| <<Skin>>                                                         || <<Version>> || Site Plugin Version || <<Description>>
-*-------------------------------------------------------------------+--------------+----------------------+------------------+
-| {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.2          | [3.5,)               |You get this skin if you don't specify any skin.
-*-------------------------------------------------------------------+--------------+----------------------+------------------+
-| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.6          | [3.5,)               |Skin based on Bootstrap CSS.
-*-------------------------------------------------------------------+--------------+----------------------+------------------+
+*-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
+|| <<Skin>>                                                         || <<Version>> || Site Plugin Version || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
+*-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
+| {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.2          | [3.5,)               | You get this skin if you don't specify any skin or template. | {{{http://gitbox.apache.org/repos/asf/maven-default-skin/}GIT}} / {{{https://github.com/apache/maven-default-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326472}JIRA}}
+*-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
+| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.6          | [3.5,)               | Skin based on Bootstrap CSS. | {{{http://gitbox.apache.org/repos/asf/maven-fluido-skin/}GIT}} / {{{https://github.com/apache/maven-fluido-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326474}JIRA}}
+*-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
 
   To use one of these skins in your project, you use the <<<skin>>> element of the
   {{{https://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}site descriptor}}.
