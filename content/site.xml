@@ -31,7 +31,7 @@ under the License.
     <version>1.7</version>
   </skin>
 
-  <edit>${project.scm.url}</edit>
+  <edit>https://github.com/apache/maven-site/tree/HEAD</edit>
 
   <custom>
     <fluidoSkin>
