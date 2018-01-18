@@ -911,7 +911,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   For example, a Plexus project requires a <<<configuration.xml>>> file (which specifies component
   configurations to the container) to live within the <<<META-INF/plexus>>> directory. Although we
-  could just as easily place this file within <<<src/main/resource/META-INF/plexus>>>, we want
+  could just as easily place this file within <<<src/main/resources/META-INF/plexus>>>, we want
   instead to give Plexus its own directory of <<<src/main/plexus>>>. In order for the JAR plugin
   to bundle the resource correctly, you would specify resources similar to the following:
 
