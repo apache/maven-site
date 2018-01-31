@@ -154,7 +154,8 @@ under the License.
         <!-- not currently generated on the CMS due to the profile, probably also badly formattted
            <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
         -->
-        <li><a href="[preferred]/maven/">All sources (plugins, shared libraries,...) available at https://www.apache.org/dist/maven/</a></li>
+        <li><a href="[preferred]maven/">All current release sources (plugins, shared libraries,...) available at https://www.apache.org/dist/maven/</a></li>
+        <li><a href="./source-repository.html">latest source code from source repository</a>
         <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
       </ul>
       </subsection>
