@@ -7,5 +7,6 @@ maven-archetype-plugin-site ../components/archetypes/maven-archetype-plugin-site
 maven-archetype-portlet     ../components/archetypes/maven-archetype-portlet
 maven-archetype-quickstart  ../components/archetypes/maven-archetype-quickstart
 maven-archetype-simple      ../components/archetypes/maven-archetype-simple
+maven-archetype-site        ../components/archetypes/maven-archetype-site
 maven-archetype-site-simple ../components/archetypes/maven-archetype-site-simple
 maven-archetype-webapp      ../components/archetypes/maven-archetype-webapp
