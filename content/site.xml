@@ -36,7 +36,6 @@ under the License.
   <custom>
     <fluidoSkin>
       <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
-      <googlePlusOne />
       <googleSearch>
         <sitesearch>https://maven.apache.org</sitesearch>
       </googleSearch>
