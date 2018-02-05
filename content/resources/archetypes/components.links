@@ -1,0 +1,11 @@
+# links property file for Ant's symlink task in pom.xml:
+# links to components in https://maven.apache.org/components
+maven-archetype-archetype   ../components/archetypes/maven-archetype-archetype
+maven-archetype-j2ee-simple ../components/archetypes/maven-archetype-j2ee-simple
+maven-archetype-plugin      ../components/archetypes/maven-archetype-plugin
+maven-archetype-plugin-site ../components/archetypes/maven-archetype-plugin-site
+maven-archetype-portlet     ../components/archetypes/maven-archetype-portlet
+maven-archetype-quickstart  ../components/archetypes/maven-archetype-quickstart
+maven-archetype-simple      ../components/archetypes/maven-archetype-simple
+maven-archetype-site-simple ../components/archetypes/maven-archetype-site-simple
+maven-archetype-webapp      ../components/archetypes/maven-archetype-webapp

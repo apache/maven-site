@@ -5,7 +5,6 @@ ant-tasks-archives=components/ant-tasks-archives
 archetype-archives=components/archetype-archives
 archetype=components/archetype
 archetypes-archives=components/archetypes-archives
-archetypes=components/archetypes
 archives=components/archives
 core-its=components/core-its
 enforcer-archives=components/enforcer-archives
