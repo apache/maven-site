@@ -113,7 +113,7 @@ Introduction
 
   * {{{/shared/maven-reporting-impl/dependency-info.html}<<<org.apache.maven.reporting:maven-reporting-impl>>>}}
 
-  * {{{/shared/maven-reporting-api/dependency-info.html}<<<org.apache.maven.reporting:maven-reporting-api>>>}}
+  * {{{/shared/maven-reporting-api/project-summary.html}<<<org.apache.maven.reporting:maven-reporting-api>>>}}
 
   []
 
