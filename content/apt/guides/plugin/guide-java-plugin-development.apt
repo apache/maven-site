@@ -328,7 +328,8 @@ mvn archetype:generate \
   parameter of the annotation defines the default value for the variable.  This value can
   include expressions which reference the project, such as
   "<<<$\{project.version\}>>>" (more can be found in the
-  {{{http://maven.apache.org/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html}"Parameter Expressions" document}}). The <<<property>>> parameter can be used to allow configuration
+  {{{/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html}"Parameter Expressions" document}}).
+  The <<<property>>> parameter can be used to allow configuration
   of the mojo parameter from the command line by referencing a system property that the user sets
   via the <<<-D>>> option.
 

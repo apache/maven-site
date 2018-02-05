@@ -50,7 +50,7 @@ Introduction
     A regular Maven project usually invokes a <reporting goal> of a plugin by declaring such plugin in the
     {{{/plugins/maven-site-plugin/examples/configuring-reports.html}<<<<reporting\>>>>}} section of its <<<pom.xml>>> as in the example below:
 
-+---
++---+
 <project>
   ...
   <reporting>
@@ -63,21 +63,21 @@ Introduction
     </plugins>
   </reporting>
   ...
-+---
++---+
 
   [[2]]
     When {{{/plugins/maven-site-plugin/}<<<maven-site-plugin>>>}} is invoked (for example with the <<<mvn site>>> command),
-    the specified plugins are loaded and the <executeReport()> method of each class that extends
-    {{{/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html}<AbstractMavenReport>}}
+    the specified plugins are loaded and the <generate()> method of each class that implements
+    {{{/shared/maven-reporting-api/apidocs/org/apache/maven/reporting/MavenReport.html}<MavenReport>}}
     is executed.
 
   [[3]]
-    The <executeReport()> method generates a document through Maven's {{{/doxia/doxia/doxia-sink-api/}Doxia Sink API}}.
+    The <generate()> method generates a document through Maven's {{{/doxia/doxia/doxia-sink-api/}Doxia Sink API}}.
     This document is comprised of basic elements like title, headings, text, links, tables, etc.
     This is where you will put the logic of your report, assembling elements, based on the content of the Maven project.
 
   [[4]]
-    These document elements are passed to Doxia to generate an HTML document, which itself gets wrapped into a {{{/skins}Maven Skin}},
+    These document elements are passed to Doxia to generate an HTML document, which itself gets wrapped into a {{{/skins/}Maven Skin}},
     as specified in the projects {{{/guides/mini/guide-site.html}<<<./src/site/site.xml>>>}}.
 
   [[5]]
@@ -89,8 +89,11 @@ Introduction
 
 * Basic Requirements of a Report <Mojo>
 
-  Each goal or <Mojo> is implemented with a separate Java class. For a <Mojo> to become a <report Mojo>, it needs
-  to extend the {{{/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html}<org.apache.maven.reporting.AbstractMavenReport>}}
+  Each goal or <Mojo> is implemented with a separate Java class. For a <Mojo> to become a <report Mojo>, it needs to
+  implement {{{/shared/maven-reporting-api/apidocs/org/apache/maven/reporting/MavenReport.html}<MavenReport>}}
+  (in addition to {{{/ref/current/apidocs/org/apache/maven/plugin/Mojo.html}<org.apache.maven.plugin.Mojo>}}).
+  An easy way to implement both interfaces is to extend
+  the {{{/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html}<org.apache.maven.reporting.AbstractMavenReport>}}
   class (instead of <org.apache.maven.plugin.AbstractMojo> for a regular <Mojo>).
 
   The class will also need to implement the following methods:
@@ -108,9 +111,9 @@ Introduction
   To build a Maven plugin that includes <report Mojos>, the <<<pom.xml>>> of your project will need declare the project
   as a regular plugin, and include specific dependencies required by the report <Mojos>:
 
-  * {{{https://mvnrepository.com/artifact/org.apache.maven.reporting/maven-reporting-impl}<<<org.apache.maven.reporting:maven-reporting-impl:3.0.0>>>}}
+  * {{{/shared/maven-reporting-impl/dependency-info.html}<<<org.apache.maven.reporting:maven-reporting-impl>>>}}
 
-  * {{{https://mvnrepository.com/artifact/org.apache.maven.reporting/maven-reporting-api}<<<org.apache.maven.reporting:maven-reporting-api:3.0>>>}}
+  * {{{/shared/maven-reporting-api/dependency-info.html}<<<org.apache.maven.reporting:maven-reporting-api>>>}}
 
   []
 
@@ -204,7 +207,7 @@ Introduction
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-plugin-plugin</artifactId>
-				<version>3.5</version>
+				<version>3.5.1</version>
 				<configuration>
 					<goalPrefix>simple</goalPrefix>
 				</configuration>
@@ -254,12 +257,8 @@ import org.apache.maven.reporting.MavenReportException;
  */
 @Mojo(
 		name = "simple",
-		aggregator = false,
-		executionStrategy = "always",
 		defaultPhase = LifecyclePhase.SITE,
 		requiresDependencyResolution = ResolutionScope.RUNTIME,
-		requiresDirectInvocation = false,
-		requiresOnline = false,
 		requiresProject = true,
 		threadSafe = true
 		)
@@ -326,7 +325,7 @@ public class SimpleReport extends AbstractMavenReport {
 		mainSink.paragraph_();
 
 		// Close
-    mainSink.section1_();
+        mainSink.section1_();
 		mainSink.body_();
 
 	}
@@ -339,12 +338,10 @@ public class SimpleReport extends AbstractMavenReport {
   Building the plugin is done by executing the below command in the root directory of the plugin project:
 
 +---
-$ mvn clean install
+$ mvn install
 +---
 
   This command will:
-
-  * erase the content of the <<<./target>>> directory
 
   * compile your code
 
@@ -414,7 +411,7 @@ simple:simple
   In your <executeReport()> method, you will leverage the {{{/doxia/doxia/doxia-sink-api/}Doxia Sink API}}
   to add elements to the report document.
 
-  You will use the {{{https://maven.apache.org/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html}<Sink>}} object associated to the report:
+  You will use the {{{/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html}<Sink>}} object associated to the report:
 
 +---
 Sink sink = getSink();
