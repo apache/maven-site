@@ -111,6 +111,6 @@ needs of different projects, it can not cater to every situation without
 making compromises to the integrity of its objectives.
 
 If you decide to use Maven, and have an unusual build structure that you
-cannot reorganise, you may have to forgot some features or the use of
+cannot reorganise, you may have to forget some features or the use of
 Maven altogether.
 
