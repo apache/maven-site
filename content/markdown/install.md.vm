@@ -9,14 +9,12 @@ Detailed steps are:
 
 * Extract distribution archive in any directory 
 
+  ```cmd
+  unzip apache-maven-${currentStableVersion}-bin.zip
   ```
-    unzip apache-maven-${currentStableVersion}-bin.zip
-  ```
-  
   or
-  
-  ```
-    tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz
+  ```sh
+  tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz
   ```
 
 Alternatively use your preferred archive extraction tool.
@@ -26,23 +24,24 @@ the `PATH` environment variable
 
 * Confirm with `mvn -v` in a new shell. The result should look similar to
 
-
+    ```
     Apache Maven ${currentStableVersion} (${currentStableVersionDetails})
     Maven home: /opt/apache-maven-${currentStableVersion}
     Java version: 1.8.0_45, vendor: Oracle Corporation
     Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre
     Default locale: en_US, platform encoding: UTF-8
     OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
-
+    ```
 
 Windows Tips
 -----
 
 * Check environment variable value e.g.
 
-
+    ```cmd
     echo %JAVA_HOME% 
     C:\Program Files\Java\jdk1.7.0_51
+    ```
 
 * Adding to `PATH`:  Add the unpacked distribution's bin directory to your user PATH environment variable 
 by opening up the system properties (WinKey + Pause), selecting the "Advanced" tab, and 
@@ -57,12 +56,14 @@ Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
 
 * Check environment variable value
 
-
+    ```sh
     echo $JAVA_HOME
     /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
+    ```
     
 * Adding to `PATH`
 
-
+    ```sh
     export PATH=/opt/apache-maven-${currentStableVersion}/bin:$PATH
+    ```
 
