@@ -9,12 +9,15 @@ Detailed steps are:
 
 * Extract distribution archive in any directory 
 
-
+  ```
     unzip apache-maven-${currentStableVersion}-bin.zip
-
-or
-
+  ```
+  
+  or
+  
+  ```
     tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz
+  ```
 
 Alternatively use your preferred archive extraction tool.
 
