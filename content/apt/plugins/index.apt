@@ -200,11 +200,7 @@ Available Plugins
 
 * Outside The Maven Land
 
-** At codehaus.org
-
-  <<<Due to the shutdown of codehaus.org {{{http://www.mojohaus.org/}all plugins are under transition}}
-  to the new location. This means that currently some of the links might be invalid. We are continiously
-  cleaning up the links.>>>
+** At MojoHaus (formerly known as {codehaus.org})
 
   There are also {{{http://www.mojohaus.org/plugins.html}many plug-ins}} available at 
   the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
@@ -214,7 +210,7 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 || <<Plugin>> (see {{{http://www.mojohaus.org/plugins.html}complete list with version}}) || <<Description>>
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
+| {{{http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
 *---------------------------------------------------------------------------------+----------------------------------+
@@ -222,7 +218,7 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/clirr-maven-plugin/} <<<clirr>>>}}                  | Compare binaries or sources for compatibility using Clirr |
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{http://mojo.codehaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammar.
+| {{{http://www.mojohaus.org/javacc-maven-plugin/} <<<javacc>>>}}                | Generate sources from a JavaCC grammar.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{http://www.mojohaus.org/jdepend-maven-plugin/} <<<jdepend>>>}}              | Generate a report on code metrics using JDepend.
 *---------------------------------------------------------------------------------+----------------------------------+
