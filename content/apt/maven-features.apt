@@ -38,10 +38,10 @@ Feature Summary
 
  * Able to easily work with multiple projects at the same time
  
- * A large and growing repository of libraries and metadata to use out of the box, and arrangements in place with the largest Open Source projects for
+ * A {{{/repository/}large and growing repository of libraries and metadata}} to use out of the box, and arrangements in place with the largest Open Source projects for
    real-time availability of their latest releases
  
- * Extensible, with the ability to easily write plugins in Java or scripting languages
+ * Extensible, with the ability to easily {{{/plugin-developers/}write plugins}} in Java or scripting languages
 
  * Instant access to new features with little or no extra configuration
  
