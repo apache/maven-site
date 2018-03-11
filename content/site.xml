@@ -43,6 +43,10 @@ under the License.
   </custom>
   
   <body>
+    <links>
+      <item name="Download" href="/download.cgi" />
+      <item name="Get Sources" href="/source-repository.html" />
+    </links>
     <breadcrumbs>
       <item name="Maven"  href="https://maven.apache.org/index.html" />
     </breadcrumbs>
@@ -95,7 +99,7 @@ under the License.
         <item name="Fixing Metadata" href="/guides/mini/guide-maven-evangelism.html" />
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
-        <item name="Guide to helping with Maven" href="/guides/development/guide-helping.html" />
+        <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
         </item>
@@ -108,6 +112,7 @@ under the License.
           <item name="Complete Overview" href="/developers/website/website-overview.html" />
           <item name="Main Website" href="/developers/website/deploy-maven-website.html" />
           <item name="Components Documentation" href="developers/website/deploy-component-reference-documentation.html" />
+          <item name="Component Helper" href="/developers/website/component-reference-documentation-helper.html" />
         </item>
       </item>
       <item name="Books and Resources" href="/articles.html" />
