@@ -69,6 +69,8 @@ RedirectMatch permanent ^/plugins/maven-clover-plugin/int(.+)$ /plugins/maven-cl
 RedirectMatch ^/plugins/maven-site-plugin-2.x/(.*)$ /plugins-archives/maven-site-plugin-2.4/$1
 RedirectMatch ^/plugins/maven-site-plugin-3.x/(.*)$ /plugins/maven-site-plugin/$1
 
+RedirectMatch permanent ^/components/images/(.+)$ /images/$1
+
 Redirect Permanent /guides/development/guide-plugin-snapshot-repositories.html /guides/development/guide-testing-development-plugins.html
 
 Redirect Permanent /guides/mini/guide-apt-format.html /doxia/references/apt-format.html
