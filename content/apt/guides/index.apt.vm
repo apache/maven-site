@@ -49,7 +49,7 @@ Documentation
 
  * {{{./introduction/introduction-to-dependency-mechanism.html}The Dependency Mechanism}}
 
- * {{{./introduction/introduction-to-optional-and-excludes-dependencies.html} Optional Dependencies and Dependency Exclusions}}
+   * {{{./introduction/introduction-to-optional-and-excludes-dependencies.html} Optional Dependencies and Dependency Exclusions}}
 
 ** Plugins
 
@@ -94,54 +94,8 @@ Documentation
 
 * Guides
 
- * {{{./mini/guide-assemblies.html}Creating Assemblies}}
-
- * {{{./mini/guide-archive-configuration.html}Configuring Archive Plugins}}
-
- * {{{./mini/guide-configuring-maven.html}Configuring Maven}}
-
- * {{{./mini/guide-mirror-settings.html}Mirror Settings}}
-
- * {{{./mini/guide-deployment-security-settings.html}Deployment and Security Settings}}
-
- * {{{./mini/guide-generating-sources.html}Generating Sources}}
-
- * {{{./mini/guide-manifest.html}Working with Manifests}}
-
- * {{{./mini/guide-maven-classloading.html}Maven Classloading}}
-
- * {{{./mini/guide-multiple-modules.html}Using Multiple Modules in a Build}}
-
- * {{{./mini/guide-multiple-repositories.html}Using Multiple Repositories}}
-
- * {{{./mini/guide-proxies.html}Using Proxies}}
-
- * {{{./mini/guide-releasing.html}Using the Release Plugin}}
-
- * {{{./mini/guide-using-ant.html}Using Ant with Maven}}
-
- * {{{./mini/guide-using-modello.html}Using Modello}}
-
- * {{{./mini/guide-using-extensions.html}Using Extensions}}
-
- * {{{./mini/guide-building-for-different-environments.html}Building For Different Environments with Maven 2}}
-
- * {{{./mini/guide-using-toolchains.html}Using Toolchains}}
-
- * {{{./mini/guide-encryption.html} Encrypting passwords in settings.xml}}
-
- * {{{./mini/guide-http-settings.html} Guide to HTTP Connection Settings}}
-
- * {{{./mini/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
-
- * {{{./mini/guide-building-jdk14-on-jdk15.html} Guide to Building JDK 1.4 Projects Using JDK 1.5}}
-
- * {{{./mini/guide-default-execution-ids.html} Guide to Configuring Default Mojo Executions}}
-
-
-~~ ** Testing
-
-~~ * {{{./mini/guide-attached-tests.html}Reusable Test JARs}}
+#set( $prefix = './mini' )
+#parse( "mini/index.txt" )
 
 ** Maven Tools and IDE Integration
 

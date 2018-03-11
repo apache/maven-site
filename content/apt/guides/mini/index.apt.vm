@@ -27,3 +27,6 @@
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
 Maven Mini Guides
+
+#set( $prefix = '.' )
+#parse( "index.txt" )

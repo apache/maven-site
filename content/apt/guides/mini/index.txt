@@ -1,0 +1,47 @@
+ * {{{$prefix/guide-assemblies.html}Creating Assemblies}}
+
+ * {{{$prefix/guide-archive-configuration.html}Configuring Archive Plugins}}
+
+ * {{{$prefix/guide-configuring-maven.html}Configuring Maven}}
+
+ * {{{$prefix/guide-mirror-settings.html}Mirror Settings}}
+
+ * {{{$prefix/guide-deployment-security-settings.html}Deployment and Security Settings}}
+
+ * {{{$prefix/guide-generating-sources.html}Generating Sources}}
+
+ * {{{$prefix/guide-manifest.html}Working with Manifests}}
+
+ * {{{$prefix/guide-maven-classloading.html}Maven Classloading}}
+
+ * {{{$prefix/guide-multiple-modules.html}Using Multiple Modules in a Build}}
+
+ * {{{$prefix/guide-multiple-repositories.html}Using Multiple Repositories}}
+
+ * {{{$prefix/guide-proxies.html}Using Proxies}}
+
+ * {{{$prefix/guide-releasing.html}Using the Release Plugin}}
+
+ * {{{$prefix/guide-using-ant.html}Using Ant with Maven}}
+
+ * {{{$prefix/guide-using-modello.html}Using Modello}}
+
+ * {{{$prefix/guide-using-extensions.html}Using Extensions}}
+
+ * {{{$prefix/guide-building-for-different-environments.html}Building For Different Environments with Maven 2}}
+
+ * {{{$prefix/guide-using-toolchains.html}Using Toolchains}}
+
+ * {{{$prefix/guide-encryption.html} Encrypting passwords in settings.xml}}
+
+ * {{{$prefix/guide-http-settings.html} Guide to HTTP Connection Settings}}
+
+ * {{{$prefix/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
+
+ * {{{$prefix/guide-building-jdk14-on-jdk15.html} Guide to Building JDK 1.4 Projects Using JDK 1.5}}
+
+ * {{{$prefix/guide-default-execution-ids.html} Guide to Configuring Default Mojo Executions}}
+
+~~ ** Testing
+
+~~ * {{{$prefix/guide-attached-tests.html}Reusable Test JARs}}
