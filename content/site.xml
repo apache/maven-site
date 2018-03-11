@@ -87,13 +87,29 @@ under the License.
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Maven API" href="/ref/current/index.html"/>
+        <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html"/>
       </item>
       <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
         <item name="Maintaining your Metadata" href="/project-faq.html" />
         <item name="Guide to Uploading Artifacts" href="/guides/mini/guide-central-repository-upload.html" />
         <item name="Fixing Metadata" href="/guides/mini/guide-maven-evangelism.html" />
       </item>
-      <item name="Maven Developer Centre" href="/developers/index.html"/>
+      <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
+        <item name="Guide to helping with Maven" href="/guides/development/guide-helping.html" />
+        <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
+          <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
+        </item>
+        <item name="Release Process" href="/developers/release/index.html" collapse="true">
+          <item name="Common Procedure" href="/developers/release/maven-project-release-procedure.html" />
+          <item name="Maven Core" href="/developers/release/maven-core-release.html" />
+          <item name="Parent POM" href="/developers/release/parent-pom-release.html" />
+        </item>
+        <item name="Deploy Maven Website" href="/developers/website/index.html" collapse="true">
+          <item name="Complete Overview" href="/developers/website/website-overview.html" />
+          <item name="Main Website" href="/developers/website/deploy-maven-website.html" />
+          <item name="Components Documentation" href="developers/website/deploy-component-reference-documentation.html" />
+        </item>
+      </item>
       <item name="Books and Resources" href="/articles.html" />
       <item name="Security" href="/security.html" />
     </menu>
