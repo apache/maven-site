@@ -89,6 +89,9 @@ under the License.
         <item name="Maven API" href="/ref/current/index.html"/>
       </item>
       <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
+        <item name="Maintaining your Metadata" href="/project-faq.html" />
+        <item name="Guide to Uploading Artifacts" href="/guides/mini/guide-central-repository-upload.html" />
+        <item name="Fixing Metadata" href="/guides/mini/guide-maven-evangelism.html" />
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html"/>
       <item name="Books and Resources" href="/articles.html" />
@@ -99,10 +102,9 @@ under the License.
       <item name="Community Overview" href="/community.html" />
       <item name="Project Roles" href="/project-roles.html" />
       <item name="How to Contribute" href="/guides/development/guide-helping.html" />
-      <item name="Maven Repository" href="/guides/mini/guide-maven-evangelism.html" />
       <item name="Getting Help" href="/users/getting-help.html" />
       <item name="Issue Tracking" href="/issue-tracking.html" />
-      <item name="Source Repository" href="/source-repository.html" />
+      <item name="Getting Maven Source" href="/source-repository.html" />
       <item name="The Maven Team" href="/team-list.html" />
     </menu>
   </body>

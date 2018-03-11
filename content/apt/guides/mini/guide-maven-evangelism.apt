@@ -26,10 +26,10 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Guide to add, improve or fix metadata in the Central Maven 2 repository
+Guide to add, improve or fix metadata in the Central Maven repository
 
- There are artifacts in the repository that don't have POMs. They come from projects with repositories that have
- been synced into central without extra checks (particularly historical ones that were in Maven 1 format). We
+ There are artifacts in the {{{/repository/}Central Maven repository}} that don't have POMs. They come from projects with repositories that have
+ been synced into central without extra checks (particularly historical ones that were in <Maven 1> format). We
  know about the problems but can't do anything unless you provide a POM for it or you ask the project in
  question to add the POM when they add the artifacts.
 
@@ -51,4 +51,3 @@ Guide to add, improve or fix metadata in the Central Maven 2 repository
 
  *Important:* by default assume that we won't trust your info, so you must provide all links
  to the project documentation you can to convince us that your solution is right.
-

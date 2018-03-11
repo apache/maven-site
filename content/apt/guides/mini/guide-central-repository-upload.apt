@@ -32,25 +32,27 @@ Guide to uploading artifacts to the Central Repository
  In order for users of Maven to utilize artifacts produced by your project, you must deploy them to
  a remote repository. Many open source projects want to allow users of their projects who build with
  Maven to have transparent access to their project's artifacts. In order to allow for this, a project
- must have their artifacts deployed to the Central Repository.
+ must have their artifacts deployed to {{{/repository/}the Central Repository}}.
 
 
-{Requirements}
+Requirements
 
- Only releases can be uploaded to the central repository, that means files that won't change and that only depend on other files
+ Only <releases> can be uploaded to the central repository, that means files that won't change and that only depend on other files
  already released and available in the repository.
 
- There are some requirements for the minimal information in the POMs that are in the central repository.
+ There are some requirements for the minimal information in the POMs that are in the Central repository.
  The updated list of requirements can be found {{{http://central.sonatype.org/pages/requirements.html}here}}.
 
-{Choosing your coordinates}
+Choosing your coordinates
 
  Picking the appropriate coordinates for your project is important. See the guidelines
  {{{http://central.sonatype.org/pages/choosing-your-coordinates.html}here}}.
 
 * Explanation
 
- Some folks have asked why do we require all this information in the POM for deployed artifacts so here's a small explanation. The POM
+ Some folks have asked <"why do we require all this information in the POM for deployed artifacts?">, so here's a small explanation.
+ 
+ The POM
  being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting
  transitive dependencies working is really not that hard, the problem is getting the data. The other applications
  that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
@@ -97,7 +99,7 @@ Guide to uploading artifacts to the Central Repository
   </dependencies>
 
   <!--
-  NOT ALLOWED: (see FAQ)
+  NOT RECOMMENDED: (see FAQ)
   <repositories></repositories>
   <pluginRepositories></pluginRepositories>
   -->
@@ -140,9 +142,9 @@ Guide to uploading artifacts to the Central Repository
 
  []
 
-{Publishing your artifacts to the Central Repository}
+Publishing your artifacts to the Central Repository
 
-* {Approved Repository Hosting}
+* Approved Repository Hosting
 
  Instead of maintaining repository rsync feeds for each projects, we now encourage projects to use an approved repository hosting location.
 
@@ -160,13 +162,13 @@ Guide to uploading artifacts to the Central Repository
  that meet certain minimum criteria such as validation of PGP keys and pom contents as defined above. If you are interested in
  becoming an approved Forge, contact us at <<<repo-maintainers@maven.apache.org>>>.
 
-* {Other Projects}
+* Other Projects
 
  The easiest way to upload another project is to use the
  {{{http://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}}, which is an approved repository provided
  by Sonatype for <any> OSS Project that want to get their artifacts into Central Repository.
 
-* {Explanations}
+* Explanations
 
  Having each project maintain its own repository with rsync to Central Repository used to be the preferred process until January 2010.
  But we are no longer accepting rsync requests on a per project basis.
