@@ -42,7 +42,7 @@ Retirement Plan for Plugins
 
     [[A]] Move to another Apache project
 
-    [[A]] Move to mojo.codehaus.org, apache-extras.org or another forge
+    [[A]] Move to www.mojohaus.org, apache-extras.org or another forge
 
     []
 
@@ -58,7 +58,7 @@ Hi,
 A paragraph giving the reasons why the plugin should be retired. Make a note of
 how long it has been since the latest release.
 
-I therefor propose that we retire maven-foo-plugin.
+I therefore propose that we retire maven-foo-plugin.
 
 If this vote is successful I will make one final release of the plugin, making
 it clear on the plugin site that it has been retired. After that the source code

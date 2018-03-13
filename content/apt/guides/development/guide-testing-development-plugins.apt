@@ -45,7 +45,7 @@ Guide to Testing Development Versions of Plugins
 
   <Note:> Currently, this is not done automatically by our continuous integration setup. This is coming soon.
 
-  Other sites may publish there own - for example, the Mojo project hosts theirs at {{http://snapshots.repository.codehaus.org/}}
+  Other sites may publish there own - for example, the MojoHaus project hosts theirs at {{https://oss.sonatype.org/content/repositories/snapshots/}}
 
   The first step is to include this in your project:
 

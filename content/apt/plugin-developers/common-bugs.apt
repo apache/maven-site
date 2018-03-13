@@ -84,7 +84,7 @@ Reader reader = new FileReader( javaFile );
   To save the user from configuring each plugin individually, conventions have been established that allow a user to
   centrally configure the file encoding per POM. Plugin developers should respect these conventions whereever possible:
 
-  * {{{http://docs.codehaus.org/display/MAVENUSER/POM+Element+for+Source+File+Encoding}Source File Encoding}}
+  * {{{https://cwiki.apache.org/confluence/display/MAVEN/POM+Element+for+Source+File+Encoding}Source File Encoding}}
 
   * {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Reporting+Encoding+Configuration}Report Output Encoding}}
 
