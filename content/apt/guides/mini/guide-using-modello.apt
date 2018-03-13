@@ -30,7 +30,7 @@
 Guide to using Modello
 
  {{{https://codehaus-plexus.github.io/modello/}Modello}} is a tool for generating resources from a simple model. From a
- simple model you can generate things like:
+ {{{https://codehaus-plexus.github.io/modello/modello.html}simple model}} you can generate things like:
 
  * Java sources
 
@@ -48,8 +48,9 @@ Guide to using Modello
 
 %{snippet|id=modello-model|url=https://raw.githubusercontent.com/apache/maven-archetype/master/archetype-models/archetype-descriptor/src/main/mdo/archetype-descriptor.mdo}
 
- To utilize Modello you would configure the <<<maven-modello-plugin>>> something like the following where you want
- to generate the Java sources for the model, the xpp3 serialization code and the xpp3 deserialization code:
+ To utilize Modello, you would configure the <<<modello-maven-plugin>>> something like the following where you want
+ to generate the Java sources for the model, the xpp3 serialization code and the xpp3 deserialization code
+ (see {{{https://codehaus-plexus.github.io/modello/modello-plugins/modello-plugin-xpp3/}modello-plugin-xpp3}} for more details):
 
 +----+
 
