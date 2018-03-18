@@ -72,12 +72,12 @@ repo start master --all</pre>
           <table>
             <tr>
               <td><a href="/ref/current/">Apache Maven</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven.git">https://git-wip-us.apache.org/repos/asf/maven.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven.git">https://gitbox.apache.org/repos/asf/maven.git</a></source></td>
               <td><a href="https://github.com/apache/maven/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td><a href="/core-its/">Apache Maven Core ITs</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git">https://git-wip-us.apache.org/repos/asf/maven-integration-testing.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-integration-testing.git">https://gitbox.apache.org/repos/asf/maven-integration-testing.git</a></source></td>
               <td><a href="https://github.com/apache/maven-integration-testing/">(GitHub mirror)</a></td>
             </tr>
           </table>
@@ -99,12 +99,12 @@ repo start master --all</pre>
           <table>
             <tr>
               <td><a href="/archetype/">Apache Maven Archetype</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-archetype.git">https://git-wip-us.apache.org/repos/asf/maven-archetype.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-archetype.git">https://gitbox.apache.org/repos/asf/maven-archetype.git</a></source></td>
               <td><a href="https://github.com/apache/maven-archetype/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td><a href="/resolver/">Apache Maven Artifact Resolver</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-resolver.git">https://git-wip-us.apache.org/repos/asf/maven-resolver.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-resolver.git">https://gitbox.apache.org/repos/asf/maven-resolver.git</a></source></td>
               <td><a href="https://github.com/apache/maven-resolver/">(GitHub mirror)</a></td>
             </tr>
             <tr>
@@ -129,12 +129,12 @@ repo start master --all</pre>
             </tr>
             <tr>
               <td><a href="/maven-indexer/">Apache Maven Indexer</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-indexer.git">https://git-wip-us.apache.org/repos/asf/maven-indexer.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-indexer.git">https://gitbox.apache.org/repos/asf/maven-indexer.git</a></source></td>
               <td><a href="https://github.com/apache/maven-indexer/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td><a href="/plugin-testing/">Apache Maven Plugin Testing</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git">https://git-wip-us.apache.org/repos/asf/maven-plugin-testing.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-plugin-testing.git">https://gitbox.apache.org/repos/asf/maven-plugin-testing.git</a></source></td>
               <td><a href="https://github.com/apache/maven-plugin-testing/">(GitHub mirror)</a></td>
             </tr>
             <tr>
@@ -149,17 +149,17 @@ repo start master --all</pre>
             </tr>
             <tr>
               <td><a href="/scm/">Apache Maven SCM</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-scm.git">https://git-wip-us.apache.org/repos/asf/maven-scm.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-scm.git">https://gitbox.apache.org/repos/asf/maven-scm.git</a></source></td>
               <td><a href="https://github.com/apache/maven-scm/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td><a href="/surefire/">Apache Maven Surefire</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-surefire.git">https://git-wip-us.apache.org/repos/asf/maven-surefire.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-surefire.git">https://gitbox.apache.org/repos/asf/maven-surefire.git</a></source></td>
               <td><a href="https://github.com/apache/maven-surefire/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td><a href="/wagon/">Apache Maven Wagon</a></td>
-              <td><source><a href="https://git-wip-us.apache.org/repos/asf/maven-wagon.git">https://git-wip-us.apache.org/repos/asf/maven-wagon.git</a></source></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-wagon.git">https://gitbox.apache.org/repos/asf/maven-wagon.git</a></source></td>
               <td><a href="https://github.com/apache/maven-wagon/">(GitHub mirror)</a></td>
             </tr>
             <tr>
