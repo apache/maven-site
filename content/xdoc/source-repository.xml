@@ -103,6 +103,11 @@ repo start master --all</pre>
               <td><a href="https://github.com/apache/maven-archetype/">(GitHub mirror)</a></td>
             </tr>
             <tr>
+              <td><a href="/archetypes/">Apache Maven Archetypes</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-archetypes.git">https://gitbox.apache.org/repos/asf/maven-archetypes.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-archetypes/">(GitHub mirror)</a></td>
+            </tr>
+            <tr>
               <td><a href="/resolver/">Apache Maven Artifact Resolver</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-resolver.git">https://gitbox.apache.org/repos/asf/maven-resolver.git</a></source></td>
               <td><a href="https://github.com/apache/maven-resolver/">(GitHub mirror)</a></td>
@@ -554,11 +559,6 @@ repo start master --all</pre>
               <td>the Maven site (this site)</td>
               <td><source><a href="https://svn.apache.org/viewvc/maven/site/trunk/">https://svn.apache.org/repos/asf/maven/site/trunk/</a></source></td>
               <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
-            </tr>
-            <tr>
-              <td><a href="/archetypes/">Maven Archetypes</a></td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/archetypes/trunk/">https://svn.apache.org/repos/asf/maven/archetypes/trunk/</a></source></td>
-              <td><a href="https://github.com/apache/maven-archetypes/">(GitHub mirror)</a></td>
             </tr>
             <tr>
               <td>Maven Sandbox</td>
