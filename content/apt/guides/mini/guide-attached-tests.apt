@@ -41,7 +41,7 @@ Guide to using attached tests
      <plugin>
        <groupId>org.apache.maven.plugins</groupId>
        <artifactId>maven-jar-plugin</artifactId>
-       <version>2.6</version>
+       <version>3.0.2</version>
        <executions>
          <execution>
            <goals>
@@ -81,7 +81,7 @@ mvn deploy
 * Using the attached test JAR
 
  In order to use the attached test JAR that was created above you simply specify a dependency on the main
- artifact with a specified type of <<<test-jar>>>:
+ artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
 
 +----+
 
@@ -92,6 +92,7 @@ mvn deploy
       <groupId>com.myco.app</groupId>
       <artifactId>foo</artifactId>
       <version>1.0-SNAPSHOT</version>
+      <classifier>tests</classifier>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
