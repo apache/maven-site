@@ -38,8 +38,9 @@ Introduction
  []
 
  Since December 2012, the overall website uses svnpubsub mechanism:
- the whole site content accessible at {{{http://maven.apache.org}http://maven.apache.org}} is stored
- in a dedicated site publication svn: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}}.
+ the whole site content accessible at {{https://maven.apache.org}} is stored
+ in a dedicated site publication svn: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}}
+ with a svn working copy maintained by {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}.
 
  See {{{http://www.apache.org/dev/cms}CMS documentation}} for more information on the rationale behind the switch
  from "scp to people.apache.org + (find+rsync)" to svnpubsub.
