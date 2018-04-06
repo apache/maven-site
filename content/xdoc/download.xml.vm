@@ -126,8 +126,8 @@ under the License.
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
             <td>
               <ul>
+                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.sha1">apache-maven-${currentStableVersion}-bin.tar.gz.sha1</a></li>
                 <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.sha256">apache-maven-${currentStableVersion}-bin.tar.gz.sha256</a></li>
-                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.sha512">apache-maven-${currentStableVersion}-bin.tar.gz.sha512</a></li>
               </ul> 
             </td>
             <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
@@ -137,8 +137,8 @@ under the License.
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip">apache-maven-${currentStableVersion}-bin.zip</a></td>
             <td>
               <ul>
+                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.sha1">apache-maven-${currentStableVersion}-bin.zip.sha1</a></li>
                 <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.sha256">apache-maven-${currentStableVersion}-bin.zip.sha256</a></li>
-                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.sha512">apache-maven-${currentStableVersion}-bin.zip.sha512</a></li>
               </ul>
             </td>
             <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.zip.asc">apache-maven-${currentStableVersion}-bin.zip.asc</a></td>
@@ -148,8 +148,8 @@ under the License.
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz">apache-maven-${currentStableVersion}-src.tar.gz</a></td>
             <td>
               <ul>
+                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.sha1">apache-maven-${currentStableVersion}-src.tar.gz.sha1</a></li>
                 <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.sha256">apache-maven-${currentStableVersion}-src.tar.gz.sha256</a></li>
-                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.sha512">apache-maven-${currentStableVersion}-src.tar.gz.sha512</a></li>
               </ul>
             </td>
             <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.tar.gz.asc">apache-maven-${currentStableVersion}-src.tar.gz.asc</a>
@@ -160,8 +160,8 @@ under the License.
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip">apache-maven-${currentStableVersion}-src.zip</a></td>
             <td>
               <ul>
+                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.sha1">apache-maven-${currentStableVersion}-src.zip.sha1</a></li>
                 <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.sha256">apache-maven-${currentStableVersion}-src.zip.sha256</a></li>
-                <li><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.sha512">apache-maven-${currentStableVersion}-src.zip.sha512</a></li>
              </ul>
             </td>
             <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/source/apache-maven-${currentStableVersion}-src.zip.asc">apache-maven-${currentStableVersion}-src.zip.asc</a></td>
