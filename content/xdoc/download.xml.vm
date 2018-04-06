@@ -116,7 +116,7 @@ under the License.
           <tr>
             <th></th>
             <th>Link</th>
-            <th>Checksum sha256/sha512</th>
+            <th>Checksums</th>
             <th>Signature</th>
           </tr>
         </thead>
