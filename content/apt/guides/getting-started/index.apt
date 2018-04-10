@@ -428,7 +428,7 @@ Results :
  You have walked through the process for setting up, building, testing, packaging, and installing a typical Maven project.
  This is likely the vast majority of what projects will be doing with Maven and if you've noticed, everything you've been
  able to do up to this point has been driven by an 18-line file, namely the project's model or POM. If you look at
- a typical Ant {{{../../ant/build-a1.xml}build file}} that provides the same functionality that we've achieved thus
+ a typical Ant {{{../../ant/build-a2.xml}build file}} that provides the same functionality that we've achieved thus
  far you'll notice it's already twice the size of the POM and we're just getting started! There is far more
  functionality available to you from Maven without requiring any additions to our POM as it currently stands. To
  get any more functionality out of our example Ant build file you must keep making error-prone additions.
