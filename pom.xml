@@ -47,11 +47,12 @@
   <distributionManagement>
     <site>
       <id>apache.website</id>
-      <url>scm:svn:https://svn.apache.org/repos/infra/websites/production/maven/content/</url>
+      <url>${siteDistributionUrl}</url>
     </site>
   </distributionManagement>
 
   <properties>
+    <siteDistributionUrl>scm:svn:https://svn.apache.org/repos/infra/websites/production/maven/content/</siteDistributionUrl>
     <maven.site.path>maven-site</maven.site.path>
     <currentStableVersion>3.5.3</currentStableVersion>
     <currentStableReleaseDate>2017-10-24</currentStableReleaseDate>
@@ -326,6 +327,12 @@
           </plugins>
         </pluginManagement>
       </build>
+    </profile>
+    <profile>
+      <id>ASF-jenkins</id>
+      <properties><!-- INFRA-16088 Jenkins credentials put outside CMS svn space but on new ASF svn repo space -->
+        <siteDistributionUrl>scm:svn:https://svn.apache.org/repos/asf/maven/website/content/</siteDistributionUrl>
+      </properties>
     </profile>
   </profiles>
 </project>
