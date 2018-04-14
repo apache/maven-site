@@ -29,7 +29,7 @@
 
 Introduction
 
- The Maven {{{http://maven.apache.org}http://maven.apache.org}} website is composed from:
+ The Maven {{{https://maven.apache.org}https://maven.apache.org}} website is composed from:
 
  * a main content,
 
@@ -37,25 +37,33 @@ Introduction
 
  []
 
- Since December 2012, the overall website uses svnpubsub mechanism:
- the whole site content accessible at {{https://maven.apache.org}} is stored
- in a dedicated site publication svn: {{https://svn.apache.org/repos/infra/websites/production/maven/content/}}
- with a svn working copy maintained by {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}.
+ And {{{https://maven.apache.org/doxia/}Doxia}} website has the same dual structure.
 
- See {{{http://www.apache.org/dev/cms}CMS documentation}} for more information on the rationale behind the switch
- from "scp to people.apache.org + (find+rsync)" to svnpubsub.
+ These contents are stored in svn and svnpubsub/svnwcsub maintains a working copy on the webserver in <<</www/maven.apache.org/content>>>,
+ see {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}:
+
+ * <<</>>> comes from {{{https://svn.apache.org/viewvc/maven/website/content/}https://svn.apache.org/repos/asf/maven/website/content/}}
+
+ * {{{https://maven.apache.org/components}<<</components>>>}} comes from {{https://svn.apache.org/repos/infra/websites/production/maven/components/}}
+
+ * <<</doxia>>> comes from {{{https://svn.apache.org/viewvc/maven/doxia/website/content/}https://svn.apache.org/repos/asf/maven/doxia/website/content/}}
+
+ * {{{https://maven.apache.org/doxia/components}<<</doxia/components>>>}} comes from {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/components/}}
+
+ []
+
+ and the link between main content and components reference documentation is done with symbolic links.
 
 How website publication works
 
  Instructions on how to publish website content are split in separate documents:
 
- * {{{./deploy-maven-website.html}deploying the main Maven website}}, using {{{https://cms.apache.org/maven/}CMS}} at least
- for publish step,
+ * main content is published though Jenkins jobs:
+   {{{https://builds.apache.org/view/M-R/view/Maven/job/maven-site/}maven-site}}
+   and {{{https://builds.apache.org/view/M-R/view/Maven/job/doxia-site/}doxia-site}},
 
  * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
  eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
  easily prepare <<<svnmucc>>> command line.
 
  []
-
- A {{{./website-overview.html}complete overview}} is available, assembling previous explanations.

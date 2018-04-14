@@ -160,8 +160,6 @@ under the License.
           <item name="Parent POM" href="/developers/release/parent-pom-release.html" />
         </item>
         <item name="Deploy Maven Website" href="/developers/website/index.html" collapse="true">
-          <item name="Complete Overview" href="/developers/website/website-overview.html" />
-          <item name="Main Website" href="/developers/website/deploy-maven-website.html" />
           <item name="Components Documentation" href="developers/website/deploy-component-reference-documentation.html" />
           <item name="Component Helper" href="/developers/website/component-reference-documentation-helper.html" />
         </item>
