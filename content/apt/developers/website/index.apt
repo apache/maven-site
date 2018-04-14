@@ -39,7 +39,7 @@ Introduction
 
  And {{{https://maven.apache.org/doxia/}Doxia}} website has the same dual structure.
 
- These contents are stored in svn and svnpubsub/svnwcsub maintains a working copy on the webserver in <<</www/maven.apache.org/content>>>,
+ These contents are stored in svn and svnpubsub/svnwcsub maintains a working copy on the webservers in <<</www/maven.apache.org/content>>>,
  see {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}:
 
  * <<</>>> comes from {{{https://svn.apache.org/viewvc/maven/website/content/}https://svn.apache.org/repos/asf/maven/website/content/}}
