@@ -13,7 +13,9 @@ Redirect Permanent /maven-v4_0_0.xsd /xsd/maven-4.0.0.xsd
 Redirect Permanent /ant-tasks.html /ant-tasks/index.html
 Redirect Permanent /ant-tasks-release-notes.html /ant-tasks/release-notes.html
 
-Redirect Permanent /guides/mini/guide-ibiblio-upload.html /guides/mini/guide-central-repository-upload.html
+Redirect Permanent /guides/mini/guide-ibiblio-upload.html /repository/guide-central-repository-upload.html
+Redirect Permanent /guides/mini/guide-maven-evangelism.html /repository/central-metadata.html
+Redirect Permanent /guides/mini/guide-central-repository-upload.html /repository/guide-central-repository-upload.html
 Redirect Permanent /guides/development/guide-m2-development.html /guides/development/guide-maven-development.html
 Redirect Permanent /guides/development/guide-building-m2.html /guides/development/guide-building-maven.html
 Redirect Permanent /faq.html /general.html

@@ -146,8 +146,9 @@ under the License.
       </item>
       <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
         <item name="Maintaining your Metadata" href="/project-faq.html" />
-        <item name="Guide to Uploading Artifacts" href="/guides/mini/guide-central-repository-upload.html" />
-        <item name="Fixing Metadata" href="/guides/mini/guide-maven-evangelism.html" />
+        <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html" />
+        <item name="Fixing Metadata" href="/repository/central-metadata.html" />
+        <item name="Central Index" href="/repository/central-index.html" />
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />

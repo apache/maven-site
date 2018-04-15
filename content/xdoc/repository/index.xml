@@ -31,14 +31,15 @@
 
     <section name="Maven Central Repository">
 
-      <p>This documentation is for those that need to use or contribute to the Maven central repository. This includes those
+      <p>This documentation is for those that need to use or contribute to the Maven <code>central</code> repository. This includes those
     that need dependencies for their own build or projects that wish to have
-    their releases added to the Maven central repository, even if they don't use Maven as their build tool.</p>
+    their releases added to the Maven <code>central</code> repository, even if they don't use Maven as their build tool.</p>
 
       <ul>
         <li><a href="../project-faq.html">Maintaining your Metadata</a> - Information for third-party projects</li>
-        <li><a href="../guides/mini/guide-central-repository-upload.html">Guide to uploading artifacts</a> - How to
+        <li><a href="./guide-central-repository-upload.html">Guide to uploading artifacts</a> - How to
         get things uploaded to the central repository</li>
+        <li><a href="./central-metadata.html">Fixing Central Metadata</a> - How to fix issues in content already uploaded</li>
       </ul>
 
 <!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->

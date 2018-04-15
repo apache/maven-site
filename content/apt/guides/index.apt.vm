@@ -134,9 +134,11 @@ Documentation
 
 ** The Central Repository
 
+ * {{{/repository/}Introduction to the Central Repository}}
+
  * {{{./mini/guide-central-repository-upload.html}Uploading Artifacts to the Central Repository}}
 
- * {{{./mini/guide-maven-evangelism.html}Improving the Repository}}
+ * {{{/repository/central-metadata.html}Improving the Repository}}
 
 
 * References
