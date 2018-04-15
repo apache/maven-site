@@ -33,7 +33,7 @@ Guide to installing 3rd party JARs
  builds, since they don't exist in any public repository like {{{http://search.maven.org}Maven Central}}. 
  The JARs must be placed in the local repository in the correct place in order for it to be correctly
  picked up by Apache Maven. To make this easier, and less error prone, we have provide a goal in the 
- {{{http://maven.apache.org/plugins/maven-install-plugin/}maven-install-plugin}} which should make this relatively painless. 
+ {{{/plugins/maven-install-plugin/}maven-install-plugin}} which should make this relatively painless. 
  To install a JAR in the local repository use the following command:
 
 +----+

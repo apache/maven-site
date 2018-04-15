@@ -183,6 +183,6 @@ Internal Repositories
  your own private releases to share.
 
  To publish to the repository, you will need to have access via one of SCP, SFTP, FTP, WebDAV, or the filesystem. Connectivity is accomplished with the various
- {{{http://maven.apache.org/wagon/wagon-providers/index.html}wagons}}. Some wagons may need to be added as {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_extension}extension}} to your build.
+ {{{/wagon/wagon-providers/index.html}wagons}}. Some wagons may need to be added as {{{/ref/current/maven-model/maven.html#class_extension}extension}} to your build.
 ~~ For example, to set up an SCP transfer.
 ~~ show the scp example.

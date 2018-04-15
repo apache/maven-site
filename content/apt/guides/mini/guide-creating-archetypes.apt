@@ -79,7 +79,7 @@ Guide to Creating Archetypes
 
 * 2. Create the archetype descriptor
 
- The {{{http://maven.apache.org/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
+ The {{{/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
  is a file called <<<archetype.xml>>> which must be
  located in the <<<src/main/resources/META-INF/maven/>>> directory. An example of an archetype
  descriptor can be found in the quickstart archetype:

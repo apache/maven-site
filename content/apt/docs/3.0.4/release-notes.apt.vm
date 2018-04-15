@@ -39,7 +39,7 @@ Maven 3.0.4
   to implement many highly demanded features.
 
   <<NOTE:>> Maven 3.0.4 has a new default Http Wagon based on Apache HttpClient 4.1.2. You must read various available settings
-   documented {{{http://maven.apache.org/guides/mini/guide-http-settings.html}here}}.
+   documented {{{/guides/mini/guide-http-settings.html}here}}.
 
   Some enhancements are now included by default:
 

@@ -277,7 +277,7 @@ public MyMojo extends AbstractMojo
   The problem is that the properties managed by the <<<System>>> class are global, i.e. shared among all threads in the
   current JVM. To prevent conflicts with other code running in the same JVM, Maven plugins should instead query the
   execution properties. These can be obtained from
-  <<<{{{http://maven.apache.org/ref/current/maven-core/apidocs/org/apache/maven/execution/MavenSession.html#getExecutionProperties()}MavenSession.getExecutionProperties()}}>>>.
+  <<<{{{https://maven.apache.org/ref/current/maven-core/apidocs/org/apache/maven/execution/MavenSession.html#getExecutionProperties()}MavenSession.getExecutionProperties()}}>>>.
 
 * {Using Shutdown Hooks}
 

@@ -63,18 +63,18 @@ Introduction to Build Profiles
 
   * Per User
 
-    - Defined in the {{{http://maven.apache.org/ref/2.2.1/maven-settings/settings.html} Maven-settings}}
+    - Defined in the {{{/ref/current/maven-settings/settings.html} Maven-settings}}
     <<<(%USER_HOME%/.m2/settings.xml)>>>.
 
   * Global
 
-    - Defined in the {{{http://maven.apache.org/ref/2.2.1/maven-settings/settings.html} global Maven-settings}}
+    - Defined in the {{{/ref/current/maven-settings/settings.html} global Maven-settings}}
     <<<($\{maven.home\}/conf/settings.xml)>>>.
 
   * Profile descriptor
 
     - a descriptor located in
-    {{{http://maven.apache.org/ref/2.2.1/maven-profile/profiles.html}project basedir <<<(profiles.xml)>>>}}
+    {{{/ref/2.2.1/maven-profile/profiles.html}project basedir <<<(profiles.xml)>>>}}
     (unsupported in Maven 3.0: see
     {{{https://cwiki.apache.org/MAVEN/maven-3x-compatibility-notes.html#Maven3.xCompatibilityNotes-profiles.xml} Maven 3 compatibility notes}})
 
@@ -142,7 +142,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 </profiles>
 +---+
 
-  Ranges can also be used as of Maven 2.1 (refer to the {{{http://maven.apache.org/enforcer/enforcer-rules/versionRanges.html} Enforcer Version Range Syntax}} for more information).
+  Ranges can also be used as of Maven 2.1 (refer to the {{{/enforcer/enforcer-rules/versionRanges.html} Enforcer Version Range Syntax}} for more information).
   The following honours versions 1.3, 1.4 and 1.5.
 
 +---+
@@ -158,7 +158,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2
 
   <Note:> an upper bound such as <<<,1.5]>>> is likely not to include most releases of 1.5, since they will have an additional "patch" release such as <<<_05>>> that is not taken into consideration in the above range.
 
-  This next one will activate based on OS settings. See the {{{http://maven.apache.org/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
+  This next one will activate based on OS settings. See the {{{/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
 
 +---+
 <profiles>
@@ -601,7 +601,7 @@ mvn -Denv=production integration-test
 * How can I tell which profiles are in effect during a build?
 
   Determining active profiles will help the user to know what particular
-  profiles has been executed during a build. We can use the {{{http://maven.apache.org/plugins/maven-help-plugin/}Maven Help Plugin}}
+  profiles has been executed during a build. We can use the {{{/plugins/maven-help-plugin/}Maven Help Plugin}}
   to tell what profiles are in effect during a build.
 
 +---+

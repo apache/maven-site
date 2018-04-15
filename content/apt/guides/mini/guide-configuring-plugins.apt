@@ -88,7 +88,7 @@ Guide to Configuring Plug-ins
   []
 
   All plugins should have minimal required
-  {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_plugin}informations}}:
+  {{{/ref/current/maven-model/maven.html#class_plugin}informations}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
   <<Important Note>>: It is recommended to always defined each version of the plugins used by the build to guarantee
@@ -194,7 +194,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 +----+
 
   And you will see all parameters for the javadoc:javadoc goal, similar to this
-  {{{http://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
+  {{{/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
 
 ** {Configuring Parameters}
 

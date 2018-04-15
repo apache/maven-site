@@ -58,7 +58,7 @@ Creating a site
  descriptor and the examples of the various document types.
 
   The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one)
-  very quickly. A full reference of the {{{http://maven.apache.org/doxia/references/apt-format.html} APT Format}} is available.
+  very quickly. A full reference of the {{{/doxia/references/apt-format.html} APT Format}} is available.
 
   The FML format is the FAQ format.
 
@@ -72,7 +72,7 @@ Creating a site
 
   If you want to tune the way your site looks, you can use a custom skin to provide your own CSS styles. If that is
   still not enough, you can even tweak the output templates that Maven uses to generate the site documentation.
-  You can visit the {{{http://maven.apache.org/skins/}Skins site}} to have a
+  You can visit the {{{/skins/}Skins site}} to have a
   look at some of the skins that you can use to change the look of your site.
 
 ~~  TODO: The following link is currently not available. Restore it when it becomes available again.
@@ -171,7 +171,7 @@ mvn site-deploy
   reports that you have configured.
 
   More information about the site descriptor is available at the site for the
-  {{{http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html}Maven Site Plugin}}.
+  {{{/plugins/maven-site-plugin/examples/sitedescriptor.html}Maven Site Plugin}}.
 
 * Adding Extra Resources
 

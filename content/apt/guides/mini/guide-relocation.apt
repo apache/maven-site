@@ -118,7 +118,7 @@ Guide to relocation
  to add the element that has changed to the <<<relocation>>> element. For
  information on which elements are allowed in the <<<relocation>>> element,
  see
- {{{http://maven.apache.org/ref/current/maven-model/maven.html#class_relocation}the pom reference}}.
+ {{{/ref/current/maven-model/maven.html#class_relocation}the pom reference}}.
 
  [[5]] If your project uses MD5 or SHA1 checksums you must now create new checksums for
  the pom files in <<</bar/foo/>>> in your Maven 2 repository. If the pom file needs

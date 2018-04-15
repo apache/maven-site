@@ -34,7 +34,7 @@ mvn site
 
  It will generate a plugin site based on the information in the POM, <<<src/site>>> and other reporting
  plugins configured in the POM. The most important reporting plugin is the
- {{{http://maven.apache.org/plugins/maven-plugin-plugin/}Maven Plugin Plugin}} which will generate
+ {{{/plugins/maven-plugin-plugin/}Maven Plugin Plugin}} which will generate
  the documentation for each plugin goal based on the mojo annotations. But in order for the generated site to be
  usable, the required information should be available to the Maven Site Plugin.
    
@@ -274,16 +274,16 @@ Plugin Name
   entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
   Of course, patches are welcome, too. Contributors can check out the project from our
   {{{source-repository.html}source repository}} and will find supplementary information in the
-  {{{http://maven.apache.org/guides/development/guide-helping.html}guide to helping with Maven}}. 
+  {{{/guides/development/guide-helping.html}guide to helping with Maven}}. 
 
 * Examples
 
   To provide you with better understanding of some usages of the Plugin Name,
   you can take a look into the following examples:
 
-  * {{{examples/example-one.html}Example Description One}}
+  * {{{./examples/example-one.html}Example Description One}}
 
-  * {{{examples/example-two.html}Example Description Two}}
+  * {{{./examples/example-two.html}Example Description Two}}
  
 +--------------+     
  
@@ -326,9 +326,9 @@ Plugin Name
   
    For examples of items under "Examples" check these plugin sites:
   
-   * {{{http://maven.apache.org/plugins/maven-javadoc-plugin/}Maven Javadoc Plugin Examples}}
+   * {{{/plugins/maven-javadoc-plugin/}Maven Javadoc Plugin Examples}}
   
-   * {{{http://maven.apache.org/plugins/maven-war-plugin/}Maven War Plugin Examples}}
+   * {{{/plugins/maven-war-plugin/}Maven War Plugin Examples}}
   
 *Recommended Configured Reports
  
@@ -364,7 +364,7 @@ Plugin Name
   [...]
 +--------------+   
   
-  Check the documentation about the plugin's {{{http://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html}<<<javadoc:javadoc>>>}} goal for the advanced configurations.
+  Check the documentation about the plugin's {{{/plugins/maven-javadoc-plugin/javadoc-mojo.html}<<<javadoc:javadoc>>>}} goal for the advanced configurations.
   
   * Maven JXR Plugin
   
@@ -391,4 +391,4 @@ Plugin Name
   [...]  
 +--------------+   
   
-  Check the {{{http://maven.apache.org/plugins/maven-jxr-plugin/jxr-mojo.html}JXR configuration page}} for the possible configuration parameters.
+  Check the {{{/plugins/maven-jxr-plugin/jxr-mojo.html}JXR configuration page}} for the possible configuration parameters.

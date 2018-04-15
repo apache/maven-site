@@ -30,7 +30,7 @@ Example: Using Maven 3 lifecycle extension
 
 * Lifecyle Participation
 
-  You can extends the class <<<org.apache.maven.AbstractMavenLifecycleParticipant>>> see {{{http://maven.apache.org/ref/current/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html}javadoc}}.
+  You can extends the class <<<org.apache.maven.AbstractMavenLifecycleParticipant>>> see {{{/ref/current/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html}javadoc}}.
 
 
 * Build your extension

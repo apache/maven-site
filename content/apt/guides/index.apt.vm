@@ -65,7 +65,7 @@ Documentation
 
  * {{{./mini/guide-site.html}Creating a Site}}
 
- * {{{http://maven.apache.org/doxia/references/apt-format.html}The APT Format}}
+ * {{{/doxia/references/apt-format.html}The APT Format}}
 
  * {{{./mini/guide-snippet-macro.html}Snippet Macro}}
 
@@ -136,7 +136,7 @@ Documentation
 
  * {{{/repository/}Introduction to the Central Repository}}
 
- * {{{./mini/guide-central-repository-upload.html}Uploading Artifacts to the Central Repository}}
+ * {{{/repository/guide-central-repository-upload.html}Uploading Artifacts to the Central Repository}}
 
  * {{{/repository/central-metadata.html}Improving the Repository}}
 
@@ -161,18 +161,18 @@ Documentation
 
  Here is some useful Javadoc API links to the current version of Maven:
 
- * {{{http://maven.apache.org/ref/current/maven-artifact/apidocs/}Maven Artifact}}
+ * {{{/ref/current/maven-artifact/apidocs/}Maven Artifact}}
 
- * {{{http://maven.apache.org/shared/maven-reporting-api/apidocs/}Maven Reporting}}
+ * {{{/shared/maven-reporting-api/apidocs/}Maven Reporting}}
 
- * {{{http://maven.apache.org/ref/current/maven-plugin-api/apidocs/}Maven Plugin API}}
+ * {{{/ref/current/maven-plugin-api/apidocs/}Maven Plugin API}}
 
- * {{{http://maven.apache.org/ref/current/maven-model/apidocs/}Maven Model}}
+ * {{{/ref/current/maven-model/apidocs/}Maven Model}}
 
- * {{{http://maven.apache.org/ref/current/maven-core/apidocs/}Maven Core}}
+ * {{{/ref/current/maven-core/apidocs/}Maven Core}}
 
- * {{{http://maven.apache.org/ref/current/maven-settings/apidocs/}Maven Settings}}
+ * {{{/ref/current/maven-settings/apidocs/}Maven Settings}}
 
  []
 
- You could also browse the {{{http://maven.apache.org/ref/current/}full technical documentation references}} of the current version of Maven.
+ You could also browse the {{{/ref/current/}full technical documentation references}} of the current version of Maven.

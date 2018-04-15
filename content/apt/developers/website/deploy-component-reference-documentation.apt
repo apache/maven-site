@@ -30,7 +30,7 @@
 Introduction
 
  This document gives step-by-step instructions for deploying 
- Maven components reference documentation inside the Maven {{{http://maven.apache.org/}http://maven.apache.org/}} website.
+ Maven components reference documentation inside the Maven {{{/}http:s//maven.apache.org/}} website.
 
  See {{{./index.html}Maven website introduction}} for instructions on the whole website publication (main site content + components).
 

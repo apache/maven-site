@@ -441,6 +441,6 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
     
     [[3]] {{{./guide-wagon-providers.html}Guide to Wagon Providers}}
 
-    [[4]] {{{http://maven.apache.org/wagon/wagon-providers/wagon-http/}Wagon Http}}
+    [[4]] {{{/wagon/wagon-providers/wagon-http/}Wagon Http}}
     
     []

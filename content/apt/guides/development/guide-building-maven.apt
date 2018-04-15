@@ -46,7 +46,7 @@ Building Maven
   All of the source code for Maven and its related libraries is in managed in the ASF source code
   repositories. Current development of the core of Maven, and some other components, are in git.
   Other pieces (and older versions) are in Subversion. For details, see
-  {{{http://maven.apache.org/source-repository.html}http://maven.apache.org/source-repository.html}}.
+  {{{/source-repository.html}https://maven.apache.org/source-repository.html}}.
 
 * Building Maven
 

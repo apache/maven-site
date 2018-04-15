@@ -29,7 +29,7 @@
 
 Introduction
 
- This document gives step-by-step instructions for deploying the main Maven {{{http://maven.apache.org}http://maven.apache.org}} website.
+ This document gives step-by-step instructions for deploying the main Maven {{{/}https://maven.apache.org}} website.
 
  See {{{./index.html}Maven website introduction}} for instructions on the whole website publication.
 
@@ -43,7 +43,7 @@ Overview
 
 How main website publication works
 
- Maven main website ({{http://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree
+ Maven main website ({{https://maven.apache.org}}) is generated with {{{/plugins/maven-site-plugin}maven-site-plugin}} from a source tree
  stored in svn: {{https://svn.apache.org/repos/asf/maven/site/trunk}}.
 
 
@@ -108,6 +108,6 @@ How Doxia website publication works
  * CMS copies CMS staging svn area content to {{{https://svn.apache.org/repos/infra/websites/production/maven-doxia/content/}website production svn area}},
 
  * svnpubsub mecanism transfers svn production content to live production site: {{http://maven.apache.org/doxia}},
- with its {{{http://maven.apache.org/doxia/extpaths.txt}<<<extpaths.txt>>>}}
+ with its {{{/doxia/extpaths.txt}<<<extpaths.txt>>>}}
 
  []
