@@ -79,7 +79,7 @@ function instructions() {
     svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}\n\n');
   }
   if (category.indexOf("doxia") == 0) {
-    svnmucc = replaceAll(svnmucc, 'maven/components', 'maven-doxia/content');
+    svnmucc = replaceAll(svnmucc, 'maven/components', 'maven-doxia/components');
     if (category != "doxia-tools") {
       document.getElementById('artifactId').value = category;
     }
