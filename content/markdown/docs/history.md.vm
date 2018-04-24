@@ -104,6 +104,8 @@ Date format is: YYYY-MM-DD
 </table>
 
 <h3><a name="Maven_2">Maven 2</a></h3>
+<p>Maven 2.x has now reached its <a href="../maven-2.x-eol.html">end of life</a>.
+  The following <a href="/archives/maven-2.x/index.html">Maven 2.x specific documentation</a> is archived for reference.</p>
 <table>
 <tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td></td><td>
 <b><a href="../maven-2.x-eol.html">EoL notes</a>,
@@ -131,6 +133,8 @@ Date format is: YYYY-MM-DD
 </table>
 
 <h3><a name="Maven_1">Maven 1</a></h3>
+<p>Maven 1.x has now reached its <a href="../maven-1.x-eol.html">end of life</a>.
+  <a href="/archives/maven-1.x/index.html">Maven 1.x documentation</a> is archived for reference.</p>
 #macro ( announce $date $version $page )
 <tr><td>$date</td><td>$version</td><td><a href="$archive/$page">announce</a></td></tr>
 #end

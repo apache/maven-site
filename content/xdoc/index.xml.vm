@@ -125,6 +125,7 @@ under the License.
         You can also reach the Maven developers on <a href="community.html">IRC</a>.
       </p>
 
+      <h3>Apache Software Foundation</h3>
       <p>
         Maven is a part of the Apache Software Foundation. We'd like to <a href="https://www.apache.org/foundation/thanks.html">thank
         the sponsors</a> that provide financial assistance to the foundation. For more information on how you can support the
@@ -137,15 +138,6 @@ under the License.
         You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>: don't hesitate to ask on the <a href="mail-lists.html">Maven User mailing list</a>
         if Maven team members will be there, it can be a great opportunity to meet them.
       </p>
-
-      <h3>Archived Releases</h3>
-      <p>
-        Maven 1.x and Maven 2.x have now reached their end of life. The following documentation is archived:
-      </p>
-      <ul>
-        <li><a href="archives/maven-1.x/index.html">Archived documentation for Maven 1.x</a></li>
-        <li><a href="archives/maven-2.x/index.html">Archived documentation for Maven 2.x</a></li>
-      </ul>
     </section>
   </body>
 </document>
