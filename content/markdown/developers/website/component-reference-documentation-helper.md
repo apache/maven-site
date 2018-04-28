@@ -37,9 +37,7 @@ version: <input type="text" name="version" id="version"></input><br/>
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
 </td></tr>
 
-<tr><td colspan="2"><a href="" id="link-index-page" target="_blank" style="display:none">edit category index page through CMS</a><br/>
-<iframe id="index-page" src="" width="100%" height="300px"></iframe>
-</td>
+<tr><td colspan="2"><iframe id="index-page" src="" width="100%" height="300px"></iframe></td>
 <td>archives directory<br/>
 <iframe id="archives" src="" width="100%" height="300px"></iframe>
 </td>
@@ -51,11 +49,9 @@ function selectCategory(index, archive) {
   var indexPage = document.getElementById('index-page');
   var linkIndexPage = document.getElementById('link-index-page');
   var archives = document.getElementById('archives');
-  var indexUrl = index ? ('http://maven.apache.org/' + index) : '';
+  var indexUrl = index ? ('https://maven.apache.org/' + index) : '';
   indexPage.setAttribute('src', indexUrl);
-  linkIndexPage.setAttribute('href', 'https://cms.apache.org/redirect?uri='+escape(indexUrl));
-  linkIndexPage.style.display = index ? "initial":"none";
-  archives.setAttribute('src', 'http://maven.apache.org/' + archive + '?C=M;O=D');
+  archives.setAttribute('src', 'https://maven.apache.org/' + archive + '?C=M;O=D');
   instructions();
 }
 
