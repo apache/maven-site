@@ -30,7 +30,7 @@
 Introduction
 
  This document gives step-by-step instructions for deploying 
- Maven components reference documentation inside the Maven {{{/}http:s//maven.apache.org/}} website.
+ Maven components reference documentation inside the Maven {{{/}https://maven.apache.org/}} website.
 
  See {{{./index.html}Maven website introduction}} for instructions on the whole website publication (main site content + components).
 
@@ -50,7 +50,7 @@ How components reference documentation publication works
 
 * Staging component reference documentation
 
- Reference documentation of a component is staged in <<<http://maven.apache.org/xxx-archives/yyy-LATEST/>>>, where <<<yyy>>> is the
+ Reference documentation of a component is staged in <<<https://maven.apache.org/xxx-archives/yyy-LATEST/>>>, where <<<yyy>>> is the
  component name and <<<xxx>>> can be:
 
  * the component type, like <<<shared>>>, <<<plugins>>>, <<<skins>>>, ... (see
@@ -94,8 +94,9 @@ mvn scm-publish:publish-scm
  []
 
  <<Notice>>: content is in fact published to {{/components/}} directory,
- and rewrite rules in <<<.htaccess>>> detect files not found in main site to try
- {{/components/}} content instead (see {{{https://issues.apache.org/jira/browse/MPOM-80}MPOM-80}}).
+ and symbolic links declared in <<<resources/**/components.links>>> in main site source are used by Ant to
+ create a reference from <<</xxx>>> (= what we want to be user-visible) to <<</components/xxx>>> (what what is
+ checked out).
 
 * Publishing versioned component reference documentation
 
