@@ -47,9 +47,3 @@ Maven Plugins Cookbook
   * {{{./plexus-plugin-upgrade.html}How to upgrade from Plexus javadoc tags to Plexus Java annotations?}}
 
   []
-
-* Other Resources
-
-  * {{{http://docs.codehaus.org/display/MAVENUSER/Mojo+Developer+Cookbook}Mojo Developer Cookbook}}
-
-  []

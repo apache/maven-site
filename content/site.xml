@@ -140,9 +140,18 @@ under the License.
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html" />
         <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
+        <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html" />
+        <item name="Documenting Plugins" href="/plugin-developers/plugin-documenting.html" />
+        <item name="Plugins Cookbook" href="/plugin-developers/cookbook/index.html" collapse="true">
+          <item name="Build Time" href="/plugin-developers/cookbook/add-build-time-to-manifest.html" />
+          <item name="SVN Revision" href="/plugin-developers/cookbook/add-svn-revision-to-manifest.html" />
+          <item name="Attach Source + Javadoc" href="/plugin-developers/cookbook/attach-source-javadoc-artifacts.html" />
+          <item name="Assembly" href="/plugin-developers/cookbook/generate-assembly.html" />
+          <item name="Plexus Javadoc to Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
+        </item>
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
-        <item name="Maven API" href="/ref/current/index.html"/>
-        <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html"/>
+        <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />
+        <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html" />
       </item>
       <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
         <item name="Maintaining your Metadata" href="/project-faq.html" />
@@ -152,6 +161,10 @@ under the License.
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />
+        <item name="Code Style and Conventions" href="/developers/conventions/code.html" />
+        <item name="JIRA Convention" href="/developers/conventions/jira.html" />
+        <item name="SVN Convention" href="/developers/conventions/svn.html" />
+        <item name="Git Convention" href="/developers/conventions/git.html" />
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
         </item>
@@ -159,6 +172,7 @@ under the License.
           <item name="Common Procedure" href="/developers/release/maven-project-release-procedure.html" />
           <item name="Maven Core" href="/developers/release/maven-core-release.html" />
           <item name="Parent POM" href="/developers/release/parent-pom-release.html" />
+          <item name="GPG Keys" href="/developers/release/pmc-gpg-keys.html" />
         </item>
         <item name="Deploy Maven Website" href="/developers/website/index.html" collapse="true">
           <item name="Components Documentation" href="developers/website/deploy-component-reference-documentation.html" />
