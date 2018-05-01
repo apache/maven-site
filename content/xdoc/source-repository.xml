@@ -65,6 +65,19 @@ repo start master --all</pre>
         </ol>
       </subsection>
 
+      <subsection name="Maven Site">
+        <p>
+         The sources for this site are available in a distinct Git repository:
+          <table>
+            <tr>
+              <td><a href="/">Apache Maven Site</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-site.git">https://gitbox.apache.org/repos/asf/maven-site.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
+            </tr>
+          </table>
+        </p>
+      </subsection>
+
       <subsection name="Maven Core">
         <p>
           The Git repository for <a href="/ref/current/">Maven</a> contains a master branch which is the current development version. There is also a
@@ -79,18 +92,6 @@ repo start master --all</pre>
               <td><a href="/core-its/">Apache Maven Core ITs</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-integration-testing.git">https://gitbox.apache.org/repos/asf/maven-integration-testing.git</a></source></td>
               <td><a href="https://github.com/apache/maven-integration-testing/">(GitHub mirror)</a></td>
-            </tr>
-          </table>
-        </p>
-      </subsection>
-
-      <subsection name="Maven Site">
-        <p>
-          <table>
-            <tr>
-              <td><a href="/">Apache Maven Site</a></td>
-              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-site.git">https://gitbox.apache.org/repos/asf/maven-site.git</a></source></td>
-              <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
             </tr>
           </table>
         </p>
