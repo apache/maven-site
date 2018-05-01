@@ -31,6 +31,10 @@ Introduction
 
  This document gives step-by-step instructions for deploying the main Maven {{{/}https://maven.apache.org}} website.
 
+ <<Obsolete>> this documentation is obsolete: with the migration of site source to Git, Apache CMS is not used any more.
+ It is replaced by Git edit (eventually through GitHub with the "edit" link accessible from breadcrumb) followed
+ by Jenkins job to build and commit to svnpubsub.
+
  See {{{./index.html}Maven website introduction}} for instructions on the whole website publication.
 
 
