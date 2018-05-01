@@ -84,6 +84,18 @@ repo start master --all</pre>
         </p>
       </subsection>
 
+      <subsection name="Maven Site">
+        <p>
+          <table>
+            <tr>
+              <td><a href="/">Apache Maven Site</a></td>
+              <td><source><a href="https://gitbox.apache.org/repos/asf/maven-site.git">https://gitbox.apache.org/repos/asf/maven-site.git</a></source></td>
+              <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
+            </tr>
+          </table>
+        </p>
+      </subsection>
+
       <subsection name="Other Components">
         <p>
           The source repositories for the various plugins are in Git, listed in the documentation of the respective plugin,
@@ -556,9 +568,14 @@ repo start master --all</pre>
           You can also check out every component separately. The components in Subversion are:
           <table>
             <tr>
-              <td>the Maven site (this site)</td>
-              <td><source><a href="https://svn.apache.org/viewvc/maven/site/trunk/">https://svn.apache.org/repos/asf/maven/site/trunk/</a></source></td>
-              <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
+              <td>Maven Project (mainly KEYS)</td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/project/">https://svn.apache.org/repos/asf/maven/project/</a></source></td>
+              <td><!--a href="https://github.com/apache/maven-sandbox/">(GitHub mirror)</a--></td>
+            </tr>
+            <tr>
+              <td><a href="/apache-resource-bundles/">Apache Resource Bundles</a></td>
+              <td><source><a href="https://svn.apache.org/viewvc/maven/resources/trunk/">https://svn.apache.org/repos/asf/maven/resources/trunk/</a></source></td>
+              <td><!--a href="https://github.com/apache/maven-sandbox/">(GitHub mirror)</a--></td>
             </tr>
             <tr>
               <td>Maven Sandbox</td>
@@ -574,54 +591,6 @@ repo start master --all</pre>
         </p>
       </subsection>
 
-      <subsection name="Anonymous Access">
-        <p>
-          Both subversion and git repositories may be cloned with either http or https. Only read-only access is available
-          for http checkouts.
-        </p>
-        <source>$ svn checkout http://svn.apache.org/repos/asf/maven/site/trunk</source>
-      </subsection>
-
-      <subsection name="Developer Access">
-        <p>
-          Everyone can access Subversion repositories via HTTP, but committers must checkout Subversion
-          repositories via HTTPS to gain write access:
-        </p>
-	<source>$ svn checkout <a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
-        <p>
-          To commit changes to the repository, execute the following command to commit your changes (<code>svn</code> will
-          prompt you for your password):
-        </p>
-        <source>$ svn commit --username your-username -m "A message"</source>
-      </subsection>
-
-      <subsection name="Access from behind a Firewall">
-        <p>
-          For those users who are stuck behind a corporate firewall which is blocking HTTP access to the Subversion
-          repository, you can try to access it via the developer connection:
-        </p>
-	<source>$ svn checkout <a href="https://svn.apache.org/viewvc/maven/site/trunk">https://svn.apache.org/repos/asf/maven/site/trunk</a></source>
-      </subsection>
-
-      <subsection name="Access through a Proxy">
-        <p>
-          The Subversion client can go through a proxy, if you configure it to do so. First, edit your <code>servers</code>
-          configuration file to indicate which proxy to use. The file's location depends on your operating system. On
-          Linux or Unix it is located in the directory <code>~/.subversion</code>. On Windows it is in <code>%APPDATA%\Subversion</code>
-          (try <code>echo %APPDATA%</code>, note this is a hidden directory).
-        </p>
-        <p>
-          There are comments in the file explaining what to do. If you don't have that file, get the latest Subversion
-          client and run any command; this will cause the configuration directory and template files to be created.
-        </p>
-        <p>
-          Example: Edit the <code>servers</code> file and add something like:
-        </p>
-        <source>
-[global]
-http-proxy-host = your.proxy.name
-http-proxy-port = 3128</source>
-      </subsection>
     </section>
   </body>
 </document>
