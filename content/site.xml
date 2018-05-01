@@ -31,7 +31,7 @@ under the License.
     <version>${fluidoVersion}</version><!-- modify pom.xml property if necessary -->
   </skin>
 
-  <edit>https://github.com/apache/maven-site/tree/trunk</edit>
+  <edit>${project.scm.url}</edit>
 
   <custom>
     <fluidoSkin>

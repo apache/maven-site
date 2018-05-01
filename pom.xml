@@ -35,9 +35,10 @@
 
   <!-- repeated here so that maven-site is not appended -->
   <scm>
-    <connection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</connection>
-    <developerConnection>scm:svn:https://svn.apache.org/repos/asf/maven/site/trunk/</developerConnection>
-    <url>https://svn.apache.org/viewvc/maven/site/trunk/</url>
+    <connection>scm:git:https://gitbox.apache.org/repos/asf/maven-site.git</connection>
+    <developerConnection>scm:git:https://gitbox.apache.org/repos/asf/maven-site.git</developerConnection>
+    <url>https://github.com/apache/maven-site/tree/${project.scm.tag}</url>
+    <tag>master</tag>
   </scm>
 
   <issueManagement>
