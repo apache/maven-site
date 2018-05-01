@@ -30,12 +30,21 @@ Example: Using Maven 3 lifecycle extension
 
 * Lifecyle Participation
 
-  You can extends the class <<<org.apache.maven.AbstractMavenLifecycleParticipant>>> see {{{/ref/current/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html}javadoc}}.
+  You can extend multiple classes depending on your needs:
 
+  * {{{/ref/current/maven-embedder/apidocs/index.html?org.apache.maven.cli.transfer.AbstractMavenTransferListener.html}<<<org.apache.maven.cli.transfer.AbstractMavenTransferListener>>>}},
+
+  * {{{/ref/current/maven-core/apidocs/index.html?org.apache.maven.execution.AbstractExecutionListener.html}<<<org.apache.maven.execution.AbstractExecutionListener>>>}},
+
+  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/AbstractMavenLifecycleParticipant.html}<<<org.apache.maven.AbstractMavenLifecycleParticipant>>>}},
+
+  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/eventspy/AbstractEventSpy.html}<<<org.apache.maven.eventspy.AbstractEventSpy>>>}},
+
+  []
 
 * Build your extension
 
-  Create a Maven project with a dependency on org.apache.maven:maven-core:${currentStableVersion} and other dependencies :
+  Create a Maven project with a dependency on <<<org.apache.maven:maven-core:${currentStableVersion}>>> and other dependencies:
 
 +---+
     <groupId>org.apache.maven.extensions</groupId>
@@ -82,7 +91,7 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
 }
 +---+
 
-  Generate plexus metadatas during building your extension jar
+  Generate plexus metadatas during the build of your extension jar:
 
 +---+
   <build>
@@ -109,17 +118,20 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
 
 * Use your extension in your build(s)
 
-  You have two ways to use your extension within your builds:
+  You have 3 ways to use your extension within your builds:
 
-  * add your extension jar in <<<$\{maven.home\}/lib/ext>>>.
+  * add your extension jar in <<<$\{maven.home\}/lib/ext>>>,
 
-  * add it as a build extension in your pom.
+  * add it as a build extension in your pom,
+
+  * (since Maven 3.3.1) configure your extension in {{{/ref/current/maven-embedder/core-extensions.html}<<<.mvn/extensions.xml>>>}}.
 
   []
 
-  <<NOTE>>: if you use a build extension mechanism the method <<<afterSessionStart>>> <<won't be called>>
+  <<NOTE>>: if you use the build extension mechanism, the method <<<afterSessionStart>>> <<won't be called>> since the extension
+  is loaded later in the build
 
-  Use a extension in your project, declare as it in your pom:
+  To use a build extension in your project, declare it in your pom as:
 
 +---+
    <build>

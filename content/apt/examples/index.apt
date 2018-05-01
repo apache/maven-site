@@ -1,5 +1,5 @@
   ---
-  Summary of Maven 2.0 Examples
+  Summary of Maven Examples
   ---
   John Casey
   ---
@@ -27,8 +27,6 @@
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
 Examples
-
-* <<<settings.xml>>> Configuration
 
   * {{{./injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
 
