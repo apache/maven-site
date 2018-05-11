@@ -124,7 +124,7 @@ under the License.
           <tr>
             <td>Binary tar.gz archive</td>
             <td><a href="[preferred]maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz">apache-maven-${currentStableVersion}-bin.tar.gz</a></td>
-            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.sha1">apache-maven-${currentStableVersion}-bin.tar.gz.sha1</a></li></td>
+            <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.sha1">apache-maven-${currentStableVersion}-bin.tar.gz.sha1</a></td>
             <td><a href="https://www.apache.org/dist/maven/maven-3/${currentStableVersion}/binaries/apache-maven-${currentStableVersion}-bin.tar.gz.asc">apache-maven-${currentStableVersion}-bin.tar.gz.asc</a></td>
           </tr>
           <tr>
