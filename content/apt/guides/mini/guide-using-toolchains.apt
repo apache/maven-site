@@ -59,15 +59,15 @@ Guide to Using Toolchains
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 | jdk             | <<<{{{/plugins/maven-surefire-plugin/}maven-surefire-plugin}}>>>                             | 2.5                 | Apache Maven
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/}animal-sniffer-maven-plugin}}>>> | 1.3   | Codehaus Mojo
+| jdk             | <<<{{{https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/}animal-sniffer-maven-plugin}}>>> | 1.3   | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://www.mojohaus.org/cassandra-maven-plugin/}cassandra-maven-plugin}}>>>            | 0.7.0-1             | Codehaus Mojo
+| jdk             | <<<{{{https://www.mojohaus.org/cassandra-maven-plugin/}cassandra-maven-plugin}}>>>            | 0.7.0-1             | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://www.mojohaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                      | 1.1.1               | Codehaus Mojo
+| jdk             | <<<{{{https://www.mojohaus.org/exec-maven-plugin/}exec-maven-plugin}}>>>                      | 1.1.1               | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://www.mojohaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                    | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
+| jdk             | <<<{{{https://www.mojohaus.org/jdiff-maven-plugin/}jdiff-maven-plugin}}>>>                    | 1.0-beta-1-SNAPSHOT | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| jdk             | <<<{{{http://www.mojohaus.org/keytool/keytool-maven-plugin/}keytool-maven-plugin}}>>>        | 1.4                 | Codehaus Mojo
+| jdk             | <<<{{{https://www.mojohaus.org/keytool/keytool-maven-plugin/}keytool-maven-plugin}}>>>        | 1.4                 | Codehaus Mojo
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 | protobuf        | <<<{{{http://sergei-ivanov.github.io/maven-protoc-plugin/examples/protobuf-toolchain.html}maven-protoc-plugin}}>>> | 0.3.2 | github
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+

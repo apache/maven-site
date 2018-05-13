@@ -223,4 +223,4 @@ See [complete release notes for all versions][5]
 [MNG-6191]: https://issues.apache.org/jira/browse/MNG-6191
 [MNG-6192]: https://issues.apache.org/jira/browse/MNG-6192
 
-[flatten-maven-plugin]: http://www.mojohaus.org/flatten-maven-plugin/
+[flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/

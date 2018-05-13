@@ -95,7 +95,7 @@ Improvements
 
  * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
 
- * Update used [Modello](http://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
+ * Update used [Modello](https://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
 
  * Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
 
@@ -105,12 +105,12 @@ Improvements
 
  * Upgrade [Wagon](/wagon/) version to 2.10 [MNG-5915][MNG-5915].
 
- * Upgraded to [plexus-component-*](http://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
+ * Upgraded to [plexus-component-*](https://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
    [asm](http://asm.ow2.org/) 5.x [MNG-5921][MNG-5921].
 
- * Upgrade [plexus-utils](http://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
+ * Upgrade [plexus-utils](https://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
 
- * Update [animal-sniffer-maven-plugin](http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
+ * Update [animal-sniffer-maven-plugin](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
 
 
 Bugs
@@ -172,7 +172,7 @@ Bugs
 Task
 ----
 
- * Update [Modello site url](http://codehaus-plexus.github.io/modello/) [MNG-5887][MNG-5887].
+ * Update [Modello site url](https://codehaus-plexus.github.io/modello/) [MNG-5887][MNG-5887].
 
 
 The full list of changes can be found in our [issue management system][4].

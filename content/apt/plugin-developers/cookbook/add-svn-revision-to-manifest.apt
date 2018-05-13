@@ -42,7 +42,7 @@ Cookbook: How To Add SVN Revision To A JAR Manifest?
 *-----------------------------------------------------------+--------------+
 | {{{../../plugins/maven-jar-plugin/} <<<jar>>>}}           | 2.6
 *-----------------------------------------------------------+--------------+
-| {{{http://www.mojohaus.org/buildnumber-maven-plugin/} <<<buildnumber>>>}} | 1.3
+| {{{https://www.mojohaus.org/buildnumber-maven-plugin/} <<<buildnumber>>>}} | 1.3
 *-----------------------------------------------------------+--------------+
 
 * Sample Generated Manifest

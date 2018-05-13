@@ -244,7 +244,7 @@ See [complete release notes for all versions][7]
 [5]: http://www.mail-archive.com/dev@maven.apache.org/msg112103.html
 [6]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12336084&amp;styleName=Text
 [7]: ../../docs/history.html
-[flatten-maven-plugin]: http://www.mojohaus.org/flatten-maven-plugin/
+[flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
 [maven-aether-provider]: /ref/3.5.0/maven-aether-provider/
 [maven-compat]: /ref/3.5.0/maven-compat/
 [maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
