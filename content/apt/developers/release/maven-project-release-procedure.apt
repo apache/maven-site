@@ -200,7 +200,7 @@ wagon/wagon-2.2-source-release.zip.sha1
    for explanations.
    Note that not all projects follow these conventions exactly.
 
-  In case there's an overview table with version (e.g. {{{/plugins/index.html}plugins}} and {{{/shared/index.html}shared}}) update it via {{https://cms.apache.org/}}.
+  In case there's an overview table with version (e.g. {{{/plugins/index.html}plugins}} and {{{/shared/index.html}shared}}) you can directly edit it on the github page.
 
  [[3]] Update the version tracking in JIRA
 
