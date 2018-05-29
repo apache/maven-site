@@ -82,11 +82,11 @@ Developers Conventions
 
   * {{{../../developers/conventions/code.html}Maven Code Style And Convention}}
 
-  * {{{../../developers/conventions/jira.html}Maven JIRA Convention}}
+  * {{{../../developers/conventions/jira.html}Maven Jira Convention}}
 
-  * {{{../../developers/conventions/svn.html}Maven SVN Convention}}
+  * {{{../../developers/conventions/svn.html}Maven Subversion Convention}}
 
-  * {{{../../developers/conventions/git.html}Maven GIT Convention}}
+  * {{{../../developers/conventions/git.html}Maven Git Convention}}
 
   * {{{../../developers/release/index.html}Releasing a maven project}}
 

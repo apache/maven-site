@@ -219,7 +219,7 @@ functioning of the committee itself.
 
 The Apache Foundation currently does not have a policy requiring projects to
 cross-promote. For example Subversion is an Apache project, yet projects
-are free to choose from Subversion and GIT (a non-Apache project) for source 
+are free to choose from Subversion and Git (a non-Apache project) for source 
 control.
 
 When considering integration of technologies within Maven, there is
@@ -275,7 +275,7 @@ from other talented individuals, the PMC members should endevour to bring
 those individuals and their talent to the project as committers.
 
 Finally, where a fork is hosted outside of Apache hardware, there is less
-traceability of the code provenance, for example GIT commits can be squashed 
+traceability of the code provenance, for example Git commits can be squashed 
 and history re-written to mask or otherwise hide the source of contributions.
 This does not mean that code coming from an external fork inherently has
 such issues, instead it means that the requirements for review and verification
