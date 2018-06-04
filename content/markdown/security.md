@@ -8,6 +8,35 @@ has been fixed.
 For more information about reporting vulnerabilities, see the [Apache
 Security Team](https://www.apache.org/security/) page.
 
+
+### Maven Dependency, EAR, Javadoc, WAR and Plugin Plugins
+
+Severity: Low
+
+Vendor: The Apache Software Foundation
+
+Versions Affected:
+
+- Maven Dependency Plugin 3.1.0 and earlier
+- Maven EAR Plugin 3.0.0 and earlier
+- Maven Javadoc Plugin 2.5 to 3.0.0
+- Maven WAR Plugin 2.1-alpha-1 to 3.2.0
+- Maven Plugin Plugin 3.0 to 3.5.1
+
+Description: As part of a broader research, the Snyk Security Research Team discovered
+an arbitrary file write generic vulnerability, that can be achieved using a 
+specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
+path traversal filenames. So when the filename gets concatenated to the 
+target extraction directory, if the extraction tool used does not make 
+sufficient checks, the final path ends up outside of the target folder.
+The affected plugins use plexus-archiver to unpack dependencies to disk
+and have been identified as potential triggers for exposing the vulnerability
+if dependencies are compromised.
+
+See [full description](./security-plexus-archiver.html) for more details.
+
+Credit: This issue was identified by the Snyk Security Research Team
+
 ### CVE-2013-0253 Apache Maven 3.0.4
 
 Severity: Medium
