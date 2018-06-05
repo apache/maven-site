@@ -1,4 +1,4 @@
-# Zip Slip Vulnernability
+# Zip Slip Vulnerability
 
 As part of a broader research, the Snyk Security Research Team discovered
 an arbitrary file write generic vulnerability, that can be achieved using a 
