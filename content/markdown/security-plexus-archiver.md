@@ -1,6 +1,7 @@
 # Zip Slip Vulnerability
 
-As part of a broader research, the Snyk Security Research Team discovered
+As part of [a broader research](https://snyk.io/research/zip-slip-vulnerability),
+the Snyk Security Research Team discovered
 an arbitrary file write generic vulnerability, that can be achieved using a 
 specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
 path traversal filenames. So when the filename gets concatenated to the 
