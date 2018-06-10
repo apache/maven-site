@@ -462,5 +462,12 @@ Where: <path-to-file>  the path to the file to load
         </ul>
       </answer>
     </faq>
+    <faq id="javadoc_jar_built_twice">
+      <question>Why is my Javadoc JAR built twice during release?</question>
+      <answer>
+        With MNG-5940 the release profile goal of the Maven Javadoc Plugin has been changed to <code>
+        jar-no-fork</code>. Revise your configuration to avoid duplicate JAR upload.
+      </answer>
+    </faq>
   </part>
 </faqs>
