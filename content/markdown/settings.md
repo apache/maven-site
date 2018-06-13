@@ -176,7 +176,7 @@ information should exist on the build server in the `settings.xml`.
 -   **filePermissions**, **directoryPermissions**: When a repository
     file or directory is created on deployment, these are the
     permissions to use. The legal values of each is a three digit number
-    corrosponding to \*nix file permissions, ie. 664, or 775.
+    corresponding to \*nix file permissions, e.g. 664, or 775.
 
 *Note:* If you use a private key to login to the server, make sure you
 omit the `<password>` element. Otherwise, the key will be ignored.
@@ -248,7 +248,7 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 -   **active**: `true` if this proxy is active. This is useful for
     declaring a set of proxies, but only one may be active at a time.
 -   **protocol**, **host**, **port**: The `protocol://host:port` of the
-    proxy, seperated into discrete elements.
+    proxy, separated into discrete elements.
 -   **username**, **password**: These elements appear as a pair denoting
     the login and password required to authenticate to this proxy
     server.
@@ -479,9 +479,9 @@ Maven can find new plugins.
 The final piece of the `settings.xml` puzzle is the `activeProfiles`
 element. This contains a set of `activeProfile` elements, which each
 have a value of a `profile` `id`. Any `profile` `id` defined as an
-`activeProfile` will be active, reguardless of any environment settings.
+`activeProfile` will be active, regardless of any environment settings.
 If no matching profile is found nothing will happen. For example, if
 `env-test` is an `activeProfile`, a profile in a `pom.xml` (or
-`profile.xml` with a corrosponding `id` will be active. If no such
+`profile.xml` with a corresponding `id` will be active. If no such
 profile is found then execution will continue as normal.
 
