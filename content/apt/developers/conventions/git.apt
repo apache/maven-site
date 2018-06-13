@@ -52,17 +52,17 @@ Maven Git Convention
   and in particular to keep track of which changes are included in
   which releases.
 
-  [[2]] Make a fork of the offical ASF clone from github.com. For
+  [[2]] Make a fork of the official ASF clone from github.com. For
   example, <<<https://github.com/apache/maven-scm>>>.
 
   [[3]] Make a branch named after your JIRA. This is not <required>,
-  but it makes it easier for Maven commiters to keep track of your 
+  but it makes it easier for Maven committers to keep track of your 
   contribution.
 
   [[4]] Make your changes. As always, unit or integration tests make
   it much easier for us to accept your changes.
 
-  [[5]] Make a pull request to pull your changes to the offical clone.
+  [[5]] Make a pull request to pull your changes to the official clone.
   Add a link to your pull request to the JIRA. Committers will take it
   from here.
 
@@ -166,7 +166,7 @@ $ git push
 
 * Other useful Git commands while developing
 
- If you've done a chunk of work and you would like ditch your changes and start from scratch use this command to
+ If you've done a chunk of work and you would like to ditch your changes and start from scratch use this command to
  revert to the original checkout:
 
 ---
@@ -212,7 +212,7 @@ gitk --all
 
 ---
 git push # your github account
-git push apache # the authorative apache repo
+git push apache # the authoritative apache repo
 ---
 
  Using your github account as a storage for half-finished work is excellent if you switch between multiple computers,
