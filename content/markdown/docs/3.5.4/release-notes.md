@@ -65,12 +65,17 @@ Thank you also for your time and feedback.
 
 ## Known Issues
 
+At the time of release, there are no known regressions introduced by this release
 
 ## Overview about the changes
 
+This release is primarily aimed to resolve the two regressions introduced in the 3.5.3 release, specifically [MNG-6372][] and [MNG-6388][].
+
+There are some additional minor improvements, the most notable of which is:
+
+- The Maven Super POM changes the default execution of the `maven-source-plugin` `jar` goal into `jar-no-fork` which should resolve some issues complex projects had running releases.
 
 ## [The detailed issue list](#Details)
-
 
 ### Bugs
 - [MNG-6370][] `ConcurrencyDependencyGraph#getNumberOfBuilds()` does not remove finished projects from unfinished ones
