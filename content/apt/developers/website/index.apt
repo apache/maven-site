@@ -44,11 +44,11 @@ Introduction
 
  * <<</>>> comes from {{{https://svn.apache.org/viewvc/maven/website/content/}https://svn.apache.org/repos/asf/maven/website/content/}}
 
- * {{{https://maven.apache.org/components}<<</components>>>}} comes from {{https://svn.apache.org/repos/infra/websites/production/maven/components/}}
+ * {{{https://maven.apache.org/components}<<</components>>>}} comes from {{https://svn.apache.org/repos/asf/maven/website/components/}}
 
  * <<</doxia>>> comes from {{{https://svn.apache.org/viewvc/maven/doxia/website/content/}https://svn.apache.org/repos/asf/maven/doxia/website/content/}}
 
- * {{{https://maven.apache.org/doxia/components}<<</doxia/components>>>}} comes from {{https://svn.apache.org/repos/infra/websites/production/maven-doxia/components/}}
+ * {{{https://maven.apache.org/doxia/components}<<</doxia/components>>>}} comes from {{https://svn.apache.org/repos/asf/maven/doxia/website/components/}}
 
  []
 

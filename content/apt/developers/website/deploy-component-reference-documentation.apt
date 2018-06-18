@@ -118,7 +118,7 @@ mvn scm-publish:publish-scm
  * Unix:
 
 +----------+
-SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/components
+SVNPUBSUB=https://svn.apache.org/repos/asf/maven/website/components
 
 svn cp $SVNPUBSUB/xxx-archives/yyy-LATEST $SVNPUBSUB/xxx-archives/yyy-$version -m "Archive versioned site."
 
@@ -129,7 +129,7 @@ svn cp $SVNPUBSUB/xxx-archives/yyy-$version $SVNPUBSUB/xxx/yyy -m "Publish new s
  * Windows:
 
 +----------+
-set SVNPUBSUB=https://svn.apache.org/repos/infra/websites/production/maven/components
+set SVNPUBSUB=https://svn.apache.org/repos/asf/maven/website/components
 
 svn cp %SVNPUBSUB%/xxx-archives/yyy-LATEST %SVNPUBSUB%/xxx-archives/yyy-$version -m "Archive versioned site."
 
@@ -143,7 +143,7 @@ svn cp %SVNPUBSUB%/xxx-archives/yyy-$version %SVNPUBSUB%/xxx/yyy -m "Publish new
 
 +----------+
 svnmucc -m "Publish yyy $version documentation" \
-  -U https://svn.apache.org/repos/infra/websites/production/maven/components \
+  -U https://svn.apache.org/repos/asf/maven/website/components \
   cp HEAD xxx-archives/yyy-LATEST xxx-archives/yyy-$version \
   rm xxx/yyy \
   cp HEAD xxx-archives/yyy-LATEST xxx/yyy

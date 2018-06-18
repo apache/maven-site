@@ -31,7 +31,7 @@ version: <input type="text" name="version" id="version"></input><br/>
 <tr><td colspan="3">
 <h3>instructions to publish component release documentation</h3>
 <pre id="svnmucc">svnmucc -m "Publish ${artifactId} ${version} documentation" \
-  -U https://svn.apache.org/repos/infra/websites/production/maven/components \
+  -U https://svn.apache.org/repos/asf/maven/website/components \
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}-archives/${artifactId}-${version} \
   rm ${category}/${artifactId} \
   cp HEAD ${category}-archives/${artifactId}-LATEST ${category}/${artifactId}</pre>
@@ -75,7 +75,7 @@ function instructions() {
     svnmucc = replaceAll(svnmucc, '${artifactId}-${version} \\', '${version}\n\n');
   }
   if (category.indexOf("doxia") == 0) {
-    svnmucc = replaceAll(svnmucc, 'maven/components', 'maven-doxia/components');
+    svnmucc = replaceAll(svnmucc, 'maven/website/components', 'maven/doxia/website/components');
     if (category != "doxia-tools") {
       document.getElementById('artifactId').value = category;
     }
