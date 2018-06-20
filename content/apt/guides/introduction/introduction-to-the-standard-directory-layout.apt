@@ -64,7 +64,7 @@ Introduction to the Standard Directory Layout
 *-----------------------------------+-----------------------------------------------+
 
 
- At the top level files descriptive of the project: a <<<pom.xml>>> file 
+ At the top level, files descriptive of the project: a <<<pom.xml>>> file. 
  In addition, there are textual documents meant for the user to be able to 
  read immediately on receiving the source: <<<README.txt>>>, <<<LICENSE.txt>>>, etc.
 
