@@ -294,5 +294,7 @@ Enjoy,
  Several projects follow this list, and should be made aware of changes to the common parent.
  This might also be a step to take if other shared resources are released, or if plugin releases are
  of particular interest to that group.
+ 
+ If releasing Maven Core, notify announce@apache.org
 
  [[7]] Celebrate :o)
