@@ -93,7 +93,7 @@ Project-A -> Project-B
 
   The diagram above says that Project-A depends on Project-B. When A 
   declares B as an optional dependency in its POM, this relationship remains
-  unchanged. Its just like a normal build where Project-B will be added in its 
+  unchanged. It's just like a normal build where Project-B will be added in its 
   classpath.
 
 +---+
