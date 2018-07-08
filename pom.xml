@@ -226,11 +226,11 @@
             <id>site-mpir</id>
             <reports>
               <report>index</report>          <!-- xdoc/index.xml.vm -->
-              <report>project-team</report>
-              <report>mailing-list</report>
-              <report>scm</report>            <!-- xdoc/source-repository.xml -->
-              <report>issue-tracking</report> <!-- markdown/issue-tracking.md -->
-              <report>cim</report>
+              <report>team</report>
+              <report>mailing-lists</report>
+              <report>scm</report>            <!-- xdoc/scm.xml -->
+              <report>issue-management</report> <!-- markdown/issue-management.md -->
+              <report>ci-management</report>
             </reports>
           </reportSet>
         </reportSets>
