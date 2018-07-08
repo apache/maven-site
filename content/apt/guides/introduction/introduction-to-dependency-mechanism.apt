@@ -32,7 +32,7 @@
 Introduction to the Dependency Mechanism
 
   Dependency management is one of the features of Maven that is best known to users and is one of the areas where Maven
-  excels. There is not much difficulty in managing dependencies for a single a project, but when you start getting into
+  excels. There is not much difficulty in managing dependencies for a single project, but when you start getting into
   dealing with multi-module projects and applications that consist of tens or hundreds of modules this is where Maven can
   help you a great deal in maintaining a high degree of control and stability.
 
@@ -97,7 +97,7 @@ Introduction to the Dependency Mechanism
 
  * <Optional dependencies>
    - If project Y depends on project Z, the owner of project Y can mark project Z
-     as an optional dependency, using the "optional" element.  When project X depends on project Y, X will 
+     as an optional dependency, using the "optional" element.  When project X depends on project Y, X will
      depend only on Y and not on Y's optional dependency Z.  The owner of project X may then
      explicitly add a dependency on Z, at her option.  (It may be helpful to think of optional
      dependencies as "excluded by default.")
@@ -763,7 +763,7 @@ Introduction to the Dependency Mechanism
 
  * Never declare the pom importing a pom as the parent (or grandparent, etc) of the target pom.
    There is no way to resolve the circularity and an exception will be thrown.
-     
+
  * When referring to artifacts whose poms have transitive dependencies the project will need to specify versions
      of those artifacts as managed dependencies. Not doing so will result in a build failure since the
      artifact may not have a version specified. (This should be considered a best practice in any case as it
