@@ -45,7 +45,7 @@ under the License.
   <body>
     <links>
       <item name="Download" href="/download.cgi" />
-      <item name="Get Sources" href="/source-repository.html" />
+      <item name="Get Sources" href="/scm.html" />
     </links>
     <breadcrumbs>
       <item name="Maven"  href="https://maven.apache.org/index.html" />
@@ -188,9 +188,9 @@ under the License.
       <item name="Project Roles" href="/project-roles.html" />
       <item name="How to Contribute" href="/guides/development/guide-helping.html" />
       <item name="Getting Help" href="/users/getting-help.html" />
-      <item name="Issue Tracking" href="/issue-tracking.html" />
-      <item name="Getting Maven Source" href="/source-repository.html" />
-      <item name="The Maven Team" href="/team-list.html" />
+      <item name="Issue Management" href="/issue-management.html" />
+      <item name="Getting Maven Source" href="/scm.html" />
+      <item name="The Maven Team" href="/team.html" />
     </menu>
   </body>
 </project>
