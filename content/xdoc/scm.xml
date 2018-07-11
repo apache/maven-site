@@ -219,7 +219,7 @@ repo start master --all</pre>
               <td><a href="https://github.com/apache/maven-checkstyle-plugin/">(GitHub mirror)</a></td>
             </tr>
             <tr>
-              <td><a href="/plugins/maven-clean-plugin/">Apache Maven Plugin</a></td>
+              <td><a href="/plugins/maven-clean-plugin/">Apache Maven Clean Plugin</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-clean-plugin.git">https://gitbox.apache.org/repos/asf/maven-clean-plugin.git</a></source></td>
               <td><a href="https://github.com/apache/maven-clean-plugin/">(GitHub mirror)</a></td>
             </tr>
