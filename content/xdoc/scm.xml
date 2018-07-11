@@ -319,7 +319,7 @@ repo start master --all</pre>
               <td><a href="https://github.com/apache/maven-linkcheck-plugin/">(GitHub mirror)</a></td>
             </tr>
             <tr>
-              <td><a href="/plugins/maven-patch-plugin/">Apache Maven Plugin</a></td>
+              <td><a href="/plugins/maven-patch-plugin/">Apache Maven Patch Plugin</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-patch-plugin.git">https://gitbox.apache.org/repos/asf/maven-patch-plugin.git</a></source></td>
               <td><a href="https://github.com/apache/maven-patch-plugin/">(GitHub mirror)</a></td>
             </tr>
