@@ -36,7 +36,7 @@ Developing Maven
 * Finding some work to do
 
  First of all you need something to work on! Issues can be found in
- {{{/issue-tracking.html}several JIRA projects}}.
+ {{{/issue-management.html}several JIRA projects}}.
 
  * <<{{{https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&mode=hide&jqlQuery=project%20%3D%20MNG%20AND%20issuetype%20in%20%28Improvement%2C%20%22New%20Feature%22%2C%20%22Planned%20Work%22%2C%20Request%2C%20Wish%29}JIRA Issues}}>>
 
@@ -47,8 +47,8 @@ Developing Maven
 
 * Where's the source?
 
-   See {{{/source-repository.html}https://maven.apache.org/source-repository.html}} for information.
-   The Maven project uses a Git for some things, and Subversion for others, and this 
+   See {{{/scm.html}https://maven.apache.org/scm.html}} for information.
+   The Maven project uses a Git for some things, and Subversion for others, and this
    page tracks the situation.
  
   []

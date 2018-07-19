@@ -76,8 +76,7 @@ practices were used as guidelines:
 -   Have test cases setup their environment and don't rely on
     customizing the build for test preparation.
 
-Maven also aims to assist in project workflow such as release management
-and issue tracking.
+Maven also aims to assist in project workflow such as release and issue management.
 
 Maven also suggests some guidelines on how to layout your project's
 directory structure so that once you learn the layout you can easily

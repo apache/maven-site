@@ -34,7 +34,7 @@ Building Maven
   Building Maven yourself is for one of two reasons:
 
     * to try out a bleeding edge feature or bugfix (issues can be found in
-      {{{/issue-tracking.html} JIRA}}),
+      {{{/issue-management.html} JIRA}}),
 
     * to fix a problem you are having and submit a patch to the developers team.
 
@@ -46,7 +46,7 @@ Building Maven
   All of the source code for Maven and its related libraries is in managed in the ASF source code
   repositories. Current development of the core of Maven, and some other components, are in git.
   Other pieces (and older versions) are in Subversion. For details, see
-  {{{/source-repository.html}https://maven.apache.org/source-repository.html}}.
+  {{{/scm.html}https://maven.apache.org/scm.html}}.
 
 * Building Maven
 

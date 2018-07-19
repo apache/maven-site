@@ -30,7 +30,7 @@
 Maven Plugins Cookbook
 
   A set of small complete working examples projects that demonstrate how to use Maven Plugins.
-  It is based on commons how-to questions from the {{{../../mail-lists.html}Maven User Mailing List}}.
+  It is based on commons how-to questions from the {{{../../mailing-lists.html}Maven User Mailing List}}.
 
   <(Like to add more cookbooks? See {{{../../guides/development/guide-helping.html} How to Contribute}} page)>
 

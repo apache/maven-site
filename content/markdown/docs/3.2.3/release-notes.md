@@ -39,7 +39,7 @@ See the [PluginList][1] for more information.
 We hope you enjoy using Maven! If you have any questions, please consult:
 
 - the web site: [http://maven.apache.org/](http://maven.apache.org/)
-- the maven-user mailing list: [http://maven.apache.org/mail-lists.html](http://maven.apache.org/mail-lists.html)
+- the maven-user mailing list: [http://maven.apache.org/mailing-lists.html](http://maven.apache.org/mailing-lists.html)
 - the reference documentation: [http://maven.apache.org/ref/3.2.3/](http://maven.apache.org/ref/3.2.3/)
 
 The full list of changes can be found in our [issue management system][4].

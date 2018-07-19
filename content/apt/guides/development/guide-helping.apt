@@ -32,20 +32,20 @@ Guide to helping with Maven
 
  As with any open source project, there are several ways you can help:
 
- * Join the {{{../../mail-lists.html}mailing list}} and answer other user's questions
+ * Join the {{{../../mailing-lists.html}mailing lists}} and answer other user's questions
 
- * Report bugs, feature requests and other issues in the {{{../../issue-tracking.html}issue tracking}} application.
+ * Report bugs, feature requests and other issues in the {{{../../issue-management.html}issue management system}}.
 
  * {{{./guide-building-maven.html} Build Maven}} for yourself, in order to fix bugs.
 
  * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find, or that others have filed)
 
- * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mail-lists.html} mailing list}} for release votes
+ * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mailing-lists.html} mailing list}} for release votes
 
  * {{{./guide-testing-development-plugins.html} test snapshot plugins}} help test the latest development versions of plugins and report issues
 
  * Help with the documentation by pointing out areas that are lacking or unclear, and if you are so inclined, submitting patches to correct it.
-   You can create appropriate issues {{{https://issues.apache.org/jira/browse/MNGSITE}by using the issue tracking system}}.
+   You can create appropriate issues {{{https://issues.apache.org/jira/browse/MNGSITE}by using the issue management system}}.
 
  []
 

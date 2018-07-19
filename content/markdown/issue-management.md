@@ -3,10 +3,10 @@
 Maven projects use [JIRA](https://www.atlassian.com/software/jira) a
 J2EE-based, issue tracking and project management application.
 
-## Issue Tracking
+## Issue Management
 
 Issues, bugs, and feature requests should be submitted to the following
-issue tracking systems depending on which project is involved:
+issue management systems depending on which project is involved:
 
 * Maven Project: <https://issues.apache.org/jira/browse/MNG>
 

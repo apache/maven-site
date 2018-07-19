@@ -50,9 +50,9 @@
     <item name="Community Overview" ref="/community.html">
       <item name="How to Contribute" ref="/guides/development/guide-helping.html"/>
       <item name="Getting Help" ref="/users/getting-help.html" />
-      <item name="Issue Tracking" ref="/issue-tracking.html" />
-      <item name="Source Repository" ref="/source-repository.html" />
-      <item name="Continuous Integration" ref="/continuous-integration.html"/>
+      <item name="Issue Management" ref="/issue-management.html" />
+      <item name="Source Repository" ref="/scm.html" />
+      <item name="CI Management" ref="/ci-management.html"/>
     </item>
 
     <!-- Generic Documentation -->

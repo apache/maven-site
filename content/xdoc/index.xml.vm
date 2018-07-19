@@ -112,13 +112,13 @@ under the License.
       </p>
       <p>
         To get started, search the documentation,
-        <a href="issue-tracking.html">issue tracker</a>, the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>
-        or the <a href="mail-lists.html">mailing list archives</a> to
+        <a href="issue-management.html">issue management system</a>, the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>
+        or the <a href="mailing-lists.html">mailing list archives</a> to
         see if the problem has been solved or reported before.
       </p>
       <p>
         If the problem has not been reported before, the recommended way to get help is to
-        subscribe to the <a href="mail-lists.html">Maven Users Mailing list</a>. Many other users and Maven developers
+        subscribe to the <a href="mailing-lists.html">Maven Users Mailing list</a>. Many other users and Maven developers
         will answer your questions there, and the answer will be archived for others in the future.
       </p>
       <p>
@@ -135,7 +135,7 @@ under the License.
         <a href="https://www.apache.org/events/current-event.html">
           <img src="https://www.apache.org/events/current-event-234x60.png" alt="Apache Events" style="vertical-align: text-top"/>
         </a>
-        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>: don't hesitate to ask on the <a href="mail-lists.html">Maven User mailing list</a>
+        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>: don't hesitate to ask on the <a href="mailing-lists.html">Maven User mailing list</a>
         if Maven team members will be there, it can be a great opportunity to meet them.
       </p>
     </section>

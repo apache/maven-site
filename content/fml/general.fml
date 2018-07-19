@@ -175,7 +175,7 @@
       <question>Where is the source code? I couldn't seem to find a link anywhere on the Maven site.</question>
       <answer>
         <p>
-          The source code can be found in <a href="source-repository.html">our subversion and git repositories</a>.
+          The source code can be found in <a href="scm.html">our Subversion and Git repositories</a>.
         </p>
         <p>
           For more information, see <a href="/guides/development/guide-building-maven.html">Building Maven</a>.

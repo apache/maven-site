@@ -26,7 +26,7 @@ the users mailing list and tell us about it.
 Just as any other healthy project requires a quick turn-around on
 defects, and a transparent method of users to have their wishes heard,
 so too does Maven need your help. Refer to the [Issue
-Tracking](./issue-tracking.html) page.
+Management](./issue-management.html) page.
 
 #### Developers
 
@@ -64,7 +64,7 @@ gather.
 
 #### Mailing Lists
 
-Maven has a number of [Mailing Lists](./mail-lists.html), and the Maven
+Maven has a number of [Mailing Lists](./mailing-lists.html), and the Maven
 User List is specifically dedicated to answering questions about all
 Maven things.
 

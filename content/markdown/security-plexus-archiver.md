@@ -12,7 +12,7 @@ The Apache Maven team has been informed because the plexus-archiver library
 did not make sufficient checks and it is a library used by most of the 
 packaging plugins.
 Affected versions of plexus-archiver are [,3.4]+[3.5], fixed versions are 3.4.1 & 3.6.0,
-with issue tracking [plexus-archiver #87](https://github.com/codehaus-plexus/plexus-archiver/pull/87) and
+with issue management [plexus-archiver #87](https://github.com/codehaus-plexus/plexus-archiver/pull/87) and
 Snyk vulnerability report [SNYK-JAVA-ORGCODEHAUSPLEXUS-31680](https://snyk.io/vuln/SNYK-JAVA-ORGCODEHAUSPLEXUS-31680)
 
 

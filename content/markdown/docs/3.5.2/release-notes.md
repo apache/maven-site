@@ -33,7 +33,7 @@ The core release is independent of the plugins available. Further releases of pl
 We hope you enjoy using Maven! If you have any questions, please consult:
 
 - the web site: [https://maven.apache.org/][2]
-- the maven-user mailing list: [https://maven.apache.org/mail-lists.html][3]
+- the maven-user mailing list: [https://maven.apache.org/mailing-lists.html][3]
 - the reference documentation: [https://maven.apache.org/ref/3.5.2/][4]
 
 ## Reporters and Contributors of this release
@@ -118,7 +118,7 @@ See [complete release notes for all versions][7]
 [0]: /download.html
 [1]: /plugins/index.html
 [2]: https://maven.apache.org/
-[3]: /mail-lists.html
+[3]: /mailing-lists.html
 [4]: /ref/3.5.2/
 [6]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12338964&amp;styleName=Text
 [7]: /docs/history.html

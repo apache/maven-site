@@ -52,14 +52,14 @@ Getting Help
 
   Someone else might have experienced the same problem as you before. A list
   of mail-archives can be found on
-  {{{https://maven.apache.org/mail-lists.html}mailing list index page}}. Please search one of
+  {{{https://maven.apache.org/mailing-lists.html}mailing list index page}}. Please search one of
   them before going any further.
 
 *Ask on the user list
 
   Our community is very helpful, just ask it the right way. See the references
   section, at the end of this page, for info on how to do that. Subscribe to
-  the {{{https://maven.apache.org/mail-lists.html}users-list}} and describe your
+  the {{{https://maven.apache.org/mailing-lists.html}users-list}} and describe your
   problem there. Don't expect to get an answer right away. Sometimes it takes a
   couple of days.
 
@@ -78,10 +78,10 @@ Getting Help
   If the problem is in one of the plugins, check the site of that plugin to
   get the correct link. Each plugin has its own section in JIRA, so using the
   correct link is important. Click on <Project Information> and then
-  <Issue Tracking>. On that page you will find the correct link.
+  <Issue Management>. On that page you will find the correct link.
 
   If the problem is in Maven itself you can find the appropriate link on the
-  {{{https://maven.apache.org/issue-tracking.html}issue tracking page}}.
+  {{{https://maven.apache.org/issue-management.html}issue management}} page.
 
 **How?
 
