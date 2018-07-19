@@ -158,7 +158,7 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 
   []
 
-  For information on this file, see the {{{./settings.html}Settings reference}}
+  For information on this file, see the {{{/settings.html}Settings reference}}
 
 ** Security
 
