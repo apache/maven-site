@@ -897,7 +897,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   Defines <<<*.properties>>> files that contain a list of properties that apply to resources which
   accept their settings (covered below). In other words, the "<<<name=value>>>" pairs defined within
   the filter files replace <<<$\{name\}>>> strings within resources on build. The example above defines
-  the <<<filter1.properties>>> file under the <<<filter/>>> directory. Maven's default filter
+  the <<<filter1.properties>>> file under the <<<filters/>>> directory. Maven's default filter
   directory is <<<$\{basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
