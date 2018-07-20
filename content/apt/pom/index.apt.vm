@@ -47,8 +47,6 @@ Parent POMs
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 | {{{./skins/} <<<Maven Skins>>>}}           |              |            | {{{/skins/}Maven skins}} configuration. |                   | {{{https://issues.apache.org/jira/browse/MPOM/component/12317104}JIRA}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| <<<Maven Archetype Bundles>>>              |              |            | {{{/archetypes/}Maven Archetypes}} configuration. |         | {{{https://issues.apache.org/jira/browse/MARCHETYPES}JIRA}}
-*--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 | {{{/apache-resource-bundles/} <<<Apache Resource Bundles>>>}} | |      | A set of resources to help you building Java resources compliant with Apache rules. | | {{{https://issues.apache.org/jira/browse/MASFRES}JIRA}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 
