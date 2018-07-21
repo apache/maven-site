@@ -55,8 +55,8 @@
   <properties>
     <maven.site.path>maven-site</maven.site.path>
     <currentStableVersion>3.5.4</currentStableVersion>
-    <currentStableReleaseDate>2017-10-24</currentStableReleaseDate>
-    <currentStableVersionDetails>138edd61fd100ec658bfa2d307c43b76940a5d7d; 2017-10-18T08:58:13+01:00</currentStableVersionDetails>
+    <currentStableReleaseDate>2018-06-22</currentStableReleaseDate>
+    <currentStableVersionDetails>1edded0938998edf8bf061f1ceb3cfdeccf443fe; 2018-06-17T20:33:14+02:00</currentStableVersionDetails>
     <current35xVersion>3.5.4</current35xVersion>
     <current33xVersion>3.3.9</current33xVersion>
     <current32xVersion>3.2.5</current32xVersion>
