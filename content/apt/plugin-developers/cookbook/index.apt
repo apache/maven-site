@@ -46,4 +46,6 @@ Maven Plugins Cookbook
 
   * {{{./plexus-plugin-upgrade.html}How to upgrade from Plexus javadoc tags to Plexus Java annotations?}}
 
+  * {{{/maven-jsr330.html}Using JSR-330 (instead of Plexus Java annotations)}}
+
   []

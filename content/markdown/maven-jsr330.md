@@ -24,11 +24,15 @@ If you are interested the background of moving from Plexus to Guice and JSR-330,
 
 ## How to use JSR-330
 
-When you use JSR-330 in Maven plugins or extensions, there are two things you need to setup in your build.
-First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations
-in your plugins and extensions. Second you need to setup the [`sisu-maven-plugin`][sisu-maven-plugin] to index the JSR-330 components
+When you use JSR-330 in Maven plugins or extensions, there are two things you need to setup in your build:
+
+1. First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations
+in your plugins and extensions.
+
+2. Second you need to setup the [`sisu-maven-plugin`][sisu-maven-plugin] to index the JSR-330 components
 you want made available to Maven. The `sisu-maven-plugin` creates its index in `META-INF/sisu/javax.inject.Named`.
-If you take a look in that file you will see something like the following:
+
+If you take a look in that file with the example from the next paragraph, you will see something like the following:
 
 ```
 org.apache.maven.lifecycle.profiler.LifecycleProfiler
@@ -83,9 +87,9 @@ Ok, so let\'s take a look at the POM:
   <build>
     <plugins>
       <plugin>
-        <groupId>org.sonatype.plugins</groupId>
+        <groupId>org.eclipse.sisu</groupId>
         <artifactId>sisu-maven-plugin</artifactId>
-        <version>1.1</version>
+        <version>0.3.3</version>
         <executions>
           <execution>
             <id>generate-index</id>
@@ -271,9 +275,9 @@ annotations in our example.
         </executions>
       </plugin>
       <plugin>
-        <groupId>org.sonatype.plugins</groupId>
+        <groupId>org.eclipse.sisu</groupId>
         <artifactId>sisu-maven-plugin</artifactId>
-        <version>1.1</version>
+        <version>0.3.3</version>
         <executions>
           <execution>
             <id>generate-index</id>
@@ -337,7 +341,7 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [jsr330]: https://www.jcp.org/en/jsr/detail?id=330
 [sisu]: https://eclipse.org/sisu/
 [plexus]: https://codehaus-plexus.github.io/
-[plexus-container]: https://github.com/sonatype/plexus-containers
+[plexus-container]: https://codehaus-plexus.github.io/plexus-containers/
 [jsr330-plugin]: https://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/

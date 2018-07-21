@@ -147,7 +147,8 @@ under the License.
           <item name="SVN Revision" href="/plugin-developers/cookbook/add-svn-revision-to-manifest.html" />
           <item name="Attach Source + Javadoc" href="/plugin-developers/cookbook/attach-source-javadoc-artifacts.html" />
           <item name="Assembly" href="/plugin-developers/cookbook/generate-assembly.html" />
-          <item name="Plexus Javadoc to Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
+          <item name="Plexus Javadoc to Plexus Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
+          <item name="Using JSR-330" href="/maven-jsr330.html" />
         </item>
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />
