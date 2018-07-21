@@ -78,6 +78,8 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 |         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/test-merge-descriptors-mojo.html}<<<test-merge-descriptors>>>}} | see <<<testStaticMetadataDirectory>>> parameter \
 |         |                                                                                                         | default: <<<$\{basedir}/src/test/resources/META-INF/plexus>>>
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
+|         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/components-report-mojo.html}<<<components-report>>>}} | reporting feature not available
+*---------+---------------------------------------------------------------------------------------------------------+--------------+
 || source annotations | javadoc tags: \
 ||        |                                                                                                         | javadoc tags + {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/}<<<plexus-component-annotations>>>}} Java 5 annotations:\
 ||        |  <<<@plexus.component>>>, <<<@plexus.requirement>>>, <<<@plexus.configuration>>> \
