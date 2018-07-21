@@ -52,10 +52,6 @@ Setting up Multiple Repositories
 
 +----+
 
- The <<<repositories>>> element is inherited so you would usually specify the repositories
- to use for a group of projects by defining a <<<repositories>>> element at the top of your
- inheritance chain.
-
  <<NOTE:>> You will also get the standard set of repositories as defined in the 
  {{{../introduction/introduction-to-the-pom.html#Super_POM}Super POM}}.
 
