@@ -64,7 +64,6 @@ Guide to Maven Classloading
  
  The second classloader down the graph contains the core requirements of Maven. More precisely, the core classloader
  has the libraries in <<<$\{maven.home\}/lib>>>. In general these are just Maven libraries, e.g. instances of
-       
  <<<{{{/ref/current/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  belong to this classloader.
  We hope to further separate these in the future to just be Maven APIs and have 
