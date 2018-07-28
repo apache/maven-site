@@ -14,7 +14,7 @@ pipeline {
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn clean site"
+                    sh "mvn -U clean site"
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn clean site-deploy"
+                    sh "mvn -U clean site-deploy"
                 }
             }
         }
