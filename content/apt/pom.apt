@@ -1218,8 +1218,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   is an element that is seen along side plugins. Plugin Management contains plugin elements in much
   the same way, except that rather than configuring plugin information for this particular project build,
   it is intended to configure project builds that inherit from this one. However, this only configures
-  plugins that are actually referenced within the plugins element in the children. The children have every
-  right to override <<<pluginManagement>>> definitions.
+  plugins that are actually referenced within the plugins element in the children or in the current POM.
+  The children have every right to override <<<pluginManagement>>> definitions.
 
   []
 
