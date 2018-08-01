@@ -39,7 +39,7 @@ Maven in 5 Minutes
   <Maven is a Java tool, so you must have {{{http://www.oracle.com/technetwork/java/javase/downloads/index.html}Java}}
  installed in order to proceed.>
 
-  First, {{{../../download.html}download Maven}} and follow the {{{../../download.html#Installation}installation instructions}}.
+  First, {{{../../download.html}download Maven}} and follow the {{{../../install.html}installation instructions}}.
   After that, type the following in a terminal or in a command prompt:
 
 +-----+
