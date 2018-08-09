@@ -117,7 +117,7 @@ Thank you also for your time and feedback.
    [MNG-5815], [MNG-5852], [MNG-5963], [MNG-6022].
 
  * In Maven 3.3.9, we have removed bindings for maven-ejb3-plugin because it 
-   does not exist. We follow-up and removed the artifact handler for `ejb3̀
+   does not exist. We follow-up and removed the artifact handler for `ejb3`
    and the `par` lifecycle [MNG-6014], [MNG-6017].
 
  * In previous Maven versions, there had been a larger problem related to 
