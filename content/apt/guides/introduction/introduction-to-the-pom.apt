@@ -132,7 +132,7 @@ Introduction to the POM
  are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project
  has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
 
- Furthermore, as you can see that in the minimal POM, the <repositories> were not specified. If you build your project using the minimal POM,
+ Furthermore, you can see that in the minimal POM the <repositories> were not specified. If you build your project using the minimal POM,
  it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
  the minimal POM, it would know that these dependencies will be downloaded from <<<http://repo.maven.apache.org/maven2>>> which was specified
  in the Super POM.
