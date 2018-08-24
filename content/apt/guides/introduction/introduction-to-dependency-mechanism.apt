@@ -32,8 +32,8 @@
 Introduction to the Dependency Mechanism
 
   Dependency management is one of the features of Maven that is best known to users and is one of the areas where Maven
-  excels. There is not much difficulty in managing dependencies for a single project, but when you start getting into
-  dealing with multi-module projects and applications that consist of tens or hundreds of modules this is where Maven can
+  excels. There is not much difficulty in managing dependencies for a single project; but when you
+  work with multi-module projects and applications that consist of tens or hundreds of modules, Maven can
   help you a great deal in maintaining a high degree of control and stability.
 
   Learn more about:
@@ -54,18 +54,18 @@ Introduction to the Dependency Mechanism
 
 * {Transitive Dependencies}
 
- Transitive dependencies are a new feature in Maven 2.0. This allows you to avoid needing to discover and
- specify the libraries that your own dependencies require, and including them automatically.
+ Maven avoids the need to discover and
+ specify the libraries that your own dependencies require by including transitive dependencies automatically.
 
  This feature is facilitated by reading the project files of your dependencies from the remote repositories
  specified. In general, all dependencies of those projects are used in your project, as are any that the
  project inherits from its parents, or from its dependencies, and so on.
 
- There is no limit to the number of levels that dependencies can be gathered from, and will only cause a
- problem if a cyclic dependency is discovered.
+ There is no limit to the number of levels that dependencies can be gathered from. A problem arises
+ only if a cyclic dependency is discovered.
 
  With transitive dependencies, the graph of included libraries can quickly grow quite large. For this reason,
- there are some additional features that will limit which dependencies are included:
+ there are additional features that limit which dependencies are included:
 
  * <Dependency mediation>
    - this determines what version of a dependency will be used when multiple
