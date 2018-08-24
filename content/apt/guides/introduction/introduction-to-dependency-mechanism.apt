@@ -68,17 +68,17 @@ Introduction to the Dependency Mechanism
  there are additional features that limit which dependencies are included:
 
  * <Dependency mediation>
-   - this determines what version of a dependency will be used when multiple
-     versions of an artifact are encountered. Currently, Maven 2.0 only supports using the "nearest definition" which means
-     that it will use the version of the closest dependency to your project in the tree of dependencies.
+   - this determines what version of an artifact will be chosen when multiple
+     versions are encountered as dependencies. Maven picks the "nearest definition". That is,
+     it uses the version of the closest dependency to your project in the tree of dependencies.
      You can always guarantee a version by declaring it explicitly in your project's POM.
-     Note that if two dependency versions are at the same depth in the dependency tree, until Maven 2.0.8 it was not defined which one would win,
-     but since Maven 2.0.9 it's the order in the declaration that counts: the first declaration wins.
+     Note that if two dependency versions are at the same depth in the dependency tree, 
+     the first declaration wins.
 
-     * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies,
-        eg. if dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
+     * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies.
+        For example, if dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
         then D 1.0 will be used when building A because the path from A to D through E is shorter.
-        You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0
+        You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0.
 
  * <Dependency management>
    - this allows project authors to directly specify the versions of artifacts to be used when they are encountered
@@ -801,7 +801,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- If your artifact is provided by the JDK's <<<tools.jar>>> the system path
+ If your artifact is provided by the JDK's <<<tools.jar>>>, the system path
  would be defined as follows:
 
 +----+
