@@ -735,7 +735,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 ** {Aggregation} (or Multi-Module)
 
   A project with modules is known as a multimodule, or aggregator project. Modules are projects
-  that this POM lists, and are executed as a group. An <<<pom>>> packaged project may
+  that this POM lists, and are executed as a group. A <<<pom>>> packaged project may
   aggregate the build of a set of projects by listing them as modules, which are relative paths to the 
   directories or the POM files of those projects.
 
