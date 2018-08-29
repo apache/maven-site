@@ -221,7 +221,7 @@ POM Reference
   The artifactId is generally the name that the project is known by. Although the groupId is
   important, people within the group will rarely mention the groupId in discussion (they are often all be the
   same ID, such as the {{{http://mojo.codehaus.org/}Codehaus Mojo}} project groupId: <<<org.codehaus.mojo>>>).
-  It, along with the groupId, create a key that separates this project from every other project
+  It, along with the groupId, creates a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
   the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
@@ -229,12 +229,12 @@ POM Reference
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denote a single project but
   they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
-  of today (version 4), or of four years ago (version 2)? In short: code changes, those changes
+  of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
   structure <<<$M2_REPO/org/codehaus/mojo/my-project/1.0>>>.
 
-  The three elements given above point to a specific version of a project letting Maven knows <who> we
+  The three elements given above point to a specific version of a project letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
   * <<packaging>>:
@@ -264,26 +264,26 @@ POM Reference
   You will sometimes see Maven print out a project coordinate as <<<groupId:artifactId:packaging:version>>>.
 
   * <<classifier>>:
-  You may occasionally find a fifth element on the coordinate, and that is the <<<classifier>>>. We will
-  visit the classifier later, but for now it suffices to know that those kinds of projects are
+  You may occasionally find a fifth element on the coordinate, the <<<classifier>>>. We will
+  visit the classifier later, but for now it suffices to know that these kinds of projects are
   displayed as <<<groupId:artifactId:packaging:classifier:version>>>.
 
 * {POM Relationships}
 
-  One powerful aspect of Maven is in its handling of project relationships; that includes
+  One powerful aspect of Maven is its handling of project relationships. This includes
   dependencies (and transitive dependencies), inheritance, and aggregation (multi-module projects).
   Dependency management has a long tradition of being a complicated mess for
   anything but the most trivial of projects. <"Jarmageddon"> quickly ensues as the dependency tree
   becomes large and complicated. <"Jar Hell"> follows, where versions of dependencies on one system
-  are not equivalent to versions as those developed with, either by the wrong version given, or conflicting
+  are not equivalent to the versions developed with, either by the wrong version given, or conflicting
   versions between similarly named jars. Maven solves both problems through a common local repository
   from which to link projects correctly, versions and all.
 
 ** {Dependencies}
 
-  The cornerstone of the POM is its dependency list. Most every project depends upon others to build
-  and run correctly, and if all Maven does for you is manage this list for you, you have gained a lot.
-  Maven downloads and links the dependencies for you on compilation and other goals that require them.
+  The cornerstone of the POM is its dependency list. Most projects depend on others to build
+  and run correctly. If all Maven does for you is manage this list, you have gained a lot.
+  Maven downloads and links the dependencies on compilation and other goals that require them.
   As an added bonus, Maven brings in the dependencies of those dependencies (transitive dependencies),
   allowing your list to focus solely on the dependencies your project requires.
 
@@ -297,7 +297,7 @@ POM Reference
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.0</version>
+      <version>4.12</version>
       <type>jar</type>
       <scope>test</scope>
       <optional>true</optional>
@@ -346,14 +346,14 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    []
 
   * <<classifier>>:\
-  The classifier allows to distinguish artifacts that were built from the same POM but differ in their content. It is
+  The classifier distinguishes artifacts that were built from the same POM but differ in content. It is
   some optional and arbitrary string that - if present - is appended to the artifact name just after the version number.
   
   As a motivation for this element, consider for example a project that offers an artifact targeting JRE 1.5 but at the
   same time also an artifact that still supports JRE 1.4. The first artifact could be equipped with the classifier
   <<<jdk15>>> and the second one with <<<jdk14>>> such that clients can choose which one to use.
   
-  Another common use case for classifiers is the need to attach secondary artifacts to the project's main artifact. If
+  Another common use case for classifiers is to attach secondary artifacts to the project's main artifact. If
   you browse the Maven central repository, you will notice that the classifiers <<<sources>>> and <<<javadoc>>> are used
   to deploy the project source code and API docs along with the packaged class files.
 
@@ -426,7 +426,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 *** {Version Order Specification}:
 
-  The maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
+  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
   The separator is recorded and will have effect on the order. A transition between digits and characters is equivalent to hypen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
   with "<<<.>>>" or "<<<->>>" prefixes.
@@ -521,7 +521,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
 *** {Exclusions}
 
-  Exclusions explicitly tell Maven that you don't want to include the
+  Exclusions tell Maven not to include the
   specified project that is a dependency of this dependency (in other words, its transitive
   dependency). For example, the <<<maven-embedder>>> requires <<<maven-core>>>, and we do not
   wish to use it or its dependencies, then we would add it as an <<<exclusion>>>.
@@ -715,12 +715,12 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <<<dependencyManagement>>>.
 
   * <<dependencyManagement>>:
-  is used by POMs to help manage dependency information across all of its children.
+  is used by a POM to help manage dependency information across all of its children.
   If the <<<my-parent>>> project uses <<<dependencyManagement>>> to define a dependency on
-  <<<junit:junit:4.0>>>, then POMs inheriting from this one can set their dependency giving
-  the <<<groupId>>>=<<<junit>>> and <<<artifactId>>>=<<<junit>>> only, then Maven will fill in
+  <<<junit:junit:4.12>>>, then POMs inheriting from this one can set their dependency giving
+  the <<<groupId>>>=<<<junit>>> and <<<artifactId>>>=<<<junit>>> only and Maven will fill in
   the <<<version>>> set by the parent. The benefits of this method are obvious. Dependency
-  details can be set in one central location, which will propagate to all inheriting POMs. 
+  details can be set in one central location, which propagates to all inheriting POMs. 
 
   Note that the version and scope of artifacts which are incorporated from transitive dependencies
   are also controlled by version specifications in a dependency management section. This can lead
@@ -759,29 +759,29 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </project>
 +-----------------------------+
 
-  You do not need to consider the inter-module dependencies yourself when listing the modules, i.e. the
+  You do not need to consider the inter-module dependencies yourself when listing the modules; i.e. the
   ordering of the modules given by the POM is not important. Maven will topologically sort the modules
   such that dependencies are always build before dependent modules.
 
-  To see aggregation in action, just have a look at the
+  To see aggregation in action, have a look at the
   {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
   {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
 
 *** A final note on {Inheritance v}. Aggregation
 
   Inheritance and aggregation create a nice dynamic to control builds through a single,
-  high-level POM. You will often see projects that are both parents and aggregators.
-  For example, the entire maven core runs through a single base POM
+  high-level POM. You often see projects that are both parents and aggregators.
+  For example, the entire Maven core runs through a single base POM
   {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}<<<org.apache.maven:maven>>>}},
   so building the Maven project can be executed by a single command: <<<mvn compile>>>.
-  However, although both POM projects, an aggregator project and a parent project are not
-  one in the same and should not be confused. A POM project may be inherited from - but does
+  However, an aggregator project and a parent project are both POM projects, they are not
+  one and the same and should not be confused. A POM project may be inherited from - but does
   not necessarily have - any modules that it aggregates. Conversely, a POM project may aggregate
   projects that do not inherit from it.
 
 * {Properties}
 
-  Properties are the last required piece in understanding POM basics. Maven properties
+  Properties are the last required piece to understand POM basics. Maven properties
   are value placeholder, like properties in Ant. Their values are accessible anywhere
   within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property. Or they can be used by plugins
   as default values, for example:
