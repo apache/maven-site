@@ -38,7 +38,8 @@ Guide to helping with Maven
 
  * {{{./guide-building-maven.html} Build Maven}} for yourself, in order to fix bugs.
 
- * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find, or that others have filed)
+ * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find,
+   or that others have filed: we have a {{{https://s.apache.org/for-the-grabs_maven}list of issues that should be easy to solve}})
 
  * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mailing-lists.html} mailing list}} for release votes
 
