@@ -170,7 +170,8 @@ I will promote the artifacts to the central repo.
   add the release, its signature and sha512 checksum files, copying them from
   <<<target/checkout/target/>>> directory created during <<<mvn release:perform>>> step.
   Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}https://issues.apache.org/jira/browse/INFRA-5945}}).
-  If you are not PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you.
+  If you are not PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you: the PMC member will
+  get the source release bundle and its signature from Nexus staging repository and will create sha512 checksum file by hand.
 
   For example:
 
