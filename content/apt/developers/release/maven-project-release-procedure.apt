@@ -96,7 +96,7 @@ https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/[PATH-TO]-source-release.zip
 
 Source release checksum(s):
-[NAME-OF]-source-release.zip sha1: [SHA1SUM]
+[NAME-OF]-source-release.zip sha512: [SHA512SUM]
 
 Staging site:
 https://maven.apache.org/plugins-archives/maven-XXX-plugin-LATEST/
