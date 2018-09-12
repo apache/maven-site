@@ -37,7 +37,7 @@ Parent POMs
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 | {{{./asf/} <<<ASF>>>}}                     | 21           | 2018-08-22 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPOM/component/12314370}JIRA}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-|| <<Maven Parent POMs>>                     | 32           | 2018-07-18 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
+|| <<Maven Parent POMs>>                     | 33           | 2018-09-11 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 | {{{./maven/} <<<Maven>>>}}                 |              |            | Maven wide configuration.          |                        | {{{https://issues.apache.org/jira/browse/MPOM/component/12314371}JIRA}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
