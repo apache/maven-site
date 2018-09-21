@@ -134,7 +134,7 @@ Introduction to the Dependency Mechanism
    which contains it explicitly. The artifact is always available and is not
    looked up in a repository.
 
- * <<import>> <(only available in Maven 2.0.9 or later)>\
+ * <<import>>\
    This scope is only supported on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It
    indicates the dependency to be replaced with the effective list of dependencies in the specified POM's
    <<<\<dependencyManagement\>>>> section. Since they are replaced, dependencies with a scope of <<<import>>> do not
@@ -433,8 +433,6 @@ Introduction to the Dependency Mechanism
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
 ** {Importing Dependencies}
-
- <The features defined in this section are only available in Maven 2.0.9 or later. This means that poms declaring the import scope will not be parseable by earlier versions of Maven. Weigh this information carefully before deciding to use it. If you do use it, we suggest you use the enforcer plugin to require a minimum Maven version of 2.0.9.>
 
  The examples in the previous section describe how to specify managed dependencies through inheritence. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
