@@ -607,8 +607,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   The <<<packaging>>> type required to be <<<pom>>> for
   <parent> and <aggregation> (multi-module) projects. These types define the goals bound
   to a set of lifecycle stages. For example, if packaging is <<<jar>>>, then the
-  <<<package>>> phase will execute the <<<jar:jar>>> goal. If the packaging is <<<pom>>>,
-  the goal executed will be <<<site:attach-descriptor>>>. Now we may add values to the
+  <<<package>>> phase will execute the <<<jar:jar>>> goal. Now we may add values to the
   parent POM, which will be inherited by its children. Most elements from the parent POM
   are inherited by its children, including:
 
