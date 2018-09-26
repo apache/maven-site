@@ -17,8 +17,8 @@ sometimes be confusing for newcomers.
 -   **Artifact**: An artifact is something that is either produced or
     used by a project. Examples of artifacts produced by Maven for a
     project include: JARs, source and binary distributions, WARs. Each
-    artifact is uniquely identified by a [group id](#GroupId) and an
-    artifact ID which is unique within a group.
+    artifact is identified by a [group id](#GroupId), an
+    artifact ID, a version, a packaging, and a classifier.
 -   **GroupId**: A group ID is a universally unique identifier for a
     project. While this is often just the project name (eg.
     `commons-collections`), it is helpful to use a fully-qualified
