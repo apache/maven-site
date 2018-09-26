@@ -43,13 +43,13 @@ Guide to Working with Multiple Modules
 
 ** Reactor Sorting
 
-  Because modules within a multi-module build can depend on each other, it is important that The reactor sorts all the projects in a way that guarantees any project is built before it is required.
+  Because modules within a multi-module build can depend on each other, it is important that the reactor sorts all the projects in a way that guarantees any project is built before it is required.
 
   The following relationships are honoured when sorting projects:
 
     * a project dependency on another module in the build
 
-    * a plugin declaration where the plugin is another modules in the build
+    * a plugin declaration where the plugin is another module in the build
 
     * a plugin dependency on another module in the build
 
@@ -57,7 +57,7 @@ Guide to Working with Multiple Modules
 
     * the order declared in the <<<\<modules\>>>> element (if no other rule applies)
 
-  Note that only "instantiated" references are used - <<<dependencyManagement>>> and <<<pluginManagement>>> elements will not cause a change to the reactor sort order
+  Note that only "instantiated" references are used - <<<dependencyManagement>>> and <<<pluginManagement>>> elements do not cause a change to the reactor sort order.
 
 ** Command Line Options
 
