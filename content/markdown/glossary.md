@@ -8,36 +8,43 @@ sometimes be confusing for newcomers.
     will build are projects. Those projects follow a well defined
     "Project Object Model". Projects can depend on other projects, in
     which case the latter are called "dependencies". A project may
-    consistent of several subprojects, however these subprojects are
+    consist of several subprojects, however these subprojects are
     still treated equally as projects.
+
 -   **Project Object Model (POM)**: The Project Object Model, almost
     always referred as the POM for brevity, is the metadata that Maven
     needs to work with your project. Its name is "project.xml" and it is
     located in the root directory of each project.
+
 -   **Artifact**: An artifact is something that is either produced or
     used by a project. Examples of artifacts produced by Maven for a
     project include: JARs, source and binary distributions, WARs. Each
     artifact is identified by a [group id](#GroupId), an
-    artifact ID, a version, a packaging, and a classifier.
+    artifact ID, a version, an extension and a classifier
+    (extension+classifier may be named by a [type](/ref/current/maven-core/artifact-handlers.html)).
+
 -   **GroupId**: A group ID is a universally unique identifier for a
     project. While this is often just the project name (eg.
     `commons-collections`), it is helpful to use a fully-qualified
     package name to distinguish it from other projects with a similar
     name (eg. `org.apache.maven`).
+
 -   **Dependency**: A typical Java project relies on libraries to build
     and/or run. Those are called "dependencies" inside Maven. Those
     dependencies are usually other projects' JAR artifacts, but are
     referenced by the POM that describes them.
+
 -   **Plug-in**: Maven is organized in plugins. Every piece of
     functionality in Maven is provided by a plugin. Plugins provide
     goals and use the metadata found in the POM to perform their task.
     Examples of plugins are: jar, eclipse, war. Plugins are primarily
     written in Java, but Maven also supports writing plug-ins in
     Beanshell and Ant Scripting.
+
 -   **Mojo**: A plugin written in Java consists of one or more mojos. A
     mojo is a Java class that implements the
     org.apache.maven.plugin.Mojo interface. This means that a mojo is
-    the implementation for a goal in a plugin.
+    the implementation for a **goal** in a plugin.
 
 -   **Repository**:
 
