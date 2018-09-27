@@ -201,7 +201,7 @@ POM Reference
 
 * {Maven Coordinates}
 
-  The POM defined above is the minimum that both Maven 2 & 3 will allow. <<<groupId:artifactId:version>>> are all
+  The POM defined above is the minimum that Maven will allow. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version need not be explicitly defined if they are inherited
   from a parent - more on inheritance later). The three fields act much like an address and timestamp
   in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects.
@@ -237,9 +237,10 @@ POM Reference
   The three elements given above point to a specific version of a project letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-  * <<packaging>>:
+  * <<extension>>:
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
-  label to give us a really complete address. That is the project's artifact type. In our
+  label to give us a really complete address. That is the project's extension which is a function of the
+  packaging declared in the POM. In our
   case, the example POM for <<<org.codehaus.mojo:my-project:1.0>>> defined above will be packaged as a
   <<<jar>>>. We could make it into a <<<war>>> by declaring a different packaging:
 
@@ -254,19 +255,22 @@ POM Reference
 </project>
 +-----------------+
 
-  When no packaging is declared, Maven assumes the artifact is the default: <<<jar>>>. The valid types
-  are Plexus role-hints (read more on Plexus for a explanation of roles and role-hints) of the component role
+  The valid types are Plexus role-hints (read more on Plexus for an explanation of roles and role-hints)
+  of the component role
   <<<org.apache.maven.lifecycle.mapping.LifecycleMapping>>>. The current core packaging values are:
-  <<<pom>>>, <<<jar>>>, <<<maven-plugin>>>, <<<ejb>>>, <<<war>>>, <<<ear>>>, <<<rar>>>, <<<par>>>.
+  <<<pom>>>, <<<jar>>>, <<<maven-plugin>>>, <<<ejb>>>, <<<war>>>, <<<ear>>>, <<<rar>>>, <<<java-source>>>,
+  and <<<javadoc>>>. 
   These define the default list of goals which execute to each corresponding build lifecycle stage for
-  a particular package structure.
+  a particular package structure. <<<maven-plugin>>>, <<<ejb>>>, and <<<java-source>>> all have the 
+  extension jar. For the others the extension is the same as the packaging; for instance ear for
+  <<<ear>>>. When no packaging is declared, Maven assumes the extension is the default: <<<jar>>>. 
 
-  You will sometimes see Maven print out a project coordinate as <<<groupId:artifactId:packaging:version>>>.
+  You will sometimes see Maven print out a project coordinate as <<<groupId:artifactId:extension:version>>>.
 
   * <<classifier>>:
   You may occasionally find a fifth element on the coordinate, the <<<classifier>>>. We will
   visit the classifier later, but for now it suffices to know that these kinds of projects are
-  displayed as <<<groupId:artifactId:packaging:classifier:version>>>.
+  displayed as <<<groupId:artifactId:extension:classifier:version>>>.
 
 * {POM Relationships}
 
