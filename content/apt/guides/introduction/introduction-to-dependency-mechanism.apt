@@ -31,10 +31,10 @@
 
 Introduction to the Dependency Mechanism
 
-  Dependency management is one of the features of Maven that is best known to users and is one of the areas where Maven
-  excels. There is not much difficulty in managing dependencies for a single project; but when you
-  work with multi-module projects and applications that consist of tens or hundreds of modules, Maven can
-  help you a great deal in maintaining a high degree of control and stability.
+  Dependency management is a core feature of Maven. Managing dependencies for a single project is easy.
+  Managing dependencies for multi-module projects and applications that consist of hundreds of modules
+  is possible. Maven helps a great deal in defining, creating, and maintaining reproducible builds
+  with well-defined classpaths and library versions.
 
   Learn more about:
 
