@@ -28,42 +28,39 @@
 
 Introduction
 
-  This section discusses the functionality of optional dependencies and 
-  dependency exclusions. This will help users to understand what are they, 
-  how to use them, how they work and when is the best way to use them. 
-  It also explains why exclusions are made as per dependency basis not in 
-  a POM level.
+  This section discusses optional dependencies and 
+  dependency exclusions. This will help users to understand what they are and 
+  when and how to use them. It also explains why exclusions are made on a 
+  per dependency basis instead of at the POM level.
 
 * Optional Dependencies
 
-  Optional dependencies are used when it's not really possible 
-  (for whatever reason) to split a project up into sub-modules. 
+  Optional dependencies are used when it's not possible 
+  (for whatever reason) to split a project into sub-modules. 
   The idea is that some of the dependencies are only used for certain features 
-  in the project, and will not be needed if that feature isn't used. Ideally, 
-  such a feature would be split into a sub-module that depended on the core 
-  functionality project...this new subproject would have only non-optional 
+  in the project and will not be needed if that feature isn't used. Ideally, 
+  such a feature would be split into a sub-module that depends on the core 
+  functionality project. This new subproject would have only non-optional 
   dependencies, since you'd need them all if you decided to use the 
   subproject's functionality. 
 
   However, since the project cannot be split up (again, for whatever reason), 
   these dependencies are declared optional. If a user wants to use 
-  functionality related to an optional dependency, they will have to redeclare 
-  that optional dependency in their own project. This is not the most clear 
-  way to handle this situation, but then again both optional dependencies and
+  functionality related to an optional dependency, they have to redeclare 
+  that optional dependency in their own project. This is not the clearest 
+  way to handle this situation, but both optional dependencies and
   dependency exclusions are stop-gap solutions.
 
 ** Why use optional dependencies?
 
-  It's not only important to declare optional dependencies in order to save 
-  space/memory/etc. It's vital to control the list of actual dependencies a 
-  person needs in order to use a project, since these jars may eventually make 
-  it into a WAR, EAR, EJB, etc. Inclusion of the wrong jars may violate a 
-  license agreement, cause classpath issues, etc. 
+  Optional dependencies save space and memory. They prevent problematic jars
+  that violate a license agreement or cause classpath issues from being 
+  bundled into a WAR, EAR, fat jar, or the like. 
 
 ** How do I use the optional tag?
 
-  A dependency is declared as optional by simply setting the \<optional\> tag 
-  to true in your dependency declaration. See the sample below:
+  A dependency is declared optional by setting the \<optional\> element 
+  to true in its dependency declaration:
 
 +---+
 
@@ -93,8 +90,8 @@ Project-A -> Project-B
 
   The diagram above says that Project-A depends on Project-B. When A 
   declares B as an optional dependency in its POM, this relationship remains
-  unchanged. It's just like a normal build where Project-B will be added in its 
-  classpath.
+  unchanged. It's just like a normal build where Project-B will be added in
+  Project-A's classpath.
 
 +---+
 
@@ -102,31 +99,33 @@ Project-X -> Project-A
 
 +---+
 
-  But when another project(Project-X) declares Project-A as a dependency in 
-  its POM, the optional dependency takes effect. You'll notice that 
-  Project-B is not included in the classpath of Project-X; you will 
-  need to declare it directly in your POM in order for B to be included 
-  in X's classpath. 
+  When another project (Project-X) declares Project-A as a dependency in 
+  its POM, the optional nature of the dependency takes effect.  
+  Project-B is not included in the classpath of Project-X. You 
+  need to declare it directly in the POM of Project X for B to be included 
+  in X's classpath.
 
 ** Example
 
-  Let us say that there is a project named <X2> that has similar functions 
-  with <Hibernate> which supports many database drivers/dependencies such as 
-  mysql, postgre, oracle etc. All of these dependencies are needed for X2 
-  to build but not for your project, so it is very practical for X2 to 
-  declare these dependencies as optional, so that whenever your project 
-  declares X2 as a direct dependency in your POM, all the drivers supported 
-  by the X2 will not be automatically included to your project's classpath 
-  instead you'll have to declare it directly on what driver/dependency of the 
-  database you are going to use.
+  Suppose there is a project named <X2> that has similar functionality 
+  to <Hibernate>. It supports many databases such as 
+  MySQL, PostgreSQL, and several versions of Oracle. 
+  Each supported database requires an additional dependency on a driver jar.
+  All of these dependencies are needed at compile time to build X2.
+  However your project only uses one specific database
+   and doesn't need drivers for the others. X2 can 
+  declare these dependencies as optional, so that when your project 
+  declares X2 as a direct dependency in its POM, all the drivers supported 
+  by the X2 are not automatically included in your project's classpath.
+  Your project will have to include an explicit dependency on the specific
+  driver for the one database it does use.
 
 * Dependency Exclusions
 
-  Since maven 2.x resolves dependencies transitively, it is possible 
+  Since Maven resolves dependencies transitively, it is possible 
   for unwanted dependencies to be included in your project's classpath.
-  Projects that you depend on may not have declared their set of dependencies
-  correctly, for example. In order to address this special situtation, 
-  maven 2.x has incorporated the notion of explicit dependency exclusion.
+  For example, a certain older jar may have security issues or be incompatible with the Java 
+  version you're using. To address this, Maven allows you to exlude specific dependencies.
   Exclusions are set on a specific dependency in your POM, and are targeted
   at a specific groupId and artifactId. When you build your project, that
   artifact will not be added to your project's classpath <by way of the
@@ -134,7 +133,8 @@ Project-X -> Project-A
 
 ** How to use dependency exclusions
 
-  We add the \<exclusions\> tag under the \<dependency\> section of the pom.
+  Add an \<exclusions\> element in the \<dependency\> element by which 
+  the problematic jar is included.
 
 +---+
 
@@ -179,12 +179,12 @@ Project-A
 B, C, D, E, F
 +---+
 
-  What if we dont want project D and its dependencies to be added to 
-  Project A's classpath because we know some of Project-D's dependencies 
-  (maybe Project-E for example) was missing from the repository, and you 
-  don't need/want the functionality in Project-B that depends on Project-D 
-  anyway. In this case, Project-B's developers could provide a dependency on 
-  Project-D that is \<optional\>true\</optional\>, like this:
+  Suppose you don't want project D and its dependencies to be added to 
+  Project A's classpath because some of Project-D's dependencies 
+  are missing from the repository, and you 
+  don't need the functionality in Project-B that depends on Project-D 
+  anyway. Project-B's developers could have marked the dependency on 
+  Project-D \<optional\>true\</optional\>:
 
 +---+
 <dependency>
@@ -195,8 +195,8 @@ B, C, D, E, F
 </dependency>
 +---+
 
-  HOWEVER, they didn't. As a last resort, you still have the option to exclude it 
-  on your side, in Project-A, like this:
+  Unfortunately, they didn't. As a last resort, you can exclude it 
+  on your your own POM for Project-A like this:
 
 +---+
 
@@ -224,9 +224,9 @@ B, C, D, E, F
 
 +---+
 
-  If we deploy the Project-A to a repository, and Project-X declares a 
-  normal dependency on Project-A, will Project-D be excluded from the 
-  classpath still?
+  If you deploy  Project-A to a repository, and Project-X declares a 
+  normal dependency on Project-A, will Project-D still be excluded from the 
+  classpath?
 
 +---+
 
@@ -252,12 +252,12 @@ Project-X -> Project-Y
   Project-Y also has a dependency on Project-B, and it does need the features 
   supported by Project-D. Therefore, it will NOT place an exclusion on 
   Project-D in its dependency list. It may also supply an additional 
-  repository, from which we can resolve Project-E. In this case, it's important 
+  repository, from which it can resolve Project-E. In this case, it's important 
   that Project-D <<is not>> excluded globally, since it is a legitimate 
   dependency of Project-Y. 
 
-  As another scenario, what if the dependency we don't want is Project-E 
-  instead of Project-D. How will we exclude it? See the diagram below:
+  As another scenario, suppose the dependency you don't want is Project-E 
+  instead of Project-D. How do you exclude it? See the diagram below:
 
 +---+
 
@@ -271,9 +271,9 @@ Project-A
 +---+  
 
   Exclusions work on the entire dependency graph below the point where they 
-  are declared. If you wanted to exclude Project-E instead of Project-D, 
-  you'd simply change the exclusion to point at Project-E, but you wouldn't 
-  move the exclusion down to Project-D...you cannot change Project-D's POM. 
+  are declared. If you want to exclude Project-E instead of Project-D, 
+  simply change the exclusion to point at Project-E, but you don't
+  move the exclusion down to Project-D. You cannot change Project-D's POM. 
   If you could, you would use optional dependencies instead of exclusions, 
   or split Project-D up into multiple subprojects, each with nothing but 
   normal dependencies. 
@@ -306,8 +306,15 @@ Project-A
 
 ** Why exclusions are made on a per-dependency basis, rather than at the POM level
   
-  This is mainly done to be sure the dependency graph is predictable, and to 
+  This is mainly to be sure the dependency graph is predictable, and to 
   keep inheritance effects from excluding a dependency that should not be 
   excluded. If you get to the method of last resort and have to put in an 
   exclusion, you should be absolutely certain which of your dependencies is 
   bringing in that unwanted transitive dependency.
+  
+  If you truly want to ensure that a particular dependency appears nowhere in
+  your classpath, regardless of path, the 
+  [banned dependencies rule](https://maven.apache.org/enforcer/enforcer-rules/bannedDependencies.html)
+  can be configured to fail the build if a problematic dependency is found.
+  When the build fails, you'll need to add specific exclusions on each path
+  the enforcer finds. 
