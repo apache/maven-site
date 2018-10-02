@@ -382,6 +382,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
     * <<system>> - this scope is similar to <<<provided>>> except that you have to provide the JAR which contains
       it explicitly. The artifact is always available and is not looked up in a repository.
+      
+    * <<import>> - this scope is only supported on a dependency of type <<pom>> in the <dependencyManagement> section. 
+      It indicates the dependency to be replaced with the effective list of dependencies in the specified POM's 
+      <dependencyManagement> section. Since they are replaced, dependencies with a scope of import do not actually 
+      participate in limiting the transitivity of a dependency.  
 
   * <<systemPath>>:\
   is used <only> if the the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
