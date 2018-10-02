@@ -180,9 +180,9 @@ POM Reference
   used during the build process. It is, effectively, the declarative manifestation of the "who", "what",
   and "where", while the build lifecycle is the "when" and "how". That is not to say that the POM cannot
   affect the flow of the lifecycle - it can. For example, by configuring the <<<maven-antrun-plugin>>>, one can
-  effectively embed ant tasks inside of the POM. It is ultimately a declaration, however. Where as a
-  <<<build.xml>>> tells ant precisely what to do when it is run (procedural), a POM states its
-  configuration (declarative). If some external force causes the lifecycle to skip the ant plugin
+  effectively embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Where as a
+  <<<build.xml>>> tells Ant precisely what to do when it is run (procedural), a POM states its
+  configuration (declarative). If some external force causes the lifecycle to skip the Ant plugin
   execution, it will not stop the plugins that are executed from doing their magic. This is unlike a
   <<<build.xml>>> file, where tasks are almost always dependant on the lines executed before it.
 
@@ -201,14 +201,14 @@ POM Reference
 
 * {Maven Coordinates}
 
-  The POM defined above is the minimum that both Maven 2 & 3 will allow. <<<groupId:artifactId:version>>> are all
+  The POM defined above is the minimum that both Maven will allow. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version need not be explicitly defined if they are inherited
   from a parent - more on inheritance later). The three fields act much like an address and timestamp
-  in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects.
+  in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects:
 
   * <<groupId>>:
   This is generally unique amongst an organization or a project. For example, all core
-  Maven artifacts do (well, should) live under the groupId org.apache.maven. Group ID's do not
+  Maven artifacts do (well, should) live under the groupId <<<org.apache.maven>>>. Group ID's do not
   necessarily use the dot notation, for example, the junit project. Note that the dot-notated
   groupId does not have to correspond to the package structure that the project contains. It is,
   however, a good practice to follow. When stored within a repository, the group acts much like the
@@ -220,26 +220,29 @@ POM Reference
   * <<artifactId>>:
   The artifactId is generally the name that the project is known by. Although the groupId is
   important, people within the group will rarely mention the groupId in discussion (they are often all be the
-  same ID, such as the {{{http://mojo.codehaus.org/}Codehaus Mojo}} project groupId: <<<org.codehaus.mojo>>>).
+  same ID, such as the {{{http://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
   It, along with the groupId, creates a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
   the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
 
   * <<version>>:
-  This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denote a single project but
+  This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denotes a single project but
   they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
   structure <<<$M2_REPO/org/codehaus/mojo/my-project/1.0>>>.
 
-  The three elements given above point to a specific version of a project letting Maven know <who> we
+  []
+
+  The three elements given above point to a specific version of a project, letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-  * <<packaging>>:
+* <<packaging>>
+
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
-  label to give us a really complete address. That is the project's artifact type. In our
+  label to give us a really complete <what>: that is the project's packaging. In our
   case, the example POM for <<<org.codehaus.mojo:my-project:1.0>>> defined above will be packaged as a
   <<<jar>>>. We could make it into a <<<war>>> by declaring a different packaging:
 
@@ -254,34 +257,32 @@ POM Reference
 </project>
 +-----------------+
 
-  When no packaging is declared, Maven assumes the artifact is the default: <<<jar>>>. The valid types
+  When no packaging is declared, Maven assumes the packaging is the default: <<<jar>>>. The valid types
   are Plexus role-hints (read more on Plexus for a explanation of roles and role-hints) of the component role
   <<<org.apache.maven.lifecycle.mapping.LifecycleMapping>>>. The current core packaging values are:
-  <<<pom>>>, <<<jar>>>, <<<maven-plugin>>>, <<<ejb>>>, <<<war>>>, <<<ear>>>, <<<rar>>>, <<<par>>>.
+  <<<pom>>>, <<<jar>>>, <<<maven-plugin>>>, <<<ejb>>>, <<<war>>>, <<<ear>>>, <<<rar>>>.
   These define the default list of goals which execute to each corresponding build lifecycle stage for
-  a particular package structure.
-
-  You will sometimes see Maven print out a project coordinate as <<<groupId:artifactId:packaging:version>>>.
-
-  * <<classifier>>:
-  You may occasionally find a fifth element on the coordinate, the <<<classifier>>>. We will
-  visit the classifier later, but for now it suffices to know that these kinds of projects are
-  displayed as <<<groupId:artifactId:packaging:classifier:version>>>.
+  a particular package structure:
+  see {{{/ref/current/maven-core/default-bindings.html}Plugin Bindings for default Lifecycle Reference}} for details.
 
 * {POM Relationships}
 
-  One powerful aspect of Maven is its handling of project relationships. This includes
+  One powerful aspect of Maven is its handling of project relationships: this includes
   dependencies (and transitive dependencies), inheritance, and aggregation (multi-module projects).
+
   Dependency management has a long tradition of being a complicated mess for
   anything but the most trivial of projects. <"Jarmageddon"> quickly ensues as the dependency tree
   becomes large and complicated. <"Jar Hell"> follows, where versions of dependencies on one system
   are not equivalent to the versions developed with, either by the wrong version given, or conflicting
-  versions between similarly named jars. Maven solves both problems through a common local repository
+  versions between similarly named jars.
+
+  Maven solves both problems through a common local repository
   from which to link projects correctly, versions and all.
 
 ** {Dependencies}
 
-  The cornerstone of the POM is its dependency list. Most projects depend on others to build
+  The cornerstone of the POM is its {{{/ref/current/maven-model/maven.html#class_dependency}dependency}} list.
+  Most projects depend on others to build
   and run correctly. If all Maven does for you is manage this list, you have gained a lot.
   Maven downloads and links the dependencies on compilation and other goals that require them.
   As an added bonus, Maven brings in the dependencies of those dependencies (transitive dependencies),
@@ -321,7 +322,9 @@ POM Reference
 
   Since the dependency is described by Maven coordinates, you may be thinking:
   "This means that my project can only depend upon Maven artifacts!" The answer is, "Of course, but that's a
-  good thing." This forces you to depend solely on dependencies that Maven can manage. There are times,
+  good thing." This forces you to depend solely on dependencies that Maven can manage.
+  
+  There are times,
   unfortunately, when a project cannot be downloaded from the central Maven repository. For example, a project
   may depend upon a jar that has a closed-source license which prevents it from being in a central repository.
   There are three methods for dealing with this scenario.
@@ -358,10 +361,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   to deploy the project source code and API docs along with the packaged class files.
 
   * <<type>>:\
-  Corresponds to the dependant artifact's <<<packaging>>> type. This defaults to <<<jar>>>. While it usually represents
-  the extension on the filename of the dependency, that is not always the case. A type can be mapped to a
+  Corresponds to the chosen dependency type. This defaults to <<<jar>>>. While it usually represents
+  the extension on the filename of the dependency, that is not always the case: a type can be mapped to a
   different extension and a classifier. The type often corresponds to the packaging used, though this is
-  also not always the case. Some examples are <<<jar>>>, <<<ejb-client>>> and <<<test-jar>>>. New types can be
+  also not always the case. Some examples are <<<jar>>>, <<<ejb-client>>> and <<<test-jar>>>:
+  see {{{/ref/current/maven-core/artifact-handlers.html}default artifact handlers}} for a list. New types can be
   defined by plugins that set <<<extensions>>> to true, so this is not a complete list.
 
   * <<scope>>:\
