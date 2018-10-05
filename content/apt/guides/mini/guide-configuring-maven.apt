@@ -163,9 +163,9 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 ** Security
 
   As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on
-  both server passwords and the master password, see the {{{.guide-encryption.html}Guide to Password Encryption}}.
+  both server passwords and the master password, see the {{{./guide-encryption.html}Guide to Password Encryption}}.
 
 ** Toolchains
 
   As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with.
-  For more information, see the {{{./guides/mini/guide-using-toolchains.html}Guide to Using Toolchains}}.
+  For more information, see the {{{./guide-using-toolchains.html}Guide to Using Toolchains}}.
