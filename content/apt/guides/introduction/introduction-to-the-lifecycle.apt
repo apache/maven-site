@@ -450,8 +450,8 @@ mvn clean dependency:copy-dependencies package
  The full Maven lifecycle is defined by the <<<components.xml>>> file in the <<<maven-core>>> module, with
  {{{/ref/current/maven-core/lifecycles.html}associated documentation}} for reference.
 
- In Maven 2.x, default lifecycle bindings were included in <<<components.xml>>>, but in Maven 3.x, they are defined in a separate
- <<<{{{https://git-wip-us.apache.org/repos/asf?p=maven.git;a=blob;f=maven-core/src/main/resources/META-INF/plexus/default-bindings.xml}default-bindings.xml}}>>>
+ Default lifecycle bindings are defined in a separate
+ <<<{{{https://github.com/apache/maven/blob/master/maven-core/src/main/resources/META-INF/plexus/default-bindings.xml}default-bindings.xml}}>>>
  descriptor.
 
  See {{{/ref/current/maven-core/lifecycles.html}Lifecycles Reference}} and
