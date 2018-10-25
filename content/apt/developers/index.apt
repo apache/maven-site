@@ -60,8 +60,6 @@ Maven Developer Centre
   * {{{./committer-environment.html}Committer Environment}}
 
   * {{{./committer-settings.html}Committer Settings}}
-
-  * {{{./java5.html}Java 5 in Plugins and Components}}
   
   * {{{./java6.html}Java 6 in Plugins and Shared Components}}
 
@@ -79,8 +77,6 @@ Maven Developer Centre
   * {{{./conventions/code.html}Maven Code Style And Conventions}}
 
   * {{{./conventions/jira.html}Maven JIRA Convention}}
-
-  * {{{./conventions/svn.html}Maven SVN Convention}}
 
   * {{{./conventions/git.html}Maven Git Convention}}
 
