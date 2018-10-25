@@ -144,7 +144,6 @@
       <item name="Committer Settings" ref="/developers/committer-settings.html"/>
       <item name="Maven Code Style And Conventions" ref="/developers/conventions/code.html"/>
       <item name="Maven JIRA Convention" ref="/developers/conventions/jira.html"/>
-      <item name="Maven SVN Convention" ref="/developers/conventions/svn.html"/>
       <item name="Making GPG Keys" ref="/developers/release/pmc-gpg-keys.html"/>
       <item name="Release Process" ref="/developers/release/releasing.html"/>
       <item name="Deploy Maven Current References" ref="/developers/website/deploy-maven-current-ref.html"/>
