@@ -164,7 +164,6 @@ under the License.
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />
         <item name="Code Style and Conventions" href="/developers/conventions/code.html" />
         <item name="JIRA Convention" href="/developers/conventions/jira.html" />
-        <item name="SVN Convention" href="/developers/conventions/svn.html" />
         <item name="Git Convention" href="/developers/conventions/git.html" />
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
