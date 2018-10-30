@@ -233,11 +233,6 @@ Available Plugins
 | {{{https://www.mojohaus.org/versions-maven-plugin/} <<<versions>>>}}            | Manage versions of your project, its modules, dependencies and plugins.
 *---------------------------------------------------------------------------------+----------------------------------+
 
-** At code.google.com
-
-  There are also {{{https://code.google.com/hosting/search?q=maven+plugin+label%3Amaven&projectsearch=Search+Projects}many plug-ins}}
-  available at the {{{https://code.google.com} Google Code}}.
-
 ** Misc
 
   A number of other projects provide their own Maven plugins. This includes:
