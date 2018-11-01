@@ -72,7 +72,7 @@ Date format is: YYYY-MM-DD
 </tr>
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 #set ( $archive = '' )
-#release( "2018-10-24" "3.6.0" "https://www.mail-archive.com/announce@maven.apache.org/msg00881.html" "" "Java 7" "10" )
+#release( "2018-10-24" "3.6.0" "https://www.mail-archive.com/announce@maven.apache.org/msg00881.html" "true" "Java 7" "10" )
 #set ( $archive = 'http://mail-archives.apache.org/mod_mbox/maven-' )
 #release( "2018-06-21" "3.5.4" "announce/201806.mbox/%3CCA%2BnPnMyX2qN9gHFH9EidAgQVvxtZt0Aux2RUEQqACJ_dZ7sw%2BA%40mail.gmail.com%3E" "" "" "" )
 #release( "2018-03-08" "3.5.3" "announce/201803.mbox/%3CCA%2BnPnMyM0sWU1yQ8Vxo3P5f8_W0F5wDgadzK99NceVrJn%2ByxAQ%40mail.gmail.com%3E" "" "" "" )
