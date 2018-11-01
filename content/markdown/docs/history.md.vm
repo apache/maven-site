@@ -70,9 +70,12 @@ Date format is: YYYY-MM-DD
 <td>Required Java Version</td>
 <td>Links</td>
 </tr>
-
-#release( "2018-06-21" "3.5.4" "announce/201806.mbox/%3CCA%2BnPnMyX2qN9gHFH9EidAgQVvxtZt0Aux2RUEQqACJ_dZ7sw%2BA%40mail.gmail.com%3E" "true" "Java 7" "9" )
-#release( "2018-03-08" "3.5.3" "announce/201803.mbox/%3CCA%2BnPnMyM0sWU1yQ8Vxo3P5f8_W0F5wDgadzK99NceVrJn%2ByxAQ%40mail.gmail.com%3E" "" "" "8" )
+<!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
+#set ( $archive = '' )
+#release( "2018-10-24" "3.6.0" "https://www.mail-archive.com/announce@maven.apache.org/msg00881.html" "" "Java 7" "10" )
+#set ( $archive = 'http://mail-archives.apache.org/mod_mbox/maven-' )
+#release( "2018-06-21" "3.5.4" "announce/201806.mbox/%3CCA%2BnPnMyX2qN9gHFH9EidAgQVvxtZt0Aux2RUEQqACJ_dZ7sw%2BA%40mail.gmail.com%3E" "" "" "" )
+#release( "2018-03-08" "3.5.3" "announce/201803.mbox/%3CCA%2BnPnMyM0sWU1yQ8Vxo3P5f8_W0F5wDgadzK99NceVrJn%2ByxAQ%40mail.gmail.com%3E" "" "" "" )
 #release( "2017-10-24" "3.5.2" "announce/201710.mbox/%3CCA%2BnPnMyzJ1%3DtTQ_%3DsAKnj95_2PjiE4ArUQkysyJrW%2Bpz5MEWcA%40mail.gmail.com%3E" "" "" "" )
 #release( "2017-04-07" "3.5.0" "announce/201704.mbox/%3CCA%2BnPnMz9C8uo0WseJjbdVtC7Sh%3DKM5uvWcOjBfW5r-WRYfMXWw%40mail.gmail.com%3E" "" "" "" )
 #release( "2017-03-24" "3.5.0-beta-1" "announce/201703.mbox/%3CCA%2BnPnMz1zeTkXn_2b%3DPgBDm61PLTM43zZ5fgvOSNvTqwEkfS_A%40mail.gmail.com%3E" "" "" "" )
