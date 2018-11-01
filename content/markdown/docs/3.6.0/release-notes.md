@@ -51,7 +51,6 @@ Issue Reporters of this release:
 
  * [MNG-4508] Richard van der Hoff
  * [MNG-5951] Jörg Sesterhenn
- * [MNG-6059] Andreas Sewe
  * [MNG-6311] David Churcher
  * [MNG-6358] Adam John Burley
  * [MNG-6383] Christoph Kunze
@@ -151,7 +150,6 @@ At the time of release, there are no known regressions introduced by this releas
 
 - [MNG-4508] - No way to avoid adding artifactId to site urls
 - [MNG-5951] - add an option to avoid path addition to inherited URLs
-- [MNG-6059] - Important use cases not covered, as child.inherit.append.path affects all children
 - [MNG-6164] - Collections inconsistently immutable
 - [MNG-6391] - Printout version of last built module in reactor build
 - [MNG-6414] - Add more Apache license header patterns to skip downloading Apache license
@@ -189,7 +187,6 @@ See [complete release notes for all versions][5]
 [5]: ../../docs/history.html
 [MNG-4508]: https://issues.apache.org/jira/browse/MNG-4508
 [MNG-5951]: https://issues.apache.org/jira/browse/MNG-5951
-[MNG-6059]: https://issues.apache.org/jira/browse/MNG-6059
 [MNG-6164]: https://issues.apache.org/jira/browse/MNG-6164
 [MNG-6311]: https://issues.apache.org/jira/browse/MNG-6311
 [MNG-6358]: https://issues.apache.org/jira/browse/MNG-6358
