@@ -187,10 +187,10 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
 ** {Help Goal}
 
   Recent Maven plugins have generally an <<<help>>> goal to have in the command line the description of the plugin,
-  with their parameters and types. For instance, to understand the javadoc plugin, you need to call:
+  with their parameters and types. For instance, to understand how to use the <<<javadoc>>> plugin, you need to call:
 
 +----+
-mvn javadoc:help -Ddetail -Dgoal=javadoc
+mvn javadoc:help
 +----+
 
   And you will see all parameters for the javadoc:javadoc goal, similar to this
