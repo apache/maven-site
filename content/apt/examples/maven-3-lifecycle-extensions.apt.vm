@@ -89,7 +89,7 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
 }
 +---+
 
-  Generate plexus metadatas during the build of your extension jar:
+  Generate plexus metadata during the build of your extension jar:
 
 +---+
   <build>
