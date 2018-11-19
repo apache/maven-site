@@ -88,10 +88,10 @@ Guide to Configuring Plug-ins
   []
 
   All plugins should have minimal required
-  {{{/ref/current/maven-model/maven.html#class_plugin}informations}}:
+  {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
-  <<Important Note>>: It is recommended to always defined each version of the plugins used by the build to guarantee
+  <<Important Note>>: It is recommended to always define each version of the plugins used by the build to guarantee
   the build reproducibility. A good practice is to specify them in the <<<\<build\>\<pluginManagement/\>\</build\>>>>
   elements for <<each>> build plugins (generally, you will define a \<pluginManagement/\> element in a parent POM).
   For reporting plugins, you should specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> elements
