@@ -30,7 +30,8 @@ Guide to Creating Archetypes
 
  <<Help Wanted>>: this mini-guide explains Archetype 1.x and should be updated to match Archetype 2.x
  (the essential difference being {{{/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}the <<<archetype-metadata.xml>>> descriptor}}).
- Please attach a patch to {{{https://issues.apache.org/jira/browse/MNGSITE-292}MNGSITE-292 Jira issue}}.
+ Please attach a patch to {{{https://issues.apache.org/jira/browse/MNGSITE-292}MNGSITE-292 Jira issue}}
+ or create a Pull Request on {{{https://github.com/apache/maven-site/blob/master/content/apt/guides/mini/guide-creating-archetypes.apt}the source file}}.
 
  Creating an archetype is a pretty straight forward process. An archetype is a
  very simple artifact, that contains the project prototype you wish to create.
