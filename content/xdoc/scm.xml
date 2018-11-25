@@ -65,6 +65,38 @@ repo start master --all</pre>
         </ol>
       </subsection>
 
+      <subsection name="Maven Sources Overview">
+        <p align="center">
+          <img src="maven-sources.png" width="843" height="837" border="0" usemap="#maven-sources" />
+          <map name="maven-sources">
+            <area shape="rect" coords="8,1,82,36"       alt="Site"           href="https://github.com/apache/maven-site" />
+            <area shape="rect" coords="100,0,205,37"    alt="Sources"        href="https://github.com/apache/maven-sources/" />
+            <area shape="rect" coords="89,43,171,78"    alt="Maven"          href="/ref/current" />
+            <area shape="rect" coords="178,43,275,78"   alt="Core ITs"       href="/core-its" />
+            <area shape="rect" coords="283,43,387,78"   alt="Resolver"       href="/resolver" />
+            <area shape="rect" coords="393,43,497,78"   alt="Ant Tasks"      href="/resolver-ant-tasks" />
+            <area shape="rect" coords="1,89,842,424"    alt="Plugins"        href="/plugins" />
+            <area shape="rect" coords="80,432,163,466"  alt="Doxia"          href="/doxia/doxia" />
+            <area shape="rect" coords="169,432,278,467" alt="Site Tools"     href="/doxia/doxia-site-tools" />
+            <area shape="rect" coords="283,432,359,466" alt="Site"           href="/doxia" />
+            <area shape="rect" coords="445,431,549,466" alt="Converter"      href="/doxia/doxia-tools/doxia-converter" />
+            <area shape="rect" coords="554,431,659,466" alt="Linkcheck"      href="/doxia/doxia-tools/doxia-linkcheck" />
+            <area shape="rect" coords="69,473,191,508"  alt="Archetypes"     href="/archetypes" />
+            <area shape="rect" coords="198,473,272,508" alt="Poms"           href="/pom" />
+            <area shape="rect" coords="280,473,355,508" alt="Skins"          href="/skins" />
+            <area shape="rect" coords="392,472,468,507" alt="Studies"        href="/studies" />
+            <area shape="rect" coords="502,473,597,508" alt="Indexer"        href="/maven-indexer" />
+            <area shape="rect" coords="604,473,699,509" alt="Wagon"          href="/wagon" />
+            <area shape="rect" coords="705,473,836,509" alt="Plugin testing" href="/plugin-testing" />
+            <area shape="rect" coords="69,515,164,551"  alt="dist tool"      href="https://builds.apache.org/job/dist-tool-plugin/site/index.html" />
+            <area shape="rect" coords="280,514,354,550" alt="env"            href="https://github.com/apache/maven-jenkins-env" />
+            <area shape="rect" coords="360,515,435,550" alt="lib"            href="https://github.com/apache/maven-jenkins-lib" />
+            <area shape="rect" coords="1,557,833,779"   alt="shared"         href="/shared" />
+            <area shape="rect" coords="1,787,560,836"   alt="Plexus"         href="https://codehaus-plexus.github.io/" />
+          </map>
+        </p>
+      </subsection>
+
       <subsection name="Maven Site">
         <p>
          The sources for this site are available in a distinct Git repository:
