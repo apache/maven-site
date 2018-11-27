@@ -36,10 +36,9 @@ under the License.
         (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
       </p>
       <p>
-        If you think that Maven could help your project, you can find out more information about in the "About Maven"
-        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a>,
-        a <a href="maven-features.html">list of some of its main features</a>, and a set of <a href="general.html">frequently
-        asked questions about what Maven is</a>.
+        If you think that Maven could help your project, you can find out more information in the "About Maven"
+        section of the navigation: this includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
+        a <a href="maven-features.html">list of some of its main features</a>.
       </p>
       <p>
         <!-- TODO: this could be the big button type thing instead of a list of links -->
@@ -48,7 +47,7 @@ under the License.
       <!-- TODO: use CSS -->
       <table>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Use</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Use</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
           <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="run.html">Run</a> Maven
         </th>
@@ -57,7 +56,6 @@ under the License.
         </th>
       </tr>
       <tr>
-        <td></td>
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
             Information for those wanting to use Maven to build their project, including a "10 minute test" that gives a
@@ -66,12 +64,11 @@ under the License.
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Extend</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Extend</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="plugin-developers/index.html">Write Maven Plugins</a></th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">Improve the Maven Central Repository</a></th>
       </tr>
       <tr>
-        <td></td>
         <td>
             Information for those who want to provide a Maven plugin for shared
             functionality or to accompany their own product or toolset
@@ -82,12 +79,11 @@ under the License.
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">Contribute</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Contribute</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="guides/development/guide-helping.html">Help Maven</a></th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">Develop Maven</a></th>
       </tr>
       <tr>
-        <td></td>
         <td>
             Information if you'd like to get involved: Maven is an open source community and welcomes contributions.
         </td>
