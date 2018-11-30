@@ -28,17 +28,12 @@
 
 Guide to Creating Archetypes
 
- <<Help Wanted>>: this mini-guide explains Archetype 1.x and should be updated to match Archetype 2.x
- (the essential difference being {{{/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}the <<<archetype-metadata.xml>>> descriptor}}).
- Please attach a patch to {{{https://issues.apache.org/jira/browse/MNGSITE-292}MNGSITE-292 Jira issue}}
- or create a Pull Request on {{{https://github.com/apache/maven-site/blob/master/content/apt/guides/mini/guide-creating-archetypes.apt}the source file}}.
-
  Creating an archetype is a pretty straight forward process. An archetype is a
  very simple artifact, that contains the project prototype you wish to create.
  An archetype is made up of:
 
  * an {{{/archetype-archives/archetype-2.1/archetype-common/archetype.html}archetype descriptor}}
-  (<<<archetype.xml>>> in directory:
+  (<<<archetype-metadata.xml>>> in directory:
    <<<src/main/resources/META-INF/maven/>>>). It lists all the files that will be
    contained in the archetype and categorizes them so they can be processed
    correctly by the archetype generation mechanism.
@@ -69,7 +64,7 @@ Guide to Creating Archetypes
   <groupId>my.groupId</groupId>
   <artifactId>my-archetype-id</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <artifactId>archetype-packaging</artifactId>
 </project>
 
 +----+
@@ -81,54 +76,46 @@ Guide to Creating Archetypes
 * 2. Create the archetype descriptor
 
  The {{{/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
- is a file called <<<archetype.xml>>> which must be
+ is a file called <<<archetype-metadata.xml>>> which must be
  located in the <<<src/main/resources/META-INF/maven/>>> directory. An example of an archetype
  descriptor can be found in the quickstart archetype:
 
 +----+
 
-<archetype xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype/1.0.0 http://maven.apache.org/xsd/archetype-1.0.0.xsd">
-  <id>quickstart</id>
-  <sources>
-    <source>src/main/java/App.java</source>
-  </sources>
-  <testSources>
-    <source>src/test/java/AppTest.java</source>
-  </testSources>
-</archetype>
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd
+        http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="quickstart">
+    <fileSets>
+        <fileSet filtered="true" packaged="true">
+            <directory>src/main/java</directory>
+        </fileSet>
+        <fileSet>
+            <directory>src/test/java</directory>
+        </fileSet>
+    </fileSets>
+</archetype-descriptor>
 
 +----+
 
- The <<<\<id\>>>> tag should be the same as the <<<artifactId>>> in the
+ The attribute <<<name>>> tag should be the same as the <<<artifactId>>> in the
  archetype <<<pom.xml>>>.
 
- An optional <<<\<allowPartial\>true\</allowPartial\>>>> tag makes it possible
- to run the <<<archetype:generate>>> even on existing projects.
+ The boolean attribute <<<partial>>> show if this archetype is representing a full Maven project or only parts.
 
- The <<<\<sources\>>>>, <<<\<resources\>>>>, <<<\<testSources\>>>>, <<<\<testResources\>>>> and
- <<<\<siteResources\>>>> tags represent the different sections of the project:
+ The <<<requiredProperties>>>, <<<fileSets>>> and <<<modules>>> tags represent the differents parts of the project:
 
- * <<<\<sources\>>>> = <<<src/main/java>>>
+ * <<<\<requiredProperties\>>>> : List of required properties to generate a project from this archetype
 
- * <<<\<resources\>>>> = <<<src/main/resources>>>
+ * <<<\<fileSets\>>>> : File sets definition
 
- * <<<\<testSources\>>>> = <<<src/test/java>>>
+ * <<<\<modules\>>>> : Modules definition
 
- * <<<\<testResources\>>>> = <<<src/test/resources>>>
-
- * <<<\<siteResources\>>>> = <<<src/site>>>
 
  []
 
- <<<\<sources\>>>> and <<<\<testSources\>>>> can contain <<<\<source\>>>>
- elements that specify a source file.
-
- <<<\<testResources\>>>> and <<<\<siteResources\>>>> can contain
- <<<\<resource\>>>> elements that specify a resource file.
-
- Place other resources such as the ones in the <<<src/main/webapp>>> directory
- inside the <<<\<resources\>>>> tag.
 
  At this point one can only specify individual files to be created but not empty
  directories.
@@ -145,7 +132,7 @@ archetype
         `-- resources
             |-- META-INF
             |   `-- maven
-            |       `--archetype.xml
+            |       `--archetype-metadata.xml
             `-- archetype-resources
                 |-- pom.xml
                 `-- src
@@ -171,25 +158,25 @@ archetype
 +----+
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>${groupId}</groupId>
-  <artifactId>${artifactId}</artifactId>
-  <version>${version}</version>
-  <packaging>jar</packaging>
+    <groupId>${groupId}</groupId>
+    <artifactId>${artifactId}</artifactId>
+    <version>${version}</version>
+    <packaging>jar</packaging>
 
-  <name>A custom project</name>
-  <url>http://www.myorganization.org</url>
+    <name>${artifactId}</name>
+    <url>http://www.myorganization.org</url>
 
-  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-  </dependencies>
+    <dependencies>
+        <dependency>
+ 		<groupId>junit</groupId>
+      		<artifactId>junit</artifactId>
+     		 <version>4.12</version>
+      		<scope>test</scope>
+        </dependency>
+    </dependencies>
 </project>
 
 +----+
@@ -242,5 +229,5 @@ mvn archetype:generate
 +------+
 
  Afterwhich, you can now customize the contents of the <<<archetype-resources>>>
- directory, and <<<archetype.xml>>>, then, proceed to Step#4 (Install the archetype and run
+ directory, and <<<archetype-metadata.xml>>>, then, proceed to Step#4 (Install the archetype and run
  the archetype plugin).
