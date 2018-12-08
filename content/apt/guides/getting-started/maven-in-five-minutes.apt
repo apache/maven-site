@@ -49,10 +49,9 @@ mvn --version
   It should print out your installed version of Maven, for example:
 
 +-----+
-Apache Maven 3.0.5 (r01de14724cdef164cd33c7c8c2fe155faf9602da; 2013-02-19 14:51:28+0100)
-Maven home: D:\apache-maven-3.0.5\bin\..
-Java version: 1.6.0_25, vendor: Sun Microsystems Inc.
-Java home: C:\Program Files\Java\jdk1.6.0_25\jre
+Apache Maven 3.6.0 (97c98ec64a1fdfee7767ce5ffb20918da4f719f3; 2018-10-24T20:41:47+02:00)
+Maven home: D:\apache-maven-3.6.0\bin\..
+Java version: 1.8.0_161, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk1.8.0_161\jre
 Default locale: nl_NL, platform encoding: Cp1252
 OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
 +-----+
@@ -69,7 +68,7 @@ OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
   On your command line, execute the following Maven goal:
 
 +-----+
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3 -DinteractiveMode=false
 +-----+
 
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
@@ -126,8 +125,8 @@ my-app
   <!-- packaging>jar</packaging -->
 
   <properties>
-    <maven.compiler.source>1.8</maven.compiler.source>
-    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.7</maven.compiler.source>
+    <maven.compiler.target>1.7</maven.compiler.target>
   </properties>
 
   <dependencies>
@@ -144,9 +143,10 @@ my-app
 ** What did I just do?
 
   You executed the Maven goal <archetype:generate>, and passed in various parameters to that goal.
-  The prefix <archetype> is the {{{../../plugins/index.html}plugin}} that contains the goal. If you are familiar with
+  The prefix <archetype> is the {{{../../plugins/index.html}plugin}} that provides the goal. If you are familiar with
   {{{http://ant.apache.org}Ant}}, you
-  may conceive of this as similar to a task. This goal created a simple project based upon an archetype.
+  may conceive of this as similar to a task. This <archetype:generate> goal created a simple project based upon
+  a {{{/archetypes/maven-archetype-quickstart/}maven-archetype-quickstart}} archetype.
   Suffice it to say for now that a <plugin> is a collection
   of <goals> with a general common purpose. For example the jboss-maven-plugin, whose purpose is "deal with
   various jboss items".
@@ -171,7 +171,7 @@ mvn package
 +-----+
 
   Unlike the first command executed (<archetype:generate>) you may notice the second is simply
-  a single word - <package>. Rather than a goal, this is a <phase>. A phase is a step in the
+  a single word - <package>. Rather than a <goal>, this is a <phase>. A phase is a step in the
   {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
   sequence of phases. When a phase is given, Maven will execute every phase in the sequence
   up to and including the one defined. For example, if we execute the <compile> phase, the
