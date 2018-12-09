@@ -38,9 +38,9 @@ Available Skins
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
 || <<Skin>>                                                         || <<Version>> || Site Plugin Version || <<Description>> || <<Source Repository>> || <<Issue Tracking>>
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
-| {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.2          | [3.5,)               | You get this skin if you don't specify any skin or template. | {{{http://gitbox.apache.org/repos/asf/maven-default-skin/}Git}} / {{{https://github.com/apache/maven-default-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326472}JIRA}}
+| {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.2          | [3.5,)               | You get this skin if you don't specify any skin or template. | {{{http://gitbox.apache.org/repos/asf/maven-default-skin/}Git}} / {{{https://github.com/apache/maven-default-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326472}Jira MSKINS}}
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
-| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.7          | [3.7,)               | Skin based on Bootstrap CSS. | {{{http://gitbox.apache.org/repos/asf/maven-fluido-skin/}Git}} / {{{https://github.com/apache/maven-fluido-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326474}JIRA}}
+| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.7          | [3.7,)               | Skin based on Bootstrap CSS. | {{{http://gitbox.apache.org/repos/asf/maven-fluido-skin/}Git}} / {{{https://github.com/apache/maven-fluido-skin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSKINS/component/12326474}Jira MSKINS}}
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
 
 ** Retired
