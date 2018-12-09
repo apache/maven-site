@@ -105,6 +105,7 @@ repo start master --all</pre>
               <td><a href="/">Apache Maven Site</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-site.git">https://gitbox.apache.org/repos/asf/maven-site.git</a></source></td>
               <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MNGSITE/">Jira MNGSITE</a></td>
             </tr>
           </table>
         </p>
@@ -119,6 +120,7 @@ repo start master --all</pre>
               <td><a href="/ref/current/">Apache Maven</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven.git">https://gitbox.apache.org/repos/asf/maven.git</a></source></td>
               <td><a href="https://github.com/apache/maven/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MNG/">Jira MNG</a></td>
             </tr>
             <tr>
               <td><a href="/core-its/">Apache Maven Core ITs</a></td>
@@ -146,21 +148,25 @@ repo start master --all</pre>
               <td><a href="/archetype/">Apache Maven Archetype</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-archetype.git">https://gitbox.apache.org/repos/asf/maven-archetype.git</a></source></td>
               <td><a href="https://github.com/apache/maven-archetype/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MARCHETYPE/">Jira MARCHETYPE</a></td>
             </tr>
             <tr>
               <td><a href="/archetypes/">Apache Maven Archetypes</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-archetypes.git">https://gitbox.apache.org/repos/asf/maven-archetypes.git</a></source></td>
               <td><a href="https://github.com/apache/maven-archetypes/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MARCHETYPES/">Jira MARCHETYPES</a></td>
             </tr>
             <tr>
               <td><a href="/resolver/">Apache Maven Artifact Resolver</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-resolver.git">https://gitbox.apache.org/repos/asf/maven-resolver.git</a></source></td>
               <td><a href="https://github.com/apache/maven-resolver/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MRESOLVER/">Jira MRESOLVER</a></td>
             </tr>
             <tr>
               <td><a href="/resolver-ant-tasks/">Apache Maven Artifact Resolver Ant Tasks</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-resolver-ant-tasks.git">https://gitbox.apache.org/repos/asf/maven-resolver-ant-tasks.git</a></source></td>
               <td><a href="https://github.com/apache/maven-resolver-ant-tasks/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MRESOLVER/">Jira MRESOLVER</a></td>
             </tr>
             <tr>
               <td><a href="https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/">Apache Maven Distribution Checking Tool</a></td>
@@ -171,46 +177,55 @@ repo start master --all</pre>
               <td><a href="/enforcer/">Apache Maven Enforcer</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-enforcer.git">https://gitbox.apache.org/repos/asf/maven-enforcer.git</a></source></td>
               <td><a href="https://github.com/apache/maven-enforcer/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MENFORCER/">Jira MENFORCER</a></td>
             </tr>
             <tr>
               <td><a href="/jxr/">Apache Maven JXR</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-jxr.git">https://gitbox.apache.org/repos/asf/maven-jxr.git</a></source></td>
               <td><a href="https://github.com/apache/maven-jxr/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/JXR/">Jira JXR</a></td>
             </tr>
             <tr>
               <td><a href="/maven-indexer/">Apache Maven Indexer</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-indexer.git">https://gitbox.apache.org/repos/asf/maven-indexer.git</a></source></td>
               <td><a href="https://github.com/apache/maven-indexer/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MINDEXER/">Jira MINDEXER</a></td>
             </tr>
             <tr>
               <td><a href="/plugin-testing/">Apache Maven Plugin Testing</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-plugin-testing.git">https://gitbox.apache.org/repos/asf/maven-plugin-testing.git</a></source></td>
               <td><a href="https://github.com/apache/maven-plugin-testing/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MPLUGINTESTING/">Jira MPLUGINTESTING</a></td>
             </tr>
             <tr>
               <td><a href="/plugin-tools/">Apache Maven Plugin Tools</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-plugin-tools.git">https://gitbox.apache.org/repos/asf/maven-plugin-tools.git</a></source></td>
               <td><a href="https://github.com/apache/maven-plugin-tools/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MPLUGIN/">Jira MPLUGIN</a></td>
             </tr>
             <tr>
               <td><a href="/maven-release/">Apache Maven Release</a> (Release api and plugin)</td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-release.git">https://gitbox.apache.org/repos/asf/maven-release.git</a></source></td>
               <td><a href="https://github.com/apache/maven-release/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/MRELEASE/">Jira MRELEASE</a></td>
             </tr>
             <tr>
               <td><a href="/scm/">Apache Maven SCM</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-scm.git">https://gitbox.apache.org/repos/asf/maven-scm.git</a></source></td>
               <td><a href="https://github.com/apache/maven-scm/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/SCM/">Jira SCM</a></td>
             </tr>
             <tr>
               <td><a href="/surefire/">Apache Maven Surefire</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-surefire.git">https://gitbox.apache.org/repos/asf/maven-surefire.git</a></source></td>
               <td><a href="https://github.com/apache/maven-surefire/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/SUREFIRE/">Jira SUREFIRE</a></td>
             </tr>
             <tr>
               <td><a href="/wagon/">Apache Maven Wagon</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-wagon.git">https://gitbox.apache.org/repos/asf/maven-wagon.git</a></source></td>
               <td><a href="https://github.com/apache/maven-wagon/">(GitHub mirror)</a></td>
+              <td><a href="https://issues.apache.org/jira/projects/WAGON/">Jira WAGON</a></td>
             </tr>
             <tr>
               <th>Plugins</th>
