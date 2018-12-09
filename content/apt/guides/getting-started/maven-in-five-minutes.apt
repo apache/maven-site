@@ -140,6 +140,12 @@ my-app
 </project>
 +-----+
 
+Note: The maven-archetype-quickstart in version 1.3 generates a POM with version 2.20.1 of the maven-surefire plugin
+(for running tests). This version will not work with a Java 9+ runtime (you will see a NullPointerException if
+you run the package command). You can work around this by using a newer version: use a text editor and open `pom.xml`,
+search for the plugin with `<artifactID>maven-surefire-plugin</artifactId>` and change the version tag
+to: `<version>2.22.1</version>`.
+
 ** What did I just do?
 
   You executed the Maven goal <archetype:generate>, and passed in various parameters to that goal.
