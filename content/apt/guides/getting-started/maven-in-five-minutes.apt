@@ -68,7 +68,7 @@ OS name: "windows 7", version: "6.1", arch: "amd64", family: "windows"
   On your command line, execute the following Maven goal:
 
 +-----+
-mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.3 -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
 +-----+
 
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
@@ -138,12 +138,6 @@ my-app
   </dependencies>
 </project>
 +-----+
-
-  Note: The version 1.3 of maven-archetype-quickstart generates a POM with version 2.20.1 of the maven-surefire-plugin
-  (for running tests). This version will not work with a Java 11+ runtime (you will see a NullPointerException).
-  You can work around this by using a newer version: open `pom.xml` in a text editor,
-  search for the plugin with `<artifactID>maven-surefire-plugin</artifactId>` and change the version tag
-  to: `<version>2.22.1</version>`.
 
 ** What did I just do?
 
