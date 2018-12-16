@@ -911,9 +911,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}}.
 
  Let's add another dependency to our project.  Let's say we've added some logging to the code and need to add log4j as a dependency.
- First, we need to know what the groupId, artifactId, and version are for log4j.  We can browse ibiblio and look for it, or use Google
- to help by searching for "site:www.ibiblio.org maven2 log4j".  The search shows a directory called /maven2/log4j/log4j (or
- /pub/packages/maven2/log4j/log4j).  In that directory is a file called maven-metadata.xml.  Here's what the maven-metadata.xml for
+ First, we need to know what the groupId, artifactId, and version are for log4j. The appropriate directory on Maven Central is called
+ /maven2/log4j/log4j. In that directory is a file called maven-metadata.xml.  Here's what the maven-metadata.xml for
  log4j looks like:
 
 +----+
