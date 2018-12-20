@@ -26,7 +26,7 @@ It reminds me of one of my favourite quotes from Ralph Johnson and Don Roberts i
 
 > People develop abstractions by generalizing from concrete examples. Every attempt to determine the correct abstraction
 > on paper without actually developing a running system is doomed to failure. No one is that smart. A framework is a
-> resuable design, so you develop it by looking at the things it is supposed to be a design of. The more examples
+> reusable design, so you develop it by looking at the things it is supposed to be a design of. The more examples
 > you look at, the more general your framework will be.
 
 I didn't really know what the final result would look like I just knew there had to be a better way.
@@ -47,7 +47,7 @@ as Gump was not trying to standardize anything at the time but trying to continu
 get its hands on. My goals were different and I wanted to make an
 [opinionated][8] piece of software and I preferred the notion of convention over configuration. I wanted a project's infrastructure to
 look the same and work the same so I continued to pursue my own model for a project and decided to disagree with
-Gump's particular tact at project modelling which I thought was too flexible. I wanted to save people time by being
+Gump's particular tact at project modeling which I thought was too flexible. I wanted to save people time by being
 able to find things in the same place. Again the value in a project is the final result: how it is constructed
 and built predictable and easy. I fully admit some warts in Maven 1.x sometimes made things harder but that is
 par for the course with first generation tools.

@@ -271,7 +271,7 @@ by example the early committing of such changes from a fork (that they
 are involved in maintaining)  back to Apache Maven source control. 
 
 Similarly, if a fork is being hosted elsewhere in order to get contributions
-from other talented individuals, the PMC members should endevour to bring
+from other talented individuals, the PMC members should endeavour to bring
 those individuals and their talent to the project as committers.
 
 Finally, where a fork is hosted outside of Apache hardware, there is less
@@ -286,7 +286,7 @@ of the risk that review obligations may grow above the time capabilities
 of the PMC and committers such that when they eventually decide to try and
 bring the changes in their fork back to the Apache Maven project their 
 contribution may end up being rejected on the basis of the review of a
-large set of changes being too difficult/timeconsuming.
+large set of changes being too difficult/time-consuming.
 
 ### [Project Management Chair](https://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
@@ -305,7 +305,7 @@ Committee as a whole that is responsible for the direction of the project.
 If things break down and there is no consensus and there is no clear
 ability to reach any conclusion *and* it is in the interest of the
 foundation because damage is done and the board expects the chair
-to act as an officier of the foundation and clean things up, then the chair
+to act as an officer of the foundation and clean things up, then the chair
 can act as an ultimate decision maker, however, by this point the
 board of the foundation must already be well aware of the situation and
 should be actively monitoring the chair.

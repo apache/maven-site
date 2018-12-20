@@ -26,7 +26,7 @@ Eclipse workspace with those changes.
 
 ## JetBrains IntelliJ IDEA
 
-Intelli IDEA has a [feature-rich integration for Maven](https://www.jetbrains.com/idea/help/maven.html). 
+IntelliJ IDEA has a [feature-rich integration for Maven](https://www.jetbrains.com/idea/help/maven.html).
 
 ## Netbeans IDE
 

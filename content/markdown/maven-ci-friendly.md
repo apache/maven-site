@@ -41,7 +41,7 @@ mvn clean package
 mvn -Drevision=1.0.0-SNAPSHOT clean package
 ```
 
-  This wil become cumbersome over the time. So the other solution for this is 
+  This will become cumbersome over the time. So the other solution for this is
   to simply use a property inside the pom file which looks like this:
 
 ```xml
@@ -71,7 +71,7 @@ mvn -Drevision=1.0.0-SNAPSHOT clean package
 mvn -Drevision=2.0.0-SNAPSHOT clean package
 ```
  
-  Of cource you can use the `.mvn/maven.config` file for this.
+  Of course you can use the `.mvn/maven.config` file for this.
 
   A note about the used properties. You can only use those named
   `${revision}`, `${sha1}` and/or `${changelist}` and not other
@@ -96,7 +96,7 @@ mvn -Drevision=2.0.0-SNAPSHOT clean package
 </project>
 ```
 
-  The above example will *not work as expeced*. If you like
+  The above example will *not work as expected*. If you like
   to have more flexibility you can use a combination of the
   different properties like this:
 
@@ -128,7 +128,7 @@ mvn -Drevision=2.0.0-SNAPSHOT clean package
 mvn -Drevision=2.0.0 clean package
 ```
 
-  Another usage example can be do make a release which can be
+  Another usage example can be to make a release which can be
   done via (version 1.3.1):
 
 ```
@@ -146,7 +146,7 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 ## Multi Module Setup
 
   So now let us take a look into a situation where we have a multi module
-  build. We have a parent pom and one or more childs.
+  build. We have a parent pom and one or more children.
   The parent pom will look like this:
 
 ```xml
@@ -196,7 +196,7 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 
   If you like to install or deploy artifacts by using the above setup you **have to use**
   the [flatten-maven-plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts 
-  in your repository which will not be cosumable by Maven anymore. Such kind of setup
+  in your repository which will not be consumable by Maven anymore. Such kind of setup
   will look like this:
 
 

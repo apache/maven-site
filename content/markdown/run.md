@@ -45,7 +45,7 @@ or
 
     mvn checkstyle:check
 
-There are many different plugins avaiable and they all implement different goals.
+There are many different plugins available and they all implement different goals.
 
 
 Further resources: 
