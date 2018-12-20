@@ -33,7 +33,7 @@ As previously mentioned, the artifact ID should be the basis of the
 filename for the project, as by default Maven will use that and the
 version to assemble the filename. Having the version as part of the
 filename is strongly recommended to ensure that the version can be
-determined at a glance without having to check a possibly non-existant
+determined at a glance without having to check a possibly non-existent
 manifest, or compare file sizes with the official releases.
 
 Following these guidelines are particularly encouraged when distributing

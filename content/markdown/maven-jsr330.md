@@ -296,7 +296,7 @@ Now let\'s take a look at the plugin code. You\'ll notice that we\'re using cons
 which makes testing a lot easier. If you want to test your `Jsr330Component`, you do not need the container
 to instantiate the `Mojo`. In this simple case, you can actually test this plugin without using the plugin
 testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire
-everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplies testing. 
+everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplifies testing.
 
 ```
 package org.apache.maven.plugins;

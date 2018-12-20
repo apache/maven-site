@@ -47,21 +47,21 @@ which versions contain the fixed and the link to the corresponding issue.
    <td>(,3.1.0]</td>
    <td>3.1.1</td>
    <td><a href="https://issues.apache.org/jira/browse/MDEP-611">MDEP-611</a></td>
-   <td>unpack and unpack-dependencies goals (not used unless configured explicitely)</td>
+   <td>unpack and unpack-dependencies goals (not used unless configured explicitly)</td>
  </tr>
  <tr>
    <td>maven-ear-plugin</td>
    <td>(,3.0.0]</td> 
    <td>3.0.1</td>
    <td><a href="https://issues.apache.org/jira/browse/MEAR-268">MEAR-268</a></td>
-   <td>EAR <a href="/plugins/maven-ear-plugin/modules.html">modules</a> feature (not used unless configured explicitely)</td>
+   <td>EAR <a href="/plugins/maven-ear-plugin/modules.html">modules</a> feature (not used unless configured explicitly)</td>
  </tr>
  <tr>
    <td>maven-javadoc-plugin</td>
    <td>[2.5,3.0.0]</td>
    <td>3.0.1</td>
    <td><a href="https://issues.apache.org/jira/browse/MJAVADOC-520">MJAVADOC-520</a></td>
-   <td>resourcesArtifacts and includeDependencySources features (not used unless configured explicitely)</td>
+   <td>resourcesArtifacts and includeDependencySources features (not used unless configured explicitly)</td>
  </tr>
  <tr>
    <td>maven-war-plugin</td>

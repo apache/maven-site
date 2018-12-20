@@ -73,7 +73,7 @@ Plugin classloaders are wired differently for projects with and without build ex
 
 For projects without build extensions, single classloader is created for each plugin identified by groupId:artifactId:version and the classloader imports API packages from Maven API classloader. Maven will create one and only one classloader for each unique plugin+dependency combination.
 
-For projects that use build extensions, plugin classloaders are wired to project classloaders. This gives plugin code access to both Maven API packages and packages exported by the project build extensions. Maven will create one and only one classlaoder for each unique plugin+dependencies+buid-extensions combination.
+For projects that use build extensions, plugin classloaders are wired to project classloaders. This gives plugin code access to both Maven API packages and packages exported by the project build extensions. Maven will create one and only one classlaoder for each unique plugin+dependencies+build-extensions combination.
 
 All plugin classloaders use ClassWorlds bootstrap classloader as the parent. This provides relatively clean and therefore consistent plugin classpath, while still allowing plugins access to `-javaagent` classes (see [MNG-4747](https://issues.apache.org/jira/browse/MNG-4747)).
 
