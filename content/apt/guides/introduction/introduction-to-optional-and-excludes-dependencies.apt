@@ -224,7 +224,7 @@ B, C, D, E, F
 
 +---+
 
-  If you deploy  Project-A to a repository, and Project-X declares a 
+  If you deploy Project-A to a repository, and Project-X declares a 
   normal dependency on Project-A, will Project-D still be excluded from the 
   classpath?
 
