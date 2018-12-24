@@ -95,6 +95,10 @@ repo start master --all</pre>
             <area shape="rect" coords="1,787,560,836"   alt="Plexus"         href="https://codehaus-plexus.github.io/" />
           </map>
         </p>
+        <p>Each component has its own Jira project or component for issue tracking:
+        see the <a href="https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview">Maven Jira issues overview</a>) to
+        get an summary of open issues.
+        </p>
       </subsection>
 
       <subsection name="Maven Site">
