@@ -1,14 +1,17 @@
 ## Overview
 
-Maven projects use [JIRA](https://www.atlassian.com/software/jira) a
-J2EE-based, issue tracking and project management application.
+Maven projects use [Jira](https://www.atlassian.com/software/jira) as issue tracking and project management application.
+
+Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own Jira project or component:
+see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview) to
+get a summary of open issues.
 
 ## Issue Management
 
 Issues, bugs, and feature requests should be submitted to the following
 issue management systems depending on which project is involved:
 
-* Maven Project: <https://issues.apache.org/jira/browse/MNG>
+* Maven "core" Project: <https://issues.apache.org/jira/browse/MNG>
 
 * Maven Website Project: <https://issues.apache.org/jira/browse/MNGSITE>
 
