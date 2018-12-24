@@ -38,10 +38,6 @@ Developing Maven
  First of all you need something to work on! Issues can be found in
  {{{/issue-management.html}several JIRA projects}}.
 
- * <<{{{https://issues.apache.org/jira/secure/IssueNavigator.jspa?reset=true&mode=hide&jqlQuery=project%20%3D%20MNG%20AND%20issuetype%20in%20%28Improvement%2C%20%22New%20Feature%22%2C%20%22Planned%20Work%22%2C%20Request%2C%20Wish%29}JIRA Issues}}>>
-
- []
-
  When you find a issue you would like to work on, add a comment in the issue log so the core developers and other
  people looking for work know that someone is already working on it.
 
@@ -50,8 +46,6 @@ Developing Maven
    See {{{/scm.html}https://maven.apache.org/scm.html}} for information.
    The Maven project uses Git for some things and Subversion for others; and this
    page tracks the situation.
- 
-  []
 
 * Don't forget tests!
 ~~ TODO move details to guide-building-maven.apt, keep only principles here
@@ -115,7 +109,7 @@ $ patch -p0 < MNG-123.patch
 
 * Patch acceptance criteria
 
-There are a number of criteria that a patch will be judged on:
+ There are a number of criteria that a patch will be judged on:
 
   * Whether it works and does what is intended. This one is probably obvious!
 
@@ -135,8 +129,8 @@ There are a number of criteria that a patch will be judged on:
 
   []
 
-Above all, don't be discouraged. These are the same requirements the current committers should hold each other to as well.
-And remember, your contributions are always welcome!
+  Above all, don't be discouraged. These are the same requirements the current committers should hold each other to as well.
+  And remember, your contributions are always welcome!
 
 * Related Projects
 

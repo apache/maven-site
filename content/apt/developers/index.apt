@@ -39,13 +39,13 @@ Maven Developer Centre
 
   * {{{../guides/development/guide-maven-development.html}Developing Maven}}
 
-  * {{{../plugin-developers/common-bugs.html} Common Bugs and Pitfalls}}
-
   * {{{../guides/development/guide-building-maven.html}Building Maven}}
+
+  * {{{../scm.html}Source Code}}
 
   * {{{../continuous-integration.html}Continuous Integration}}
 
-  * {{{../scm.html}Source Code}}
+  * {{{../plugin-developers/common-bugs.html} Common Bugs and Pitfalls}}
 
   * {{{../project-roles.html}Apache Maven Project Roles}}
 

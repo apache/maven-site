@@ -38,15 +38,10 @@ Building Maven
 
     * to fix a problem you are having and submit a patch to the developers team.
 
-  Note, that you don't need to bootstrap Maven for day to day use, or to develop plugins. While we encourage getting
-  involved and fixing bugs that you find, for day to day use we recommend using the latest release.
-
 * Checking out the sources
 
   All of the source code for Maven and its related libraries is in managed in the ASF source code
-  repositories. Current development of the core of Maven, and some other components, are in git.
-  Other pieces (and older versions) are in Subversion. For details, see
-  {{{/scm.html}https://maven.apache.org/scm.html}}.
+  repositories: for details, see {{{/scm.html}https://maven.apache.org/scm.html}}.
 
 * Building Maven
 
@@ -58,15 +53,18 @@ Building Maven
 mvn install
 +-----+
 
-  Before submitting a patch, it is advised to run the integration tests, which are available in a profile:
+*** Running Integration Tests
+
+  Before submitting a patch, it is advised to run the integration tests, which are available in the <<<run-its>>> profile:
 
 +-----+
 mvn -Prun-its install
 +-----+
 
-** Building Maven With Maven Installed
+** Building Maven core
 
-  If you already have Maven installed, it can be faster to build a new version with Maven, rather than a clean bootstrap.
+  Until Maven 3.3, Maven core build could be boostrapped with an Ant build. This bootstrap has been removed in Maven 3.5:
+  you need a pre-built Maven to build Maven from source.
 
   To do this, run from the source directory:
 
@@ -74,15 +72,22 @@ mvn -Prun-its install
 mvn install
 +-----+
 
-  The assemblies will be created in <<<apache-maven>>>, and can be unzipped to the location where you'd like Maven installed.
+  The assemblies will be created in <<<apache-maven>>>, and can be manually unzipped to the location where you'd like the resulting Maven installed.
 
-** Running the full Maven core integration tests
-
-   Before checking in a change or submitting a patch to Maven core, it is required to run the integration tests.
-   These live in their own git repository. Using your local build of Maven, run:
+  If you want to have the resulting Maven directly copied to a directory, you can use the <<<distributionTargetDir>>> property:
 
 +-----+
-mvn install -Prun-its
+mvn -DdistributionTargetDir="$HOME/app/maven/apache-maven-SNAPSHOT" install
++-----+
+
+*** Running the full Maven core integration tests
+
+   Before checking in a change or submitting a patch to Maven core, it is required to run the core integration tests.
+   These live in their own {{{/core-its/source-repository.html}<<<maven-integration-testing.git>>> Git repository}}.
+   Using your local build of Maven, run:
+
++-----+
+mvn test -Prun-its
 +-----+
 
    Consult {{{/core-its/core-it-suite/}Core IT Suite documentation}} for more options.

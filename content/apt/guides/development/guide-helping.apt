@@ -32,21 +32,23 @@ Guide to helping with Maven
 
  As with any open source project, there are several ways you can help:
 
- * Join the {{{../../mailing-lists.html}mailing lists}} and answer other user's questions
+ * Join the {{{../../mailing-lists.html}mailing lists}} and answer other user's questions.
 
  * Report bugs, feature requests and other issues in the {{{../../issue-management.html}issue management system}}.
 
  * {{{./guide-building-maven.html} Build Maven}} for yourself, in order to fix bugs.
 
  * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find,
-   or that others have filed: we have a {{{https://s.apache.org/for-the-grabs_maven}list of issues that should be easy to solve}})
+   or that others have filed)\
+   To ease your first contribution, we have a {{{https://s.apache.org/for-the-grabs_maven}list of issues that should be easy to solve}}.
 
- * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mailing-lists.html} mailing list}} for release votes
+ * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mailing-lists.html} mailing list}} for release votes)
 
  * {{{./guide-testing-development-plugins.html} test snapshot plugins}} help test the latest development versions of plugins and report issues
 
- * Help with the documentation by pointing out areas that are lacking or unclear, and if you are so inclined, submitting patches to correct it.
-   You can create appropriate issues {{{https://issues.apache.org/jira/browse/MNGSITE}by using the issue management system}}.
+ * Help with the documentation by pointing out areas that are lacking or unclear, and if you can, submitting Pull Requests to correct it:
+   use the "edit" button in the breadcrumb, just after the page title.
+   You can also create appropriate issues {{{https://issues.apache.org/jira/browse/MNGSITE}by using the issue management system}}.
 
  []
 
@@ -85,11 +87,9 @@ Developers Conventions
 
   * {{{../../developers/conventions/jira.html}Maven Jira Convention}}
 
-  * {{{../../developers/conventions/svn.html}Maven Subversion Convention}}
-
   * {{{../../developers/conventions/git.html}Maven Git Convention}}
 
-  * {{{../../developers/release/index.html}Releasing a maven project}}
+  * {{{../../developers/release/index.html}Releasing a Maven project}}
 
   []
 

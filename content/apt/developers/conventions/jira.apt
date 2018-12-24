@@ -32,13 +32,15 @@ Maven JIRA Convention
 
 * When To Create a JIRA Issue?
 
- This section discusses when to create a JIRA issue versus just committing a change in SVN.
+ This section discusses when to create a JIRA issue versus just committing a change in Git (eventually through a PR).
 
  * <<Minor changes>>, like code reformatting, documentation fixes, etc. that aren't going to impact other users can
  be committed without much issue.
 
  * <<Larger changes>>, like bug fixes, API changes, significant refactoring, new classes, and pretty much any change
- of more than 100 lines, should have a JIRA ticket associated with it, or at least an email discussion.
+ of more than 100 lines, should have a JIRA ticket associated with it, or at least an email discussion.\
+ Creating a JIRA issue and referring it in commit comment will ease tracking what changes happen in a release,
+ using JIRA automatic release notes creation.
 
  []
 
