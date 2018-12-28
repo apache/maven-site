@@ -96,8 +96,7 @@ repo start master --all</pre>
           </map>
         </p>
         <p>Each component has its own Jira project or component for issue tracking:
-        see the <a href="https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview">Maven Jira issues overview</a>) to
-        get an summary of open issues.
+        see the <a href="/issue-management.html">Issue Management report</a> to get a summary.
         </p>
       </subsection>
 
