@@ -54,7 +54,6 @@ Here is an overview of the top elements under `settings`:
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
       <localRepository/>
       <interactiveMode/>
-      <usePluginRegistry/>
       <offline/>
       <pluginGroups/>
       <servers/>
@@ -88,7 +87,6 @@ system that are active full-time.
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
       <localRepository>${user.home}/.m2/repository</localRepository>
       <interactiveMode>true</interactiveMode>
-      <usePluginRegistry>false</usePluginRegistry>
       <offline>false</offline>
       ...
     </settings>
@@ -100,11 +98,6 @@ system that are active full-time.
     common local repository.
 -   **interactiveMode**: `true` if Maven should attempt to interact with
     the user for input, `false` if not. Defaults to `true`.
--   **usePluginRegistry**: `true` if Maven should use the
-    `${user.home}/.m2/plugin-registry.xml` file to manage plugin
-    versions, defaults to `false`. *Note that for the current version of
-    Maven 2.0, the plugin-registry.xml file should not be depended upon.
-    Consider it dormant for now.*
 -   **offline**: `true` if this build system should operate in offline
     mode, defaults to `false`. This element is useful for build servers
     which cannot connect to a remote repository, either because of
