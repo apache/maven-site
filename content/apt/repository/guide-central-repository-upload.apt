@@ -4,7 +4,7 @@
  Jason van Zyl
  Brian Fox
  ------
- 2014-11-16
+ 2018-12-31
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -136,9 +136,12 @@ Choosing your coordinates
  When you patch / modify a third party project, that patched version becomes your project and therefore should be distributed under a <<<groupId>>> you control
  as any project you would have developed, never under <<<com.foo>>>. See above considerations about <<<groupId>>>.
 
- * My project is hosted at a project hosting service like SourceForge or dev.java.net, what should I use as groupId?
+ * My project is hosted at a project hosting service like SourceForge or Github, what should I use as groupId?
 
- If your project name is <<<foo>>> at SourceForge, then <<<net.sf.foo>>>. If it's <<<foo>>> at dev.java.net, then <<<net.java.dev.foo>>>
+ If your project name is <<<foo>>> at SourceForge, you can use <<<net.sf.foo>>>.
+ If your username is <<<bar>>> on Github, you can use <<<com.github.bar>>>.
+ You can also use another reversed domain name you control. The group ID does
+ not have to reflect the project host.
 
  []
 
