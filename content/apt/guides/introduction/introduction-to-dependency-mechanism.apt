@@ -104,6 +104,16 @@ Introduction to the Dependency Mechanism
 
  []
 
+ Although transitive dependencies can help you to include desired dependencies, it is a good practice that you directly
+ specify the dependencies you are directly using in your own source code. This best practice proves its value especially
+ when the dependencies of your project constantly changes their dependencies. Assume that your project A specifies a
+ dependency on another project B, and project B specifies a dependency on project C. If you are directly using components
+ in project C, and you don't specify project C in your project A, it may cause build failure when project B suddenly
+ updates/removes its dependency on project C. Another reason to directly specify dependencies is that it provides better
+ documentation for your project: one can learn more information by just reading the POM file in your project. Maven also
+ provides a plugin {{{https://maven.apache.org/plugins/maven-dependency-plugin/analyze-mojo.html}dependency:analyze mojo}}
+ for analyzing the dependencies and making this best practice more achievable.
+
 * {Dependency Scope}
 
  Dependency scope is used to limit the transitivity of a dependency, and also to affect the classpath used for
