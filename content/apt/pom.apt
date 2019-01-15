@@ -1546,7 +1546,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 +-------------------------+
 
   * <<id>>, <<name>>, <<email>>:
-  These corrospond to the developer's ID (presumably some unique ID across an organization), the
+  These correspond to the developer's ID (presumably some unique ID across an organization), the
   developer's name and email address.
 
   * <<organization>>, <<organizationUrl>>:
