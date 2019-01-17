@@ -31,10 +31,10 @@ Introduction to Repositories
 
 * Artifact Repositories
 
- A repository in Maven is used to hold build artifacts and dependencies of varying types.
+ A repository in Maven holds build artifacts and dependencies of varying types.
 
- There are strictly only two types of repositories: local and remote. The local repository refers to a copy
- on your own installation that is a cache of the remote downloads, and also contains the temporary
+ There are exactly two types of repositories: local and remote. The local repository is a directory
+ on the computer where Maven runs. It caches remote downloads and contains temporary
  build artifacts that you have not yet released.
 
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
@@ -45,8 +45,8 @@ Introduction to Repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
 
- The local and remote repositories are structured the same way so that scripts can easily be run on either
- side, or they can be synced for offline used. In general use, the layout of the repositories is completely
+ Local and remote repositories are structured the same way so that scripts can run on either
+ side, or they can be synced for offline use. The layout of the repositories is completely
  transparent to the Maven user, however.
 
 * Why not Store JARs in CVS?
@@ -89,9 +89,9 @@ Introduction to Repositories
 
  To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}
 
- You can set this in your <<<settings.xml>>> file to globally use a certain mirror, however
- note that it is common for a project to customise the repository in their <<<pom.xml>>>
- and that your setting will take precedence. If you find that dependencies are not being found, check you
+ You can set this in your <<<settings.xml>>> file to globally use a certain mirror. However,
+ it is common for a project to customise the repository in its <<<pom.xml>>>
+ and that your setting will take precedence. If dependencies are not being found, check that you
  have not overridden the remote repository.
 
  For more information on dependencies, see {{{./introduction-to-dependency-mechanism.html}Dependency Mechanism}}.
@@ -104,7 +104,8 @@ Introduction to Repositories
 
 * Building Offline
 
- If you are temporarily disconnected from the internet and you need to build your projects offline you can use the offline switch on the CLI:
+ If you are temporarily disconnected from the internet and you need to build your projects offline,
+ you can use the offline switch on the CLI:
 
 +---+
 
@@ -112,7 +113,7 @@ Introduction to Repositories
 
 +---+
 
- Note that many plugins will honour the offline setting and not perform any operations that would connect to
+ Many plugins honor the offline setting and do not perform any operations that connect to
  the internet. Some examples are resolving Javadoc links and link checking the site.
 
 * Uploading to a Remote Repository
@@ -120,16 +121,16 @@ Introduction to Repositories
  While this is possible for any type of remote repository, you must have the permission to do so.
  To have someone upload to the central Maven repository, see {{{../../repository/index.html}Repository Center}}.
 
-Internal Repositories
+* Internal Repositories
 
  When using Maven, particularly in a corporate environment, connecting to the internet to download dependencies
  is not acceptable for security, speed or bandwidth reasons. For that reason, it is desirable to set up an
  internal repository to house a copy of artifacts, and to publish private artifacts to.
 
- Such an internal repository can be downloaded from using HTTP or the file system (using a <<<file://>>>
+ Such an internal repository can be downloaded using HTTP or the file system (with a <<<file://>>>
  URL), and uploaded to using SCP, FTP, or a file copy.
 
- Note that as far as Maven is concerned, there is nothing special about this repository: it is another
+ As far as Maven is concerned, there is nothing special about this repository: it is another
  <<remote repository>> that contains artifacts to download to a user's local cache, and is a publish
  destination for artifact releases.
 
@@ -138,12 +139,12 @@ Internal Repositories
 
 * Setting up the Internal Repository
 
- To set up an internal repository just requires that you have a place to put it, and then start copying
+ To set up an internal repository just requires that you have a place to put it, and then copy
  required artifacts there using the same layout as in a remote repository such as {{{http://repo.maven.apache.org/maven2/}repo.maven.apache.org}}.
 
  It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
  of data there and doing so will get you banned. You can use a program such as those described on the {{{../../repository-management.html}Repository Management}} page to
- run your internal repository's server, to download from the internet as required and then hold
+ run your internal repository's server, download from the internet as required, and then hold
  the artifacts in your internal repository for faster downloading later.
 
  The other options available are to manually download and vet releases, then copy them to the internal
@@ -180,7 +181,7 @@ Internal Repositories
 * Deploying to the Internal Repository
 
  One of the most important reasons to have one or more internal repositories is to be able to publish
- your own private releases to share.
+ your own private releases.
 
  To publish to the repository, you will need to have access via one of SCP, SFTP, FTP, WebDAV, or the filesystem. Connectivity is accomplished with the various
  {{{/wagon/wagon-providers/index.html}wagons}}. Some wagons may need to be added as {{{/ref/current/maven-model/maven.html#class_extension}extension}} to your build.
