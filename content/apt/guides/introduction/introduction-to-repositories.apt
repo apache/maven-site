@@ -49,30 +49,6 @@ Introduction to Repositories
  side, or they can be synced for offline use. The layout of the repositories is completely
  transparent to the Maven user, however.
 
-* Why not Store JARs in CVS?
-
- It is not recommended that you store your JARs in CVS. Maven tries to
- promote the notion of a user local repository where JARs, or any
- project artifacts, can be stored and used for any number of builds.
- Many projects have dependencies such as XML parsers and standard utilities that
- are often replicated in typical builds. With Maven these standard utilities
- can be stored in your local repository and shared by any number of builds.
-
- This has the following advantages:
-
- * <<It uses less storage>> - while a repository is typically quite large, because each JAR is only kept
-   in the one place it is actually saving space, even though it may not seem that way
-
- * <<It makes checking out a project quicker>> - initial checkout, and to a small degree updating, a
-   project will be faster if there are no large binary files in CVS. While they may need to be downloaded
-   again afterwards anyway, this only happens once and may not be necessary for some common JARs already in
-   place.
-
- * <<No need for versioning>> - CVS and other source control systems are designed for versioning files,
-   but external dependencies typically don't change, or if they do their filename changes anyway to indicate the
-   new version. Storing these in CVS doesn't have any added benefit over keeping them in a local artifact cache.
-
-
 * Using Repositories
 
   In general, you should not need to do anything with the local repository on a regular basis, except clean
