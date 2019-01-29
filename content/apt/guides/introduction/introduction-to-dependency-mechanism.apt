@@ -177,8 +177,8 @@ Introduction to the Dependency Mechanism
 
  <<(*) Note:>>
  it is intended that this should be runtime scope instead, so that all compile dependencies must
- be explicitly listed - however, there is the case where the library you depend on extends a class from another
- library, forcing you to have available at compile time. For this reason, compile time dependencies remain
+ be explicitly listed. However, if a library you depend on extends a class from another
+ library, both must be available at compile time. For this reason, compile time dependencies remain
  as compile scope even when they are transitive.
 
 * {Dependency Management}
