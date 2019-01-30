@@ -28,19 +28,18 @@
 
 Guide to Remote repository access through authenticated HTTPS
 
-  This document describes how to configure Maven for accessing a remote
+  This document describes how to configure Maven to access a remote
   repository that sits behind an HTTPS server which requires client
-  authentication with certificates. It is expected that this
-  documentation be valid both for Maven 1.x and Maven 2.0.
+  authentication with certificates.
 
 * The problem
 
-  You have a server storing a maven repository at addresse
+  There is a maven repository at
   <<<https://my.server.com/maven>>>. This server only serves clients
   authenticated through SSL protocol by a valid certificate signed by an approved certificate
   authority's certificate which we call the <<<CACert>>>. In the
   simplest case where the server is used internally by an identified
-  community of users (eg. corporate intranet), the server's certificate is the certificate authority
+  community of users (e.g. corporate intranet), the server's certificate is the certificate authority
   as the server is used only internally.
 
   So we assume that we have access to the trusted certificate in X.509
@@ -50,10 +49,10 @@ Guide to Remote repository access through authenticated HTTPS
    /somewhere/in/filesystem/CACert.cert
 ------------
 
-  The client's certificate has been issued by some other mean not
+  The client's certificate has been issued by some means not
   described in this document in  PKCS#12 format, which is the format
   that is accepted by browsers (at least Firefox and Internet Explorer)
-  for importation in their keystore.
+  for import into their keystore.
   This file is named:
 
 ---------------------
@@ -61,16 +60,15 @@ Guide to Remote repository access through authenticated HTTPS
 ---------------------
 
    and we assume it is accessible when launching maven.
-   Note that this file contains the client's private key which may be
-   very sensitive information and so is secured by a password:
+   This file contains the client's private key which may be
+   very sensitive information so it is secured by a password:
 
 --------------------
    CeRtPwD
 --------------------
 
     The remote repository is referenced either through the <<<pom.xml>>>
-    file  (maven2.0) or one of <<<build.properties>>> or
-    <<<project.properties>>> (Maven1.X). In Maven 1.X:
+    file:
 
 ---------------
 maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
@@ -80,10 +78,10 @@ maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
 
    For maven to use this repository, we should take the following steps:
 
-   [[1]] Create a  store to hold the  server's certificate usings Sun's
-         {{{http://java.sun.com/j2se/1.4.2/docs/tooldocs/solaris/keytool.html} keytool}},
+   [[1]] Create a store to hold the  server's certificate usings Oracle's
+         {{{https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html} keytool}},
 
-   [[2]] Defines properties to be used by HttpClient for finding keys and
+   [[2]] Define properties to be used by HttpClient for finding keys and
          certificate
 
 ** Storing certificate
@@ -151,16 +149,9 @@ MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
                      -Djavax.net.ssl.keyStorePassword=XXXXXX"
 ---------------
 
-*** For maven 1.X  users
-
-  Setting these properties  in <<<build.properties>>> or <<<project.properties>>> does
-  <<not work>>: the properties are needed before any of theses files are opened.
-
 * Links
 
    The following links may be useful in understanding SSL infrastructure
    management in Java:
-
-    * {{{http://java.sun.com/j2se/1.4.2/docs/guide/security/} Javasecurity infrastructure (1.4.2)}}
 
     * {{{http://hc.apache.org/httpclient-3.x/sslguide.html} HttpClient}}'s SSL guide
