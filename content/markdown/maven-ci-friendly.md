@@ -191,6 +191,62 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
   A multi module build can of course build the same way as the single project setup. You should
   define the version either via property in the parent or use the `.mvn/maven.config` file.
 
+## Dependencies
+
+  In a multi module build you have often the case that you define dependencies
+  between module(s). The usual way of defining dependencies and their appropriate
+  versions has been to use `${project.version}` and this has not been changed.
+
+  So the correct way to do such things can be seen in the following example:
+
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache</groupId>
+    <artifactId>apache</artifactId>
+    <version>18</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-parent</artifactId>
+  <name>First CI Friendly</name>
+  <version>${revision}</version>
+  ...
+  <properties>
+    <revision>1.0.0-SNAPSHOT</revision>
+  </properties>
+  <modules>
+    <module>child1</module>
+    ..
+  </modules>
+</project>
+```
+
+  The child will look like this:
+
+```xml
+<project>
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.apache.maven.ci</groupId>
+    <artifactId>ci-parent</artifactId>
+    <version>${revision}</version>
+  </parent>
+  <groupId>org.apache.maven.ci</groupId>
+  <artifactId>ci-child</artifactId>
+   ...
+  <dependencies>
+		<dependency>
+      <groupId>org.apache.maven.ci</groupId>
+      <artifactId>child2</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+  </dependencies>
+</project>
+```
+
+  If you try to use `${revision}` instead of `${project.version}` your build
+  will fail.
 
 ## Install / Deploy
 
