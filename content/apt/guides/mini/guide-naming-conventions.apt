@@ -30,14 +30,18 @@ Guide to naming conventions on groupId, artifactId, and version
 
  []
 
- * <<groupId>> uniquely identifies your project across all projects,
- so we need to enforce a naming schema. A groupId must follow Java's package name rules. This
- means it must start with a reversed domain name you control. You can create as many subgroups
- as you want. Look at {{{https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7}
- More information about package names}}.
+ * <<groupId>> uniquely identifies your project across all projects.
+ A group ID should follow {{{https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7}Java's
+ package name rules}}. This means it starts with a reversed domain name you control. 
+ For example,
+ 
+ <<<org.apache.maven>>>, <<<org.apache.commons>>>
+ 
+ Maven does not enforce this rule. There are many legacy projects that do not follow
+ this convention and instead use single word group IDs. However, it will be difficult
+ to get a new single word group ID approved for inclusion in the Maven Central repository.
 
- eg. <<<org.apache.maven>>>, <<<org.apache.commons>>>
-
+ You can create as many subgroups as you want.
  A good way to determine the granularity of the <<<groupId>>> is to use the project structure. That is, if
  the current project is a multiple module project, it should append a new identifier to the parent's
  <<<groupId>>>. For example,
