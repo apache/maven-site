@@ -50,7 +50,7 @@ For example, Maven can provide:
 
 -   Change log document created directly from source control
 -   Cross referenced sources
--   Mailing lists
+-   List of mailing lists managed by the project
 -   Dependency list
 -   Unit test reports including coverage
 
