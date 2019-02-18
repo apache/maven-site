@@ -32,13 +32,13 @@ Guide to uploading artifacts to the Central Repository
  In order for users of Maven to utilize artifacts produced by your project, you must deploy them to
  a remote repository. Many open source projects want to allow users of their projects who build with
  Maven to have transparent access to their project's artifacts. In order to allow for this, a project
- must have their artifacts deployed to {{{/repository/}the Central Repository}}.
+ must deploy their artifacts to {{{/repository/}the Central Repository}}.
 
 
 Requirements
 
- Only <releases> can be uploaded to the central repository, that means files that won't change and that only depend on other files
- already released and available in the repository.
+ Only <releases> can be uploaded to the central repository. Files do not change after they are
+ published in the repository.
 
  There are some requirements for the minimal information in the POMs that are in the Central repository.
  The updated list of requirements can be found {{{http://central.sonatype.org/pages/requirements.html}here}}.
@@ -59,7 +59,7 @@ Choosing your coordinates
  process we open up the doors to new ideas that involve unified access to project POMs.
 
  We also ask for license now because it is possible that your project's license may change in the course of
- its life time and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
+ its lifetime and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
  for a particular graph of artifacts, we could have some strategies that would identify potential licensing problems.
 
 * A basic sample:
