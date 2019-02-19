@@ -37,10 +37,10 @@ Guide to uploading artifacts to the Central Repository
 
 Requirements
 
- Only <releases> can be uploaded to the central repository, that means files that won't change and that only depend on other files
+ Only <releases> can be uploaded to the Central Repository, that means files that won't change and that only depend on other files
  already released and available in the repository.
 
- There are some requirements for the minimal information in the POMs that are in the Central repository.
+ There are some requirements for the minimal information in the POMs that are in the Central Repository.
  The updated list of requirements can be found {{{http://central.sonatype.org/pages/requirements.html}here}}.
 
 Choosing your coordinates
@@ -55,7 +55,7 @@ Choosing your coordinates
  The POM
  being deployed with the artifact is part of the process to make transitive dependencies a reality in Maven. The logic for getting
  transitive dependencies working is really not that hard, the problem is getting the data. The other applications
- that are made possible by having all the POMs available for artifacts are vast, so by placing them into the repository as part of the
+ that are made possible by having all the POMs available for artifacts are vast, so by placing them into the Central Repository as part of the
  process we open up the doors to new ideas that involve unified access to project POMs.
 
  We also ask for license now because it is possible that your project's license may change in the course of
@@ -109,11 +109,11 @@ Choosing your coordinates
 
 * PGP Signature
 
- When people download artifacts from Central Maven repository, they might want to validate that these artifacts have valid PGP
+ When people download artifacts from the Central Repository, they might want to validate that these artifacts have valid PGP
  signatures that can be verified against a public key server. If there is no signatures, then users have no guarantee that they
  are downloading the original artifact.
 
- To improve the quality of the Central Maven repository, we require you to provide PGP signatures for all your artifacts (all
+ To improve the quality of the Central Repository, we require you to provide PGP signatures for all your artifacts (all
  files except checksums), and distribute your public key to a key server like {{{http://pgp.mit.edu}http://pgp.mit.edu}}. Read
  {{{http://central.sonatype.org/pages/working-with-pgp-signatures.html}Working with PGP Signatures}}
  for more information.
@@ -123,7 +123,7 @@ Choosing your coordinates
  * I have other <<<repositories>>> or <<<pluginRepositories>>> listed in my POM, is that a problem?
 
  At present, this won't preclude your project from being included, but we do strongly encourage making sure all your dependencies
- are included in Central. If you rely on sketchy repositories that have junk in them or disappear, it just creates havok for
+ are included in the Central Repository. If you rely on sketchy repositories that have junk in them or disappear, it just creates havok for
  downstream users. Try to keep your dependencies among reliable repos like Central, Jboss, etc.
 
  * What about artifacts that can't be distributed because of their license?
@@ -169,11 +169,11 @@ Publishing your artifacts to the Central Repository
 
  The easiest way to upload another project is to use the
  {{{http://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}}, which is an approved repository provided
- by Sonatype for <any> OSS Project that want to get their artifacts into Central Repository.
+ by Sonatype for <any> OSS Project that want to get their artifacts into the Central Repository.
 
 * Explanations
 
- Having each project maintain its own repository with rsync to Central Repository used to be the preferred process until January 2010.
+ Having each project maintain its own repository with rsync to the Central Repository used to be the preferred process until January 2010.
  But we are no longer accepting rsync requests on a per project basis.
 
  Over time, we have learned that this process is not scalable. Many of the projects being synced release very infrequently, yet
