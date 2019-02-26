@@ -116,13 +116,13 @@ not provided in the command line. This list automatically contains
                           https://maven.apache.org/xsd/settings-1.0.0.xsd">
       ...
       <pluginGroups>
-        <pluginGroup>org.mortbay.jetty</pluginGroup>
+        <pluginGroup>org.eclipse.jetty</pluginGroup>
       </pluginGroups>
       ...
     </settings>
 
 For example, given the above settings the Maven command line may execute
-`org.mortbay.jetty:jetty-maven-plugin:run` with the truncated command:
+`org.eclipse.jetty:jetty-maven-plugin:run` with the truncated command:
 
     mvn jetty:run
 
