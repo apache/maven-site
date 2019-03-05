@@ -55,7 +55,8 @@ under the License.
           </table>
         </p>
         <ol>
-          <li>Install a git client if needed and the <a href="https://android.googlesource.com/tools/repo">Google Repo</a> tool.</li>
+          <li>Install a git client if needed and the <a href="https://android.googlesource.com/tools/repo">Google Repo</a> tool
+            (see <a href="https://source.android.com/setup/build/downloading#installing-repo">manual install instructions</a>).</li>
           <li>Check out a new repo workspace and prepare master branch:
         <pre>repo init -u https://gitbox.apache.org/repos/asf/maven-sources.git
 repo sync
