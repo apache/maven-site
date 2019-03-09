@@ -140,7 +140,7 @@ Guide to relocation
  files. First you should publish a pom with the new groupId <<<org.bar>>>.
  
  Because data in the repository is not supposed to change, Maven 2 doesn't
- download pom files that it has already downloaded. Therefor you will also need
+ download pom files that it has already downloaded. Therefore you will also need
  to publish a pom file with the old groupId <<<bar>>> for the new version. This
  should be a minimal relocation pom (as described in step 4 above), but for the
  new version of <<<foo>>>.
