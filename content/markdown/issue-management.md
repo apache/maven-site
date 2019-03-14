@@ -16,7 +16,7 @@ issue management systems depending on which component is involved:
 
 * Maven Plugins: Please refer to the [Available Plugins](./plugins/index.html) page
 
-or which Maven sub-project:
+* Maven Shared Components: Please refer to the [Shared Components](./shared/index.html) page
 
 * Doxia: <https://issues.apache.org/jira/browse/DOXIA>
 
@@ -26,4 +26,4 @@ or which Maven sub-project:
 
 * Wagon: <https://issues.apache.org/jira/browse/WAGON>
 
-* Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>
+or for Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>
