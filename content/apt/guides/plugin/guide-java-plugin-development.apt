@@ -382,7 +382,7 @@ mvn archetype:generate \
 <myBoolean>true</myBoolean>
 +-----+
 
-*** Fixed-Point Numbers
+*** Integer Numbers
 
   This includes variables typed <<<byte>>>, <<<Byte>>>, <<<int>>>,
   <<<Integer>>>, <<<long>>>, <<<Long>>>, <<<short>>>, and <<<Short>>>.  When
