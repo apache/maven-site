@@ -1,10 +1,10 @@
 ## Introduction
 
 Maven, a [Yiddish word](https://en.wikipedia.org/wiki/Maven) meaning
-*accumulator of knowledge*, was originally started as an attempt to
+*accumulator of knowledge*, began as an attempt to
 simplify the build processes in the Jakarta Turbine project. There were
-several projects each with their own Ant build files that were all
-slightly different and JARs were checked into CVS. We wanted a standard
+several projects, each with their own Ant build files, that were all
+slightly different. JARs were checked into CVS. We wanted a standard
 way to build the projects, a clear definition of what the project
 consisted of, an easy way to publish project information and a way to
 share JARs across several projects.
@@ -18,7 +18,7 @@ with the comprehension of any Java-based project.
 
 Maven's primary goal is to allow a developer to comprehend the complete
 state of a development effort in the shortest period of time. In order
-to attain this goal there are several areas of concern that Maven
+to attain this goal, there are several areas of concern that Maven
 attempts to deal with:
 
 -   Making the build process easy
@@ -70,16 +70,15 @@ For example, specification, execution, and reporting of unit tests are
 part of the normal build cycle using Maven. Current unit testing best
 practices were used as guidelines:
 
--   Keeping your test source code in a separate, but parallel source
-    tree
+-   Keeping test source code in a separate, but parallel source tree
 -   Using test case naming conventions to locate and execute tests
--   Have test cases setup their environment and don't rely on
-    customizing the build for test preparation.
+-   Having test cases setup their environment instead of relying on
+    customizing the build for test preparation
 
 Maven also aims to assist in project workflow such as release and issue management.
 
 Maven also suggests some guidelines on how to layout your project's
-directory structure so that once you learn the layout you can easily
+directory structure. Once you learn the layout you can easily
 navigate any other project that uses Maven and the same defaults.
 
 ### Allowing transparent migration to new features
@@ -109,7 +108,7 @@ designed to be flexible, to an extent, in these situations and to the
 needs of different projects, it can not cater to every situation without
 making compromises to the integrity of its objectives.
 
-If you decide to use Maven, and have an unusual build structure that you
-cannot reorganise, you may have to forget some features or the use of
+If you decide to use Maven and have an unusual build structure that you
+cannot reorganise, you may have to forgo some features or the use of
 Maven altogether.
 
