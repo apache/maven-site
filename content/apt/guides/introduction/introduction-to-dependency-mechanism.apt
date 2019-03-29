@@ -288,7 +288,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- And then the two child poms would become much simpler:
+ Then the two child poms become much simpler:
 
 +----+
 
@@ -402,6 +402,7 @@ Introduction to the Dependency Mechanism
   <packaging>pom</packaging>
   <name>B</name>
   <version>1.0</version>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -411,6 +412,7 @@ Introduction to the Dependency Mechanism
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>test</groupId>
@@ -428,11 +430,11 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- When maven is run on project B version 1.0 of artifacts a, b, c, and d will be used regardless of
+ When maven is run on project B, version 1.0 of artifacts a, b, c, and d will be used regardless of
  the version specified in their pom.
 
- * a and c both are declared as dependencies of the project so  version 1.0 is used due to
- dependency mediation. Both will also have runtime scope since it is directly specified.
+ * a and c both are declared as dependencies of the project so version 1.0 is used due to
+ dependency mediation. Both also have runtime scope since it is directly specified.
 
  * b is defined in B's parent's dependency management section and since dependency management
  takes precedence over dependency mediation for transitive dependencies, version 1.0 will be
@@ -450,7 +452,7 @@ Introduction to the Dependency Mechanism
 
 ** {Importing Dependencies}
 
- The examples in the previous section describe how to specify managed dependencies through inheritence. However,
+ The examples in the previous section describe how to specify managed dependencies through inheritance. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
  To accommodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a
  pom artifact as a dependency with a scope of "import".
@@ -466,6 +468,7 @@ Introduction to the Dependency Mechanism
   <packaging>pom</packaging>
   <name>B</name>
   <version>1.0</version>
+
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -482,6 +485,7 @@ Introduction to the Dependency Mechanism
       </dependency>
     </dependencies>
   </dependencyManagement>
+
   <dependencies>
     <dependency>
       <groupId>test</groupId>
@@ -513,6 +517,7 @@ Introduction to the Dependency Mechanism
  <packaging>pom</packaging>
  <name>X</name>
  <version>1.0</version>
+
  <dependencyManagement>
    <dependencies>
      <dependency>
@@ -543,6 +548,7 @@ Introduction to the Dependency Mechanism
  <packaging>pom</packaging>
  <name>Y</name>
  <version>1.0</version>
+
  <dependencyManagement>
    <dependencies>
      <dependency>
@@ -573,6 +579,7 @@ Introduction to the Dependency Mechanism
   <packaging>pom</packaging>
   <name>Z</name>
   <version>1.0</version>
+ 
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -624,6 +631,7 @@ Introduction to the Dependency Mechanism
     <project1Version>1.0.0</project1Version>
     <project2Version>1.0.0</project2Version>
   </properties>
+ 
   <dependencyManagement>
     <dependencies>
       <dependency>
@@ -638,6 +646,7 @@ Introduction to the Dependency Mechanism
       </dependency>
     </dependencies>
   </dependencyManagement>
+ 
   <modules>
     <module>parent</module>
   </modules>
@@ -785,7 +794,7 @@ Introduction to the Dependency Mechanism
 
 * {System Dependencies}
 
- <<<Important note: This is marked deprecated.>>>
+ <<<Important note: This is deprecated.>>>
 
  Dependencies with the scope <system> are always available and are not looked
  up in repository. They are usually used to tell Maven about dependencies which
