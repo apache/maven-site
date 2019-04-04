@@ -40,12 +40,12 @@ Guide to Configuring Default Mojo Executions
   
   However, these two options leave out a few important configuration use cases: 
   
-  # Mojos run from the command line <and> during the build, when the CLI-driven invocation requires its own configuration.
+  * Mojos run from the command line <and> during the build, when the CLI-driven invocation requires its own configuration.
   
-  # Mojo executions that are bound to the lifecycle as part of the default mapping for a particular packaging, especially in cases
+  * Mojo executions that are bound to the lifecycle as part of the default mapping for a particular packaging, especially in cases
     where the same mojos need to be added to a second execution with different configuration.
   
-  # Groups of mojos from the same plugin that are bound to the lifecycle as part of the default mapping for a particular packaging, but 
+  * Groups of mojos from the same plugin that are bound to the lifecycle as part of the default mapping for a particular packaging, but 
     require separate configurations.
     
   []
@@ -168,13 +168,13 @@ Guide to Configuring Default Mojo Executions
 
   There are three important things to notice in the above compiler-plugin configuration:
   
-  # The default <<<source>>> and <<<target>>> compatibility levels are for Java 1.5. This means that the compiler will generate binaries
+  * The default <<<source>>> and <<<target>>> compatibility levels are for Java 1.5. This means that the compiler will generate binaries
     for Java 1.5 from both the main codebase and the test codebase, unless otherwise overridden.
     
-  # The default pass of the <<<compile>>> goal will <exclude> the <<<**/cli/*>>> path pattern, but will compile everything else in 
+  * The default pass of the <<<compile>>> goal will <exclude> the <<<**/cli/*>>> path pattern, but will compile everything else in 
     <<<src/main/java>>> to run under Java 1.5.
     
-  # The second pass of the <<<compile>>> mojo - in the execution called <<<build-java14-cli>>> - resets the <<<source>>> and <<<target>>>
+  * The second pass of the <<<compile>>> mojo - in the execution called <<<build-java14-cli>>> - resets the <<<source>>> and <<<target>>>
     versions to <<<1.3>>>, and inverts the exclude rule from the first pass. This means the second time around, the compiler will produce
     1.4-targeted binaries for the classes matching the <<<**/cli/*>>> path pattern.
     
