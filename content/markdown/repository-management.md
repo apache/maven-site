@@ -12,7 +12,7 @@ considered an essential best practice for any significant usage of Maven.
 A repository manager serves these essential purposes:
 
 * act as dedicated proxy server for public Maven repositories
-(see {{{./guides/mini/guide-mirror-settings.html}Maven Guide to Mirror Settings}})
+(see [Maven Guide to Mirror Settings](./guides/mini/guide-mirror-settings.html))
 * provide repositories as a deployment destination for your Maven project 
 outputs
 
