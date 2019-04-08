@@ -42,7 +42,7 @@ Using Mirrors for Repositories
 
     * You want to replace a particular repository with your own internal repository which you have greater control over
 
-    * You want to run a repository manager to provide a local cache to a mirror and need to use its URL instead
+    * You want to run a {{{../../repository-management.html}repository manager}} to provide a local cache to a mirror and need to use its URL instead
 
     []
 
@@ -84,7 +84,7 @@ Using A Single Repository
 
   You can force Maven to use a single repository by having it mirror all repository requests. The repository must
   contain all of the desired artifacts, or be able to proxy the requests to other repositories. This setting is most
-  useful when using an internal company repository with the Maven Repository Manager to proxy external requests.
+  useful when using an internal company repository with a {{{../../repository-management.html}Maven Repository Manager}} to proxy external requests.
 
   To achieve this, set <<<mirrorOf>>> to <<<*>>>.
 
