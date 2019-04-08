@@ -1,7 +1,9 @@
 ## Best Practice - Using a Repository Manager
 
 A repository manager is a dedicated server application designed to manage
-repositories of binary components. The usage of a repository manager is 
+repositories of binary components.
+
+The usage of a repository manager is 
 considered an essential best practice for any significant usage of Maven.
 
 
@@ -10,6 +12,7 @@ considered an essential best practice for any significant usage of Maven.
 A repository manager serves these essential purposes:
 
 * act as dedicated proxy server for public Maven repositories
+(see {{{./guides/mini/guide-mirror-settings.html}Maven Guide to Mirror Settings}})
 * provide repositories as a deployment destination for your Maven project 
 outputs
 
