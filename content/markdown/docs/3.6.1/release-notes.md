@@ -156,10 +156,10 @@ mvn -ntp ... ....
  - [MNG-6495] - ModelResolver cannot be null
  - [MNG-6505] - child.(x.y).inherit.append.path value should be inherited
  - [MNG-6506] - Mojos are unable to load package annotations on Java >= 9
- - [MNG-6529] - ProjectBuilder.build(List<File> projects, boolean, ProjectBuildingRequest) doesn't honor ProjectBuildingRequest.isResolveDependencies()
+ - [MNG-6529] - `ProjectBuilder.build(List<File> projects, boolean, ProjectBuildingRequest)` doesn't honor `ProjectBuildingRequest.isResolveDependencies()`
  - [MNG-6530] - Regression in ProjectBuilder when file change between invocations (introduced by MNG-6311)
- - [MNG-6533] - ProjectBuilder.build(list_of_projects,...) does not contain MavenProject in exception report
- - [MNG-6543] - Upgrade plexus classworld to support java 9+ ClassLoader.findClass(String moduleName, String name) in Mojos
+ - [MNG-6533] - `ProjectBuilder.build(list_of_projects,...)` does not contain MavenProject in exception report
+ - [MNG-6543] - Upgrade plexus classworld to support java 9+ `ClassLoader.findClass(String moduleName, String name)` in Mojos
  - [MNG-6558] - ToolchainsBuildingResult event is not sent on EventSpy
  - [MNG-6577] - pom.xml: Uncaught IllegalArgumentException when parsing unicode entity ref
  - [MNG-6590] - DefaultProjectArtifactsCache java.lang.IllegalStateException: Duplicate artifact resolution result
