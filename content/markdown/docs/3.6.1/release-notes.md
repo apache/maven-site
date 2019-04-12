@@ -91,7 +91,7 @@ Thanks to the following preliminary testers:
 
 ## Known Issues
 
-If you are using reporting configuration it might happen that you will get an exception which looks like this:
+If you are using Maven reporting, it might happen that you will get an exception which looks like this:
 
 ```
 [INFO] Scanning for projects...
@@ -110,29 +110,29 @@ a `<report></report>` element.
 Temporarily this issue can circumvented by adding an empty `<report></report>` element
 inside the `<reportSet></reportSet>`.
 
-An [appropriate issue has been created][MNG-6636] to follow the fix.
+An [issue has been created][MNG-6636] to track the fix.
 
 [MNG-6636]: https://issues.apache.org/jira/browse/MNG-6636
 
 ## Overview about the changes
 
-- There has been fixed an issue related to multiple executions of plugin goals related to
+- An issue has been fixed causing multiple executions of plugin goals, related to
   using parallel build options like `mvn plugin:goal -T 4`. This resulted in duplicated
-  executions of phases which has been fixed with [MNG-5965].
+  executions of phases. This has been fixed with [MNG-5965].
 
-- Null Pointer Exception related to call in parallel build like `mvn -T 1C clean javadoc:aggregat`
+- NullPointerException related to call in parallel build like `mvn -T 1C clean javadoc:aggregate`
   [MNG-5705] 
 
-- An performance issue related to artifact transfer has been found related to [WAGON-537] which 
+- A performance issue related to artifact transfer has been found related to [WAGON-537]. It 
   has been solved via the update to [Maven Wagon 3.3.1][MNG-6526].
 
 - There had been issues related calling Maven script like this: `mvn -f ..`
-   - Having parentheses within the path which has been fixed with [MNG-6346]. 
-   - Script can break having special characters as part of the path which has
+   - Having parentheses within the path, which has been fixed with [MNG-6346]. 
+   - Script can break having special characters as part of the path, which has
      been solved with [MNG-6256].
 
 
-- Issue related to the Maven Resolver API which broke some IDE's (for example https://youtrack.jetbrains.com/issue/IDEA-201282)
+- Issue related to the Maven Resolver API which broke some IDEs (for example https://youtrack.jetbrains.com/issue/IDEA-201282);
   this has been fixed by [MNG-6538].
 
 - Issue related to missing event for ToolchainsBuildingResult on EventSpy [MNG-6558].
@@ -156,7 +156,7 @@ in interactive mode.
 ```
 mvn --no-transfer-progress ....
 ```
-or for short:
+or in short:
 
 ```
 mvn -ntp ... ....
@@ -181,7 +181,7 @@ Detailed explanations can be found in [Inheritance Assembly][inheritance-assembl
 
 [inheritance-assembly]: https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly
 
-## [The detailed issue list](#Details)
+## The detailed issue list[](#Details)
 
 ### Bugs:
 
