@@ -79,6 +79,8 @@ Code Contributors of this release:
 
 Many thanks to all reporters and contributors for their time and support.
 
+(Please send an email to the dev list if we missed one to mention).
+
 ## Preliminary Testers
 
 Thanks to the following preliminary testers:
@@ -89,9 +91,61 @@ Thanks to the following preliminary testers:
 
 ## Known Issues
 
+If you are using reporting configuration it might happen that you will get an exception which looks like this:
 
+```
+[INFO] Scanning for projects...
+[ERROR] Internal error: java.lang.NullPointerException -> [Help 1]
+org.apache.maven.InternalErrorException: Internal error: java.lang.NullPointerException
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:120)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+Caused by: java.lang.NullPointerException
+    at org.apache.maven.model.plugin.DefaultReportingConverter.convert (DefaultReportingConverter.java:243)
+    at org.apache.maven.model.plugin.DefaultReportingConverter.convert (DefaultReportingConverter.java:213)
+    at org.apache.maven.model.plugin.DefaultReportingConverter.convertReporting (DefaultReportingConverter.java:140)
+    at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:479)
+    at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:432)
+    at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:616)
+    at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:385)
+    at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:414)
+    at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:405)
+    at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:82)
+    at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:507)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:219)
+    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
+    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
+    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
+    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
+    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
+    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
+    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke (Method.java:566)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
+    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+```
 
-At the time of release, there are no known regressions introduced by this release.
+This is caused by using a `<reportSet>..</reportSet>` which does not contain 
+a `<report></report>` element.
+
+Temporarily this issue can circumvented by adding an empty `<report></report>` element
+inside the `<reportSet></reportSet>`.
+
+An [appropriate issue has been created][MNG-6637] to follow the development.
+
+[MNG-6637]: https://issues.apache.org/jira/browse/MNG-6637
 
 ## Overview about the changes
 
