@@ -58,8 +58,8 @@ Choosing your coordinates
  that are made possible by having all the POMs available for artifacts are vast, so by placing them into the Central Repository as part of the
  process we open up the doors to new ideas that involve unified access to project POMs.
 
- We also ask for license now because it is possible that your project's license may change in the course of
- its life time and we are trying create tools to help normal people sort out licensing issues. For example, knowing all the licenses
+ We ask for the license because it is possible that your project's license may change in the course of
+ its lifetime, and we are trying to create tools to help sort out licensing issues. For example, knowing all the licenses
  for a particular graph of artifacts, we could have some strategies that would identify potential licensing problems.
 
 * A basic sample:
@@ -109,8 +109,9 @@ Choosing your coordinates
 
 * PGP Signature
 
- When people download artifacts from the Central Repository, they might want to validate that these artifacts have valid PGP
- signatures that can be verified against a public key server. If there is no signatures, then users have no guarantee that they
+ When people download artifacts from the Central Repository, they might want to verify these artifacts' PGP
+ signatures against a public key server.
+ If there are no signatures, then users have no guarantee that they
  are downloading the original artifact.
 
  To improve the quality of the Central Repository, we require you to provide PGP signatures for all your artifacts (all
@@ -173,12 +174,12 @@ Publishing your artifacts to the Central Repository
 
 * Explanations
 
- Having each project maintain its own repository with rsync to the Central Repository used to be the preferred process until January 2010.
- But we are no longer accepting rsync requests on a per project basis.
+ Having each project maintain its own repository with rsync to the Central Repository was the preferred process until January 2010.
+ However, we are no longer accepting rsync requests on a per project basis.
 
  Over time, we have learned that this process is not scalable. Many of the projects being synced release very infrequently, yet
  we have to hit hundreds of servers several times a day looking for artifacts that don't change. Additionally, there is no good
  mechanism currently for validating the incoming data via the rsync, and this leads to bad metadata that affects everyone. 
 
- The aggregation of projects into single larger feeds allows us to sync faster and more often, and ensuring these locations
+ The aggregation of projects into larger feeds allows us to sync faster and more often, and ensuring these locations
  perform sufficient checks increases the quality of metadata for everyone.
