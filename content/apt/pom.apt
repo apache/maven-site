@@ -180,7 +180,7 @@ POM Reference
   used during the build process. It is, effectively, the declarative manifestation of the "who", "what",
   and "where", while the build lifecycle is the "when" and "how". That is not to say that the POM cannot
   affect the flow of the lifecycle - it can. For example, by configuring the <<<maven-antrun-plugin>>>, one can
-  effectively embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Where as a
+  effectively embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Whereas a
   <<<build.xml>>> tells Ant precisely what to do when it is run (procedural), a POM states its
   configuration (declarative). If some external force causes the lifecycle to skip the Ant plugin
   execution, it will not stop the plugins that are executed from doing their magic. This is unlike a
@@ -1903,7 +1903,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
 ** {Repository}
 
-  Where as the repositories element specifies in the POM the location and manner in which Maven may
+  Whereas the repositories element specifies in the POM the location and manner in which Maven may
   download remote artifacts for use by the current project, distributionManagement specifies where
   (and how) this project will get to a remote repository when it is deployed.
   The repository elements will be used for snapshot distribution if the snapshotRepository is not defined.
@@ -1944,7 +1944,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   the address.
 
   * <<url>>:
-  This is the core of the repository element. It specifies both the location and the transport protocol to be
+  This is the core of the repository element. It specifies both the location and the transport protocol
   used to transfer a built artifact (and POM file, and checksum data) to the repository.
 
   * <<layout>>:
@@ -2004,7 +2004,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   Projects are not static; they are living things (or dying things, as the case may be). A common
   thing that happens as projects grow, is that they are forced to move to more suitable
   quarters. For example, when your next wildly successful open source project moves under
-  the Apache umbrella, it would be good to give your users as heads-up that the project is
+  the Apache umbrella, it would be good to give users a heads-up that the project is
   being renamed to <<<org.apache:my-project:1.0>>>. Besides specifying the new address, it
   is also good form to provide a message explaining why.
 
