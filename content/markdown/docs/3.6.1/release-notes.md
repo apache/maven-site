@@ -98,43 +98,10 @@ If you are using reporting configuration it might happen that you will get an ex
 [ERROR] Internal error: java.lang.NullPointerException -> [Help 1]
 org.apache.maven.InternalErrorException: Internal error: java.lang.NullPointerException
     at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:120)
-    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
-    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
-    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
-    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
-    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
-    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
-    at java.lang.reflect.Method.invoke (Method.java:566)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+...
 Caused by: java.lang.NullPointerException
     at org.apache.maven.model.plugin.DefaultReportingConverter.convert (DefaultReportingConverter.java:243)
-    at org.apache.maven.model.plugin.DefaultReportingConverter.convert (DefaultReportingConverter.java:213)
-    at org.apache.maven.model.plugin.DefaultReportingConverter.convertReporting (DefaultReportingConverter.java:140)
-    at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:479)
-    at org.apache.maven.model.building.DefaultModelBuilder.build (DefaultModelBuilder.java:432)
-    at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:616)
-    at org.apache.maven.project.DefaultProjectBuilder.build (DefaultProjectBuilder.java:385)
-    at org.apache.maven.graph.DefaultGraphBuilder.collectProjects (DefaultGraphBuilder.java:414)
-    at org.apache.maven.graph.DefaultGraphBuilder.getProjectsForMavenReactor (DefaultGraphBuilder.java:405)
-    at org.apache.maven.graph.DefaultGraphBuilder.build (DefaultGraphBuilder.java:82)
-    at org.apache.maven.DefaultMaven.buildGraph (DefaultMaven.java:507)
-    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:219)
-    at org.apache.maven.DefaultMaven.doExecute (DefaultMaven.java:192)
-    at org.apache.maven.DefaultMaven.execute (DefaultMaven.java:105)
-    at org.apache.maven.cli.MavenCli.execute (MavenCli.java:956)
-    at org.apache.maven.cli.MavenCli.doMain (MavenCli.java:288)
-    at org.apache.maven.cli.MavenCli.main (MavenCli.java:192)
-    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke0 (Native Method)
-    at jdk.internal.reflect.NativeMethodAccessorImpl.invoke (NativeMethodAccessorImpl.java:62)
-    at jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke (DelegatingMethodAccessorImpl.java:43)
-    at java.lang.reflect.Method.invoke (Method.java:566)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.launchEnhanced (Launcher.java:282)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.launch (Launcher.java:225)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.mainWithExitCode (Launcher.java:406)
-    at org.codehaus.plexus.classworlds.launcher.Launcher.main (Launcher.java:347)
+...
 ```
 
 This is caused by using a `<reportSet>..</reportSet>` which does not contain 
@@ -143,7 +110,7 @@ a `<report></report>` element.
 Temporarily this issue can circumvented by adding an empty `<report></report>` element
 inside the `<reportSet></reportSet>`.
 
-An [appropriate issue has been created][MNG-6636] to follow the development.
+An [appropriate issue has been created][MNG-6636] to follow the fix.
 
 [MNG-6636]: https://issues.apache.org/jira/browse/MNG-6636
 
@@ -153,7 +120,7 @@ An [appropriate issue has been created][MNG-6636] to follow the development.
   using parallel build options like `mvn plugin:goal -T 4`. This resulted in duplicated
   executions of phases which has been fixed with [MNG-5965].
 
-- Null Pointer Exception realted to call in parallel build like `mvn -T 1C clean javadoc:aggregat`
+- Null Pointer Exception related to call in parallel build like `mvn -T 1C clean javadoc:aggregat`
   [MNG-5705] 
 
 - An performance issue related to artifact transfer has been found related to [WAGON-537] which 
