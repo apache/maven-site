@@ -179,7 +179,7 @@ builds like this:
 Detailed explanations can be found in [Inheritance Assembly][inheritance-assembly] and in [MNG-6059]
 
 
-[inheritance-assembly]: https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly
+[inheritance-assembly]: https://maven.apache.org/ref/3.6.1/maven-model-builder/index.html#Inheritance_Assembly
 
 ## The detailed issue list[](#Details)
 
