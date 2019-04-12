@@ -89,6 +89,8 @@ Thanks to the following preliminary testers:
 
 ## Known Issues
 
+
+
 At the time of release, there are no known regressions introduced by this release.
 
 ## Overview about the changes
@@ -104,9 +106,9 @@ At the time of release, there are no known regressions introduced by this releas
   has been solved via the update to [Maven Wagon 3.3.1][MNG-6526].
 
 - There had been issues related calling Maven script like this: `mvn -f ..`
-  - Having parentheses within the path which has been fixed with [MNG-6346]. 
-  - Script can break having special characters as part of the path which has
-    been solved with [MNG-6256].
+   - Having parentheses within the path which has been fixed with [MNG-6346]. 
+   - Script can break having special characters as part of the path which has
+     been solved with [MNG-6256].
 
 
 - Issue related to the Maven Resolver API which broke some IDE's (for example https://youtrack.jetbrains.com/issue/IDEA-201282)
@@ -139,6 +141,24 @@ or for short:
 mvn -ntp ... ....
 ```
 
+There had been issues related to the construction of
+URL's etc. within `distributionManagement` and `scm` part in the pom for multi module
+builds like this:
+
+
+```
+<scm child.scm.connection.inherit.append.path="true"
+     child.scm.developerConnection.inherit.append.path="true"
+     child.scm.url.inherit.append.path="true" />
+<distributionManagement>
+   <site child.site.url.inherit.append.path="true" />
+ </distributionManagement>
+```
+
+Detailed explanations can be found in [Inheritance Assembly][inheritance-assembly].  
+
+
+[inheritance-assembly]: https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly
 
 ## [The detailed issue list](#Details)
 
