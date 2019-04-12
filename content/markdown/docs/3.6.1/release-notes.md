@@ -34,7 +34,7 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 - the web site: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
-- the reference documentation: [https://maven.apache.org/ref/3.6.1/](/ref/3.6.0/)
+- the reference documentation: [https://maven.apache.org/ref/3.6.1/](/ref/3.6.1/)
 
 ## Reporters and Contributors of this release
 
