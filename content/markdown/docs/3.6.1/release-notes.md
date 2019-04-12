@@ -143,9 +143,9 @@ a `<report></report>` element.
 Temporarily this issue can circumvented by adding an empty `<report></report>` element
 inside the `<reportSet></reportSet>`.
 
-An [appropriate issue has been created][MNG-6637] to follow the development.
+An [appropriate issue has been created][MNG-6636] to follow the development.
 
-[MNG-6637]: https://issues.apache.org/jira/browse/MNG-6637
+[MNG-6636]: https://issues.apache.org/jira/browse/MNG-6636
 
 ## Overview about the changes
 
