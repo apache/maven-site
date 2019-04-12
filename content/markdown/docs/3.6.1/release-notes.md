@@ -195,7 +195,7 @@ or for short:
 mvn -ntp ... ....
 ```
 
-There had been issues related to the construction of
+There had been an issues like [MNG-6505] and [MNG-6059] related to the construction of
 URL's etc. within `distributionManagement` and `scm` part in the pom for multi module
 builds like this:
 
@@ -209,7 +209,7 @@ builds like this:
  </distributionManagement>
 ```
 
-Detailed explanations can be found in [Inheritance Assembly][inheritance-assembly].  
+Detailed explanations can be found in [Inheritance Assembly][inheritance-assembly] and in [MNG-6059]
 
 
 [inheritance-assembly]: https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly
