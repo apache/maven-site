@@ -20,7 +20,7 @@
  http://maven.apache.org/doxia/references/apt-format.html
 -->
 
-# WIP - Release Notes &#x2013; Maven 3.6.1 (WIP)
+# Release Notes &#x2013; Maven 3.6.1
 
 The Apache Maven team would like to announce the release of Maven 3.6.1
 
