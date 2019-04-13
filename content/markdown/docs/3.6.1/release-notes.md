@@ -45,7 +45,7 @@ the [end of these release notes](#Details).
 Issue Reporters of this release:
 
  * [MNG-5705] Ondra Žižka
- * [MNG-5965] Matthias Scmalz
+ * [MNG-5965] Matthias Schmalz
  * [MNG-6059] Andreas Sewe
  * [MNG-6159] Christian Aistleitner
  * [MNG-6213] Jin Kwon
