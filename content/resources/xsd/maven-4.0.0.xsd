@@ -105,7 +105,8 @@
           <xs:documentation source="description">
             
             The URL to the project&apos;s homepage.
-            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property)
+            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property), or just parent value if 
+            &lt;code&gt;child.urls.inherit.append.path=&quot;false&quot;&lt;/code&gt;
             
           </xs:documentation>
         </xs:annotation>
@@ -343,6 +344,19 @@
         </xs:complexType>
       </xs:element>
     </xs:all>
+    <xs:attribute name="child.inherit.append.path" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation source="version">4.0.0+</xs:documentation>
+        <xs:documentation source="description">
+            
+            When childs inherit from urls, append path or not?. Note: While the type
+            of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
+            &lt;code&gt;Boolean&lt;/code&gt;
+            &lt;br /&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
+            
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="License">
     <xs:annotation>
@@ -541,12 +555,26 @@
           <xs:documentation source="description">
             
             The URL to the project&apos;s browsable SCM repository, such as ViewVC or Fisheye.
-            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property)
+            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property), or just parent value if 
+            &lt;code&gt;child.urls.inherit.append.path=&quot;false&quot;&lt;/code&gt;
             
           </xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:all>
+    <xs:attribute name="child.inherit.append.path" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation source="version">4.0.0+</xs:documentation>
+        <xs:documentation source="description">
+            
+            When childs inherit from urls, append path or not?. Note: While the type
+            of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
+            &lt;code&gt;Boolean&lt;/code&gt;
+            &lt;br /&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
+            
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="IssueManagement">
     <xs:annotation>
@@ -1318,12 +1346,26 @@
           <xs:documentation source="description">
             
             The url of the location where website is deployed, in the form &lt;code&gt;protocol://hostname/path&lt;/code&gt;.
-            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property)
+            &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or &lt;code&gt;project.directory&lt;/code&gt; property), or just parent value if 
+            &lt;code&gt;child.urls.inherit.append.path=&quot;false&quot;&lt;/code&gt;
             
           </xs:documentation>
         </xs:annotation>
       </xs:element>
     </xs:all>
+    <xs:attribute name="child.inherit.append.path" type="xs:string" use="optional">
+      <xs:annotation>
+        <xs:documentation source="version">4.0.0+</xs:documentation>
+        <xs:documentation source="description">
+            
+            When childs inherit from urls, append path or not?. Note: While the type
+            of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
+            &lt;code&gt;Boolean&lt;/code&gt;
+            &lt;br /&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
+            
+          </xs:documentation>
+      </xs:annotation>
+    </xs:attribute>
   </xs:complexType>
   <xs:complexType name="Reporting">
     <xs:annotation>
