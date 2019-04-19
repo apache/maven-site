@@ -65,6 +65,6 @@ java -version
 * Firewalls and Anti-virus
 
   Firewall and Anti-virus sometimes prevent Java from running properly, or Windows Firewall (and various other Firewalls) actively
-  prevent Java.exe from reaching out to the Internet to "download stuff" which is a key part of Maven
+  prevent Java.exe from reaching out to the Internet to "download stuff" which is a key part of Maven.
   You may need to configure the Firewall or Anti-virus to add exceptions to allow such actions.
 
