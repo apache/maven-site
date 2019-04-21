@@ -32,7 +32,7 @@ Guide to Creating Archetypes
  very simple artifact, that contains the project prototype you wish to create.
  An archetype is made up of:
 
- * an {{{/archetype-archives/archetype-2.1/archetype-common/archetype.html}archetype descriptor}}
+ * an {{{/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html}archetype descriptor}}
   (<<<archetype-metadata.xml>>> in directory:
    <<<src/main/resources/META-INF/maven/>>>). It lists all the files that will be
    contained in the archetype and categorizes them so they can be processed
@@ -83,7 +83,7 @@ Guide to Creating Archetypes
 +----+
 
 <archetype-descriptor
-        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0
 	http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd"
         xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -225,6 +225,7 @@ mvn archetype:generate                                  \
 mvn archetype:generate
   -DgroupId=[your project's group id]
   -DartifactId=[your project's artifact id]
+  -DarchetypeGroupId=org.apache.maven.archetypes
   -DarchetypeArtifactId=maven-archetype-archetype
 +------+
 
