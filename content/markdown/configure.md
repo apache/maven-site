@@ -61,10 +61,8 @@ Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.project
 
         -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
 
-You don’t need to remember of using this options in `MAVEN_OPTS` or switching between different configurations.
-in the end, add the following:
+You don’t need to remember of using this options in MAVEN_OPTS or switching between different configurations.
 
-=======
 ### `.mvn/maven.config` file:
 
 This file allows developers to drop in parameters that will always be present in any 
