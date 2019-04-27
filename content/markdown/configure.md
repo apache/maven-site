@@ -22,7 +22,15 @@ contain project specific configuration for running Maven.
 ### `.mvn/maven.config` file:
 
 This file allows developers to drop in parameters that will always be present in any 
-execution of `mvn <goal>` of the given project.
+execution of `mvn <goal>` of the given project. This would make unecessary to add 
+parameters in every command-line call.
+
+For example, to always use a specific profile and demand that the build only fails 
+in the end, add the following:
+
+```
+--fail-at-end -P local-test-all-modules
+```
 
 ## Other guides
 
