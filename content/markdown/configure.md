@@ -16,21 +16,53 @@ configuration for Maven usage across projects.
 
 ## `.mvn` folder:
 
-Located with in the projects top level folder, the files `maven.config` and `extensions.xml`
+Located with in the projects top level folder, the files `maven.config`, `jvm.config`, and `extensions.xml`
 contain project specific configuration for running Maven.
+
+This folder is part of the project and may be checked in into your version control.
+
+### `.mvn/extensions.xml` file:
+
+The old way (up to Maven 3.2.5) was to create a jar (must be shaded if you have other dependencies) which contains the extension and put 
+it manually into the `${MAVEN_HOME}/lib/ext` folder. This means you had to change the Maven installation. The consequence was that everyone 
+who likes to use this needed to change it’s installation and makes the on-boarding for a developer much more inconvenient. The other 
+option was to give the path to the jar on command line via `mvn -Dmaven.ext.class.path=extension.jar`. This has the drawback giving those 
+options to your Maven build every time you are calling Maven. Not very convenient as well.
+
+From now on this can be done much more simpler and in a more Maven like way. So you can define an `${maven.projectBasedir}/.mvn/extensions.xml` file which looks like the following:
+
+```xml
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+  <extension>
+    <groupId/>
+    <artifactId/>
+    <version/>
+  </extension>
+</extensions>
+```
+
+Now you can simply use an extension by defining the usual maven coordinates groupId, artifactId, version as any other artifact. Furthermore all transitive dependencies of those extensions will automatically being downloaded from your repository. So no need to create a shaded artifact anymore.
 
 ### `.mvn/maven.config` file:
 
-This file allows developers to drop in parameters that will always be present in any 
-execution of `mvn <goal>` of the given project. This would make unecessary to add 
-parameters in every command-line call.
+It’s really hard to define a general set of options for calling the maven command line. Starting with Maven 3.3.1+, this can be solved by 
+putting this 
+options to a script but this can now simple being done by defining `${maven.projectBasedir}/.mvn/maven.config` file which contains the 
+configuration options for the `mvn` command line. 
 
-For example, to always use a specific profile and demand that the build only fails 
+For example things like `-T3 -U --fail-at-end`. So you only have to call Maven just by using `mvn 
+clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. The 
+`${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` folder; also works if in the root of a multi module build. 
+
+### `.mvn/jvm.config` file:
+
+Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.projectBasedir}/.mvn/jvm.config` file which means you can define the options for your build on a per project base. This file will become part of your project and will be checked in along with your project. So no need anymore for `MAVEN_OPTS`, `.mavenrc` files. So for example if you put the following JVM options into the `${maven.projectBasedir}/.mvn/jvm.config` file
+
+        -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
+
+You don’t need to remember of using this options in `MAVEN_OPTS` or switching between different configurations.
 in the end, add the following:
-
-```
---fail-at-end -P local-test-all-modules
-```
 
 ## Other guides
 
