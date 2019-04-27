@@ -63,19 +63,6 @@ Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.project
 
 You don’t need to remember of using this options in MAVEN_OPTS or switching between different configurations.
 
-### `.mvn/maven.config` file:
-
-This file allows developers to drop in parameters that will always be present in any 
-execution of `mvn <goal>` of the given project. This would make unecessary to add 
-parameters in every command-line call.
-
-For example, to always use a specific profile and demand that the build only fails 
-in the end, add the following:
-
-```
---fail-at-end -P local-test-all-modules
-```
-
 ## Other guides
 
 The following guides contain further information to specific configuration aspects:
