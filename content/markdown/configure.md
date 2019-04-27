@@ -3,22 +3,36 @@
 The configuration for Apache Maven usage itself and projects built with resides 
 in a number of places: 
 
-* `MAVEN_OPTS` environment variable:
+## `MAVEN_OPTS` environment variable:
 
 This variable contains parameters used to start up the JVM running Maven and can 
 be used to supply additional options to globally to Maven. E.g. JVM memory 
 settings could be defined with the value `-Xms256m -Xmx512m`.
 
-* `settings.xml` file:
+## `settings.xml` file:
 
 Located in USER_HOME/.m2 the settings files is designed to contain any
 configuration for Maven usage across projects.
 
-* `.mvn` folder:
+## `.mvn` folder:
 
 Located with in the projects top level folder, the files `maven.config` and `extensions.xml`
 contain project specific configuration for running Maven.
 
+### `.mvn/maven.config` file:
+
+This file allows developers to drop in parameters that will always be present in any 
+execution of `mvn <goal>` of the given project. This would make unecessary to add 
+parameters in every command-line call.
+
+For example, to always use a specific profile and demand that the build only fails 
+in the end, add the following:
+
+```
+--fail-at-end -P local-test-all-modules
+```
+
+## Other guides
 
 The following guides contain further information to specific configuration aspects:
 
