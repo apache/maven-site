@@ -624,7 +624,7 @@ mvn myqyeryplugin:queryMojo@execution1
 
 ** {Using the <<<\<inherited\>>>> Tag In Build Plugins}
 
-  By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could uses
+  By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use
   the <<<\<inherited\>>>> tag:
 
 +----+
