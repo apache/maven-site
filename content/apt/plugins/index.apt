@@ -167,8 +167,6 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-remote-resources-plugin/} <<<remote-resources>>>}}| B   | 1.6.0        | 2018-10-31 | Copy remote resources to the output directory for inclusion in the artifact. | {{{https://gitbox.apache.org/repos/asf/maven-remote-resources-plugin.git}Git}} / {{{https://github.com/apache/maven-remote-resources-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MRRESOURCES}Jira MRRESOURCES}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.4          | 2015-02-22 | Plugin to help with repository-based tasks. | {{{https://gitbox.apache.org/repos/asf/maven-repository-plugin.git}Git}} / {{{https://github.com/apache/maven-repository-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MREPOSITORY}Jira MREPOSITORY}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/scm/maven-scm-plugin/} <<<scm>>>}}                       | B          | 1.11.2       | 2019-03-21 | Execute SCM commands for the current project. | {{{https://gitbox.apache.org/repos/asf/maven-scm.git }Git}} / {{{https://github.com/apache/maven-scm/}GitHub}} | {{{https://issues.apache.org/jira/browse/SCM}Jira SCM}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-scm-publish-plugin/} <<<scm-publish>>>}}   | B          | 3.0.0        | 2018-01-29 | Publish your Maven website to a scm location. | {{{https://gitbox.apache.org/repos/asf/maven-scm-publish-plugin.git}Git}} / {{{https://github.com/apache/maven-scm-publish-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSCMPUB}Jira MSCMPUB}}
@@ -196,6 +194,8 @@ Available Plugins
 | {{{/plugins/maven-one-plugin/} <<<one>>>}}                   | B          | 1.3          | 2013-07-30        | A plugin for interacting with legacy Maven 1.x repositories and builds.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.1          | 2014-03-24        | Build a subset of interdependent projects in a reactor (Maven 2 only).
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+| {{{/plugins/maven-repository-plugin/} <<<repository>>>}}     | B          | 2.4          | 2019-04-30        | Plugin to help with repository-based tasks.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 
 * Outside The Maven Land
