@@ -202,6 +202,36 @@ java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
 Hello World!
 +-----+
 
+* Java 9 or later
+
+  By default your version of Maven might use an old version of the <<<maven-compiler-plugin>>> 
+  that is not compatible with Java 9 or later versions. To target Java 9 or later,
+  you should at least use version 3.6.0 of the <<<maven-compiler-plugin>>> and set the 
+  <<<maven.compiler.release>>> property to the Java release you are targetting  (e.g. 9, 10, 11, 12, etc.).
+
+  In the following example, we have configured our Maven project to use version 3.8.1 of <<<maven-compiler-plugin>>>
+  and target Java 11:
+
++-----+
+    <properties>
+        <maven.compiler.release>11</maven.compiler.release>
+    </properties>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.1</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
++-----+
+
+  To learn more about <<<javac>>>'s <<<--release>>> option, see {{{https://openjdk.java.net/jeps/247}JEP 247}}.
+
 * Running Maven Tools
 
 ** Maven Phases
