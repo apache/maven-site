@@ -139,24 +139,25 @@ but has moved to the <Organization> <Project> project.
 
 * Clean up after the release
 
-  [[1]] Remove the plugin from the <<<\<modules\>>>> section of the plugins aggregator POM.
+  [[1]] Remove the <<<.Jenkinsfile>>> from all branches. This will remove the project from https://builds.apache.org/job/maven-box/
 
-  [[1]] Remove any jobs from Continuous Integration servers like {{{https://builds.apache.org/}ASF Jenkins farm}}.
-  Plugins normally don't have separate jobs, but check anyway just to make sure.
+  [[1]] Ask INFRA for archive git repos (gitbox + github)
 
-  [[1]] Move the source code in Subversion. <Where to> depends on which scenario
-  was decided on.
-
-  [[1]] Change the SCM URLs in the <<<pom.xml>>> to point to the new location.
+  [[1]] Republish documentation, postfix project name with (RETIRED)
+  
+  [[1]] When relevant update summary pages for {{{https://maven.apache.org/plugins/index.html}plugins}} or {{{https://maven.apache.org/shared/index.html}shared components}} 
 
   [[1]] Add " (RETIRED)" at the end of the project name in JIRA.
 
-  [[1]] Put the JIRA project in read-only mode. (How to do this? Probably require JIRA admin karma: ask Brian Fox)
+  [[1]] Put the JIRA project in read-only mode in case of standalone project (own Jira key): apply Maven Retired Project Permissions Scheme.
+  (Requires JIRA admin karma: e.g. ask Brian Fox)
 
   [[1]] Comment the {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool.conf.html}dist-tool configuration}} entry.
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
   (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
+  
+  [[1]] Update board report
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
