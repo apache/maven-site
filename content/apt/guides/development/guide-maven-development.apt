@@ -76,7 +76,7 @@ Developing Maven
 
  * Push your branch with the commit(s) to your fork.
  
- * Create a {{{https://help.github.com/en/articles/about-pull-requests} pull request} to submit your contribution.
+ * Create a {{{https://help.github.com/en/articles/about-pull-requests} pull request}} to submit your contribution.
    Shortly after, someone will review the pull request and give you feedback on it.
 
  []
