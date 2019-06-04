@@ -4,8 +4,9 @@
  Emmanuel Venisse
  Trygve Laugstol
  Brett Porter
+ Maarten Mulders
  ------
- 2015-01-04
+ 2019-06-04
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -38,19 +39,22 @@ Developing Maven
  First of all you need something to work on! Issues can be found in
  {{{/issue-management.html}several JIRA projects}}.
 
+ Another good place to look for work is the {{{https://s.apache.org/up-for-grabs_maven} Up for grabs}} list.
+ This list contains relatively simple issues that can be worked on without a lot of prerequisite knowledge.	
+
  When you find a issue you would like to work on, add a comment in the issue log so the core developers and other
  people looking for work know that someone is already working on it.
 
 * Where's the source?
 
    See {{{/scm.html}https://maven.apache.org/scm.html}} for information.
-   The Maven project uses Git for some things and Subversion for others; and this
-   page tracks the situation.
+   The Maven project uses the Apache GitBox Repositories, and all of them are dual-mirrored to
+   {{{https://github.com/apache/} GitHub}}.
 
 * Don't forget tests!
 ~~ TODO move details to guide-building-maven.apt, keep only principles here
 
-  You will find many unit tests in the maven-3 tree. If at all possible, create or modify a unit test to demonstrate
+  You will find many unit tests. If at all possible, create or modify a unit test to demonstrate
   the problem, and then validate your fix.
 
   If the problem case can't be set up in the unit tests, add an integration test. Before submitting a patch, in any
@@ -59,66 +63,42 @@ Developing Maven
 
 * {Creating and submitting a patch}
 
- When you have either completed an issue or just want some feedback on the work you have done, create a patch
- and attach the patch to the issue in question. We have a couple of guidelines when creating patches:
+ The most convenient way is to create a GitHub fork from the Git repository you are working with.
+ When you have either completed an issue or just want some feedback on the work you have done, create a pull request.
+ We have a couple of guidelines when submitting contributions:
 
- * Patch the trunk, not a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
+ * Create your branch from <<<master>>>, not from a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
    to the development head.
-
- * Always create the patch from the root of the Maven project, i.e. where the <<<pom.xml>>> file is.
 
  * If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
 
- * Name the file <<<MNG-<issue number>-<artifact id>.patch>>>.
+ * Name the branch <<<MNG-<issue number>>>>.
 
- * Attach the patch to the JIRA issue you were working on. Do not paste its content in as a comment.
-   When adding the patch, add a comment to the issue explaining what it does. Shortly after, someone will apply the patch
-   and close the issue.
+ * Push your branch with the commit(s) to your fork.
+ 
+ * Create a {{{https://help.github.com/en/articles/about-pull-requests} pull request} to submit your contribution.
+   Shortly after, someone will review the pull request and give you feedback on it.
 
  []
 
- An example of how to create a patch from the command line:
-
----
-$ svn diff > MNG-123-maven-core.patch
----
-
- If you are picking up an issue with a existing patch attached to the issue, you can apply the patch to your working
- directory directly from JIRA like this. The <<<wget>>> and <<<patch>>> commands will only be available if you are
- on a UNIX platform or using Cygwin on windows.
-
----
-$ wget -O - -q <URL to the patch from JIRA> | patch -p0
----
-
- If the patch is in a local file <<<MNG-123.patch>>> and you want to apply that use this command:
-
----
-$ patch -p0 < MNG-123.patch
----
-
- A couple of notes:
-
- * If you are using another tool for creating patches, make sure that the patch doesn't include absolute paths.
- Including absolute paths in the patch will make it useless for us as we most likely don't have the same directory
- structure as you.
+ A short note:
 
  * Make sure that you follow our code style, see {{{Further_Links}Further Links}}.
 
  []
 
-* Patch acceptance criteria
+* Pull request acceptance criteria
 
- There are a number of criteria that a patch will be judged on:
+ There are a number of criteria that a pull request will be judged on:
 
   * Whether it works and does what is intended. This one is probably obvious!
 
-  * Whether it fits the spirit of the project. Some patches may be rejected as they take the project in a different
+  * Whether it fits the spirit of the project. Some pull requests may be rejected as they take the project in a different
     direction than the current development community has chosen. This is usually discussed on an issue well
-    before a patch is contributed, so if you are unsure, discuss it there or on the mailing lists first. Feel free to
+    before a pull request is contributed, so if you are unsure, discuss it there or on the mailing lists first. Feel free to
     continue discussing it (with new justification) if you disagree, or appeal to a wider audience on the mailing lists.
 
-  * Whether it contains tests. It is expected that any patches relating to functionality will be accompanied by unit tests
+  * Whether it contains tests. It is expected that any pull request relating to functionality will be accompanied by unit tests
     and/or integration tests. It is strongly desired (and will be requested) for bug fixes too, but will not be the basis
     for not applying it. At a bare minimum, the change should not decrease the amount of automated test coverage.
     As a community, we are focusing on increasing the current coverage, as there are several areas that do not receive automated testing.
