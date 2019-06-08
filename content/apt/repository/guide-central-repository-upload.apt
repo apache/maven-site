@@ -37,16 +37,22 @@ Guide to uploading artifacts to the Central Repository
 
 Requirements
 
- Only <releases> can be uploaded to the Central Repository, that means files that won't change and that only depend on other files
- already released and available in the repository.
+ [[1]] <<releases>>: Only <releases> can be uploaded to the Central Repository, that means files that won't change and that only depend on other files
+ already released and available in the repository,
 
- There are some requirements for the minimal information in the POMs that are in the Central Repository.
- The updated list of requirements can be found {{{http://central.sonatype.org/pages/requirements.html}here}}.
+ [[2]] <<javadoc and sources>> for IDE lookup,
 
-Choosing your coordinates
+ [[3]] <<PGP signature>>,
 
- Picking the appropriate coordinates for your project is important. See the guidelines
- {{{http://central.sonatype.org/pages/choosing-your-coordinates.html}here}}.
+ [[4]] <<minimum POM information>>: There are some requirements for the minimal information in the POMs that are in the Central Repository,
+ see {{{https://central.sonatype.org/pages/requirements.html#sufficient-metadata}here}}, 
+
+ [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See the guidelines
+ {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}here}}.
+
+ []
+
+ The updated list of requirements can be found <<{{{https://central.sonatype.org/pages/requirements.html}here}}>>.
 
 * Explanation
 
