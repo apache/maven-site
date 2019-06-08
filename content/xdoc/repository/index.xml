@@ -54,7 +54,8 @@
         <map name="map">
           <area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
           <area shape="rect" coords="264,76,354,111"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
-          <area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="http://central.sonatype.org/pages/ossrh-guide.html" />
+          <area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
+          <area shape="rect" coords="490,75,520,111"  alt="Producers" href="https://central.sonatype.org/pages/producers.html" />
           <area shape="rect" coords="596,326,666,363" alt="JBoss"    href="http://repository.jboss.org/maven2/" />
           <area shape="rect" coords="329,274,426,312" alt="central index" href="./central-index.html" />
           <area shape="rect" coords="39,274,205,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
