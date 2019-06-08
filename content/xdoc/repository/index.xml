@@ -61,6 +61,7 @@
           <area shape="rect" coords="65,348,205,383"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
           <area shape="rect" coords="292,356,365,391" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
           <area shape="rect" coords="373,356,447,391" alt="Google"   href="https://storage-download.googleapis.com/maven-central/index.html" />
+          <area shape="rect" coords="100,126,424,239" alt="Central Upload"                href="./guide-central-repository-upload.html" />
           <area shape="rect" coords="0,184,460,421"   alt="central (default)"             href="/guides/introduction/introduction-to-the-pom.html" />
           <area shape="rect" coords="187,593,277,629" alt="Maven"    href="/what-is-maven.html" />
           <area shape="rect" coords="280,628,403,649" alt="local repository"              href="/guides/mini/guide-configuring-maven.html" />
