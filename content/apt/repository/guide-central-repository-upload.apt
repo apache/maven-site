@@ -49,7 +49,7 @@ Requirements
 
  [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See the guidelines
  {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}here}}, particularly
- on {{{https://central.sonatype.org/pages/producers.html#individual-projects-open-source-software-repository-hosting-ossrh}}groupId and domain ownership}}.
+ on {{{https://central.sonatype.org/pages/producers.html#individual-projects-open-source-software-repository-hosting-ossrh}groupId and domain ownership}}.
 
  []
 
