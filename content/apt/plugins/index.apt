@@ -171,7 +171,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-stage-plugin/} <<<stage>>>}}               | B          | 1.0          | 2015-03-03 | Assists with release staging and promotion. | {{{https://gitbox.apache.org/repos/asf/maven-stage-plugin.git}Git}} / {{{https://github.com/apache/maven-stage-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSTAGE}Jira MSTAGE}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 1.1          | 2014-11-12 | Allows to share configuration across plugins. | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}Jira MTOOLCHAINS}}
+| {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 3.0.0        | 2019-06-16 | Allows to share configuration across plugins. | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}Jira MTOOLCHAINS}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
