@@ -91,7 +91,10 @@ Thanks to the following preliminary testers:
 
 ## Known Issues
 
-If you are using Maven reporting, it might happen that you will get an exception which looks like this:
+ * New attributes for URLs inheritance (see [User Visible Changes](./release-notes.html#User_visible_Changes)) are not yet
+ accepted during POM structure control on [upload to the Central Repository](/repository/guide-central-repository-upload.html):
+ see [MVNCENTRAL-4841](https://issues.sonatype.org/browse/MVNCENTRAL-4841) to track progress
+ * If you are using Maven reporting, it might happen that you will get an exception which looks like this:
 
 ```
 [INFO] Scanning for projects...
@@ -110,7 +113,7 @@ a `<report></report>` element.
 Temporarily this issue can circumvented by adding an empty `<report></report>` element
 inside the `<reportSet></reportSet>`.
 
-An [issue has been created][MNG-6636] to track the fix.
+[MNG-6636 issue has been created][MNG-6636] to track the fix in Maven 3.6.2.
 
 [MNG-6636]: https://issues.apache.org/jira/browse/MNG-6636
 
@@ -150,7 +153,7 @@ An [issue has been created][MNG-6636] to track the fix.
 
 ## User visible Changes
 
-Maven has now a an option to suppress the transfer progress when downloading/uploading
+ - Maven has now a an option to suppress the transfer progress when downloading/uploading
 in interactive mode.
 
 ```
@@ -162,7 +165,7 @@ or in short:
 mvn -ntp ... ....
 ```
 
-There had been an issues like [MNG-6505] and [MNG-6059] related to the construction of
+ - There had been an issues like [MNG-6505] and [MNG-6059] related to the construction of
 URL's etc. within `distributionManagement` and `scm` part in the pom for multi module
 builds like this:
 
