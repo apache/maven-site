@@ -69,8 +69,9 @@ Guide to Creating Archetypes
   <build>
     <extensions>
       <extension>
-        <groupId>org.apache.maven.archetype</groupId>
-        <artifactId>archetype-packaging</artifactId>
+         <groupId>org.apache.maven.archetype</groupId>
+         <artifactId>archetype-packaging</artifactId>
+	 <version>3.1.1</version>
        </extension>
      </extensions>
    </build>
