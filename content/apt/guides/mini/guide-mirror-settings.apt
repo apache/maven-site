@@ -122,6 +122,10 @@ Advanced Mirror Specification
 
  []
 
+  Be careful to not include extra whitespace around identifiers or wildcards in comma separated lists. For example,
+  a mirror with <<<<mirrorOf>>>> set to <<<!repo1, *>>> will not mirror anything while <<<!repo1,*>>> will mirror
+  everything but <<<repo1>>>.
+
   The position of wildcards within a comma separated list of repository identifiers is not important as the wildcards
   defer to further processing and explicit includes or excludes stop the processing, overruling any wildcard match.
 
