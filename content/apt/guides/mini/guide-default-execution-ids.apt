@@ -124,7 +124,7 @@ Guide to Configuring Default Mojo Executions
   Without such an entry point, the user would be confronted with a stacktrace in the event he tried to run this application with a 1.4 or older
   JRE.
   
-  Therefore, the user needs to compile tha bulk of his application to target the 1.5 Java specification, then compile the rest (the entry point)
+  Therefore, the user needs to compile the bulk of his application to target the 1.5 Java specification, then compile the rest (the entry point)
   to target an older specification...say, 1.3. The first execution will specify the <<<source>>> and <<<target>>> values at <<<1.5>>>, 
   and add an <<<excludes>>> section to avoid compiling the entry point for the application. The second pass will then re-specify <<<source>>>
   and <<<target>>> to <<<1.3>>>, and basically invert the original <<<excludes>>> section to be an <<<includes>>> section, so as to compile <only>
