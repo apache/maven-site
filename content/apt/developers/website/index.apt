@@ -60,7 +60,7 @@ How website publication works
 
  * main content is published through Jenkins jobs:
    {{{https://builds.apache.org/job/maven-box/job/maven-site/}maven-site}}
-   and {{{https://builds.apache.org/view/M-R/view/Maven/job/doxia-site/}doxia-site}},
+   and {{{https://builds.apache.org/job/maven-box/job/maven-doxia-site/}doxia-site}},
 
  * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
  eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
