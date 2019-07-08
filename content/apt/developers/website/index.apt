@@ -59,7 +59,7 @@ How website publication works
  Instructions on how to publish website content are split in separate documents:
 
  * main content is published through Jenkins jobs:
-   {{{https://builds.apache.org/view/M-R/view/Maven/job/maven-site/}maven-site}}
+   {{{https://builds.apache.org/job/maven-box/job/maven-site/}maven-site}}
    and {{{https://builds.apache.org/view/M-R/view/Maven/job/doxia-site/}doxia-site}},
 
  * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
