@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'websites1'
+        label 'svn-websites'
     }
     stages {
         stage('Build') {
