@@ -111,19 +111,13 @@ Guide to Configuring Plug-ins
 public class MyQueryMojo
     extends AbstractMojo
 {
-    /**
-     * @parameter expression="${query.url}"
-     */
+    @Parameter(property = "query.url", required = true)
     private String url;
 
-    /**
-     * @parameter default-value="60"
-     */
+    @Parameter(property = "timeout", required = false, defaultValue = "50")
     private int timeout;
 
-    /**
-     * @parameter
-     */
+    @Parameter(property = "options")
     private String[] options;
 
     public void execute()
@@ -274,9 +268,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 public class MyAnimalMojo
     extends AbstractMojo
 {
-    /**
-     * @parameter
-     */
+    @Parameter(property = "animals")
     private List animals;
 
     public void execute()
@@ -331,11 +323,7 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    /**
-     * My Map.
-     *
-     * @parameter
-     */
+    @Parameter(property = "myMap")
     private Map myMap;
 ...
 +-----+
@@ -357,11 +345,7 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    /**
-     * My Properties.
-     *
-     * @parameter
-     */
+    @Parameter(property = "myProperties")
     private Properties myProperties;
 ...
 +-----+
@@ -507,19 +491,13 @@ public class MyAnimalMojo
 public class MyBindedQueryMojo
     extends AbstractMojo
 {
-    /**
-     * @parameter expression="${query.url}"
-     */
+    @Parameter(property = "query.url", required = true)
     private String url;
 
-    /**
-     * @parameter default-value="60"
-     */
+    @Parameter(property = "timeout", required = false, defaultValue = "50")
     private int timeout;
 
-    /**
-     * @parameter
-     */
+    @Parameter(property = "options")
     private String[] options;
 
     public void execute()
