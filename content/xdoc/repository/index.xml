@@ -36,7 +36,7 @@
     their releases added to the Maven <code>central</code> repository, even if they don't use Maven as their build tool.</p>
 
       <p><img src="../images/icon_warning_sml.gif"/>
-      <a href="http://central.sonatype.org/articles/2018/May/04/discontinue-support-for-tlsv11-and-below/"><b>Discontinuing
+      <a href="http://central.sonatype.org/articles/2018/May/04/discontinued-support-for-tlsv11-and-below/"><b>Discontinuing
       support for TLSv1.1</b> and below as of <b>June 15th 2018</b></a></p>
 
       <ul>
