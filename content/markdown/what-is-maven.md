@@ -84,7 +84,7 @@ navigate any other project that uses Maven and the same defaults.
 ### Allowing transparent migration to new features
 
 Maven provides an easy way for Maven clients to update their
-installations so that they can take advantage of any changes that has been
+installations so that they can take advantage of any changes that have been
 made to Maven itself.
 
 Installation of new or updated plugins from third parties or Maven
