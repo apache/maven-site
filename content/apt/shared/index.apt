@@ -30,8 +30,7 @@
 
 Shared Components
 
-The shared components are currently under transition to Maven 3.x only components.
-
+  The shared components are currently under transition to Maven 3.x only components.
 
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 || <<Shared Component>>                                                      || <<Version>> || <<Release Date>> || <<Description>> || <<Source Repository>> || <<Issue Tracking>> |
@@ -63,8 +62,6 @@ The shared components are currently under transition to Maven 3.x only component
 | {{{/shared/maven-reporting-exec/} <<<maven-reporting-exec>>>}}             | 1.4          | 2017-10-16        | API to manage report plugins preparation with Maven 3. | {{{https://gitbox.apache.org/repos/asf/maven-reporting-exec.git}Git}} / {{{https://github.com/apache/maven-reporting-exec/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSHARED/component/14716}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-reporting-impl/} <<<maven-reporting-impl>>>}}             | 3.0.0        | 2017-06-21        | Abstract classes to manage report generation. | {{{https://gitbox.apache.org/repos/asf/maven-reporting-impl.git}Git}} / {{{https://github.com/apache/maven-reporting-impl/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSHARED/component/13274}JIRA}}
-*----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/shared/maven-repository-builder/} <<<maven-repository-builder>>>}}     | 1.0          | 2014-11-11        |  | {{{https://gitbox.apache.org/repos/asf/maven-repository-builder.git}Git}} / {{{https://github.com/apache/maven-repository-builder/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSHARED/component/13275}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-script-interpreter/} <<<maven-script-interpreter>>>}}     | 1.2          | 2017-07-21        | Utilities to interpret/execute some scripts for various implementations: groovy or beanshell. | {{{https://gitbox.apache.org/repos/asf/maven-script-interpreter.git}Git}} / {{{https://github.com/apache/maven-script-interpreter/}GitHub}} | {{{https://issues.apache.org/jira/browse/MSHARED/component/15256}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
