@@ -2088,7 +2088,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 </project>
 +-------------------------+
 
-  Activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
+  Before Maven 3.2.2 Activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
+  Since Maven 3.2.2 Activation occurs when all of the specified criteria have been met.
 
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
