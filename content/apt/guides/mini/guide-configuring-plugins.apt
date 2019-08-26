@@ -546,7 +546,7 @@ public class MyBindedQueryMojo
 </project>
 +----+
 
-  Now, <<<MyBindedQueryMojo>>> default phase which is package has been overrided by
+  Now, <<<MyBindedQueryMojo>>> default phase which is package has been overridden by
   install phase.
   
   <<Note:>> Configurations inside the <<<\<executions\>>>> element used to differ from those that are outside
