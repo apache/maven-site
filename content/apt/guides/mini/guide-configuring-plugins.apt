@@ -488,7 +488,7 @@ public class MyAnimalMojo
  * @goal query
  * @phase package
  */
-public class MyBindedQueryMojo
+public class MyBoundQueryMojo
     extends AbstractMojo
 {
     @Parameter(property = "query.url", required = true)
@@ -508,7 +508,7 @@ public class MyBindedQueryMojo
 }
 +----+
 
-  From the above mojo example, <<<MyBindedQueryMojo>>> is by default bound to the package phase
+  From the above mojo example, <<<MyBoundQueryMojo>>> is by default bound to the package phase
   (see the <<<@phase>>> notation). But if we want to execute this mojo during the install
   phase and not with package we can rebind this mojo into a new lifecycle phase
   using the <<<\<phase\>>>> tag under <<<\<execution\>>>>.
@@ -546,7 +546,7 @@ public class MyBindedQueryMojo
 </project>
 +----+
 
-  Now, <<<MyBindedQueryMojo>>> default phase which is package has been overridden by
+  Now, <<<MyBoundQueryMojo>>> default phase which is package has been overridden by
   install phase.
   
   <<Note:>> Configurations inside the <<<\<executions\>>>> element used to differ from those that are outside
