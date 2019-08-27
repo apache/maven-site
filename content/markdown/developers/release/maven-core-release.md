@@ -48,7 +48,7 @@ Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the ne
 
 #### Update the Release Notes and Web Site
 
-Checkout Maven site source <https://github.com/apache/maven-site/maven-site.git>.
+Checkout Maven site source <https://github.com/apache/maven-site.git>.
 
 Note that release notes can be created and checked in, but other changes should not be checked in as it can be deployed 'live' at any time.
 
