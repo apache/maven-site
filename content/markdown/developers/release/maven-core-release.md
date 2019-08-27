@@ -20,7 +20,7 @@ For non-alpha/beta releases, release candidates are produced before the actual r
 
 Checkout https://dist.apache.org/repos/dist/dev/maven/maven-3 then create the necessary directory tree.
 
-Copy the binaries and src-tar.gz with their md5/asc to the created directories.
+Copy the binaries and src-tar.gz with their sha512/asc to the created directories.
 
 To produce a release candidate, follow the first seven steps only from the following procedure:
 
@@ -48,7 +48,7 @@ Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the ne
 
 #### Update the Release Notes and Web Site
 
-Checkout <https://svn.apache.org/repos/asf/maven/site/trunk>.
+Checkout Maven site source <https://github.com/apache/maven-site/maven-site.git>.
 
 Note that release notes can be created and checked in, but other changes should not be checked in as it can be deployed 'live' at any time.
 
