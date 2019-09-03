@@ -125,7 +125,7 @@ Project-X -> Project-A
   Since Maven resolves dependencies transitively, it is possible 
   for unwanted dependencies to be included in your project's classpath.
   For example, a certain older jar may have security issues or be incompatible with the Java 
-  version you're using. To address this, Maven allows you to exlude specific dependencies.
+  version you're using. To address this, Maven allows you to exclude specific dependencies.
   Exclusions are set on a specific dependency in your POM, and are targeted
   at a specific groupId and artifactId. When you build your project, that
   artifact will not be added to your project's classpath <by way of the
