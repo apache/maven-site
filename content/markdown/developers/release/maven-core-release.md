@@ -85,14 +85,14 @@ moved to the release svnpubsub tree:
 svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
 ```
 
-#### Deploy the Current Reference
+#### Deploy the Latest Documentation
 
-The source code references and API docs need to be deployed before deploying the web site with the new version.
+The reference documentation for Maven core source code references and API docs has been staged in a previous step: now it needs to be deployed to its dedicated directory before deploying the web site pointing to the new version.
 
-This consists in copying in website svn tree the /ref/3-LATEST directory to /ref/`$VERSION`.
+This consists in copying in website svn tree the staging /ref/3-LATEST directory to final /ref/`$VERSION`.
 
 ```
-svn cp https://svn.apache.org/repos/infra/websites/production/maven/components/ref/3-LATEST https://svn.apache.org/repos/infra/websites/production/maven/components/ref/$VERSION
+svn cp https://svn.apache.org/repos/asf/maven/website/components/ref/3-LATEST https://svn.apache.org/repos/asf/maven/website/components/ref/$VERSION
 ```
 
 ### Information on `/ref/current` mechanism
