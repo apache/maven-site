@@ -7,7 +7,7 @@ The goal is to commit candidate release to svn tree <https://dist.apache.org/rep
 The tree directory is:
 
 - https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/binaries
-- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/source
+- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/source (notice: singular...)
 
 Note that the policy for failed releases is to move forward with a new
 version. The tag that produced the failed released is left in place for
