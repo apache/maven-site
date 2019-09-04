@@ -74,7 +74,7 @@ mvn -Preporting site site:stage
 mvn scm-publish:publish-scm
 ```
 
-This will publish the site in [/ref/3-LATEST](/ref/3-LATEST).
+This will publish the Maven core site in [/ref/3-LATEST](/ref/3-LATEST).
 
 #### Add New Version to ASF Distribution Directory
 
@@ -85,7 +85,7 @@ moved to the release svnpubsub tree:
 svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
 ```
 
-#### Deploy the Latest Documentation
+#### Deploy the Latest Documentation to Target Versioned Location
 
 The reference documentation for Maven core source code references and API docs has been staged in a previous step: now it needs to be deployed to its dedicated directory before deploying the web site pointing to the new version.
 
