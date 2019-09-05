@@ -55,11 +55,11 @@ Many thanks to all reporters and contributors for their time and support.
 
 - This release focuses mostly performance improvements, better memory footprint, and less CPU usage.
 
-- We are continuing to convert Maven Core to use JSR 330 annotations instead of Plexus (still not finished, see [MNG-5577][https://issues.apache.org/jira/browse/MNG-5577]).
+- We are continuing to convert Maven Core to use JSR 330 annotations instead of Plexus (still not finished, see [MNG-5577](https://issues.apache.org/jira/browse/MNG-5577)).
 
-- New support for 'release' qualifier (see [MNG-6655]).
+- New support for 'release' qualifier (see [MNG-6655](https://issues.apache.org/jira/browse/MNG-6655)).
 
-- The toolchain.xml file supports environment variables (see [MNG-6665]).
+- The toolchain.xml file supports environment variables (see [MNG-6665](https://issues.apache.org/jira/browse/MNG-6665)).
 
 ## The detailed issue list[](#Details)
 
