@@ -73,7 +73,7 @@ Date format is: YYYY-MM-DD
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
 #release( "2019-08-27" "3.6.2" "announce/TODO" "true" "Java 7" "11" )
-#release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "true" "Java 7" "11" )
+#release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "" "Java 7" "11" )
 #release( "2018-10-24" "3.6.0" "announce/201811.mbox/%3C20181101115259.168F4187BA%40minotaur.apache.org%3E" "" "" "" )
 #release( "2018-06-21" "3.5.4" "announce/201806.mbox/%3CCA%2BnPnMyX2qN9gHFH9EidAgQVvxtZt0Aux2RUEQqACJ_dZ7sw%2BA%40mail.gmail.com%3E" "" "" "" )
 #release( "2018-03-08" "3.5.3" "announce/201803.mbox/%3CCA%2BnPnMyM0sWU1yQ8Vxo3P5f8_W0F5wDgadzK99NceVrJn%2ByxAQ%40mail.gmail.com%3E" "" "" "" )
