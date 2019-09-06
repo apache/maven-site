@@ -54,10 +54,10 @@
 
   <properties>
     <maven.site.path>maven-site</maven.site.path>
-    <currentStableVersion>3.6.1</currentStableVersion>
-    <currentStableReleaseDate>2019-04-12</currentStableReleaseDate>
-    <currentStableVersionDetails>d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T21:00:29+02:00</currentStableVersionDetails>
-    <current36xVersion>3.6.1</current36xVersion>
+    <currentStableVersion>3.6.2</currentStableVersion>
+    <currentStableReleaseDate>2019-08-27</currentStableReleaseDate>
+    <currentStableVersionDetails>40f52333136460af0dc0d7232c0dc0bcf0d9e117; 2019-08-27T17:06:16+02:00</currentStableVersionDetails>
+    <current36xVersion>3.6.2</current36xVersion>
     <current35xVersion>3.5.4</current35xVersion>
     <current33xVersion>3.3.9</current33xVersion>
     <current32xVersion>3.2.5</current32xVersion>
