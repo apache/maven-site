@@ -90,7 +90,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-pdf-plugin</artifactId>
-          <version>1.3</version>
+          <version>1.4</version>
         </plugin>
         <!-- publish mono-module site with "mvn site-deploy" -->
         <plugin>
