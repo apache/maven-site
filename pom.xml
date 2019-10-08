@@ -333,7 +333,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-linkcheck-plugin</artifactId>
-            <version>1.0</version>
+            <version>1.2</version>
             <configuration>
               <excludedLinks>
                 <excludedLink>**/archetype/*</excludedLink>
