@@ -70,7 +70,7 @@
     <site.output>${project.build.directory}/site</site.output>
     <fluidoVersion>1.7</fluidoVersion><!-- used by src/xdoc/errors/404.xml.vm -->
     <doxiaVersion>1.9</doxiaVersion>
-    <doxiaToolsVersion>1.9</doxiaToolsVersion>
+    <doxiaToolsVersion>1.9.1</doxiaToolsVersion>
   </properties>
 
   <repositories>
