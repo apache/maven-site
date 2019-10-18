@@ -409,8 +409,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 *** {Dependency Version Requirement Specification}
 
-  Dependencies' <<<version>>> element define version requirements, used to compute effective dependency
-  version. Version requirements have the following syntax:
+  Dependencies' <<<version>>> elements define version requirements, which are used to compute effective dependency
+  versions. Version requirements have the following syntax:
 
   * <<<1.0>>>: "Soft" requirement on 1.0 (just a recommendation, if it matches all other ranges for the dependency)
 
