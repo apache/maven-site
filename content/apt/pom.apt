@@ -809,7 +809,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   <Note:> While environment variables themselves are case-insensitive on Windows, lookup of properties is
   case-sensitive. In other words, while the Windows shell returns the same value for <<<%PATH%>>> and <<<%Path%>>>,
-  Maven distinguishes between <<<$\{env.PATH\}>>> and <<<$\{env.Path\}>>>. As of Maven 2.1.0, <<the names of environment
+  Maven distinguishes between <<<$\{env.PATH\}>>> and <<<$\{env.Path\}>>>. <<The names of environment
   variables are normalized to all upper-case>> for the sake of reliability.
 
   [[2]]  <<<project.x>>>: A dot (.) notated path in the POM will contain the corresponding element's value.
@@ -2083,11 +2083,10 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
   is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. Ranges are also supported as of Maven 2.1. See the {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
+  will match. Ranges are also supported. See the {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
 
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
-
 
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
