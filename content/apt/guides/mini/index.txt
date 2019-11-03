@@ -1,3 +1,5 @@
+ * {{{$prefix/guide-reproducible-builds.html}Configuring for Reproducible Builds}}
+
  * {{{$prefix/guide-assemblies.html}Creating Assemblies}}
 
  * {{{$prefix/guide-archive-configuration.html}Configuring Archive Plugins}}

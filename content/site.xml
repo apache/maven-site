@@ -109,6 +109,7 @@ under the License.
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
         <item name="Guides" href="/guides/mini/index.html" collapse="true">
+          <item name="Configuring for Reproducible Builds" href="/guides/mini/guide-reproducible-builds.html" />
           <item name="Creating Assemblies" href="/guides/mini/guide-assemblies.html" />
           <item name="Configuring Archive Plugins" href="/guides/mini/guide-archive-configuration.html" />
           <item name="Configuring Maven" href="/guides/mini/guide-configuring-maven.html" />
