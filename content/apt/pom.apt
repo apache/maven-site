@@ -177,10 +177,10 @@ POM Reference
 {The Basics}
 
   The POM contains all necessary information about a project, as well as configurations of plugins to be
-  used during the build process. It is, effectively, the declarative manifestation of the "who", "what",
+  used during the build process. It is the declarative manifestation of the "who", "what",
   and "where", while the build lifecycle is the "when" and "how". That is not to say that the POM cannot
   affect the flow of the lifecycle - it can. For example, by configuring the <<<maven-antrun-plugin>>>, one can
-  effectively embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Whereas a
+  embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Whereas a
   <<<build.xml>>> tells Ant precisely what to do when it is run (procedural), a POM states its
   configuration (declarative). If some external force causes the lifecycle to skip the Ant plugin
   execution, it will not stop the plugins that are executed from doing their magic. This is unlike a
@@ -318,12 +318,12 @@ POM Reference
 
     * <<groupId>>, <<artifactId>>: directly the corresponding coordinates of the dependency,
 
-    * <<version>>: a <<dependency version requirement specification>>, that will be used to compute the dependency's effective version.
+    * <<version>>: a <<dependency version requirement specification>>, that is used to compute the dependency's effective version.
 
   Since the dependency is described by Maven coordinates, you may be thinking:
   "This means that my project can only depend upon Maven artifacts!" The answer is, "Of course, but that's a
   good thing." This forces you to depend solely on dependencies that Maven can manage.
-  
+
   There are times,
   unfortunately, when a project cannot be downloaded from the central Maven repository. For example, a project
   may depend upon a jar that has a closed-source license which prevents it from being in a central repository.
@@ -351,11 +351,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<classifier>>:\
   The classifier distinguishes artifacts that were built from the same POM but differ in content. It is
   some optional and arbitrary string that - if present - is appended to the artifact name just after the version number.
-  
+
   As a motivation for this element, consider for example a project that offers an artifact targeting JRE 1.5 but at the
   same time also an artifact that still supports JRE 1.4. The first artifact could be equipped with the classifier
   <<<jdk15>>> and the second one with <<<jdk14>>> such that clients can choose which one to use.
-  
+
   Another common use case for classifiers is to attach secondary artifacts to the project's main artifact. If
   you browse the Maven central repository, you will notice that the classifiers <<<sources>>> and <<<javadoc>>> are used
   to deploy the project source code and API docs along with the packaged class files.
@@ -410,25 +410,29 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 *** {Dependency Version Requirement Specification}
 
   Dependencies' <<<version>>> elements define version requirements, which are used to compute effective dependency
-  versions. Version requirements have the following syntax:
+  versions. Soft requirements can be replaced by different versions of the same artifact found elsewhere in the dependency graph. Hard requirements mandate
+  a particular version or versions and override soft requirements.
+  If there are no versions of a dependency that satisfy all the hard requirements for that artifact, the build fails.
 
-  * <<<1.0>>>: "Soft" requirement on 1.0. Use 1.0 if no other version appears earlier in the dependency tree. 
+  Version requirements have the following syntax:
 
-  * <<<[1.0]>>>: "Hard" requirement on 1.0. Use 1.0 and only 1.0, even if other versions come before this dependency in
+  * <<<1.0>>>: "Soft" requirement on 1.0. Use 1.0 if no other version appears earlier in the dependency tree.
+
+  * <<<[1.0]>>>: "Hard" requirement for 1.0. Use 1.0 and only 1.0, even if other versions come before this dependency in
     the tree. If multiple hard versions conflict, fail the build.
 
-  * <<<(,1.0]>>>: Soft requirement on any version \<= 1.0
+  * <<<(,1.0]>>>: Hard requirement for any version \<= 1.0
 
-  * <<<[1.2,1.3]>>>: Soft requirement on any version between 1.2 and 1.3 inclusive.
+  * <<<[1.2,1.3]>>>: Hard requirement for any version between 1.2 and 1.3 inclusive.
 
-  * <<<[1.0,2.0)>>>: 1.0 \<= x \< 2.0; soft requirement on any version between 1.0 inclusive and 2.0 exclusive.
+  * <<<[1.0,2.0)>>>: 1.0 \<= x \< 2.0; Hard requirement for any version between 1.0 inclusive and 2.0 exclusive.
 
-  * <<<[1.5,)>>>: Soft requirement on any version greater than or equal to 1.5. 
+  * <<<[1.5,)>>>: Hard requirement for any version greater than or equal to 1.5.
 
-  * <<<(,1.0],[1.2,)>>>: Soft requirement on any version less than or equal to 1.0 than or greater than
+  * <<<(,1.0],[1.2,)>>>: Hard requirement for any version less than or equal to 1.0 than or greater than
     or equal to 1.2, but not 1.1. Multiple requirements are comma-separated
 
-  * <<<(,1.1),(1.1,)>>>: Soft requirement on any version except 1.1; for example because
+  * <<<(,1.1),(1.1,)>>>: Hard requirement for any version except 1.1; for example because
     it is known not to have a critical vulnerability.
 
 *** {Version Order Specification}:
@@ -700,7 +704,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   To see inheritance in action, just have a look at the
   {{{https://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
-  {{{https://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's. 
+  {{{https://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's.
 
 *** {The Super POM}
 
@@ -726,7 +730,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <<<junit:junit:4.12>>>, then POMs inheriting from this one can set their dependency giving
   the <<<groupId>>>=<<<junit>>> and <<<artifactId>>>=<<<junit>>> only and Maven will fill in
   the <<<version>>> set by the parent. The benefits of this method are obvious. Dependency
-  details can be set in one central location, which propagates to all inheriting POMs. 
+  details can be set in one central location, which propagates to all inheriting POMs.
 
   Note that the version and scope of artifacts which are incorporated from transitive dependencies
   are also controlled by version specifications in a dependency management section. This can lead
@@ -742,7 +746,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   A project with modules is known as a multimodule, or aggregator project. Modules are projects
   that this POM lists, and are executed as a group. A <<<pom>>> packaged project may
-  aggregate the build of a set of projects by listing them as modules, which are relative paths to the 
+  aggregate the build of a set of projects by listing them as modules, which are relative paths to the
   directories or the POM files of those projects.
 
 +-----------------------------+
@@ -771,7 +775,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   To see aggregation in action, have a look at the
   {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
-  {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's. 
+  {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's.
 
 *** A final note on {Inheritance v}. Aggregation
 
@@ -1027,8 +1031,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   values within a <<<configuration>>> element are never explicitly required by the POM schema, but a plugin goal
   has every right to require configuration values.
 
-  If your POM declares a parent, it will inherit plugin configuration from either the 
-  <<build/plugins>> or <<pluginManagement>> sections of the parent. 
+  If your POM declares a parent, it will inherit plugin configuration from either the
+  <<build/plugins>> or <<pluginManagement>> sections of the parent.
 
   To illustrate, consider the following fragment from a parent POM:
 
@@ -1070,7 +1074,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   element, that value becomes the effective value. if the child POM
   does not have an element, but the parent does, the parent value
   becomes the effective value. Note that this is purely an operation on XML;
-  no code or configuration of the plugin itself is involved. Only the 
+  no code or configuration of the plugin itself is involved. Only the
   elements, not their values, are involved.
 
   Applying those rules to the example, Maven comes up with:
@@ -1092,7 +1096,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   You can control how child POMs inherit configuration from parent POMs by adding attributes
   to the children of the <<configuration>> element. The attributes are <<<combine.children>>> and
-  <<<combine.self>>>. Use these attributes in a child POM to control how Maven combines 
+  <<<combine.self>>>. Use these attributes in a child POM to control how Maven combines
   plugin configuration from the parent with the explicit configuration in the child.
 
   Here is the child configuration with illustrations of the two attributes:
@@ -1126,7 +1130,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 +-----------------------------------------------+
 
   <<combine.children="append">> results in the
-  concatenation of parent and child elements, in that order. 
+  concatenation of parent and child elements, in that order.
   <<combine.self="override">>, on the other hand, completely
   suppresses parent configuration. You cannot use both
   both <<combine.self="override">>
@@ -1141,7 +1145,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   marked with attributes.
 
   The combine.* attributes are inherited from parent to child POMs.
-  Take care when adding those attributes 
+  Take care when adding those attributes
   a parent POM as this might affect child or
   grand-child POMs.
 
@@ -1755,11 +1759,11 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   The POM may have certain prerequisites in order to execute correctly.  For example,
   perhaps there was a fix in Maven 2.0.3 that you need in order to deploy using sftp.
-  
+
   In Maven 3, use
   {{{/enforcer/enforcer-rules/requireMavenVersion.html} Maven Enforcer Plugin's <<<requireMavenVersion>>> rule}},
   or other rules to check other aspects.
-  
+
   In Maven 2, here is where you give the prerequisites to building: if these are not met, Maven will
   fail the build before even starting. The only element that exists as a prerequisite in
   POM 4.0 is the <<<maven>>> element, which takes a minimum version number. It is checked with Maven 2, it is not any
