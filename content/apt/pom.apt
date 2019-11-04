@@ -183,7 +183,7 @@ POM Reference
   embed Apache Ant tasks inside of the POM. It is ultimately a declaration, however. Whereas a
   <<<build.xml>>> tells Ant precisely what to do when it is run (procedural), a POM states its
   configuration (declarative). If some external force causes the lifecycle to skip the Ant plugin
-  execution, it will not stop the plugins that are executed from doing their magic. This is unlike a
+  execution, it does not stop the plugins that are executed from doing their magic. This is unlike a
   <<<build.xml>>> file, where tasks are almost always dependant on the lines executed before it.
 
 +--------------------------+
@@ -392,8 +392,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   element is set. The path must be absolute, so it is recommended to use a property to specify the
   machine-specific path (more on <<<properties>>> below),
   such as <<<$\{java.home\}/lib>>>. Since it is assumed that system scope dependencies are installed <a priori>,
-  Maven will not check the repositories for the project, but instead checks to ensure that the file exists.
-  If not, Maven will fail the build and suggest that you download and install it manually.
+  Maven does not check the repositories for the project, but instead checks to ensure that the file exists.
+  If not, Maven fails the build and suggests that you download and install it manually.
 
   * <<optional>>:\
   Marks optional a dependency when this project itself is a dependency. Confused?
