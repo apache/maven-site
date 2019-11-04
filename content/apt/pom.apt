@@ -396,7 +396,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   If not, Maven fails the build and suggests that you download and install it manually.
 
   * <<optional>>:\
-  Marks optional a dependency when this project itself is a dependency. Confused?
+  Marks a dependency optional when this project itself is a dependency.
   For example, imagine a project <<<A>>> that depends upon project <<<B>>> to
   compile a portion of code that may not be used at runtime, then we may have no need for project <<<B>>>
   for all project. So if project <<<X>>> adds project <<<A>>> as its own dependency, then Maven does
@@ -416,10 +416,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   Version requirements have the following syntax:
 
-  * <<<1.0>>>: "Soft" requirement on 1.0. Use 1.0 if no other version appears earlier in the dependency tree.
+  * <<<1.0>>>: Soft requirement for 1.0. Use 1.0 if no other version appears earlier in the dependency tree.
 
-  * <<<[1.0]>>>: "Hard" requirement for 1.0. Use 1.0 and only 1.0, even if other versions come before this dependency in
-    the tree. If multiple hard versions conflict, fail the build.
+  * <<<[1.0]>>>: Hard requirement for 1.0. Use 1.0 and only 1.0.
+   If any other hard requirement is not satisfied by 1.0, fail the build.
 
   * <<<(,1.0]>>>: Hard requirement for any version \<= 1.0
 
@@ -430,10 +430,9 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<<[1.5,)>>>: Hard requirement for any version greater than or equal to 1.5.
 
   * <<<(,1.0],[1.2,)>>>: Hard requirement for any version less than or equal to 1.0 than or greater than
-    or equal to 1.2, but not 1.1. Multiple requirements are comma-separated
+    or equal to 1.2, but not 1.1. Multiple requirements are separated by commas.
 
-  * <<<(,1.1),(1.1,)>>>: Hard requirement for any version except 1.1; for example because
-    it is known not to have a critical vulnerability.
+  * <<<(,1.1),(1.1,)>>>: Hard requirement for any version except 1.1; for example because 1.1 has a critical vulnerability.
 
 *** {Version Order Specification}:
 
