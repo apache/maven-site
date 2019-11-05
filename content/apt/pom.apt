@@ -409,10 +409,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 *** {Dependency Version Requirement Specification}
 
-  Dependencies' <<<version>>> elements define version requirements, which are used to compute effective dependency
-  versions. Soft requirements can be replaced by different versions of the same artifact found elsewhere in the dependency graph. Hard requirements mandate
-  a particular version or versions and override soft requirements.
-  If there are no versions of a dependency that satisfy all the hard requirements for that artifact, the build fails.
+  Dependencies' <<<version>>> elements define version requirements, which are used to compute dependency versions. Soft requirements can be replaced by
+  different versions of the same artifact found elsewhere in the dependency 
+  graph. Hard requirements mandate a particular version or versions and
+  override soft requirements. If there are no versions of a dependency that
+  satisfy all the hard requirements for that artifact, the build fails.
 
   Version requirements have the following syntax:
 
@@ -1033,7 +1034,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   values within a <<<configuration>>> element are never explicitly required by the POM schema, but a plugin goal
   has every right to require configuration values.
 
-  If your POM declares a parent, it will inherit plugin configuration from either the
+  If your POM declares a parent, it inherits plugin configuration from either the
   <<build/plugins>> or <<pluginManagement>> sections of the parent.
 
   To illustrate, consider the following fragment from a parent POM:
