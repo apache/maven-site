@@ -4,6 +4,13 @@ All popular development environments for the Java platform and beyond support
 Apache Maven with numerous features out of the box. The following list iterates 
 popular IDEs in alphabetical order:
 
+## Apache NetBeans IDE
+
+Apache NetBeans includes full Maven support since 6.7, including Maven 3 support in 7.0+. 
+You can open any Maven project in the IDE and start coding immediately.
+
+For more information see the [NetBeans.org wiki page](http://wiki.netbeans.org/Maven).
+
 ## Eclipse IDE - M2Eclipse
 
   [M2Eclipse ](http://www.eclipse.org/m2e/) is 
@@ -27,10 +34,3 @@ Eclipse workspace with those changes.
 ## JetBrains IntelliJ IDEA
 
 IntelliJ IDEA has a [feature-rich integration for Maven](https://www.jetbrains.com/idea/help/maven.html).
-
-## Netbeans IDE
-
-NetBeans includes full Maven support since 6.7, including Maven 3 support in 7.0+. 
-You can open any Maven project in the IDE and start coding immediately.
-
-For more information see the [NetBeans.org wiki page](http://wiki.netbeans.org/Maven).
