@@ -56,7 +56,7 @@ Many thanks to all reporters and contributors for their time and support.
 
 - Some license issues on binary distribution have been fixed.
 
-- This Maven distribution is now Reproducible
+- This Maven distribution is now Reproducible: if you build from source archive, with JDK 8, on Windows and with `-DbuildNumber=cecedd343002696d0abb50b32b541b8a6ba2883f`, you'll get bit-for-bit identical output that you can check with sha512 fingerprints. If you're building on any Unix system, you'll need to add `-Dline.separator=$'\r\n'`. See the [Maven - Guide to Configuring for Reproducible Builds](/guides/mini/guide-reproducible-builds.html) for more details.
 
 ## The detailed issue list[](#Details)
 
