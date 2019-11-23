@@ -509,7 +509,7 @@ Introduction to the POM
 *-----------------------------------+--------------------------------------+
 | <<<project.baseUri>>>             | The directory that the current project resides in, represented as an URI. <Since Maven 2.1.0> |
 *-----------------------------------+--------------------------------------+
-| <<<maven.build.timestamp>>>       | The timestamp that denotes the start of the build. <Since Maven 2.1.0-M1> |
+| <<<maven.build.timestamp>>>       | The timestamp that denotes the start of the build (UTC). <Since Maven 2.1.0-M1> |
 *-----------------------------------+--------------------------------------+
 
   The format of the build timestamp can be customized by declaring the property <<<maven.build.timestamp.format>>> as
@@ -526,7 +526,7 @@ Introduction to the POM
 +----+
 
   The format pattern has to comply with the rules given in the API documentation for
-  {{{http://java.sun.com/javase/6/docs/api/java/text/SimpleDateFormat.html}SimpleDateFormat}}.
+  {{{https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html}SimpleDateFormat}}.
   If the property is not present, the format defaults to the value already given in the example.
 
 *** Properties
@@ -537,7 +537,7 @@ Introduction to the POM
 <project>
   ...
   <properties>
-    <mavenVersion>2.1</mavenVersion>
+    <mavenVersion>3.0</mavenVersion>
   </properties>
   <dependencies>
     <dependency>
@@ -547,7 +547,7 @@ Introduction to the POM
     </dependency>
     <dependency>
       <groupId>org.apache.maven</groupId>
-      <artifactId>maven-project</artifactId>
+      <artifactId>maven-core</artifactId>
       <version>${mavenVersion}</version>
     </dependency>
   </dependencies>
