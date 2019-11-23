@@ -201,7 +201,7 @@ POM Reference
 
 * {Maven Coordinates}
 
-  The POM defined above is the minimum that both Maven will allow. <<<groupId:artifactId:version>>> are all
+  The POM defined above is the minimum that Maven allows. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version need not be explicitly defined if they are inherited
   from a parent - more on inheritance later). The three fields act much like an address and timestamp
   in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects:
