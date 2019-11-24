@@ -22,7 +22,7 @@ the reference to the last version of plugins you can use.
 NOTE: If you find plugins which are not mentioned or issues please
 report on the users mailing list.
 
-|Plugin|Type\*|Version|Release Date|Description|
+|Plugin (current docs)|Type\*|Version|Release Date|Description|
 |---|---|---|---|---|
 |**Core plugins**||||**Plugins corresponding to default core phases (ie. clean, compile). They may have multiple goals as well**|
 |[clean](/plugins/maven-clean-plugin/)|B|[2.6.1](/plugins-archives/maven-clean-plugin-2.6.1)|2014-10-26|Clean up after the build|
