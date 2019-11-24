@@ -257,6 +257,23 @@
           </execution>
         </executions>
       </plugin>
+      <plugin>
+        <groupId>org.apache.rat</groupId>
+        <artifactId>apache-rat-plugin</artifactId>
+        <configuration>
+          <excludes>
+            <exclude>**/*.svg</exclude>
+            <exclude>**/*.ai</exclude>
+            <exclude>**/*.links</exclude>
+            <exclude>**/.htaccess</exclude>
+            <exclude>content/apt/guides/plugin/notes.txt</exclude>
+            <exclude>content/apt/guides/suggestions/non-standard-directories.txt</exclude>
+            <exclude>content/filtered-resources/.htaccess</exclude>
+            <exclude>content/resources/developers/svn-eol-style.txt</exclude>
+            <exclude>content/resources/download.cgi</exclude>
+          </excludes>
+        </configuration>
+      </plugin>
     </plugins>
   </build>
 
