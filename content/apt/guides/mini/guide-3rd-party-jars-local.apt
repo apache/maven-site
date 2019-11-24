@@ -56,7 +56,7 @@ mvn install:install-file -Dfile=<path-to-file> -DpomFile=<path-to-pomfile>
 
 +----+
 
-mvn install:install-file -Dfile=<path-to-file>
+mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=<path-to-file>
 
 +----+
 
