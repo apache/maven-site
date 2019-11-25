@@ -93,13 +93,17 @@ mvn scm-publish:publish-scm
 
 This will publish the Maven core site in [/ref/3-LATEST](/ref/3-LATEST).
 
+### Complete the release
+
+After a succesful vote you should do the following steps to finish the release.
+
 #### Add New Version to ASF Distribution Directory
 
 In addition to promoting the repository, the release archives should be
 moved to the release svnpubsub tree:
 
 ```
-svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3
+svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven Distribution Archives"
 ```
 
 #### Deploy the Latest Documentation to Target Versioned Location
