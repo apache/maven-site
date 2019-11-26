@@ -56,11 +56,11 @@ Many thanks to all reporters and contributors for their time and support.
 
 - Some license issues on binary distribution have been fixed.
 
-- This Maven distribution is now Reproducible: if you build from source archive, with JDK 8, on Windows, with  
+- This Maven distribution is now Reproducible: if you [download Maven source archive](/download.cgi) (`apache-maven-3.6.3-src.zip` or `.tar.gz`), build it on Windows with JDK 8 using following command:  
 ```
 mvn -DbuildNumber=cecedd343002696d0abb50b32b541b8a6ba2883f package
 ```
-  you'll get bit-by-bit identical output that you can check with sha512 fingerprints.  
+  you'll get bit-by-bit identical output (`apache-maven-3.6.3-bin.zip` and `.tar.gz` in `apache-maven/target/`) that you can check with sha512 fingerprints against official release.  
   If you're building on any Unix system, you'll need to add "`-Dline.separator=$'\r\n'`".  
   See the [Maven - Guide to Configuring for Reproducible Builds](/guides/mini/guide-reproducible-builds.html) for more details.
 
