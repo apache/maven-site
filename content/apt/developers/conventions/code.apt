@@ -28,18 +28,19 @@
 
 Maven Code Style And Code Conventions
 
- This document describes how developers and contributors should write code. The reasoning of these styles and conventions is
- mainly for consistency, readability and maintainability reasons.
+ This document describes how developers and contributors should format code 
+ in order to improve consistency, readability and maintainability.
 
 * Generic Code Style And Convention
 
  All working files (java, xml, others) should respect the following conventions:
 
  * <<License Header>>: Always add the current {{{https://www.apache.org/legal/src-headers.html#headers}ASF license header}}
- in all versionned files.
+ in all files checked into the source code repository.
 
- * <<Trailing Whitespaces>>: Remove all trailing whitespaces. If your are an Eclipse user, you could use the
- {{{https://andrei.gmxhome.de/anyedit/}Anyedit Eclipse Plugin}}.
+ * <<Trailing Whitespace>>: Remove all trailing whitespace. If you use
+ Eclipse, you can use the
+ {{{http://andrei.gmxhome.de/anyedit/}Anyedit Eclipse Plugin}}.
 
 ~~ * Using SVN properties like \$Id: \$ => Is it a wanted goal for all files like java or apt?
  []
@@ -52,7 +53,7 @@ Maven Code Style And Code Conventions
 
  []
 
- <<Note>>: The specific styles and conventions, listed in the next sections, could override these generic rules.
+ <<Note>>: The specific styles and conventions, listed in the next sections, can override these generic rules.
 
 * {Java}
 
@@ -60,7 +61,7 @@ Maven Code Style And Code Conventions
 
  The Maven style for Java is mainly:
 
- * <<White space>>: One space after control statements and between arguments (i.e. <<<if ( foo )>>> instead of
+ * <<White space>>: One space after control statements and between arguments (e.g. <<<if ( foo )>>> instead of
    <<<if(foo)>>>), <<<myFunc( foo, bar, baz )>>> instead of <<<myFunc(foo,bar,baz)>>>).
    No spaces after methods names (i.e. <<<void myMethod(), myMethod( "foo" )>>>)
 
@@ -162,21 +163,21 @@ public class MyMojo
 
  For consistency reasons, our Java code convention is mainly:
 
- * <<Naming>>: Constants (i.e. static final members) values should always be in upper case.
-   Using short, descriptive names for classes and methods.
+ * <<Naming>>: Constants (i.e. static final members) should always be in upper case.
+   Use short, descriptive names for classes and methods.
 
- * <<Organization>>: Avoid using a lot of public inner classes. Prefer interfaces instead of default implementation.
+ * <<Organization>>: Avoid using public inner classes. Prefer interfaces instead of default implementation.
 
- * <<Modifier>>: Avoid using final modifier on all member variables and arguments.
- Prefer using private or protected member instead of public member.
+ * <<Modifier>>: Avoid using final modifier on all fields and arguments.
+ Prefer using private or protected fields instead of public fields.
 
- * <<Exceptions>>: Throw meaningful exceptions to makes debugging and testing more easy.
+ * <<Exceptions>>: Throw meaningful exceptions to make debugging and testing easier.
 
  * <<Documentation>>: Document public interfaces well, i.e. all non-trivial public and
- protected functions should include Javadoc that indicates what it does.
- <<Note>>: it is an ongoing convention for the Maven Team.
+ protected functions should include Javadoc that indicates what they do.
 
- * <<Testing>>: All non-trivial public classes should include corresponding unit or IT tests.
+ * <<Testing>>: All non-trivial public classes should corresponding unit or
+ integration tests.
 
  []
 
@@ -294,7 +295,7 @@ public class MyMojo
 
     []
 
- <<Note>>: There existing two alternativs to change order of a pom file
+ <<Note>>: There exist two alternatives to change order of a pom file
  {{{https://www.mojohaus.org/tidy-maven-plugin/}Tidy Maven Plugin}} or the
  {{{https://github.com/Ekryd/sortpom}Sortpom Maven Plugin}}.
 
