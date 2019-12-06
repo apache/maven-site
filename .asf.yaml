@@ -1,0 +1,6 @@
+github:
+  description: "Apache Maven site"
+  homepage: https://maven.apache.org/
+  labels:
+    - apache
+    - maven
