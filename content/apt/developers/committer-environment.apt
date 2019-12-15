@@ -1,5 +1,5 @@
  ------
- Developers centre - Commiter Environment
+ Developer centre - Committer Environment
  ------
  Vincent Siveton
  ------
@@ -37,13 +37,7 @@ Introduction
  all characters that Java can handle. The source files should not contain the byte order mark (BOM). There can be
  exceptions to this general rule, e.g. properties files are usually encoded using ISO-8859-1 as per the JRE API, so
  please keep this in mind, too.
-
-Subversion Configuration
-
- Before committing files in subversion repository, you need to read the
- {{{https://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with this properties file: {{{./svn-eol-style.txt}svn-eol-style.txt}}
-
+ 
 {Maven Code Style}
 
  The following sections show how to set up the code style for Maven in IDEA and Eclipse.
