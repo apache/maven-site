@@ -66,8 +66,6 @@ Maven Git Convention
   Add a link to your pull request to the JIRA. Committers will take it
   from here.
 
-  [[]]
-
 ** For committers
 
   Committers may, of course, commit directly to the ASF repositories.
