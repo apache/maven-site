@@ -61,8 +61,6 @@ Maven Developer Centre
 
   * {{{./committer-settings.html}Committer Settings}}
   
-  * {{{./java6.html}Java 6 in Plugins and Shared Components}}
-
   * {{{./retirement-plan-plugins.html}Retirement Plan for Plugins}}
 
   * {{{./dependency-policies.html}Maven Dependency Policies}}
