@@ -83,7 +83,6 @@ mvn -DdistributionTargetDir="$HOME/app/maven/apache-maven-SNAPSHOT" install
 *** Running the full Maven core integration tests
 
    Before checking in a change or submitting a patch to Maven core, it is required to run the core integration tests.
-   These live in their own {{{/core-its/source-repository.html}<<<maven-integration-testing.git>>> Git repository}}.
    Using your local build of Maven, run:
 
 +-----+
