@@ -79,10 +79,10 @@ Guide to Configuring Plug-ins
 
  In Maven, there are the build and the reporting plugins:
 
-  * <<Build plugins>> will be executed during the build and then, they should be configured in the <<<\<build/\>>>>
+  * <<Build plugins>> are executed during the build and configured in the <<<\<build/\>>>>
   element.
 
-  * <<Reporting plugins>> will be executed during the site generation and they should be configured in the
+  * <<Reporting plugins>> are executed during the site generation and configured in the
   <<<\<reporting/\>>>> element.
 
   []
@@ -91,17 +91,17 @@ Guide to Configuring Plug-ins
   {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
-  <<Important Note>>: It is recommended to always define each version of the plugins used by the build to guarantee
+  <<Important Note>>: Always define each version of the plugins used by the build to guarantee
   the build reproducibility. A good practice is to specify them in the <<<\<build\>\<pluginManagement/\>\</build\>>>>
-  elements for <<each>> build plugins (generally, you will define a \<pluginManagement/\> element in a parent POM).
-  For reporting plugins, you should specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> elements
+  elements for <<each>> build plugins. (Generally, you will define a \<pluginManagement/\> element in a parent POM.)
+  For reporting plugins, specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> elements
   (and surely in the <<<\<build\>\<pluginManagement/\>\</build\>>>> elements too).
 
 * {Generic Configuration}
 
  Maven plugins (build and reporting) are configured by specifying a <<<\<configuration\>>>> element where the child elements of the
- <<<\<configuration\>>>> element are mapped to fields, or setters, inside your Mojo (remember that a plug-in consists of
- one or more Mojos where a Mojo maps to a goal). Say, for example, we had a Mojo that performed a query against
+ <<<\<configuration\>>>> element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of
+ one or more Mojos where a Mojo maps to a goal.) Say, for example, you have a Mojo that performs a query against
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 +----+
@@ -155,24 +155,23 @@ public class MyQueryMojo
 </project>
 +----+
 
- As you can see the elements in the configuration match the names of the fields in the Mojo. The configuration
- mechanism Maven employs is very similar to the way {{{http://x-stream.github.io/}XStream}} works where elements
- in XML are mapped to objects. So from the example above you can see that the mapping is pretty straight forward the
+ The elements in the configuration match the names of the fields in the Mojo.
+ The mapping is straight forward, the
  <<<url>>> element maps to the <<<url>>> field, the <<<timeout>>> element maps to the <<<timeout>>> field and the
  <<<options>>> element maps to the <<<options>>> field. The mapping mechanism can deal with arrays by inspecting
  the type of the field and determining if a suitable mapping is possible.
 
-  For mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be
+  For Mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be
   configured via system properties instead of a <<<\<configuration\>>>> section in the POM. The plugin documentation
   for those parameters will list an <expression> that denotes the system properties for the configuration. In the
-  mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
+  Mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
   be specified by the system property <<<query.url>>> as shown below:
 
 +----+
 mvn myquery:query -Dquery.url=http://maven.apache.org
 +----+
 
-  Note that the name of the system property does not necessarily match the name of the mojo parameter. While this is
+  The name of the system property does not necessarily match the name of the mojo parameter. While this is
   a rather common practice, you will often notice plugins that employ some prefix for the system properties to avoid
   name clashes with other system properties. Though rarely, there are also plugin parameters that (e.g. for historical
   reasons) employ system properties which are completely unrelated to the parameter name. So be sure to have a close
@@ -180,7 +179,7 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
 
 ** {Help Goal}
 
-  Most recent Maven plugins have a <<<help>>> goal that prints a description
+  Most Maven plugins have a <<<help>>> goal that prints a description
   of the plugin and its parameters and types. For instance, to see help
   for the javadoc goal, type:
 
@@ -213,7 +212,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
 *** {Mapping Complex Objects}
 
-  Mapping complex types is also fairly straight forward in Maven so let's look at a simple example where we
+  Mapping complex types is also fairly straight forward. Let's look at a simple example where we
   are trying to map a configuration for Person object. The <<<\<configuration/\>>>> element might look like the
   following:
 
@@ -235,11 +234,11 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  * The object instantiated must be in the same package as the Mojo itself. So if your mojo is in
    <<<com.mycompany.mojo.query>>> then the mapping mechanism will look in that package for an
-   object named <<<Person>>>. As you can see the mechanism will capitalize the first letter of
-   the element name and use that to search for the object to instantiate.
+   object named <<<Person>>>. The mechanism capitalizes the first letter of
+   the element name and uses that to search for the object to instantiate.
 
  * If you wish to have the object to be instantiated live in a different package or have a more
-   complicated name then you must specify this using an <<<implementation>>> attribute like the
+   complicated name, specify this using an <<<implementation>>> attribute like the
    following:
 
  []
