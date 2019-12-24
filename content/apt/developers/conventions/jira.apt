@@ -1,10 +1,10 @@
- ------
- Maven JIRA Convention
- ------
- Vincent Siveton
- ------
- 2008-07-05
- ------
+------
+Maven JIRA Conventions
+------
+Vincent Siveton
+------
+2008-07-05
+------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
 ~~ or more contributor license agreements.  See the NOTICE file
@@ -28,69 +28,63 @@
 
 Maven JIRA Convention
 
- This document describes how Maven developers should use JIRA, our issue management system.
+This document describes how Maven developers should use JIRA, our issue management system.
 
 * When To Create a JIRA Issue?
 
- This section discusses when to create a JIRA issue versus just committing a change in Git (eventually through a PR).
+This section discusses when to create a JIRA issue versus just committing a change in Git (eventually through a PR).
 
- * <<Minor changes>>, like code reformatting, documentation fixes, etc. that aren't going to impact other users can
- be committed without much issue.
+* <<Minor changes>> such as code reformatting, documentation fixes, etc. that aren't going to impact other users can
+be committed without much issue.
 
- * <<Larger changes>>, like bug fixes, API changes, significant refactoring, new classes, and pretty much any change
- of more than 100 lines, should have a JIRA ticket associated with it, or at least an email discussion.\
- Creating a JIRA issue and referring it in commit comment will ease tracking what changes happen in a release,
- using JIRA automatic release notes creation.
+* <<Larger changes>> such as bug fixes, API changes, significant refactoring, new classes, and pretty much any change
+of more than 100 lines, should have JIRA tickets.
+Creating a JIRA issue and referring it in the commit comments simplifies tracking the changes that happen in a release,
+using JIRA automatic release notes creation.
 
- []
+[]
 
 * How To Use Issue Details?
 
- This section presents some conventions about the issue fields.
+This section presents some conventions about the issue fields.
 
 ** Priority
 
- Committers has the responsibility to realign priority by editing the issue.
+Committers have the responsibility to realign priority by editing the issue.
 
- <<Reasoning>>: having a correct release note.
+<<Reasoning>>: having a correct release note.
 
 ** Assignee
 
- Committers could assign an issue to a specific committer if he thinks it is the right committer.
+Committers can assign an issue to a specific committer that person seems to
+be well placed to address it.
 
 ** Component/s
 
- Committers has the responsibility to specify the correct the component by editing the issue.
+Committers have the responsibility to specify the correct component by editing the issue.
 
- <<Reasoning>>: having a correct release note.
+<<Reasoning>>: having a correct release note.
 
 ** Affects Version/s
 
- By default, the Maven team considers that an issue, which affects a given version, affects also precedent versions, i.e. issue
- which affects Maven 2.0.9 will affect also 2.0, 2.0.1 ... 2.0.9.
- If it is a regression, the committers should specify the affected versions.
+By default, the Maven team considers that an issue which affects a given version also affects preceding versions. For example, an issue
+that affects Maven 2.0.9 also affects 2.0, 2.0.1 ... 2.0.9.
+If it is a regression, the committers should specify the affected versions.
 
- <<Reasoning>>: having a correct release note.
+<<Reasoning>>: having a correct release note.
 
 ** Fix Version/s
 
-  TO BE DISCUSSED
-
-~~ Since the Maven team works on the trunk (2.1) and the main branch (2.0.x), the committers should always mark issues that are both 2.0.x and 2.1.
-~~ Reasoning: it's good housekeeping to always say both to keep track of the changes in both branches.
-
 ** Time Tracking
 
- The Maven team never uses it. Committers could do it, but like said, it will never be used.
+The Maven team doesn't use this. Committers can if it helps them.
 
 * Further Links
 
- * {{{https://www.atlassian.com/software/jira/docs/latest/}JIRA Documentation}}
+* {{{https://www.atlassian.com/software/jira/docs/latest/}JIRA Documentation}}
 
- * {{{https://www.atlassian.com/software/jira/docs/latest/issues.html}What is an Issue?}}
+* {{{https://www.atlassian.com/software/jira/docs/latest/issues.html}What is an Issue?}}
 
- * {{{https://www.atlassian.com/software/jira/docs/latest/projects.html}What is a project?}}
+* {{{https://www.atlassian.com/software/jira/docs/latest/projects.html}What is a project?}}
 
- * {{{https://markmail.org/message/wfv2lw66i2gggnaq}how we handle JIRA versions Thread}}
-
- []
+[]
