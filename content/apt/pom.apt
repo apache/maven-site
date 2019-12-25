@@ -458,7 +458,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 *** {Version Order Specification}:
 
   The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
-  The separator is recorded and will have effect on the order. A transition between digits and characters is equivalent to hypen.
+  The separator is recorded and will have effect on the order. A transition 
+  between digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
   with "<<<.>>>" or "<<<->>>" prefixes.
 
@@ -468,7 +469,9 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   []
 
-  Then, starting from the end of the version, the trailing "null" values (<<<0>>>, <<<"">>>, "<<<final>>>", "<<<ga>>>") are trimmed. This process is repeated at each remaining hypen from end to start.
+  Then, starting from the end of the version, the trailing "null" values 
+  (<<<0>>>, <<<"">>>, "<<<final>>>", "<<<ga>>>") are trimmed. This process is
+  repeated at each remaining hyphen from end to start.
 
   Trimming Examples:
 
