@@ -34,11 +34,12 @@ Performing a Maven Project Release
 
   * you have a Subversion 1.5+ client installed and on your shell's path. See {{{https://subversion.apache.org/}https://subversion.apache.org/}}.
 
-  * you have JDK 5 installed and on your shell's path.
+  * you have JDK 8 installed and on your shell's path to build Maven 3.7.0+. Details about minimum JDK version to build an appropriate version
+    can be found here: {{{https://maven.apache.org/docs/history.html}https://maven.apache.org/docs/history.html}}
 
   * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable <<<MAVEN_OPTS=-Xmx512m>>>
 
-  * you must use Maven 2.2.1+, as Maven 2.1.0 and 2.2.0 produce incorrect GPG signatures and checksums respectively.
+  * you must use Maven 3.0.5+.
   
   * follow Apache environment configuration steps outlined at: {{{https://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
 
