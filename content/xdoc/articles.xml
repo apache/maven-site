@@ -27,10 +27,50 @@ under the License.
   </properties>
   <body>
     <section name="Books on Maven">
-    
-<div style="float: left; margin-right: 5em;">
-<a href="https://www.packtpub.com/application-development/apache-maven-cookbook"><img src="images/books/apache_maven_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
+        
+        <div style="float: left; margin-right: 5em;">
+<a href="https://www.packtpub.com/application-development/mastering-apache-maven-3"><img src="images/books/apache_maven_cookbook.jpg" title="Mastering Apache Maven 3" /></a>
 </div>
+
+    <div style="min-height: 220px">
+      <p><a href="https://www.packtpub.com/application-development/apache-maven-cookbook?utm_source=maven.appache.org&utm_medium=referral&utm_campaign=OutreachB02037dollar5"><strong>Mastering Apache Maven 3</strong></a></p>
+      <ul>
+        <li><strong>Covers: </strong>Maven </li>
+        <li><strong>Published: </strong> Packt Publishing (December 2014)</li>
+        <li><strong>Authors: </strong> Prabath Siriwardena</li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/apache-maven-cookbook">Packt</a>, <a href="https://www.amazon.com/Mastering-Apache-Maven-Prabath-Siriwardena-ebook/dp/B00RP13CMU/ref=sr_1_1?keywords=Mastering+Apache+Maven+3&qid=1577705394&s=digital-text&sr=1-1">Amazon</a></li>
+      </ul>
+    </div> 
+        
+        
+        <div style="float: left; margin-right: 5em;">
+<a href="https://www.packtpub.com/application-development/apache-maven-cookbook"><img src="images/books/apache_maven_cookbook.jpg" title="Learning Apache Maven 3 [Video]" /></a>
+</div>
+
+    <div style="min-height: 220px">
+      <p><a href="https://www.packtpub.com/application-development/learning-apache-maven-3-video?utm_source=maven.appache.org&utm_medium=referral&utm_campaign=OutreachV00140dollar5"><strong>Learning Apache Maven 3 [Video]</strong></a></p>
+      <ul>
+        <li><strong>Covers: </strong>Maven </li>
+        <li><strong>Published: </strong> Packt Publishing (November 2013)</li>
+        <li><strong>Authors: </strong> Kapila Bogahapitiya</li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/learning-apache-maven-3-video">Packt</a></li>
+      </ul>
+    </div> 
+        
+        
+        <div style="float: left; margin-right: 5em;">
+<a href="https://www.packtpub.com/application-development/maven-essentials"><img src="images/books/apache_maven_cookbook.jpg" title="Maven Essentials" /></a>
+</div>
+
+    <div style="min-height: 220px">
+      <p><a href="https://www.packtpub.com/application-development/maven-essentials?utm_source=maven.appache.org&utm_medium=referral&utm_campaign=OutreachB02157dollar5"><strong>Maven Essentials</strong></a></p>
+      <ul>
+        <li><strong>Covers: </strong>Maven </li>
+        <li><strong>Published: </strong> Packt Publishing (December 2015)</li>
+        <li><strong>Authors: </strong> Prabath Siriwardena</li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/maven-essentials">Packt</a>, <a href="https://www.amazon.com/Maven-Essentials-started-essentials-automation-ebook/dp/B015CYBP16/ref=sr_1_1?keywords=Maven+Essentials&qid=1577706486&s=digital-text&sr=1-1">Amazon</a></li>
+      </ul>
+    </div>
 
     <div style="min-height: 220px">
       <p><a href="https://www.packtpub.com/application-development/apache-maven-cookbook"><strong>Apache Maven Cookbook</strong></a></p>
