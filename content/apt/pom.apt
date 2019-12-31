@@ -4,7 +4,7 @@
  Eric Redmond, et al.
  Karl Heinz Marbaise
  -----
- 2016-06-17
+ 2019-12-31
  -----
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -1513,7 +1513,9 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   projects.
 
   * <<name>>, <<url>> and <<comments>>:
-  are self explanatory, and have been encountered before in other capacities. The fourth license element is:
+  are self explanatory, and have been encountered before in other capacities.
+  Using an {{{https://spdx.org/licenses/}SPDX identifier}} as the license <<name>> is recommended.
+  The fourth license element is:
 
   * <<distribution>>:
   This describes how the project may be legally distributed. The two stated methods are repo (they may be
