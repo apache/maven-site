@@ -459,10 +459,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   If version strings are syntactically correct [Semantic Versioning 1.0.0](https://semver.org/spec/v1.0.0.html),
   version numbers, then version comparison follows the precedence rules outlined in that specification.
-  These versions are ASCII alphanumeric strings such as 2.15.2-alpha commonly encountered.
+  These versions are the commonly encountered alphanumeric sASCII trings such as 2.15.2-alpha.
   More precisely, this is true if both version numbers to be compared match the "valid semver"
   production in the BNF grammar in the semantic versioning specification.
-  It does not consider any semantics implied by that specification.
+  Maven does not consider any semantics implied by that specification.
   
   **Important**: This is only true for Semantic Versioning *1.0.0*. The Maven version order algorithm
   is not compatible with Semantic Versioning *2.0.0*. In particular, Maven does not special case the
