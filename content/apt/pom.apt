@@ -468,7 +468,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   is not compatible with Semantic Versioning *2.0.0*. In particular, Maven does not special case the
   plus sign or consider build identifiers.
 
-  When version strings do not follow semantic versioning, a more complex set of rule is required. 
+  When version strings do not follow semantic versioning, a more complex set of rules is required. 
   The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
   The separator is recorded and will have effect on the order. A transition 
   between digits and characters is equivalent to a hyphen.
