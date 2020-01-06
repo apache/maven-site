@@ -369,9 +369,9 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   The classifier distinguishes artifacts that were built from the same POM but differ in content. It is
   some optional and arbitrary string that - if present - is appended to the artifact name just after the version number.
 
-  As a motivation for this element, consider for example a project that offers an artifact targeting JRE 1.5 but at the
-  same time also an artifact that still supports JRE 1.4. The first artifact could be equipped with the classifier
-  <<<jdk15>>> and the second one with <<<jdk14>>> such that clients can choose which one to use.
+  As a motivation for this element, consider for example a project that offers an artifact targeting Java 11 but at the
+  same time also an artifact that still supports Java 1.8. The first artifact could be equipped with the classifier
+  <<<jdk11>>> and the second one with <<<jdk8>>> such that clients can choose which one to use.
 
   Another common use case for classifiers is to attach secondary artifacts to the project's main artifact. If
   you browse the Maven central repository, you will notice that the classifiers <<<sources>>> and <<<javadoc>>> are used
