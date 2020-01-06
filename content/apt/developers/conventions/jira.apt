@@ -34,8 +34,8 @@ This document describes how Maven developers should use JIRA, our issue manageme
 
 This section discusses when to create a JIRA issue versus just committing a change in Git (eventually through a PR).
 
-* <<Minor changes>> such as code reformatting, documentation fixes, etc. that aren't going to impact other users can
-be committed without much issue.
+* <<Minor changes>> such as code reformatting, documentation fixes, etc. that aren't going to impact other users
+can be committed without a JIRA issue.
 
 * <<Larger changes>> such as bug fixes, API changes, significant refactoring, new classes, and pretty much any change
 of more than 100 lines, should have JIRA tickets.
