@@ -1830,9 +1830,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   does not exist in the local repository, it will then attempt to download from a remote repository.
   The repository elements within a POM specify those alternate repositories to search.
 
-  The repository is one of the most powerful features of the Maven community. The default central Maven
-  repository lives on {{https://repo.maven.apache.org/maven2/}}. Another source for artifacts not yet in Central
-  is the Apache snapshots repo.
+  The repository is one of the most powerful features of the Maven community. By default Maven searches
+  the central repository at {{https://repo.maven.apache.org/maven2/}}. Additional repositories can be 
+  configured in the pom.xml `repositories` element. 
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1852,9 +1852,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
         <updatePolicy>never</updatePolicy>
         <checksumPolicy>fail</checksumPolicy>
       </snapshots>
-      <id>apacheSnapshots</id>
-      <name>Apache Snapshots</name>
-      <url>https://repository.apache.org/snapshots/</url>
+      <name>Nexus Snapshots</name>
+      <id>snapshots-repo</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
       <layout>default</layout>
     </repository>
   </repositories>
@@ -1895,7 +1895,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The other type of artifact is plugins. Maven plugins are themselves a special type of artifact.
   Because of this, plugin repositories may be separated from other repositories (although, I have
   yet to hear a convincing argument for doing so). In any case, the structure of the <<<pluginRepositories>>>
-  element block is similar to the repositories element. The <<<pluginRepository>>> elements each specify a
+  element block is similar to the <<<repositories>>> element. The <<<pluginRepository>>> elements each specify a
   remote location of where Maven can find new plugins.
 
 
@@ -1920,7 +1920,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 +-------------------------+
 
   * <<downloadUrl>>:
-  is the url of the repository from whence another POM may point to in order to grab this POM's
+  is the URL of the repository which another POM can point to in order to grab this POM's
   artifact. In the simplest terms, we told the POM how to upload it (through repository/url),
   but from where can the public download it? This element answers that question.
 
@@ -1936,7 +1936,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
     The manager of the repository converted this POM from an earlier version to Maven 2.
 
     * <<partner>>:
-    This could just as easily have been called synched. This means that this artifact has been synched with a partner repository.
+    This artifact has been synchronized with a partner repository.
 
     * <<deployed>>:
     By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
