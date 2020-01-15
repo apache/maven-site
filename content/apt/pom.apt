@@ -1831,8 +1831,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The repository elements within a POM specify those alternate repositories to search.
 
   The repository is one of the most powerful features of the Maven community. The default central Maven
-  repository lives on {{https://repo.maven.apache.org/maven2/}}. Another source for artifacts not yet in iBiblio
-  is the Codehaus snapshots repo.
+  repository lives on {{https://repo.maven.apache.org/maven2/}}. Another source for artifacts not yet in Central
+  is the Apache snapshots repo.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -1852,9 +1852,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
         <updatePolicy>never</updatePolicy>
         <checksumPolicy>fail</checksumPolicy>
       </snapshots>
-      <id>codehausSnapshots</id>
-      <name>Codehaus Snapshots</name>
-      <url>http://snapshots.maven.codehaus.org/maven2</url>
+      <id>apacheSnapshots</id>
+      <name>Apache Snapshots</name>
+      <url>https://repository.apache.org/snapshots/</url>
       <layout>default</layout>
     </repository>
   </repositories>

@@ -127,7 +127,7 @@ Introduction to the POM
 
  Furthermore, you can see that in the minimal POM the <repositories> were not specified. If you build your project using the minimal POM,
  it would inherit the <repositories> configuration in the Super POM. Therefore when Maven sees the dependencies in
- the minimal POM, it would know that these dependencies will be downloaded from <<<http://repo.maven.apache.org/maven2>>> which was specified
+ the minimal POM, it would know that these dependencies will be downloaded from <<<https://repo.maven.apache.org/maven2>>> which was specified
  in the Super POM.
 
  {{{./introduction-to-the-pom.html}[top]}}

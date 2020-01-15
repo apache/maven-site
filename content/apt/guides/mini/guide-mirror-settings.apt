@@ -49,17 +49,17 @@ Using Mirrors for Repositories
  To configure a mirror of a given repository, you provide it in your settings file (<<<$\{user.home\}/.m2/settings.xml>>>),
  giving the new repository its
  own <<<id>>> and <<<url>>>, and specify the <<<mirrorOf>>> setting that is the ID of the repository you are using a
- mirror of. For example, the ID of the main Maven Central US repository included by default is <<<central>>>, so to use
- the European Central instance, you would configure the following:
+ mirror of. For example, the ID of the main Maven Central repository included by default is <<<central>>>, so to use
+ the different mirror instance, you would configure the following:
 
 +-----+
 <settings>
   ...
   <mirrors>
     <mirror>
-      <id>UK</id>
-      <name>UK Central</name>
-      <url>http://uk.maven.org/maven2</url>
+      <id>other-mirror</id>
+      <name>Other Mirror Repository</name>
+      <url>https://other-mirror.repo.other-company.com/maven2</url>
       <mirrorOf>central</mirrorOf>
     </mirror>
   </mirrors>
@@ -75,9 +75,9 @@ Using Mirrors for Repositories
  The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings
  Model Website}}.
 
- <<Note>>: The official Maven 2 repository is at <<<http://repo.maven.apache.org/maven2>>> hosted in the US, or <<<http://uk.maven.org/maven2>>> hosted in the UK. 
+ <<Note>>: The official Maven repository is at <<<https://repo.maven.apache.org/maven2>>> hosted by the Sonatype Company and is distributed worldwide via CDN.
  
- A list of known mirrors is available in the {{{http://repo.maven.apache.org/maven2/.meta/repository-metadata.xml}Repository Metadata}}. These 
+ A list of known mirrors is available in the {{{https://repo.maven.apache.org/maven2/.meta/repository-metadata.xml}Repository Metadata}}. These
 mirrors may not have the same contents and we don't support them in any way.
 
 Using A Single Repository
