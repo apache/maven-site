@@ -1895,7 +1895,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The other type of artifact is plugins. Maven plugins are themselves a special type of artifact.
   Because of this, plugin repositories may be separated from other repositories (although, I have
   yet to hear a convincing argument for doing so). In any case, the structure of the <<<pluginRepositories>>>
-  element block is similar to the repositories element. The <<<pluginRepository>>> elements each specify a
+  element block is similar to the <<<repositories>>> element. The <<<pluginRepository>>> elements each specify a
   remote location of where Maven can find new plugins.
 
 
