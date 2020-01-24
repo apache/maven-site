@@ -28,7 +28,7 @@
 
 Introduction to Build Profiles
 
-  Apache Maven 2.0 goes to great lengths to ensure that builds are portable. Among
+  Apache Maven goes to great lengths to ensure that builds are portable. Among
   other things, this means allowing build configuration inside the POM,
   avoiding <<all>> filesystem references (in inheritance, dependencies, and
   other places), and leaning much more heavily on the local repository to
@@ -41,8 +41,8 @@ Introduction to Build Profiles
   And at still other times, you may even need to include a whole plugin in the
   build lifecycle depending on the detected build environment.
 
-  To address these circumstances, Maven 2.0 introduces the concept of a build
-  profile. Profiles are specified using a subset of the elements available in
+  To address these circumstances, Maven supports build profiles.
+  Profiles are specified using a subset of the elements available in
   the POM itself (plus one extra section), and are triggered in any of a
   variety of ways. They modify the POM at build time, and are meant to be used
   in complementary sets to give equivalent-but-different parameters for a set
