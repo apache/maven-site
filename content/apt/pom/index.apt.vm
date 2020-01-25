@@ -35,7 +35,7 @@ Parent POMs
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 || <<POM>>                                   || <<Version>> || <<Release Date>> || <<Parent POM Description>> || <<Source Repository>> || <<Issue Tracking>>
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                     | 22           | 2020-01-08 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project+%3D+MPOM+AND+component+%3D+asf}Jira MPOM}}
+| {{{./asf/} <<<ASF>>>}}                     | 23           | 2020-01-25 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project+%3D+MPOM+AND+component+%3D+asf}Jira MPOM}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 || <<Maven Parent POMs>>                     | 33           | 2018-09-11 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
