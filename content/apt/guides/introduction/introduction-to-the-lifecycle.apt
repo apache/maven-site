@@ -92,7 +92,7 @@ Introduction to the Build Lifecycle
   You should select the phase that matches your outcome. If you want your jar, run <<<package>>>. If you want to run the 
   unit tests, run <<<test>>>.
 
-  If you are uncertain what you want, the preffered phase to call is
+  If you are uncertain what you want, the preferred phase to call is
 
 ------
 mvn verify
