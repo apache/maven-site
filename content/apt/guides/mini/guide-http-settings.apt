@@ -352,10 +352,10 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
       <id>my-server</id>
       <configuration>
         <httpHeaders>
-          <httpHeader>
+          <property>
             <name>Foo</name>
             <value>Bar</value>
-          </httpHeader>
+          </property>
         </httpHeaders>
       </configuration>
     </server>
