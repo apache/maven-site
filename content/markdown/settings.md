@@ -465,7 +465,7 @@ artifact.
 
 Repositories are home to two major types of artifacts. The first are
 artifacts that are used as dependencies of other artifacts. These are
-the majority of plugins that reside within central. The other type of
+the majority of artifacts that reside within central. The other type of
 artifact is plugins. Maven plugins are themselves a special type of
 artifact. Because of this, plugin repositories may be separated from
 other repositories (although, I have yet to hear a convincing argument
