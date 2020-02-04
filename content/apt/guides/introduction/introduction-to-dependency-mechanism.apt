@@ -642,7 +642,7 @@ Introduction to the Dependency Mechanism
       <dependency>
         <groupId>com.test</groupId>
         <artifactId>project2</artifactId>
-        <version>${project1Version}</version>
+        <version>${project2Version}</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
