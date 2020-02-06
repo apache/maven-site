@@ -138,7 +138,7 @@ mvn clean dependency:copy-dependencies package
   Moreover, if a goal is bound to one or more build phases, that goal will be called in all those phases.
 
   Furthermore, a build phase can also have zero or more goals bound to it. If a build phase has no goals bound to it,
-  that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals
+  that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals.
 ~~~
 ~~~ Check if the following is true for Maven 3...
   (<Note: In Maven 2.0.5 and above, multiple goals bound to a phase are executed in the same order as they are declared in the
