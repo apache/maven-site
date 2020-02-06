@@ -78,4 +78,4 @@ Configuring for Reproducible Builds
 
  * Q. can <<<project.build.outputTimestamp>>> property be updated automatically at release time?
 
-   A. this should be available in a future maven-release-plugin version: see {{{https://issues.apache.org/jira/browse/MRELEASE-1029}MRELEASE-1029}}
+   A. yes, you'll need to upgrade maven-release-plugin to version 3.0.0-M1 minimum: see {{{https://issues.apache.org/jira/browse/MRELEASE-1029}MRELEASE-1029}}
