@@ -80,7 +80,7 @@ Coping with Sun JARs
 *----------------------------------------------------------+-------------------+----------------+
 
  If you use our suggestions as noted above when adding a Sun dependency to your
- POM, Maven 2.x can help you locate the JARs by providing
+ POM, Maven can help you locate the JARs by providing
  the site where they can be retrieved. It is important that you follow
  the suggested naming conventions as we cannot store the JARs at the central repository. We
  can only store metadata about those JARs and it is the metadata that contains
@@ -89,19 +89,3 @@ Coping with Sun JARs
  Once you have downloaded a particular Sun JAR to your system you can install the JAR
  in your local repository. Please refer to our {{{./guide-3rd-party-jars-local.html}Guide to installing 3rd party JARs}}
  for instructions on how to accomplish this.
-
- <<Note>>: Java.net provides a {{{http://download.java.net/maven/2/}Maven 2 repository}}. You could specify it directly in your POM or
- in your settings.xml between the tags \<repositories\>:
-
------
-...
-      <repositories>
-        <repository>
-          <id>maven2-repository.dev.java.net</id>
-          <name>Java.net Repository for Maven</name>
-          <url>http://download.java.net/maven/2/</url>
-          <layout>default</layout>
-        </repository>
-      </repositories>
-...
------
