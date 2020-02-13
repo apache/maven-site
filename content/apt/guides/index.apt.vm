@@ -85,8 +85,6 @@ Documentation
 
  * {{{./mini/guide-3rd-party-jars-remote.html}Deploying 3rd party JARs to Remote Repository}}
 
- * {{{./mini/guide-coping-with-sun-jars.html}Coping with Sun JARs}}
-
  * {{{./mini/guide-repository-ssl.html}Remote repository access through authenticated HTTPS}}
 
 ~~ * {{{./introduction/introduction-to-artifact-resolution.html}Repository Definitions and Artifact Resolution}}
@@ -175,4 +173,4 @@ Documentation
 
  []
 
- You could also browse the {{{/ref/current/}full technical documentation references}} of the current version of Maven.
+ You can also browse the {{{/ref/current/}full technical documentation references}} of the current version of Maven.
