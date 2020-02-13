@@ -77,7 +77,7 @@ Guide to Configuring Plug-ins
 
 * Introduction
 
- In Maven, there are the build and the reporting plugins:
+ In Maven, there are two kinds of plugins, build and reporting:
 
   * <<Build plugins>> are executed during the build and configured in the <<<\<build/\>>>>
   element.
