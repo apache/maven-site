@@ -48,20 +48,20 @@ Guide to relocation
  [[1]] Copy all <<<foo>>>-related files from <<</bar/foo/>>> in your Maven 2
  repository to a temporary location.
 
- [[2]] Change the groupId to <<<org.bar>>> in all <<<foo>>>-related pom files in the
+ [[2]] Change the groupId to <<<org.bar>>> in all <<<foo>>>-related POM files in the
  temporary location.
 
  [[3]] Copy all files from the temporary location to <<</org/bar/foo/>>> in
  your Maven 2 repository.
 
- [[4]] Create a minimal Maven 2 pom file for every old release of <<<foo>>> in
- your Maven 2 repository. The pom files only need to include <<<groupId>>>,
+ [[4]] Create a minimal Maven 2 POM file for every old release of <<<foo>>> in
+ your Maven 2 repository. The POM files only need to include <<<groupId>>>,
  <<<artifactId>>>, <<<version>>> and the relocation section.
  
- <<Note:>> Before you replace your old pom files in <<</bar/foo/>>> with these
- minimal pom files, make sure you have made backups!
+ <<Note:>> Before you replace your old POM files in <<</bar/foo/>>> with these
+ minimal POM files, make sure you have made backups!
  
- The minimal pom file might look like this for version 1.0 of <<<foo>>>:
+ The minimal POM file might look like this for version 1.0 of <<<foo>>>:
 
 +----+
 <project>
@@ -81,10 +81,10 @@ Guide to relocation
  to add the element that has changed to the <<<relocation>>> element. For
  information on which elements are allowed in the <<<relocation>>> element,
  see
- {{{/ref/current/maven-model/maven.html#class_relocation}the pom reference}}.
+ {{{/ref/current/maven-model/maven.html#class_relocation}the POM reference}}.
 
  [[5]] If your project uses MD5 or SHA1 checksums you must now create new checksums for
- the pom files in <<</bar/foo/>>> in your Maven 2 repository. If the pom file needs
+ the pom files in <<</bar/foo/>>> in your Maven 2 repository. If the POM file needs
  to be signed, do that as well.
 
  [[6]] If your project syncs with Central, you should now initiate that sync.
@@ -99,11 +99,11 @@ Guide to relocation
 
 ** Releasing the next version
 
- When the next release of <<<foo>>> is made, you should publish two Maven 2 pom
+ When the next release of <<<foo>>> is made, you should publish two Maven 2 POM
  files: first you should publish <<<foo>>>'s POM with the new groupId <<<org.bar>>>.
  
  Because data in the repository is not supposed to change, Maven doesn't
- download pom files that it has already downloaded. Therefore you will also need
+ download POM files that it has already downloaded. Therefore you will also need
  to publish a relocation POM file with the old groupId <<<bar>>> for the new version: this
  should be a minimal relocation POM (as described in step 4 above), but for the
  new version of <<<foo>>>.
