@@ -112,9 +112,9 @@ Guide to relocation
  groupId of <<<org.bar>>>, since users of the previous version have been
  informed of the changed groupId.
 
-** Examples
+* Examples
 
- <<Apache Ant>>
+** Apache Ant
  
   [[1]] has published its releases until 1.6.5 to Maven 1-compliant <<<ant:ant>>> coordinates
   (see {{{https://repo.maven.apache.org/maven2/ant/ant/}repository content}}),
