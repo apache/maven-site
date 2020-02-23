@@ -40,7 +40,7 @@ Introduction to Repositories
  Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
  <<<file://>>> and <<<https://>>>. These repositories might be a truly remote repository
  set up by a third party to provide their artifacts for downloading (for example,
- {{{https://repo.maven.apache.org/maven2/}repo.maven.apache.org}}.
+ {{{https://repo.maven.apache.org/maven2/}repo.maven.apache.org}}).
  Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
