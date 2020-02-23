@@ -131,3 +131,21 @@ Guide to relocation
  Notice that past <<<ant:ant>>> versions POMs (until 1.6.5) have not been modified to advertise about the move:  
  Central POM content is not expected to be changed once published (because initial content has been downloaded
  many times and is not expected to be re-loaded later).
+
+** Apache POI
+ 
+  [[1]] has published its releases until 3.0-alpha-3 to Maven 1-compliant <<<poi:poi>>> coordinates
+  (see {{{https://repo.maven.apache.org/maven2/poi/poi/}repository content}}),
+ 
+  [[2]] starting with 3.0-FINAL, moved to reverse-DNS compliant Maven 2+ <<<org.apache.poi:poi>>> coordinates,
+  (see {{{https://repo.maven.apache.org/maven2/org/apache/poi/poi/}repository content}}),
+ 
+  [[3]] published <<<poi:poi:3.0-FINAL>>> relocation POM <<with jars>>
+  in old groupId to advertise about the move
+  (see {{{https://repo.maven.apache.org/maven2/poi/poi/3.0-FINAL/}repository content}}).
+
+  [[4]] published <<<poi:poi>>> relocation POMs for 3.0.1-FINAL, 3.0.2-beta1/beta2/FINAL and 3.1-beta1/beta2/FINAL
+  in old groupId to advertise about the move
+  (see {{{https://repo.maven.apache.org/maven2/poi/poi/}repository content}}).
+
+[]
