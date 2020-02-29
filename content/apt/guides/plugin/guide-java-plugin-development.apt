@@ -333,6 +333,50 @@ mvn archetype:generate \
   of the mojo parameter from the command line by referencing a system property that the user sets
   via the <<<-D>>> option.
 
+** Mojo Conventions
+
+  Since plugins are often configured in a organizational or enterprise parent poms, there are
+  conventions which make re-configuration in an inheriting project easier.
+
+  [[1]] Provide a skip parameter for each goal.  This enables disabling a plugin in a child project
+  with a simple configuration parameter or property.
+
+  [[2]] Provide a default phase for each goal to eliminate the need to specify the phase in the <<<pom.xml>>>.
+
+  [[3]] Some configuration names are quite common; e.g. 'includes', 'excludes', 'skip'.  To prevent
+  accidentally configuring multiple mojos sharing a common property name, use a your plugin's prefix
+  as a 'namespace' for your plugin's configuration names.
+
+  []
+
++-----+
+@Mojo( name = "sayhi", defaultPhase = LifecyclePhase.INITIALIZE )
+public class GreetingMojo extends AbstractMojo
+{
+    /**
+     * Skip execution of the sayhi goal
+     */
+    @Parameter( property = "sayhi.skip", defaultValue = "false" )
+    private boolean skip;
+
+    /**
+     * The greeting to display.
+     */
+    @Parameter( property = "sayhi.greeting", defaultValue = "Hello World!" )
+    private String greeting;
+
+    public void execute() throws MojoExecutionException
+    {
+        if( skip )
+        {
+            getLog().debug( "Skipping sayhi" );
+            return;
+        }
+        getLog().info( greeting );
+    }
+}
++-----+
+
 ** Configuring Parameters in a Project
 
   Configuring the parameter values for a plugin is done in a Maven
