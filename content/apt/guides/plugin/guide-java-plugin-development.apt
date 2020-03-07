@@ -335,7 +335,7 @@ mvn archetype:generate \
 
 ** Mojo Conventions
 
-  Since plugins are often configured in a organizational or enterprise parent poms, there are
+  Since plugins are often configured in organizational or enterprise parent poms, there are
   conventions which make re-configuration in an inheriting project easier.
 
   [[1]] Provide a skip parameter for each goal.  This enables disabling a plugin in a child project
@@ -344,7 +344,7 @@ mvn archetype:generate \
   [[2]] Provide a default phase for each goal to eliminate the need to specify the phase in the <<<pom.xml>>>.
 
   [[3]] Some configuration names are quite common; e.g. 'includes', 'excludes', 'skip'.  To prevent
-  accidentally configuring multiple mojos sharing a common property name, use a your plugin's prefix
+  accidentally configuring multiple mojos sharing a common property name, use your plugin's prefix
   as a 'namespace' for your plugin's configuration names.
 
   []
