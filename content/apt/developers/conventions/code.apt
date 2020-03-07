@@ -143,15 +143,13 @@ public class MyMojo
  The following sections show how to set up the code style for Maven in IDEA and Eclipse.
  It is strongly preferred that patches use this style before they are applied.
 
-*** IntelliJ IDEA 4.5+
+*** IntelliJ IDEA
 
- Download <<<{{{../../developers/maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
- <<<~/.IntelliJIDEA/config/codestyles>>> then restart IDEA. On Windows, try
- <<<C:\Documents and Settings\<username>\.IntelliJIDEA\config\codestyles>>>
+ Download <<<{{{../../developers/maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>>
+ and import it into IDEA using File > Settings > Editor > Code Style > Gear icon >
+ Import Scheme > IntelliJ IDEA Code Style XML
 
- After this, restart IDEA and open the settings to select the new code style.
-
-*** Eclipse 3.2+
+*** Eclipse
 
  Download <<<{{{../../developers/maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
 
@@ -176,7 +174,7 @@ public class MyMojo
  * <<Documentation>>: Document public interfaces well, i.e. all non-trivial public and
  protected functions should include Javadoc that indicates what they do.
 
- * <<Testing>>: All non-trivial public classes should corresponding unit or
+ * <<Testing>>: All non-trivial public classes should have corresponding unit or
  integration tests.
 
  []
