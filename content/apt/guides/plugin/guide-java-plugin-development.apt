@@ -341,7 +341,9 @@ mvn archetype:generate \
   [[1]] Provide a skip parameter for each goal.  This enables disabling a plugin in a child project
   with a simple configuration parameter or property.
 
-  [[2]] Provide a default phase for each goal to eliminate the need to specify the phase in the <<<pom.xml>>>.
+  [[2]] Novice Maven users often misconfigure plugin execution by not providing a phase and wonder
+  why the goal isn't run.  Make your goal easy to use by providing a defaultPhase if the goal will
+  usually be run at a particular phase. (Convention over Configuration!)   
 
   [[3]] Some configuration names are quite common; e.g. 'includes', 'excludes', 'skip'.  To prevent
   accidentally configuring multiple mojos sharing a common property name, use your plugin's prefix
