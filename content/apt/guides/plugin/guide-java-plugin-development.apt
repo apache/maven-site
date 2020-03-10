@@ -335,49 +335,18 @@ mvn archetype:generate \
 
 ** Mojo Conventions
 
-  Since plugins are often configured in organizational or enterprise parent poms, there are
-  conventions which make re-configuration in an inheriting project easier.
+  There are conventions which make plugin configuration easier.
 
-  [[1]] Provide a skip parameter for each goal.  This enables disabling a plugin in a child project
-  with a simple configuration parameter or property.
-
-  [[2]] Novice Maven users often misconfigure plugin execution by not providing a phase and wonder
+  [[1]] Novice Maven users often misconfigure plugin execution by not providing a phase and wonder
   why the goal isn't run.  Make your goal easy to use by providing a defaultPhase if the goal will
   usually be run at a particular phase. (Convention over Configuration!)   
 
-  [[3]] Some configuration names are quite common; e.g. 'includes', 'excludes', 'skip'.  To prevent
-  accidentally configuring multiple mojos sharing a common property name, use your plugin's prefix
-  as a 'namespace' for your plugin's configuration names.
+  [[2]] Some configuration names are quite common; e.g. 'includes', 'excludes', 'skip'.  To prevent
+  accidentally configuring multiple mojos sharing a common property name when using configuration
+  from system properties, use your plugin's prefix as a 'namespace' for your plugin's system property names.
 
   []
 
-+-----+
-@Mojo( name = "sayhi", defaultPhase = LifecyclePhase.INITIALIZE )
-public class GreetingMojo extends AbstractMojo
-{
-    /**
-     * Skip execution of the sayhi goal
-     */
-    @Parameter( property = "sayhi.skip", defaultValue = "false" )
-    private boolean skip;
-
-    /**
-     * The greeting to display.
-     */
-    @Parameter( property = "sayhi.greeting", defaultValue = "Hello World!" )
-    private String greeting;
-
-    public void execute() throws MojoExecutionException
-    {
-        if( skip )
-        {
-            getLog().debug( "Skipping sayhi" );
-            return;
-        }
-        getLog().info( greeting );
-    }
-}
-+-----+
 
 ** Configuring Parameters in a Project
 
