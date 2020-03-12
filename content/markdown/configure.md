@@ -22,8 +22,8 @@ in a number of places:
 
 ## `MAVEN_OPTS` environment variable:
 
-This variable contains parameters used to start up the JVM running Maven and can 
-be used to supply additional options to globally to Maven. E.g. JVM memory 
+This variable contains parameters used to start up the JVM running Maven and
+can be used to supply additional options to it. E.g. JVM memory
 settings could be defined with the value `-Xms256m -Xmx512m`.
 
 ## `settings.xml` file:
@@ -33,7 +33,7 @@ configuration for Maven usage across projects.
 
 ## `.mvn` folder:
 
-Located with in the projects top level folder, the files `maven.config`, `jvm.config`, and `extensions.xml`
+Located within the project's top level directory, the files `maven.config`, `jvm.config`, and `extensions.xml`
 contain project specific configuration for running Maven.
 
 This folder is part of the project and may be checked in into your version control.
@@ -78,8 +78,7 @@ Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.project
 
         -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
 
-You don’t need to remember of using this options in `MAVEN_OPTS` or switching between different configurations.
-in the end, add the following:
+You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 
 ## Other guides
 
