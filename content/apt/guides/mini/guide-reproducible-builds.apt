@@ -38,7 +38,7 @@ Configuring for Reproducible Builds
 
  There is no Maven version prerequisite, everything happens at plugins level:
 
- [[1]] upgrade your plugins to reproducible version, particularly maven-source-plugin, maven-jar-plugin and maven-assembly-plugin to version 3.2.0 minimum,
+ [[1]] upgrade your plugins to reproducible version, particularly <<<maven-jar-plugin>>>, <<<maven-source-plugin>>> and <<<maven-assembly-plugin>>> to version 3.2.0 minimum,
 
  [[2]] add <<<project.build.outputTimestamp>>> property with the timestamp value that will be used in zip/jar/tar archives:
 
@@ -49,7 +49,7 @@ Configuring for Reproducible Builds
 +--------+
  []
 
- You have the basis configured, the output should be reproducible now.
+ You have the basis configured, the output should be reproducible now: you can check using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}}.
 
  If something is still not reproducible:
  
