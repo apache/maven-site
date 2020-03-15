@@ -79,3 +79,35 @@ Configuring for Reproducible Builds
  * Q. can <<<project.build.outputTimestamp>>> property be updated automatically at release time?
 
    A. yes, you'll need to upgrade maven-release-plugin to version 3.0.0-M1 minimum: see {{{https://issues.apache.org/jira/browse/MRELEASE-1029}MRELEASE-1029}}
+ 
+ * Q. which additional plugins need to be updated for Reproducible Builds?
+ 
+   A. here is a simplified list:
+
+*----------------------------------------------------------------------------+-------+--------------+
+| <<plugin>>                                                   | <<minimum version>> | <<comments>>
+*----------------------------------------------------------------------------+-------+--------------+
+| {{{/plugins/maven-assembly-plugin/}maven-assembly-plugin}}                 | 3.2.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-jar-plugin/}maven-jar-plugin}}                           | 3.2.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}                   | 3.2.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugin-tools/maven-plugin-plugin/}maven-plugin-plugin}}                | 3.5.1 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-remote-resources-plugin/}maven-remote-resources-plugin}} | 1.7.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-shade-plugin/}maven-shade-plugin}}                       | 3.2.2 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-site-plugin/}maven-site-plugin}}                         | 3.9.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-source-plugin/}maven-source-plugin}}                     | 3.2.1 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
+| {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
+*----------------------------------------------------------------------------+-------+--------------+ 
+
+  For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
+
+  
