@@ -17,8 +17,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-The Apache Maven Project Team would like to inform you that the Apache
-Maven 2.x has reached its end of life and is no longer supported.
+Apache Maven 2.x has reached its end of life and is no longer supported.
 
 Apache Maven 2.x had its last release - version 2.2.1 - in November 2009.
 

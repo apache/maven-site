@@ -1032,42 +1032,6 @@ Run the mvn command with `-Dmaven.test.skip=true` argument.
 
 Also see [How do I run a build/package/deploy process without waiting for reports or unit tests, so that I can quickly deploy to an integration box?]
 
-### How do I convert my `<reports>` from Maven 1 to Maven 2?
-
-In m1, we declare reports in the pom like this:
-```
-<project>
-  ...
-  <reports>
-    <report>maven-checkstyle-plugin</report>
-    <report>maven-pmd-plugin</report>
-  </reports>
-</project>
-```
-In m2, the `<reports>` tag is replaced with `<reporting>`
-```
-<project>
-  ...
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-           <!-- put your config here -->
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <configuration>
-           <!-- put your config here -->
-        </configuration>
-      </plugin>
-    </plugins>
-  <reporting>
-</project>
-```
 _Sites & Reporting, General_
 
 ### How do I create a command line parameter (i.e., \-Dname=value ) in my mojo?

@@ -1,5 +1,5 @@
  ---
- Building For Different Environments with Maven 2
+ Building For Different Environments
  ---
  Trygve Laugstøl
  ---
@@ -26,7 +26,7 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Building For Different Environments with Maven 2
+Building For Different Environments
 
   Building the same artifact for different environments has always been an annoyance. You have multiple environments,
      for instance test and production servers or, maybe a set of servers that run the same application with different
@@ -36,7 +36,7 @@ Building For Different Environments with Maven 2
   
   Note:
   
-  * This guide assume that you have basic Maven 2 knowledge.
+  * This guide assume that you have basic Maven knowledge.
   
   * It will show a way to configure Maven to solve simple configuration set-ups only. By simple configuration set-up I
      mean cases where you only have a single file or a small set of files that vary for each environment. There are
@@ -137,7 +137,7 @@ src/
 
 Caveats
 
-   * Currently Maven 2 doesn't allow a project build to only produce attached artifacts. (i.e. it has to produce a
+   * Currently Maven doesn't allow a project build to only produce attached artifacts. (i.e. it has to produce a
    "main" artifact as well) This results in two equal JARs being packaged and installed. The JAR plugin probably
    should also get improved support for this use case to that two different output directories will be used as the
    basis for building the JAR.
