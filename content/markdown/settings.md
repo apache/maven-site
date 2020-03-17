@@ -325,7 +325,7 @@ all are required at once.
 -   **jdk**: `activation` has a built in, Java-centric check in the
     `jdk` element. This will activate if the test is run under a jdk
     version number that matches the prefix given. In the above example,
-    `1.5.0_06` will match. Ranges are also supported as of Maven 2.1.
+    `1.5.0_06` will match. Ranges are also supported.
     See the
     [maven-enforcer-plugin](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
     for more details about supported ranges.
