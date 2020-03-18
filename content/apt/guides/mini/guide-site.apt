@@ -1,4 +1,3 @@
- ------
  Guide to creating a site
  ------
  Brett Porter
@@ -125,7 +124,7 @@ mvn site-deploy
 
 * Creating a Site Descriptor
 
-  The <<<site.xml>>> file is used to describe the layout of the site.
+  The <<<site.xml>>> file is used to describe the structure of the site.
   A sample is given below:
 
 --------------------
