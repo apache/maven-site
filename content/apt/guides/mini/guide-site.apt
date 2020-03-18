@@ -125,9 +125,7 @@ mvn site-deploy
 
 * Creating a Site Descriptor
 
-  The <<<site.xml>>> file is used to describe the layout of the site, and
-  replaces the <<<navigation.xml>>> file used in Maven 1.x.
-
+  The <<<site.xml>>> file is used to describe the layout of the site.
   A sample is given below:
 
 --------------------
