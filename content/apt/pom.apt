@@ -42,9 +42,9 @@ POM Reference
 
         [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
 
-        [[2]] {{{Version Order Specification}Version Order Specification}}
+        [[2]] {{{Version_Order_Specification}Version Order Specification}}
 
-        [[3]] {{{Version Order Testing}Version Order Testing}}
+        [[3]] {{{Version_Order_Testing}Version Order Testing}}
 
         [[4]] {{{Exclusions}Exclusions}}
 
@@ -56,7 +56,7 @@ POM Reference
 
       [[3]] {{{Aggregation}Aggregation (or Multi-Module)}}
 
-        [[1]] {{{Inheritance_v}Inheritance v. Aggregation}}
+        [[1]] {{{Inheritance_v._Aggregation}Inheritance v. Aggregation}}
 
     [[3]] {{{Properties}Properties}}
 
@@ -139,12 +139,12 @@ POM Reference
   as the developers involved and the roles they play, the defect tracking system, the organization and
   licenses, the URL of where the project lives, the project's dependencies, and all of the other little
   pieces that come into play to give code life. It is a one-stop-shop for all things concerning the project.
-  In fact, in the Maven world, a project need not contain any code at all, merely a <<<pom.xml>>>.
+  In fact, in the Maven world, a project does not need to contain any code at all, merely a <<<pom.xml>>>.
 
 * {Quick Overview}
 
   This is a listing of the elements directly under the POM's project element. Notice that <<<modelVersion>>>
-  contains 4.0.0. That is currently the only supported POM version for both Maven 2 & 3, and is always required.
+  contains 4.0.0. That is currently the only supported POM version, and is always required.
 
 +--------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
@@ -218,8 +218,8 @@ POM Reference
 
 * {Maven Coordinates}
 
-  The POM defined above is the minimum that Maven allows. <<<groupId:artifactId:version>>> are all
-  required fields (although, groupId and version need not be explicitly defined if they are inherited
+  The POM defined above is the bare minimum that Maven allows. <<<groupId:artifactId:version>>> are all
+  required fields (although, groupId and version do not need to be explicitly defined if they are inherited
   from a parent - more on inheritance later). The three fields act much like an address and timestamp
   in one. This marks a specific place in a repository, acting like a coordinate system for Maven projects:
 
@@ -278,7 +278,7 @@ POM Reference
   are Plexus role-hints (read more on Plexus for a explanation of roles and role-hints) of the component role
   <<<org.apache.maven.lifecycle.mapping.LifecycleMapping>>>. The current core packaging values are:
   <<<pom>>>, <<<jar>>>, <<<maven-plugin>>>, <<<ejb>>>, <<<war>>>, <<<ear>>>, <<<rar>>>.
-  These define the default list of goals which execute to each corresponding build lifecycle stage for
+  These define the default list of goals which execute on each corresponding build lifecycle stage for
   a particular package structure:
   see {{{/ref/current/maven-core/default-bindings.html}Plugin Bindings for default Lifecycle Reference}} for details.
 
@@ -301,7 +301,7 @@ POM Reference
   The cornerstone of the POM is its {{{/ref/current/maven-model/maven.html#class_dependency}dependency}} list.
   Most projects depend on others to build
   and run correctly. If all Maven does for you is manage this list, you have gained a lot.
-  Maven downloads and links the dependencies on compilation and other goals that require them.
+  Maven downloads and links the dependencies on compilation, as well as on other goals that require them.
   As an added bonus, Maven brings in the dependencies of those dependencies (transitive dependencies),
   allowing your list to focus solely on the dependencies your project requires.
 
@@ -405,7 +405,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
       it explicitly. The artifact is always available and is not looked up in a repository.
 
   * <<systemPath>>:\
-  is used <only> if the the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
+  is used <only> if the dependency <<<scope>>> is <<<system>>>. Otherwise, the build will fail if this
   element is set. The path must be absolute, so it is recommended to use a property to specify the
   machine-specific path (more on <<<properties>>> below),
   such as <<<$\{java.home\}/lib>>>. Since it is assumed that system scope dependencies are installed <a priori>,
@@ -779,7 +779,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
 ** {Aggregation} (or Multi-Module)
 
-  A project with modules is known as a multimodule, or aggregator project. Modules are projects
+  A project with modules is known as a multi-module, or aggregator project. Modules are projects
   that this POM lists, and are executed as a group. A <<<pom>>> packaged project may
   aggregate the build of a set of projects by listing them as modules, which are relative paths to the
   directories or the POM files of those projects.
@@ -812,7 +812,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
   {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's.
 
-*** A final note on {Inheritance v}. Aggregation
+*** A final note on {Inheritance v. Aggregation}
 
   Inheritance and aggregation create a nice dynamic to control builds through a single,
   high-level POM. You often see projects that are both parents and aggregators.
@@ -1168,7 +1168,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   concatenation of parent and child elements, in that order.
   <<combine.self="override">>, on the other hand, completely
   suppresses parent configuration. You cannot use both
-  both <<combine.self="override">>
+  <<combine.self="override">>
   and <<combine.children="append">> on an element; if you try,
   <override> will prevail.
 
@@ -1180,7 +1180,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   marked with attributes.
 
   The combine.* attributes are inherited from parent to child POMs.
-  Take care when adding those attributes
+  Take care when adding those attributes to
   a parent POM as this might affect child or
   grand-child POMs.
 
@@ -1190,7 +1190,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   The major difference in this case is that instead of applying as dependencies of the project,
   they now apply as dependencies of the plugin that they are under. The power of this is to alter
   the dependency list of a plugin, perhaps by removing an unused runtime dependency via
-  <<<exclusions>>>, or by altering the version of a required dpendency. See above under <<Dependencies>>
+  <<<exclusions>>>, or by altering the version of a required dependency. See above under <<Dependencies>>
   for more information.
 
   * <<executions>>:
@@ -1250,7 +1250,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   any goal to any phase in the build lifecycle, altering the default behavior of Maven.
 
   * <<inherited>>:
-  Like the <<<inherited>>> element above, setting this false will supress Maven from passing this execution
+  Like the <<<inherited>>> element above, setting this to false will suppress Maven from passing this execution
   onto its children. This element is only meaningful to parent POMs.
 
   * <<configuration>>:
@@ -1357,15 +1357,15 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   If the values of a <<<*Directory>>> element above is set as an absolute path (when their
   properties are expanded) then that directory is used. Otherwise, it is relative to the
-  base build directory: <<<$\{basedir\}>>>. Please note that the <<<scriptSourceDirectory>>> is nowhere
-  used in Maven and is obsolete.
+  base build directory: <<<$\{basedir\}>>>. <<Please note that the>> <<<scriptSourceDirectory>>> <<is nowhere
+  used in Maven and is obsolete>>.
 
 *** {Extensions}
 
   Extensions are a list of artifacts that are to be used in this build. They will be included
   in the running build's classpath. They can enable extensions to the build process (such as add an
   ftp provider for the Wagon transport mechanism), as well as make plugins active which make changes
-  to the build lifecycle. In short, extensions are artifacts that activated during build. The
+  to the build lifecycle. In short, extensions are artifacts that are activated during build. The
   extensions do not have to actually do anything nor contain a Mojo. For this reason, extensions
   are excellent for specifying one out of multiple implementations of a common plugin interface.
 
@@ -1559,7 +1559,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   Note that, although an organization may have many
   developers (programmers) as members, it is not good form to list them all as developers, but
   only those who are immediately responsible for the code. A good rule of thumb is, if the person
-  should not be contacted about the project, they need not be listed here.
+  should not be contacted about the project, they do not need to be listed here.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
