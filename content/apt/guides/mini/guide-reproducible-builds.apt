@@ -121,6 +121,8 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
 *----------------------------------------------------------------------------+-------+--------------+ 
+| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} |   | <<<manifest>>> goal requires <<<\<_removeheaders\>Bnd-LastModified\</_removeheaders\> as configuration <<<instructions>>>
+*----------------------------------------------------------------------------+-------+--------------+ 
 
   For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
 
