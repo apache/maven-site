@@ -49,7 +49,10 @@ Configuring for Reproducible Builds
 +--------+
  []
 
- You have the basis configured, the output should be reproducible now: you can check using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}}:
+ You have the basis configured, the output should be reproducible now.
+ 
+ Using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}},
+ you can easily check that 2 builds give you the same output:
 
  [[1]] build and deploy to a staging directory: <<<mvn clean deploy -DskipTests -DaltDeploymentRepository=local::default::file:../stage buildinfo:buildinfo>>>
 
@@ -59,7 +62,7 @@ Configuring for Reproducible Builds
 
  If something is still not reproducible:
  
- [[1]] use {{{https://diffoscope.org/}diffoscope}} to find the unstable output,
+ [[1]] use {{{https://diffoscope.org/}diffoscope}} to find the unstable output (maven-buildinfo-plugin propose you the command to launch),
   
  [[2]] find the plugin that generated this output
 
@@ -79,6 +82,11 @@ Configuring for Reproducible Builds
  []
 
  For detailed explanations, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318}Maven "Reproducible/Verifiable Builds" Wiki page}}.
+
+* How Many Projects are Reproducible?
+
+ You can have a look at {{{https://github.com/jvm-repo-rebuild/reproducible-central}Reproducible Central}} to see which projects are
+ reproducible, and check for yourself.
 
 * FAQ
 
