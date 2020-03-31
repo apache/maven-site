@@ -37,10 +37,10 @@ Maven's primary goal is to allow a developer to comprehend the complete
 state of a development effort in the shortest period of time. In order
 to attain this goal, Maven deals with several areas of concern:
 
--   Making the build process easy
--   Providing a uniform build system
--   Providing quality project information
--   Encouraging best practices development
+- Making the build process easy
+- Providing a uniform build system
+- Providing quality project information
+- Encouraging better development practices
 
 ### Making the build process easy
 
@@ -81,7 +81,7 @@ practices were used as guidelines:
 
 -   Keeping test source code in a separate, but parallel source tree
 -   Using test case naming conventions to locate and execute tests
--   Having test cases setup their environment instead of relying on
+-   Having test cases setup their environment instead of
     customizing the build for test preparation
 
 Maven also assists in project workflow such as release and issue management.
