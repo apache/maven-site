@@ -54,9 +54,9 @@ Configuring for Reproducible Builds
  Using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}},
  you can easily check that 2 builds give you the same output:
 
- [[1]] build and deploy to a staging directory: <<<mvn clean deploy -DskipTests -DaltDeploymentRepository=local::default::file:../stage buildinfo:buildinfo>>>
+ [[1]] build and deploy to a staging directory: <<<mvn clean deploy -e -DskipTests -DaltDeploymentRepository=local::default::file:../stage buildinfo:buildinfo>>>
 
- [[2]] rebuild and check against the previous staging directory: <<<mvn clean verify -DskipTests buildinfo:buildinfo -Dreference.repo=file:../stage>>>
+ [[2]] rebuild and check against the previous staging directory: <<<mvn clean verify -e -DskipTests buildinfo:buildinfo -Dreference.repo=file:../stage>>>
 
  []
 
