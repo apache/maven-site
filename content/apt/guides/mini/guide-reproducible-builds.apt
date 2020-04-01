@@ -123,5 +123,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+ 
 | Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} |   | <<<manifest>>> goal requires <<<\<_removeheaders\>Bnd-LastModified\</_removeheaders\>>>> as configuration <<<instructions>>>
 *----------------------------------------------------------------------------+-------+--------------+ 
+| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
+*----------------------------------------------------------------------------+-------+--------------+ 
 
   For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
