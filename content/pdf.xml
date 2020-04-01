@@ -109,7 +109,7 @@
         <item name="Using Ant with Maven" ref="/guides/mini/guide-using-ant.html" />
         <item name="Using Modello" ref="/guides/mini/guide-using-modello.html" />
         <item name="Using Extensions" ref="/guides/mini/guide-using-extensions.html" />
-        <item name="Building For Different Environments with Maven 2" ref="/guides/mini/guide-building-for-different-environments.html" />
+        <item name="Building For Different Environments with Maven" ref="/guides/mini/guide-building-for-different-environments.html" />
         <item name="Using Toolchains" ref="/guides/mini/guide-using-toolchains.html" />
         <item name="Encrypting passwords in settings.xml" ref="/guides/mini/guide-encryption.html" />
 
