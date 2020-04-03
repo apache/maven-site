@@ -51,6 +51,8 @@ Configuring for Reproducible Builds
 
  You have the basis configured, the output should be reproducible now.
  
+* How to test and fix my Maven build reproducibility?
+
  Using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}},
  you can easily check that 2 builds give you the same output:
 
