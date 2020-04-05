@@ -108,7 +108,7 @@ mvn --encrypt-password <password>
 {COQLCE6DU6GtcS5P=}
 +------------------------------------+
 
- Copy and paste it into your <<<settings.xml>>> file in the server section. This will look like:
+ Copy and paste it into the servers section of your <<<settings.xml>>> file. This will look like:
 
 +------------------------------------+
 <settings>
@@ -176,7 +176,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 </settingsSecurity>
 +------------------------------------+
 
- This assures that encryption only works when the USB drive is mounted by OS.
+ This assures that encryption only works when the USB drive is mounted by the OS.
  This addresses a use case where only certain people are authorized to deploy and
  are issued these devices.
 
