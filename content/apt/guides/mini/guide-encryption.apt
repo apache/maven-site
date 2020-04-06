@@ -42,7 +42,7 @@
 
 * {Introduction}
 
- Maven 2.1.0+ now supports server password encryption. The main use case, addressed by this solution is:
+ Maven supports server password encryption. The main use case, addressed by this solution is:
 
    * multiple users share the same build machine (server, CI box)
 
@@ -94,7 +94,7 @@ mvn --encrypt-master-password <password>
 
 * {How to encrypt server passwords}
 
- You will have to use the following command line:
+ You have to use the following command line:
 
 +------------------------------------+
 mvn --encrypt-password <password>
@@ -102,13 +102,13 @@ mvn --encrypt-password <password>
 
   <Note:>Just like <<<--encrypt-master-password>>> the password argument should no longer be used since Maven 3.2.1 (see {{{Tips}Tips below for more information.}}).
 
-  This command will produce an encrypted version of it, something like
+  This command produces an encrypted version of it, something like
 
 +------------------------------------+
 {COQLCE6DU6GtcS5P=}
 +------------------------------------+
 
- Cut-n-paste it into your <<<settings.xml>>> file in the server section. This will look like:
+ Copy and paste it into the servers section of your <<<settings.xml>>> file. This will look like:
 
 +------------------------------------+
 <settings>
@@ -176,7 +176,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 </settingsSecurity>
 +------------------------------------+
 
- This assures that encryption will only work when the usb drive is mounted by OS.
+ This assures that encryption only works when the USB drive is mounted by the OS.
  This addresses a use case where only certain people are authorized to deploy and
  are issued these devices.
 
@@ -184,22 +184,22 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
 ** Escaping curly-brace literals in your password <(Since: Maven 2.2.0)>
 
-  At times, you might find that your password (or the encrypted form of it) may
-  actually contain '\{' or '\}' as a literal value. If you added such a password as-is
+  At times, you might find that your password (or the encrypted form of it) 
+  contains '\{' or '\}' as a literal value. If you added such a password as-is
   to your settings.xml file, you would find that Maven does strange things with it.
-  Specifically, Maven will treat all the characters preceding the '\{' literal, and
+  Specifically, Maven treats all the characters preceding the '\{' literal, and
   all the characters after the '\}' literal, as comments. Obviously, this is not the
-  behavior you want in such a situation. What you really need is a way of <<escaping>>
+  behavior you want. What you really need is a way of <<escaping>>
   the curly-brace literals in your password.
 
-  Starting in Maven 2.2.0, you can do just this, with the widely used '\' escape character.
+  You can do this with the widely used '\' escape character.
   If your password looks like this:
 
 +---+
 jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
 +---+
 
-  Then, the value you would add to your settings.xml would look like this:
+  Then, the value you would add to your settings.xml looks like this:
 
 +---+
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+\{EF1iFQyJQ=}
@@ -221,9 +221,9 @@ jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
 
 ** Password Escaping on different platforms
 
-  On some platforms it might be neccessary to quote your password based on the content of your
-  password in particular having special characters like <<<%>>>, <<<!>>>, <<<$>>> etc. in there. 
-  For example on Windows you have to be carefull about things like the following:
+  On some platforms it might be necessary to quote the password if it contains
+  special characters like <<<%>>>, <<<!>>>, <<<$>>>, etc. 
+  For example on Windows you have to be careful about things like the following:
 
   The following example will not work on Windows:
 
@@ -238,21 +238,21 @@ mvn --encrypt-master-password "a!$%^b"
 +----+
 
   If you are on a linux/unix platform you should use single quotes for the above 
-  master password otherwise you will be astonished that the usage of the master-password
-  will not work (caused by the dollar sign and furthermore the exclamation mark).
+  master password. Otherwise the master password
+  will not work (caused by the dollar sign and the exclamation mark).
 
 ** Prompting for Password
 
-  In Maven before version 3.2.1 you have to give the password on command line as
-  argument which means you might need to escape your password. In addition
+  In Maven before version 3.2.1 you have to give the password on the command line as
+  an argument which means you might need to escape your password. In addition
   usually the shell stores the full history of commands you have entered,
   therefore anyone with access to your computer could restore the password from
   the shell`s history.
 
-  Starting with Maven 3.2.1 the password is an optional argument which means if
-  you omit the password you will be prompted for it which prevents all the issues
+  Starting with Maven 3.2.1, the password is an optional argument. If
+  you omit the password, you will be prompted for it which prevents all the issues
   mentioned above.
 
-  Therefore we strongly recommend to use Maven 3.2.1 and above to prevent
+  We strongly recommend using Maven 3.2.1 and above to prevent
   problems with escaping special characters and of course security issues related
   to bash history or environment issues in relationship with the password.
