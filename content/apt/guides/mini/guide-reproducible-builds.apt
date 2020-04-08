@@ -56,7 +56,7 @@ Configuring for Reproducible Builds
  Using {{{https://github.com/apache/maven-studies/tree/maven-buildinfo-plugin}<<<maven-buildinfo-plugin>>>}},
  you can check that two builds give the same output:
 
- [[1]] build and install: <<<mvn clean verify -e -DskipTests buildinfo:buildinfo install:install>>>
+ [[1]] build and install: <<<mvn clean install -e -DskipTests buildinfo:buildinfo>>>
 
  [[2]] rebuild and check against the previous install: <<<mvn clean verify -e -DskipTests buildinfo:buildinfo -Dreference.repo=central>>>
 
