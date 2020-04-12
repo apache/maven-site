@@ -17,6 +17,11 @@
 
 # Maven Site
 
+[![ASF Jira](https://img.shields.io/endpoint?url=https%3A%2F%2Fmaven.apache.org%2Fbadges%2Fasf_jira-MNGSITE.json)][jira]
+[![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
+[![Jenkins Status](https://img.shields.io/jenkins/s/https/builds.apache.org/job/maven-box/job/maven-doxia-site/job/master.svg)][build]
+[![Jenkins tests](https://img.shields.io/jenkins/t/https/builds.apache.org/job/maven-box/job/maven-doxia-site/job/master.svg)][test-results]
+
 This is the Git repository for the content of <https://maven.apache.org/>.
 
 
@@ -29,3 +34,21 @@ $ mvn site:run
 ```
 
 to run locally and see the website on <http://localhost:8080/>.
+
+Additional Resources
+--------------------
+
++ [Contributing patches](https://maven.apache.org/guides/development/guide-maven-development.html#Creating_and_submitting_a_patch)
++ [Apache Maven Site JIRA project page][jira]
++ [Contributor License Agreement][cla]
++ [General GitHub documentation](https://help.github.com/)
++ [GitHub pull request documentation](https://help.github.com/send-pull-requests/)
++ [Apache Maven Twitter Account](https://twitter.com/ASFMavenProject)
++ #Maven IRC channel on freenode.org
+
+[jira]: https://issues.apache.org/jira/projects/DOXIA/
+[license]: https://www.apache.org/licenses/LICENSE-2.0
+[ml-list]: https://maven.apache.org/mailing-lists.html
+[cla]: https://www.apache.org/licenses/#clas
+[test-results]: https://builds.apache.org/job/maven-box/job/maven-site/job/master/lastCompletedBuild/testReport/
+[build]: https://builds.apache.org/job/maven-box/job/maven-site/job/master/
