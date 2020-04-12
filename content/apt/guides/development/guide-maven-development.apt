@@ -114,7 +114,7 @@ Developing Maven
 
 * Related Projects
 
- Maven has a few dependencies on other projects.
+ Maven has a few dependencies on other projects:
 
  * <<Plexus>>
 
@@ -143,7 +143,7 @@ Developing Maven
 
 * Sub Projects
 
- ** Maven Surefire
+ ** <<Maven Surefire>>
 
  Surefire is a testing framework. It can run regular JUnit tests so you won't have to change anything in your code to
  use it. It supports scripting tests in BeanShell and Jython and has special "batteries" for writing acceptance and
@@ -151,7 +151,7 @@ Developing Maven
 
  You can {{{/surefire/}read more about Surefire}}.
 
- ** Maven Doxia
+ ** <<Maven Doxia>>
 
  Doxia is Maven's documentation engine. It has a sink and parser API that can be used to plug in support for input
  and output documents.
@@ -160,14 +160,14 @@ Developing Maven
  {{{/doxia/references/index.html}document formats}}.
 
 
- ** Maven SCM
+ ** <<Maven SCM>>
 
  Maven SCM (Source Control Management) is a reusable API which is independent of Maven itself. It is used by the
  SCM related Maven Plugins. The core part of Maven doesn't depend on Maven SCM.
 
  You can {{{/scm/}read more about Scm}}.
 
- ** Maven Wagon
+ ** <<Maven Wagon>>
 
  Maven Wagon is a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
  API to download and upload artifacts and artifact metadata. The site plug-in uses it to publish the site.
