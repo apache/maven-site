@@ -20,7 +20,6 @@
 [![ASF Jira](https://img.shields.io/endpoint?url=https%3A%2F%2Fmaven.apache.org%2Fbadges%2Fasf_jira-MNGSITE.json)][jira]
 [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
 [![Jenkins Status](https://img.shields.io/jenkins/s/https/builds.apache.org/job/maven-box/job/maven-doxia-site/job/master.svg)][build]
-[![Jenkins tests](https://img.shields.io/jenkins/t/https/builds.apache.org/job/maven-box/job/maven-doxia-site/job/master.svg)][test-results]
 
 This is the Git repository for the content of <https://maven.apache.org/>.
 
@@ -50,5 +49,4 @@ Additional Resources
 [license]: https://www.apache.org/licenses/LICENSE-2.0
 [ml-list]: https://maven.apache.org/mailing-lists.html
 [cla]: https://www.apache.org/licenses/#clas
-[test-results]: https://builds.apache.org/job/maven-box/job/maven-site/job/master/lastCompletedBuild/testReport/
 [build]: https://builds.apache.org/job/maven-box/job/maven-site/job/master/
