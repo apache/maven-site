@@ -45,7 +45,7 @@ Additional Resources
 + [Apache Maven Twitter Account](https://twitter.com/ASFMavenProject)
 + #Maven IRC channel on freenode.org
 
-[jira]: https://issues.apache.org/jira/projects/DOXIA/
+[jira]: https://issues.apache.org/jira/projects/MNGSITE/
 [license]: https://www.apache.org/licenses/LICENSE-2.0
 [ml-list]: https://maven.apache.org/mailing-lists.html
 [cla]: https://www.apache.org/licenses/#clas
