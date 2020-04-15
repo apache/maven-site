@@ -456,33 +456,4 @@ public MyMojo extends AbstractMojo
   format for its output and also outputs debug messages even if Maven's debug mode was not enabled. For this reason,
   developers must not try to cache the logger during construction time. The method <<<getLog()>>> is fast enough and
   can simply be called whenever one needs it.
-
-* {Depending on Plexus Utilities 1.1+}
-
-  Up to Maven 2.0.5, version 1.1 of the artifact <<<plexus-utils>>> was included in the Maven core class loader which
-  is shared with the plugin class realm. This effectively prevented plugins from using another/newer version of
-  <<<plexus-utils>>>. This has been solved starting with Maven 2.0.6 by shading (most of) the classes from
-  <<<plexus-utils>>> (see {{{https://issues.apache.org/jira/browse/MNG-2892}MNG-2892}}).
-
-  In short, plugins that strictly require a newer version of <<<plexus-utils>>> also require Maven 2.0.6 as a minimum.
-  Hence, a POM snippet for a Maven plugin like shown below is misleading:
-
-+---
-<project>
-  <packaging>maven-plugin</packaging>
-  ...
-  <prerequisites>
-    <!-- FIXME: This assumes the plugin works with plexus-utils:1.1, too -->
-    <maven>2.0</maven>
-  </prerequisites>
-  ...
-  <dependencies>
-    <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>1.5.6</version>
-    </dependency>
-  </dependencies>
-  ...
-</project>
 +---
