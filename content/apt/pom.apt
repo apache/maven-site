@@ -527,7 +527,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1>>>" \< "<<<1.1>>>" (number padding)
 
-  * "<<<1-snapshot>>>" \< "<<<1>>>" \< "<<<1-sp>>>" (qualifer padding)
+  * "<<<1-snapshot>>>" \< "<<<1>>>" \< "<<<1-sp>>>" (qualifier padding)
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
