@@ -29,8 +29,8 @@
 
 Introduction
 
- Currently, Maven only supports unit testing out of the box. This document is intended to help Maven Developers to
- test Plugins with Unit Tests, Integration Tests or Functional tests.
+ Currently, Maven only supports unit testing out of the box. This document is intended to help Maven Developers
+ test plugins with unit tests, integration tests, and functional tests.
 
 ~~  <<Note: There are a lot of different ways to test a Maven plugin.>>  For a review of different strategies and tools, please refer to {{{http://docs.codehaus.org/display/MAVENUSER/Review+of+Plugin+Testing+Strategies}Review of Plugin Testing Strategies}}
 
@@ -54,7 +54,7 @@ Unit Tests
 
  Mojo variables are injected using Plexus, and many Mojos are written to take specific advantage of the Plexus container (by executing a lifecycle or having various injected dependencies).
 
- If you all you need is Plexus container services, you can write your class with <<<extends PlexusTestCase>>> instead of TestCase.
+ If all you need are Plexus container services, you can write your class with <<<extends PlexusTestCase>>> instead of TestCase.
 
  With that said, if you need to inject Maven objects into your mojo, you'll probably prefer to use the maven-plugin-testing-harness.
 
@@ -63,8 +63,8 @@ Unit Tests
  The {{{/plugin-testing/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
  is explicitly intended to test the <<<org.apache.maven.reporting.AbstractMavenReport#execute()>>> implementation.
 
- In general, you need to include <<<maven-plugin-testing-harness>>> as dependency, and create a *MojoTest (by convention)
- class which <<<extends AbstractMojoTestCase>>>.
+ In general, you need to include <<<maven-plugin-testing-harness>>> as a dependency,
+ and create a *MojoTest (by convention) class which <<<extends AbstractMojoTestCase>>>.
 
 +-----+
 ...
@@ -108,7 +108,7 @@ public class YourMojoTest
 }
 +-----+
 
- For more information, please refer to {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
+ For more information, refer to {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
 
 Integration/Functional testing
 
