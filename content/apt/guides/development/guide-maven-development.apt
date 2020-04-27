@@ -58,9 +58,9 @@ Developing Maven
   the problem, and then validate your fix.
   
   If you need to mock a class to write a test, use the Mockito framework.
-  Parts of the Maven codebse predate Mockito so you will encounter existing tests
+  Parts of the Maven codebase predate Mockito so you will encounter existing tests
   that use EasyMock, PowerMock, and JMock. However, all newly written mocks
-  should use Mockito, even if this means a module or even a single class
+  should use Mockito, even if this means a module or a single class
   uses multiple mocking frameworks. If an existing test class has complicated
   legacy mock setup, you can add new Mockito based tests in a new test class.
   There is no requirement that all tests for a single model class must be in
