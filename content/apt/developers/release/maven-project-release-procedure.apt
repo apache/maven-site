@@ -91,7 +91,7 @@ We solved N issues:
 https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=XXXXXX&version=YYYYYYY&styleName=Text
 
 There are still a couple of issues left in JIRA:
-https://issues.apache.org/jira/issues/?jql=project%20%3D%20XXXXXXXXXX%20AND%20status%20%3D%20Open%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC
+https://issues.apache.org/jira/issues/?jql=project%20%3D%20XXXXXXXXXX%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC
 
 Staging repo:
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
