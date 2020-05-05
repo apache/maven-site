@@ -65,8 +65,7 @@ under the License.
           <li><strong>Covers: </strong>Maven 2.0.4</li>
           <li><strong>Published: </strong><a href="http://www.maestrodev.com">MaestroDev</a> (March 2006)</li>
           <li><strong>Authors: </strong>
-            John Casey,
-            <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
+            John Casey, Vincent Massol,
             <a href="http://brettporter.wordpress.com/">Brett Porter</a>,
             <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
           </li>
@@ -156,7 +155,7 @@ under the License.
             <td>6 November 2006</td>
           </tr>
           <tr>
-            <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven 2 and Continuum (in French)</a></td>
+            <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven and Continuum (in French)</a></td>
             <td>Developpez.com</td>
             <td>Eric Reboisson</td>
             <td>11 October 2006</td>
@@ -179,14 +178,6 @@ under the License.
             <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
             <td>18 July 2006</td>
           </tr>
-          <!--
-          <tr>
-            <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
-            <td></td>
-            <td>Maurício Linhares</td>
-            <td>7 July 2006</td>
-          </tr>
-          -->
           <tr>
             <td><a href="http://today.java.net/pub/a/today/2006/05/30/continuous-integration-with-continuum.html">Continuous Integration with Continuum</a></td>
             <td>Java.net</td>
@@ -278,12 +269,6 @@ under the License.
             <td>November 2004</td>
           </tr>
           <tr>
-            <td><a href="http://www.manfred-wolff.de/Maven-short.pdf">installing and working with Maven (in German)</a></td>
-            <td></td>
-            <td>Manfred Wolff</td>
-            <td>August 2004</td>
-          </tr>
-          <tr>
             <td><a href="http://www.internetnews.com/dev-news/article.php/3381841">Apache's Maven Comes of Age</a> (Coverage of the release of Maven 1.0)</td>
             <td>internetnews.com</td>
             <td>Sean Michael Kerner</td>
@@ -314,14 +299,6 @@ under the License.
             <td></td>
             <td></td>
           </tr>
-          <!--
-          <tr>
-            <td><a href="http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html">An Introduction to Maven (in French).</a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          -->
           <tr>
             <td><a href="http://hotwork.sourceforge.net/hotwork/manual/maven/index.html">A tutorial for Maven, J2EE projects, and MevenIDE</a> (in Portuguese).</td>
             <td></td>

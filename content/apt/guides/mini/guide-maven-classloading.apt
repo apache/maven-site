@@ -29,7 +29,7 @@
 
 Guide to Maven Classloading
 
- This is a description of the classloader hierarchy in Maven 2.0.6+.
+ This is a description of the classloader hierarchy in Maven.
  
 * Overview
 

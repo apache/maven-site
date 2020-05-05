@@ -81,13 +81,13 @@ Guide To Maven Documentation Style
 
   A POM file must use 2 spaces for each indentation. Because POM snippets are
   often used in documentation to show the user how to configure something, it is
-  important that these snippets aren't too wide. If the are too wide it will
-  make the page difficult to read on a smaller screen.
+  important that these snippets aren't too wide. If they are too wide, 
+  the page is difficult to read on a smaller screen.
 
-  When you use a snippet of XML from the POM as an example in your
-  documentation, you need to make sure that the example is properly indented.
+  When you use a snippet of XML from the POM as an example in
+  documentation, make sure that the example is properly indented.
   A user should be able to copy and paste the example into their own POM without
-  the need to change the indentation afterwards.
+  changing the indentation.
 
   Also, you should declare all parent POM elements to improve the comprehension. You could use ellipsis (i.e. ...) if
   you don't want to specify elements.
@@ -111,12 +111,12 @@ Guide To Maven Documentation Style
 +-----+
 
   As you can see above the <<<\<distributionManagement\>>>> element is indented
-  once (=2 spaces), the <<<\<site\>>>> element in indented twice (=4 spaces) and
+  once (=2 spaces), the <<<\<site\>>>> element is indented twice (=4 spaces), and
   the <<<\<id\>>>> is indented three times (=6 spaces).
 
 * Naming Documentation Files
 
- All file names should replace space by a minus (-), for instance for this given APT document:
+ All file names should replace space by a hyphen (-), for instance for this given APT document:
 
 +-----+
  guide-documentation-style.apt
@@ -130,9 +130,7 @@ Guide To Maven Documentation Style
 
  Here are some pointers about English rules when typing material:
 
- * {{{http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style}Wikipedia:Manual of Style}}, specifically
- {{{http://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style#Punctuation}Punctuation Part}}
-
- * {{{http://developer.gnome.org/projects/gtp/style-guides/pdf/styleguide-C.pdf}Linguistic Style Guidelines}}, specifically the "Grammatical Guidelines" chapter.
-
+ * {{{https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style}Wikipedia:Manual of Style}}, specifically
+ {{{https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style#Punctuation}Punctuation Part}}
+ 
  []
