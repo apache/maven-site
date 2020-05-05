@@ -38,65 +38,54 @@ under the License.
         <li><strong>Covers: </strong>Maven 3</li>
         <li><strong>Published: </strong> Packt Publishing (August 2015)</li>
         <li><strong>Authors: </strong> Raghuram Bharathan</li>
-        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/apache-maven-cookbook">Packt</a>, <a href="http://www.amazon.com/Apache-Maven-Cookbook-Raghuram-Bharathan/dp/1785286129/ref=sr_1_1">Amazon</a></li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/application-development/apache-maven-cookbook">Packt</a>, <a href="https://www.amazon.com/Apache-Maven-Cookbook-Raghuram-Bharathan/dp/1785286129/ref=sr_1_1">Amazon</a></li>
       </ul>
     </div>    
 
 <div style="float: left; margin-right: 5em;">
-<a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book"><img src="images/books/apache_maven_3_0_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
+<a href="https://www.packtpub.com/apache-maven-3-0-cookbook/book"><img src="images/books/apache_maven_3_0_cookbook.jpg" title="Apache Maven 3.0 Cookbook" /></a>
 </div>
 
     <div style="min-height: 220px">
-      <p><a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book"><strong>Apache Maven 3.0 Cookbook</strong></a></p>
+      <p><a href="https://www.packtpub.com/apache-maven-3-0-cookbook/book"><strong>Apache Maven 3.0 Cookbook</strong></a></p>
       <ul>
         <li><strong>Covers: </strong>Maven 3</li>
         <li><strong>Published: </strong> Packt Publishing (August 2011)</li>
         <li><strong>Authors: </strong> Srirangan</li>
-        <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book">Packt</a>, <a href="http://www.amazon.com/Apache-Maven-3-Cookbook-Srirangan/dp/1849512442/ref=sr_1_1?ie=UTF8&amp;qid=1315861966&amp;sr=8-1">Amazon</a></li>
+        <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/apache-maven-3-0-cookbook/book">Packt</a>, <a href="https://www.amazon.com/Apache-Maven-3-Cookbook-Srirangan/dp/1849512442/ref=sr_1_1?ie=UTF8&amp;qid=1315861966&amp;sr=8-1">Amazon</a></li>
       </ul>
-    </div> 
+    </div>    
 
 <div style="float: left; margin-right: 5em;">
-<a href="http://books.sonatype.com/"><img src="images/books/definitive_guide.jpg" title="Maven: The Definitive Guide" /></a>
+      <img src="images/books/better_builds.png" title="Better Builds with Maven" />
 </div>
-
       <div style="min-height: 220px">
-        <p><a href="http://books.sonatype.com/"><strong>Maven: The Definitive Guide</strong></a> (Readable HTML and Free PDF Downloads)</p>
+        <p><a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
         <ul>
-          <li><strong>Covers: </strong>Maven 2.0.9+</li>
-          <li><strong>Published: </strong> O'Reilly (Edition 1: October 1, 2008)</li>
+          <li><strong>Covers: </strong>Maven 2.0.4</li>
+          <li><strong>Published: </strong><a href="http://www.maestrodev.com">MaestroDev</a> (March 2006)</li>
           <li><strong>Authors: </strong>
-            <a href="http://www.sonatype.com">Sonatype</a> (
-            Jason van Zyl,  
-<a href="http://www.sonatype.com/people/author/brian">Brian Fox</a>,
-<a href="http://www.sonatype.com/people/author/john">John Casey</a>,
-<a href="http://bsnyderblog.blogspot.com/">Bruce Snyder</a>,
-Tim O'Brien,
-Eric Redmond)
+            John Casey, Vincent Massol,
+            <a href="http://brettporter.wordpress.com/">Brett Porter</a>,
+            <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
           </li>
-          <li><strong>Buy the Book:</strong> <a href="http://www.amazon.com/Maven-Definitive-Guide-Sonatype-Company/dp/0596517335/ref=pd_bbs_sr_1?ie=UTF8&amp;s=books&amp;qid=1226091388&amp;sr=8-1">Amazon</a></li>
+          <li><strong>Read Online:</strong> <a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven">http://www.scribd.com/doc/238927/Better-Builds-With-Maven</a></li>
         </ul>
-        <p>Updated and expanded content of the book is available as free HTML pages and PDF downloads as two separate books:</p>
-          <ul>
-            <li><strong><a href="http://www.sonatype.com/resources/books/maven-by-example">Maven by Example</a></strong></li>
-            <li><strong><a href="http://www.sonatype.com/resources/books/maven-the-complete-reference">Maven: The Complete Reference</a></strong></li>
-          </ul>
       </div>
-
 <div style="float: left; margin-right: 5em;">
       <img src="images/books/getting_started.png" title="Getting started with Apache Maven" />
 </div>
 <div style="float: left; margin-right: 5em;">
-<a href="http://www.packtpub.com/getting-started-with-apache-maven/video"></a>
+<a href="https://www.packtpub.com/getting-started-with-apache-maven/video"></a>
 </div>
       <div style="min-height: 220px">
-        <p><a href="http://www.packtpub.com/getting-started-with-apache-maven/video"><strong>Getting Started with Apache Maven [Video]</strong></a></p>
+        <p><a href="https://www.packtpub.com/getting-started-with-apache-maven/video"><strong>Getting Started with Apache Maven [Video]</strong></a></p>
         <ul>
           <li><strong>Covers: </strong>Maven 2.2.1, and above</li>
           <li><strong>Published: </strong> Packt Publishing (September 30, 2013)</li>
           <li><strong>Authors: </strong><a>Russell Gold</a>
           </li>
-          <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/getting-started-with-apache-maven/video">Packt</a></li>
+          <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/getting-started-with-apache-maven/video">Packt</a></li>
         </ul>
       </div>      
       
@@ -166,7 +155,7 @@ Eric Redmond)
             <td>6 November 2006</td>
           </tr>
           <tr>
-            <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven 2 and Continuum (in French)</a></td>
+            <td><a href="http://java.developpez.com/faq/maven/">FAQ for Maven and Continuum (in French)</a></td>
             <td>Developpez.com</td>
             <td>Eric Reboisson</td>
             <td>11 October 2006</td>
@@ -189,14 +178,6 @@ Eric Redmond)
             <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
             <td>18 July 2006</td>
           </tr>
-          <!--
-          <tr>
-            <td><a href="http://repo.maujr.org/artigos/maven2-guj/maven-2-guj.pdf">Automatizando seus projetos com o Maven 2</a></td>
-            <td></td>
-            <td>Maurício Linhares</td>
-            <td>7 July 2006</td>
-          </tr>
-          -->
           <tr>
             <td><a href="http://today.java.net/pub/a/today/2006/05/30/continuous-integration-with-continuum.html">Continuous Integration with Continuum</a></td>
             <td>Java.net</td>
@@ -315,12 +296,6 @@ Eric Redmond)
           <tr>
             <td><a href="https://web.archive.org/web/20160731002256/http://wiki.astrogrid.org/bin/view/Astrogrid/UsefulMavenNotes">Some Useful Maven Notes on AstroGrid</a></td>
             <td>Astrogrid</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="http://hotwork.sourceforge.net/hotwork/manual/maven/index.html">A tutorial for Maven, J2EE projects, and MevenIDE</a> (in Portuguese).</td>
-            <td></td>
             <td></td>
             <td></td>
           </tr>
