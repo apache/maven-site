@@ -54,41 +54,7 @@ under the License.
         <li><strong>Authors: </strong> Srirangan</li>
         <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/apache-maven-3-0-cookbook/book">Packt</a>, <a href="http://www.amazon.com/Apache-Maven-3-Cookbook-Srirangan/dp/1849512442/ref=sr_1_1?ie=UTF8&amp;qid=1315861966&amp;sr=8-1">Amazon</a></li>
       </ul>
-    </div>    
-
-<div style="float: left; margin-right: 5em;">
-<a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><img src="images/books/pearson_apache_maven_fr.png" title="Apache Maven - en Français" /></a>
-</div>
-
-      <div style="min-height: 220px">
-        <p><a href="http://www.pearson.fr/livre/?GCOI=27440100730370"><strong>Apache Maven (en Français)</strong></a></p>
-        <ul>
-          <li><strong>Covers: </strong>Maven 2 and above</li>
-          <li><strong>Published: </strong> Pearson (November 20, 2009)</li>
-          <li><strong>Authors: </strong>
-<a href="http://blog.loof.fr/">Nicolas De loof</a>, 
-<a href="http://blog.aheritier.net/">Arnaud Héritier</a>
-          </li>
-          <li><strong>Buy the Book:</strong> <a href="http://www.pearson.fr/livre/index.cfm?gcoi=27440100730370">Pearson</a>, <a href="http://www.amazon.fr/Apache-Maven-Nicolas-loof/dp/274402337X/wwwdeveloppec-21?tag=citofgamonlco-20">Amazon</a>, <a href="http://livre.fnac.com/a2748495/Nicolas-de-Loof-Apache-Maven?PID=1&amp;Mn=-1&amp;Mu=-13&amp;Ra=-1&amp;To=0&amp;Nu=1&amp;Fr=0">FNAC</a></li>
-        </ul>
-      </div>    
-    
-<div style="float: left; margin-right: 5em;">
-<a href="http://www.packtpub.com/apache-maven-2-effective-implementations/book"><img src="images/books/apache_maven_2_effective_implementation.jpg" title="Apache Maven 2: Effective Implementation" /></a>
-</div>
-
-      <div style="min-height: 220px">
-        <p><a href="http://www.packtpub.com/apache-maven-2-effective-implementations/book"><strong>Apache Maven 2: Effective Implementation</strong></a></p>
-        <ul>
-          <li><strong>Covers: </strong>Maven 2.0.9, 2.2.1, and above</li>
-          <li><strong>Published: </strong> Packt Publishing (September 15, 2009)</li>
-          <li><strong>Authors: </strong>
-<a href="http://brettporter.wordpress.com/">Brett Porter</a>, 
-<a href="http://blogs.exist.com/oching/">Maria Odea Ching</a>
-          </li>
-          <li><strong>Buy the Book:</strong> <a href="http://www.packtpub.com/apache-maven-2-effective-implementations/book">Packt</a>; <a href="http://www.amazon.com/Apache-Maven-2-Effective-Implementation/dp/1847194540/">Amazon</a></li>
-        </ul>
-      </div>
+    </div> 
 
 <div style="float: left; margin-right: 5em;">
 <a href="http://books.sonatype.com/"><img src="images/books/definitive_guide.jpg" title="Maven: The Definitive Guide" /></a>
@@ -117,23 +83,6 @@ Eric Redmond)
           </ul>
       </div>
 
-<div style="float: left; margin-right: 5em;">
-      <img src="images/books/better_builds.png" title="Better Builds with Maven" />
-</div>
-      <div style="min-height: 220px">
-        <p><a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
-        <ul>
-          <li><strong>Covers: </strong>Maven 2.0.4</li>
-          <li><strong>Published: </strong><a href="http://www.maestrodev.com">MaestroDev</a> (March 2006)</li>
-          <li><strong>Authors: </strong>
-            John Casey,
-            <a href="http://blogs.codehaus.org/people/vmassol/">Vincent Massol</a>,
-            <a href="http://brettporter.wordpress.com/">Brett Porter</a>,
-            <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
-          </li>
-          <li><strong>Read Online:</strong> <a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven">http://www.scribd.com/doc/238927/Better-Builds-With-Maven</a></li>
-        </ul>
-      </div>
 <div style="float: left; margin-right: 5em;">
       <img src="images/books/getting_started.png" title="Getting started with Apache Maven" />
 </div>
@@ -339,12 +288,6 @@ Eric Redmond)
             <td>November 2004</td>
           </tr>
           <tr>
-            <td><a href="http://www.manfred-wolff.de/Maven-short.pdf">installing and working with Maven (in German)</a></td>
-            <td></td>
-            <td>Manfred Wolff</td>
-            <td>August 2004</td>
-          </tr>
-          <tr>
             <td><a href="http://www.internetnews.com/dev-news/article.php/3381841">Apache's Maven Comes of Age</a> (Coverage of the release of Maven 1.0)</td>
             <td>internetnews.com</td>
             <td>Sean Michael Kerner</td>
@@ -375,14 +318,6 @@ Eric Redmond)
             <td></td>
             <td></td>
           </tr>
-          <!--
-          <tr>
-            <td><a href="http://etudiant.univ-mlv.fr/~mvongvil/Maven_Intro.html">An Introduction to Maven (in French).</a></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          -->
           <tr>
             <td><a href="http://hotwork.sourceforge.net/hotwork/manual/maven/index.html">A tutorial for Maven, J2EE projects, and MevenIDE</a> (in Portuguese).</td>
             <td></td>
