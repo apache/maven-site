@@ -314,7 +314,7 @@ Project-A
   
   If you truly want to ensure that a particular dependency appears nowhere in
   your classpath, regardless of path, the 
-  [banned dependencies rule](https://maven.apache.org/enforcer/enforcer-rules/bannedDependencies.html)
+  {{{https://maven.apache.org/enforcer/enforcer-rules/bannedDependencies.html}banned dependencies rule}}
   can be configured to fail the build if a problematic dependency is found.
   When the build fails, you'll need to add specific exclusions on each path
   the enforcer finds. 

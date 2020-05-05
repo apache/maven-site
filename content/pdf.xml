@@ -87,8 +87,6 @@
         <item name="What is an Archetype" ref="/guides/introduction/introduction-to-archetypes.html" />
         <item name="Creating Archetypes" ref="/guides/mini/guide-creating-archetypes.html" />
 
-        <item name="From Maven 1.x to Maven 2.x" ref="/guides/mini/guide-m1-m2.html" />
-        <item name="Using Maven 1.x repositories with Maven 2.x" ref="/guides/mini/guide-using-m1-repos-with-m2.html" />
         <item name="Relocation of Artifacts" ref="/guides/mini/guide-relocation.html" />
 
         <item name="Installing 3rd party JARs to Local Repository" ref="/guides/mini/guide-3rd-party-jars-local.html" />

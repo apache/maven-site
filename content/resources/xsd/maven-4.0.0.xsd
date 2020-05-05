@@ -2363,11 +2363,6 @@
           <xs:documentation source="description">
             For a plugin project (packaging is &lt;code&gt;maven-plugin&lt;/code&gt;), the minimum version of
             Maven required to use the resulting plugin.&lt;br&gt;
-            In Maven 2, this was also specifying the minimum version of Maven required to build a
-            project, but this usage is &lt;b&gt;deprecated&lt;/b&gt; in Maven 3 and not checked any more: use
-            the &lt;a href=&quot;https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html&quot;&gt;Maven Enforcer Plugin&apos;s
-            &lt;code&gt;requireMavenVersion&lt;/code&gt; rule&lt;/a&gt; instead.
-            
           </xs:documentation>
         </xs:annotation>
       </xs:element>

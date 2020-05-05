@@ -482,9 +482,6 @@ mvn clean
 
   Whenever you want to customise the build for a Maven project, this is done by adding or reconfiguring plugins.
 
-  <<Note for Maven 1.0 Users:>> In Maven 1.0, you would have added some <<<preGoal>>> to <<<maven.xml>>>
-  and some entries to <<<project.properties>>>. Here, it is a little different.
-
   For this example, we will configure the Java compiler to allow JDK 5.0 sources. This is as simple as
   adding this to your POM:
 
@@ -1245,6 +1242,6 @@ $ jar tvf my-webapp/target/my-webapp-1.0-SNAPSHOT.war
   reason for this is the <<<\<scope\>test\</scope\>>>> element - it is only required for testing,
   and so is not included in the web application as the compile time dependency <<<my-app>>> is.
 
-  The final step was to include a parent definition. This is different to the <<<extend>>> element you
-  may be familiar with from Maven 1.0: this ensures that the POM can always be located even if the project
+  The final step was to include a parent definition.
+  This ensures that the POM can always be located even if the project
   is distributed separately from its parent by looking it up in the repository.

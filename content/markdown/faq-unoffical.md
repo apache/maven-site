@@ -35,15 +35,13 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [How do I integrate static (x)html into a Maven site?](#How do I integrate static (x)html into a Maven site?)
 [Where do I configure report plug-ins, like javadoc?](#Where do I configure report plug-ins, like javadoc?)
 [Is there a way to get Maven to report the number of compile errors found?](#Is there a way to get Maven to report the number of compile errors found?)
-[How do I convert my < reports > from Maven 1 to Maven 2?](#How do I convert my < reports > from Maven 1 to Maven 2?)
-(#Handle special characters in site)
 [How do I add a description to the welcome page of the generated site when I execute mvn site?](#How do I add a description to the welcome page of the generated site when I execute mvn site?]
 [Which part in pom.xml the javadoc plugin should be configured?](#Which part in pom.xml the javadoc plugin should be configured?]
 
 ### Eclipse
 
 [How do I specify which output folders the Eclipse plugin puts into the .classpath file?](#How do I specify which output folders the Eclipse plugin puts into the .classpath file?]
-[Where can I get the Maven 2 plugin for Eclipse?](#Where can I get the Maven 2 plugin for Eclipse?]
+[Where can I get the Maven plugin for Eclipse?](#Where can I get the Maven plugin for Eclipse?]
 [I issued\- mvn \-Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?](#I issued- mvn -Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?]
 [Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?](#Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?]
 [Does it matter if the project's directory name is not the same as the artifactId?](#Does it matter if the project's directory name is not the same as the artifactId?]
@@ -56,7 +54,6 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [How do I locate a required plug-in?](#How do I locate a required plug-in?]
 [How do I determine what version of a plugin I am using?](#How do I determine what version of a plugin I am using?]
 [How do I use SNAPSHOT versions of plug-ins?](#How do I use SNAPSHOT versions of plug-ins?]
-[Is there a property file for plug-in configuration in Maven 2.0?](#Is there a property file for plug-in configuration in Maven 2.0?]
 [I've just created a maven plugin. Is there a sample plugin integration test I can use?](#I've just created a maven plugin. Is there a sample plugin integration test I can use?]
 [The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?](#The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?]
 [How to list all goals available for a certain plugin?](#How to list all goals available for a certain plugin?]
@@ -81,8 +78,6 @@ This page serves as a collection of questions *with* answers. If you have a freq
 
 ### Dependencies
 
-[How do I implement "maven.jar.override" of Maven 1 with Maven 2?](#How do I implement maven.jar.override of Maven 1 with Maven 2]
-[Why there are no dependency properties in Maven 2?](#Why there are no dependency properties in Maven 2?]
 [How to make a war artifact as a dependency?](#How to make a war artifact as a dependency?]
 [Can I disable transitive dependencies?](#Can I disable transitive dependencies?]
 [Is there a preferred way to communicate dependencies in documentation?](#Is there a preferred way to communicate dependencies in documentation?]
@@ -100,13 +95,13 @@ This page serves as a collection of questions *with* answers. If you have a freq
 
 [How do I prevent verification warnings with custom repositories?](#How do I prevent verification warnings with custom repositories?]
 [How do I access artifacts if Ibiblio is down?](#How do I access artifacts if Ibiblio is down?]
-[How do I specify my remote repo in Maven 2.0?](#How do I specify my remote repo in Maven 2.0?]
+[How do I specify my remote repo in Maven?](#How do I specify my remote repo in Maven?]
 [How do I install artifacts to a remote repository?](#How do I install artifacts to a remote repository?]
 [#Repository precedence]
-[#List of available maven 2 mirrors.]
+[#List of available maven mirrors.]
 [How do I change the default remote repository?](#How do I change the default remote repository?]
 [How to remove the artifact in the local repository?](#How to remove the artifact in the local repository?]
-[What is the purpose of remote repository (other than ibilbilo)?](#What is the purpose of remote repository (other than ibilbilo)?]
+[What is the purpose of remote repository (other than ibiblio)?](#What is the purpose of remote repository (other than ibiblio)?]
 
 ### Errors
 
@@ -116,12 +111,6 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [Unsupported Protocol Error when deploying a 3rd party jar. What should I do?](#Unsupported Protocol Error when deploying a 3rd party jar. What should I do?]
 [I have my web.xml in my customed directory layout for my webapp, but why am I getting the error "Deployment descriptor < Path >\WEB-INF\web.xml does not exist"?](#I have my web.xml in my customed directory layout for my webapp, but why am I getting the error "Deployment descriptor < Path >\WEB-INF\web.xml does not exist"?]
 [How can I stop this "WARNING While downloading artifactId-artifactId-version This artifact has been relocated to groupId-artifactId-version"?](#How can I stop this "WARNING While downloading artifactId-artifactId-version This artifact has been relocated to groupId-artifactId-version"?]
-[Why do i get an 'error downloading artifact' message when building with Maven 2 under Fedora Core 4 and Java 1.4?](#Why do i get an 'error downloading artifact' message when building with Maven 2 under Fedora Core 4 and Java 1.4?]
-
-### Supported Features
-
-[Does Maven 2.x support pre/postGoals?](#Does Maven 2.x support pre/postGoals?]
-[How does maven 2 implement reproducibility?](#How does maven 2 implement reproducibility?]
 
 ### Maven Comparisons
 
@@ -129,7 +118,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 
 ### Ant
 
-[How can I use Ant tasks in Maven 2?](#How can I use Ant tasks in Maven 2?]
+[How can I use Ant tasks in Maven?](#How can I use Ant tasks in Maven?]
 [How do I run an ant task twice, against two different phases?](#How do I run an ant task twice, against two different phases?]
 [Can I define the antrun plug-in to be executed on demand?](#Can I define the antrun plug-in to be executed on demand?]
 [How do I generate sources with the antrun plug-in?](#How do I generate sources with the antrun plug-in?]
@@ -148,7 +137,6 @@ This page serves as a collection of questions *with* answers. If you have a freq
 ### Deploy
 
 [How do I deploy my binary during the deploy phase?](#How do I deploy my binary during the deploy phase?]
-[How do I invoke the 'maven dist' function from Maven 1.0, in Maven 2.0?](#How do I invoke the 'maven dist' function from Maven 1.0, in Maven 2.0?]
 [Is there a way to use the deploy phase to perform some tasks without maven trying to install the artifact to a maven repository?](#Is there a way to use the deploy phase to perform some tasks without maven trying to install the artifact to a maven repository?]
 [Is maven 'deploy' goal and actually copying of a dependency or artifact jar to remote repository same?](#Is maven 'deploy' goal and actually copying of a dependency or artifact jar to remote repository same?]
 
@@ -200,13 +188,12 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [How do I get a list of archetypes?](#How do I get a list of archetypes?]
 [How do I add main class in a generated jar's manifest?](#How do I add main class in a generated jar's manifest?]
 [How do I run a build/package/deploy process without waiting for reports or unit tests, so that I can quickly deploy to an integration box?](#How do I run a build/package/deploy process without waiting for reports or unit tests, so that I can quickly deploy to an integration box?]
-[Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.](#Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.]
-[How do I configure the equivalent of maven.war.src of war plugin in Maven 2.0?](#How do I configure the equivalent of maven.war.src of war plugin in Maven 2.0?]
+[Where is the source code? I couldn't seem to find a link anywhere on the Maven site.](#Where is the source code? I couldn't seem to find a link anywhere on the Maven site.]
 [How do I add my generated sources to the compile path of Maven, when using modello?](#How do I add my generated sources to the compile path of Maven, when using modello?]
 [Where can I get offline documentation for Maven?](#Where can I get offline documentation for Maven?]
 [What is the purpose of displaying read-only, plug-in fields in user documentation, if they are not configurable in the project descriptor?](#What is the purpose of displaying read-only, plug-in fields in user documentation, if they are not configurable in the project descriptor?]
 [How can I disable the timestamp appended in my deployed artifact?](#How can I disable the timestamp appended in my deployed artifact?]
-[How to run a java program from M2?](#How to run a java program from M2?]
+[How to run a java program from Maven?](#How to run a java program from Maven?]
 [Where to find the source code for org.apache.maven.model package?](#Where to find the source code for org.apache.maven.model package?]
 [How can I reference windows or unix environment variables in my POM?](#How can I reference windows or unix environment variables in my POM?]
 [Where to get sun.jdk-tools-jar-1.4.0 on MacOSX?](#Where to get sun.jdk-tools-jar-1.4.0 on MacOSX?]
@@ -217,7 +204,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [How do I install the package generated by the assembly plugin to be installed in the local repository?](#How do I install the package generated by the assembly plugin to be installed in the local repository?]
 [Is it possible to use HashMap as configurable parameter in a plugin? How do I configure that in pom.xml?](#Is it possible to use HashMap as configurable parameter in a plugin? How do I configure that in pom.xml?]
 [Which plugins have StarTeam (SCM) support? How do they differ?](#Which plugins have StarTeam (SCM) support? How do they differ?]
-[How should I point a path for maven 2 to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?](#How should I point a path for maven 2 to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?]
+[How should I point a path for Maven to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?](#How should I point a path for Maven to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?]
 [Why does release prepare goal requires the project to be released be a snapshot? Is it possible to do a release prepare from a parent project? What about from a sub-project?](#Why does release prepare goal requires the project to be released be a snapshot? Is it possible to do a release prepare from a parent project? What about from a sub-project?]
 [How can I create an archetype with resources mapped to the class files directory?](#How can I create an archetype with resources mapped to the class files directory?]
 [What does (f) and (s) debug output mean?](#What does (f) and (s) debug output mean?]
@@ -307,60 +294,11 @@ To resolve this error:
 
 If the error persists, browse [archived discussions](http://www.mail-archive.com/users@maven.apache.org/), post to the Maven user list, or log a [ticket](http://jira.codehaus.org/browse/MNG) describing your problem, if you think it is a bug. Tickets may also be issued for feature enhancement requests, and other tasks.
 
-There is a known issue with Maven as of 2.0.4 which is related to metadata files being corrupted during plugin version resolution. For more information, and for a workaround, see [MNG-2408](http://jira.codehaus.org/browse/MNG-2408).
-
-_Dependencies_
-
-### How do I implement "maven.jar.override" of Maven 1 with Maven 2?
-
-Assume you have an open source project on Source Forge which uses some 3rd party libraries which are not available in any public Maven repository. Still, you want to build your project with Maven 2 - how to deal with those unavailable dependencies? Maven 1 allowed to override the path of files of dependencies, with a relative path, for example to a .jar file included in the projects' CVS structure. Maven 2 does not support that, so one way to achieve the same thing is:
-* Create a multi-module project. The first module contains the local 3rd-party jar files, at any location, with any name. As a simple example, just one file, under the path "src/build/jars/acme-worker12.jar"
-* The purpose of the first sub-module is to install the 3rd party .jar file into your local Maven 2 repository through the maven "install" plugin. This plugin allows to install any given file under any "groupId", "artifactId" and "version":
-
-```
-<build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-install-plugin</artifactId>
-			<executions>
-				<execution>
-					<id>copy-acme</id>
-					<phase>validate</phase>
-					<goals>
-						<goal>install-file</goal>
-					</goals>
-					<configuration>
-						<file>${basedir}/src/build/jars/acme-worker-12.jar</file>
-						<groupId>acme</groupId>
-						<artifactId>worker</artifactId>
-						<version>1.2</version>
-						<packaging>jar</packaging>
-					</configuration>
-				</execution>
-			</executions>
-		</plugin>
-	</plugins>
-</build>
-```
-* In the second module, where your actual project code is, create a dependency based on the "groupId", "artifactId" and "version" that you used to install the 3rd party libary.
-
-```
-<dependencies>
-	<dependency>
-		<groupId>acme</groupId>
-		<artifactId>worker</artifactId>
-		<version>1.2</version>
-	</dependency>
-</dependencies>
-```
-One word of caution, though; if you include - for whatever reason Junit like that, it MUST be deployed under - and referred to as - the group id "junit", or the build will break, due to some hardwired dependencies of the current Surefire plugin.
-
 _Errors, Dependencies, Plugins_
 
 ### How do I install a file in my local repository along with a generic POM?
 
-This solution requires at least 2.0.1-SNAPSHOT or above version of Maven 2. You may do this by typing this command (please take note that this is a single line only).
+You may do this by typing this command (please take note that this is a single line only).
 
 ```
 mvn install:install-file
@@ -379,7 +317,7 @@ This command installs the jar in your local repository with the generated generi
 
 ### How do I install a file in my local repository along with my customized POM?
 
-The solution requires at least 2.0.1-SNAPSHOT or above version of Maven 2 and add the `-DpomFile=<path-to-pom>` parameter just like the sample below.
+The solution requires the `-DpomFile=<path-to-pom>` parameter just like the sample below.
 ```
 mvn install:install-file
       -DgroupId=<group-id>
@@ -398,14 +336,6 @@ _Repositories_
 correctly point out only work when the site is deployed.
 
 _Plugins & Lifecycle_
-
-### Does Maven 2.x support pre/postGoals?
-
-Maven 2.x no longer supports pre/postGoals, which were used in Maven 1.x to inject custom behavior to the build process. This caused a problem, since declaring your code to be a preGoal of some other goal meant that you depended on that specific goal, rather than the work it did. It also caused confusion when trying to inject other behavior into a build that already had pre/postGoals attached: Where would the new behavior be injected?
-
-Pre- and post-goals in Maven 1.x were usually used to develop the concept of a workflow, or lifecycle, for the build, where *x* happened before *y*, which had to happen before the sources could be compiled. In Maven 2, we've incorporated this concept of a build lifecycle natively. The steps - or phases - in this lifecycle correspond to the types of actions that might occur in a build. Your plugin can declare which type of action it performs - or which phase it should bind to - and that will guarantee it is executed before the next action type. For example, if your plugin generates some source code, you might want it to bind to the "generate-sources" lifecycle phase, so it is guaranteed to run before the "compile" phase.
-
-For more information, see [Introduction to the Build Lifecycle](http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html)
 
 _General_
 
@@ -571,9 +501,9 @@ _Repositories, General_
 
 To get a list of archetypes, refer to the following page [http://svn.apache.org/viewcvs.cgi/maven/archetype/trunk/maven-archetypes)
 
-### How do I specify my remote repo in Maven 2.0 (i.e., what is the equivalent of 'maven.repo.remote' in Maven 1.x)?
+### How do I specify my remote repo in Maven?
 
-To specify a remote repo in Maven 2.0, add the `<repositories>` element to the POM:
+To specify a remote repo in Maven, add the `<repositories>` element to the POM:
 
 ```
 <repositories>
@@ -607,12 +537,6 @@ _Repositories_
 </build>
 ```
 _Plugins and Lifecycle, IDEs_
-
-### How do I invoke the "maven dist" function from Maven 1.0, in Maven 2.0?
-
-mvn assembly:assembly
-
-See the [Assembly Plugin documentation](http://maven.apache.org/plugins/maven-assembly-plugin/) for more details.
 
 _General, Plugins and Lifecycle_
 
@@ -734,10 +658,6 @@ _Inheritence and Interpolation_
 run `mvn -X`
 
 _POM, Dependencies_
-
-### Is there a property file for plug-in configuration in Maven 2.0?
-
-No. Maven 2.x no longer supports plug-in configuration via properties files. Instead, in Maven 2.0 you can configure plug-ins directly from command line using the \-D arguement, or from the plug-in's POM using the `<configuration>` element.
 
 _General, POM, Plugins and Lifecycle, Command Line_
 
@@ -895,27 +815,6 @@ You could create a specific profile that skips the reporting and test phases.
 
 Also refer to [How do I skip unit tests when building a project?](How do I skip unit tests when building a project?)
 
-
-### How do I configure the equivalent of maven.war.src of war plugin in Maven 2.0?
-
-```
-<build>
-  ...
-  <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-war-plugin</artifactId>
-      <configuration>
-         <warSourceDirectory><!-- put the path of the directory --></warSourceDirectory>
-      </configuration>
-    </plugin>
-  </plugins>
-  ...
-</build>
-```
-See [http://maven.apache.org/plugins/maven-war-plugin/war-mojo.html] for other configurable properties of the war plugin.
-
-
 ### How do I execute the assembly plugin with different configurations?
 
 Add this to your pom,
@@ -1032,42 +931,6 @@ Run the mvn command with `-Dmaven.test.skip=true` argument.
 
 Also see [How do I run a build/package/deploy process without waiting for reports or unit tests, so that I can quickly deploy to an integration box?]
 
-### How do I convert my `<reports>` from Maven 1 to Maven 2?
-
-In m1, we declare reports in the pom like this:
-```
-<project>
-  ...
-  <reports>
-    <report>maven-checkstyle-plugin</report>
-    <report>maven-pmd-plugin</report>
-  </reports>
-</project>
-```
-In m2, the `<reports>` tag is replaced with `<reporting>`
-```
-<project>
-  ...
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <configuration>
-           <!-- put your config here -->
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-pmd-plugin</artifactId>
-        <configuration>
-           <!-- put your config here -->
-        </configuration>
-      </plugin>
-    </plugins>
-  <reporting>
-</project>
-```
 _Sites & Reporting, General_
 
 ### How do I create a command line parameter (i.e., \-Dname=value ) in my mojo?
@@ -1115,13 +978,13 @@ Currently, this type of summary information is not built into the compiler plugi
 
 _Sites & Reporting_
 
-### In a multi-module project, is there any way for maven to build only those modules that have changed from the previous build and leave the unchanged modules alone (i.e. not build them)?
+### In a multi-module project, is there any way for Maven to build only those modules that have changed from the previous build and leave the unchanged modules alone (i.e. not build them)?
 
-Currently, this is not possible. The main reason is that it's a non-trivial to determine whether an entire project's build is stale (the project here being one of the modules). It will be dependent on the phase being called, and the packaging of the particular module. This type of feature would have to be included in a design discussion on the [Maven 2.1 Discussion Wiki](http://docs.codehaus.org/display/MAVEN/Maven+2.1+Design+Documents].
+Currently, this is not possible. The main reason is that it's non-trivial to determine whether an entire project's build is stale (the project here being one of the modules). It will be dependent on the phase being called, and the packaging of the particular module.
 
 _Design, Patterns & Best Practices_
 
-### Where can I get the Maven 2 plugin for Eclipse?
+### Where can I get the Maven plugin for Eclipse?
 
 [http://maven.apache.org/eclipse-plugin.html]
 
@@ -1352,7 +1215,7 @@ _Plugins and Lifecycle, IDEs_
 
 When a Mojo has a `@aggregator` expression, it means that It can only build the parent project of your multi-module-project, the one who has the packaging of pom. It can also give you values for the expression $\{reactorProjects\} where reactorProjects are the MavenProject references to the parent pom modules.
 
-### Why there are no dependency properties in Maven 2?
+### Why there are no dependency properties in Maven?
 
 They were removed because they aren't reliable in a transitive environment. It implies that the dependency knows something about the
 environment of the dependee, which is back to front. In most cases, granted, the value for war bundle will be the same for a particular
@@ -1369,7 +1232,7 @@ Dependencies with this scope will not be passed on transitively, nor will they b
 
 ### How do I list available plugins?
 
-The "Available Plugins" page lists them, and provides additional information to browse the Maven 2 repository. See [http://maven.apache.org/plugins]
+The "Available Plugins" page lists them, and provides additional information to browse the Maven repository. See [http://maven.apache.org/plugins]
 
 ### How do I determine what version of a plugin I am using?
 
@@ -1377,7 +1240,7 @@ You can use the Maven Help Plugin's describe goal. For example, to find out the 
 {noformat}mvn -Dplugin=install help:describe
 {noformat}Note that you must give the plugin prefix as the argument to plugin, not it's artifact ID.
 
-### How can I use Ant tasks in Maven 2?
+### How can I use Ant tasks in Maven?
 
 There are currently 2 alternatives:
 * For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct the Ant tasks [using the instructions given in the Ant documentation](http://ant.apache.org/manual/antexternal.html)
@@ -1391,13 +1254,13 @@ By configuring `<sourceDirectory>`, `<resources>` and other elements of the `<bu
 
 In addition, you may need to change the plugin configuration if you are not using plugin defaults for their files/directories.
 
-### Where is the source code? I couldn't seem to find a link anywhere on the Maven2 site.
+### Where is the source code? I couldn't seem to find a link anywhere on the Maven site.
 
 The source code can be found in subversion: [http://svn.apache.org/repos/asf/maven/components/trunk].
 
-For more information, see [Building Maven 2.0](http://maven.apache.org/guides/development/guide-building-m2.html)
+For more information, see [Building Maven](http://maven.apache.org/guides/development/guide-building-m2.html)
 
-### Why does Maven compile my test classes but don't run them?
+### Why does Maven compile my test classes but doesn't run them?
 
 Tests are run by the surefire plugin. The surefire plugin can be configured to run certain test classes and you may have unintentionally done so by specifying a value to $
 {test}. Check your settings.xml and pom.xml for a property named "test" which would like this:
@@ -1450,7 +1313,7 @@ We have compiled a list of available resources on the [getting help page](http:/
 
 The source for the model package is generated by modello. From your maven-model source, build it and you should able to see tha java files inside /target/generated-sources directory.
 
-### List of available maven 2 mirrors.
+### List of available Maven mirrors.
 
 Here is the list of available mirrors you can use, just use one of the following mirror entries in your settings.xml
 
@@ -1492,10 +1355,6 @@ Here is the list of available mirrors you can use, just use one of the following
 
 </settings>
 ```
-### How does maven 2 implement reproducibility?
-
-- Add the exact versions of plugins into your pluginDepenencies (make use of the release plugin)
-- Make use of ibiblio for your libraries. This should always be the case for jars. (The group is working on stabilising metadata and techniques for locking it down even if it changes. An internal repository mirror that doesn't fetch updates (only new) is recommended for true reproducibility.)
 
 ### Unsupported Protocol Error when deploying a 3rd party jar. What should I do?
 
@@ -1624,7 +1483,7 @@ For example, From 1.0-SNAPSHOT to 1.0
 2. Use the maven-release-plugin to prepare and create the official RELEASE version of your project artifact.
 Please see [http://maven.apache.org/guides/mini/guide-releasing.html] for more reference.
 
-### How to run a java program from M2?
+### How to run a java program from Maven?
 
 You may use the exec-maven-plugin for this. [http://mojo.codehaus.org/exec-maven-plugin/usage.html]
 
@@ -1742,9 +1601,9 @@ Note: You don't have to define the central repo (i.e. ibiblio).
 
 You can configure maven-compiler-plugin to exclude your unwanted packages or files to be compiled in the first place. But you will not be able to prevent javac to compile those files if they are referenced by other packages within the source tree. To prevent that, you will need to use antrun plugin ( or write your own custom plugin), bind it to compile phase, and remove unwanted classes in $\{project.build.directory\}/classes. If possible, just move those pacakges/files to another source tree to become another project.
 
-### How should I point a path for maven 2 to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?
+### How should I point a path for Maven to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?
 
-If yu don't want to change your system JAVA_HOME, set it in maven script instead.
+If you don't want to change your system JAVA_HOME, set it in maven script instead.
 
 ### Why does release prepare goal requires the project to be released be a snapshot? Is it possible to do a release prepare from a parent project? What about from a sub-project?
 
@@ -1916,16 +1775,6 @@ pom.xml > project scope
 ### What is reactorProjects? executedProject?
 
 $\{reactorProjects} are the projects that the current mvn command are going to be built. This will include the parent project and all its children while $\{executedProject} is the project where you typed your mvn command.
-
-### Why do i get an 'error downloading artifact' message when building with Maven 2 under Fedora Core 4 and Java 1.4?
-
-Some versions of Java 1.4 are incompatible with the IPv6 networking protocol, leading to socket errors when Java attempts to establish network connections. IPv6 is enabled by default in Fedora Core 4, and in recent kernel updates (2.6.12) to Fedora Core 3. This causes maven to fail to download jars from remote repositories. The symptoms are:
-{color:#ff0000}java.net.SocketException: Invalid argument or cannot assign requested address{color}
-
-To solve this, add *_\-Djava.net.preferIPv4Stack=true{_}* to your maven invocation, i.e.
-{color:#ff0000}mvn install \-Djava.net.preferIPv4Stack=true{color}
-
-More information can be found at [http://wiki.astrogrid.org/bin/view/Deploy/IPV6Warning?skin=print]
 
 ### What is a Snapshot?
 

@@ -52,7 +52,7 @@ details.
 
 ### Providing a uniform build system
 
-Maven allows a project to build using its project object model (POM) and
+Maven allows a project to be built using its project object model (POM) and
 a set of plugins that are shared by all projects using Maven, providing
 a uniform build system. Once you familiarize yourself with how one Maven
 project builds you automatically know how all Maven projects build
