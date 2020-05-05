@@ -57,22 +57,6 @@ under the License.
     </div>    
 
 <div style="float: left; margin-right: 5em;">
-      <img src="images/books/better_builds.png" title="Better Builds with Maven" />
-</div>
-      <div style="min-height: 220px">
-        <p><a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven"><strong>Better Builds with Maven</strong></a> (Free PDF Download)</p>
-        <ul>
-          <li><strong>Covers: </strong>Maven 2.0.4</li>
-          <li><strong>Published: </strong><a href="http://www.maestrodev.com">MaestroDev</a> (March 2006)</li>
-          <li><strong>Authors: </strong>
-            John Casey, Vincent Massol,
-            <a href="http://brettporter.wordpress.com/">Brett Porter</a>,
-            <a href="http://www.carlossanchez.eu/">Carlos Sanchez</a>
-          </li>
-          <li><strong>Read Online:</strong> <a href="http://www.scribd.com/doc/238927/Better-Builds-With-Maven">http://www.scribd.com/doc/238927/Better-Builds-With-Maven</a></li>
-        </ul>
-      </div>
-<div style="float: left; margin-right: 5em;">
       <img src="images/books/getting_started.png" title="Getting started with Apache Maven" />
 </div>
 <div style="float: left; margin-right: 5em;">
@@ -85,7 +69,7 @@ under the License.
           <li><strong>Published: </strong> Packt Publishing (September 30, 2013)</li>
           <li><strong>Authors: </strong><a>Russell Gold</a>
           </li>
-          <li><strong>Buy the Book:</strong> <a href="https://www.packtpub.com/getting-started-with-apache-maven/video">Packt</a></li>
+          <li><strong>Buy the Video:</strong> <a href="https://www.packtpub.com/getting-started-with-apache-maven/video">Packt</a></li>
         </ul>
       </div>      
       
@@ -137,18 +121,6 @@ under the License.
             <td>June 2007</td>
           </tr>
           <tr>
-            <td><a href="http://today.java.net/pub/a/today/2007/03/01/building-web-applications-with-maven-2.html">Building Web Applications with Maven 2</a></td>
-            <td>java.net</td>
-            <td>Will Iverson</td>
-            <td>1 March 2007</td>
-          </tr>
-          <tr>
-            <td><a href="http://www-128.ibm.com/developerworks/edu/j-dw-java-mavenv2.html">Introduction to Apache Maven 2</a></td>
-            <td>developerWorks</td>
-            <td>Sing Li</td>
-            <td>19 December 2006</td>
-          </tr>
-          <tr>
             <td><a href="http://www.manuelrecena.com/docs/maven_061106.pdf">Maven - Menos mal que has venido (in Spanish)</a></td>
             <td>Universidad de Sevilla</td>
             <td>Manuel J. Recena Soto</td>
@@ -161,106 +133,40 @@ under the License.
             <td>11 October 2006</td>
           </tr>
           <tr>
-            <td><a href="http://www.devx.com/Java/Article/32386">Keep Your Maven Projects Portable Throughout the Build Cycle</a></td>
-            <td>DevX</td>
-            <td>Eric Redmond</td>
-            <td>8 September 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://www-128.ibm.com/developerworks/java/library/j-ap09056/index.html">Automation for the people: Choosing a Continuous Integration server</a></td>
-            <td>deverloperWorks</td>
-            <td>Paul Duvall</td>
-            <td>5 September 2006</td>
-          </tr>
-          <tr>
             <td><a href="http://www.javaposse.com/index.php?post_id=112128">Java Posse #070 - Interview with Brett Porter of Maven</a></td>
             <td>Java Posse</td>
             <td>Tor Norbye, Carl Quinn, Dick Wall, Joe Nuxoll, Brett Porter</td>
             <td>18 July 2006</td>
           </tr>
           <tr>
-            <td><a href="http://today.java.net/pub/a/today/2006/05/30/continuous-integration-with-continuum.html">Continuous Integration with Continuum</a></td>
-            <td>Java.net</td>
-            <td>John Ferguson Smart</td>
-            <td>30 May 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html">The Maven 2 POM demystified</a></td>
+            <td><a href="https://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html">The Maven 2 POM demystified</a></td>
             <td>JavaWorld</td>
             <td>Eric Redmond</td>
             <td>29 May 2006</td>
           </tr>
           <tr>
-            <td><a href="http://www.ddj.com/showArticle.jhtml?articleID=186100398">Maven: Building Complex Systems</a></td>
+            <td><a href="https://www.drdobbs.com/architecture-and-design/maven-building-complex-systems/186100398">Maven: Building Complex Systems</a></td>
             <td>Dr.Dobb's</td>
             <td>Gigi Sayfan</td>
             <td>21 April 2006</td>
           </tr>
           <tr>
-            <td><a href="http://cvs.peopleware.be/training/maven/maven2/">Working with maven 2</a></td>
-            <td>PeopleWare</td>
-            <td>Jan Dockx</td>
-            <td>13 April 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.onjava.com/pub/a/onjava/2006/03/29/maven-2-0.html">Maven 2.0: Compile, Test, Run, Deploy, and More</a></td>
-            <td>onjava</td>
-            <td>Chris Hardin</td>
-            <td>29 March 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://metaware-inc.wiki.mailxmail.com/AntMaven">Descripcion tecnica de Maven (in Spanish)</a></td>
-            <td>Metaware Inc</td>
-            <td>Juan Pablo Santos Rodríguez</td>
-            <td>13 March 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.javaworld.com/javaworld/jw-02-2006/jw-0227-maven.html">Get the most out of Maven 2 site generation</a></td>
+            <td><a href="https://www.javaworld.com/javaworld/jw-02-2006/jw-0227-maven.html">Get the most out of Maven site generation</a></td>
             <td>JavaWorld</td>
             <td>John Ferguson Smart</td>
             <td>27 February 2006</td>
           </tr>
           <tr>
-            <td><a href="http://dcabasson.developpez.com/articles/java/maven/introduction-maven2/">An introduction to Maven 2 (in french)</a></td>
-            <td>Developpez.com</td>
-            <td>Denis Cabasson</td>
-            <td>27 January 2006</td>
-          </tr>
-          <tr>
-            <td><a href="http://blogs.codehaus.org/people/vmassol/archives/001275_javapolis_2005_slides_on_maven_2.html">Maven 2.0 - Javapolis 2005</a></td>
-            <td></td>
-            <td>Vincent Massol</td>
-            <td>15 December 2005</td>
-          </tr>
-          <tr>
-            <td><a href="http://www.javaworld.com/javaworld/jw-12-2005/jw-1205-maven.html?lsrc=maven-users">An introduction to Maven 2</a></td>
+            <td><a href="https://www.javaworld.com/javaworld/jw-12-2005/jw-1205-maven.html?lsrc=maven-users">An introduction to Maven 2</a></td>
             <td>JavaWorld</td>
             <td>John Ferguson Smart</td>
             <td>5 December 2005</td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20051127014056/http://www.developer.com/open/article.php/10930_3552026_1">Taking the Maven 2 Plunge</a></td>
-            <td></td>
-            <td>David DeWolf</td>
-            <td>1 October 2005</td>
           </tr>
           <tr>
             <td><a href="https://web.archive.org/web/20051228123436/http://www.onjava.com/pub/a/onjava/2005/09/07/maven.html">Building J2EE Projects with Maven</a></td>
             <td>OnJava</td>
             <td>Vincent Massol</td>
             <td>7 September 2005</td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20051212060839/http://www-128.ibm.com/developerworks/opensource/library/os-maven/index.html">Exploiting Maven in Eclipse</a></td>
-            <td>developerWorks</td>
-            <td>Gilles Dodinet</td>
-            <td>24 May 2005</td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20051206214359/http://www-128.ibm.com/developerworks/websphere/library/techarticles/0503_boog/0503_boog.html?ca=dgr-lnxw09Maven">Managing WebSphere Portal V5.1 projects with Apache Maven and Rational Application Developer 6.0</a></td>
-            <td>developerWorks</td>
-            <td>Hinrich Boog</td>
-            <td>30 March 2005</td>
           </tr>
           <tr>
             <td><a href="https://web.archive.org/web/20041217085616/http://www.oracle.com/technology/pub/articles/masterj2ee/j2ee_wk2.html">Master and Commander by Julien Dubois</a></td>
@@ -273,31 +179,6 @@ under the License.
             <td>internetnews.com</td>
             <td>Sean Michael Kerner</td>
             <td>15 July 2004</td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20160809061511/http://www.onjava.com/pub/a/onjava/2004/03/17/maven.html">Extending Maven Through Plugins by Eric Pugh</a></td>
-            <td>OnJava</td>
-            <td>Eric Pugh</td>
-            <td>17 March 2004</td>
-          </tr>
-
-          <tr>
-            <td><a href="https://web.archive.org/web/20160611202944/http://wiki.astrogrid.org:80/bin/view/Astrogrid/MakingWarWithMaven">How to get Maven to build your web service into a WAR on AstroGrid</a></td>
-            <td>Astrogrid</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20160731000646/http://wiki.astrogrid.org/bin/view/Astrogrid/MavenFAQ">Some Maven FAQs on AstroGrid</a></td>
-            <td>Astrogrid</td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><a href="https://web.archive.org/web/20160731002256/http://wiki.astrogrid.org/bin/view/Astrogrid/UsefulMavenNotes">Some Useful Maven Notes on AstroGrid</a></td>
-            <td>Astrogrid</td>
-            <td></td>
-            <td></td>
           </tr>
         </table>
       </div>
