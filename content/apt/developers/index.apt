@@ -43,9 +43,9 @@ Maven Developer Centre
 
   * {{{../scm.html}Source Code}}
 
-  * {{{../continuous-integration.html}Continuous Integration}}
+  * {{{https://builds.apache.org/view/M-R/view/Maven/job/maven-box/}Continuous Integration}}
 
-  * {{{../plugin-developers/common-bugs.html} Common Bugs and Pitfalls}}
+  * {{{../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}
 
   * {{{../project-roles.html}Apache Maven Project Roles}}
 
