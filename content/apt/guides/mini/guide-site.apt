@@ -41,38 +41,47 @@ Creating a site
       |  +- index.apt
       !
       +- markdown/
-      |  +- index.md
-      |
-      +- xdoc/
-      |  +- other.xml
+      |  +- content.md
       |
       +- fml/
       |  +- general.fml
       |  +- faq.fml
       |
+      +- xdoc/
+      |  +- other.xml
+      |
       +- site.xml
 --------------------
 
- You will notice there is now a <<<$\{basedir\}/src/site>>> directory within which is contained a site descriptor
- along with various directories corresponding to the supported document types. Let's take a look at site
- descriptor and the examples of the various document types.
+ You will notice there is now a <<<$\{basedir\}/src/site>>> directory within which is contained a <<<site.xml>>> site descriptor
+ along with various directories corresponding to the supported document types.
+ 
+ Let's take a look at the examples of the various document types:
 
-  The APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one)
-  very quickly. A full reference of the {{{/doxia/references/apt-format.html} APT Format}} is available.
+ * <<<apt>>>: the APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one)
+  very quickly. A full reference of the {{{/doxia/references/apt-format.html}APT Format}} is available,
 
-  The FML format is the FAQ format.
+ * <<<markdown>>>: the well known {{{https://en.wikipedia.org/wiki/Markdown}Markdown}} format,
 
-  Other formats are available, but at this point these 3 are the best tested. There are also several possible output formats,
-  but as of 2.0, only XHTML is available.
+ * <<<fml>>>: the FML format is the {{{/doxia/references/fml-format.html}FAQ format}},
+
+ * <<<xdoc>>>: an XML document conforming to a small and simple set of tags, see the {{{/doxia/references/xdoc-format.html}full reference}}.
+
+ []
+
+  Other formats are available, but at this point these 4 are the best tested.
+  
+  There are also several possible output formats, but as of Maven Site Plugin, only XHTML is available.
 
   Note that all of the above is optional - just one index file is required in one of the input trees. Each of the paths will be merged
   together to form the root directory of the site.
 
 * Customizing the Look & Feel
 
-  If you want to tune the way your site looks, you can use a custom skin to provide your own CSS styles. If that is
+  If you want to tune the way your site looks, you can use a custom <<skin>> to provide your own CSS styles. If that is
   still not enough, you can even tweak the output templates that Maven uses to generate the site documentation.
-  You can visit the {{{/skins/}Skins site}} to have a
+
+  You can visit the {{{/skins/}Skins index}} to have a
   look at some of the skins that you can use to change the look of your site.
 
 ~~  TODO: The following link is currently not available. Restore it when it becomes available again.
@@ -89,7 +98,7 @@ mvn site
 
   By default, the resulting site will be in <<<target/site/...>>>
 
-  For more information on the Maven Site Plugin, see its {{{../../plugins/maven-site-plugin/} plugin reference}}.
+  For more information on the Maven Site Plugin, see the {{{../../plugins/maven-site-plugin/} maven-site-plugin reference}}.
 
 * Deploying the Site
 
@@ -130,20 +139,23 @@ mvn site-deploy
 
 --------------------
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<project name="Maven">
+<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
+  name="Maven">
   <bannerLeft>
     <name>Maven</name>
-    <src>http://maven.apache.org/images/apache-maven-project.png</src>
-    <href>http://maven.apache.org/</href>
+    <src>https://maven.apache.org/images/apache-maven-project.png</src>
+    <href>https://maven.apache.org/</href>
   </bannerLeft>
   <bannerRight>
-    <src>http://maven.apache.org/images/maven-small.gif</src>
+    <src>https://maven.apache.org/images/maven-small.gif</src>
   </bannerRight>
+
   <body>
     <links>
       <item name="Apache" href="http://www.apache.org/" />
-      <item name="Maven 1.x" href="http://maven.apache.org/maven-1.x/"/>
-      <item name="Maven 2" href="http://maven.apache.org/"/>
+      <item name="Maven 1.x" href="https://maven.apache.org/maven-1.x/"/>
+      <item name="Maven 2" href="https://maven.apache.org/"/>
     </links>
 
     <menu name="Maven 2.0">
@@ -168,8 +180,8 @@ mvn site-deploy
   When building the site, this is replaced by a menu with links to all the
   reports that you have configured.
 
-  More information about the site descriptor is available at the site for the
-  {{{/plugins/maven-site-plugin/examples/sitedescriptor.html}Maven Site Plugin}}.
+  More information about the site descriptor is available at the
+  {{{/plugins/maven-site-plugin/examples/sitedescriptor.html}dedicated page of Maven Site Plugin}}.
 
 * Adding Extra Resources
 
