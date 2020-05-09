@@ -102,10 +102,12 @@ mvn site
 
 * Deploying the Site
 
-  To be able to deploy the site, you must first declare a location to distribute to in your <<<pom.xml>>>, similar to the repository for
-  deployment.
+** Classical Website deployment
 
----------------
+  To be able to deploy the site with a classical network protocol (ftp, scp, webdav), you must first declare a location to distribute to in your <<<pom.xml>>>,
+  similar to the repository for deployment:
+
++--------------
 <project>
   ...
   <distributionManagement>
@@ -116,28 +118,57 @@ mvn site
   </distributionManagement>
   ...
 </project>
----------------
++--------------
 
-  The <<<\<id\>>>> element identifies the repository, so that you can attach credentials to it in your <<<settings.xml>>>
-  file using the {{{../../settings.html#Servers} <<<\<servers\>>>> element}} as you would for any other repository.
+  * the <<<\<id\>>>> element identifies the repository, so that you can attach credentials to it in your <<<settings.xml>>>
+  file using the {{{../../settings.html#Servers} <<<\<servers\>>>> element}} as you would for any other repository,
 
-  The <<<\<url\>>>> gives the location to deploy to. Currently, only SSH is supported, as above which copies to the host
-  <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>. If subprojects inherit the site URL from a parent POM,
-  they will automatically append their <<<\<artifactId\>>>> to form their effective deployment location.
+  * the <<<\<url\>>>> gives the location to deploy to. Currently, only SSH is supported by default, as above which copies to the host
+  <<<www.mycompany.com>>> in the path <<</www/docs/project/>>>, but you can {{{/plugins/maven-site-plugin/examples/adding-deploy-protocol.html}add more protocols as required}}.
+  If subprojects inherit the site URL from a parent POM, they will automatically get their <<<\<artifactId\>>>> appended to form their effective deployment location.
 
-  Deploying the site is done by using the <<<site-deploy>>> phase of the site
-  lifecycle.
+  []
+
+  Once distribution location is configured, deploying the site is done by using the <<<site-deploy>>> phase of the site lifecycle.
 
 ---------------
 mvn site-deploy
 ---------------
+
+** GitHub Pages, Apache svnpubsub/gitpubsub Deployment
+
+  When site publication is done with a SCM commit, like with {{{GitHub Pages}https://pages.github.com/}} or
+  {{{https://infra.apache.org/project-site.html#tools}Apache svnpubsub/gitpubsub}}, deploying the site will be done with
+  {{{/plugins/maven-scm-publish-plugin/}Maven SCM Publish Plugin}}. 
+
+  For example with a project hosted on GitHub and using GitHub Pages for its site publication:
+
++---------------------
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-scm-publish-plugin</artifactId>
+      <version>3.0.0</version>
+      <configuration>
+        <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
+        <scmBranch>gh-pages</scmBranch>
+      </configuration>
+    </plugin>
++---------------------
+
+  Deploying the site is done in 2 steps:
+  
+  [[1]] staging the content by using the <<<site>>> phase of the site lifecycle followed by <<<site:stage>>>: <<<mvn site site-stage>>>
+
+  [[2]] publishing the staged site to the SCM: <<<mvn scm-publish:publish-scm>>>
+
+  []
 
 * Creating a Site Descriptor
 
   The <<<site.xml>>> file is used to describe the structure of the site.
   A sample is given below:
 
---------------------
++-------------------
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
@@ -172,7 +203,7 @@ mvn site-deploy
     ...
   </body>
 </project>
---------------------
++-------------------
 
   ~~TODO: deserves more explanation.
 
@@ -236,7 +267,7 @@ mvn site-deploy
   following example shows how to configure the standard project information reports that display information from the
   POM in a friendly format:
 
--------------------
++------------------
 <project>
   ...
   <reporting>
@@ -250,7 +281,7 @@ mvn site-deploy
   </reporting>
   ...
 </project>
--------------------
++------------------
 
   If you have included the appropriate <<<\<menu ref="reports"/\>>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
   the site those items will appear in the menu.
@@ -270,7 +301,7 @@ mvn site-deploy
 
   To enable multiple locales, add a configuration similar to the following to your POM:
 
--------------------
++------------------
 <project>
   ...
   <build>
@@ -287,7 +318,7 @@ mvn site-deploy
   </build>
   ...
 </project>
--------------------
++------------------
 
   This will generate both an English and a French version of the site. If <<<en>>> is your current locale, then it will
   be generated at the root of the site, with a copy of the French translation of the site in the <<<fr/>>> subdirectory.
