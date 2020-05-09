@@ -137,7 +137,7 @@ mvn site-deploy
 
 ** GitHub Pages, Apache svnpubsub/gitpubsub Deployment
 
-  When site publication is done with a SCM commit, like with {{{GitHub Pages}https://pages.github.com/}} or
+  When site publication is done with a SCM commit, like with {{{https://pages.github.com/}GitHub Pages}} or
   {{{https://infra.apache.org/project-site.html#tools}Apache svnpubsub/gitpubsub}}, deploying the site will be done with
   {{{/plugins/maven-scm-publish-plugin/}Maven SCM Publish Plugin}}. 
 
