@@ -28,13 +28,8 @@
 
 Maven Git Convention
 
- This document describes how developers should use Git. The Maven project
- is in the process of migrating some of its components from svn to git.
-
-* Git migration
-
- Information on the migration is here: {{https://cwiki.apache.org/confluence/display/MAVEN/Git+Migration}}
-
+ This document describes how developers should use Git. 
+ 
 * Git Configuration
 
 ** For contributors who are not committers
