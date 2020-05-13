@@ -1653,7 +1653,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   This defines the defect tracking system (<Bugzilla>, <TestTrack>, <ClearQuest>, etc)
   used. Although there is nothing stopping a plugin from using this information for
-  something, its primarily used for generating project documentation.
+  something, it's primarily used for generating project documentation.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
