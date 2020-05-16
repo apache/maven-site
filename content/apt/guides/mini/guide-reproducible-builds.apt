@@ -87,8 +87,9 @@ Configuring for Reproducible Builds
 
 * How Many Projects are Reproducible?
 
- You can have a look at {{{https://github.com/jvm-repo-rebuild/reproducible-central}Reproducible Central}} to see which projects are
- reproducible, and check for yourself.
+ You can have a look at {{{https://github.com/jvm-repo-rebuild/reproducible-central}Reproducible Central}} to see which projects
+ have been checked as reproducible by rebuilding independently from the reference build published in Central Repository.
+ You can also check for yourself that you can rebuild locally and get the same result.
 
 * FAQ
 
