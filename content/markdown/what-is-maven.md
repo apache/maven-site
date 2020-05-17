@@ -17,7 +17,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Maven, a Yiddish word meaning
+
+Maven, a [Yiddish word](https://en.wikipedia.org/wiki/Maven) meaning
 *accumulator of knowledge*, began as an attempt to
 simplify the build processes in the Jakarta Turbine project. There were
 several projects, each with their own Ant build files, that were all
