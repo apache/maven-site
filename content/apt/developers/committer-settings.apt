@@ -33,9 +33,8 @@ Introduction
 
 * Enable Apache Servers
 
- Maven uses several servers configuration to deploy snapshots, releases and documentation on the Apache servers.
- You need to tell to Maven what your Apache username is. Please note that the servers now use your LDAP credentials,
- which may differ from your old SVN credentials.
+ Maven uses several servers configuration to deploy snapshots and releases on the Apache servers.
+ You need to tell to Maven what your Apache username is.
 
  <<It is highly recommended to use Maven's {{{../guides/mini/guide-encryption.html} password encryption capabilities}} for your passwords>>.
 
@@ -49,39 +48,17 @@ Introduction
       <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
       <password> <!-- YOUR APACHE LDAP PASSWORD --> </password>
     </server>
-    <!-- To publish a website of some part of Maven -->
-    <server>
-      <id>apache.website</id>
-      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
-      <!-- Either
-      <password>...</password>
-      or
-      <privateKey>...</privateKey>
-      ---> 
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
-    </server>
     <!-- To stage a release of some part of Maven -->
     <server>
       <id>apache.releases.https</id>
       <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
       <password> <!-- YOUR APACHE LDAP PASSWORD --> </password>
     </server>
-    <!-- To stage a website of some part of Maven -->
-    <server>
-      <id>stagingSite</id> <!-- must match hard-coded repository identifier in site:stage-deploy -->
-      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
-      <filePermissions>664</filePermissions>
-      <directoryPermissions>775</directoryPermissions>
-    </server>
     ...
   </servers>
 </settings>
 +-----+
 
- You also need to be a member of the group <<<apcvs>>> and <<<maven>>> on <<<people.apache.org>>>.
-
- 
 * Enable sending announcement e-mails
 
  To be able to send out announcements of Maven releases you need to add a couple
