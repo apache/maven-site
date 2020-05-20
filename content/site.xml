@@ -179,6 +179,12 @@ under the License.
           <item name="Components Documentation" href="developers/website/deploy-component-reference-documentation.html" />
           <item name="Component Helper" href="/developers/website/component-reference-documentation-helper.html" />
         </item>
+        <item name="Committers" href="/developers/welcome-to-new-committers.html" collapse="true">
+          <item name="Environment" href="/developers/committer-environment.html"/>
+          <item name="Settings" href="/developers/committer-settings.html"/>
+          <item name="Plugins Retirement Plan" href="/developers/retirement-plan-plugins.html"/>
+          <item name="Maven Dependency Policies" href="/developers/dependency-policies.html"/>
+        </item>
       </item>
       <item name="Books and Resources" href="/articles.html" />
       <item name="Security" href="/security.html" />
