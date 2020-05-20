@@ -1,0 +1,71 @@
+ ------
+ Maven Compatibility Plan
+ ------
+ Hervé Boutemy
+ ------
+ 2020-05-20
+ -------
+
+~~ Licensed to the Apache Software Foundation (ASF) under one
+~~ or more contributor license agreements.  See the NOTICE file
+~~ distributed with this work for additional information
+~~ regarding copyright ownership.  The ASF licenses this file
+~~ to you under the Apache License, Version 2.0 (the
+~~ "License"); you may not use this file except in compliance
+~~ with the License.  You may obtain a copy of the License at
+~~
+~~   http://www.apache.org/licenses/LICENSE-2.0
+~~
+~~ Unless required by applicable law or agreed to in writing,
+~~ software distributed under the License is distributed on an
+~~ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+~~ KIND, either express or implied.  See the License for the
+~~ specific language governing permissions and limitations
+~~ under the License.
+
+~~ NOTE: For help with the syntax of this file, see:
+~~ https://maven.apache.org/doxia/references/apt-format.html
+
+Maven Compatibility Plan
+
+  Work In Progress...
+
+* Scope
+
+  This page describes the plan on:
+
+  [[1]] minimum <<Java>> requirement for Maven components and plugins,
+
+  [[2]] minimum <<Maven>> requirement for plugins.
+
+  []
+
+  Current minimum prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
+
+* Facts
+
+  * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
+
+  * JDK/JRE support dates:
+
+    * Java 5 is closed source, EOLed by binary providers on ...
+
+    * Java 6 is Open Source, EOLed by OpenJDK maintainers on ... 
+
+    * Java 7 is Open Source, OpenJDK maintained at least until June 2020 
+
+    * Java 8 is Open Source, OpenJDK maintained at least until September 2023
+
+    * see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free 2.0.4}}
+    
+    []
+
+  []
+
+* Maven Plan
+
+  * Until ..., Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
+
+  * Since ..., Maven 3.0 + Java 7 prerequisites, with plugins in 3.x
+
+  * Since ..., discussions on Maven 3.2.5? + Java 8 prerequisites
