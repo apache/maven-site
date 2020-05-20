@@ -34,13 +34,13 @@ Maven Compatibility Plan
 
   This page describes the plan on:
 
-  [[1]] minimum <<Java>> requirement for Maven components and plugins,
+  [[1]] minimum <<Java>> requirement for Maven components and plugins runtime,
 
-  [[2]] minimum <<Maven>> requirement for plugins.
+  [[2]] minimum <<Maven>> requirement for plugins runtime.
 
   []
 
-  Current minimum prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
+  Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Facts
 
