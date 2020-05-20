@@ -42,26 +42,6 @@ Maven Compatibility Plan
 
   Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
 
-* Facts
-
-  * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
-
-  * JDK/JRE support dates:
-
-    * Java 5 is closed source, EOLed by binary providers on ...
-
-    * Java 6 is Open Source, EOLed by OpenJDK maintainers on ... 
-
-    * Java 7 is Open Source, OpenJDK maintained at least until June 2020 
-
-    * Java 8 is Open Source, OpenJDK maintained at least until September 2023
-
-    * see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free 2.0.4}}
-    
-    []
-
-  []
-
 * Maven Plan
 
   * Until ..., Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
@@ -69,3 +49,23 @@ Maven Compatibility Plan
   * Since ..., Maven 3.0 + Java 7 prerequisites, with plugins in 3.x
 
   * Since ..., discussions on Maven 3.2.5? + Java 8 prerequisites
+
+* Context
+
+  * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
+
+  * JDK/JRE support dates:
+
+    * Java 5 is closed source, EOLed by binary providers on ...
+
+    * Java 6 is Open Source, maintained at OpenJDK until ... 
+
+    * Java 7 is Open Source, maintained at OpenJDK at least until June 2020 
+
+    * Java 8 is Open Source, maintained at OpenJDK at least until September 2023
+
+    * see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}}
+    
+    []
+
+  []
