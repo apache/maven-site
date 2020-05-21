@@ -50,6 +50,10 @@ Maven Compatibility Plan
 
   * discussions on Maven > 3.0.x (3.1 or 3.2 or 3.3? details still TDB) + Java 8 prerequisites
 
+  []
+
+  There are a few exception
+
 * Context
 
   * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
