@@ -52,8 +52,6 @@ Maven Compatibility Plan
 
   []
 
-  There are a few exception
-
 * Context
 
   * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
