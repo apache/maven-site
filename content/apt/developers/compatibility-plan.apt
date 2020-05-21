@@ -44,11 +44,11 @@ Maven Compatibility Plan
 
 * Maven Plan
 
-  * Until ..., Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
+  * Until 2012?, Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
 
-  * Since ..., Maven 3.0 + Java 7 prerequisites, with plugins in 3.x
+  * Since 2012?, Maven 3.0 + Java 7 prerequisites, with plugins in 3.x
 
-  * Since ..., discussions on Maven 3.2.5? + Java 8 prerequisites
+  * discussions on Maven > 3.0.x (3.1 or 3.2 or 3.3? details still TDB) + Java 8 prerequisites
 
 * Context
 
@@ -56,7 +56,7 @@ Maven Compatibility Plan
 
   * JDK/JRE support dates:
 
-    * Java 5 is closed source, EOLed by binary providers on ...
+    * Java 5 is closed source, End of Public Update in 2009
 
     * Java 6 is Open Source, maintained at OpenJDK until ... 
 
