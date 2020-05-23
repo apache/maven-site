@@ -26,11 +26,10 @@ uses - since 3.0-beta-3 - is named [Sisu][sisu] and is based on [Guice 3.x][guic
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush to switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
 co-exist within Maven\'s core and you can choose to use JSR-330 when you wish. There are hundreds of components
-written using the Plexus APIs, particularly components and plugins compatible with Maven 2,
-then those APIs will be supported forever, or at least until Maven fully drops Maven 2 support. 
+written using the Plexus APIs. 
 
-If you want to use JSR-330, you must understand that your code won\'t be compatible with Maven 2 or 3.0.x
-but only with Maven 3.1.0+: even if JSR-330 is available in core since Maven 3.0-beta-3, it was made available to plugins and
+If you want to use JSR-330, you must understand that your code won\'t be compatible with Maven 3.0.x
+but only with Maven 3.1.0 and later. Even though JSR-330 has been available in core since Maven 3.0-beta-3, it was made available to plugins and
 extensions only in Maven 3.1.0 (see [MNG-5343][MNG-5343] for more details).
 
 If you are interested the background of moving from Plexus to Guice and JSR-330, you can refer to the following articles:
