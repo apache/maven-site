@@ -28,15 +28,13 @@
 
 Maven Compatibility Plan
 
-  Work In Progress...
-
 * Scope
 
   This page describes the plan on:
 
-  [[1]] minimum <<Java>> requirement for Maven components and plugins runtime,
+  [[1]] minimum <<Java>> runtime prerequisite for Maven components and plugins,
 
-  [[2]] minimum <<Maven>> requirement for plugins runtime.
+  [[2]] minimum <<Maven>> runtime prerequisite for plugins.
 
   []
 
@@ -44,27 +42,29 @@ Maven Compatibility Plan
 
 * Maven Plan
 
-  * Until 2012?, Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
+  * Until 2012 (?), Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
 
-  * Since 2012?, Maven 3.0 + Java 7 prerequisites, with plugins in 3.x
+  * Since 2012 (?), Maven 3.0 + Java 7 prerequisites, with plugins in 3.0
 
-  * discussions on Maven > 3.0.x (3.1 or 3.2 or 3.3? details still TDB) + Java 8 prerequisites
+  * (WIP) discussions on Maven > 3.0.x (3.1 or 3.2 or 3.3? details still TDB) + Java 8 prerequisites
 
   []
 
 * Context
 
-  * Maven core Java requirement history is visible in the {{{/docs/history.html}release notes}}
+  * Maven core history with Java prerequisite is available in the {{{/docs/history.html}release notes}}
 
-  * JDK/JRE support dates:
+  * JDK/JRE availability dates:
 
-    * Java 5 is closed source, End of Public Update in 2009
+    * Java 5 (2004) is closed source, End of Public Update in 2009
 
-    * Java 6 is Open Source, maintained at OpenJDK until ... 
+    * Java 6 (2006) is Open Source, maintained at OpenJDK until ... 
 
-    * Java 7 is Open Source, maintained at OpenJDK at least until June 2020 
+    * Java 7 (2011) is Open Source, maintained at OpenJDK at least until June 2020 
 
-    * Java 8 is Open Source, maintained at OpenJDK at least until September 2023
+    * Java 8 (2014) is Open Source, maintained at OpenJDK at least until September 2023
+
+    * Java 11 (LTS, 2019) is Open Source, maintained at OpenJDK at least until ...
 
     * see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}}
     
