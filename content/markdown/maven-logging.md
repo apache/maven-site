@@ -75,11 +75,11 @@ from the `lib` directory and replacing it with one of the alternative implementa
 See SLF4J documentation for more details on [swapping "SLF4J bindings"][7]. 
 
 [1]: http://slf4j.org
-[2]: http://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
+[2]: https://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
 [3]: https://logging.apache.org/log4j/2.x/log4j-slf4j-impl/
 [4]: http://logback.qos.ch
-[5]: http://slf4j.org/apidocs/
+[5]: https://slf4j.org/apidocs/
 [6]: https://codehaus-plexus.github.io/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
-[7]: http://www.slf4j.org/manual.html#swapping
+[7]: https://www.slf4j.org/manual.html#swapping
 [8]: https://github.com/apache/maven/blob/master/apache-maven/src/conf/logging/simplelogger.properties
 [9]: https://maven.apache.org/configure.html
