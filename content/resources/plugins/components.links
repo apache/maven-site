@@ -47,3 +47,4 @@ maven-stage-plugin=../components/plugins/maven-stage-plugin
 maven-toolchains-plugin=../components/plugins/maven-toolchains-plugin
 maven-verifier-plugin=../components/plugins/maven-verifier-plugin
 maven-war-plugin=../components/plugins/maven-war-plugin
+maven-wrapper-plugin=../components/plugins/maven-wrapper-plugin
