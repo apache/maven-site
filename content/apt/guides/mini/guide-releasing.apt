@@ -91,7 +91,7 @@ mvn release:prepare \
   or they can be defined and maintained within the project's <pom.xml> file.  The location of the current development trunk is defined 
   within the <pom.xml> file in the following form:
  
------
++-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -124,12 +124,12 @@ mvn release:prepare \
   </build>
   ...
 </project> 
------
++-----+
  
   To define the tagBase parameter within the <pom.xml> file a tagBase element must be defined within a <plugins/plugin/configuration> element.
   The following example shows how this would look within the <pom.xml> file.
  
------
++-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -162,7 +162,7 @@ mvn release:prepare \
   </build>
   ...
 </project>
------
++-----+
 
   During the execution of the <<<release:prepare>>> goal maven will interact with the user to gather information about the current release.
   Maven will prompt the user for the following information:
@@ -246,7 +246,7 @@ checkpoint.check-in-development-version=OK
 
   The following is an example of how a distributionManagement element can be configured within a project <pom.xml> file.
   
------
++-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -265,7 +265,7 @@ checkpoint.check-in-development-version=OK
   </distributionManagement>
   ...
 </project>
------
++-----+
 
   If the distributionManagement element is not configured within the <pom.xml> file then the deployment of the artifact will fail.  Maven will 
   report a failure back to the user for the execution of the maven-deploy plugin.  Please refer maven documentationa and additional mini 
