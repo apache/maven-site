@@ -271,6 +271,7 @@
             <exclude>content/filtered-resources/.htaccess</exclude>
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
+            <exclude>content/resources/badges/*.json</exclude>
           </excludes>
         </configuration>
       </plugin>
