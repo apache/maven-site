@@ -104,7 +104,6 @@ under the License.
         <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
           <item name="Local" href="/guides/mini/guide-3rd-party-jars-local.html" />
           <item name="Remote" href="/guides/mini/guide-3rd-party-jars-remote.html" />
-          <item name="SUN Jars" href="/guides/mini/guide-coping-with-sun-jars.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
