@@ -46,7 +46,7 @@ Maven Compatibility Plan
 
   * Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.0
 
-  * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}}Technical details}}
+  * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}Technical details}}
 
   []
 
