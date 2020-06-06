@@ -41,9 +41,9 @@ Maven on Windows
   Once Java is installed, you must ensure that the commands from the Java SDK are in your PATH environment variable.
   Running, for example,
 
-+-------+
+-------
 java -version
-+-------+
+-------
 
   must show the right version number.
 

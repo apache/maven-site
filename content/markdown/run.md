@@ -21,7 +21,7 @@ The syntax for running Maven is as follows:
 
     mvn [options] [<goal(s)>] [<phase(s)>]
 
-All available options are documented in the built in help that you can access with
+All available options are documented in the built-in help that you can access with
 
     mvn -h
 
@@ -29,7 +29,7 @@ The typical invocation for building a Maven project uses a Maven life cycle phas
 
     mvn package
 
-The built in life cycles and their phases are in order are:
+The built-in lifecycles and their phases are in order are:
 
 * clean - pre-clean, clean, post-clean
 
@@ -53,7 +53,7 @@ Just creating the package and installing it in the local repository for re-use f
 This is the most common build invocation for a Maven project.
 
 When not working with a project, and in some other use cases, you might want to invoke
-a specific task implemented by a part of Maven - this is called a goal of a plugin.
+a specific task implemented by a part of Maven - this is called a **goal** of a plugin.
 E.g.:
 
     mvn archetype:generate

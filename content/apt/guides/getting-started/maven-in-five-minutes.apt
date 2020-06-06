@@ -42,19 +42,19 @@ Maven in 5 Minutes
   First, {{{../../download.html}download Maven}} and follow the {{{../../install.html}installation instructions}}.
   After that, type the following in a terminal or in a command prompt:
 
-+-----+
+-----
 mvn --version
-+-----+
+-----
 
   It should print out your installed version of Maven, for example:
 
-+-----+
+-----
 Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
 Maven home: D:\apache-maven-3.6.3\apache-maven\bin\..
 Java version: 1.8.0_232, vendor: AdoptOpenJDK, runtime: C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\jre
 Default locale: en_US, platform encoding: Cp1250
 OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
-+-----+
+-----
 
   Depending upon your network setup, you may require extra configuration. Check out the
   {{{../mini/guide-configuring-maven.html}Guide to Configuring Maven}} if necessary.
@@ -67,9 +67,9 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
   You will need somewhere for your project to reside, create a directory somewhere and start a shell in that directory.
   On your command line, execute the following Maven goal:
 
-+-----+
+-----
 mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
-+-----+
+-----
 
   <If you have just installed Maven, it may take a while on the first run. This is because Maven is downloading
   the most recent artifacts (plugin jars and other files) into your local repository. You may also need to
@@ -79,14 +79,14 @@ mvn archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darchety
   You will notice that the <generate> goal created a directory with the same name given as the
   artifactId. Change into that directory.
 
-+-----+
+-----
 cd my-app
-+-----+
+-----
 
   Under this directory you will notice the following
   {{{../introduction/introduction-to-the-standard-directory-layout.html}standard project structure}}.
 
-+-----+
+-----
 my-app
 |-- pom.xml
 `-- src
@@ -102,7 +102,7 @@ my-app
                 `-- mycompany
                     `-- app
                         `-- AppTest.java
-+-----+
+-----
 
   The <<<src/main/java>>> directory contains the project source code, the <<<src/test/java>>> directory contains
   the test source, and the <<<pom.xml>>> file is the project's Project Object Model, or POM.
@@ -152,13 +152,13 @@ my-app
 
 ** Build the Project
 
-+-----+
+-----
 mvn package
-+-----+
+-----
 
   The command line will print out various actions, and end with the following:
 
-+-----+
+-----
  ...
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
@@ -166,7 +166,7 @@ mvn package
 [INFO] Total time:  2.953 s
 [INFO] Finished at: 2019-11-24T13:05:10+01:00
 [INFO] ------------------------------------------------------------------------
-+-----+
+-----
 
   Unlike the first command executed (<archetype:generate>) you may notice the second is simply
   a single word - <package>. Rather than a <goal>, this is a <phase>. A phase is a step in the
@@ -191,15 +191,15 @@ mvn package
 
   You may test the newly compiled and packaged JAR with the following command:
 
-+-----+
+-----
 java -cp target/my-app-1.0-SNAPSHOT.jar com.mycompany.app.App
-+-----+
+-----
 
   Which will print the quintessential:
 
-+-----+
+-----
 Hello World!
-+-----+
+-----
 
 * Java 9 or later
 
@@ -271,18 +271,18 @@ Hello World!
 
   An interesting thing to note is that phases and goals may be executed in sequence.
 
-+-----+
+-----
 mvn clean dependency:copy-dependencies package
-+-----+
+-----
 
   This command will clean the project, copy dependencies, and package the project (executing all phases up to
   <package>, of course).
 
 ** Generating the Site
 
-+-----+
+-----
 mvn site
-+-----+
+-----
 
   This phase generates a site based upon information on the project's pom. You can look at the
   documentation generated under <<<target/site>>>.
