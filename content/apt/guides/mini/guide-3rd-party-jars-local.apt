@@ -34,10 +34,10 @@ Guide to installing 3rd party JARs
  The JARs must be placed in the local repository in the correct place in order for it to be correctly
  picked up by Apache Maven.
 
-To make this easier, and less error prone, we have provided an <<install-file>> goal in the 
+ To make this easier, and less error prone, we have provided an <<install-file>> goal in the 
  {{{/plugins/maven-install-plugin/}maven-install-plugin}} which should make this relatively painless. 
 
-To install a JAR in the local repository use the following command:
+ To install a JAR in the local repository use the following command:
 
 ----
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
