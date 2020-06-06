@@ -102,8 +102,9 @@ under the License.
           <item name="Creating Archetypes" href="/guides/mini/guide-creating-archetypes.html" />
         </item>
         <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
-          <item name="Local" href="/guides/mini/guide-3rd-party-jars-local.html" />
-          <item name="Remote" href="/guides/mini/guide-3rd-party-jars-remote.html" />
+          <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html" />
+          <item name="Deploy to Remote" href="/guides/mini/guide-3rd-party-jars-remote.html" />
+          <item name="Repository Management" href="/repository-management.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>

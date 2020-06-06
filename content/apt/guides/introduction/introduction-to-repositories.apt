@@ -33,17 +33,21 @@ Introduction to Repositories
 
  A repository in Maven holds build artifacts and dependencies of varying types.
 
- There are exactly two types of repositories: local and remote. The local repository is a directory
+ There are exactly two types of repositories: <<local>> and <<remote>>:
+ 
+ [[1]] the <<local>> repository is a directory
  on the computer where Maven runs. It caches remote downloads and contains temporary
  build artifacts that you have not yet released.
 
- Remote repositories refer to any other type of repository, accessed by a variety of protocols such as
+ [[2]] <<remote>> repositories refer to any other type of repository, accessed by a variety of protocols such as
  <<<file://>>> and <<<https://>>>. These repositories might be a truly remote repository
  set up by a third party to provide their artifacts for downloading (for example,
  {{{https://repo.maven.apache.org/maven2/}repo.maven.apache.org}}).
  Other "remote" repositories may be internal repositories
  set up on a file or HTTP server within your company, used to share private artifacts between development teams
  and for releases.
+
+ []
 
  Local and remote repositories are structured the same way so that scripts can run on either
  side, or they can be synced for offline use. The layout of the repositories is completely
@@ -63,7 +67,7 @@ Introduction to Repositories
  repository (or for a <<<SNAPSHOT>>>, when the remote repository contains one that is newer).
  By default, Maven will download from the {{{https://repo.maven.apache.org/maven2/}central}} repository.
 
- To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}
+ To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}.
 
  You can set this in your <<<settings.xml>>> file to globally use a certain mirror. However,
  it is common for a project to customise the repository in its <<<pom.xml>>>
@@ -74,7 +78,7 @@ Introduction to Repositories
 
 ** Using Mirrors for the Central Repository
 
- There are several official Central repositories geographically distributed. You can make
+ There are {{{/repository/}several official Central repositories}} geographically distributed. You can make
  changes to your <<<settings.xml>>> file to use one or more mirrors. Instructions for this can be
  found in the guide {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}.
 
@@ -83,11 +87,9 @@ Introduction to Repositories
  If you are temporarily disconnected from the internet and you need to build your projects offline,
  you can use the offline switch on the CLI:
 
-+---+
-
+-----
  mvn -o package
-
-+---+
+-----
 
  Many plugins honor the offline setting and do not perform any operations that connect to
  the internet. Some examples are resolving Javadoc links and link checking the site.
@@ -95,7 +97,7 @@ Introduction to Repositories
 * Uploading to a Remote Repository
 
  While this is possible for any type of remote repository, you must have the permission to do so.
- To have someone upload to the central Maven repository, see {{{../../repository/index.html}Repository Center}}.
+ To have someone upload to the Central Maven repository, see {{{../../repository/index.html}Repository Center}}.
 
 * Internal Repositories
 
