@@ -58,7 +58,7 @@ mvn verify
 
   A missing dependency presents with an error like the following:
 
-+-----+
+-----
 [INFO] Failed to resolve artifact.
 
 Missing:
@@ -83,7 +83,7 @@ for artifact:
 
 from the specified remote repositories:
   central (https://repo.maven.apache.org/maven2)
-+-----+
+-----
 
   To resolve this issue, it depends on what the dependency is and why it is missing. The most common cause is because
   it can not be redistributed from the repository and must be manually installed using the instructions given in the
@@ -99,8 +99,8 @@ from the specified remote repositories:
 
 ** Inconsistent output
 
-  Most plugins are optimized to know if they have to execute their task. In some cases the output can be polluted from
-  a previous build and the end result is not what you expected. In such rare situations you can call the <<<clean>>> phase
+  Most plugins are optimized to know if they have to execute their task. In some cases, the output can be polluted from
+  a previous build and the end result is not what you expected. In such rare situations, you can call the <<<clean>>> phase
   which means: remove the output directory.
   You can also call it as <<<mvn clean verify>>> which means: first clean up the output directory, next build the project
   and verify the outcome.

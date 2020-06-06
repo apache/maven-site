@@ -84,9 +84,9 @@ Introduction to the POM
 * {Super POM}
 
  The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified
- in the Super POM is inherited by the POMs you created for your projects. The snippet below is the Super POM for Maven 3.5.4.
+ in the Super POM is inherited by the POMs you created for your projects.
 
-%{snippet|id=superpom|url=https://raw.githubusercontent.com/apache/maven/maven-3.5.4/maven-model-builder/src/main/resources/org/apache/maven/model/pom-4.0.0.xml}
+ You can see the {{{/ref/3.6.3/maven-model-builder/super-pom.html}Super POM for Maven 3.6.3}} in Maven Core reference documentation.
 
  {{{./introduction-to-the-pom.html}[top]}}
 
@@ -94,15 +94,15 @@ Introduction to the POM
 
  The minimum requirement for a POM are the following:
 
- * project root
+ * <<<project>>> root
 
- * modelVersion - should be set to 4.0.0
+ * <<<modelVersion>>> - should be set to 4.0.0
 
- * groupId - the id of the project's group.
+ * <<<groupId>>> - the id of the project's group.
 
- * artifactId - the id of the artifact (project)
+ * <<<artifactId>>> - the id of the artifact (project)
 
- * version - the version of the artifact under the specified group
+ * <<<version>>> - the version of the artifact under the specified group
 
  []
 
@@ -111,6 +111,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -165,6 +166,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-module</artifactId>
   <version>1</version>
@@ -173,12 +175,12 @@ Introduction to the POM
 
  And let us specify their directory structure as the following:
 
-+-----+
+-----
 .
  |-- my-module
  |   `-- pom.xml
  `-- pom.xml
-+-----+
+-----
 
  <<Note:>> <<<my-module/pom.xml>>> is the POM of com.mycompany.app:my-module:1 while <<<pom.xml>>> is the POM of
  com.mycompany.app:my-app:1
@@ -192,12 +194,14 @@ Introduction to the POM
 
 +-----+
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>my-app</artifactId>
     <version>1</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-module</artifactId>
   <version>1</version>
@@ -213,12 +217,14 @@ Introduction to the POM
 
 +-----+
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>my-app</artifactId>
     <version>1</version>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <artifactId>my-module</artifactId>
 </project>
 +-----+
@@ -251,13 +257,15 @@ Introduction to the POM
 
 +-----+
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>my-app</artifactId>
     <version>1</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <artifactId>my-module</artifactId>
 </project>
 +-----+
@@ -290,6 +298,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -301,6 +310,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-module</artifactId>
   <version>1</version>
@@ -323,6 +333,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -368,6 +379,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -414,6 +426,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -425,6 +438,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-module</artifactId>
   <version>1</version>
@@ -450,6 +464,7 @@ Introduction to the POM
 +-----+
 <project>
   <modelVersion>4.0.0</modelVersion>
+
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-app</artifactId>
   <version>1</version>
@@ -465,13 +480,15 @@ Introduction to the POM
 
 +-----+
 <project>
+  <modelVersion>4.0.0</modelVersion>
+
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>my-app</artifactId>
     <version>1</version>
     <relativePath>../parent/pom.xml</relativePath>
   </parent>
-  <modelVersion>4.0.0</modelVersion>
+
   <artifactId>my-module</artifactId>
 </project>
 +-----+
@@ -539,6 +556,7 @@ Introduction to the POM
   <properties>
     <mavenVersion>3.0</mavenVersion>
   </properties>
+
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
