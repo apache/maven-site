@@ -624,11 +624,11 @@ mvn -Denv=production integration-test
   activation property of "env=dev" together with the source where it was
   declared. See sample below.
 
-+---+
+---
 The following profiles are active:
 
  - appserverConfig-dev (source: pom)
-+---+
+---
 
   Now if we have a profile declared in <<<settings.xml>>> (refer to the sample of profile
   in <<<settings.xml>>>) and that have been set to be an active profile and execute:
@@ -639,11 +639,11 @@ The following profiles are active:
 
   The result should be something like this
 
-+---+
+---
 The following profiles are active:
 
  - appserverConfig (source: settings.xml)
-+---+
+---
 
   Even though we don't have an activation property, a profile has been listed as active.
   Why? Like we mentioned before, a profile that has been set as an active profile
@@ -659,12 +659,12 @@ The following profiles are active:
 
   This will list the activated profiles:
 
-+---+
+---
 The following profiles are active:
 
  - appserverConfig-dev (source: pom)
  - appserverConfig (source: settings.xml)
-+---+
+---
 
   Even though it listed the two active profiles, we are not sure which one
   of them has been applied. To see the effect on the build execute:

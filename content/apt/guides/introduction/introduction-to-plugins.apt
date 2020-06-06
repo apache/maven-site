@@ -60,7 +60,7 @@ Introduction to Maven Plugin Development
 
 * What is a Mojo (<And Why the H--- is it Named 'Mojo'>)?
 
-  A Mojo is really just a goal in Maven, and plug-ins consist of
+  A Mojo is really just a <<goal>> in Maven, and plug-ins consist of
   any number of goals (Mojos).  Mojos can be defined as annotated Java classes or
   Beanshell script.  A Mojo specifies
   metadata about a goal: a goal name, which phase of the lifecycle it fits into,
@@ -75,7 +75,7 @@ Introduction to Maven Plugin Development
 
 * What is the Build Lifecycle? (Overview)
 
-  The build lifecycle is a series of common stages through which all project
+  The build lifecycle is a series of common <<stage>>s through which all project
   builds naturally progress.  Plugin goals are bound to specific stages in the
   lifecycle.
 

@@ -133,7 +133,7 @@ Guide to Creating Archetypes
  Thus the quickstart archetype shown above defines the following directory
  structure:
 
-+----+
+----
 
 archetype
 |-- pom.xml
@@ -153,7 +153,7 @@ archetype
                         `-- java
                             `-- AppTest.java
 
-+----+
+----
 
 * 3. Create the prototype files and the prototype pom.xml
 

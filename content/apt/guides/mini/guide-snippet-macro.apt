@@ -57,18 +57,18 @@ Guide to the Snippet Macro
 
 ** Java
 
------
++-----
     // START SNIPPET: snip-id
     public static void main( String[] args )
     {
         System.out.println( "Hello World!" );
     }
     // END SNIPPET: snip-id
------
++-----
 
 ** XML
 
------
++-----
   <!-- START SNIPPET: snip-id -->
   <navigation-rule>
     <from-view-id>/logon.jsp</from-view-id>
@@ -78,37 +78,37 @@ Guide to the Snippet Macro
     </navigation-case>
   </navigation-rule>
   <!-- END SNIPPET: snip-id -->
------
++-----
 
 ** JSP
 
-------
++------
   <%-- START SNIPPET: snip-id --%>
   <ul>
       <li><a href="newPerson!input.action">Create</a> a new person</li>
       <li><a href="listPeople.action">List</a> all people</li>
   </ul>
   <%-- END SNIPPET: snip-id --%>
-------
++------
 
 * Snippets in Documentation
 
 ** APT
 
-------
++------
  %{snippet|id=snip-id|url=http://svn.example.com/path/to/Sample.java}
 
  %{snippet|id=snip-id|url=file:///path/to/Sample.java}
-------
++------
 
   As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available.
   If a full path is not specified, the location is assumed to be relative to
   $\{basedir\}.
 
-------
++------
  ~~ Since doxia-core 1.0-alpha-9
  %{snippet|id=abc|file=src/main/webapp/index.jsp}
-------
++------
 
  * Macros in apt <<must not>> be indented.
  

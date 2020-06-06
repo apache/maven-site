@@ -78,9 +78,9 @@ mvn --encrypt-master-password <password>
 
  This command will produce an encrypted version of the password, something like
 
-+------------------------------------+
+------------------------------------
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
-+------------------------------------+
+------------------------------------
 
  Store this password in the <<<$\{user.home\}/.m2/settings-security.xml>>>; it should look like
 
@@ -104,9 +104,9 @@ mvn --encrypt-password <password>
 
   This command produces an encrypted version of it, something like
 
-+------------------------------------+
+------------------------------------
 {COQLCE6DU6GtcS5P=}
-+------------------------------------+
+------------------------------------
 
  Copy and paste it into the servers section of your <<<settings.xml>>> file. This will look like:
 
@@ -195,15 +195,15 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
   You can do this with the widely used '\' escape character.
   If your password looks like this:
 
-+---+
+-----
 jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
-+---+
+-----
 
   Then, the value you would add to your settings.xml looks like this:
 
-+---+
+-----
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+\{EF1iFQyJQ=}
-+---+
+-----
 
 ** Password Security
 

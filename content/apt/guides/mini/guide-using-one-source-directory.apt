@@ -108,7 +108,7 @@ Using Maven When You Can't Use the Conventions
 
   First, you set up your <<<pom.xml>>> at the top level not to produce anything, but to include the other modules we plan to create:
 
---------
++--------
 <project>
   <artifactId>my-parent</artifactId>
   <packaging>pom</packaging>
@@ -118,12 +118,12 @@ Using Maven When You Can't Use the Conventions
     <module>module</module>
   </modules>
 </project>
---------
++--------
 
   Next, the modules themselves are created. Here is the <<<core/pom.xml>>> file you should create. The one in the
   <<<module>>> subdirectory will be similar.
 
---------
++--------
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -148,7 +148,7 @@ Using Maven When You Can't Use the Conventions
     </plugins>
   </build>
 </project>
---------
++--------
 
   In this example, the sources are found in the parent directory <<<../src/main/java>>>, and only Java files within a
   <<<core>>> package are included.

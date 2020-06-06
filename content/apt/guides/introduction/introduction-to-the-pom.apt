@@ -236,13 +236,13 @@ Introduction to the POM
 
  But what if the parent is not yet installed and if the directory structure is as in the following example?
 
-+-----+
+-----
 .
  |-- my-module
  |   `-- pom.xml
  `-- parent
      `-- pom.xml
-+-----+
+-----
 
 *** The Solution
 
@@ -309,12 +309,12 @@ Introduction to the POM
 
  <<directory structure>>
 
-+-----+
+-----
 .
  |-- my-module
  |   `-- pom.xml
  `-- pom.xml
-+-----+
+-----
 
 *** The Solution
 
@@ -351,13 +351,13 @@ Introduction to the POM
 
  But what if we change the directory structure to the following:
 
-+-----+
+-----
 .
  |-- my-module
  |   `-- pom.xml
  `-- parent
      `-- pom.xml
-+-----+
+-----
 
  How would the parent POM specify its modules?
 
@@ -433,13 +433,13 @@ Introduction to the POM
 
  and this <<directory structure>>
 
-+-----+
+-----
 .
  |-- my-module
  |   `-- pom.xml
  `-- parent
      `-- pom.xml
-+-----+
+-----
 
 *** The Solution
 
