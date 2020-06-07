@@ -62,7 +62,7 @@ mvn verify
 [INFO] Failed to resolve artifact.
 
 Missing:
-----------
+ ----------
 1) jnuit:junit:jar:3.8.1
 
   Try downloading the file manually from the project website.
@@ -75,7 +75,7 @@ Missing:
         1) org.apache.maven:maven:pom:2.1-SNAPSHOT
         2) jnuit:junit:jar:3.8.1
 
-----------
+ ----------
 1 required artifact is missing.
 
 for artifact:
