@@ -120,6 +120,8 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{/plugins/maven-source-plugin/}maven-source-plugin}}                     | 3.2.1 |
 *----------------------------------------------------------------------------+-------+--------------+ 
+| {{{/plugins/maven-war-plugin/}maven-war-plugin}}                           | 3.3.0 |
+*----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
