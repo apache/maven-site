@@ -72,6 +72,7 @@
     <fluidoVersion>1.9.1-SNAPSHOT</fluidoVersion><!-- used by src/xdoc/errors/404.xml.vm -->
     <doxiaVersion>1.9.1</doxiaVersion>
     <doxiaToolsVersion>1.9.1</doxiaToolsVersion>
+    <javaVersion>8</javaVersion>
   </properties>
 
   <repositories>
@@ -172,7 +173,22 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
+        <version>3.0.0-M3</version>
         <executions>
+          <execution>
+            <id>enforce-java8</id>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <phase>site</phase>
+            <configuration>
+              <rules>
+                <requireJavaVersion>
+                  <version>1.8</version>
+                </requireJavaVersion>
+              </rules>
+            </configuration>
+          </execution>
           <execution>
             <id>check-site-inheritance</id>
             <goals>
@@ -218,6 +234,13 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-antrun-plugin</artifactId>
+        <dependencies>
+          <dependency>
+            <groupId>org.apache.ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.10.7</version>
+          </dependency>
+        </dependencies>
         <executions>
           <execution>
             <id>chmod</id>
@@ -377,29 +400,6 @@
           </plugin>
         </plugins>
       </reporting>
-    </profile>
-    <profile>
-      <id>java8-ant-ln</id>
-      <activation>
-        <jdk>[1.8,)</jdk>
-      </activation>
-      <build>
-        <pluginManagement>
-          <plugins>
-            <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-antrun-plugin</artifactId>
-              <dependencies>
-                <dependency>
-                  <groupId>org.apache.ant</groupId>
-                  <artifactId>ant</artifactId>
-                  <version>1.10.3</version><!-- to get symbolic links from Java 7 API instead of "ln" -->
-                </dependency>
-              </dependencies>
-            </plugin>
-          </plugins>
-        </pluginManagement>
-      </build>
     </profile>
   </profiles>
 </project>
