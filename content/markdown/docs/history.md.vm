@@ -63,7 +63,7 @@ $b_</td>
 
 Date format is: YYYY-MM-DD
 
-<h3><a name="Maven_3">Maven 3</a></h3>
+<h3><a name="Maven_31">Maven 3.1+</a></h3>
 <table>
 <tr><td>Release Date</td>
 <td>Version</td>
@@ -93,6 +93,23 @@ Date format is: YYYY-MM-DD
 #release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "17" )
 #release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" "" "" )
 #release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" "" "" )
+
+</table>
+
+<h3><a name="Maven_3">Maven 3.0.x</a></h3>
+
+<p>Maven 3.0 has now reached its end of life.
+New plugin releases will require Maven 3.1 or later.
+The following information is made available for reference.</p>
+
+<table>
+<tr><td>Release Date</td>
+<td>Version</td>
+<td>Required Java Version</td>
+<td>Links</td>
+</tr>
+
+
 #release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" "" "" )
 #release( "2012-01-20" "3.0.4" "users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E" "" "" "" )
 #release( "2011-03-04" "3.0.3" "announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E" "" "" "" )
