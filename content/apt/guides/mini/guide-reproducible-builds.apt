@@ -54,13 +54,15 @@ Configuring for Reproducible Builds
 * How to test and fix my Maven build reproducibility?
 
  Using {{{https://github.com/apache/maven-artifact-plugin}<<<maven-artifact-plugin>>>'s <<<buildinfo>>> goal}},
- you can check that two builds produce the same output:
+ you can check that the second build of your project produce the same output than an initial build:
 
- [[1]] build and install: <<<mvn clean install -e -DskipTests artifact:buildinfo>>>
+ [[1]] build and install your project: <<<mvn clean install -e -DskipTests>>> (don't hesitate to customize arguments to better match your project)
 
- [[2]] rebuild and check against the previous install: <<<mvn clean verify -e -DskipTests artifact:buildinfo -Dreference.repo=central>>>
+ [[2]] rebuild (without installing) and check against the previous install: <<<mvn clean verify -e -DskipTests artifact:buildinfo -Dreference.repo=central>>>
 
  []
+
+ The <<<buildinfo>>> goal in the second run will calculate fingerprints for the second build output and for the initial installed output, then compare the 2 build informations and display result.
 
  If something is still not reproducible:
  
