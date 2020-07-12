@@ -411,8 +411,8 @@ mvn install
 [INFO] Building jar: <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar
 [INFO] 
 [INFO] --- maven-install-plugin:2.5.2:install (default-install) @ my-app ---
-[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to local-repository/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
-[INFO] Installing /dir>/my-app/pom.xml to /local-repository/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.pom
+[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
+[INFO] Installing /dir>/my-app/pom.xml to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.pom
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
