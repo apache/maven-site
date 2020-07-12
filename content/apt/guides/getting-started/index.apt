@@ -111,12 +111,9 @@ Sections
  On to creating your first project! In order to create the simplest of Maven projects, execute the following from
  the command line:
 
-+-----+
-mvn -B archetype:generate \
-  -DarchetypeGroupId=org.apache.maven.archetypes \
-  -DgroupId=com.mycompany.app \
-  -DartifactId=my-app
-+-----+
+-----
+mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+-----
 
  Once you have executed this command, you will notice a few things have happened. First, you will notice that
  a directory named <<<my-app>>> has been created for the new project, and this directory contains a file named
