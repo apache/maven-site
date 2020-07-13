@@ -53,9 +53,11 @@ Guide for new Maven committers
 
  * {{{/guides/development/guide-maven-development.html}Guide to Maven development}}
 
+ * {{{/developers/committer-environment.html}Setup your committer environment}}
+
  []
 
- And here are the specifics on setting up your SVN access:
+ And here are the specifics on setting up your Git access:
 
  * {{{http://www.apache.org/dev/version-control.html}Apache's Source Code Repository}}
 
