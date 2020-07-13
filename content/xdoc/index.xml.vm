@@ -37,7 +37,7 @@ under the License.
       </p>
       <p>
         If you think that Maven could help your project, you can find out more information in the "About Maven"
-        section of the navigation: this includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
+        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
         a <a href="maven-features.html">list of some of its main features</a>.
       </p>
       <p>
@@ -58,9 +58,9 @@ under the License.
       <tr>
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
-            Information for those wanting to use Maven to build their project, including a "10 minute test" that gives a
-            practical overview of Maven's main features in just 10 minutes and <a href="plugins/index.html">plugin list</a>
-            for more information on each plugin
+            Information for developers using Maven to build their project, including a "10 minute test" that gives a
+            practical overview of Maven's main features and a <a href="plugins/index.html">plugin list</a>
+            for more information on each plugin.
         </td>
       </tr>
       <tr>
@@ -70,12 +70,11 @@ under the License.
       </tr>
       <tr>
         <td>
-            Information for those who want to provide a Maven plugin for shared
-            functionality or to accompany their own product or toolset
+            Information for developers writing Maven plugins.
         </td>
         <td>
             Information for those who may or may not use Maven, but are interested in getting project metadata into the
-            <a href="repository/index.html">central repository</a>
+            <a href="repository/index.html">central repository</a>.
         </td>
       </tr>
       <tr>
@@ -85,11 +84,11 @@ under the License.
       </tr>
       <tr>
         <td>
-            Information if you'd like to get involved: Maven is an open source community and welcomes contributions.
+            Information if you'd like to get involved. Maven is an open source community and welcomes contributions.
         </td>
         <td>
-            Information for those who are currently developers, or who are interested
-            in contributing to the Maven project itself
+            Information for those who are currently Maven developers, or who are interested
+            in contributing to the Maven project itself.
         </td>
       </tr>
       </table>
@@ -131,8 +130,8 @@ under the License.
         <a href="https://www.apache.org/events/current-event.html">
           <img src="https://www.apache.org/events/current-event-234x60.png" alt="Apache Events" style="float: left"/>
         </a>
-        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>: don't hesitate to ask on the <a href="mailing-lists.html">Maven User mailing list</a>
-        if Maven team members will be there, it can be a great opportunity to meet them.
+        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>. Don't hesitate to ask on the <a href="mailing-lists.html">Maven User mailing list</a>
+        if Maven team members will be there. It can be a great opportunity to meet them.
       </p>
     </section>
   </body>
