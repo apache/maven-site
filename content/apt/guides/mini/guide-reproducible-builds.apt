@@ -135,7 +135,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{/plugins/maven-source-plugin/}maven-source-plugin}}                     | 3.2.1 |
 *----------------------------------------------------------------------------+-------+--------------+ 
-| {{{/plugins/maven-war-plugin/}maven-war-plugin}}                           | 3.3.0 |
+| {{{/plugins/maven-war-plugin/}maven-war-plugin}}                           | 3.3.1 |
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+ 
