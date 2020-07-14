@@ -3,6 +3,7 @@ github:
   description: "Apache Maven site"
   enabled_merge_buttons:
     squash: false
+    merge: true
   homepage: https://maven.apache.org/
   labels:
     - apache
