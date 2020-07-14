@@ -1,6 +1,8 @@
 # see https://s.apache.org/asfyaml
 github:
   description: "Apache Maven site"
+  enabled_merge_buttons:
+    squash: false
   homepage: https://maven.apache.org/
   labels:
     - apache
