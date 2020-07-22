@@ -51,7 +51,7 @@
           provided at run time by its container or the JDK, for example.
         </p>
         <p>
-          Dependencies with this scope will not be passed on transitively, nor will they be bundled in an package such
+          Dependencies with this scope will not be passed on transitively, nor will they be bundled in a package such
           as a WAR, or included in the runtime classpath.
         </p>
       </answer>
