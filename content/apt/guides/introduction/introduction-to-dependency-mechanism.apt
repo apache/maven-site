@@ -800,7 +800,7 @@ Introduction to the Dependency Mechanism
  up in repository. They are usually used to tell Maven about dependencies which
  are provided by the JDK or the VM. Thus, system dependencies are especially
  useful for resolving dependencies on artifacts which are now provided by the
- JDK, but were available as separate downloads earlier. Typical example are
+ JDK, but were available as separate downloads earlier. Typical examples are
  the JDBC standard extensions or the Java Authentication and Authorization
  Service (JAAS).
 
