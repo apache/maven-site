@@ -75,10 +75,31 @@ Introduction to the Dependency Mechanism
      Note that if two dependency versions are at the same depth in the dependency tree, 
      the first declaration wins.
 
-     * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies.
-        For example, if dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
+     * "nearest definition" means that the version used will be the closest one to your project in the tree of dependencies.  Consider this tree of dependencies:
+
+----
+  A
+  ├── B
+  │   └── C
+  │       └── D 2.0
+  └── E
+      └── D 1.0
+----
+
+        In text, dependencies for A, B, and C are defined as A -> B -> C -> D 2.0 and A -> E -> D 1.0,
         then D 1.0 will be used when building A because the path from A to D through E is shorter.
-        You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0.
+        You could explicitly add a dependency to D 2.0 in A to force the use of D 2.0, as shown here:
+
+----
+  A
+  ├── B
+  │   └── C
+  │       └── D 2.0
+  ├── E
+  │   └── D 1.0
+  │
+  └── D 2.0      
+----
 
  * <Dependency management>
    - this allows project authors to directly specify the versions of artifacts to be used when they are encountered
@@ -114,7 +135,7 @@ Introduction to the Dependency Mechanism
  updates/removes its dependency on project C.
  
  Another reason to directly specify dependencies is that it provides better
- documentation for your project: one can learn more information by just reading the POM file in your project.
+ documentation for your project: one can learn more information by just reading the POM file in your project, or by executing <<mvn dependency:tree>>.
  
  Maven also
  provides {{{/plugins/maven-dependency-plugin/analyze-mojo.html}dependency:analyze}} plugin goal
