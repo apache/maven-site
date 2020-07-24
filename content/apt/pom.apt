@@ -457,7 +457,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 *** {Version Order Specification}:
 
-  If version strings are syntactically correct  {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}},
+  If version strings are syntactically correct  {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
   version numbers, then in almost all cases version comparison follows the precedence rules outlined in that specification.
   These versions are the commonly encountered alphanumeric ASCII strings such as 2.15.2-alpha.
   More precisely, this is true if both version numbers to be compared match the "valid semver"
