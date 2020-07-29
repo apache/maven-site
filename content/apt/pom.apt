@@ -633,8 +633,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 ** {Inheritance}
 
   One powerful addition that Maven brings to build management is the concept of project inheritance.
-  Although in build systems such as Ant, inheritance can certainly be simulated, Maven has gone the
-  extra step in making project inheritance explicit to the project object model.
+  Although in build systems such as Ant inheritance can be simulated, Maven 
+  makes project inheritance explicit in the project object model.
 
 +-----------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
