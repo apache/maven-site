@@ -62,7 +62,7 @@ Configuring for Reproducible Builds
 
  []
 
- The <<<buildinfo>>> goal in the second run will calculate fingerprints for the second build output and for the initial installed output, then compare the 2 build informations and display result.
+ The <<<buildinfo>>> goal in the second run will calculate fingerprints for the second build output, then compare against reference build as it was installed in the first run and display comparison result.
 
  If something is still not reproducible:
  
@@ -141,7 +141,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
 *----------------------------------------------------------------------------+-------+--------------+ 
-| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} |   | <<<manifest>>> goal requires <<<\<_removeheaders\>Bnd-LastModified\</_removeheaders\>>>> as configuration <<<instructions>>>
+| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} |   | <<<manifest>>> goal requires <<<\<_removeheaders\>Bnd-LastModified\</_removeheaders\>>>> as configuration <<<instructions>>>, and <<<bundle>>> goal requires <<<\<_reproducible\>true\</_reproducible\>>>> (see {{{https://issues.apache.org/jira/browse/FELIX-6304}FELIX-6304}})
 *----------------------------------------------------------------------------+-------+--------------+ 
 | {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
 *----------------------------------------------------------------------------+-------+--------------+ 
