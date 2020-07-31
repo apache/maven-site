@@ -39,7 +39,7 @@ Performing a Maven Project Release
 
   * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable <<<MAVEN_OPTS=-Xmx512m>>>
 
-  * you must use Maven 3.0.5+.
+  * you must use Maven 3.3.9+.
   
   * follow Apache environment configuration steps outlined at: {{{https://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
 
