@@ -48,6 +48,8 @@ Introduction to the Dependency Mechanism
 
    * {{{Importing_Dependencies}Importing Dependencies}}
 
+   * {{{bill-of-materials-bom-poms}Bill of Materials (BOM) POMs}}
+
  * {{{System_Dependencies}System Dependencies}}
 
  []
@@ -314,7 +316,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- Then the two child poms become much simpler:
+ Then the two child POMs become much simpler:
 
 +----+
 
@@ -457,18 +459,18 @@ Introduction to the Dependency Mechanism
 +----+
 
  When maven is run on project B, version 1.0 of artifacts a, b, c, and d will be used regardless of
- the version specified in their pom.
+ the version specified in their POM.
 
  * a and c both are declared as dependencies of the project so version 1.0 is used due to
  dependency mediation. Both also have runtime scope since it is directly specified.
 
  * b is defined in B's parent's dependency management section and since dependency management
  takes precedence over dependency mediation for transitive dependencies, version 1.0 will be
- selected should it be referenced in a or c's pom. b will also have compile scope.
+ selected should it be referenced in a or c's POM. b will also have compile scope.
 
  * Finally, since d is specified in B's dependency management section, should d be a dependency
  (or transitive dependency) of a or c, version 1.0 will be chosen - again  because dependency
- management takes precedence over dependency mediation and also because the current pom's
+ management takes precedence over dependency mediation and also because the current POM's
  declaration takes precedence over its parent's declaration.
 
  []
@@ -481,7 +483,7 @@ Introduction to the Dependency Mechanism
  The examples in the previous section describe how to specify managed dependencies through inheritance. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
  To accommodate this, projects can import managed dependencies from other projects. This is accomplished by declaring a
- pom artifact as a dependency with a scope of "import".
+ POM artifact as a dependency with a scope of "import".
 
  Project B:
 
@@ -529,8 +531,8 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- Assuming A is the pom defined in the preceding example, the end result would be the same. All of A's managed dependencies
- would be incorporated into B except for d since it is defined in this pom.
+ Assuming A is the POM defined in the preceding example, the end result would be the same. All of A's managed dependencies
+ would be incorporated into B except for d since it is defined in this POM.
 
  Project X:
 
@@ -631,8 +633,10 @@ Introduction to the Dependency Mechanism
  In the example above Z imports the managed dependencies from both X and Y. However, both X and Y contain dependency a. Here,
  version 1.1 of a would be used since X is declared first and a is not declared in Z's dependencyManagement.
 
- This process is recursive. For example, if X imports another pom, Q, when Z is processed it will simply appear that all
+ This process is recursive. For example, if X imports another POM, Q, when Z is processed it will simply appear that all
  of Q's managed dependencies are defined in X.
+
+** {Bill of Materials (BOM) POMs}
 
  Imports are most effective when used for defining a "library" of related artifacts that are generally part of a
  multiproject build. It is fairly common for one project to use one or more artifacts from these libraries.
@@ -640,9 +644,9 @@ Introduction to the Dependency Mechanism
  with the versions distributed in the library. The pattern below illustrates how a "bill of materials" (BOM) can be
  created for use by other projects.
 
- The root of the project is the BOM pom. It defines the versions of all the artifacts that will be created
- in the library. Other projects that wish to use the library should import this pom into the dependencyManagement
- section of their pom.
+ The root of the project is the BOM POM. It defines the versions of all the artifacts that will be created
+ in the library. Other projects that wish to use the library should import this POM into the dependencyManagement
+ section of their POM.
 
 +----+
 
@@ -680,7 +684,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- The parent subproject has the BOM pom as its parent. It is a normal multiproject pom.
+ The parent subproject has the BOM POM as its parent. It is a normal multiproject pom.
 
 +----+
 
@@ -720,7 +724,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- Next are the actual project poms.
+ Next are the actual project POMs.
 
 +----+
 
@@ -807,13 +811,13 @@ Introduction to the Dependency Mechanism
 
  Finally, when creating projects that import dependencies beware of the following:
 
- * Do not attempt to import a pom that is defined in a submodule of the current pom.
-     Attempting to do that will result in the build failing since it won't be able to locate the pom.
+ * Do not attempt to import a POM that is defined in a submodule of the current POM.
+     Attempting to do that will result in the build failing since it won't be able to locate the POM.
 
- * Never declare the pom importing a pom as the parent (or grandparent, etc) of the target pom.
+ * Never declare the POM importing a POM as the parent (or grandparent, etc) of the target POM.
    There is no way to resolve the circularity and an exception will be thrown.
 
- * When referring to artifacts whose poms have transitive dependencies the project will need to specify versions
+ * When referring to artifacts whose POMs have transitive dependencies the project will need to specify versions
      of those artifacts as managed dependencies. Not doing so will result in a build failure since the
      artifact may not have a version specified. (This should be considered a best practice in any case as it
      keeps the versions of artifacts from changing from one build to the next).
