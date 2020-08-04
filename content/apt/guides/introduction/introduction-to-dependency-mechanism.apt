@@ -126,8 +126,8 @@ Introduction to the Dependency Mechanism
  []
 
  Although transitive dependencies can implicitly include desired dependencies, it is a good practice to explicitly
- specify the dependencies you are directly using in your own source code. This best practice proves its value especially
- when the dependencies of your project changes their dependencies.
+ specify the dependencies your source code uses directly. This best practice proves its value especially
+ when the dependencies of your project change their dependencies.
  
  For example, assume that your project A specifies a
  dependency on another project B, and project B specifies a dependency on project C. If you are directly using components
