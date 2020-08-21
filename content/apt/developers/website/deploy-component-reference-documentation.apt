@@ -161,5 +161,6 @@ svnmucc -m "Publish yyy $version documentation" \
  site content editing.
 
  <<Notice>>: if you forget about updating the index page, dist-tool has a
- {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-check-index-page.html}report run daily}}
- that will gently send a failure notification on notifications@maven.a.o.
+ {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/}report run daily}}
+ that will gently send a failure notification on notifications@maven.a.o when "Check Errors" report is not empty.
+ 
