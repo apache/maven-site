@@ -52,9 +52,9 @@ Introduction
 
  []
 
- and the link between main content and components reference documentation (for example /plugins/maven-xxx-plugin) is done with symbolic links
- (configured in <<<components.links>>> files in <<<content/resources/>>> and subdirectories, for example
- {{{https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links}plugins/components.links}}).
+ and the link between main content and components reference documentation (for example from <<</plugins/maven-xxx-plugin>>> to internal <<</components/plugins/maven-xxx-plugin>>>)
+ is done with symbolic links. These links are configured in <<<components.links>>> files in <<<content/resources/>>> and subdirectories,
+ for example {{{https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links}plugins/components.links}}.
 
 How website publication works
 
@@ -62,9 +62,10 @@ How website publication works
 
  * on every main content source commit ({{{https://github.com/apache/maven-site}maven-site.git}}
    and {{{https://github.com/apache/maven-doxia-site}maven-doxia-site.git}}),
-   main content rebuild and publish is triggered through Jenkins jobs (which basically run <<<mvn site-deploy>>>, which can be run locally if CI is off...):
+   main content rebuild and publish is triggered through Jenkins jobs (
    {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-site/}maven-site job}}
-   and {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/}doxia-site job}},
+   and {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/}doxia-site job}}),
+   which basically run <<<mvn site-deploy>>> (it can be run locally if CI is off...),
 
  * on every Maven component release, release manager follows "{{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}}",
  eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
