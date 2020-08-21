@@ -52,7 +52,7 @@ Introduction
 
  []
 
- and the link between main content and components reference documentation is done with symbolic links
+ and the link between main content and components reference documentation (for example /plugins/maven-xxx-plugin) is done with symbolic links
  (configured in <<<content/resources/components.links>>>, see
  {{{https://github.com/apache/maven-site/blob/master/content/resources/components.links}Maven site <<<components.links>>>}}
  and {{{https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links}Doxia site <<<components.links>>>}}).
