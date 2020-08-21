@@ -39,8 +39,8 @@ Introduction
 
  And {{{https://maven.apache.org/doxia/}Doxia}} website has the same dual structure.
 
- These contents are stored in svn and svnpubsub/svnwcsub maintains a working copy on the webservers in <<</www/maven.apache.org/content>>>,
- see {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}:
+ These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in <<</www/maven.apache.org/content>>>
+ (see {{{https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L152}<<<svnwcsub>>> configured in infra Puppet}}):
 
  * <<</>>> comes from {{{https://svn.apache.org/viewvc/maven/website/content/}https://svn.apache.org/repos/asf/maven/website/content/}}
 
@@ -52,17 +52,22 @@ Introduction
 
  []
 
- and the link between main content and components reference documentation is done with symbolic links.
+ and the link between main content and components reference documentation is done with symbolic links
+ (configured in <<<content/resources/components.links>>>, see
+ {{{https://github.com/apache/maven-site/blob/master/content/resources/components.links}Maven site <<<components.links>>>}}
+ and {{{https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links}Doxia site <<<components.links>>>}}).
 
 How website publication works
 
  Instructions on how to publish website content are split in separate documents:
 
- * main content is published through Jenkins jobs:
-   {{{https://builds.apache.org/job/maven-box/job/maven-site/}maven-site}}
-   and {{{https://builds.apache.org/job/maven-box/job/maven-doxia-site/}doxia-site}},
+ * on every main content source commit ({{{https://github.com/apache/maven-site}maven-site.git}}
+   and {{{https://github.com/apache/maven-doxia-site}maven-doxia-site.git}}),
+   main content rebuild and publish is triggered through Jenkins jobs:
+   {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-site/}maven-site job}}
+   and {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/}doxia-site job}},
 
- * {{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}},
+ * on every Maven component release, release manager follows "{{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}}",
  eventually using {{{./component-reference-documentation-helper.html}Component Reference Documentation Helper}} to
  easily prepare <<<svnmucc>>> command line.
 
