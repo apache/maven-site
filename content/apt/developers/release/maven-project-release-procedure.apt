@@ -114,10 +114,10 @@ Vote open for at least 72 hours.
 
 -----
 
- To get the JIRA release notes link, browse to the plugin's JIRA page, select the <Road Map> link,
+ To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Road Map> link,
  and use the link to <Release Notes> that is next to the version being released.
 
- To get the list of issues left in JIRA, browse to the plugin's JIRA page, and from the <Preset Filters>
+ To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
 
  The vote is open for at least 72 hours means, that you need to wait at least 72 hours before proceeding.
@@ -171,8 +171,8 @@ I will promote the artifacts to the central repo.
   {{{https://dist.apache.org/repos/dist/release/maven}the subversion repository for the dist area}}:
   add the release, its signature and sha512 checksum files, copying them from
   <<<target/checkout/target/>>> directory created during <<<mvn release:perform>>> step.
-  Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}https://issues.apache.org/jira/browse/INFRA-5945}}).
-  If you are not a PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you: the PMC member will
+  Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}INFRA-5945}}).
+  If you are not a PMC member, drop a line to <private@maven.apache.org> and ask them to do this step (and the next one) for you: the PMC member will
   get the source release bundle and its signature from Nexus staging repository and will create sha512 checksum file by hand.
 
   For example:
@@ -188,14 +188,14 @@ wagon/wagon-2.2-source-release.zip.sha512
   will have copied it to the archive.
 
   To check that everything is ok in the dist area, dist-tool-plugin has been written and run once a day to produce
-  {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-check-source-release.html}"Disttool> Source Release" report}}.
+  {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/}"Disttool> Source Release" report}}.
 
-* List the release
+* Add the release for next board report
 
   After committing the 3 source-release files, visit {{{https://reporter.apache.org/addrelease.html?maven}Apache Committee Report Helper}} to add your release data with the Full Version Name and Date of Release.
   (You will receive an e-mail for it as well).
   
-  If you are not a PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you.
+  If you are not a PMC member, drop a line to <private@maven.apache.org> and ask them to do this step for you if they did not do the update while adding to release area.
 
 * Promote the release
 
