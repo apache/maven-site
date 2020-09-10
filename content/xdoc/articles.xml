@@ -91,6 +91,12 @@ under the License.
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="https://maarten.mulders.it/2020/01/customise-the-maven-release-process/">Customise the Maven Release process</a></td>
+            <td></td>
+            <td>Maarten Mulders</td>
+            <td>January 2020</td>
+          </tr>
+          <tr>
             <td><a href="http://www.sonatype.com/people/2009/08/create-a-customized-build-process-in-maven/">Create a Customized Build Process in Maven</a></td>
             <td></td>
             <td>John Casey</td>
