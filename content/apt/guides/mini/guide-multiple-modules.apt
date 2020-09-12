@@ -65,7 +65,11 @@ Guide to Working with Multiple Modules
 
   The following command line switches are available:
 
-    * <<<--resume-from>>> - resumes a reactor from the specified project (e.g. when it fails in the middle)
+    * <<<--resume>>> - resumes a reactor from the last failed project (e.g. when it fails in the middle)
+
+    * <<<--resume-from>>> - resumes a reactor from the specified project
+
+    * <<<--projects>>> - include or exclude one or many projects in the reactor
 
     * <<<--also-make>>> - build the specified projects, and any of their dependencies in the reactor
 
