@@ -83,6 +83,10 @@ Guide to Working with Multiple Modules
 
   Refer to the Maven command line interface reference for more information on these switches.
 
+** Advanced scenarios
+
+  * Since version 3.7.0 Maven includes all modules of a parent pom when it is selected with <<<--projects>>>. Use <<<--file>>> in combination with <<<--non-recursive>>> to build just the given pom.
+
 * More information
 
   * {{{http://books.sonatype.com/mvnex-book/reference/multimodule.html} Chapter 6. A Multi-module Project (Maven by Example)}}
