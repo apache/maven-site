@@ -238,6 +238,8 @@ wagon/wagon-2.2-source-release.zip.sha512
 
  [[5]] Create an announcement.
 
+   Following instructions are done for plugins: if you are releasing anything else than a plugin, you should adapt email content to match what you are releasing.
+
    [[a]] Using Maven Changes Plugin
 
    If you are releasing a plugin or a shared component you can let Maven Changes Plugin <<generate>>, and eventually even
