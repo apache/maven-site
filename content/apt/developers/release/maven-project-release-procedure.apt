@@ -251,7 +251,7 @@ cd target/checkout
 mvn changes:announcement-mail -Papache-release
 ------
 
-   If sending the mail should fail, the generated annoucement is available in <<<target/annoucement>>> (see <<<annoucement.vm>>>)
+   If sending the mail should fail, the generated announcement is available in <<<target/announcement>>> (see <<<announcement.vm>>>)
    and you can use it as a base for sending the mail manually.
 
    If your SMTP server requires authentication you need to add the command line
