@@ -93,9 +93,9 @@ Guide to Creating Archetypes
 +----+
 
 <archetype-descriptor
-        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0
+        xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0
 	https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
-        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+        xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         name="quickstart">
     <fileSets>
