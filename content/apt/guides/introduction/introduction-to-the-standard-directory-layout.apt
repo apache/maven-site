@@ -28,11 +28,11 @@
 
 Introduction to the Standard Directory Layout
 
- Having a common directory layout would allow for users familiar with one Maven project to immediately feel
+ Having a common directory layout allows users familiar with one Maven project to immediately feel
  at home in another Maven project. The advantages are analogous to adopting a site-wide look-and-feel.
 
  The next section documents the directory layout expected by Maven and the directory layout created by
- Maven. Please try to conform to this structure as much as possible; however, if you can't these settings can
+ Maven. Try to conform to this structure as much as possible. However, if you can't, these settings can
  be overridden via the project descriptor.
 
 *-----------------------------------+-----------------------------------------------+
@@ -82,5 +82,5 @@ Introduction to the Standard Directory Layout
  directory for the language <<<java>>> (under which the normal package hierarchy exists), and one for
  <<<resources>>> (the structure which is copied to the target classpath given the default resource definition).
 
- If there are other contributing sources to the artifact build, they would be under other subdirectories: for
+ If there are other contributing sources to the artifact build, they would be under other subdirectories. For
  example <<<src/main/antlr>>> would contain Antlr grammar definition files.
