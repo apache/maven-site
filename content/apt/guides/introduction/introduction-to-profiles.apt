@@ -400,8 +400,58 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
   how to share the <<<settings.xml>>> with others. Note that too many files to
   configure is very confusing and very hard to maintain.
   Bottom line is that since this is build data, it should be in the POM.
-  One of the goals in Maven 2 is to consolidate all the information needed to
+  One of the goals of Maven is to consolidate all the information needed to
   run a build into a single file, or file hierarchy which is the POM.
+
+* Profile Order
+
+All profile elements in a POM from active profiles overwrite the global elements with the same name or extend those in case of collections.
+If multiple profiles are active in the same POM or external file, the ones which are defined <<later>> take precedence over the ones defined <<earlier>>, independent of their profile id and activation order.
+
+Example:
+
++---+
+<project>
+  ...
+  <repositories>
+    <repository>
+      <id>global-repo</id>
+      ...
+    </repository>
+  </repositories>
+  ...
+  <profiles>
+    <profile>
+      <id>profile-1</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>profile-1-repo</id>
+          ...
+        </repository>
+      </repositories>
+    </profile>
+    <profile>
+      <id>profile-2</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <repositories>
+        <repository>
+          <id>profile-2-repo</id>
+          ...
+        </repository>
+      </repositories>
+    </profile>
+    ...
+  </profiles>
+  ...
+</project>
++---+
+
+This leads to the repository list: <<<profile-2-repo, profile-1-repo, global-repo>>>.
 
 * Profile Pitfalls
 

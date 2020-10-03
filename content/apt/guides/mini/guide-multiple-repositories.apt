@@ -29,7 +29,7 @@
 Setting up Multiple Repositories
 
  There are two different ways that you can specify the use of multiple repositories. The first
- way is to specify in a POM which repositories you want to use:
+ way is to specify in a POM which repositories you want to use. That is supported both inside and outside of build profiles:
 
 +----+
 
@@ -55,8 +55,10 @@ Setting up Multiple Repositories
  <<NOTE:>> You will also get the standard set of repositories as defined in the 
  {{{../introduction/introduction-to-the-pom.html#Super_POM}Super POM}}.
 
- The other way you can specify the use of multiple repositories by creating a profile in
- your <<<$\{user.home\}/.m2/settings.xml>>> file like the following:
+
+
+ The other way you can specify multiple repositories is by creating a profile in the
+ <<<$\{user.home\}/.m2/settings.xml>>> or <<<$\{maven.home\}/conf/settings.xml>>> file like the following:
 
 +----+
 
@@ -102,3 +104,15 @@ mvn -Pmyprofile ...
  activate multiple profiles simultaneously.
  
  <<Note>>: The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
+ 
+ ** Repository Order
+
+Remote repository URLs are queried in the following order for artifacts until one returns a valid result:
+
+[[1]] Global <<<settings.xml>>>
+[[1]] User <<<settings.xml>>>
+[[1]] Local POM
+[[1]] Parent POMs, recursively
+[[1]] Super POM
+
+For each of these locations, the repositories within the profiles are queried first in the order outlined at {{{../introduction/introduction-to-profiles.html}Introduction to build profiles}}.
