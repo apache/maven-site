@@ -52,8 +52,6 @@ Common Bugs and Pitfalls
 
   * {{{Retrieving_the_Mojo_Logger}Retrieving the Mojo Logger}}
 
-  * {{{Depending_on_Plexus_Utilities_1.1}Depending on Plexus Utilities 1.1+}}
-
 * {Reading and Writing Text Files}
 
   Textual content is composed of characters while file systems merely store byte streams. A file encoding (aka charset)
