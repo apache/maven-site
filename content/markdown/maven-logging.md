@@ -62,7 +62,7 @@ To configure logging with the [SLF4J Simple][2], you can edit the properties in 
 `${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation
 for details.
 
-Every entry in this file can be overriden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9]. 
+Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9]. 
 E.g. `MAVEN_OPTS=-Dorg.slf4j.simpleLogger.showThreadName=true mvn <goals>` will add the thread name to every logging line.
 
 The default SLF4J configuration for Maven is listed [here][8].
@@ -78,8 +78,8 @@ See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 [2]: https://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
 [3]: https://logging.apache.org/log4j/2.x/log4j-slf4j-impl/
 [4]: http://logback.qos.ch
-[5]: https://slf4j.org/apidocs/
+[5]: https://www.slf4j.org/apidocs/
 [6]: https://codehaus-plexus.github.io/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
 [7]: https://www.slf4j.org/manual.html#swapping
-[8]: https://github.com/apache/maven/blob/master/apache-maven/src/conf/logging/simplelogger.properties
+[8]: https://github.com/apache/maven/blob/master/apache-maven/src/assembly/maven/conf/logging/simplelogger.properties
 [9]: https://maven.apache.org/configure.html
