@@ -80,9 +80,9 @@ Introduction to Build Profiles
 
 * How can a profile be triggered? How does this vary according to the type of profile being used?
 
-  A profile can be triggered/activated in several ways:
+  A profile can be activated in several ways:
 
-  * Explicitly
+  * From the command line
 
   * Through Maven settings
 
@@ -94,11 +94,11 @@ Introduction to Build Profiles
 
 ** Details on profile activation
 
-  Profiles can be explicitly specified using the <<<-P>>> CLI option.
+  Profiles can be explicitly specified using the <<<-P>>> command line flag.
 
-  This option takes an argument that is a comma-delimited list of
-  profile-ids to use. When this option is specified, the profile(s) specified in the option
-  argument will be activated in addition to any profiles which are activated by their activation
+  This flag is followed by a comma-delimited list of
+  profile IDs to use. The profile(s) specified in the option
+  are activated in addition to any profiles which are activated by their activation
   configuration or the <<<\<activeProfiles\>>>> section in <<<settings.xml>>>.
 
 +---+
