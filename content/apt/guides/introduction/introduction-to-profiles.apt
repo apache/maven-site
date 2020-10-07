@@ -406,14 +406,19 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
 * Profile Order
 
 <<<<<<< Upstream, based on origin/master
+<<<<<<< Upstream, based on origin/master
 All profile elements in a POM from active profiles overwrite the global elements with the same name of the POM or extend those in case of collections.
 In case multiple profiles are active in the same POM or external file, the ones which are defined <<later>> take precedence over the ones defined <<earlier>> (independent of their profile id and activation order).
 =======
 All profile elements in a POM from active profiles overwrite the global elements with the same name or extend those in case of collections.
 If multiple profiles are active in the same POM or external file, the ones which are defined <<later>> take precedence over the ones defined <<earlier>>, independent of their profile id and activation order.
 >>>>>>> f13d480 [MNG-6994] clarify remote repository order
+=======
+  All profile elements in a POM from active profiles overwrite the global elements with the same name or extend those in case of collections.
+  If multiple profiles are active in the same POM or external file, the ones which are defined <<later>> take precedence over the ones defined <<earlier>>, independent of their profile id and activation order.
+>>>>>>> 93e6a22 [MNG-6994] APT syntax fixes
 
-Example:
+  Example:
 
 +---+
 <project>
@@ -456,7 +461,7 @@ Example:
 </project>
 +---+
 
-This leads to the repository list: <<<profile-2-repo, profile-1-repo, global-repo>>>.
+  This leads to the repository list: <<<profile-2-repo, profile-1-repo, global-repo>>>.
 
 * Profile Pitfalls
 
