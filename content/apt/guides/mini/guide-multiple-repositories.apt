@@ -105,14 +105,20 @@ mvn -Pmyprofile ...
  
  <<Note>>: The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
  
- ** Repository Order
+* Repository Order
 
-Remote repository URLs are queried in the following order for artifacts until one returns a valid result:
+  Remote repository URLs are queried in the following order for artifacts until one returns a valid result:
 
-[[1]] Global <<<settings.xml>>>
-[[1]] User <<<settings.xml>>>
-[[1]] Local POM
-[[1]] Parent POMs, recursively
-[[1]] Super POM
+  [[1]] Global <<<settings.xml>>>
 
-For each of these locations, the repositories within the profiles are queried first in the order outlined at {{{../introduction/introduction-to-profiles.html}Introduction to build profiles}}.
+  [[1]] User <<<settings.xml>>>
+
+  [[1]] Local POM
+
+  [[1]] Parent POMs, recursively
+
+  [[1]] Super POM
+
+  []
+
+  For each of these locations, the repositories within the profiles are queried first in the order outlined at {{{../introduction/introduction-to-profiles.html}Introduction to build profiles}}.
