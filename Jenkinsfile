@@ -19,7 +19,7 @@
 
  pipeline {
     agent {
-        label 'svn-websites'
+        label 'websites'
     }
     stages {
         stage('Build only') {
