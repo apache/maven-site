@@ -1155,10 +1155,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   subject to the default merge strategy unless they were themselves
   marked with attributes.
 
-  The combine.* attributes are inherited from parent to child POMs.
-  Take care when adding those attributes to
-  a parent POM as this might affect child or
-  grand-child POMs.
+  The <<<combine.*>>> attributes are inherited from parent to child POMs.
+  Take care when adding those attributes to a parent POM as this might affect child or grand-child POMs.
 
   * <<dependencies>>:
   Dependencies are seen a lot within the POM, and are an element under all plugins element blocks.
@@ -1210,24 +1208,24 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </project>
 +------------------------------------------+
 
-  * <<id>>:
+    * <<id>>:
   Self explanatory. It specifies this execution block between all of the others. When the phase is run,
   it will be shown in the form: <<<[plugin:goal {execution: id}]>>>. In the case of this example:
   <<<[antrun:run {execution: echodir}]>>>
 
-  * <<goals>>:
+    * <<goals>>:
   Like all pluralized POM elements, this contains a list of singular elements. In this case, a list
   of plugin <<<goals>>> which are being specified by this <<<execution>>> block.
 
-  * <<phase>>:
+    * <<phase>>:
   This is the phase that the list of goals will execute in. This is a very powerful option, allowing one to bind
   any goal to any phase in the build lifecycle, altering the default behavior of Maven.
 
-  * <<inherited>>:
+    * <<inherited>>:
   Like the <<<inherited>>> element above, setting this to false will suppress Maven from passing this execution
   onto its children. This element is only meaningful to parent POMs.
 
-  * <<configuration>>:
+    * <<configuration>>:
   Same as above, but confines the configuration to this specific list of goals, rather than all goals
   under the plugin.
 
