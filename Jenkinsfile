@@ -22,7 +22,7 @@
         label 'svn-websites'
     }
     stages {
-        stage('Build') {
+        stage('Build only') {
             when {
                 not { branch 'master' }
             }
@@ -37,7 +37,7 @@
                 }
             }
         }
-        stage('Deploy') {
+        stage('Site Deploy') {
             when {
                 branch 'master'
             }
