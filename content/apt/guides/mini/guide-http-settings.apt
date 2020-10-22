@@ -188,26 +188,26 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
           <put>
             <useDefaultHeaders>false</useDefaultHeaders>
             <headers>
-              <header>
+              <property>
                 <name>Cache-control</name>
                 <value>no-cache</value>
-              </header>
-              <header>
+              </property>
+              <property>
                 <name>Cache-store</name>
                 <value>no-store</value>
-              </header>
-              <header>
+              </property>
+              <property>
                 <name>Pragma</name>
                 <value>no-cache</value>
-              </header>
-              <header>
+              </property>
+              <property>
                 <name>Expires</name>
                 <value>0</value>
-              </header>
-              <header>
+              </property>
+              <property>
                 <name>Accept-Encoding</name>
                 <value>*</value>
-              </header>
+              </property>
             </headers>
           </put>
         </httpConfiguration>
