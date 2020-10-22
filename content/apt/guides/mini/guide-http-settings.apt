@@ -30,31 +30,13 @@ Advanced Configuration of the HttpClient HTTP Wagon
 
 %{toc}
 
-*Notice on Maven Versioning and Availability
-
-**Maven 2.2.0
-
-  Starting in <<Maven 2.2.0>>, the HttpClient wagon was the implementation in use. The remainder of this document
-  deals specifically with the differences between the HttpClient- and Sun-based HTTP wagons.
-
-**Maven 2.2.1
-  
-  Due to several critical issues introduced by the HttpClient-based HTTP wagon, <<Maven 2.2.1>> reverted back to 
-  the Sun implementation (a.k.a. 'lightweight') of the HTTP wagon as the default for HTTP/HTTPS transfers.
-  The issues with the HttpClient-based wagon were mainly related to checksums, transfer timeouts, and NTLM proxies,
-  and served as the primary cause for the release of <<2.2.1>> in the first place.
-  
-  <<However>>, starting in <<Maven 2.2.1>> you have a choice: you can use the default wagon implementation for a given
-  protocol, or you can select an alternative wagon <<<provider>>> you'd like to use on a per-protocol basis. 
+  You can use the default wagon implementation for a given
+  protocol, or you can select an alternative wagon <<<provider>>> on a per-protocol basis. 
   For more information, see the {{{./guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
-
-**Maven 3.0.4
-
-  With 3.0.4, the default wagon http(s) is now the HttpClient based on {{{http://hc.apache.org/httpcomponents-client-ga}Apache Http Client 4.1.2}}.
-  There is now a http connection pooling to prevent reopening http(s) to remote server for each requests.
+  The default wagon http(s) is the HttpClient based on {{{http://hc.apache.org/httpcomponents-client-ga}Apache Http Client 4.1.2}}.
+  HTTP connection pooling prevents reopening http(s) to remote server for each requests.
   This pool feature is configurable with some parameters \[4\].
-
-  This new defaut wagon comes with some default configuration:
+  The default wagon comes with some default configuration:
 
   * http(s) connection pool: default to 20.
 
@@ -121,7 +103,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   
 *Configuring GET, HEAD, PUT, or All of the Above
 
-  In all of the examples below, it's important to understand that we can configure the HTTP settings for all requests made to a given
+  In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given
   server, or for only one method. To configure all methods for a server, you'd use the following section of the <<<settings.xml>>> file:
   
 +---+
