@@ -65,7 +65,7 @@ Expires: 0
 Accept-Encoding: gzip
 +---+
 
-  In addition, PUT requests made with the HTTP wagon will use the following HttpClient parameter:
+  In addition, PUT requests made with the HTTP wagon use the following HttpClient parameter:
   
 +---+
 http.protocol.expect-continue=true
@@ -104,7 +104,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 *Configuring GET, HEAD, PUT, or All of the Above
 
   In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given
-  server, or for only one method. To configure all methods for a server, you'd use the following section of the <<<settings.xml>>> file:
+  server, or for only one method. To configure all methods for a server, use the following section of the <<<settings.xml>>> file:
   
 +---+
 <settings>
@@ -156,8 +156,8 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   decompressing the GZipped file <during the transfer> and writing the decompressed file to the local disk with the original filename.
   This can be misleading to say the least, and can use up an inordinate amount of disk space on the local computer.
   
-  To turn off this default behavior, we'll simply disable the default headers. Then, we'll need to respecify the other headers 
-  that we are still interested in, like this:
+  To turn off this default behavior, simply disable the default headers. Then, respecify the other headers 
+  that you are still interested in, like this:
   
 +---+
 <settings>
@@ -313,7 +313,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
   The configuration above can be useful in cases where the repository is using cookies - like the session cookies
   that are often mistakenly turned on or left on in appservers - alongside HTTP redirection. In these cases, it
-  becomes far more likely that the cookie issued by the appserver will use a <<<Path>>> that is inconsistent with
+  becomes far more likely that the cookie issued by the appserver uses a <<<Path>>> that is inconsistent with
   the one used by the client to access the server. If you have this problem, and know that you don't need to use
   this session cookie, you can ignore cookies from this server with the above configuration.
 
