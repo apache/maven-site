@@ -33,28 +33,28 @@ Advanced Configuration of the HttpClient HTTP Wagon
   You can use the default wagon implementation for a given
   protocol, or you can select an alternative wagon <<<provider>>> on a per-protocol basis. 
   For more information, see the {{{./guide-wagon-providers.html}Guide to Wagon Providers}} \[3\].
-  The default wagon http(s) is the HttpClient based on {{{http://hc.apache.org/httpcomponents-client-ga}Apache Http Client 4.1.2}}.
-  HTTP connection pooling prevents reopening http(s) to remote server for each requests.
+  The default wagon http(s) is the HttpClient based on {{{https://hc.apache.org/httpcomponents-client-4.5.x/}Apache Http Client 4.5}}.
+  HTTP connection pooling prevents reopening new connections to the same server for each request.
   This pool feature is configurable with some parameters \[4\].
   The default wagon comes with some default configuration:
 
   * http(s) connection pool: default to 20.
 
-  * readTimeout: default to 1800000ms (~30 minutes) (see section <<<Read time out>>> below)
+  * readTimeout: default to 1,800,000ms (~30 minutes) (see section <<<Read time out>>> below)
 
   * default Preemptive Authentication only with PUT (GET doesn't use anymore default Preemptive Authentication)
 
 *Introduction
 
-  Using the HttpClient-based HTTP wagon, you have a lot more control over the
+  The HttpClient-based HTTP wagon offers more control over the
   configuration used to access HTTP-based Maven repositories. For starters, you have fine-grained control over what HTTP headers
   are used when resolving artifacts. In addition, you can also configure a wide range of parameters to control the behavior
   of HttpClient itself. Best of all, you have the ability to control these headers and parameters for all requests, or individual 
-  request types (Maven issues GET, HEAD, and PUT requests for different parts of the artifact-management subsystem).
+  request types (GET, HEAD, and PUT).
   
 *The Basics
 
-  Without any special configuration, Maven's HTTP wagon will use some default HTTP headers and client parameters when managing
+  Without any special configuration, Maven's HTTP wagon uses some default HTTP headers and client parameters when managing
   artifacts. The default headers are:
   
 +---+
@@ -88,7 +88,7 @@ the target server's authentication.
 problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 -----
 
-  Without this setting, PUT requests that require authentication will transfer their entire payload to the server before that server 
+  Without this setting, PUT requests that require authentication transfer their entire payload to the server before that server 
   issues an authentication challenge. In order to complete the PUT request, the client must then re-send the payload with the proper
   credentials specified in the HTTP headers. This results in twice the bandwidth usage, and twice the time to transfer each artifact.
   
@@ -239,7 +239,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
 **Example: Using Preemptive Authentication
 
-  Using the above syntax, we can configure preemptive authentication for PUT requests using the boolean HttpClient parameter
+  Using the above syntax, you can configure preemptive authentication for PUT requests using the boolean HttpClient parameter
   <<<http.authentication.preemptive>>>, like this:
   
 +---+
