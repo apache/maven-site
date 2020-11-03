@@ -29,16 +29,16 @@
 Using Maven When You Can't Use the Conventions
 
   There is a common misconception that Maven can't build a project that doesn't conform to certain directory
-  structures or build practices. This often isn't the case - however it is true that some Maven features or plugins
+  structures or build practices. This often isn't the case. However, it is true that some Maven features or plugins
   (especially by third parties) may not work or work completely.
 
   This guide will help you set up Maven on your project when the directive from on high is to not change the existing
   layout, and detail some of the feature that you might miss when doing so.
 
-  <The Maven developers highly recommend you use this as a last resort. There are good reasons why the defaults are
+  Use this as a last resort. There are good reasons why the defaults are
   the way they are, and we strongly recommend you use them if you can. It encourages consistency and means one less
-  thing you ever need to worry about when starting a new project - there are more interesting things to do then
-  change your layout for the sake of it! Hopefully having used any of these techniques you find that Maven proves itself
+  thing you ever need to worry about when starting a new project. There are more interesting things to do than
+  change your layout for the sake of it. Hopefully having used any of these techniques you find that Maven proves itself
   capable, you will reconsider restructuring to address these issues.>
 
 * Using Multiple Source Directories
@@ -185,10 +185,10 @@ Using Maven When You Can't Use the Conventions
   Source directories aside, sometimes people desire to produce multiple JARs from a single POM. Depending on your use case, Maven
   can support this.
 
-   * If you are looking to produce JARs that are different (ie, they have their own dependencies and metadata), Maven
+   * If you are looking to produce JARs that are different (i.e., they have their own dependencies and metadata), Maven
      doesn't support this. This usually is only needed when sharing a source directory for intrinsically different things,
      so the use case above applies instead.
 
-   * If you are producing a JAR that is a derivative of the original (eg, just a subset of classes, or the same JAR with
-     debugging enabled), the Maven supports this completely using profiles. See {{{../introduction/introduction-to-profiles.html} Introduction to Profiles}}
+   * If you are producing a JAR that is a derivative of the original (e.g., just a subset of classes, or the same JAR with
+     debugging enabled), Maven supports this using profiles. See {{{../introduction/introduction-to-profiles.html} Introduction to Profiles}}
      for more information.
