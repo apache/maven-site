@@ -346,8 +346,8 @@ mvn groupId:artifactId:goal -P !profile-1,!profile-2
   it's reasonable to say you can add more information to them without the risk
   of that information being unavailable to other users.
 
-  Profiles specified in the POM can modify the following POM elements as outlined
-  in the {{{/ref/current/maven-model/maven.html}maven model}}:
+  Profiles specified in the POM can modify the
+  {{{/ref/current/maven-model/maven.html}the following POM elements}}:
 
   * <<<\<repositories\>>>>
 
