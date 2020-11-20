@@ -32,7 +32,7 @@ Guide to uploading artifacts to the Central Repository
  In order for users of Maven to utilize artifacts produced by your project, you must deploy them to
  a remote repository. Many open source projects want to allow users of their projects who build with
  Maven to have transparent access to their project's artifacts. In order to allow for this, a project
- must have their artifacts deployed to {{{/repository/}the Central Repository}}.
+ should deploy their artifacts to the {{{/repository/}the Central Repository}}.
 
 
 Requirements
