@@ -17,11 +17,11 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Maven, like any other opensource project, relies heavily on the efforts
-of the entire user community to be ever vigilant for improvements,
-logging of defects, communicating use-cases, generating documentation,
-and being wary of other users in need. This is a quick guide outlining
-what members of the Maven community may do to make the system work
+Maven, like any other open source project, relies heavily on the efforts
+of the entire user community to contribute improvements,
+report defects, communicate use cases, write documentation,
+and assist other users in need. This is a quick guide outlining
+what members of the Maven community can do to make the system work
 better for everyone.
 
 ### Helping With Maven
