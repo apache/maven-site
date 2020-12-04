@@ -301,6 +301,36 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+ 
 
+**Example: using BasicAuth for SSO redirects
+
+  Using wagon >=3.4.2, tell the HttpClient to use BasicAuth for ANY hosts it connects to.
+  You might need to force cookie-policy to standard so it handles cookies correctly.
++---+
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <basicAuthScope>
+          <host>ANY</host>
+          <port>ANY</port> <!-- or even 443 to force the use of TLS -->
+        </basicAuthScope>
+        <httpConfiguration>
+          <all>
+            <params>
+              <property>
+                <name>http.protocol.cookie-policy</name>
+                <value>standard</value>
+              </property>
+            </params>
+          </all>
+        </httpConfiguration>
+      </configuration>
+    </server>
+  </servers>
+</settings>
++---+
+
 **Ignoring Cookies
 
   Like the example above, telling the HttpClient to ignore cookies for all methods of request is a simple matter of
