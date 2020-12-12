@@ -22,21 +22,17 @@ With these action cards you can share your passion for Maven on social media!
 
 <!-- no markdown here, so we can apply preferred style -->
 <ul class="thumbnails">
-
-<li>
-<p><a href="/images/branding/i_am_a_maven_content_contributor_1.png"><img src="/images/branding/i_am_a_maven_content_contributor_1.png" class="thumbnail" alt="" /></a></p>
+<li class="span3">
+<a href="/images/branding/i_am_a_maven_content_contributor_1.png"><img data-src="holder.js/280x180" src="/images/branding/i_am_a_maven_content_contributor_1.png" class="thumbnail" alt="" /></a>
 </li>
-<li>
-
-<p><a href="/images/branding/i_am_a_maven_contributor_1.png"><img src="/images/branding/i_am_a_maven_contributor_1.png" class="thumbnail" alt="" /></a></p>
+<li class="span3">
+<a href="/images/branding/i_am_a_maven_contributor_1.png"><img src="/images/branding/i_am_a_maven_contributor_1.png" class="thumbnail" alt="" /></a>
 </li>
-<li>
-
-<p><a href="/images/branding/i_am_a_proud_maven_user_1.png"><img src="/images/branding/i_am_a_proud_maven_user_1.png" class="thumbnail" alt="" /></a></p>
+<li class="span3">
+<a href="/images/branding/i_am_a_proud_maven_user_1.png"><img src="/images/branding/i_am_a_proud_maven_user_1.png" class="thumbnail" alt="" /></a>
 </li>
-<li>
-
-<p><a href="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png"><img src="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png" class="thumbnail" alt="" /></a></p>
+<li class="span3">
+<a href="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png"><img src="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png" class="thumbnail" alt="" /></a>
 </li>
 
 </ul>
