@@ -85,7 +85,7 @@ Guide to Working with Multiple Modules
 
 ** Advanced scenarios
 
-  * Since version 3.7.0 Maven includes all modules of a parent pom when it is selected with <<<--projects>>>. Use <<<--file>>> in combination with <<<--non-recursive>>> to build just the given pom.
+  * Since version 4.0.0 Maven includes all modules of a parent pom when it is selected with <<<--projects>>>. Use <<<--file>>> in combination with <<<--non-recursive>>> to build just the given pom.
 
 * More information
 
