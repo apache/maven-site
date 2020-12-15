@@ -97,6 +97,12 @@ under the License.
             <td>March 2021</td>
           </tr>
           <tr>
+              <td><a href="https://maarten.mulders.it/2020/11/whats-new-in-maven-4/">What's New in Maven 4</a></td>
+              <td></td>
+              <td>Maarten Mulders</td>
+              <td>November 2020</td>
+          </tr>
+          <tr>
             <td><a href="https://maarten.mulders.it/2020/01/customise-the-maven-release-process/">Customise the Maven Release process</a></td>
             <td></td>
             <td>Maarten Mulders</td>
