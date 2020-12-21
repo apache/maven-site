@@ -414,7 +414,17 @@ artifact.
             </repository>
           </repositories>
           <pluginRepositories>
-            ...
+            <pluginRepository>
+              <id>myPluginRepo</id>
+              <name>My Plugins repo</name>
+              <releases>
+                <enabled>true</enabled>
+              </releases>
+              <snapshots>
+                <enabled>false</enabled>
+              </snapshots>
+              <url>https://maven-central-eu....com/maven2/</url>
+            </pluginRepository>
           </pluginRepositories>
           ...
         </profile>
