@@ -38,7 +38,7 @@ Maven Compatibility Plan
 
   []
 
-  Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
+  Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Maven Plan
 
