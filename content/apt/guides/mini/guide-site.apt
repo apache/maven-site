@@ -147,7 +147,7 @@ mvn site-deploy
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-scm-publish-plugin</artifactId>
-      <version>3.0.0</version>
+      <version>3.1.0</version>
       <configuration>
         <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
         <scmBranch>gh-pages</scmBranch>
