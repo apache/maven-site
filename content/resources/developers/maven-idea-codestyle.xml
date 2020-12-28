@@ -23,7 +23,7 @@ under the License.
   <option name="CLASS_BRACE_STYLE" value="2" />
   <option name="METHOD_BRACE_STYLE" value="2" />
   <JavaCodeStyleSettings>
-    <option name="ANNOTATION_PARAMETER_WRAP" value="2" />
+    <option name="ANNOTATION_PARAMETER_WRAP" value="1" />
     <option name="ALIGN_MULTILINE_ANNOTATION_PARAMETERS" value="true" />
     <option name="CLASS_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999" />
     <option name="NAMES_COUNT_TO_USE_IMPORT_ON_DEMAND" value="999" />
@@ -104,9 +104,9 @@ under the License.
     <option name="SPACE_WITHIN_ANNOTATION_PARENTHESES" value="true" />
     <option name="ENUM_CONSTANTS_WRAP" value="1" />
     <indentOptions>
-      <option name="INDENT_SIZE" value="2" />
-      <option name="CONTINUATION_INDENT_SIZE" value="4" />
-      <option name="TAB_SIZE" value="2" />
+      <option name="INDENT_SIZE" value="4" />
+      <option name="CONTINUATION_INDENT_SIZE" value="8" />
+      <option name="TAB_SIZE" value="4" />
     </indentOptions>
   </codeStyleSettings>
 </code_scheme>
