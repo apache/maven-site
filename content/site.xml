@@ -132,6 +132,7 @@ under the License.
           <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
           <item name="Building JDK 1.4 Projects Using JDK 1.5" href="/guides/mini/guide-building-jdk14-on-jdk15.html" />
           <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
+          <item name="Large Scale Centralized Deployments" href="/guides/mini/guide-large-scale-centralized-deployments.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
