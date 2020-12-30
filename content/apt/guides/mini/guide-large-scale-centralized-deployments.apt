@@ -30,7 +30,7 @@ Guide to Large Scale Centralized Deployments
 
   This guide covers an simple optimized approach to using a
   {{{../../repository-management.html}repository manager}}
-  in a large organization.
+  in a large organization with hundreds/thousands of Maven projects.
 
   The pillars of this approach are:
 
@@ -40,7 +40,7 @@ Guide to Large Scale Centralized Deployments
 
           * Maven clients should upload proprietary artifacts to the repository manager.
 
-    [[2]] Configure the location to download/upload artifacts in maven <<<settings.xml>>> files,
+    [[2]] Configure the location to download/upload artifacts in Maven <<<settings.xml>>> files,
           rather than in <<<pom.xml>>> files.
 
     [[3]] Centrally manage the <<<settings.xml>>> files, and distribute them via automation.
@@ -67,19 +67,25 @@ Guide to Large Scale Centralized Deployments
     * a local repository for snapshots
 
     * a local repository that can contain both releases and snapshots
-      (see {{{Managing_Uploads_to_the_Repository_Manager}Managing Uploads to the Repository Manager}} for why this repository is needed)
+      (Only needed if some projects are still using maven-deploy-plugin \< 2.8.
+      See {{{Managing_Uploads_to_the_Repository_Manager}Managing Uploads to the Repository Manager}} for more info.)
 
   Separate local repositories are generally used for releases and snapshots
   due to the need for different artifact retention policies.
 
+  The following sections describe how to configure Maven clients to:
+
+    * {{{Managing_Downloads_from_the_Repository_Manager}Download}} artifacts from the virtual repository.
+
+    * {{{Managing_Uploads_to_the_Repository_Manager}Upload}} artifacts to one of the local repositories.
 
 * {Managing Downloads from the Repository Manager}
 
-  All artifacts used by maven projects in the organization should be downloaded
-  via the single virtual repository of the repository manager.
+  All artifacts used by Maven projects in the organization should be downloaded
+  from the single virtual repository of the repository manager.
 
   Maven can be instructed to download artifacts from the repository manager's virtual repository
-  by defining a mirror in the maven <<<settings.xml>>> file as described in the
+  by defining a mirror in the Maven <<<settings.xml>>> file as described in the
   {{{./guide-mirror-settings.html}Guide to Mirror Settings}}.
 
   Example: To download artifacts from the corporate repository manager's <<<maven-virtual>>> repository:
@@ -88,7 +94,7 @@ Guide to Large Scale Centralized Deployments
 <settings>
   ...
   <mirrors>
-    <!-- Mirror all external repositories via the Corporate Repository Manager's maven virtual repository -->
+    <!-- Mirror all external repositories via the Corporate Repository Manager's Maven virtual repository -->
     <mirror>
       <id>corp-repository-manager</id>
       <name>Corporate Repository Manager</name>
@@ -102,34 +108,34 @@ Guide to Large Scale Centralized Deployments
 
 * {Managing Uploads to the Repository Manager}
 
-  All proprietary artifacts produced by maven projects in the organization should be uploaded
+  All proprietary artifacts produced by Maven projects in the organization should be uploaded
   to the repository manager's local repositories.
 
   The {{{../../plugins/maven-deploy-plugin}maven-deploy-plugin}} can be instructed to upload artifacts
   to the repository manager's repositories by defining the <<<alt*DeploymentRepository>>> properties
-  in the maven <<<settings.xml>>> file.
+  in the Maven <<<settings.xml>>> file.
+  When these properties are defined, the maven-deploy-plugin's {{{../../plugins/maven-deploy-plugin/deploy-mojo.html}deploy}}
+  goal uses them instead of the <<<\<distributionManagement\>>>> section of <<<pom.xml>>> files
+  to determine where to upload artifacts.
 
   Defining the upload destination of artifacts in <<<settings.xml>>> files rather than
-  in the <<<distributionManagement>>> section of <<<pom.xml>>> files allows the destinations
+  in the <<<\<distributionManagement\>>>> section of <<<pom.xml>>> files allows the destinations
   to be centrally managed, which simplifies maintenance if the destinations need to change.
   In other words, rather than changing a huge number of <<<pom.xml>>> files,
   you just need to change {{{Settings_File_Locations}relatively few}}
-  <<<settings.xml>>> files when the distribution locations need to change.
+  <<<settings.xml>>> files if/when the distribution locations need to change.
 
-  The ability to specify a <single> alternate deployment repository via the <<<altDeploymentRepository>>>
-  property was added in maven-deploy-plugin 2.3.
-  This single alternate deployment repository is used for both releases and snapshots.
-  Therefore, a repository capable of hosting release and snapshots artifacts must exist on the repository manager
-  when using maven-deploy-plugin \>=2.3 and \<2.8.
-
-  The ability to specify <separate> alternate deployment repositories for releases and snapshots
+  The ability to specify separate alternate deployment repositories for releases and snapshots
   via the <<<altReleaseDeploymentRepository>>> and <<<altSnapshotDeploymentRepository>>> properties,
   respectively, was added in maven-deploy-plugin 2.8.
-  To get the most out of the approach defined in this document, use maven-deploy-plugin \>=2.8.
+  To get the most out of the approach defined in this document, all projects should use maven-deploy-plugin \>=2.8.
+  If some projects are still using an older version of maven-deploy-plugin (\>=2.3 and \<2.8), then
+  specify a single alternate deployment repository via the <<<altDeploymentRepository>>> property
+  that points to a repository capable of containing both releases and snapshots.
 
-  Typically, only continuous integration servers are allowed to artifacts to the repository manager.
+  Typically, only continuous integration servers are allowed to upload artifacts to the repository manager.
   Therefore, these settings should only be specified in <<<settings.xml>>> files on continuous integration servers,
-  and should not be in <<<settings.xml>>> files on developer workstations.
+  and should not be in <<<settings.xml>>> files on developer machines.
 
   Example: To upload artifacts to one of the corporate repository manager's local repositories:
 
@@ -143,17 +149,22 @@ Guide to Large Scale Centralized Deployments
 
       <properties>
         <!--
-          For maven-deploy-plugin >= 2.8, override the distributionManagement snapshotRepository in project pom.xml files.
+          For maven-deploy-plugin >= 2.8, deploy snapshots to this repository instead of the
+          distributionManagement snapshotRepository from project pom.xml files.
         -->
         <altSnapshotDeploymentRepository>corp::default::https://corp-repository-manager-host/maven-snapshots</altSnapshotDeploymentRepository>
 
         <!--
-          For maven-deploy-plugin >= 2.8, override the distributionManagement repository in project pom.xml files.
+          For maven-deploy-plugin >= 2.8, deploy releases to this repository instead of the
+          distributionManagement repository from project pom.xml files.
         -->
         <altReleaseDeploymentRepository>corp::default::https://corp-repository-manager-host/maven-releases</altReleaseDeploymentRepository>
 
         <!--
-          For maven-deploy-plugin >=2.3 and < 2.8, override the distributionManagement repository AND snapshotRepository in project pom.xml files.
+          Only needed if some projects are still using maven-deploy-plugin >=2.3 and < 2.8,
+          which is the case if projects are using the default version of maven-deploy-plugin in maven 3.x.
+          For maven-deploy-plugin >=2.3 and < 2.8, deploy both releases and snapshots to this repository
+          instead of the repositories mentioned in distributionManagement from project pom.xml files.
         -->
         <altDeploymentRepository>corp::default::https://corp-repository-manager-host/maven-combined</altDeploymentRepository>
       </properties>
@@ -210,11 +221,11 @@ Guide to Large Scale Centralized Deployments
 
 * {Settings File Locations}
 
-  Maven <<<settings.xml>>> files need to be available wherever maven builds are performed, typically:
+  Maven <<<settings.xml>>> files need to be available wherever Maven builds are performed, typically:
 
     * on continuous integration servers, and
 
-    * on developer workstations
+    * on developer machines
 
   Both locations should have the mirror settings mentioned in
   {{{Managing_Downloads_from_the_Repository_Manager}Managing Downloads from the Repository Manager}}.
@@ -227,4 +238,4 @@ Guide to Large Scale Centralized Deployments
 
   How the <<<settings.xml>>> files are stored and updated is beyond the scope of this document.
   The general recommendation is to manage a few <<<settings.xml>>> files centrally,
-  and then use automation to distribute them to continuous integration servers and developer workstations.
+  and then use automation to distribute them to continuous integration servers and developer machines.
