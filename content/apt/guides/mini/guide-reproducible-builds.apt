@@ -38,7 +38,8 @@ Configuring for Reproducible Builds
 
  There is no Maven version prerequisite. Everything happens at plugin level:
 
- [[1]] Upgrade your plugins to reproducible versions, particularly <<<maven-jar-plugin>>>, <<<maven-source-plugin>>> and <<<maven-assembly-plugin>>> to version 3.2.0 minimum.
+ [[1]] Upgrade your plugins to reproducible versions, particularly <<<maven-jar-plugin>>>, <<<maven-source-plugin>>>,
+ <<<maven-assembly-plugin>>> and <<<maven-javadoc-plugin>>> to version 3.2.0 minimum.
 
  [[2]] Add a <<<project.build.outputTimestamp>>> property to the project's <<<pom.xml>>> with the timestamp value that will be used in zip/jar/tar archives (see FAQ for future value update strategy):
 
@@ -47,6 +48,9 @@ Configuring for Reproducible Builds
      <project.build.outputTimestamp>2019-10-02T08:04:00Z</project.build.outputTimestamp>
    </properties>
 +--------+
+
+ [[3]] Configure <<<maven-javadoc-plugin>>> with option <<<notimestamp>>> set to <<<true>>> to avoid timestamps in generated files.
+
  []
 
  You have the basics configured. The output should be reproducible now.
