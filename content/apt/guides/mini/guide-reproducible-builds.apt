@@ -127,7 +127,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{/plugins/maven-ejb-plugin/}maven-ejb-plugin}}                           | 3.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}                   | 3.2.0 |
+| {{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}                   | 3.2.0 | requires also <<<\<notimestamp\>true\</notimestamp\>>>> configuration in <<<pluginManagement>>> (for automatic use both from plugins and reports)
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{/plugin-tools/maven-plugin-plugin/}maven-plugin-plugin}}                | 3.5.1 |
 *----------------------------------------------------------------------------+-------+--------------+
