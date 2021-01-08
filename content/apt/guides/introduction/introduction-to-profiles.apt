@@ -100,7 +100,7 @@ Introduction to Build Profiles
   profile IDs to use. The profile(s) specified in the option
   are activated in addition to any profiles which are activated by their activation
   configuration or the <<<\<activeProfiles\>>>> section in <<<settings.xml>>>.
-  Maven will refuse to activate or deactivate a profile that cannot be resolved.
+  From Maven 4 onward, Maven will refuse to activate or deactivate a profile that cannot be resolved.
   To prevent this, prefix the profile identifier with an <<<?>>>, marking it as optional:
 
 +---+
