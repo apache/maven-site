@@ -57,6 +57,14 @@ When you walk away from this class, you will know how to:
 
 Public virtual classes run monthly. If you are interested in setting up a private virtual session, we can customize the hours to the needs of your team. Please contact us for more details at [training@takari.io][4]. To learn more or get registered for an upcoming class, please click [here][1].
 
+### vogella GmbH
+
+![vogella](https://www.vogella.com/img/logo/index_logo.png)  
+[vogella](https://www.vogella.com/training/testbuild/maven.html) offers a one day training to learn the benefits of the Maven build system to build, test and package Java applications.  
+
+We offer this training as a traditional classroom course or as a live virtual course.
+
+
 ### Web Age Solutions
 
 ![Web Age Solutions](http://www.webagesolutions.com/graphics/new_logo.gif)  
