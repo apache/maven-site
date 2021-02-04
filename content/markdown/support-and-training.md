@@ -62,7 +62,7 @@ Public virtual classes run monthly. If you are interested in setting up a privat
 ![vogella](https://www.vogella.com/img/logo/index_logo.png)  
 [vogella](https://www.vogella.com/training/testbuild/maven.html) offers a one day training to learn the benefits of the Maven build system to build, test and package Java applications.  
 
-We offer this training as a traditional classroom course or as a live virtual course.
+vogella GmbH offers this training as a traditional classroom course or as a live virtual course.
 
 
 ### Web Age Solutions
