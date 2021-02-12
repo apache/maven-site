@@ -109,15 +109,21 @@ mvn -Pmyprofile ...
 
   Remote repository URLs are queried in the following order for artifacts until one returns a valid result:
 
-  [[1]] Global <<<settings.xml>>>
+  [[1]] settings:
 
-  [[1]] User <<<settings.xml>>>
+    [[A]] Global <<<settings.xml>>>
 
-  [[1]] Local POM
+    [[A]] User <<<settings.xml>>>
 
-  [[1]] Parent POMs, recursively
+  [[1]] local effective build POM:
 
-  [[1]] Super POM
+    [[A]] Local <<<pom.xml>>>
+
+    [[A]] Parent POMs, recursively
+
+    [[A]] Super POM
+
+  [[1]] effective POMs from dependency path to the artifact.
 
   []
 
