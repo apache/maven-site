@@ -3,6 +3,7 @@
 maven-acr-plugin=../components/plugins/maven-acr-plugin
 maven-ant-plugin=../components/plugins/maven-ant-plugin
 maven-antrun-plugin=../components/plugins/maven-antrun-plugin
+maven-artifact-plugin=../components/plugins/maven-artifact-plugin
 maven-assembly-plugin=../components/plugins/maven-assembly-plugin
 maven-changelog-plugin=../components/plugins/maven-changelog-plugin
 maven-changes-plugin=../components/plugins/maven-changes-plugin
