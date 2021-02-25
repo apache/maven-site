@@ -130,5 +130,5 @@ mvn -Pmyprofile ...
   For each of these locations, the repositories within the profiles are queried first in the order outlined at {{{../introduction/introduction-to-profiles.html}Introduction to build profiles}}.
 
   Effective settings and local build POM, with profile taken into account, can easily be reviewed to see their repositories order with
-  <<<mvn help:effective-settings>>> and <<<mvn help:effective-pom>>>.
+  <<<mvn help:effective-settings>>> and <<<mvn help:effective-pom -Dverbose>>>.
   
