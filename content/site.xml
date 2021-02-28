@@ -106,6 +106,12 @@ under the License.
           <item name="Deploy to Remote" href="/guides/mini/guide-3rd-party-jars-remote.html" />
           <item name="Repository Management" href="/repository-management.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
+          <item name="Using Repositories" href="/guides/mini/guide-multiple-repositories.html" />
+          <item name="Large Scale Centralized Deployments" href="/guides/mini/guide-large-scale-centralized-deployments.html" />
+          <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
+          <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html" />
+          <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html" />
+          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
         <item name="Guides" href="/guides/mini/index.html" collapse="true">
@@ -113,26 +119,20 @@ under the License.
           <item name="Creating Assemblies" href="/guides/mini/guide-assemblies.html" />
           <item name="Configuring Archive Plugins" href="/guides/mini/guide-archive-configuration.html" />
           <item name="Configuring Maven" href="/guides/mini/guide-configuring-maven.html" />
-          <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html" />
-          <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html" />
           <item name="Generating Sources" href="/guides/mini/guide-generating-sources.html" />
           <item name="Working with Manifests" href="/guides/mini/guide-manifest.html" />
           <item name="Maven Classloading" href="/guides/mini/guide-maven-classloading.html" />
           <item name="Using Modules" href="/guides/mini/guide-multiple-modules.html" />
-          <item name="Using Repositories" href="/guides/mini/guide-multiple-repositories.html" />
-          <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
           <item name="Using Release Plugin" href="/guides/mini/guide-releasing.html" />
           <item name="Using Ant" href="/guides/mini/guide-using-ant.html" />
           <item name="Using Modello" href="/guides/mini/guide-using-modello.html" />
           <item name="Using Extensions" href="/guides/mini/guide-using-extensions.html" />
           <item name="Building for Different Environments" href="/guides/mini/guide-building-for-different-environments.html" />
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html" />
-          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
           <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
           <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
           <item name="Building JDK 1.4 Projects Using JDK 1.5" href="/guides/mini/guide-building-jdk14-on-jdk15.html" />
           <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
-          <item name="Large Scale Centralized Deployments" href="/guides/mini/guide-large-scale-centralized-deployments.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
