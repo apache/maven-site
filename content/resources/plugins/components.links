@@ -41,6 +41,7 @@ maven-remote-resources-plugin=../components/plugins/maven-remote-resources-plugi
 maven-repository-plugin=../components/plugins/maven-repository-plugin
 maven-resources-plugin=../components/plugins/maven-resources-plugin
 maven-scm-publish-plugin=../components/plugins/maven-scm-publish-plugin
+maven-scripting-plugin=../components/plugins/maven-scripting-plugin
 maven-shade-plugin=../components/plugins/maven-shade-plugin
 maven-site-plugin=../components/plugins/maven-site-plugin
 maven-source-plugin=../components/plugins/maven-source-plugin
