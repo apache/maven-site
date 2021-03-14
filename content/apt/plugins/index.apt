@@ -254,15 +254,19 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://www.triemax.com/products/jalopy/manual/plugin-maven.html} <<<jalopy>>>}} | {{{http://www.triemax.com/}Triemax}} | Use Jalopy to format your source code.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://creadur.apache.org/rat/} <<<rat>>>}}                             | {{{https://creadur.apache.org/}Apache Creadur Project}} | Release Audit Tool (RAT) to verify files.
+| {{{https://creadur.apache.org/rat/} <<<rat>>>}}                            | {{{https://creadur.apache.org/}Apache Creadur Project}} | Release Audit Tool (RAT) to verify files.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://geronimo.apache.org/maven/genesis/plugins/tools-maven-plugin/index.html} <<<Genesis Plugins>>>}} | {{{https://geronimo.apache.org/}Apache Geronimo Project}} | Verify legal files in artifacts.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://tomcat.apache.org/maven-plugin.html} <<<Apache Tomcat>>>}}| {{{https://tomcat.apache.org/maven-plugin.html}Apache Tomcat Project}} | Run an Apache Tomcat container for rapid webapp development.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://jeremylong.github.io/DependencyCheck/} <<<OWASP dependency-check>>>}} | {{{https://www.owasp.org/index.php/OWASP_Dependency_Check}OWASP Dependency-check Project}} | Run OWASP Dependency-Check, a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities..
+| {{{https://jeremylong.github.io/DependencyCheck/} <<<OWASP dependency-check>>>}} | {{{https://www.owasp.org/index.php/OWASP_Dependency_Check}OWASP Dependency-check Project}} | Run OWASP Dependency-Check, a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://github.com/CycloneDX/cyclonedx-maven-plugin} <<<CycloneDX>>>}} | {{{https://cyclonedx.org/}CycloneDX Project}} | Generate Software Bill of Materials (SBOM) in CycloneDX format
+| {{{https://github.com/CycloneDX/cyclonedx-maven-plugin} <<<CycloneDX>>>}}  | {{{https://cyclonedx.org/}CycloneDX Project}} | Generate Software Bill of Materials (SBOM) in CycloneDX format.
+*----------------------------------------------------------------------------+----------------+-----------------------+
+| {{{https://www.simplify4u.org/pgpverify-maven-plugin/} <<<pgpverify>>>}}   | {{{https://www.simplify4u.org/parent/}Simplify4U}} | Verify PGP signature of all project dependencies.
+*----------------------------------------------------------------------------+----------------+-----------------------+
+| {{{http://buildplan.jcgay.fr/} <<<buildplan}}                              | JC Gay         | Inspect the lifecycle of your build.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 
 * Resources
