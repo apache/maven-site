@@ -266,7 +266,7 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://www.simplify4u.org/pgpverify-maven-plugin/} <<<pgpverify>>>}}   | {{{https://www.simplify4u.org/parent/}Simplify4U}} | Verify PGP signature of all project dependencies.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{http://buildplan.jcgay.fr/} <<<buildplan}}                              | JC Gay         | Inspect the lifecycle of your build.
+| {{{http://buildplan.jcgay.fr/} <<<buildplan>>>}}                           | JC Gay         | Inspect the lifecycle of your build.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 
 * Resources
