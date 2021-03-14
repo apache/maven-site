@@ -141,6 +141,8 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{/plugins/maven-war-plugin/}maven-war-plugin}}                           | 3.3.1 |
 *----------------------------------------------------------------------------+-------+--------------+
+| {{{/plugins/maven-ear-plugin/}maven-ear-plugin}}                           | 3.1.0 |
+*----------------------------------------------------------------------------+-------+--------------+
 | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
