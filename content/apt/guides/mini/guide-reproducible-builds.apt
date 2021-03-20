@@ -109,6 +109,7 @@ Configuring for Reproducible Builds
      it will automatically update the timestamp value in <<<pom.xml>>> during the release in the same commit that updates version,
 
    * if you have a custom release process tooling, you'll need to add the feature to your release tooling.
+     Notice that a {{{https://github.com/mojohaus/versions-maven-plugin/issues/453}new feature}} was proposed to <<<versions:set>>> goal, that is often used in custom release scripts.
 
    []
 
