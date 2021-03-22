@@ -36,43 +36,49 @@ If you have any questions, please consult:
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.8.0/](/ref/3.8.0/)
 
-## Reporters and Contributors of this release
-
 ## Overview about the changes 
 
-This release covers 2 CVEs:
+This release covers two CVEs:
 
-- CVE-2021-26291
+### CVE-2021-26291
 
-  We received a report from Jonathan Leitschuh about a vulnerability of custom repositories in dependency poms.
+  We received a report from Jonathan Leitschuh about a vulnerability of custom repositories in dependency POMs.
   We've split this up into three separate issues:
   
-  - Possible Man-The-Middle-Attack due to custom repositories using http protocol
-  More and more repositories use https nowadays, but this hasn't always been the case. This means that Maven Central contains poms with custom repositories that refer to a URL over http.
-  This makes it a target for a MITM attack. Since Maven Central is immutable, those poms won't be updated. At the same time, developers are probably not aware that for some downloads an
-  insecure URL is being used. 
+  - Possible Man-In-The-Middle-Attack due to custom repositories using HTTP\
+  More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains poms with custom repositories that refer to a URL over HTTP.
+  This makes downloads via such repository a target for a MITM attack. 
+  At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
+  Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
   To solve this, we extended the mirror configuration with `<blocked>`. 
-  We've also improved the URL scheme to match URLs. Now it is possible to match with `external:http:*`, meaning any external URL using http. So `http://localhost` won't match this pattern.
-  Decision was made to make this the new default behavior. This is done by providing by default a mirror in the `conf/settings.xml` blocking insecure external URLs.
+  We've also improved the URL scheme to match URLs. Now it is possible to match with `external:http:*`, meaning any external URL using HTTP. For example both `http://localhost` and `http://127.0.0.1` won't match this pattern.
+  The decision was made to make this the new default behavior. This is done by providing a mirror in the `conf/settings.xml` blocking insecure external URLs by default.
   
-  - Possible Domain Hijacking due to custom repositories using abandoned domains
+  - Possible Domain Hijacking due to custom repositories using abandoned domains\
   Sonatype has analyzed which domains were abandoned and has claimed these domains. 
   
-  - Possible hijacking downloads by redirecting to custom repositories
+  - Possible hijacking of downloads by redirecting to custom repositories\
   This one was the hardest to analyze and explain. The short story is: you're safe, dependencies are only downloaded from repositories within their context.
-  So there are 2 main questions: what is the context and what is the order?
-  The order is describes on the [Repository Order](maven.apache.org/guides/mini/guide-multiple-repositories.html#repository-order) page.
-  The first group of repositories are defined in the settings.xml
-  The second group of repositories are based on inheritence, with ultimately the super pom containing the URL to Maven Central.
+  So there are two main questions: what is the context and what is the order?
+  The order is described on the [Repository Order](maven.apache.org/guides/mini/guide-multiple-repositories.html#repository-order) page.
+  The first group of repositories are defined in the settings.xml (both user and global).
+  The second group of repositories are based on inheritence, with ultimately the super POM containing the URL to Maven Central.
   The third group is the most complex one but is important to understand the term context: repositories from the effective POMs from the dependency path to the artifact.
   So if a dependency was defined by another dependency or by a Maven project, it will also include their repositories.
   In the end this is not a bug, but a design feature.
 
-- CVE-2020-13956
+### CVE-2020-13956
 
   Apache HttpClient is a transitive dependency of Maven Resolver via Maven Wagon, so we've updated those versions as part of this release.
-
   
+## Why does this version have the value 3.8.0?
+
+  - Why not 3.6.4?\
+  This is not just a bugfix as it contains three features. Also due a change of default behavior (external insecure URLs are now blocked by default) it makes sense to increase increase the minor version.
+  
+  - Why not 3.7.0?\
+  Apache Maven 3.7.0 would be the first release where you could optionally activate the build/consumer feature. This version of this release has been renamed to 4.0.0.
+  Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.  
 
 ## The detailed issue list[](#Details)
 
