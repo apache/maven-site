@@ -107,14 +107,16 @@ Using A Single Repository
 
 Advanced Mirror Specification
 
-  A single mirror can handle multiple repositories when used in conjunction with a repository manager.
+  A single mirror can handle multiple repositories. This is typically used in conjunction with a repository manager,
+  that gives easy centralised configuration of the list of repositories behind.
 
   The syntax as of Maven 2.0.9:
 
  * <<<\*>>> matches all repo ids.
 
- * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used in conjunction
-  with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
+ * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used when you want to exclude redirecting repositories that are defined for Integration Testing.
+
+ * since Maven 3.8.0, <<<external:http:\*>>> matches all repositories using HTTP except those using localhost.
 
  * multiple repositories may be specified using a comma as the delimiter
 

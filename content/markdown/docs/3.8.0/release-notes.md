@@ -46,13 +46,13 @@ This release covers two CVEs:
   We've split this up into three separate issues:
   
   - Possible Man-In-The-Middle-Attack due to custom repositories using HTTP\
-  More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains poms with custom repositories that refer to a URL over HTTP.
+  More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains POMs with custom repositories that refer to a URL over HTTP.
   This makes downloads via such repository a target for a MITM attack. 
   At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
   Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
-  To solve this, we extended the mirror configuration with `<blocked>`. 
-  We've also improved the URL scheme to match URLs. Now it is possible to match with `external:http:*`, meaning any external URL using HTTP. For example both `http://localhost` and `http://127.0.0.1` won't match this pattern.
-  The decision was made to make this the new default behavior. This is done by providing a mirror in the `conf/settings.xml` blocking insecure external URLs by default.
+  To solve this, we extended the mirror configuration with `<blocked>` parameter,
+  and we added a new `external:http:*` mirror selector extending existing `external:*`, meaning any external URL using HTTP.\
+  The decision was made to make this the new default behavior: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs by default.
   
   - Possible Domain Hijacking due to custom repositories using abandoned domains\
   Sonatype has analyzed which domains were abandoned and has claimed these domains. 
@@ -60,7 +60,7 @@ This release covers two CVEs:
   - Possible hijacking of downloads by redirecting to custom repositories\
   This one was the hardest to analyze and explain. The short story is: you're safe, dependencies are only downloaded from repositories within their context.
   So there are two main questions: what is the context and what is the order?
-  The order is described on the [Repository Order](maven.apache.org/guides/mini/guide-multiple-repositories.html#repository-order) page.
+  The order is described on the [Repository Order](/guides/mini/guide-multiple-repositories.html#repository-order) page.
   The first group of repositories are defined in the settings.xml (both user and global).
   The second group of repositories are based on inheritence, with ultimately the super POM containing the URL to Maven Central.
   The third group is the most complex one but is important to understand the term context: repositories from the effective POMs from the dependency path to the artifact.
@@ -74,11 +74,12 @@ This release covers two CVEs:
 ## Why does this version have the value 3.8.0?
 
   - Why not 3.6.4?\
-  This is not just a bugfix as it contains three features. Also due a change of default behavior (external insecure URLs are now blocked by default) it makes sense to increase increase the minor version.
+  This is not just a bugfix as it contains three features. Also due a change of default behavior (external HTTP insecure URLs are now blocked by default), it makes sense to increase the minor version.
   
   - Why not 3.7.0?\
-  Apache Maven 3.7.0 would be the first release where you could optionally activate the build/consumer feature. This version of this release has been renamed to 4.0.0.
-  Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.  
+  Apache Maven 3.7.0 has been advertised in the past that it would be the first release where you could optionally activate the build/consumer feature:
+  the version containing this feature has been renamed to 4.0.0.
+  Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.
 
 ## The detailed issue list[](#Details)
 
