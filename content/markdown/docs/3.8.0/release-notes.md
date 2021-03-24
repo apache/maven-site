@@ -51,8 +51,8 @@ This release covers two CVEs:
   At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
   Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
   To solve this, we extended the mirror configuration with `<blocked>` parameter,
-  and we added a new `external:http:*` mirror selector extending existing `external:*`, meaning any external URL using HTTP.\
-  The decision was made to make this the new default behavior: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs by default.
+  and we added a new `external:http:*` mirror selector (like existing `external:*`), meaning "any external URL using HTTP".\
+  The decision was made to block such external HTTP repositories by default: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs.
   
   - Possible Domain Hijacking due to custom repositories using abandoned domains\
   Sonatype has analyzed which domains were abandoned and has claimed these domains. 
@@ -74,12 +74,30 @@ This release covers two CVEs:
 ## Why does this version have the value 3.8.0?
 
   - Why not 3.6.4?\
-  This is not just a bugfix as it contains three features. Also due a change of default behavior (external HTTP insecure URLs are now blocked by default), it makes sense to increase the minor version.
+  This is not just a bugfix as it contains three features that **cause a change of default behavior** (external HTTP insecure URLs are now blocked by default):
+  your builds may fail when using this new Maven release, if you use now blocked repositories. Please check and eventually fix before upgrading.
   
   - Why not 3.7.0?\
   Apache Maven 3.7.0 has been advertised in the past that it would be the first release where you could optionally activate the build/consumer feature:
   the version containing this feature has been renamed to 4.0.0.
   Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.
+
+## How to fix when I get a HTTP repository blocked?
+
+  If the repository is defined in your `pom.xml`, please fix it in your source code.
+
+  If the repository is defined in one of your dependencies POM, you'll get a message like:
+
+```
+[ERROR] Failed to execute goal on project test: Could not resolve dependencies for project xxx: Failed to collect dependencies at my.test:dependency:version -> my.test.transitive:transitive:version: Failed to read artifact descriptor for my.test.transitive:transitive:jar:version: Could not transfer artifact my.test.transitive:transitive:pom:version from/to maven-default-http-blocker (http://0.0.0.0/): Blocked mirror for repositories: [blocked-repository-id (http://blocked.repository.org, default, releases+snapshots)]
+
+```
+
+  Options to fix are:
+
+  - upgrade the dependency version to a newer version that replaced the obsolete HTTP repository URL with a HTTPS one,
+
+  - keep the dependency version but [define a mirror in your settings](/guides/mini/guide-mirror-settings.html).
 
 ## The detailed issue list[](#Details)
 
