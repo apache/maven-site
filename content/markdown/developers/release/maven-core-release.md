@@ -19,9 +19,9 @@ under the License.
 -->
 Maven differs slightly in its release process due to several extra steps.
 
-The goal is to commit candidate release to svn tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Then once the vote passed, svn move to <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
+The goal is to commit candidate release to svn `dev` tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Then once the vote passed, svn move to `release` <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
 
-The tree directory is:
+The `release` tree directory to use as a model for `dev` staging is:
 
 - https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/binaries
 - https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/source (notice: singular...)
@@ -95,7 +95,7 @@ This will publish the Maven core site in [/ref/3-LATEST](/ref/3-LATEST).
 
 ### Complete the release
 
-After a succesful vote you should do the following steps to finish the release.
+After a successful vote you should do the following steps to finish the release.
 
 #### Add New Version to ASF Distribution Directory
 
