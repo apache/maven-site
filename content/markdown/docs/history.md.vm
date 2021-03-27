@@ -65,10 +65,10 @@ Date format is: YYYY-MM-DD
 
 <h3><a name="Maven_31">Maven 3.1+</a></h3>
 <table>
-<tr><td>Release Date</td>
-<td>Version</td>
-<td>Required Java Version</td>
-<td>Links</td>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
 </tr>
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
@@ -90,7 +90,7 @@ Date format is: YYYY-MM-DD
 #release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
 #release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
 #release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
-#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "17" )
+#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "3" )
 #release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" "" "" )
 #release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" "" "" )
 
@@ -103,14 +103,14 @@ New plugin releases will require Maven 3.1 or later.
 The following information is made available for reference.</p>
 
 <table>
-<tr><td>Release Date</td>
-<td>Version</td>
-<td>Required Java Version</td>
-<td>Links</td>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
 </tr>
 
 
-#release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" "" "" )
+#release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" "Java 5" "14" )
 #release( "2012-01-20" "3.0.4" "users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E" "" "" "" )
 #release( "2011-03-04" "3.0.3" "announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E" "" "" "" )
 #release( "2011-01-12" "3.0.2" "announce/201101.mbox/%3C4D2E1D75.6090008%40apache.org%3E" "" "" "" )
@@ -131,10 +131,10 @@ The following information is made available for reference.</p>
 <p>Maven 2.x has now reached its <a href="../maven-2.x-eol.html">end of life</a>.
   The following <a href="/archives/maven-2.x/index.html">Maven 2.x specific documentation</a> is archived for reference.</p>
 <table>
-<tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td></td><td>
-<b><a href="../maven-2.x-eol.html">EoL notes</a>,
-<a href="${archive}announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E">announce</a></b>
-</td>
+<tr><th>2014-02-18</th><th>End of Life</th><th></th><th>
+<a href="../maven-2.x-eol.html">EoL notes</a>,
+<a href="${archive}announce/201402.mbox/%3CCA%2BnPnMwcnChz2RUgsWAF4VpPvsycXrak-4DDpQ6u9Cs2xiCCaA%40mail.gmail.com%3E">announce</a>
+</th>
 </tr>
 
 #release( "2009-11-08" "2.2.1" "announce/200908.mbox/%3C4A81E6CF.605%40apache.org%3E" "" "Java 5" "2" )
@@ -166,9 +166,9 @@ The following information is made available for reference.</p>
 <tr><td>$date</td><td>$version</td><td><a href="http://jakarta.apache.org/site/news/$page">announce</a></td></tr>
 #end
 <table>
-<tr><td><b>2014-02-18</b></td><td><b>End of Life</b></td><td>
-<b><a href="../maven-1.x-eol.html">EoL announce</a></b>
-</td></tr>
+<tr><th>2014-02-18</th><th>End of Life</th><th>
+<a href="../maven-1.x-eol.html">EoL announce</a>
+</th></tr>
 #announce( "2007-06-25" "1.1" "announce/200706.mbox/%3C262c6c680706250248m46d1b285i1792a19fb7c2b87e%40mail.gmail.com%3E" )
 #announce( "2007-05-12" "1.1-RC-1" "announce/200705.mbox/%3C262c6c680705120121i5a2c1372v1a2824a4f22e496%40mail.gmail.com%3E" )
 <tr><td>2006-08-01</td><td>1.1-beta-3</td><td><a href="/maven-1.x/news.html">announce</a></td></tr>
