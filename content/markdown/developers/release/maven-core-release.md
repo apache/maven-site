@@ -19,12 +19,28 @@ under the License.
 -->
 Maven differs slightly in its release process due to several extra steps.
 
-The goal is to commit candidate release to svn `dev` tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Then once the vote passed, svn move to `release` <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
+The goal is to commit candidate release to svn `dev` tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Once the vote has passed, svn move to `release` <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
 
-The `release` tree directory to use as a model for `dev` staging is:
+The tree directory is:
 
-- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/binaries
-- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/source (notice: singular...)
+```
+https://dist.apache.org/repos/dist/dev/maven/maven-3/
+  `-- $VERSION/
+      |-- binaries/
+      |   |-- apache-maven-$VERSION-bin.tar.gz
+      |   |-- apache-maven-$VERSION-bin.tar.gz.asc
+      |   |-- apache-maven-$VERSION-bin.tar.gz.sha512
+      |   |-- apache-maven-$VERSION-bin.zip
+      |   |-- apache-maven-$VERSION-bin.zip.asc
+      |   `-- apache-maven-$VERSION-bin.zip.sha512
+      `-- source/ (notice: singular...)
+          |-- apache-maven-$VERSION-src.tar.gz
+          |-- apache-maven-$VERSION-src.tar.gz.asc
+          |-- apache-maven-$VERSION-src.tar.gz.sha512
+          |-- apache-maven-$VERSION-src.zip
+          |-- apache-maven-$VERSION-src.zip.asc
+          `-- apache-maven-$VERSION-src.zip.sha512
+```
 
 Note that the policy for failed releases is to move forward with a new
 version. The tag that produced the failed released is left in place for
