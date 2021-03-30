@@ -20,11 +20,11 @@
  http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
-# Release Notes &#x2013; Maven 3.8.0
+# Release Notes &#x2013; Maven 3.8.1
 
-The Apache Maven team would like to announce the release of Maven 3.8.0.
+The Apache Maven team would like to announce the release of Maven 3.8.1.
 
-Maven 3.8.0 is [available for download][0].
+Maven 3.8.1 is [available for download][0].
 
 Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting, and documentation from a central place.
 
@@ -34,7 +34,7 @@ If you have any questions, please consult:
 
 - the web site: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
-- the reference documentation: [https://maven.apache.org/ref/3.8.0/](/ref/3.8.0/)
+- the reference documentation: [https://maven.apache.org/ref/3.8.1/](/ref/3.8.1/)
 
 ## Overview about the changes 
 
@@ -71,7 +71,7 @@ This release covers two CVEs:
 
   Apache HttpClient is a transitive dependency of Maven Resolver via Maven Wagon, so we've updated those versions as part of this release.
   
-## Why does this version have the value 3.8.0?
+## Why does this version have the value 3.8.1?
 
   - Why not 3.6.4?\
   This is not just a bugfix as it contains three features that **cause a change of default behavior** (external HTTP insecure URLs are now blocked by default):
@@ -81,6 +81,11 @@ This release covers two CVEs:
   Apache Maven 3.7.0 has been advertised in the past that it would be the first release where you could optionally activate the build/consumer feature:
   the version containing this feature has been renamed to 4.0.0.
   Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.
+  
+  - Why not 3.8.0?\
+  With every release there's a 72h+ voting period. During the vote of 3.8.0 a bug was discovered, one that was important enough to cancel the vote.
+  With Maven we burn versions, to ensure we're always talking about the same "version". This way there will be never confusion about which Maven 3.8.0 one was using.
+  
 
 ## How to fix when I get a HTTP repository blocked?
 
@@ -101,6 +106,9 @@ This release covers two CVEs:
 
 ## The detailed issue list[](#Details)
 
+Bug
+    [MNG-7128] - improve error message when blocked repository defined in build POM
+	
 New Feature
 
     [MNG-7116] - Add support for mirror selector on external:http:*
