@@ -122,7 +122,8 @@ under the License.
           <item name="Generating Sources" href="/guides/mini/guide-generating-sources.html" />
           <item name="Working with Manifests" href="/guides/mini/guide-manifest.html" />
           <item name="Maven Classloading" href="/guides/mini/guide-maven-classloading.html" />
-          <item name="Using Modules" href="/guides/mini/guide-multiple-modules.html" />
+          <item name="Using Modules (Maven 3)" href="/guides/mini/guide-multiple-modules.html" />
+          <item name="Using Modules (Maven 4)" href="/guides/mini/guide-multiple-modules-4.html" />
           <item name="Using Release Plugin" href="/guides/mini/guide-releasing.html" />
           <item name="Using Ant" href="/guides/mini/guide-using-ant.html" />
           <item name="Using Modello" href="/guides/mini/guide-using-modello.html" />
