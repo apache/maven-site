@@ -106,6 +106,7 @@ This release covers two CVEs:
 ## The detailed issue list[](#Details)
 
 Bug
+
     [MNG-7128] - improve error message when blocked repository defined in build POM
 	
 New Feature
