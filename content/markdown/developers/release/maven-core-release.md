@@ -75,26 +75,14 @@ To produce a final release, the same process as for standard projects is followe
 
 Below describes the additional steps that need to be taken at the points where the website are updated in those instructions.
 
-#### Update the DOAP Information
-
-Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the new release.
-
-#### Update the Release Notes and Web Site
+#### Prepare the Release Notes
 
 Checkout Maven site source <https://github.com/apache/maven-site.git>.
 
-Note that release notes can be created and checked in, but other changes should not be checked in as it can be deployed 'live' at any time.
-
-- For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableReleaseDate` properties in `pom.xml`
-
-Next, create the release notes:
+Create the release notes:
 
 - create `content/markdown/docs/$version`
 - create `content/markdowndocs/$version/release-notes.md` (see other versions for an example)
-
-Next, update release history `content/markdown/docs/history.md.vm`.
-
-Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to [/ref/](/ref).
 
 #### Stage the Latest Documentation
 
@@ -121,6 +109,20 @@ moved to the release svnpubsub tree:
 ```
 svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven Distribution Archives"
 ```
+
+#### Update the DOAP Information
+
+Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the new release.
+
+#### Update the Web Site
+
+Checkout Maven site source <https://github.com/apache/maven-site.git>.
+
+For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableReleaseDate` properties in `pom.xml`
+
+Next, update release history `content/markdown/docs/history.md.vm`.
+
+Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to [/ref/](/ref).
 
 #### Deploy the Latest Documentation to Target Versioned Location
 
