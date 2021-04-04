@@ -73,7 +73,8 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "Java 7" "13" )
+#release( "2021-04-04" "3.8.1" "" "true" "Java 7" "14" )
+#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "" "" )
 #release( "2019-08-27" "3.6.2" "announce/201909.mbox/%3CCACcefgc8DBFwq5vQ7EuZNGSeBxemz6Hd_2n%3DMV9T%3DpYgdUM5EA%40mail.gmail.com%3E" "" "" "" )
 #release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "" "" "" )
 #release( "2018-10-24" "3.6.0" "announce/201811.mbox/%3C20181101115259.168F4187BA%40minotaur.apache.org%3E" "" "" "" )
