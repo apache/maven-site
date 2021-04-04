@@ -82,7 +82,7 @@ Checkout Maven site source <https://github.com/apache/maven-site.git>.
 Create the release notes:
 
 - create `content/markdown/docs/$version`
-- create `content/markdowndocs/$version/release-notes.md` (see other versions for an example)
+- create `content/markdown/docs/$version/release-notes.md` (see other versions for an example)
 
 #### Stage the Latest Documentation
 
@@ -107,7 +107,7 @@ In addition to promoting the repository, the release archives should be
 moved to the release svnpubsub tree:
 
 ```
-svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven Distribution Archives"
+svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven $VERSION Distribution Archives"
 ```
 
 #### Update the DOAP Information
@@ -131,7 +131,7 @@ The reference documentation for Maven core source code references and API docs h
 This consists in copying in website svn tree the staging /ref/3-LATEST directory to final /ref/`$VERSION`.
 
 ```
-svn cp https://svn.apache.org/repos/asf/maven/website/components/ref/3-LATEST https://svn.apache.org/repos/asf/maven/website/components/ref/$VERSION
+svn cp https://svn.apache.org/repos/asf/maven/website/components/ref/3-LATEST https://svn.apache.org/repos/asf/maven/website/components/ref/$VERSION -m "Maven $VERSION released"
 ```
 
 ### Information on `/ref/current` mechanism
@@ -146,7 +146,7 @@ Commit your changes and then [deploy the main Maven site](../website/deploy-mave
 
 #### Remove Old Versions from ASF Distribution Directory
 
-Next, any superceded releases should be removed from the above locations (after confirming that they exist in /www/archive.apache.org/dist/maven).
+Next, any superseded releases should be removed from the above locations (after confirming that they exist in /www/archive.apache.org/dist/maven).
 
 #### Proceed with Announcement
 
