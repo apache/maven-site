@@ -823,7 +823,9 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Following project.-properties are reserved for Maven in will become elements in a future POM definition. -->
+    <!-- Don't start your own properties properties with project. -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   ...
