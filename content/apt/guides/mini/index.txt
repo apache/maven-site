@@ -23,10 +23,6 @@
 
  * {{{$prefix/guide-configuring-maven.html}Configuring Maven}}
 
- * {{{$prefix/guide-mirror-settings.html}Mirror Settings}}
-
- * {{{$prefix/guide-deployment-security-settings.html}Deployment and Security Settings}}
-
  * {{{$prefix/guide-generating-sources.html}Generating Sources}}
 
  * {{{$prefix/guide-manifest.html}Working with Manifests}}
@@ -34,10 +30,6 @@
  * {{{$prefix/guide-maven-classloading.html}Maven Classloading}}
 
  * {{{$prefix/guide-multiple-modules.html}Using Multiple Modules in a Build}}
-
- * {{{$prefix/guide-multiple-repositories.html}Using Multiple Repositories}}
-
- * {{{$prefix/guide-proxies.html}Using Proxies}}
 
  * {{{$prefix/guide-releasing.html}Using the Release Plugin}}
 
