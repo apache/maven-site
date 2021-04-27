@@ -311,6 +311,10 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 mvn groupId:artifactId:goal -P !profile-1,!profile-2,!?profile-3
 +---+
+  or
++---+
+mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
++---+
 
   This can be used to deactivate profiles marked as activeByDefault or profiles that would 
   otherwise be activated through their activation config.
