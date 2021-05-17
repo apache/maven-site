@@ -31,17 +31,17 @@ settings could be defined with the value `-Xms256m -Xmx512m`.
 Located in USER_HOME/.m2 the settings files is designed to contain any
 configuration for Maven usage across projects.
 
-## `.mvn` folder:
+## `.mvn` directory:
 
 Located within the project's top level directory, the files `maven.config`, `jvm.config`, and `extensions.xml`
 contain project specific configuration for running Maven.
 
-This folder is part of the project and may be checked in into your version control.
+This directory is part of the project and may be checked in into your version control.
 
 ### `.mvn/extensions.xml` file:
 
 The old way (up to Maven 3.2.5) was to create a jar (must be shaded if you have other dependencies) which contains the extension and put 
-it manually into the `${MAVEN_HOME}/lib/ext` folder. This means you had to change the Maven installation. The consequence was that everyone 
+it manually into the `${MAVEN_HOME}/lib/ext` directory. This means you had to change the Maven installation. The consequence was that everyone
 who likes to use this needed to change it’s installation and makes the on-boarding for a developer much more inconvenient. The other 
 option was to give the path to the jar on command line via `mvn -Dmaven.ext.class.path=extension.jar`. This has the drawback giving those 
 options to your Maven build every time you are calling Maven. Not very convenient as well.
@@ -70,7 +70,7 @@ configuration options for the `mvn` command line.
 
 For example things like `-T3 -U --fail-at-end`. So you only have to call Maven just by using `mvn 
 clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. The 
-`${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` folder; also works if in the root of a multi module build. 
+`${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` directory; also works if in the root of a multi module build.
 
 ### `.mvn/jvm.config` file:
 
