@@ -34,6 +34,9 @@ Configuring for Reproducible Builds
  independently-verifiable path from source to binary code. A build is <<reproducible>> if given the same source code,
  build environment and build instructions, any party can recreate <<bit-by-bit>> identical copies of all specified artifacts.
 
+ {{{https://github.com/jvm-repo-rebuild/reproducible-central}Reproducible Central}} lists projects releases that
+ have been checked as reproducible by rebuilding independently from the reference build published in Central Repository.
+
 * How do I configure my Maven build?
 
  There is no Maven version prerequisite. Everything happens at plugin level:
@@ -53,22 +56,22 @@ Configuring for Reproducible Builds
 
  You have the basics configured. The output should be reproducible now.
  
-* How to test and fix my Maven build reproducibility?
+* How to test my Maven build reproducibility?
 
- Using {{{https://github.com/apache/maven-artifact-plugin}<<<maven-artifact-plugin>>>'s <<<buildinfo>>> goal}},
+ Using {{{/plugins/maven-artifact-plugin/buildinfo-mojo.html}<<<maven-artifact-plugin>>>'s <<<buildinfo>>> goal}},
  you can check that the second build of your project produce the same output than an initial build:
 
- [[1]] build and install your project: <<<mvn clean install -e -DskipTests>>> (don't hesitate to customize arguments to better match your project)
+ [[1]] build and <<<install>>> your project: <<<mvn clean install -e -DskipTests>>> (don't hesitate to customize arguments to better match your project)
 
- [[2]] rebuild (without installing) and check against the previous install: <<<mvn clean verify -e -DskipTests artifact:buildinfo -Dreference.repo=central>>>
+ [[2]] rebuild (<<<verify>>> only, without installing) and check against the previous install: <<<mvn clean verify -e -DskipTests artifact:buildinfo -Dreference.repo=central>>>
 
  []
 
- The <<<buildinfo>>> goal in the second run will calculate fingerprints for the second build output, then compare against reference build as it was installed in the first run and display comparison result.
+* How to fix my Maven build reproducibility?
 
- If something is still not reproducible:
+ If something is still not reproducible after initial setup:
  
- [[1]] Use {{{https://diffoscope.org/}diffoscope}} to find the unstable output. The <<<artifact:buildinfo>>> goal proposes a command with path to files: just copy/paste to launch.
+ [[1]] Use {{{https://diffoscope.org/}diffoscope}} to find the unstable output between builds. The <<<artifact:buildinfo>>> goal proposes a command with path to files: just copy/paste to launch.
   
  [[2]] Find the plugin that generated this output.
 
@@ -77,7 +80,9 @@ Configuring for Reproducible Builds
 
  []
 
- <<Notice>>: Reproducible Builds for Maven:
+* More Details
+
+ Reproducible Builds for Maven:
  
  * Require <<no version ranges>> in dependencies,
 
@@ -88,12 +93,6 @@ Configuring for Reproducible Builds
  []
 
  For detailed explanations, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318}Maven "Reproducible/Verifiable Builds" Wiki page}}.
-
-* How Many Projects are Reproducible?
-
- You can have a look at {{{https://github.com/jvm-repo-rebuild/reproducible-central}Reproducible Central}} to see which projects releases
- have been checked as reproducible by rebuilding independently from the reference build published in Central Repository.
- You can also check for yourself that you can rebuild locally and get the same result.
 
 * FAQ
 
