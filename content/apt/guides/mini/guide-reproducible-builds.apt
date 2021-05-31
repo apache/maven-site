@@ -49,8 +49,6 @@ Configuring for Reproducible Builds
    </properties>
 +--------+
 
- [[3]] Configure <<<maven-javadoc-plugin>>> with option <<<notimestamp>>> set to <<<true>>> to avoid timestamps in generated files.
-
  []
 
  You have the basics configured. The output should be reproducible now.
