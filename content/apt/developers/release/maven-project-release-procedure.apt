@@ -178,7 +178,11 @@ I will promote the artifacts to the central repo.
   <<<target/checkout/target/>>> directory created during <<<mvn release:perform>>> step.
   Currently this requires to be in maven-pmc group (see {{{https://issues.apache.org/jira/browse/INFRA-5945}INFRA-5945}}).
   If you are not a PMC member, drop a line to <private@maven.apache.org> and ask them to do this step (and the next one) for you: the PMC member will
-  get the source release bundle and its signature from Nexus staging repository and will create sha512 checksum file by hand.
+  get the source release bundle and its signature from Nexus staging repository and will create sha512 checksum file by hand, for example using shell:
+
+--------
+for f in *.zip ; do echo -n $(sha512sum $f | cut -c -128) > $f.sha512 ; done
+--------
 
   For example:
 
