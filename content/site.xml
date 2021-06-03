@@ -132,7 +132,6 @@ under the License.
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html" />
           <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
           <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
-          <item name="Building JDK 1.4 Projects Using JDK 1.5" href="/guides/mini/guide-building-jdk14-on-jdk15.html" />
           <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
