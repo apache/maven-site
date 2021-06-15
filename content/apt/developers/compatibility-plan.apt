@@ -1,5 +1,5 @@
  ------
- Maven Compatibility Plan
+ Maven Plugins Compatibility Plan
  ------
  Hervé Boutemy
  ------
@@ -26,25 +26,25 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Maven Compatibility Plan
+Maven Plugins Compatibility Plan
 
 * Scope
 
   This page describes the plan on:
 
-  [[1]] minimum <<Java>> runtime prerequisite for Maven components and plugins,
+  [[1]] minimum <<Java>> runtime prerequisite for Maven plugins, which can be extended to shared components,
 
   [[2]] minimum <<Maven>> runtime prerequisite for plugins.
 
   []
 
-  Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
+  Current minimum runtime prerequisites for LATEST plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Maven Plan
 
   * Until 2012, Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
 
-  * Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.0
+  * Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.x.y
 
   * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}Technical details}}
 
