@@ -30,7 +30,7 @@ Maven Plugins Compatibility Plan
 
 * Scope
 
-  This page describes the plan on:
+  This page describes the system requirements plan, which consists of:
 
   [[1]] minimum <<Java>> runtime prerequisite for Maven plugins, which can be extended to shared components,
 
@@ -38,7 +38,9 @@ Maven Plugins Compatibility Plan
 
   []
 
-  Current minimum runtime prerequisites for LATEST plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
+  Such requirements are displayed as "System Requirements" in every plugin info report (see {{{/plugins/maven-clean-plugin/plugin-info.html}this example}}).
+
+  Consolidated view for all LATEST plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Maven Plan
 
