@@ -61,9 +61,9 @@ Configuring for Reproducible Builds
  Using {{{/plugins/maven-artifact-plugin/buildinfo-mojo.html}<<<maven-artifact-plugin>>>'s <<<buildinfo>>> goal}},
  you can check that the second build of your project produce the same output than an initial build:
 
- [[1]] build and <<<install>>> your project: <<<mvn clean install -e -DskipTests>>> (don't hesitate to customize arguments to better match your project)
+ [[1]] build and <<<install>>> your project: <<<mvn clean install>>> (don't hesitate to customize arguments to better match your project)
 
- [[2]] rebuild (<<<verify>>> only, without installing) and check against the previous install: <<<mvn clean verify -e -DskipTests artifact:buildinfo -Dreference.repo=central>>>
+ [[2]] rebuild (<<<verify>>> only, without installing) and check against the previous install: <<<mvn clean verify artifact:buildinfo -Dreference.repo=central>>>
 
  []
 
