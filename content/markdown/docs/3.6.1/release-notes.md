@@ -166,17 +166,27 @@ mvn -ntp ... ....
 ```
 
  - There had been an issues like [MNG-6505] and [MNG-6059] related to the construction of
-URL's etc. within `distributionManagement` and `scm` part in the pom for multi module
+URL's etc. within `project`, `distributionManagement` and `scm` part in the pom for multi module
 builds like this:
 
-
 ```
-<scm child.scm.connection.inherit.append.path="true"
-     child.scm.developerConnection.inherit.append.path="true"
-     child.scm.url.inherit.append.path="true" />
-<distributionManagement>
-   <site child.site.url.inherit.append.path="true" />
- </distributionManagement>
+<project child.project.url.inherit.append.path="false">
+  <url>...</url>
+
+  <scm child.scm.connection.inherit.append.path="false"
+       child.scm.developerConnection.inherit.append.path="false"
+       child.scm.url.inherit.append.path="false">
+    <connection>...</connection>
+    <developerConnection>...</developerConnection>
+    <url>...</url>
+  </scm>
+
+  <distributionManagement>
+    <site child.site.url.inherit.append.path="false">
+      <url>...</url>
+    </site>
+  </distributionManagement>
+</project>
 ```
 
 Detailed explanations can be found in [Inheritance Assembly][inheritance-assembly] and in [MNG-6059]
