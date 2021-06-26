@@ -22,7 +22,7 @@ and adding the `bin` folder with the `mvn` command to the `PATH`.
 
 Detailed steps are:
 
-* Ensure `JAVA_HOME` environment variable is set and points to your JDK installation
+* Have a JDK installation on your system. Either set the `JAVA_HOME` environment variable pointing to your JDK installation or have the `java` executable on your `PATH`.
 
 * Extract distribution archive in any directory 
 
