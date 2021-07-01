@@ -51,7 +51,6 @@
       <item name="Getting Help" ref="/users/getting-help.html" />
       <item name="Issue Management" ref="/issue-management.html" />
       <item name="Source Repository" ref="/scm.html" />
-      <item name="CI Management" ref="/ci-management.html"/>
     </item>
 
     <!-- Generic Documentation -->

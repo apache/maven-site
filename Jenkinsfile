@@ -33,7 +33,7 @@
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn -U clean site"
+                    sh "mvn -Ppdf -U clean site"
                 }
             }
         }
@@ -48,7 +48,7 @@
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn -U clean site-deploy"
+                    sh "mvn -Ppdf -U clean site-deploy"
                 }
             }
         }
