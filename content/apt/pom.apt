@@ -1443,31 +1443,29 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   Between build <<<executions>>> and reporting <<<reportSets>>>, it should be clear now as to why they exist.
   In the simplest sense, they drill down in configuration. The POM must have a way not only to
-  configure plugins, but they also must configure individual goals of those plugins. That is where these
+  configure plugins, but must also configure the goals of those plugins. That is where these
   elements come in, giving the POM ultimate granularity in control of its build destiny.
 
 {More Project Information}
 
-  Although the above information is enough to get a firm grasp on POM authoring, there are far more
-  elements to make developer's live easier. Many of these elements are related to site generation,
-  but like all POM declarations, they may be used for anything, depending upon how certain plugins use
-  it. The following are the simplest elements:
+  Several elements do not affect the build, but rather document the project for
+  the convenience of developers. Many of these elements are used to fill in project
+  details when generating the project's web site. However, like all POM declarations,
+  plugins can use them for anything. The following are the simplest elements:
 
   * <<name>>:
   Projects tend to have conversational names, beyond the <<<artifactId>>>. The Sun engineers did not
   refer to their project as "java-1.5", but rather just called it "Tiger". Here is where to set that value.
 
   * <<description>>:
-  Description of a project is always good. Although this should not replace formal documentation,
+  A short, human readable description of the project. Although this should not replace formal documentation,
   a quick comment to any readers of the POM is always helpful.
 
   * <<url>>:
-  The URL, like the name, is not required. This is a nice gesture for projects users, however, so
-  that they know where the project lives.
+  The project's home page.
 
   * <<inceptionYear>>:
-  This is another good documentation point. It will at least help you remember where you have spent
-  the last few years of your life.
+  The year the project was first created. 
 
 * {Licenses}
 
