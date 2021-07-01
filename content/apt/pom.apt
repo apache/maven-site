@@ -1483,14 +1483,11 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 +-------------------------+
 
   Licenses are legal documents defining how and when a project (or parts of a project) may be used.
-  Note that a project should list only licenses that may apply directly to this project, and not list
-  licenses that apply to this project's dependencies. Maven currently does little with these documents
-  other than displays them on generated sites. However, there is talk of flexing for different types
-  of licenses, forcing users to accept license agreements for certain types of (non open source)
-  projects.
+  A project should list licenses that apply directly to this project, and not list
+  licenses that apply to the project's dependencies.
 
   * <<name>>, <<url>> and <<comments>>:
-  are self explanatory, and have been encountered before in other capacities.
+  are self explanatory, and have been encountered before in other contexts.
   Using an {{{https://spdx.org/licenses/}SPDX identifier}} as the license <<name>> is recommended.
   The fourth license element is:
 
