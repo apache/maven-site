@@ -99,7 +99,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.9.1</version>
+          <version>3.10.0-SNAPSHOT</version>
           <configuration>
             <siteDirectory>${project.basedir}/content</siteDirectory>
             <skipDeploy>true</skipDeploy><!-- don't deploy site with maven-site-plugin -->
@@ -197,6 +197,7 @@
               </rules>
             </configuration>
           </execution>
+<!--
           <execution>
             <id>check-site-inheritance</id>
             <goals>
@@ -207,7 +208,7 @@
               <rules>
                 <requireFilesExist>
                   <message>Generated site should have inherited the correct skin from the parent</message>
-                  <!-- check assumes you've run with "clean" -->
+                  &lt;!&ndash; check assumes you've run with "clean" &ndash;&gt;
                   <files>
                     <file>${project.reporting.outputDirectory}/images/apache-maven-project-2.png</file>
                   </files>
@@ -215,6 +216,7 @@
               </rules>
             </configuration>
           </execution>
+-->
         </executions>
       </plugin>
       <plugin>
