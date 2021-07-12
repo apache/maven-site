@@ -110,7 +110,7 @@ You don't need to use these options in `MAVEN_OPTS` or switch between different 
 
 ### `.mavenrc` file:
 
-Located in USER_HOME/.mavenrc file allows you to define scripts which can set ENV variables and other properties prior to Maven reading the project. This allows users to define variables in either the settings.xml or pom.xml and have them read the property that was dynamically set by the .mavenrc file.
+Located in USER_HOME/.mavenrc this file allows you to define scripts which can set ENV variables and other properties prior to Maven reading the project. This allows users to define variables in either the settings.xml or pom.xml and have them read the property that was dynamically set by the .mavenrc file.
 
 
 ## Other guides
