@@ -357,11 +357,11 @@ public class MyAnimalMojo
       <property>
         <name>propertyName1</name>
         <value>propertyValue1</value>
-      <property>
+      </property>
       <property>
         <name>propertyName2</name>
         <value>propertyValue2</value>
-      <property>
+      </property>
     </myProperties>
   </configuration>
 ...
