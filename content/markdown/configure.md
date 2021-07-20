@@ -80,6 +80,12 @@ Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.project
 
 You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 
+
+### `.mavenrc` file:
+
+Located in `$HOME/.mavenrc` (or `%HOME%\mavenrc_pre.bat` on Windows) this file allows you to define scripts which can set environment variables or system properties prior to Maven building the project. This allows users to define variables in either the settings.xml or pom.xml and have them read the property that was set by the .mavenrc file.
+
+
 ## Other guides
 
 The following guides contain further information to specific configuration aspects:
