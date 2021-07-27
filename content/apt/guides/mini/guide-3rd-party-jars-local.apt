@@ -29,7 +29,7 @@
 
 Guide to installing 3rd party JARs
 
- Although rarely, but sometimes, you will have 3rd party JARs that you need to put in your local repository for use in your
+ Occasionally, you will have 3rd party JARs that you need to put in your local repository for use in your
  builds, since they don't exist in any public repository like {{{https://search.maven.org}Maven Central}}. 
  The JARs must be placed in the local repository in the correct place in order for it to be correctly
  picked up by Apache Maven.
