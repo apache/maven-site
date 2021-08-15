@@ -36,7 +36,7 @@ If you have any questions, please consult:
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.8.2/](/ref/3.8.2/)
 
-## Overview about the changes
+## Overview About the Changes
 
 This release mainly contains fixes and non-invasive backports from Maven 4.0.0-alpha-1.
 
@@ -44,14 +44,13 @@ The full list of changes can be found in our [issue management system][4].
 
 ## Known Issues
 
-- If any of your plugin mojos spawn new threads there might be a change in class loading as a
-  result of the fix for [https://issues.apache.org/jira/browse/MNG-6843][MNG-6843]. See [https://lists.apache.org/thread.html/r0777c9e364f93a609cb4c3da6e634139b9c400166e280856ee25ba72%40%3Cdev.maven.apache.org%3E][discussion]
-  with a possible fix for your plugin mojo as well as a potential general fix in
-  [https://issues.apache.org/jira/browse/MNG-7212][MNG-7212].
-- If any or your projects rely a Maven Core artifacts and your build is perfomed with Maven 3.8.1
+- If any of your plugin mojos spawns new threads there might be a change in class loading as a
+  result of the fix for [MNG-6843][6]. See [discussion][7] with a possible fix for your plugin
+  mojo as well as a potential general fix in [MNG-7212][8].
+- If any or your projects relies on a Maven Core artifacts and your build is perfomed with Maven 3.8.1
   or later a transitive dependency parent of Sisu Plexus/CPI API 1.0 will inject a remote repository
-  over HTTP which will be blocked by default and (might) lead to build failures. See [https://lists.apache.org/thread.html/rda29028b2c8985f3b94e721d3014a948b312fbddf95ffaa4971acc03%40%3Cusers.maven.apache.org%3E][discussion}
-  and [https://issues.apache.org/jira/browse/MNG-7214][MNG-7214] for details.
+  over HTTP which will be blocked by default and (might) lead to build failures. See [discussion][9]
+  and [MNG-7214][10] for details.
 
 ## Complete Release Notes
 
@@ -62,3 +61,8 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12349965
 [5]: ../../docs/history.html
+[6]: https://issues.apache.org/jira/browse/MNG-6843
+[7]: https://lists.apache.org/thread.html/r0777c9e364f93a609cb4c3da6e634139b9c400166e280856ee25ba72%40%3Cdev.maven.apache.org%3E
+[8]: https://issues.apache.org/jira/browse/MNG-7212
+[9]: https://lists.apache.org/thread.html/rda29028b2c8985f3b94e721d3014a948b312fbddf95ffaa4971acc03%40%3Cusers.maven.apache.org%3E
+[10]: https://issues.apache.org/jira/browse/MNG-7214
