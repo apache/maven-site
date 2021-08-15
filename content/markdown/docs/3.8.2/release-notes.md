@@ -42,6 +42,17 @@ This release mainly contains fixes and non-invasive backports from Maven 4.0.0-a
 
 The full list of changes can be found in our [issue management system][4].
 
+## Known Issues
+
+- If any of your plugin mojos spawn new threads there might be a change in class loading as a
+  result of the fix for [https://issues.apache.org/jira/browse/MNG-6843](MNG-6843). See [https://lists.apache.org/thread.html/r0777c9e364f93a609cb4c3da6e634139b9c400166e280856ee25ba72%40%3Cdev.maven.apache.org%3E](discussion)
+  with a possible fix for your plugin mojo as well as a potential general fix in
+  [https://issues.apache.org/jira/browse/MNG-7212](MNG-7212).
+- If any or your projects rely a Maven Core artifacts and your build is perfomed with Maven 3.8.1
+  or later a transitive dependency parent of Sisu Plexus/CPI API 1.0 will inject a remote repository
+  over HTTP which will be blocked by default and (might) lead to build failures. See [https://lists.apache.org/thread.html/rda29028b2c8985f3b94e721d3014a948b312fbddf95ffaa4971acc03%40%3Cusers.maven.apache.org%3E](dicussion)
+  and [https://issues.apache.org/jira/browse/MNG-7214](MNG-7214) for details.
+
 ## Complete Release Notes
 
 See [complete release notes for all versions][5]
