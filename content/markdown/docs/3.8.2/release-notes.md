@@ -51,6 +51,8 @@ The full list of changes can be found in our [issue management system][4].
   or later a transitive dependency parent of Sisu Plexus/CPI API 1.0 will inject a remote repository
   over HTTP which will be blocked by default and (might) lead to build failures. See [discussion][9]
   and [MNG-7214][10] for details.
+- [MNG-7170][11] has caused a regression where non-reactor projects have basedir set and plugins as
+  well as other components make false assumptions. See [discussion][12] and [MNG-7215][13] for details.
 
 ## Complete Release Notes
 
@@ -66,3 +68,6 @@ See [complete release notes for all versions][5]
 [8]: https://issues.apache.org/jira/browse/MNG-7212
 [9]: https://lists.apache.org/thread.html/rda29028b2c8985f3b94e721d3014a948b312fbddf95ffaa4971acc03%40%3Cusers.maven.apache.org%3E
 [10]: https://issues.apache.org/jira/browse/MNG-7214
+[11]: https://issues.apache.org/jira/browse/MNG-7170
+[12]: https://lists.apache.org/thread.html/r226ec816d20c84c532dca5eff5de66028259521c79610e3efc2b0f63%40%3Cdev.maven.apache.org%3E
+[13]: https://issues.apache.org/jira/browse/MNG-7215
