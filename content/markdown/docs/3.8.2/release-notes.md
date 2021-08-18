@@ -53,6 +53,9 @@ The full list of changes can be found in our [issue management system][4].
   and [MNG-7214][10] for details.
 - [MNG-7170][11] has caused a regression where non-reactor projects have basedir set and plugins as
   well as other components make false assumptions. See [discussion][12] and [MNG-7215][13] for details.
+- [MNG-6886][14] has caused a regression where `plexus-cipher` with the `org.sonatype.plexus` group id was
+  globally excluded, but not all affected modules were updated to depend on this dependency directly with
+  the `org.codehaus.plexus` group id. See [discussion][15] for details.
 
 ## Complete Release Notes
 
@@ -71,3 +74,5 @@ See [complete release notes for all versions][5]
 [11]: https://issues.apache.org/jira/browse/MNG-7170
 [12]: https://lists.apache.org/thread.html/r226ec816d20c84c532dca5eff5de66028259521c79610e3efc2b0f63%40%3Cdev.maven.apache.org%3E
 [13]: https://issues.apache.org/jira/browse/MNG-7215
+[14]: https://issues.apache.org/jira/browse/MNG-6886
+[15]: https://lists.apache.org/thread.html/r7f5a62fd35dc6698c8f7097734f7c4acf4bb657d6c721e8a7bc76b8c%40%3Cusers.maven.apache.org%3E
