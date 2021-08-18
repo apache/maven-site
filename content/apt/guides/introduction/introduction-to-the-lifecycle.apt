@@ -52,7 +52,7 @@ Introduction to the Build Lifecycle
 
   There are three built-in build lifecycles: default, clean and site. The <<<default>>> lifecycle handles your project
   deployment, the <<<clean>>> lifecycle handles project cleaning, while the <<<site>>> lifecycle handles the creation of your
-  project's documentation web site.
+  project's web site.
 
 **  {A Build Lifecycle is Made Up of Phases}
 
