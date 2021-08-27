@@ -50,7 +50,7 @@ Maven Git Convention
   [[2]] Make a fork of the official ASF clone from github.com. For
   example, <<<https://github.com/apache/maven-scm>>>.
 
-  [[3]] Make a branch named after your JIRA. This is not <required>,
+  [[3]] Make a branch named after your JIRA ticket. This is not <required>,
   but it makes it easier for Maven committers to keep track of your 
   contribution.
 
