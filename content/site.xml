@@ -73,6 +73,7 @@ under the License.
 
     <menu name="Documentation">
       <item name="Maven Plugins" href="/plugins/index.html" />
+	  <item name="Maven Extensions" href="/extensions/index.html" />
       <item name="Index (category)" href="/guides/index.html" />
 
       <item name="User Centre" href="/users/index.html" collapse="true">
