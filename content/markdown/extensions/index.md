@@ -42,4 +42,4 @@ A number of other projects provide their own Maven extensions. This includes:
 | polyglot       | [Takari](https://github.com/takari/polyglot-maven)             | Polyglot for Maven is a set of extensions that allows the POM model to be written in dialects other than XML. 
 | profiler       | [Jean-Christophe Gay](https://github.com/jcgay/maven-profiler) | A time execution recorder for Maven which log time taken by each mojo in your build lifecycle.
 |                | [Takari](https://github.com/takari/maven-profiler)             | The Tesla profiler is a simple EventSpy implementation that gathers timing information.
-| smart-builder  | [Takari](https://github.com/takari/maven-profiler)             | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
+| smart-builder  | [Takari](https://github.com/takari/takari-smart-builder)       | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
