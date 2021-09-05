@@ -47,7 +47,7 @@ Guide to Testing Staged Releases
 
   The repository configuration for testing a plugin will typically look something like this (it will be provided in the vote email):
 
-----
++----
   ...
   <pluginRepositories>
     <pluginRepository>
@@ -56,7 +56,7 @@ Guide to Testing Staged Releases
     </pluginRepository>
   </pluginRepositories>
   ...
-----
++----
 
   The important thing is that the staged release does not pollute your eventual environment as it may change if the vote fails and the 
   release is made again. This is why clearing the local repository is necessary, but if you are using a repository manager this is also
@@ -111,7 +111,7 @@ Guide to Testing Staged Releases
   If you are using the repository mirroring technique to lock down to the repository manager in your environment, you would add an additional
   mirror to correspond to the additional repository in the POM, such as:
 
-----
++----
   ...
   <mirror>
     <id>staged-releases-mirror</id>
@@ -119,14 +119,14 @@ Guide to Testing Staged Releases
     <mirrorOf>staged-releases</mirrorOf>
   </mirror>
   ...
-----
++----
 
 * Using a Settings Profile
 
   If you regularly test staged releases and want to have a more convenient way to add the repository to a build without
-  modifying your POM, you may add a profile to your POM:
+  modifying your POM, you may add a profile to your <<<~/.m2/settings.xml>>>:
 
-----
++----
   ...
   <profiles>
     <profile>
@@ -139,14 +139,14 @@ Guide to Testing Staged Releases
       </pluginRepositories>
     </profile>
   ...
-----
++----
 
   With this in place, you can activate it by simply changing the plugin version to the one you are testing in the POM as above, then
   run the build with the following command:
 
-----
++----
 mvn verify -Pstaged-releases
-----
++----
 
   Note that the same conditions apply as above about cleaning out the local repository to prevent pollution of your local build
   environment.

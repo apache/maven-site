@@ -49,7 +49,7 @@ Guide to Testing Development Versions of Plugins
 
   The first step is to include this in your project:
 
--------
++-------
 <project>
   ...
   <pluginRepositories>
@@ -60,7 +60,7 @@ Guide to Testing Development Versions of Plugins
   </pluginRepositories>
   ...
 </project>
--------
++-------
 
   After this is included, there are three ways to use the updated versions:
 
@@ -70,26 +70,18 @@ Guide to Testing Development Versions of Plugins
 
     * You can have Maven automatically check for updates on a given interval, for example:
 
--------
++-------
 <project>
   ...
   <pluginRepositories>
     <pluginRepository>
       <id>apache.snapshots</id>
       <url>https://repository.apache.org/snapshots/</url>
-      <!-- The releases element here is due to an issue in Maven 2.0 that will be
-           fixed in future releases. This should be able to be disabled altogether. -->
-      <releases>
-        <updatePolicy>daily</updatePolicy>
-      </releases>
-      <snapshots>
-        <updatePolicy>daily</updatePolicy>
-      </snapshots>
     </pluginRepository>
   </pluginRepositories>
   ...
 </project>
--------
++-------
 
   <Note:> These last two techniques mean that <every> plugin will be updated to the latest snapshot version.
 
