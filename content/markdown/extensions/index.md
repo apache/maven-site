@@ -36,10 +36,11 @@ under the License.
 
 A number of other projects provide their own Maven extensions. This includes:
 
-| Extension      | Maintainer                                                     | Description 
-|----------------|----------------------------------------------------------------|-----------
-| notifier       | [Jean-Christophe Gay](https://github.com/jcgay/maven-notifier) | A status notification will be send at the end of a Maven build.
-| polyglot       | [Takari](https://github.com/takari/polyglot-maven)             | Polyglot for Maven is a set of extensions that allows the POM model to be written in dialects other than XML. 
-| profiler       | [Jean-Christophe Gay](https://github.com/jcgay/maven-profiler) | A time execution recorder for Maven which log time taken by each mojo in your build lifecycle.
-|                | [Takari](https://github.com/takari/maven-profiler)             | The Tesla profiler is a simple EventSpy implementation that gathers timing information.
-| smart-builder  | [Takari](https://github.com/takari/takari-smart-builder)       | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
+| Extension         | Maintainer                                                         | Description 
+|-------------------|--------------------------------------------------------------------|-----------
+| Gradle Enterprise | [Gradle Inc.](https://docs.gradle.com/enterprise/maven-extension/) | Captures Maven build insights that can be viewed for free on [scans.gradle.com](https://scans.gradle.com/). Provides local and remote build caching and distributed test execution for Maven builds connected to a Gradle Enterprise installation.
+| notifier          | [Jean-Christophe Gay](https://github.com/jcgay/maven-notifier)     | A status notification will be send at the end of a Maven build.
+| polyglot          | [Takari](https://github.com/takari/polyglot-maven)                 | Polyglot for Maven is a set of extensions that allows the POM model to be written in dialects other than XML. 
+| profiler          | [Jean-Christophe Gay](https://github.com/jcgay/maven-profiler)     | A time execution recorder for Maven which log time taken by each mojo in your build lifecycle.
+|                   | [Takari](https://github.com/takari/maven-profiler)                 | The Tesla profiler is a simple EventSpy implementation that gathers timing information.
+| smart-builder     | [Takari](https://github.com/takari/takari-smart-builder)           | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
