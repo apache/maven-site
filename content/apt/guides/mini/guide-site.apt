@@ -157,7 +157,7 @@ mvn site-deploy
 
   Deploying the site is done in 2 steps:
   
-  [[1]] staging the content by using the <<<site>>> phase of the site lifecycle followed by <<<site:stage>>>: <<<mvn site site-stage>>>
+  [[1]] staging the content by using the <<<site>>> phase of the site lifecycle followed by <<<site:stage>>>: <<<mvn site site:stage>>>
 
   [[2]] publishing the staged site to the SCM: <<<mvn scm-publish:publish-scm>>>
 
