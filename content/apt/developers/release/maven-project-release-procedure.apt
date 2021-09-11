@@ -197,7 +197,7 @@ wagon/wagon-2.2-source-release.zip.sha512
   will have copied it to the archive.
 
   To check that everything is ok in the dist area, dist-tool-plugin has been written and run once a day to produce
-  {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/}"Check Source Release" and "Check Errors" reports}}.
+  {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/}"Check Source Release" and "Check Errors" reports}}.
 
 * Add the release for next board report
 

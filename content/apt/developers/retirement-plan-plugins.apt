@@ -152,7 +152,7 @@ but has moved to the <Organization> <Project> project.
   [[1]] Put the JIRA project in read-only mode in case of standalone project (own Jira key): apply Maven Retired Project Permissions Scheme.
   (Requires JIRA admin karma: e.g. ask Brian Fox)
 
-  [[1]] Comment the {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool.conf.html}dist-tool configuration}} entry.
+  [[1]] Comment the {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool.conf.html}dist-tool configuration}} entry.
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
   (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
