@@ -43,7 +43,7 @@ Additional Resources
 + [General GitHub documentation](https://help.github.com/)
 + [GitHub pull request documentation](https://help.github.com/send-pull-requests/)
 + [Apache Maven Twitter Account](https://twitter.com/ASFMavenProject)
-+ "#Maven" IRC channel on freenode.org
++ [Slack channel in ASF Workspace](https://infra.apache.org/slack.html)
 
 [jira]: https://issues.apache.org/jira/projects/MNGSITE/
 [license]: https://www.apache.org/licenses/LICENSE-2.0
