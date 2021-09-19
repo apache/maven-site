@@ -63,8 +63,8 @@ How website publication works
  * on every main content source commit ({{{https://github.com/apache/maven-site}maven-site.git}}
    and {{{https://github.com/apache/maven-doxia-site}maven-doxia-site.git}}),
    main content rebuild and publish is triggered through Jenkins jobs (
-   {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-site/}maven-site job}}
-   and {{{https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/}doxia-site job}}),
+   {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/}maven-site job}}
+   and {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/}doxia-site job}}),
    which basically run <<<mvn site-deploy>>> (it can be run locally if CI is off...),
 
  * on every Maven component release, release manager follows "{{{./deploy-component-reference-documentation.html}deploying Maven components reference documentation}}",

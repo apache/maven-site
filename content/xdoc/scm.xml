@@ -173,7 +173,7 @@ repo start master --all</pre>
               <td><a href="https://issues.apache.org/jira/projects/MRESOLVER/">Jira MRESOLVER</a></td>
             </tr>
             <tr>
-              <td><a href="https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/">Apache Maven Distribution Checking Tool</a></td>
+              <td><a href="https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/">Apache Maven Distribution Checking Tool</a></td>
               <td><source><a href="https://gitbox.apache.org/repos/asf/maven-dist-tool.git">https://gitbox.apache.org/repos/asf/maven-dist-tool.git</a></source></td>
               <td><a href="https://github.com/apache/maven-dist-tool/">(GitHub mirror)</a></td>
               <td></td>

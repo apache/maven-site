@@ -40,7 +40,7 @@ Maven Plugins Compatibility Plan
 
   Such requirements are displayed as "System Requirements" in every plugin info report (see {{{/plugins/maven-clean-plugin/plugin-info.html}this example}}).
 
-  Consolidated view for all LATEST plugins release is visible in a {{{https://ci-builds.apache.org/job/Maven/job/dist-tool-plugin/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
+  Consolidated view for all LATEST plugins release is visible in a {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Maven Plan
 
