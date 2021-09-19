@@ -85,8 +85,8 @@ Maven has a number of [Mailing Lists](./mailing-lists.html), and the Maven
 User List is specifically dedicated to answering questions about all
 Maven things.
 
-#### IRC (Internet Relay Chat)
+#### Slack
 
-Log into the `#maven` IRC channel on `irc.freenode.net` with your
-favorite IRC client or [with web IRC chat](https://webchat.freenode.net/).
-
+For people actively contributing to Maven, especially committers, there
+is [the ASF Slack workspace](https://infra.apache.org) available to discuss
+issues, solve problems and build community in real-time.

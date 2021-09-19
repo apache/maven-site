@@ -24,7 +24,7 @@ under the License.
     <title>Welcome to Apache Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
     <author email="jason@takari.io">Jason van Zyl</author>
-    <author email="olamy@apache.org">Olivier Lamy</author>    
+    <author email="olamy@apache.org">Olivier Lamy</author>
   </properties>
   <body>
 
@@ -115,7 +115,7 @@ under the License.
         will answer your questions there, and the answer will be archived for others in the future.
       </p>
       <p>
-        You can also reach the Maven developers on <a href="community.html">IRC</a>.
+        You can also reach the Maven developers on <a href="community.html">Slack</a>.
       </p>
 
       <h3>Apache Software Foundation</h3>
