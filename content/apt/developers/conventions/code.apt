@@ -179,6 +179,28 @@ public class MyMojo
 
  []
 
+** {Java Code Convention - import layouts}
+
+ For consistency reasons, Java imports should be organized as:
+
+ * import <<javax.*>>
+
+ * blank line
+
+ * import <<java.*>>
+
+ * blank line
+
+ * import <<all other imports>>
+
+ * blank line
+
+ * import <<static all other imports>>
+
+ []
+
+ all imports in each group should be sorted alphabetically.
+
 ** {JavaDoc Convention}
 
  TO BE DISCUSSED
