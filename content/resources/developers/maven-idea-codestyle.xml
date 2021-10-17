@@ -68,6 +68,21 @@ under the License.
   <ADDITIONAL_INDENT_OPTIONS fileType="yml">
     <option name="INDENT_SIZE" value="2" />
   </ADDITIONAL_INDENT_OPTIONS>
+  <codeStyleSettings language="Groovy">
+    <option name="BRACE_STYLE" value="2" />
+    <option name="CLASS_BRACE_STYLE" value="2" />
+    <option name="METHOD_BRACE_STYLE" value="2" />
+    <option name="SPACE_WITHIN_METHOD_CALL_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_METHOD_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_IF_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_WHILE_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_FOR_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_TRY_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_CATCH_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_SWITCH_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_SYNCHRONIZED_PARENTHESES" value="true" />
+    <option name="SPACE_WITHIN_ANNOTATION_PARENTHESES" value="true" />
+  </codeStyleSettings>
   <codeStyleSettings language="JAVA">
     <option name="KEEP_FIRST_COLUMN_COMMENT" value="false" />
     <option name="RIGHT_MARGIN" value="120" />
