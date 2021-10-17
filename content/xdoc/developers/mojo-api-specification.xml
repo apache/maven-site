@@ -427,9 +427,7 @@ under the License.
           <td><code>executionStrategy</code></td>
           <td><code>@executionStrategy &lt;strategy&gt;</code></td>
           <td>No</td>
-          <td>Specify the execution strategy. <i>NOTE: Currently supports <b>once-per-session</b>,
-            <b>always</b>.</i>
-          </td>
+          <td>Specify the execution strategy. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>goal</code></td>
@@ -442,7 +440,7 @@ under the License.
           <td><code>inheritByDefault</code></td>
           <td><code>@inheritByDefault &lt;true|false&gt;</code></td>
           <td>No. Default: <code>true</code></td>
-          <td>Specify that the Mojo is inherited.</td>
+          <td>Specify that the Mojo is inherited. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>instantiationStrategy</code></td>
@@ -536,7 +534,7 @@ under the License.
           <td><code>requiresDirectInvocation</code></td>
           <td><code>@requiresDirectInvocation &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
-          <td>Flags this Mojo to be invoke directly.</td>
+          <td>Flags this Mojo to be invoke directly. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>requiresOnline</code></td>
@@ -554,7 +552,7 @@ under the License.
           <td><code>requiresReports</code></td>
           <td><code>@requiresReports &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
-          <td>Flags this Mojo to require reports. Unsupported since Maven 3.0.</td>
+          <td>Flags this Mojo to require reports. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>threadSafe</code></td>
