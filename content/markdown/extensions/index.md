@@ -45,6 +45,8 @@ A number of other projects provide their own Maven extensions. This includes:
 | profiler       | [Jean-Christophe Gay](https://github.com/jcgay/maven-profiler) | A time execution recorder for Maven which log time taken by each mojo in your build lifecycle.
 |                | [Takari](https://github.com/takari/maven-profiler)             | The Tesla profiler is a simple EventSpy implementation that gathers timing information.
 | smart-builder  | [Takari](https://github.com/takari/takari-smart-builder)       | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
+| opentelemetry-maven-extension  | [The OpenTelemetry project](https://github.com/open-telemetry/opentelemetry-java-contrib/tree/main/maven-extension)       | The OpenTelemetry Maven Extension instruments builds to gather execution details as traces for build performance optimization and for troubleshooting. <br/>OpenTelemetry traces can be visualized in open source observability solutions such as [Jaeger Tracing](https://www.jaegertracing.io) as well as in commercial solutions.
+
 
 ### Commercial
 
