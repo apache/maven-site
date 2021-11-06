@@ -1733,7 +1733,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 -----------
 
   * <<tag>>:
-  Specifies the tag that this project lives under. HEAD (meaning, the SCM root) should be the default.
+  Specifies the tag that this project lives under. HEAD (meaning, the SCM root) is the default.
 
   * <<url>>:
   A publicly browsable repository. For example, via ViewCVS.
