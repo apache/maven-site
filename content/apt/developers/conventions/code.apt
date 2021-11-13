@@ -227,7 +227,7 @@ public class MyMojo
 
 ** {POM Code Convention}
 
- The team has {{{https://maven.40175.n5.nabble.com/Proposal-Pom-Code-Style-WAS-svn-commit-r670264-maven-plugins-trunk-maven-site-plugin-pom-xml-td210642.html#a210643}voted}}
+ The team has {{{https://lists.apache.org/thread/h8px5t6f3q59cnkzpj1t02wsoynr3ygk}voted}}
  during the end of June 2008 to follow a specific POM convention to ordering POM elements.
  The consequence of this vote is that the {{{https://maven.apache.org/ref/current/maven-model/maven.html}Maven project descriptor}}
  is <<no more>> considered as the reference for the ordering.
