@@ -68,8 +68,10 @@ Maven Plugins Compatibility Plan
 
     * Java 11 (LTS, 2018) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/JDKUpdates/JDK11u}at OpenJDK}} at least until September 2025
 
+    * see [Java Version Almanach](https://javaalmanac.io/jdk/) for updated JDK releases
+
     []
 
-    see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}} for more details
+    see also {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}} for more details
 
   []
