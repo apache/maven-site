@@ -55,6 +55,7 @@ The following list (alphabetical order) of open source and commercial repository
 and the features provided by these products.
 
 * <a href="https://archiva.apache.org/" target="_blank">Apache Archiva</a> (open source)
+* <a href="https://bytesafe.dev/" target="_blank">Bytesafe</a> (commercial)
 * <a href="https://www.cloudrepo.io" target="_blank">CloudRepo</a> (commercial)
 * <a href="https://www.cloudsmith.io" target="_blank">Cloudsmith Package</a> (commercial)
 * <a href="https://www.dist.cloud" target="_blank">Dist</a> (commercial)
