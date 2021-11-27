@@ -41,3 +41,5 @@ surefire-archives=components/surefire-archives
 surefire=components/surefire
 wagon-archives=components/wagon-archives
 wagon=components/wagon
+wrapper-archives=components/wrapper-archives
+wrapper=components/wrapper
