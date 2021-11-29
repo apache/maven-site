@@ -64,6 +64,11 @@ Subversion Configuration
  After this, select Window \> Preferences, and open up the configuration for Java \> Code
  Style \> Code Formatter. Click on the button labeled Import... and select the file you
  downloaded. Give the style a name, and click OK.
+ 
+ To ensure a consistent package import order in Java files, download 
+ <<<{{{./maven-eclipse.importorder}maven-eclipse.importorder}}>>>, select Window \> Preferences and
+ navigate to Java \> Code Style \> Organize Imports. Click on Import... and select the downloaded
+ file to change the sort order.
 
 Useful software
 
