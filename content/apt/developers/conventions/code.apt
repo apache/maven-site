@@ -156,6 +156,11 @@ public class MyMojo
  After this, select Window \> Preferences, and open up the configuration for Java \> Code
  Style \> Code Formatter. Click on the button labeled Import... and select the file you
  downloaded. Give the style a name, and click OK.
+ 
+ To ensure a package import order consistent with the layout described below, download 
+ <<<{{{../../developers/maven-eclipse.importorder}maven-eclipse.importorder}}>>>, select Window \> Preferences and
+ navigate to Java \> Code Style \> Organize Imports. Click on Import... and select the downloaded
+ file to change the import order.
 
 ** {Java Code Convention}
 
