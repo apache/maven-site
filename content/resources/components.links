@@ -9,6 +9,7 @@ archetypes=components/archetypes
 core-its=components/core-its
 enforcer-archives=components/enforcer-archives
 enforcer=components/enforcer
+extensions-archives=components/extensions-archives
 jxr-archives=components/jxr-archives
 jxr=components/jxr
 maven-eclipse-plugin=components/maven-eclipse-plugin
