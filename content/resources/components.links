@@ -10,6 +10,7 @@ core-its=components/core-its
 enforcer-archives=components/enforcer-archives
 enforcer=components/enforcer
 extensions-archives=components/extensions-archives
+#extensions
 jxr-archives=components/jxr-archives
 jxr=components/jxr
 maven-eclipse-plugin=components/maven-eclipse-plugin
