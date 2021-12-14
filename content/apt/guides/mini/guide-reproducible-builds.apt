@@ -145,7 +145,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
 *----------------------------------------------------------------------------+-------+--------------+ 
-| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.1 | require <<<\<_reproducible\>true\</_reproducible\>>>> as configuration <<<instructions>>> (see {{{https://issues.apache.org/jira/browse/FELIX-6304}FELIX-6304}})
+| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.3 |
 *----------------------------------------------------------------------------+-------+--------------+
 | Eclipse {{{https://www.eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/}Sisu Maven Plugin}} | 0.3.4 |
 *----------------------------------------------------------------------------+-------+--------------+
