@@ -177,7 +177,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 3.0.0        | 2019-06-16 | Allows to share configuration across plugins. | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MTOOLCHAINS}Jira MTOOLCHAINS}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-wrapper-plugin/} <<<wrapper>>>}}           | B          | 3.0.2        | 2021-04-08 | Download and unpack the maven wrapper distribution (works only with Maven 4) | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MWRAPPER}Jira MWRAPPER}}
+| {{{/plugins/maven-wrapper-plugin/} <<<wrapper>>>}}           | B          | 3.1.0        | 2021-12-16 | Download and unpack the maven wrapper distribution (works only with Maven 4) | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MWRAPPER}Jira MWRAPPER}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
   \* <<B>>uild or <<R>>eporting plugin
