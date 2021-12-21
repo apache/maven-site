@@ -26,6 +26,12 @@ This variable contains parameters used to start up the JVM running Maven and
 can be used to supply additional options to it. E.g. JVM memory
 settings could be defined with the value `-Xms256m -Xmx512m`.
 
+## `MAVEN_ARGS` environment variable:
+
+Starting with Maven 4, this variable contains arguments passed to Maven before
+CLI arguments. E.g., options and goals could be defined with the value
+`-B -V checkstyle:checkstyle`.
+
 ## `settings.xml` file:
 
 Located in USER_HOME/.m2 the settings files is designed to contain any
