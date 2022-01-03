@@ -48,9 +48,11 @@ Guide to creating assemblies
     <plugins>
       <plugin>
         <artifactId>maven-assembly-plugin</artifactId>
-        <version>2.5.3</version>
+        <version>3.3.0</version>
         <configuration>
-          <descriptor>src/assembly/dep.xml</descriptor>
+          <descriptors>
+            <descriptor>src/assembly/dep.xml</descriptor>
+          </descriptors>
         </configuration>
         <executions>
           <execution>
