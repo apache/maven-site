@@ -30,6 +30,8 @@ under the License.
   
 | Extension                                      | Version | Release Date | Description                                                                             | Source Repository                                                                                                   | Issue Tracker
 |------------------------------------------------|---------|--------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------|
+|[Build Cache](./maven-build-cache-extension/)   | WIP     | WIP          | Build cache. | [Git](https://gitbox.apache.org/repos/asf/maven-build-cache-extension.git) / [GitHub](https://github.com/apache/maven-build-cache-extension/) | [Jira MBUILDCACHE](https://issues.apache.org/jira/browse/MBUILDCACHE)
+|------------------------------------------------|---------|--------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------|
 |[Enforcer](/enforcer/maven-enforcer-extension/) | 3.0.0   | 2021-07-26   | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | [Git](https://gitbox.apache.org/repos/asf/maven-enforcer.git) / [GitHub](https://github.com/apache/maven-enforcer/) | [Jira MENFORCER](https://issues.apache.org/jira/browse/MENFORCER)
 
 ## Outside The Maven Land
