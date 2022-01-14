@@ -1,3 +1,4 @@
 # links property file for Ant's symlink task in pom.xml:
 # links to components in https://maven.apache.org/components
-maven-caching-extension=../components/extensions/maven-caching-extension
+#maven-build-cache-extension=../components/extensions/maven-build-cache-extension
+maven-build-cache-extension=../components/extensions-archives/maven-build-cache-extension-LATEST
