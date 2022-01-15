@@ -77,7 +77,7 @@ Shared Components
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 | {{{/shared/maven-verifier/} <<<maven-verifier>>>}}                         | 1.7.2        | 2020-05-06        | Used to run Maven builds as part of tests. | {{{https://gitbox.apache.org/repos/asf/maven-verifier.git}Git}} / {{{https://github.com/apache/maven-verifier/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project = MSHARED AND status != Closed AND component = maven-verifier}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
-| {{{/scm/} <<<maven-scm>>>}}                                                | 1.11.2       | 2019-03-16        | Generic API to SCM systems.               | {{{https://gitbox.apache.org/repos/asf/maven-scm.git}Git}} / {{{https://github.com/apache/maven-scm/}GitHub}} | {{{https://issues.apache.org/jira/browse/SCM}JIRA}}
+| {{{/scm/} <<<maven-scm>>>}}                                                | 2.0.0-M1     | 2022-01-08        | Generic API to SCM systems.               | {{{https://gitbox.apache.org/repos/asf/maven-scm.git}Git}} / {{{https://github.com/apache/maven-scm/}GitHub}} | {{{https://issues.apache.org/jira/browse/SCM}JIRA}}
 *----------------------------------------------------------------------------+--------------+-------------------+------------------+------------------------+---------------------+
 
 
