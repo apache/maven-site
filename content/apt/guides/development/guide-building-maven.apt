@@ -31,7 +31,7 @@ Building Maven
 
 * Why would I want to build Maven?
 
-  Building Maven yourself is for one of two reasons:
+  Building Maven (or a plugin, or any component) yourself is for one of two reasons:
 
     * to try out a bleeding edge feature or bugfix (issues can be found in
       {{{/issue-management.html} JIRA}}),
@@ -89,4 +89,4 @@ mvn -DdistributionTargetDir="$HOME/app/maven/apache-maven-SNAPSHOT" install
 mvn test -Prun-its
 +-----+
 
-   Consult {{{/core-its/core-it-suite/}Core IT Suite documentation}} for more options.
+   Consult {{{/core-its/}Core ITs documentation}} for more options.
