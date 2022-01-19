@@ -19,7 +19,17 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The layout is responsible to translate the artifact coordinates into generic URI (path, URL, it depends on context). 
+The layout is responsible to translate the artifact coordinates into generic path, that is later used to construct some
+URI (file path, URL, it depends on context). Obviously, since Maven inception in 2002. the layout evolved as well.
+Due simplicity, we will cover current layout (aka "maven2" or "default"), as since Maven 3.x release, the deprecated
+"Maven1 layout" is not supported anymore.
+
+The original premise of layout was simplicity: from historical perspective, a remote repository was expected to be run
+by some compute with file storage (where artifacts were laid down) and served by a HTTP server, essentially publishing 
+the files on file paths for consumption (mainly for HTTP GET requests). Actually, the reason of layout change between
+Maven1 and Maven2 (the today's "default") was exactly that: Maven1 layout was stressing the underlying file system 
+way too much, it was not scaling in this setup.
+
 The transformation rule is quite simple for that matter:
 
 | Source coordinate | Trasformation | Result example |

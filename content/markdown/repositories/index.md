@@ -26,7 +26,7 @@ and developed since inception of Maven project itself.
 
 Maven addresses artifacts using coordinates, that are most often represented as `groupId`:`artifactId`:`version`, 
 or GAV in short (or informally). The artifact coordinates uniquely describes the artifact you are referring to, but
-does not tells anything about its source (or origin). It is up to Maven to figure out (or you to tell Maven how
+does not tell anything about its source (or origin). It is up to Maven to figure out (or you to tell Maven how
 to figure it out).
 
 Maven in general operates with one local repository and one or more remote repositories.
