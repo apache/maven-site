@@ -32,7 +32,7 @@ Maven to figure out (or you to tell Maven how to figure it out).
 
 While Maven internally uses notion of "artifact" thoroughly (just look at sources!), end user may never hit this name.
 That's due the fact, that while for Maven, "everything is artifact" (internally), the end users actually speak about
-"projects", "parent projects", "dependencies", "plugins", "extensions" and so on.
+"projects", "parent projects", "dependencies", "build plugins", "build extensions" and so on.
 
 ## Artifact properties
 
@@ -46,10 +46,43 @@ The artifacts that Maven (internally) uses has following (among many others, but
 | classifier | The artifact distinguishing classifier |
 | extension  | The artifact extension |
 
-And some more, a bit of special ones:
+And some more, a bit of special one: `baseVersion` that is actually derived from version (or other way around, 
+depends on context): for release artifacts holds same value as `version`, for snapshot artifacts holds "non-timestamped 
+snapshot version". For example, for `version` "1.0-20220119.164608-1" value the `baseVersion` would have value 
+"1.0-SNAPSHOT".
 
-| Name | Description                                                                                                                                                                                                          |
-|------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| type | The "type" of the artifact, implies extension.                                                                                                                                                                       |
-| baseVersion | Is actually derived from version (or other way around, depends on context): for release artifacts same as version, for snapshot artifacts this is always "non stamped snapshot version", for example "1.0-SNAPSHOT". |
+## But where do I set artifact extension?
 
+In short, nowhere. Or maybe "you rarely have to". Maven POM (where you declare your project, parent project,
+dependencies, plugins and other), maps those elements onto artifact coordinates with some simple mapping. In case
+of "project" and "parent project" (aka POMs):
+
+| Project    | Artifact      |
+|------------|---------------|
+| groupId    | -> groupId    |
+| artifactId | -> artifactId |
+| version    | -> version    |
+| classifier | empty         |
+| extension  | "pom"         |
+
+In case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped:
+
+| Plugin     | Artifact      |
+|------------|---------------|
+| groupId    | -> groupId    |
+| artifactId | -> artifactId |
+| version    | -> version    |
+| classifier | empty         |
+| extension  | "jar"         |
+
+And finally, in case of "dependencies", this is the mapping:
+
+| Dependency | Artifact                                 |
+|------------|------------------------------------------|
+| groupId    | -> groupId                               |
+| artifactId | -> artifactId                            |
+| version    | -> version                               |
+| classifier | -> classifier                            |
+| type       | -> type handler provided or same as type |
+
+Here, we need to make a short turn to explain "type" (of a dependency) and how it becomes artifact extension.

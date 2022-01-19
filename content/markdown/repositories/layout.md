@@ -34,12 +34,36 @@ the files on file paths for consumption (mainly for HTTP GET requests). Actually
 Maven1 and Maven2 (the today's "default") was exactly that: Maven1 layout was stressing the underlying file system 
 way too much, it was not scaling in this setup.
 
-The transformation rule is quite simple for that matter:
+The transformation rule is quite simple for that matter: consider artifact properties below:
 
-| Source coordinate | Transformation                                          | Result example |
-|-------------------|---------------------------------------------------------|----------------|
-| Group ID          | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
-| Artifact ID       | none                                                    | `apache-maven` -> `apache-maven` |
-| Version           | none                                                    | `3.8.4` -> `3.8.4` |
+| Name       | Transformation                                          | Result example                           |
+|------------|---------------------------------------------------------|------------------------------------------|
+| groupId    | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
+| artifactId | none | `apache-maven` -> `apache-maven`         |
+| version    | none | `3.8.4` -> `3.8.4`                       |
+| classifier | none | `bin` -> `bin`                           |
+| extension  | none | `tar.gz` -> `tar.gz`                     |
 
+And using these properties transformed as above we can construct following layout (if classifier not present):
 
+```
+${groupId}/${artifactId}/${version}/${artifactId}-${version}.${extension}
+```
+
+or if classifier present:
+
+```
+${groupId}/${artifactId}/${version}/${artifactId}-${version}-${classifier}.${extension}
+```
+
+So the example artifact above:
+
+```
+org.apache.maven:apache-maven:3.8.4:bin:tar.gz
+```
+
+is translated to path:
+
+```
+org/apache/maven/apache-maven/3.8.4/apache-maven-3.8.4-bin.tar.gz
+```
