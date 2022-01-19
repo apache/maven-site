@@ -61,3 +61,8 @@ For artifact files, there are 2 options available:
 
 1. unique SNAPSHOT artifacts, using the same base version,
 2. multiple SNAPSHOT artifacts for one base version, each deployment will have an effective version where `SNAPSHOT` is replaced with `YYYYMMDD.HHMMSS-<counter>`.
+
+## Protocol
+
+Repository can be accessed through many file-oriented protocols, both for read and write: most classical are `file://`, `http://` and `https://` (`GET` and `PUT`).
+Older (now unused) protocols are FTP(S), SCP, SSH, ...
