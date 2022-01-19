@@ -62,8 +62,8 @@ of "project" and "parent project" (aka POMs):
 | groupId    | -> groupId    |
 | artifactId | -> artifactId |
 | version    | -> version    |
-| classifier | empty         |
-| extension  | "pom"         |
+| classifier | -> empty      |
+| extension  | -> "pom"      |
 
 In case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped:
 
@@ -72,17 +72,17 @@ In case of "build plugins" and "build extensions", as they are JARs, this is how
 | groupId    | -> groupId    |
 | artifactId | -> artifactId |
 | version    | -> version    |
-| classifier | empty         |
-| extension  | "jar"         |
+| classifier | -> empty      |
+| extension  | -> "jar"      |
 
 And finally, in case of "dependencies", this is the mapping:
 
-| Dependency | Artifact                                 |
-|------------|------------------------------------------|
-| groupId    | -> groupId                               |
-| artifactId | -> artifactId                            |
-| version    | -> version                               |
-| classifier | -> classifier                            |
-| type       | -> type handler provided or same as type |
+| Dependency | Artifact                                  |
+|------------|-------------------------------------------|
+| groupId    | -> groupId                                |
+| artifactId | -> artifactId                             |
+| version    | -> version                                |
+| classifier | -> classifier                             |
+| type       | -> type handler provided, or same as type |
 
 Here, we need to make a short turn to explain "type" (of a dependency) and how it becomes artifact extension.
