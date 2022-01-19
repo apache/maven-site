@@ -19,5 +19,5 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The local repository is mixed bag, in sense, that it serves two purpose: it "caches" downloaded artifacts from
+The local repository is mixed bag, in sense, that it serves two purposes: it caches downloaded artifacts from
 remote repositories along with locally built and installed ones.
