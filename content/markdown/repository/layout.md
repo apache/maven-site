@@ -66,3 +66,14 @@ For artifact files, there are 2 options available:
 
 Repository can be accessed through many file-oriented protocols, both for read and write: most classical are `file://`, `http://` and `https://` (`GET` and `PUT`).
 Older (now unused) protocols are FTP(S), SCP, SSH, ...
+Older (now generally unused) protocols are FTP(S), SCP, SSH, ...
+
+## Extensions and Classifiers
+
+Obviously, `${groupId}`, `${artifactId}` and `${version}` are defined in `pom.xml`. But what about `${classifier}` and `${extension}`, how are they defined?
+
+At artifact publication time, extensions and classifiers are defined by plugins that create the artifacts and attach them for publication.
+Some plugins provide configuration parameters to be able to override some default values. For example, [Maven JAR Plugin's `jar:jar` goal](/plugins/maven-jar-plugin/jar-mojo.html)
+by default produces an artifact with empty classifier and `jar` extension, and the `classifier` goal parameter can be used to define another classifier (no parameter to override extension).
+
+At artifact usage, usage happens through dependencies definition. Defining [`<dependency>`'s `<type>`](/ref/current/maven-model/maven.html#class_dependency) is what defines the initial extensions and classifier (by default, Maven considers a dependency type to be `jar`): see [default artifact handlers](/ref/current/maven-core/artifact-handlers.html) to see what default types exist and how they are bound to extensions and classifiers values. After that, you can also define `<dependency>`'s `<classifier>` to override default classifier defined by the type.
