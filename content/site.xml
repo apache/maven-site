@@ -75,6 +75,7 @@ under the License.
       <item name="Maven Plugins" href="/plugins/index.html" />
       <item name="Maven Extensions" href="/extensions/index.html" />
       <item name="Maven Repositories" href="/repositories/index.html">
+        <item name="Maven Artifacts" href="/repositories/artifacts.html" />
         <item name="Maven Layout" href="/repositories/layout.html" />
         <item name="Maven Local Repository" href="/repositories/local.html" />
         <item name="Maven Remote Repositories" href="/repositories/remote.html" />

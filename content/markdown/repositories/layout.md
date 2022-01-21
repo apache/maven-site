@@ -21,8 +21,8 @@ under the License.
 
 The layout is responsible to translate the artifact coordinates into generic paths, that is later used to construct some
 URI (file path, URL, it depends on context). Obviously, since Maven;s inception in 2002 the layout evolved as well.
-Due simplicity, we will cover current layout (aka "maven2" or "default"), as since Maven 3.x release, the deprecated
-"Maven1 layout" is not supported anymore.
+For simplicity, we will cover current layout (aka "maven2", "default"), as since Maven 3.x release, the deprecated
+"Maven1 layout" (aka "legacy") is not supported anymore.
 
 This above implies following: if the repository contains a file that is "not on layout" (does not obey layout 
 transformation rules discussed below), that file is "not addressable" by Maven coordinates, you cannot make Maven
@@ -31,20 +31,20 @@ to download it using GAV coordinates!
 The original premise of layout was simplicity: from historical perspective, a remote repository was expected to be run
 by some computer with file storage (where artifacts were laid down) and served by a HTTP server, essentially publishing 
 the files on file paths for consumption (mainly for HTTP GET requests). Actually, the reason of layout change between
-Maven1 and Maven2 (the today's "default") was exactly that: Maven1 layout was stressing the underlying file system 
-way too much, it was not scaling in this setup.
+Maven1 and current Maven was exactly that: Maven1 layout was stressing the underlying file system way too much, it 
+was not scaling in this setup.
 
 The transformation rule is quite simple for that matter: consider artifact properties below:
 
 | Name       | Transformation                                          | Result example                           |
 |------------|---------------------------------------------------------|------------------------------------------|
 | groupId    | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
-| artifactId | none | `apache-maven` -> `apache-maven`         |
-| version    | none | `3.8.4` -> `3.8.4`                       |
-| classifier | none | `bin` -> `bin`                           |
-| extension  | none | `tar.gz` -> `tar.gz`                     |
+| artifactId | none                                                    | `apache-maven` -> `apache-maven`         |
+| version    | none                                                    | `3.8.4` -> `3.8.4`                       |
+| classifier | none                                                    | `bin` -> `bin`                           |
+| extension  | none                                                    | `tar.gz` -> `tar.gz`                     |
 
-And using these properties transformed as above we can construct following layout (if classifier not present):
+And using these properties transformed as above we can construct following path (if classifier not present):
 
 ```
 ${groupId}/${artifactId}/${version}/${artifactId}-${version}.${extension}
@@ -66,4 +66,42 @@ is translated to path:
 
 ```
 org/apache/maven/apache-maven/3.8.4/apache-maven-3.8.4-bin.tar.gz
+```
+
+And that is it! By applying this "algorithm" above to ANY Artifact we can, we can build up the path segment that
+artifact is expected to be.
+
+# A word about Maven1 layout
+
+Maven1 aka "legacy" layout **is unsupported since Maven 3.x** (Maven 2.x supported it to ease transition from 1.x to 
+2.x), but is still worth a few words.
+
+The Maven1 layout was not applying groupId transformation (hence the path, if it had dots, still contained it), and
+used "type" in plural as second level directory. This is the reason why it caused FS stress, as these directories
+ended up containing a LOT of files (in case of many versions existed).
+
+| Name       | Transformation                        | Result example                           |
+|------------|---------------------------------------|------------------------------------------|
+| groupId    | none                                  | `org.apache.maven` -> `org.apache.maven` |
+| artifactId | none                                  | `apache-maven` -> `apache-maven`         |
+| version    | none                                  | `3.8.4` -> `3.8.4`                       |
+| extension  | none                                  | `pom` -> `pom`                           |
+| type       | derived by extension by appending 's' | `pom` -> `poms`                          |
+
+And using these properties transformed as above we can construct following path:
+
+```
+${groupId}/${type}/${artifactId}-${version}.${extension}
+```
+
+So the example artifact above:
+
+```
+org.apache.maven:apache-maven:3.8.4:pom
+```
+
+is translated to path:
+
+```
+org.apache.maven/poms/apache-maven-3.8.4.pom
 ```
