@@ -71,7 +71,7 @@
           <area shape="rect" coords="407,589,628,653" alt="pom.xml &lt;repository&gt;"    href="/guides/mini/guide-multiple-repositories.html" />
         </map>
       </p>
-      <p>See also the <a href="/guides/introduction/introduction-to-repositories.html">Introduction to Repositories</a>.</p>
+      <p>See also the <a href="/guides/introduction/introduction-to-repositories.html">Introduction to Repositories</a> and <a href="./layout.html">Repository Layout</a>.</p>
     </section>
   </body>
 </document>

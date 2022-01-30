@@ -22,13 +22,13 @@ Maven2 repository layout format is the default layout used since Maven 2, superc
 
 ```
 Repository root
-`-- ${groupId as directory}
+`-- ${groupId as directory}/
     |-- maven-medatada.xml
     |--                   .${checksums}
-    `-- ${artifactId}
+    `-- ${artifactId}/
         |-- maven-medatada.xml
         |--                   .${checksums}
-        `-- ${version}
+        `-- ${version}/
             |-- ${artifactId}-${version}.pom
             |--                             .asc
             |--                             .${checksums}
@@ -53,6 +53,20 @@ where:
 
 `.asc` file is optional (may be required in some repositories, like Central Repository) and is a PGP detached signature file.
 
+Obviously, `${groupId}`, `${artifactId}` and `${version}` are defined in `pom.xml`. But what about `${classifier}` and `${extension}`, how are they defined?
+
+Classifier and extension definition is completely different at artifact *publication* and *usage* times:
+
+- **At artifact publication time**: Extension and classifier are defined by plugins that create the artifacts and attach them for publication.<br />
+Some plugins provide configuration parameters to be able to override default values.
+For example, [Maven JAR Plugin's `jar:jar` goal](/plugins/maven-jar-plugin/jar-mojo.html) produces by default an artifact with `jar` extension and empty classifier.
+The `classifier` goal parameter can be used to define a classifier (there is no parameter to override extension).
+
+- **At artifact usage time**: Extension and classifier are defined by [`<dependency>`'s `<type>` and `<classifier>`](/ref/current/maven-model/maven.html#class_dependency) definition in `pom.xml`:
+  - `<type>` (`jar` by default) defines the extension and default classifier: <br />
+    see [default artifact handlers](/ref/current/maven-core/artifact-handlers.html) to see default types and corresponding extension and default classifier. <br />
+  - `<classifier>` is optional, to override default classifier defined by the dependency type.
+
 ## SNAPSHOT
 
 In case of a SNAPSHOT version, version directory uses base version, i.e. version ending in `-SNAPSHOT`, for example `3.8.4-SNAPSHOT`.
@@ -73,19 +87,3 @@ HTTP/HTTPS protocol have 2 specific characteristics:
 
 2. [HTTP/1.1 Reason-Phrase](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html) is used to provide extended message when artifact access is rejected by remote repository.
 This usage of Reason-Phrase is nowadays legacy and is removed in HTTP/2, [MNG-6795](https://issues.apache.org/jira/browse/MNG-6795) is open to create a replacement.
-
-## Extensions and Classifiers
-
-Obviously, `${groupId}`, `${artifactId}` and `${version}` are defined in `pom.xml`. But what about `${classifier}` and `${extension}`, how are they defined?
-
-Classifier and Extension definition is completely different at artifact publication and usage times:
-
-- **At artifact publication time**: Extensions and classifiers are defined by plugins that create the artifacts and attach them for publication.
-Some plugins provide configuration parameters to be able to override some default values.
-For example, [Maven JAR Plugin's `jar:jar` goal](/plugins/maven-jar-plugin/jar-mojo.html) by default produces an artifact with empty classifier and `jar` extension,
-and the `classifier` goal parameter can be used to define another classifier (there is no parameter to override extension).
-
-- **At artifact usage time**: Artifact usage happens through dependencies definition in `pom.xml`.
-Defining [`<dependency>`'s `<type>`](/ref/current/maven-model/maven.html#class_dependency) is what defines the initial extensions and classifier (by default, Maven considers a dependency type to be `jar`):
-see [default artifact handlers](/ref/current/maven-core/artifact-handlers.html) to see what default types exist and how they are bound to extensions and classifiers values.
-After that, you can also define `<dependency>`'s `<classifier>` to override default classifier defined by the dependency type.
