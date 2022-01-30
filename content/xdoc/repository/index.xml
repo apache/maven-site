@@ -48,7 +48,7 @@
 
 <!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->
 
-      <p>
+      <p align="center">
         <img src="maven-repositories.png" width="764" height="654" border="0" usemap="#map" />
 
         <map name="map">
