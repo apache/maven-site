@@ -21,3 +21,7 @@ under the License.
 
 The local repository is mixed bag, in sense, that it serves two purposes: it caches downloaded artifacts from
 remote repositories along with locally built and installed ones.
+
+As noted on [Layout](layout.md) page, locally built and installed artifacts with use baseVersion while calculating
+layout. Snapshots pulled from remote will use version property instead, hence they will have the full-blown
+"timestamped" version format applied.

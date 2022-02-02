@@ -71,6 +71,10 @@ org/apache/maven/apache-maven/3.8.4/apache-maven-3.8.4-bin.tar.gz
 And that is it! By applying this "algorithm" above to ANY Artifact we can, we can build up the path segment that
 artifact is expected to be.
 
+Important note: in case of locally installed artifacts (those you built locally and invoked `mvn install`) will use
+Artifact baseVersion property instead of version. The full-blown "timestamped" versions are used only in
+remote repositories, when the artifact is deployed.
+
 # A word about Maven1 layout
 
 Maven1 aka "legacy" layout **is unsupported since Maven 3.x** (Maven 2.x supported it to ease transition from 1.x to 
@@ -105,3 +109,6 @@ is translated to path:
 ```
 org.apache.maven/poms/apache-maven-3.8.4.pom
 ```
+
+Easy to spot, that `org.apache.maven/poms` directory will become a file system issue, as that directory
+may potentially contain way too much files.
