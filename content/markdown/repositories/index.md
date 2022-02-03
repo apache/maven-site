@@ -24,6 +24,9 @@ and artifacts you build are being stored (installed, uploaded) into repositories
 fundamental concepts of Maven since its inception: Maven command line tool and Maven Repositories were mold together
 and developed since the beginning of Maven project itself.
 
+<img src="../repository/maven-repositories.png" border="0" />
+
+
 As you may know, Maven addresses artifacts using coordinates. The artifact coordinate uniquely describe the artifact 
 you are referring to, but does not tell anything about its source (or origin). This is where
 Maven Repositories come into picture, that holds the artifacts laid out (published) according to Maven Repository

@@ -74,12 +74,6 @@ under the License.
     <menu name="Documentation">
       <item name="Maven Plugins" href="/plugins/index.html" />
       <item name="Maven Extensions" href="/extensions/index.html" />
-      <item name="Maven Repositories" href="/repositories/index.html">
-        <item name="Maven Artifacts" href="/repositories/artifacts.html" />
-        <item name="Maven Layout" href="/repositories/layout.html" />
-        <item name="Maven Local Repository" href="/repositories/local.html" />
-        <item name="Maven Remote Repositories" href="/repositories/remote.html" />
-      </item>
       <item name="Index (category)" href="/guides/index.html" />
 
       <item name="User Centre" href="/users/index.html" collapse="true">
@@ -163,12 +157,18 @@ under the License.
         <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />
         <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html" />
       </item>
-      <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
-        <item name="Maintaining your Metadata" href="/project-faq.html" />
-        <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html" />
-        <item name="Fixing Metadata" href="/repository/central-metadata.html" />
-        <item name="Central Index" href="/repository/central-index.html" />
-        <item name="Repository Layout" href="/repository/layout.html" />
+      <item name="Maven Repository Centre" href="/repositories/index.html" collapse="true">
+        <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
+          <item name="Maintaining your Metadata" href="/project-faq.html" />
+          <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html" />
+          <item name="Fixing Metadata" href="/repository/central-metadata.html" />
+          <item name="Central Index" href="/repository/central-index.html" />
+          <item name="Repository Layout" href="/repository/layout.html" />
+        </item>
+        <item name="Maven Artifacts" href="/repositories/artifacts.html" />
+        <item name="Maven Layout" href="/repositories/layout.html" />
+        <item name="Maven Local Repository" href="/repositories/local.html" />
+        <item name="Maven Remote Repositories" href="/repositories/remote.html" />
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />

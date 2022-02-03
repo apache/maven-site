@@ -49,7 +49,7 @@
 <!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->
 
       <p align="center">
-        <img src="maven-repositories.png" width="764" height="654" border="0" usemap="#map" />
+        <img src="maven-central-repository.png" border="0" usemap="#map" />
 
         <map name="map">
           <area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
