@@ -263,7 +263,7 @@ mvn site-deploy
   To find out more please refer to the
   {{{../../plugins/maven-project-info-reports-plugin/}Project Info Reports Plugin}}.
 
-  To add these reports to your site, you must add the plugins to a special <<<\<reporting\>>>> section in the POM. The
+  To add these reports to your site, you must add the Project Info Reports plugin to a special <<<\<reporting\>>>> section in the POM. The
   following example shows how to configure the standard project information reports that display information from the
   POM in a friendly format:
 
@@ -275,7 +275,7 @@ mvn site-deploy
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.8</version>
+        <version>2.8</version><!-- define version here if not already defined in build/plugins or build/pluginManagement -->
       </plugin>
     </plugins>
   </reporting>
@@ -286,9 +286,14 @@ mvn site-deploy
   If you have included the appropriate <<<\<menu ref="reports"/\>>>> tag in your <<<site.xml>>> descriptor, then when you regenerate
   the site those items will appear in the menu.
 
+  Many other plugins provide reporting goals: look for "R" (Reporting) value in the "Type" column of the {{{/plugins/} list of plugins}}.
+  When plugins are both Build and Reporting plugins, defining explicitely the version in the reporting section is usually not
+  necessary since reporting will use the version from <<<build/plugins>>> or <<<build/pluginManagement>>>. Since Maven Site Plugin 3.4,
+  reporting plugin also get configuration from <<<build/pluginManagement>>>.
+
   <<Note:>> Many report plugins provide a parameter called <<<outputDirectory>>> or similar to specify the destination
   for their report outputs. This parameter is only relevant if the report plugin is run standalone, i.e. by invocation
-  directly from the command line. In constrast, when reports are generated as part of the site, the configuration of the
+  directly from the command line. In contrast, when reports are generated as part of the site, the configuration of the
   Maven Site Plugin will determine the effective output directory to ensure that all reports end up in a central location.
 
   ~~TODO: explain report sets
