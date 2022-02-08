@@ -347,7 +347,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
   On the other hand, if your profiles can be reasonably specified <inside> the
   POM, you have many more options. The trade-off, of course, is that you can
-  only modify <that> project and it's sub-modules. Since these profiles are
+  only modify <that> project and its sub-modules. Since these profiles are
   specified inline, and therefore have a better chance of preserving portability,
   it's reasonable to say you can add more information to them without the risk
   of that information being unavailable to other users.
