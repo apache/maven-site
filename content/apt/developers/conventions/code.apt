@@ -126,10 +126,25 @@ public class MyMojo
     // ----------------------------------------------------------------------
     ...
 
+    // multiline arguments should be aligned for method declaration
+    protected void methodOne( String arg1, String arg2,
+                              String arg3, String arg4 )
+    {
+
+    }
+
     // ----------------------------------------------------------------------
     // Private methods
     // ----------------------------------------------------------------------
     ...
+
+    private void methodNext()
+        throw Exception
+    {
+        // multiline arguments should be aligned for method call
+        methodOne( arg1, arg2,
+                   arg3, arg4 );
+    }
 
     // ----------------------------------------------------------------------
     // Static methods
