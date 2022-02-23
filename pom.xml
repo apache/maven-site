@@ -328,7 +328,6 @@
           <reportSet><!-- execute only reports necessary for main site, in a dedicated reportSet -->
             <id>site-mpir</id>
             <reports>
-              <report>index</report>          <!-- xdoc/index.xml.vm -->
               <report>team</report>
               <report>mailing-lists</report>
               <report>scm</report>            <!-- xdoc/scm.xml -->
