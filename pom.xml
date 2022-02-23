@@ -330,8 +330,6 @@
             <reports>
               <report>team</report>
               <report>mailing-lists</report>
-              <report>scm</report>            <!-- xdoc/scm.xml -->
-              <report>issue-management</report> <!-- markdown/issue-management.md -->
               <report>ci-management</report>
             </reports>
           </reportSet>
