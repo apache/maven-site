@@ -192,7 +192,7 @@ public class ExampleMojo
     extends AbstractWarMojo
 {
     public void execute()
-        throws MojoExecutionException, MojoFailureException
+        throws MojoExecutionException
     {  
 [...]
 +--------------+   
