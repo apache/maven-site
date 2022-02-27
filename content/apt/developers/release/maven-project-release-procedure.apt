@@ -155,7 +155,7 @@ The vote has passed with the following result:
 
 PMC quorum: ...
 
-I will promote the artifacts to the central repo.
+I will promote the source release zip file to Apache distribution area and the artifacts to the central repo.
 -----
 
   If the vote is <<unsuccessful>>, the process will need to be restarted. Be sure to:
