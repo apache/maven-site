@@ -55,10 +55,10 @@
 
   <properties>
     <maven.site.path>maven-site</maven.site.path>
-    <currentStableVersion>3.8.4</currentStableVersion>
-    <currentStableReleaseDate>2021-11-14</currentStableReleaseDate>
-    <currentStableVersionDetails>9b656c72d54e5bacbed989b64718c159fe39b537</currentStableVersionDetails>
-    <current38xVersion>3.8.4</current38xVersion>
+    <currentStableVersion>3.8.5</currentStableVersion>
+    <currentStableReleaseDate>2021-03-05</currentStableReleaseDate>
+    <currentStableVersionDetails>3599d3414f046de2324203b78ddcf9b5e4388aa0</currentStableVersionDetails>
+    <current38xVersion>3.8.5</current38xVersion>
     <current36xVersion>3.6.3</current36xVersion>
     <current35xVersion>3.5.4</current35xVersion>
     <current33xVersion>3.3.9</current33xVersion>
@@ -68,7 +68,7 @@
     <currentAntTasksVersion>2.1.3</currentAntTasksVersion>
     <currentAntTasksReleaseDate>2011-04-17</currentAntTasksReleaseDate>
     <versions2x>2.2.1,2.2.0,2.1.0,2.0.11,2.0.10,2.0.9,2.0.8,2.0.7,2.0.6,2.0.5,2.0.4,2.0.3,2.0.2,2.0.1,2.0</versions2x>
-    <versions3x>3.8.4,3.8.3,3.8.2,3.8.1,3.6.3,3.6.2,3.6.1,3.6.0,3.5.4,3.5.3,3.5.2,3.5.0,3.5.0-beta-1,3.5.0-alpha-1,3.3.9,3.3.3,3.3.1,3.2.5,3.2.3,3.2.2,3.2.1,3.1.1,3.1.0,3.1.0-alpha-1,3.0.5,3.0.4,3.0.3,3.0.2,3.0.1,3.0,3.0-beta-3,3.0-beta-2,3.0-beta-1,3.0-alpha-7,3.0-alpha-6,3.0-alpha-5,3.0-alpha-4,3.0-alpha-3</versions3x>
+    <versions3x>3.8.5,3.8.4,3.8.3,3.8.2,3.8.1,3.6.3,3.6.2,3.6.1,3.6.0,3.5.4,3.5.3,3.5.2,3.5.0,3.5.0-beta-1,3.5.0-alpha-1,3.3.9,3.3.3,3.3.1,3.2.5,3.2.3,3.2.2,3.2.1,3.1.1,3.1.0,3.1.0-alpha-1,3.0.5,3.0.4,3.0.3,3.0.2,3.0.1,3.0,3.0-beta-3,3.0-beta-2,3.0-beta-1,3.0-alpha-7,3.0-alpha-6,3.0-alpha-5,3.0-alpha-4,3.0-alpha-3</versions3x>
     <site.output>${project.build.directory}/site</site.output>
     <fluidoVersion>1.10.0</fluidoVersion><!-- used by src/xdoc/errors/404.xml.vm -->
     <doxiaVersion>1.11.1</doxiaVersion>
