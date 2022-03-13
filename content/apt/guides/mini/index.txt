@@ -49,8 +49,6 @@
 
  * {{{$prefix/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
 
- * {{{$prefix/guide-default-execution-ids.html} Guide to Configuring Default Mojo Executions}}
-
  * {{{$prefix/guide-large-scale-centralized-deployments.html} Guide to Large Scale Centralized Deployments}}
 
 ~~ ** Testing

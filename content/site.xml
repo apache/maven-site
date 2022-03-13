@@ -94,6 +94,7 @@ under the License.
         <item name="Running Maven" href="/run-maven/index.html" />
         <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
           <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html" />
+          <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
         </item>
         <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
           <item name="Markup Formats" href="/doxia/references/index.html" />
@@ -133,7 +134,6 @@ under the License.
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html" />
           <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
           <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
-          <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
