@@ -43,14 +43,6 @@
 
  * {{{$prefix/guide-using-toolchains.html}Using Toolchains}}
 
- * {{{$prefix/guide-encryption.html} Encrypting passwords in settings.xml}}
-
- * {{{$prefix/guide-http-settings.html} Guide to HTTP Connection Settings}}
-
- * {{{$prefix/guide-wagon-providers.html} Guide to Selecting Alternative Wagon Providers}}
-
- * {{{$prefix/guide-large-scale-centralized-deployments.html} Guide to Large Scale Centralized Deployments}}
-
 ~~ ** Testing
 
 ~~ * {{{$prefix/guide-attached-tests.html}Reusable Test JARs}}

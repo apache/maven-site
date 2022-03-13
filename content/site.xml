@@ -111,14 +111,16 @@ under the License.
           <item name="Large Scale Centralized Deployments" href="/guides/mini/guide-large-scale-centralized-deployments.html" />
           <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html" />
           <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html" />
+          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
           <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
+          <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
+          <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
         <item name="Guides" href="/guides/mini/index.html" collapse="true">
           <item name="Configuring for Reproducible Builds" href="/guides/mini/guide-reproducible-builds.html" />
           <item name="Creating Assemblies" href="/guides/mini/guide-assemblies.html" />
-          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
           <item name="Configuring Archive Plugins" href="/guides/mini/guide-archive-configuration.html" />
           <item name="Configuring Maven" href="/guides/mini/guide-configuring-maven.html" />
           <item name="Generating Sources" href="/guides/mini/guide-generating-sources.html" />
@@ -132,8 +134,6 @@ under the License.
           <item name="Using Extensions" href="/guides/mini/guide-using-extensions.html" />
           <item name="Building for Different Environments" href="/guides/mini/guide-building-for-different-environments.html" />
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html" />
-          <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
-          <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
