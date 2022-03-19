@@ -153,5 +153,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
 *----------------------------------------------------------------------------+-------+--------------+ 
+| MojoHaus {{{https://www.mojohaus.org/properties-maven-plugin/}properties-maven-plugin}} | 1.1.0 |
+*----------------------------------------------------------------------------+-------+--------------+
 
   For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
