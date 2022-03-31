@@ -45,6 +45,7 @@ The full list of changes can be found in our [issue management system][4].
 ## Known Issues
 
 - Dependencies of a profile are not picked up anymore if that profile is activated via `-P<profileName>` (see [MNG-7432](https://issues.apache.org/jira/browse/MNG-7432))
+- Custom `StringVisitorModelInterpolator` instance throws `NullPointerException` due to missing `ModelVersionProcessor` (see [MNG-7449](https://issues.apache.org/jira/browse/MNG-7449))
 
 ## Complete Release Notes
 
