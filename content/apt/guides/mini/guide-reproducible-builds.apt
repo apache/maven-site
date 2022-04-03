@@ -108,7 +108,8 @@ Configuring for Reproducible Builds
    * if you have a custom release process tooling, you'll need to add the feature to your release tooling.
      Notice that if you're using <<<versions-maven-plugin>>> in custom release scripts, starting with release 2.9.0, {{{https://github.com/mojohaus/versions-maven-plugin/issues/453}<<<versions:set>>> goal updates the property}}.
 
-   * instead of explicitely writing a timestamp in their <<<pom.xml>>>, some people tend to prefer using last Git commit timestamp.
+   * instead of explicitely writing a timestamp in their <<<pom.xml>>>, some people tend to prefer using last Git commit timestamp, like <<<${git.commit.time}>>> from
+   {{{https://github.com/git-commit-id/git-commit-id-maven-plugin}git-commit-id-maven-plugin}}.
 
   []
 
