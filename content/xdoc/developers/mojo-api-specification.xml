@@ -29,7 +29,7 @@ under the License.
     <section name="Introduction">
       <p>Maven plugins can be written in Java or any of a
         number of scripting languages. Plugins consists of one or more Mojos,
-        each one being the implementation for one of the plugin's goals.
+        each one being the implementation for one of the plugin's <b>goals</b>.
         Maven tries to stay out of
         the way of the programmer with its new Mojo API. This opens up the
         opportunity for many Mojos to be reused outside of Maven, or bridged
@@ -55,32 +55,25 @@ under the License.
       <p>While this will satisfy the requirements for execution as a Mojo
         inside Maven, it is recommended that Mojos implement
          --> Basically, these Mojo requirements are embodied by the
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code></a>
-        interface, which the Mojo
-        must implement (or else extend its abstract base class counterpart
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html"><code>org.apache.maven.plugin.AbstractMojo</code></a>
-        ). This interface
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code> interface</a>, which the Mojo
+        must implement (or else extend its
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html">abstract base class counterpart <code>org.apache.maven.plugin.AbstractMojo</code></a>).
+        This interface
         guarantees the correct execution contract for the Mojo: no parameters,
         void return type, and a throws clause that allows only
         <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html"><code>org.apache.maven.plugin.MojoExecutionException</code></a>
         and its
         derivatives. It also guarantees that the Mojo will have access to the
         standard Maven user-feedback mechanism,
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>
-        , so the Mojo can
-        communicate important events to the console or other log sink.<!-- Using the
-        Plugin/Mojo API will give that Mojo access to the Maven-integrated Log,
-        along with tighter integration into the Maven build. -->
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>,
+        so the Mojo can communicate important events to the console or other log sink.
       </p>
       <p>As mentioned before, each Plugin - or packaged set of Mojos - must
-        provide a descriptor called
-        <a href="/ref/current/maven-plugin-api/plugin.html"><code>plugin.xml</code></a>
-        under the path
-        <code>META-INF/maven</code>
+        provide a <a href="/ref/current/maven-plugin-api/plugin.html"><code>META-INF/maven/plugin.xml</code> descriptor file</a>
         inside the Plugin jar file. Fortunately,
         Maven also provides a set of Javadoc annotations
         (named <a href="/plugin-tools/maven-plugin-tools-java/index.html">Mojo Javadoc Tags</a>),
-        Java 5 annotations
+        Java annotations
         (named <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">Maven Plugin Tools Java5 Annotations</a>)
         and tools (named <a href="/plugin-tools/">plugin-tools</a>) to generate
         this descriptor, so developers don't have to worry about directly

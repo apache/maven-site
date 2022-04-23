@@ -145,17 +145,11 @@ under the License.
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
         <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html" />
         <item name="Documenting Plugins" href="/plugin-developers/plugin-documenting.html" />
-        <item name="Plugins Cookbook" href="/plugin-developers/cookbook/index.html" collapse="true">
-          <item name="Build Time" href="/plugin-developers/cookbook/add-build-time-to-manifest.html" />
-          <item name="SVN Revision" href="/plugin-developers/cookbook/add-svn-revision-to-manifest.html" />
-          <item name="Attach Source + Javadoc" href="/plugin-developers/cookbook/attach-source-javadoc-artifacts.html" />
-          <item name="Assembly" href="/plugin-developers/cookbook/generate-assembly.html" />
-          <item name="Plexus Javadoc to Plexus Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
-          <item name="Using JSR-330" href="/maven-jsr330.html" />
-        </item>
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />
         <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html" />
+        <item name="Plexus Javadoc to Plexus Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
+        <item name="Using JSR-330" href="/maven-jsr330.html" />
       </item>
       <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
         <item name="Maintaining your Metadata" href="/project-faq.html" />
