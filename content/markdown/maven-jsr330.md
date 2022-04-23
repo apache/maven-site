@@ -38,7 +38,7 @@ If you are interested the background of moving from Plexus to Guice and JSR-330,
 - [Plexus to Guice Part 2][p2g2]
 - [Plexus to Guice Part 3][p2g3]
 
-If you are interested in migrating from Plexus to Sisu, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
+If you are interested in migrating from Plexus to JSR-330, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
 
 ## How to use JSR-330
 
@@ -364,4 +364,4 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
-[SisuPlexusMigration]: https://wiki.eclipse.org/Sisu/PlexusMigration
+[SisuPlexusMigration]: https://github.com/eclipse/sisu.plexus/wiki/Plexus-to-JSR330
