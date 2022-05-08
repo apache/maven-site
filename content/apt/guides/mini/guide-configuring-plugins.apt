@@ -154,6 +154,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   the following:
 
 +----+
+<project>
 ...
 <configuration>
   <myString>a string</myString>
@@ -164,6 +165,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   <myURL>http://maven.apache.org</myURL>
 </configuration>
 ...
+</project>
 +----+
 
   The detailed type coercion is explained in the table below.
@@ -214,6 +216,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   following:
 
 +----+
+<project>
 ...
 <configuration>
   <person>
@@ -222,6 +225,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   </person>
 </configuration>
 ...
+</project>
 +----+
 
  The rules for mapping complex objects are as follows:
@@ -241,6 +245,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
  []
 
 +----+
+<project>
 ...
 <configuration>
   <person implementation="com.mycompany.mojo.query.SuperPerson">
@@ -249,6 +254,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   </person>
 </configuration>
 ...
+</project>
 +----+
 
 *** {Mapping Collection Types}
@@ -355,6 +361,7 @@ public class MyAnimalMojo
 +-----+
 
 +-----+
+<project>
 ...
   <configuration>
     <myMap>
@@ -363,6 +370,7 @@ public class MyAnimalMojo
     </myMap>
   </configuration>
 ...
+</project>
 +-----+
 
  Unlike Collections the value type for Maps is always derived from the parameter type information from either
@@ -385,6 +393,7 @@ public class MyAnimalMojo
 +-----+
 
 +-----+
+<project>
 ...
   <configuration>
     <myProperties>
@@ -399,6 +408,7 @@ public class MyAnimalMojo
     </myProperties>
   </configuration>
 ...
+</project>
 +-----+
 
  In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument. 
