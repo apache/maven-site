@@ -360,7 +360,7 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [sisu]: https://eclipse.org/sisu/
 [plexus]: https://codehaus-plexus.github.io/
 [plexus-container]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/
-[jsr330-plugin]: https://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
+[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/master/core-it-suite/src/test/resources/mng-5382
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
