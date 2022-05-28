@@ -630,15 +630,15 @@ mvn myqyeryplugin:queryMojo@execution1
 
 ** {Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}
 
-  Configuring a reporting plugin in the \<reporting\> or \<build\> elements in the pom does <<NOT>> have the same behavior!
+  Configuring a reporting plugin in the \<reporting\> or \<build\> elements in the pom does not exactly have the same results.
 
-  [<<<mvn site>>>] It uses <<only>> the parameters defined in the \<configuration\> element of each reporting Plugin
-  specified in the \<reporting\> element, i.e. <<<site>>> always <<ignores>> the parameters defined in the
-  \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn site>>>] Sine maven-site-plugin 3.4, it uses the parameters defined in the \<configuration\> element of each reporting Plugin
+  specified in the \<reporting\> element, in addition to the parameters defined in the
+  \<configuration\> element of each plugin specified in \<build\> (parameters from \<build\> section were previously ignored).
 
-  [<<<mvn aplugin:areportgoal>>>] It uses <<firstly>> the parameters defined in the \<configuration\> element of each
-  reporting Plugin specified in the \<reporting\> element; if a parameter is not found, it will look up to a parameter
-  defined in the \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn aplugin:areportgoal>>>] It <<ignores>> the parameters defined in the \<configuration\> element of each
+  reporting Plugin specified in the \<reporting\> element; only parameters
+  defined in the \<configuration\> element of each plugin specified in \<build\> are used.
 
   []
 
