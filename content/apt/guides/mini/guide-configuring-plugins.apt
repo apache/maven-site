@@ -105,9 +105,7 @@ Guide to Configuring Plug-ins
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 +----+
-/**
- * @goal query
- */
+@Mojo( name = "query" )
 public class MyQueryMojo
     extends AbstractMojo
 {
@@ -484,10 +482,7 @@ public class MyAnimalMojo
   Now, let us have another mojo example which shows a default lifecycle phase binding.
 
 +----+
-/**
- * @goal query
- * @phase package
- */
+@Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
 public class MyBoundQueryMojo
     extends AbstractMojo
 {
