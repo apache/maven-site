@@ -20,7 +20,7 @@ under the License.
 ## Why JSR-330?
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
-[JSR-330][jsr330] is to replace a custom DI mechanism with something standard. The implementation Maven
+[JSR-330][jsr330] is to replace a custom DI mechanism (with custom `@Component`/`@Requirement` annotations) with something standard ( with `@Named`/`@Inject` anotations). The implementation Maven
 uses - since 3.0-beta-3 - is named [Sisu][sisu] and is based on [Guice 3.x][guice], which directly supports JSR-330.
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
@@ -38,7 +38,7 @@ If you are interested the background of moving from Plexus to Guice and JSR-330,
 - [Plexus to Guice Part 2][p2g2]
 - [Plexus to Guice Part 3][p2g3]
 
-If you are interested in migrating from Plexus to Sisu, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
+If you are interested in migrating from Plexus to JSR-330, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
 
 ## How to use JSR-330
 
@@ -359,9 +359,9 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [jsr330]: https://www.jcp.org/en/jsr/detail?id=330
 [sisu]: https://eclipse.org/sisu/
 [plexus]: https://codehaus-plexus.github.io/
-[plexus-container]: https://codehaus-plexus.github.io/plexus-containers/
-[jsr330-plugin]: https://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
+[plexus-container]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/
+[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/master/core-it-suite/src/test/resources/mng-5382
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
-[SisuPlexusMigration]: https://wiki.eclipse.org/Sisu/PlexusMigration
+[SisuPlexusMigration]: https://github.com/eclipse/sisu.plexus/wiki/Plexus-to-JSR330

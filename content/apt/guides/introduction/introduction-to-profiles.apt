@@ -311,7 +311,9 @@ mvn groupId:artifactId:goal -Denvironment=test
 +---+
 mvn groupId:artifactId:goal -P !profile-1,!profile-2,!?profile-3
 +---+
+
   or
+
 +---+
 mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 +---+

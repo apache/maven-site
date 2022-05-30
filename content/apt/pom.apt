@@ -1744,17 +1744,17 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
 * {Prerequisites}
 
-  The POM may have certain prerequisites in order to execute correctly.  For example,
-  perhaps there was a fix in Maven 2.0.3 that you need in order to deploy using sftp.
-
+  The POM may have certain prerequisites in order to execute correctly.  
+  The only element that exists as a prerequisite in
+  POM 4.0.0 is the <<<maven>>> element, which takes a minimum version number.
+  
   In Maven 3, use
   {{{/enforcer/enforcer-rules/requireMavenVersion.html} Maven Enforcer Plugin's <<<requireMavenVersion>>> rule}},
-  or other rules to check other aspects.
+  or other rules for <<build-time>> prerequisites. For packaging <<<maven-plugin>>> this is still used at <<run-time>> to make sure
+  that the minimum Maven version for the plugin is met (but only in the pom.xml of the referenced plugin).
 
-  In Maven 2, here is where you give the prerequisites to building: if these are not met, Maven will
-  fail the build before even starting. The only element that exists as a prerequisite in
-  POM 4.0 is the <<<maven>>> element, which takes a minimum version number. It is checked with Maven 2, it is not any
-  more in Maven 3.
+  In Maven 2 those prerequisites were also evaluated at build time: if these are not met, Maven 2 will
+  fail the build before even starting.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

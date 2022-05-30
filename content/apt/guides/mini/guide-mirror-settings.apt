@@ -172,9 +172,7 @@ Advanced Mirror Specification
 
 Creating Your Own Mirror
 
-  The size of the central repository is {{{http://search.maven.org/stats}increasing steadily}}
+  The size of the central repository is {{{https://search.maven.org/stats}increasing steadily}}
   To save us bandwidth and you time, mirroring the entire central repository is not allowed. 
   (Doing so will get you automatically banned.) Instead, we suggest you setup a
   {{{../../repository-management.html}repository manager}} as a proxy.
-
-  If you really want to become an official mirror, contact Sonatype at {{{https://issues.sonatype.org/browse/MVNCENTRAL}MVNCENTRAL}} with your location and we'll work to get you setup.

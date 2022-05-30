@@ -105,9 +105,7 @@ Guide to Configuring Plug-ins
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 +----+
-/**
- * @goal query
- */
+@Mojo( name = "query" )
 public class MyQueryMojo
     extends AbstractMojo
 {
@@ -167,9 +165,9 @@ public class MyQueryMojo
   Mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
   be specified by the system property <<<query.url>>> as shown below:
 
-+----+
+------
 mvn myquery:query -Dquery.url=http://maven.apache.org
-+----+
+------
 
   The name of the system property does not necessarily match the name of the mojo parameter. While this is
   a rather common practice, you will often notice plugins that employ some prefix for the system properties to avoid
@@ -183,9 +181,9 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
   of the plugin and its parameters and types. For instance, to see help
   for the javadoc goal, type:
 
-+----+
+------
 mvn javadoc:help -Ddetail -Dgoal=javadoc
-+----+
+------
 
   And you will see all parameters for the javadoc:javadoc goal, similar to this
   {{{/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
@@ -484,10 +482,7 @@ public class MyAnimalMojo
   Now, let us have another mojo example which shows a default lifecycle phase binding.
 
 +----+
-/**
- * @goal query
- * @phase package
- */
+@Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
 public class MyBoundQueryMojo
     extends AbstractMojo
 {
@@ -560,9 +555,9 @@ public class MyBoundQueryMojo
   run the above plugin and it's specific execution1's configuration from the
   command-line, you can execute:
 
-+----+
+------
 mvn myquery:query@execution1
-+----+
+------
 
 ** {Using the <<<\<dependencies\>>>> Tag}
 
@@ -630,15 +625,15 @@ mvn myquery:query@execution1
 
 ** {Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}
 
-  Configuring a reporting plugin in the \<reporting\> or \<build\> elements in the pom does <<NOT>> have the same behavior!
+  Configuring a reporting plugin in the <<<\<reporting\>>>> or <<<\<build\>>>> elements in the pom does not exactly have the same results.
 
-  [<<<mvn site>>>] It uses <<only>> the parameters defined in the \<configuration\> element of each reporting Plugin
-  specified in the \<reporting\> element, i.e. <<<site>>> always <<ignores>> the parameters defined in the
-  \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn site>>>] Since maven-site-plugin 3.4, it uses the parameters defined in the <<<\<configuration\>>>> element of each reporting Plugin
+  specified in the <<<\<reporting\>>>> element, in addition to the parameters defined in the
+  <<<\<configuration\>>>> element of each plugin specified in <<<\<build\>>>> (parameters from <<<\<build\>>>> section were previously ignored).
 
-  [<<<mvn aplugin:areportgoal>>>] It uses <<firstly>> the parameters defined in the \<configuration\> element of each
-  reporting Plugin specified in the \<reporting\> element; if a parameter is not found, it will look up to a parameter
-  defined in the \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn aplugin:areportgoal>>>] It <<ignores>> the parameters defined in the <<<\<configuration\>>>> element of each
+  reporting Plugin specified in the <<<\<reporting\>>>> element; only parameters
+  defined in the <<<\<configuration\>>>> element of each plugin specified in <<<\<build\>>>> are used.
 
   []
 

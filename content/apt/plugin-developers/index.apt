@@ -50,8 +50,6 @@ Plugin Developers Centre
 
   * TODO: creating and using custom packaging (like {{{/archetype/archetype-packaging/}<<<maven-archetype>>> packaging}})
 
-  * {{{./cookbook/index.html} Plugins Cookbook}} - Examples for how to perform common tasks in plugins
-
   * {{{./common-bugs.html} Common Bugs and Pitfalls}} - Overview of problematic coding patterns
 
   []
@@ -62,16 +60,20 @@ Plugin Developers Centre
 
   * {{{../developers/mojo-api-specification.html} Mojo API and Annotation Reference}}
 
+  * {{{/plugin-tools/examples/using-annotations.html} Maven Plugin Tools and annotations}}
+
   * {{{../ref/current/index.html} Maven API Reference}}
 
   * {{{../guides/mini/guide-maven-classloading.html} Maven Class Loading}}
 
   []
 
-* Examples
-
-  * {{{../examples/injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
+* Extensions
 
   * {{{../examples/maven-3-lifecycle-extensions.html}Maven 3 lifecycle extensions}}
+
+  * {{{./cookbook/plexus-plugin-upgrade.html}How to upgrade from Plexus javadoc tags to Plexus Java annotations?}}
+
+  * {{{/maven-jsr330.html}Using JSR-330 (instead of Plexus Java annotations)}}
 
   []

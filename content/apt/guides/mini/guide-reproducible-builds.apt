@@ -41,8 +41,11 @@ Configuring for Reproducible Builds
 
  There is no Maven version prerequisite. Everything happens at plugin level:
 
- [[1]] Upgrade your plugins to reproducible versions, particularly <<<maven-jar-plugin>>>, <<<maven-source-plugin>>>,
- and <<<maven-assembly-plugin>>> to version 3.2.0 minimum.
+ [[1]] Upgrade your plugins to reproducible versions: to easily detect {{{/plugins/maven-artifact-plugin/plugin-issues.html}required upgrades}}, run
+ 
+--------
+mvn artifact:check-buildplan
+--------
 
  [[2]] Enable Reproducible Builds mode for plugins, by adding <<<project.build.outputTimestamp>>> property to the project's <<<pom.xml>>>:
 
@@ -61,15 +64,23 @@ Configuring for Reproducible Builds
  Using {{{/plugins/maven-artifact-plugin/compare-mojo.html}<<<maven-artifact-plugin>>>'s <<<compare>>> goal}},
  you can check that the second build of your project produce the same output than an initial build:
 
- [[1]] build and <<<install>>> your project: <<<mvn clean install>>> (don't hesitate to customize arguments to better match your project)
+ [[1]] build and <<<install>>> your project (don't hesitate to customize arguments to better match your project):
+ 
+--------
+mvn clean install 
+--------
 
- [[2]] rebuild (<<<verify>>> only, without installing) and check against the previous install: <<<mvn clean verify artifact:compare>>>
+ [[2]] rebuild (<<<verify>>> only, without installing) and check against the previous install:
+ 
+--------
+mvn clean verify artifact:compare
+--------
 
  []
 
 * How to fix my Maven build reproducibility?
 
- If something is still not reproducible after initial setup:
+ If something is still not reproducible after initial setup and {{{/plugins/maven-artifact-plugin/plugin-issues.html}automatic check from <<<artifact:check-buildplan>>>}}:
  
  [[1]] Use {{{https://diffoscope.org/}diffoscope}} to find the unstable output between builds. The <<<artifact:buildinfo>>> goal proposes a command with path to files: just copy/paste to launch.
   
@@ -108,7 +119,8 @@ Configuring for Reproducible Builds
    * if you have a custom release process tooling, you'll need to add the feature to your release tooling.
      Notice that if you're using <<<versions-maven-plugin>>> in custom release scripts, starting with release 2.9.0, {{{https://github.com/mojohaus/versions-maven-plugin/issues/453}<<<versions:set>>> goal updates the property}}.
 
-   * instead of explicitely writing a timestamp in their <<<pom.xml>>>, some people tend to prefer using last Git commit timestamp.
+   * instead of explicitely writing a timestamp in their <<<pom.xml>>>, some people tend to prefer using last Git commit timestamp, like <<<$\{git.commit.time}>>> from
+   {{{https://github.com/git-commit-id/git-commit-id-maven-plugin}git-commit-id-maven-plugin}}.
 
   []
 
@@ -153,5 +165,7 @@ Configuring for Reproducible Builds
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
 *----------------------------------------------------------------------------+-------+--------------+ 
+| MojoHaus {{{https://www.mojohaus.org/properties-maven-plugin/}properties-maven-plugin}} | 1.1.0 |
+*----------------------------------------------------------------------------+-------+--------------+
 
   For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
