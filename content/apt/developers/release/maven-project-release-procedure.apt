@@ -274,7 +274,7 @@ mvn changes:announcement-mail -Dchanges.username=<SMTP-USERNAME> -Dchanges.passw
    [[b]] Manually
     
    <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
-   the email to announce@maven.apache.org will bounce.
+   the email to <<<announce@maven.apache.org>>> will bounce.
 
 -----
 From: YOUR_APACHE_USERNAME@apache.org
@@ -312,12 +312,11 @@ Enjoy,
 
    []
 
- [[6]] If releasing the Apache Parent POM, notify release-discuss@apache.org
-
+ [[6]] If releasing the Apache Parent POM, notify <<<release-discuss@apache.org>>>: 
  Several projects follow this list, and should be made aware of changes to the common parent.
  This might also be a step to take if other shared resources are released, or if plugin releases are
  of particular interest to that group.
  
- If releasing Maven Core, notify announce@apache.org
+ If releasing Maven Core, notify <<<announce@apache.org>>>
 
  [[7]] Celebrate :o)
