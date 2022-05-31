@@ -110,7 +110,7 @@ sub   2048g/D2814A59 2006-10-10
 
 -------
 
-* gpg --list-sigs
+* gpg --list-sigs && gpg --armor --export
 
 +--------------+
 >gpg --list-sigs "Vincent Siveton" && gpg --armor --export "Vincent Siveton"
