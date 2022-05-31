@@ -1,5 +1,5 @@
  ------
- Developers centre - PMC Making GPG Keys
+ Developers centre - Making GPG Keys
  ------
  Vincent Siveton
  ------
@@ -31,9 +31,9 @@ Introduction
  You need to add your GPG keys in {{https://svn.apache.org/repos/asf/maven/project/KEYS}} before a release. Here are some
  useful {{{http://www.gnupg.org/}GnuPG}} commands to generate your Keys.
 
-* gpg --gen-key
+* <<<gpg --gen-key>>>
 
-+-----+
+-------
 >gpg --gen-key
 gpg (GnuPG) 1.4.5; Copyright (C) 2006 Free Software Foundation, Inc.
 This program comes with ABSOLUTELY NO WARRANTY.
@@ -108,11 +108,11 @@ pub   1024D/07DDB702 2006-10-10
 uid                  Vincent Siveton <vsiveton@apache.org>
 sub   2048g/D2814A59 2006-10-10
 
-+-----+
+-------
 
-* gpg --list-sigs
+* <<<gpg --list-sigs>>>
 
-+-----+
+-------
 >gpg --list-sigs "Vincent Siveton" && gpg --armor --export "Vincent Siveton"
 pub   1024D/07DDB702 2006-10-10
 uid                  Vincent Siveton <vsiveton@apache.org>
@@ -150,7 +150,7 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 85TjkMPTgjp9
 =Hg4C
 -----END PGP PUBLIC KEY BLOCK-----
-+-----+
+-------
 
  You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
 
@@ -158,16 +158,16 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
  by copying the same you appended in the text field and submit.
  You can ensure by searching your email in key search engine.
 
-* gpg --fingerprint 
+* <<<gpg --fingerprint>>>
 
-+-----+
+-------
 >gpg --fingerprint vsiveton
 pub   1024D/07DDB702 2006-10-10     
       Key fingerprint = 0000 0000 0000 0000 0000  0000 0000 0000 0000 0000
 uid                  Vincent Siveton <vsiveton@apache.org>
 sub   2048g/D2814A59 2006-10-10
-+-----+
+-------
 
  Go to {{https://id.apache.org}}, log in and fill <<<OpenPGP Public Key Primary Fingerprint:>>> with the value of <<<Key fingerprint>>>.
 
- You can read more about {{{http://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}} and {{{https://docs.sonatype.org/display/Repository/How+To+Generate+PGP+Signatures+With+Maven} How to Generate PGP Signatures With Maven}}
+ You can read more about {{{https://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
