@@ -112,7 +112,7 @@ sub   2048g/D2814A59 2006-10-10
 
 * <<<gpg --list-sigs>>>
 
--------
+--------------
 >gpg --list-sigs "Vincent Siveton" && gpg --armor --export "Vincent Siveton"
 pub   1024D/07DDB702 2006-10-10
 uid                  Vincent Siveton <vsiveton@apache.org>
@@ -150,7 +150,7 @@ CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
 85TjkMPTgjp9
 =Hg4C
 -----END PGP PUBLIC KEY BLOCK-----
--------
+--------------
 
  You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
 
