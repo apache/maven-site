@@ -59,7 +59,7 @@ Introduction
 
 ** How do I use the optional tag?
 
-  A dependency is declared optional by setting the \<optional\> element 
+  A dependency is declared optional by setting the <<<\<optional\>>>> element 
   to true in its dependency declaration:
 
 +---+
@@ -82,22 +82,22 @@ Introduction
 
 ** How do optional dependencies work?
 
-+---+
+-----
 
 Project-A -> Project-B
 
-+---+
+-----
 
   The diagram above says that Project-A depends on Project-B. When A 
   declares B as an optional dependency in its POM, this relationship remains
   unchanged. It's just like a normal build where Project-B will be added in
   Project-A's classpath.
 
-+---+
+-----
 
 Project-X -> Project-A
 
-+---+
+-----
 
   When another project (Project-X) declares Project-A as a dependency in 
   its POM, the optional nature of the dependency takes effect.  
@@ -133,7 +133,7 @@ Project-X -> Project-A
 
 ** How to use dependency exclusions
 
-  Add an \<exclusions\> element in the \<dependency\> element by which 
+  Add an <<<\<exclusions\>>>> element in the <<<\<dependency\>>>> element by which 
   the problematic jar is included.
 
 +---+
@@ -160,7 +160,7 @@ Project-X -> Project-A
 
 ** How dependency exclusion works and when to use it <<( as a last resort! )>>
 
-+---+
+-----
 
 Project-A
    -> Project-B
@@ -169,22 +169,22 @@ Project-A
 	      -> Project-F
    -> Project C
 
-+---+
+-----
   
   The diagram shows that Project-A depends on both Project-B and C. Project-B 
   depends on Project-D. Project-D depends on both Project-E and F. By default, 
   Project A's classpath will include:
 
-+---+
+-----
 B, C, D, E, F
-+---+
+-----
 
   Suppose you don't want project D and its dependencies to be added to 
   Project A's classpath because some of Project-D's dependencies 
   are missing from the repository, and you 
   don't need the functionality in Project-B that depends on Project-D 
   anyway. Project-B's developers could have marked the dependency on 
-  Project-D \<optional\>true\</optional\>:
+  Project-D <<<\<optional\>true\</optional\>>>>:
 
 +---+
 <dependency>
@@ -228,11 +228,11 @@ B, C, D, E, F
   normal dependency on Project-A, will Project-D still be excluded from the 
   classpath?
 
-+---+
+-----
 
 Project-X -> Project-A
 
-+---+
+-----
 
   The answer is <<Yes>>. Project-A has declared that it doesn't need 
   Project-D to run, so it won't be brought in as a transitive dependency 
@@ -240,14 +240,14 @@ Project-X -> Project-A
 
   Now, consider that Project-X depends on Project-Y, as in the diagram below:
   
-+---+
+-----
 
 Project-X -> Project-Y
                -> Project-B
 		    -> Project-D
 		       ...
 
-+---+  
+-----  
   
   Project-Y also has a dependency on Project-B, and it does need the features 
   supported by Project-D. Therefore, it will NOT place an exclusion on 
@@ -259,7 +259,7 @@ Project-X -> Project-Y
   As another scenario, suppose the dependency you don't want is Project-E 
   instead of Project-D. How do you exclude it? See the diagram below:
 
-+---+
+-----
 
 Project-A
    -> Project-B
@@ -268,7 +268,7 @@ Project-A
 	      -> Project-F
    -> Project C
 
-+---+  
+-----  
 
   Exclusions work on the entire dependency graph below the point where they 
   are declared. If you want to exclude Project-E instead of Project-D, 
@@ -314,7 +314,7 @@ Project-A
   
   If you truly want to ensure that a particular dependency appears nowhere in
   your classpath, regardless of path, the 
-  {{{https://maven.apache.org/enforcer/enforcer-rules/bannedDependencies.html}banned dependencies rule}}
+  {{{/enforcer/enforcer-rules/bannedDependencies.html}banned dependencies rule}}
   can be configured to fail the build if a problematic dependency is found.
   When the build fails, you'll need to add specific exclusions on each path
   the enforcer finds. 
