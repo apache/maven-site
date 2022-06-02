@@ -79,6 +79,7 @@ under the License.
       <item name="User Centre" href="/users/index.html" collapse="true">
         <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html" />
         <item name="Getting Started Guide" href="/guides/getting-started/index.html" collapse="true">
+          <item name="Naming Conventions" href="/guides/mini/guide-naming-conventions.html" />
           <item name="The Build Lifecycle" href="/guides/introduction/introduction-to-the-lifecycle.html" />
           <item name="The POM" href="/guides/introduction/introduction-to-the-pom.html" />
           <item name="Profiles" href="/guides/introduction/introduction-to-profiles.html" />
