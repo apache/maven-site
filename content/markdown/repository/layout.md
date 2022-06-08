@@ -23,10 +23,10 @@ Maven2 repository layout format is the default layout used since Maven 2 (see [R
 ```
 Repository root
 `-- ${groupId as directory}/
-    |-- maven-medatada.xml
+    |-- maven-metadata.xml
     |--                   .${checksums}
     `-- ${artifactId}/
-        |-- maven-medatada.xml
+        |-- maven-metadata.xml
         |--                   .${checksums}
         `-- ${version}/
             |-- ${artifactId}-${version}.pom
