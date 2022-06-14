@@ -556,7 +556,7 @@ public class MyBoundQueryMojo
   command-line, you can execute:
 
 ------
-mvn myqyeryplugin:queryMojo@execution1
+mvn myquery:query@execution1
 ------
 
 ** {Using the <<<\<dependencies\>>>> Tag}
