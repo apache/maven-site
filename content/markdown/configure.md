@@ -23,10 +23,13 @@ which based on several environment variables, project files and system files, co
 and runs the appropriate `java ...` command line.  
 
 * `mvn` - normal way to run from the command line.
-* `MvnDebug` - launches `mvn` in debug mode, waiting for a debugger to attach to port `$MAVEN_DEBUG_ADDRESS` (default 8000).
+* `mvnDebug` - launches `mvn` in debug mode, waiting for a Java debugger to attach to port `$MAVEN_DEBUG_ADDRESS` (default 8000).
+
 
 ## Environment variables
 
+In the following the Unix syntax for environment variables is used.  For `$A` the 
+Windows equivalent is `%A%`.
 
 ### `$MAVEN_OPTS`
 
@@ -47,7 +50,7 @@ CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 -->
 
-### `$MAVEN_BASEDIR`:
+### `$MAVEN_BASEDIR`
 
 If set, this is considered the base directory of the Maven project.  If not set, 
 the launcher scripts search for a `.mvn` folder towards the root of the drive, and if
@@ -55,6 +58,21 @@ found consider that the base directory.
 
 FIXME:
 The `-f` command line argument overrides this.
+
+### `$MAVEN_SKIP_RC`
+
+If set, tells the launcher scripts _not_ to read the various Maven configuration files.
+This is useful to get standard behaviour.
+
+### `$JAVA_HOME`
+
+If set, the Java binary to be used must be found at `$JAVA_HOME/bin/java` or an error will
+be reported.  If not set, the Java binary is found in the `$PATH`.
+
+### `$MAVEN_DEBUG_OPTS`
+
+Additional options for the JVM if needed.  
+They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
 
 ## Files
 
@@ -77,9 +95,9 @@ FIXME: Is this a thing?
 
 ### `$MAVEN_BASEDIR/.mvn/maven.config`:
 
-This file contains additional command line arguments added to every invocation of Maven.
+FIXME:  IS THIS STILL THE CASE? LAUNCHER SCRIPTS DOES NOT LOOK FOR IT?!?
 
-FIXME:  Something more useful?
+This file contains additional command line arguments added to every invocation of Maven.
 
 For example things like `-T3 -U --fail-at-end`. 
 So you only have to call Maven just by using `mvn clean package` 
@@ -95,10 +113,10 @@ additional arguments to the JVM before the class name on the constructed
         -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
 
 
-### `$MAVEN_BASEDIR/.mvn/extensions.xml` file:
+### `$MAVEN_BASEDIR/.mvn/extensions.xml`
 
 If you for any reason needs additional artifacts put on the classpath used by Maven,
-simply list them here with their usual maven coordinates.
+simply list them here with their usual Maven coordinates.
 
 FIXME:  Where is this done?
 
@@ -112,6 +130,27 @@ FIXME:  Where is this done?
   </extension>
 </extensions>
 ```
+
+### `/usr/local/etc/mavenrc` + `/etc/mavenrc` + `$HOME/.mavenrc`
+
+Unix-like systems only: 
+Configuration files executed by the Unix launcher scripts first thing, unless
+if the environment variable `$MAVEN_SKIP_RC` is set.
+
+### `%USERPROFILE%\mavenrc_pre.bat` + `%USERPROFILE%\mavenrc_pre.cmd`
+
+Windows systems only:
+Configuration files executed by the Windows launcher scripts first thing, unless
+if the environment variable `%MAVEN_SKIP_RC%` is set.
+
+### `%USERPROFILE%\mavenrc_post.bat` + `%USERPROFILE%\mavenrc_post.cmd`
+
+Windows systems only:
+Configuration files executed by the Windows launcher scripts after Maven itself exits, unless
+if the environment variable `%MAVEN_SKIP_RC%` is set.
+
+
+---
 
 
 ## Other guides
