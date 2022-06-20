@@ -143,6 +143,12 @@ Windows systems only:
 Configuration files executed by the Windows launcher scripts first thing, unless
 if the environment variable `%MAVEN_SKIP_RC%` is set.
 
+This is useful for providing secrets, like the password for a keystore:
+
+```
+set MAVEN_OPTS=-Djavax.net.ssl.keyStore="<path to p12 file>" -Djavax.net.ssl.keyStoreType=pkcs12 -Djavax.net.ssl.keyStorePassword=<password>
+```
+
 ### `%USERPROFILE%\mavenrc_post.bat` + `%USERPROFILE%\mavenrc_post.cmd`
 
 Windows systems only:
