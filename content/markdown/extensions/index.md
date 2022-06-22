@@ -26,7 +26,7 @@ under the License.
   * [Write Extensions](/examples/maven-3-lifecycle-extensions.html)
   
 
-### Supported By The Maven Project
+### Maintained By The Maven Project
   
 | Extension                                      | Version | Release Date | Description                                                                             | Source Repository                                                                                                   | Issue Tracker
 |------------------------------------------------|---------|--------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------|
