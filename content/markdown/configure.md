@@ -28,10 +28,11 @@ and runs the appropriate `java ...` command line.
 
 ## Environment variables
 
-In the following the Unix syntax for environment variables is used.  For `$A` the 
-Windows equivalent is `%A%`.
+In the following the Unix syntax for environment variables is used in the text.
 
-### `$MAVEN_OPTS`
+For Windows the syntax is slightly different, for `$A` use `%A%`.
+
+### `$MAVEN_OPTS` - `%MAVEN_OPTS%`
 
 The contents of this variable is placed in the `java` command _before_ the class name, and 
 can therefore be used to provide additional arguments to the JVM. 
@@ -50,7 +51,7 @@ CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 -->
 
-### `$MAVEN_BASEDIR`
+### `$MAVEN_BASEDIR` - `%MAVEN_BASEDIR%`
 
 If set, this is considered the base directory of the Maven project.  If not set, 
 the launcher scripts search for a `.mvn` folder towards the root of the drive, and if
@@ -59,17 +60,17 @@ found consider that the base directory.
 FIXME:
 The `-f` command line argument overrides this.
 
-### `$MAVEN_SKIP_RC`
+### `$MAVEN_SKIP_RC` - `%MAVEN_SKIP_RC%`
 
 If set, tells the launcher scripts _not_ to read the various Maven configuration files.
 This is useful to get standard behaviour.
 
-### `$JAVA_HOME`
+### `$JAVA_HOME` - `%JAVA_HOME%`
 
 If set, the Java binary to be used must be found at `$JAVA_HOME/bin/java` or an error will
 be reported.  If not set, the Java binary is found in the `$PATH`.
 
-### `$MAVEN_DEBUG_OPTS`
+### `$MAVEN_DEBUG_OPTS` - `%MAVEN_DEBUG_OPTS%`
 
 Additional options for the JVM if needed.  
 They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
@@ -81,7 +82,7 @@ into source control.
 
 FIXME:  Get all %'s right for Windows paths.
 
-### `$USER_HOME/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
+### `$USER/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
 
 This contains the user-specific Maven setup used across projects.  
 Often this is used to tell Maven to
