@@ -19,8 +19,9 @@ under the License.
 -->
 
 Apache Maven ships with two launcher commands in the `${MAVEN_HOME}/bin` folder,
-which based on several environment variables, project files and system files, constructs
-and runs the appropriate `java ...` command line.  
+which - based on several environment variables, project files and system files as described below
+- constructs and runs the appropriate `java ...` command line which then invokes the Java Virtual Machine (JVM) 
+that actually runs Maven.
 
 * `mvn` - normal way to run from the command line.
 * `mvnDebug` - launches `mvn` in debug mode, waiting for a Java debugger to attach to port `$MAVEN_DEBUG_ADDRESS` (default 8000).
@@ -35,13 +36,12 @@ For Windows the syntax is slightly different, for `$A` use `%A%`.
 ### `$MAVEN_OPTS` - `%MAVEN_OPTS%`
 
 The contents of this variable is placed in the `java` command _before_ the class name, and 
-can therefore be used to provide additional arguments to the JVM. 
+can therefore be used to provide additional arguments to the Java Virtual Machine (JVM) without
+having to specify them on the command line every time.
 
-FIXME:  Better example of what to use.
+Examples include garbage collector and memory configuration, but _not_ options to Maven itself
 
-This variable contains parameters used to start up the JVM running Maven and
-can be used to supply additional options to it. E.g. JVM memory
-settings could be defined with the value `-Xms256m -Xmx512m`.
+Use `java --help` and `java -X` to see what is possible in this particular JVM.
 
 <!--
 ### `$MAVEN_ARGS`
@@ -55,10 +55,8 @@ CLI arguments. E.g., options and goals could be defined with the value
 
 If set, this is considered the base directory of the Maven project.  If not set, 
 the launcher scripts search for a `.mvn` folder towards the root of the drive, and if
-found consider that the base directory.  
+found consider that the base directory.
 
-FIXME:
-The `-f` command line argument overrides this.
 
 ### `$MAVEN_SKIP_RC` - `%MAVEN_SKIP_RC%`
 
@@ -77,22 +75,16 @@ They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
 
 ## Files
 
-Files underneath `$MAVEN_BASEDIR` are part of your project and may be checked 
+Files in `$MAVEN_BASEDIR` and below are part of your project and may be checked 
 into source control.
-
-FIXME:  Get all %'s right for Windows paths.
 
 ### `$USER/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
 
 This contains the user-specific Maven setup used across projects.  
-Often this is used to tell Maven to
-use an internal repository instead of Maven Central if behind a firewall, 
-various profiles, 
-and passwords.
+Often this is used to tell Maven to use an internal repository instead of Maven Central if behind a firewall, 
+various profiles, and passwords.
 
-### `$MAVEN_BASEDIR/.mvn/config`:
-
-FIXME: Is this a thing?
+<!-- 
 
 ### `$MAVEN_BASEDIR/.mvn/maven.config`:
 
@@ -104,6 +96,7 @@ For example things like `-T3 -U --fail-at-end`.
 So you only have to call Maven just by using `mvn clean package` 
 instead of `mvn -T3 -U --fail-at-end clean package`.
 
+-->
 
 ### `$MAVEN_BASEDIR/.mvn/jvm.config`:
 
@@ -113,13 +106,18 @@ additional arguments to the JVM before the class name on the constructed
 
         -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
 
+Word of caution:  If you for any reason need to configure memory usage or the garbage collector - which should
+be considered a last resort - be absolutely certain that the configuration you use 
+applies to the version of the JVM you are using, and that you understand what you are doing.
+
 
 ### `$MAVEN_BASEDIR/.mvn/extensions.xml`
+
+FIXME:  WHERE IS THIS DONE?  IS THIS MAVEN 4 FUNCTIONALITY?
 
 If you for any reason needs additional artifacts put on the classpath used by Maven,
 simply list them here with their usual Maven coordinates.
 
-FIXME:  Where is this done?
 
 ```xml
 <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -138,13 +136,15 @@ Unix-like systems only:
 Configuration files executed by the Unix launcher scripts first thing, unless
 if the environment variable `$MAVEN_SKIP_RC` is set.
 
+Typically environment variables - including `$PATH` - are set here.
+
 ### `%USERPROFILE%\mavenrc_pre.bat` + `%USERPROFILE%\mavenrc_pre.cmd`
 
 Windows systems only:
-Configuration files executed by the Windows launcher scripts first thing, unless
-if the environment variable `%MAVEN_SKIP_RC%` is set.
+Configuration files executed by the Windows launcher scripts first thing _before_ launching the Maven JVM, 
+unless if the environment variable `%MAVEN_SKIP_RC%` is set.
 
-This is useful for providing secrets, like the password for a keystore:
+This can be used to provide secrets, like the password for a keystore:
 
 ```
 set MAVEN_OPTS=-Djavax.net.ssl.keyStore="<path to p12 file>" -Djavax.net.ssl.keyStoreType=pkcs12 -Djavax.net.ssl.keyStorePassword=<password>
@@ -153,7 +153,7 @@ set MAVEN_OPTS=-Djavax.net.ssl.keyStore="<path to p12 file>" -Djavax.net.ssl.key
 ### `%USERPROFILE%\mavenrc_post.bat` + `%USERPROFILE%\mavenrc_post.cmd`
 
 Windows systems only:
-Configuration files executed by the Windows launcher scripts after Maven itself exits, unless
+Configuration files executed by the Windows launcher scripts _after_ the Maven JVM itself exits, unless
 if the environment variable `%MAVEN_SKIP_RC%` is set.
 
 
