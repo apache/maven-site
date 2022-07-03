@@ -76,7 +76,7 @@ They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
 ## Files
 
 
-### `$HOME/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
+### `$HOME/.m2/settings.xml` - `%USERPROFILE%\.m2\settings.xml`
 
 This contains the user-specific Maven setup used across projects.  
 Often this is used to tell Maven to use an internal repository instead of Maven Central if behind a firewall, 
