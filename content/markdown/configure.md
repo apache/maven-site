@@ -18,13 +18,13 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Apache Maven ships with two launcher commands in the `${MAVEN_HOME}/bin` folder,
-which - based on several environment variables, project files and system files as described below
-- constructs and runs the appropriate `java ...` command line which then invokes the Java Virtual Machine (JVM) 
+Apache Maven ships with two launcher commands in the `${MAVEN_HOME}/bin` directory,
+which &ndash; based on several environment variables, project files and system files as described below
+&ndash; constructs and runs the appropriate `java ...` command line which then invokes the Java Virtual Machine (JVM) 
 that actually runs Maven.
 
-* `mvn` - normal way to run from the command line.
-* `mvnDebug` - launches `mvn` in debug mode, waiting for a Java debugger to attach to port `$MAVEN_DEBUG_ADDRESS` (default 8000).
+* `mvn`: normal way to run from the command line.
+* `mvnDebug`: launches `mvn` in debug mode, waiting for a Java debugger to attach to the address specified in `$MAVEN_DEBUG_ADDRESS` (default 8000).
 
 
 ## Environment variables
@@ -33,7 +33,7 @@ In the following the Unix syntax for environment variables is used in the text.
 
 For Windows the syntax is slightly different, for `$A` use `%A%`.
 
-### `$MAVEN_OPTS` - `%MAVEN_OPTS%`
+### `$MAVEN_OPTS` / `%MAVEN_OPTS%`
 
 The contents of this variable is placed in the `java` command _before_ the class name, and 
 can therefore be used to provide additional arguments to the Java Virtual Machine (JVM) without
@@ -41,7 +41,7 @@ having to specify them on the command line every time.
 
 Examples include garbage collector and memory configuration, but _not_ options to Maven itself
 
-Use `java --help` and `java -X` to see what is possible in this particular JVM.
+Use `java -help` and `java -X` to see what is possible in this particular JVM.
 
 <!--
 ### `$MAVEN_ARGS`
@@ -51,34 +51,32 @@ CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 -->
 
-### `$MAVEN_BASEDIR` - `%MAVEN_BASEDIR%`
+### `$MAVEN_BASEDIR` / `%MAVEN_BASEDIR%`
 
 If set, this is considered the base directory of the Maven project.  If not set, 
 the launcher scripts search for a `.mvn` folder towards the root of the drive, and if
 found consider that the base directory.
 
 
-### `$MAVEN_SKIP_RC` - `%MAVEN_SKIP_RC%`
+### `$MAVEN_SKIP_RC` / `%MAVEN_SKIP_RC%`
 
-If set, tells the launcher scripts _not_ to read the various Maven configuration files.
+If set, tells the launcher scripts _not_ to read the various Maven run command scripts before and after running the Maven JVM.
 This is useful to get standard behaviour.
 
-### `$JAVA_HOME` - `%JAVA_HOME%`
+### `$JAVA_HOME` / `%JAVA_HOME%`
 
-If set, the Java binary to be used must be found at `$JAVA_HOME/bin/java` or an error will
-be reported.  If not set, the Java binary is found in the `$PATH`.
+If set, the Java executable to be used must be found at `$JAVA_HOME/bin/java` or an error will
+be reported.  If not set, the Java executable is found in the `$PATH`.
 
-### `$MAVEN_DEBUG_OPTS` - `%MAVEN_DEBUG_OPTS%`
+### `$MAVEN_DEBUG_OPTS` / `%MAVEN_DEBUG_OPTS%`
 
 Additional options for the JVM if needed.  
 They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
 
 ## Files
 
-Files in `$MAVEN_BASEDIR` and below are part of your project and may be checked 
-into source control.
 
-### `$USER/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
+### `$HOME/.m2/settings.xml` - `%USER_HOME%\.m2\settings.xml`
 
 This contains the user-specific Maven setup used across projects.  
 Often this is used to tell Maven to use an internal repository instead of Maven Central if behind a firewall, 
@@ -100,7 +98,7 @@ instead of `mvn -T3 -U --fail-at-end clean package`.
 
 ### `$MAVEN_BASEDIR/.mvn/jvm.config`:
 
-Allows a persistable alternative to `$MAVEN_OPTS` for providing 
+Allows a persistable alternative per project to `$MAVEN_OPTS` for providing 
 additional arguments to the JVM before the class name on the constructed 
 `java ...` command line.  Sample contents: 
 
@@ -115,8 +113,8 @@ applies to the version of the JVM you are using, and that you understand what yo
 
 FIXME:  WHERE IS THIS DONE?  IS THIS MAVEN 4 FUNCTIONALITY?
 
-If you for any reason needs additional artifacts put on the classpath used by Maven,
-simply list them here with their usual Maven coordinates.
+If you for any reason needs additional artifacts put on the classpath used by Maven
+in your project, simply list them here with their usual Maven coordinates.
 
 
 ```xml
@@ -136,7 +134,7 @@ Unix-like systems only:
 Configuration files executed by the Unix launcher scripts first thing, unless
 if the environment variable `$MAVEN_SKIP_RC` is set.
 
-Typically environment variables - including `$PATH` - are set here.
+Typically environment variables &ndash; including `$PATH` &ndash; are set here.
 
 ### `%USERPROFILE%\mavenrc_pre.bat` + `%USERPROFILE%\mavenrc_pre.cmd`
 
@@ -149,6 +147,10 @@ This can be used to provide secrets, like the password for a keystore:
 ```
 set MAVEN_OPTS=-Djavax.net.ssl.keyStore="<path to p12 file>" -Djavax.net.ssl.keyStoreType=pkcs12 -Djavax.net.ssl.keyStorePassword=<password>
 ```
+
+IMPORTANT:  Information provided in this way may be accessible for others sharing the computer this runs on.
+
+
 
 ### `%USERPROFILE%\mavenrc_post.bat` + `%USERPROFILE%\mavenrc_post.cmd`
 
