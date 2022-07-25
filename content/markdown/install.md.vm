@@ -37,7 +37,7 @@ tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz
 Alternatively use your preferred archive extraction tool.
 
 * Add the `bin` directory of the created directory `apache-maven-${currentStableVersion}` to 
-the `PATH` environment variable
+the `PATH` environment variable. 
 
 * Confirm with `mvn -v` in a new shell. The result should look similar to
 
@@ -70,6 +70,7 @@ The same dialog can be used to set `JAVA_HOME` to the location of your JDK, e.g.
 
 Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
 -----
+Apple sets the zsh shell as the default for any new user account that is created in macOS Catalina(10.15.7) or later. Thus, `.zprofile` is the startup file when you open up a terminal. You would need to modify `PATH` environment variable in `.zprofile` instead of `.bash_profile`. But if you upgraded your macOS from an earlier version, you can still add environment variable to `.bash_profile`. 
 
 * Check environment variable value
 
