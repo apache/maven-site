@@ -220,6 +220,8 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
 *---------------------------------------------------------------------------------+----------------------------------+
+| {{{https://www.mojohaus.org/buildplan-maven-plugin/} <<<buildplan>>>}}          | Inspect the lifecycle of your build.
+*---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/castor-maven-plugin/} <<<castor>>>}}                | Generate sources from an XSD using Castor.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/clirr-maven-plugin/} <<<clirr>>>}}                  | Compare binaries or sources for compatibility using Clirr |
@@ -265,8 +267,6 @@ Available Plugins
 | {{{https://github.com/CycloneDX/cyclonedx-maven-plugin} <<<CycloneDX>>>}}  | {{{https://cyclonedx.org/}CycloneDX Project}} | Generate Software Bill of Materials (SBOM) in CycloneDX format.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://www.simplify4u.org/pgpverify-maven-plugin/} <<<pgpverify>>>}}   | {{{https://www.simplify4u.org/}Simplify4U}} | Verify PGP signature of all project dependencies.
-*----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{http://buildplan.jcgay.fr/} <<<buildplan>>>}}                           | JC Gay         | Inspect the lifecycle of your build.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 
 * Resources
