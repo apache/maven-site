@@ -60,7 +60,7 @@ Available Skins
 *-------------------------------------------------------------------+----------------+-----------------------+
 || <<Skin>>                                                         || <<Maintainer>> || <<Description>>
 *-------------------------------------------------------------------+----------------+-----------------------+
-| {{{http://andriusvelykis.github.io/reflow-maven-skin/} <<<Reflow Maven Skin>>>}} | {{{https://github.com/andriusvelykis} Andrius Velykis}} | Responsive Apache Maven skin to reflow the standard Maven site with a modern fe
+| {{{https://olamy.github.io/reflow-maven-skin/} <<<Reflow Maven Skin>>>}} | {{{https://github.com/olamy} Olivier Lamy}} | Responsive Apache Maven skin to reflow the standard Maven site with a modern fe
 *-------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://docs.bernardomg.com/maven/docs-maven-skin/} <<<Docs Maven Skin>>>}} | {{{https://github.com/Bernardo-MG} Bernardo Martínez Garrido}} | A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
 *-------------------------------------------------------------------+----------------+-----------------------+
