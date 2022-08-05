@@ -53,4 +53,4 @@ A number of other projects provide their own Maven extensions. This includes:
 
 | Extension                                                                | Maintainer  | Description
 |--------------------------------------------------------------------------|-------------|-----------
-| [Gradle Enterprise](https://docs.gradle.com/enterprise/maven-extension/) | Gradle Inc. | Captures Maven build insights that can be viewed for free on [scans.gradle.com](https://scans.gradle.com/). Provides local and remote build caching and distributed test execution for Maven builds connected to a Gradle Enterprise installation.
+| [Gradle Enterprise](https://docs.gradle.com/enterprise/maven-extension/) | Gradle Inc. | Captures Maven build insights that can be viewed for free on [scans.gradle.com](https://scans.gradle.com/). Provides local and remote build caching, distributed test execution and predictive test selection for Maven builds connected to a Gradle Enterprise installation.
