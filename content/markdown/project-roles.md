@@ -134,11 +134,25 @@ These are those people who have been given write access to the
 Apache Maven code repository and have a signed 
 [Contributor License Agreement (CLA)][4] on file with the ASF.
 
-The Apache Maven project uses a Commit then Review policy and has
-[a number of conventions][5] which should be followed.
+Committers are responsible for ensuring that every file they
+commit is covered by a valid CLA.
 
-Committers are responsible for ensuring that every file they 
-commit is covered by a valid CLA. 
+The Apache Maven project follows both ASF commit policies as described in
+[ASF Development Process](https://www.apache.org/foundation/how-it-works/legal.html)
+document.
+
+In general, "review then commit" (RTC) is required for complex changes or against "stable" 
+branches, while "commit then review" (CTR) is allowed for the rest of changes. 
+Always inform yourself (ultimately by asking on developers mailing list) which branches 
+are considered as "stable" and which as not stable ones.
+
+Naturally, while committers have write access to code repository, nothing prevents
+them to use personal forks of project repositories, hence creating pull requests
+may happen in both ways (as both has pros and cons): from branch in project 
+repository or from personal fork as well. It is left to developer how
+he organizes his own work.
+
+Committers should also follow [a number of conventions][5].
 
 Committers who would like to become PMC members should try to find
 ways to demonstrate the responsibilities listed in the PMC Members

@@ -64,8 +64,12 @@ Maven Git Convention
 ** For committers
 
   Committers may, of course, commit directly to the ASF repositories.
-  For complex changes, you may find it valuable to make a pull request
-  at github to make it easier to collaborate with others.
+  For complex changes or changes against stable branches it is required
+  to make a pull request at github to make it easier to collaborate with
+  others. For simple/trivial changes, it is okay for a committer to push
+  directly to repository and not create PR. Whether pull requests are created
+  from branch pushed to ASF repository or from developer own
+  personal fork, is left up to developer to decide.
 
 *** {Commit Message Template}
 
