@@ -71,6 +71,8 @@ Maven Git Convention
   from branch pushed to ASF repository or from developer own
   personal fork, is left up to developer to decide.
 
+  About definition of stable branches see {{{/project-roles.html#committers}Committer role}}.
+
 *** {Commit Message Template}
 
   Commits should be focused on one issue at a time, because that makes it easier

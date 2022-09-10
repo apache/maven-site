@@ -146,6 +146,8 @@ branches, while "commit then review" (CTR) is allowed for the rest of changes.
 Always inform yourself (ultimately by asking on developers mailing list) which branches 
 are considered as "stable" and which as not stable ones.
 
+If unsure by any reason, RTC policy is to be followed (create pull request and ask for review).
+
 Naturally, while committers have write access to code repository, nothing prevents
 them to use personal forks of project repositories, hence creating pull requests
 may happen in both ways (as both has pros and cons): from branch in project 
