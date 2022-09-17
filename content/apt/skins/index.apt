@@ -60,11 +60,13 @@ Available Skins
 *-------------------------------------------------------------------+----------------+-----------------------+
 || <<Skin>>                                                         || <<Maintainer>> || <<Description>>
 *-------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://olamy.github.io/reflow-maven-skin/} <<<Reflow Maven Skin>>>}} | {{{https://github.com/olamy} Olivier Lamy}} | Responsive Apache Maven skin to reflow the standard Maven site with a modern fe
+| {{{https://olamy.github.io/reflow-maven-skin/} <<<Reflow Maven Skin>>>}} | {{{https://github.com/olamy} Olivier Lamy}} | Responsive Apache Maven skin to reflow the standard Maven site with a modern feel.
 *-------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://devacfr.github.io/reflow-maven-skin/} <<<Reflow 2 Maven Skin>>>}} | {{{https://github.com/devacfr} Friederich Christophe}} | Responsive 2 Apache Maven skin to reflow the standard Maven site with a modern fe
+| {{{https://devacfr.github.io/reflow-maven-skin/} <<<Reflow 2 Maven Skin>>>}} | {{{https://github.com/devacfr} Friederich Christophe}} | Responsive 2 Apache Maven skin to reflow the standard Maven site with a modern feel.
 *-------------------------------------------------------------------+----------------+-----------------------+
 | {{{http://docs.bernardomg.com/maven/docs-maven-skin/} <<<Docs Maven Skin>>>}} | {{{https://github.com/Bernardo-MG} Bernardo Martínez Garrido}} | A minimalist and responsive Bootstrap-based HTML5 skin for Maven Site, which will help to use it as a documentation site.
+*-------------------------------------------------------------------+----------------+-----------------------+
+| {{{https://stevecrox.github.io/maven-site-bootstrap-skin//} <<<Bootstrap Site Skin>>>}} | {{{https://github.com/stevecrox/maven-site-bootstrap-skin} Stephen Crocker}} | Responsive Maven Bootstrap Skin which has toggleable elements implemented based on the boostrap reference layouts.
 *-------------------------------------------------------------------+----------------+-----------------------+
 
 * Instructions
