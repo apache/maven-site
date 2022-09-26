@@ -1,4 +1,4 @@
-# Maven Repository Metadata
+# Maven Metadata
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -19,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Repositories contain metadata files as well, that enables several "discovery" and "resolution"-like operations
+Repositories contain metadata (aka "repository metadata") files as well, that enables several "discovery" and "resolution"-like operations
 for Maven. These metadata files are **not** Artifacts, and hence, are not addressable by Maven users. They are instead
 transparently operated and handled by Maven itself in automatic manner. These files are XML files named as
 `maven-metadata.xml` (are deployed with checksums just like artifacts are).
