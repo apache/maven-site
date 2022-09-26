@@ -25,6 +25,24 @@ has been fixed.
 For more information about reporting vulnerabilities, see the [Apache
 Security Team](https://www.apache.org/security/) page.
 
+### CVE-2021-26291 Apache Maven 3.8.1
+
+Severity: Medium
+
+Vendor: The Apache Software Foundation
+
+Versions Affected:
+
+- Apache Maven 3.6.3 and earlier
+
+Description: More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains POMs with custom repositories that refer to a URL over HTTP.
+This makes downloads via such repository a target for a MITM attack. 
+At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
+Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
+To solve this, we extended the mirror configuration with `<blocked>` parameter,
+and we added a new `external:http:*` mirror selector (like existing `external:*`), meaning "any external URL using HTTP".\
+The decision was made to block such external HTTP repositories by default: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs.
+Note: this is a vulnerability in case you're connectioning directly to remote repositories instead of using an artifact repository manager.
 
 ### Maven Dependency, EAR, Javadoc, WAR and Plugin Plugins
 
