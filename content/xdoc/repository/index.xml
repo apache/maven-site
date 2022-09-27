@@ -49,29 +49,21 @@
 <!-- TODO: more documents to link to here. Use the navigation cues (how to upload, how to mirror, etc). -->
 
       <p align="center">
-        <img src="maven-repositories.png" width="764" height="654" border="0" usemap="#map" />
+        <img src="maven-central-repository.png" border="0" usemap="#map" />
 
         <map name="map">
           <area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
           <area shape="rect" coords="264,76,354,111"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
           <area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
           <area shape="rect" coords="490,75,520,111"  alt="Producers" href="https://central.sonatype.org/pages/producers.html" />
-          <area shape="rect" coords="596,326,666,363" alt="JBoss"    href="http://repository.jboss.org/maven2/" />
           <area shape="rect" coords="329,274,426,312" alt="central index" href="./central-index.html" />
           <area shape="rect" coords="39,274,205,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
           <area shape="rect" coords="65,348,205,383"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
           <area shape="rect" coords="292,356,365,391" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
           <area shape="rect" coords="373,356,447,391" alt="Google"   href="https://storage-download.googleapis.com/maven-central/index.html" />
           <area shape="rect" coords="100,126,424,239" alt="Central Upload"                href="./guide-central-repository-upload.html" />
-          <area shape="rect" coords="0,184,460,421"   alt="central (default)"             href="/guides/introduction/introduction-to-the-pom.html" />
-          <area shape="rect" coords="187,593,277,629" alt="Maven"    href="/what-is-maven.html" />
-          <area shape="rect" coords="280,628,403,649" alt="local repository"              href="/guides/mini/guide-configuring-maven.html" />
-          <area shape="rect" coords="364,498,570,534" alt="Repository Manager"            href="/repository-management.html" />
-          <area shape="rect" coords="303,545,451,584" alt="settings.xml &lt;mirrorOf&gt;" href="/guides/mini/guide-mirror-settings.html" />
-          <area shape="rect" coords="407,589,628,653" alt="pom.xml &lt;repository&gt;"    href="/guides/mini/guide-multiple-repositories.html" />
         </map>
       </p>
-      <p>See also the <a href="/guides/introduction/introduction-to-repositories.html">Introduction to Repositories</a> and <a href="./layout.html">Repository Layout</a>.</p>
     </section>
   </body>
 </document>
