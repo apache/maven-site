@@ -202,9 +202,9 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 *---------------------*--------------*
  <<<StringBuilder>>>  | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#StringBuilder-java.lang.String-}<<<new StringBuilder(String)>>>}}
 *---------------------*--------------*
- <<<java.net.URI>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-)}<<<new URI(String)>>>}}
+ <<<java.net.URI>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-}<<<new URI(String)>>>}}
 *---------------------*--------------*
- <<<java.net.URL>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-)}<<<new URL(String)>>>}}
+ <<<java.net.URL>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-}<<<new URL(String)>>>}}
 *---------------------*--------------*
 
 *** {Mapping Complex Objects}
