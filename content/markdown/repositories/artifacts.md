@@ -104,7 +104,7 @@ Maven for dependencies defines "type", that describes what that dependency is (s
 many other things). Plugins and extensions may define new types, that is usually a must for plugins introducing
 a "packaging" (lifecycle mapping) by providing `ArtifactHandler` components with name corresponding to type name.
 
-Maven Core out of the box defines following "types" (handled by same named `ArtifactHandler` components):
+Maven Core out of the box [defines following "types" (handled by same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
 
 | Type Name    | Extension | Classifier   |
 |--------------|-----------|--------------|

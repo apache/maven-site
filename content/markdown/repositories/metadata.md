@@ -25,8 +25,10 @@ transparently operated and handled by Maven itself in automatic manner. These fi
 `maven-metadata.xml` (are deployed with checksums just like artifacts are).
 
 Links:
+* [Reference documentation](/ref/current/maven-repository-metadata/)
 * [XML Schema](/xsd/repository-metadata-1.1.0.xsd)
 * [Modello model](https://gitbox.apache.org/repos/asf?p=maven.git;a=blob_plain;f=maven-repository-metadata/src/main/mdo/metadata.mdo;hb=HEAD)
+  and its [descriptor documentation](/ref/current/maven-repository-metadata/repository-metadata.html)
 
 We distinguish 3 different kinds of metadata files (using GAV coordinates):
 * G level metadata

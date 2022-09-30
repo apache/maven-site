@@ -37,22 +37,22 @@ The transformation rule is quite simple for that matter: consider artifact prope
 | Name        | Transformation                                          | Result example                           |
 |-------------|---------------------------------------------------------|------------------------------------------|
 | groupId     | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
-| artifactId  | none                                                    | `apache-maven` -> `apache-maven`         |
-| version     | none                                                    | `3.8.4` -> `3.8.4`                       |
+| artifactId  | none                                                    | `apache-maven`                         |
+| version     | none                                                    | `3.8.4`                                 |
 | baseVersion | none                                                    | (in this example same as version)        | 
-| classifier  | none                                                    | `bin` -> `bin`                           |
-| extension   | none                                                    | `tar.gz` -> `tar.gz`                     |
+| classifier  | none                                                    | `bin`                                   |
+| extension   | none                                                    | `tar.gz`                                |
 
-And using these properties transformed as above we can construct following path (if classifier not present):
+And using these properties transformed as above, we can construct following path (if classifier not present):
 
 ```
-${groupId}/${artifactId}/${baseVersion}/${artifactId}-${version}.${extension}
+${groupId as directory}/${artifactId}/${baseVersion}/${artifactId}-${version}.${extension}
 ```
 
 or if classifier present:
 
 ```
-${groupId}/${artifactId}/${baseVersion}/${artifactId}-${version}-${classifier}.${extension}
+${groupId as directory}/${artifactId}/${baseVersion}/${artifactId}-${version}-${classifier}.${extension}
 ```
 
 So the example artifact above noted as GAV:

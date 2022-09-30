@@ -64,9 +64,9 @@ In case of consuming snapshot, the following transformation happens:
 1.0-SNAPSHOT -> Remote V Level Repository Metadata -> 1.0-YYYYMMDD.HHMMS-X
 ```
 
-Due this indirection (the real filename of artifact, the version part) is figured from deployed maven repository metadata,
-the snapshot artifacts are "moving target": each snapshot deploy as above will deploy new and new metadata, hence, will
-alter this transformation here (Maven will download different and different snapshot artifact).
+Due this indirection (the real filename of artifact, the version part) is figured from deployed Maven repository metadata,
+the snapshot artifacts are "moving target": each snapshot deployment as above will deploy new metadata, hence, will
+alter this transformation here (Maven will download different snapshot artifact).
 
 Note: it is possible to "lock down" snapshot artifacts, by using timestamped version in version field of a dependency,
 and it will ensure Maven downloads always same artifact (is not "moving target" anymore), but **Maven will still consider
