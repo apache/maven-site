@@ -29,51 +29,7 @@
 
 Guide to Configuring Plug-ins
 
-  [[1]] {{{Generic_Configuration}Generic Configuration}}
-
-    [[1]] {{{Help_Goal}Help Goal}}
-
-    [[2]] {{{Configuring_Parameters}Configuring Parameters}}
-
-        [[1]] {{{Mapping_Simple_Objects}Mapping Simple Objects}}
-
-        [[2]] {{{Mapping_Complex_Objects}Mapping Complex Objects}}
-
-        [[3]] {{{Mapping_Collections}Mapping Collections}}
-
-            [[1]] {{{Mapping_Lists}Mapping Lists}}
-
-            [[2]] {{{Mapping_Maps}Mapping Maps}}
-
-            [[3]] {{{Mapping_Properties}Mapping Properties}}
-
-            []
-
-        []
-
-    []
-
-  [[2]] {{{Configuring_Build_Plugins}Configuring Build Plugins}}
-
-      [[1]] {{{Using_the_executions_Tag}Using the <<<\<executions\>>>> Tag}}
-
-      [[2]] {{{Using_the_dependencies_Tag}Using the <<<\<dependencies\>>>> Tag}}
-
-      [[3]] {{{Using_the_inherited_Tag_In_Build_Plugins}Using the <<<\<inherited\>>>> Tag In Build Plugins}}
-
-      []
-
-  [[3]] {{{Configuring_Reporting_Plugins}Configuring Reporting Plugins}}
-
-      [[1]] {{{Using_the_reporting_Tag_VS_build_Tag}Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}}
-
-      [[2]] {{{Using_the_reportSets_Tag}Using the <<<\<reportSets\>>>> Tag}}
-
-      [[3]] {{{Using_the_inherited_Tag_In_Reporting_Plugins}Using the <<<\<inherited\>>>> Tag In Reporting Plugins}}
-
-      []
-
-  []
+%{toc|fromDepth=2}
 
 * Introduction
 
@@ -190,9 +146,11 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
 ** {Configuring Parameters}
 
-*** {Mapping Simple Objects}
+  Parametrisation of Mojos is relying internally on Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
 
-  Mapping simple types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
+*** {Mapping Value Objects}
+
+  Mapping value types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
   the following:
 
 +----+
@@ -207,6 +165,47 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 </configuration>
 ...
 +----+
+
+  The detailed type coercion is explained in the table below.
+  For conversion to primitive types their according {{{https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html}wrapper classes are used and automatically unboxed}}.
+
+*---------------------*--------------*
+|| Parameter Class   || Conversion from String
+*---------------------*--------------*
+ <<<Boolean>>>        | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html#valueOf-java.lang.String-}<<<Boolean.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Byte>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html#decode-java.lang.String-}<<<Byte.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Character>>>      | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#valueOf-char-}<<<Character.valueOf(char)>>>}} of the first character in the given string
+*---------------------*--------------*
+ <<<Class>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#forName-java.lang.String-}<<<Class.forName(String)>>>}}
+*---------------------*--------------*
+ <<<java.util.Date>>> | {{{https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html#parse-java.lang.String-}<<<SimpleDateFormat.parse(String)>>>}} for the following patterns: <<<yyyy-MM-dd hh:mm:ss.S a>>>, <<<yyyy-MM-dd hh:mm:ssa>>>, <<<yyyy-MM-dd HH:mm:ss.S>>> or <<<yyyy-MM-dd HH:mm:ss>>>
+*---------------------*--------------*
+ <<<Double>>>         | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#valueOf-java.lang.String-}<<<Double.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Enum>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html#valueOf-java.lang.String-}<<<Enum.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<java.io.File>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/io/File.html#File-java.lang.String-}<<<new File(String)>>>}} with the file separators normalized to <<<File.separatorChar>>>. In case the file is relative, is is made absolute by prefixing it with the project's base directory.
+*---------------------*--------------*
+ <<<Float>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#valueOf-java.lang.String-}<<<Float.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Integer>>>        | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#decode-java.lang.String-}<<<Integer.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Long>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html#decode-java.lang.String-}<<<Long.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Short>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html#decode-java.lang.String-}<<<Short.decode(String)>>>}}
+*---------------------*--------------*
+ <<<String>>>         | n/a
+*---------------------*--------------*
+ <<<StringBuffer>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#StringBuffer-java.lang.String-}<<<new StringBuffer(String)>>>}}
+*---------------------*--------------*
+ <<<StringBuilder>>>  | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#StringBuilder-java.lang.String-}<<<new StringBuilder(String)>>>}}
+*---------------------*--------------*
+ <<<java.net.URI>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-}<<<new URI(String)>>>}}
+*---------------------*--------------*
+ <<<java.net.URL>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-}<<<new URL(String)>>>}}
+*---------------------*--------------*
 
 *** {Mapping Complex Objects}
 
@@ -252,15 +251,15 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 ...
 +----+
 
-*** {Mapping Collections}
+*** {Mapping Collection Types}
 
  The configuration mapping mechanism can easily deal with most collections so let's go through a few examples
  to show you how it's done:
 
-**** {Mapping Lists}
+**** {Mapping Collections and Arrays}
 
- Mapping lists works in much the same way as mapping to arrays where you a list of elements will be
- mapped to the List. So if you have a mojo like the following:
+ Mapping to collections works in much the same way as mapping to arrays. Each item is given in the XML
+ as dedicated element. The element name does not matter in that case. So if you have a mojo like the following:
 
 +----+
 public class MyAnimalMojo
@@ -277,7 +276,7 @@ public class MyAnimalMojo
 }
 +----+
 
- Where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
+ where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
 
 +----+
 <project>
@@ -314,6 +313,31 @@ public class MyAnimalMojo
   [[4]] If the element has no children, assume its type is <<<String>>>. Otherwise, the configuration will fail.
 
   []
+
+ Alternatively, you can list individual items as comma-separated list in the XML value of animals directly.
+ This approach is also used if configuring collection/array parameters via command line
+ The following example is equivalent to the example above:
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-myanimal-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <animals>cat,dog,aardvark</animals>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+ Each item is mapped again according to the rules of this section depending on the type of the collection/array.
+
 
 **** {Mapping Maps}
 
@@ -556,7 +580,7 @@ public class MyBoundQueryMojo
   command-line, you can execute:
 
 ------
-mvn myqyeryplugin:queryMojo@execution1
+mvn myquery:query@execution1
 ------
 
 ** {Using the <<<\<dependencies\>>>> Tag}

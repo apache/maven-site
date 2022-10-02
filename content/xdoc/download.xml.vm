@@ -31,49 +31,7 @@ under the License.
     <section name="Downloading Apache Maven ${currentStableVersion}">
 
       <p>Apache Maven ${currentStableVersion} is the latest release and recommended version for all users.</p>
-      <p>
-          [if-any logo]
-          <a href="[link]">
-            <img align="right" src="[logo]" border="0"
-                 alt="logo"/>
-          </a>
-          [end]
-          The currently selected download mirror is
-          <b>[preferred]</b>.
-          If you encounter a problem with this mirror,
-          please select another mirror.
-          If all mirrors are failing, there are
-          <i>backup</i>
-          mirrors
-          (at the end of the mirrors list) that should be available.
-            You may also consult the
-          <a href="https://www.apache.org/mirrors/">complete list of
-            mirrors.</a>
-        
-        </p>
 
-        <form action="[location]" method="get" id="SelectMirror">
-          Other mirrors:
-          <select name="Preferred">
-            [if-any http]
-            [for http]
-            <option value="[http]">[http]</option>
-            [end]
-            [end]
-            [if-any ftp]
-            [for ftp]
-            <option value="[ftp]">[ftp]</option>
-            [end]
-            [end]
-            [if-any backup]
-            [for backup]
-            <option value="[backup]">[backup] (backup)</option>
-            [end]
-            [end]
-          </select>
-          <input type="submit" value="Change"/>
-        </form>
-      
       <a name="Requirements"/>
       <subsection name="System Requirements" id="Requirements">
         <p>
@@ -108,7 +66,7 @@ under the License.
       Use a source archive if you intend to build Maven yourself.</p>
       <p>
       In order to guard against corrupted downloads/installations, it is highly recommended to
-      <a href="https://www.apache.org/dev/release-signing#verifying-signature">verify the signature</a>
+      <a href="https://www.apache.org/info/verification.html">verify the signature</a>
       of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
       developers.</p>
       <table>

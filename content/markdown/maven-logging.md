@@ -74,6 +74,10 @@ from the `lib` directory and replacing it with one of the alternative implementa
 
 See SLF4J documentation for more details on [swapping "SLF4J bindings"][7]. 
 
+## Maven implemenation details
+
+[More technical details](/ref/current/maven-embedder/logging.html) can be found in Maven release reference documentation.
+
 [1]: http://slf4j.org
 [2]: https://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
 [3]: https://logging.apache.org/log4j/2.x/log4j-slf4j-impl/

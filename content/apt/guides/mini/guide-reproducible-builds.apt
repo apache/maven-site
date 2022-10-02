@@ -57,7 +57,7 @@ mvn artifact:check-buildplan
 
  []
 
- You have the basics configured. The output should be reproducible now.
+ You have the basics configured. The output should be mostly reproducible now.
  
 * How to test my Maven build reproducibility?
 

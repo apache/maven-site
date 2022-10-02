@@ -986,7 +986,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 * {How do I deploy my jar in my remote repository?}
 
  For deploying jars to an external repository, you have to configure the repository url in the pom.xml
- and the authentication information for connectiong to the repository in the settings.xml.
+ and the authentication information for connecting to the repository in the settings.xml.
 
  Here is an example using scp and username/password authentication:
 

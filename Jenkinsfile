@@ -27,13 +27,13 @@
                 not { branch 'master' }
             }
             steps {
-                withMaven(jdk:'jdk_1.8_latest', maven:'maven_3_latest', mavenLocalRepo:'.repository', options: [
+                withMaven(jdk:'jdk_17_latest', maven:'maven_3_latest', mavenLocalRepo:'.repository', options: [
                   artifactsPublisher(disabled: true),
                   junitPublisher(disabled: true),
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn -Ppdf -U clean site"
+                    sh "mvn -U clean site"
                 }
             }
         }
@@ -42,13 +42,13 @@
                 branch 'master'
             }
             steps {
-                withMaven(jdk:'jdk_1.8_latest', maven:'maven_3_latest', mavenLocalRepo:'.repository', options: [
+                withMaven(jdk:'jdk_17_latest', maven:'maven_3_latest', mavenLocalRepo:'.repository', options: [
                   artifactsPublisher(disabled: true),
                   junitPublisher(disabled: true),
                   findbugsPublisher(disabled: true),
                   openTasksPublisher(disabled: true)
                 ]) {
-                    sh "mvn -Ppdf -U clean site-deploy"
+                    sh "mvn -U clean site-deploy"
                 }
             }
         }
