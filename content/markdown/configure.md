@@ -19,8 +19,8 @@ under the License.
 -->
 
 Apache Maven ships with two launcher commands in the `${MAVEN_HOME}/bin` directory,
-which &ndash; based on several environment variables, project files and system files as described below
-&ndash; constructs and runs the appropriate `java ...` command line which then invokes the Java Virtual Machine (JVM) 
+which &mdash; based on several environment variables, project files and system files as described below
+&mdash; constructs and runs the appropriate `java ...` command line which then invokes the Java Virtual Machine (JVM) 
 that actually runs Maven.
 
 * `mvn`: normal way to run from the command line.
@@ -35,11 +35,11 @@ For Windows the syntax is slightly different, for `$A` use `%A%`.
 
 ### `$MAVEN_OPTS` / `%MAVEN_OPTS%`
 
-The contents of this variable is placed in the `java` command _before_ the class name, and 
+The content of this variable is placed in the `java` command _before_ the class name, and 
 can therefore be used to provide additional arguments to the Java Virtual Machine (JVM) without
 having to specify them on the command line every time.
 
-Examples include garbage collector and memory configuration, but _not_ options to Maven itself
+Examples include garbage collector and memory configuration, but _not_ options to Maven itself.
 
 Use `java -help` and `java -X` to see what is possible in this particular JVM.
 
@@ -74,27 +74,28 @@ They are put after `$MAVEN_OPTS` and before the `-classpath` argument.
 ### `$HOME/.m2/settings.xml` - `%USERPROFILE%\.m2\settings.xml`
 
 This contains the user-specific Maven setup used across projects.  
-Often this is used to tell Maven to use an internal repository instead of Maven Central if behind a firewall, 
+Often this is used to tell Maven to use an internal repository 
+instead of Maven Central if behind a firewall, 
 various profiles, and passwords.
 
 
 ### `${project.basedir}/.mvn/jvm.config`:
 
-Allows a persistable alternative in the current project to `$MAVEN_OPTS` for providing 
+Allows a persistent alternative in the current project to `$MAVEN_OPTS` for providing 
 additional arguments to the JVM before the class name on the constructed 
 `java ...` command line.  Sample contents: 
 
         -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
 
-Word of caution:  If you for any reason need to configure memory usage or the garbage collector - which should
-be considered a last resort - be absolutely certain that the configuration you use 
+Word of caution:  If you for any reason need to configure memory usage or the garbage collector
+be absolutely certain that the configuration you use 
 applies to the version of the JVM you are using, and that you understand what you are doing.
 
 
 <!--
 ### `${project.basedir}/.mvn/extensions.xml`
 
-FIXME:  WHERE IS THIS DONE?  IS THIS MAVEN 4 FUNCTIONALITY?
+FIXME:  WHERE IS THIS DONE?  IS THIS MAVEN 4 FUNCTIONALITY?  Commented out for now.
 
 If you for any reason needs additional artifacts put on the classpath used by Maven
 in the current project, simply list them here with their usual Maven coordinates.
@@ -116,9 +117,9 @@ in the current project, simply list them here with their usual Maven coordinates
 
 Unix-like systems only: 
 Configuration files executed by the Unix launcher scripts first thing, unless
-if the environment variable `$MAVEN_SKIP_RC` is set.
+the environment variable `$MAVEN_SKIP_RC` is set.
 
-Typically environment variables &ndash; including `$PATH` &ndash; are set here.
+Typically, environment variables including `$PATH` are set here.
 
 
 ---
