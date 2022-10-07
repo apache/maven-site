@@ -345,7 +345,7 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    @Parameter(property = "myMap")
+    @Parameter
     private Map myMap;
 ...
 +-----+
@@ -367,7 +367,7 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    @Parameter(property = "myProperties")
+    @Parameter
     private Properties myProperties;
 ...
 +-----+
