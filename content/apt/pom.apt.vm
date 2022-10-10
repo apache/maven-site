@@ -550,19 +550,19 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
     The maven distribution includes a tool to check version order. It was used to produce the examples in the previous paragraphs. Feel free to run it yourself when in doubt. You can run it like this:
 
 ----------------------------------------
-java -jar ${MAVEN_HOME}/lib/maven-artifact-3.3.9.jar [versions...]
+java -jar ${MAVEN_HOME}/lib/maven-artifact-${currentStableVersion}.jar [versions...]
 ----------------------------------------
 
     example:
 
 ----------------------------------------
-$ java -jar ./lib/maven-artifact-3.3.9.jar  1 2 1.1
-Display parameters as parsed by Maven (in canonical form) and comparison result:
-1. 1 == 1
+$ java -jar ./lib/maven-artifact-${currentStableVersion}.jar  1 2 1.1
+Display parameters as parsed by Maven (in canonical form and as a list of tokens) and comparison result:
+1. 1 -> 1; tokens: [1]
    1 < 2
-2. 2 == 2
+2. 2 -> 2; tokens: [2]
    2 > 1.1
-3. 1.1 == 1.1
+3. 1.1 -> 1.1; tokens: [1, 1]
 ----------------------------------------
 
 *** {Exclusions}
