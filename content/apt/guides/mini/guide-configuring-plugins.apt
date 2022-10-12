@@ -391,7 +391,7 @@ public class MyAnimalMojo
 ...
 +-----+
 
- In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of those type via CLI argument. 
+ In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument. 
 
 * {Configuring Build Plugins}
 
