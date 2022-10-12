@@ -145,13 +145,13 @@ public class MyMojo
 
 *** IntelliJ IDEA
 
- Download <<<{{{../../developers/maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>>
- and import it into IDEA using File > Settings > Editor > Code Style > Gear icon >
- Import Scheme > IntelliJ IDEA Code Style XML
+ Download <<<{{{https://github.com/apache/maven-shared-resources/blob/master/src/main/resources/config/eclipse-formatter-config.xml}eclipse-formatter-config.xml}}>>>
+ and import it into IDEA using Intellij IDEA > Preferences > Editor > Code Style > Java > Gear icon >
+ Import Scheme > Eclipse XML Profile
 
 *** Eclipse
 
- Download <<<{{{../../developers/maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
+ Download <<<{{{https://github.com/apache/maven-shared-resources/blob/master/src/main/resources/config/eclipse-formatter-config.xml}eclipse-formatter-config.xml}}>>>.
 
  After this, select Window \> Preferences, and open up the configuration for Java \> Code
  Style \> Code Formatter. Click on the button labeled Import... and select the file you
