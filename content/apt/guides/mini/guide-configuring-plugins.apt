@@ -314,7 +314,7 @@ public class MyAnimalMojo
 
   []
 
- Alternatively, you can list individual items as comma-separated list in the XML value of animals directly.
+ Since Maven 3.3.9 ({{{https://issues.apache.org/jira/browse/MNG-5440}MNG-5440}}), you can list individual items alternatively as comma-separated list in the XML value of animals directly.
  This approach is also used if configuring collection/array parameters via command line
  The following example is equivalent to the example above:
 
@@ -361,6 +361,8 @@ public class MyAnimalMojo
 ...
 +-----+
 
+ In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of those type via CLI argument. 
+
 **** {Mapping Properties}
 
  Properties should be defined like the following:
@@ -388,6 +390,8 @@ public class MyAnimalMojo
   </configuration>
 ...
 +-----+
+
+ In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of those type via CLI argument. 
 
 * {Configuring Build Plugins}
 
