@@ -28,7 +28,7 @@
 
 Example: Using Maven 3 lifecycle extension
 
-* Lifecyle Participation
+* Lifecycle Extension Points
 
   You can extend multiple classes depending on your needs:
 
@@ -36,11 +36,11 @@ Example: Using Maven 3 lifecycle extension
 
   * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/AbstractMavenLifecycleParticipant.html}<<<org.apache.maven.AbstractMavenLifecycleParticipant>>>}},
 
-  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/eventspy/AbstractEventSpy.html}<<<org.apache.maven.eventspy.AbstractEventSpy>>>}},
+  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/eventspy/AbstractEventSpy.html}<<<org.apache.maven.eventspy.AbstractEventSpy>>>}}
 
   []
 
-* Build your extension
+* Build Your Extension
 
   Create a Maven project with a dependency on <<<org.apache.maven:maven-core:${currentStableVersion}>>> and other dependencies:
 
@@ -53,21 +53,23 @@ Example: Using Maven 3 lifecycle extension
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-core</artifactId>
       <version>${currentStableVersion}</version>
+      <scope>provided</scope> <!-- always provided by the Maven Core Classloader -->
     </dependency>
 
-    <!-- dependency for plexus annotation -->
+    <!-- dependency for JSR 330 annotation -->
     <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-component-annotations</artifactId>
-      <version>1.7.1</version>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version> 
+      <scope>provided</scope> <!-- always provided by the Maven Core Classloader -->
     </dependency>
 +---+
 
-  Create your extension class
+  Create your extension class; your extension must be a {{{https://www.eclipse.org/sisu/}Sisu component}}, therefore mark it with the JSR 330 (or legacy Plexus container) annotation:
 
 +---+
-// your extension must be a "Plexus" component so mark it with the annotation
-@Component( role = AbstractMavenLifecycleParticipant.class, hint = "beer")
+@Named( "beer")
+@Singleton
 public class BeerMavenLifecycleParticipant extends AbstractMavenLifecycleParticipant
 {
 
@@ -89,7 +91,7 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
 }
 +---+
 
-  Generate plexus metadata during the build of your extension jar:
+  Generate {{{https://eclipse.github.io/sisu.mojos/}Sisu index files}} during the build of your extension jar:
 
 +---+
   <build>
@@ -97,13 +99,14 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
     <plugins>
       ...
       <plugin>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-component-metadata</artifactId>
-        <version>1.7.1</version>
+        <groupId>org.eclipse.sisu</groupId>
+        <artifactId>sisu-maven-plugin</artifactId>
+        <version>0.3.5</version>
         <executions>
           <execution>
+            <id>generate-index</id>
             <goals>
-              <goal>generate-metadata</goal>
+              <goal>main-index</goal>
             </goals>
           </execution>
         </executions>
@@ -114,35 +117,11 @@ public class BeerMavenLifecycleParticipant extends AbstractMavenLifecyclePartici
   </build>
 +---+
 
-* Use your extension in your build(s)
+* Load Your Extension
 
-  You have 3 ways to use your extension within your builds:
+ Use your extension in your build(s) via one of the means outlined at {{{../guides/mini/guide-using-extensions.html}Guide to using Extensions}}
 
-  * add your extension jar in <<<$\{maven.home\}/lib/ext>>>,
-
-  * add it as a build extension in your pom,
-
-  * (since Maven 3.3.1) configure your extension in {{{/ref/current/maven-embedder/core-extensions.html}<<<.mvn/extensions.xml>>>}}.
+  Whether late registration is sufficient or early registration is required depends on the implemented interface/extended class,
+  e.g. <<<AbstractMavenLifecycleParticipant.afterSessionStart()>>> is not called for components registered late.
 
   []
-
-  <<NOTE>>: if you use the build extension mechanism, the method <<<afterSessionStart>>> <<won't be called>> since the extension
-  is loaded later in the build
-
-  To use a build extension in your project, declare it in your pom as:
-
-+---+
-   <build>
-     ...
-     <extensions>
-       ...
-       <extension>
-         <groupId>org.apache.maven.extensions</groupId>
-         <artifactId>beer-maven-lifecycle</artifactId>
-         <version>1.0-SNAPSHOT</version>
-       </extension>
-       ...
-     </extensions>
-    ...
-   </build>
-+---+
