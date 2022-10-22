@@ -515,7 +515,18 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
-  * else "<<<.qualifier>>>" \< "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+  * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+
+  * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
+
+  []
+
+   Following semver rules is encouraged, and some qualifiers are discouraged:
+   * Prefer '<<<alpha>>>', '<<<beta>>>' and '<<<milestone>>>' qualifiers over '<<<ea>>>' and '<<<preview>>>'.
+   * Prefer '<<<1.0.0-RC1>>>'' over '<<<1.0.0.RC1>>>'.
+   * The usage of '<<<CR>>>' qualifier is discouraged. Use '<<<RC>>>' instead.
+   * The usage of '<<<final>>>', '<<<ga>>>', and '<<<release>>>' qualifiers is discouraged. Use no qualifier instead.
+   * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
   []
 
@@ -527,17 +538,17 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" \< "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
 
-  * "<<<1.ga>>>"  = "<<<1-ga>>>"  = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
+  * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
-  * "<<<1-sp>>>"   \> "<<<1-ga>>>"
+  * "<<<1-sp>>>" \> "<<<1-ga>>>"
 
-  * "<<<1-sp.1>>>"  \> "<<<1-ga.1>>>"
+  * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
   * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
 
-  * "<<<1-a1>>>"  = "<<<1-alpha-1>>>"
+  * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
