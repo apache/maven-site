@@ -63,6 +63,20 @@ $b_</td>
 
 Date format is: YYYY-MM-DD
 
+<h3><a name="Maven_40>Maven 4.0+</a></h3>
+<table>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
+</tr>
+<!--  release( date version announce latest-minor jdk rowspan ) -->
+<!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
+
+#release( "2022-10-24" "4.0.0-alpha-2" "https://lists.apache.org/thread/snnlfsk24wmdp8tp79b2k11ln34hk6ks" "" "Java 8" "1" )
+
+</table>
+
 <h3><a name="Maven_31">Maven 3.1+</a></h3>
 <table>
 <tr><th>Release Date</th>
