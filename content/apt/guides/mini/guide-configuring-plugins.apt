@@ -266,7 +266,7 @@ public class MyAnimalMojo
     extends AbstractMojo
 {
     @Parameter(property = "animals")
-    private List animals;
+    private List<String> animals;
 
     public void execute()
         throws MojoExecutionException
@@ -300,17 +300,21 @@ public class MyAnimalMojo
 </project>
 +----+
 
- Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections have no
- specific component type. In order to derive the type of a list item, the following strategy is used:
+ Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections do not necessarily have
+  a specific component type. In order to derive the type of a collection item, the following strategy is used:
 
-  [[1]] If the XML element contains an <<<implementation>>> hint attribute, that is used
+  [[1]] If the XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
 
-  [[2]] If the XML tag contains a <<<.>>>, try that as a fully qualified class name
+  [[2]] If the XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
 
-  [[3]] Try the XML tag (with capitalized first letter) as a class in the same package as the mojo/object being
+  [[3]] Try the XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
         configured
 
-  [[4]] If the element has no children, assume its type is <<<String>>>. Otherwise, the configuration will fail.
+  [[4]] Use the parameter type information from either
+        {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html#getGenericType()}<<<Field.getGenericType()>>>}} or 
+        {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html#getGenericParameterTypes()}<<<Method.getGenericParameterTypes()>>>}}
+
+  [[5]] If the element has no children, assume its type is <<<String>>>. Otherwise, the configuration will fail.
 
   []
 
@@ -346,7 +350,7 @@ public class MyAnimalMojo
 +-----+
 ...
     @Parameter
-    private Map myMap;
+    private Map<String,String> myMap;
 ...
 +-----+
 
@@ -361,7 +365,13 @@ public class MyAnimalMojo
 ...
 +-----+
 
- In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of those type via CLI argument. 
+ Unlike Collections the value type for Maps is always derived from the parameter type information from either
+ {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html#getGenericType()}<<<Field.getGenericType()>>>}} or 
+ {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html#getGenericParameterTypes()}<<<Method.getGenericParameterTypes()>>>}}.
+ It falls back to <<<String>>>.
+ The key type must always be <<<String>>>.
+ 
+ In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument. 
 
 **** {Mapping Properties}
 
