@@ -36,7 +36,7 @@
 #end
 <td>##
 #if( !$announce.equals( "" ) )
-#if( !$announce.startsWith( "http://" ) )
+#if( !$announce.startsWith( "http://" ) && !$announce.startsWith( "https://" ) )
 #set ( $announceLink = "$archive$announce" )
 #else
 #set ( $announceLink = $announce )
@@ -52,7 +52,7 @@ $b<a href="$announceLink">announce</a>##
 $b<a href="./$version/release-notes.html">release notes</a>##
 #end
 #end
-#if( $version.startsWith( "3.5.0" ) || $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
+#if( $version.startsWith( "4.0.0-alpha" ) || $version.startsWith( "3.5.0" ) || $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
 , <a href="/ref/$version/">reference documentation</a>##
 #end##
 $b_</td>
