@@ -140,7 +140,9 @@ but the 'minimum quorum of three +1 votes' rule is universal.
 
   The list of PMC members is available at {{https://people.apache.org/committers-by-project.html#maven-pmc}}.
 
-  Once a vote is successful, post the result to the dev list and cc the PMC. For instance:
+** Successful vote
+
+  Once a vote is <<successful>>, post the result to the <<<dev>>> list and cc the <<<PMC>>>. For instance:
 
 -----
 To: "Maven Developers List" <dev@maven.apache.org>
@@ -158,13 +160,40 @@ PMC quorum: ...
 I will promote the source release zip file to Apache distribution area and the artifacts to the central repo.
 -----
 
-  If the vote is <<unsuccessful>>, the process will need to be restarted. Be sure to:
+ Follow the procedure to the end.
 
-  * drop your staging repository as described in {{{https://www.apache.org/dev/publishing-maven-artifacts.html#drop}Dropping a Repo}}.
+** Unsuccessful vote
 
-  * remove the release from the corresponding github release {{{https://github.com/apache/maven/releases}https://github.com/apache/<maven-project>/releases}}
+  Once a vote is <<unsuccessful>>, post the result to the <<<dev>>> list, For instance:
+
+-----
+To: "Maven Developers List" <dev@maven.apache.org>
+Subject: [CANCEL] [VOTE] Release Apache Maven XXX Plugin version Y.Z
+
+Hi,
+
+The vote has been canceled.
+-----
+
+  For canceled vote the process will need to be restarted.
+
+  Be sure to:
+
+  * drop your staging repository as described in {{{https://www.apache.org/dev/publishing-maven-artifacts.html}Drop a repository}}
+
+  * create new version for next round <<<Y.Z+1>>>
+
+  * assign issues from version  <<<Y.Z>>> also to version <<<Y.Z+1>>>
+
+  * mark the <<<Y.Z>>> version as <<archived>>
+
+  * report found issues and assign them to version <<<Y.Z+1>>>
+
+  * fix found issues
 
   []
+
+  Start the process for version <<<Y.Z+1>>> from the beginning.
 
 * Copy the source release to the Apache Distribution Area
 
