@@ -1748,13 +1748,10 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The only element that exists as a prerequisite in
   POM 4.0.0 is the <<<maven>>> element, which takes a minimum version number.
   
-  In Maven 3, use
+  Use
   {{{/enforcer/enforcer-rules/requireMavenVersion.html} Maven Enforcer Plugin's <<<requireMavenVersion>>> rule}},
   or other rules for <<build-time>> prerequisites. For packaging <<<maven-plugin>>> this is still used at <<run-time>> to make sure
   that the minimum Maven version for the plugin is met (but only in the pom.xml of the referenced plugin).
-
-  In Maven 2 those prerequisites were also evaluated at build time: if these are not met, Maven 2 will
-  fail the build before even starting.
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1831,8 +1828,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<layout>>:
   In the above description of repositories, it was mentioned that they all follow a common layout. This
-  is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3; however, Maven 1.x had a different
-  layout. Use this element to specify which if it is <<<default>>> or <<<legacy>>>.
+  is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3.
+  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>.
 
 * {Plugin Repositories}
 
@@ -2056,8 +2053,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 </project>
 +-------------------------+
 
-  Before Maven 3.2.2 Activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
-  Since Maven 3.2.2 Activation occurs when all of the specified criteria have been met.
+  Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
+  Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
