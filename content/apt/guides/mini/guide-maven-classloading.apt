@@ -30,28 +30,35 @@
 Guide to Maven Classloading
 
  This is a description of the classloader hierarchy in Maven.
- 
+
+%{toc|section=1|fromDepth=2}
+
 * Overview
-
- * System Classloader
- 
- * Core Classloader
- 
- * Plugin Classloaders
- 
- * Custom Classloaders
-
- [] 
- 
- 
-* 1. {System Classloader}
 
  Maven uses the {{{https://codehaus-plexus.github.io/plexus-classworlds/}Plexus Classworlds}} classloading framework with which we
  create our classloader graph. If you look in your <<<$\{maven.home\}/boot>>> directory you will see a single JAR
  which is the Classworlds JAR we use to boot the classloader graph. The Classworlds JAR is the only element of
  the Java <<<CLASSPATH>>> and Classworlds then builds the other classloaders or realms in Classworlds terminology.
  
- An Ant script like this will show the contents of the system classloader:
+ Each realm exposes
+ 
+ [[1]] optionally some classes imported from 0..n other classloaders
+ 
+ [[2]] optionally some classes from a directory or JAR
+ 
+ [[3]] one parent classloader
+ 
+ []
+ 
+ The search order is always as given above.
+
+* {Platform Classloader}
+
+ This is the classloader exposing all JRE classes.
+
+* {System Classloader}
+ 
+ An Ant script like this will show the contents of the system/bootstrap classloader:
  
 +---+
     <target name="info">
@@ -59,26 +66,53 @@ Guide to Maven Classloading
     </target>
 +---+
 
+ It imports the platform classloader.
 
-* 2. {Core Classloader}
+* {Core Classloader}
  
- The second classloader down the graph contains the core requirements of Maven. More precisely, the core classloader
- has the libraries in <<<$\{maven.home\}/lib>>>. In general these are just Maven libraries, e.g. instances of
+ The second classloader down the graph contains the core requirements of Maven. <<It is only used by Maven internally but not by Plugins>>. 
+ The core classloader has the libraries in <<<$\{maven.home\}/lib>>>. In general these are just Maven libraries, e.g. instances of
  <<<{{{/ref/current/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  belong to this classloader.
- We hope to further separate these in the future to just be Maven APIs and have 
- the implementations selected at runtime as required by the system.
  
  You can add elements to this classloader by {{{/ref/current/maven-model/maven.html#class_extension}extensions}}. 
  These are loaded into the same place as <<<$\{maven.home\}/lib>>> and hence are available 
- to the Maven core and all plugins for the current project and subsequent projects (in future, we
- plan to remove it from subsequent projects).
+ to the Maven core and all plugins for the current project (through the API classloader).
+ More information available in {{{./guide-using-extensions.html}Core Extension}}.
 
-  
-* 3. {Plugin Classloaders}
+* {API Classloader}
 
- After that, each plugin has its own classloader that is a child of Maven's core classloader. 
- The classes in this classloader are taken from the dependencies in the plugin's dependency list.
+ This exposes a filtered view of the Core Classloader by only exposing the exported packages from all Core Extensions.
+ The main API is listed in {{{https://maven.apache.org/ref/3-LATEST/maven-core/core-extensions.html}Maven Core Extensions Reference}}.
+ 
+ This has been introduced with Maven 3.3.1 ({{{https://issues.apache.org/jira/browse/MNG-5771}MNG-5771}}).
+
+* {Build Extension Classloaders}
+
+[../../buildExtensionClassRealm.svg] Build Extension Class Realm
+
+ For every plugin which is marked with <<<\<extensions\>true\</extensions\>>>> or a build extension listed in the according section of the POM there is
+ a dedicated classloader. Those are isolated (i.e. one build extension does not have access to other build extensions).
+ It imports everything from API classloader.
+ All JSR 330 or Plexus components declared in the underlying JAR are registered as components in the global Plexus container
+ while creating the classloader.
+ In addition all component references in the plugin descriptor are properly wired from the underlying Plexus container.
+ Build extensions have limited effect as they are loaded late.
+
+* {Project Classloaders}
+
+ There is one project classloader per Maven project (identified through its GAV).
+ This one imports the API Classloader. In addition it exposes all classes from all Build Extension Classloaders which are bound to the current project.
+ This is only released with the container.
+ During the build outside Mojo executions, the thread's context classloader is set to the project classloader.
+
+* {Plugin Classloaders}
+
+[../../pluginClassRealm.svg] Plugin Class Realm
+
+ Each plugin (which is not marked as build extension) has its own classloader that imports the Project classloader. 
+ 
+ Plugins marked with <<<\<extensions\>true\</extensions\>>>> leverage the Build Extension classloader instead of the Plugin classloader.
 
  Users can add dependencies to this classloader by adding dependencies 
  to a plugin in the <<<{{{/ref/current/maven-model/maven.html#class_plugin}plugins/plugin}}>>>
@@ -118,7 +152,7 @@ Guide to Maven Classloading
  When a build plugin is executed, the thread's context classloader is set to the plugin classloader.
 
 
-* 4. {Custom Classloaders}
+* {Custom Classloaders}
  
  Plugins are free to create further classloaders on their discretion. For example, a plugin might want to create a
  classloader that combines the plugin class path and the project class path.
