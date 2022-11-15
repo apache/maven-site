@@ -54,7 +54,7 @@ Guide to using attached tests
   </build>
 </project>
 
-The attached test JAR can be installed and deployed like any other Maven artifact with 
+The attached test JAR can be installed and deployed like any other Maven artifact with
 
 To use the attached test JAR, specify a dependency on the main
 artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
@@ -66,14 +66,42 @@ artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
   <dependencies>
     <dependency>
       <groupId>com.myco.app</groupId>
-      <artifactId>foo</artifactId>
+      <artifactId>foo-core</artifactId>
       <version>1.0-SNAPSHOT</version>
       <classifier>tests</classifier>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <!--
+        only needed if the test provider is not correctly autodetected by surefire
+        ... and you are using junit-jupiter (othewise, replace with your test framework)
+      -->
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version> <!-- remember to set version as needed -->
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   ...
+  <build>
+    <plugins>
+      ...
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${surefire.version}</version> <!-- remember to set version as needed ->
+          <configuration>
+              <dependenciesToScan>
+                  <dependency>com.myco.app:foo-core:test-jar:tests</dependency>
+              </dependenciesToScan>
+          </configuration>
+      </plugin>
+      ...
+    </plugins>
+   </build>
+   ...
 </project>
 
 +----+
