@@ -2,8 +2,9 @@
  Guide to using Extensions
  ------
  Jason van Zyl
+ Konrad Windszus
  ------
- 2005-10-12
+ 2022-11-16
  ------
 
 ~~ Licensed to the Apache Software Foundation (ASF) under one
@@ -32,7 +33,7 @@ Using Extensions
  or the {{{./guide-maven-classloading.html#Project_Classloaders}Project Classloader}} (Build Extensions).
  This is necessary for adjusting Maven in a way that affects more than just one plug-in.
 
- The mechanism allows to either replace default {{{https://www.eclipse.org/sisu/}Sisu components}} with custom ones or add
+ The mechanism allows extensions to either replace default {{{https://www.eclipse.org/sisu/}Sisu components}} with custom ones or add
  new components which are used at run time. In addition one could also expose additional packages from the Core Classloader.
  
  Extensions are typically used to enable 
@@ -44,7 +45,7 @@ Using Extensions
  There are different means of loading extensions depending on the type. There are <core extensions> which are loaded <<early>>
  and build extensions which are loaded <<late>>.
  Some extensions require early loading as they fundamentally change Maven behaviour.
- Please refer to the extension's documentation whether they provide a core or a build extension.
+ An extension's documentation should indicate whether it provides a core or a build extension.
 
 ** Core Extension
 
