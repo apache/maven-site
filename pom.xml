@@ -76,6 +76,7 @@
     <doxiaVersion>2.0.0-M3</doxiaVersion>
     <doxiaToolsVersion>2.0.0-M3</doxiaToolsVersion>
     <javaVersion>8</javaVersion>
+    <siteDirectory>${project.basedir}/content</siteDirectory>
   </properties>
 
   <repositories>
@@ -111,7 +112,7 @@
           <artifactId>maven-site-plugin</artifactId>
           <version>4.0.0-M3</version>
           <configuration>
-            <siteDirectory>${project.basedir}/content</siteDirectory>
+            <siteDirectory>${siteDirectory}</siteDirectory>
             <skipDeploy>true</skipDeploy><!-- don't deploy site with maven-site-plugin -->
           </configuration>
           <dependencies>
@@ -282,6 +283,45 @@
             </configuration>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>it.mulders.puml</groupId>
+        <artifactId>plantuml-maven-plugin</artifactId>
+        <version>0.1</version>
+        <dependencies>
+          <dependency>
+            <groupId>it.mulders.puml</groupId>
+            <artifactId>plantuml-v1-adapter</artifactId>
+            <version>0.2</version>
+          </dependency>
+          <dependency>
+            <groupId>net.sourceforge.plantuml</groupId>
+            <artifactId>plantuml</artifactId>
+            <version>1.2022.12</version>
+          </dependency>
+        </dependencies>
+        <executions>
+          <execution>
+            <id>generate-svg-from-plantuml</id>
+            <goals>
+              <goal>generate</goal>
+            </goals>
+            <phase>pre-site</phase>
+            <configuration>
+              <sourceFiles>
+                <directory>src/plantuml</directory>
+                <includes>
+                  <include>**/*.dot</include>
+                  <include>**/*.puml</include>
+                </includes>
+              </sourceFiles>
+              <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
+              <format>SVG</format>
+              <stripPath>src/plantuml</stripPath>
+            </configuration>
+          </execution>
+        </executions>
+        
       </plugin>
 
       <plugin>
