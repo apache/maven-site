@@ -278,30 +278,6 @@ wagon/wagon-2.2-source-release.zip.sha512
 
    Following instructions are done for plugins: if you are releasing anything else than a plugin, you should adapt email content to match what you are releasing.
 
-   [[a]] Using Maven Changes Plugin
-
-   If you are releasing a plugin or a shared component you can let Maven Changes Plugin <<generate>>, and eventually even
-   <<send>>, the announcement for you. First make sure that you have configured the necessary
-   properties in your {{{../committer-settings.html}committer settings}}.
-
-------
-cd target/checkout
-mvn changes:announcement-mail -Papache-release
-------
-
-   If sending the mail should fail, the generated announcement is available in <<<target/announcement>>> (see <<<announcement.vm>>>)
-   and you can use it as a base for sending the mail manually.
-
-   If your SMTP server requires authentication you need to add the command line
-   options for it:
- 
-------
-cd target/checkout
-mvn changes:announcement-mail -Dchanges.username=<SMTP-USERNAME> -Dchanges.password=<SMTP-PASSWORD> -Papache-release
-------
-
-   [[b]] Manually
-    
    <<Note:>> You must send this email from your apache email account, e.g. YOUR_APACHE_USERNAME@apache.org otherwise
    the email to <<<announce@maven.apache.org>>> will bounce.
 
@@ -339,9 +315,7 @@ Enjoy,
 
 -----
 
-   []
-
- [[6]] If releasing the Apache Parent POM, notify <<<release-discuss@apache.org>>>: 
+ [[6]] If releasing the Apache Parent POM, notify <<<release-discuss@apache.org>>>:
  Several projects follow this list, and should be made aware of changes to the common parent.
  This might also be a step to take if other shared resources are released, or if plugin releases are
  of particular interest to that group.
