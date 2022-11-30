@@ -52,7 +52,7 @@ Introduction to Build Profiles
   However, used properly, profiles can be used while still preserving
   project portability. This will also minimize the use of <<<-f>>> option of
   maven which allows user to create another POM with different parameters or
-  configuration to build which makes it more maintainable since it is runnning
+  configuration to build which makes it more maintainable since it is running
   with one POM only.
 
 * What are the different types of profile? Where is each defined?
