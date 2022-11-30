@@ -26,109 +26,7 @@
 
 POM Reference
 
-  [[1]] {{{Introduction}Introduction}}
-
-    [[1]] {{{What_is_the_POM}What is the POM?}}
-
-    [[2]] {{{Quick_Overview}Quick Overview}}
-
-  [[2]] {{{The_Basics}The Basics}}
-
-    [[1]] {{{Maven_Coordinates}Maven Coordinates}}
-
-    [[2]] {{{POM_Relationships}POM Relationships}}
-
-      [[1]] {{{Dependencies}Dependencies}}
-
-        [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
-
-        [[2]] {{{Version_Order_Specification}Version Order Specification}}
-
-        [[3]] {{{Version_Order_Testing}Version Order Testing}}
-
-        [[4]] {{{Exclusions}Exclusions}}
-
-      [[2]] {{{Inheritance}Inheritance}}
-
-        [[1]] {{{The_Super_POM}The Super POM}}
-
-        [[2]] {{{Dependency_Management}Dependency Management}}
-
-      [[3]] {{{Aggregation}Aggregation (or Multi-Module)}}
-
-        [[1]] {{{Inheritance_v._Aggregation}Inheritance v. Aggregation}}
-
-    [[3]] {{{Properties}Properties}}
-
-  [[3]] {{{Build_Settings}Build Settings}}
-
-    [[1]] {{{Build}Build}}
-
-      [[1]] {{{BaseBuild_Element}The BaseBuild Element Set}}
-
-        [[1]] {{{Resources}Resources}}
-
-        [[2]] {{{Plugins}Plugins}}
-
-          [[1]]{{{default_configuration_inheritance}Default Configuration Inheritance}}
-
-          [[2]]{{{advanced_configuration_inheritance}Advanced Configuration Inheritance}}
-
-        [[3]] {{{Plugin_Management}Plugin Management}}
-
-      [[2]] {{{Build_Element}The Build Element Set}}
-
-        [[1]] {{{Directories}Directories}}
-
-        [[2]] {{{Extensions}Extensions}}
-
-    [[2]] {{{Reporting}Reporting}}
-
-      [[1]] {{{Report_Sets}Report Sets}}
-
-  [[4]] {{{More_Project_Information}More Project Information}}
-
-    [[1]] {{{Licenses}Licenses}}
-
-    [[2]] {{{Organization}Organization}}
-
-    [[3]] {{{Developers}Developers}}
-
-    [[4]] {{{Contributors}Contributors}}
-
-  [[5]] {{{Environment_Settings}Environment Settings}}
-
-    [[1]] {{{Issue_Management}Issue Management}}
-
-    [[2]] {{{Continuous_Integration_Management}Continuous Integration Management}}
-
-    [[3]] {{{Mailing_Lists}Mailing Lists}}
-
-    [[4]] {{{SCM}SCM}}
-
-    [[5]] {{{Prerequisites}Prerequisites}}
-
-    [[6]] {{{Repositories}Repositories}}
-
-    [[7]] {{{Plugin_Repositories}Plugin Repositories}}
-
-    [[8]] {{{Distribution_Management}Distribution Management}}
-
-      [[1]] {{{Repository}Repository}}
-
-      [[2]] {{{Site_Distribution}Site Distribution}}
-
-      [[3]] {{{Relocation}Relocation}}
-
-    [[9]] {{{Profiles}Profiles}}
-
-      [[1]] {{{Activation}Activation}}
-
-      [[2]] {{{The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
-
-  [[6]] {{{Final}Final}}
-
-  []
+%{toc|section=0|fromDepth=1|toDepth=3}
 
 {Introduction}
 
@@ -2068,9 +1966,16 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
   * <<jdk>>:
-  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
-  is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. Ranges are also supported. See the {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
+  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
+  
+    * A version range according to the definition of {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} in case the value starts with either <<<[>>> or <<<(>>>,
+    
+    * A negated prefix if the value starts with <<<!>>> or
+    
+    * A (non-negated) prefix for all other cases
+    
+  (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading <<<!>>>).
+  The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
 
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
