@@ -26,11 +26,13 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Introduction
+Committer Environment
+
+* Introduction
 
  This document is intended to set up the Maven committer environment.
 
-{Source File Encoding}
+* Source File Encoding
 
  When editing source files, make sure you use the right file encoding. For the Maven project, UTF-8 has been chosen
  as the default file encoding. UTF-8 is an encoding scheme for the Unicode character set and as such allows to encode
@@ -38,37 +40,11 @@ Introduction
  exceptions to this general rule, e.g. properties files are usually encoded using ISO-8859-1 as per the JRE API, so
  please keep this in mind, too.
 
-Subversion Configuration
+* Maven Code Style
 
- Before committing files in subversion repository, you need to read the
- {{{https://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with this properties file: {{{./svn-eol-style.txt}svn-eol-style.txt}}
+ Refer to {{{./conventions/code.html}Maven Code Style And Code Conventions}}
 
-{Maven Code Style}
-
- The following sections show how to set up the code style for Maven in IDEA and Eclipse.
- It is strongly preferred that patches use this style before they are supplied.
-
-* IntelliJ IDEA
-
- Download <<<{{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-idea-codestyle.xml;hb=HEAD}maven-idea-codestyle.xml}}>>>
- and import it into IDEA using Intellij IDEA > Preferences > Editor > Code Style > Java > Gear icon >
- Import Scheme (> Intellij IDEA code style XML)
-
-* Eclipse
-
- Download <<<{{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-eclipse-codestyle.xml;hb=HEAD}maven-eclipse-codestyle.xml}}>>>.
-
- After this, select Window \> Preferences, and open up the configuration for Java \> Code
- Style \> Code Formatter. Click on the button labeled Import... and select the file you
- downloaded. Give the style a name, and click OK.
-
- To ensure a package import order consistent with the layout described below, download
- <<<{{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-eclipse-importorder.txt;hb=HEAD}maven-eclipse-importorder.txt}}>>>, select Window \> Preferences and
- navigate to Java \> Code Style \> Organize Imports. Click on Import... and select the downloaded
- file to change the import order.
-
-Useful software
+* Useful software
 
  The Maven Team uses several software. Here is a partial list:
 
