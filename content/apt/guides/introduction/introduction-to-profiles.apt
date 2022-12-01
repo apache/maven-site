@@ -129,11 +129,11 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   Profiles can be automatically triggered based on the detected state of
   the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
-  matching of the JDK version, matching the operating system,
-  the presence of a system property or the value of a system property. Here are some examples.
+  JDK version matching, operating system matching or
+  the presence/the value of a system property. Here are some examples.
 
   The following configuration will trigger the profile when the JDK's
-  version <starts with> "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"), particularly it <won't be active>
+  version <starts with> "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"), in particular it <won't be active>
   for <<newer>> versions like "1.8" or "11":
 
 +---+
