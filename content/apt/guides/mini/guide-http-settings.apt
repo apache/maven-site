@@ -37,7 +37,7 @@ Advanced Configuration of the Maven Resolver Transport
 
 *Advanced configuration to Transports
 
-  Using your <<<settings.xml>> you can customize the transport configurations in several ways.
+  Using your <<<settings.xml>>> you can customize the transport configurations in several ways.
 
 **HTTP Headers
 
