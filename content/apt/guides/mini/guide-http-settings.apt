@@ -30,16 +30,16 @@ Advanced Configuration of the Maven Resolver Transport
 
 %{toc}
 
-  You can use the default transport for a given protocol, or you can select transport you want by configuration.
+  You can use the default transport for a given protocol, or you can select the transport you want by using the configuration.
   For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
-  site. The default transport in Maven 3.x is Transport-Wagon, while Wagon itself was introduced in Maven 2.x.
+  site. The default transport in Maven 3.x is Transport-Wagon, the Wagon layer having been introduced in Maven 2.x.
   Since then, more modern transports were introduced as well, even supporting overlapping protocols. The default
-  transport in Maven 4.x changed to more modern
+  transport in Maven 4.x changed to the more modern
   {{{https://maven.apache.org/resolver/maven-resolver-transport-http/index.html}"native" HTTP}} transport.
 
   Ultimate reference for resolver transport configuration can be found on
   {{{https://maven.apache.org/resolver/configuration.html} this page}}. While one can easily define simple typed
-  values on command line using <<<-D...>>> switch, some more complex, like HTTP headers cannot.
+  values on command line using <<<-D...>>> switch, some more complex values, like HTTP headers, cannot.
 
 *Advanced configuration to Transports
 
@@ -67,7 +67,7 @@ Advanced Configuration of the Maven Resolver Transport
 </settings>
 +---+
 
-  It's important to understand that the above approach doesn't allow you to turn off all of the default HTTP headers; nor
+  It is important to understand that the above approach does not allow you to turn off all of the default HTTP headers; nor
   does it allow you to specify headers on a per-method basis. However, this configuration remains available in all
   transports that support headers, like HTTP transports are.
 
