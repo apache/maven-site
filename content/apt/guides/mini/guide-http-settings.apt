@@ -35,6 +35,10 @@ Advanced Configuration of the Maven Resolver Transport
   site. The default transport is Transport-Wagon, while Wagon itself is introduced in Maven 2.x. Since then,
   more modern transports were introduced as well, even supporting overlapping protocols.
 
+  Ultimate reference for resolver transport configuration can be found on
+  {{{https://maven.apache.org/resolver/configuration.html} this page}}. While one can easily define simple typed
+  values on command line using <<<-D...>>> switch, some more complex, like HTTP headers cannot.
+
 *Advanced configuration to Transports
 
   Using your <<<settings.xml>>> you can customize the transport configurations in several ways.
