@@ -1,5 +1,5 @@
   ------
-  Guide to Advanced HTTP Wagon Configuration
+  Guide to Advanced HTTP Transport Configuration
   ------
   John Casey
   ------
@@ -25,6 +25,67 @@
 
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
+
+Advanced Configuration of the Maven Resolver Transport
+
+  You can use the default transport for a given protocol, or you can select transport you want by configuration.
+  For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
+  site. The default transport is Transport-Wagon, while Wagon itself is introduced in Maven 2.x. Since then, more
+  more modern transports were introduced as well, even supporting same protocols.
+
+*Advanced configuration to Transports
+
+  Using your <<<settings.xml>> you can customize the transport configurations in several ways.
+
+**HTTP Headers
+
+  In all HTTP transports, you can add your custom HTTP headers like this:
+
++---+
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <httpHeaders>
+          <property>
+            <name>Foo</name>
+            <value>Bar</value>
+          </property>
+        </httpHeaders>
+      </configuration>
+    </server>
+  </servers>
+</settings>
++---+
+
+  It's important to understand that the above approach doesn't allow you to turn off all of the default HTTP headers; nor
+  does it allow you to specify headers on a per-method basis. However, this configuration remains available in all
+  transports that support headers, like HTTP transports are.
+
+**Connection Timeouts
+
+  All transport implementations that perform some network access allow the configuration of a several timeouts,
+  for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
+
++---+
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <connectTimeout>10000</connectTimeout> <!-- milliseconds -->
+        <requestTimeout>1800000</requestTimeout> <!-- milliseconds -->
+      </configuration>
+    </server>
+  </servers>
+</settings>
++---+
+
+  These above define per-server timeout configuration, and show default values.
+
+  These are the standard ways to configure transport, regarding custom headers, and various timeouts. Each transport
+  MAY introduce it's own specific configuration, like we can see below for Wagon.
 
 Advanced Configuration of the HttpClient HTTP Wagon
 
