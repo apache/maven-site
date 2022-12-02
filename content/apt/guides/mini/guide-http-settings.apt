@@ -32,8 +32,8 @@ Advanced Configuration of the Maven Resolver Transport
 
   You can use the default transport for a given protocol, or you can select transport you want by configuration.
   For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
-  site. The default transport is Transport-Wagon, while Wagon itself is introduced in Maven 2.x. Since then, more
-  more modern transports were introduced as well, even supporting same protocols.
+  site. The default transport is Transport-Wagon, while Wagon itself is introduced in Maven 2.x. Since then,
+  more modern transports were introduced as well, even supporting overlapping protocols.
 
 *Advanced configuration to Transports
 
