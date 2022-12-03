@@ -22,6 +22,14 @@
         label 'svn-websites'
     }
     stages {
+        stage('Checkout') {
+            steps {
+                // Clean before build
+                cleanWs()
+                // We need to explicitly checkout from SCM here
+                checkout scm
+            }
+        }
         stage('Build only') {
             when {
                 not { branch 'master' }
@@ -65,5 +73,7 @@
         //timestamps()
         disableConcurrentBuilds()
         ansiColor('xterm')
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
     }
 }
