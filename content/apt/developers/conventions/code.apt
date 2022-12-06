@@ -30,8 +30,12 @@ Maven Code Style And Code Conventions
 
  This document describes the rules for how the sources should be formatted
  in order to improve consistency, readability and maintainability.
+
  As the formatting is automatically enforced or even applied with {{{https://github.com/diffplug/spotless/tree/main/plugin-maven}spotless-maven-plugin}} for all projects
  using {{{/pom/maven/index.html}Maven Project Parent POM 38 or newer}} developers usually don't need to care and the following sections are just for informational purposes.
+
+ For comfortable work, you can import the code style formatter for your IDE from
+ {{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD}shared-resources}}
 
 %{toc|section=1|fromDepth=2|toDepth=3}
 
