@@ -1385,7 +1385,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +-------------------------+
 <licenses>
   <license>
-    <name>Apache License, Version 2.0</name>
+    <name>Apache-2.0</name>
     <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     <distribution>repo</distribution>
     <comments>A business-friendly OSS license</comments>
