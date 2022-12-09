@@ -9,6 +9,28 @@ github:
     squash: true
     merge: false
     rebase: true
+  autolink_jira:
+    - MNG
+    - MNGSITE
+    - MSITE
+    - MINSTALL
+    - MPIR
+    - MANTTASKS
+    - MGPG
+    - SUREFIRE
+    - MENFORCER
+    - DOXIASITETOOLS
+    - MPLUGIN
+    - MWRAPPER
+    - MSHARED
+    - MSKINS
+    - MPOM
+    - ARCHETYPE
+    - ARCHETYPES
+    - INFRA
+    - MASSEMBLY
+    - FELIX
+    - MRELEASE
 notifications:
   commits: commits@maven.apache.org
   issues: issues@maven.apache.org
