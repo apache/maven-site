@@ -38,7 +38,7 @@
                 withEnv(["JAVA_HOME=${ tool "jdk_17_latest" }",
                          "PATH+MAVEN=${ tool "jdk_17_latest" }/bin:${tool "maven_3_latest"}/bin",
                          "MAVEN_OPTS=-Xms2g -Xmx4g -Djava.awt.headless=true"]) {                 
-                    sh "mvn -U clean site -Dmaven.repo.local=.repository"
+                    sh "mvn -U -ntp clean site -Dmaven.repo.local=.repository"
                 }
             }
         }
@@ -50,7 +50,7 @@
                 withEnv(["JAVA_HOME=${ tool "jdk_17_latest" }",
                          "PATH+MAVEN=${ tool "jdk_17_latest" }/bin:${tool "maven_3_latest"}/bin",
                          "MAVEN_OPTS=-Xms2g -Xmx4g -Djava.awt.headless=true"]) {                 
-                    sh "mvn -U clean site-deploy -Dmaven.repo.local=.repository"
+                    sh "mvn -U -ntp clean site-deploy -Dmaven.repo.local=.repository"
                 }             
             }
         }
