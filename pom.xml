@@ -232,6 +232,33 @@
 -->
         </executions>
       </plugin>
+      <!--
+        used for timestamp of .well-known/security.txt file
+        Plugin-definition must be before resources-plugin to be
+        in the pre-site phase before 'copy-filtered-resources'.
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <version>3.3.0</version>
+        <executions>
+          <execution>
+            <id>create-security.txt-timestamp</id>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>timestamp-property</goal>
+            </goals>
+            <configuration>
+              <name>maven.security.expires</name>
+              <pattern>yyyy-MM-'01T00:00:00Z'</pattern>
+              <!-- This ugly Plexus magic will be coerced in the plugin to Locale#ROOT -->
+              <locale xml:space="preserve"> </locale>
+              <offset>+1</offset>
+              <unit>year</unit>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-resources-plugin</artifactId>
@@ -355,6 +382,7 @@
             <exclude>content/apt/guides/plugin/notes.txt</exclude>
             <exclude>content/apt/guides/suggestions/non-standard-directories.txt</exclude>
             <exclude>content/filtered-resources/.htaccess</exclude>
+            <exclude>content/filtered-resources/.well-known/security.txt</exclude>
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
             <exclude>content/resources/badges/*.json</exclude>
