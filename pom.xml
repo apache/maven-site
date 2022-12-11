@@ -251,7 +251,7 @@
             <configuration>
               <name>maven.security.expires</name>
               <pattern>yyyy-MM-dd'T'HH:mm:ssXXX</pattern>
-              <!-- This ulgy Plexus magic will be coerced in the plugin to Locale#ROOT -->
+              <!-- This ugly Plexus magic will be coerced in the plugin to Locale#ROOT -->
               <locale xml:space="preserve"> </locale>
               <offset>+1</offset>
               <unit>year</unit>
