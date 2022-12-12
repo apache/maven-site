@@ -92,7 +92,7 @@ o Comments
 
   []
 
-eg:
+  eg:
 
 +-----+
 [MNG-1456] Added the foo to the bar
@@ -123,7 +123,7 @@ o Applied without change
 
 * Edit Commit Message
 
-to edit last commit comment:
+  to edit last commit comment:
 
 ---
 $ git commit --amend -m "new comment"
