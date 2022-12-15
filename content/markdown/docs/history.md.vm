@@ -73,6 +73,7 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
+#release( "2022-12-15" "4.0.0-alpha-3" "https://lists.apache.org/thread/0j63n7o3lnlz9mmk39wqh1jx5h3r7vqv" "" "Java 8" "1" )
 #release( "2022-10-24" "4.0.0-alpha-2" "https://lists.apache.org/thread/snnlfsk24wmdp8tp79b2k11ln34hk6ks" "" "Java 8" "1" )
 
 </table>
