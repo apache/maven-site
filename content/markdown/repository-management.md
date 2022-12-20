@@ -64,7 +64,7 @@ and the features provided by these products.
 * <a href="https://www.jfrog.com/open-source" target="_blank">JFrog Artifactory Open Source</a> (open source)
 * <a href="https://www.jfrog.com/artifactory/" target="_blank">JFrog Artifactory Pro</a> (commercial)
 * <a href="https://www.myget.org" target="_blank">MyGet</a> (commercial)
-* <a href="https://www.sonatype.org/nexus/go/" target="_blank">Sonatype Nexus OSS</a> (open source)
+* <a href="https://www.sonatype.com/products/repository-oss-download" target="_blank">Sonatype Nexus OSS</a> (open source)
 * <a href="https://links.sonatype.com/products/nexus/pro/home" target="_blank">Sonatype Nexus Pro</a> (commercial)
 * <a href="https://packagecloud.io" target="_blank">packagecloud.io</a> (commercial)
 * <a href="https://reposilite.com" target="_blank">Reposilite</a> (open source)
