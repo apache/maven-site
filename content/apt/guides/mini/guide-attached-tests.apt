@@ -54,6 +54,8 @@ Guide to using attached tests
   </build>
 </project>
 
++----+
+
 The attached test JAR can be installed and deployed like any other Maven artifact with
 
 To use the attached test JAR, specify a dependency on the main
