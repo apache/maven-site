@@ -572,7 +572,7 @@ my-app
 ----
 |-- META-INF
 |   |-- MANIFEST.MF
-|   |-- application.properties
+|   `-- application.properties
 |   `-- maven
 |       `-- com.mycompany.app
 |           `-- my-app
