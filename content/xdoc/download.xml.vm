@@ -38,8 +38,8 @@ under the License.
           <table>
             <tr>
               <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.3+ requires JDK 1.7 or above to execute - it still allows you to build against 1.3 and other JDK versions
-              <a href="/guides/mini/guide-using-toolchains.html">by Using Toolchains</a></td>
+              <td>Maven 3.3+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
+              <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
             </tr>
             <tr>
               <td><b>Memory</b></td>
@@ -47,7 +47,7 @@ under the License.
             </tr>
             <tr>
               <td><b>Disk</b></td>
-              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, additional disk space will
+              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, disk space will
               be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
               least 500MB.</td>
             </tr>
@@ -136,8 +136,8 @@ under the License.
           <table>
             <tr>
               <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 4.0+ requires JDK 1.8 or above to execute - it still allows you to build against 1.3 and other JDK versions
-                  <a href="/guides/mini/guide-using-toolchains.html">by Using Toolchains</a></td>
+              <td>Maven 4.0+ requires JDK 1.8 or above to execute. It still allows you to build against 1.3 and other JDK versions
+                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
             </tr>
             <tr>
               <td><b>Memory</b></td>
@@ -145,7 +145,7 @@ under the License.
             </tr>
             <tr>
               <td><b>Disk</b></td>
-              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, additional disk space will
+              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, disk space will
                 be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
                 least 500MB.</td>
             </tr>
