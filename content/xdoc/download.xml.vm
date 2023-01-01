@@ -136,7 +136,7 @@ under the License.
           <table>
             <tr>
               <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 4.0+ requires JDK 1.8 or above to execute - it still allow you to build against 1.3 and other JDK versions
+              <td>Maven 4.0+ requires JDK 1.8 or above to execute - it still allows you to build against 1.3 and other JDK versions
                   <a href="/guides/mini/guide-using-toolchains.html">by Using Toolchains</a></td>
             </tr>
             <tr>
