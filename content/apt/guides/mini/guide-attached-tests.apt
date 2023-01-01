@@ -54,10 +54,12 @@ Guide to using attached tests
   </build>
 </project>
 
-The attached test JAR can be installed and deployed like any other Maven artifact with
++----+
 
-To use the attached test JAR, specify a dependency on the main
-artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
+  The attached test JAR can be installed and deployed like any other Maven artifact.
+
+  To use the attached test JAR, specify a dependency on the main
+  artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
 
 +----+
 
@@ -91,7 +93,7 @@ artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
       <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-surefire-plugin</artifactId>
-          <version>${surefire.version}</version> <!-- remember to set version as needed ->
+          <version>${surefire.version}</version> <!-- remember to set version as needed -->
           <configuration>
               <dependenciesToScan>
                   <dependency>com.myco.app:foo-core:test-jar:tests</dependency>
