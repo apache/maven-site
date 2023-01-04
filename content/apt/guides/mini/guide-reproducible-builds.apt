@@ -47,7 +47,7 @@ Configuring for Reproducible Builds
 mvn artifact:check-buildplan
 --------
 
- [[2]] Enable Reproducible Builds mode for plugins, by adding {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-OutputArchiveEntriesTimestamp}<<<project.build.outputTimestamp>>>}} property to the project's <<<pom.xml>>>:
+ [[2]] Enable Reproducible Builds mode for plugins, by adding {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-OutputArchiveEntriesTimestamp}<<<project.build.outputTimestamp>>> property}} to the project's <<<pom.xml>>>:
 
 +--------+
    <properties>
