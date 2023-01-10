@@ -233,8 +233,7 @@ mvn clean dependency:copy-dependencies package
   a model and incorporate that into the build, you would add the following to your POM in the <<<\<plugins\>>>> section of
   <<<\<build\>>>>:
 
-----
-...
++----+
  <plugin>
    <groupId>org.codehaus.modello</groupId>
    <artifactId>modello-maven-plugin</artifactId>
@@ -253,8 +252,7 @@ mvn clean dependency:copy-dependencies package
      </execution>
    </executions>
  </plugin>
-...
-----
++----+
 
   You might be wondering why that <<<\<executions\>>>> element is there. That is so that you can run the same goal multiple times
   with different configuration if needed. Separate executions can also be given an ID so that during inheritance or the
@@ -269,8 +267,7 @@ mvn clean dependency:copy-dependencies package
   it to run in the <<<process-test-resources>>> phase to indicate when the tests were started. This would be configured
   like so:
 
-----
-...
++----+
  <plugin>
    <groupId>com.mycompany.example</groupId>
    <artifactId>display-maven-plugin</artifactId>
@@ -284,8 +281,7 @@ mvn clean dependency:copy-dependencies package
      </execution>
    </executions>
  </plugin>
-...
-----
++----+
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
