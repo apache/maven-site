@@ -811,7 +811,7 @@ under the License.
         </tr>
       </table>
       <p>After making the changes above, the developer can simply call</p>
-      <source>mvn install</source>
+      <code>mvn install</code>
       <p>
         to install the plugin to
         the local repository. (Any of the other standard lifecycle targets like
