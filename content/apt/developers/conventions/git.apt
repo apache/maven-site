@@ -74,12 +74,12 @@ Maven Git Convention
 
   A commit message should use this template:
 
-+-----+
+-------
 [ISSUE-1] <<Summary field from JIRA>>
 Submitted by: <<Name of non-committer>>
 
 o Comments
-+-----+
+-------
 
   Where:
 
@@ -94,12 +94,12 @@ o Comments
 
   eg:
 
-+-----+
+-------
 [MNG-1456] Added the foo to the bar
 Submitted by: Baz Bazman
 
 o Applied without change
-+-----+
+-------
 
 * Apply User Patch
 
@@ -115,9 +115,9 @@ o Applied without change
  closing that pull request. You do this by adding a note to a commit
  message:
 
-+----+
+------
   Closes #NNN.
-+----+
+------
 
   where NNN is the number of the pull request.
 

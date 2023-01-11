@@ -48,7 +48,7 @@ Retirement Plan for Plugins
 
   Here's a template for scenario A that can be used for the vote email:
 
-+-----
+------
 To: "Maven Developers List" <dev@maven.apache.org>
 Cc: "Maven Users List" <users@maven.apache.org>
 Subject: [VOTE] Retire Maven Foo Plugin
@@ -71,12 +71,12 @@ The vote is open for 72 hours.
 
 [ ] +1 Yes, it's about time
 [ ] -1 No, because...
-+-----
+------
 
   If the vote is successful, post the result to the dev list and cc the PMC and
   users list. For instance:
 
-+-----
+------
 To: "Maven Developers List" <dev@maven.apache.org>
 Cc: "Maven Users List" <users@maven.apache.org>
 CC: "Maven Project Management Committee List" <private@maven.apache.org>
@@ -90,7 +90,7 @@ The vote has passed with the following result:
 +1 (non binding): <<list of names>>
 
 I will continue with the steps required to retire this plugin.
-+-----
+------
 
   If the vote passes, make one final release of the plugin (with its own standard 72h vote on source release) before it is
   retired. This allows us to make a clean break. The person who wants to retire
@@ -112,17 +112,17 @@ I will continue with the steps required to retire this plugin.
   [[1]] Add a prominent notice on the front page of the plugin's site,
   informing that the plugin is retired. Suggested text:
 
-+-----
+------
 Note: This plugin is retired. It is no longer maintained.
-+-----
+------
 
   If the plugin is moved elsewhere, that should also be added to the plugin's
   site. Suggested text:
 
-+-----
+------
 Note: This plugin has retired from the Apache Maven project,
 but has moved to the <Organization> <Project> project.
-+-----
+------
 
   [[1]] Add " (RETIRED)" at the end of <<<\<project\>>>>/<<<\<name\>>>> in the
   plugin's <<<pom.xml>>>. This will show up on every page of the generated site.

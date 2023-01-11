@@ -127,9 +127,9 @@ Guide to Testing Development Versions of Plugins
 
   When invoking Maven for Apache profile, do it like this:
 
-+---
+----
 mvn -Papache <phase|goal>
-+---
+----
 
 * Using a Repository Manager
 

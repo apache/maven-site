@@ -216,9 +216,9 @@ public class GreetingMojo extends AbstractMojo
 
   And, you need to specify a fully-qualified goal in the form of:
 
-+----+
+------
 mvn groupId:artifactId:version:goal
-+----+
+------
 
   For example, to run the simple mojo in the sample plugin, you would enter
   "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
@@ -290,13 +290,13 @@ mvn groupId:artifactId:version:goal
   To create a new plugin project, you could using the Mojo
   {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
 
-+---+
+-----
 mvn archetype:generate \
   -DgroupId=sample.plugin \
   -DartifactId=hello-maven-plugin \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-plugin
-+---+
+-----
 
 * {Parameters}
 

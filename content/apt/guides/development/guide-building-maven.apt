@@ -49,17 +49,17 @@ Building Maven
 
   Building a Maven plugin or component is like any Maven build:
 
-+-----+
+-------
 mvn install
-+-----+
+-------
 
 *** Running Integration Tests
 
   Before submitting a patch, it is advised to run the integration tests, which are available in the <<<run-its>>> profile:
 
-+-----+
+-------
 mvn -Prun-its install
-+-----+
+-------
 
 ** Building Maven core
 
@@ -68,25 +68,25 @@ mvn -Prun-its install
 
   To do this, run from the source directory:
 
-+-----+
+-------
 mvn install
-+-----+
+-------
 
   The assemblies will be created in <<<apache-maven>>>, and can be manually unzipped to the location where you'd like the resulting Maven installed.
 
   If you want to have the resulting Maven directly copied to a directory, you can use the <<<distributionTargetDir>>> property:
 
-+-----+
+-------
 mvn -DdistributionTargetDir="$HOME/app/maven/apache-maven-SNAPSHOT" install
-+-----+
+-------
 
 *** Running the full Maven core integration tests
 
    Before checking in a change or submitting a patch to Maven core, it is required to run the core integration tests.
    Using your local build of Maven, run:
 
-+-----+
+-------
 mvn test -Prun-its
-+-----+
+-------
 
    Consult {{{/core-its/}Core ITs documentation}} for more options.

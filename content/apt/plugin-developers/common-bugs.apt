@@ -234,14 +234,14 @@ if ( "info".equals( debugLevel.toLowerCase() ) )
   The following example illustrates this requirement. Imagine the broken resource bundle family shown below which is
   intended to provide localization for English, German and French:
 
-+---
+----
 src/
 +- main/
    +- resources/
       +- mymojo-report.properties
       +- mymojo-report_de.properties
       +- mymojo-report_fr.properties
-+---
+----
 
   Now, if a resource bundle is to be looked up for English on a JVM whose default locale happens to be French, the
   bundle <<<mymojo-report_fr.properties>>> will be loaded instead of the intended bundle <<<mymojo-report.properties>>>.

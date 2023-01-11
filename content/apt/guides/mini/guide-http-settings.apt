@@ -124,19 +124,19 @@ Advanced Configuration of the Maven Resolver Transport
   Without any special configuration, Maven's HTTP wagon uses some default HTTP headers and client parameters when managing
   artifacts. The default headers are:
   
-+---+
+-----
 Cache-control: no-cache
 Cache-store: no-store
 Pragma: no-cache
 Expires: 0
 Accept-Encoding: gzip
-+---+
+-----
 
   In addition, PUT requests made with the HTTP wagon use the following HttpClient parameter:
   
-+---+
+-----
 http.protocol.expect-continue=true
-+---+
+-----
 
   From the HttpClient documentation\[2\], this parameter provides the following functionality:
   
@@ -291,13 +291,13 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   
   [[5]] <<collection of strings:>> <<<%c,\<value1\>,\<value2\>,\<value3\>,...>>>, which could also be specified as:
   
-+---+
+-----
 %c,
 <value1>,
 <value2>,
 <value3>,
 ...
-+---+
+-----
   
   []
   

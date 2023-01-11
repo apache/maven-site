@@ -41,7 +41,7 @@ Guide to deploying 3rd party JARs to remote repository
 
  Then execute the command:
 
-+----+
+------
 mvn deploy:deploy-file -DgroupId=<group-id> \
   -DartifactId=<artifact-id> \
   -Dversion=<version> \
@@ -49,7 +49,7 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
   -Dfile=<path-to-file> \
   -DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \
   -Durl=<url-of-the-repository-to-deploy>
-+----+
+------
 
 * Deploying a 3rd party JAR with a generic POM
 
@@ -57,9 +57,9 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
   together with the 3rd party JAR. To disable this feature we should set the
   <<<generatePOM>>> argument to false.
 
-+----+
+------
 -DgeneratePom=false
-+----+
+------
 
 * Deploying a 3rd party JAR with a customized POM
 
@@ -67,12 +67,12 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
   it together with the JAR we should use the <<<pomFile>>> argument of the
   deploy-file goal. See sample below.
 
-+----+
+------
 mvn deploy:deploy-file -DpomFile=<path-to-pom> \
   -Dfile=<path-to-file> \
   -DrepositoryId=<id-to-map-on-server-section-of-settings.xml> \
   -Durl=<url-of-the-repository-to-deploy>
-+----+
+------
 
   Note that <<<groupId>>>, <<<artifactId>>>, <<<version>>> and <<<packaging>>>
   arguments are not included here because deploy-file goal will get these

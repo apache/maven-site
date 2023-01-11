@@ -132,9 +132,9 @@ Localization of Plugins
   * Create a patch file that contains your new translation. Use the issue number
     when you name the file:
   
-+-----
+------
 svn diff > MYISSUE-123.patch
-+-----
+------
 
   * Attach your patch file to the issue in JIRA.
 
@@ -149,9 +149,9 @@ svn diff > MYISSUE-123.patch
   {{{http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/native2ascii.html}read more about it here}}.
   You use it like this:
 
-+-----
+------
 native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.properties
-+-----
+------
 
 ** Tools to find out the charset of a file
 

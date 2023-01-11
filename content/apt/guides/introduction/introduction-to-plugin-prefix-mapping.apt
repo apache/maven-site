@@ -88,9 +88,9 @@ Introduction to Plugin Prefix Resolution
   The above configuration will allow users to refer to your plugin by the prefix
   <<somePrefix>>, as in the following example:
 
-+---+
+-----
 mvn somePrefix:goal
-+---+
+-----
 
 * Mapping Prefixes to Plugins
 
@@ -142,9 +142,9 @@ mvn somePrefix:goal
   This allows me to execute the following, which will generate Java classes
   from the model:
 
-+---+
+-----
 mvn -Dversion=4.0.0 -Dmodel=maven.mdo modello:java
-+---+
+-----
 
   Maven will always search the following groupId's <<after>> searching any plugin groups
   specified in the user's settings:

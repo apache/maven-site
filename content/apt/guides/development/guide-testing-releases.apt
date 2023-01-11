@@ -144,9 +144,9 @@ Guide to Testing Staged Releases
   With this in place, you can activate it by simply changing the plugin version to the one you are testing in the POM as above, then
   run the build with the following command:
 
-+----
+-----
 mvn verify -Pstaged-releases
-+----
+-----
 
   Note that the same conditions apply as above about cleaning out the local repository to prevent pollution of your local build
   environment.

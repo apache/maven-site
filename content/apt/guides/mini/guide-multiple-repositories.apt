@@ -94,11 +94,11 @@ Setting up Multiple Repositories
  You could also activate this profile on the command like by executing the following
  command:
 
-+----+
+------
 
 mvn -Pmyprofile ...
 
-+----+
+------
 
  In fact the <<<-P>>> option will take a CSV list of profiles to activate if you wish to
  activate multiple profiles simultaneously.
