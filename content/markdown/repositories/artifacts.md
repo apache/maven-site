@@ -133,7 +133,7 @@ Also, this has "interesting" consequences, consider for example following Artifa
 `org.project:reusable-test-support:1.0:tests:jar`. With type handlers above, maybe surprisingly, the dependency to 
 this very same artifact can be described in two ways:
 
-```
+```xml
 <dependency>
   <groupId>org.project</groupId>
   <artifactId>reusable-test-support</artifactId>
@@ -144,7 +144,7 @@ this very same artifact can be described in two ways:
 
 and the equivalent dependency would be:
 
-```
+```xml
 <dependency>
   <groupId>org.project</groupId>
   <artifactId>reusable-test-support</artifactId>

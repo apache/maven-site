@@ -52,7 +52,7 @@ you want made available to Maven. The `sisu-maven-plugin` creates its index in `
 
 If you take a look in that file with the example from the next paragraph, you will see something like the following:
 
-```
+```java
 org.apache.maven.lifecycle.profiler.LifecycleProfiler
 org.apache.maven.lifecycle.profiler.internal.DefaultSessionProfileRenderer
 org.apache.maven.lifecycle.profiler.internal.DefaultTimer
@@ -72,7 +72,7 @@ If you want to look at the full implementation, you can find it [here][tesla-pro
 
 Ok, so let\'s take a look at the POM:
  
-```
+```xml
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -127,7 +127,7 @@ the JSR-330 component index. When you build and place the extension JAR in the `
 it will automatically get picked up by Maven. In the case of this example, we have an implementation of
 an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
 
-```
+```java
 package org.apache.maven.lifecycle.profiler;
 
 import javax.inject.Inject;
@@ -224,7 +224,7 @@ Let\'s take a look at an example plugin. The POM is setup in a similar way to an
 to `maven-plugin-api` and `maven-plugin-annotations` to extend the `AbstractMojo` and use the Java 5 plugin
 annotations in our example.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -316,7 +316,7 @@ to instantiate the `Mojo`. In this simple case, you can actually test this plugi
 testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire
 everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplifies testing.
 
-```
+```java
 package org.apache.maven.plugins;
 
 import javax.inject.Inject;

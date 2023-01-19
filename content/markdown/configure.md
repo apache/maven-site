@@ -82,7 +82,9 @@ clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to mi
 
 Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.projectBasedir}/.mvn/jvm.config` file which means you can define the options for your build on a per project base. This file will become part of your project and will be checked in along with your project. So no need anymore for `MAVEN_OPTS`, `.mavenrc` files. So for example if you put the following JVM options into the `${maven.projectBasedir}/.mvn/jvm.config` file
 
-        -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
+```
+-Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
+```
 
 You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 
