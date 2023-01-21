@@ -209,7 +209,7 @@ page](./guides/mini/guide-encryption.html)
   </mirrors>
   ...
 </settings>
-```xml
+```
 
 -   **id**, **name**: The unique identifier and user-friendly name of
     this mirror. The `id` is used to differentiate between `mirror`
@@ -247,7 +247,7 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
   </proxies>
   ...
 </settings>
-```xml
+```
 
 -   **id**: The unique identifier for this proxy. This is used to
     differentiate between `proxy` elements.
@@ -313,7 +313,7 @@ certain circumstances; those circumstances are specified via an
   </profiles>
   ...
 </settings>
-```xml
+```
 
 Activation occurs when all specified criteria have been met, though not
 all are required at once.
@@ -387,7 +387,7 @@ all accessible from the `settings.xml` file:
   </profiles>
   ...
 </settings>
-```xml
+```
 
 The property `${user.install}` is accessible from a POM if this profile
 is active.
@@ -444,7 +444,7 @@ artifact.
   </profiles>
   ...
 </settings>
-```xml
+```
 
 -   **releases**, **snapshots**: These are the policies for each type of
     artifact, Release or snapshot. With these two sets, a POM has the
@@ -490,7 +490,7 @@ Maven can find new plugins.
     <activeProfile>env-test</activeProfile>
   </activeProfiles>
 </settings>
-```xml
+```
 
 The final piece of the `settings.xml` puzzle is the `activeProfiles`
 element. This contains a set of `activeProfile` elements, which each
