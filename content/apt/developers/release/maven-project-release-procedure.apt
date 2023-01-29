@@ -60,14 +60,17 @@ Performing a Maven Project Release
   If the item you are planning to release is not using the most recent version of its parent
   (see {{{../../pom/}parent POMs}} index), consider taking this opportunity to update to it.
 
-* Make sure that site compilation and publication works
+* Make sure that site compilation works
 
-  Particularly if you update the parent (but sometimes under other circumstances),
-  the site compilation process may fail, or reveal a conspicuous error, 
-  or deploy to the wrong location. It is stressful and time-consuming
+  Particularly if you update the parent or if you updated your javadoc,
+  the site compilation process may fail, or reveal a conspicuous error. It is stressful and time-consuming
   to discover this *after* you stage a release and then try to follow
   the procedure to deploy the site for review. So you may find it more
-  pleasant to check out the state of the site before you start.
+  pleasant to check out the state of the site before you start:
+
+----
+mvn -Preporting site site:stage
+----
 
 * Stage the Release
 
