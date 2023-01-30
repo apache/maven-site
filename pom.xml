@@ -331,7 +331,7 @@
           <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml</artifactId>
-            <version>1.2022.13</version>
+            <version>1.2023.1</version>
           </dependency>
         </dependencies>
         <executions>
