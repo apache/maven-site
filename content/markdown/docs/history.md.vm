@@ -89,7 +89,8 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "true" "Java 7" "20" )
+#release( "2023-01-31" "3.9.0" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "true" "Java 8" "20" )
+#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "true" "Java 7" "" )
 #release( "2022-06-06" "3.8.6" "announce/202206.mbox/%3C850c94d3-c7d3-81a3-b6e2-5b6f0d268126@apache.org%3E" "" "" "" )
 #release( "2022-03-05" "3.8.5" "announce/202203.mbox/%3Cb5eab336-e5ba-73bb-1c0c-d063d919ce4d@apache.org%3E" "" "" "" )
 #release( "2021-11-14" "3.8.4" "announce/202111.mbox/%3C55867acd-a5d4-6f42-ef39-c82a4bcd9062@apache.org%3E" "" "" "" )
