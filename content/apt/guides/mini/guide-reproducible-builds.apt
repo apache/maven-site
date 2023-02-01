@@ -157,13 +157,13 @@ mvn clean verify artifact:compare
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
-| {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven/bnd-maven-plugin#reproducible-builds}configuration instructions}}
+| {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#reproducible-builds}}
 *----------------------------------------------------------------------------+-------+--------------+ 
 | Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.3 |
 *----------------------------------------------------------------------------+-------+--------------+
 | Eclipse {{{https://www.eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/}Sisu Maven Plugin}} | 0.3.4 |
 *----------------------------------------------------------------------------+-------+--------------+
-| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
+| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/}springboot-maven-plugin}} | 2.3.0-M4 | not yet for war (because maven-war-plugin not yet ok)
 *----------------------------------------------------------------------------+-------+--------------+ 
 | MojoHaus {{{https://www.mojohaus.org/properties-maven-plugin/}properties-maven-plugin}} | 1.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
