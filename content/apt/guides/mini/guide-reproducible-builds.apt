@@ -157,7 +157,7 @@ mvn clean verify artifact:compare
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
-| {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#reproducible-builds}}}
+| {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#reproducible-builds}documentation}}
 *----------------------------------------------------------------------------+-------+--------------+ 
 | Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.3 |
 *----------------------------------------------------------------------------+-------+--------------+
