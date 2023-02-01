@@ -61,6 +61,9 @@ mvn artifact:check-buildplan
  
 * How to test my Maven build reproducibility?
 
+ <<IMPORTANT>>: This plugin is still in development and performs only a shallow comparison.
+ Thus, you might receive false positives. Using <<<diffoscope(1)>>> is highly advised.
+
  Using {{{/plugins/maven-artifact-plugin/compare-mojo.html}<<<maven-artifact-plugin>>>'s <<<compare>>> goal}},
  you can check that the second build of your project produce the same output than an initial build:
 
