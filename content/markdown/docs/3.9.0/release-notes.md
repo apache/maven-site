@@ -41,7 +41,7 @@ If you have any questions, please consult:
 * Minimum Java version to use with Maven 3.9.0 is raised to Java 8.
 * With Java 8, upgrade of several key dependencies became possible as well.
 * Several backports from Maven 4.x line.
-* Regression fixes from Maven 3.8.x line.
+* Long outstanding issue fixes from Maven 3.8.x line.
 * General fixes and improvements.
 
 The full list of changes can be found in our [issue management system][4].
