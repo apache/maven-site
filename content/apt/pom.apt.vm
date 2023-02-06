@@ -569,10 +569,10 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   It is sometimes useful to limit  a dependency's transitive dependencies. A dependency may have incorrectly
   specified scopes, or dependencies that conflict with other dependencies in your project. Exclusions tell Maven not to include a
-  specified artifact in the classpath even if it is a dependency of one or more of this project's dependencies.
-  (a transitive dependency). For example, the <<<maven-embedder>>> depends on <<<maven-core>>>.
-  Suppose we want to depend on maven-embedder but we do not want to include maven-core 
-  or its dependencies in our classpath. Then we add it as an <<<exclusion>>> when we declare the 
+  specified artifact in the classpath even if it is a dependency of one or more of this project's dependencies
+  (a transitive dependency). For example, <<<maven-embedder>>> depends on <<<maven-core>>>.
+  Suppose you want to depend on maven-embedder but do not want to include maven-core 
+  or its dependencies in the classpath. Then add it as an <<<exclusion>>> in the element that declares the 
   dependency on maven-embedder:
 
 +-----------------------------+
@@ -600,9 +600,9 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   This only removes the path to maven-core from this one dependency. If maven-core appears as
   a direct or transitive dependency elsewhere in the POM, it can still be added to the classpath.
 
-  Using a wildcard excludes makes it easy to exclude all a dependency's
-  all transitive dependencies. In the case below you may be working with the maven-embedder and you want to manage
-  the dependencies you use yourself, so you clip all the transitive dependencies:
+  Wildcard excludes make it easy to exclude all of a dependency's
+  transitive dependencies. In the case below, you may be working with the maven-embedder and you want to manage
+  the dependencies you use, so you exclude all the transitive dependencies:
 
 +-----------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
