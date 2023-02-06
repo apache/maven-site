@@ -43,6 +43,7 @@ If you have any questions, please consult:
 * Several backports from Maven 4.x line.
 * Long outstanding issue fixes from Maven 3.8.x line.
 * General fixes and improvements.
+* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines.
 
 The full list of changes can be found in our [issue management system][4].
 
