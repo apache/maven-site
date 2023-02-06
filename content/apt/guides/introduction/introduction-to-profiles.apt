@@ -28,7 +28,7 @@
 
 Introduction to Build Profiles
 
-%{toc|section=0|fromDepth=2|toDepth=3}
+%{toc|section=0|fromDepth=2|toDepth=5}
 
   Apache Maven goes to great lengths to ensure that builds are portable. Among
   other things, this means allowing build configuration inside the POM,
@@ -84,17 +84,23 @@ Introduction to Build Profiles
 
   A profile can be activated in several ways:
 
-  * From the command line
+  * Explicitly
 
-  * Through Maven settings
+  * Implicitly
+  
+  ** Based on OS
+  
+  ** Based on system properties
+  
+  ** Based on presence of files
+  
+  []
 
-  * Based on environment variables
-
-  * OS settings
-
-  * Present or missing files
+  Refer to the sections below for details.
 
 ** Details on profile activation
+
+*** Explicit profile activation
 
   Profiles can be explicitly specified using the <<<-P>>> command line flag.
 
@@ -126,11 +132,15 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
   every time a project use it.
 
+*** Implicit profile activation
+
   Profiles can be automatically triggered based on the detected state of
   the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
   JDK version matching, operating system matching or
   the presence/the value of a system property. Here are some examples.
+
+**** JDK
 
   The following configuration will trigger the profile when the JDK's
   version <starts with> "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"), in particular it <won't be active>
@@ -164,7 +174,10 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
   <Note:> an upper bound such as <<<,1.5]>>> is likely not to include most releases of 1.5, since they will have an additional "patch" release such as <<<_05>>> that is not taken into consideration in the above range.
 
-  This next one will activate based on OS settings. See the {{{/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
+
+**** OS
+
+  This next one will activate based on the detected operating system. See the {{{/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
 
 +---+
 <profiles>
@@ -181,6 +194,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   </profile>
 </profiles>
 +---+
+
+**** Property
 
   The profile below will be activated when the system property "debug" is specified
   with any value:
@@ -266,6 +281,26 @@ mvn groupId:artifactId:goal -Denvironment=test
 
   <<Note>>: Environment variables like <<<FOO>>> are available as properties of the form <<<env.FOO>>>. Further note
   that environment variable names are normalized to all upper-case on Windows.
+
+  Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing property <<<packaging>>>. 
+  This is only useful where the profile activation is defined in a common parent POM which is reused among multiple Maven projects.
+  The next example will trigger the profile when a project with packaging <<<war>>> is built:
+  
++---+
+<profiles>
+  <profile>
+    <activation>
+      <property>
+        <name>packaging</name>
+        <value>war</value>
+      </property>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+**** Files
 
   This example will trigger the profile when the generated file
   <<<target/generated-sources/axistools/wsdl2java/org/apache/maven>>> is missing.
