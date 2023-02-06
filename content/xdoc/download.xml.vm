@@ -38,7 +38,7 @@ under the License.
           <table>
             <tr>
               <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.3+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
+              <td>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
               <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
             </tr>
             <tr>
@@ -215,4 +215,3 @@ under the License.
     </section>
   </body>
 </document>
-
