@@ -1981,8 +1981,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
 
   * <<property>>:
-  The <<<profile>>> will activate if Maven detects a system property and commandline property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
-  of the corresponding <<<name=value>>> pair.
+  The <<<profile>>> will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
+  of the corresponding <<<name=value>>> pair and it matches the given value (if given). Since Maven 3.9.0 one can also evaluate the <<packaging value>> of the pom via property name <<<packaging>>>.
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
