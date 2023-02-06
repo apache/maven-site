@@ -583,7 +583,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.8.6</version>
+      <version>${currentStableVersion}</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.maven</groupId>
