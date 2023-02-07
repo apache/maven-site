@@ -53,12 +53,12 @@ If you have any questions, please consult:
 
 ### Notable Resolver 1.9.x Changes
 
-* Shared local repository (advisory file locking, Hazelcast or Redis, see https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository).
-* Split local repository, plus "workspace" support for branched development (see https://maven.apache.org/resolver/local-repository.html#split-local-repository).
+* Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository)).
+* Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#split-local-repository)).
 * Switchable and alternative resolver transports included, with default switched to native transport.
-* Pluggable checksum algorithms API (is not tied to MessageDigest anymore, see https://maven.apache.org/resolver/about-checksums.html).
+* Pluggable checksum algorithms API (is not tied to MessageDigest anymore, see [documentation](https://maven.apache.org/resolver/about-checksums.html)).
 * Choice of resolver collectors, along existing DF, added BF collector (parallel POM downloads).
-* Remote repository filtering (see https://maven.apache.org/resolver/remote-repository-filtering.html).
+* Remote repository filtering (see [documentation](https://maven.apache.org/resolver/remote-repository-filtering.html)).
 * Trusted checksum sources (ability to provide some or all artifact checksums ahead of time).
 * Pluggable artifact resolver post-processor, with "trustedChecksums" implementation.
 * Chained local repository (for IT isolation between "outer" and "inner" builds).
@@ -68,7 +68,7 @@ The full list of changes can be found in our [issue management system][4].
 
 ## Known Issues
 
-* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see https://issues.apache.org/jira/browse/MNG-7131
+* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
 
 ## Complete Release Notes
 
