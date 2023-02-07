@@ -53,7 +53,7 @@ If you have any questions, please consult:
 
 ### Potentially Breaking Core Changes
 
-* Maven 2.x was auto-injecting into plugin classpath ancient version of `plexus-utils`, and Maven 3.x continued doing this, to preserve backward compatibility. Maven 3.9 does not do this anymore, that may lead to plugin breakage. Fix for affected plugin maintainers: explicitly declare dependency on `plexus-utils` in plugin if used. Fix for affected plugin users: add this dependency to plugin dependencies until issue is fixed by plugin maintainer. See [MNG-6965](https://issues.apache.org/jira/browse/MNG-6965).
+* Maven 2.x was auto-injecting ancient version of `plexus-utils` dependency into plugin classpath, and Maven 3.x continued doing this to preserve backward compatibility. Starting with Maven 3.9, it does not happen anymore. This change may lead to plugin breakage. Fix for affected plugin maintainers: explicitly declare dependency on `plexus-utils`. Workaround for affected plugin users: add this dependency to plugin dependencies until issue is fixed by affected plugin maintainer. See [MNG-6965](https://issues.apache.org/jira/browse/MNG-6965).
 * Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
 
 
