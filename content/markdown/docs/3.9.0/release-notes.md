@@ -44,11 +44,31 @@ If you have any questions, please consult:
 * Long outstanding issue fixes from Maven 3.8.x line.
 * General fixes and improvements.
 
+### Notable Core Changes
+
+* Help with projects maintenance: warnings about deprecated plugins, goals, parameters, etc.
+* Add support for "mvn pluginPrefix:version:goal" invocation, align console logging (make it copy-paste-able).
+* Add profile activation by packaging.
+* Maven is now fully compatible with new 3.x line of install and deploy plugins (previous versions warns about this).
+
+### Notable Resolver 1.9.x Changes
+
+* Shared local repository (advisory file locking, Hazelcast or Redis, see https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository).
+* Switchable and alternative transports included, with default switched to native transport.
+* Pluggable checksum algorithms API (is not tied to MessageDigest anymore, see https://maven.apache.org/resolver/about-checksums.html).
+* Choice of resolver collectors, along existing DF, added BF collector (parallel POM downloads).
+* Split local repository, plus "workspace" support for branched development (see https://maven.apache.org/resolver/local-repository.html#split-local-repository).
+* Remote repository filtering (see https://maven.apache.org/resolver/remote-repository-filtering.html).
+* Trusted checksum sources (ability to provide some or all artifact checksums ahead of time).
+* Pluggable artifact resolver post-processor, with "trustedChecksums" implementation.
+* Chained local repository (for IT isolation between "outer" and "inner" builds).
+* Recording reverse dependency tree tracking information into local repository.
+
 The full list of changes can be found in our [issue management system][4].
 
 ## Known Issues
 
-*none*
+* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see https://issues.apache.org/jira/browse/MNG-7131
 
 ## Complete Release Notes
 
