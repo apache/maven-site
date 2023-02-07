@@ -41,15 +41,9 @@ If you have any questions, please consult:
 * Minimum Java version to use with Maven 3.9.0 is raised to Java 8.
 * With Java 8, upgrade of several key dependencies became possible as well.
 * Several backports from Maven 4.x line.
-* Long outstanding issue fixes from Maven 3.8.x line.
+* Long outstanding issue fixes from Maven 3.x line.
+* Cutting ties with Maven 2 backward compatibility, preparing grounds for Maven 4.
 * General fixes and improvements.
-
-### Notable Core Changes
-
-* Help with projects maintenance: Maven now warns about use of deprecated plugins, goals, parameters, etc.
-* Add support for "mvn pluginPrefix:version:goal" invocation, and align console logging as well (make it copy-paste-able).
-* Add profile activation by packaging.
-* Maven 3.9.0 is now fully compatible with new 3.x line of install and deploy plugins (previous versions warns about this).
 
 ### Potentially Breaking Core Changes
 
@@ -57,7 +51,14 @@ If you have any questions, please consult:
 * Mojos are prevented to boostrap new instance of `RepositorySystem` (for example by using deprecated `ServiceLocator`), they should reuse `RepositorySystem` instance provided by Maven instead. See [MNG-7471](https://issues.apache.org/jira/browse/MNG-7471).
 * Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
 
-### Notable Resolver 1.9.x Changes
+### Notable Core Improvements
+
+* Help with projects maintenance: Maven now warns about use of deprecated plugins, goals, parameters, etc.
+* Add support for "mvn pluginPrefix:version:goal" invocation, and align console logging as well (make it copy-paste-able).
+* Add profile activation by packaging.
+* Maven 3.9.0 is now fully compatible with new 3.x line of install and deploy plugins (previous versions warns about this).
+
+### Notable Resolver 1.9.x Improvements
 
 * Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository)).
 * Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#split-local-repository)).
