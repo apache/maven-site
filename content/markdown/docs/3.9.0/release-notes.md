@@ -51,6 +51,12 @@ If you have any questions, please consult:
 * Add profile activation by packaging.
 * Maven 3.9.0 is now fully compatible with new 3.x line of install and deploy plugins (previous versions warns about this).
 
+### Potentially Breaking Core Changes
+
+* Maven 2.x was auto-injecting into plugin classpath ancient version of `plexus-utils`, and Maven 3.x continued doing this, to preserve backward compatibility. Maven 3.9 does not do this anymore, that may lead to plugin breakage. Fix for affected plugin maintainers: explicitly declare dependency on `plexus-utils` in plugin if used. Fix for affected plugin users: add this dependency to plugin dependencies until issue is fixed by plugin maintainer. See [MNG-6965](https://issues.apache.org/jira/browse/MNG-6965).
+* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
+
+
 ### Notable Resolver 1.9.x Changes
 
 * Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository)).
@@ -68,7 +74,7 @@ The full list of changes can be found in our [issue management system][4].
 
 ## Known Issues
 
-* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
+*none*
 
 ## Complete Release Notes
 
