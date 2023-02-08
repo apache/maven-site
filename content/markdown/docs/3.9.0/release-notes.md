@@ -75,7 +75,7 @@ The full list of changes can be found in our [issue management system][4].
 
 ## Known Issues
 
-*none*
+* Observed roughly 10% slow-down on large builds when compared to Maven 3.8.7, tracked on [MNG-7677](https://issues.apache.org/jira/browse/MNG-7677).
 
 ## Complete Release Notes
 
