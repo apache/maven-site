@@ -69,7 +69,7 @@ under the License.
 
  - [Maven Plugins and Components Compatibility Plan](./compatibility-plan.html)
 
- - [Maven Proposals/Backlog](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId\=5964567)
+ - [Maven Proposals/Backlog](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=5964567)
 
 
 

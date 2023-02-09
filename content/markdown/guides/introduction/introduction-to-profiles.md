@@ -57,7 +57,7 @@ under the License.
 
   - [Profiles in POMs](Profiles_in_POMs)
 
-  - [POM elements outside \<profiles\>](POM_elements_outside_.3Cprofiles.3E)
+  - [POM elements outside `<profiles>`](POM_elements_outside_.3Cprofiles.3E)
 
 
 
@@ -109,7 +109,7 @@ under the License.
 
  - Profile descriptor
 
-   - a descriptor located in [project basedir `(profiles.xml)`](/ref/2.2.1/maven-profile/profiles.html) (no longer supported in Maven 3.0 and above; see [ Maven 3 compatibility notes](https://cwiki.apache.org/confluence/display/MAVEN/Maven\+3.x\+Compatibility\+Notes#Maven3.xCompatibilityNotes-profiles.xml))
+   - a descriptor located in [project basedir `(profiles.xml)`](/ref/2.2.1/maven-profile/profiles.html) (no longer supported in Maven 3.0 and above; see [ Maven 3 compatibility notes](https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes#Maven3.xCompatibilityNotes-profiles.xml))
 
 
 
@@ -145,7 +145,7 @@ under the License.
  Profiles can be explicitly specified using the `-P` command line flag.
 
 
- This flag is followed by a comma-delimited list of profile IDs to use. The profile(s) specified in the option are activated in addition to any profiles which are activated by their activation configuration or the `\<activeProfiles\>` section in `settings.xml`. From Maven 4 onward, Maven will refuse to activate or deactivate a profile that cannot be resolved. To prevent this, prefix the profile identifier with an `?`, marking it as optional:
+ This flag is followed by a comma-delimited list of profile IDs to use. The profile(s) specified in the option are activated in addition to any profiles which are activated by their activation configuration or the `<activeProfiles>` section in `settings.xml`. From Maven 4 onward, Maven will refuse to activate or deactivate a profile that cannot be resolved. To prevent this, prefix the profile identifier with an `?`, marking it as optional:
 
 
 
@@ -153,7 +153,7 @@ under the License.
 mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 ```
 
- Profiles can be activated in the Maven settings, via the `\<activeProfiles\>` section. This section takes a list of `\<activeProfile\>` elements, each containing a profile-id inside.
+ Profiles can be activated in the Maven settings, via the `<activeProfiles>` section. This section takes a list of `<activeProfile>` elements, each containing a profile-id inside.
 
 
 
@@ -167,14 +167,14 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 </settings>
 ```
 
- Profiles listed in the `\<activeProfiles\>` tag would be activated by default every time a project use it.
+ Profiles listed in the `<activeProfiles>` tag would be activated by default every time a project use it.
 
 
 
 ##### Implicit profile activation
 
 
- Profiles can be automatically triggered based on the detected state of the build environment. These triggers are specified via an `\<activation\>` section in the profile itself. Currently, this detection is limited to JDK version matching, operating system matching or the presence/the value of a system property. Here are some examples.
+ Profiles can be automatically triggered based on the detected state of the build environment. These triggers are specified via an `<activation>` section in the profile itself. Currently, this detection is limited to JDK version matching, operating system matching or the presence/the value of a system property. Here are some examples.
 
 
 ###### JDK
@@ -373,7 +373,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 </profiles>
 ```
 
- As of Maven 2.0.9, the tags `\<exists\>` and `\<missing\>` could be interpolated. Supported variables are system properties like `$\{user.home\}` and environment variables like `$\{env.HOME\}`. Please note that properties and values defined in the POM itself are not available for interpolation here, e.g. the above example activator cannot use `$\{project.build.directory\}` but needs to hard-code the path `target`.
+ As of Maven 2.0.9, the tags `<exists>` and `<missing>` could be interpolated. Supported variables are system properties like `${user.home}` and environment variables like `${env.HOME}`. Please note that properties and values defined in the POM itself are not available for interpolation here, e.g. the above example activator cannot use `${project.build.directory}` but needs to hard-code the path `target`.
 
 
  Profiles can also be active by default using a configuration like the following:
@@ -434,10 +434,10 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 #### Profiles in external files
 
 
- Profiles specified in external files (i.e in `settings.xml` or `profiles.xml`) are not portable in the strictest sense. Anything that seems to stand a high chance of changing the result of the build is restricted to the inline profiles in the POM. Things like repository lists could simply be a proprietary repository of approved artifacts, and won't change the outcome of the build. Therefore, you will only be able to modify the `\<repositories\>` and `\<pluginRepositories\>` sections, plus an extra `\<properties\>` section.
+ Profiles specified in external files (i.e in `settings.xml` or `profiles.xml`) are not portable in the strictest sense. Anything that seems to stand a high chance of changing the result of the build is restricted to the inline profiles in the POM. Things like repository lists could simply be a proprietary repository of approved artifacts, and won't change the outcome of the build. Therefore, you will only be able to modify the `<repositories>` and `<pluginRepositories>` sections, plus an extra `<properties>` section.
 
 
- The `\<properties\>` section allows you to specify free-form key-value pairs which will be included in the interpolation process for the POM. This allows you to specify a plugin configuration in the form of `$\{profile.provided.path\}`.
+ The `<properties>` section allows you to specify free-form key-value pairs which will be included in the interpolation process for the POM. This allows you to specify a plugin configuration in the form of `${profile.provided.path}`.
 
 
 
@@ -451,49 +451,49 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
 
 
- - `\<repositories\>`
+ - `<repositories>`
 
- - `\<pluginRepositories\>`
+ - `<pluginRepositories>`
 
- - `\<dependencies\>`
+ - `<dependencies>`
 
- - `\<plugins\>`
+ - `<plugins>`
 
- - `\<properties\>` (not actually available in the main POM, but used behind the scenes)
+ - `<properties>` (not actually available in the main POM, but used behind the scenes)
 
- - `\<modules\>`
+ - `<modules>`
 
- - `\<reports\>`
+ - `<reports>`
 
- - `\<reporting\>`
+ - `<reporting>`
 
- - `\<dependencyManagement\>`
+ - `<dependencyManagement>`
 
- - `\<distributionManagement\>`
+ - `<distributionManagement>`
 
- - a subset of the `\<build\>` element, which consists of:
+ - a subset of the `<build>` element, which consists of:
 
-  - `\<defaultGoal\>`
+  - `<defaultGoal>`
 
-  - `\<resources\>`
+  - `<resources>`
 
-  - `\<testResources\>`
+  - `<testResources>`
 
-  - `\<directory\>`
+  - `<directory>`
 
-  - `\<finalName\>`
+  - `<finalName>`
 
-  - `\<filters\>`
+  - `<filters>`
 
-  - `\<pluginManagement\>`
+  - `<pluginManagement>`
 
-  - `\<plugins\>`
-
-
+  - `<plugins>`
 
 
 
-#### POM elements outside \<profiles\>
+
+
+#### POM elements outside `<profiles>`
 
 
  We don't allow modification of some POM elements outside of POM-profiles because these runtime modifications will not be distributed when the POM is deployed to the repository system, making that person's build of that project completely unique from others. While you can do this to some extent with the options given for external profiles, the danger is limited. Another reason is that this POM info is sometimes being reused from the parent POM.
@@ -621,10 +621,10 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
  When you build the **integration-test** lifecycle phase, your integration tests pass, since the path you've provided allows the test plugin to install and test this web application.
 
 
- _However_, when your colleague attempts to build to **integration-test**, his build fails spectacularly, complaining that it cannot resolve the plugin configuration parameter `\<appserverHome\>`, or worse, that the value of that parameter - literally `$\{appserver.home\}` - is invalid (if it warns you at all).
+ _However_, when your colleague attempts to build to **integration-test**, his build fails spectacularly, complaining that it cannot resolve the plugin configuration parameter `<appserverHome>`, or worse, that the value of that parameter - literally `${appserver.home}` - is invalid (if it warns you at all).
 
 
- Congratulations, your project is now non-portable. Inlining this profile in your `pom.xml` can help alleviate this, with the obvious drawback that each project hierarchy (allowing for the effects of inheritance) now have to specify this information. Since Maven provides good support for project inheritance, it's possible to stick this sort of configuration in the `\<pluginManagement\>` section of a team-level POM or similar, and simply inherit the paths.
+ Congratulations, your project is now non-portable. Inlining this profile in your `pom.xml` can help alleviate this, with the obvious drawback that each project hierarchy (allowing for the effects of inheritance) now have to specify this information. Since Maven provides good support for project inheritance, it's possible to stick this sort of configuration in the `<pluginManagement>` section of a team-level POM or similar, and simply inherit the paths.
 
 
  Another, less attractive answer might be standardization of development environments. However, this will tend to compromise the productivity gain that Maven is capable of providing.
@@ -696,7 +696,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 </project>
 ```
 
- This profile looks quite similar to the one from the last example, with a few important exceptions: it's plainly geared toward a development environment, a new profile named `appserverConfig-dev-2` is added and it has an activation section that will trigger its inclusion when the system properties contain "env\=dev" for a profile named `appserverConfig-dev` and "env\=dev-2" for a profile named `appserverConfig-dev-2`. So, executing:
+ This profile looks quite similar to the one from the last example, with a few important exceptions: it's plainly geared toward a development environment, a new profile named `appserverConfig-dev-2` is added and it has an activation section that will trigger its inclusion when the system properties contain "env=dev" for a profile named `appserverConfig-dev` and "env=dev-2" for a profile named `appserverConfig-dev-2`. So, executing:
 
 
 
@@ -720,7 +720,7 @@ mvn -Denv=dev integration-test
 mvn -Denv=production integration-test
 ```
 
- will not do a successful build. Why? Because, the resulting non-interpolated literal value of `$\{appserver.home\}` will not be a valid path for deploying and testing your web application. We haven't considered the case for the production environment when writing our profiles. The "production" environment (env\=production), along with "test" and possibly even "local" constitute a natural set of target environments for which we may want to build the integration-test lifecycle phase. The incomplete specification of this natural set means we have effectively limited our valid target environments to the development environment. Your teammates - and probably your manager - will not see the humor in this. When you construct profiles to handle cases such as these, be sure to address the entire set of target permutations.
+ will not do a successful build. Why? Because, the resulting non-interpolated literal value of `$\{appserver.home\}` will not be a valid path for deploying and testing your web application. We haven't considered the case for the production environment when writing our profiles. The "production" environment (env=production), along with "test" and possibly even "local" constitute a natural set of target environments for which we may want to build the integration-test lifecycle phase. The incomplete specification of this natural set means we have effectively limited our valid target environments to the development environment. Your teammates - and probably your manager - will not see the humor in this. When you construct profiles to handle cases such as these, be sure to address the entire set of target permutations.
 
 
  As a quick aside, it's possible for user-specific profiles to act in a similar way. This means that profiles for handling different environments which are keyed to the user can act up when the team adds a new developer. While I suppose this _could_ act as useful training for the newbie, it just wouldn't be nice to throw them to the wolves in this way. Again, be sure to think of the _whole_ set of profiles.
@@ -750,7 +750,7 @@ mvn -Denv=production integration-test
   mvn help:active-profiles -Denv=dev
 ```
 
- The result will be a bulleted list of the id of the profile with an activation property of "env\=dev" together with the source where it was declared. See sample below.
+ The result will be a bulleted list of the id of the profile with an activation property of "env=dev" together with the source where it was declared. See sample below.
 
 
 
@@ -811,7 +811,7 @@ The following profiles are active:
  This will print the effective POM for this build configuration out to the console. Take note that profiles in the `settings.xml` takes higher priority than profiles in the POM. So the profile that has been applied here is `appserverConfig` not `appserverConfig-dev`.
 
 
- If you want to redirect the output from the plugin to a file called `effective-pom.xml`, use the command-line option `-Doutput\=effective-pom.xml`.
+ If you want to redirect the output from the plugin to a file called `effective-pom.xml`, use the command-line option `-Doutput=effective-pom.xml`.
 
 
 
@@ -829,7 +829,7 @@ The following profiles are active:
 mvn -Denv=test <phase>
 ```
 
- The right command-line option can be had by simply substituting "\=" for "-" in the profile id.
+ The right command-line option can be had by simply substituting "=" for "-" in the profile id.
 
 
 

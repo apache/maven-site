@@ -70,19 +70,19 @@ password
 
 
 
- 1 I look at the actual diff, if there is a whole lot of formatting changes irrelevant to the issue being fixed \=\> **Patch is no good, ask on JIRA for a clean patch**
+ 1 I look at the actual diff, if there is a whole lot of formatting changes irrelevant to the issue being fixed => **Patch is no good, ask on JIRA for a clean patch**
 
- 1 I look at the list of files in the diff, if there are no tests \=\> **Patch is no good, ask on JIRA for test cases**
+ 1 I look at the list of files in the diff, if there are no tests => **Patch is no good, ask on JIRA for test cases**
 
- 1 I look at the issue and if the issue requires documentation be updated and there is no documentation changes in the patch \=\> **Patch is no good, ask on JIRA for documentation changes in the patch**
+ 1 I look at the issue and if the issue requires documentation be updated and there is no documentation changes in the patch => **Patch is no good, ask on JIRA for documentation changes in the patch**
 
- 1 I take a clean checkout of the source that the patch applies to and try to apply the patch... if it does not apply clean \=\> **Patch is no good, ask on JIRA for an updated patch**
+ 1 I take a clean checkout of the source that the patch applies to and try to apply the patch... if it does not apply clean => **Patch is no good, ask on JIRA for an updated patch**
 
- 1 I revert the src/main and run the tests. If the tests all pass, then there are no test cases to catch the bug \=\> **Patch is no good, ask on JIRA for proper tests**
+ 1 I revert the src/main and run the tests. If the tests all pass, then there are no test cases to catch the bug => **Patch is no good, ask on JIRA for proper tests**
 
- 1 I revert src and run the tests. If any tests fail, then there is something wrong with the existing code \=\> **If I have time I might try and fix the issue, otherwise I just move on**
+ 1 I revert src and run the tests. If any tests fail, then there is something wrong with the existing code => **If I have time I might try and fix the issue, otherwise I just move on**
 
- 1 I apply the patch a second time and run the tests. If the tests all pass \=\> **Patch is good, I commit the patch and mark the JIRA as resolved**
+ 1 I apply the patch a second time and run the tests. If the tests all pass => **Patch is good, I commit the patch and mark the JIRA as resolved**
 
 
  So there you have it, my guide to writing good patches... now the next step is getting your patches noticed...

@@ -32,7 +32,7 @@ under the License.
 
  - add the repository or plugin repository to your POM or settings (see below)
 
- - ensure you are using the version being released of the artifacts in your project, e.g. by setting the `\<version\>` in the `\<plugin\>` tag.
+ - ensure you are using the version being released of the artifacts in your project, e.g. by setting the `<version>` in the `<plugin>` tag.
 
  - test the release
 
@@ -69,11 +69,11 @@ under the License.
 
 
 
- - Identifier \= `staged-releases`
+ - Identifier = `staged-releases`
 
- - Name \= Staged Releases
+ - Name = Staged Releases
 
- - Directory \= `/path/to/repositories/staged-releases`
+ - Directory = `/path/to/repositories/staged-releases`
 
  - Uncheck 'Scannable'
 
@@ -82,26 +82,26 @@ under the License.
 
 
 
- - Identifier \= `dfabulich.staged.releases`
+ - Identifier = `dfabulich.staged.releases`
 
- - Name \= dfabulich Staged Releases
+ - Name = dfabulich Staged Releases
 
- - URL \= `http://people.apache.org/\~dfabulich/staging-repo/`
+ - URL = `http://people.apache.org/\~dfabulich/staging-repo/`
 
 
  Finally, add a proxy connector to connect the two repositories:
 
 
 
- - Managed repository \= `staged-releases`
+ - Managed repository = `staged-releases`
 
- - Remote repository \= `dfabulich.staged`
+ - Remote repository = `dfabulich.staged`
 
- - Release policy \= `once`
+ - Release policy = `once`
 
- - Snapshot policy \= `never`
+ - Snapshot policy = `never`
 
- - White list \= `org/apache/maven/\*\*`
+ - White list = `org/apache/maven/\*\*`
 
 
  You can then utilise this repository from your POM or settings in the same way, but with the alternate URL of `http://localhost:8080/archiva/repository/staged-releases/`.

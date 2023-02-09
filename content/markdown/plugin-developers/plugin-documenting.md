@@ -46,6 +46,6 @@ mvn docck:check
 
 
 
- - [Maven Plugin Documentation](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven\+Plugin\+Documentation)
+ - [Maven Plugin Documentation](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Documentation)
 
 

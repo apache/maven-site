@@ -35,11 +35,11 @@ under the License.
 
  - you have a recent Git client installed and on your shell's path.
 
- - you have JDK 8 installed and on your shell's path to build Maven 3.7.0\+. Details about minimum JDK version to build an appropriate version can be found here: [https://maven.apache.org/docs/history.html](/docs/history.html)
+ - you have JDK 8 installed and on your shell's path to build Maven 3.7.0+. Details about minimum JDK version to build an appropriate version can be found here: [https://maven.apache.org/docs/history.html](/docs/history.html)
 
- - if you receive an OutOfMemoryError during the build, make sure to have set the environment variable `MAVEN_OPTS\=-Xmx512m`
+ - if you receive an OutOfMemoryError during the build, make sure to have set the environment variable `MAVEN_OPTS=-Xmx512m`
 
- - you must use Maven 3.3.9\+.
+ - you must use Maven 3.3.9+.
 
  - follow Apache environment configuration steps outlined at: [Publishing Maven Artifacts](https://www.apache.org/dev/publishing-maven-artifacts.html#dev-env).
 
@@ -133,7 +133,7 @@ Vote open for at least 72 hours.
  To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the _Preset Filters_ on the right, use the link for _Outstanding_ issues.
 
 
- The vote is open for at least 72 hours means, that you need to wait at least 72 hours before proceeding. This gives others time to test your release and check that everything is good. If you have received after that not enough \+1 votes to reach the quorum, this doesn't mean, the vote failed. It just takes a bit longer.
+ The vote is open for at least 72 hours means, that you need to wait at least 72 hours before proceeding. This gives others time to test your release and check that everything is good. If you have received after that not enough +1 votes to reach the quorum, this doesn't mean, the vote failed. It just takes a bit longer.
 
 
 
@@ -209,18 +209,18 @@ The vote has been canceled.
 
  - drop your staging repository as described in [Drop a repository](https://www.apache.org/dev/publishing-maven-artifacts.html)
 
- - create new version for next round `Y.Z\+1`
+ - create new version for next round `Y.Z+1`
 
- - assign issues from version `Y.Z` also to version `Y.Z\+1`
+ - assign issues from version `Y.Z` also to version `Y.Z+1`
 
  - mark the `Y.Z` version as **archived**
 
- - report found issues and assign them to version `Y.Z\+1`
+ - report found issues and assign them to version `Y.Z+1`
 
  - fix found issues
 
 
- Start the process for version `Y.Z\+1` from the beginning.
+ Start the process for version `Y.Z+1` from the beginning.
 
 
 
@@ -287,7 +287,7 @@ wagon/wagon-2.2-source-release.zip.sha512
 
  1 Update the version tracking in JIRA
 
-   In the relevant project, go to Administration, then Versions. Mark the `Y.Z` version as 'released'. Create version `Y.Z\+1`, if that hasn't already been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+   In the relevant project, go to Administration, then Versions. Mark the `Y.Z` version as 'released'. Create version `Y.Z+1`, if that hasn't already been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
 
 

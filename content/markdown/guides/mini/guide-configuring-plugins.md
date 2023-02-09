@@ -53,21 +53,21 @@ under the License.
 
  - [Configuring Build Plugins](Configuring_Build_Plugins)
 
-  - [Using the \<executions\> Tag](Using_the_.3Cexecutions.3E_Tag)
+  - [Using the `<executions>` Tag](Using_the_.3Cexecutions.3E_Tag)
 
-  - [Using the \<dependencies\> Tag](Using_the_.3Cdependencies.3E_Tag)
+  - [Using the `<dependencies>` Tag](Using_the_.3Cdependencies.3E_Tag)
 
-  - [Using the \<inherited\> Tag In Build Plugins](Using_the_.3Cinherited.3E_Tag_In_Build_Plugins)
+  - [Using the `<inherited>` Tag In Build Plugins](Using_the_.3Cinherited.3E_Tag_In_Build_Plugins)
 
 
 
  - [Configuring Reporting Plugins](Configuring_Reporting_Plugins)
 
-  - [Using the \<reporting\> Tag VS \<build\> Tag](Using_the_.3Creporting.3E_Tag_VS_.3Cbuild.3E_Tag)
+  - [Using the `<reporting>` Tag VS `<build>` Tag](Using_the_.3Creporting.3E_Tag_VS_.3Cbuild.3E_Tag)
 
-  - [Using the \<reportSets\> Tag](Using_the_.3CreportSets.3E_Tag)
+  - [Using the `<reportSets>` Tag](Using_the_.3CreportSets.3E_Tag)
 
-  - [Using the \<inherited\> Tag In Reporting Plugins](Using_the_.3Cinherited.3E_Tag_In_Reporting_Plugins)
+  - [Using the `<inherited>` Tag In Reporting Plugins](Using_the_.3Cinherited.3E_Tag_In_Reporting_Plugins)
 
 
 
@@ -79,22 +79,22 @@ under the License.
 
 
 
- - **Build plugins** are executed during the build and configured in the `\<build/\>` element.
+ - **Build plugins** are executed during the build and configured in the `<build>` element.
 
- - **Reporting plugins** are executed during the site generation and configured in the `\<reporting/\>` element.
+ - **Reporting plugins** are executed during the site generation and configured in the `<reporting>` element.
 
 
  All plugins should have minimal required [information](/ref/current/maven-model/maven.html#class_plugin): `groupId`, `artifactId` and `version`.
 
 
- **Important Note**: Always define the version of each plugin used to guarantee build reproducibility. A good practice is to specify each build plugin's version in a `\<build\>\<pluginManagement/\>\</build\>` element. Often the \<pluginManagement/\> element is found in the parent POM. For reporting plugins, specify each version in the `\<reporting\>\<plugins/\>\</reporting\>` element (and in the `\<build\>\<pluginManagement/\>\</build\>` element too).
+ **Important Note**: Always define the version of each plugin used to guarantee build reproducibility. A good practice is to specify each build plugin's version in a `<build><pluginManagement><build>` element. Often the `<pluginManagement>` element is found in the parent POM. For reporting plugins, specify each version in the `<reporting><plugins><reporting>` element (and in the `<build><pluginManagement><build>` element too).
 
 
 
 ### Generic Configuration
 
 
- Maven plugins (build and reporting) are configured by specifying a `\<configuration\>` element where the child elements of the `\<configuration\>` element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of one or more Mojos where a Mojo maps to a goal.) Say, for example, you have a Mojo that performs a query against a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
+ Maven plugins (build and reporting) are configured by specifying a `<configuration>` element where the child elements of the `<configuration>` element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of one or more Mojos where a Mojo maps to a goal.) Say, for example, you have a Mojo that performs a query against a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 
 
@@ -151,7 +151,7 @@ public class MyQueryMojo
  The elements in the configuration match the names of the fields in the Mojo. The mapping is straight forward. The `url` element maps to the `url` field, the `timeout` element maps to the `timeout` field, and the `options` element maps to the `options` field. The mapping mechanism can deal with arrays by inspecting the type of the field and determining if a suitable mapping is possible.
 
 
- For Mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be configured via system properties instead of a `\<configuration\>` section in the POM. The plugin documentation for those parameters will list an _expression_ that denotes the system properties for the configuration. In the Mojo above, the parameter `url` is associated with the expression `$\{query.url\}`, meaning its value can be specified by the system property `query.url` as shown below:
+ For Mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be configured via system properties instead of a `<configuration>` section in the POM. The plugin documentation for those parameters will list an _expression_ that denotes the system properties for the configuration. In the Mojo above, the parameter `url` is associated with the expression `${query.url}`, meaning its value can be specified by the system property `query.url` as shown below:
 
 
 
@@ -186,7 +186,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 ##### Mapping Value Objects
 
 
- Mapping value types, like Boolean or Integer, is very simple. The `\<configuration\>` element might look like the following:
+ Mapping value types, like Boolean or Integer, is very simple. The `<configuration>` element might look like the following:
 
 
 
@@ -232,7 +232,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 ##### Mapping Complex Objects
 
 
- Mapping complex types is also fairly straight forward. Let's look at a simple example where we are trying to map a configuration for Person object. The `\<configuration/\>` element might look like the following:
+ Mapping complex types is also fairly straight forward. Let's look at a simple example where we are trying to map a configuration for Person object. The `<configuration>` element might look like the following:
 
 
 
@@ -449,13 +449,13 @@ public class MyAnimalMojo
 ### Configuring Build Plugins
 
 
- The following is only to configure Build plugins in the `\<build\>` element.
+ The following is only to configure Build plugins in the `<build>` element.
 
 
-#### Using the `\<executions\>` Tag
+#### Using the `<executions>` Tag
 
 
- You can also configure a mojo using the `\<executions\>` tag. This is most commonly used for mojos that are intended to participate in some phases of the [build lifecycle](../introduction/introduction-to-the-lifecycle.html). Using `MyQueryMojo` as an example, you may have something that will look like:
+ You can also configure a mojo using the `<executions>` tag. This is most commonly used for mojos that are intended to participate in some phases of the [build lifecycle](../introduction/introduction-to-the-lifecycle.html). Using `MyQueryMojo` as an example, you may have something that will look like:
 
 
 
@@ -507,7 +507,7 @@ public class MyAnimalMojo
 </project>
 ```
 
- The first execution with id "execution1" binds this configuration to the test phase. The second execution does not have a `\<phase\>` tag, how do you think will this execution behave? Well, goals can have a default phase binding as discussed further below. If the goal has a default phase binding then it will execute in that phase. But if the goal is not bound to any lifecycle phase then it simply won't be executed during the build lifecycle.
+ The first execution with id "execution1" binds this configuration to the test phase. The second execution does not have a `<phase>` tag, how do you think will this execution behave? Well, goals can have a default phase binding as discussed further below. If the goal has a default phase binding then it will execute in that phase. But if the goal is not bound to any lifecycle phase then it simply won't be executed during the build lifecycle.
 
 
  Note that while execution id's have to be unique among all executions of a single plugin within a POM, they don't have to be unique across an inheritance hierarchy of POMs. Executions of the same id from different POMs are merged. The same applies to executions that are defined by profiles.
@@ -583,7 +583,7 @@ public class MyBoundQueryMojo
 }
 ```
 
- From the above mojo example, `MyBoundQueryMojo` is by default bound to the package phase (see the `@phase` notation). But if we want to execute this mojo during the install phase and not with package we can rebind this mojo into a new lifecycle phase using the `\<phase\>` tag under `\<execution\>`.
+ From the above mojo example, `MyBoundQueryMojo` is by default bound to the package phase (see the `@phase` notation). But if we want to execute this mojo during the install phase and not with package we can rebind this mojo into a new lifecycle phase using the `<phase>` tag under `<execution>`.
 
 
 
@@ -623,7 +623,7 @@ public class MyBoundQueryMojo
  Now, `MyBoundQueryMojo` default phase which is package has been overridden by install phase.
 
 
- **Note:** Configurations inside the `\<executions\>` element used to differ from those that are outside `\<executions\>` in that they could not be used from a direct command line invocation because they were only applied when the lifecycle phase they were bound to was invoked. So you had to move a configuration section outside of the executions section to apply it globally to all invocations of the plugin. Since Maven 3.3.1 this is not the case anymore as you can specify on the command line the execution id for direct plugin goal invocation. Hence if you want to run the above plugin and it's specific execution1's configuration from the command-line, you can execute:
+ **Note:** Configurations inside the `<executions>` element used to differ from those that are outside `<executions>` in that they could not be used from a direct command line invocation because they were only applied when the lifecycle phase they were bound to was invoked. So you had to move a configuration section outside of the executions section to apply it globally to all invocations of the plugin. Since Maven 3.3.1 this is not the case anymore as you can specify on the command line the execution id for direct plugin goal invocation. Hence if you want to run the above plugin and it's specific execution1's configuration from the command-line, you can execute:
 
 
 
@@ -632,13 +632,13 @@ mvn myquery:query@execution1
 ```
 
 
-#### Using the `\<dependencies\>` Tag
+#### Using the `<dependencies>` Tag
 
 
  You could configure the dependencies of the Build plugins, commonly to use a more recent dependency version.
 
 
- For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version when running this plugin, you need to add `\<dependencies\>` element like the following:
+ For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version when running this plugin, you need to add `<dependencies>` element like the following:
 
 
 
@@ -672,10 +672,10 @@ mvn myquery:query@execution1
 ```
 
 
-#### Using the `\<inherited\>` Tag In Build Plugins
+#### Using the `<inherited>` Tag In Build Plugins
 
 
- By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use the `\<inherited\>` tag:
+ By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use the `<inherited>` tag:
 
 
 
@@ -702,26 +702,26 @@ mvn myquery:query@execution1
 ### Configuring Reporting Plugins
 
 
- The following is only to configure Reporting plugins in the `\<reporting\>` element.
+ The following is only to configure Reporting plugins in the `<reporting>` element.
 
 
-#### Using the `\<reporting\>` Tag VS `\<build\>` Tag
+#### Using the `<reporting>` Tag VS `<build>` Tag
 
 
- Configuring a reporting plugin in the `\<reporting\>` or `\<build\>` elements in the pom does not exactly have the same results.
-
-
-
- [`mvn site`] Since maven-site-plugin 3.4, it uses the parameters defined in the `\<configuration\>` element of each reporting Plugin specified in the `\<reporting\>` element, in addition to the parameters defined in the `\<configuration\>` element of each plugin specified in `\<build\>` (parameters from `\<build\>` section were previously ignored).
-
- [`mvn aplugin:areportgoal`] It **ignores** the parameters defined in the `\<configuration\>` element of each reporting Plugin specified in the `\<reporting\>` element; only parameters defined in the `\<configuration\>` element of each plugin specified in `\<build\>` are used.
+ Configuring a reporting plugin in the `<reporting>` or `<build>` elements in the pom does not exactly have the same results.
 
 
 
-#### Using the `\<reportSets\>` Tag
+ [`mvn site`] Since maven-site-plugin 3.4, it uses the parameters defined in the `<configuration>` element of each reporting Plugin specified in the `<reporting>` element, in addition to the parameters defined in the `<configuration>` element of each plugin specified in `<build>` (parameters from `<build>` section were previously ignored).
+
+ [`mvn aplugin:areportgoal`] It **ignores** the parameters defined in the `<configuration>` element of each reporting Plugin specified in the `<reporting>` element; only parameters defined in the `<configuration>` element of each plugin specified in `<build>` are used.
 
 
- You can configure a reporting plugin using the `\<reportSets\>` tag. This is most commonly used to generate reports selectively when running `mvn site`. The following will generate only the project team report.
+
+#### Using the `<reportSets>` Tag
+
+
+ You can configure a reporting plugin using the `<reportSets>` tag. This is most commonly used to generate reports selectively when running `mvn site`. The following will generate only the project team report.
 
 
 
@@ -767,10 +767,10 @@ mvn myquery:query@execution1
 
 
 
-#### Using the `\<inherited\>` Tag In Reporting Plugins
+#### Using the `<inherited>` Tag In Reporting Plugins
 
 
- Similar to the build plugins, to break the inheritance, you can use the `\<inherited\>` tag:
+ Similar to the build plugins, to break the inheritance, you can use the `<inherited>` tag:
 
 
 

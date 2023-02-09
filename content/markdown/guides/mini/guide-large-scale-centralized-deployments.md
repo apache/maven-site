@@ -68,7 +68,7 @@ under the License.
 
  - a hosted repository for snapshots
 
- - a hosted repository that can contain both releases and snapshots (Only needed if some projects are still using Maven Deploy Plugin \< 2.8. See [Managing Uploads to the Repository Manager](Managing_Uploads_to_the_Repository_Manager) for more info.)
+ - a hosted repository that can contain both releases and snapshots (Only needed if some projects are still using Maven Deploy Plugin < 2.8. See [Managing Uploads to the Repository Manager](Managing_Uploads_to_the_Repository_Manager) for more info.)
 
 
  Separate hosted repositories are generally used for releases and snapshots due to the need for different artifact retention policies.
@@ -120,13 +120,13 @@ under the License.
  All proprietary artifacts produced by Maven projects in the organization should be uploaded to the repository manager's hosted repositories.
 
 
- The [Maven Deploy Plugin](../../plugins/maven-deploy-plugin) can be instructed to upload artifacts to the repository manager's repositories by defining the `alt\*DeploymentRepository` properties in the Maven `settings.xml` file. When these properties are defined, the Maven Deploy Plugin's [deploy](../../plugins/maven-deploy-plugin/deploy-mojo.html) goal uses them instead of the `\<distributionManagement\>` section of `pom.xml` files to determine where to upload artifacts.
+ The [Maven Deploy Plugin](../../plugins/maven-deploy-plugin) can be instructed to upload artifacts to the repository manager's repositories by defining the `alt\*DeploymentRepository` properties in the Maven `settings.xml` file. When these properties are defined, the Maven Deploy Plugin's [deploy](../../plugins/maven-deploy-plugin/deploy-mojo.html) goal uses them instead of the `<distributionManagement>` section of `pom.xml` files to determine where to upload artifacts.
 
 
- Defining the upload destination of artifacts in `settings.xml` files rather than in the `\<distributionManagement\>` section of `pom.xml` files allows the destinations to be centrally managed, which simplifies maintenance if the destinations need to change. In other words, rather than changing a huge number of `pom.xml` files, you just need to change [relatively few](Settings_File_Locations) `settings.xml` files if/when the distribution locations need to change.
+ Defining the upload destination of artifacts in `settings.xml` files rather than in the `<distributionManagement>` section of `pom.xml` files allows the destinations to be centrally managed, which simplifies maintenance if the destinations need to change. In other words, rather than changing a huge number of `pom.xml` files, you just need to change [relatively few](Settings_File_Locations) `settings.xml` files if/when the distribution locations need to change.
 
 
- The ability to specify separate alternate deployment repositories for releases and snapshots via the `altReleaseDeploymentRepository` and `altSnapshotDeploymentRepository` properties, respectively, was added in Maven Deploy Plugin 2.8. To get the most out of the approach defined in this document, all projects should use Maven Deploy Plugin \>\=2.8. If some projects are still using an older version of Maven Deploy Plugin (\>\=2.3 and \<2.8), then specify a single alternate deployment repository via the `altDeploymentRepository` property that points to a repository capable of containing both releases and snapshots.
+ The ability to specify separate alternate deployment repositories for releases and snapshots via the `altReleaseDeploymentRepository` and `altSnapshotDeploymentRepository` properties, respectively, was added in Maven Deploy Plugin 2.8. To get the most out of the approach defined in this document, all projects should use Maven Deploy Plugin >=2.8. If some projects are still using an older version of Maven Deploy Plugin (>=2.3 and <2.8), then specify a single alternate deployment repository via the `altDeploymentRepository` property that points to a repository capable of containing both releases and snapshots.
 
 
  Typically, only continuous integration servers are allowed to upload artifacts to the repository manager. Therefore, these settings should only be specified in `settings.xml` files on continuous integration servers, and should not be in `settings.xml` files on developer machines. Alternatively, if you want developers to be able to upload artifacts to the repository manager, then include these properties in the `settings.xml` files used by developers.

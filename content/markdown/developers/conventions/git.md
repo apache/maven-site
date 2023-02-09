@@ -33,7 +33,7 @@ under the License.
 #### For contributors who are not committers
 
 
- Apache git repositories are at _ \<\<git://git.apache.org_\>\>. However, the ASF uses clones on github.com to make it easier for people to contribute changes via pull requests.
+ Apache git repositories are at _git://git.apache.org_. However, the ASF uses clones on github.com to make it easier for people to contribute changes via pull requests.
 
 
  To contribute to a Maven component that is maintained in git, please follow these steps:

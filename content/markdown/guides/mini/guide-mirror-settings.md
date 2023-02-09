@@ -56,7 +56,7 @@ under the License.
 </settings>
 ```
 
- Note that there can be at most one mirror for a given repository. In other words, you cannot map a single repository to a group of mirrors that all define the same `\<mirrorOf\>` value. Maven will not aggregate the mirrors but simply picks the first match. If you want to provide a combined view of several repositories, use a [repository manager](../../repository-management.html) instead.
+ Note that there can be at most one mirror for a given repository. In other words, you cannot map a single repository to a group of mirrors that all define the same `<mirrorOf>` value. Maven will not aggregate the mirrors but simply picks the first match. If you want to provide a combined view of several repositories, use a [repository manager](../../repository-management.html) instead.
 
 
  The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../maven-settings/settings.html).
@@ -78,7 +78,7 @@ under the License.
  To achieve this, set `mirrorOf` to `\*`.
 
 
- **Note:** This feature is only available in Maven 2.0.5\+.
+ **Note:** This feature is only available in Maven 2.0.5+.
 
 
 
@@ -119,26 +119,26 @@ under the License.
  - an exclamation mark may be used in conjunction with one of the above wildcards to exclude a repository id
 
 
- Be careful not to include extra whitespace around identifiers or wildcards in comma separated lists. For example, a mirror with `\<mirrorOf`\> set to `!repo1, \*` will not mirror anything while `!repo1,\*` will mirror everything but `repo1`.
+ Be careful not to include extra whitespace around identifiers or wildcards in comma separated lists. For example, a mirror with `<mirrorOf`> set to `!repo1, *` will not mirror anything while `!repo1,*` will mirror everything but `repo1`.
 
 
  The position of wildcards within a comma separated list of repository identifiers is not important as the wildcards defer to further processing and explicit includes or excludes stop the processing, overruling any wildcard match.
 
 
- When you use the advanced syntax and configure multiple mirrors, the declaration order matters. When Maven looks for a mirror of some repository, it first checks for a mirror whose `\<mirrorOf\>` exactly matches the repository identifier. If no direct match is found, Maven picks the first mirror declaration that matches according to the rules above (if any). Hence, you may influence match order by changing the order of the definitions in the `settings.xml`
+ When you use the advanced syntax and configure multiple mirrors, the declaration order matters. When Maven looks for a mirror of some repository, it first checks for a mirror whose `<mirrorOf>` exactly matches the repository identifier. If no direct match is found, Maven picks the first mirror declaration that matches according to the rules above (if any). Hence, you may influence match order by changing the order of the definitions in the `settings.xml`
 
 
  Examples:
 
 
 
- - `\*` \= everything
+ - `*` = everything
 
- - `external:\*` \= everything not on the localhost and not file based.
+ - `external:*` = everything not on the localhost and not file based.
 
- - `repo,repo1` \= repo or repo1
+ - `repo,repo1` = repo or repo1
 
- - `\*,!repo1` \= everything except repo1
+ - `*,!repo1` = everything except repo1
 
 
 

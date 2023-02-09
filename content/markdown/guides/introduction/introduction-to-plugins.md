@@ -46,7 +46,7 @@ under the License.
  A Mojo is really just a **goal** in Maven, and plug-ins consist of any number of goals (Mojos). Mojos can be defined as annotated Java classes or Beanshell script. A Mojo specifies metadata about a goal: a goal name, which phase of the lifecycle it fits into, and the parameters it is expecting.
 
 
- MOJO is a play on POJO (Plain-old-Java-object), substituting "Maven" for "Plain". Mojo is also an interesting word (see [definition](http://www.answers.com/mojo&r\=67)). From [Wikipedia](http://www.wikipedia.org), a "mojo" is defined as: "...a small bag worn by a person under the clothes (also known as a mojo hand). Such bags were thought to have supernatural powers, such as protecting from evil, bringing good luck, etc."
+ MOJO is a play on POJO (Plain-old-Java-object), substituting "Maven" for "Plain". Mojo is also an interesting word (see [definition](http://www.answers.com/mojo&r=67)). From [Wikipedia](http://www.wikipedia.org), a "mojo" is defined as: "...a small bag worn by a person under the clothes (also known as a mojo hand). Such bags were thought to have supernatural powers, such as protecting from evil, bringing good luck, etc."
 
 
 

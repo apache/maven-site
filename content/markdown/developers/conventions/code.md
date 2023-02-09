@@ -27,7 +27,7 @@ under the License.
  As the formatting is automatically enforced or even applied with [spotless-maven-plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) for all projects using [Maven Project Parent POM 38 or newer](/pom/maven/index.html) developers usually don't need to care and the following sections are just for informational purposes.
 
 
- Optionally you can still import the code style formatter for your IDE from [shared-resources](https://gitbox.apache.org/repos/asf?p\=maven-shared-resources.git;a\=tree;f\=src/main/resources/config;hb\=HEAD)
+ Optionally you can still import the code style formatter for your IDE from [shared-resources](https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD)
 
 
  - [Generic Code Style And Convention](Generic_Code_Style_And_Convention)
@@ -134,7 +134,7 @@ under the License.
  all imports in each group should be sorted alphabetically.
 
 
- To ensure a package import order consistent with the layout described above, download `[maven-eclipse-importorder.txt](https://gitbox.apache.org/repos/asf?p\=maven-shared-resources.git;a\=blob_plain;f\=src/main/resources/config/maven-eclipse-importorder.txt;hb\=HEAD)`, select _Window \> Preferences_ and navigate to _Java \> Code Style \> Organize Imports_. Click on _Import..._ and select the downloaded file to change the import order.
+ To ensure a package import order consistent with the layout described above, download `[maven-eclipse-importorder.txt](https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-eclipse-importorder.txt;hb=HEAD)`, select _Window \> Preferences_ and navigate to _Java \> Code Style \> Organize Imports_. Click on _Import..._ and select the downloaded file to change the import order.
 
 
 
@@ -262,11 +262,11 @@ under the License.
 
 
 
- 1 The \<project/\> element is always on one line.
+ 1 The `<project>` element is always on one line.
 
- 1 The blocks are voluntary separated by a new line to improve the readingness.
+ 1 The blocks are voluntary separated by a new line to improve the readiness.
 
- 1 The dependencies in \<dependencies/\> and \<dependencyManagement/\> tags have no specific ordering. Developers are free to choose the ordering, but grouping dependencies by topics (like groupId i.e. `org.apache.maven`) is a good practice.
+ 1 The dependencies in `<dependencies>` and `<dependencyManagement>` tags have no specific ordering. Developers are free to choose the ordering, but grouping dependencies by topics (like groupId i.e. `org.apache.maven`) is a good practice.
 
 
 
@@ -277,9 +277,9 @@ under the License.
 
 
 
- - **Metadata**: Always specify metadata in the \<properties/\> tag.
+ - **Metadata**: Always specify metadata in the `<properties>` tag.
 
- - **Sections**: Always use a new line with indentation for \<section/\> tags.
+ - **Sections**: Always use a new line with indentation for `<section>` tags.
 
 
 
@@ -290,7 +290,7 @@ under the License.
 
 
 
- - **FAQ**: Always use a new line with indentation for \<faq/\> tags.
+ - **FAQ**: Always use a new line with indentation for `<faq>` tags.
 
 
 <!--  * {APT} Do we need any specific APT style/convention? -->

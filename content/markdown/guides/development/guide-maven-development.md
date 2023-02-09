@@ -74,7 +74,7 @@ under the License.
 
  - If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
 
- - Name the branch after the issue number; the branch name would start with `\<jira-project-id\>-\<ticket-id\>`.
+ - Name the branch after the issue number; the branch name would start with `<jira-project-id>-<ticket-id>`.
 
  - Push your branch with the commit(s) to your fork.
 

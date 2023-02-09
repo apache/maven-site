@@ -47,11 +47,11 @@ under the License.
 
 
 
- - Until 2012, Maven 2.2.1 \+ Java 5 prerequisites, with plugins versions in 2.x
+ - Until 2012, Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
 
- - Since 2012, Maven 3.0 \+ Java 7 prerequisites, with plugins in 3.x.y
+ - Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.x.y
 
- - Since June 2020, Maven Plugin API used by plugins \>\= 3.1.0 \+ Java 8 prerequisites [Technical details](https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1)
+ - Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites [Technical details](https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1)
 
 
 

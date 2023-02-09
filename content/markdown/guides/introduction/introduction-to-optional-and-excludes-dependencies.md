@@ -45,7 +45,7 @@ under the License.
 #### How do I use the optional tag?
 
 
- A dependency is declared optional by setting the `\<optional\>` element to true in its dependency declaration:
+ A dependency is declared optional by setting the `<optional>` element to true in its dependency declaration:
 
 
 
@@ -109,7 +109,7 @@ Project-X -> Project-A
 #### How to use dependency exclusions
 
 
- Add an `\<exclusions\>` element in the `\<dependency\>` element by which the problematic jar is included.
+ Add an `<exclusions>` element in the `<dependency>` element by which the problematic jar is included.
 
 
 
@@ -159,7 +159,7 @@ Project-A
 B, C, D, E, F
 ```
 
- Suppose you don't want project D and its dependencies to be added to Project A's classpath because some of Project-D's dependencies are missing from the repository, and you don't need the functionality in Project-B that depends on Project-D anyway. Project-B's developers could have marked the dependency on Project-D `\<optional\>true\</optional\>`:
+ Suppose you don't want project D and its dependencies to be added to Project A's classpath because some of Project-D's dependencies are missing from the repository, and you don't need the functionality in Project-B that depends on Project-D anyway. Project-B's developers could have marked the dependency on Project-D `<optional>true</optional>`:
 
 
 

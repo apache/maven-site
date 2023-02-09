@@ -118,13 +118,13 @@ but has moved to the <Organization> <Project> project.
 ```
 
 
- 1 Add " (RETIRED)" at the end of `\<project\>`/`\<name\>` in the plugin's `pom.xml`. This will show up on every page of the generated site.
+ 1 Add " (RETIRED)" at the end of `<project> <name>` in the plugin's `pom.xml`. This will show up on every page of the generated site.
 
  1 Go ahead with [the standard release process](./release/maven-project-release-procedure.html), making sure that you follow the exceptions mentioned above regarding the site deployment.
 
  1 When updating the plugins page, move Maven Foo Plugin to under the "Retired" heading. Remove the SVN and JIRA links and add the date of retirement.
 
- 1 When updating the version in JIRA, do not add Y.Z\+1 and make sure you remove any future versions.
+ 1 When updating the version in JIRA, do not add Y.Z+1 and make sure you remove any future versions.
 
 
 
@@ -134,7 +134,7 @@ but has moved to the <Organization> <Project> project.
 
  1 Remove the `.Jenkinsfile` from all branches. This will remove the project from https://builds.apache.org/job/maven-box/
 
- 1 Ask INFRA for archive git repos (gitbox \+ github)
+ 1 Ask INFRA for archive git repos (gitbox + github)
 
  1 Republish documentation, postfix project name with (RETIRED)
 

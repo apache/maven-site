@@ -30,7 +30,7 @@ under the License.
  This page describes the policies around the use of dependencies by the Apache Maven Developers in the process of developing Apache Maven itself.
 
 
- This page does not apply to projects hosted outside of the Apache Maven project. In order to remove all doubt, this page only applies to code which has a Github URL that starts with `https://github.com/apache/maven` or a Gitbox URL starting with `https://gitbox.apache.org/repos/asf?p\=maven`
+ This page does not apply to projects hosted outside of the Apache Maven project. In order to remove all doubt, this page only applies to code which has a Github URL that starts with `https://github.com/apache/maven` or a Gitbox URL starting with `https://gitbox.apache.org/repos/asf?p=maven`
 
 
  If you have stumbled across this page and you are working on code that does not have a Github URL starting with `https://github.com/apache/maven` then this page does not apply to you.
