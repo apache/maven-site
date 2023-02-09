@@ -111,7 +111,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -167,7 +167,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -202,7 +202,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -225,7 +225,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -276,7 +276,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -325,7 +325,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -339,7 +339,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -368,7 +368,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -423,7 +423,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -477,7 +477,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -491,7 +491,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -524,7 +524,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -543,7 +543,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -609,7 +609,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
@@ -630,7 +630,7 @@ under the License.
 
 
 ```
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>
     <mavenVersion>3.0</mavenVersion>
