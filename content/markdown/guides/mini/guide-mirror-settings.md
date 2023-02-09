@@ -37,7 +37,7 @@ under the License.
  - You want to run a [repository manager](../../repository-management.html) to provide a local cache to a mirror and need to use its URL instead
 
 
- To configure a mirror of a given repository, you provide it in your settings file (`$\{user.home\}/.m2/settings.xml`), giving the new repository its own `id` and `url`, and specify the `mirrorOf` setting that is the ID of the repository you are using a mirror of. For example, the ID of the main Maven Central repository included by default is `central`, so to use the different mirror instance, you would configure the following:
+ To configure a mirror of a given repository, you provide it in your settings file (`${user.home}/.m2/settings.xml`), giving the new repository its own `id` and `url`, and specify the `mirrorOf` setting that is the ID of the repository you are using a mirror of. For example, the ID of the main Maven Central repository included by default is `central`, so to use the different mirror instance, you would configure the following:
 
 
 

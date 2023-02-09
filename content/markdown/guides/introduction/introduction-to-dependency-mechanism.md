@@ -322,7 +322,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
 ```
 
- **NOTE:** In two of these dependency references, we had to specify the `<type>` element. This is because the minimal set of information for matching a dependency reference against a dependencyManagement section is actually **\{groupId, artifactId, type, classifier\}**. In many cases, these dependencies will refer to jar artifacts with no classifier. This allows us to shorthand the identity set to **\{groupId, artifactId\}**, since the default for the type field is `jar`, and the default classifier is null.
+ **NOTE:** In two of these dependency references, we had to specify the `<type>` element. This is because the minimal set of information for matching a dependency reference against a dependencyManagement section is actually **{groupId, artifactId, type, classifier}**. In many cases, these dependencies will refer to jar artifacts with no classifier. This allows us to shorthand the identity set to **{groupId, artifactId}**, since the default for the type field is `jar`, and the default classifier is null.
 
 
  A second, and very important use of the dependency management section is to control the versions of artifacts used in transitive dependencies. As an example consider these projects:

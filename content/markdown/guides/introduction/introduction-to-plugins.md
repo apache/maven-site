@@ -36,7 +36,7 @@ under the License.
  Plugins are the central feature of Maven that allow for the reuse of common build logic across multiple projects. They do this by executing an "action" (i.e. creating a WAR file or compiling unit tests) in the context of a project's description - the Project Object Model (POM). Plugin behavior can be customized through a set of unique parameters which are exposed by a description of each plugin goal (or Mojo).
 
 
- One of the simplest plugins in Maven is the Clean Plugin. The [Maven Clean plugin](../../plugins/maven-clean-plugin/) (maven-clean-plugin) is responsible for removing the target directory of a Maven project. When you run "mvn clean", Maven executes the "clean" goal as defined in the Clean plug-in, and the target directory is removed. The Clean plugin [defines a parameter](../../plugins/maven-clean-plugin/clean-mojo.html) which can be used to customize plugin behavior, this parameter is called outputDirectory and it defaults to $\{project.build.directory\}.
+ One of the simplest plugins in Maven is the Clean Plugin. The [Maven Clean plugin](../../plugins/maven-clean-plugin/) (maven-clean-plugin) is responsible for removing the target directory of a Maven project. When you run "mvn clean", Maven executes the "clean" goal as defined in the Clean plug-in, and the target directory is removed. The Clean plugin [defines a parameter](../../plugins/maven-clean-plugin/clean-mojo.html) which can be used to customize plugin behavior, this parameter is called outputDirectory and it defaults to `${project.build.directory}`.
 
 
 

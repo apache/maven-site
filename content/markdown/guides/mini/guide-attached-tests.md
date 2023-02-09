@@ -24,7 +24,7 @@ under the License.
 ## Guide to using attached tests
 
 
- You can reuse the tests that you have created for one project in another. For example, suppose `foo-core` contains test code in the `$\{basedir\}/src/test/java`. To package up those compiled tests in a JAR and deploy them for general reuse, configure the `maven-jar-plugin` as follows:
+ You can reuse the tests that you have created for one project in another. For example, suppose `foo-core` contains test code in the `${basedir}/src/test/java`. To package up those compiled tests in a JAR and deploy them for general reuse, configure the `maven-jar-plugin` as follows:
 
 
 

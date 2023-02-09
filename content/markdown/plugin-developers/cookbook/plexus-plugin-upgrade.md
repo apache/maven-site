@@ -128,7 +128,7 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 </project>
 ```
 
- If `merge-descriptors` is used, move the handwritten xml file to `$\{basedir\}/src/main/resources/META-INF/plexus`.
+ If `merge-descriptors` is used, move the handwritten xml file to `${basedir}/src/main/resources/META-INF/plexus`.
 
 
 

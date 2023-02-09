@@ -252,9 +252,9 @@ mvn groupId:artifactId:version:goal
 
  - If you need to run the latest version of a plugin installed in your local repository, you can omit its version number. So just use "`mvn sample.plugin:hello-maven-plugin:sayhi`" to run your plugin.
 
- - You can assign a shortened prefix to your plugin, such as `mvn hello:sayhi`. This is done automatically if you follow the convention of using `$\{prefix\}-maven-plugin` (or `maven-$\{prefix\}-plugin` if the plugin is part of the Apache Maven project). You may also assign one through additional configuration - for more information see [ Introduction to Plugin Prefix Mapping](../introduction/introduction-to-plugin-prefix-mapping.html).
+ - You can assign a shortened prefix to your plugin, such as `mvn hello:sayhi`. This is done automatically if you follow the convention of using `${prefix}-maven-plugin` (or `maven-${prefix}-plugin` if the plugin is part of the Apache Maven project). You may also assign one through additional configuration - for more information see [ Introduction to Plugin Prefix Mapping](../introduction/introduction-to-plugin-prefix-mapping.html).
 
- - Finally, you can also add your plugin's groupId to the list of groupIds searched by default. To do this, you need to add the following to your `$\{user.home\}/.m2/settings.xml` file:
+ - Finally, you can also add your plugin's groupId to the list of groupIds searched by default. To do this, you need to add the following to your `${user.home}/.m2/settings.xml` file:
 
 ```
 <pluginGroups>
@@ -352,7 +352,7 @@ mvn archetype:generate \
     private String greeting;
 ```
 
- The portion before the annotations is the description of the parameter. The `parameter` annotation identifies the variable as a mojo parameter. The `defaultValue` parameter of the annotation defines the default value for the variable. This value can include expressions which reference the project, such as "`$\{project.version\}`" (more can be found in the ["Parameter Expressions" document](/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html)). The `property` parameter can be used to allow configuration of the mojo parameter from the command line by referencing a system property that the user sets via the `-D` option.
+ The portion before the annotations is the description of the parameter. The `parameter` annotation identifies the variable as a mojo parameter. The `defaultValue` parameter of the annotation defines the default value for the variable. This value can include expressions which reference the project, such as "`${project.version}`" (more can be found in the ["Parameter Expressions" document](/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html)). The `property` parameter can be used to allow configuration of the mojo parameter from the command line by referencing a system property that the user sets via the `-D` option.
 
 
 

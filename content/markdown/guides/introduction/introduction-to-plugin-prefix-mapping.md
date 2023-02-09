@@ -39,9 +39,9 @@ under the License.
 
 
 
- - `maven-$\{prefix\}-plugin` - for official plugins maintained by the Apache Maven team itself (you **must not** use this naming pattern for your plugin, see [this note for more informations](../plugin/guide-java-plugin-development.html#Plugin_Naming_Convention_and_Apache_Maven_Trademark))
+ - `maven-${prefix}-plugin` - for official plugins maintained by the Apache Maven team itself (you **must not** use this naming pattern for your plugin, see [this note for more informations](../plugin/guide-java-plugin-development.html#Plugin_Naming_Convention_and_Apache_Maven_Trademark))
 
- - `$\{prefix\}-maven-plugin` - for plugins from other sources
+ - `${prefix}-maven-plugin` - for plugins from other sources
 
 
  If your plugin's artifactId fits this pattern, Maven will automatically map your plugin to the correct prefix in the metadata stored within your plugin's groupId path on the repository. However, if you want to customize the prefix used to reference your plugin, you can specify the prefix directly through a configuration parameter on the `maven-plugin-plugin` in your plugin's POM:
@@ -84,9 +84,9 @@ mvn somePrefix:goal
 
 
 
- 1 Download `maven-metadata.xml` from each remote repository into the local repository, and name it `maven-metadata-$\{repoId\}.xml` within the path of $\{groupId\}.
+ 1 Download `maven-metadata.xml` from each remote repository into the local repository, and name it `maven-metadata-${repoId}.xml` within the path of `${groupId}`.
 
- 1 Load these metadata files, along with `maven-metadata-local.xml` (if it exists), within the path of $\{groupId\}. Merge them.
+ 1 Load these metadata files, along with `maven-metadata-local.xml` (if it exists), within the path of `${groupId}`. Merge them.
 
  1 Lookup the plugin prefix in the merged metadata. If it's mapped, it should refer to a concrete groupId-artifactId pair. Otherwise, go on to #1 for the next groupId in the user's plugin-groups.
 
@@ -101,7 +101,7 @@ mvn somePrefix:goal
  By default, Maven will search the groupId **org.apache.maven.plugins** for prefix-to-artifactId mappings for the plugins it needs to perform a given build. However, as previously mentioned, the user may have a need for third-party plugins. Since the Maven project is assumed to have control over the default plugin groupId, this means configuring Maven to search other groupId locations for plugin-prefix mappings.
 
 
- As it turns out, this is simple. In the Maven settings file (per-user: `$\{user.home\}/.m2/settings.xml`; global: `$\{maven.home\}/conf/settings.xml`), you can provide a custom **pluginGroups** section, listing the plugin groupIds you want to search (each groupId goes in its own **pluginGroup** sub-element). For example, if my project uses a Modello model file, I might have the following in my settings:
+ As it turns out, this is simple. In the Maven settings file (per-user: `${user.home}/.m2/settings.xml`; global: `${maven.home}/conf/settings.xml`), you can provide a custom **pluginGroups** section, listing the plugin groupIds you want to search (each groupId goes in its own **pluginGroup** sub-element). For example, if my project uses a Modello model file, I might have the following in my settings:
 
 
 

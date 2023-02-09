@@ -114,7 +114,7 @@ under the License.
  The `toolchains.xml` file (see below) is the configuration file where you set the installation paths of your toolchains. This file should be put in your `${user.home}/.m2` directory. When the `maven-toolchains-plugin` executes, it looks for the `toolchains.xml` file, reads it and looks for a toolchain matching the toolchains requirements configured in the plugin. In our example, that would be a JDK toolchain with `<version>` "1.5" and `<vendor>` "sun". Once a match is found, the plugin then stores the toolchain to be used in the MavenSession. As you can see in our `toolchains.xml` below, there is indeed a JDK toolchain with `<version>` "1.5" and `<vendor>` "sun" configured. So when the `maven-compiler-plugin` we've configured in our `pom.xml` above executes, it will see that a JDK toolchain is set in the MavenSession and will thereby use that toolchain (that would be the JDK installed at `/path/to/jdk/1.5` for our example) to compile the sources.
 
 
- Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `--global-toolchains file` option but it is recommended to locate it into `$\{user.home\}/.m2/`. 
+ Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `--global-toolchains file` option but it is recommended to locate it into `${user.home}/.m2/`. 
 
 
 

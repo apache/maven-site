@@ -47,14 +47,14 @@ java -version
 ### Maven Unpacked
 
 
- You need to unpack the Maven distribution. Don't unpack it in the middle of your source code; pick some location and unpack it there. Let's assume that the path is `$\{maven.home\}`.
+ You need to unpack the Maven distribution. Don't unpack it in the middle of your source code; pick some location and unpack it there. Let's assume that the path is `${maven.home}`.
 
 
 
 ### Maven in PATH
 
 
- You run Maven by invoking a command-line tool: `mvn.cmd` from the `bin` directory of the Maven. To do this conveniently, `$\{maven.home\}\\bin` must be in your PATH, just like the Java SDK commands. You can add directories to your `PATH` in the control panel; the details vary by Windows version.
+ You run Maven by invoking a command-line tool: `mvn.cmd` from the `bin` directory of the Maven. To do this conveniently, `${maven.home}/bin` must be in your PATH, just like the Java SDK commands. You can add directories to your `PATH` in the control panel; the details vary by Windows version.
 
 
 
