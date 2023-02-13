@@ -28,7 +28,7 @@ settings could be defined with the value `-Xms256m -Xmx512m`.
 
 ## `MAVEN_ARGS` environment variable:
 
-Starting with Maven 4, this variable contains arguments passed to Maven before
+Starting with Maven 3.9.0, this variable contains arguments passed to Maven before
 CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 
