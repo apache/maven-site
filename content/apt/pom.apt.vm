@@ -154,7 +154,7 @@ POM Reference
   The three elements given above point to a specific version of a project, letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-* <<packaging>>
+* {Packaging}
 
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
   label to give us a really complete <what>: that is the project's packaging. In our
