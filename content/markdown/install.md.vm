@@ -50,36 +50,3 @@ Default locale: en_US, platform encoding: UTF-8
 OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 ```
 
-Windows Tips
------
-
-* Check environment variable value e.g.
-
-```cmd
-echo %JAVA_HOME% 
-C:\Program Files\Java\jdk1.7.0_51
-```
-
-* Adding to `PATH`:  Add the unpacked distribution's bin directory to your user PATH environment variable 
-by opening up the system properties (WinKey + Pause), selecting the "Advanced" tab, and 
-the "Environment Variables" button, then adding or selecting the <i>PATH</i>
-variable in the user variables with the value `C:\Program Files\apache-maven-${currentStableVersion}\bin`.
-The same dialog can be used to set `JAVA_HOME` to the location of your JDK, e.g. `C:\Program Files\Java\jdk1.7.0_51`
-
-* Open a new command prompt (Winkey + R then type `cmd`) and run `mvn -v` to verify the installation.
-
-Unix-based Operating System (Linux, Solaris and Mac OS X) Tips
------
-
-* Check environment variable value
-
-```sh
-echo $JAVA_HOME
-/Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home
-```
-
-* Adding to `PATH`
-
-```sh
-export PATH=/opt/apache-maven-${currentStableVersion}/bin:$PATH
-```
