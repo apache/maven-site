@@ -63,7 +63,7 @@ under the License.
 
  1 prerequisite: eventually build the component if it has not been done previously, or some reports may miss build or integration information:
 
-   Notice: In cases where you have prepared a release you can simple change into `target/checkout` folder and continue with 2.
+   Notice: In cases where you have prepared a release you can simple change into `target/checkout` directory and continue with 2.
 
 
 

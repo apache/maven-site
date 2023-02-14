@@ -58,7 +58,7 @@ under the License.
 
 
 
- - authorized users have an additional `settings-security.xml` file in their `${user.home}/.m2` folder
+ - authorized users have an additional `settings-security.xml` file in their `${user.home}/.m2` directory
 
   - this file either contains encrypted **master password**, used to encrypt other passwords
 

@@ -35,7 +35,7 @@ under the License.
 ### Supported By The Maven Project
 
 
- To see the most up-to-date list browse the Maven repository, specifically the [ `org/apache/maven/plugins`](https://repo.maven.apache.org/maven2/org/apache/maven/plugins/) subfolder. _(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)_
+ To see the most up-to-date list browse the Maven repository, specifically the [ `org/apache/maven/plugins`](https://repo.maven.apache.org/maven2/org/apache/maven/plugins/) subdirectory. _(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)_
 
 
 <!--  TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins. -->
@@ -141,7 +141,7 @@ under the License.
 |**Plugin** (see [complete list with version](https://www.mojohaus.org/plugins.html))|**Description**|
 |---|---|
 |[ `animal-sniffer`](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/)|Build signatures of APIs (JDK for example) and checks your classes against them.|
-|[ `build-helper`](https://www.mojohaus.org/build-helper-maven-plugin/)|Attach extra artifacts and source folders to build.|
+|[ `build-helper`](https://www.mojohaus.org/build-helper-maven-plugin/)|Attach extra artifacts and source directories to build.|
 |[ `buildplan`](https://www.mojohaus.org/buildplan-maven-plugin/)|Inspect the lifecycle of your build.|
 |[ `castor`](https://www.mojohaus.org/castor-maven-plugin/)|Generate sources from an XSD using Castor.|
 |[ `clirr`](https://www.mojohaus.org/clirr-maven-plugin/)|Compare binaries or sources for compatibility using Clirr|
