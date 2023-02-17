@@ -75,8 +75,16 @@ options to a script but this can now simple being done by defining `${maven.proj
 configuration options for the `mvn` command line. 
 
 For example things like `-T3 -U --fail-at-end`. So you only have to call Maven just by using `mvn 
-clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. The 
-`${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` directory; also works if in the root of a multi module build.
+clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. 
+The `${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` directory; also works if in the root of a multi module build.
+
+**NOTICE** starting with Maven **3.9.0** each single argument must be put in new line, so for the mentioned example your file will have content like:
+
+```
+-T3
+-U 
+--fail-at-end
+```
 
 ### `.mvn/jvm.config` file:
 
