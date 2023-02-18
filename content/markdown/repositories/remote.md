@@ -23,6 +23,7 @@ Remote repositories usually refer to repositories like [Maven Central Repository
 repositories are holding the artifacts to be consumed by Maven builds.
 
 The two most important properties of remote repositories are:
+
 * baseURL
 * repository policy
 
@@ -37,29 +38,32 @@ sort of "version transformation" happens. We can distinguish two cases:
 
 ### Deploying Snapshot Artifact
 
-Your POM locally usually contains snapshot versions in a form of a string that ends with "SNAPSHOT" constant string 
+Your POM locally usually contains snapshot versions in a form of a string that ends with "SNAPSHOT" constant string
 (for example "1.0-SNAPSHOT"). But, in case of deploy, this version is being transformed to a "timestamped snapshot"
-on the fly (by Maven) and when you check the deployed result, you will see that artifact file does not end up with 
+on the fly (by Maven) and when you check the deployed result, you will see that artifact file does not end up with
 "SNAPSHOT" anymore, but a timestamp and build number. Also, during deploy, Maven will deploy required Maven V Level Metadata
 as well that will describe for consumers of this snapshot how to "reverse" this process.
 
 So, in case of snapshot deploy, version transformation happens in form of:
+
 ```
 1.0-SNAPSHOT -> Maven (on the fly) -> 1.0-${YYYYMMDD.HHMMSS}-${counter}
 ```
-Where the date in `Etc/UTC` timezone (used in `YYYYMMDD.HHMMSS` format) is constant across deploy from same session (is time when Maven 
-Session was created), and counter is increased counter from previously deployed metadata (or if no 
+
+Where the date in `Etc/UTC` timezone (used in `YYYYMMDD.HHMMSS` format) is constant across deploy from same session (is time when Maven
+Session was created), and counter is increased counter from previously deployed metadata (or if no
 remote metadata exists, is initialized with 1).
 
 ### Consuming Snapshot Artifacts
 
 If your project depends on SNAPSHOT dependencies, the POM of your project usually contains `version` value that ends
-with "SNAPSHOT" (for example "1.0-SNAPSHOT"), still, as we see above, remote repositories do NOT contain such versions, 
-but only timestamped ones.  Maven snapshots are "moving targets", hence, during resolution Maven 
-will use the deployed metadata first, to figure out `baseVersion` -> `version` (timestamped) mapping, and only then 
+with "SNAPSHOT" (for example "1.0-SNAPSHOT"), still, as we see above, remote repositories do NOT contain such versions,
+but only timestamped ones.  Maven snapshots are "moving targets", hence, during resolution Maven
+will use the deployed metadata first, to figure out `baseVersion` -> `version` (timestamped) mapping, and only then
 will fetch the required files.
 
 In case of consuming snapshot, the following transformation happens:
+
 ```
 1.0-SNAPSHOT -> Remote V Level Repository Metadata -> 1.0-YYYYMMDD.HHMMS-X
 ```

@@ -42,18 +42,18 @@ Remember to add you company to both sections if you provide support and training
 
 ![Takari](http://takari.io/assets/img/takari_logo.png)  
 
-Takari's [Introduction to Maven][1] virtual training course [curriculum][2] was designed by Jason van Zyl, the creator of the Apache Maven project. Whether you're a new user looking for a solid introduction or a current user looking for an essential refresh, this course was designed to offer a practical and relevant baseline of knowledge to help your team collaborate more effectively on Maven projects. 
+Takari's [Introduction to Maven][1] virtual training course [curriculum][2] was designed by Jason van Zyl, the creator of the Apache Maven project. Whether you're a new user looking for a solid introduction or a current user looking for an essential refresh, this course was designed to offer a practical and relevant baseline of knowledge to help your team collaborate more effectively on Maven projects.
 
 [Takari][3] virtual training provides an opportunity to benefit from access to a Maven expert for the day, as well as valuable discussions with fellow students all from the comfort of your own office.
 
 When you walk away from this class, you will know how to:
 
-- Download, install Maven and run a simple build
-- Understand Maven fundamentals and concepts
-- Understand Maven configuration essentials
-- Configure and locate dependencies for a project
-- Configure plugins to run unit tests
--  Create and configure Maven multi-module projects
+* Download, install Maven and run a simple build
+* Understand Maven fundamentals and concepts
+* Understand Maven configuration essentials
+* Configure and locate dependencies for a project
+* Configure plugins to run unit tests
+* Create and configure Maven multi-module projects
 
 Public virtual classes run monthly. If you are interested in setting up a private virtual session, we can customize the hours to the needs of your team. Please contact us for more details at [training@takari.io][4]. To learn more or get registered for an upcoming class, please click [here][1].
 
@@ -63,7 +63,6 @@ Public virtual classes run monthly. If you are interested in setting up a privat
 [vogella](https://www.vogella.com/training/testbuild/maven.html) offers a one day training to learn the benefits of the Maven build system to build, test and package Java applications.  
 
 vogella GmbH offers this training as a traditional classroom course or as a live virtual course.
-
 
 ### Web Age Solutions
 

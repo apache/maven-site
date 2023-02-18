@@ -28,7 +28,7 @@ For more information see the [NetBeans.org wiki page](http://wiki.netbeans.org/M
 
 ## Eclipse IDE - M2Eclipse
 
-  [M2Eclipse](https://www.eclipse.org/m2e/) is 
+  [M2Eclipse](https://www.eclipse.org/m2e/) is
   the official Eclipse project for Maven integration for the Eclipse IDE.
   
 Features include:
@@ -42,8 +42,8 @@ Features include:
 - Quick fixes in the Java editor for looking up required dependencies/jars by the class or package name
 - Integration with other Eclipse tools, such as WTP, AJDT, Mylyn, Subclipse and others.
 
-M2E dynamically integrates with your Maven projects with Eclipse while you make changes in the IDE. As 
-you change dependencies, or configurations of Maven plugins in your POMs M2E, will synchronize the 
+M2E dynamically integrates with your Maven projects with Eclipse while you make changes in the IDE. As
+you change dependencies, or configurations of Maven plugins in your POMs M2E, will synchronize the
 Eclipse workspace with those changes.
 
 ## JetBrains IntelliJ IDEA

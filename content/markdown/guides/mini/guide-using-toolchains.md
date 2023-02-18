@@ -22,24 +22,17 @@ under the License.
 -->
 ## Guide to Using Toolchains
 
-
 ### What is Toolchains?
-
 
  The Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build, without the need to configure them in each plugin nor in every `pom.xml`, or forcing a precise location among every machine building the project.
 
-
  With Maven Toolchains applied to JDK toolchain, a project can now be built using a specific version of JDK independent from the one Maven is running with. Think how JDK versions can be set in IDEs like IDEA, NetBeans and Eclipse, or how you can compile with an older JDK from Maven running with a recent one.
-
 
 #### Prerequisites
 
-
  Toolchains will only work in Maven 2.0.9 and higher versions. For more details about its design and implementation, please see [Toolchains](http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains).
 
-
  Below are some plugins which are toolchain-aware, with the toolchain-type used:
-
 
 |Toolchain type|**Plugin**|**Starting with**|**Hosted at**|
 |---|---|---|---|
@@ -55,26 +48,17 @@ under the License.
 |jdk|`[keytool-maven-plugin](https://www.mojohaus.org/keytool/keytool-maven-plugin/)`|1.4|MojoHaus|
 |protobuf|`[maven-protoc-plugin](http://sergei-ivanov.github.io/maven-protoc-plugin/examples/protobuf-toolchain.html)`|0.3.2|github|
 
-
-
 ### Using Toolchains in Your Project
 
-
  There are two essential components that you need to configure in order to use toolchains:
-
-
 
  1 the `[maven-toolchains-plugin](/plugins/maven-toolchains-plugin/)` in your project POM,
 
  1 the `[toolchains.xml](/ref/current/maven-core/toolchains.html)` file on the building machine.
 
-
  The `maven-toolchains-plugin` is the one that sets the toolchain to be used by the toolchain-aware plugins in your project.
 
-
  For example, you want to use a different JDK version to build your project than the version used to run Maven, you can configure the version you want to use via this plugin as shown in the `pom.xml` below:
-
-
 
 ```
 <plugins>
@@ -110,13 +94,9 @@ under the License.
 
  As you can see in the example above, a JDK toolchain with `<version>` "1.5" and `<vendor>` "sun" is to be used. Now how does the plugin know where this JDK is installed? This is where the `toolchains.xml` file comes in.
 
-
  The `toolchains.xml` file (see below) is the configuration file where you set the installation paths of your toolchains. This file should be put in your `${user.home}/.m2` directory. When the `maven-toolchains-plugin` executes, it looks for the `toolchains.xml` file, reads it and looks for a toolchain matching the toolchains requirements configured in the plugin. In our example, that would be a JDK toolchain with `<version>` "1.5" and `<vendor>` "sun". Once a match is found, the plugin then stores the toolchain to be used in the MavenSession. As you can see in our `toolchains.xml` below, there is indeed a JDK toolchain with `<version>` "1.5" and `<vendor>` "sun" configured. So when the `maven-compiler-plugin` we've configured in our `pom.xml` above executes, it will see that a JDK toolchain is set in the MavenSession and will thereby use that toolchain (that would be the JDK installed at `/path/to/jdk/1.5` for our example) to compile the sources.
 
-
- Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `--global-toolchains file` option but it is recommended to locate it into `${user.home}/.m2/`. 
-
-
+ Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `--global-toolchains file` option but it is recommended to locate it into `${user.home}/.m2/`.
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
@@ -157,6 +137,3 @@ under the License.
 ```
 
  Note that you can configure as many toolchains as you want in your `toolchains.xml` file.
-
-
-

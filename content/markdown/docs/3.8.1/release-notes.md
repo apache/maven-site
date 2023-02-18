@@ -33,7 +33,7 @@ If you have any questions, please consult:
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.8.1/](/ref/3.8.1/)
 
-## Overview about the changes 
+## Overview about the changes
 
 This release covers two CVEs:
 
@@ -42,19 +42,19 @@ This release covers two CVEs:
   We received a report from Jonathan Leitschuh about a vulnerability of custom repositories in dependency POMs.
   We've split this up into three separate issues:
   
-  - Possible Man-In-The-Middle-Attack due to custom repositories using HTTP\
+- Possible Man-In-The-Middle-Attack due to custom repositories using HTTP\
   More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains POMs with custom repositories that refer to a URL over HTTP.
-  This makes downloads via such repository a target for a MITM attack. 
-  At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
+  This makes downloads via such repository a target for a MITM attack.
+  At the same time, developers are probably not aware that for some downloads an insecure URL is being used.
   Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
   To solve this, we extended the mirror configuration with `<blocked>` parameter,
   and we added a new `external:http:*` mirror selector (like existing `external:*`), meaning "any external URL using HTTP".\
   The decision was made to block such external HTTP repositories by default: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs.
   
-  - Possible Domain Hijacking due to custom repositories using abandoned domains\
-  Sonatype has analyzed which domains were abandoned and has claimed these domains. 
+- Possible Domain Hijacking due to custom repositories using abandoned domains\
+  Sonatype has analyzed which domains were abandoned and has claimed these domains.
   
-  - Possible hijacking of downloads by redirecting to custom repositories\
+- Possible hijacking of downloads by redirecting to custom repositories\
   This one was the hardest to analyze and explain. The short story is: you're safe, dependencies are only downloaded from repositories within their context.
   So there are two main questions: what is the context and what is the order?
   The order is described on the [Repository Order](/guides/mini/guide-multiple-repositories.html#repository-order) page.
@@ -70,20 +70,19 @@ This release covers two CVEs:
   
 ## Why does this version have the value 3.8.1?
 
-  - Why not 3.6.4?\
+- Why not 3.6.4?\
   This is not just a bugfix as it contains three features that **cause a change of default behavior** (external HTTP insecure URLs are now blocked by default):
   your builds may fail when using this new Maven release, if you use now blocked repositories. Please check and eventually fix before upgrading.
   
-  - Why not 3.7.0?\
+- Why not 3.7.0?\
   Apache Maven 3.7.0 has been advertised in the past that it would be the first release where you could optionally activate the build/consumer feature:
   the version containing this feature has been renamed to 4.0.0.
   Reusing 3.7.0 might lead to confusion, hence we picked the next available minor version.
   
-  - Why not 3.8.0?\
+- Why not 3.8.0?\
   With every release there's a 72h+ voting period. During the vote of 3.8.0 a bug was discovered, one that was important enough to cancel the vote.
   With Maven we burn versions, to ensure we're always talking about the same "version". This way there will be never confusion about which Maven 3.8.0 one was using.
   
-
 ## How to fix when I get a HTTP repository blocked?
 
   If the repository is defined in your `pom.xml`, please fix it in your source code.
@@ -96,16 +95,16 @@ This release covers two CVEs:
 
   Options to fix are:
 
-  - upgrade the dependency version to a newer version that replaced the obsolete HTTP repository URL with a HTTPS one,
+- upgrade the dependency version to a newer version that replaced the obsolete HTTP repository URL with a HTTPS one,
 
-  - keep the dependency version but [define a mirror in your settings](/guides/mini/guide-mirror-settings.html).
+- keep the dependency version but [define a mirror in your settings](/guides/mini/guide-mirror-settings.html).
 
 ## The detailed issue list[](#details)
 
 Bug
 
     [MNG-7128] - improve error message when blocked repository defined in build POM
-	
+ 
 New Feature
 
     [MNG-7116] - Add support for mirror selector on external:http:*
@@ -116,7 +115,7 @@ Dependency upgrade
 
     [MNG-7119] - Upgrade Maven Wagon to 3.4.3
     [MNG-7123] - Upgrade Maven Resolver to 1.6.2
-    
+
 The full list of changes can be found in our [issue management system][4].
 
 ## Complete Release Notes
@@ -128,4 +127,3 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12350032
 [5]: ../../docs/history.html
-

@@ -23,31 +23,21 @@ under the License.
 <!--  @todo dennisl: We should drop this document and refer to the macros page in the Doxia site -->
 ## Guide to the Snippet Macro
 
-
  When generating your project website with Maven, you have the option of dynamically including _snippet_s of source code in your pages.
-
 
  A _snippet_ is a section of a source code file that is surrounded by specially formatted comments.
 
-
  This functionality is inspired by the [Confluence](http://www.atlassian.com/software/confluence/) snippet macro, and is provided by the Maven Doxia project by way of the Maven Site Plugin.
-
 
  To include snippets of source code in your documentation, first add comments in the source document surrounding the lines you want to include, and then refer to the snippet by its id in the documentation file. Each snippet must be assigned an id, and the id must be unique within the source document. The id parameter is not required if you want to include the entire file.
 
-
  Following are examples of snippets in various source documents, as well as the corresponding macros in the APT documentation format.
-
 
  See the Doxia [Macros Guide](/doxia/macros/index.html#snippet-macro) for more information and examples.
 
-
 ### Snippets in Sources
 
-
 #### Java
-
-
 
 ```
     // START SNIPPET: snip-id
@@ -58,10 +48,7 @@ under the License.
     // END SNIPPET: snip-id
 ```
 
-
 #### XML
-
-
 
 ```
   <!-- START SNIPPET: snip-id -->
@@ -75,10 +62,7 @@ under the License.
   <!-- END SNIPPET: snip-id -->
 ```
 
-
 #### JSP
-
-
 
 ```
   <%-- START SNIPPET: snip-id --%>
@@ -89,14 +73,9 @@ under the License.
   <%-- END SNIPPET: snip-id --%>
 ```
 
-
-
 ### Snippets in Documentation
 
-
 #### APT
-
-
 
 ```
  %{snippet|id=snip-id|url=http://svn.example.com/path/to/Sample.java}
@@ -106,18 +85,11 @@ under the License.
 
  As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available. If a full path is not specified, the location is assumed to be relative to `${basedir}`.
 
-
-
 ```
  ~~ Since doxia-core 1.0-alpha-9
  %{snippet|id=abc|file=src/main/webapp/index.jsp}
 ```
 
+- Macros in apt **must not** be indented.
 
- - Macros in apt **must not** be indented.
-
- - Exactly one of `url` or `file` **must** be specified.
-
-
-
-
+- Exactly one of `url` or `file` **must** be specified.

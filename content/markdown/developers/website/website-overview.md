@@ -22,17 +22,12 @@ under the License.
 -->
 ## Introduction
 
-
  The Maven [https://maven.apache.org](/) website is composed from:
 
+- a main content
 
-
- - a main content
-
- - multiple components reference documentation
+- multiple components reference documentation
 
 <img src="website-overview.png" />Website mechanisms overview
 
  See [Maven website introduction](./index.html) for instructions on website publication.
-
-

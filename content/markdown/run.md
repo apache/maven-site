@@ -64,7 +64,6 @@ or
 
 There are many different plugins available and they all implement different goals.
 
-
 Further resources:
 
 * [Building a Project with Maven](./run-maven/index.html)

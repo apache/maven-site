@@ -22,13 +22,9 @@ under the License.
 -->
 ## Configuring a proxy
 
-
  You can configure a proxy to use for some or all of your HTTP requests with Maven. The username and password are only required if your proxy requires basic authentication (note that later releases may support storing your passwords in a secured keystore - in the mean time, please ensure your settings.xml file (usually `${user.home}/.m2/settings.xml`) is secured with permissions appropriate for your operating system).
 
-
  The `nonProxyHosts` setting accepts wild cards, and each host not to proxy is separated by the | character. This matches the JDK configuration equivalent.
-
-
 
 ```
 
@@ -55,14 +51,8 @@ under the License.
 
  Please note that currently NTLM proxies are not supported as they have not been tested. You may be able to use the relevant system properties on JDK 1.4+ to make this work.
 
-
 ### Resources
-
-
 
  1 [Settings descriptor documentation](../../maven-settings/settings.html)
 
  1 [Configuring Maven](./guide-configuring-maven.html)
-
-
-

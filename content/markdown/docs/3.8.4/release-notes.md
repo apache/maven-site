@@ -35,8 +35,8 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-* Regression fixes from Maven 3.8.3
-* Upgrade to Jansi 2.4.0 which supports macOS on ARM natively
+- Regression fixes from Maven 3.8.3
+- Upgrade to Jansi 2.4.0 which supports macOS on ARM natively
 
 The full list of changes can be found in our [issue management system][4].
 
@@ -55,4 +55,3 @@ See [complete release notes for all versions][5]
 [5]: ../../docs/history.html
 [6]: https://issues.apache.org/jira/browse/MNG-6843
 [7]: https://issues.apache.org/jira/browse/MNG-7335
-

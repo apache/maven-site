@@ -23,21 +23,19 @@ under the License.
 
 ## Guide to Configuring Plug-ins
 
+- [Introduction](#introduction)
 
+- [Generic Configuration](#generic-configuration)
 
- - [Introduction](#introduction)
+- [Help Goal](#help-goal)
 
- - [Generic Configuration](#generic-configuration)
+- [Configuring Parameters](#configuring-parameters)
 
-  - [Help Goal](#help-goal)
+- [Mapping Value Objects](#mapping-value-objects)
 
-  - [Configuring Parameters](#configuring-parameters)
+- [Mapping Complex Objects](#mapping-complex-objects)
 
-   - [Mapping Value Objects](#mapping-value-objects)
-
-   - [Mapping Complex Objects](#mapping-complex-objects)
-
-   - [Mapping Collection Types](#mapping-collection-types)
+- [Mapping Collection Types](#mapping-collection-types)
 
     - [Mapping Collections and Arrays](#mapping-collections-and-arrays)
 
@@ -45,58 +43,37 @@ under the License.
 
     - [Mapping Properties](#mapping-properties)
 
+- [Configuring Build Plugins](#configuring-build-plugins)
 
+- [Using the `<executions>` Tag](#using-the-executions-tag)
 
+- [Using the `<dependencies>` Tag](#using-the-dependencies-tag)
 
+- [Using the `<inherited>` Tag In Build Plugins](#using-the-inherited-tag-in-build-plugins)
 
+- [Configuring Reporting Plugins](#configuring-reporting-plugins)
 
+- [Using the `<reporting>` Tag VS `<build>` Tag](#using-the-reporting-tag-vs-build-tag)
 
- - [Configuring Build Plugins](#configuring-build-plugins)
+- [Using the `<reportSets>` Tag](#using-the-reportsets-tag)
 
-  - [Using the `<executions>` Tag](#using-the-executions-tag)
-
-  - [Using the `<dependencies>` Tag](#using-the-dependencies-tag)
-
-  - [Using the `<inherited>` Tag In Build Plugins](#using-the-inherited-tag-in-build-plugins)
-
-
-
- - [Configuring Reporting Plugins](#configuring-reporting-plugins)
-
-  - [Using the `<reporting>` Tag VS `<build>` Tag](#using-the-reporting-tag-vs-build-tag)
-
-  - [Using the `<reportSets>` Tag](#using-the-reportsets-tag)
-
-  - [Using the `<inherited>` Tag In Reporting Plugins](#using-the-inherited-tag-in-reporting-plugins)
-
-
-
+- [Using the `<inherited>` Tag In Reporting Plugins](#using-the-inherited-tag-in-reporting-plugins)
 
 ### Introduction
 
-
  In Maven, there are two kinds of plugins, build and reporting:
 
+- **Build plugins** are executed during the build and configured in the `<build>` element.
 
-
- - **Build plugins** are executed during the build and configured in the `<build>` element.
-
- - **Reporting plugins** are executed during the site generation and configured in the `<reporting>` element.
-
+- **Reporting plugins** are executed during the site generation and configured in the `<reporting>` element.
 
  All plugins should have minimal required [information](/ref/current/maven-model/maven.html#class_plugin): `groupId`, `artifactId` and `version`.
 
-
  **Important Note**: Always define the version of each plugin used to guarantee build reproducibility. A good practice is to specify each build plugin's version in a `<build><pluginManagement><build>` element. Often the `<pluginManagement>` element is found in the parent POM. For reporting plugins, specify each version in the `<reporting><plugins><reporting>` element (and in the `<build><pluginManagement><build>` element too).
-
-
 
 ### Generic Configuration
 
-
  Maven plugins (build and reporting) are configured by specifying a `<configuration>` element where the child elements of the `<configuration>` element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of one or more Mojos where a Mojo maps to a goal.) Say, for example, you have a Mojo that performs a query against a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
-
-
 
 ```
 @Mojo( name = "query" )
@@ -121,8 +98,6 @@ public class MyQueryMojo
 ```
 
  To configure the Mojo from your POM with the desired URL, timeout and options you might have something like the following:
-
-
 
 ```
 <project>
@@ -150,10 +125,7 @@ public class MyQueryMojo
 
  The elements in the configuration match the names of the fields in the Mojo. The mapping is straight forward. The `url` element maps to the `url` field, the `timeout` element maps to the `timeout` field, and the `options` element maps to the `options` field. The mapping mechanism can deal with arrays by inspecting the type of the field and determining if a suitable mapping is possible.
 
-
  For Mojos that are intended to be executed directly from the CLI, their parameters usually provide a means to be configured via system properties instead of a `<configuration>` section in the POM. The plugin documentation for those parameters will list an _expression_ that denotes the system properties for the configuration. In the Mojo above, the parameter `url` is associated with the expression `${query.url}`, meaning its value can be specified by the system property `query.url` as shown below:
-
-
 
 ```
 mvn myquery:query -Dquery.url=http://maven.apache.org
@@ -161,13 +133,9 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
 
  The name of the system property does not necessarily match the name of the mojo parameter. While this is a rather common practice, you will often notice plugins that employ some prefix for the system properties to avoid name clashes with other system properties. Though rarely, there are also plugin parameters that (e.g. for historical reasons) employ system properties which are completely unrelated to the parameter name. So be sure to have a close look at the plugin documentation.
 
-
 #### Help Goal
 
-
  Most Maven plugins have a `help` goal that prints a description of the plugin and its parameters and types. For instance, to see help for the javadoc goal, type:
-
-
 
 ```
 mvn javadoc:help -Ddetail -Dgoal=javadoc
@@ -175,20 +143,13 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  And you will see all parameters for the javadoc:javadoc goal, similar to this [page](/plugins/maven-javadoc-plugin/javadoc-mojo.html).
 
-
-
 #### Configuring Parameters
-
 
  Parametrisation of Mojos is relying internally on Plexus Component Configuration API provided by [sisu-plexus](https://github.com/eclipse/sisu.plexus).
 
-
 ##### Mapping Value Objects
 
-
  Mapping value types, like Boolean or Integer, is very simple. The `<configuration>` element might look like the following:
-
-
 
 ```
 <project>
@@ -206,7 +167,6 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 ```
 
  The detailed type coercion is explained in the table below. For conversion to primitive types their according [wrapper classes are used and automatically unboxed](https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html).
-
 
 |Parameter Class|Conversion from String|
 |---|---|
@@ -228,13 +188,9 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 |`java.net.URI`|[`new URI(String)`](https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-)|
 |`java.net.URL`|[`new URL(String)`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-)|
 
-
 ##### Mapping Complex Objects
 
-
  Mapping complex types is also fairly straight forward. Let's look at a simple example where we are trying to map a configuration for Person object. The `<configuration>` element might look like the following:
-
-
 
 ```
 <project>
@@ -251,15 +207,11 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  The rules for mapping complex objects are as follows:
 
+- There must be a private field that corresponds to name of the element being mapped. So in our case the `person` element must map to a `person` field in the mojo.
 
+- The object instantiated must be in the same package as the Mojo itself. So if your mojo is in `com.mycompany.mojo.query` then the mapping mechanism will look in that package for an object named `Person`. The mechanism capitalizes the first letter of the element name and uses that to search for the object to instantiate.
 
- - There must be a private field that corresponds to name of the element being mapped. So in our case the `person` element must map to a `person` field in the mojo.
-
- - The object instantiated must be in the same package as the Mojo itself. So if your mojo is in `com.mycompany.mojo.query` then the mapping mechanism will look in that package for an object named `Person`. The mechanism capitalizes the first letter of the element name and uses that to search for the object to instantiate.
-
- - If you wish to have the object to be instantiated live in a different package or have a more complicated name, specify this using an `implementation` attribute like the following:
-
-
+- If you wish to have the object to be instantiated live in a different package or have a more complicated name, specify this using an `implementation` attribute like the following:
 
 ```
 <project>
@@ -274,19 +226,13 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 </project>
 ```
 
-
 ##### Mapping Collection Types
-
 
  The configuration mapping mechanism can easily deal with most collections so let's go through a few examples to show you how it's done:
 
-
 ###### Mapping Collections and Arrays
 
-
  Mapping to collections works in much the same way as mapping to arrays. Each item is given in the XML as dedicated element. The element name does not matter in that case. So if you have a mojo like the following:
-
-
 
 ```
 public class MyAnimalMojo
@@ -304,8 +250,6 @@ public class MyAnimalMojo
 ```
 
  where you have a field named `animals` then your configuration for the plug-in would look like the following:
-
-
 
 ```
 <project>
@@ -331,8 +275,6 @@ public class MyAnimalMojo
 
  Where each of the animals listed would be entries in the `animals` field. Unlike arrays, collections do not necessarily have a specific component type. In order to derive the type of a collection item, the following strategy is used:
 
-
-
  1 If the XML element contains an `implementation` hint attribute, try to load the class with the given fully qualified class name from the attribute value
 
  1 If the XML element contains a `.`, try to load the class with the fully qualified class name given in the element name
@@ -343,10 +285,7 @@ public class MyAnimalMojo
 
  1 If the element has no children, assume its type is `String`. Otherwise, the configuration will fail.
 
-
  Since Maven 3.3.9 ([MNG-5440](https://issues.apache.org/jira/browse/MNG-5440)), you can list individual items alternatively as comma-separated list in the XML value of animals directly. This approach is also used if configuring collection/array parameters via command line The following example is equivalent to the example above:
-
-
 
 ```
 <project>
@@ -368,14 +307,9 @@ public class MyAnimalMojo
 
  Each item is mapped again according to the rules of this section depending on the type of the collection/array.
 
-
-
 ###### Mapping Maps
 
-
  In the same way, you could define maps like the following:
-
-
 
 ```
 ...
@@ -383,7 +317,6 @@ public class MyAnimalMojo
     private Map<String,String> myMap;
 ...
 ```
-
 
 ```
 <project>
@@ -400,17 +333,11 @@ public class MyAnimalMojo
 
  Unlike Collections the value type for Maps is always derived from the parameter type information from either [`Field.getGenericType()`](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html#getGenericType()) or [`Method.getGenericParameterTypes()`](https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html#getGenericParameterTypes()). It falls back to `String`. The key type must always be `String`.
 
-
- In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument. 
-
-
+ In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument.
 
 ###### Mapping Properties
 
-
  Properties should be defined like the following:
-
-
 
 ```
 ...
@@ -418,7 +345,6 @@ public class MyAnimalMojo
     private Properties myProperties;
 ...
 ```
-
 
 ```
 <project>
@@ -439,25 +365,15 @@ public class MyAnimalMojo
 </project>
 ```
 
- In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument. 
-
-
-
-
-
+ In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument.
 
 ### Configuring Build Plugins
 
-
  The following is only to configure Build plugins in the `<build>` element.
-
 
 #### Using the `<executions>` Tag
 
-
  You can also configure a mojo using the `<executions>` tag. This is most commonly used for mojos that are intended to participate in some phases of the [build lifecycle](../introduction/introduction-to-the-lifecycle.html). Using `MyQueryMojo` as an example, you may have something that will look like:
-
-
 
 ```
 <project>
@@ -509,13 +425,9 @@ public class MyAnimalMojo
 
  The first execution with id "execution1" binds this configuration to the test phase. The second execution does not have a `<phase>` tag, how do you think will this execution behave? Well, goals can have a default phase binding as discussed further below. If the goal has a default phase binding then it will execute in that phase. But if the goal is not bound to any lifecycle phase then it simply won't be executed during the build lifecycle.
 
-
  Note that while execution id's have to be unique among all executions of a single plugin within a POM, they don't have to be unique across an inheritance hierarchy of POMs. Executions of the same id from different POMs are merged. The same applies to executions that are defined by profiles.
 
-
  How about if we have a multiple executions with different phases bound to it? How do you think will it behave? Let us use the example POM above again, but this time we shall bind `execution2` to a phase.
-
-
 
 ```
 <project>
@@ -556,10 +468,7 @@ public class MyAnimalMojo
 
  If there are multiple executions bound to different phases, then the mojo is executed once for each phase indicated. Meaning, `execution1` will be executed applying the configuration setup when the phase of the build is test, and `execution2` will be executed applying the configuration setup when the build phase is already in install.
 
-
  Now, let us have another mojo example which shows a default lifecycle phase binding.
-
-
 
 ```
 @Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
@@ -584,8 +493,6 @@ public class MyBoundQueryMojo
 ```
 
  From the above mojo example, `MyBoundQueryMojo` is by default bound to the package phase (see the `@phase` notation). But if we want to execute this mojo during the install phase and not with package we can rebind this mojo into a new lifecycle phase using the `<phase>` tag under `<execution>`.
-
-
 
 ```
 <project>
@@ -622,25 +529,17 @@ public class MyBoundQueryMojo
 
  Now, `MyBoundQueryMojo` default phase which is package has been overridden by install phase.
 
-
  **Note:** Configurations inside the `<executions>` element used to differ from those that are outside `<executions>` in that they could not be used from a direct command line invocation because they were only applied when the lifecycle phase they were bound to was invoked. So you had to move a configuration section outside of the executions section to apply it globally to all invocations of the plugin. Since Maven 3.3.1 this is not the case anymore as you can specify on the command line the execution id for direct plugin goal invocation. Hence if you want to run the above plugin and it's specific execution1's configuration from the command-line, you can execute:
-
-
 
 ```
 mvn myquery:query@execution1
 ```
 
-
 #### Using the `<dependencies>` Tag
-
 
  You could configure the dependencies of the Build plugins, commonly to use a more recent dependency version.
 
-
  For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version when running this plugin, you need to add `<dependencies>` element like the following:
-
-
 
 ```
 <project>
@@ -671,13 +570,9 @@ mvn myquery:query@execution1
 </project>
 ```
 
-
 #### Using the `<inherited>` Tag In Build Plugins
 
-
  By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use the `<inherited>` tag:
-
-
 
 ```
 <project>
@@ -697,33 +592,21 @@ mvn myquery:query@execution1
 </project>
 ```
 
-
-
 ### Configuring Reporting Plugins
-
 
  The following is only to configure Reporting plugins in the `<reporting>` element.
 
-
 #### Using the `<reporting>` Tag VS `<build>` Tag
 
-
  Configuring a reporting plugin in the `<reporting>` or `<build>` elements in the pom does not exactly have the same results.
-
-
 
  [`mvn site`] Since maven-site-plugin 3.4, it uses the parameters defined in the `<configuration>` element of each reporting Plugin specified in the `<reporting>` element, in addition to the parameters defined in the `<configuration>` element of each plugin specified in `<build>` (parameters from `<build>` section were previously ignored).
 
  [`mvn aplugin:areportgoal`] It **ignores** the parameters defined in the `<configuration>` element of each reporting Plugin specified in the `<reporting>` element; only parameters defined in the `<configuration>` element of each plugin specified in `<build>` are used.
 
-
-
 #### Using the `<reportSets>` Tag
 
-
  You can configure a reporting plugin using the `<reportSets>` tag. This is most commonly used to generate reports selectively when running `mvn site`. The following will generate only the project team report.
-
-
 
 ```
 <project>
@@ -750,8 +633,6 @@ mvn myquery:query@execution1
 
  **Notes**:
 
-
-
  1 To exclude all reports, you need to use:
 
 ```
@@ -762,17 +643,11 @@ mvn myquery:query@execution1
   </reportSets>
 ```
 
-
  1 Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
-
-
 
 #### Using the `<inherited>` Tag In Reporting Plugins
 
-
  Similar to the build plugins, to break the inheritance, you can use the `<inherited>` tag:
-
-
 
 ```
 <project>
@@ -790,6 +665,3 @@ mvn myquery:query@execution1
   ...
 </project>
 ```
-
-
-

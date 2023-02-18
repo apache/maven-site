@@ -41,22 +41,24 @@ the [end of these release notes](#details).
 
 Issue Reporters of this release: Jonathan Chen, Charles Oliver Nutter, Lucas Ludueño, Stig Rohde Døssing, Vladimir Sitnikov
 
-Contributors of this release: Stuart McCulloch, Mickael Istria, Peter Lynch, Christian Wansart, Dezhi Cai, Anatoly Zaretsky, Stig Rohde Døssing 
- 
+Contributors of this release: Stuart McCulloch, Mickael Istria, Peter Lynch, Christian Wansart, Dezhi Cai, Anatoly Zaretsky, Stig Rohde Døssing
+
 Many thanks to all reporters and contributors for their time and support.
 
 (Please send an email to the dev list if we missed anyone).
 
-## Overview about the changes 
+## Overview about the changes
 
 - This is a regression release to fix some critical issues shipped with 3.6.2.
 
 - Some license issues on binary distribution have been fixed.
 
 - This Maven distribution is now Reproducible: if you [download Maven source archive](/download.cgi) (`apache-maven-3.6.3-src.zip` or `.tar.gz`), build it on Windows with JDK 8 using following command:  
+
 ```
 mvn -DbuildNumber=cecedd343002696d0abb50b32b541b8a6ba2883f package
 ```
+
   you'll get bit-by-bit identical output (`apache-maven-3.6.3-bin.zip` and `.tar.gz` in `apache-maven/target/`) that you can check with sha512 fingerprints against official release.  
   If you're building on any Unix system, you'll need to add "`-Dline.separator=$'\r\n'`".  
   See the [Maven - Guide to Configuring for Reproducible Builds](/guides/mini/guide-reproducible-builds.html) for more details.
@@ -96,4 +98,3 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346152
 [5]: ../../docs/history.html
-

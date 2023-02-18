@@ -22,16 +22,11 @@ under the License.
 -->
 ## Retirement Plan for Plugins
 
-
 ### Decide to retire
-
 
  Propose a vote on the dev-list to retire a plugin. The vote should be open for the standard 72 hours to allow people to voice their opinions. Send a cc to the users-list. Standard Apache voting rules apply. Only PMC votes are binding.
 
-
  The vote must contain one or more options on how to retire the plugin. There are multiple scenarios available. Here are a couple that have been suggested:
-
-
 
  A Move to our retired area in svn
 
@@ -39,10 +34,7 @@ under the License.
 
  A Move to www.mojohaus.org, apache-extras.org or another forge
 
-
  Here's a template for scenario A that can be used for the vote email:
-
-
 
 ```
 To: "Maven Developers List" <dev@maven.apache.org>
@@ -71,8 +63,6 @@ The vote is open for 72 hours.
 
  If the vote is successful, post the result to the dev list and cc the PMC and users list. For instance:
 
-
-
 ```
 To: "Maven Developers List" <dev@maven.apache.org>
 Cc: "Maven Users List" <users@maven.apache.org>
@@ -91,11 +81,7 @@ I will continue with the steps required to retire this plugin.
 
  If the vote passes, make one final release of the plugin (with its own standard 72h vote on source release) before it is retired. This allows us to make a clean break. The person who wants to retire a plugin is the one who does the final release. Below you will find the extra steps that you need to follow when retiring a plugin, in addition to [our standard release process](./release/maven-project-release-procedure.html).
 
-
-
 ### Make the final release
-
-
 
  1 Create an issue in JIRA with the issue type "Task" and the summary "Retire this plugin", and schedule it for the final release. If the plugin includes a JIRA report in the generated site, you will need to close this issue before you make the release.
 
@@ -107,16 +93,12 @@ I will continue with the steps required to retire this plugin.
 Note: This plugin is retired. It is no longer maintained.
 ```
 
-
    If the plugin is moved elsewhere, that should also be added to the plugin's site. Suggested text:
-
-
 
 ```
 Note: This plugin has retired from the Apache Maven project,
 but has moved to the <Organization> <Project> project.
 ```
-
 
  1 Add " (RETIRED)" at the end of `<project> <name>` in the plugin's `pom.xml`. This will show up on every page of the generated site.
 
@@ -126,19 +108,15 @@ but has moved to the <Organization> <Project> project.
 
  1 When updating the version in JIRA, do not add Y.Z+1 and make sure you remove any future versions.
 
-
-
 ### Clean up after the release
 
-
-
- 1 Remove the `.Jenkinsfile` from all branches. This will remove the project from https://builds.apache.org/job/maven-box/
+ 1 Remove the `.Jenkinsfile` from all branches. This will remove the project from <https://builds.apache.org/job/maven-box/>
 
  1 Ask INFRA for archive git repos (gitbox + github)
 
  1 Republish documentation, postfix project name with (RETIRED)
 
- 1 When relevant update summary pages for [plugins](https://maven.apache.org/plugins/index.html) or [shared components](https://maven.apache.org/shared/index.html) 
+ 1 When relevant update summary pages for [plugins](https://maven.apache.org/plugins/index.html) or [shared components](https://maven.apache.org/shared/index.html)
 
  1 Add " (RETIRED)" at the end of the project name in JIRA.
 
@@ -152,6 +130,4 @@ but has moved to the <Organization> <Project> project.
 
  1 Announce the fact that the plugin has been retired/moved on the announce@m.a.o and users@m.a.o mailing lists. Explain to people what they should do if they would like to continue development of the plugin.
 
-
 <!--  Insert template for retirement email here -->
-

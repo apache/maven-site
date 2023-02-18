@@ -23,19 +23,13 @@ under the License.
 
 ## Introduction
 
-
  This document is intended to set up the Maven committer settings, i.e. the `${user.home}/.m2/settings.xml`.
-
 
 ### Enable Apache Servers
 
-
  Maven uses several servers configuration to deploy snapshots and releases on the Apache servers. You need to tell to Maven what your Apache username is.
 
-
- **It is highly recommended to use Maven's [ password encryption capabilities](../guides/mini/guide-encryption.html) for your passwords**.
-
-
+ **It is highly recommended to use Maven's [password encryption capabilities](../guides/mini/guide-encryption.html) for your passwords**.
 
 ```
 <settings>
@@ -58,13 +52,9 @@ under the License.
 </settings>
 ```
 
-
 ### Enable sending announcement e-mails
 
-
  To be able to send out announcements of Maven releases you need to add a couple of properties to the `apache-release` profile.
-
-
 
 ```
 <settings>
@@ -81,5 +71,3 @@ under the License.
   </profiles>
 </settings>
 ```
-
-

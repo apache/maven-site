@@ -23,16 +23,11 @@ under the License.
 
 ## Guide to installing 3rd party JARs
 
-
  Occasionally, you will have 3rd party JARs that you need to put in your local repository for use in your builds, since they don't exist in any public repository like [Maven Central](https://search.maven.org). The JARs must be placed in the local repository in the correct place in order for it to be correctly picked up by Apache Maven.
 
-
- To make this easier, and less error prone, we have provided an `install-file` goal in the [maven-install-plugin](/plugins/maven-install-plugin/) which should make this relatively painless. 
-
+ To make this easier, and less error prone, we have provided an `install-file` goal in the [maven-install-plugin](/plugins/maven-install-plugin/) which should make this relatively painless.
 
  To install a JAR in the local repository use the following command:
-
-
 
 ```
 mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId=<artifact-id> -Dversion=<version> -Dpackaging=<packaging>
@@ -40,17 +35,12 @@ mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId
 
  If there's a pom-file as well, you can install it with the following command:
 
-
-
 ```
 mvn install:install-file -Dfile=<path-to-file> -DpomFile=<path-to-pomfile>
 ```
 
  With version 2.5 of the maven-install-plugin, it can get even simpler: if the JAR was built by Apache Maven, it'll contain a pom.xml in a subdirectory of the META-INF/ directory, which will be read by default. In that case, all you need to do is:
 
-
-
 ```
 mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=<path-to-file>
 ```
-

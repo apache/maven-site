@@ -23,16 +23,11 @@ under the License.
 
 ## Security and Deployment Settings
 
-
  Repositories to deploy to are defined in a project in the `distributionManagement` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own settings with an id that matches that of the deployment repository in the project.
-
 
  In addition, some repositories may require authorisation to download from, so the corresponding settings can be specified in a server element in the same way.
 
-
  Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
-
-
 
 ```
 
@@ -56,9 +51,6 @@ under the License.
 
 ```
 
- To encrypt passwords in these sections, refer to [ Encryption Settings](./guide-encryption.html).
-
+ To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
 
  **Note**: The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../maven-settings/settings.html).
-
-

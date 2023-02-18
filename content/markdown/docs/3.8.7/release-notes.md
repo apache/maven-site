@@ -35,9 +35,9 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-* Regression fixes from Maven 3.8.6
-* General fixes
-* Maven Wagon upgrade
+- Regression fixes from Maven 3.8.6
+- General fixes
+- Maven Wagon upgrade
 
 The full list of changes can be found in our [issue management system][4].
 

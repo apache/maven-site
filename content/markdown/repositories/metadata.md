@@ -25,12 +25,14 @@ transparently operated and handled by Maven itself in automatic manner. These fi
 `maven-metadata.xml` (are deployed with checksums just like artifacts are).
 
 Links:
+
 * [Reference documentation](/ref/current/maven-repository-metadata/)
 * [XML Schema](/xsd/repository-metadata-1.1.0.xsd)
 * [Modello model](https://gitbox.apache.org/repos/asf?p=maven.git;a=blob_plain;f=maven-repository-metadata/src/main/mdo/metadata.mdo;hb=HEAD)
   and its [descriptor documentation](/ref/current/maven-repository-metadata/repository-metadata.html)
 
 We distinguish 3 different kinds of metadata files (using GAV coordinates):
+
 * G level metadata
 * A level metadata
 * V level metadata
@@ -52,7 +54,7 @@ The group level metadata (found in directory of groupId) serves purpose only in 
 (POM packaging: maven-plugin). This metadata contains mapping of `plugin prefix` to `artifactId`, and the XML bit
 considered for this kind of metadata is `metadata/plugins/plugin[]` path only.
 
-Example: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml
+Example: <https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-metadata.xml>
 
 When user uses some plugin prefix on CLI, Maven will go through registered `pluginGroups` groupIds, download their
 G level metadata, and look for prefix. If found, Maven has obtained G (from pluginGroups) and A (from metadata)
@@ -68,6 +70,7 @@ coordinates of plugin, and will go for given version, or attempt to discover "la
 
 The artifactId level metadata (found in directory of artifactId) serves purpose of version discovery. This metadata
 contains list of versions of given GA coordinates. The XML bit considered for this kind of metadata are only:
+
 * `metadata/groupId`
 * `metadata/artifactId`
 * `metadata/versionining/latest`
@@ -75,7 +78,7 @@ contains list of versions of given GA coordinates. The XML bit considered for th
 * `metadata/versionining/versions/*`
 * `metadata/versionining/lastUpdated`
 
-Example: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml
+Example: <https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml>
 
 ## The V Level Metadata
 
@@ -88,9 +91,10 @@ Example: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar
 Exists only in Snapshot Remote repositories. The version level metadata (found in directory of baseVersion) serves the
 purpose of snapshot timestamped version resolution. This metadata contains mapping of all artifacts in this baseVersion
 directory with corresponding timestamps. The XML bit considered for this kind of metadata are only:
+
 * `metadata/groupId`
 * `metadata/artifactId`
 * `metadata/versionining/snapshot/*`
 * `metadata/versionining/snapshotVersions/*`
 
-Example: https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.3.0-SNAPSHOT/maven-metadata.xml
+Example: <https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.3.0-SNAPSHOT/maven-metadata.xml>

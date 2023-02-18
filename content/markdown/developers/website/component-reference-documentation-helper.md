@@ -34,7 +34,7 @@ select component category, then type artifact id and version to generate svn com
 <li><a href="?doxia-tools">Doxia Tools</a></li>
 <li><a href="?others">others</a></li>
 </ul>
- 
+
 </td><td>
 
 <h3>Component information</h3>

@@ -22,19 +22,13 @@ under the License.
 -->
 ## Guide to Remote repository access through authenticated HTTPS
 
-
  This document describes how to configure Maven to access a remote repository that sits behind an HTTPS server which requires client authentication with certificates.
-
 
 ### The problem
 
-
  There is a maven repository at `https://my.server.com/maven`. This server only serves clients authenticated through SSL protocol by a valid certificate signed by an approved certificate authority's certificate which we call the `CACert`. In the simplest case where the server is used internally by an identified community of users (e.g. corporate intranet), the server's certificate is the certificate authority as the server is used only internally.
 
-
  So we assume that we have access to the trusted certificate in X.509 format stored in a file named:
-
-
 
 ```
    /somewhere/in/filesystem/CACert.cert
@@ -42,15 +36,11 @@ under the License.
 
  The client's certificate has been issued by some means not described in this document in PKCS#12 format, which is the format that is accepted by browsers (at least Firefox and Internet Explorer) for import into their keystore. This file is named:
 
-
-
 ```
    /home/directory/mycertificate.p12
 ```
 
  and we assume it is accessible when launching maven. This file contains the client's private key which may be very sensitive information so it is secured by a password:
-
-
 
 ```
    CeRtPwD
@@ -58,31 +48,21 @@ under the License.
 
  The remote repository is referenced either through the `pom.xml` file:
 
-
-
 ```
 maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
 ```
 
-
 ### The solution
-
 
  For maven to use this repository, we should take the following steps:
 
-
-
- 1 Create a store to hold the server's certificate usings Oracle's [ keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html),
+ 1 Create a store to hold the server's certificate usings Oracle's [keytool](https://docs.oracle.com/javase/8/docs/technotes/tools/unix/keytool.html),
 
  1 Define properties to be used by HttpClient for finding keys and certificate
 
-
 #### Storing certificate
 
-
  The following command line imports the certififcate authority's certificate into a JKS formatted key store named `trust.jks`, the _trust store_.
-
-
 
 ```
 $> keytool -v -alias mavensrv -import \
@@ -104,14 +84,9 @@ $>
 
  Note that it should be possible to import a full chain of certificates with only one root certificate being trusted but the author did not test it.
 
-
-
 #### Setting properties
 
-
  The following properties must be set at start of maven to be accessible when HttpClient starts up.
-
-
 
  [javax.net.ssl.trustStore] the path to the keystore where trusted certificates are stored
 
@@ -125,13 +100,9 @@ $>
 
  [javax.net.ssl.keyStorePassword] the password protecting the store
 
-
  Not all the properties must be set depending of your precise settings: type of store may left to default, password may be empty.
 
-
  They may be set either on maven's command-line, in `.mavenrc` file or in `MAVEN_OPTS` environment variable. For the setting defined in this document, here is an example `.mavenrc` file:
-
-
 
 ```
 MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
@@ -141,16 +112,8 @@ MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
                      -Djavax.net.ssl.keyStorePassword=XXXXXX"
 ```
 
-
-
 ### Links
-
 
  The following links may be useful in understanding SSL infrastructure management in Java:
 
-
-
- - [ HttpClient](http://hc.apache.org/httpclient-3.x/sslguide.html)'s SSL guide
-
-
-
+- [HttpClient](http://hc.apache.org/httpclient-3.x/sslguide.html)'s SSL guide

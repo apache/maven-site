@@ -75,16 +75,16 @@ Many thanks to all reporters and contributors for their time and support.
 
 The following members of the Maven community provided valuable feedback during the release process:
 
-*  Grzegorz Grzybek
-*  Petr Široký
-*  Mark Derricutt,
-*  Dejan Stojadinović
-*  Thomas Collignon
-*  Fred Cooke
-*  Raphael Ackermann
-*  Elliot Metsger
-*  Chas Honton
-*  Dennis Kieselhorst
+- Grzegorz Grzybek
+- Petr Široký
+- Mark Derricutt,
+- Dejan Stojadinović
+- Thomas Collignon
+- Fred Cooke
+- Raphael Ackermann
+- Elliot Metsger
+- Chas Honton
+- Dennis Kieselhorst
 
 Thank you for your time and feedback.
 
@@ -242,11 +242,8 @@ See [complete release notes for all versions][7]
 [6]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12336084&amp;styleName=Text
 [7]: ../../docs/history.html
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
-[maven-aether-provider]: /ref/3.5.0/maven-aether-provider/
-[maven-compat]: /ref/3.5.0/maven-compat/
 [maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
 [maven-resolver]: /resolver/
-[MNG-2199]: https://issues.apache.org/jira/browse/MNG-2199
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507
 [MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
 [MNG-5368]: https://issues.apache.org/jira/browse/MNG-5368
@@ -266,7 +263,6 @@ See [complete release notes for all versions][7]
 [MNG-5931]: https://issues.apache.org/jira/browse/MNG-5931
 [MNG-5934]: https://issues.apache.org/jira/browse/MNG-5934
 [MNG-5946]: https://issues.apache.org/jira/browse/MNG-5946
-[MNG-5954]: https://issues.apache.org/jira/browse/MNG-5954
 [MNG-5958]: https://issues.apache.org/jira/browse/MNG-5958
 [MNG-5961]: https://issues.apache.org/jira/browse/MNG-5961
 [MNG-5962]: https://issues.apache.org/jira/browse/MNG-5962
@@ -283,35 +279,24 @@ See [complete release notes for all versions][7]
 [MNG-6022]: https://issues.apache.org/jira/browse/MNG-6022
 [MNG-6030]: https://issues.apache.org/jira/browse/MNG-6030
 [MNG-6032]: https://issues.apache.org/jira/browse/MNG-6032
-[MNG-6053]: https://issues.apache.org/jira/browse/MNG-6053
 [MNG-6057]: https://issues.apache.org/jira/browse/MNG-6057
 [MNG-6068]: https://issues.apache.org/jira/browse/MNG-6068
 [MNG-6078]: https://issues.apache.org/jira/browse/MNG-6078
 [MNG-6081]: https://issues.apache.org/jira/browse/MNG-6081
-[MNG-6088]: https://issues.apache.org/jira/browse/MNG-6088
 [MNG-6090]: https://issues.apache.org/jira/browse/MNG-6090
 [MNG-6092]: https://issues.apache.org/jira/browse/MNG-6092
 [MNG-6093]: https://issues.apache.org/jira/browse/MNG-6093
 [MNG-6102]: https://issues.apache.org/jira/browse/MNG-6102
 [MNG-6105]: https://issues.apache.org/jira/browse/MNG-6105
-[MNG-6106]: https://issues.apache.org/jira/browse/MNG-6106
 [MNG-6109]: https://issues.apache.org/jira/browse/MNG-6109
 [MNG-6110]: https://issues.apache.org/jira/browse/MNG-6110
 [MNG-6115]: https://issues.apache.org/jira/browse/MNG-6115
 [MNG-6117]: https://issues.apache.org/jira/browse/MNG-6117
-[MNG-6136]: https://issues.apache.org/jira/browse/MNG-6136
-[MNG-6137]: https://issues.apache.org/jira/browse/MNG-6137
-[MNG-6138]: https://issues.apache.org/jira/browse/MNG-6138
 [MNG-6140]: https://issues.apache.org/jira/browse/MNG-6140
 [MNG-6144]: https://issues.apache.org/jira/browse/MNG-6144
 [MNG-6145]: https://issues.apache.org/jira/browse/MNG-6145
 [MNG-6146]: https://issues.apache.org/jira/browse/MNG-6146
 [MNG-6147]: https://issues.apache.org/jira/browse/MNG-6147
-[MNG-6150]: https://issues.apache.org/jira/browse/MNG-6150
-[MNG-6151]: https://issues.apache.org/jira/browse/MNG-6151
-[MNG-6152]: https://issues.apache.org/jira/browse/MNG-6152
-[MNG-6163]: https://issues.apache.org/jira/browse/MNG-6163
-[MNG-6165]: https://issues.apache.org/jira/browse/MNG-6165
 [MNG-6166]: https://issues.apache.org/jira/browse/MNG-6166
 [MNG-6168]: https://issues.apache.org/jira/browse/MNG-6168
 [MNG-6170]: https://issues.apache.org/jira/browse/MNG-6170
@@ -320,13 +305,9 @@ See [complete release notes for all versions][7]
 [MNG-6173]: https://issues.apache.org/jira/browse/MNG-6173
 [MNG-6176]: https://issues.apache.org/jira/browse/MNG-6176
 [MNG-6177]: https://issues.apache.org/jira/browse/MNG-6177
-[MNG-6179]: https://issues.apache.org/jira/browse/MNG-6179
 [MNG-6180]: https://issues.apache.org/jira/browse/MNG-6180
 [MNG-6181]: https://issues.apache.org/jira/browse/MNG-6181
-[MNG-6182]: https://issues.apache.org/jira/browse/MNG-6182
 [MNG-6183]: https://issues.apache.org/jira/browse/MNG-6183
-[MNG-6185]: https://issues.apache.org/jira/browse/MNG-6185
-[MNG-6189]: https://issues.apache.org/jira/browse/MNG-6189
 [MNG-6190]: https://issues.apache.org/jira/browse/MNG-6190
 [MNG-6191]: https://issues.apache.org/jira/browse/MNG-6191
 [MNG-6192]: https://issues.apache.org/jira/browse/MNG-6192

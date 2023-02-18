@@ -23,9 +23,7 @@ under the License.
 
 ## Guide to Working with Manifests
 
-
  In order to modify the manifest of the archive produced by the packaging plug-ins you need to create a configuration for it. The definitive guide for this is [the site for the Maven Archiver shared component](/shared/maven-archiver/index.html). This component is used by all our packaging plugins.
-
 
 <!--  suggestion by jorg -->
 <!--  it would be nice if the Specification-Version could be easily generated to be major.minor of pom.currentVersion i.e. that -->

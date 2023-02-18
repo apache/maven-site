@@ -37,11 +37,11 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-* upgrade maven resolver 1.9.4
-* improved resolution of modules within a multi-module build
-* do not parse all projects in the reactor when building a subtree
-* fix some compatibility issues (with flatten-maven-plugin)
-* re-implement the consumer pom feature to support the maven-gpg-plugin
+- upgrade maven resolver 1.9.4
+- improved resolution of modules within a multi-module build
+- do not parse all projects in the reactor when building a subtree
+- fix some compatibility issues (with flatten-maven-plugin)
+- re-implement the consumer pom feature to support the maven-gpg-plugin
 
 The full list of changes can be found in our [issue management system][4].
 

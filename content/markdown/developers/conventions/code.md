@@ -26,139 +26,99 @@ under the License.
 
  As the formatting is automatically enforced or even applied with [spotless-maven-plugin](https://github.com/diffplug/spotless/tree/main/plugin-maven) for all projects using [Maven Project Parent POM 38 or newer](/pom/maven/index.html) developers usually don't need to care and the following sections are just for informational purposes.
 
-
  Optionally you can still import the code style formatter for your IDE from [shared-resources](https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD)
 
+- [Generic Code Style And Convention](#generic-code-style-and-convention)
 
- - [Generic Code Style And Convention](#generic-code-style-and-convention)
+- [Java](#java)
 
- - [Java](#java)
+- [Java Code Style](#java-code-style)
 
-  - [Java Code Style](#java-code-style)
+- [Java Code Convention](#java-code-convention)
 
-  - [Java Code Convention](#java-code-convention)
+- [Java Code Convention - import layouts](#java-code-convention---import-layouts)
 
-  - [Java Code Convention - import layouts](#java-code-convention---import-layouts)
+- [JavaDoc Convention](#javadoc-convention)
 
-  - [JavaDoc Convention](#javadoc-convention)
+- [XML](#xml)
 
+- [XML Code Style](#xml-code-style)
 
+- [Generic XML Code Convention](#generic-xml-code-convention)
 
- - [XML](#xml)
+- [POM Code Convention](#pom-code-convention)
 
-  - [XML Code Style](#xml-code-style)
+- [XDOC Code Convention](#xdoc-code-convention)
 
-  - [Generic XML Code Convention](#generic-xml-code-convention)
-
-  - [POM Code Convention](#pom-code-convention)
-
-  - [XDOC Code Convention](#xdoc-code-convention)
-
-  - [FML Code Convention](#fml-code-convention)
-
-
-
+- [FML Code Convention](#fml-code-convention)
 
 ### Generic Code Style And Convention
 
-
  All working files (java, xml, others) should respect the following conventions:
 
+- **License Header**: Always add the current [ASF license header](https://www.apache.org/legal/src-headers.html#headers) in all files checked into the source code repository.
 
-
- - **License Header**: Always add the current [ASF license header](https://www.apache.org/legal/src-headers.html#headers) in all files checked into the source code repository.
-
- - **Trailing Whitespace**: No trailing whitespaces allowed. 
-
+- **Trailing Whitespace**: No trailing whitespaces allowed.
 
  and the following style:
 
+- **Indentation**: **Never** use tabs!
 
-
- - **Indentation**: **Never** use tabs!
-
- - **Line wrapping**: Always use a 120-column line width.
-
+- **Line wrapping**: Always use a 120-column line width.
 
  **Note**: The specific styles and conventions, listed in the next sections, can override these generic rules.
 
-
-
 ### Java
-
 
 #### Java Code Style
 
-
  Maven adopts the [palantir Java format](https://github.com/palantir/palantir-java-format).
-
-
 
 #### Java Code Convention
 
-
  For consistency reasons, our Java code convention is mainly:
 
+- **Naming**: Constants (i.e. static final members) should always be in upper case. Use short, descriptive names for classes and methods.
 
+- **Organization**: Avoid using public inner classes. Prefer interfaces instead of default implementation.
 
- - **Naming**: Constants (i.e. static final members) should always be in upper case. Use short, descriptive names for classes and methods.
+- **Modifier**: Avoid using final modifier on all fields and arguments. Prefer using private or protected fields instead of public fields.
 
- - **Organization**: Avoid using public inner classes. Prefer interfaces instead of default implementation.
+- **Exceptions**: Throw meaningful exceptions to make debugging and testing easier.
 
- - **Modifier**: Avoid using final modifier on all fields and arguments. Prefer using private or protected fields instead of public fields.
+- **Documentation**: Document public interfaces well, i.e. all non-trivial public and protected functions should include Javadoc that indicates what they do.
 
- - **Exceptions**: Throw meaningful exceptions to make debugging and testing easier.
-
- - **Documentation**: Document public interfaces well, i.e. all non-trivial public and protected functions should include Javadoc that indicates what they do.
-
- - **Testing**: All non-trivial public classes should have corresponding unit or integration tests.
-
-
+- **Testing**: All non-trivial public classes should have corresponding unit or integration tests.
 
 #### Java Code Convention - import layouts
 
-
  For consistency reasons, Java imports should be organized as:
 
+- import **javax.\***
 
+- import **java.\***
 
- - import **javax.\***
+- blank line
 
- - import **java.\***
-
- - blank line
-
- - import **all other imports**
-
+- import **all other imports**
 
  all imports in each group should be sorted alphabetically.
 
-
  To ensure a package import order consistent with the layout described above, download `[maven-eclipse-importorder.txt](https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-eclipse-importorder.txt;hb=HEAD)`, select _Window \> Preferences_ and navigate to _Java \> Code Style \> Organize Imports_. Click on _Import..._ and select the downloaded file to change the import order.
-
-
 
 #### JavaDoc Convention
 
-
  TO BE DISCUSSED
-
-
-
 
 ### XML
 
-
 #### XML Code Style
-
 
  The Maven style for XML files is mainly:
 
+- **Indentation**: Always use 2 space indents, unless you're wrapping a new XML tags line in which case you should indent 4 spaces.
 
-
- - **Indentation**: Always use 2 space indents, unless you're wrapping a new XML tags line in which case you should indent 4 spaces.
-
- - **Line Breaks**: Always use a new line with indentation for complex XML types and no line break for simple XML types. Always use a new line to separate XML sections or blocks, for instance:
+- **Line Breaks**: Always use a new line with indentation for complex XML types and no line break for simple XML types. Always use a new line to separate XML sections or blocks, for instance:
 
 ```
 <aTag>
@@ -170,19 +130,13 @@ under the License.
 </aTag>
 ```
 
-
    In some cases, adding comments could improve the readability of blocks, for instance:
-
-
 
 ```
     <!-- Simple XML documentation                                               -->
 ```
 
-
    or
-
-
 
 ```
     <!-- ====================================================================== -->
@@ -190,25 +144,15 @@ under the License.
     <!-- ====================================================================== -->
 ```
 
-
-
-
 #### Generic XML Code Convention
-
 
  No generic code convention exists yet for XML files.
 
-
-
 #### POM Code Convention
-
 
  The team has [voted](https://lists.apache.org/thread/h8px5t6f3q59cnkzpj1t02wsoynr3ygk) during the end of June 2008 to follow a specific POM convention to ordering POM elements. The consequence of this vote is that the [Maven project descriptor](https://maven.apache.org/ref/current/maven-model/maven.html) is **no more** considered as the reference for the ordering.
 
-
  The following is the recommended ordering for all Maven POM files:
-
-
 
 ```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -260,39 +204,24 @@ under the License.
 
  **Comments**:
 
-
-
  1 The `<project>` element is always on one line.
 
  1 The blocks are voluntary separated by a new line to improve the readiness.
 
  1 The dependencies in `<dependencies>` and `<dependencyManagement>` tags have no specific ordering. Developers are free to choose the ordering, but grouping dependencies by topics (like groupId i.e. `org.apache.maven`) is a good practice.
 
-
-
 #### XDOC Code Convention
-
 
  For consistency and readability reasons, XDOC files should respect:
 
+- **Metadata**: Always specify metadata in the `<properties>` tag.
 
-
- - **Metadata**: Always specify metadata in the `<properties>` tag.
-
- - **Sections**: Always use a new line with indentation for `<section>` tags.
-
-
+- **Sections**: Always use a new line with indentation for `<section>` tags.
 
 #### FML Code Convention
 
-
  For readability reasons, FML files should respect:
 
-
-
- - **FAQ**: Always use a new line with indentation for `<faq>` tags.
-
+- **FAQ**: Always use a new line with indentation for `<faq>` tags.
 
 <!--  * {APT} Do we need any specific APT style/convention? -->
-
-

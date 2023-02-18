@@ -24,12 +24,12 @@ URI (file path, URL, it depends on context). Obviously, since Maven inception in
 For simplicity, we will cover current layout (aka "maven2" or "default"), as since Maven 3.x release, the deprecated
 "Maven1 layout" (aka "legacy") is not supported anymore.
 
-This above implies following: if the repository contains a file that is "not on layout" (does not obey layout 
+This above implies following: if the repository contains a file that is "not on layout" (does not obey layout
 transformation rules discussed below), that file is "not addressable" by Maven coordinates, you cannot address that file
 in Maven nor make it to download it using GAV coordinates!
 
 The original premise of layout was simplicity: from historical perspective, a remote repository was expected to be run
-by some computer with file storage (where artifacts were laid down) and served by a HTTP server, essentially publishing 
+by some computer with file storage (where artifacts were laid down) and served by a HTTP server, essentially publishing
 the files on file paths for consumption (mainly for HTTP GET requests).
 
 The transformation rule is quite simple for that matter: consider artifact properties below:
@@ -39,7 +39,7 @@ The transformation rule is quite simple for that matter: consider artifact prope
 | groupId     | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
 | artifactId  | none                                                    | `apache-maven`                         |
 | version     | none                                                    | `3.8.4`                                 |
-| baseVersion | none                                                    | (in this example same as version)        | 
+| baseVersion | none                                                    | (in this example same as version)        |
 | classifier  | none                                                    | `bin`                                   |
 | extension   | none                                                    | `tar.gz`                                |
 

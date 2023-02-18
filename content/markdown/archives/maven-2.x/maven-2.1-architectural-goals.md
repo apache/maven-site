@@ -8,7 +8,7 @@ h1. Maven 2.1 -- Jason van Zyl
 ~~ "License"); you may not use this file except in compliance
 ~~ with the License.  You may obtain a copy of the License at
 ~~
-~~   http://www.apache.org/licenses/LICENSE-2.0
+~~   <http://www.apache.org/licenses/LICENSE-2.0>
 ~~
 ~~ Unless required by applicable law or agreed to in writing,
 ~~ software distributed under the License is distributed on an
@@ -35,7 +35,7 @@ h2. Architectural Goals
 
 h3. Backward Compatibility
 
-We must ensure that plugins and reports written against the Maven 2.0.x APIs remain to work in 2.1. We don't want people to have to rewrite 
+We must ensure that plugins and reports written against the Maven 2.0.x APIs remain to work in 2.1. We don't want people to have to rewrite
 their plugins. There are several plugins that are using the current artifact resolution code that will not be supported (please see the Mercury section below). The
 ones that are in our control we can port over to use Mercury, and external users will have to deal with the major version change. Most people will not be affected and
 Mercury will be a far better solution.
@@ -75,7 +75,6 @@ So the basic problem we're up against is that there can be core api changes betw
 
 h3. Strategies for ensuring backward compatibility
 
-
 * Plugin integration testing
 
 {code}
@@ -100,7 +99,7 @@ jason: so when you and benjamin went through the tests you have "integration-tes
 [08:07am] aheritier: it's too long
 [08:07am] jason: a smoke test in one mode
 [08:07am] jason: and then turn them all on in hudson
-[08:07am] aheritier: it's why we invented CI servers 
+[08:07am] aheritier: it's why we invented CI servers
 [08:07am] aheritier: yes
 [08:07am] eu left the chat room. (Ping timeout)
 [08:08am] jason: i will document the setup but you and ben should figure out the pattern you want for a given plugin test
@@ -141,7 +140,7 @@ jason: so when you and benjamin went through the tests you have "integration-tes
 [08:15am] bentmann: Not sure what kind of consistency you actually require
 [08:16am] bentmann: The IT profile should be named equal for all of them
 [08:16am] bentmann: by inheriting from the parent
-[08:16am] i386_ left the chat room. (i386_)
+[08:16am] i386_left the chat room. (i386_)
 [08:16am] bentmann: whether the are run by Invoker or Shitty shouldn't matter, I guess
 [08:17am] jason: no, the actual project just needs a profile name the same. not taken from the parent but stated in the project itself
 [08:17am] jason: though the parent could specify that profile which just echos "No ITs"
@@ -161,7 +160,7 @@ We just need some way to easy support multiple versions and support mediation be
 * Tags: loose categorization people to use to help categorize as they see fit
 * Categories: more standard categories that form over time by using category structures that exist or common tags that are used so often they become categories
 * Dendency excludes: being to transitively exclude a dependency
-* Properties on dependencies 
+* Properties on dependencies
 * Specification Dependencies
 * Schematron/RelaxNG descriptor for each plugin -- Bryon Jacob proposed a flexible model but XSD is hard to fight here so I'm not sure how far this will go
 
@@ -176,17 +175,17 @@ h3. Custom Components
 As discussed in [Substituting of Custom Components|http://docs.codehaus.org/display/MAVEN/Substitution+of+Custom+Maven+Components] we now have two ways
 to insert new components into the system.
 
-* Using a directory and specifying it in the Classworlds configuration. Tycho simply has a special set of components that load first before the standard maven components and they override 
+* Using a directory and specifying it in the Classworlds configuration. Tycho simply has a special set of components that load first before the standard maven components and they override
   the standard Maven components. Here's the example based on what Tycho is currently doing which allows custom components to be used.
   
 {code}
-main is org.apache.maven.cli.MavenCli from plexus.core                                                                                                                     
-                                                                                                                                                                           
-set maven.home default ${user.home}/m2                                                                                                                                     
-                                                                                                                                                                           
-[plexus.core]                                                                                                                                                              
-load ${maven.home}/tycho/*.jar                                                                                                                                             
-load ${maven.home}/lib/*.jar 
+main is org.apache.maven.cli.MavenCli from plexus.core
+
+set maven.home default ${user.home}/m2
+
+[plexus.core]
+load ${maven.home}/tycho/*.jar
+load ${maven.home}/lib/*.jar
 {code}
 
 * The embedder has the ContainerCustomizer which allow you to inject new component descriptors. This is used in the IDE integration (m2ecipse, Netbeans) for adding
@@ -204,7 +203,7 @@ Mercury is a replacement for the current Maven Artifact subsystem, and a complet
 The primary reasons for replacing the code are that it is unmaintainable and nearly impossible to navigate, it uses completely non-standard structures and libraries for
 version calculations, the API is too hard for people to use, and it is not given to users to consume as a single componment to use. Users are forced to know how several
 complicated components interact in order to implement a mechanism of retrieving artifacts from a repository. The entire mechanism needs to be replaced with something
-that can be maintained and is reliable. 
+that can be maintained and is reliable.
 
 Mercury started as some fixes to Maven Artifact to first help with embeddability and error reporting for IDE integration. This was a direct result of all IDE integrators
 having to reimplement the current artifact resolver to provide decent feedback to users when errors occured. The artifact subsystem would just die and leave the IDE in
@@ -214,21 +213,21 @@ behavior, Oleg and I decided to make a break from the old codebase and attempt t
 
 * Find the best people in the world to help create an awesome HTTP and DAV implementation. We did this by talking to Greg, Jan, and Jesse who are the Jetty folks
   and there just isn't anyone who knows HTTP better. Greg and Jan are awesome, and Jesse is Maven committer so we have some deep understanding of the issues involved. So
-  what Oleg and I wanted to see was: 
-** Easy SSL support where mucky with certificates in the default install is not required.
-** Connection pooling 
-** Connection parallelization
+  what Oleg and I wanted to see was:
+**Easy SSL support where mucky with certificates in the default install is not required.
+** Connection pooling
+**Connection parallelization
 ** Built in DAV client support for deployment
-** Atomic retrieval: we make sure absolutely everything is been safely transported to disk before we place it in the local Maven repository
-** Atomic deployment: in this case we could only support this using a special filter Greg created which blocks requests for any artifacts being deploy in the current 
-   set until the entire set land safely to disk. So it becomes impossible to ask for an artifact that refers to something else in the set before it is actually available. 
+**Atomic retrieval: we make sure absolutely everything is been safely transported to disk before we place it in the local Maven repository
+** Atomic deployment: in this case we could only support this using a special filter Greg created which blocks requests for any artifacts being deploy in the current
+   set until the entire set land safely to disk. So it becomes impossible to ask for an artifact that refers to something else in the set before it is actually available.
 ** Starting thinking about a client that can understand GeoIP. Given the recent spikes in traffic we are going to start needing to distribute the load.
 
 * Find the best solution possible solution for dealing with version calculations, in particular ranges. For this we called on Daniel Le Berre and ask for some help in
   integrating his SAT4J library. We learned about the SAT4J library from the P2 project over at Eclipse.org at the last EclipseCon. SAT4J was deemed the best way forward
-  by the P2 team in providing the most reliable, and most workable solution for doing version calculation. SAT4J provides ways to plug-in strategies to deal with our 
+  by the P2 team in providing the most reliable, and most workable solution for doing version calculation. SAT4J provides ways to plug-in strategies to deal with our
   scopes, conflict resolution strategies and it is deadly fast. We felt we are in good company as we can call on Daniel and the P2 team and collaborate when difficult
-  problems arise. 
+  problems arise.
   
 * Find the best people to help with with security. This might an SSL-based solution to secure the channel where the source is known to be safe, a PGP-based solution where
   the contents must be secured assuming a hostile channel, or a combination of the two. To that end I have contacted the folks at the Legion of the Bouncy Castle and asked
@@ -236,22 +235,24 @@ behavior, Oleg and I decided to make a break from the old codebase and attempt t
   
 So in the end I believe it would be detrimental to use the Maven Artifact code in the 2.1.x tree and the change needs to be made to use Mercury before the first alpha ships. Oleg
 and I started this work, and Oleg has subsequently worked tirelessly on Mercury along with a great deal of help from Greg, Jan and Jesse. I think Oleg understands the requirements
-as he's seen Maven in action in one of the largest development environments in the world and watched how Maven can fail spectacularly. 
+as he's seen Maven in action in one of the largest development environments in the world and watched how Maven can fail spectacularly.
   
 h3. Plugin API
+
 * Symmetric output expressions
 * Java5 Mojo annotations (Yoav Landman has this working already)
 * Clean separation of plugins from reports. It's not good that those are the same thing in the Maven internals.
 ** Not using concrete XML classes in the Plugin API (Xpp3Dom)
 
 h3. Core Refactorings
+
 * Project Builder ([architecture|http://docs.codehaus.org/display/MAVENUSER/Project+Builder])
-** Maven shared model work: a new way of reading in the models for Maven that is not format dependent in any way i.e. XML, text, YAML, scripts, whatever.
+**Maven shared model work: a new way of reading in the models for Maven that is not format dependent in any way i.e. XML, text, YAML, scripts, whatever.
 ** Pluggable model readers: this could leverage different implementations provided by the shared model work, but we still need a way to detect the type and version
    of the model that we want to consume
-** A new terse format that uses attributes
+**A new terse format that uses attributes
 ** Automatic parent versioning
-** New interpolation component (plexus-interpolation)
+**New interpolation component (plexus-interpolation)
 ** Dynamic build sections ([MNG-3530|http://jira.codehaus.org/browse/MNG-3530])
 ** Mixin support -- allowing a paramterizable template which can be imported with one line.
 
@@ -263,12 +264,12 @@ h3. Core Refactorings
 * Have one configuration model for session: session takes the request in the constructor and delegates
 * Domain logging
 * Plugin Manager
-**  Removal of the Plugin Registry (done) -- we moved in a direction where people lock down their versions and we've helped by putting default versions
+**Removal of the Plugin Registry (done) -- we moved in a direction where people lock down their versions and we've helped by putting default versions
     in the parent POM.
 **  Load Plugin dependencies into a separate ClassRealm (done)
 **  Plugin Execution Environment: Ability to run any version of a plugin where an environment is created which contains all the
     requirements for a particular version of the Plugin API
-* Lifecycle Executor 
+* Lifecycle Executor
 **  Queryable Lifecycle
 *** The most important change in the embedding environment. You can actually query Maven for the complete execution before it happens. We must know the entire
     model of execution before we execute.
@@ -276,15 +277,17 @@ h3. Core Refactorings
 
 h3. Java 5
 
-Java5 annotations for plugins: we have two implementations that have now been merged in plexus-cdc. QDOX 1.7 has now been released so we may want to check the 
+Java5 annotations for plugins: we have two implementations that have now been merged in plexus-cdc. QDOX 1.7 has now been released so we may want to check the
 source level gleaning again. Jason Dillon has created a working class processing model. We need to deal with Plexus components and Maven plugins.
-   
+
 h3. Integration and promotion of scriptable plugins
-       
+
 h3. Toolchains
+
 * Milos has implemented this and Shane had some feedback so this needs to be linked together
 
 h3. Reporting
+
 * Report Execution Environment: Ability to run any version of a report where an environment is created which contains all the requirements for a particular version of the Report API.
 * Decouple the reporting core. We need to get Doxia out of the core. Anything it needs to run should be isolated.
 
@@ -315,7 +318,7 @@ or
 This test will return false negative for some WAR projects (not added to classpath and don't have any sources to compile). Also, compileSourceRoots and testCompileSourceRoots only become fully populated after running maven build lifecycle, which is expensive.
 
 * Extensions
-** Different categories of extensions: providers vs packaging vs PMD/Checkstyle resources stuff in a JAR
+**Different categories of extensions: providers vs packaging vs PMD/Checkstyle resources stuff in a JAR
 ** Transparent Extension Loading
-*** Any Wagon or SCM providers should get picked up automatically from SCM and distributionManagement URLs
+***Any Wagon or SCM providers should get picked up automatically from SCM and distributionManagement URLs
 *** Any extensions containing packaging/lifecycle related bits needs to be picked up automatically

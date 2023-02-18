@@ -22,37 +22,26 @@ under the License.
 -->
 ## Central Index
 
-
  Central repository provides [an index](https://repo.maven.apache.org/maven2/.index/) that is updated weekly as full (`nexus-maven-repository-index.gz`) and incremental (`nexus-maven-repository-index.<n>.gz` + `nexus-maven-repository-index.properties`).
 
  This index is build using [Maven Indexer](/maven-indexer/): see [LATEST indexer-core documentation](/maven-indexer-archives/maven-indexer-LATEST/indexer-core/) for more details on the fields that are available.
 
  You can use [Maven Indexer API](/maven-indexer-archives/maven-indexer-LATEST/indexer-core/apidocs/) (see [examples](/maven-indexer-archives/maven-indexer-LATEST/indexer-examples/)) to use this index with a dedicated API, or use [Apache Lucene](http://lucene.apache.org/) indexes browsers like [Luke](https://github.com/DmitryKey/luke) or [Marple](https://github.com/flaxsearch/marple) after unpacking the index (see [`-u` CLI option](/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/)).
 
-
 ### Digging Into Central Index with Luke
 
+- download [the Central index: `nexus-maven-repository-index.gz`](https://repo.maven.apache.org/maven2/.index/)
 
-
- - download [the Central index: `nexus-maven-repository-index.gz`](https://repo.maven.apache.org/maven2/.index/)
-
- - download [Maven Indexer CLI](https://repo.maven.apache.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar) and [unpack](/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/) the index to raw Lucene index directory:
+- download [Maven Indexer CLI](https://repo.maven.apache.org/maven2/org/apache/maven/indexer/indexer-cli/5.1.1/indexer-cli-5.1.1.jar) and [unpack](/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/) the index to raw Lucene index directory:
 
 ```
 java -jar indexer-cli-5.1.1.jar --unpack nexus-maven-repository-index.gz --destination central-lucene-index --type full
 ```
 
-
- - download and extract [Luke binary tarball](https://github.com/DmitryKey/luke/releases/download/luke-4.10.4/luke-with-deps.tar.gz) and launch it on the Central index with Lucene format:
+- download and extract [Luke binary tarball](https://github.com/DmitryKey/luke/releases/download/luke-4.10.4/luke-with-deps.tar.gz) and launch it on the Central index with Lucene format:
 
 ```
 luke.sh -ro -index central-lucene-index
 ```
 
-
    You need an old Luke version using an old Lucene version, since Maven Indexer 5.5.1 uses Lucene 3.6.2: for this tutorial, we chose Luke version 4.10.4, but you may choose another version.
-
-
-
-
-

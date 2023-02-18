@@ -22,18 +22,13 @@ under the License.
 -->
 ## Localization of Plugins
 
-
  Most of the plugins involved with the site generation are fully internationalized. This means that adapting them to another language, a process known as localization, is very easy. All that is needed is to download a couple of properties files and start translating the texts in them. If you want to provide a patch for an unsupported language, there are detailed instructions below.
-
 
  For the basic site generation there are currently files for three components that needs to be localized to support a new language: Maven Site Plugin, Maven Project Info Reports Plugin and Maven Doxia Tools.
 
-
  **Note:** The links to SVN below goes to the latest development code. So the files may be newer than the ones included in the latest release.
 
-
  In the table below you can see our localized plugins and which languages they are available in.
-
 
 |Plugin|ca|cs|da|de|es|fr|gl|hu|it|ja|ko|lt|nl|no|pl|pt|pt_BR|ru|sk|sv|tr|zh_CN|zh_TW|l10n report|SVN|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
@@ -53,24 +48,21 @@ under the License.
 
  Is your favourite plugin missing a localization for your language? Please help us expand the language support by following the instructions below.
 
-
 ### Localizing a Plugin
 
+- Check out the source code for the plugin you want to add a translation to.
 
+- Find the resource bundles that needs to be translated. They are often found in the `src/main/resources` directory.
 
- - Check out the source code for the plugin you want to add a translation to.
+- Copy the basefile for the bundle, i.e. the one **without** a language extension. The copy should have the same name as the original file, except for the addition of a language extension. If, for example, you want to translate the Checkstyle Plugin into Spanish, you would copy `src/main/resources/checkstyle-report.properties` to `src/main/resources/checkstyle-report_es.properties`.
 
- - Find the resource bundles that needs to be translated. They are often found in the `src/main/resources` directory.
+- Edit the new file and translate all the properties. Do not change the formating of the file, i.e. keep the current indentation and line breaks. This makes it easy to use a graphical diff tool to find missing keys in the file.
 
- - Copy the basefile for the bundle, i.e. the one **without** a language extension. The copy should have the same name as the original file, except for the addition of a language extension. If, for example, you want to translate the Checkstyle Plugin into Spanish, you would copy `src/main/resources/checkstyle-report.properties` to `src/main/resources/checkstyle-report_es.properties`.
+- Convert the new file so that all non-US-ASCII characters are transformed into Unicode escapes, see below for a tool that can help with this.
 
- - Edit the new file and translate all the properties. Do not change the formating of the file, i.e. keep the current indentation and line breaks. This makes it easy to use a graphical diff tool to find missing keys in the file.
+- Run "mvn install" for the plugin.
 
- - Convert the new file so that all non-US-ASCII characters are transformed into Unicode escapes, see below for a tool that can help with this.
-
- - Run "mvn install" for the plugin.
-
- - Configure a project to use the latest SNAPSHOT version of the plugin you are working on. Also configure the project to produce a site in the language you are adding a translation for. For Spanish, as we used in the example above, it would look like this:
+- Configure a project to use the latest SNAPSHOT version of the plugin you are working on. Also configure the project to produce a site in the language you are adding a translation for. For Spanish, as we used in the example above, it would look like this:
 
 ```
   <build>
@@ -86,28 +78,21 @@ under the License.
   </build>
 ```
 
+- Run "mvn site" on that project to test it.
 
- - Run "mvn site" on that project to test it.
+- When you are happy with your translation, create an issue in JIRA for the plugin in question, with a description like this: "Add Spanish translation". Take note of the issue number.
 
- - When you are happy with your translation, create an issue in JIRA for the plugin in question, with a description like this: "Add Spanish translation". Take note of the issue number.
-
- - Create a patch file that contains your new translation. Use the issue number when you name the file:
+- Create a patch file that contains your new translation. Use the issue number when you name the file:
 
 ```
 svn diff > MYISSUE-123.patch
 ```
 
-
- - Attach your patch file to the issue in JIRA.
-
-
+- Attach your patch file to the issue in JIRA.
 
 ### Tools
 
-
  There is a command line tool called **native2ascii** that can be used to convert a text file to use Unicode-encoded characters instead of native-encoded characters. This is part of the Java SDK and you can [read more about it here](http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/native2ascii.html). You use it like this:
-
-
 
 ```
 native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.properties
@@ -115,51 +100,30 @@ native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.proper
 
 #### Tools to find out the charset of a file
 
+- Unix `file` command
 
+- [cpdetector](http://cpdetector.sourceforge.net/)
 
- - Unix `file` command
+- [IntelliJ IDEA ShowEncodingPlugin](http://plugins.intellij.net/plugin/?id=24)
 
- - [cpdetector](http://cpdetector.sourceforge.net/)
-
- - [IntelliJ IDEA ShowEncodingPlugin](http://plugins.intellij.net/plugin/?id=24)
-
- - [Notepad++](http://notepad-plus.sourceforge.net/)
-
-
+- [Notepad++](http://notepad-plus.sourceforge.net/)
 
 #### Tools to write a file in a given charset
 
-
  Any editor like Notepad++, Eclipse, IntelliJ IDEA, ...
-
-
 
 #### Tools to convert a file from one encoding to another encoding
 
+- Unix `iconv` command
 
-
- - Unix `iconv` command
-
- - Notepad++
-
-
+- Notepad++
 
 #### IDE plugins
 
-
-
- - [Properties Editor Eclipse Plugin](http://propedit.sourceforge.jp/index_en.html)
-
-
-
+- [Properties Editor Eclipse Plugin](http://propedit.sourceforge.jp/index_en.html)
 
 ### References
 
-
  Please refer to the [Java Internationalization home page](http://java.sun.com/javase/technologies/core/basic/intl/) for an introduction to the topic.
 
-
  You can also refer to this Sun FAQ: [How Can I Determine the Encoding of a File?](http://developers.sun.com/global/technology/standards/reference/faqs/determining-file-encoding.html)
-
-
-

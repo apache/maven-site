@@ -17,8 +17,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Starting with Maven 3.5.0-beta-1 you can use the `${revision}`, `${sha1}` 
-and/or `${changelist}` as placeholders for the version in your pom file. 
+Starting with Maven 3.5.0-beta-1 you can use the `${revision}`, `${sha1}`
+and/or `${changelist}` as placeholders for the version in your pom file.
 
 ## Single Project Setup
 
@@ -42,7 +42,6 @@ This can look like this:
 
   This is of course a simple situation where we use only `${revision}` for brevity
   to show the general course.
-
 
   Based on the above pom you can build your project using:
 
@@ -87,7 +86,7 @@ mvn -Drevision=1.0.0-SNAPSHOT clean package
 ```
 mvn -Drevision=2.0.0-SNAPSHOT clean package
 ```
- 
+
   Of course you can use the `.mvn/maven.config` file for this.
 
   A note about the used properties. You can only use those named
@@ -268,10 +267,9 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 ## Install / Deploy
 
   If you like to install or deploy artifacts by using the above setup you **have to use**
-  the [flatten-maven-plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts 
+  the [flatten-maven-plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts
   in your repository which will not be consumable by Maven anymore. Such kind of setup
   will look like this:
-
 
 ```xml
 <project>
@@ -326,4 +324,4 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 </project>
 ```
 
-[flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/ 
+[flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/

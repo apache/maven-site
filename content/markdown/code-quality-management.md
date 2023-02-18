@@ -27,11 +27,11 @@ this information to offer enhanced quality management functionalities.
 Following is an alphabetical list of those we've heard mentioned around
 the Maven community:
 
--   [Hudson](https://hudson-ci.org)
--   [Jenkins](https://jenkins-ci.org)
--   [SonarQube](http://www.sonarqube.org/)
--   [Squale](http://www.squale.org/)
--   [XRadar](http://xradar.sourceforge.net)
+- [Hudson](https://hudson-ci.org)
+- [Jenkins](https://jenkins-ci.org)
+- [SonarQube](http://www.sonarqube.org/)
+- [Squale](http://www.squale.org/)
+- [XRadar](http://xradar.sourceforge.net)
 
 [PMD]: https://maven.apache.org/plugins/maven-pmd-plugin/
 [Checkstyle]: https://maven.apache.org/plugins/maven-checkstyle-plugin/

@@ -23,8 +23,6 @@ under the License.
 
 ## Examples
 
- - [Injecting POM Properties via settings.xml](./injecting-properties-via-settings.html)
+- [Injecting POM Properties via settings.xml](./injecting-properties-via-settings.html)
 
- - [Maven 3 lifecycle extensions](./maven-3-lifecycle-extensions.html)
-
-
+- [Maven 3 lifecycle extensions](./maven-3-lifecycle-extensions.html)
