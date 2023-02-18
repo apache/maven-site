@@ -45,13 +45,13 @@ under the License.
 
 
 <!-- TODO: versioning doc that discusses this -->
- You can specify your user configuration in `${user.home}/.m2/settings.xml`. A [full reference](../../maven-settings/settings.html) to the configuration file is available. This section will show how to make some common configurations. Note that the file is not required - defaults will be used if it is not found.
+ You can specify your user configuration in `$\{user.home\}/.m2/settings.xml`. A [full reference](../../maven-settings/settings.html) to the configuration file is available. This section will show how to make some common configurations. Note that the file is not required - defaults will be used if it is not found.
 
 
 ### Configuring your Local Repository
 
 
- The location of your local repository can be changed in your user configuration. The default value is `${user.home}/.m2/repository/`.
+ The location of your local repository can be changed in your user configuration. The default value is `$\{user.home\}/.m2/repository/`.
 
 
 

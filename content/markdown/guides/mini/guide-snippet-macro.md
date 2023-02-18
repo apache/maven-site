@@ -104,7 +104,7 @@ under the License.
  %{snippet|id=snip-id|url=file:///path/to/Sample.java}
 ```
 
- As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available. If a full path is not specified, the location is assumed to be relative to `${basedir}`.
+ As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available. If a full path is not specified, the location is assumed to be relative to $\{basedir\}.
 
 
 

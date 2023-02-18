@@ -234,7 +234,7 @@ NOTE: I fixed this behavior in Maven's trunk; previously, it had been putting th
 So, to recap:
 
 parent:
-```xml
+```
 <configuration>
   <items>
       <item>one</item>
@@ -608,8 +608,8 @@ _Plugins and Lifecycle, Sites & Reporting_
 ### How do I integrate static (x)html into my Maven site?
 
 You can integrate your static pages in this several steps,
-* Put your static pages in the resources directory, ${basedir}/src/site/resources.
-* Create your site.xml and put it in `${basedir}/src/site`. An example below:
+* Put your static pages in the resources directory, $\{basedir\}/src/site/resources.
+* Create your site.xml and put it in $\{basedir\}/src/site. An example below:
 ```
 <project name="Maven War Plugin">
   <bannerLeft>
@@ -935,7 +935,7 @@ _Sites & Reporting, General_
 
 ### How do I create a command line parameter (i.e., \-Dname=value ) in my mojo?
 
-In your mojo, put `expression=${<exp>}` in your parameter field
+In your mojo, put `expression=$\{<exp>\}` in your parameter field
 
 ```
 /**
@@ -1084,7 +1084,7 @@ To do so, simply add the following fragment to your pom:
 Now, to specify a different output directory at runtime simply use the directory property as a mvn command line parameter;
 {code}mvn -Ddirectory=tmp package
 ```
-This will send the build's output files to the ${basedir}/tmp directory.
+This will send the build's output files to the $\{basedir}/tmp directory.
 
 _POM, Command Line_
 
@@ -1213,7 +1213,7 @@ _Plugins and Lifecycle, IDEs_
 
 ### What does aggregator mean in mojo?
 
-When a Mojo has a `@aggregator` expression, it means that It can only build the parent project of your multi-module-project, the one who has the packaging of pom. It can also give you values for the expression `${reactorProjects}` where reactorProjects are the MavenProject references to the parent pom modules.
+When a Mojo has a `@aggregator` expression, it means that It can only build the parent project of your multi-module-project, the one who has the packaging of pom. It can also give you values for the expression $\{reactorProjects\} where reactorProjects are the MavenProject references to the parent pom modules.
 
 ### Why there are no dependency properties in Maven?
 
@@ -1382,8 +1382,8 @@ Use the `inherited` property. Set it to `false` in the plugin configuration. So 
 ### How can I reference windows or unix environment variables in my POM?
 
 Starting in maven *2.0.1*, you can reference windows and unix environment variables inside your pom.xml or settings.xml using an expression of the form:
-`${env.VARNAME}`
-So, if you wanted to reference your home directory environment variable, you might use: `${env.HOME}`
+`$\{env.VARNAME\}`
+So, if you wanted to reference your home directory environment variable, you might use: `$\{env.HOME\}`
 
 ### How do I know which phase a plug-in is associated with?
 
@@ -1456,7 +1456,7 @@ When specifying a war as dependency, make sure that you have set the `<type>` to
 
 ### How can I change the default location of the generated jar when I command "mvn package"?
 
-By default, the location of the generated jar is in `${project.build.directory}` or in your target directory.
+By default, the location of the generated jar is in $\{project.build.directory\} or in your target directory.
 We can change this by configuring the outputDirectory of maven-jar-plugin.
 ```
 <plugin>
@@ -1595,7 +1595,7 @@ Note: You don't have to define the central repo (i.e. ibiblio).
 
 ### Is it possible to exclude a package from the generated jar file?
 
-You can configure maven-compiler-plugin to exclude your unwanted packages or files to be compiled in the first place. But you will not be able to prevent javac to compile those files if they are referenced by other packages within the source tree. To prevent that, you will need to use antrun plugin ( or write your own custom plugin), bind it to compile phase, and remove unwanted classes in `${project.build.directory}/classes`. If possible, just move those pacakges/files to another source tree to become another project.
+You can configure maven-compiler-plugin to exclude your unwanted packages or files to be compiled in the first place. But you will not be able to prevent javac to compile those files if they are referenced by other packages within the source tree. To prevent that, you will need to use antrun plugin ( or write your own custom plugin), bind it to compile phase, and remove unwanted classes in $\{project.build.directory\}/classes. If possible, just move those pacakges/files to another source tree to become another project.
 
 ### How should I point a path for Maven to use a certain version of JDK when I have different versions of JDK installed on my PC and my JAVA_HOME already set?
 
@@ -1770,7 +1770,7 @@ pom.xml > project scope
 ```
 ### What is reactorProjects? executedProject?
 
-`${reactorProjects}` are the projects that the current mvn command are going to be built. This will include the parent project and all its children while `${executedProject}` is the project where you typed your mvn command.
+$\{reactorProjects} are the projects that the current mvn command are going to be built. This will include the parent project and all its children while $\{executedProject} is the project where you typed your mvn command.
 
 ### What is a Snapshot?
 

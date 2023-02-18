@@ -103,7 +103,7 @@ under the License.
  If you are using the goals from the command line on a number of projects, you should include this in your `settings.xml` file instead.
 
 
- You need to modify your `${user.home}/.m2/settings.xml` file to include two new profiles and then when you need access to the plugin snapshots use `-Papache`. The profile only needs to be enabled once so that the plugins can be downloaded into you local repository. Once in your local repository Maven can successfully resolve the dependencies and the profile no longer needs to be activated.
+ You need to modify your `$\{user.home\}/.m2/settings.xml` file to include two new profiles and then when you need access to the plugin snapshots use `-Papache`. The profile only needs to be enabled once so that the plugins can be downloaded into you local repository. Once in your local repository Maven can successfully resolve the dependencies and the profile no longer needs to be activated.
 
 
 

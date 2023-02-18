@@ -269,7 +269,7 @@ public MyMojo extends AbstractMojo
 ### Resolving Relative Paths
 
 
- It is common practice for users of Maven to specify relative paths in the POM, not to mention that the Super POM does so, too. The intention is to resolve such relative paths against the base directory of the current project. In other words, the paths `target/classes` and `${basedir}/target/classes` should resolve to the same directory for a given POM.
+ It is common practice for users of Maven to specify relative paths in the POM, not to mention that the Super POM does so, too. The intention is to resolve such relative paths against the base directory of the current project. In other words, the paths `target/classes` and `$\{basedir\}/target/classes` should resolve to the same directory for a given POM.
 
 
  Unfortunately, the class `[java.io.File](http://java.sun.com/javase/6/docs/api/java/io/File.html)` does not resolve relative paths against the project's base directory. As mentioned in its class javadoc, it resolves relative paths against the current working directory. In plain English: Unless a Maven component has complete control over the current working directory, any usage of `java.io.File` in combination with a relative path is a bug.
@@ -343,7 +343,7 @@ if ( !file.isAbsolute() )
  Most reporting plugins inherit from `AbstractMavenReport`. In doing so, they need to implement the inherited but abstract method `getOutputDirectory()`. To implement this method, plugins usually declare a field named `outputDirectory` which they return in the method. Nothing wrong so far.
 
 
- Now, some plugins need to create additional files in the report output directory that accompany the report generated via the sink interface. While it is tempting to use either the method `getOutputDirectory()` or the field `outputDirectory` directly in order to setup a path for the output files, this leads most likely to a bug. More precisely, those plugins will not properly output files when run by the Maven Site Plugin as part of the site lifecycle. This is best noticed when the output directory for the site is configured directly in the Maven Site Plugin such that it deviates from the expression `${project.reporting.outputDirectory}` that the plugins use by default. Multi-language site generation is another scenario to exploit this bug which is illustrated below:
+ Now, some plugins need to create additional files in the report output directory that accompany the report generated via the sink interface. While it is tempting to use either the method `getOutputDirectory()` or the field `outputDirectory` directly in order to setup a path for the output files, this leads most likely to a bug. More precisely, those plugins will not properly output files when run by the Maven Site Plugin as part of the site lifecycle. This is best noticed when the output directory for the site is configured directly in the Maven Site Plugin such that it deviates from the expression `$\{project.reporting.outputDirectory\}` that the plugins use by default. Multi-language site generation is another scenario to exploit this bug which is illustrated below:
 
 
 

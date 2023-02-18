@@ -49,7 +49,7 @@ under the License.
       +- site.xml
 ```
 
- You will notice there is now a `${basedir}/src/site` directory within which is contained a `site.xml` site descriptor along with various directories corresponding to the supported document types.
+ You will notice there is now a `$\{basedir\}/src/site` directory within which is contained a `site.xml` site descriptor along with various directories corresponding to the supported document types.
 
 
  Let's take a look at the examples of the various document types:

@@ -103,7 +103,7 @@ under the License.
 
  - Global
 
-   - Defined in the [ global Maven-settings](/ref/current/maven-settings/settings.html) `(${maven.home}/conf/settings.xml)`.
+   - Defined in the [ global Maven-settings](/ref/current/maven-settings/settings.html) `($\{maven.home\}/conf/settings.xml)`.
 
 
 
@@ -595,7 +595,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 </project>
 ```
 
- Now, in your local `${user.home}/.m2/settings.xml`, you have:
+ Now, in your local `$\{user.home\}/.m2/settings.xml`, you have:
 
 
 
@@ -720,7 +720,7 @@ mvn -Denv=dev integration-test
 mvn -Denv=production integration-test
 ```
 
- will not do a successful build. Why? Because, the resulting non-interpolated literal value of `${appserver.home}` will not be a valid path for deploying and testing your web application. We haven't considered the case for the production environment when writing our profiles. The "production" environment (env=production), along with "test" and possibly even "local" constitute a natural set of target environments for which we may want to build the integration-test lifecycle phase. The incomplete specification of this natural set means we have effectively limited our valid target environments to the development environment. Your teammates - and probably your manager - will not see the humor in this. When you construct profiles to handle cases such as these, be sure to address the entire set of target permutations.
+ will not do a successful build. Why? Because, the resulting non-interpolated literal value of `$\{appserver.home\}` will not be a valid path for deploying and testing your web application. We haven't considered the case for the production environment when writing our profiles. The "production" environment (env=production), along with "test" and possibly even "local" constitute a natural set of target environments for which we may want to build the integration-test lifecycle phase. The incomplete specification of this natural set means we have effectively limited our valid target environments to the development environment. Your teammates - and probably your manager - will not see the humor in this. When you construct profiles to handle cases such as these, be sure to address the entire set of target permutations.
 
 
  As a quick aside, it's possible for user-specific profiles to act in a similar way. This means that profiles for handling different environments which are keyed to the user can act up when the team adds a new developer. While I suppose this _could_ act as useful training for the newbie, it just wouldn't be nice to throw them to the wolves in this way. Again, be sure to think of the _whole_ set of profiles.

@@ -150,7 +150,7 @@ archetype
 ### 3. Create the prototype files and the prototype pom.xml
 
 
- The next component of the archetype to be created is the prototype `pom.xml`. Any `pom.xml` will do, just don't forget to the set `artifactId` and `groupId` as variables ( `${artifactId}` / `${groupId}` ). Both variables will be initialized from the commandline when calling `archetype:generate`.
+ The next component of the archetype to be created is the prototype `pom.xml`. Any `pom.xml` will do, just don't forget to the set `artifactId` and `groupId` as variables ( `$\{artifactId\}` / `$\{groupId\}` ). Both variables will be initialized from the commandline when calling `archetype:generate`.
 
 
  An example for a prototype `pom.xml` is:

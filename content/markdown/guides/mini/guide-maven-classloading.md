@@ -49,7 +49,7 @@ under the License.
 ### Overview
 
 
- Maven uses the [Plexus Classworlds](https://codehaus-plexus.github.io/plexus-classworlds/) classloading framework to create the classloader graph. If you look in your `${maven.home}/boot` directory, you will see a single JAR which is the Classworlds JAR we use to boot the classloader graph. The Classworlds JAR is the only element of the Java `CLASSPATH`. The other classloaders are built by Classworlds ("realms" in Classworlds terminology).
+ Maven uses the [Plexus Classworlds](https://codehaus-plexus.github.io/plexus-classworlds/) classloading framework to create the classloader graph. If you look in your `$\{maven.home\}/boot` directory, you will see a single JAR which is the Classworlds JAR we use to boot the classloader graph. The Classworlds JAR is the only element of the Java `CLASSPATH`. The other classloaders are built by Classworlds ("realms" in Classworlds terminology).
 
 
  Each realm exposes
@@ -84,10 +84,10 @@ under the License.
 ### Core Classloader
 
 
- The second classloader down the graph contains the core requirements of Maven. **It is used by Maven internally but not by plugins**. The core classloader has the libraries in `${maven.home}/lib`. In general these are just Maven libraries. For example instances of `[MavenProject](/ref/current/apidocs/org/apache/maven/project/MavenProject.html)` belong to this classloader.
+ The second classloader down the graph contains the core requirements of Maven. **It is used by Maven internally but not by plugins**. The core classloader has the libraries in `$\{maven.home\}/lib`. In general these are just Maven libraries. For example instances of `[MavenProject](/ref/current/apidocs/org/apache/maven/project/MavenProject.html)` belong to this classloader.
 
 
- You can add elements to this classloader by [extensions](/ref/current/maven-model/maven.html#class_extension). These are loaded through the same classloader as `${maven.home}/lib` and hence are available to the Maven core and all plugins for the current project (through the API classloader). More information is available in [Core Extension](./guide-using-extensions.html).
+ You can add elements to this classloader by [extensions](/ref/current/maven-model/maven.html#class_extension). These are loaded through the same classloader as `$\{maven.home\}/lib` and hence are available to the Maven core and all plugins for the current project (through the API classloader). More information is available in [Core Extension](./guide-using-extensions.html).
 
 
 
@@ -146,7 +146,7 @@ under the License.
             </plugin>
 ```
 
- Plugins can inspect their effective runtime class path via the expressions `${plugin.artifacts}` or `${plugin.artifactMap}` to have a list or map, respectively, of resolved artifacts injected from the `[PluginDescriptor](/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/PluginDescriptor.html)`.
+ Plugins can inspect their effective runtime class path via the expressions `$\{plugin.artifacts\}` or `$\{plugin.artifactMap\}` to have a list or map, respectively, of resolved artifacts injected from the `[PluginDescriptor](/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/PluginDescriptor.html)`.
 
 
  Please note that the plugin classloader does neither contain the [dependencies](/ref/current/maven-model/maven.html#class_dependency) of the current project nor its build output. Instead, plugins can query the project's compile, runtime and test class path from the `[MavenProject](/ref/current/apidocs/org/apache/maven/project/MavenProject.html)` in combination with the mojo annotation `requiresDependencyResolution` from the [Mojo API Specification](/developers/mojo-api-specification.html). For instance, flagging a mojo with `@requiresDependencyResolution runtime` enables it to query the runtime class path of the current project from which it could create further classloaders.

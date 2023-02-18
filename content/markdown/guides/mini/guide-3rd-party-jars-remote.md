@@ -30,7 +30,7 @@ under the License.
  To deploy a 3rd party JAR use the deploy:deploy-file goal under maven-deploy-plugin.
 
 
- First, the wagon-provider(wagon-ftp, wagon-file, etc..) must be placed to your `${maven.home}/lib`.
+ First, the wagon-provider(wagon-ftp, wagon-file, etc..) must be placed to your `$\{maven.home\}/lib`.
 
 
  Then execute the command:

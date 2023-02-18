@@ -42,7 +42,7 @@ under the License.
 
 
 
- - Registered via extension jar in `${maven.home}/lib/ext`
+ - Registered via extension jar in `$\{maven.home\}/lib/ext`
 
  - Registered via CLI argument `mvn -Dmaven.ext.class.path=extension.jar`
 

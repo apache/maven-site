@@ -66,7 +66,7 @@ under the License.
 </project>
 ```
 
- You'll notice that the assembly descriptor is located in `${project.basedir}/src/assembly` which is the [standard](../introduction/introduction-to-the-standard-directory-layout.html) location for assembly descriptors.
+ You'll notice that the assembly descriptor is located in `$\{project.basedir\}/src/assembly` which is the [standard](../introduction/introduction-to-the-standard-directory-layout.html) location for assembly descriptors.
 
 
 ### Creating a binary assembly

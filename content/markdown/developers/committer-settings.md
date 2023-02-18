@@ -24,7 +24,7 @@ under the License.
 ## Introduction
 
 
- This document is intended to set up the Maven committer settings, i.e. the `${user.home}/.m2/settings.xml`.
+ This document is intended to set up the Maven committer settings, i.e. the `$\{user.home\}/.m2/settings.xml`.
 
 
 ### Enable Apache Servers

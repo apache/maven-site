@@ -135,7 +135,7 @@ mvn clean verify artifact:compare
 
   - if you have a custom release process tooling, you'll need to add the feature to your release tooling. Notice that if you're using `versions-maven-plugin` in custom release scripts, starting with release 2.9.0, [`versions:set` goal updates the property](https://github.com/mojohaus/versions-maven-plugin/issues/453).
 
-  - instead of explicitely writing a timestamp in their `pom.xml`, some people tend to prefer using last Git commit timestamp, like `${git.commit.time}` from [git-commit-id-maven-plugin](https://github.com/git-commit-id/git-commit-id-maven-plugin).
+  - instead of explicitely writing a timestamp in their `pom.xml`, some people tend to prefer using last Git commit timestamp, like `$\{git.commit.time\}` from [git-commit-id-maven-plugin](https://github.com/git-commit-id/git-commit-id-maven-plugin).
 
 
 

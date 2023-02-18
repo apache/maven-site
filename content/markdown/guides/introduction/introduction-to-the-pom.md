@@ -589,7 +589,7 @@ under the License.
 ##### Project Model Variables
 
 
- Any field of the model that is a single value element can be referenced as a variable. For example, `${project.groupId}`, `${project.version}`, `${project.build.sourceDirectory}` and so on. Refer to the POM reference to see a full list of properties.
+ Any field of the model that is a single value element can be referenced as a variable. For example, `$\{project.groupId\}`, `$\{project.version\}`, `$\{project.build.sourceDirectory\}` and so on. Refer to the POM reference to see a full list of properties.
 
 
  These variables are all referenced by the prefix "`project.`". You may also see references with `pom.` as the prefix, or the prefix omitted entirely - these forms are now deprecated and should not be used.

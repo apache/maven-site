@@ -51,7 +51,7 @@ under the License.
  **NOTE:** You will also get the standard set of repositories as defined in the [Super POM](../introduction/introduction-to-the-pom.html#Super_POM).
 
 
- The other way you can specify multiple repositories is by creating a profile in the `${user.home}/.m2/settings.xml` or `${maven.home}/conf/settings.xml` file like the following:
+ The other way you can specify multiple repositories is by creating a profile in the `$\{user.home\}/.m2/settings.xml` or `$\{maven.home\}/conf/settings.xml` file like the following:
 
 
 

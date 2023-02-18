@@ -217,7 +217,7 @@ my-app
                         `-- AppTest.java
 ```
 
- As you can see, the project created from the archetype has a POM, a source tree for your application's sources and a source tree for your test sources. This is the standard layout for Maven projects (the application sources reside in `${basedir}/src/main/java` and test sources reside in `${basedir}/src/test/java`, where `${basedir}` represents the directory containing `pom.xml`).
+ As you can see, the project created from the archetype has a POM, a source tree for your application's sources and a source tree for your test sources. This is the standard layout for Maven projects (the application sources reside in `$\{basedir\}/src/main/java` and test sources reside in `$\{basedir\}/src/test/java`, where $\{basedir\} represents the directory containing `pom.xml`).
 
 
  If you were to create a Maven project by hand this is the directory structure that we recommend using. This is a Maven convention and to learn more about it you can read our [Introduction to the Standard Directory Layout](../introduction/introduction-to-the-standard-directory-layout.html).
@@ -267,7 +267,7 @@ mvn compile
  The first time you execute this (or any other) command, Maven will need to download all the plugins and related dependencies it needs to fulfill the command. From a clean installation of Maven, this can take quite a while (in the output above, it took almost 4 minutes). If you execute the command again, Maven will now have what it needs, so it won't need to download anything new and will be able to execute the command much more quickly.
 
 
- As you can see from the output, the compiled classes were placed in `${basedir}/target/classes`, which is another standard convention employed by Maven. So, if you're a keen observer, you'll notice that by using the standard conventions, the POM above is very small and you haven't had to tell Maven explicitly where any of your sources are or where the output should go. By following the standard Maven conventions, you can get a lot done with very little effort! Just as a casual comparison, let's take a look at what you might have had to do in [Ant](http://ant.apache.org) to accomplish the same [thing](../../ant/build-a1.xml).
+ As you can see from the output, the compiled classes were placed in `$\{basedir\}/target/classes`, which is another standard convention employed by Maven. So, if you're a keen observer, you'll notice that by using the standard conventions, the POM above is very small and you haven't had to tell Maven explicitly where any of your sources are or where the output should go. By following the standard Maven conventions, you can get a lot done with very little effort! Just as a casual comparison, let's take a look at what you might have had to do in [Ant](http://ant.apache.org) to accomplish the same [thing](../../ant/build-a1.xml).
 
 
  Now, this is simply to compile a single tree of application sources and the Ant script shown is pretty much the same size as the POM shown above. But we'll see how much more we can do with just that simple POM!
@@ -367,10 +367,10 @@ mvn test
 mvn package
 ```
 
- You can now take a look in the `${basedir}/target` directory and you will see the generated JAR file.
+ You can now take a look in the `$\{basedir\}/target` directory and you will see the generated JAR file.
 
 
- Now you'll want to install the artifact you've generated (the JAR file) in your local repository (`${user.home}/.m2/repository` is the default location). For more information on repositories you can refer to our [Introduction to Repositories](../introduction/introduction-to-repositories.html) but let's move on to installing our artifact! To do so execute the following command:
+ Now you'll want to install the artifact you've generated (the JAR file) in your local repository (`$\{user.home\}/.m2/repository` is the default location). For more information on repositories you can refer to our [Introduction to Repositories](../introduction/introduction-to-repositories.html) but let's move on to installing our artifact! To do so execute the following command:
 
 
 
@@ -541,7 +541,7 @@ mvn clean
  Another common use case that can be satisfied which requires no changes to the POM that we have above is packaging resources in the JAR file. For this common task, Maven again relies on the [Standard Directory Layout](../introduction/introduction-to-the-standard-directory-layout.html), which means by using standard Maven conventions you can package resources within JARs simply by placing those resources in a standard directory structure.
 
 
- You see below in our example we have added the directory `${basedir}/src/main/resources` into which we place any resources we wish to package in our JAR. The simple rule employed by Maven is this: any directories or files placed within the `${basedir}/src/main/resources` directory are packaged in your JAR with the exact same structure starting at the base of the JAR.
+ You see below in our example we have added the directory `$\{basedir\}/src/main/resources` into which we place any resources we wish to package in our JAR. The simple rule employed by Maven is this: any directories or files placed within the `$\{basedir\}/src/main/resources` directory are packaged in your JAR with the exact same structure starting at the base of the JAR.
 
 
 
@@ -585,7 +585,7 @@ my-app
             `-- App.class
 ```
 
- As you can see, the contents of `${basedir}/src/main/resources` can be found starting at the base of the JAR and our `application.properties` file is there in the `META-INF` directory. You will also notice some other files there like `META-INF/MANIFEST.MF` as well as a `pom.xml` and `pom.properties` file. These come standard with generation of a JAR in Maven. You can create your own manifest if you choose, but Maven will generate one by default if you don't. (You can also modify the entries in the default manifest. We will touch on this later.) The `pom.xml` and `pom.properties` files are packaged up in the JAR so that each artifact produced by Maven is self-describing and also allows you to utilize the metadata in your own application if the need arises. One simple use might be to retrieve the version of your application. Operating on the POM file would require you to use some Maven utilities but the properties can be utilized using the standard Java API and look like the following:
+ As you can see, the contents of `$\{basedir\}/src/main/resources` can be found starting at the base of the JAR and our `application.properties` file is there in the `META-INF` directory. You will also notice some other files there like `META-INF/MANIFEST.MF` as well as a `pom.xml` and `pom.properties` file. These come standard with generation of a JAR in Maven. You can create your own manifest if you choose, but Maven will generate one by default if you don't. (You can also modify the entries in the default manifest. We will touch on this later.) The `pom.xml` and `pom.properties` files are packaged up in the JAR so that each artifact produced by Maven is self-describing and also allows you to utilize the metadata in your own application if the need arises. One simple use might be to retrieve the version of your application. Operating on the POM file would require you to use some Maven utilities but the properties can be utilized using the standard Java API and look like the following:
 
 
 
@@ -597,7 +597,7 @@ groupId=com.mycompany.app
 artifactId=my-app
 ```
 
- To add resources to the classpath for your unit tests, you follow the same pattern as you do for adding resources to the JAR except the directory you place resources in is `${basedir}/src/test/resources`. At this point you would have a project directory structure that would look like the following:
+ To add resources to the classpath for your unit tests, you follow the same pattern as you do for adding resources to the JAR except the directory you place resources in is $\{basedir\}/src/test/resources. At this point you would have a project directory structure that would look like the following:
 
 
 
@@ -686,7 +686,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  You'll notice that we had to add the `build`, `resources`, and `resource` elements which weren't there before. In addition, we had to explicitly state that the resources are located in the src/main/resources directory. All of this information was provided as default values previously, but because the default value for `filtering` is false, we had to add this to our pom.xml in order to override that default value and set `filtering` to true.
 
 
- To reference a property defined in your pom.xml, the property name uses the names of the XML elements that define the value, with "pom" being allowed as an alias for the project (root) element. So `${project.name}` refers to the name of the project, `${project.version}` refers to the version of the project, `${project.build.finalName}` refers to the final name of the file created when the built project is packaged, etc. Note that some elements of the POM have default values, so don't need to be explicitly defined in your `pom.xml` for the values to be available here. Similarly, values in the user's `settings.xml` can be referenced using property names beginning with "settings" (for example, `${settings.localRepository}` refers to the path of the user's local repository).
+ To reference a property defined in your pom.xml, the property name uses the names of the XML elements that define the value, with "pom" being allowed as an alias for the project (root) element. So `$\{project.name\}` refers to the name of the project, `$\{project.version\}` refers to the version of the project, `$\{project.build.finalName\}` refers to the final name of the file created when the built project is packaged, etc. Note that some elements of the POM have default values, so don't need to be explicitly defined in your `pom.xml` for the values to be available here. Similarly, values in the user's `settings.xml` can be referenced using property names beginning with "settings" (for example, `$\{settings.localRepository\}` refers to the path of the user's local repository).
 
 
  To continue our example, let's add a couple of properties to the `application.properties` file (which we put in the `src/main/resources` directory) whose values will be supplied when the resource is filtered:
@@ -878,7 +878,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  For more information about the dependency mechanism as a whole, see [Introduction to Dependency Mechanism](../introduction/introduction-to-dependency-mechanism.html).
 
 
- With this information about a dependency, Maven will be able to reference the dependency when it builds the project. Where does Maven reference the dependency from? Maven looks in your local repository (`${user.home}/.m2/repository` is the default location) to find all dependencies. In a [previous section](How_do_I_create_a_JAR_and_install_it_in_my_local_repository), we installed the artifact from our project (my-app-1.0-SNAPSHOT.jar) into the local repository. Once it's installed there, another project can reference that jar as a dependency simply by adding the dependency information to its pom.xml:
+ With this information about a dependency, Maven will be able to reference the dependency when it builds the project. Where does Maven reference the dependency from? Maven looks in your local repository (`$\{user.home\}/.m2/repository` is the default location) to find all dependencies. In a [previous section](How_do_I_create_a_JAR_and_install_it_in_my_local_repository), we installed the artifact from our project (my-app-1.0-SNAPSHOT.jar) into the local repository. Once it's installed there, another project can reference that jar as a dependency simply by adding the dependency information to its pom.xml:
 
 
 

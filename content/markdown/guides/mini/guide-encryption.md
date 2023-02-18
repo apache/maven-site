@@ -58,7 +58,7 @@ under the License.
 
 
 
- - authorized users have an additional `settings-security.xml` file in their `${user.home}/.m2` folder
+ - authorized users have an additional `settings-security.xml` file in their `$\{user.home\}/.m2` folder
 
   - this file either contains encrypted **master password**, used to encrypt other passwords
 
@@ -98,7 +98,7 @@ mvn --encrypt-master-password <password>
 {jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}
 ```
 
- Store this password in the `${user.home}/.m2/settings-security.xml`; it should look like
+ Store this password in the `$\{user.home\}/.m2/settings-security.xml`; it should look like
 
 
 
@@ -201,7 +201,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
  in the file `/Volumes/mySecureUsb/secure/settings-security.xml`
 
 
- And then I create `${user.home}/.m2/settings-security.xml` with the following content:
+ And then I create `$\{user.home\}/.m2/settings-security.xml` with the following content:
 
 
 
@@ -221,7 +221,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 #### Escaping curly-brace literals in your password _(Since: Maven 2.2.0)_
 
 
- At times, you might find that your password (or the encrypted form of it) contains '{' or '}' as a literal value. If you added such a password as-is to your settings.xml file, you would find that Maven does strange things with it. Specifically, Maven treats all the characters preceding the '{' literal, and all the characters after the '}' literal, as comments. Obviously, this is not the behavior you want. What you really need is a way of **escaping** the curly-brace literals in your password.
+ At times, you might find that your password (or the encrypted form of it) contains '\{' or '\}' as a literal value. If you added such a password as-is to your settings.xml file, you would find that Maven does strange things with it. Specifically, Maven treats all the characters preceding the '\{' literal, and all the characters after the '\}' literal, as comments. Obviously, this is not the behavior you want. What you really need is a way of **escaping** the curly-brace literals in your password.
 
 
  You can do this with the widely used '\\' escape character. If your password looks like this:
@@ -237,7 +237,7 @@ jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
 
 
 ```
-{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=}
+{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+\{EF1iFQyJQ=}
 ```
 
 
