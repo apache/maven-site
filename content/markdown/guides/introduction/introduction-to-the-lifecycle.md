@@ -28,19 +28,17 @@ under the License.
 
 
 
- - [Build Lifecycle Basics](Build_Lifecycle_Basics)
+ - [Build Lifecycle Basics](#build-lifecycle-basics)
 
- - [Setting Up Your Project to Use the Build Lifecycle](Setting_Up_Your_Project_to_Use_the_Build_Lifecycle)
+ - [Setting Up Your Project to Use the Build Lifecycle](#setting-up-your-project-to-use-the-build-lifecycle)
 
-  - [Packaging](Packaging)
-
-  - [Plugins](Plugins)
-
-
+   - [Packaging](#packaging)
+ 
+   - [Plugins](#plugins)
 
  - [Lifecycle Reference](Lifecycle_Reference)
 
- - [Built-in Lifecycle Bindings](Built-in_Lifecycle_Bindings)
+ - [Built-in Lifecycle Bindings](#built-in-lifecycle-bindings)
 
 
 
