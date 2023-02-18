@@ -45,7 +45,7 @@ under the License.
 
  In this case, the assembly-plugin configuration might look like this:
 
-```xml
+```
 <plugin>
   <artifactId>maven-assembly-plugin</artifactId>
   <configuration>
@@ -90,7 +90,7 @@ under the License.
 
  The resulting configuration might look something like this:
 
-```xml
+```
 <plugin>
   <artifactId>maven-compiler-plugin</artifactId>
   <configuration>
@@ -138,7 +138,7 @@ under the License.
 
  The resulting compiler-plugin configuration might look something like the following:
 
-```xml
+```
 <plugin>
   <artifactId>maven-compiler-plugin</artifactId>
   <executions>

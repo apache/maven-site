@@ -47,7 +47,7 @@ The full list of changes can be found in our [issue management system][4].
 
 Parent elements can now use bounded ranges in the version specification. You can now consistently use ranges for all intra-project dependencies, of which parents are a special case but still considered a dependency of projects that inherit from them. The following is now permissible:
 
-```xml
+```
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -77,7 +77,7 @@ This feature helps support the pattern where many streams of development are set
 
 Now when you use create plugins that strictly use annotation processing to generate the descriptor, you can avoid the confusing configuration previously required. This is what you typically needed to include in order to run the descriptor generator on compiled classes and avoid errors.
 
-```xml
+```
     <pluginManagement>
       <plugins>
         <plugin>

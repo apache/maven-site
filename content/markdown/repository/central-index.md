@@ -40,7 +40,7 @@ java -jar indexer-cli-5.1.1.jar --unpack nexus-maven-repository-index.gz --desti
 
 - download and extract [Luke binary tarball](https://github.com/DmitryKey/luke/releases/download/luke-4.10.4/luke-with-deps.tar.gz) and launch it on the Central index with Lucene format:
 
-```bash
+```
 luke.sh -ro -index central-lucene-index
 ```
 

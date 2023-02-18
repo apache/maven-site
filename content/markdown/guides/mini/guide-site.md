@@ -91,7 +91,7 @@ mvn site
 
  To be able to deploy the site with a classical network protocol (ftp, scp, webdav), you must first declare a location to distribute to in your `pom.xml`, similar to the repository for deployment:
 
-```xml
+```
 <project>
   ...
   <distributionManagement>
@@ -120,7 +120,7 @@ mvn site-deploy
 
  For example with a project hosted on GitHub and using GitHub Pages for its site publication:
 
-```xml
+```
     <plugin>
       <groupId>org.apache.maven.plugins</groupId>
       <artifactId>maven-scm-publish-plugin</artifactId>
@@ -142,7 +142,7 @@ mvn site-deploy
 
  The `site.xml` file is used to describe the structure of the site. A sample is given below:
 
-```xml
+```
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
@@ -227,7 +227,7 @@ mvn site-deploy
 
  To add these reports to your site, you must add the Project Info Reports plugin to a special `<reporting>` section in the POM. The following example shows how to configure the standard project information reports that display information from the POM in a friendly format:
 
-```xml
+```
 <project>
   ...
   <reporting>
@@ -257,7 +257,7 @@ mvn site-deploy
 
  To enable multiple locales, add a configuration similar to the following to your POM:
 
-```xml
+```
 <project>
   ...
   <build>

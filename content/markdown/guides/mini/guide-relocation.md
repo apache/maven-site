@@ -46,7 +46,7 @@ under the License.
 
    The minimal POM file might look like this for version 1.0 of `foo`:
 
-```xml
+```
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>bar</groupId>

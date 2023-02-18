@@ -67,7 +67,7 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  In your `pom.xml`, replace `plexus-maven-plugin` configuration:
 
-```xml
+```
 <project>
   <build>
     <plugins>
@@ -89,7 +89,7 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  with corresponding `plexus-component-metadata` configuration:
 
-```xml
+```
 <project>
   <build>
     <plugins>
@@ -115,7 +115,7 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  In your `pom.xml`, add `plexus-component-annotations` dependency:
 
-```xml
+```
 <project>
   <dependencies>
     <dependency>
@@ -129,7 +129,7 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  In your java sources, replace javadoc tags:
 
-```java
+```
 /**
  * @plexus.component role="foo.MyComponent" role-hint="hint-value"
  */
@@ -145,7 +145,7 @@ public class MyComponentImplementation
 
  with corresponding Java 5 annotations
 
-```java
+```
 import org.codehaus.plexus.component.annotations.Component;
 import org.codehaus.plexus.component.annotations.Requirement;
 

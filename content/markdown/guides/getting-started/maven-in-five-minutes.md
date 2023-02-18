@@ -92,7 +92,7 @@ my-app
 
  The `pom.xml` file is the core of a project's configuration in Maven. It is a single configuration file that contains the majority of information required to build a project in just the way you want. The POM is huge and can be daunting in its complexity, but it is not necessary to understand all of the intricacies just yet to use it effectively. This project's POM is:
 
-```xml
+```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -171,7 +171,7 @@ Hello World!
 
  In the following example, we have configured our Maven project to use version 3.8.1 of `maven-compiler-plugin` and target Java 11:
 
-```xml
+```
     <properties>
         <maven.compiler.release>11</maven.compiler.release>
     </properties>

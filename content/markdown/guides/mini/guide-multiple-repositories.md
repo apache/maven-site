@@ -24,7 +24,7 @@ under the License.
 
  There are two different ways that you can specify the use of multiple repositories. The first way is to specify in a POM which repositories you want to use. That is supported both inside and outside of build profiles:
 
-```xml
+```
 
 <project>
 ...
@@ -49,7 +49,7 @@ under the License.
 
  The other way you can specify multiple repositories is by creating a profile in the `${user.home}/.m2/settings.xml` or `${maven.home}/conf/settings.xml` file like the following:
 
-```xml
+```
 
 <settings>
  ...

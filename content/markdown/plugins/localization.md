@@ -64,7 +64,7 @@ under the License.
 
 - Configure a project to use the latest SNAPSHOT version of the plugin you are working on. Also configure the project to produce a site in the language you are adding a translation for. For Spanish, as we used in the example above, it would look like this:
 
-```xml
+```
   <build>
     <plugins>
       <plugin>

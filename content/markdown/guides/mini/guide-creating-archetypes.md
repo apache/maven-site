@@ -39,7 +39,7 @@ under the License.
 
  An example `pom.xml` for an archetype artifact looks as follows:
 
-```xml
+```
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -69,7 +69,7 @@ under the License.
 
  The [archetype descriptor](/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html) is a file called `archetype-metadata.xml` which must be located in the `src/main/resources/META-INF/maven/` directory. An example of an archetype descriptor can be found in the quickstart archetype:
 
-```xml
+```
 
 <archetype-descriptor
         xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -103,7 +103,7 @@ under the License.
 
  Thus the quickstart archetype shown above defines the following directory structure:
 
-```xml
+```
 
 archetype
 |-- pom.xml
@@ -131,7 +131,7 @@ archetype
 
  An example for a prototype `pom.xml` is:
 
-```xml
+```
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">

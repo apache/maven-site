@@ -117,7 +117,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  Profiles can be activated in the Maven settings, via the `<activeProfiles>` section. This section takes a list of `<activeProfile>` elements, each containing a profile-id inside.
 
-```xml
+```
 <settings>
   ...
   <activeProfiles>
@@ -137,7 +137,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  The following configuration will trigger the profile when the JDK's version _starts with_ "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"), in particular it _won't be active_ for **newer** versions like "1.8" or "11":
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -150,7 +150,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  Ranges can also be used as of Maven 2.1 (refer to the [Enforcer Version Range Syntax](/enforcer/enforcer-rules/versionRanges.html) for more information). Range values must start with either `\[` or `(` otherwise the value is interpreted as prefix. The following honours versions 1.3, 1.4 and 1.5.
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -167,7 +167,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  This next one will activate based on the detected operating system. See the [Maven Enforcer Plugin](/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -187,7 +187,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  The profile below will be activated when the system property "debug" is specified with any value:
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -202,7 +202,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  The following profile will be activated when the system property "debug" is not defined at all:
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -217,7 +217,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
  The following profile will be activated when the system property "debug" is not defined, or is defined with a value which is not "true".
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -240,7 +240,7 @@ mvn groupId:artifactId:goal -Ddebug=false
 
  The next example will trigger the profile when the system property "environment" is specified with the value "test":
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -266,7 +266,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 
  Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing property `packaging`. This is only useful where the profile activation is defined in a common parent POM which is reused among multiple Maven projects. The next example will trigger the profile when a project with packaging `war` is built:
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -284,7 +284,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 
  This example will trigger the profile when the generated file `target/generated-sources/axistools/wsdl2java/org/apache/maven` is missing.
 
-```xml
+```
 <profiles>
   <profile>
     <activation>
@@ -301,7 +301,7 @@ mvn groupId:artifactId:goal -Denvironment=test
 
  Profiles can also be active by default using a configuration like the following:
 
-```xml
+```
 <profiles>
   <profile>
     <id>profile-1</id>
@@ -399,7 +399,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
  Example:
 
-```xml
+```
 <project>
   ...
   <repositories>
@@ -452,7 +452,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
  External property definition concerns any property value defined outside the `pom.xml` but not defined in a corresponding profile inside it. The most obvious usage of properties in the POM is in plugin configuration. While it is certainly possible to break project portability without properties, these critters can have subtle effects that cause builds to fail. For example, specifying appserver paths in a profile that is specified in the `settings.xml` may cause your integration test plugin to fail when another user on the team attempts to build without a similar `settings.xml`. Consider the following `pom.xml` snippet for a web application project:
 
-```xml
+```
 <project>
   ...
   <build>
@@ -474,7 +474,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
  Now, in your local `${user.home}/.m2/settings.xml`, you have:
 
-```xml
+```
 <settings>
   ...
   <profiles>
@@ -505,7 +505,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
  In addition to the above portability-breaker, it's easy to fail to cover all cases with your profiles. When you do this, you're usually leaving one of your target environments high and dry. Let's take the example `pom.xml` snippet from above one more time:
 
-```xml
+```
 <project>
   ...
   <build>
@@ -527,7 +527,7 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
 
  Now, consider the following profile, which would be specified inline in the `pom.xml`:
 
-```xml
+```
 <project>
   ...
   <profiles>

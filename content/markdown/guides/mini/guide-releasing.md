@@ -66,7 +66,7 @@ mvn release:prepare \
 
  The previous goal parameters can be supplied while executing maven on the commandline, (as shown in the previous example) or they can be defined and maintained within the project's _pom.xml_ file. The location of the current development trunk is defined within the _pom.xml_ file in the following form:
 
-```xml
+```
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -103,7 +103,7 @@ mvn release:prepare \
 
  To define the tagBase parameter within the _pom.xml_ file a tagBase element must be defined within a _plugins/plugin/configuration_ element. The following example shows how this would look within the _pom.xml_ file.
 
-```xml
+```
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
@@ -199,7 +199,7 @@ checkpoint.check-in-development-version=OK
 
  The following is an example of how a distributionManagement element can be configured within a project _pom.xml_ file.
 
-```xml
+```
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>

@@ -56,7 +56,7 @@ under the License.
 
  In general, you need to include `maven-plugin-testing-harness` as a dependency, and create a \*MojoTest (by convention) class which `extends AbstractMojoTestCase`.
 
-```xml
+```
 ...
   <dependencies>
     ...
@@ -71,7 +71,7 @@ under the License.
 ...
 ```
 
-```java
+```
 public class YourMojoTest
     extends AbstractMojoTestCase
 {
@@ -117,7 +117,7 @@ public class YourMojoTest
 
  You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/) how there are integration tests are written.
 
-```xml
+```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...

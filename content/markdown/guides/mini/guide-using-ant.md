@@ -24,7 +24,7 @@ under the License.
 
  The example above illustrates how to bind an ant script to a lifecycle phase. You can add a script to each lifecycle phase, by duplicating the _execution/_ section and specifying a new phase.
 
-```xml
+```
 
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -64,7 +64,7 @@ under the License.
 
  So a concrete example would be something like the following:
 
-```xml
+```
 
 <project>
   <modelVersion>4.0.0</modelVersion>

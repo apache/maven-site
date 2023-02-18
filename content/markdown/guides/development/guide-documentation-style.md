@@ -73,7 +73,7 @@ under the License.
 
  The following is an example of how the distribution management of the Maven site is configured.
 
-```xml
+```
 <project>
   ...
   <distributionManagement>

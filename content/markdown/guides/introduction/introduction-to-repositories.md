@@ -93,7 +93,7 @@ under the License.
 
  Using the internal repository is quite simple. Simply make a change to add a `repositories` element:
 
-```xml
+```
 
 <project>
   ...

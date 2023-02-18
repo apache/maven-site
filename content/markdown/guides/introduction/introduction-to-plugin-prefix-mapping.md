@@ -38,7 +38,7 @@ under the License.
 
  If your plugin's artifactId fits this pattern, Maven will automatically map your plugin to the correct prefix in the metadata stored within your plugin's groupId path on the repository. However, if you want to customize the prefix used to reference your plugin, you can specify the prefix directly through a configuration parameter on the `maven-plugin-plugin` in your plugin's POM:
 
-```xml
+```
 <project>
   ...
   <build>
@@ -82,7 +82,7 @@ mvn somePrefix:goal
 
  As it turns out, this is simple. In the Maven settings file (per-user: `${user.home}/.m2/settings.xml`; global: `${maven.home}/conf/settings.xml`), you can provide a custom **pluginGroups** section, listing the plugin groupIds you want to search (each groupId goes in its own **pluginGroup** sub-element). For example, if my project uses a Modello model file, I might have the following in my settings:
 
-```xml
+```
 <pluginGroups>
   <pluginGroup>org.codehaus.modello</pluginGroup>
 </pluginGroups>

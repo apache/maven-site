@@ -38,7 +38,7 @@ under the License.
 
  A dependency is declared optional by setting the `<optional>` element to true in its dependency declaration:
 
-```xml
+```
 
 <project>
   ...
@@ -86,7 +86,7 @@ Project-X -> Project-A
 
  Add an `<exclusions>` element in the `<dependency>` element by which the problematic jar is included.
 
-```xml
+```
 
 <project>
   ...
@@ -129,7 +129,7 @@ B, C, D, E, F
 
  Suppose you don't want project D and its dependencies to be added to Project A's classpath because some of Project-D's dependencies are missing from the repository, and you don't need the functionality in Project-B that depends on Project-D anyway. Project-B's developers could have marked the dependency on Project-D `<optional>true</optional>`:
 
-```xml
+```
 <dependency>
   <groupId>sample.ProjectD</groupId>
   <artifactId>ProjectD</artifactId>
@@ -140,7 +140,7 @@ B, C, D, E, F
 
  Unfortunately, they didn't. As a last resort, you can exclude it on your own POM for Project-A like this:
 
-```xml
+```
 
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -204,7 +204,7 @@ Project-A
 
  Exclusions work on the entire dependency graph below the point where they are declared. If you want to exclude Project-E instead of Project-D, simply change the exclusion to point at Project-E, but you don't move the exclusion down to Project-D. You cannot change Project-D's POM. If you could, you would use optional dependencies instead of exclusions, or split Project-D up into multiple subprojects, each with nothing but normal dependencies.
 
-```xml
+```
 
 <project>
   <modelVersion>4.0.0</modelVersion>

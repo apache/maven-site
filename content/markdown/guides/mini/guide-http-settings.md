@@ -73,7 +73,7 @@ under the License.
 
  In all HTTP transports, you can add your custom HTTP headers like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -97,7 +97,7 @@ under the License.
 
  All transport implementations that perform some network access allow the configuration of a several timeouts, for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -174,7 +174,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given server, or for only one method. To configure all methods for a server, use the following section of the `settings.xml` file:
 
-```xml
+```
 <settings>
   [...]
   <servers>
@@ -194,7 +194,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  On the other hand, if you can live with the default configuration for most requests - say, HEAD and GET requests, which are used to check for the existence of a file and retrieve a file respectively - maybe you only need to configure the PUT method:
 
-```xml
+```
 <settings>
   [...]
   <servers>
@@ -220,7 +220,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  To turn off this default behavior, simply disable the default headers. Then, respecify the other headers that you are still interested in, like this:
 
-```xml
+```
 <settings>
   [...]
   <servers>
@@ -294,7 +294,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  Using the above syntax, you can configure preemptive authentication for PUT requests using the boolean HttpClient parameter `http.authentication.preemptive`, like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -318,7 +318,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  Another option is to make write it like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -343,7 +343,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  Like the example above, telling the HttpClient to ignore cookies for all methods of request is a simple matter of configuring the `http.protocol.cookie-policy` parameter (it uses a regular string value, so no special syntax is required):
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -375,7 +375,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  In all HTTP Wagon implementations, you can add your own HTTP headers like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -399,7 +399,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  All wagon implementations that extend the `AbstractWagon` class, including those for SCP, HTTP, FTP, and more, allow the configuration of a connection timeout, to allow the user to tell Maven how long to wait before giving up on a connection that has not responded. This option is preserved in the HttpClient-based wagon, but this wagon also provides a fine-grained alternative configuration that can allow you to specify timeouts per-method for a given server. The old configuration option - which is still supported - looks like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -414,7 +414,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  ...while the new configuration option looks more like this:
 
-```xml
+```
 <settings>
   <servers>
     <server>
@@ -437,7 +437,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
  With Wagon 2.0 and Apache Maven 3.0.4, a default timeout of 30 minutes comes by default. If you want to change this value, you can add the following setup in your settings:
 
-```xml
+```
 <settings>
   <servers>
     <server>

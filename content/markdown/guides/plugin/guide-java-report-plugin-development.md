@@ -34,7 +34,7 @@ under the License.
 
  1  A regular Maven project usually invokes _reporting goals_ of a plugin by declaring such plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
-```xml
+```
 <project>
   ...
   <reporting>
@@ -103,7 +103,7 @@ under the License.
 
 #### ./pom.xml
 
-```xml
+```
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -207,7 +207,7 @@ under the License.
 
 #### ./src/main/java/com/mycompany/maven/SimpleReport.java
 
-```java
+```
 package com.mycompany.maven;
 
 import java.util.Locale;
@@ -326,7 +326,7 @@ mvn install
 
  To make sure everything went well and is properly declared, you can now execute the below command in any other Maven project directory:
 
-```bash
+```
 $ mvn com.mycompany.maven:simple-maven-plugin:1.0-SNAPSHOT:help
 
 [INFO] --- simple-maven-plugin:1.0-SNAPSHOT:help (default-cli) @ hardware-connectors ---
@@ -355,7 +355,7 @@ simple:simple
 
  To invoke the _report Mojo_ of our plugin in another Maven project, we just need to declare the plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
-```xml
+```
 <project>
   ...
   <reporting>
@@ -381,7 +381,7 @@ simple:simple
 
  You will use the [`Sink`](/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) object associated to the report:
 
-```java
+```
 Sink sink = getSink();
 ```
 
@@ -417,7 +417,7 @@ Sink sink = getSink();
 
  You may need to create not just one HTML file, but several of them (like Javadoc produces one HTML file for each Java class). To do so, you will need to get a new _Sink_ for each HTML file you need to produce. This is achieved by using the [`SinkFactory`](/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/SinkFactory.html) object that you can easily obtain with the [`getSinkFactory()`](/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html#getSinkFactory) method of your [`AbstractMavenReport`](/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html) instance, as in the example below.
 
-```java
+```
 public class SimpleReport extends AbstractMavenReport {
 
   ...

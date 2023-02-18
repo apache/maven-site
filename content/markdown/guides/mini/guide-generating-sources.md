@@ -27,7 +27,7 @@ under the License.
 
  So this is all fine and dandy, we have a plugin that wants to generate some sources from a Antlr4 grammar but how do we use it. You need to specify that you want to use it in your POM:
 
-```xml
+```
 
 <project>
   ...
