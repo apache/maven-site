@@ -60,7 +60,7 @@ under the License.
 
  - Check out the source code for the plugin you want to add a translation to.
 
- - Find the resource bundles that needs to be translated. They are often found in the `src/main/resources` directory.
+ - Find the resource bundles that needs to be translated. They are often found in the `src/main/resources` folder.
 
  - Copy the basefile for the bundle, i.e. the one **without** a language extension. The copy should have the same name as the original file, except for the addition of a language extension. If, for example, you want to translate the Checkstyle Plugin into Spanish, you would copy `src/main/resources/checkstyle-report.properties` to `src/main/resources/checkstyle-report_es.properties`.
 

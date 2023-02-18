@@ -46,7 +46,7 @@ mvn install:install-file -Dfile=<path-to-file> -DgroupId=<group-id> -DartifactId
 mvn install:install-file -Dfile=<path-to-file> -DpomFile=<path-to-pomfile>
 ```
 
- With version 2.5 of the maven-install-plugin, it can get even simpler: if the JAR was built by Apache Maven, it'll contain a pom.xml in a subdirectory of the META-INF/ directory, which will be read by default. In that case, all you need to do is:
+ With version 2.5 of the maven-install-plugin, it can get even simpler: if the JAR was built by Apache Maven, it'll contain a pom.xml in a subfolder of the META-INF/ directory, which will be read by default. In that case, all you need to do is:
 
 
 

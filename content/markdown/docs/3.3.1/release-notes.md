@@ -58,7 +58,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 
 * The handling of the [`toolchains.xml`][MNG-3891] file has been adjusted with the 
   handling of `settings.xml` which means it will be searched within the
-  `${maven.home}/conf/` directory and furthermore within the `${user.home}/.m2/` directory.
+  `${maven.home}/conf/` folder and furthermore within the `${user.home}/.m2/` folder.
 
 * For a better understanding and as an example of the `toolchains.xml` file has been added
   to the [Maven distribution][MNG-5745].
@@ -75,7 +75,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   it simpler to use.
 
 * The old way (up to Maven 3.2.5) was to create a jar (must be shaded if you have other dependencies)
-  which contains the extension and put it manually into the `${MAVEN_HOME}/lib/ext` directory. 
+  which contains the extension and put it manually into the `${MAVEN_HOME}/lib/ext` folder. 
   This means you had to change the Maven installation. The consequence was that everyone who likes 
   to use this needed to change it's installation and makes the on-boarding for a developer much 
   more inconvenient. The other option was to give the path to the jar on command line via 
@@ -124,8 +124,8 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   --fail-at-end`. So you only have to call maven just by using `mvn clean
   package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss
   the `-T3 -U --fail-at-end` options. The `${maven.projectBasedir}/.mvn/maven.config` 
-  is located in the `${maven.projectBasedir}/.mvn/` directory which is in the root 
-  of a multi module build. This directory is part of the project and will be checked 
+  is located in the `${maven.projectBasedir}/.mvn/` folder which is in the root 
+  of a multi module build. This folder is part of the project and will be checked 
   in into your version control. This results in being picked by everybody who 
   checks out the project and no need to remember to call this project 
   via `mvn -T3 -U --fail-at-end clean package` instead of `mvn clean package`.

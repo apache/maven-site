@@ -287,7 +287,7 @@ public MyMojo extends AbstractMojo
 
  a Embedded Maven Invocations
 
-   Other tools, most notably IDEs, that run Maven under the hood may have set the current working directory to their installation directory or whatever they like.
+   Other tools, most notably IDEs, that run Maven under the hood may have set the current working directory to their installation folder or whatever they like.
 
 
 

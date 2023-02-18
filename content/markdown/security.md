@@ -77,7 +77,7 @@ an arbitrary file write generic vulnerability, that can be achieved using a
 specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
 path traversal filenames. So when the filename gets concatenated to the 
 target extraction directory, if the extraction tool used does not make 
-sufficient checks, the final path ends up outside of the target directory.
+sufficient checks, the final path ends up outside of the target folder.
 The affected plugins use plexus-archiver to unpack dependencies to disk
 and have been identified as potential triggers for exposing the vulnerability
 if dependencies are compromised.

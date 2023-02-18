@@ -169,7 +169,7 @@ mvn release:prepare \
 
  - **A Desired SCM provider tag name**. 
 
-   This is a SCM provider specific value, in the case of the Subversion SCM provider this value is equal to the directory name that will appear under the URL provided by the the tagBase parameter.
+   This is a SCM provider specific value, in the case of the Subversion SCM provider this value is equal to the folder name that will appear under the URL provided by the the tagBase parameter.
 
 
 

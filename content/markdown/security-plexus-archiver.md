@@ -23,7 +23,7 @@ an arbitrary file write generic vulnerability, that can be achieved using a
 specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
 path traversal filenames. So when the filename gets concatenated to the 
 target extraction directory, if the extraction tool used does not make 
-sufficient checks, the final path ends up outside of the target directory.
+sufficient checks, the final path ends up outside of the target folder.
 
 The Apache Maven team has been informed because the plexus-archiver library 
 did not make sufficient checks and it is a library used by most of the 

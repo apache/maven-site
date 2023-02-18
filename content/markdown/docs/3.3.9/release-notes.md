@@ -123,7 +123,7 @@ Bugs
    `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
 
  * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the 
-   `${maven.projectBasedir}/.mvn` directory of the project. There you can use the `maven.config` 
+   `${maven.projectBasedir}/.mvn` folder of the project. There you can use the `maven.config` 
    file to store command line options instead of repeating them every time you call Maven.
    In cases where this file has been empty Maven ended with a failure. This has been fixed
    with [MNG-5816][MNG-5816].
@@ -147,7 +147,7 @@ Bugs
    has been fixed with [MNG-5721].
 
  * There had been several issues with the `mvn` script which are for example
-   wrong locating the `.mvn` directory, nonportable shell constructs, wrongly setting
+   wrong locating the `.mvn` folder, nonportable shell constructs, wrongly setting
    'maven.multiModuleProjectDirectory' variable or directories which contain spaces. Those
    issues have been fixed [MNG-5786][MNG-5786], [MNG-5858][MNG-5858], 
    [MNG-5882][MNG-5882] and [MNG-5884][MNG-5884].
