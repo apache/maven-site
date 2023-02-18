@@ -74,7 +74,7 @@ mvn site
 
 - `<issueManagement>` - describes the system used for reporting problems and modification requests
 
-```
+```xml
 <project>
   [...]
   <issueManagement>
@@ -89,7 +89,7 @@ mvn site
 
 - `<mailingLists>` - lists where other users or the developers can be contacted for help and discussions
 
-```
+```xml
 <project>
   [...]
   <mailingLists>
@@ -110,7 +110,7 @@ mvn site
 
 - `<licenses>` - plugin license
 
-```
+```xml
 <project>
   [...]
   <licenses>
@@ -126,7 +126,7 @@ mvn site
 
 - `<scm>` - the source code management configuration - a plugin without this would raise suspicion, might not be OSS
 
-```
+```xml
 <project>
   [...]
   <scm>
@@ -140,7 +140,7 @@ mvn site
 
 - `<organization>` - the organization maintaining the plugin, just in case we need someone to blame
 
-```
+```xml
 <project>
   [...]
   <organization>
@@ -155,7 +155,7 @@ mvn site
 
  The Maven Plugin Plugin is responsible for generating the Plugin Info site and needs to be added to the `<reporting>` section unless it is already inherited from a parent POM:
 
-```
+```xml
 <project>
   [...]
   <reporting>
@@ -175,7 +175,7 @@ mvn site
 
 - all `@parameter` fields should have a descriptive comment, informative enough that even a regular user can understand
 
-```
+```java
     [...]
     /**
      * Put something informative here that a regular user can understand.
@@ -188,7 +188,7 @@ mvn site
 
 - class level comment should explain what the goal does
 
-```
+```java
 [...]
 /**
  * Everything here will show up on the top of the generated plugin info page.
@@ -215,7 +215,7 @@ public class ExampleMojo
 
  The site descriptor describes the navigation links and can be found in `src/site/site.xml`. Below is the suggested site descriptor template.
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
   <body>
@@ -303,7 +303,7 @@ Plugin Name
 
    A well documented project always collates frequently asked questions which are usually located in `src/site/fml/faq.fml`. The example below provides a template for your FAQ:
 
-```
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <faqs id="FAQ" title="Frequently Asked Questions">
   <part id="General">
@@ -339,7 +339,7 @@ Plugin Name
 
    To enable javadoc for your plugin add the following to your `pom.xml`
 
-```
+```xml
 <project>
   [...]
   <build>
@@ -372,7 +372,7 @@ Plugin Name
 
    To enable source code cross-references add the following to your `pom.xml`
 
-```
+```xml
 <project>
   [...]
   <build>

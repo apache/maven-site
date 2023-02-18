@@ -64,7 +64,7 @@ maven.repo.remote=https://my.server.com/maven,http://www.ibiblio.org/maven
 
  The following command line imports the certififcate authority's certificate into a JKS formatted key store named `trust.jks`, the _trust store_.
 
-```
+```bash
 $> keytool -v -alias mavensrv -import \
      -file /somewhere/in/filesystem/CACert.cert\
       -keystore trust.jks
@@ -104,7 +104,7 @@ $>
 
  They may be set either on maven's command-line, in `.mavenrc` file or in `MAVEN_OPTS` environment variable. For the setting defined in this document, here is an example `.mavenrc` file:
 
-```
+```bash
 MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
                      -Djavax.net.ssl.trustStorePassword=  \
                      -Djavax.net.ssl.keyStore=/home/directory/mycertificate.p12 \

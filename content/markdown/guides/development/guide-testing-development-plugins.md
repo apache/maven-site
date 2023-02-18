@@ -40,7 +40,7 @@ under the License.
 
  The first step is to include this in your project:
 
-```
+```xml
 <project>
   ...
   <pluginRepositories>
@@ -61,7 +61,7 @@ under the License.
 
 - You can have Maven automatically check for updates on a given interval, for example:
 
-```
+```xml
 <project>
   ...
   <pluginRepositories>
@@ -84,7 +84,7 @@ under the License.
 
  You need to modify your `${user.home}/.m2/settings.xml` file to include two new profiles and then when you need access to the plugin snapshots use `-Papache`. The profile only needs to be enabled once so that the plugins can be downloaded into you local repository. Once in your local repository Maven can successfully resolve the dependencies and the profile no longer needs to be activated.
 
-```
+```xml
 <settings>
   ...
   <profiles>

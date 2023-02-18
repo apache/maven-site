@@ -31,7 +31,7 @@ under the License.
 
  **It is highly recommended to use Maven's [password encryption capabilities](../guides/mini/guide-encryption.html) for your passwords**.
 
-```
+```xml
 <settings>
   ...
   <servers>
@@ -56,7 +56,7 @@ under the License.
 
  To be able to send out announcements of Maven releases you need to add a couple of properties to the `apache-release` profile.
 
-```
+```xml
 <settings>
   ...
   <profiles>

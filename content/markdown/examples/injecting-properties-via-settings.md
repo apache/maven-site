@@ -28,7 +28,7 @@ under the License.
 
 ### Plugin Configuration
 
-```
+```xml
 <project>
   [...]
   <build>
@@ -47,7 +47,7 @@ under the License.
 
 ### `settings.xml`
 
-```
+```xml
 <settings>
   [...]
   <profiles>

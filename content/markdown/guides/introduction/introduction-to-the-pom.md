@@ -83,7 +83,7 @@ under the License.
 
  Here's an example:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -125,7 +125,7 @@ under the License.
 
  As an example, let us reuse our previous artifact, com.mycompany.app:my-app:1. And let us introduce another artifact, com.mycompany.app:my-module:1.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -152,7 +152,7 @@ under the License.
 
  **com.mycompany.app:my-module:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -172,7 +172,7 @@ under the License.
 
  Alternatively, if you want the groupId or the version of your modules to be the same as their parents, you can remove the groupId or the version identity of your module in its POM.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -210,7 +210,7 @@ under the License.
 
  To address this directory structure (or any other directory structure), we would have to add the `<relativePath>` element to our parent section.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -245,7 +245,7 @@ under the License.
 
  **com.mycompany.app:my-app:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -257,7 +257,7 @@ under the License.
 
  **com.mycompany.app:my-module:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -280,7 +280,7 @@ under the License.
 
  If we are to aggregate my-module into my-app, we would only have to modify my-app.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -321,7 +321,7 @@ under the License.
 
  The answer? - the same way as Example 3, by specifying the path to the module.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -360,7 +360,7 @@ under the License.
 
  **com.mycompany.app:my-app:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -372,7 +372,7 @@ under the License.
 
  **com.mycompany.app:my-module:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -398,7 +398,7 @@ under the License.
 
  **com.mycompany.app:my-app:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -415,7 +415,7 @@ under the License.
 
  **com.mycompany.app:my-module:1's POM**
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
@@ -440,7 +440,7 @@ under the License.
 
  For example, to access the `project.version` variable, you would reference it like so:
 
-```
+```xml
   <version>${project.version}</version>
 ```
 
@@ -463,7 +463,7 @@ under the License.
 
  The format of the build timestamp can be customized by declaring the property `maven.build.timestamp.format` as shown in the example below:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>
@@ -479,7 +479,7 @@ under the License.
 
  You are also able to reference any properties defined in the project as a variable. Consider the following example:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>

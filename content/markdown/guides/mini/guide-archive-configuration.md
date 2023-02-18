@@ -31,7 +31,7 @@ under the License.
 
  To disable the generation of these files, include the following configuration for your plugin (in this example, the WAR plugin is used):
 
-```
+```xml
 <project>
   ...
   <build>

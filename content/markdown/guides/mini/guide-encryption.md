@@ -77,7 +77,7 @@ mvn --encrypt-master-password <password>
 
  Store this password in the `${user.home}/.m2/settings-security.xml`; it should look like
 
-```
+```xml
 <settingsSecurity>
   <master>{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}</master>
 </settingsSecurity>
@@ -103,7 +103,7 @@ mvn --encrypt-password <password>
 
  Copy and paste it into the servers section of your `settings.xml` file. This will look like:
 
-```
+```xml
 <settings>
 ...
   <servers>
@@ -121,7 +121,7 @@ mvn --encrypt-password <password>
 
  Please note that password can contain any information outside of the curly brackets, so that the following will still work:
 
-```
+```xml
 <settings>
 ...
   <servers>
@@ -149,7 +149,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
  Create the master password exactly as described above, and store it on a removable drive, for instance on OSX, my USB drive mounts as `/Volumes/mySecureUsb`, so I store
 
-```
+```xml
 <settingsSecurity>
   <master>{jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+9EF1iFQyJQ=}</master>
 </settingsSecurity>
@@ -159,7 +159,7 @@ mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
 
  And then I create `${user.home}/.m2/settings-security.xml` with the following content:
 
-```
+```xml
 <settingsSecurity>
   <relocation>/Volumes/mySecureUsb/secure/settings-security.xml</relocation>
 </settingsSecurity>

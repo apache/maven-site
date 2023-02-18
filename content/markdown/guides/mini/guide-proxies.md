@@ -26,7 +26,7 @@ under the License.
 
  The `nonProxyHosts` setting accepts wild cards, and each host not to proxy is separated by the | character. This matches the JDK configuration equivalent.
 
-```
+```xml
 
 <settings>
   .

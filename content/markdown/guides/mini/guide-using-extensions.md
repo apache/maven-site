@@ -46,7 +46,7 @@ under the License.
 
    Example:
 
-```
+```xml
 
 <project>
   ...
@@ -71,7 +71,7 @@ under the License.
 
    Example:
 
-```
+```xml
 
 <project>
   ...

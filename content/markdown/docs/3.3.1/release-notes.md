@@ -86,7 +86,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   you can define an `${maven.projectBasedir}/.mvn/extensions.xml` file which looks
   like the following:
 
-``` xml
+```xml
 <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
   <extension>
@@ -161,7 +161,7 @@ mvn exec:java
 
 The configuration which is used here can be defined in your pom by using an execution id `default-cli`.
 
-```
+```xml
 <project...>
 
   <build>
@@ -187,7 +187,7 @@ The configuration which is used here can be defined in your pom by using an exec
 Starting with this Maven release you can now define several configuration for different
 executions on command like the following:
 
-```
+```xml
 <project...>
 
   <build>

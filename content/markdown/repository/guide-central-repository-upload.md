@@ -48,7 +48,7 @@ under the License.
 
 ### A basic sample
 
-```
+```xml
 
 <project>
   <modelVersion>4.0.0</modelVersion>

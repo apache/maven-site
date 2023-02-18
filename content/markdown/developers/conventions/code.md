@@ -120,7 +120,7 @@ under the License.
 
 - **Line Breaks**: Always use a new line with indentation for complex XML types and no line break for simple XML types. Always use a new line to separate XML sections or blocks, for instance:
 
-```
+```xml
 <aTag>
   <simpleType>This is a simple type</simpleType>
 
@@ -132,13 +132,13 @@ under the License.
 
    In some cases, adding comments could improve the readability of blocks, for instance:
 
-```
+```xml
     <!-- Simple XML documentation                                               -->
 ```
 
    or
 
-```
+```xml
     <!-- ====================================================================== -->
     <!-- Block documentation                                                    -->
     <!-- ====================================================================== -->
@@ -154,7 +154,7 @@ under the License.
 
  The following is the recommended ordering for all Maven POM files:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion/>
 

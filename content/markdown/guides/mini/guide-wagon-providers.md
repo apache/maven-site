@@ -44,7 +44,7 @@ mvn -Dmaven.wagon.provider.http=httpclient clean install
 
  To specify which Wagon provider to use for a particular server, modify your `settings.xml` file to add the `<wagonProvider>` configuration to your `<server>` entry, like the following:
 
-```
+```xml
 <settings>
   [...]
   <servers>
@@ -61,7 +61,7 @@ mvn -Dmaven.wagon.provider.http=httpclient clean install
 
  Maven 2.2.1 provides two providers for HTTP/HTTPS Wagons: `lightweight` and `httpclient`. If you add a new HTTP Wagon implementation via build extension, you'll need to make sure the extension binds its Wagon components to role-hints of the form `<protocol>-<provider>` in order to allow users to specify your alternative Wagon provider. For instance, the HttpClient HTTP Wagon component definition looks like this:
 
-```
+```xml
 <component>
   <role>org.apache.maven.wagon.Wagon</role>
   <role-hint>http-httpclient</role-hint>

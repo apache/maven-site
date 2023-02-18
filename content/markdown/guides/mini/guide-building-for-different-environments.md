@@ -53,7 +53,7 @@ src/
 
    In the project descriptor, you need to configure the different profiles. Only the test profile is showed here.
 
-```
+```xml
  <profiles>
    <profile>
      <id>test</id>

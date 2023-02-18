@@ -39,7 +39,7 @@ under the License.
 
 #### Java
 
-```
+```java
     // START SNIPPET: snip-id
     public static void main( String[] args )
     {
@@ -50,7 +50,7 @@ under the License.
 
 #### XML
 
-```
+```xml
   <!-- START SNIPPET: snip-id -->
   <navigation-rule>
     <from-view-id>/logon.jsp</from-view-id>

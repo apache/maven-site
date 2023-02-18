@@ -75,7 +75,7 @@ under the License.
 
  Maven plugins (build and reporting) are configured by specifying a `<configuration>` element where the child elements of the `<configuration>` element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of one or more Mojos where a Mojo maps to a goal.) Say, for example, you have a Mojo that performs a query against a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
-```
+```java
 @Mojo( name = "query" )
 public class MyQueryMojo
     extends AbstractMojo
@@ -99,7 +99,7 @@ public class MyQueryMojo
 
  To configure the Mojo from your POM with the desired URL, timeout and options you might have something like the following:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -151,7 +151,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  Mapping value types, like Boolean or Integer, is very simple. The `<configuration>` element might look like the following:
 
-```
+```xml
 <project>
 ...
 <configuration>
@@ -192,7 +192,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  Mapping complex types is also fairly straight forward. Let's look at a simple example where we are trying to map a configuration for Person object. The `<configuration>` element might look like the following:
 
-```
+```xml
 <project>
 ...
 <configuration>
@@ -213,7 +213,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
 - If you wish to have the object to be instantiated live in a different package or have a more complicated name, specify this using an `implementation` attribute like the following:
 
-```
+```xml
 <project>
 ...
 <configuration>
@@ -234,7 +234,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
  Mapping to collections works in much the same way as mapping to arrays. Each item is given in the XML as dedicated element. The element name does not matter in that case. So if you have a mojo like the following:
 
-```
+```java
 public class MyAnimalMojo
     extends AbstractMojo
 {
@@ -251,7 +251,7 @@ public class MyAnimalMojo
 
  where you have a field named `animals` then your configuration for the plug-in would look like the following:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -287,7 +287,7 @@ public class MyAnimalMojo
 
  Since Maven 3.3.9 ([MNG-5440](https://issues.apache.org/jira/browse/MNG-5440)), you can list individual items alternatively as comma-separated list in the XML value of animals directly. This approach is also used if configuring collection/array parameters via command line The following example is equivalent to the example above:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -311,14 +311,14 @@ public class MyAnimalMojo
 
  In the same way, you could define maps like the following:
 
-```
+```java
 ...
     @Parameter
     private Map<String,String> myMap;
 ...
 ```
 
-```
+```xml
 <project>
 ...
   <configuration>
@@ -339,14 +339,14 @@ public class MyAnimalMojo
 
  Properties should be defined like the following:
 
-```
+```java
 ...
     @Parameter
     private Properties myProperties;
 ...
 ```
 
-```
+```xml
 <project>
 ...
   <configuration>
@@ -375,7 +375,7 @@ public class MyAnimalMojo
 
  You can also configure a mojo using the `<executions>` tag. This is most commonly used for mojos that are intended to participate in some phases of the [build lifecycle](../introduction/introduction-to-the-lifecycle.html). Using `MyQueryMojo` as an example, you may have something that will look like:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -429,7 +429,7 @@ public class MyAnimalMojo
 
  How about if we have a multiple executions with different phases bound to it? How do you think will it behave? Let us use the example POM above again, but this time we shall bind `execution2` to a phase.
 
-```
+```xml
 <project>
   ...
   <build>
@@ -470,7 +470,7 @@ public class MyAnimalMojo
 
  Now, let us have another mojo example which shows a default lifecycle phase binding.
 
-```
+```java
 @Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
 public class MyBoundQueryMojo
     extends AbstractMojo
@@ -494,7 +494,7 @@ public class MyBoundQueryMojo
 
  From the above mojo example, `MyBoundQueryMojo` is by default bound to the package phase (see the `@phase` notation). But if we want to execute this mojo during the install phase and not with package we can rebind this mojo into a new lifecycle phase using the `<phase>` tag under `<execution>`.
 
-```
+```xml
 <project>
   ...
   <build>
@@ -541,7 +541,7 @@ mvn myquery:query@execution1
 
  For instance, the Maven Antrun Plugin version 1.2 uses Ant version 1.6.5, if you want to use the latest Ant version when running this plugin, you need to add `<dependencies>` element like the following:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -574,7 +574,7 @@ mvn myquery:query@execution1
 
  By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use the `<inherited>` tag:
 
-```
+```xml
 <project>
   ...
   <build>
@@ -608,7 +608,7 @@ mvn myquery:query@execution1
 
  You can configure a reporting plugin using the `<reportSets>` tag. This is most commonly used to generate reports selectively when running `mvn site`. The following will generate only the project team report.
 
-```
+```xml
 <project>
   ...
   <reporting>
@@ -635,7 +635,7 @@ mvn myquery:query@execution1
 
  1 To exclude all reports, you need to use:
 
-```
+```xml
   <reportSets>
     <reportSet>
       <reports/>
@@ -649,7 +649,7 @@ mvn myquery:query@execution1
 
  Similar to the build plugins, to break the inheritance, you can use the `<inherited>` tag:
 
-```
+```xml
 <project>
   ...
   <reporting>

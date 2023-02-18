@@ -96,7 +96,7 @@ under the License.
 
  Users can add dependencies to this classloader by adding dependencies to a plugin in the `[plugins/plugin](/ref/current/maven-model/maven.html#class_plugin)` section of their project `pom.xml`. Here is a sample of adding `ant-nodeps` to the plugin classloader of the Antrun Plugin and hereby enabling the use of additional/optional Ant tasks:
 
-```
+```xml
             <plugin>
               <groupId>org.apache.maven.plugins</groupId>
               <artifactId>maven-antrun-plugin</artifactId>

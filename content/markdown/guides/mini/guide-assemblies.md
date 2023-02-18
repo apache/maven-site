@@ -25,7 +25,7 @@ under the License.
 
  The assembly mechanism in Maven provides an easy way to create distributions using a assembly descriptor and dependency information found in you POM. In order to use the assembly plug-in you need to configure the assembly plug-in in your POM and it might look like the following:
 
-```
+```xml
 <project>
   <parent>
     <artifactId>maven</artifactId>
@@ -69,7 +69,7 @@ under the License.
 
  This is the most typical usage of the assembly plugin where you are creating a distribution for standard use.
 
-```
+```xml
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
   <id>bin</id>
@@ -107,7 +107,7 @@ under the License.
 
  How to use such pre-defined assembly descriptors is described in the [documentation of maven-assembly-plugin](/plugins/maven-assembly-plugin/usage.html#configuration).
 
-```
+```xml
 <assembly 
   xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 
@@ -147,7 +147,7 @@ under the License.
 
  If you like to create a source distribution package the best solution is to use the [pre-defined assembly descriptor src](/plugins/maven-assembly-plugin/descriptor-refs.html#src) for such purposes.
 
-```
+```xml
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
   <id>src</id>

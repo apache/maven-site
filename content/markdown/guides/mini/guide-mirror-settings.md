@@ -34,7 +34,7 @@ under the License.
 
  To configure a mirror of a given repository, you provide it in your settings file (`${user.home}/.m2/settings.xml`), giving the new repository its own `id` and `url`, and specify the `mirrorOf` setting that is the ID of the repository you are using a mirror of. For example, the ID of the main Maven Central repository included by default is `central`, so to use the different mirror instance, you would configure the following:
 
-```
+```xml
 <settings>
   ...
   <mirrors>
@@ -65,7 +65,7 @@ under the License.
 
  **Note:** This feature is only available in Maven 2.0.5+.
 
-```
+```xml
 <settings>
   ...
   <mirrors>
@@ -112,7 +112,7 @@ under the License.
 
 - `*,!repo1` = everything except repo1
 
-```
+```xml
 <settings>
   ...
   <mirrors>

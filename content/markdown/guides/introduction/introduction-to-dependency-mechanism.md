@@ -133,7 +133,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project A:
 
-```
+```xml
 
 <project>
   ...
@@ -163,7 +163,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project B:
 
-```
+```xml
 
 <project>
   ...
@@ -189,7 +189,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  These two example POMs share a common dependency and each has one non-trivial dependency. This information can be put in the parent POM like this:
 
-```
+```xml
 
 <project>
   ...
@@ -232,7 +232,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Then the two child POMs become much simpler:
 
-```
+```xml
 
 <project>
   ...
@@ -253,7 +253,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
 ```
 
-```
+```xml
 
 <project>
   ...
@@ -282,7 +282,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project A:
 
-```
+```xml
 
 <project>
  <modelVersion>4.0.0</modelVersion>
@@ -323,7 +323,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project B:
 
-```
+```xml
 
 <project>
   <parent>
@@ -381,7 +381,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project B:
 
-```
+```xml
 
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -429,7 +429,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project X:
 
-```
+```xml
 
 <project>
  <modelVersion>4.0.0</modelVersion>
@@ -460,7 +460,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project Y:
 
-```
+```xml
 
 <project>
  <modelVersion>4.0.0</modelVersion>
@@ -491,7 +491,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Project Z:
 
-```
+```xml
 
 <project>
   <modelVersion>4.0.0</modelVersion>
@@ -533,7 +533,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  The root of the project is the BOM POM. It defines the versions of all the artifacts that will be created in the library. Other projects that wish to use the library should import this POM into the dependencyManagement section of their POM.
 
-```
+```xml
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -571,7 +571,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  The parent subproject has the BOM POM as its parent. It is a normal multiproject pom.
 
-```
+```xml
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -611,7 +611,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  Next are the actual project POMs.
 
-```
+```xml
 
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
@@ -659,7 +659,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  The project that follows shows how the library can now be used in another project without having to specify the dependent project's versions.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
      xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -709,7 +709,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  A simple example would be:
 
-```
+```xml
 
 <project>
   ...
@@ -729,7 +729,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
  If your artifact is provided by the JDK's `tools.jar`, the system path would be defined as follows:
 
-```
+```xml
 <project>
   ...
   <dependencies>

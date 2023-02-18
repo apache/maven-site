@@ -38,7 +38,7 @@ under the License.
 
  The repository configuration for testing a plugin will typically look something like this (it will be provided in the vote email):
 
-```
+```xml
   ...
   <pluginRepositories>
     <pluginRepository>
@@ -93,7 +93,7 @@ under the License.
 
  If you are using the repository mirroring technique to lock down to the repository manager in your environment, you would add an additional mirror to correspond to the additional repository in the POM, such as:
 
-```
+```xml
   ...
   <mirror>
     <id>staged-releases-mirror</id>
@@ -107,7 +107,7 @@ under the License.
 
  If you regularly test staged releases and want to have a more convenient way to add the repository to a build without modifying your POM, you may add a profile to your `\~/.m2/settings.xml`:
 
-```
+```xml
   ...
   <profiles>
     <profile>

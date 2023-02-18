@@ -52,7 +52,7 @@ under the License.
 
  To use one of these skins in your project, you use the `skin` element of the [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html). This is a regular artifact or dependency-like element. For example, to use the Maven Fluido Skin, you would include the this in your `site.xml` file:
 
-```
+```xml
 <project>
   ...
   <skin>

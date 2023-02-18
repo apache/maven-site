@@ -102,7 +102,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
 
  Once you have executed this command, you will notice a few things have happened. First, you will notice that a directory named `my-app` has been created for the new project, and this directory contains a file named `pom.xml` that should look like this:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -394,7 +394,7 @@ mvn clean
 
  Notice the value of the **version** tag in the `pom.xml` file shown below has the suffix: `-SNAPSHOT`.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0"
   ...
   <groupId>...</groupId>
@@ -417,7 +417,7 @@ mvn clean
 
  For this example, we will configure the Java compiler to allow JDK 5.0 sources. This is as simple as adding this to your POM:
 
-```
+```xml
 ...
 <build>
   <plugins>
@@ -522,7 +522,7 @@ my-app
 
  In a unit test you could use a simple snippet of code like the following to access the resource required for testing:
 
-```
+```java
 ...
 
 // Retrieve resource
@@ -539,7 +539,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 
  To have Maven filter resources when copying, simply set `filtering` to true for the resource directory in your `pom.xml`:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -607,7 +607,7 @@ my.filter.value=hello!
 
  Next, we'll add a reference to this new file in the `pom.xml`:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -654,7 +654,7 @@ message=${my.filter.value}
 
  the next execution of the `mvn process-resources` command will put our new property value into `application.properties`. As an alternative to defining the my.filter.value property in an external file, you could also have defined it in the `properties` section of your `pom.xml` and you'd get the same effect (notice I don't need the references to `src/main/filters/filter.properties` either):
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -711,7 +711,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  The `dependencies` section of the pom.xml lists all of the external dependencies that our project needs in order to build (whether it needs that dependency at compile time, test time, run time, or whatever). Right now, our project is depending on JUnit only (I took out all of the resource filtering stuff for clarity):
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -742,7 +742,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  With this information about a dependency, Maven will be able to reference the dependency when it builds the project. Where does Maven reference the dependency from? Maven looks in your local repository (`${user.home}/.m2/repository` is the default location) to find all dependencies. In a [previous section](#how-do-i-create-a-jar-and-install-it-in-my-local-repository), we installed the artifact from our project (my-app-1.0-SNAPSHOT.jar) into the local repository. Once it's installed there, another project can reference that jar as a dependency simply by adding the dependency information to its pom.xml:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <groupId>com.mycompany.app</groupId>
@@ -764,7 +764,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  Let's add another dependency to our project. Let's say we've added some logging to the code and need to add log4j as a dependency. First, we need to know what the groupId, artifactId, and version are for log4j. The appropriate directory on Maven Central is called [/maven2/log4j/log4j](https://repo.maven.apache.org/maven2/log4j/log4j/). In that directory is a file called maven-metadata.xml. Here's what the maven-metadata.xml for log4j looks like:
 
-```
+```xml
 <metadata>
   <groupId>log4j</groupId>
   <artifactId>log4j</artifactId>
@@ -789,7 +789,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  Now that we know the information we need, we can add the dependency to our pom.xml:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -829,7 +829,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  Here is an example using scp and username/password authentication:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -882,7 +882,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 </project>
 ```
 
-```
+```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
@@ -931,7 +931,7 @@ mvn archetype:generate \
 
  Note that these must all be on a single line. This will create a directory called `my-webapp` containing the following project descriptor:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -986,7 +986,7 @@ mvn package
 
  The POM file you'll create should contain the following:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -1005,7 +1005,7 @@ mvn package
 
  We'll need a dependency on the JAR from the webapp, so add this to `my-webapp/pom.xml`:
 
-```
+```xml
   ...
   <dependencies>
     <dependency>
@@ -1019,7 +1019,7 @@ mvn package
 
  Finally, add the following `<parent>` element to both of the other `pom.xml` files in the subdirectories:
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>

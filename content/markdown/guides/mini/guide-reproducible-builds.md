@@ -40,7 +40,7 @@ mvn artifact:check-buildplan
 
  1 Enable Reproducible Builds mode for plugins, by adding [`project.build.outputTimestamp` property](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-OutputArchiveEntriesTimestamp) to the project's `pom.xml`:
 
-```
+```xml
    <properties>
      <project.build.outputTimestamp>2023-01-01T00:00:00Z</project.build.outputTimestamp>
    </properties>

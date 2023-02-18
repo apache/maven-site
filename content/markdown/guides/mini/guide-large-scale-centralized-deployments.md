@@ -73,7 +73,7 @@ under the License.
 
  Example: To download artifacts from the corporate repository manager's `maven-virtual` repository:
 
-```
+```xml
 <settings>
   ...
   <mirrors>
@@ -103,7 +103,7 @@ under the License.
 
  Example: To upload artifacts to one of the corporate repository manager's hosted repositories:
 
-```
+```xml
 <settings>
   ...
   <profiles>

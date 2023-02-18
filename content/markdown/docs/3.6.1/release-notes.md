@@ -164,7 +164,7 @@ mvn -ntp ... ....
 URL's etc. within `project`, `distributionManagement` and `scm` part in the pom for multi module
 builds like this:
 
-```
+```xml
 <project child.project.url.inherit.append.path="false">
   <url>...</url>
 

@@ -29,7 +29,7 @@ under the License.
 
  Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
 
-```
+```xml
 
 <settings>
   .

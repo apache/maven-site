@@ -101,7 +101,7 @@ git commit --amend -m "new comment"
 
  Workflow for svn folks is something like :
 
-```
+```bash
  $ git pull
  $ hack hack hack
  $ git push
@@ -113,7 +113,7 @@ git commit --amend -m "new comment"
 
  A more quiet workflow :
 
-```
+```bash
 $ git pull
 $ hack hack hack
 $ git push
