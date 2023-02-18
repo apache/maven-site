@@ -25,15 +25,15 @@ under the License.
 
 
 
- 1 [Introduction](#introduction)
+ 1 [Introduction](Introduction)
 
- 1 [How to create a master password](#how-to-create-a-master-password)
+ 1 [How to create a master password](How_to_create_a_master_password)
 
- 1 [How to encrypt server passwords](#how-to-encrypt-server-passwords)
+ 1 [How to encrypt server passwords](How_to_encrypt_server_passwords)
 
- 1 [How to keep the master password on removable drive](#how-to-keep-the-master-password-on-removable-drive)
+ 1 [How to keep the master password on removable drive](How_to_keep_the_master_password_on_removable_drive)
 
- 1 [Tips](#tips)
+ 1 [Tips](Tips)
 
 
 ### Introduction
@@ -87,7 +87,7 @@ under the License.
 mvn --encrypt-master-password <password>
 ```
 
- _Note:_ Since Maven 3.2.1 the password argument should no longer be used (see [Tips](#tips) below for more information). Maven will prompt for the password. Earlier versions of Maven will not prompt for a password, so it must be typed on the command-line in plaintext.
+ _Note:_ Since Maven 3.2.1 the password argument should no longer be used (see [Tips](Tips) below for more information). Maven will prompt for the password. Earlier versions of Maven will not prompt for a password, so it must be typed on the command-line in plaintext.
 
 
  This command will produce an encrypted version of the password, something like
@@ -123,7 +123,7 @@ mvn --encrypt-master-password <password>
 mvn --encrypt-password <password>
 ```
 
- _Note:_Just like `--encrypt-master-password` the password argument should no longer be used since Maven 3.2.1 (see [Tips below for more information.](#tips)).
+ _Note:_Just like `--encrypt-master-password` the password argument should no longer be used since Maven 3.2.1 (see [Tips below for more information.](Tips)).
 
 
  This command produces an encrypted version of it, something like

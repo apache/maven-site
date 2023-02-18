@@ -131,7 +131,7 @@ So now some more interesting things about new (small) features:
 
 - If you have used the deprecated version markers like `RELEASE` or `LATEST` this will now produce a WARNING during the build [MNG-6342][].
 
-## [The detailed issue list](#details)
+## [The detailed issue list](#Details)
 
 Bugs:
 

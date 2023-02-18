@@ -113,7 +113,7 @@ under the License.
  You can use a manually defined assembly descriptor as mentioned before but it is simpler to use the [pre-defined assembly descriptor bin](/plugins/maven-assembly-plugin/descriptor-refs.html#bin) in such cases.
 
 
- How to use such pre-defined assembly descriptors is described in the [documentation of maven-assembly-plugin](/plugins/maven-assembly-plugin/usage.html#configuration).
+ How to use such pre-defined assembly descriptors is described in the [documentation of maven-assembly-plugin](/plugins/maven-assembly-plugin/usage.html#Configuration).
 
 
 

@@ -37,7 +37,7 @@ If you have any questions, please consult:
 
 We really value the contributions of these non committers, so this section is
 focused on those individuals. Descriptions of the issues fixed can be found at
-the [end of these release notes](#details).
+the [end of these release notes](#Details).
 
 Issue Reporters of this release: Benoit GUERIN, Christian Schulte, Elliotte Rusty Harold, Falko Modler, Francesco Chicchiriccò, Guillaume Nodet, guofei, Joseph Walton, Louis Mills, Mark Derricutt, Mark McKelvy, Mickael Istria, Nicolas Echegut, Nicolas Radde, Raphael Rösch, Ray Tsang, Robert Thornton, Rohan Padhye, Sergey Chernov, Stefan Oehme, Thibaud Lepretre, zhb.
 
@@ -58,7 +58,7 @@ Many thanks to all reporters and contributors for their time and support.
 
 - The toolchain.xml file supports environment variables (see [MNG-6665](https://issues.apache.org/jira/browse/MNG-6665)).
 
-## The detailed issue list[](#details)
+## The detailed issue list[](#Details)
 
 Sub-task
 

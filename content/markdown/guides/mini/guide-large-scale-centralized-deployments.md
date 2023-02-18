@@ -68,7 +68,7 @@ under the License.
 
  - a hosted repository for snapshots
 
- - a hosted repository that can contain both releases and snapshots (Only needed if some projects are still using Maven Deploy Plugin < 2.8. See [Managing Uploads to the Repository Manager](#managing-uploads-to-the-repository-manager) for more info.)
+ - a hosted repository that can contain both releases and snapshots (Only needed if some projects are still using Maven Deploy Plugin < 2.8. See [Managing Uploads to the Repository Manager](Managing_Uploads_to_the_Repository_Manager) for more info.)
 
 
  Separate hosted repositories are generally used for releases and snapshots due to the need for different artifact retention policies.
@@ -78,9 +78,9 @@ under the License.
 
 
 
- - [Download](#managing-downloads-from-the-repository-manager) artifacts from the virtual repository.
+ - [Download](Managing_Downloads_from_the_Repository_Manager) artifacts from the virtual repository.
 
- - [Upload](#managing-uploads-to-the-repository-manager) artifacts to one of the hosted repositories.
+ - [Upload](Managing_Uploads_to_the_Repository_Manager) artifacts to one of the hosted repositories.
 
 
 
@@ -228,10 +228,10 @@ under the License.
  - on developer machines
 
 
- Both locations should have the mirror settings mentioned in [Managing Downloads from the Repository Manager](#managing-downloads-from-the-repository-manager).
+ Both locations should have the mirror settings mentioned in [Managing Downloads from the Repository Manager](Managing_Downloads_from_the_Repository_Manager).
 
 
- Typically, only continuous integration servers should have the deployment repository settings mentioned in [Managing Uploads to the Repository Manager](#managing-uploads-to-the-repository-manager), because only continuous integration servers should be allowed to upload to the repository manager. Alternatively, if you want developers to be able to upload artifacts to the repository manager, then include the deployment repository properties in the `settings.xml` files used by developers.
+ Typically, only continuous integration servers should have the deployment repository settings mentioned in [Managing Uploads to the Repository Manager](Managing_Uploads_to_the_Repository_Manager), because only continuous integration servers should be allowed to upload to the repository manager. Alternatively, if you want developers to be able to upload artifacts to the repository manager, then include the deployment repository properties in the `settings.xml` files used by developers.
 
 
  How the `settings.xml` files are stored and updated is beyond the scope of this document. The general recommendation is to manage a few `settings.xml` files centrally, and then use automation to distribute them to continuous integration servers and developer machines.

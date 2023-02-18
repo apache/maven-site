@@ -30,31 +30,31 @@ under the License.
  Optionally you can still import the code style formatter for your IDE from [shared-resources](https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD)
 
 
- - [Generic Code Style And Convention](#generic-code-style-and-convention)
+ - [Generic Code Style And Convention](Generic_Code_Style_And_Convention)
 
- - [Java](#java)
+ - [Java](Java)
 
-  - [Java Code Style](#java-code-style)
+  - [Java Code Style](Java_Code_Style)
 
-  - [Java Code Convention](#java-code-convention)
+  - [Java Code Convention](Java_Code_Convention)
 
-  - [Java Code Convention - import layouts](#java-code-convention---import-layouts)
+  - [Java Code Convention - import layouts](Java_Code_Convention_-_import_layouts)
 
-  - [JavaDoc Convention](#javadoc-convention)
+  - [JavaDoc Convention](JavaDoc_Convention)
 
 
 
- - [XML](#xml)
+ - [XML](XML)
 
-  - [XML Code Style](#xml-code-style)
+  - [XML Code Style](XML_Code_Style)
 
-  - [Generic XML Code Convention](#generic-xml-code-convention)
+  - [Generic XML Code Convention](Generic_XML_Code_Convention)
 
-  - [POM Code Convention](#pom-code-convention)
+  - [POM Code Convention](POM_Code_Convention)
 
-  - [XDOC Code Convention](#xdoc-code-convention)
+  - [XDOC Code Convention](XDOC_Code_Convention)
 
-  - [FML Code Convention](#fml-code-convention)
+  - [FML Code Convention](FML_Code_Convention)
 
 
 

@@ -37,7 +37,7 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 We really value the contributions of these non committers, so this section is
 focused on those individuals. Descriptions of the issues fixed can be found at
-the [end of these release notes](#details).
+the [end of these release notes](#Details).
 
 Code Contributors of this release:
 
@@ -131,7 +131,7 @@ At the time of release, there are no known regressions introduced by this releas
 - There was an issue related to the classpath ordering [MNG-6415] in Maven which 
   can cause issues which has been fixed.
 
-## [The detailed issue list](#details)
+## [The detailed issue list](#Details)
 
 ### Bugs:
 

@@ -22,7 +22,7 @@ Maven projects use [Jira](https://www.atlassian.com/software/jira) as issue trac
 
 ## Issue Management
 
-Maven is composed of nearly [100 parts](/scm.html#maven-sources-overview), each one having its own Jira project or component:
+Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own Jira project or component:
 **see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview) to get a summary of open issues**.
 
 Issues, bugs, and feature requests should be submitted to the following

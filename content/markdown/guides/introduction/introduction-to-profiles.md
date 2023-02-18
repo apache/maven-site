@@ -25,55 +25,55 @@ under the License.
 
 
 
- - [What are the different types of profile? Where is each defined?](#what-are-the-different-types-of-profile-where-is-each-defined)
+ - [What are the different types of profile? Where is each defined?](What_are_the_different_types_of_profile.3F_Where_is_each_defined.3F)
 
- - [How can a profile be triggered? How does this vary according to the type of profile being used?](#how-can-a-profile-be-triggered-how-does-this-vary-according-to-the-type-of-profile-being-used)
+ - [How can a profile be triggered? How does this vary according to the type of profile being used?](How_can_a_profile_be_triggered.3F_How_does_this_vary_according_to_the_type_of_profile_being_used.3F)
 
-  - [Details on profile activation](#details-on-profile-activation)
+  - [Details on profile activation](Details_on_profile_activation)
 
-   - [Explicit profile activation](#explicit-profile-activation)
+   - [Explicit profile activation](Explicit_profile_activation)
 
-   - [Implicit profile activation](#implici-profile-activation)
+   - [Implicit profile activation](Implicit_profile_activation)
 
-    - [JDK](#jdk)
+    - [JDK](JDK)
 
-    - [OS](#os)
+    - [OS](OS)
 
-    - [Property](#property)
+    - [Property](Property)
 
-    - [Files](#files)
-
-
+    - [Files](Files)
 
 
 
-  - [Deactivating a profile](#deactivating-a-profile)
+
+
+  - [Deactivating a profile](Deactivating_a_profile)
 
 
 
- - [Which areas of a POM can be customized by each type of profile? Why?](#which-areas-of-a-pom-can-be-customized-by-each-type-of-profile-why)
+ - [Which areas of a POM can be customized by each type of profile? Why?](Which_areas_of_a_POM_can_be_customized_by_each_type_of_profile.3F_Why.3F)
 
-  - [Profiles in external files](#profiles-in-external-files)
+  - [Profiles in external files](Profiles_in_external_files)
 
-  - [Profiles in POMs](#profiles-in-poms)
+  - [Profiles in POMs](Profiles_in_POMs)
 
-  - [POM elements outside `<profiles>`](#pom-elements-outside-profiles)
-
-
-
- - [Profile Order](#profile-order)
-
- - [Profile Pitfalls](#profile-pitfalls)
-
-  - [External Properties](#external-properties)
-
-  - [Incomplete Specification of a Natural Profile Set](#incomplete-specification-of-a-natural-profile-set)
+  - [POM elements outside `<profiles>`](POM_elements_outside_.3Cprofiles.3E)
 
 
 
- - [How can I tell which profiles are in effect during a build?](#how-can-i-tell-which-profiles-are-in-effect-during-a-build)
+ - [Profile Order](Profile_Order)
 
- - [Naming Conventions](#naming-conventions)
+ - [Profile Pitfalls](Profile_Pitfalls)
+
+  - [External Properties](External_Properties)
+
+  - [Incomplete Specification of a Natural Profile Set](Incomplete_Specification_of_a_Natural_Profile_Set)
+
+
+
+ - [How can I tell which profiles are in effect during a build?](How_can_I_tell_which_profiles_are_in_effect_during_a_build.3F)
+
+ - [Naming Conventions](Naming_Conventions)
 
 
  Apache Maven goes to great lengths to ensure that builds are portable. Among other things, this means allowing build configuration inside the POM, avoiding **all** filesystem references (in inheritance, dependencies, and other places), and leaning much more heavily on the local repository to store the metadata needed to make this possible.

@@ -25,49 +25,49 @@ under the License.
 
 
 
- - [Advanced Configuration of the Maven Resolver Transport](#advanced-configuration-of-the-maven-resolver-transport)
+ - [Advanced Configuration of the Maven Resolver Transport](Advanced_Configuration_of_the_Maven_Resolver_Transport)
 
-  - [Advanced configuration to Transports](#advanced-configuration-to-transports)
+  - [Advanced configuration to Transports](Advanced_configuration_to_Transports)
 
-   - [HTTP Headers](#http-headers)
+   - [HTTP Headers](HTTP_Headers)
 
-   - [Connection Timeouts](#connection-timeouts)
-
-
-
-  - [Advanced Configuration of the HttpClient HTTP Wagon](#advanced-configuration-of-the-httpclient-http-wagon)
-
-   - [Introduction](#introduction)
-
-   - [The Basics](#the-basics)
-
-   - [Configuring GET, HEAD, PUT, or All of the Above](#configuring-get-head-put-or-all-of-the-above)
-
-   - [Taking Control of Your HTTP Headers](#taking-control-of-your-http-headers)
-
-   - [Fine-Tuning HttpClient Parameters](#fine-tuning-httpclient-parameters)
-
-    - [Non-String Parameter Values](#non-string-parameter-values)
-
-    - [Example: Using Preemptive Authentication](#example--using-preemptive-authentication)
-
-    - [Example: Lifting auth scope restriction for external authentication systems](#example--lifting-auth-scope-restriction-for-external-authentication-systems)
-
-    - [Ignoring Cookies](#ignoring-cookies)
+   - [Connection Timeouts](Connection_Timeouts)
 
 
 
-   - [Support for General-Wagon Configuration Standards](#support-for-general-wagon-configuration-standards)
+  - [Advanced Configuration of the HttpClient HTTP Wagon](Advanced_Configuration_of_the_HttpClient_HTTP_Wagon)
 
-     - [HTTP Headers](#http-headers-1)
+   - [Introduction](Introduction)
 
-     - [Connection Timeouts](#connection-timeouts-1)
+   - [The Basics](The_Basics)
 
-     - [Read time out](#read-time-out)
+   - [Configuring GET, HEAD, PUT, or All of the Above](Configuring_GET.2C_HEAD.2C_PUT.2C_or_All_of_the_Above)
+
+   - [Taking Control of Your HTTP Headers](Taking_Control_of_Your_HTTP_Headers)
+
+   - [Fine-Tuning HttpClient Parameters](Fine-Tuning_HttpClient_Parameters)
+
+    - [Non-String Parameter Values](Non-String_Parameter_Values)
+
+    - [Example: Using Preemptive Authentication](Example:_Using_Preemptive_Authentication)
+
+    - [Example: Lifting auth scope restriction for external authentication systems](Example:_Lifting_auth_scope_restriction_for_external_authentication_systems)
+
+    - [Ignoring Cookies](Ignoring_Cookies)
 
 
 
-   - [Resources](#resources)
+   - [Support for General-Wagon Configuration Standards](Support_for_General-Wagon_Configuration_Standards)
+
+    - [HTTP Headers](HTTP_Headers_1)
+
+    - [Connection Timeouts](Connection_Timeouts_1)
+
+    - [Read time out](Read_time_out)
+
+
+
+   - [Resources](Resources)
 
 
 

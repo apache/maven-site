@@ -72,7 +72,7 @@ There are some additional minor improvements, the most notable of which is:
 
 - The Maven Super POM changes the default execution of the `maven-source-plugin` `jar` goal into `jar-no-fork` which should resolve some issues complex projects had running releases.
 
-## [The detailed issue list](#details)
+## [The detailed issue list](#Details)
 
 ### Bugs
 - [MNG-6370][] `ConcurrencyDependencyGraph#getNumberOfBuilds()` does not remove finished projects from unfinished ones
