@@ -35,138 +35,142 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 - the maven-user mailing list: [http://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [http://maven.apache.org/ref/3.3.9/](/ref/3.3.9/)
 
+
 Reporters and Contributors of this release
 ------------------------------------------
 
 Bugs:
 
-- [MNG-5297] - contributor: Joseph Walton
-- [MNG-5721] - reporter/contributor Martin Schäf
-- [MNG-5786] - reporter Stephan Schroevers
-- [MNG-5787] - reporter Christian Schlichtherle
-- [MNG-5796] - reporter Brandon Enochs
-- [MNG-5812] - contributor tssp
-- [MNG-5816] - contributor tssp
-- [MNG-5858] - contributor Dave Syer
-- [MNG-5877] - contributor Joseph Walton; reporter Anders Forsell
-- [MNG-5882] - contributor Ben Caradoc-Davies
-- [MNG-5884] - contributor Stephen Kitt
-- [MNG-5886] - reporter Shubham Chaurasia
-- [MNG-5891] - reporter Keith Turner
-- [MNG-5898] - reporter Jonathan Radon
+ * [MNG-5297] - contributor: Joseph Walton
+ * [MNG-5721] - reporter/contributor Martin Schäf
+ * [MNG-5786] - reporter Stephan Schroevers
+ * [MNG-5787] - reporter Christian Schlichtherle
+ * [MNG-5796] - reporter Brandon Enochs
+ * [MNG-5812] - contributor tssp
+ * [MNG-5816] - contributor tssp
+ * [MNG-5858] - contributor Dave Syer
+ * [MNG-5877] - contributor Joseph Walton; reporter Anders Forsell
+ * [MNG-5882] - contributor Ben Caradoc-Davies
+ * [MNG-5884] - contributor Stephen Kitt
+ * [MNG-5886] - reporter Shubham Chaurasia
+ * [MNG-5891] - reporter Keith Turner
+ * [MNG-5898] - reporter Jonathan Radon
 
 Improvements:
 
-- [MNG-5805] - contributor Anton Tanasenko
-- [MNG-5844] - contributor Tang Xinye
-- [MNG-5871] - make url inheritance algorithm more visible
-- [MNG-5923] - reporter/contributor: Stuart McCulloch
-- [MNG-5924] - reporter/contributor: Stuart McCulloch
+ * [MNG-5805] - contributor Anton Tanasenko
+ * [MNG-5844] - contributor Tang Xinye
+ * [MNG-5871] - make url inheritance algorithm more visible
+ * [MNG-5923] - reporter/contributor: Stuart McCulloch
+ * [MNG-5924] - reporter/contributor: Stuart McCulloch
 
 Many thanks to all reporters and contributors and for their time and support.
 
 Improvements
 ------------
 
-- The `par` lifecycle has been removed from the default life cycle bindings and the maven-ejb3-plugin
+ * The `par` lifecycle has been removed from the default life cycle bindings and the maven-ejb3-plugin
    has been removed from default bindings, cause it does not exist [MNG-5892][MNG-5892], [MNG-5894][MNG-5894].
 
-- The default bindings defined two different versions for the [maven-resources-plugin][maven-resources-plugin]
+ * The default bindings defined two different versions for the [maven-resources-plugin][maven-resources-plugin]
    which has been fixed by [MNG-5893][MNG-5893].
 
-- Switch to official [Guice](https://github.com/google/guice/wiki/Motivation) 4.0, upgrade to
+ * Switch to official [Guice](https://github.com/google/guice/wiki/Motivation) 4.0, upgrade to
    [Eclipse/Sisu](https://www.eclipse.org/sisu/) 0.3.2 has been done with [MNG-5923][MNG-5923] and [MNG-5924][MNG-5924].
-
-- Several areas of Maven Core have been changed to use
-   [Commons Lang](https://commons.apache.org/proper/commons-lang/)'s Validate to intercept invalid
+ 
+ * Several areas of Maven Core have been changed to use
+   [Commons Lang](https://commons.apache.org/proper/commons-lang/)'s Validate to intercept invalid 
    input [MNG-5649][MNG-5649].
 
-- Upgrade Java minimum version prerequisite from Java 6 to Java 7 [MNG-5780][MNG-5780].
+ * Upgrade Java minimum version prerequisite from Java 6 to Java 7 [MNG-5780][MNG-5780].
 
-- Custom packaging types: configuring DefaultLifecycleMapping mojo executions [MNG-5805][MNG-5805].
+ * Custom packaging types: configuring DefaultLifecycleMapping mojo executions [MNG-5805][MNG-5805].
 
-- Disallow the programmatic injection of project dependencies [MNG-5818][MNG-5818].
+ * Disallow the programmatic injection of project dependencies [MNG-5818][MNG-5818].
 
-- Close IO streams in finally or try-with-resource statement [MNG-5844][MNG-5844].
+ * Close IO streams in finally or try-with-resource statement [MNG-5844][MNG-5844].
 
-- Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
+ * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
 
-- Update used [Modello](https://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
+ * Update used [Modello](https://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
 
-- Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
+ * Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
 
-- Use canonical name for UTC timezone [MNG-5906][MNG-5906].  
+ * Use canonical name for UTC timezone [MNG-5906][MNG-5906].  
 
-- Upgrade [maven-parent](/pom/maven/) to version 27 [MNG-5911][MNG-5911].
+ * Upgrade [maven-parent](/pom/maven/) to version 27 [MNG-5911][MNG-5911].
 
-- Upgrade [Wagon](/wagon/) version to 2.10 [MNG-5915][MNG-5915].
+ * Upgrade [Wagon](/wagon/) version to 2.10 [MNG-5915][MNG-5915].
 
-- Upgraded to [plexus-component-*](https://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
+ * Upgraded to [plexus-component-*](https://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
    [asm](http://asm.ow2.org/) 5.x [MNG-5921][MNG-5921].
 
-- Upgrade [plexus-utils](https://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
+ * Upgrade [plexus-utils](https://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
 
-- Update [animal-sniffer-maven-plugin](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
+ * Update [animal-sniffer-maven-plugin](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
+
 
 Bugs
 ----
 
-- Moving from Maven 3.0.5 to 3.3.3 breaks plugins with some dependencies on the classpath.
+ * Moving from Maven 3.0.5 to 3.3.3 breaks plugins with some dependencies on the classpath.
    This has been fixed with [MNG-5787][MNG-5787].
 
-- The Cygwin Shell related handling of the `MAVEN_PROJECTBASEDIR` has been fixed
+ * The Cygwin Shell related handling of the `MAVEN_PROJECTBASEDIR` has been fixed
    with [MNG-5812][MNG-5812].
 
-- The scripts to call Maven has introduced a bug related to the handling of the
+ * The scripts to call Maven has introduced a bug related to the handling of the
    `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
 
-- Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the
-   `${maven.projectBasedir}/.mvn` directory of the project. There you can use the `maven.config`
+ * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the 
+   `${maven.projectBasedir}/.mvn` directory of the project. There you can use the `maven.config` 
    file to store command line options instead of repeating them every time you call Maven.
    In cases where this file has been empty Maven ended with a failure. This has been fixed
    with [MNG-5816][MNG-5816].
 
-- The handling of the relativePath in a parent has been fixed related to the case
+ * The handling of the relativePath in a parent has been fixed related to the case
    that the parent has the same groupId:artifactId but a different version. In this
    case the resolution must be done against the repository.
    This has been fixed by [MNG-5840][MNG-5840].
 
-- In cases where you start Maven in the root of a windows drive Maven will fail.
-   This has been fixed by [MNG-5796][MNG-5796].
+ * In cases where you start Maven in the root of a windows drive Maven will fail.
+   This has been fixed by [MNG-5796][MNG-5796]. 
 
-- The `<prerequisites>` elements is intended for [buildtime checking but not for runtime checks][MNG-4840]
-   which should be left to [maven-enforcer-plugin][maven-enforcer-plugin].
+ * The `<prerequisites>` elements is intended for [buildtime checking but not for runtime checks][MNG-4840] 
+   which should be left to [maven-enforcer-plugin][maven-enforcer-plugin]. 
    This has not been documented accordingly. This has been done with [MNG-5297][MNG-5297].
 
-- In situations like this: `mvn -Dtest=\"anton\" clean package` the trailing quote
+ * In situations like this: `mvn -Dtest=\"anton\" clean package` the trailing quote
    is stripped away which could cause problems. This has been fixed with [MNG-5681][MNG-5681].
 
-- Possible NullPointerException in org.apache.maven.repository.MetadataResolutionResult
+ * Possible NullPointerException in org.apache.maven.repository.MetadataResolutionResult 
    has been fixed with [MNG-5721].
 
-- There had been several issues with the `mvn` script which are for example
+ * There had been several issues with the `mvn` script which are for example
    wrong locating the `.mvn` directory, nonportable shell constructs, wrongly setting
    'maven.multiModuleProjectDirectory' variable or directories which contain spaces. Those
-   issues have been fixed [MNG-5786][MNG-5786], [MNG-5858][MNG-5858],
+   issues have been fixed [MNG-5786][MNG-5786], [MNG-5858][MNG-5858], 
    [MNG-5882][MNG-5882] and [MNG-5884][MNG-5884].
 
-- Broken link of 'Building Maven' in README.md has been fixed by [MNG-5886][MNG-5886].
+ * Broken link of 'Building Maven' in README.md has been fixed by [MNG-5886][MNG-5886].
 
-- [maven-aether-provider][maven-aether-provider]/[maven-compat][maven-compat]
-   does not always generate snapshot versions using Gregorian calendar year
-   fixed in [MNG-5877][MNG-5877]
+ * [maven-aether-provider][maven-aether-provider]/[maven-compat][maven-compat] 
+   does not always generate snapshot versions using Gregorian calendar year 
+   fixed in [MNG-5877][MNG-5877] 
 
-- Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891]
+ * Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891] 
 
-- org.apache.maven.repository.internal.RemoteSnapshotMetadataTest fails to start at midnight fixed with
+ * org.apache.maven.repository.internal.RemoteSnapshotMetadataTest fails to start at midnight fixed with
    [MNG-5907][MNG-5907].
 
-- Multi-module build with ear fails to resolve war in 3.3.3 fixed in [MNG-5898][MNG-5898].
+ * Multi-module build with ear fails to resolve war in 3.3.3 fixed in [MNG-5898][MNG-5898].
+
 
 Task
 ----
 
-- Update [Modello site url](https://codehaus-plexus.github.io/modello/) [MNG-5887][MNG-5887].
+ * Update [Modello site url](https://codehaus-plexus.github.io/modello/) [MNG-5887][MNG-5887].
+
 
 The full list of changes can be found in our [issue management system][4].
 
@@ -176,6 +180,7 @@ See [complete release notes for all versions][5]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
+[2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12333074
 [5]: ../../docs/history.html
 [maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/

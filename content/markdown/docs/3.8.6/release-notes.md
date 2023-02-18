@@ -35,8 +35,8 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-- Regression fixes from Maven 3.8.5
-- Improve locking for multithreaded builds
+* Regression fixes from Maven 3.8.5
+* Improve locking for multithreaded builds
 
 The full list of changes can be found in our [issue management system][4].
 

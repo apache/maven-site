@@ -23,26 +23,37 @@ under the License.
 
 ## Configuring Maven
 
+
  Maven configuration occurs at 3 levels:
 
-- _Project_ - most static configuration occurs in `pom.xml`
 
-- _Installation_ - this is configuration added once for a Maven installation
 
-- _User_ - this is configuration specific to a particular user
+ - _Project_ - most static configuration occurs in `pom.xml`
+
+ - _Installation_ - this is configuration added once for a Maven installation
+
+ - _User_ - this is configuration specific to a particular user
+
 
  The separation is quite clear - the project defines information that applies to the project, no matter who is building it, while the others both define settings for the current environment.
 
+
  **Note:** the installation and user configuration cannot be used to add shared project information - for example, setting `<organization>` or `<distributionManagement>` company-wide.
 
+
  For this, you should have your projects inherit from a company-wide parent `pom.xml`.
+
 
 <!-- TODO: versioning doc that discusses this -->
  You can specify your user configuration in `${user.home}/.m2/settings.xml`. A [full reference](../../maven-settings/settings.html) to the configuration file is available. This section will show how to make some common configurations. Note that the file is not required - defaults will be used if it is not found.
 
+
 ### Configuring your Local Repository
 
+
  The location of your local repository can be changed in your user configuration. The default value is `${user.home}/.m2/repository/`.
+
+
 
 ```
 <settings>
@@ -54,15 +65,24 @@ under the License.
 
  **Note:** The local repository must be an absolute path.
 
+
+
 ### Configuring a Proxy
+
 
  Proxy configuration can also be specified in the settings file.
 
- For more information, see the [Guide to using a Proxy](./guide-proxies.html).
+
+ For more information, see the [ Guide to using a Proxy](./guide-proxies.html).
+
+
 
 ### Configuring Parallel Artifact Resolution
 
+
  By default, Maven 2.1.0+ will download up to 5 artifacts (from different groups) at once. To change the size of the thread pool, start Maven using `-Dmaven.artifact.threads`. For example, to only download single artifacts at a time:
+
+
 
 ```
 mvn -Dmaven.artifact.threads=1 verify
@@ -70,17 +90,25 @@ mvn -Dmaven.artifact.threads=1 verify
 
  You may wish to set this option permanently, in which case you can use the `MAVEN_OPTS` environment variable. For example:
 
+
+
 ```
 export MAVEN_OPTS=-Dmaven.artifact.threads=3
 ```
 
+
 ### Security and Deployment Settings
+
 
  Repositories to deploy to are defined in a project in the `<distributionManagement>` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own settings with an `id` that matches that of the deployment repository in the project.
 
+
  In addition, some repositories may require authorization to download from, so the corresponding settings can be specified in a `server` element in the same way.
 
+
  Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
+
+
 
 ```
 <settings>
@@ -101,38 +129,62 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 </settings>
 ```
 
- To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
+ To encrypt passwords in these sections, refer to [ Encryption Settings](./guide-encryption.html).
+
+
 
 ### Using Mirrors for Repositories
 
- Repositories can be declared inside a project, which means that if you have your own custom repositories, those sharing your project easily get the right settings out of the box. However, you may want to use an alternative mirror for a particular repository without changing the project files. Refer to [Guide to Mirror Settings](./guide-mirror-settings.html) for more details.
+
+ Repositories can be declared inside a project, which means that if you have your own custom repositories, those sharing your project easily get the right settings out of the box. However, you may want to use an alternative mirror for a particular repository without changing the project files. Refer to [ Guide to Mirror Settings](./guide-mirror-settings.html) for more details.
+
+
 
 ### Profiles
 
+
  Repository configuration can also be put into a profile. You can have multiple profiles, with one set to active so that you can easily switch environments. Read more about profiles in [Introduction to Build Profiles](../introduction/introduction-to-profiles.html).
+
+
 
 ### Optional configuration
 
+
  Maven will work for most tasks with the above configuration, however if you have any environmental specific configuration outside of individual projects then you will need to configure settings. The following sections refer to what is available.
+
 
 #### Settings
 
+
  Maven has a settings file located in the Maven installation and/or user home directory that configure environmental specifics such as:
 
-- HTTP proxy server
 
-- repository manager location
 
-- server authentication and passwords
+ - HTTP proxy server
 
-- other configuration properties
+ - repository manager location
+
+ - server authentication and passwords
+
+ - other configuration properties
+
 
  For information on this file, see the [Settings reference](/settings.html)
 
+
+
 #### Security
+
 
  As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on both server passwords and the master password, see the [Guide to Password Encryption](./guide-encryption.html).
 
+
+
 #### Toolchains
 
+
  As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with. For more information, see the [Guide to Using Toolchains](./guide-using-toolchains.html).
+
+
+
+

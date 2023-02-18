@@ -32,7 +32,7 @@ and through [MNG-6007](https://issues.apache.org/jira/browse/MNG-6007).
 |**central groupId**|[org.eclipse.aether](https://repo.maven.apache.org/maven2/org/eclipse/aether/)|[org.apache.maven.resolver](https://repo.maven.apache.org/maven2/org/apache/maven/resolver/)|
 |**artifactIds**|aether<br/>aether-api<br/>aether-impl<br/>aether-spi<br/>aether-util<br/>aether-transport-\*|maven-resolver<br/>maven-resolver-api<br/>maven-resolver-impl<br/>maven-resolver-spi<br/>maven-resolver-util<br/>maven-resolver-transport-*|
 |**OSGi Bundles**|org.eclipse.aether.api<br/>org.eclipse.aether.impl<br/>org.eclipse.aether....|no OSGi bundles in Apache Maven|
-|**P2 repo**|<http://download.eclipse.org/aether/aether-core/releases/<br/>http://download.eclipse.org/aether/maven-aether-provider/releases/|no> P2 repo|
+|**P2 repo**|http://download.eclipse.org/aether/aether-core/releases/<br/>http://download.eclipse.org/aether/maven-aether-provider/releases/|no P2 repo|
 |**API java packages**|org.eclipse.aether...|**Keep packages in Maven 3.x to maintain compatibility for some plugins or extensions using Aether API.**|
 |**Impl java packages**|org.eclipse.aether.impl.\*<br/>org.eclipse.aether.internal.\*|Same as API, even if nobody should rely on impl...|
 |**SPI java packages**|org.eclipse.aether.spi.\*|Same as API (is it really used outside?)|

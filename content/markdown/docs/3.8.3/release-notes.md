@@ -35,9 +35,9 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-- Regression fixes from Maven 3.8.2
-- [Drop CDI API][6] to avoid leakage into code
-- Speed improvements with [MNG-7235][7] and [MNG-7236][8]
+* Regression fixes from Maven 3.8.2
+* [Drop CDI API][6] to avoid leakage into code
+* Speed improvements with [MNG-7235][7] and [MNG-7236][8]
 
 The full list of changes can be found in our [issue management system][4].
 

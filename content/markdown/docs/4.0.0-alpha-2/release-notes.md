@@ -37,10 +37,10 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-- cli improvement: `--also-make` , `--resume`, `--non-recursive`, `--fail-on-severity`
-- consistent timestamps
-- build/consumer POMs (automatic parent versioning, automatic versioning of reactor dependencies, automatic detection of child modules)
-- new maven 4 api
+* cli improvement: `--also-make` , `--resume`, `--non-recursive`, `--fail-on-severity`
+* consistent timestamps
+* build/consumer POMs (automatic parent versioning, automatic versioning of reactor dependencies, automatic detection of child modules)
+* new maven 4 api
 
 The full list of changes can be found in our [issue management system][4].
 

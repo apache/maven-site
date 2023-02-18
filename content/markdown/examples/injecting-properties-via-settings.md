@@ -22,11 +22,17 @@ under the License.
 -->
 ## Example: Injecting POM Properties via Settings.xml
 
+
 ### Impetus
+
 
  You have a plugin parameter that should contain a user-specific value. This parameter has a common format (relative directory structure), but depends on knowing the directory of the installed application or something.
 
+
+
 ### Plugin Configuration
+
+
 
 ```
 <project>
@@ -45,7 +51,10 @@ under the License.
   </build>
 ```
 
+
 ### `settings.xml`
+
+
 
 ```
 <settings>
@@ -65,6 +74,11 @@ under the License.
 </settings>
 ```
 
+
 ### Explanation
 
+
  When Maven loads the project's POM, it will pickup the activated profiles from the `activeProfiles` section of the `settings.xml` file, and inject the properties declared within the profile. When the POM is interpolated, the `application-home` property will already have been injected, so will allow the plugin's parameter value to be resolved.
+
+
+

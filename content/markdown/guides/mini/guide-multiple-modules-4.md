@@ -162,3 +162,5 @@ The table below illustrates multiple scenarios which have changed between Maven 
 ## More information
 
 * [Chapter 6. A Multi-module Project (Maven by Example)](http://books.sonatype.com/mvnex-book/reference/multimodule.html) - does not include Maven 4 changes!
+
+

@@ -56,13 +56,13 @@ apache-maven-3.x.y
     └── ...
 </pre></div>
 
-## Configuring logging
+## Configuring logging 
 
 To configure logging with the [SLF4J Simple][2], you can edit the properties in the
 `${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation
 for details.
 
-Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9].
+Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9]. 
 E.g. `MAVEN_OPTS=-Dorg.slf4j.simpleLogger.showThreadName=true mvn <goals>` will add the thread name to every logging line.
 
 The default SLF4J configuration for Maven is listed [here][8].
@@ -72,7 +72,7 @@ The default SLF4J configuration for Maven is listed [here][8].
 If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR
 from the `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
 
-See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
+See SLF4J documentation for more details on [swapping "SLF4J bindings"][7]. 
 
 ## Maven implemenation details
 

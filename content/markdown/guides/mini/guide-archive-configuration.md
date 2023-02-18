@@ -23,13 +23,19 @@ under the License.
 
 ## Guide to Configuring Archive Plugins
 
+
  Many Java archive generating plugins accept the `archive` configuration element to customize the generation of the archive. In the standard Maven Plugins, this includes the `jar`, `war`, `ejb`, `ear` and `assembly` plugins.
+
 
 ### Disabling Maven Meta Information
 
+
  By default, Maven generated archives include the `META-INF/maven` directory, which contains the `pom.xml` file used to build the archive, and a `pom.properties` file that includes some basic properties in a small, easier to read format.
 
+
  To disable the generation of these files, include the following configuration for your plugin (in this example, the WAR plugin is used):
+
+
 
 ```
 <project>
@@ -57,4 +63,8 @@ under the License.
 
 ### Configuring the Manifest
 
+
  The archive configuration also accepts manifest configuration. See [Guide to Working with Manifests](./guide-manifest.html) for more information.
+
+
+

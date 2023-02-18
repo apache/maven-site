@@ -48,7 +48,7 @@ This guide is intended to assist users in developing Java plugins for Maven.
 You will typically name your plugin `<yourplugin>-maven-plugin`.
 
 Calling it `maven-<yourplugin>-plugin` (note "Maven" is at the beginning of the plugin name)
-is **strongly discouraged** since it's a **reserved naming pattern for official Apache Maven plugins maintained by the Apache Maven team**
+is **strongly discouraged** since it's a **reserved naming pattern for official Apache Maven plugins maintained by the Apache Maven team** 
 with groupId `org.apache.maven.plugins`.
 
 Using this naming pattern is an infringement of the Apache Maven Trademark.
@@ -61,16 +61,16 @@ and a couple ways to execute the mojo.
 
 ### Your First Mojo
 
-At its simplest, a Java mojo consists simply of a single class representing one plugin's goal.
-There is no requirement for multiple classes like EJBs, although a plugin which contains a number of similar mojos is likely to use an abstract superclass
+At its simplest, a Java mojo consists simply of a single class representing one plugin's goal. 
+There is no requirement for multiple classes like EJBs, although a plugin which contains a number of similar mojos is likely to use an abstract superclass 
 for the mojos to consolidate code common to all mojos.
 
-When processing the source tree to find mojos, [`plugin-tools`](/plugin-tools/) looks for classes with either `@Mojo` annotation.
+When processing the source tree to find mojos, [`plugin-tools`](/plugin-tools/) looks for classes with either `@Mojo` annotation. 
 Any class with this annotation are included in the plugin configuration file.
 
 ### A Simple Mojo
 
-Listed below is a simple mojo class which has no parameters. This is about as simple as a mojo can be.
+Listed below is a simple mojo class which has no parameters. This is about as simple as a mojo can be. 
 After the listing is a description of the various parts of the source.
 
 ```
@@ -186,7 +186,7 @@ For more details, you can look at [detailed bindings for `maven-plugin` packagin
 
 ## Executing Your First Mojo
 
-The most direct means of executing your new plugin is to specify the plugin goal directly on the command line.
+The most direct means of executing your new plugin is to specify the plugin goal directly on the command line. 
 To do this, you need to configure the `hello-maven-plugin` plugin in you project:
 
 ```
@@ -221,12 +221,12 @@ For example, to run the simple mojo in the sample plugin, you would enter "`mvn 
 
 There are several ways to reduce the amount of required typing:
 
-- If you need to run the latest version of a plugin installed in your local repository, you can omit its version number.
+- If you need to run the latest version of a plugin installed in your local repository, you can omit its version number. 
   So just use "`mvn sample.plugin:hello-maven-plugin:sayhi`" to run your plugin.
-- You can assign a shortened prefix to your plugin, such as `mvn hello:sayhi`.
-  This is done automatically if you follow the convention of using `${prefix}-maven-plugin`
+- You can assign a shortened prefix to your plugin, such as `mvn hello:sayhi`. 
+  This is done automatically if you follow the convention of using `${prefix}-maven-plugin` 
   (or `maven-${prefix}-plugin` if the plugin is part of the Apache Maven project).
-  You may also assign one through additional configuration - for more information see [Introduction to Plugin Prefix Mapping](../introduction/introduction-to-plugin-prefix-mapping.html).
+  You may also assign one through additional configuration - for more information see [ Introduction to Plugin Prefix Mapping](../introduction/introduction-to-plugin-prefix-mapping.html).
 - Finally, you can also add your plugin's groupId to the list of groupIds searched by default.
   To do this, you need to add the following to your `${user.home}/.m2/settings.xml` file:
 
@@ -304,12 +304,12 @@ Listed below is an example of a parameter for the simple mojo:
     private String greeting;
 ```
 
-The portion before the annotations is the description of the parameter.
+The portion before the annotations is the description of the parameter. 
 
-The `@Parameter` annotation identifies the variable as a mojo parameter.
+The `@Parameter` annotation identifies the variable as a mojo parameter. 
 
-The `defaultValue` parameter of the annotation defines the default value for the variable.
-This value can include expressions which reference the project, such as "`${project.version}`"
+The `defaultValue` parameter of the annotation defines the default value for the variable. 
+This value can include expressions which reference the project, such as "`${project.version}`" 
 (more can be found in the ["Parameter Expressions" document](/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html)).
 
 The `property` parameter can be used to allow configuration of the mojo parameter from the command line by referencing a property that the user sets via the `-D` option.
@@ -380,7 +380,7 @@ public class MyQueryMojo extends AbstractMojo {
 
 ```
 
-Note the specification of the property name for each parameter which tells Maven
+Note the specification of the property name for each parameter which tells Maven 
 what setter and getter to use when the field's name does not match the intended name of the parameter in the plugin configuration.
 
 ## Resources
@@ -391,3 +391,6 @@ what setter and getter to use when the field's name does not match the intended 
 4. [Plexus Common Utilities](https://codehaus-plexus.github.io/plexus-utils/): Set of utilities classes useful for Mojo development.
 5. [Commons IO](http://commons.apache.org/io/): Set of utilities classes useful for file/path handling.
 6. [Common Bugs and Pitfalls](../../plugin-developers/common-bugs.html): Overview of problematic coding patterns.
+
+
+

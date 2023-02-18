@@ -22,8 +22,13 @@ under the License.
 -->
 ## Maven Extensions Cookbook
 
+
  Extensions are based on components, defined either with Plexus or JSR-330:
 
-- [How to upgrade from Plexus javadoc tags to Plexus Java annotations?](./plexus-plugin-upgrade.html)
 
-- [Using JSR-330 (instead of Plexus Java annotations)](/maven-jsr330.html)
+
+ - [How to upgrade from Plexus javadoc tags to Plexus Java annotations?](./plexus-plugin-upgrade.html)
+
+ - [Using JSR-330 (instead of Plexus Java annotations)](/maven-jsr330.html)
+
+

@@ -26,18 +26,18 @@ While the local repository does reside on local filesystem, users should **never
 using plain file operations, but use the provided API instead. Reason for this strict expectation is that even
 today different implementations of local repository exists. Hence, "reverse engineering" the layout and direct
 access to locally cached or installed files may not only break in the future, but may also circumvent important
-aspects like locking and synchronization, and so forth. Latest resolver even implements "split" local repository,
-where user may configure local repository to split the installed and cached artifacts, hence to make them physically
-split from each other.
+aspects like locking and synchronization, and so forth. Latest resolver even implements "split" local repository, 
+where user may configure local repository to split the installed and cached artifacts, hence to make them physically 
+split from each other. 
 
-All these underlying changes remain hidden from code using local repository API, and hence, the code will
+All these underlying changes remain hidden from code using local repository API, and hence, the code will 
 be more robust and time proof.
 
 ## The `baseVersion` Artifact Property
 
-As noted in [Layout](layout.md) page, locally built and installed (implies "to local repository") artifacts will use
+As noted in [Layout](layout.md) page, locally built and installed (implies "to local repository") artifacts will use 
 `baseVersion` while calculating layout. Hence, in this case both, `baseVersion` and `version` of them will both
 contain same value, the one ending with "SNAPSHOT" constant string, no transformation is applied to file name.
 
-Snapshots pulled from remote and cached in local repository will have timestamped `version` property instead, hence
+Snapshots pulled from remote and cached in local repository will have timestamped `version` property instead, hence 
 they will have the full-blown timestamped version applied to file name.

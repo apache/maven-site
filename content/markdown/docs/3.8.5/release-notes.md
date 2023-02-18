@@ -35,7 +35,7 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-- Regression fixes from Maven 3.8.4
+* Regression fixes from Maven 3.8.4
 
 The full list of changes can be found in our [issue management system][4].
 

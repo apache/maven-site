@@ -23,17 +23,25 @@ under the License.
 
 ## Releasing A Maven Project
 
+
  What follows is a description of releasing a Maven project to a staging repository and its documentation, whereupon it is scrutinized by the community, approved, and transferred to a production repository.
 
+
  The steps involved are similar for any Apache project, with more specifics for parent POMs and Maven itself. The steps involved, and the relevant documents for each, are listed below.
+
 
 <!--  nothing specific: normal component  * {{{./maven-plugin-release.html} Releasing a Maven plugin project}} -->
 <!--  nothing specific: normal component * {{{./maven-shared-release.html} Releasing a Maven shared component or subproject}} -->
 
-- [Releasing Maven Core](./maven-core-release.html)
+ - [ Releasing Maven Core](./maven-core-release.html)
 
-- [Releasing a parent POM](./parent-pom-release.html)
+ - [ Releasing a parent POM](./parent-pom-release.html)
+
 
  The above links all provide specific information for those types of releases, but they all refer back to the common documentation:
 
-- [Maven Project Common Release procedure](./maven-project-release-procedure.html)
+
+
+ - [ Maven Project Common Release procedure](./maven-project-release-procedure.html)
+
+

@@ -22,29 +22,43 @@ under the License.
 -->
 ## Using Extensions
 
+
  Extensions are a way to add classes to either the [Core Classloader](./guide-maven-classloading.html#core-classloader) (Core Extensions) or the [Project Classloader](./guide-maven-classloading.html#Project_Classloaders) (Build Extensions). This is necessary for adjusting Maven in a way that affects more than just one plug-in.
+
 
  The mechanism allows extensions to either replace default [Sisu components](https://www.eclipse.org/sisu/) with custom ones or add new components which are used at run time. In addition one could also expose additional packages from the Core Classloader.
 
+
  Extensions are typically used to enable [Wagon providers](../../wagon/wagon-providers/), used for the transport of artifact between repositories, and plug-ins which [provide lifecycle enhancements](../../examples/maven-3-lifecycle-extensions.html).
+
 
 ### Loading Extensions
 
+
  There are different means of loading extensions depending on the type. There are _core extensions_ which are loaded **early** and build extensions which are loaded **late**. Some extensions require early loading as they fundamentally change Maven behaviour. An extension's documentation should indicate whether it provides a core or a build extension.
+
 
 #### Core Extension
 
-- Registered via extension jar in `${maven.home}/lib/ext`
 
-- Registered via CLI argument `mvn -Dmaven.ext.class.path=extension.jar`
 
-- Registered via [`.mvn/extensions.xml` file](../../configure.html#mvn-extensions-xml-file)
+ - Registered via extension jar in `${maven.home}/lib/ext`
+
+ - Registered via CLI argument `mvn -Dmaven.ext.class.path=extension.jar`
+
+ - Registered via [`.mvn/extensions.xml` file](../../configure.html#mvn-extensions-xml-file)
+
+
 
 #### Build Extension
 
-- Registered via [`project-\>build-\>plugins-\>plugin`](../../pom.html#plugins) with element `extensions` being set to `true`. This is useful for regular plug-ins carrying some extensions.
+
+
+ - Registered via [`project-\>build-\>plugins-\>plugin`](../../pom.html#plugins) with element `extensions` being set to `true`. This is useful for regular plug-ins carrying some extensions.
 
    Example:
+
+
 
 ```
 
@@ -67,9 +81,12 @@ under the License.
 
 ```
 
-- Registered as build extension in [`project-\>build-\>extensions-\>extension`](../../pom.html#extensions)
+
+ - Registered as build extension in [`project-\>build-\>extensions-\>extension`](../../pom.html#extensions)
 
    Example:
+
+
 
 ```
 
@@ -88,3 +105,8 @@ under the License.
 </project>
 
 ```
+
+
+
+
+

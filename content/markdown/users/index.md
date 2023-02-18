@@ -22,22 +22,30 @@ under the License.
 -->
 ## Maven Users Centre
 
+
  This documentation centre is for those that have decided to use Maven to build their project, and would like to get started quickly, or are already using Maven and would like to add new functionality or fix a problem in their build.
+
 
 <!-- TODO: tasks as buttons? -->
 
-- [Download Maven](../download.html) - Download the latest version of Maven
+ - [ Download Maven](../download.html) - Download the latest version of Maven
 
-- [The 5 minute test](../guides/getting-started/maven-in-five-minutes.html) - Learn how to use Maven in 5 minutes
+ - [ The 5 minute test](../guides/getting-started/maven-in-five-minutes.html) - Learn how to use Maven in 5 minutes
 
-- [Getting Started Tutorial](../guides/getting-started/index.html) - An in depth tutorial once you've learned the basics
+ - [ Getting Started Tutorial](../guides/getting-started/index.html) - An in depth tutorial once you've learned the basics
 
-- [Getting Help](./getting-help.html) - How to get help with Maven
+ - [ Getting Help](./getting-help.html) - How to get help with Maven
+
 
 <!-- TODO: old getting started guide should become a beginners trail, and remove content covered in the 5 minute tutorial -->
 <!-- TODO: link to repository centre and plugin developers centre, and the reasons why they would progress there -->
 ### Reference
 
-- [POM Reference](../pom.html)
 
-- [Settings Reference](../settings.html)
+
+ - [ POM Reference](../pom.html)
+
+ - [ Settings Reference](../settings.html)
+
+
+

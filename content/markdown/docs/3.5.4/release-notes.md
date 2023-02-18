@@ -39,7 +39,7 @@ We really value the contributions of these non committers, so this section is fo
 
 Bugs:
 
-- [MNG-6370][] reporter and contributor: Sylwester Lachiewicz
+- [MNG-6370][] reporter and contributor: Sylwester Lachiewicz 
 - [MNG-6382][] reporter: Falko Modler
 - [MNG-6388][] reporter: Mike Kelly
 - [MNG-6410][] reporter and contributor: Łukasz Dywicki
@@ -75,7 +75,6 @@ There are some additional minor improvements, the most notable of which is:
 ## [The detailed issue list](#details)
 
 ### Bugs
-
 - [MNG-6370][] `ConcurrencyDependencyGraph#getNumberOfBuilds()` does not remove finished projects from unfinished ones
 - [MNG-6372][] On Windows Maven can output spurious ANSI escapes such as `[0m [0m`
 - [MNG-6382][] JANSI fails frequently with `NumberFormatException` when building in parallel
@@ -85,7 +84,6 @@ There are some additional minor improvements, the most notable of which is:
 - [MNG-6410][] Add `groupId` to `--resume-from` suggestion if `artifactId` is not unique in reactor
 
 ### Improvements
-
 - [MNG-5756][] Java home output in `mvn -v` is misleading
 - [MNG-5940][] Change the `maven-source-plugin` `jar` goal into `jar-no-fork` in Maven Super POM
 - [MNG-6362][] Add documentation information for GitHub
@@ -94,11 +92,9 @@ There are some additional minor improvements, the most notable of which is:
 - [MNG-6411][] Improve readability of project list returned when `--resume-from` option value is invalid
 
 ### Tasks
-
 - [MNG-6377][] switch from Git-WIP to Gitbox
 
 ### Dependency upgrades
-
 - [MNG-6344][] Upgrade Guice to 4.2.0
 - [MNG-6423][] Upgrade to Wagon 3.1.0
 

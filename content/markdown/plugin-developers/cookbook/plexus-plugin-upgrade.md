@@ -22,28 +22,40 @@ under the License.
 -->
 ## Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 
+
 ### Summary
+
 
  This recipe describes how to upgrade from Plexus Javadoc Tags to Plexus Java Annotations when defining a Plexus component.
 
+
  This is done in 2 steps:
+
+
 
  1 replace the [deprecated `plexus-maven-plugin`](https://codehaus-plexus.github.io/plexus-maven-plugin/), which only supports Plexus Javadoc Tags, with its [successor: `plexus-component-metadata`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/), which support both Plexus Javadoc Tags and Plexus Java Annotations,
 
  1 update sources with [Java Annotations for Plexus](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/).
 
+
  **Notice**: if you're targeting components for Maven 3.1.0+, using [`@Named`/`@Inject` JSR-330 annotations](/maven-jsr330.html) instead of `@Component`/`@Requirement` Plexus Java Annotations may be a good next step
+
+
 
 ### Prerequisite Plugins
 
+
  Here is the list of the plugins used:
+
 
 |**Plugin**|**Version**|
 |---|---|
 |[`plexus-maven-plugin`](https://codehaus-plexus.github.io/plexus-maven-plugin/)|1.3.8|
 |[`plexus-component-metadata`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/)|1.7.1|
 
+
 ### Equivalence Table
+
 
 ||**plexus-maven-plugin**|**plexus-component-metadata**|
 |---|---|---|
@@ -58,14 +70,19 @@ default: `${basedir}/src/main/resources/META-INF/plexus`|
 default: `${basedir}/src/test/resources/META-INF/plexus`|
 ||[`components-report`](https://codehaus-plexus.github.io/plexus-maven-plugin/components-report-mojo.html)|reporting feature not available|
 |source annotations|javadoc tags:  
-`@plexus.component`, `@plexus.requirement`, `@plexus.configuration`  |javadoc tags + [`plexus-component-annotations`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/) Java 5 annotations:
+`@plexus.component`, `@plexus.requirement`, `@plexus.configuration`  |javadoc tags + [`plexus-component-annotations`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/) Java 5 annotations: 
 [`@Component`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Component.html), [`@Requirement`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Requirement.html), [`@Configuration`](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/apidocs/org/codehaus/plexus/component/annotations/Configuration.html),|
+
 
 ### Recipe
 
+
 #### Plugin Configuration
 
+
  In your `pom.xml`, replace `plexus-maven-plugin` configuration:
+
+
 
 ```
 <project>
@@ -89,6 +106,8 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  with corresponding `plexus-component-metadata` configuration:
 
+
+
 ```
 <project>
   <build>
@@ -111,9 +130,14 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 
  If `merge-descriptors` is used, move the handwritten xml file to `${basedir}/src/main/resources/META-INF/plexus`.
 
+
+
 #### Replacing Plexus Javadoc Tags with Plexus Java 5 Annotations
 
+
  In your `pom.xml`, add `plexus-component-annotations` dependency:
+
+
 
 ```
 <project>
@@ -128,6 +152,8 @@ default: `${basedir}/src/test/resources/META-INF/plexus`|
 ```
 
  In your java sources, replace javadoc tags:
+
+
 
 ```
 /**
@@ -145,6 +171,8 @@ public class MyComponentImplementation
 
  with corresponding Java 5 annotations
 
+
+
 ```
 import org.codehaus.plexus.component.annotations.Component;
 import org.codehaus.plexus.component.annotations.Requirement;
@@ -157,3 +185,6 @@ public class MyComponentImplementation
     private InjectedComponent;
 }
 ```
+
+
+

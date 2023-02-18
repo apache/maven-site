@@ -37,9 +37,9 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-- upgrade maven resolver 1.9.2
-- chained local repository
-- profile activation by packaging
+* upgrade maven resolver 1.9.2
+* chained local repository
+* profile activation by packaging
 
 The full list of changes can be found in our [issue management system][4].
 

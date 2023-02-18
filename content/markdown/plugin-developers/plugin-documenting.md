@@ -22,18 +22,30 @@ under the License.
 -->
 ## Introduction
 
+
  A [Guide to the Plugin Documentation Standard](../guides/development/guide-plugin-documentation.html) was created. This document is intended to verify it during the Plugins development.
+
+
 
 ## Verify Plugin Documentation
 
+
  The [maven-docck-plugin](../plugins/maven-docck-plugin) checks that a project complies with the Plugin Documentation Standard.
 
+
  You **should** verify that all Plugin documentation respects this standard. The maven-docck-plugin can be run:
+
+
 
 ```
 mvn docck:check
 ```
 
+
 ## References
 
-- [Maven Plugin Documentation](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Documentation)
+
+
+ - [Maven Plugin Documentation](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Documentation)
+
+

@@ -26,7 +26,7 @@ uses - since 3.0-beta-3 - is named [Sisu][sisu] and is based on [Guice 3.x][guic
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush to switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
 co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components
-written using the Plexus APIs.
+written using the Plexus APIs. 
 
 If you want to use JSR-330, you must understand that your code won't be compatible with Maven 3.0.x
 but only with Maven 3.1.0 and later. Even though JSR-330 has been available in core since Maven 3.0-beta-3, it was made available to plugins and
@@ -65,13 +65,13 @@ not be discovered. This is a compromise that is reasonable given Maven is a comm
 is important.
 
 ## How to use JSR-330 in extensions
-
+ 
 Let's take a look at an example extension. We'll take a look at the POM, and a little bit of the implementation
 so you can get an idea of how JSR-330 extensions work. Really, it's just a simple JSR-330 component.
 If you want to look at the full implementation, you can find it [here][tesla-profiler] on Github.
 
 Ok, so let's take a look at the POM:
-
+ 
 ```xml
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

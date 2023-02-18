@@ -45,9 +45,10 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 The following issues were identified during release testing of this _BETA_ release but have not been deemed as release blockers:
 
-- [MNG-6190] maven-resolver-provider's `DefaultArtifactDescriptorReader` has mismatched constructor and initService methods (this issue does not affect normal usage of Maven)
-- [MNG-6191] `mvn -f` complains about illegal `readlink` option under macOS
-- [MNG-6192] The distribution zip file has unordered entries and some tools - most notably Maven wrapper - will fail to unzip the distribution
+* [MNG-6190] maven-resolver-provider's `DefaultArtifactDescriptorReader` has mismatched constructor and initService methods (this issue does not affect normal usage of Maven)
+* [MNG-6191] `mvn -f` complains about illegal `readlink` option under macOS
+* [MNG-6192] The distribution zip file has unordered entries and some tools - most notably Maven wrapper - will fail to unzip the distribution
+
 
 ## Why not Maven 3.4.0?
 
@@ -67,8 +68,8 @@ More detail on this decision can be read in the [mailing list archive](http://ww
 
 Bugs:
 
-- [MNG-6090] reporter: Harald Wellmann
-- [MNG-6173] reporter/contributor: Christoph Böhme
+ * [MNG-6090] reporter: Harald Wellmann
+ * [MNG-6173] reporter/contributor: Christoph Böhme
 
 Many thanks to all reporters and contributors for their time and support.
 
@@ -78,43 +79,43 @@ Thank you also for your time and feedback.
 
 ## Overview about the changes
 
-- The most obvious change you may encounter is that the console output
+ * The most obvious change you may encounter is that the console output
    has colors now [MNG-3507], [MNG-6093].
 
-- The new `project.directory` special property adds support in every calculated URLs (project, SCM, site)
+ * The new `project.directory` special property adds support in every calculated URLs (project, SCM, site)
    for module directory name that does not match artifactId [MNG-5878]
 
-- The `JAVA_HOME` discovery has been reduced to simply check if `JAVA_HOME` is set
+ * The `JAVA_HOME` discovery has been reduced to simply check if `JAVA_HOME` is set
    or not then trying to discover via `which java`, nothing more [MNG-6003].
 
-- The build bootstrapping support via Apache Ant has been removed. You can now only bootstrap Maven
+ * The build bootstrapping support via Apache Ant has been removed. You can now only bootstrap Maven
    build with a previous version of Maven, but not with Ant any more [MNG-5904].
 
-- Based on problems in using `M2_HOME` related to different Maven versions installed and
+ * Based on problems in using `M2_HOME` related to different Maven versions installed and
    to simplify things, the usage of `M2_HOME` has been removed and is not
    supported any more [MNG-5823], [MNG-5836], [MNG-5607].
 
-- Important change for windows users: The usage of `%HOME%` has been replaced
+ * Important change for windows users: The usage of `%HOME%` has been replaced
    with `%USERPROFILE%` [MNG-6001]
 
-- Several issues have been reported and fixed related to the `mvn` script either
+ * Several issues have been reported and fixed related to the `mvn` script either
    for Unix/Linux/Cygwin/Solaris or for Windows
    [MNG-5815], [MNG-5852], [MNG-5963], [MNG-6022].
 
-- In Maven 3.3.9, we have removed bindings for maven-ejb3-plugin because it
+ * In Maven 3.3.9, we have removed bindings for maven-ejb3-plugin because it
    does not exist. We follow-up and removed the artifact handler for `ejb3`
    and the `par` lifecycle [MNG-6014], [MNG-6017].
 
-- In previous Maven versions, there had been a larger problem related to
+ * In previous Maven versions, there had been a larger problem related to
    memory usage in case of very large reactors (200-300 modules or more)
    which caused failures with out of memory exceptions or the need to increase
    the memory settings. This problem has been fixed with [MNG-6030].
 
-- If you have defined a property within the `.mvn/maven.config` file,
+ * If you have defined a property within the `.mvn/maven.config` file,
    it was not possible to overwrite the property via command line.
    This has been fixed with [MNG-6078][MNG-6078].
 
-- If you have are using `<prerequisites>..</prerequisites>` for a non
+ * If you have are using `<prerequisites>..</prerequisites>` for a non
    maven-plugin project, you will get a WARNING which looks like this:
 
 ```
@@ -126,42 +127,42 @@ Thank you also for your time and feedback.
    you are expecting to build your project with, instead of using `prerequisites`
    [MNG-5297], [MNG-6092].
 
-- Replaced Eclipse Aether with [Maven Resolver][maven-resolver]
+ * Replaced Eclipse Aether with [Maven Resolver][maven-resolver]
    [MNG-6110], [MNG-6140].
 
-- Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}`
+ * Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}`
    has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. It is very important to
    know if you are using the previously named properties for a version in your
    pom you have to use [flatten-maven-plugin] if you like to do an `mvn install`
    or `mvn deploy` more details can be found at [Maven CI Friendly](/maven-ci-friendly.html).
 
-- The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
+ * The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
 
 Improvements:
 
 Bugs:
 
-- [MNG-5895] - Problem with CI friendly usage of ${..} which is already defined via property in pom file.
-- [MNG-6057] - Problem with CI friendly usage of ${..} reactor order is changed
-- [MNG-6090] - CI friendly properties break submodule builds
-- [MNG-6170] - NPE in cases using Multithreaded -T X versions:set -DnewVersion=1.0-SNAPSHOT
-- [MNG-6173] - MavenSession.getAllProjects() should return all projects in the reactor
-- [MNG-6176] - Javadoc errors prevent release with Java 8
-- [MNG-6177] - The --file command line option of the Windows and Unix launchers does not work for directory names like "Spaces & Special Char"
-- [MNG-6180] - groupId has plain color when goal fails
-- [MNG-6181] - HttpClient produces a lot of noise at debug loglevel
-- [MNG-6183] - Dependency management debug message corrections.
+* [MNG-5895] - Problem with CI friendly usage of ${..} which is already defined via property in pom file.
+* [MNG-6057] - Problem with CI friendly usage of ${..} reactor order is changed
+* [MNG-6090] - CI friendly properties break submodule builds
+* [MNG-6170] - NPE in cases using Multithreaded -T X versions:set -DnewVersion=1.0-SNAPSHOT
+* [MNG-6173] - MavenSession.getAllProjects() should return all projects in the reactor
+* [MNG-6176] - Javadoc errors prevent release with Java 8
+* [MNG-6177] - The --file command line option of the Windows and Unix launchers does not work for directory names like "Spaces & Special Char"
+* [MNG-6180] - groupId has plain color when goal fails
+* [MNG-6181] - HttpClient produces a lot of noise at debug loglevel
+* [MNG-6183] - Dependency management debug message corrections.
 
 Improvements:
 
-- [MNG-6078] - Can't overwrite properties which have been defined in .mvn/maven.config
-- [MNG-6115] - Add Jansi native library search path to our start scripts to avoid extraction to temp file on each run
-- [MNG-6179] - Remove unused prerequisites
-- [MNG-6189] - WARN if maven-site-plugin configuration contains reportPlugins element
+* [MNG-6078] - Can't overwrite properties which have been defined in .mvn/maven.config
+* [MNG-6115] - Add Jansi native library search path to our start scripts to avoid extraction to temp file on each run
+* [MNG-6179] - Remove unused prerequisites
+* [MNG-6189] - WARN if maven-site-plugin configuration contains reportPlugins element
 
 New Feature:
 
-- [MNG-6182] - ModelResolver interface enhancement: addition of resolveModel( Dependency ) supporting version ranges
+* [MNG-6182] - ModelResolver interface enhancement: addition of resolveModel( Dependency ) supporting version ranges
 
 The full list of changes can be found in our [issue management system][4].
 
@@ -171,8 +172,13 @@ See [complete release notes for all versions][5]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
+[2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12339664&amp;styleName=Text
 [5]: ../../docs/history.html
+[maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
+[maven-resources-plugin]: /enforcer/maven-resources-plugin/
+[maven-aether-provider]: /ref/3.5.0-alpha-1/maven-aether-provider/
+[maven-compat]: /ref/3.5.0-alpha-1/maven-compat/
 [maven-resolver]: /resolver/
 
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507

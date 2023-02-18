@@ -22,20 +22,36 @@ under the License.
 -->
 ## Guide to naming conventions on groupId, artifactId, and version
 
-- **groupId** uniquely identifies your project across all projects. A group ID should follow [Java's package name rules](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7). This means it starts with a reversed domain name you control. For example,
+
+
+ - **groupId** uniquely identifies your project across all projects. A group ID should follow [Java's package name rules](https://docs.oracle.com/javase/specs/jls/se6/html/packages.html#7.7). This means it starts with a reversed domain name you control. For example,
 
    `org.apache.maven`, `org.apache.commons`
 
+
+
    Maven does not enforce this rule. There are many legacy projects that do not follow this convention and instead use single word group IDs. However, it will be difficult to get a new single word group ID approved for inclusion in the Maven Central repository.
+
+
 
    You can create as many subgroups as you want. A good way to determine the granularity of the `groupId` is to use the project structure. That is, if the current project is a multiple module project, it should append a new identifier to the parent's `groupId`. For example,
 
+
+
    `org.apache.maven`, `org.apache.maven.plugins`, `org.apache.maven.reporting`
 
-- **artifactId** is the name of the jar without version. If you created it, then you can choose whatever name you want with lowercase letters and no strange symbols. If it's a third party jar, you have to take the name of the jar as it's distributed.
+
+
+ - **artifactId** is the name of the jar without version. If you created it, then you can choose whatever name you want with lowercase letters and no strange symbols. If it's a third party jar, you have to take the name of the jar as it's distributed.
 
    eg. `maven`, `commons-math`
 
-- **version** if you distribute it, then you can choose any typical version with numbers and dots (1.0, 1.1, 1.0.1, ...). Don't use dates as they are usually associated with SNAPSHOT (nightly) builds. If it's a third party artifact, you have to use their version number whatever it is, and as strange as it can look. For example,
+
+
+ - **version** if you distribute it, then you can choose any typical version with numbers and dots (1.0, 1.1, 1.0.1, ...). Don't use dates as they are usually associated with SNAPSHOT (nightly) builds. If it's a third party artifact, you have to use their version number whatever it is, and as strange as it can look. For example,
 
    `2.0`, `2.0.1`, `1.3.1`
+
+
+
+

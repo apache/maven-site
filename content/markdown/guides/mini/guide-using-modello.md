@@ -22,19 +22,25 @@ under the License.
 -->
 ## Guide to using Modello
 
+
  [Modello](https://codehaus-plexus.github.io/modello/) is a tool for generating resources from a simple model. From a [simple model](https://codehaus-plexus.github.io/modello/modello.html) you can generate things like:
 
-- Java sources
 
-- XML serialization code for the model
 
-- XML deserialization code for model
+ - Java sources
 
-- Model documentation
+ - XML serialization code for the model
 
-- XSD
+ - XML deserialization code for model
+
+ - Model documentation
+
+ - XSD
+
 
  A typical modello model looks like the following:
+
+
 
 ```
 <model xmlns="https://codehaus-plexus.github.io/MODELLO/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -265,6 +271,8 @@ under the License.
 
  To utilize Modello, you would configure the `modello-maven-plugin` something like the following where you want to generate the Java sources for the model, the xpp3 serialization code and the xpp3 deserialization code (see [modello-plugin-xpp3](https://codehaus-plexus.github.io/modello/modello-plugins/modello-plugin-xpp3/) for more details):
 
+
+
 ```
 
 <project>
@@ -301,3 +309,4 @@ under the License.
 </project>
 
 ```
+

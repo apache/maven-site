@@ -37,19 +37,19 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 Bugs:
 
-- Marcel Schutte (reporter)
-- Mario Krizmanic (reporter, contributor)
-- Charles Gould (reporter)
-- Brian Oxley (reporter)
-- Dejan Stojadinovic (contributor)
+* Marcel Schutte (reporter)
+* Mario Krizmanic (reporter, contributor)
+* Charles Gould (reporter)
+* Brian Oxley (reporter)
+* Dejan Stojadinovic (contributor)
 
 Improvements:
 
-- Anton Tanasenko (reporter, contributor)
-- Gregor B. Rosenauer (reporter)
-- Sylwester Lachiewicz (reporter)
-- Stefan Eicher (reporter, contributor)
-- Manuel Ryan (reporter)
+* Anton Tanasenko (reporter, contributor)
+* Gregor B. Rosenauer (reporter)
+* Sylwester Lachiewicz (reporter)
+* Stefan Eicher (reporter, contributor)
+* Manuel Ryan (reporter)
 
 Many thanks to all reporters and contributors and for their time and support.
 
@@ -57,13 +57,13 @@ Many thanks to all reporters and contributors and for their time and support.
 
 The following members of the Maven community provided valuable feedback during the release process:
 
-- Mark Derricutt
-- Dejan Stojadinovic
-- Thomas Collignon
-- Grzegorz Grzybek
-- Petar Tahchiev
-- jieryn
-- Petr Široký
+* Mark Derricutt
+* Dejan Stojadinovic
+* Thomas Collignon
+* Grzegorz Grzybek
+* Petar Tahchiev
+* jieryn
+* Petr Široký
 
 Thank you for your time and feedback.
 
@@ -86,12 +86,10 @@ The full list of changes as well as detailed descriptions of same can be found i
 - [MNG-6242][] - No color for maven on Cygwin
 
 ### Sub-tasks
-
 - [MNG-6186][] - switch to improved HawtJNI
 - [MNG-6280][] - ArrayIndexOutOfBoundsException caused by pom.xml with process instructions
 
 ### Improvements
-
 - [MNG-5457][] - Show repository id when downloading or uploading from/to a remote repository
 - [MNG-6025][] - Add a ProjectArtifactsCache similar to PluginArtifactsCache
 - [MNG-6123][] - detect self references in POM and fail fast
@@ -103,12 +101,10 @@ The full list of changes as well as detailed descriptions of same can be found i
 - [MNG-6228][] - Optionality not displayed in dependency tree when run in debug mode
 
 ### New Features
-
 - [MNG-6084][] - Support JSR 250 annotations
 - [MNG-6220][] - Add CLI options to control color output
 
 ### Tasks
-
 - [MNG-6167][] - Clean up dependency mess (reported by dependency:analyze)
 - [MNG-6258][] - Upgrade to Maven Resolver 1.1.0
 

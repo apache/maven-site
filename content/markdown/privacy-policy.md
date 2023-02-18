@@ -21,11 +21,11 @@ Information about your use of this website is collected using server
 access logs and a tracking cookie. The collected information consists of
 the following:
 
-1. The IP address from which you access the website;
-2. The type of browser and operating system you use to access our site;
-3. The date and time you access our site;
-4. The pages you visit; and
-5. The addresses of pages from where you followed a link to our site.
+1.  The IP address from which you access the website;
+2.  The type of browser and operating system you use to access our site;
+3.  The date and time you access our site;
+4.  The pages you visit; and
+5.  The addresses of pages from where you followed a link to our site.
 
 Part of this information is gathered using a tracking cookie set by the
 [Google Analytics](https://www.google.com/analytics/) service and handled
@@ -42,3 +42,4 @@ sources.
 
 By using this website, you consent to the collection of this data in the
 manner and for the purpose described above.
+

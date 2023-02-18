@@ -23,21 +23,29 @@ under the License.
 
 ## Guide to Creating Archetypes
 
+
  Creating an archetype is a pretty straight forward process. An archetype is a very simple artifact, that contains the project prototype you wish to create. An archetype is made up of:
 
-- an [archetype descriptor](/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html) (`archetype-metadata.xml` in directory: `src/main/resources/META-INF/maven/`). It lists all the files that will be contained in the archetype and categorizes them so they can be processed correctly by the archetype generation mechanism.
 
-- the prototype files that are copied by the archetype plugin (directory: `src/main/resources/archetype-resources/`)
 
-- the prototype pom (`pom.xml` in: `src/main/resources/archetype-resources`)
+ - an [archetype descriptor](/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html) (`archetype-metadata.xml` in directory: `src/main/resources/META-INF/maven/`). It lists all the files that will be contained in the archetype and categorizes them so they can be processed correctly by the archetype generation mechanism.
 
-- a pom for the archetype (`pom.xml` in the archetype's root directory).
+ - the prototype files that are copied by the archetype plugin (directory: `src/main/resources/archetype-resources/`)
+
+ - the prototype pom (`pom.xml` in: `src/main/resources/archetype-resources`)
+
+ - a pom for the archetype (`pom.xml` in the archetype's root directory).
+
 
  To create an archetype follow these steps:
 
+
 ### 1. Create a new project and pom.xml for the archetype artifact
 
+
  An example `pom.xml` for an archetype artifact looks as follows:
+
+
 
 ```
 
@@ -65,9 +73,14 @@ under the License.
 
  All you need to specify is a `groupId`, `artifactId` and `version`. These three parameters will be needed later for invoking the archetype via `archetype:generate` from the commandline.
 
+
+
 ### 2. Create the archetype descriptor
 
+
  The [archetype descriptor](/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html) is a file called `archetype-metadata.xml` which must be located in the `src/main/resources/META-INF/maven/` directory. An example of an archetype descriptor can be found in the quickstart archetype:
+
+
 
 ```
 
@@ -89,19 +102,27 @@ under the License.
 
  The attribute `name` tag should be the same as the `artifactId` in the archetype `pom.xml`.
 
+
  The boolean attribute `partial` show if this archetype is representing a full Maven project or only parts.
+
 
  The `requiredProperties`, `fileSets` and `modules` tags represent the differents parts of the project:
 
-- `<requiredProperties>` : List of required properties to generate a project from this archetype
 
-- `<fileSets>` : File sets definition
 
-- `<modules>` : Modules definition
+ - `<requiredProperties>` : List of required properties to generate a project from this archetype
+
+ - `<fileSets>` : File sets definition
+
+ - `<modules>` : Modules definition
+
 
  At this point one can only specify individual files to be created but not empty directories.
 
+
  Thus the quickstart archetype shown above defines the following directory structure:
+
+
 
 ```
 
@@ -125,11 +146,16 @@ archetype
 
 ```
 
+
 ### 3. Create the prototype files and the prototype pom.xml
+
 
  The next component of the archetype to be created is the prototype `pom.xml`. Any `pom.xml` will do, just don't forget to the set `artifactId` and `groupId` as variables ( `${artifactId}` / `${groupId}` ). Both variables will be initialized from the commandline when calling `archetype:generate`.
 
+
  An example for a prototype `pom.xml` is:
+
+
 
 ```
 
@@ -157,9 +183,13 @@ archetype
 
 ```
 
+
 ### 4. Install the archetype and run the archetype plugin
 
+
  Now you are ready to install the archetype:
+
+
 
 ```
 
@@ -168,6 +198,8 @@ mvn install
 ```
 
  Now that you have created an archetype, you can try it on your local system by using the following command. In this command, you need to specify the full information about the archetype you want to use (its `groupId`, its `artifactId`, its `version`) and the information about the new project you want to create (`artifactId` and `groupId`). Don't forget to include the version of your archetype (if you don't include the version, you archetype creation may fail with a message that version:RELEASE was not found)
+
+
 
 ```
 
@@ -182,9 +214,14 @@ mvn archetype:generate                                  \
 
  Once you are happy with the state of your archetype, you can deploy (or submit it to [Maven Central](/guides/mini/guide-central-repository-upload.html)) it as any other artifact and the archetype will then be available to any user of Maven.
 
+
+
 ### Alternative way to start creating your Archetype
 
+
  Instead of manually creating the directory structure needed for an archetype, simply use
+
+
 
 ```
 mvn archetype:generate
@@ -195,3 +232,6 @@ mvn archetype:generate
 ```
 
  Afterwhich, you can now customize the contents of the `archetype-resources` directory, and `archetype-metadata.xml`, then, proceed to Step#4 (Install the archetype and run the archetype plugin).
+
+
+

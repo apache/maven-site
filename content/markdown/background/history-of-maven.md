@@ -1,4 +1,4 @@
-# History of Maven
+# History of Maven 
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one

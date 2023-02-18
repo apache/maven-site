@@ -71,7 +71,7 @@ Multiple profile activation conditions are now ANDed instead of ORed. We believe
 
 ### Support resolution of Import Scope POMs from Repo that contains a ${parameter} ([MNG-5639][MNG-5639])
 
-This feature helps support the pattern where many streams of development are setup with an individually sandboxed repository holding specific version of several shared components. A repository configuration might use the pattern ${nexus.baseurl}/content/groups/${stream.name} where the properties are set in settings.xml file.
+This feature helps support the pattern where many streams of development are setup with an individually sandboxed repository holding specific version of several shared components. A repository configuration might use the pattern ${nexus.baseurl}/content/groups/${stream.name} where the properties are set in settings.xml file. 
 
 ### Update maven-plugin-plugin:descriptor default binding from generate-resources phase to process-classes ([MNG-5346][MNG-5346])
 
@@ -117,6 +117,7 @@ See [complete release notes for all versions][5]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
+[2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330186
 [5]: ../../docs/history.html
 [MNG-2199]: https://issues.apache.org/jira/browse/MNG-2199

@@ -53,6 +53,11 @@ See [complete release notes for all versions][5]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
+[2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330187
 [5]: ../../docs/history.html
 [MNG-5672]: https://issues.apache.org/jira/browse/MNG-5672
+[MNG-4565]: https://issues.apache.org/jira/browse/MNG-4565
+[MNG-5346]: https://issues.apache.org/jira/browse/MNG-5346
+[MNG-5452]: https://issues.apache.org/jira/browse/MNG-5452
+[MNG-5639]: https://issues.apache.org/jira/browse/MNG-5639

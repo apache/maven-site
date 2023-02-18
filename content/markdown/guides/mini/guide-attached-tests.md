@@ -23,7 +23,10 @@ under the License.
 
 ## Guide to using attached tests
 
+
  You can reuse the tests that you have created for one project in another. For example, suppose `foo-core` contains test code in the `${basedir}/src/test/java`. To package up those compiled tests in a JAR and deploy them for general reuse, configure the `maven-jar-plugin` as follows:
+
+
 
 ```
 
@@ -50,7 +53,10 @@ under the License.
 
  The attached test JAR can be installed and deployed like any other Maven artifact.
 
+
  To use the attached test JAR, specify a dependency on the main artifact with a specified type of `test-jar` and the `classifier`.
+
+
 
 ```
 
@@ -98,3 +104,4 @@ under the License.
 </project>
 
 ```
+

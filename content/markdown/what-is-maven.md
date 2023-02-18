@@ -61,11 +61,11 @@ Maven provides useful project information that is in part
 taken from your POM and in part generated from your project's sources.
 For example, Maven can provide:
 
-- Change log created directly from source control
-- Cross referenced sources
-- Mailing lists managed by the project
-- Dependencies used by the project
-- Unit test reports including coverage
+-   Change log created directly from source control
+-   Cross referenced sources
+-   Mailing lists managed by the project
+-   Dependencies used by the project
+-   Unit test reports including coverage
 
 Third party code analysis products also provide Maven plugins that add their
 reports to the standard information given by
@@ -80,9 +80,9 @@ For example, specification, execution, and reporting of unit tests are
 part of the normal build cycle using Maven. Current unit testing best
 practices were used as guidelines:
 
-- Keeping test source code in a separate, but parallel source tree
-- Using test case naming conventions to locate and execute tests
-- Having test cases setup their environment instead of
+-   Keeping test source code in a separate, but parallel source tree
+-   Using test case naming conventions to locate and execute tests
+-   Having test cases setup their environment instead of
     customizing the build for test preparation
 
 Maven also assists in project workflow such as release and issue management.
@@ -96,7 +96,7 @@ may not fit with this structure for historical reasons. While Maven is
 designed to be flexible to the needs of different projects,
 it cannot cater to every situation without compromising its objectives.
 
-If your project has an unusual build structure that
+If your project has an unusual build structure that 
 cannot be reorganized, you may have to forgo some features or the use of
 Maven altogether.
 
@@ -104,10 +104,11 @@ Maven altogether.
 
 You might have heard some of the following things about Maven:
 
-- Maven is a site and documentation tool
-- Maven extends Ant to let you download dependencies
-- Maven is a set of reusable Ant scriptlets
+-   Maven is a site and documentation tool
+-   Maven extends Ant to let you download dependencies
+-   Maven is a set of reusable Ant scriptlets
 
 While Maven does these things, as you can read above in the "What is
 Maven?" section, these are not the only features Maven has, and its
 objectives are quite different.
+

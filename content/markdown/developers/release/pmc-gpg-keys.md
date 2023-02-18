@@ -23,9 +23,13 @@ under the License.
 
 ## Introduction
 
+
  You need to add your GPG keys in [https://svn.apache.org/repos/asf/maven/project/KEYS](https://svn.apache.org/repos/asf/maven/project/KEYS) before a release. Here are some useful [GnuPG](http://www.gnupg.org/) commands to generate your Keys.
 
+
 ### gpg --gen-key
+
+
 
 ```
 >gpg --gen-key
@@ -104,7 +108,10 @@ sub   2048g/D2814A59 2006-10-10
 
 ```
 
+
 ### gpg --list-sigs && gpg --armor --export
+
+
 
 ```
 >gpg --list-sigs "Vincent Siveton" && gpg --armor --export "Vincent Siveton"
@@ -116,15 +123,24 @@ sig          07DDB702 2006-10-10  Vincent Siveton <vsiveton@apache.org>
 
 ```
 
+
+
 ## Version: GnuPG v1.4.5 (MingW32)
+
+
 
 ## mQGiBEUrnAsRBACQDiYGc1IQmkENLO9iznBg8otGPEbzqQozT5tsip5mB30f6Mc/ uuLxJkLdna7Ul3goIXDtCeLJq38gHvruNtVNR6S+juJFkd5sLEH8UJ18PbKuo/9I KGlzjtCYUUDC48czRr0efhqd54NH8ydNdpaZ76NGPPYfpXtk7kKgH/nPiwCgxozK IG2frMuWIvdFafbqdAl7y/sD/1Csf0r9jtHEeXOuyhm8jCGrSwzLbHUGKPUQP37P ajECHoWp6HnvHEEEpgVl+UjfZvrcVhzUoP+3r5HAugqERfkzK8AWc7qjIRjf64kU sjvto31G2KYz17Y8K9y4LkRkUspu8uw903pKnW/QELg4vvPVaEYpVVIdS6+cUreu V0hOA/4tW7T/GpzSbQmjvnIRQ7GVHbQeXsANwrS6NmGYIxafN9P9dfHV+eUieTu6 rvMP9coOhTYyEKZksrXw2MmXx5SzgxsXT0g4wDXbwxPYFfIdGUzFMobnVXiZ3G8l JEl9cML0cg3ZL1SoDmVf2iG3e3Yxxsne4AE1SU+0bbq0t7rqALQlVmluY2VudCBT aXZldG9uIDx2c2l2ZXRvbkBhcGFjaGUub3JnPohgBBMRAgAgBQJFK5wLAhsDBgsJ CAcDAgQVAggDBBYCAwECHgECF4AACgkQhPTUcAfdtwLP3gCbB/V1afp8hzxgirCS d2r6zCkJQ2IAoLKD/RIkkerNintYzrubJliJKBsRuQINBEUrnBgQCAD1+Sx+sBDL 1XCDtxQGsrZmMnJJVK/w4TPa/8weJkuZ1GSpINOjInmqESuehvCLoOoyfcuDVXlR PUZhKZLPEKfJlFptGNK19oTO/CoQN+SJLwR41FoumsBaf1YSSRpAukyx2J6cUxqf uWrK/T8PmgDw4YzmY96tev//41eZ5tSOxpoUM8ypnTaShtS9pjgHijEG0b7wBqeU e1OGOiLHgKyjEJUmlTaLm1SxJ84eq0uAvYb+rb/QoWWLpjvr2/mo1kzUvCPgo3fh kgOxCxsC9QD836Mi5HFK6CRYU3yAFu5+/jM+LJzELy3u7uMuOSP6yuiK8WXopdbN WHOiJQfdc2gTAAMFCADdljjAG7L+8de6JzsEduKErKqWlTEWa99n1knaGKzdUUOP WrKxwqgI6PAJbxOfG4vBdDa6M6+nySJDMybQsOCFyNx91/7jYkgkmv8Jkt8CTW4z P4HKlFYMAFpU95ftpTAAMAlr+t+nZRTHi94/VHMv4yLGzB/xapbzToHKuUt1Yqom Ncio5px7RVoicn13/i/GeY72fIdC2LRGo6PXlmmDQemoAnUw0RJoEtzapb0j/tWd BdAtQQX/Ks7qhk4aDDHGgO+CdHAB8PLHDpMpUX5Zc9JX1xhyJcS8d/LPUpXtt9WN eekqDpx+jNmySJr6os7rPAkjx6jDUvHPiuKdT4aviEkEGBECAAkFAkUrnBgCGwwA CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ 85TjkMPTgjp9 =Hg4C -----END PGP PUBLIC KEY BLOCK----- ----------------
 
+
  You need to append this result to [https://svn.apache.org/repos/asf/maven/project/KEYS](https://svn.apache.org/repos/asf/maven/project/KEYS).
+
 
  You also need to upload your key to the public server: [http://pgp.mit.edu/](http://pgp.mit.edu/) by copying the same you appended in the text field and submit. You can ensure by searching your email in key search engine.
 
+
 ### gpg --fingerprint
+
+
 
 ```
 >gpg --fingerprint vsiveton
@@ -136,4 +152,8 @@ sub   2048g/D2814A59 2006-10-10
 
  Go to [https://id.apache.org](https://id.apache.org), log in and fill `OpenPGP Public Key Primary Fingerprint:` with the value of `Key fingerprint`.
 
+
  You can read more about [Checksums And Signatures](https://www.apache.org/dev/release-signing.html#faq).
+
+
+

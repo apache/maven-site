@@ -99,6 +99,7 @@ See [complete release notes for all versions][5]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
+[2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330185
 [5]: ../../docs/history.html
 [MNG-2315]: https://issues.apache.org/jira/browse/MNG-2315
@@ -106,6 +107,9 @@ See [complete release notes for all versions][5]
 [MNG-5582]: https://issues.apache.org/jira/browse/MNG-5582
 [MNG-5230]: https://issues.apache.org/jira/browse/MNG-5230
 [MNG-5389]: https://issues.apache.org/jira/browse/MNG-5389
+[MNG-5578]: https://issues.apache.org/jira/browse/MNG-5578
+[MNG-5530]: https://issues.apache.org/jira/browse/MNG-5530
+[MNG-5549]: https://issues.apache.org/jira/browse/MNG-5549
 [MNG-5575]: https://issues.apache.org/jira/browse/MNG-5575
 [MNG-5576]: https://issues.apache.org/jira/browse/MNG-5576
 [MNG-5581]: https://issues.apache.org/jira/browse/MNG-5581

@@ -51,13 +51,13 @@ with 3.2.5.
 
 For non-alpha/beta releases, release candidates are produced before the actual release.
 
-Checkout <https://dist.apache.org/repos/dist/dev/maven/maven-3> then create the necessary directory tree.
+Checkout https://dist.apache.org/repos/dist/dev/maven/maven-3 then create the necessary directory tree.
 
 Copy the binaries and src-tar.gz with their sha512/asc to the created directories.
 
 To produce a release candidate, follow the first seven steps only from the following procedure:
 
-- [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+-   [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
 
 The version used should be the eventual version with -RC1, -RC2, etc. appended.
 
@@ -71,7 +71,7 @@ Once happy with a release candidate, the full release is performed, with the fin
 
 To produce a final release, the same process as for standard projects is followed:
 
-- [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+-   [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
 
 Below describes the additional steps that need to be taken at the points where the website are updated in those instructions.
 
@@ -151,3 +151,4 @@ Next, any superseded releases should be removed from the above locations (after 
 #### Proceed with Announcement
 
 You can now proceed with the steps outlined after deploying the website on [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+

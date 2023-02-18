@@ -25,8 +25,9 @@ This means:
 
 - security vulnerability reports will not be checked against the 2.x branch
 - the 2.x download pages will be removed
-- the latest 2.x release will be removed from the mirror system
+- the latest 2.x release will be removed from the mirror system 
 - the links to any 2.x specific documentation will be moved to [Maven 2.x Archives](https://maven.apache.org/archives/maven-2.x/)
+
 
 ## List Of Last Plugins Versions Which Support Maven 2.x
 

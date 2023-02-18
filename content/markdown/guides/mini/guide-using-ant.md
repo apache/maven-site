@@ -22,7 +22,10 @@ under the License.
 -->
 ## Guide to using Ant with Maven
 
+
  The example above illustrates how to bind an ant script to a lifecycle phase. You can add a script to each lifecycle phase, by duplicating the _execution/_ section and specifying a new phase.
+
+
 
 ```
 
@@ -64,6 +67,8 @@ under the License.
 
  So a concrete example would be something like the following:
 
+
+
 ```
 
 <project>
@@ -100,3 +105,4 @@ under the License.
 </project>
 
 ```
+

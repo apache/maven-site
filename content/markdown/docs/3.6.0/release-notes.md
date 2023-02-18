@@ -41,22 +41,22 @@ the [end of these release notes](#details).
 
 Code Contributors of this release:
 
-- [MNG-6383] Christoph Kunze
-- [MNG-6311] David Churcher
+ * [MNG-6383] Christoph Kunze
+ * [MNG-6311] David Churcher
 
 Issue Reporters of this release:
 
-- [MNG-4508] Richard van der Hoff
-- [MNG-5951] Jörg Sesterhenn
-- [MNG-6311] David Churcher
-- [MNG-6358] Adam John Burley
-- [MNG-6383] Christoph Kunze
-- [MNG-6391] Alexander Griesbaum
-- [MNG-6412] Christoph Amshoff
-- [MNG-6415] Seckin Onur Selamet
-- [MNG-6475] Phillip Webb
-- [MNG-6490] John Canny
-- [MNG-6492] Hoa Phan
+ * [MNG-4508] Richard van der Hoff
+ * [MNG-5951] Jörg Sesterhenn
+ * [MNG-6311] David Churcher
+ * [MNG-6358] Adam John Burley
+ * [MNG-6383] Christoph Kunze
+ * [MNG-6391] Alexander Griesbaum
+ * [MNG-6412] Christoph Amshoff
+ * [MNG-6415] Seckin Onur Selamet
+ * [MNG-6475] Phillip Webb
+ * [MNG-6490] John Canny
+ * [MNG-6492] Hoa Phan
 
 Many thanks to all reporters and contributors for their time and support.
 
@@ -64,7 +64,7 @@ Many thanks to all reporters and contributors for their time and support.
 
 Thanks to the following preliminary testers:
 
-- Filipe Sousa
+- Filipe Sousa 
 - Eric Lilja
 - Enrico Olivelli
 - Gary Gregory
@@ -80,7 +80,7 @@ At the time of release, there are no known regressions introduced by this releas
   been increased in previous version which influenced some of our users.
   This should have been fixed [MNG-6311], [MNG-6383] and [MNG-6412].
 
-- The output in the reactor summary has been improved [MNG-6391]
+- The output in the reactor summary has been improved [MNG-6391] 
   cause it confused people. In Maven 3.6.0 the reactor summary now
   looks like the following:
 
@@ -105,13 +105,12 @@ At the time of release, there are no known regressions introduced by this releas
 [INFO] ------------------------------------------------------------------------
 ```
 
-  The `parent` in the above output is the artifact name of the root module and
+  The `parent` in the above output is the artifact name of the root module and 
   the `5.0.4-SNAPSHOT` is the versions number for all modules in this
   reactor build.
 
   If you have an aggregator pom which contains different modules with different
   versions each line will contain the appropriate versions which looks like this:
-
 ```
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
@@ -129,12 +128,12 @@ At the time of release, there are no known regressions introduced by this releas
 ...
 ```
 
-- There was an issue related to the classpath ordering [MNG-6415] in Maven which
+- There was an issue related to the classpath ordering [MNG-6415] in Maven which 
   can cause issues which has been fixed.
 
 ## [The detailed issue list](#details)
 
-### Bugs
+### Bugs:
 
 - [MNG-6311] - Maven intolerably slow when import scope used heavily in large project
 - [MNG-6358] - Maven build should not require access to apache.org
@@ -144,7 +143,7 @@ At the time of release, there are no known regressions introduced by this releas
 - [MNG-6472] - Mockito cannot mock this class: interface org.eclipse.aether.impl.RepositoryEventDispatcher
 - [MNG-6490] - Maven shall not fail reporting circular dependency when the dependency is a classified secondary artifact
 
-### Improvements
+### Improvements:
 
 - [MNG-4508] - No way to avoid adding artifactId to site urls
 - [MNG-5951] - add an option to avoid path addition to inherited URLs

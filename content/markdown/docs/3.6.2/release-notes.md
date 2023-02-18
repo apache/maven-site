@@ -43,11 +43,12 @@ Issue Reporters of this release: Benoit GUERIN, Christian Schulte, Elliotte Rust
 
 Code Contributors of this release: Guillaume Nodet, Mickael Istria, Ray Tsang, Stefan Oehme, Joseph Walton, Bo Zhang, AElMehdi, Christian Schulte, Mao Shuai, MartinKanters, Sergey Chernov, Jesse Glick.
 
+ 
 Many thanks to all reporters and contributors for their time and support.
 
 (Please send an email to the dev list if we missed anyone).
 
-## Overview about the changes
+## Overview about the changes 
 
 - This release focuses mostly performance improvements, better memory footprint, and less CPU usage.
 
@@ -129,6 +130,7 @@ Dependency upgrade
     [MNG-6674] - Upgrade Wagon to 3.3.3
     [MNG-6738] - Upgrade maven-resolver to 1.4.1
 
+
 The full list of changes can be found in our [issue management system][4].
 
 ## Complete Release Notes
@@ -140,3 +142,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12345234
 [5]: ../../docs/history.html
+
