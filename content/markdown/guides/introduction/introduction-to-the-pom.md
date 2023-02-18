@@ -27,37 +27,37 @@ under the License.
 
 
 
- - [What is a POM](./introduction-to-the-pom.html#What_is_a_POM)?
+ - [What is a POM](./introduction-to-the-pom.html#what-is-a-pom)?
 
- - [Super POM](./introduction-to-the-pom.html#Super_POM)
+ - [Super POM](./introduction-to-the-pom.html#super-pom)
 
- - [Minimal POM](./introduction-to-the-pom.html#Minimal_POM)
+ - [Minimal POM](./introduction-to-the-pom.html#minimal-pom)
 
- - [Project Inheritance](./introduction-to-the-pom.html#Project_Inheritance)
+ - [Project Inheritance](./introduction-to-the-pom.html#project-inheritance)
 
-  - [Example 1](./introduction-to-the-pom.html#Example_1)
+  - [Example 1](./introduction-to-the-pom.html#example-1)
 
-  - [Example 2](./introduction-to-the-pom.html#Example_2)
-
-
-
- - [Project Aggregation](./introduction-to-the-pom.html#Project_Aggregation)
-
-  - [Example 3](./introduction-to-the-pom.html#Example_3)
-
-  - [Example 4](./introduction-to-the-pom.html#Example_4)
+  - [Example 2](./introduction-to-the-pom.html#example-2)
 
 
 
- - [Project Inheritance vs Project Aggregation](./introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation)
+ - [Project Aggregation](./introduction-to-the-pom.html#project-aggregation)
 
-  - [Example 5](./introduction-to-the-pom.html#Example_5)
+  - [Example 3](./introduction-to-the-pom.html#example-3)
+
+  - [Example 4](./introduction-to-the-pom.html#example-4)
 
 
 
- - [Project Interpolation and Variables](./introduction-to-the-pom.html#Project_Interpolation)
+ - [Project Inheritance vs Project Aggregation](./introduction-to-the-pom.html#project-inheritance-vs-project-aggregation)
 
-  - [Available Variables](./introduction-to-the-pom.html#Available_Variables)
+  - [Example 5](./introduction-to-the-pom.html#example-5)
+
+
+
+ - [Project Interpolation and Variables](./introduction-to-the-pom.html#project-nterpolation)
+
+  - [Available Variables](./introduction-to-the-pom.html#available-variables)
 
 
 
@@ -123,7 +123,7 @@ under the License.
  A POM requires that its groupId, artifactId, and version be configured. These three values form the project's fully qualified artifact name. This is in the form of `<groupId>:<artifactId>:<version>`. As for the example above, its fully qualified artifact name is "com.mycompany.app:my-app:1".
 
 
- Also, as mentioned in the [first section](What_is_a_POM), if the configuration details are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
+ Also, as mentioned in the [first section](#hat-is-a-pom), if the configuration details are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
 
 
  Furthermore, you can see that in the minimal POM the _repositories_ were not specified. If you build your project using the minimal POM, it would inherit the _repositories_ configuration in the Super POM. Therefore when Maven sees the dependencies in the minimal POM, it would know that these dependencies will be downloaded from `https://repo.maven.apache.org/maven2` which was specified in the Super POM.
@@ -299,7 +299,7 @@ under the License.
 ### Project Aggregation
 
 
- Project Aggregation is similar to [Project Inheritance](Project_Inheritance). But instead of specifying the parent POM from the module, it specifies the modules from the parent POM. By doing so, the parent project now knows its modules, and if a Maven command is invoked against the parent project, that Maven command will then be executed to the parent's modules as well. To do Project Aggregation, you must do the following:
+ Project Aggregation is similar to [Project Inheritance](#project-inheritance). But instead of specifying the parent POM from the module, it specifies the modules from the parent POM. By doing so, the parent project now knows its modules, and if a Maven command is invoked against the parent project, that Maven command will then be executed to the parent's modules as well. To do Project Aggregation, you must do the following:
 
 
 

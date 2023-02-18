@@ -23,7 +23,7 @@ under the License.
 ## Using Extensions
 
 
- Extensions are a way to add classes to either the [Core Classloader](./guide-maven-classloading.html#Core_Classloader) (Core Extensions) or the [Project Classloader](./guide-maven-classloading.html#Project_Classloaders) (Build Extensions). This is necessary for adjusting Maven in a way that affects more than just one plug-in.
+ Extensions are a way to add classes to either the [Core Classloader](./guide-maven-classloading.html#core-classloader) (Core Extensions) or the [Project Classloader](./guide-maven-classloading.html#Project_Classloaders) (Build Extensions). This is necessary for adjusting Maven in a way that affects more than just one plug-in.
 
 
  The mechanism allows extensions to either replace default [Sisu components](https://www.eclipse.org/sisu/) with custom ones or add new components which are used at run time. In addition one could also expose additional packages from the Core Classloader.
@@ -54,7 +54,7 @@ under the License.
 
 
 
- - Registered via [`project-\>build-\>plugins-\>plugin`](../../pom.html#Plugins) with element `extensions` being set to `true`. This is useful for regular plug-ins carrying some extensions.
+ - Registered via [`project-\>build-\>plugins-\>plugin`](../../pom.html#plugins) with element `extensions` being set to `true`. This is useful for regular plug-ins carrying some extensions.
 
    Example:
 
@@ -82,7 +82,7 @@ under the License.
 ```
 
 
- - Registered as build extension in [`project-\>build-\>extensions-\>extension`](../../pom.html#Extensions)
+ - Registered as build extension in [`project-\>build-\>extensions-\>extension`](../../pom.html#extensions)
 
    Example:
 

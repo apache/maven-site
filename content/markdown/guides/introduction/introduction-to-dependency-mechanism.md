@@ -30,23 +30,23 @@ under the License.
 
 
 
- - [Transitive Dependencies](Transitive_Dependencies)
+ - [Transitive Dependencies](#transitive-dependencies)
 
   - Excluded/Optional Dependencies
 
 
 
- - [Dependency Scope](Dependency_Scope)
+ - [Dependency Scope](#dependency-scope)
 
- - [Dependency Management](Dependency_Management)
+ - [Dependency Management](#dependency-management)
 
-  - [Importing Dependencies](Importing_Dependencies)
+  - [Importing Dependencies](#importing-dependencies)
 
-  - [Bill of Materials (BOM) POMs](bill-of-materials-bom-poms)
+  - [Bill of Materials (BOM) POMs](#bill-of-materials-bom-poms)
 
 
 
- - [System Dependencies](System_Dependencies)
+ - [System Dependencies](#system-dependencies)
 
 
 ### Transitive Dependencies

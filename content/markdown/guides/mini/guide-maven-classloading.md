@@ -27,23 +27,23 @@ under the License.
 
 
 
- - [Overview](Overview)
+ - [Overview](#overview)
 
- - [Platform Classloader](Platform_Classloader)
+ - [Platform Classloader](#platform-classloader)
 
- - [System Classloader](System_Classloader)
+ - [System Classloader](#system-classloader)
 
- - [Core Classloader](Core_Classloader)
+ - [Core Classloader](#core-classloader)
 
- - [API Classloader](API_Classloader)
+ - [API Classloader](#api-classloader)
 
- - [Build Extension Classloaders](Build_Extension_Classloaders)
+ - [Build Extension Classloaders](#build-extension-classloaders)
 
- - [Project Classloaders](Project_Classloaders)
+ - [Project Classloaders](#project-classloaders)
 
- - [Plugin Classloaders](Plugin_Classloaders)
+ - [Plugin Classloaders](#platform-classloader)
 
- - [Custom Classloaders](Custom_Classloaders)
+ - [Custom Classloaders](#custom-classloaders)
 
 
 ### Overview

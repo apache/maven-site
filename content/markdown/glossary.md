@@ -36,7 +36,7 @@ sometimes be confusing for newcomers.
 -   **Artifact**: An artifact is something that is either produced or
     used by a project. Examples of artifacts produced by Maven for a
     project include: JARs, source and binary distributions, WARs. Each
-    artifact is identified by a [group id](#GroupId), an
+    artifact is identified by a `group id`, an
     artifact ID, a version, an extension and a classifier
     (extension+classifier may be named by a [type](/ref/current/maven-core/artifact-handlers.html)).
 

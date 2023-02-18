@@ -100,7 +100,7 @@ This release covers two CVEs:
 
   - keep the dependency version but [define a mirror in your settings](/guides/mini/guide-mirror-settings.html).
 
-## The detailed issue list[](#Details)
+## The detailed issue list[](#details)
 
 Bug
 

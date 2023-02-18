@@ -37,7 +37,7 @@ If you have any questions, please consult:
 
 We really value the contributions of these non committers, so this section is
 focused on those individuals. Descriptions of the issues fixed can be found at
-the [end of these release notes](#Details).
+the [end of these release notes](#details).
 
 Issue Reporters of this release: Jonathan Chen, Charles Oliver Nutter, Lucas Ludueño, Stig Rohde Døssing, Vladimir Sitnikov
 
@@ -61,7 +61,7 @@ mvn -DbuildNumber=cecedd343002696d0abb50b32b541b8a6ba2883f package
   If you're building on any Unix system, you'll need to add "`-Dline.separator=$'\r\n'`".  
   See the [Maven - Guide to Configuring for Reproducible Builds](/guides/mini/guide-reproducible-builds.html) for more details.
 
-## The detailed issue list[](#Details)
+## The detailed issue list[](#details)
 
 Sub-task
 

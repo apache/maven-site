@@ -39,7 +39,7 @@ under the License.
  Following are examples of snippets in various source documents, as well as the corresponding macros in the APT documentation format.
 
 
- See the Doxia [Macros Guide](/doxia/macros/index.html#Snippet_Macro) for more information and examples.
+ See the Doxia [Macros Guide](/doxia/macros/index.html#snippet-macro) for more information and examples.
 
 
 ### Snippets in Sources

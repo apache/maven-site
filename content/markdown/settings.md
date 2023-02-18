@@ -17,23 +17,23 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-1.  [Introduction](#Introduction)
-    1.  [Quick Overview](#Quick_Overview)
+1.  [Introduction](#introduction)
+    1.  [Quick Overview](#quick-overview)
 
-2.  [Settings Details](#Settings_Details)
-    1.  [Simple Values](#Simple_Values)
-    2.  [Plugin Groups](#Plugin_Groups)
-    3.  [Servers](#Servers)
-        1.  [Password Encryption](#Password_Encryption)
+2.  [Settings Details](#dettings-details)
+    1.  [Simple Values](#simple-values)
+    2.  [Plugin Groups](#plugin-groups)
+    3.  [Servers](#servers)
+        1.  [Password Encryption](#password-encryption)
 
-    4.  [Mirrors](#Mirrors)
-    5.  [Proxies](#Proxies)
-    6.  [Profiles](#Profiles)
-        1.  [Activation](#Activation)
-        2.  [Repositories](#Repositories)
-        3.  [Plugin Repositories](#Plugin_Repositories)
+    4.  [Mirrors](#mirrors)
+    5.  [Proxies](#proxies)
+    6.  [Profiles](#profiles)
+        1.  [Activation](#activation)
+        2.  [Repositories](#repositories)
+        3.  [Plugin Repositories](#plugin-repositories)
 
-    7.  [Active Profiles](#Active_Profiles)
+    7.  [Active Profiles](#active-profiles)
 
 ## Introduction
 
@@ -95,7 +95,7 @@ cannot be used for interpolation.
 Half of the top-level `settings` elements are simple values,
 representing a range of values which describe elements of the build
 system that are active full-time.
-
+```xml
     <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
       <localRepository>${user.home}/.m2/repository</localRepository>
@@ -103,7 +103,7 @@ system that are active full-time.
       <offline>false</offline>
       ...
     </settings>
-
+```
 -   **localRepository**: This value is the path of this build system's
     local repository. The default value is
     `${user.home}/.m2/repository`. This element is especially useful for
@@ -214,7 +214,7 @@ page](./guides/mini/guide-encryption.html)
 -   **id**, **name**: The unique identifier and user-friendly name of
     this mirror. The `id` is used to differentiate between `mirror`
     elements and to pick the corresponding credentials from the
-    [`<servers>`](#Servers) section when connecting to the mirror.
+    [`<servers>`](#servers) section when connecting to the mirror.
 -   **url**: The base URL of this mirror. The build system will use this
     URL to connect to a repository rather than the original repository
     URL.

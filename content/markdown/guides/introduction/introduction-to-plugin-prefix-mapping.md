@@ -39,7 +39,7 @@ under the License.
 
 
 
- - `maven-${prefix}-plugin` - for official plugins maintained by the Apache Maven team itself (you **must not** use this naming pattern for your plugin, see [this note for more informations](../plugin/guide-java-plugin-development.html#Plugin_Naming_Convention_and_Apache_Maven_Trademark))
+ - `maven-${prefix}-plugin` - for official plugins maintained by the Apache Maven team itself (you **must not** use this naming pattern for your plugin, see [this note for more informations](../plugin/guide-java-plugin-development.html#plugin-naming-convention-and-apache-maven-trademark))
 
  - `${prefix}-maven-plugin` - for plugins from other sources
 

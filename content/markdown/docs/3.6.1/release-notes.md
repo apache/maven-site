@@ -37,7 +37,7 @@ We hope you enjoy using Maven! If you have any questions, please consult:
 
 We really value the contributions of these non committers, so this section is
 focused on those individuals. Descriptions of the issues fixed can be found at
-the [end of these release notes](#Details).
+the [end of these release notes](#details).
 
 Issue Reporters of this release:
 
@@ -191,7 +191,7 @@ Detailed explanations can be found in [Inheritance Assembly][inheritance-assembl
 
 [inheritance-assembly]: https://maven.apache.org/ref/3.6.1/maven-model-builder/index.html#Inheritance_Assembly
 
-## The detailed issue list[](#Details)
+## The detailed issue list[](#details)
 
 ### Bugs:
 

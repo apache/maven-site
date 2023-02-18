@@ -36,7 +36,7 @@ under the License.
  
    - [Plugins](#plugins)
 
- - [Lifecycle Reference](Lifecycle_Reference)
+ - [Lifecycle Reference](#lifecycle-reference)
 
  - [Built-in Lifecycle Bindings](#built-in-lifecycle-bindings)
 

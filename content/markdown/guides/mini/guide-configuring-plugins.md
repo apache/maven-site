@@ -25,49 +25,49 @@ under the License.
 
 
 
- - [Introduction](Introduction)
+ - [Introduction](#introduction)
 
- - [Generic Configuration](Generic_Configuration)
+ - [Generic Configuration](#generic-configuration)
 
-  - [Help Goal](Help_Goal)
+  - [Help Goal](#help-goal)
 
-  - [Configuring Parameters](Configuring_Parameters)
+  - [Configuring Parameters](#configuring-parameters)
 
-   - [Mapping Value Objects](Mapping_Value_Objects)
+   - [Mapping Value Objects](#mapping-value-objects)
 
-   - [Mapping Complex Objects](Mapping_Complex_Objects)
+   - [Mapping Complex Objects](#mapping-complex-objects)
 
-   - [Mapping Collection Types](Mapping_Collection_Types)
+   - [Mapping Collection Types](#mapping-collection-types)
 
-    - [Mapping Collections and Arrays](Mapping_Collections_and_Arrays)
+    - [Mapping Collections and Arrays](#mapping-collections-and-arrays)
 
-    - [Mapping Maps](Mapping_Maps)
+    - [Mapping Maps](#mapping-maps)
 
-    - [Mapping Properties](Mapping_Properties)
-
-
+    - [Mapping Properties](#mapping-properties)
 
 
 
 
 
- - [Configuring Build Plugins](Configuring_Build_Plugins)
-
-  - [Using the `<executions>` Tag](Using_the_.3Cexecutions.3E_Tag)
-
-  - [Using the `<dependencies>` Tag](Using_the_.3Cdependencies.3E_Tag)
-
-  - [Using the `<inherited>` Tag In Build Plugins](Using_the_.3Cinherited.3E_Tag_In_Build_Plugins)
 
 
+ - [Configuring Build Plugins](#configuring-build-plugins)
 
- - [Configuring Reporting Plugins](Configuring_Reporting_Plugins)
+  - [Using the `<executions>` Tag](#using-the-executions-tag)
 
-  - [Using the `<reporting>` Tag VS `<build>` Tag](Using_the_.3Creporting.3E_Tag_VS_.3Cbuild.3E_Tag)
+  - [Using the `<dependencies>` Tag](#using-the-dependencies-tag)
 
-  - [Using the `<reportSets>` Tag](Using_the_.3CreportSets.3E_Tag)
+  - [Using the `<inherited>` Tag In Build Plugins](#using-the-inherited-tag-in-build-plugins)
 
-  - [Using the `<inherited>` Tag In Reporting Plugins](Using_the_.3Cinherited.3E_Tag_In_Reporting_Plugins)
+
+
+ - [Configuring Reporting Plugins](#configuring-reporting-plugins)
+
+  - [Using the `<reporting>` Tag VS `<build>` Tag](#using-the-reporting-tag-vs-build-tag)
+
+  - [Using the `<reportSets>` Tag](#using-the-reportsets-tag)
+
+  - [Using the `<inherited>` Tag In Reporting Plugins](#using-the-inherited-tag-in-reporting-plugins)
 
 
 
