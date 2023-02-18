@@ -77,9 +77,9 @@ Reader reader = new FileReader( javaFile );
 
 
 
- - [Source File Encoding](https://cwiki.apache.org/confluence/display/MAVEN/POM+Element+for+Source+File+Encoding)
+ - [Source File Encoding](https://cwiki.apache.org/confluence/display/MAVEN/POM\+Element\+for\+Source\+File\+Encoding)
 
- - [Report Output Encoding](http://cwiki.apache.org/confluence/display/MAVENOLD/Reporting+Encoding+Configuration)
+ - [Report Output Encoding](http://cwiki.apache.org/confluence/display/MAVENOLD/Reporting\+Encoding\+Configuration)
 
 
  Finally note that XML files require special handling because they are equipped with an encoding declaration in the XML prolog. Reading or writing XML files with an encoding that does not match their XML prolog's `encoding` attribute is a bad idea:
@@ -138,10 +138,10 @@ URL url = new URL( "file:/C:/Program%20Files/Java/bin/java.exe" );
 File path = new File( url.getPath() );
 ```
 
- To decode a URL, people sometimes also choose `[java.net.URLDecoder](http://java.sun.com/javase/6/docs/api/java/net/URLDecoder.html)`. The pitfall with this class is that is actually performs HTML form decoding which is yet another encoding and not the same as the URL encoding (compare the last paragraph in class javadoc about `[java.net.URL](http://java.sun.com/javase/6/docs/api/java/net/URL.html)`). For instance, a `URLDecoder` will erroneously convert the character "+" into a space as illustrated by the last sysout in the example above.
+ To decode a URL, people sometimes also choose `[java.net.URLDecoder](http://java.sun.com/javase/6/docs/api/java/net/URLDecoder.html)`. The pitfall with this class is that is actually performs HTML form decoding which is yet another encoding and not the same as the URL encoding (compare the last paragraph in class javadoc about `[java.net.URL](http://java.sun.com/javase/6/docs/api/java/net/URL.html)`). For instance, a `URLDecoder` will erroneously convert the character "\+" into a space as illustrated by the last sysout in the example above.
 
 
- In an ideal world, code targetting JRE 1.4+ could easily avoid these problems by using the constructor `[File(URI)](http://java.sun.com/javase/6/docs/api/java/io/File.html#File(java.net.URI))` as suggested by the following snippet:
+ In an ideal world, code targetting JRE 1.4\+ could easily avoid these problems by using the constructor `[File(URI)](http://java.sun.com/javase/6/docs/api/java/io/File.html#File(java.net.URI))` as suggested by the following snippet:
 
 
 
@@ -209,14 +209,14 @@ src/
  Now, if a resource bundle is to be looked up for English on a JVM whose default locale happens to be French, the bundle `mymojo-report_fr.properties` will be loaded instead of the intended bundle `mymojo-report.properties`.
 
 
- Reporting plugins that suffer from this bug can easily be detected by executing `mvn site -D locales=xy,en` where `xy` denotes any other language code supported by the particular plugin. Specifying `xy` as the first locale will have the Maven Site Plugin change the JVM's default locale to `xy` which in turn causes the lookup for `en` to fail as outlined above unless the plugin has a dedicated resource bundle for English.
+ Reporting plugins that suffer from this bug can easily be detected by executing `mvn site -D locales\=xy,en` where `xy` denotes any other language code supported by the particular plugin. Specifying `xy` as the first locale will have the Maven Site Plugin change the JVM's default locale to `xy` which in turn causes the lookup for `en` to fail as outlined above unless the plugin has a dedicated resource bundle for English.
 
 
 
 ### Using System Properties
 
 
- Maven's command line supports the definition of system properties via arguments of the form `-D key=value`. While these properties are called system properties, plugins should never use `[System.getProperty()](http://java.sun.com/javase/6/docs/api/java/lang/System.html#getProperty(java.lang.String))` and related methods to query these properties. For example, the following code snippet will not work reliably when Maven is embedded, say into an IDE or a CI server:
+ Maven's command line supports the definition of system properties via arguments of the form `-D key\=value`. While these properties are called system properties, plugins should never use `[System.getProperty()](http://java.sun.com/javase/6/docs/api/java/lang/System.html#getProperty(java.lang.String))` and related methods to query these properties. For example, the following code snippet will not work reliably when Maven is embedded, say into an IDE or a CI server:
 
 
 
@@ -403,7 +403,7 @@ public MyMojo extends AbstractMojo
 }
 ```
 
- In case of the logger, the above mojo will simply use a default console logger, i.e. the code defect is not immediately noticeable by a `NullPointerException`. This default logger will however use a different message format for its output and also outputs debug messages even if Maven's debug mode was not enabled. For this reason, developers must not try to cache the logger during construction time. The method `getLog()` is fast enough and can simply be called whenever one needs it. +---
+ In case of the logger, the above mojo will simply use a default console logger, i.e. the code defect is not immediately noticeable by a `NullPointerException`. This default logger will however use a different message format for its output and also outputs debug messages even if Maven's debug mode was not enabled. For this reason, developers must not try to cache the logger during construction time. The method `getLog()` is fast enough and can simply be called whenever one needs it. \+---
 
 
 

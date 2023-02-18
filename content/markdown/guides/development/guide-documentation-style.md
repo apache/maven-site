@@ -69,7 +69,7 @@ under the License.
 
  - [W3C Quality Web Tips](http://www.w3.org/QA/Tips/iso-date)
 
- - [ISO-8601](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=26780)
+ - [ISO-8601](http://www.iso.org/iso/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber\=26780)
 
  - [Wikipedia](http://en.wikipedia.org/wiki/ISO_8601)
 
@@ -109,7 +109,7 @@ under the License.
 </project>
 ```
 
- As you can see above the `<distributionManagement>` element is indented once (=2 spaces), the `<site>` element is indented twice (=4 spaces), and the `<id>` is indented three times (=6 spaces).
+ As you can see above the `\<distributionManagement\>` element is indented once (\=2 spaces), the `\<site\>` element is indented twice (\=4 spaces), and the `\<id\>` is indented three times (\=6 spaces).
 
 
 

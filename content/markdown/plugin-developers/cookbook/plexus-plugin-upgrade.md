@@ -38,7 +38,7 @@ under the License.
  1 update sources with [Java Annotations for Plexus](https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/).
 
 
- **Notice**: if you're targeting components for Maven 3.1.0+, using [`@Named`/`@Inject` JSR-330 annotations](/maven-jsr330.html) instead of `@Component`/`@Requirement` Plexus Java Annotations may be a good next step
+ **Notice**: if you're targeting components for Maven 3.1.0\+, using [`@Named`/`@Inject` JSR-330 annotations](/maven-jsr330.html) instead of `@Component`/`@Requirement` Plexus Java Annotations may be a good next step
 
 
 

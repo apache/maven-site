@@ -25,10 +25,10 @@ uses - since 3.0-beta-3 - is named [Sisu][sisu] and is based on [Guice 3.x][guic
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
 there is no rush to switch and no big bang conversions are necessary: Plexus, JSR-330 and Guice APIs all happily
-co-exist within Maven's core and you can choose to use JSR-330 when you wish. There are hundreds of components
+co-exist within Maven\'s core and you can choose to use JSR-330 when you wish. There are hundreds of components
 written using the Plexus APIs. 
 
-If you want to use JSR-330, you must understand that your code won't be compatible with Maven 3.0.x
+If you want to use JSR-330, you must understand that your code won\'t be compatible with Maven 3.0.x
 but only with Maven 3.1.0 and later. Even though JSR-330 has been available in core since Maven 3.0-beta-3, it was made available to plugins and
 extensions only in Maven 3.1.0 (see [MNG-5343][MNG-5343] for more details).
 
@@ -58,7 +58,7 @@ org.apache.maven.lifecycle.profiler.internal.DefaultSessionProfileRenderer
 org.apache.maven.lifecycle.profiler.internal.DefaultTimer
 ```
 
-Enumerating the implementations means that no classpath scanning is required in runtime to find them, which keeps Maven's
+Enumerating the implementations means that no classpath scanning is required in runtime to find them, which keeps Maven\'s
 startup time fast. Note that our container is configured by default to only use the index. While this keeps things fast,
 if you use JSR-330 components in dependencies that do not contain an index, those implementations will currently
 not be discovered. This is a compromise that is reasonable given Maven is a command-line tool where startup speed
@@ -66,11 +66,11 @@ is important.
 
 ## How to use JSR-330 in extensions
  
-Let's take a look at an example extension. We'll take a look at the POM, and a little bit of the implementation
-so you can get an idea of how JSR-330 extensions work. Really, it's just a simple JSR-330 component.
+Let\'s take a look at an example extension. We\'ll take a look at the POM, and a little bit of the implementation
+so you can get an idea of how JSR-330 extensions work. Really, it\'s just a simple JSR-330 component.
 If you want to look at the full implementation, you can find it [here][tesla-profiler] on Github.
 
-Ok, so let's take a look at the POM:
+Ok, so let\'s take a look at the POM:
  
 ```xml
 <?xml version="1.0"?>
@@ -220,7 +220,7 @@ public class LifecycleProfiler extends AbstractEventSpy {
 
 ## How to use JSR-330 in plugins
 
-Let's take a look at an example plugin. The POM is setup in a similar way to an extension, but we add a dependency
+Let\'s take a look at an example plugin. The POM is setup in a similar way to an extension, but we add a dependency
 to `maven-plugin-api` and `maven-plugin-annotations` to extend the `AbstractMojo` and use the Java 5 plugin
 annotations in our example.
 
@@ -310,7 +310,7 @@ annotations in our example.
 </project>
 ```
 
-Now let's take a look at the plugin code. You'll notice that we're using constructor injection
+Now let\'s take a look at the plugin code. You\'ll notice that we\'re using constructor injection
 which makes testing a lot easier. If you want to test your `Jsr330Component`, you do not need the container
 to instantiate the `Mojo`. In this simple case, you can actually test this plugin without using the plugin
 testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire

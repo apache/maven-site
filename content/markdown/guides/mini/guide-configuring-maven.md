@@ -38,7 +38,7 @@ under the License.
  The separation is quite clear - the project defines information that applies to the project, no matter who is building it, while the others both define settings for the current environment.
 
 
- **Note:** the installation and user configuration cannot be used to add shared project information - for example, setting `<organization>` or `<distributionManagement>` company-wide.
+ **Note:** the installation and user configuration cannot be used to add shared project information - for example, setting `\<organization\>` or `\<distributionManagement\>` company-wide.
 
 
  For this, you should have your projects inherit from a company-wide parent `pom.xml`.
@@ -80,7 +80,7 @@ under the License.
 ### Configuring Parallel Artifact Resolution
 
 
- By default, Maven 2.1.0+ will download up to 5 artifacts (from different groups) at once. To change the size of the thread pool, start Maven using `-Dmaven.artifact.threads`. For example, to only download single artifacts at a time:
+ By default, Maven 2.1.0\+ will download up to 5 artifacts (from different groups) at once. To change the size of the thread pool, start Maven using `-Dmaven.artifact.threads`. For example, to only download single artifacts at a time:
 
 
 
@@ -100,7 +100,7 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 ### Security and Deployment Settings
 
 
- Repositories to deploy to are defined in a project in the `<distributionManagement>` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own settings with an `id` that matches that of the deployment repository in the project.
+ Repositories to deploy to are defined in a project in the `\<distributionManagement\>` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own settings with an `id` that matches that of the deployment repository in the project.
 
 
  In addition, some repositories may require authorization to download from, so the corresponding settings can be specified in a `server` element in the same way.
@@ -176,14 +176,14 @@ export MAVEN_OPTS=-Dmaven.artifact.threads=3
 #### Security
 
 
- As of Maven 2.1.0+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on both server passwords and the master password, see the [Guide to Password Encryption](./guide-encryption.html).
+ As of Maven 2.1.0\+, you can encrypt passwords in your settings file, however you must first configure a master password. For more information on both server passwords and the master password, see the [Guide to Password Encryption](./guide-encryption.html).
 
 
 
 #### Toolchains
 
 
- As of Maven 2.0.9+, you can build a project using a specific version of JDK independent from the one Maven is running with. For more information, see the [Guide to Using Toolchains](./guide-using-toolchains.html).
+ As of Maven 2.0.9\+, you can build a project using a specific version of JDK independent from the one Maven is running with. For more information, see the [Guide to Using Toolchains](./guide-using-toolchains.html).
 
 
 

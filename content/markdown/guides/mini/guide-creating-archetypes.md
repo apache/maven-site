@@ -110,11 +110,11 @@ under the License.
 
 
 
- - `<requiredProperties>` : List of required properties to generate a project from this archetype
+ - `\<requiredProperties\>` : List of required properties to generate a project from this archetype
 
- - `<fileSets>` : File sets definition
+ - `\<fileSets\>` : File sets definition
 
- - `<modules>` : Modules definition
+ - `\<modules\>` : Modules definition
 
 
  At this point one can only specify individual files to be created but not empty directories.

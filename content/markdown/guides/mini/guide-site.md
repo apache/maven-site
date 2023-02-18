@@ -130,9 +130,9 @@ mvn site
 ```
 
 
- - the `<id>` element identifies the repository, so that you can attach credentials to it in your `settings.xml` file using the [ `<servers>` element](../../settings.html#Servers) as you would for any other repository,
+ - the `\<id\>` element identifies the repository, so that you can attach credentials to it in your `settings.xml` file using the [ `\<servers\>` element](../../settings.html#Servers) as you would for any other repository,
 
- - the `<url>` gives the location to deploy to. Currently, only SSH is supported by default, as above which copies to the host `www.mycompany.com` in the path `/www/docs/project/`, but you can [add more protocols as required](/plugins/maven-site-plugin/examples/adding-deploy-protocol.html). If subprojects inherit the site URL from a parent POM, they will automatically get their `<artifactId>` appended to form their effective deployment location.
+ - the `\<url\>` gives the location to deploy to. Currently, only SSH is supported by default, as above which copies to the host `www.mycompany.com` in the path `/www/docs/project/`, but you can [add more protocols as required](/plugins/maven-site-plugin/examples/adding-deploy-protocol.html). If subprojects inherit the site URL from a parent POM, they will automatically get their `\<artifactId\>` appended to form their effective deployment location.
 
 
  Once distribution location is configured, deploying the site is done by using the `site-deploy` phase of the site lifecycle.
@@ -222,7 +222,7 @@ mvn site-deploy
 ```
 
 <!-- TODO: deserves more explanation. -->
- **Note:** The `<menu ref="reports">` element above. When building the site, this is replaced by a menu with links to all the reports that you have configured.
+ **Note:** The `\<menu ref\="reports"/\>` element above. When building the site, this is replaced by a menu with links to all the reports that you have configured.
 
 
  More information about the site descriptor is available at the [dedicated page of Maven Site Plugin](/plugins/maven-site-plugin/examples/sitedescriptor.html).
@@ -282,7 +282,7 @@ mvn site-deploy
  To find out more please refer to the [Project Info Reports Plugin](../../plugins/maven-project-info-reports-plugin/).
 
 
- To add these reports to your site, you must add the Project Info Reports plugin to a special `<reporting>` section in the POM. The following example shows how to configure the standard project information reports that display information from the POM in a friendly format:
+ To add these reports to your site, you must add the Project Info Reports plugin to a special `\<reporting\>` section in the POM. The following example shows how to configure the standard project information reports that display information from the POM in a friendly format:
 
 
 
@@ -302,7 +302,7 @@ mvn site-deploy
 </project>
 ```
 
- If you have included the appropriate `<menu ref="reports">` tag in your `site.xml` descriptor, then when you regenerate the site those items will appear in the menu.
+ If you have included the appropriate `\<menu ref\="reports"/\>` tag in your `site.xml` descriptor, then when you regenerate the site those items will appear in the menu.
 
 
  Many other plugins provide reporting goals: look for "R" (Reporting) value in the "Type" column of the [ list of plugins](/plugins/). When plugins are both Build and Reporting plugins, defining explicitely the version in the reporting section is usually not necessary since reporting will use the version from `build/plugins` or `build/pluginManagement`. Since Maven Site Plugin 3.4, reporting plugin also get configuration from `build/pluginManagement`.

@@ -61,7 +61,7 @@ under the License.
 
  - a build extension declaration on another module in the build
 
- - the order declared in the `<modules>` element (if no other rule applies)
+ - the order declared in the `\<modules\>` element (if no other rule applies)
 
 
  Note that only "instantiated" references are used - `dependencyManagement` and `pluginManagement` elements do not cause a change to the reactor sort order.

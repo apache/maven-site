@@ -27,7 +27,7 @@ under the License.
  This document gives step-by-step instructions for deploying Maven components reference documentation inside the Maven [https://maven.apache.org/](/) website.
 
 
- See [Maven website introduction](./index.html) for instructions on the whole website publication (main site content + components).
+ See [Maven website introduction](./index.html) for instructions on the whole website publication (main site content \+ components).
 
 
 
@@ -95,7 +95,7 @@ mvn scm-publish:publish-scm
 
 
 
- **Notice**: content is in fact published to [/components/](/components/) directory, and symbolic links declared in `resources/\*\*/components.links` in main site source are used by Ant to create a reference from `/xxx` (= what we want to be user-visible) to `/components/xxx` (what what is checked out).
+ **Notice**: content is in fact published to [/components/](/components/) directory, and symbolic links declared in `resources/\*\*/components.links` in main site source are used by Ant to create a reference from `/xxx` (\= what we want to be user-visible) to `/components/xxx` (what what is checked out).
 
 
 

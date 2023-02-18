@@ -121,7 +121,7 @@ public class YourMojoTest
 }
 ```
 
- For more information, refer to [Maven Plugin Harness Wiki](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness)
+ For more information, refer to [Maven Plugin Harness Wiki](http://cwiki.apache.org/confluence/display/MAVENOLD/Maven\+Plugin\+Harness)
 
 
 
@@ -135,7 +135,7 @@ public class YourMojoTest
  maven-verifier tests are run using JUnit or TestNG, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts. It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it. Follow the [Getting Started](/shared/maven-verifier/getting-started.html) guide to learn more about creating maven-verifier tests.
 
 
- Maven itself uses maven-verifier to run its core integration tests. For more information, please refer to [Creating a Maven Integration Test](https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test).
+ Maven itself uses maven-verifier to run its core integration tests. For more information, please refer to [Creating a Maven Integration Test](https://cwiki.apache.org/confluence/display/MAVEN/Creating\+a\+Maven\+Integration\+Test).
 
 
  **Note**: maven-verifier and maven-verifier-plugin sound similar, but are totally different unrelated pieces of code. maven-verifier-plugin simply verifies the existence/absence of files on the filesystem. You could use it for functional testing, but you may need more features than maven-verifier-plugin provides.

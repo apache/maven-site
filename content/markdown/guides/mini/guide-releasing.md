@@ -309,7 +309,7 @@ checkpoint.check-in-development-version=OK
 #### I get a "The authenticity of host '_host_' can't be established." error and the build hangs
 
 
- This is because your `\~user/.ssh/known_hosts` file doesn't have the host listed. You'd normally get a prompt to add the host to the known host list but Maven doesn't propagate that prompt. The solution is to add the host the `known_hosts` file before executing Maven. On Windows, this can be done by installing an OpenSSH client (for example [SSHWindows](http://sshwindows.sourceforge.net/download/)), running `ssh <host>` and accepting to add the host.
+ This is because your `\~user/.ssh/known_hosts` file doesn't have the host listed. You'd normally get a prompt to add the host to the known host list but Maven doesn't propagate that prompt. The solution is to add the host the `known_hosts` file before executing Maven. On Windows, this can be done by installing an OpenSSH client (for example [SSHWindows](http://sshwindows.sourceforge.net/download/)), running `ssh \<host`\> and accepting to add the host.
 
 
 

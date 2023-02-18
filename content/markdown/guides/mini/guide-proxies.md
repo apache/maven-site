@@ -53,7 +53,7 @@ under the License.
 
 ```
 
- Please note that currently NTLM proxies are not supported as they have not been tested. You may be able to use the relevant system properties on JDK 1.4+ to make this work.
+ Please note that currently NTLM proxies are not supported as they have not been tested. You may be able to use the relevant system properties on JDK 1.4\+ to make this work.
 
 
 ### Resources

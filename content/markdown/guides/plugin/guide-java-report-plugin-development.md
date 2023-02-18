@@ -39,7 +39,7 @@ under the License.
 
 
 
- 1  A regular Maven project usually invokes _reporting goals_ of a plugin by declaring such plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
+ 1  A regular Maven project usually invokes _reporting goals_ of a plugin by declaring such plugin in the [`\<reporting\>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
 ```
 <project>
@@ -398,7 +398,7 @@ simple:simple
 #### Invoking the Simple Plugin
 
 
- To invoke the _report Mojo_ of our plugin in another Maven project, we just need to declare the plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
+ To invoke the _report Mojo_ of our plugin in another Maven project, we just need to declare the plugin in the [`\<reporting\>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
 
 

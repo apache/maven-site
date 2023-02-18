@@ -121,16 +121,16 @@ native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.proper
 
  - [cpdetector](http://cpdetector.sourceforge.net/)
 
- - [IntelliJ IDEA ShowEncodingPlugin](http://plugins.intellij.net/plugin/?id=24)
+ - [IntelliJ IDEA ShowEncodingPlugin](http://plugins.intellij.net/plugin/?id\=24)
 
- - [Notepad++](http://notepad-plus.sourceforge.net/)
+ - [Notepad\+\+](http://notepad-plus.sourceforge.net/)
 
 
 
 #### Tools to write a file in a given charset
 
 
- Any editor like Notepad++, Eclipse, IntelliJ IDEA, ...
+ Any editor like Notepad\+\+, Eclipse, IntelliJ IDEA, ...
 
 
 
@@ -140,7 +140,7 @@ native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.proper
 
  - Unix `iconv` command
 
- - Notepad++
+ - Notepad\+\+
 
 
 

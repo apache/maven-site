@@ -22,7 +22,7 @@ to stdout.
 
 We have reached the decision that [SLF4J][1] is the best option for a logging API:
 SLF4J has reached a certain level of ubiquity and while SLF4J may not be perfect,
-it's the de facto standard and it's pointless to try and remake another one.
+it\'s the de facto standard and it\'s pointless to try and remake another one.
 There are many implementations to choose from, including [Logback][4] and [Log4j2][3].
 All the hard work has been done. All the bridges and funnels for other systems function well,
 which allows others to use whatever logging implementation they like in their components,

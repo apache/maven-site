@@ -210,7 +210,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
  Without this setting, PUT requests that require authentication transfer their entire payload to the server before that server issues an authentication challenge. In order to complete the PUT request, the client must then re-send the payload with the proper credentials specified in the HTTP headers. This results in twice the bandwidth usage, and twice the time to transfer each artifact.
 
 
- Another option to avoid this double transfer is what's known as preemptive authentication, which involves sending the authentication headers along with the original PUT request. However, there are a few potential issues with this approach. For one thing, in the event you have an unused `<server>` entry that specifies an invalid username/password combination, some servers may respond with a `401 Unauthorized` even if the server doesn't actually require any authentication for the request. In addition, blindly sending authentication credentials with every request regardless of whether the server has made a challenge can result in a security hole, since the server may not make provisions to secure credentials for paths that don't require authentication.
+ Another option to avoid this double transfer is what's known as preemptive authentication, which involves sending the authentication headers along with the original PUT request. However, there are a few potential issues with this approach. For one thing, in the event you have an unused `\<server\>` entry that specifies an invalid username/password combination, some servers may respond with a `401 Unauthorized` even if the server doesn't actually require any authentication for the request. In addition, blindly sending authentication credentials with every request regardless of whether the server has made a challenge can result in a security hole, since the server may not make provisions to secure credentials for paths that don't require authentication.
 
 
  We'll discuss preemptive authentication in another example, below.
@@ -264,7 +264,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 ```
 
- For clarity, the other two sections are `<get>` for GET requests, and `<head>` for HEAD requests. I know that's going to be hard to remember...
+ For clarity, the other two sections are `\<get\>` for GET requests, and `\<head\>` for HEAD requests. I know that's going to be hard to remember...
 
 
 
@@ -334,15 +334,15 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 
 
 
- 1 **booleans:** `%b,<value>`
+ 1 **booleans:** `%b,\<value\>`
 
- 1 **integer:** `%i,<value>`
+ 1 **integer:** `%i,\<value\>`
 
- 1 **long:** `%l,<value>` (yes, that's an 'L', not a '1')
+ 1 **long:** `%l,\<value\>` (yes, that's an 'L', not a '1')
 
- 1 **double:** `%d,<value>`
+ 1 **double:** `%d,\<value\>`
 
- 1 **collection of strings:** `%c,<value1>,<value2>,<value3>,...`, which could also be specified as:
+ 1 **collection of strings:** `%c,\<value1\>,\<value2\>,\<value3\>,...`, which could also be specified as:
 
 ```
 %c,
@@ -412,7 +412,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 ##### Example: Lifting auth scope restriction for external authentication systems
 
 
- Maven Wagon by default limits supplied credentials to the host:port combination scope, ignoring any other target servers. When the target server delegates authentication to an external system, you need to deliberately lift that scope limitation. Configure your server element to pass authentication to all target servers which challenge the client. +---+ _settings_ _servers_ _server_ _id_my-server_/id_ _configuration_ _basicAuthScope_ _host_ANY_/host_ _port_ANY_/port_ _!-- or even 443 to force the use of TLS --_ _/basicAuthScope_ _httpConfiguration_ _all_ _params_ _property_ _name_http.protocol.cookie-policy_/name_ _value_standard_/value_ _/property_ _/params_ _/all_ _/httpConfiguration_ _/configuration_ _/server_ _/servers_ _/settings_ +---+
+ Maven Wagon by default limits supplied credentials to the host:port combination scope, ignoring any other target servers. When the target server delegates authentication to an external system, you need to deliberately lift that scope limitation. Configure your server element to pass authentication to all target servers which challenge the client. \+---\+ _settings_ _servers_ _server_ _id_my-server_/id_ _configuration_ _basicAuthScope_ _host_ANY_/host_ _port_ANY_/port_ _!-- or even 443 to force the use of TLS --_ _/basicAuthScope_ _httpConfiguration_ _all_ _params_ _property_ _name_http.protocol.cookie-policy_/name_ _value_standard_/value_ _/property_ _/params_ _/all_ _/httpConfiguration_ _/configuration_ _/server_ _/servers_ _/settings_ \+---\+
 
 
 
@@ -526,7 +526,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 ```
 
- If all you need is a per-server timeout configuration, you still have the option to use the old `<timeout>` parameter. If you need to separate timeout preferences according to HTTP method, you can use one more like that specified directly above.
+ If all you need is a per-server timeout configuration, you still have the option to use the old `\<timeout\>` parameter. If you need to separate timeout preferences according to HTTP method, you can use one more like that specified directly above.
 
 
 

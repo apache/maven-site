@@ -120,7 +120,7 @@ under the License.
 </project>
 ```
 
- A POM requires that its groupId, artifactId, and version be configured. These three values form the project's fully qualified artifact name. This is in the form of `<groupId>:<artifactId>:<version>`. As for the example above, its fully qualified artifact name is "com.mycompany.app:my-app:1".
+ A POM requires that its groupId, artifactId, and version be configured. These three values form the project's fully qualified artifact name. This is in the form of \<groupId\>:\<artifactId\>:\<version\>. As for the example above, its fully qualified artifact name is "com.mycompany.app:my-app:1".
 
 
  Also, as mentioned in the [first section](What_is_a_POM), if the configuration details are not specified, Maven will use their defaults. One of these default values is the packaging type. Every Maven project has a packaging type. If it is not specified in the POM, then the default value "jar" would be used.
@@ -271,7 +271,7 @@ under the License.
 ##### The Solution
 
 
- To address this directory structure (or any other directory structure), we would have to add the `<relativePath>` element to our parent section.
+ To address this directory structure (or any other directory structure), we would have to add the `\<relativePath\>` element to our parent section.
 
 
 
@@ -382,7 +382,7 @@ under the License.
 </project>
 ```
 
- In the revised com.mycompany.app:my-app:1, the packaging section and the modules sections were added. For the packaging, its value was set to "pom", and for the modules section, we have the element `<module>my-module</module>`. The value of `<module>` is the relative path from the com.mycompany.app:my-app:1 to com.mycompany.app:my-module:1's POM (_by practice, we use the module's artifactId as the module directory's name_).
+ In the revised com.mycompany.app:my-app:1, the packaging section and the modules sections were added. For the packaging, its value was set to "pom", and for the modules section, we have the element `\<module\>my-module\</module\>`. The value of `\<module\>` is the relative path from the com.mycompany.app:my-app:1 to com.mycompany.app:my-module:1's POM (_by practice, we use the module's artifactId as the module directory's name_).
 
 
  Now, whenever a Maven command processes com.mycompany.app:my-app:1, that same Maven command would be ran against com.mycompany.app:my-module:1 as well. Furthermore, some commands (goals specifically) handle project aggregation differently.

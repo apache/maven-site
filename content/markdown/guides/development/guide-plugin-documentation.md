@@ -68,15 +68,15 @@ mvn site
 
 
 
- - `<modelVersion>` - POM model version, currently 4.0.0
+ - `\<modelVersion\>` - POM model version, currently 4.0.0
 
- - `<groupId>` - the package name
+ - `\<groupId\>` - the package name
 
- - `<artifactId>` - artifact name
+ - `\<artifactId\>` - artifact name
 
- - `<packaging>` - type of artifact produced by the POM
+ - `\<packaging\>` - type of artifact produced by the POM
 
- - `<version>` - the plugin version
+ - `\<version\>` - the plugin version
 
 
 
@@ -87,15 +87,15 @@ mvn site
 
 
 
- - `<name>` - plugin's name, _Maven NNN Plugin_ for plugins hosted at the Maven project or _NNN Maven Plugin_ for all others
+ - `\<name\>` - plugin's name, _Maven NNN Plugin_ for plugins hosted at the Maven project or _NNN Maven Plugin_ for all others
 
- - `<description>` - project description, an overview of what the plugin can do
+ - `\<description\>` - project description, an overview of what the plugin can do
 
- - `<url>` - the site of the plugin, normally _maven.apache.org_ or _org.mojohaus_
+ - `\<url\>` - the site of the plugin, normally _maven.apache.org_ or _org.mojohaus_
 
- - `<prerequisites>` - the minimum version of Maven required to use this plugin
+ - `\<prerequisites\>` - the minimum version of Maven required to use this plugin
 
- - `<issueManagement>` - describes the system used for reporting problems and modification requests
+ - `\<issueManagement\>` - describes the system used for reporting problems and modification requests
 
 ```
 <project>
@@ -109,9 +109,9 @@ mvn site
 ```
 
 
- - `<inceptionYear>` - year the plugin was first created
+ - `\<inceptionYear\>` - year the plugin was first created
 
- - `<mailingLists>` - lists where other users or the developers can be contacted for help and discussions
+ - `\<mailingLists\>` - lists where other users or the developers can be contacted for help and discussions
 
 ```
 <project>
@@ -133,7 +133,7 @@ mvn site
 ```
 
 
- - `<licenses>` - plugin license
+ - `\<licenses\>` - plugin license
 
 ```
 <project>
@@ -150,7 +150,7 @@ mvn site
 ```
 
 
- - `<scm>` - the source code management configuration - a plugin without this would raise suspicion, might not be OSS
+ - `\<scm\>` - the source code management configuration - a plugin without this would raise suspicion, might not be OSS
 
 ```
 <project>
@@ -165,7 +165,7 @@ mvn site
 ```
 
 
- - `<organization>` - the organization maintaining the plugin, just in case we need someone to blame
+ - `\<organization\>` - the organization maintaining the plugin, just in case we need someone to blame
 
 ```
 <project>
@@ -185,7 +185,7 @@ mvn site
 ### Plugin Configuration Parameters
 
 
- The Maven Plugin Plugin is responsible for generating the Plugin Info site and needs to be added to the `<reporting>` section unless it is already inherited from a parent POM:
+ The Maven Plugin Plugin is responsible for generating the Plugin Info site and needs to be added to the `\<reporting\>` section unless it is already inherited from a parent POM:
 
 
 

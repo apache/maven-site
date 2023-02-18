@@ -69,10 +69,10 @@ under the License.
 ### Important Notice: [Plugin Naming Convention and Apache Maven Trademark](../mini/guide-naming-conventions.html)
 
 
- You will typically name your plugin `<yourplugin>-maven-plugin`.
+ You will typically name your plugin `\<yourplugin\>-maven-plugin`.
 
 
- Calling it `maven-<yourplugin>-plugin` (note "Maven" is at the beginning of the plugin name) is **strongly discouraged** since it's a **reserved naming pattern for official Apache Maven plugins maintained by the Apache Maven team** with groupId `org.apache.maven.plugins`. Using this naming pattern is an infringement of the Apache Maven Trademark.
+ Calling it `maven-\<yourplugin\>-plugin` (note "Maven" is at the beginning of the plugin name) is **strongly discouraged** since it's a **reserved naming pattern for official Apache Maven plugins maintained by the Apache Maven team** with groupId `org.apache.maven.plugins`. Using this naming pattern is an infringement of the Apache Maven Trademark.
 
 
 

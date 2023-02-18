@@ -23,7 +23,7 @@ under the License.
 ## Central Index
 
 
- Central repository provides [an index](https://repo.maven.apache.org/maven2/.index/) that is updated weekly as full (`nexus-maven-repository-index.gz`) and incremental (`nexus-maven-repository-index.<n>.gz` + `nexus-maven-repository-index.properties`).
+ Central repository provides [an index](https://repo.maven.apache.org/maven2/.index/) that is updated weekly as full (`nexus-maven-repository-index.gz`) and incremental (`nexus-maven-repository-index.\<n\>.gz` \+ `nexus-maven-repository-index.properties`).
 
  This index is build using [Maven Indexer](/maven-indexer/): see [LATEST indexer-core documentation](/maven-indexer-archives/maven-indexer-LATEST/indexer-core/) for more details on the fields that are available.
 

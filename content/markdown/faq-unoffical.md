@@ -1880,7 +1880,7 @@ To store stuff that is not in ibiblio. An example of this is your own stuff.
 
 ### Whenever a file is modified in a maven project how is the SNAPSHOT jar updated in the remote repository?
 
-Using mvn deploy, after inserting proper `<distributionManagement>` section into your POM
+Using mvn deploy, after inserting proper <distributionManagement/> section into your POM
 
 ### Is maven 'deploy' goal and actually copying of a dependency or artifact jar to remote repository same?
 

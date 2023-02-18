@@ -109,7 +109,7 @@ under the License.
 
  1 has published its releases until 1.6.5 to Maven 1-compliant `ant:ant` coordinates (see [repository content](https://repo.maven.apache.org/maven2/ant/ant/)),
 
- 1 starting with 1.7.0, moved to reverse-DNS compliant Maven 2+ `org.apache.ant:ant` coordinates, (see [repository content](https://repo.maven.apache.org/maven2/org/apache/ant/ant/)),
+ 1 starting with 1.7.0, moved to reverse-DNS compliant Maven 2\+ `org.apache.ant:ant` coordinates, (see [repository content](https://repo.maven.apache.org/maven2/org/apache/ant/ant/)),
 
  1 published one `ant:ant:1.7.0` relocation POM in old groupId to advertise about the move (see [repository content](https://repo.maven.apache.org/maven2/ant/ant/1.7.0/)).
 
@@ -124,7 +124,7 @@ under the License.
 
  1 has published its releases until 3.0-alpha-3 to Maven 1-compliant `poi:poi` coordinates (see [repository content](https://repo.maven.apache.org/maven2/poi/poi/)),
 
- 1 starting with 3.0-FINAL, moved to reverse-DNS compliant Maven 2+ `org.apache.poi:poi` coordinates, (see [repository content](https://repo.maven.apache.org/maven2/org/apache/poi/poi/)),
+ 1 starting with 3.0-FINAL, moved to reverse-DNS compliant Maven 2\+ `org.apache.poi:poi` coordinates, (see [repository content](https://repo.maven.apache.org/maven2/org/apache/poi/poi/)),
 
  1 published `poi:poi:3.0-FINAL` relocation POM **with jars** in old groupId to advertise about the move (see [repository content](https://repo.maven.apache.org/maven2/poi/poi/3.0-FINAL/)).
 

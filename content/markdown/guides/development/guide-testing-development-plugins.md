@@ -93,7 +93,7 @@ under the License.
  _Note:_ These last two techniques mean that _every_ plugin will be updated to the latest snapshot version.
 
 
- The development version will stop being used if the `<pluginRepository>` element is removed from your POM and the version is set back to the release version. If you are using the command line or an unspecified version, you will also need to remove the version from the local repository.
+ The development version will stop being used if the `\<pluginRepository\>` element is removed from your POM and the version is set back to the release version. If you are using the command line or an unspecified version, you will also need to remove the version from the local repository.
 
 
 

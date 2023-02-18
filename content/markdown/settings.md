@@ -367,7 +367,7 @@ all accessible from the `settings.xml` file:
 4.  Java System Properties: All properties accessible via
     `java.lang.System.getProperties()` are available as POM properties,
     such as `${java.home}`.
-5.  `x`: Set within a `<properties\>` element or an external files, the
+5.  `x`: Set within a \<properties /\> element or an external files, the
     value may be used as `${someVar}`.
 
 <!-- -->

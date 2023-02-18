@@ -105,7 +105,7 @@ under the License.
 
 <img src="../../buildExtensionClassRealm.svg" />Build Extension Class Realm
 
- For every plugin which is marked with `<extensions>true</extensions>` or a build extension listed in the according section of the POM, there is a dedicated classloader. Those are isolated. That is, one build extension does not have access to other build extensions. It imports everything from the API classloader. All JSR 330 or Plexus components declared in the underlying JAR are registered as components in the global Plexus container while creating the classloader. In addition all component references in the plugin descriptor are properly wired from the underlying Plexus container. Build extensions have limited effect as they are loaded late.
+ For every plugin which is marked with `\<extensions\>true\</extensions\>` or a build extension listed in the according section of the POM, there is a dedicated classloader. Those are isolated. That is, one build extension does not have access to other build extensions. It imports everything from the API classloader. All JSR 330 or Plexus components declared in the underlying JAR are registered as components in the global Plexus container while creating the classloader. In addition all component references in the plugin descriptor are properly wired from the underlying Plexus container. Build extensions have limited effect as they are loaded late.
 
 
 
@@ -123,7 +123,7 @@ under the License.
  Each plugin (which is not marked as build extension) has its own classloader that imports the Project classloader. 
 
 
- Plugins marked with `<extensions>true</extensions>` leverage the Build Extension classloader instead of the Plugin classloader.
+ Plugins marked with `\<extensions\>true\</extensions\>` leverage the Build Extension classloader instead of the Plugin classloader.
 
 
  Users can add dependencies to this classloader by adding dependencies to a plugin in the `[plugins/plugin](/ref/current/maven-model/maven.html#class_plugin)` section of their project `pom.xml`. Here is a sample of adding `ant-nodeps` to the plugin classloader of the Antrun Plugin and hereby enabling the use of additional/optional Ant tasks:

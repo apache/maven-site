@@ -145,7 +145,7 @@ This scope indicates that the dependency is not required for normal use of the a
 This scope is similar to `provided` except that you have to provide the JAR which contains it explicitly. The artifact is always available and is not looked up in a repository.
 
  - **import**\
-This scope is only supported on a dependency of type `pom` in the `<dependencyManagement>` section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM's `<dependencyManagement>` section. Since they are replaced, dependencies with a scope of `import` do not actually participate in limiting the transitivity of a dependency.
+This scope is only supported on a dependency of type `pom` in the `\<dependencyManagement\>` section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM's `\<dependencyManagement\>` section. Since they are replaced, dependencies with a scope of `import` do not actually participate in limiting the transitivity of a dependency.
 
 
  Each of the scopes (except for `import`) affects transitive dependencies in different ways, as is demonstrated in the table below. If a dependency is set to the scope in the left column, a transitive dependency of that dependency with the scope across the top row results in a dependency in the main project with the scope listed at the intersection. If no scope is listed, it means the dependency is omitted.
@@ -322,7 +322,7 @@ This scope is only supported on a dependency of type `pom` in the `<dependencyMa
 
 ```
 
- **NOTE:** In two of these dependency references, we had to specify the `<type>` element. This is because the minimal set of information for matching a dependency reference against a dependencyManagement section is actually **\{groupId, artifactId, type, classifier\}**. In many cases, these dependencies will refer to jar artifacts with no classifier. This allows us to shorthand the identity set to **\{groupId, artifactId\}**, since the default for the type field is `jar`, and the default classifier is null.
+ **NOTE:** In two of these dependency references, we had to specify the \<type/\> element. This is because the minimal set of information for matching a dependency reference against a dependencyManagement section is actually **\{groupId, artifactId, type, classifier\}**. In many cases, these dependencies will refer to jar artifacts with no classifier. This allows us to shorthand the identity set to **\{groupId, artifactId\}**, since the default for the type field is `jar`, and the default classifier is null.
 
 
  A second, and very important use of the dependency management section is to control the versions of artifacts used in transitive dependencies. As an example consider these projects:

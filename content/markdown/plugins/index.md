@@ -27,9 +27,9 @@ under the License.
 
 
 
- - **Build plugins** will be executed during the build and they should be configured in the `<build>` element from the POM.
+ - **Build plugins** will be executed during the build and they should be configured in the `\<build/\>` element from the POM.
 
- - **Reporting plugins** will be executed during the site generation and they should be configured in the `<reporting>` element from the POM. Because the result of a Reporting plugin is part of the generated site, Reporting plugins should be both internationalized and localized. You can read more about the [localization of our plugins](./localization.html) and how you can help.
+ - **Reporting plugins** will be executed during the site generation and they should be configured in the `\<reporting/\>` element from the POM. Because the result of a Reporting plugin is part of the generated site, Reporting plugins should be both internationalized and localized. You can read more about the [localization of our plugins](./localization.html) and how you can help.
 
 
 ### Supported By The Maven Project
