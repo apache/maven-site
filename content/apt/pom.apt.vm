@@ -420,10 +420,15 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   []
 
    Following semver rules is encouraged, and some qualifiers are discouraged:
-   * Prefer '<<<alpha>>>', '<<<beta>>>' and '<<<milestone>>>' qualifiers over '<<<ea>>>' and '<<<preview>>>'.
+   
+   * Prefer '<<<alpha>>>', '<<<beta>>>', and '<<<milestone>>>' qualifiers over '<<<ea>>>' and '<<<preview>>>'.
+
    * Prefer '<<<1.0.0-RC1>>>'' over '<<<1.0.0.RC1>>>'.
+   
    * The usage of '<<<CR>>>' qualifier is discouraged. Use '<<<RC>>>' instead.
+   
    * The usage of '<<<final>>>', '<<<ga>>>', and '<<<release>>>' qualifiers is discouraged. Use no qualifier instead.
+   
    * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
   []
