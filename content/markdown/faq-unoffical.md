@@ -57,7 +57,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [I've just created a maven plugin. Is there a sample plugin integration test I can use?](#I've just created a maven plugin. Is there a sample plugin integration test I can use?]
 [The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?](#The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?]
 [How to list all goals available for a certain plugin?](#How to list all goals available for a certain plugin?]
-[What does the 'You cannot have two plugin executions with the same (or missing) <id/> elements' message mean?](#What does the 'You cannot have two plugin executions with the same (or missing) <id/> elements' message mean?]
+[What does the 'You cannot have two plugin executions with the same (or missing) `<id/>` elements' message mean?](#What does the 'You cannot have two plugin executions with the same (or missing) `<id/>` elements' message mean?]
 [#How do I execute the assembly plugin with different configurations]
 [Where is the plugin-registry.xml?](#Where is the plugin-registry.xml?]
 [How do I know which phase a plug-in is associated with?](#How do I know which phase a plug-in is associated with?]
