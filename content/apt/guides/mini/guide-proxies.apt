@@ -59,8 +59,9 @@ Configuring a proxy
 
 +----+
 
- Please note that currently NTLM proxies are not supported as they have not been tested. You may be able to use the
- relevant system properties on JDK 1.4+ to make this work.
+ Please note that currently NTLM proxies are not supported as they have not been tested. Some transports allow to use the
+ relevant system properties on JDK 1.4+ to make this work, but that approach is specific for given implementation, and
+ should not be considered the "official" way of configuring proxies.
 
 * Resources
 
