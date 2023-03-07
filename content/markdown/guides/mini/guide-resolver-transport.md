@@ -39,6 +39,20 @@ The transport used by resolver can be controlled using `-Dmaven.resolver.transpo
 values are `native` (the default), `wagon` (uses legacy Wagon) and `auto` (delegates to resolver to sort
 out defaults).
 
+The accepted values of `maven.resolver.transport` user property:
+* `default` (implied if not present), does `auto` by default
+* `native` forces use of transport-http
+* `wagon` forces use of transport-wagon
+* `auto` delegates to existing resolver match to choose transport (see `aether.priority.<class>` and related properties, or just rely on component priorities).
+
+Note: "forces" means that resolver will use given transport even if other, higher prioritized component is present
+on classpath.
+
+Given the priority of `native` is higher than `wagon`, and starting with Maven 3.9.0, both are present on resolver
+classpath, `native` is chosen by default. This behaviour preserves existing (pre 3.9.0) behaviour of Maven Resolver,
+that allowed third party transports to be added (by copying them to `lib/ext`) that have higher priorities. Still,
+fallback is possible with explicit use of `native` or `wagon` values.
+
 ## Custom HTTP Headers
 
 In all HTTP transports, you can add your custom HTTP headers like this:
