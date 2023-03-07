@@ -1,5 +1,5 @@
   ------
-  Guide to Advanced HTTP Transport Configuration
+  Guide to Advanced Wagon Transport Configuration
   ------
   John Casey
   ------
@@ -28,6 +28,9 @@
 
 Advanced Configuration of the Maven Wagon Transport
 
+  <<This page contains Wagon specific information, but default transport in Maven 3.9.0+ is NOT Wagon anymore.
+  Make sure you check {{{./guide-resolver-transport.html}Resolver Transport guide}} first as things have changed.>>
+
   You can use the default transport for a given protocol, or you can select the transport you want by using the configuration.
   For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
   site. The default transport in Maven 3.x is Transport-Wagon, the Wagon layer having been introduced in Maven 2.x.
@@ -38,8 +41,6 @@ Advanced Configuration of the Maven Wagon Transport
   Ultimate reference for resolver transport configuration can be found on
   {{{https://maven.apache.org/resolver/configuration.html} configuration}} page. While one can easily define simple typed
   values on command line using <<<-D...>>> switch, some more complex values, like HTTP headers, cannot.
-
-  Make sure you check {{{./guide-resolver-transport.html}Resolver Transport guide}} first as things have changed.
 
 %{toc}
 
