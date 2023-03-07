@@ -1,5 +1,5 @@
   ------
-  Guide to Advanced HTTP Transport Configuration
+  Guide to Advanced Wagon Transport Configuration
   ------
   John Casey
   ------
@@ -26,22 +26,25 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ http://maven.apache.org/doxia/references/apt-format.html
 
-Advanced Configuration of the Maven Resolver Transport
+Advanced Configuration of the Maven Wagon Transport
 
-%{toc}
+  <<This page contains Wagon specific information, but the default transport in Maven 3.9.0+ is NOT Wagon anymore.
+  Make sure to check {{{./guide-resolver-transport.html}Resolver Transport guide}} first, as things have changed.>>
 
   You can use the default transport for a given protocol, or you can select the transport you want by using the configuration.
-  For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
+  For more information about the existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
   site. The default transport in Maven 3.x is Transport-Wagon, the Wagon layer having been introduced in Maven 2.x.
   Since then, more modern transports were introduced as well, even supporting overlapping protocols. The default
-  transport in Maven 4.x changed to the more modern
+  transport in Maven 3.9.x changed to the more modern
   {{{https://maven.apache.org/resolver/maven-resolver-transport-http/index.html}"native" HTTP}} transport.
 
   Ultimate reference for resolver transport configuration can be found on
-  {{{https://maven.apache.org/resolver/configuration.html} this page}}. While one can easily define simple typed
+  {{{https://maven.apache.org/resolver/configuration.html} configuration}} page. While one can easily define simple typed
   values on command line using <<<-D...>>> switch, some more complex values, like HTTP headers, cannot.
 
-*Advanced configuration to Transports
+%{toc}
+
+*Advanced configuration to Wagon
 
   Using your <<<settings.xml>>> you can customize the transport configurations in several ways.
 
@@ -73,7 +76,7 @@ Advanced Configuration of the Maven Resolver Transport
 
 **Connection Timeouts
 
-  All transport implementations that perform some network access allow the configuration of a several timeouts,
+  All transport implementations that perform some network access allow configuring several timeouts,
   for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
 
 +---+

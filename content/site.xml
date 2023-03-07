@@ -106,7 +106,8 @@ under the License.
           <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
           <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
-          <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
+          <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html" />
+          <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html" />
           <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
