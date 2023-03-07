@@ -28,11 +28,11 @@
 
 Advanced Configuration of the Maven Wagon Transport
 
-  <<This page contains Wagon specific information, but default transport in Maven 3.9.0+ is NOT Wagon anymore.
-  Make sure you check {{{./guide-resolver-transport.html}Resolver Transport guide}} first as things have changed.>>
+  <<This page contains Wagon specific information, but the default transport in Maven 3.9.0+ is NOT Wagon anymore.
+  Make sure to check {{{./guide-resolver-transport.html}Resolver Transport guide}} first, as things have changed.>>
 
   You can use the default transport for a given protocol, or you can select the transport you want by using the configuration.
-  For more information about existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
+  For more information about the existing Resolver transports see the {{{https://maven.apache.org/resolver/} Resolver}}
   site. The default transport in Maven 3.x is Transport-Wagon, the Wagon layer having been introduced in Maven 2.x.
   Since then, more modern transports were introduced as well, even supporting overlapping protocols. The default
   transport in Maven 3.9.x changed to the more modern
@@ -76,7 +76,7 @@ Advanced Configuration of the Maven Wagon Transport
 
 **Connection Timeouts
 
-  All transport implementations that perform some network access allow the configuration of a several timeouts,
+  All transport implementations that perform some network access allow configuring several timeouts,
   for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
 
 +---+
