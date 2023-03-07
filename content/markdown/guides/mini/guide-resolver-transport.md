@@ -82,8 +82,8 @@ transports that support headers, like HTTP transports are (and works for "native
 ## How To Upgrade from Wagon? (or "native transport does not work")
 
 If your build environment uses Wagon specific configuration (in `settings.xml` or alike), you should migrate your
-configuration first. you can still upgrade to latest Maven, and use `-Dmaven.resolver.transport=wagon` to make
-"everything happen as before", but migration to new transport is recommended.
+configuration first. You can still upgrade and use latest Maven, with use `-Dmaven.resolver.transport=wagon` user property
+to stick with Wagon, but migration to new transport is warmly recommended.
 
 ## The Devil Is In Details
 
