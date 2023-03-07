@@ -39,7 +39,7 @@ Advanced Configuration of the Maven Wagon Transport
   {{{https://maven.apache.org/resolver/configuration.html} configuration}} page. While one can easily define simple typed
   values on command line using <<<-D...>>> switch, some more complex values, like HTTP headers, cannot.
 
-  The Resolver Transport {{{./guide-resolver-transport.html}Resolver Transport guide is here}}.
+  Make sure you check {{{./guide-resolver-transport.html}Resolver Transport guide}} first as things have changed.
 
 %{toc}
 
