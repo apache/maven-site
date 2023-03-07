@@ -79,6 +79,12 @@ It is important to understand that the above approach does not allow you to turn
 nor does it allow you to specify headers on a per-method basis. However, this configuration remains available in all 
 transports that support headers, like HTTP transports are (and works for "native" but also Wagon transport).
 
+## How To Upgrade from Wagon? (or "native transport does not work")
+
+If your build environment uses Wagon specific configuration (in `settings.xml` or alike), you should migrate your
+configuration first. you can still upgrade to latest Maven, and use `-Dmaven.resolver.transport=wagon` to make
+"everything happen as before", but migration to new transport is recommended.
+
 ## The Devil Is In Details
 
 Depending on which transport you use (`native`, `wagon` or something else), you will want to refer to the corresponding
