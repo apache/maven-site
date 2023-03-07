@@ -30,13 +30,10 @@
 
 Guide to generating sources
 
- Let's run though a short example to try and help. To generate sources you must first have a plugin that
+ Let's run though a short example. To generate sources you must first have a plugin that
  participates in the <<<generate-sources>>> phase 
- like the {{{http://www.antlr.org/api/maven-plugin/latest/}ANTLR4 Maven Plugin}}.
-
- So this is all fine and dandy, we have a plugin that wants to generate some
- sources from a Antlr4 grammar but how do we use it. You need to specify that
- you want to use it in your POM:
+ like the {{{https://www.antlr.org/api/maven-plugin/latest/}ANTLR4 Maven Plugin}}.
+ You configure its execution in the POM:
 
 +----+
 
@@ -64,13 +61,13 @@ Guide to generating sources
 
 +----+
 
- If you then type <<<mvn compile>>> Maven will walk through the 
+ When you type <<<mvn compile>>>, Maven walks through the 
  {{{../introduction/introduction-to-the-lifecycle.html}lifecycle}}
- and will eventually hit the <<<generate-sources>>> phase and see you have a plugin configured that
- wants to participate in that phase and the ANTLR4 Maven Plugin is executed with
- your given configuration. Furthermore during the compile you can observe that
- all the generated code (from your grammar files) will automatically being compiled 
- without supplemental configuration.
+ and eventually hits the <<<generate-sources>>> phase. It sees that a plugin is configured that
+ wants to participate in that phase, and executes the ANTLR4 Maven Plugin with
+ the given configuration. Later, during the compile phase,
+ all the code generated from the grammar files is compiled 
+ without further configuration.
 
 
  []
