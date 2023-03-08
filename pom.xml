@@ -56,7 +56,6 @@
   <properties>
     <maven.site.path>maven-site</maven.site.path>
     <currentStableVersion>3.9.0</currentStableVersion>
-    <currentStableReleaseDate>2023-01-31</currentStableReleaseDate>
     <currentStableVersionDetails>9b58d2bad23a66be161c4664ef21ce219c2c8584</currentStableVersionDetails>
     <current4xVersion>4.0.0-alpha-4</current4xVersion>
     <current39xVersion>3.9.0</current39xVersion>
