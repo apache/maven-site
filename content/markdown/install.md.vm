@@ -18,7 +18,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 The installation of Apache Maven is a simple process of extracting the archive 
-and adding the `bin` folder with the `mvn` command to the `PATH`.
+and adding the `bin` directory with the `mvn` command to the `PATH`.
 
 Detailed steps are:
 

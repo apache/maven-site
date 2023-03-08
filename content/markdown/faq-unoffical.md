@@ -40,7 +40,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 
 ### Eclipse
 
-[How do I specify which output folders the Eclipse plugin puts into the .classpath file?](#How do I specify which output folders the Eclipse plugin puts into the .classpath file?]
+[How do I specify which output directories the Eclipse plugin puts into the .classpath file?](#How do I specify which output directories the Eclipse plugin puts into the .classpath file?]
 [Where can I get the Maven plugin for Eclipse?](#Where can I get the Maven plugin for Eclipse?]
 [I issued\- mvn \-Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?](#I issued- mvn -Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?]
 [Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?](#Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?]
@@ -517,7 +517,7 @@ To specify a remote repo in Maven, add the `<repositories>` element to the POM:
 Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 _Repositories_
 
-### How do I specify which output folders the Eclipse plugin puts into the .classpath file?
+### How do I specify which output directories the Eclipse plugin puts into the .classpath file?
 
 ```
 <build>
@@ -1518,7 +1518,7 @@ Wagon wagon;
 
 ### How do I set the base directory for creating the packages created by assembly?
 
-The assembly plugin, by default, saves the packages to your project.build.directory folder from your pom or
+The assembly plugin, by default, saves the packages to your project.build.directory directory from your pom or
 ```
 <project>
 ...

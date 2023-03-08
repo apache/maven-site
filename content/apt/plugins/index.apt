@@ -50,7 +50,7 @@ Available Plugins
 * Supported By The Maven Project
 
   To see the most up-to-date list browse the Maven repository, specifically
-  the {{{https://repo.maven.apache.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subfolder.
+  the {{{https://repo.maven.apache.org/maven2/org/apache/maven/plugins/} <<<org/apache/maven/plugins>>>}} subdirectory.
   <(Plugins are organized according to a directory structure that resembles the standard Java package naming convention)>
 
   ~~ TODO: the repository manager should be able to produce a page like this. Ensure all descriptions are in the POM of these plugins.
@@ -183,15 +183,15 @@ Available Plugins
   \* <<B>>uild or <<R>>eporting plugin
 
   There are also some sandbox plugins into our {{{https://svn.apache.org/repos/asf/maven/sandbox/trunk/plugins}source repository}}.
-  
-  Previous archived versions of plugins reference documentations are {{{../plugins-archives/}located here}}. 
+
+  Previous archived versions of plugins reference documentations are {{{../plugins-archives/}located here}}.
 
 * Retired
 
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
-| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                   | B          | 2.4          | 2019-06-02        | Generate an Ant build file for the project. 
+| {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                   | B          | 2.4          | 2019-06-02        | Generate an Ant build file for the project.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.10         | 2015-10-07        | Generate an Eclipse project files for the current project.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
@@ -208,7 +208,7 @@ Available Plugins
 
 ** At MojoHaus (formerly known as {codehaus.org})
 
-  There are also {{{https://www.mojohaus.org/plugins.html}many plug-ins}} available at 
+  There are also {{{https://www.mojohaus.org/plugins.html}many plug-ins}} available at
   the {{{https://github.com/mojohaus} MojoHaus}} project at GitHub.
 
   Here are a few common ones:
@@ -218,7 +218,7 @@ Available Plugins
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/} <<<animal-sniffer>>>}}| Build signatures of APIs (JDK for example) and checks your classes against them.
 *---------------------------------------------------------------------------------+----------------------------------+
-| {{{https://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source folders to build.
+| {{{https://www.mojohaus.org/build-helper-maven-plugin/} <<<build-helper>>>}}    | Attach extra artifacts and source directories to build.
 *---------------------------------------------------------------------------------+----------------------------------+
 | {{{https://www.mojohaus.org/buildplan-maven-plugin/} <<<buildplan>>>}}          | Inspect the lifecycle of your build.
 *---------------------------------------------------------------------------------+----------------------------------+

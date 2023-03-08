@@ -123,7 +123,7 @@ Ok, so let\'s take a look at the POM:
 ```
 
 So, as mentioned, we have the `javax.inject` dependency and the `sisu-maven-plugin` configured to create
-the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` folder,
+the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` directory,
 it will automatically get picked up by Maven. In the case of this example, we have an implementation of
 an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
 

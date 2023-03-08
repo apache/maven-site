@@ -329,7 +329,7 @@ public MyMojo extends AbstractMojo
   [[b]] Embedded Maven Invocations
 
         Other tools, most notably IDEs, that run Maven under the hood may have set the current working directory to
-        their installation folder or whatever they like.
+        their installation directory or whatever they like.
 
   [[c]] Maven Invocations using the <<<-f>>> Switch
 

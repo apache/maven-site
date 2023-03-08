@@ -1,6 +1,6 @@
 # Release Notes &#x2013; Maven 3.3.1
 
-<!-- 
+<!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
  distributed with this work for additional information
@@ -24,7 +24,7 @@
 
 ## Overview
 
-The Apache Maven team would like to announce the release of Maven Version 3.3.1. The new 
+The Apache Maven team would like to announce the release of Maven Version 3.3.1. The new
 Maven Version is [available for download][0].
 
 Maven is a software project management and comprehension tool. Based on the concept of a project object model
@@ -54,14 +54,14 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 
 ### Toolchains
 
-* In our days it becomes more and more important to be able to use different JDK 
+* In our days it becomes more and more important to be able to use different JDK
   to be used by Maven itself and which is used to compile/test your production code.
-  This concept is know under the name [Toolchains][0] which is unfortunately not very 
+  This concept is know under the name [Toolchains][0] which is unfortunately not very
   well-known.
 
-* The handling of the [`toolchains.xml`][MNG-3891] file has been adjusted with the 
+* The handling of the [`toolchains.xml`][MNG-3891] file has been adjusted with the
   handling of `settings.xml` which means it will be searched within the
-  `${maven.home}/conf/` folder and furthermore within the `${user.home}/.m2/` folder.
+  `${maven.home}/conf/` directory and furthermore within the `${user.home}/.m2/` directory.
 
 * For a better understanding and as an example of the `toolchains.xml` file has been added
   to the [Maven distribution][MNG-5745].
@@ -74,19 +74,19 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 
 ### Core Extensions
 
-* Core Extension mechanism has [been improved][MNG-5771] to make 
+* Core Extension mechanism has [been improved][MNG-5771] to make
   it simpler to use.
 
 * The old way (up to Maven 3.2.5) was to create a jar (must be shaded if you have other dependencies)
-  which contains the extension and put it manually into the `${MAVEN_HOME}/lib/ext` folder. 
-  This means you had to change the Maven installation. The consequence was that everyone who likes 
-  to use this needed to change it's installation and makes the on-boarding for a developer much 
-  more inconvenient. The other option was to give the path to the jar on command line via 
+  which contains the extension and put it manually into the `${MAVEN_HOME}/lib/ext` directory.
+  This means you had to change the Maven installation. The consequence was that everyone who likes
+  to use this needed to change it's installation and makes the on-boarding for a developer much
+  more inconvenient. The other option was to give the path to the jar on command line via
   `mvn -Dmaven.ext.class.path=extension.jar`. This has the drawback giving those
   options to your Maven build every time you are calling Maven. Not very convenient as well.
- 
-* From now on this can be done much more simpler and in a more Maven like way. So 
-  you can define an `${maven.projectBasedir}/.mvn/extensions.xml` file which looks 
+
+* From now on this can be done much more simpler and in a more Maven like way. So
+  you can define an `${maven.projectBasedir}/.mvn/extensions.xml` file which looks
   like the following:
 
 ``` xml
@@ -126,11 +126,11 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   configuration options for the command line. For example things like `-T3 -U
   --fail-at-end`. So you only have to call maven just by using `mvn clean
   package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss
-  the `-T3 -U --fail-at-end` options. The `${maven.projectBasedir}/.mvn/maven.config` 
-  is located in the `${maven.projectBasedir}/.mvn/` folder which is in the root 
-  of a multi module build. This folder is part of the project and will be checked 
-  in into your version control. This results in being picked by everybody who 
-  checks out the project and no need to remember to call this project 
+  the `-T3 -U --fail-at-end` options. The `${maven.projectBasedir}/.mvn/maven.config`
+  is located in the `${maven.projectBasedir}/.mvn/` directory which is in the root
+  of a multi module build. This directory is part of the project and will be checked
+  in into your version control. This results in being picked by everybody who
+  checks out the project and no need to remember to call this project
   via `mvn -T3 -U --fail-at-end clean package` instead of `mvn clean package`.
 
 * In Maven it is not simple to define JVM configuration on a per project base.
@@ -183,7 +183,7 @@ The configuration which is used here can be defined in your pom by using an exec
           </execution>
         </executions>
       </plugin>
-    </plugins> 
+    </plugins>
   </build>
 </project>
 ```
@@ -215,7 +215,7 @@ executions on command like the following:
           </execution>
         </executions>
       </plugin>
-    </plugins> 
+    </plugins>
   </build>
 </project>
 ```
@@ -228,12 +228,12 @@ mvn exec:java@second-cli
 ```
 
 So now you can define more than one configuration for command line executions.
-   
+
  * The Maven team has decided to [drop support for Win9x in launch scripts](https://issues.apache.org/jira/browse/MNG-5776)
    at long last. Yeah.
 
 
-The above release notes have [originally been written by Karl Heinz Marbaise 
+The above release notes have [originally been written by Karl Heinz Marbaise
 and migrated afterwards to the Apache Maven project](http://blog.soebes.de/blog/2015/03/17/apache-maven-3-dot-3-1-features/).
 
 
