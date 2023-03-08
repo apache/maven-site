@@ -85,7 +85,7 @@ If your build environment uses Wagon specific configuration (in `settings.xml` o
 configuration first. You can still upgrade and use latest Maven, with use `-Dmaven.resolver.transport=wagon` user property
 to stick with Wagon, but migration to new transport is warmly recommended.
 
-## The Devil Is In Details
+## Per Transport configuration details
 
 Depending on which transport you use (`native`, `wagon` or something else), you will want to refer to the corresponding
 page(s) for detailed configuration options:
