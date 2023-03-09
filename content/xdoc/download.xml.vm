@@ -118,8 +118,93 @@ under the License.
         <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
       </ul>
       </subsection>
+    </section>
+    <section name="Previous Stable 3.8.x Release">
+      <p>Apache Maven ${current38xVersion} is the previous stable minor release for all users.</p>
 
-      <subsection name="Previous Releases">
+      <subsection name="System Requirements" id="Requirements">
+        <p>
+          <table>
+            <tr>
+              <td><b>Java Development Kit (JDK)</b></td>
+              <td>Maven 3.8+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
+                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
+            </tr>
+            <tr>
+              <td><b>Memory</b></td>
+              <td>No minimum requirement</td>
+            </tr>
+            <tr>
+              <td><b>Disk</b></td>
+              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, disk space will
+                be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
+                least 500MB.</td>
+            </tr>
+            <tr>
+              <td><b>Operating System</b></td>
+              <td>No minimum requirement. Start up scripts are included as shell scripts and Windows batch files.</td>
+            </tr>
+          </table>
+        </p>
+      </subsection>
+
+      <subsection name="Files">
+        <p>Maven is distributed in several formats for your convenience. Simply pick a
+              ready-made binary distribution archive and follow the <a href="./install.html">
+              installation instructions.</a>
+              Use a source archive if you intend to build Maven yourself.</p>
+        <p>
+            In order to guard against corrupted downloads/installations, it is highly recommended to
+              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
+              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
+              developers.</p>
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Link</th>
+              <th>Checksums</th>
+              <th>Signature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Binary tar.gz archive</td>
+              <td><a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz">apache-maven-${current38xVersion}-bin.tar.gz</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.sha512">apache-maven-${current38xVersion}-bin.tar.gz.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.asc">apache-maven-${current38xVersion}-bin.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Binary zip archive</td>
+              <td><a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip">apache-maven-${current38xVersion}-bin.zip</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.sha512">apache-maven-${current38xVersion}-bin.zip.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.asc">apache-maven-${current38xVersion}-bin.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Source tar.gz archive</td>
+              <td><a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.sha512">apache-maven-${current38xVersion}-src.tar.gz.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.asc">apache-maven-${current38xVersion}-src.tar.gz.asc</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Source zip archive </td>
+              <td><a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.sha512">apache-maven-${current38xVersion}-src.zip.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.asc">apache-maven-${current38xVersion}-src.zip.asc</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li><a href="./docs/${current38xVersion}/release-notes.html">Release Notes</a></li>
+          <li><a href="./ref/${current38xVersion}/">Reference Documentation</a></li>
+          <li><a href="[preferred]maven/">All current release sources (plugins, shared libraries,...) available at https://downloads.apache.org/maven/</a></li>
+          <li><a href="./scm.html">latest source code from source repository</a></li>
+          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+        </ul>
+      </subsection>
+
+      <subsection name="Older Previous Releases">
         <p>It is strongly recommended to use the latest release version of Apache Maven to take advantage of newest features and bug fixes.</p>
         
         <p>If you still want to use an old version you can find more information in the
