@@ -79,7 +79,7 @@ Date format is: YYYY-MM-DD
 
 </table>
 
-<h3><a name="Maven_31">Maven 3.1+</a></h3>
+<h3><a name="Maven_32">Maven 3.2.5+</a></h3>
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -110,20 +110,14 @@ Date format is: YYYY-MM-DD
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "" "" )
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )
-#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "4" )
-#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
-#release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
-#release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
-#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "3" )
-#release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" "" "" )
-#release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" "" "" )
+#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "1" )
 
 </table>
 
-<h3><a name="Maven_3">Maven 3.0.x</a></h3>
+<h3><a name="Maven_3">Maven before 3.2.5</a></h3>
 
-<p>Maven 3.0 has now reached its end of life.
-New plugin releases will require Maven 3.1 or later.
+<p>Maven before 3.2.5 has now reached its end of life.
+New plugin releases will require Maven 3.2.5 or later.
 The following information is made available for reference.</p>
 
 <table>
@@ -133,8 +127,13 @@ The following information is made available for reference.</p>
 <th>Links</th>
 </tr>
 
-
-#release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "true" "Java 5" "14" )
+#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" "Java 6" "3" )
+#release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
+#release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
+#release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "17" )
+#release( "2013-07-15" "3.1.0" "users/201307.mbox/%3C4C1F2A95-5EBB-473E-BC3F-4D3969A78421%40tesla.io%3E" "" "" "" )
+#release( "2013-06-10" "3.1.0-alpha-1" "users/201306.mbox/%3C2D8B1BBD-FF9E-4537-A748-857C96664161%40tesla.io%3E" "" "" "" )
+#release( "2013-02-23" "3.0.5" "announce/201302.mbox/%3CCAPoyBqRwyTkiAN%2Bxc7X9sx6qLYK2z-HodTuYSfWM2N6780ST-A%40mail.gmail.com%3E" "" "" "" )
 #release( "2012-01-20" "3.0.4" "users/201201.mbox/%3CCAPoyBqQ8wVpf6Zn61t8s489kgZS7tZjYUT1iX7gykathC2Qrgw%40mail.gmail.com%3E" "" "" "" )
 #release( "2011-03-04" "3.0.3" "announce/201103.mbox/%3C4D702CE2.5090506%40apache.org%3E" "" "" "" )
 #release( "2011-01-12" "3.0.2" "announce/201101.mbox/%3C4D2E1D75.6090008%40apache.org%3E" "" "" "" )
