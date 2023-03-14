@@ -50,6 +50,9 @@ Advanced Configuration of the Maven Wagon Transport
 
 **HTTP Headers
 
+  <<Supported starting with Maven 3.9.0. This configuration applies to ALL transports, both native HTTP and Wagon will obey these.
+  This mode is meant for users upgraded to Maven 3.9.0+ but being "in limbo" between new native HTTP and Wagon transport.>>
+
   In all HTTP transports, you can add your custom HTTP headers like this:
 
 +---+
@@ -75,6 +78,9 @@ Advanced Configuration of the Maven Wagon Transport
   transports that support headers, like HTTP transports are.
 
 **Connection Timeouts
+
+  <<Supported starting with Maven 3.9.0. This configuration applies to ALL transports, both native HTTP and Wagon will obey these.
+  This mode is meant for users upgraded to Maven 3.9.0+ but being "in limbo" between new native HTTP and Wagon transport.>>
 
   All transport implementations that perform some network access allow configuring several timeouts,
   for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
@@ -172,6 +178,9 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   We'll discuss preemptive authentication in another example, below.
   
 **Configuring GET, HEAD, PUT, or All of the Above
+
+  <<Starting with Maven 3.9.0 native HTTP transport will pick up the "all" settings only (get, head, put are neglected!)"
+  but it will WARN about it's deprecation. For users sticking with Wagon nothing changes.>>
 
   In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given
   server, or for only one method. To configure all methods for a server, use the following section of the <<<settings.xml>>> file:

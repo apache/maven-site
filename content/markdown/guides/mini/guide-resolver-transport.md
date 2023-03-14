@@ -33,6 +33,8 @@ The Resolver contains configuration for many aspects, including transport (see t
 prefixed with `aether.connector.`). They can be found on 
 [resolver configuration page](https://maven.apache.org/resolver/configuration.html).
 
+**This page applies only to Maven 3.9.0 and newer.**
+
 ## Switching Between Transports
 
 The transport used by resolver can be controlled using the `-Dmaven.resolver.transport` user property, for which accepted
@@ -75,9 +77,28 @@ In all HTTP transports, you can add your custom HTTP headers like this:
 </settings>
 ```
 
-It is important to understand that the above approach does not allow you to turn off all the default HTTP headers; 
-nor does it allow you to specify headers on a per-method basis. However, this configuration remains available in all 
+It is important to understand that the above approach does not allow you to turn off all the default HTTP headers;
+nor does it allow you to specify headers on a per-method basis. However, this configuration remains available in all
 transports that support headers, like HTTP transports are (and works for "native" but also Wagon transport).
+
+## Timeouts
+
+All transport implementations that perform some network access allow configuring several timeouts,
+for example to allow the user to tell Maven how long to wait before giving up on a connection that has not responded.
+
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>my-server</id>
+      <configuration>
+        <connectTimeout>10000</connectTimeout> <!-- milliseconds -->
+        <requestTimeout>1800000</requestTimeout> <!-- milliseconds -->
+      </configuration>
+    </server>
+  </servers>
+</settings>
+```
 
 ## How To Upgrade from Wagon? (or "native transport does not work")
 
