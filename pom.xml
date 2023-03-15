@@ -56,7 +56,7 @@
   <properties>
     <maven.site.path>maven-site</maven.site.path>
     <currentStableVersion>3.9.1</currentStableVersion>
-    <currentStableVersionDetails>wannabe-commit-hash</currentStableVersionDetails>
+    <currentStableVersionDetails>2e178502fcdbffc201671fb2537d0cb4b4cc58f8</currentStableVersionDetails>
     <current4xVersion>4.0.0-alpha-4</current4xVersion>
     <current39xVersion>3.9.1</current39xVersion>
     <current38xVersion>3.8.8</current38xVersion>
