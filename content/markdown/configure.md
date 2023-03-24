@@ -28,7 +28,7 @@ settings could be defined with the value `-Xms256m -Xmx512m`.
 
 ## `MAVEN_ARGS` environment variable:
 
-Starting with Maven 4, this variable contains arguments passed to Maven before
+Starting with Maven 3.9.0, this variable contains arguments passed to Maven before
 CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 
@@ -75,14 +75,24 @@ options to a script but this can now simple being done by defining `${maven.proj
 configuration options for the `mvn` command line. 
 
 For example things like `-T3 -U --fail-at-end`. So you only have to call Maven just by using `mvn 
-clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. The 
-`${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` directory; also works if in the root of a multi module build.
+clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. 
+The `${maven.projectBasedir}/.mvn/maven.config` is located in the `${maven.projectBasedir}/.mvn/` directory; also works if in the root of a multi module build.
+
+**NOTICE** starting with Maven **3.9.0** each single argument must be put in new line, so for the mentioned example your file will have content like:
+
+```
+-T3
+-U 
+--fail-at-end
+```
 
 ### `.mvn/jvm.config` file:
 
 Starting with Maven 3.3.1+ you can define JVM configuration via `${maven.projectBasedir}/.mvn/jvm.config` file which means you can define the options for your build on a per project base. This file will become part of your project and will be checked in along with your project. So no need anymore for `MAVEN_OPTS`, `.mavenrc` files. So for example if you put the following JVM options into the `${maven.projectBasedir}/.mvn/jvm.config` file
 
-        -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
+```
+-Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
+```
 
 You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 

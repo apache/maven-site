@@ -54,7 +54,7 @@
 
  The implemented solution adds the following capabilities:
 
-   * authorized users have an additional <<<settings-security.xml>>> file in their <<<$\{user.home\}/.m2>>> folder
+   * authorized users have an additional <<<settings-security.xml>>> file in their <<<$\{user.home\}/.m2>>> directory
 
       ** this file either contains encrypted <<master password>>, used to encrypt other passwords
 
@@ -70,9 +70,9 @@
 
  Use the following command line:
 
-+------------------------------------+
+--------------------------------------
 mvn --encrypt-master-password <password>
-+------------------------------------+
+--------------------------------------
 
  <Note:> Since Maven 3.2.1 the password argument should no longer be used (see {{{Tips}Tips}} below for more information). Maven will prompt for the password. Earlier versions of Maven will not prompt for a password, so it must be typed on the command-line in plaintext.
 
@@ -96,9 +96,9 @@ mvn --encrypt-master-password <password>
 
  You have to use the following command line:
 
-+------------------------------------+
+--------------------------------------
 mvn --encrypt-password <password>
-+------------------------------------+
+--------------------------------------
 
   <Note:>Just like <<<--encrypt-master-password>>> the password argument should no longer be used since Maven 3.2.1 (see {{{Tips}Tips below for more information.}}).
 
@@ -146,11 +146,11 @@ mvn --encrypt-password <password>
 
  Then you can use, say, deploy plugin, to write to this server:
 
-+------------------------------------+
+--------------------------------------
 mvn deploy:deploy-file -Durl=https://maven.corp.com/repo \
                        -DrepositoryId=my.server \
                        -Dfile=your-artifact-1.0.jar \
-+------------------------------------+
+--------------------------------------
 
 
 
@@ -227,15 +227,15 @@ jSMOWnoPFgsHVpMvz5VrIt5kRbzGpI8u+{EF1iFQyJQ=
 
   The following example will not work on Windows:
 
-+----+
+------
 mvn --encrypt-master-password a!$%^b
-+----+
+------
   
   whereas the following will work on Windows:
 
-+----+
+------
 mvn --encrypt-master-password "a!$%^b"
-+----+
+------
 
   If you are on a linux/unix platform you should use single quotes for the above 
   master password. Otherwise the master password

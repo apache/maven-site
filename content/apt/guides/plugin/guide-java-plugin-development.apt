@@ -203,22 +203,24 @@ public class GreetingMojo extends AbstractMojo
 +----+
 ...
   <build>
-    <plugins>
-      <plugin>
-        <groupId>sample.plugin</groupId>
-        <artifactId>hello-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>sample.plugin</groupId>
+          <artifactId>hello-maven-plugin</artifactId>
+          <version>1.0-SNAPSHOT</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 ...
 +----+
 
   And, you need to specify a fully-qualified goal in the form of:
 
-+----+
+------
 mvn groupId:artifactId:version:goal
-+----+
+------
 
   For example, to run the simple mojo in the sample plugin, you would enter
   "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
@@ -263,11 +265,19 @@ mvn groupId:artifactId:version:goal
 
 +-----+
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>sample.plugin</groupId>
+          <artifactId>hello-maven-plugin</artifactId>
+          <version>1.0-SNAPSHOT</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>  
     <plugins>
       <plugin>
         <groupId>sample.plugin</groupId>
         <artifactId>hello-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
         <executions>
           <execution>
             <phase>compile</phase>
@@ -290,13 +300,13 @@ mvn groupId:artifactId:version:goal
   To create a new plugin project, you could using the Mojo
   {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
 
-+---+
+-----
 mvn archetype:generate \
   -DgroupId=sample.plugin \
   -DartifactId=hello-maven-plugin \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-plugin
-+---+
+-----
 
 * {Parameters}
 

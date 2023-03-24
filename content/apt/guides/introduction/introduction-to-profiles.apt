@@ -28,6 +28,8 @@
 
 Introduction to Build Profiles
 
+%{toc|section=0|fromDepth=2|toDepth=5}
+
   Apache Maven goes to great lengths to ensure that builds are portable. Among
   other things, this means allowing build configuration inside the POM,
   avoiding <<all>> filesystem references (in inheritance, dependencies, and
@@ -52,7 +54,7 @@ Introduction to Build Profiles
   However, used properly, profiles can be used while still preserving
   project portability. This will also minimize the use of <<<-f>>> option of
   maven which allows user to create another POM with different parameters or
-  configuration to build which makes it more maintainable since it is runnning
+  configuration to build which makes it more maintainable since it is running
   with one POM only.
 
 * What are the different types of profile? Where is each defined?
@@ -82,17 +84,23 @@ Introduction to Build Profiles
 
   A profile can be activated in several ways:
 
-  * From the command line
+  * Explicitly
 
-  * Through Maven settings
+  * Implicitly
+  
+  ** Based on OS
+  
+  ** Based on system properties
+  
+  ** Based on presence of files
+  
+  []
 
-  * Based on environment variables
-
-  * OS settings
-
-  * Present or missing files
+  Refer to the sections below for details.
 
 ** Details on profile activation
+
+*** Explicit profile activation
 
   Profiles can be explicitly specified using the <<<-P>>> command line flag.
 
@@ -103,9 +111,9 @@ Introduction to Build Profiles
   From Maven 4 onward, Maven will refuse to activate or deactivate a profile that cannot be resolved.
   To prevent this, prefix the profile identifier with an <<<?>>>, marking it as optional:
 
-+---+
+-----
 mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
-+---+
+-----
 
   Profiles can be activated in the Maven settings, via the <<<\<activeProfiles\>>>>
   section. This section takes a list of <<<\<activeProfile\>>>> elements, each
@@ -124,14 +132,19 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
   every time a project use it.
 
+*** Implicit profile activation
+
   Profiles can be automatically triggered based on the detected state of
   the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
-  prefix-matching of the JDK version, the presence of a system property or
-  the value of a system property. Here are some examples.
+  JDK version matching, operating system matching or
+  the presence/the value of a system property. Here are some examples.
+
+**** JDK
 
   The following configuration will trigger the profile when the JDK's
-  version starts with "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"):
+  version <starts with> "1.4" (eg. "1.4.0_08", "1.4.2_07", "1.4"), in particular it <won't be active>
+  for <<newer>> versions like "1.8" or "11":
 
 +---+
 <profiles>
@@ -145,6 +158,7 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 +---+
 
   Ranges can also be used as of Maven 2.1 (refer to the {{{/enforcer/enforcer-rules/versionRanges.html} Enforcer Version Range Syntax}} for more information).
+  Range values must start with either <<<[>>> or <<<(>>> otherwise the value is interpreted as prefix.
   The following honours versions 1.3, 1.4 and 1.5.
 
 +---+
@@ -160,7 +174,10 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
   <Note:> an upper bound such as <<<,1.5]>>> is likely not to include most releases of 1.5, since they will have an additional "patch" release such as <<<_05>>> that is not taken into consideration in the above range.
 
-  This next one will activate based on OS settings. See the {{{/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
+
+**** OS
+
+  This next one will activate based on the detected operating system. See the {{{/enforcer/enforcer-rules/requireOS.html}Maven Enforcer Plugin}} for more details about OS values.
 
 +---+
 <profiles>
@@ -177,6 +194,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   </profile>
 </profiles>
 +---+
+
+**** Property
 
   The profile below will be activated when the system property "debug" is specified
   with any value:
@@ -229,10 +248,10 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
   To activate this you would type one of those on the command line:
 
-+---+
+-----
 mvn groupId:artifactId:goal
 mvn groupId:artifactId:goal -Ddebug=false
-+---+
+-----
 
   The next example will trigger the profile when the system property
   "environment" is specified with the value "test":
@@ -253,15 +272,35 @@ mvn groupId:artifactId:goal -Ddebug=false
 
   To activate this you would type this on the command line:
 
-+---+
+-----
 mvn groupId:artifactId:goal -Denvironment=test
-+---+
+-----
 
   As of Maven 3.0, profiles in the POM can also be activated based on properties from active profiles from the
   <<<settings.xml>>>.
 
   <<Note>>: Environment variables like <<<FOO>>> are available as properties of the form <<<env.FOO>>>. Further note
   that environment variable names are normalized to all upper-case on Windows.
+
+  Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing property <<<packaging>>>. 
+  This is only useful where the profile activation is defined in a common parent POM which is reused among multiple Maven projects.
+  The next example will trigger the profile when a project with packaging <<<war>>> is built:
+  
++---+
+<profiles>
+  <profile>
+    <activation>
+      <property>
+        <name>packaging</name>
+        <value>war</value>
+      </property>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+**** Files
 
   This example will trigger the profile when the generated file
   <<<target/generated-sources/axistools/wsdl2java/org/apache/maven>>> is missing.
@@ -308,15 +347,15 @@ mvn groupId:artifactId:goal -Denvironment=test
   Starting with Maven 2.0.10, one or more profiles can be deactivated using the command line by prefixing their
   identifier with either the character '!' or '-' as shown below:
   
-+---+
+-----
 mvn groupId:artifactId:goal -P !profile-1,!profile-2,!?profile-3
-+---+
+-----
 
   or
 
-+---+
+-----
 mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
-+---+
+-----
 
   This can be used to deactivate profiles marked as activeByDefault or profiles that would 
   otherwise be activated through their activation config.
@@ -630,23 +669,23 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
   properties contain "env=dev" for a profile named <<<appserverConfig-dev>>> and
   "env=dev-2" for a profile named <<<appserverConfig-dev-2>>>. So, executing:
 
-+---+
+-----
 mvn -Denv=dev-2 integration-test
-+---+
+-----
 
   will result in a successful build, applying the properties given
   by profile named <<<appserverConfig-dev-2>>>. And when we execute
 
-+---+
+-----
 mvn -Denv=dev integration-test
-+---+
+-----
 
   it will result in a successful build applying the properties given
   by the profile named <<<appserverConfig-dev>>>. However, executing:
 
-+---+
+-----
 mvn -Denv=production integration-test
-+---+
+-----
 
   will not do a successful build. Why? Because, the resulting non-interpolated
   literal value of <<<$\{appserver.home\}>>> will not be a valid path for deploying
@@ -673,9 +712,9 @@ mvn -Denv=production integration-test
   profiles has been executed during a build. We can use the {{{/plugins/maven-help-plugin/}Maven Help Plugin}}
   to tell what profiles are in effect during a build.
 
-+---+
+-----
   mvn help:active-profiles
-+---+
+-----
 
   Let us have some small samples that will help us to understand more on the
   <active-profiles> goal of that plugin.
@@ -685,9 +724,9 @@ mvn -Denv=production integration-test
   which has been given different values for properties. If we go ahead
   and execute:
 
-+---+
+-----
   mvn help:active-profiles -Denv=dev
-+---+
+-----
 
   The result will be a bulleted list of the id of the profile with an
   activation property of "env=dev" together with the source where it was
@@ -702,9 +741,9 @@ The following profiles are active:
   Now if we have a profile declared in <<<settings.xml>>> (refer to the sample of profile
   in <<<settings.xml>>>) and that have been set to be an active profile and execute:
 
-+---+
+-----
   mvn help:active-profiles
-+---+
+-----
 
   The result should be something like this
 
@@ -722,9 +761,9 @@ The following profiles are active:
   as an active profile and also triggered a profile in the POM. Which profile do
   you think will have an effect on the build?
 
-+---+
+-----
   mvn help:active-profiles -P appserverConfig-dev
-+---+
+-----
 
   This will list the activated profiles:
 
@@ -738,9 +777,9 @@ The following profiles are active:
   Even though it listed the two active profiles, we are not sure which one
   of them has been applied. To see the effect on the build execute:
 
-+---+
+-----
   mvn help:effective-pom -P appserverConfig-dev
-+---+
+-----
 
   This will print the effective POM for this build configuration out to the
   console. Take note that profiles in the <<<settings.xml>>> takes higher priority
@@ -767,9 +806,9 @@ The following profiles are active:
   at a particular environment. Thus, to activate a build for the test environment,
   you need to activate <<env-test>> by issuing:
 
-+---+
+-----
 mvn -Denv=test <phase>
-+---+
+-----
 
   The right command-line option can be had by simply substituting "=" for "-" in
   the profile id.

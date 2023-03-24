@@ -1,4 +1,4 @@
-<!-- 
+<!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
  distributed with this work for additional information
@@ -80,9 +80,9 @@ Improvements
 
  * Switch to official [Guice](https://github.com/google/guice/wiki/Motivation) 4.0, upgrade to
    [Eclipse/Sisu](https://www.eclipse.org/sisu/) 0.3.2 has been done with [MNG-5923][MNG-5923] and [MNG-5924][MNG-5924].
- 
+
  * Several areas of Maven Core have been changed to use
-   [Commons Lang](https://commons.apache.org/proper/commons-lang/)'s Validate to intercept invalid 
+   [Commons Lang](https://commons.apache.org/proper/commons-lang/)'s Validate to intercept invalid
    input [MNG-5649][MNG-5649].
 
  * Upgrade Java minimum version prerequisite from Java 6 to Java 7 [MNG-5780][MNG-5780].
@@ -93,13 +93,13 @@ Improvements
 
  * Close IO streams in finally or try-with-resource statement [MNG-5844][MNG-5844].
 
- * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].  
+ * Make url inheritance algorithm more visible [MNG-5871][MNG-5871].
 
- * Update used [Modello](https://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].  
+ * Update used [Modello](https://codehaus-plexus.github.io/modello/) version from 1.8.1 to 1.8.3 [MNG-5888][MNG-5888].
 
  * Maven build does not work with Maven 2.2.1 [MNG-5905][MNG-5905].
 
- * Use canonical name for UTC timezone [MNG-5906][MNG-5906].  
+ * Use canonical name for UTC timezone [MNG-5906][MNG-5906].
 
  * Upgrade [maven-parent](/pom/maven/) to version 27 [MNG-5911][MNG-5911].
 
@@ -108,9 +108,9 @@ Improvements
  * Upgraded to [plexus-component-*](https://codehaus-plexus.github.io/plexus-containers/) 1.6 that uses
    [asm](http://asm.ow2.org/) 5.x [MNG-5921][MNG-5921].
 
- * Upgrade [plexus-utils](https://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].  
+ * Upgrade [plexus-utils](https://codehaus-plexus.github.io/plexus-utils/) to 3.0.22 to support `combine.id` as configuration attribute for Map merging [MNG-5922][MNG-5922].
 
- * Update [animal-sniffer-maven-plugin](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].  
+ * Update [animal-sniffer-maven-plugin](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/) to 1.14. MANIMALSNIFFER-49 required when building with JDK9 [MNG-5925][MNG-5925].
 
 
 Bugs
@@ -125,8 +125,8 @@ Bugs
  * The scripts to call Maven has introduced a bug related to the handling of the
    `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
 
- * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the 
-   `${maven.projectBasedir}/.mvn` folder of the project. There you can use the `maven.config` 
+ * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the
+   `${maven.projectBasedir}/.mvn` directory of the project. There you can use the `maven.config`
    file to store command line options instead of repeating them every time you call Maven.
    In cases where this file has been empty Maven ended with a failure. This has been fixed
    with [MNG-5816][MNG-5816].
@@ -137,31 +137,31 @@ Bugs
    This has been fixed by [MNG-5840][MNG-5840].
 
  * In cases where you start Maven in the root of a windows drive Maven will fail.
-   This has been fixed by [MNG-5796][MNG-5796]. 
+   This has been fixed by [MNG-5796][MNG-5796].
 
- * The `<prerequisites>` elements is intended for [buildtime checking but not for runtime checks][MNG-4840] 
-   which should be left to [maven-enforcer-plugin][maven-enforcer-plugin]. 
+ * The `<prerequisites>` elements is intended for [buildtime checking but not for runtime checks][MNG-4840]
+   which should be left to [maven-enforcer-plugin][maven-enforcer-plugin].
    This has not been documented accordingly. This has been done with [MNG-5297][MNG-5297].
 
  * In situations like this: `mvn -Dtest=\"anton\" clean package` the trailing quote
    is stripped away which could cause problems. This has been fixed with [MNG-5681][MNG-5681].
 
- * Possible NullPointerException in org.apache.maven.repository.MetadataResolutionResult 
+ * Possible NullPointerException in org.apache.maven.repository.MetadataResolutionResult
    has been fixed with [MNG-5721].
 
  * There had been several issues with the `mvn` script which are for example
-   wrong locating the `.mvn` folder, nonportable shell constructs, wrongly setting
+   wrong locating the `.mvn` directory, nonportable shell constructs, wrongly setting
    'maven.multiModuleProjectDirectory' variable or directories which contain spaces. Those
-   issues have been fixed [MNG-5786][MNG-5786], [MNG-5858][MNG-5858], 
+   issues have been fixed [MNG-5786][MNG-5786], [MNG-5858][MNG-5858],
    [MNG-5882][MNG-5882] and [MNG-5884][MNG-5884].
 
  * Broken link of 'Building Maven' in README.md has been fixed by [MNG-5886][MNG-5886].
 
- * [maven-aether-provider][maven-aether-provider]/[maven-compat][maven-compat] 
-   does not always generate snapshot versions using Gregorian calendar year 
-   fixed in [MNG-5877][MNG-5877] 
+ * [maven-aether-provider][maven-aether-provider]/[maven-compat][maven-compat]
+   does not always generate snapshot versions using Gregorian calendar year
+   fixed in [MNG-5877][MNG-5877]
 
- * Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891] 
+ * Log file command line option description contains an extra word has been fixed by [MNG-5891][MNG-5891]
 
  * org.apache.maven.repository.internal.RemoteSnapshotMetadataTest fails to start at midnight fixed with
    [MNG-5907][MNG-5907].

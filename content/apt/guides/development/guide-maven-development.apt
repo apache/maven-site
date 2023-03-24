@@ -182,8 +182,9 @@ Developing Maven
 
  ** <<Maven Wagon>>
 
- Maven Wagon is a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
- API to download and upload artifacts and artifact metadata. The site plug-in uses it to publish the site.
+ Maven Wagon is a standalone API that dealt with transporting files and directories in Maven 2.x. Maven Core today
+ uses the Resolver Transport API, that among other implementations, contains a wrapper for Wagon as well.
+ Also, the site plug-in uses it to publish the site.
 
  You can {{{/wagon/}read more about Wagon}}.
 

@@ -39,7 +39,7 @@ Releasing A Parent POM
   parent POM projects have a specific structure, with the addition of <<<site-pom.xml>>> and <<<src/site-docs>>>
   to provide <<<mvn -f site-pom.xml site>>> with useful documentation content:
 
-+----+
+------
 |-- pom.xml
 |-- site-pom.xml
 `-- src
@@ -49,7 +49,7 @@ Releasing A Parent POM
         |-- apt
         |   `-- index.apt
         `-- site.xml
-+----+
+------
 
   And the <<<index.apt>>> page not only contains instructions about the content of the parent POM, but
   it maintains a history of POM releases links and diffs.
@@ -74,18 +74,18 @@ Releasing A Parent POM
 
   Then the only difference is with commands to stage the site:
 
-+------+
+--------
 cd target/checkout
 mvn -f site-pom.xml site
 mvn -f site-pom.xml scm-publish:publish-scm
-+------+
+--------
 
 * Call the vote
 
   In the vote, instead of providing links to JIRA, the parent POMs should include a link to the Git changes since the
   last release:
 
-+-----+
+-------
 ...
 Hi,
 
@@ -98,4 +98,4 @@ https://github.com/apache/maven-parent/compare/maven-parent-<VERSION-OF-PREVIOUS
 
 Staging repo:
 ...
-+-----+
+-------

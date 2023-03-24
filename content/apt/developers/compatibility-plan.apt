@@ -50,6 +50,8 @@ Maven Plugins Compatibility Plan
 
   * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}Technical details}}
 
+  * In March 2023, Maven before 3.2.5 has been {{{/docs/history.html#maven-before-3-2-5}marked as EOL}}, meaning that plugins should use 3.2.5 as minimum
+
   []
 
 * Context

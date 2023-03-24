@@ -353,9 +353,9 @@ public class SimpleReport extends AbstractMavenReport {
 
   Building the plugin is done by executing the below command in the root directory of the plugin project:
 
-+---
+----
 $ mvn install
-+---
+----
 
   This command will:
 
@@ -371,7 +371,7 @@ $ mvn install
   To make sure everything went well and is properly declared, you can now execute the below command
   in any other Maven project directory:
 
-+---
+----
 $ mvn com.mycompany.maven:simple-maven-plugin:1.0-SNAPSHOT:help
 
 [INFO] --- simple-maven-plugin:1.0-SNAPSHOT:help (default-cli) @ hardware-connectors ---
@@ -394,7 +394,7 @@ simple:simple
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-+---
+----
 
 ** Invoking the Simple Plugin
 

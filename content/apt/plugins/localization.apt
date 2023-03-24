@@ -85,7 +85,7 @@ Localization of Plugins
   * Check out the source code for the plugin you want to add a translation to.
 
   * Find the resource bundles that needs to be translated. They are often found
-    in the <<<src/main/resources>>> folder.
+    in the <<<src/main/resources>>> directory.
 
   * Copy the basefile for the bundle, i.e. the one <<without>> a language
     extension. The copy should have the same name as the original file, except
@@ -122,7 +122,7 @@ Localization of Plugins
     </plugins>
   </build>
 +-----
-    
+
   * Run "mvn site" on that project to test it.
 
   * When you are happy with your translation, create an issue in JIRA for the
@@ -131,10 +131,10 @@ Localization of Plugins
 
   * Create a patch file that contains your new translation. Use the issue number
     when you name the file:
-  
-+-----
+
+------
 svn diff > MYISSUE-123.patch
-+-----
+------
 
   * Attach your patch file to the issue in JIRA.
 
@@ -149,14 +149,14 @@ svn diff > MYISSUE-123.patch
   {{{http://java.sun.com/j2se/1.5.0/docs/tooldocs/windows/native2ascii.html}read more about it here}}.
   You use it like this:
 
-+-----
+------
 native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.properties
-+-----
+------
 
 ** Tools to find out the charset of a file
 
   * Unix <<<file>>> command
-  
+
   * {{{http://cpdetector.sourceforge.net/}cpdetector}}
 
   * {{{http://plugins.intellij.net/plugin/?id=24}IntelliJ IDEA ShowEncodingPlugin}}
@@ -172,7 +172,7 @@ native2ascii checkstyle-report_es.properties checkstyle-report_es-encoded.proper
 ** Tools to convert a file from one encoding to another encoding
 
   * Unix <<<iconv>>> command
-  
+
   * Notepad++
 
   []

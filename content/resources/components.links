@@ -2,6 +2,8 @@
 # links to components in https://maven.apache.org/components/
 ant-tasks=components/ant-tasks
 ant-tasks-archives=components/ant-tasks-archives
+apache-resource-bundles-archives=components/apache-resource-bundles-archives
+#apache-resource-bundles
 archetype-archives=components/archetype-archives
 archetype=components/archetype
 archetypes-archives=components/archetypes-archives

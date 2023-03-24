@@ -26,109 +26,7 @@
 
 POM Reference
 
-  [[1]] {{{Introduction}Introduction}}
-
-    [[1]] {{{What_is_the_POM}What is the POM?}}
-
-    [[2]] {{{Quick_Overview}Quick Overview}}
-
-  [[2]] {{{The_Basics}The Basics}}
-
-    [[1]] {{{Maven_Coordinates}Maven Coordinates}}
-
-    [[2]] {{{POM_Relationships}POM Relationships}}
-
-      [[1]] {{{Dependencies}Dependencies}}
-
-        [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
-
-        [[2]] {{{Version_Order_Specification}Version Order Specification}}
-
-        [[3]] {{{Version_Order_Testing}Version Order Testing}}
-
-        [[4]] {{{Exclusions}Exclusions}}
-
-      [[2]] {{{Inheritance}Inheritance}}
-
-        [[1]] {{{The_Super_POM}The Super POM}}
-
-        [[2]] {{{Dependency_Management}Dependency Management}}
-
-      [[3]] {{{Aggregation}Aggregation (or Multi-Module)}}
-
-        [[1]] {{{Inheritance_v._Aggregation}Inheritance v. Aggregation}}
-
-    [[3]] {{{Properties}Properties}}
-
-  [[3]] {{{Build_Settings}Build Settings}}
-
-    [[1]] {{{Build}Build}}
-
-      [[1]] {{{BaseBuild_Element}The BaseBuild Element Set}}
-
-        [[1]] {{{Resources}Resources}}
-
-        [[2]] {{{Plugins}Plugins}}
-
-          [[1]]{{{default_configuration_inheritance}Default Configuration Inheritance}}
-
-          [[2]]{{{advanced_configuration_inheritance}Advanced Configuration Inheritance}}
-
-        [[3]] {{{Plugin_Management}Plugin Management}}
-
-      [[2]] {{{Build_Element}The Build Element Set}}
-
-        [[1]] {{{Directories}Directories}}
-
-        [[2]] {{{Extensions}Extensions}}
-
-    [[2]] {{{Reporting}Reporting}}
-
-      [[1]] {{{Report_Sets}Report Sets}}
-
-  [[4]] {{{More_Project_Information}More Project Information}}
-
-    [[1]] {{{Licenses}Licenses}}
-
-    [[2]] {{{Organization}Organization}}
-
-    [[3]] {{{Developers}Developers}}
-
-    [[4]] {{{Contributors}Contributors}}
-
-  [[5]] {{{Environment_Settings}Environment Settings}}
-
-    [[1]] {{{Issue_Management}Issue Management}}
-
-    [[2]] {{{Continuous_Integration_Management}Continuous Integration Management}}
-
-    [[3]] {{{Mailing_Lists}Mailing Lists}}
-
-    [[4]] {{{SCM}SCM}}
-
-    [[5]] {{{Prerequisites}Prerequisites}}
-
-    [[6]] {{{Repositories}Repositories}}
-
-    [[7]] {{{Plugin_Repositories}Plugin Repositories}}
-
-    [[8]] {{{Distribution_Management}Distribution Management}}
-
-      [[1]] {{{Repository}Repository}}
-
-      [[2]] {{{Site_Distribution}Site Distribution}}
-
-      [[3]] {{{Relocation}Relocation}}
-
-    [[9]] {{{Profiles}Profiles}}
-
-      [[1]] {{{Activation}Activation}}
-
-      [[2]] {{{The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
-
-  [[6]] {{{Final}Final}}
-
-  []
+%{toc|section=0|fromDepth=1|toDepth=3}
 
 {Introduction}
 
@@ -256,7 +154,7 @@ POM Reference
   The three elements given above point to a specific version of a project, letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-* <<packaging>>
+* {Packaging}
 
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
   label to give us a really complete <what>: that is the project's packaging. In our
@@ -515,7 +413,23 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
-  * else "<<<.qualifier>>>" \< "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+  * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+
+  * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
+
+  []
+
+   Following semver rules is encouraged, and some qualifiers are discouraged:
+   
+   * Prefer '<<<alpha>>>', '<<<beta>>>', and '<<<milestone>>>' qualifiers over '<<<ea>>>' and '<<<preview>>>'.
+
+   * Prefer '<<<1.0.0-RC1>>>'' over '<<<1.0.0.RC1>>>'.
+   
+   * The usage of '<<<CR>>>' qualifier is discouraged. Use '<<<RC>>>' instead.
+   
+   * The usage of '<<<final>>>', '<<<ga>>>', and '<<<release>>>' qualifiers is discouraged. Use no qualifier instead.
+   
+   * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
   []
 
@@ -527,17 +441,17 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" \< "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
 
-  * "<<<1.ga>>>"  = "<<<1-ga>>>"  = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
+  * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
-  * "<<<1-sp>>>"   \> "<<<1-ga>>>"
+  * "<<<1-sp>>>" \> "<<<1-ga>>>"
 
-  * "<<<1-sp.1>>>"  \> "<<<1-ga.1>>>"
+  * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
   * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
 
-  * "<<<1-a1>>>"  = "<<<1-alpha-1>>>"
+  * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
@@ -1481,7 +1395,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +-------------------------+
 <licenses>
   <license>
-    <name>Apache License, Version 2.0</name>
+    <name>Apache-2.0</name>
     <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     <distribution>repo</distribution>
     <comments>A business-friendly OSS license</comments>
@@ -2062,16 +1976,23 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
   * <<jdk>>:
-  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
-  is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. Ranges are also supported. See the {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
+  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
+  
+    * A version range according to the definition of {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} in case the value starts with either <<<[>>> or <<<(>>>,
+    
+    * A negated prefix if the value starts with <<<!>>> or
+    
+    * A (non-negated) prefix for all other cases
+    
+  (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading <<<!>>>).
+  The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
 
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
 
   * <<property>>:
-  The <<<profile>>> will activate if Maven detects a system property and commandline property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
-  of the corresponding <<<name=value>>> pair.
+  The <<<profile>>> will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
+  of the corresponding <<<name=value>>> pair and it matches the given value (if given). Since Maven 3.9.0 one can also evaluate the <<packaging value>> of the pom via property name <<<packaging>>>.
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it

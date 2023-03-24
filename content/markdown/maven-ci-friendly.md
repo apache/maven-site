@@ -326,7 +326,4 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 </project>
 ```
 
-
-
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/ 
-

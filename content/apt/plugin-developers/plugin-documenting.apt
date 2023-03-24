@@ -37,9 +37,9 @@ Verify Plugin Documentation
 
  You <<should>> verify that all Plugin documentation respects this standard. The maven-docck-plugin can be run:
 
-+-----+
+-------
 mvn docck:check
-+-----+
+-------
 
 References
 

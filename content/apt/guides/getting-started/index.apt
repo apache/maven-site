@@ -572,7 +572,7 @@ my-app
 ----
 |-- META-INF
 |   |-- MANIFEST.MF
-|   |-- application.properties
+|   `-- application.properties
 |   `-- maven
 |       `-- com.mycompany.app
 |           `-- my-app
@@ -702,11 +702,11 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  To continue our example, let's add a couple of properties to the <<<application.properties>>> file (which we put in the
  <<<src/main/resources>>> directory) whose values will be supplied when the resource is filtered:
 
-+----+
+------
 # application.properties
 application.name=${project.name}
 application.version=${project.version}
-+----+
+------
 
  With that in place, you can execute the following command (process-resources is the build lifecycle phase where the resources are
  copied and filtered):
@@ -717,19 +717,19 @@ mvn process-resources
 
  and the <<<application.properties>>> file under <<<target/classes>>> (and will eventually go into the jar) looks like this:
 
-+----+
+------
 # application.properties
 application.name=Maven Quick Start Archetype
 application.version=1.0-SNAPSHOT
-+----+
+------
 
  To reference a property defined in an external file, all you need to do is add a reference to this external file in your pom.xml.
  First, let's create our external properties file and call it <<<src/main/filters/filter.properties>>>:
 
-+----+
+------
 # filter.properties
 my.filter.value=hello!
-+----+
+------
 
  Next, we'll add a reference to this new file in the <<<pom.xml>>>:
 
@@ -771,12 +771,12 @@ my.filter.value=hello!
 
  Then, if we add a reference to this property in the <<<application.properties>>> file:
 
-+----+
+------
 # application.properties
 application.name=${project.name}
 application.version=${project.version}
 message=${my.filter.value}
-+----+
+------
 
  the next execution of the <<<mvn process-resources>>> command will put our new property value into <<<application.properties>>>.
  As an alternative to defining the my.filter.value property in an external file, you could also have defined it in the <<<properties>>>
@@ -823,11 +823,11 @@ message=${my.filter.value}
  <<<user.home>>>) or properties defined on the command line using the standard Java -D parameter.  To continue the example, let's change
  our <<<application.properties>>> file to look like this:
 
-+----+
+------
 # application.properties
 java.version=${java.version}
 command.line.prop=${command.line.prop}
-+----+
+------
 
  Now, when you execute the following command (note the definition of the command.line.prop property on the command line), the
  <<<application.properties>>> file will contain the values from the system properties.
@@ -1072,13 +1072,13 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  To get you jump started with Maven's documentation system you can use the archetype mechanism to generate a site
  for your existing project using the following command:
 
-+----+
+------
 mvn archetype:generate \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-site \
   -DgroupId=com.mycompany.app \
   -DartifactId=my-app-site
-+----+
+------
 
  Now head on over to the {{{../mini/guide-site.html}Guide to creating a site}}
  to learn how to create the documentation for your project.
@@ -1088,13 +1088,13 @@ mvn archetype:generate \
   Note that the lifecycle applies to any project type. For example, back in the base directory we can create a
   simple web application:
 
-+----+
+------
 mvn archetype:generate \
     -DarchetypeGroupId=org.apache.maven.archetypes \
     -DarchetypeArtifactId=maven-archetype-webapp \
     -DgroupId=com.mycompany.app \
     -DartifactId=my-webapp
-+----+
+------
 
   Note that these must all be on a single line. This will create a directory called
   <<<my-webapp>>> containing the following project descriptor:

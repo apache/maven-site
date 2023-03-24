@@ -118,7 +118,7 @@ Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the ne
 
 Checkout Maven site source <https://github.com/apache/maven-site.git>.
 
-For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableReleaseDate` properties in `pom.xml`
+For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableVersionDetails` properties in `pom.xml`
 
 Next, update release history `content/markdown/docs/history.md.vm`.
 

@@ -1022,7 +1022,7 @@
               For StarTeam access: 
             &lt;/p&gt;
             &lt;div class="source"&gt;
-              &lt;pre&gt;scm:starteam:username:password@host:port/project/view/folder&lt;/pre&gt;
+              &lt;pre&gt;scm:starteam:username:password@host:port/project/view/directory&lt;/pre&gt;
             &lt;/div&gt;
 
             All of this information can be had from either the StarTeam Universal 
