@@ -77,7 +77,7 @@ Developing Maven
  We have a couple of guidelines when submitting contributions:
  
  * Verify the status of the <<<master>>> branch on {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-master-jobs.html}Maven CI}}.
-   If it is not SUCCCESS, then first try to figure out the problem, don't start with your own issue yet! You can use <<<git bisect>>> to figure out the problematic commit and help 
+   If it is not SUCCESS, then first try to figure out the problem. Don't start with your own issue yet! You can use <<<git bisect>>> to figure out the problematic commit and help 
    with that committer to solve the problem.
 
  * Create your branch from <<<master>>>, not from a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
