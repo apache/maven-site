@@ -481,10 +481,13 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
 *** {Exclusions}
 
-  Exclusions tell Maven not to include the
-  specified project that is a dependency of this dependency (in other words, its transitive
-  dependency). For example, the <<<maven-embedder>>> requires <<<maven-core>>>, and we do not
-  wish to use it or its dependencies, then we would add it as an <<<exclusion>>>.
+  It is sometimes useful to limit a dependency's transitive dependencies. A dependency may have incorrectly
+  specified scopes, or dependencies that conflict with other dependencies in your project. Exclusions tell Maven not to include a
+  specified artifact in the classpath even if it is a dependency of one or more of this project's dependencies
+  (a transitive dependency). For example, <<<maven-embedder>>> depends on <<<maven-core>>>.
+  Suppose you want to depend on maven-embedder but do not want to include maven-core 
+  or its dependencies in the classpath. Then add <<<maven-core>>> as an <<<exclusion>>> in the element that declares the 
+  dependency on maven-embedder:
 
 +-----------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -494,7 +497,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>2.0</version>
+      <version>${currentStableVersion}</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.maven</groupId>
@@ -508,10 +511,12 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-----------------------------+
 
-  It is also sometimes useful to clip a dependency's transitive dependencies. A dependency may have incorrectly
-  specified scopes, or dependencies that conflict with other dependencies in your project. Using wildcard excludes makes it easy to exclude all a dependency's
-  transitive dependencies. In the case below you may be working with the maven-embedder and you want to manage
-  the dependencies you use yourself, so you clip all the transitive dependencies:
+  This only removes the path to maven-core from this one dependency. If maven-core appears as
+  a direct or transitive dependency elsewhere in the POM, it can still be added to the classpath.
+
+  Wildcard excludes make it easy to exclude all of a dependency's
+  transitive dependencies. In the case below, you may be working with the maven-embedder and you want to manage
+  the dependencies you use, so you exclude all the transitive dependencies:
 
 +-----------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -521,7 +526,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.1.0</version>
+      <version>3.8.6</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -538,7 +543,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   * <<exclusions>>:
   Exclusions contain one or more <<<exclusion>>> elements, each containing a <<<groupId>>> and
   <<<artifactId>>> denoting a dependency to exclude. Unlike <<<optional>>>, which may or may not
-  be installed and used, <<<exclusions>>> actively remove themselves from the dependency tree.
+  be installed and used, <<<exclusions>>> actively remove artifacts from the dependency tree.
 
 ** {Inheritance}
 
