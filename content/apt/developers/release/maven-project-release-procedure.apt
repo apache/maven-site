@@ -326,3 +326,6 @@ Enjoy,
  If releasing Maven Core, notify <<<announce@apache.org>>>
 
  [[7]] Celebrate :o)
+
+ You can also check if you did not miss any step by looking at the {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-check-errors.html} Dist Tool Check Errors report}}.
+ 
