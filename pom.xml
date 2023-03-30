@@ -104,11 +104,6 @@
   <build>
     <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-pdf-plugin</artifactId>
-          <version>1.6.1</version>
-        </plugin>
         <!-- publish mono-module site with "mvn site-deploy" -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -426,37 +421,6 @@
   </reporting>
 
   <profiles>
-    <profile>
-      <id>pdf</id>
-      <activation>
-        <property>
-          <!--name>pdf.skip</name-->
-          <name>pdf.exec</name>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-pdf-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>pdf</id>
-                <goals>
-                  <goal>pdf</goal>
-                </goals>
-                <phase>site</phase>
-                <configuration>
-                  <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
-                  <siteDirectory>${project.basedir}/content</siteDirectory>
-                  <docDescriptor>${project.basedir}/content/pdf.xml</docDescriptor>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
     <profile>
       <id>linkcheck</id>
       <activation>
