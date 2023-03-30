@@ -73,7 +73,7 @@
     <version4x>4.0.0-alpha-5,4.0.0-alpha-4,4.0.0-alpha-3,4.0.0-alpha-2</version4x>
     <site.output>${project.build.directory}/site</site.output>
     <!-- used by src/xdoc/errors/404.xml.vm -->
-    <fluidoVersion>2.0.0-M3</fluidoVersion>
+    <fluidoVersion>2.0.0-M5</fluidoVersion>
     <doxiaVersion>2.0.0-M3</doxiaVersion>
     <doxiaToolsVersion>2.0.0-M3</doxiaToolsVersion>
     <javaVersion>8</javaVersion>
@@ -97,7 +97,7 @@
       </releases>
       <id>apache.staging</id>
       <name>Apache Staging Repository</name>
-      <url>https://repository.apache.org/content/repositories/maven-1752/</url>
+      <url>https://repository.apache.org/content/repositories/maven-1906/</url>
     </repository>
   </repositories>
 
