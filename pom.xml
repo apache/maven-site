@@ -73,9 +73,7 @@
     <version4x>4.0.0-alpha-5,4.0.0-alpha-4,4.0.0-alpha-3,4.0.0-alpha-2</version4x>
     <site.output>${project.build.directory}/site</site.output>
     <!-- used by src/xdoc/errors/404.xml.vm -->
-    <fluidoVersion>1.11.1</fluidoVersion>
-    <doxiaVersion>2.0.0-M3</doxiaVersion>
-    <doxiaToolsVersion>2.0.0-M3</doxiaToolsVersion>
+    <fluidoVersion>2.0.0-M5</fluidoVersion>
     <javaVersion>8</javaVersion>
     <siteDirectory>${project.basedir}/content</siteDirectory>
   </properties>
@@ -97,7 +95,7 @@
       </releases>
       <id>apache.staging</id>
       <name>Apache Staging Repository</name>
-      <url>https://repository.apache.org/content/repositories/maven-1752/</url>
+      <url>https://repository.apache.org/content/repositories/maven-1906/</url>
     </repository>
   </repositories>
 
@@ -114,55 +112,6 @@
             <!-- don't deploy site with maven-site-plugin -->
             <skipDeploy>true</skipDeploy>
           </configuration>
-          <dependencies>
-            <!--
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-sink-api</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-xhtml</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-xhtml5</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-apt</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-xdoc</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-fml</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-module-markdown</artifactId>
-              <version>${doxiaVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-decoration-model</artifactId>
-              <version>${doxiaToolsVersion}</version>
-            </dependency>
-            <dependency>
-              <groupId>org.apache.maven.doxia</groupId>
-              <artifactId>doxia-site-renderer</artifactId>
-              <version>${doxiaToolsVersion}</version>
-            </dependency>
-            -->
-          </dependencies>
         </plugin>
       </plugins>
     </pluginManagement>
