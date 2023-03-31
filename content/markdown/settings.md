@@ -17,23 +17,20 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-1.  [Introduction](#Introduction)
-    1.  [Quick Overview](#Quick_Overview)
-
-2.  [Settings Details](#Settings_Details)
-    1.  [Simple Values](#Simple_Values)
-    2.  [Plugin Groups](#Plugin_Groups)
-    3.  [Servers](#Servers)
-        1.  [Password Encryption](#Password_Encryption)
-
-    4.  [Mirrors](#Mirrors)
-    5.  [Proxies](#Proxies)
-    6.  [Profiles](#Profiles)
-        1.  [Activation](#Activation)
-        2.  [Repositories](#Repositories)
-        3.  [Plugin Repositories](#Plugin_Repositories)
-
-    7.  [Active Profiles](#Active_Profiles)
+- [Introduction](#introduction)
+    - [Quick Overview](#quick-overview)
+- [Settings Details](#settings-details)
+    - [Simple Values](#simple-values)
+    - [Plugin Groups](#plugin-groups)
+    - [Servers](#servers)
+        - [Password Encryption](#password-encryption)
+    - [Mirrors](#mirrors)
+    - [Proxies](#proxies)
+    - [Profiles](#profiles)
+        - [Activation](#activation)
+        - [Repositories](#repositories)
+        - [Plugin Repositories](#plugin-repositories)
+    -  [Active Profiles](#active-profiles)
 
 ## Introduction
 
