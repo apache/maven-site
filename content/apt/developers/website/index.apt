@@ -72,3 +72,8 @@ How website publication works
  easily prepare <<<svnmucc>>> command line.
 
  []
+
+Analytics
+
+  As part of Privacy enhancements, the whole Maven site is moving to {{{https://privacy.apache.org/matomo/}Apache's Analytics infrastructure}}:
+  see {{{https://analytics.apache.org/index.php?module=CoreHome&action=index&date=yesterday&period=day&idSite=3}Maven statistics}}.
