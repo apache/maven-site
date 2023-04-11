@@ -106,7 +106,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>4.0.0-M6</version>
+          <version>4.0.0-M7</version>
           <configuration>
             <siteDirectory>${siteDirectory}</siteDirectory>
             <!-- don't deploy site with maven-site-plugin -->
