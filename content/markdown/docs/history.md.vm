@@ -80,7 +80,7 @@ Date format is: YYYY-MM-DD
 
 </table>
 
-<h3><a name="Maven_32">Maven 3.2.5+</a></h3>
+<h3><a name="Maven_36">Maven 3.6.3+</a></h3>
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -101,6 +101,22 @@ Date format is: YYYY-MM-DD
 #release( "2021-08-04" "3.8.2" "announce/202108.mbox/%3C85a7a3d4-c4ae-8e1e-f5c4-832017b79ca3@apache.org%3E" "" "" "" )
 #release( "2021-04-04" "3.8.1" "announce/202104.mbox/%3CMailbird-0918dc43-dc18-4008-b83b-8bc8b1528177%40apache.org%3E" "" "" "" )
 #release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "" "" )
+
+</table>
+
+<h3><a name="Maven_3">Maven before 3.6.3</a></h3>
+
+<p>Maven before 3.6.3 has now reached its end of life.
+New plugin releases will require Maven 3.2.5 or later.
+The following information is made available for reference.</p>
+
+<table>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
+</tr>
+
 #release( "2019-08-27" "3.6.2" "announce/201909.mbox/%3CCACcefgc8DBFwq5vQ7EuZNGSeBxemz6Hd_2n%3DMV9T%3DpYgdUM5EA%40mail.gmail.com%3E" "" "" "" )
 #release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "" "" "" )
 #release( "2018-10-24" "3.6.0" "announce/201811.mbox/%3C20181101115259.168F4187BA%40minotaur.apache.org%3E" "" "" "" )
@@ -114,22 +130,6 @@ Date format is: YYYY-MM-DD
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )
 #release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "1" )
-
-</table>
-
-<h3><a name="Maven_3">Maven before 3.2.5</a></h3>
-
-<p>Maven before 3.2.5 has now reached its end of life.
-New plugin releases will require Maven 3.2.5 or later.
-The following information is made available for reference.</p>
-
-<table>
-<tr><th>Release Date</th>
-<th>Version</th>
-<th>Required Java Version</th>
-<th>Links</th>
-</tr>
-
 #release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" "Java 6" "3" )
 #release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
 #release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
