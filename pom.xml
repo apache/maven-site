@@ -274,7 +274,7 @@
           <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml</artifactId>
-            <version>1.2023.5</version>
+            <version>1.2023.6</version>
           </dependency>
         </dependencies>
         <executions>
