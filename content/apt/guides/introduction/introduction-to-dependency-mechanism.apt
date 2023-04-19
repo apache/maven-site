@@ -810,7 +810,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
- Finally, when creating projects that import dependencies beware of the following:
+ Finally, when creating projects that import dependencies, beware of the following:
 
  * Do not attempt to import a POM that is defined in a submodule of the current POM.
      Attempting to do that will result in the build failing since it won't be able to locate the POM.
@@ -818,8 +818,8 @@ Introduction to the Dependency Mechanism
  * Never declare the POM importing a POM as the parent (or grandparent, etc) of the target POM.
    There is no way to resolve the circularity and an exception will be thrown.
 
- * When referring to artifacts whose POMs have transitive dependencies the project will need to specify versions
-     of those artifacts as managed dependencies. Not doing so will result in a build failure since the
+ * When referring to artifacts whose POMs have transitive dependencies, the project needs to specify versions
+     of those artifacts as managed dependencies. Not doing so results in a build failure since the
      artifact may not have a version specified. (This should be considered a best practice in any case as it
      keeps the versions of artifacts from changing from one build to the next).
 

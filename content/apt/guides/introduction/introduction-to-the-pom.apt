@@ -212,8 +212,8 @@ Introduction to the POM
  parent of our POM. And we do so by specifying the fully qualified artifact name of the parent POM. With this setup, our
  module can now inherit some of the properties of our parent POM.
 
- Alternatively, if we want the groupId and / or the version of your modules to be the same as their parents, you can
- remove the groupId and / or the version identity of your module in its POM.
+ Alternatively, if you want the groupId or the version of your modules to be the same as their parents, you can
+ remove the groupId or the version identity of your module in its POM.
 
 +-----+
 <project>
@@ -229,7 +229,7 @@ Introduction to the POM
 </project>
 +-----+
 
- This allows the module to inherit the groupId and / or the version of its parent POM.
+ This allows the module to inherit the groupId or the version of its parent POM.
 
  {{{./introduction-to-the-pom.html}[top]}}
 

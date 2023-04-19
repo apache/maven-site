@@ -52,8 +52,6 @@ Common Bugs and Pitfalls
 
   * {{{Retrieving_the_Mojo_Logger}Retrieving the Mojo Logger}}
 
-  * {{{Depending_on_Plexus_Utilities_1.1}Depending on Plexus Utilities 1.1+}}
-
 * {Reading and Writing Text Files}
 
   Textual content is composed of characters while file systems merely store byte streams. A file encoding (aka charset)
@@ -236,14 +234,14 @@ if ( "info".equals( debugLevel.toLowerCase() ) )
   The following example illustrates this requirement. Imagine the broken resource bundle family shown below which is
   intended to provide localization for English, German and French:
 
-+---
+----
 src/
 +- main/
    +- resources/
       +- mymojo-report.properties
       +- mymojo-report_de.properties
       +- mymojo-report_fr.properties
-+---
+----
 
   Now, if a resource bundle is to be looked up for English on a JVM whose default locale happens to be French, the
   bundle <<<mymojo-report_fr.properties>>> will be loaded instead of the intended bundle <<<mymojo-report.properties>>>.
@@ -331,7 +329,7 @@ public MyMojo extends AbstractMojo
   [[b]] Embedded Maven Invocations
 
         Other tools, most notably IDEs, that run Maven under the hood may have set the current working directory to
-        their installation folder or whatever they like.
+        their installation directory or whatever they like.
 
   [[c]] Maven Invocations using the <<<-f>>> Switch
 

@@ -22,34 +22,36 @@
         label 'svn-websites'
     }
     stages {
-        stage('Build') {
+        stage('Checkout') {
+            steps {
+                // Clean before build
+                cleanWs()
+                // We need to explicitly checkout from SCM here
+                checkout scm
+            }
+        }
+        stage('Build only') {
             when {
                 not { branch 'master' }
             }
             steps {
-                withMaven(jdk:'JDK 1.8 (latest)', maven:'Maven 3 (latest)', mavenLocalRepo:'.repository', options: [
-                  artifactsPublisher(disabled: true),
-                  junitPublisher(disabled: true),
-                  findbugsPublisher(disabled: true),
-                  openTasksPublisher(disabled: true)
-                ]) {
-                    sh "mvn -U clean site"
+                withEnv(["JAVA_HOME=${ tool "jdk_17_latest" }",
+                         "PATH+MAVEN=${ tool "jdk_17_latest" }/bin:${tool "maven_3_latest"}/bin",
+                         "MAVEN_OPTS=-Xms2g -Xmx4g -Djava.awt.headless=true"]) {                 
+                    sh "mvn -U -ntp clean site -Dmaven.repo.local=.repository"
                 }
             }
         }
-        stage('Deploy') {
+        stage('Site Deploy') {
             when {
                 branch 'master'
             }
             steps {
-                withMaven(jdk:'JDK 1.8 (latest)', maven:'Maven 3 (latest)', mavenLocalRepo:'.repository', options: [
-                  artifactsPublisher(disabled: true),
-                  junitPublisher(disabled: true),
-                  findbugsPublisher(disabled: true),
-                  openTasksPublisher(disabled: true)
-                ]) {
-                    sh "mvn -U clean site-deploy"
-                }
+                withEnv(["JAVA_HOME=${ tool "jdk_17_latest" }",
+                         "PATH+MAVEN=${ tool "jdk_17_latest" }/bin:${tool "maven_3_latest"}/bin",
+                         "MAVEN_OPTS=-Xms2g -Xmx4g -Djava.awt.headless=true"]) {                 
+                    sh "mvn -U -ntp clean site-deploy -Dmaven.repo.local=.repository"
+                }             
             }
         }
     }
@@ -65,5 +67,7 @@
         //timestamps()
         disableConcurrentBuilds()
         ansiColor('xterm')
+        // This is required if you want to clean before build
+        skipDefaultCheckout(true)
     }
 }

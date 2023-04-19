@@ -239,9 +239,9 @@ my-app
  Change to the directory where pom.xml is created by archetype:generate and execute the following command to compile
  your application sources:
 
-+-----+
+-------
 mvn compile
-+-----+
+-------
 
  Upon executing this command you should see output like the following:
 
@@ -289,9 +289,9 @@ mvn compile
 
  Execute the following command:
 
-+----+
+------
 mvn test
-+----+
+------
 
  Upon executing this command you should see output like the following:
 
@@ -347,9 +347,9 @@ mvn test
 
  If you simply want to compile your test sources (but not execute the tests), you can execute the following:
 
-+----+
+------
  mvn test-compile
-+----+
+------
 
  Now that you can compile your application sources, compile your tests, and execute the tests, you'll want to move
  on to the next logical step so you'll be asking ...
@@ -360,9 +360,9 @@ mvn test
 
 ~~ How to skip tests ... jvz
 
-+----+
+------
 mvn package
-+----+
+------
 
  You can now take a look in the <<<$\{basedir\}/target>>> directory and you will see the generated JAR file.
 
@@ -371,9 +371,9 @@ mvn package
  {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}} but let's move on to installing our artifact!
  To do so execute the following command:
 
-+----+
+------
 mvn install
-+----+
+------
 
  Upon executing this command you should see the following output:
 
@@ -454,15 +454,15 @@ mvn install
  a web site for your project! You will most likely want to customize your Maven site but if you're pressed for
  time all you need to do to provide basic information about your project is execute the following command:
 
-+----+
+------
 mvn site
-+----+
+------
 
   There are plenty of other standalone goals that can be executed as well, for example:
 
-+----+
+------
 mvn clean
-+----+
+------
 
   This will remove the <<<target>>> directory with all the build data before starting so that it is fresh.
 
@@ -572,7 +572,7 @@ my-app
 ----
 |-- META-INF
 |   |-- MANIFEST.MF
-|   |-- application.properties
+|   `-- application.properties
 |   `-- maven
 |       `-- com.mycompany.app
 |           `-- my-app
@@ -654,10 +654,8 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  To have Maven filter resources when copying, simply set <<<filtering>>> to true for the resource directory in your <<<pom.xml>>>:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -704,42 +702,40 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  To continue our example, let's add a couple of properties to the <<<application.properties>>> file (which we put in the
  <<<src/main/resources>>> directory) whose values will be supplied when the resource is filtered:
 
-+----+
+------
 # application.properties
 application.name=${project.name}
 application.version=${project.version}
-+----+
+------
 
  With that in place, you can execute the following command (process-resources is the build lifecycle phase where the resources are
  copied and filtered):
 
-+----+
+------
 mvn process-resources
-+----+
+------
 
  and the <<<application.properties>>> file under <<<target/classes>>> (and will eventually go into the jar) looks like this:
 
-+----+
+------
 # application.properties
 application.name=Maven Quick Start Archetype
 application.version=1.0-SNAPSHOT
-+----+
+------
 
  To reference a property defined in an external file, all you need to do is add a reference to this external file in your pom.xml.
  First, let's create our external properties file and call it <<<src/main/filters/filter.properties>>>:
 
-+----+
+------
 # filter.properties
 my.filter.value=hello!
-+----+
+------
 
  Next, we'll add a reference to this new file in the <<<pom.xml>>>:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -775,22 +771,20 @@ my.filter.value=hello!
 
  Then, if we add a reference to this property in the <<<application.properties>>> file:
 
-+----+
+------
 # application.properties
 application.name=${project.name}
 application.version=${project.version}
 message=${my.filter.value}
-+----+
+------
 
  the next execution of the <<<mvn process-resources>>> command will put our new property value into <<<application.properties>>>.
  As an alternative to defining the my.filter.value property in an external file, you could also have defined it in the <<<properties>>>
  section of your <<<pom.xml>>> and you'd get the same effect (notice I don't need the references to <<<src/main/filters/filter.properties>>> either):
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -829,18 +823,18 @@ message=${my.filter.value}
  <<<user.home>>>) or properties defined on the command line using the standard Java -D parameter.  To continue the example, let's change
  our <<<application.properties>>> file to look like this:
 
-+----+
+------
 # application.properties
 java.version=${java.version}
 command.line.prop=${command.line.prop}
-+----+
+------
 
  Now, when you execute the following command (note the definition of the command.line.prop property on the command line), the
  <<<application.properties>>> file will contain the values from the system properties.
 
-+----+
+------
 mvn process-resources "-Dcommand.line.prop=hello again"
-+----+
+------
 
 
 * {How do I use external dependencies?}
@@ -855,10 +849,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  now, our project is depending on JUnit only (I took out all of the resource filtering stuff for clarity):
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -895,10 +887,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  as a dependency simply by adding the dependency information to its pom.xml:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <groupId>com.mycompany.app</groupId>
   <artifactId>my-other-app</artifactId>
   ...
@@ -960,10 +950,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  Now that we know the information we need, we can add the dependency to our pom.xml:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -998,15 +986,13 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 * {How do I deploy my jar in my remote repository?}
 
  For deploying jars to an external repository, you have to configure the repository url in the pom.xml
- and the authentication information for connectiong to the repository in the settings.xml.
+ and the authentication information for connecting to the repository in the settings.xml.
 
  Here is an example using scp and username/password authentication:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -1058,10 +1044,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 +----+
 
 +----+
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
   <servers>
     <server>
@@ -1088,13 +1072,13 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  To get you jump started with Maven's documentation system you can use the archetype mechanism to generate a site
  for your existing project using the following command:
 
-+----+
+------
 mvn archetype:generate \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-site \
   -DgroupId=com.mycompany.app \
   -DartifactId=my-app-site
-+----+
+------
 
  Now head on over to the {{{../mini/guide-site.html}Guide to creating a site}}
  to learn how to create the documentation for your project.
@@ -1104,22 +1088,20 @@ mvn archetype:generate \
   Note that the lifecycle applies to any project type. For example, back in the base directory we can create a
   simple web application:
 
-+----+
+------
 mvn archetype:generate \
     -DarchetypeGroupId=org.apache.maven.archetypes \
     -DarchetypeArtifactId=maven-archetype-webapp \
     -DgroupId=com.mycompany.app \
     -DartifactId=my-webapp
-+----+
+------
 
   Note that these must all be on a single line. This will create a directory called
   <<<my-webapp>>> containing the following project descriptor:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -1145,9 +1127,9 @@ mvn archetype:generate \
   Note the <<<\<packaging\>>>> element - this tells Maven to build as a WAR. Change into the webapp project's directory
   and try:
 
-+----+
+------
 mvn package
-+----+
+------
 
   You'll see <<<target/my-webapp.war>>> is built, and that all the normal steps were executed.
 
@@ -1175,10 +1157,8 @@ mvn package
   The POM file you'll create should contain the following:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -1210,10 +1190,8 @@ mvn package
   Finally, add the following <<<\<parent\>>>> element to both of the other <<<pom.xml>>> files in the subdirectories:
 
 +----+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <parent>
     <groupId>com.mycompany.app</groupId>
     <artifactId>app</artifactId>
@@ -1224,9 +1202,9 @@ mvn package
 
   Now, try it... from the top level directory, run:
 
-+----+
+------
 mvn verify
-+----+
+------
 
   The WAR has now been created in <<<my-webapp/target/my-webapp.war>>>, and the JAR is included:
 

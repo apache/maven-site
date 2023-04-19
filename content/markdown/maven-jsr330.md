@@ -20,7 +20,7 @@ under the License.
 ## Why JSR-330?
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
-[JSR-330][jsr330] is to replace a custom DI mechanism with something standard. The implementation Maven
+[JSR-330][jsr330] is to replace a custom DI mechanism (with custom `@Component`/`@Requirement` annotations) with something standard ( with `@Named`/`@Inject` anotations). The implementation Maven
 uses - since 3.0-beta-3 - is named [Sisu][sisu] and is based on [Guice 3.x][guice], which directly supports JSR-330.
 
 If you are using [Plexus annotations and APIs][plexus-container] currently,
@@ -38,7 +38,7 @@ If you are interested the background of moving from Plexus to Guice and JSR-330,
 - [Plexus to Guice Part 2][p2g2]
 - [Plexus to Guice Part 3][p2g3]
 
-If you are interested in migrating from Plexus to Sisu, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
+If you are interested in migrating from Plexus to JSR-330, Sisu has a [Plexus Migration documentation][SisuPlexusMigration] that is done for you.
 
 ## How to use JSR-330
 
@@ -52,7 +52,7 @@ you want made available to Maven. The `sisu-maven-plugin` creates its index in `
 
 If you take a look in that file with the example from the next paragraph, you will see something like the following:
 
-```
+```java
 org.apache.maven.lifecycle.profiler.LifecycleProfiler
 org.apache.maven.lifecycle.profiler.internal.DefaultSessionProfileRenderer
 org.apache.maven.lifecycle.profiler.internal.DefaultTimer
@@ -72,10 +72,10 @@ If you want to look at the full implementation, you can find it [here][tesla-pro
 
 Ok, so let\'s take a look at the POM:
  
-```
+```xml
 <?xml version="1.0"?>
-<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.apache.maven</groupId>
   <artifactId>maven-profiler</artifactId>
@@ -123,11 +123,11 @@ Ok, so let\'s take a look at the POM:
 ```
 
 So, as mentioned, we have the `javax.inject` dependency and the `sisu-maven-plugin` configured to create
-the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` folder,
+the JSR-330 component index. When you build and place the extension JAR in the `${MAVEN_HOME}/lib/ext` directory,
 it will automatically get picked up by Maven. In the case of this example, we have an implementation of
 an `EventSpy` that times the executions of individual mojos within a phase in the lifecycle.
 
-```
+```java
 package org.apache.maven.lifecycle.profiler;
 
 import javax.inject.Inject;
@@ -224,7 +224,7 @@ Let\'s take a look at an example plugin. The POM is setup in a similar way to an
 to `maven-plugin-api` and `maven-plugin-annotations` to extend the `AbstractMojo` and use the Java 5 plugin
 annotations in our example.
 
-```
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -316,7 +316,7 @@ to instantiate the `Mojo`. In this simple case, you can actually test this plugi
 testing harness because you can instantiate the `Jsr330Component` and `Jsr330Mojo` directly and wire
 everything up manually using the constructor. Constructor injection, which Plexus lacks, greatly simplifies testing.
 
-```
+```java
 package org.apache.maven.plugins;
 
 import javax.inject.Inject;
@@ -359,9 +359,9 @@ If you want to look at this example project, you can find the code [in Maven Cor
 [jsr330]: https://www.jcp.org/en/jsr/detail?id=330
 [sisu]: https://eclipse.org/sisu/
 [plexus]: https://codehaus-plexus.github.io/
-[plexus-container]: https://codehaus-plexus.github.io/plexus-containers/
-[jsr330-plugin]: https://svn.apache.org/viewvc/maven/core-integration-testing/trunk/core-it-suite/src/test/resources/mng-5382/
+[plexus-container]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/
+[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/master/core-it-suite/src/test/resources/mng-5382
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
-[SisuPlexusMigration]: https://wiki.eclipse.org/Sisu/PlexusMigration
+[SisuPlexusMigration]: https://github.com/eclipse/sisu.plexus/wiki/Plexus-to-JSR330

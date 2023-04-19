@@ -49,7 +49,7 @@ Guide to Testing Development Versions of Plugins
 
   The first step is to include this in your project:
 
--------
++-------
 <project>
   ...
   <pluginRepositories>
@@ -60,7 +60,7 @@ Guide to Testing Development Versions of Plugins
   </pluginRepositories>
   ...
 </project>
--------
++-------
 
   After this is included, there are three ways to use the updated versions:
 
@@ -70,26 +70,18 @@ Guide to Testing Development Versions of Plugins
 
     * You can have Maven automatically check for updates on a given interval, for example:
 
--------
++-------
 <project>
   ...
   <pluginRepositories>
     <pluginRepository>
       <id>apache.snapshots</id>
       <url>https://repository.apache.org/snapshots/</url>
-      <!-- The releases element here is due to an issue in Maven 2.0 that will be
-           fixed in future releases. This should be able to be disabled altogether. -->
-      <releases>
-        <updatePolicy>daily</updatePolicy>
-      </releases>
-      <snapshots>
-        <updatePolicy>daily</updatePolicy>
-      </snapshots>
     </pluginRepository>
   </pluginRepositories>
   ...
 </project>
--------
++-------
 
   <Note:> These last two techniques mean that <every> plugin will be updated to the latest snapshot version.
 
@@ -105,7 +97,7 @@ Guide to Testing Development Versions of Plugins
   You need to modify your <<<$\{user.home\}/.m2/settings.xml>>> file to include two new profiles
   and then when you need access to the plugin snapshots use <<<-Papache>>>.
   The profile only needs to be enabled once so that the plugins can be downloaded into you local repository.  Once
-  in your local repository Maven can succesfully resolve the dependencies and
+  in your local repository Maven can successfully resolve the dependencies and
   the profile no longer needs to be activated.
 
 +---
@@ -135,9 +127,9 @@ Guide to Testing Development Versions of Plugins
 
   When invoking Maven for Apache profile, do it like this:
 
-+---
+----
 mvn -Papache <phase|goal>
-+---
+----
 
 * Using a Repository Manager
 

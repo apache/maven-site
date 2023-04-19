@@ -30,8 +30,8 @@ Maven in 5 Minutes
 
 * Prerequisites
 
-  You must have an understanding of how to install software on your computer.
-  If you do not know how to do this, please ask someone at your office, school, etc 
+  You must understand how to install software on your computer.
+  If you do not know how to do this, please ask someone at your office, school, etc. 
   or pay someone to explain this to you. The Maven mailing lists are not the best place to ask for this advice.
 
 * Installation
@@ -64,7 +64,7 @@ OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
 
 * Creating a Project
 
-  You will need somewhere for your project to reside, create a directory somewhere and start a shell in that directory.
+  You need somewhere for your project to reside. Create a directory somewhere and start a shell in that directory.
   On your command line, execute the following Maven goal:
 
 -----
@@ -168,11 +168,11 @@ mvn package
 [INFO] ------------------------------------------------------------------------
 -----
 
-  Unlike the first command executed (<archetype:generate>) you may notice the second is simply
+  Unlike the first command executed (<archetype:generate>), the second is simply
   a single word - <package>. Rather than a <goal>, this is a <phase>. A phase is a step in the
   {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}, which is an ordered
-  sequence of phases. When a phase is given, Maven will execute every phase in the sequence
-  up to and including the one defined. For example, if we execute the <compile> phase, the
+  sequence of phases. When a phase is given, Maven executes every phase in the sequence
+  up to and including the one defined. For example, if you execute the <compile> phase, the
   phases that actually get executed are:
 
   [[1]] validate

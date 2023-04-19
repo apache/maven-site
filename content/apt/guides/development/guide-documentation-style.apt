@@ -55,7 +55,7 @@ Guide To Maven Documentation Style
 
  <<Note>>: All documentation meta-data should respect this convention, for instance for this given APT document:
 
-+-----+
+-------
  ------
  Guide To Maven Documentation Style
  ------
@@ -63,7 +63,7 @@ Guide To Maven Documentation Style
  ------
  2008-07-03
  ------
-+-----+
+-------
 
 ** References
 
@@ -118,9 +118,9 @@ Guide To Maven Documentation Style
 
  All file names should replace space by a hyphen (-), for instance for this given APT document:
 
-+-----+
+-------
  guide-documentation-style.apt
-+-----+
+-------
 
 * Updating Documentation Files
 

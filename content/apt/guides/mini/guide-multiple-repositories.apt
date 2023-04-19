@@ -29,7 +29,7 @@
 Setting up Multiple Repositories
 
  There are two different ways that you can specify the use of multiple repositories. The first
- way is to specify in a POM which repositories you want to use:
+ way is to specify in a POM which repositories you want to use. That is supported both inside and outside of build profiles:
 
 +----+
 
@@ -55,8 +55,10 @@ Setting up Multiple Repositories
  <<NOTE:>> You will also get the standard set of repositories as defined in the 
  {{{../introduction/introduction-to-the-pom.html#Super_POM}Super POM}}.
 
- The other way you can specify the use of multiple repositories by creating a profile in
- your <<<$\{user.home\}/.m2/settings.xml>>> file like the following:
+
+
+ The other way you can specify multiple repositories is by creating a profile in the
+ <<<$\{user.home\}/.m2/settings.xml>>> or <<<$\{maven.home\}/conf/settings.xml>>> file like the following:
 
 +----+
 
@@ -92,13 +94,43 @@ Setting up Multiple Repositories
  You could also activate this profile on the command like by executing the following
  command:
 
-+----+
+------
 
 mvn -Pmyprofile ...
 
-+----+
+------
 
  In fact the <<<-P>>> option will take a CSV list of profiles to activate if you wish to
  activate multiple profiles simultaneously.
  
  <<Note>>: The settings descriptor documentation can be found on the {{{../../maven-settings/settings.html}Maven Local Settings Model Website}}.
+ 
+* Repository Order
+
+  Remote repository URLs are queried in the following order for artifacts until one returns a valid result:
+
+  [[1]] effective settings:
+
+    [[A]] Global <<<settings.xml>>>
+
+    [[A]] User <<<settings.xml>>>
+
+  [[1]] local effective build POM:
+
+    [[A]] Local <<<pom.xml>>>
+
+    [[A]] Parent POMs, recursively
+
+    [[A]] Super POM
+
+  [[1]] effective POMs from dependency path to the artifact.
+
+  []
+
+  For each of these locations, the repositories within the profiles are queried first in the order outlined at {{{../introduction/introduction-to-profiles.html}Introduction to build profiles}}.
+  
+  Before downloading from a repository, {{{./guide-mirror-settings.html}mirrors configuration}} is applied.
+
+  Effective settings and local build POM, with profile taken into account, can easily be reviewed to see their repositories order with
+  <<<mvn help:effective-settings>>> and <<<mvn help:effective-pom -Dverbose>>>.
+  

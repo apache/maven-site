@@ -57,6 +57,9 @@ Following these guidelines are particularly encouraged when distributing
 via the Maven Repository, to ensure that it can easily fit alongside
 other projects and reduce the risk of conflicts and confusion.
 
+More information about conventions for Maven coordinates is available 
+in the [Guide to Naming Conventions](./guides/mini/guide-naming-conventions.html).
+
 ## Directory Structure
 
 Maven encourages a common directory structure for a project. For more

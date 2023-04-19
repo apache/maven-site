@@ -30,19 +30,21 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 
 * Summary
 
-  This recipe describes how to upgrade from Plexus Javadoc Tags to Plexus Java Annotations, in 2 steps:
+  This recipe describes how to upgrade from Plexus Javadoc Tags to Plexus Java Annotations when defining a Plexus component.
 
-  [[1]] replace the deprecated {{{https://codehaus-plexus.github.io/plexus-maven-plugin/}<<<plexus-maven-plugin>>>}},
-  which only supports Plexus Javadoc Tags, with its successor:
-  {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}<<<plexus-component-metadata>>>}},
+  This is done in 2 steps:
+
+  [[1]] replace the {{{https://codehaus-plexus.github.io/plexus-maven-plugin/}deprecated <<<plexus-maven-plugin>>>}},
+  which only supports Plexus Javadoc Tags, with its
+  {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}successor: <<<plexus-component-metadata>>>}},
   which support both Plexus Javadoc Tags and Plexus Java Annotations,
 
   [[2]] update sources with {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/}Java Annotations for Plexus}}.
 
   []
 
-  <<Notice>>: if you're targeting components for Maven 3.1.0+, using {{{/maven-jsr330.html}JSR-330 annotations}}
-  instead of Plexus Java Annotations may be a good next step
+  <<Notice>>: if you're targeting components for Maven 3.1.0+, using {{{/maven-jsr330.html}<<<@Named>>>/<<<@Inject>>> JSR-330 annotations}}
+  instead of <<<@Component>>>/<<<@Requirement>>> Plexus Java Annotations may be a good next step
 
 * Prerequisite Plugins
 

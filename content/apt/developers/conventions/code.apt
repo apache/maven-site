@@ -28,8 +28,16 @@
 
 Maven Code Style And Code Conventions
 
- This document describes how developers and contributors should format code 
+ This document describes the rules for how the sources should be formatted
  in order to improve consistency, readability and maintainability.
+
+ As the formatting is automatically enforced or even applied with {{{https://github.com/diffplug/spotless/tree/main/plugin-maven}spotless-maven-plugin}} for all projects
+ using {{{/pom/maven/index.html}Maven Project Parent POM 38 or newer}} developers usually don't need to care and the following sections are just for informational purposes.
+
+ Optionally you can still import the code style formatter for your IDE from
+ {{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD}shared-resources}}
+
+%{toc|section=1|fromDepth=2|toDepth=3}
 
 * Generic Code Style And Convention
 
@@ -38,11 +46,8 @@ Maven Code Style And Code Conventions
  * <<License Header>>: Always add the current {{{https://www.apache.org/legal/src-headers.html#headers}ASF license header}}
  in all files checked into the source code repository.
 
- * <<Trailing Whitespace>>: Remove all trailing whitespace. If you use
- Eclipse, you can use the
- {{{http://andrei.gmxhome.de/anyedit/}Anyedit Eclipse Plugin}}.
-
-~~ * Using SVN properties like \$Id: \$ => Is it a wanted goal for all files like java or apt?
+ * <<Trailing Whitespace>>: No trailing whitespaces allowed. 
+ 
  []
 
  and the following style:
@@ -59,103 +64,8 @@ Maven Code Style And Code Conventions
 
 ** {Java Code Style}
 
- The Maven style for Java is mainly:
+ Maven adopts the {{{https://github.com/palantir/palantir-java-format}palantir Java format}}.
 
- * <<White space>>: One space after control statements and between arguments (e.g. <<<if ( foo )>>> instead of
-   <<<if(foo)>>>), <<<myFunc( foo, bar, baz )>>> instead of <<<myFunc(foo,bar,baz)>>>).
-   No spaces after methods names (i.e. <<<void myMethod(), myMethod( "foo" )>>>)
-
- * <<Indentation>>: Always use 4 space indents and <<never>> use tabs!
-
- * <<Blocks>>: Always enclose with a new line brace.
-
- * <<Line wrapping>>: Always use a 120-column line width for Java code and Javadoc.
-
- * <<Readingness>>: Specify code grouping members, if needed. For instance in a Mojo class, you could have:
-
-+-----+
-public class MyMojo
-{
-    // ----------------------------------------------------------------------
-    // Mojo components
-    // ----------------------------------------------------------------------
-
-    /**
-     * Artifact factory.
-     *
-     * @component
-     */
-    private ArtifactFactory artifactFactory;
-
-    ...
-
-    // ----------------------------------------------------------------------
-    // Mojo parameters
-    // ----------------------------------------------------------------------
-
-    /**
-     * The POM.
-     *
-     * @parameter expression="${project}"
-     * @required
-     */
-    private MavenProject project;
-
-    ...
-
-    // ----------------------------------------------------------------------
-    // Mojo options
-    // ----------------------------------------------------------------------
-    ...
-
-    // ----------------------------------------------------------------------
-    // Public methods
-    // ----------------------------------------------------------------------
-
-    /**
-     * {@inheritDoc}
-     */
-    public void execute()
-        throws MojoExecutionException
-    {
-      ...
-    }
-
-    // ----------------------------------------------------------------------
-    // Protected methods
-    // ----------------------------------------------------------------------
-    ...
-
-    // ----------------------------------------------------------------------
-    // Private methods
-    // ----------------------------------------------------------------------
-    ...
-
-    // ----------------------------------------------------------------------
-    // Static methods
-    // ----------------------------------------------------------------------
-    ...
-}
-+-----+
-
- []
-
- The following sections show how to set up the code style for Maven in IDEA and Eclipse.
- It is strongly preferred that patches use this style before they are applied.
-
-*** IntelliJ IDEA
-
- Download <<<{{{../../developers/maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>>
- and import it into IDEA using File > Settings > Editor > Code Style > Gear icon >
- Import Scheme > IntelliJ IDEA Code Style XML
-
-*** Eclipse
-
- Download <<<{{{../../developers/maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
-
- After this, select Window \> Preferences, and open up the configuration for Java \> Code
- Style \> Code Formatter. Click on the button labeled Import... and select the file you
- downloaded. Give the style a name, and click OK.
 
 ** {Java Code Convention}
 
@@ -178,6 +88,27 @@ public class MyMojo
  integration tests.
 
  []
+
+** {Java Code Convention - import layouts}
+
+ For consistency reasons, Java imports should be organized as:
+
+ * import <<javax.*>>
+
+ * import <<java.*>>
+
+ * blank line
+
+ * import <<all other imports>>
+
+ []
+
+ all imports in each group should be sorted alphabetically.
+ 
+ To ensure a package import order consistent with the layout described above, download 
+ <<<{{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=blob_plain;f=src/main/resources/config/maven-eclipse-importorder.txt;hb=HEAD}maven-eclipse-importorder.txt}}>>>, select <Window \> Preferences> and
+ navigate to <Java \> Code Style \> Organize Imports>. Click on <Import...> and select the downloaded
+ file to change the import order.
 
 ** {JavaDoc Convention}
 
@@ -227,7 +158,7 @@ public class MyMojo
 
 ** {POM Code Convention}
 
- The team has {{{https://maven.40175.n5.nabble.com/Proposal-Pom-Code-Style-WAS-svn-commit-r670264-maven-plugins-trunk-maven-site-plugin-pom-xml-td210642.html#a210643}voted}}
+ The team has {{{https://lists.apache.org/thread/h8px5t6f3q59cnkzpj1t02wsoynr3ygk}voted}}
  during the end of June 2008 to follow a specific POM convention to ordering POM elements.
  The consequence of this vote is that the {{{https://maven.apache.org/ref/current/maven-model/maven.html}Maven project descriptor}}
  is <<no more>> considered as the reference for the ordering.
@@ -293,9 +224,6 @@ public class MyMojo
 
     []
 
- <<Note>>: There exist two alternatives to change order of a pom file
- {{{https://www.mojohaus.org/tidy-maven-plugin/}Tidy Maven Plugin}} or the
- {{{https://github.com/Ekryd/sortpom}Sortpom Maven Plugin}}.
 
 ** {XDOC Code Convention}
 

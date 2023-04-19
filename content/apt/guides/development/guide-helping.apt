@@ -91,6 +91,8 @@ Developers Conventions
 
   * {{{../../developers/release/index.html}Releasing a Maven project}}
 
+  * {{{https://cwiki.apache.org/confluence/display/MAVEN/Index}Apache Maven Wiki}}
+
   []
 
 Resources for committers
@@ -100,7 +102,5 @@ Resources for committers
   * {{{http://www.apache.org/foundation/} About the Apache Software Foundation}}
 
   * {{{http://www.apache.org/dev/committers.html} Committer FAQ}}
-
-  * {{{http://wiki.apache.org/} Apache Wiki}}
 
   []

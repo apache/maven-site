@@ -70,7 +70,7 @@ Introduction to Repositories
  To override this, you need to specify a <<<mirror>>> as shown in {{{../mini/guide-mirror-settings.html}Using Mirrors for Repositories}}.
 
  You can set this in your <<<settings.xml>>> file to globally use a certain mirror. However,
- it is common for a project to customise the repository in its <<<pom.xml>>>
+ it is common for a project to {{{../mini/guide-multiple-repositories.html}customise the repository in its <<<pom.xml>>>}}
  and that your setting will take precedence. If dependencies are not being found, check that you
  have not overridden the remote repository.
 
@@ -145,7 +145,7 @@ Introduction to Repositories
   <repositories>
     <repository>
       <id>my-internal-site</id>
-      <url>http://myserver/repo</url>
+      <url>https://myserver/repo</url>
     </repository>
   </repositories>
   ...

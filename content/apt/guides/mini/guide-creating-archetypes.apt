@@ -93,10 +93,8 @@ Guide to Creating Archetypes
 +----+
 
 <archetype-descriptor
-        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0
-	https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
-        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 https://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
         name="quickstart">
     <fileSets>
         <fileSet filtered="true" packaged="true">
@@ -195,11 +193,11 @@ archetype
 
  Now you are ready to install the archetype:
 
-+----+
+------
 
 mvn install
 
-+----+
+------
 
  Now that you have created an archetype, you can try it on your local system by
  using the following command. In this command, you need to specify the full
@@ -210,7 +208,7 @@ mvn install
  archetype creation may fail with a message that version:RELEASE was not found)
 
 
-+----+
+------
 
 mvn archetype:generate                                  \
   -DarchetypeGroupId=<archetype-groupId>                \
@@ -219,7 +217,7 @@ mvn archetype:generate                                  \
   -DgroupId=<my.groupid>                                \
   -DartifactId=<my-artifactId>
 
-+----+
+------
 
  Once you are happy with the state of your archetype, you can deploy (or submit
  it to {{{/guides/mini/guide-central-repository-upload.html}Maven Central}}) 
@@ -231,13 +229,13 @@ mvn archetype:generate                                  \
  Instead of manually creating the directory structure needed for an archetype,
  simply use
 
-+------+
+--------
 mvn archetype:generate
   -DgroupId=[your project's group id]
   -DartifactId=[your project's artifact id]
   -DarchetypeGroupId=org.apache.maven.archetypes
   -DarchetypeArtifactId=maven-archetype-archetype
-+------+
+--------
 
  Afterwhich, you can now customize the contents of the <<<archetype-resources>>>
  directory, and <<<archetype-metadata.xml>>>, then, proceed to Step#4 (Install the archetype and run

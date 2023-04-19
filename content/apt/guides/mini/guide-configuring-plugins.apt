@@ -29,51 +29,7 @@
 
 Guide to Configuring Plug-ins
 
-  [[1]] {{{Generic_Configuration}Generic Configuration}}
-
-    [[1]] {{{Help_Goal}Help Goal}}
-
-    [[2]] {{{Configuring_Parameters}Configuring Parameters}}
-
-        [[1]] {{{Mapping_Simple_Objects}Mapping Simple Objects}}
-
-        [[2]] {{{Mapping_Complex_Objects}Mapping Complex Objects}}
-
-        [[3]] {{{Mapping_Collections}Mapping Collections}}
-
-            [[1]] {{{Mapping_Lists}Mapping Lists}}
-
-            [[2]] {{{Mapping_Maps}Mapping Maps}}
-
-            [[3]] {{{Mapping_Properties}Mapping Properties}}
-
-            []
-
-        []
-
-    []
-
-  [[2]] {{{Configuring_Build_Plugins}Configuring Build Plugins}}
-
-      [[1]] {{{Using_the_executions_Tag}Using the <<<\<executions\>>>> Tag}}
-
-      [[2]] {{{Using_the_dependencies_Tag}Using the <<<\<dependencies\>>>> Tag}}
-
-      [[3]] {{{Using_the_inherited_Tag_In_Build_Plugins}Using the <<<\<inherited\>>>> Tag In Build Plugins}}
-
-      []
-
-  [[3]] {{{Configuring_Reporting_Plugins}Configuring Reporting Plugins}}
-
-      [[1]] {{{Using_the_reporting_Tag_VS_build_Tag}Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}}
-
-      [[2]] {{{Using_the_reportSets_Tag}Using the <<<\<reportSets\>>>> Tag}}
-
-      [[3]] {{{Using_the_inherited_Tag_In_Reporting_Plugins}Using the <<<\<inherited\>>>> Tag In Reporting Plugins}}
-
-      []
-
-  []
+%{toc|fromDepth=2}
 
 * Introduction
 
@@ -91,11 +47,11 @@ Guide to Configuring Plug-ins
   {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
-  <<Important Note>>: Always define each version of the plugins used by the build to guarantee
-  the build reproducibility. A good practice is to specify them in the <<<\<build\>\<pluginManagement/\>\</build\>>>>
-  elements for <<each>> build plugins. (Generally, you will define a \<pluginManagement/\> element in a parent POM.)
-  For reporting plugins, specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> elements
-  (and surely in the <<<\<build\>\<pluginManagement/\>\</build\>>>> elements too).
+  <<Important Note>>: Always define the version of each plugin used to guarantee
+  build reproducibility. A good practice is to specify each build plugin's version in a <<<\<build\>\<pluginManagement/\>\</build\>>>>
+  element. Often the \<pluginManagement/\> element is found in the parent POM.
+  For reporting plugins, specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> element
+  (and in the <<<\<build\>\<pluginManagement/\>\</build\>>>> element too).
 
 * {Generic Configuration}
 
@@ -105,9 +61,7 @@ Guide to Configuring Plug-ins
  a particular URL, with a specified timeout and list of options. The Mojo might look like the following:
 
 +----+
-/**
- * @goal query
- */
+@Mojo( name = "query" )
 public class MyQueryMojo
     extends AbstractMojo
 {
@@ -156,8 +110,8 @@ public class MyQueryMojo
 +----+
 
  The elements in the configuration match the names of the fields in the Mojo.
- The mapping is straight forward, the
- <<<url>>> element maps to the <<<url>>> field, the <<<timeout>>> element maps to the <<<timeout>>> field and the
+ The mapping is straight forward. The
+ <<<url>>> element maps to the <<<url>>> field, the <<<timeout>>> element maps to the <<<timeout>>> field, and the
  <<<options>>> element maps to the <<<options>>> field. The mapping mechanism can deal with arrays by inspecting
  the type of the field and determining if a suitable mapping is possible.
 
@@ -167,9 +121,9 @@ public class MyQueryMojo
   Mojo above, the parameter <<<url>>> is associated with the expression <<<$\{query.url\}>>>, meaning its value can
   be specified by the system property <<<query.url>>> as shown below:
 
-+----+
+------
 mvn myquery:query -Dquery.url=http://maven.apache.org
-+----+
+------
 
   The name of the system property does not necessarily match the name of the mojo parameter. While this is
   a rather common practice, you will often notice plugins that employ some prefix for the system properties to avoid
@@ -183,21 +137,24 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
   of the plugin and its parameters and types. For instance, to see help
   for the javadoc goal, type:
 
-+----+
+------
 mvn javadoc:help -Ddetail -Dgoal=javadoc
-+----+
+------
 
   And you will see all parameters for the javadoc:javadoc goal, similar to this
   {{{/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
 
 ** {Configuring Parameters}
 
-*** {Mapping Simple Objects}
+  Parametrisation of Mojos is relying internally on Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
 
-  Mapping simple types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
+*** {Mapping Value Objects}
+
+  Mapping value types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
   the following:
 
 +----+
+<project>
 ...
 <configuration>
   <myString>a string</myString>
@@ -208,7 +165,49 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   <myURL>http://maven.apache.org</myURL>
 </configuration>
 ...
+</project>
 +----+
+
+  The detailed type coercion is explained in the table below.
+  For conversion to primitive types their according {{{https://docs.oracle.com/javase/tutorial/java/data/autoboxing.html}wrapper classes are used and automatically unboxed}}.
+
+*---------------------*--------------*
+|| Parameter Class   || Conversion from String
+*---------------------*--------------*
+ <<<Boolean>>>        | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Boolean.html#valueOf-java.lang.String-}<<<Boolean.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Byte>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Byte.html#decode-java.lang.String-}<<<Byte.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Character>>>      | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#valueOf-char-}<<<Character.valueOf(char)>>>}} of the first character in the given string
+*---------------------*--------------*
+ <<<Class>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Class.html#forName-java.lang.String-}<<<Class.forName(String)>>>}}
+*---------------------*--------------*
+ <<<java.util.Date>>> | {{{https://docs.oracle.com/javase/8/docs/api/java/text/DateFormat.html#parse-java.lang.String-}<<<SimpleDateFormat.parse(String)>>>}} for the following patterns: <<<yyyy-MM-dd hh:mm:ss.S a>>>, <<<yyyy-MM-dd hh:mm:ssa>>>, <<<yyyy-MM-dd HH:mm:ss.S>>> or <<<yyyy-MM-dd HH:mm:ss>>>
+*---------------------*--------------*
+ <<<Double>>>         | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Double.html#valueOf-java.lang.String-}<<<Double.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Enum>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Enum.html#valueOf-java.lang.String-}<<<Enum.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<java.io.File>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/io/File.html#File-java.lang.String-}<<<new File(String)>>>}} with the file separators normalized to <<<File.separatorChar>>>. In case the file is relative, is is made absolute by prefixing it with the project's base directory.
+*---------------------*--------------*
+ <<<Float>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Float.html#valueOf-java.lang.String-}<<<Float.valueOf(String)>>>}}
+*---------------------*--------------*
+ <<<Integer>>>        | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Integer.html#decode-java.lang.String-}<<<Integer.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Long>>>           | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Long.html#decode-java.lang.String-}<<<Long.decode(String)>>>}}
+*---------------------*--------------*
+ <<<Short>>>          | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/Short.html#decode-java.lang.String-}<<<Short.decode(String)>>>}}
+*---------------------*--------------*
+ <<<String>>>         | n/a
+*---------------------*--------------*
+ <<<StringBuffer>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html#StringBuffer-java.lang.String-}<<<new StringBuffer(String)>>>}}
+*---------------------*--------------*
+ <<<StringBuilder>>>  | {{{https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html#StringBuilder-java.lang.String-}<<<new StringBuilder(String)>>>}}
+*---------------------*--------------*
+ <<<java.net.URI>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-}<<<new URI(String)>>>}}
+*---------------------*--------------*
+ <<<java.net.URL>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-}<<<new URL(String)>>>}}
+*---------------------*--------------*
 
 *** {Mapping Complex Objects}
 
@@ -217,6 +216,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   following:
 
 +----+
+<project>
 ...
 <configuration>
   <person>
@@ -225,6 +225,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   </person>
 </configuration>
 ...
+</project>
 +----+
 
  The rules for mapping complex objects are as follows:
@@ -244,6 +245,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
  []
 
 +----+
+<project>
 ...
 <configuration>
   <person implementation="com.mycompany.mojo.query.SuperPerson">
@@ -252,24 +254,25 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   </person>
 </configuration>
 ...
+</project>
 +----+
 
-*** {Mapping Collections}
+*** {Mapping Collection Types}
 
  The configuration mapping mechanism can easily deal with most collections so let's go through a few examples
  to show you how it's done:
 
-**** {Mapping Lists}
+**** {Mapping Collections and Arrays}
 
- Mapping lists works in much the same way as mapping to arrays where you a list of elements will be
- mapped to the List. So if you have a mojo like the following:
+ Mapping to collections works in much the same way as mapping to arrays. Each item is given in the XML
+ as dedicated element. The element name does not matter in that case. So if you have a mojo like the following:
 
 +----+
 public class MyAnimalMojo
     extends AbstractMojo
 {
     @Parameter(property = "animals")
-    private List animals;
+    private List<String> animals;
 
     public void execute()
         throws MojoExecutionException
@@ -279,7 +282,7 @@ public class MyAnimalMojo
 }
 +----+
 
- Where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
+ where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
 
 +----+
 <project>
@@ -303,19 +306,48 @@ public class MyAnimalMojo
 </project>
 +----+
 
- Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections have no
- specific component type. In order to derive the type of a list item, the following strategy is used:
+ Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections do not necessarily have
+  a specific component type. In order to derive the type of a collection item, the following strategy is used:
 
-  [[1]] If the XML element contains an <<<implementation>>> hint attribute, that is used
+  [[1]] If the XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
 
-  [[2]] If the XML tag contains a <<<.>>>, try that as a fully qualified class name
+  [[2]] If the XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
 
-  [[3]] Try the XML tag (with capitalized first letter) as a class in the same package as the mojo/object being
+  [[3]] Try the XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
         configured
 
-  [[4]] If the element has no children, assume its type is <<<String>>>. Otherwise, the configuration will fail.
+  [[4]] Use the parameter type information from either
+        {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html#getGenericType()}<<<Field.getGenericType()>>>}} or 
+        {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html#getGenericParameterTypes()}<<<Method.getGenericParameterTypes()>>>}}
+
+  [[5]] If the element has no children, assume its type is <<<String>>>. Otherwise, the configuration will fail.
 
   []
+
+ Since Maven 3.3.9 ({{{https://issues.apache.org/jira/browse/MNG-5440}MNG-5440}}), you can list individual items alternatively as comma-separated list in the XML value of animals directly.
+ This approach is also used if configuring collection/array parameters via command line
+ The following example is equivalent to the example above:
+
++----+
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>maven-myanimal-plugin</artifactId>
+        <version>1.0</version>
+        <configuration>
+          <animals>cat,dog,aardvark</animals>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  ...
+</project>
++----+
+
+ Each item is mapped again according to the rules of this section depending on the type of the collection/array.
+
 
 **** {Mapping Maps}
 
@@ -323,12 +355,13 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    @Parameter(property = "myMap")
-    private Map myMap;
+    @Parameter
+    private Map<String,String> myMap;
 ...
 +-----+
 
 +-----+
+<project>
 ...
   <configuration>
     <myMap>
@@ -337,7 +370,16 @@ public class MyAnimalMojo
     </myMap>
   </configuration>
 ...
+</project>
 +-----+
+
+ Unlike Collections the value type for Maps is always derived from the parameter type information from either
+ {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Field.html#getGenericType()}<<<Field.getGenericType()>>>}} or 
+ {{{https://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Method.html#getGenericParameterTypes()}<<<Method.getGenericParameterTypes()>>>}}.
+ It falls back to <<<String>>>.
+ The key type must always be <<<String>>>.
+ 
+ In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument. 
 
 **** {Mapping Properties}
 
@@ -345,27 +387,31 @@ public class MyAnimalMojo
 
 +-----+
 ...
-    @Parameter(property = "myProperties")
+    @Parameter
     private Properties myProperties;
 ...
 +-----+
 
 +-----+
+<project>
 ...
   <configuration>
     <myProperties>
       <property>
         <name>propertyName1</name>
         <value>propertyValue1</value>
-      <property>
+      </property>
       <property>
         <name>propertyName2</name>
         <value>propertyValue2</value>
-      <property>
+      </property>
     </myProperties>
   </configuration>
 ...
+</project>
 +-----+
+
+ In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument. 
 
 * {Configuring Build Plugins}
 
@@ -484,10 +530,7 @@ public class MyAnimalMojo
   Now, let us have another mojo example which shows a default lifecycle phase binding.
 
 +----+
-/**
- * @goal query
- * @phase package
- */
+@Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
 public class MyBoundQueryMojo
     extends AbstractMojo
 {
@@ -560,9 +603,9 @@ public class MyBoundQueryMojo
   run the above plugin and it's specific execution1's configuration from the
   command-line, you can execute:
 
-+----+
-mvn myqyeryplugin:queryMojo@execution1
-+----+
+------
+mvn myquery:query@execution1
+------
 
 ** {Using the <<<\<dependencies\>>>> Tag}
 
@@ -630,15 +673,15 @@ mvn myqyeryplugin:queryMojo@execution1
 
 ** {Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}
 
-  Configuring a reporting plugin in the \<reporting\> or \<build\> elements in the pom does <<NOT>> have the same behavior!
+  Configuring a reporting plugin in the <<<\<reporting\>>>> or <<<\<build\>>>> elements in the pom does not exactly have the same results.
 
-  [<<<mvn site>>>] It uses <<only>> the parameters defined in the \<configuration\> element of each reporting Plugin
-  specified in the \<reporting\> element, i.e. <<<site>>> always <<ignores>> the parameters defined in the
-  \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn site>>>] Since maven-site-plugin 3.4, it uses the parameters defined in the <<<\<configuration\>>>> element of each reporting Plugin
+  specified in the <<<\<reporting\>>>> element, in addition to the parameters defined in the
+  <<<\<configuration\>>>> element of each plugin specified in <<<\<build\>>>> (parameters from <<<\<build\>>>> section were previously ignored).
 
-  [<<<mvn aplugin:areportgoal>>>] It uses <<firstly>> the parameters defined in the \<configuration\> element of each
-  reporting Plugin specified in the \<reporting\> element; if a parameter is not found, it will look up to a parameter
-  defined in the \<configuration\> element of each plugin specified in \<build\>.
+  [<<<mvn aplugin:areportgoal>>>] It <<ignores>> the parameters defined in the <<<\<configuration\>>>> element of each
+  reporting Plugin specified in the <<<\<reporting\>>>> element; only parameters
+  defined in the <<<\<configuration\>>>> element of each plugin specified in <<<\<build\>>>> are used.
 
   []
 

@@ -91,7 +91,7 @@ Maven also suggests some guidelines on how to layout your project's
 directory structure. Once you learn the layout, you can easily
 navigate other projects that use Maven.
 
-While takes an opinionated approach to project layout, some projects
+While Maven takes an opinionated approach to project layout, some projects
 may not fit with this structure for historical reasons. While Maven is
 designed to be flexible to the needs of different projects,
 it cannot cater to every situation without compromising its objectives.

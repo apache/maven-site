@@ -52,9 +52,9 @@ Introduction to the Build Lifecycle
 
   There are three built-in build lifecycles: default, clean and site. The <<<default>>> lifecycle handles your project
   deployment, the <<<clean>>> lifecycle handles project cleaning, while the <<<site>>> lifecycle handles the creation of your
-  project's site documentation.
+  project's web site.
 
-**  {A Build Lifecycle is Made Up of Phases}
+** {A Build Lifecycle is Made Up of Phases}
 
   Each of these build lifecycles is defined by a different list of build phases, wherein a build phase represents a
   stage in the lifecycle.
@@ -116,7 +116,7 @@ mvn clean deploy
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-**  {A Build Phase is Made Up of Plugin Goals}
+** {A Build Phase is Made Up of Plugin Goals}
 
   However, even though a build phase is responsible for a specific step in the build lifecycle, the manner in which it
   carries out those responsibilities may vary. And this is done by declaring the plugin goals bound to those build phases.
@@ -233,8 +233,7 @@ mvn clean dependency:copy-dependencies package
   a model and incorporate that into the build, you would add the following to your POM in the <<<\<plugins\>>>> section of
   <<<\<build\>>>>:
 
-----
-...
++----+
  <plugin>
    <groupId>org.codehaus.modello</groupId>
    <artifactId>modello-maven-plugin</artifactId>
@@ -253,8 +252,7 @@ mvn clean dependency:copy-dependencies package
      </execution>
    </executions>
  </plugin>
-...
-----
++----+
 
   You might be wondering why that <<<\<executions\>>>> element is there. That is so that you can run the same goal multiple times
   with different configuration if needed. Separate executions can also be given an ID so that during inheritance or the
@@ -269,8 +267,7 @@ mvn clean dependency:copy-dependencies package
   it to run in the <<<process-test-resources>>> phase to indicate when the tests were started. This would be configured
   like so:
 
-----
-...
++----+
  <plugin>
    <groupId>com.mycompany.example</groupId>
    <artifactId>display-maven-plugin</artifactId>
@@ -284,8 +281,7 @@ mvn clean dependency:copy-dependencies package
      </execution>
    </executions>
  </plugin>
-...
-----
++----+
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
@@ -294,7 +290,7 @@ mvn clean dependency:copy-dependencies package
   The following lists all build phases of the <<<default>>>, <<<clean>>> and <<<site>>> lifecycles, which are executed in the order given
   up to the point of the one specified.
 
-  <<Clean Lifecycle>>
+** Clean Lifecycle
 
 *-------------------------------+---------------------------------------------------------------------------------------+
 || Phase                        || Description
@@ -306,7 +302,7 @@ mvn clean dependency:copy-dependencies package
 | <<<post-clean>>>              | execute processes needed to finalize the project cleaning
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Default Lifecycle>>
+** Default Lifecycle
 
 *-------------------------------+---------------------------------------------------------------------------------------+
 || Phase                        || Description
@@ -358,7 +354,7 @@ mvn clean dependency:copy-dependencies package
 | <<<deploy>>>                  | done in an integration or release environment, copies the final package to the remote repository for sharing with other developers and projects.
 *-------------------------------+--------------------------------------------------------------------------------------+
 
-  <<Site Lifecycle>>
+** Site Lifecycle
 
 *-------------------------------+---------------------------------------------------------------------------------------+
 || Phase                        || Description

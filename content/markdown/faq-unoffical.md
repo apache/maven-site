@@ -40,7 +40,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 
 ### Eclipse
 
-[How do I specify which output folders the Eclipse plugin puts into the .classpath file?](#How do I specify which output folders the Eclipse plugin puts into the .classpath file?]
+[How do I specify which output directories the Eclipse plugin puts into the .classpath file?](#How do I specify which output directories the Eclipse plugin puts into the .classpath file?]
 [Where can I get the Maven plugin for Eclipse?](#Where can I get the Maven plugin for Eclipse?]
 [I issued\- mvn \-Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?](#I issued- mvn -Declipse.downloadSources=true eclipse eclipse goal. It created .classpath and .project for both modules, and in my local repository it downloaded sources Ho do I access them in eclipse?]
 [Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?](#Is it possible that if I do mvn eclipse eclipse goal that my project would get disconnected from the subversion repository?]
@@ -57,7 +57,7 @@ This page serves as a collection of questions *with* answers. If you have a freq
 [I've just created a maven plugin. Is there a sample plugin integration test I can use?](#I've just created a maven plugin. Is there a sample plugin integration test I can use?]
 [The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?](#The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?]
 [How to list all goals available for a certain plugin?](#How to list all goals available for a certain plugin?]
-[What does the 'You cannot have two plugin executions with the same (or missing) <id/> elements' message mean?](#What does the 'You cannot have two plugin executions with the same (or missing) <id/> elements' message mean?]
+[What does the 'You cannot have two plugin executions with the same (or missing) `<id/>` elements' message mean?](#What does the 'You cannot have two plugin executions with the same (or missing) `<id/>` elements' message mean?]
 [#How do I execute the assembly plugin with different configurations]
 [Where is the plugin-registry.xml?](#Where is the plugin-registry.xml?]
 [How do I know which phase a plug-in is associated with?](#How do I know which phase a plug-in is associated with?]
@@ -517,7 +517,7 @@ To specify a remote repo in Maven, add the `<repositories>` element to the POM:
 Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 _Repositories_
 
-### How do I specify which output folders the Eclipse plugin puts into the .classpath file?
+### How do I specify which output directories the Eclipse plugin puts into the .classpath file?
 
 ```
 <build>
@@ -1287,18 +1287,14 @@ or
 The Maven XSD is located here and the Maven Settings XSD is located here.
 Your favorite IDE probably supports XSD schema's for pom.xml and settings.xml editing. You need to specify the following:
 ```
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
 </project>
 ```
 ```
-<settings xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
   ...
 </settings>
 ```
@@ -1522,7 +1518,7 @@ Wagon wagon;
 
 ### How do I set the base directory for creating the packages created by assembly?
 
-The assembly plugin, by default, saves the packages to your project.build.directory folder from your pom or
+The assembly plugin, by default, saves the packages to your project.build.directory directory from your pom or
 ```
 <project>
 ...

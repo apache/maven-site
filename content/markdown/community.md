@@ -17,11 +17,11 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Maven, like any other opensource project, relies heavily on the efforts
-of the entire user community to be ever vigilant for improvements,
-logging of defects, communicating use-cases, generating documentation,
-and being wary of other users in need. This is a quick guide outlining
-what members of the Maven community may do to make the system work
+Maven, like any other open source project, relies heavily on the efforts
+of the entire user community to contribute improvements,
+report defects, communicate use cases, write documentation,
+and assist other users in need. This is a quick guide outlining
+what members of the Maven community can do to make the system work
 better for everyone.
 
 ### Helping With Maven
@@ -85,8 +85,8 @@ Maven has a number of [Mailing Lists](./mailing-lists.html), and the Maven
 User List is specifically dedicated to answering questions about all
 Maven things.
 
-#### IRC (Internet Relay Chat)
+#### Slack
 
-Log into the `#maven` IRC channel on `irc.freenode.net` with your
-favorite IRC client or [with web IRC chat](https://webchat.freenode.net/).
-
+For people actively contributing to Maven, especially committers, there
+is [the ASF Slack workspace](https://infra.apache.org) available to discuss
+issues, solve problems and build community in real-time.

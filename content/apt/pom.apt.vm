@@ -26,105 +26,7 @@
 
 POM Reference
 
-  [[1]] {{{Introduction}Introduction}}
-
-    [[1]] {{{What_is_the_POM}What is the POM?}}
-
-    [[2]] {{{Quick_Overview}Quick Overview}}
-
-  [[2]] {{{The_Basics}The Basics}}
-
-    [[1]] {{{Maven_Coordinates}Maven Coordinates}}
-
-    [[2]] {{{POM_Relationships}POM Relationships}}
-
-      [[1]] {{{Dependencies}Dependencies}}
-
-        [[1]] {{{Dependency_Version_Requirement_Specification}Dependency Version Requirement Specification}}
-
-        [[2]] {{{Version_Order_Specification}Version Order Specification}}
-
-        [[3]] {{{Version_Order_Testing}Version Order Testing}}
-
-        [[4]] {{{Exclusions}Exclusions}}
-
-      [[2]] {{{Inheritance}Inheritance}}
-
-        [[1]] {{{The_Super_POM}The Super POM}}
-
-        [[2]] {{{Dependency_Management}Dependency Management}}
-
-      [[3]] {{{Aggregation}Aggregation (or Multi-Module)}}
-
-        [[1]] {{{Inheritance_v._Aggregation}Inheritance v. Aggregation}}
-
-    [[3]] {{{Properties}Properties}}
-
-  [[3]] {{{Build_Settings}Build Settings}}
-
-    [[1]] {{{Build}Build}}
-
-      [[1]] {{{BaseBuild_Element}The BaseBuild Element Set}}
-
-        [[1]] {{{Resources}Resources}}
-
-        [[2]] {{{Plugins}Plugins}}
-
-        [[3]] {{{Plugin_Management}Plugin Management}}
-
-      [[2]] {{{Build_Element}The Build Element Set}}
-
-        [[1]] {{{Directories}Directories}}
-
-        [[2]] {{{Extensions}Extensions}}
-
-    [[2]] {{{Reporting}Reporting}}
-
-      [[1]] {{{Report_Sets}Report Sets}}
-
-  [[4]] {{{More_Project_Information}More Project Information}}
-
-    [[1]] {{{Licenses}Licenses}}
-
-    [[2]] {{{Organization}Organization}}
-
-    [[3]] {{{Developers}Developers}}
-
-    [[4]] {{{Contributors}Contributors}}
-
-  [[5]] {{{Environment_Settings}Environment Settings}}
-
-    [[1]] {{{Issue_Management}Issue Management}}
-
-    [[2]] {{{Continuous_Integration_Management}Continuous Integration Management}}
-
-    [[3]] {{{Mailing_Lists}Mailing Lists}}
-
-    [[4]] {{{SCM}SCM}}
-
-    [[5]] {{{Prerequisites}Prerequisites}}
-
-    [[6]] {{{Repositories}Repositories}}
-
-    [[7]] {{{Plugin_Repositories}Plugin Repositories}}
-
-    [[8]] {{{Distribution_Management}Distribution Management}}
-
-      [[1]] {{{Repository}Repository}}
-
-      [[2]] {{{Site_Distribution}Site Distribution}}
-
-      [[3]] {{{Relocation}Relocation}}
-
-    [[9]] {{{Profiles}Profiles}}
-
-      [[1]] {{{Activation}Activation}}
-
-      [[2]] {{{The_BaseBuild_Element_Set}The BaseBuild Element Set <(revisited)>}}
-
-  [[6]] {{{Final}Final}}
-
-  []
+%{toc|section=0|fromDepth=1|toDepth=3}
 
 {Introduction}
 
@@ -147,10 +49,8 @@ POM Reference
   contains 4.0.0. That is currently the only supported POM version, and is always required.
 
 +--------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <!-- The Basics -->
@@ -204,10 +104,8 @@ POM Reference
   <<<build.xml>>> file, where tasks are almost always dependant on the lines executed before it.
 
 +--------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.mojo</groupId>
@@ -256,7 +154,7 @@ POM Reference
   The three elements given above point to a specific version of a project, letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-* <<packaging>>
+* {Packaging}
 
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
   label to give us a really complete <what>: that is the project's packaging. In our
@@ -264,10 +162,8 @@ POM Reference
   <<<jar>>>. We could make it into a <<<war>>> by declaring a different packaging:
 
 +-----------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <packaging>war</packaging>
   ...
@@ -306,10 +202,8 @@ POM Reference
   allowing your list to focus solely on the dependencies your project requires.
 
 +-----------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
@@ -513,13 +407,29 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
     * Numeric tokens have the natural order.
 
-    * Non-numeric ("qualifiers") tokens have the alphabetical order, except for the following tokens which come first in this order:
+    * Non-numeric tokens ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
 
     "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
-  * else "<<<.qualifier>>>" \< "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+  * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
+
+  * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
+
+  []
+
+   Following semver rules is encouraged, and some qualifiers are discouraged:
+   
+   * Prefer '<<<alpha>>>', '<<<beta>>>', and '<<<milestone>>>' qualifiers over '<<<ea>>>' and '<<<preview>>>'.
+
+   * Prefer '<<<1.0.0-RC1>>>'' over '<<<1.0.0.RC1>>>'.
+   
+   * The usage of '<<<CR>>>' qualifier is discouraged. Use '<<<RC>>>' instead.
+   
+   * The usage of '<<<final>>>', '<<<ga>>>', and '<<<release>>>' qualifiers is discouraged. Use no qualifier instead.
+   
+   * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
   []
 
@@ -531,58 +441,63 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" \< "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
 
-  * "<<<1.ga>>>"  = "<<<1-ga>>>"  = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
+  * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
-  * "<<<1-sp>>>"   \> "<<<1-ga>>>"
+  * "<<<1-sp>>>" \> "<<<1-ga>>>"
 
-  * "<<<1-sp.1>>>"  \> "<<<1-ga.1>>>"
+  * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
   * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
 
-  * "<<<1-a1>>>"  = "<<<1-alpha-1>>>"
+  * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
+
+  Note: As <<<2.0-rc1>>> \< <<<2.0>>>, the version requirement <<<[1.0,2.0)>>> excludes <<<2.0>>> but includes version <<<2.0-rc1>>>, which is contrary to
+  what most people expect. In addition, Gradle interprets it differently, resulting in different dependency trees for the same POM.
+  If the intention is to restrict it to <1.*> versions, the better version requirement is <<<[1,1.999999)>>>.
 
 *** {Version Order Testing}:
 
     The maven distribution includes a tool to check version order. It was used to produce the examples in the previous paragraphs. Feel free to run it yourself when in doubt. You can run it like this:
 
 ----------------------------------------
-java -jar ${MAVEN_HOME}/lib/maven-artifact-3.3.9.jar [versions...]
+java -jar ${MAVEN_HOME}/lib/maven-artifact-${currentStableVersion}.jar [versions...]
 ----------------------------------------
 
     example:
 
 ----------------------------------------
-$ java -jar ./lib/maven-artifact-3.3.9.jar  1 2 1.1
-Display parameters as parsed by Maven (in canonical form) and comparison result:
-1. 1 == 1
+$ java -jar ./lib/maven-artifact-${currentStableVersion}.jar  1 2 1.1
+Display parameters as parsed by Maven (in canonical form and as a list of tokens) and comparison result:
+1. 1 -> 1; tokens: [1]
    1 < 2
-2. 2 == 2
+2. 2 -> 2; tokens: [2]
    2 > 1.1
-3. 1.1 == 1.1
+3. 1.1 -> 1.1; tokens: [1, 1]
 ----------------------------------------
 
 *** {Exclusions}
 
-  Exclusions tell Maven not to include the
-  specified project that is a dependency of this dependency (in other words, its transitive
-  dependency). For example, the <<<maven-embedder>>> requires <<<maven-core>>>, and we do not
-  wish to use it or its dependencies, then we would add it as an <<<exclusion>>>.
+  It is sometimes useful to limit a dependency's transitive dependencies. A dependency may have incorrectly
+  specified scopes, or dependencies that conflict with other dependencies in your project. Exclusions tell Maven not to include a
+  specified artifact in the classpath even if it is a dependency of one or more of this project's dependencies
+  (a transitive dependency). For example, <<<maven-embedder>>> depends on <<<maven-core>>>.
+  Suppose you want to depend on maven-embedder but do not want to include maven-core 
+  or its dependencies in the classpath. Then add <<<maven-core>>> as an <<<exclusion>>> in the element that declares the 
+  dependency on maven-embedder:
 
 +-----------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>2.0</version>
+      <version>${currentStableVersion}</version>
       <exclusions>
         <exclusion>
           <groupId>org.apache.maven</groupId>
@@ -596,22 +511,22 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </project>
 +-----------------------------+
 
-  It is also sometimes useful to clip a dependency's transitive dependencies. A dependency may have incorrectly
-  specified scopes, or dependencies that conflict with other dependencies in your project. Using wildcard excludes makes it easy to exclude all a dependency's
-  transitive dependencies. In the case below you may be working with the maven-embedder and you want to manage
-  the dependencies you use yourself, so you clip all the transitive dependencies:
+  This only removes the path to maven-core from this one dependency. If maven-core appears as
+  a direct or transitive dependency elsewhere in the POM, it can still be added to the classpath.
+
+  Wildcard excludes make it easy to exclude all of a dependency's
+  transitive dependencies. In the case below, you may be working with the maven-embedder and you want to manage
+  the dependencies you use, so you exclude all the transitive dependencies:
 
 +-----------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <dependencies>
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.1.0</version>
+      <version>3.8.6</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -628,7 +543,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   * <<exclusions>>:
   Exclusions contain one or more <<<exclusion>>> elements, each containing a <<<groupId>>> and
   <<<artifactId>>> denoting a dependency to exclude. Unlike <<<optional>>>, which may or may not
-  be installed and used, <<<exclusions>>> actively remove themselves from the dependency tree.
+  be installed and used, <<<exclusions>>> actively remove artifacts from the dependency tree.
 
 ** {Inheritance}
 
@@ -637,10 +552,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   makes project inheritance explicit in the project object model.
 
 +-----------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.mojo</groupId>
@@ -716,10 +629,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
     []
 
 +-----------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -785,10 +696,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   directories or the POM files of those projects.
 
 +-----------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.codehaus.mojo</groupId>
@@ -827,7 +736,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 * {Properties}
 
   Properties are the last required piece to understand POM basics. Maven properties
-  are value placeholder, like properties in Ant. Their values are accessible anywhere
+  are value placeholders, like properties in Ant. Their values are accessible anywhere
   within a POM by using the notation <<<$\{X\}>>>, where <<<X>>> is the property. Or they can be used by plugins
   as default values, for example:
 
@@ -837,7 +746,9 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <properties>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Following project.-properties are reserved for Maven in will become elements in a future POM definition. -->
+    <!-- Don't start your own properties properties with project. -->
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding> 
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
   ...
@@ -889,10 +800,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <Note: These different> <<<build>>> <elements may be denoted "project build" and "profile build".>
 
 +-----------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <!-- "Project Build" contains more elements than just the BaseBuild set -->
   <build>...</build>
@@ -961,10 +870,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   to bundle the resource correctly, you would specify resources similar to the following:
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <build>
     ...
     <resources>
@@ -1023,10 +930,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 *** {Plugins}
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <build>
     ...
     <plugins>
@@ -1069,72 +974,77 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   If your POM declares a parent, it inherits plugin configuration from either the
   <<build/plugins>> or <<pluginManagement>> sections of the parent.
 
-  To illustrate, consider the following fragment from a parent POM:
+    * {<<default configuration inheritance>>}:
+
+    To illustrate, consider the following fragment from a parent POM:
 
 +-----------------------------------------------+
 <plugin>
-<groupId>my.group</groupId>
-<artifactId>my-plugin</artifactId>
-<configuration>
-  <items>
-    <item>parent-1</item>
-    <item>parent-2</item>
-  </items>
-  <properties>
-    <parentKey>parent</parentKey>
-  </properties>
-</configuration>
+  <groupId>my.group</groupId>
+  <artifactId>my-plugin</artifactId>
+  <configuration>
+    <items>
+      <item>parent-1</item>
+      <item>parent-2</item>
+    </items>
+    <properties>
+      <parentKey>parent</parentKey>
+    </properties>
+  </configuration>
 </plugin>
 +-----------------------------------------------+
 
-  And consider the following plugin configuration from a project that uses that parent
-  as its parent:
+    And consider the following plugin configuration from a project that uses that parent as its parent:
 
 +-----------------------------------------------+
 <plugin>
-<groupId>my.group</groupId>
-<artifactId>my-plugin</artifactId>
-<configuration>
-  <items>
-    <item>child-1</item>
-  </items>
-  <properties>
-    <childKey>child</childKey>
-  </properties>
-</configuration>
+  <groupId>my.group</groupId>
+  <artifactId>my-plugin</artifactId>
+  <configuration>
+    <items>
+      <item>child-1</item>
+    </items>
+    <properties>
+      <childKey>child</childKey>
+    </properties>
+  </configuration>
+</plugin>
 +-----------------------------------------------+
 
-  The default behavior is to merge the content of the <<configuration>>
-  element according to element name. If the child POM has a particular
-  element, that value becomes the effective value. if the child POM
-  does not have an element, but the parent does, the parent value
-  becomes the effective value. Note that this is purely an operation on XML;
-  no code or configuration of the plugin itself is involved. Only the
-  elements, not their values, are involved.
+    The default behavior is to merge the content of the <<configuration>>
+    element according to element name. If the child POM has a particular
+    element, that value becomes the effective value. if the child POM
+    does not have an element, but the parent does, the parent value
+    becomes the effective value. Note that this is purely an operation on XML;
+    no code or configuration of the plugin itself is involved. Only the
+    elements, not their values, are involved.
 
-  Applying those rules to the example, Maven comes up with:
+    Applying those rules to the example, Maven comes up with:
 
 +-----------------------------------------------+
 <plugin>
-<groupId>my.group</groupId>
-<artifactId>my-plugin</artifactId>
-<configuration>
-  <items>
-    <item>child-1</item>
-  </items>
-  <properties>
-    <childKey>child</childKey>
-    <parentKey>parent</parentKey>
-  </properties>
-</configuration>
+  <groupId>my.group</groupId>
+  <artifactId>my-plugin</artifactId>
+  <configuration>
+    <items>
+      <item>child-1</item>
+    </items>
+    <properties>
+      <childKey>child</childKey>
+      <parentKey>parent</parentKey>
+    </properties>
+  </configuration>
+</plugin>
 +-----------------------------------------------+
 
-  You can control how child POMs inherit configuration from parent POMs by adding attributes
-  to the children of the <<configuration>> element. The attributes are <<<combine.children>>> and
-  <<<combine.self>>>. Use these attributes in a child POM to control how Maven combines
-  plugin configuration from the parent with the explicit configuration in the child.
+    * {<<advanced configuration inheritance>>}: <<<combine.children>>> and <<<combine.self>>>
 
-  Here is the child configuration with illustrations of the two attributes:
+    You can control how child POMs inherit configuration from parent POMs by adding attributes
+    to the children of the <<configuration>> element. The attributes are <<<combine.children>>> and
+    <<<combine.self>>>. Use these attributes in a child POM to control how Maven combines
+    plugin configuration from the parent with the explicit configuration in the child.
+
+    Here is the child configuration with illustrations of the two attributes:
 
 +-----------------------------------------------+
 <configuration>
@@ -1149,7 +1059,7 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </configuration>
 +-----------------------------------------------+
 
-  Now, the effective result is the following:
+    Now, the effective result is the following:
 
 +-----------------------------------------------+
 <configuration>
@@ -1164,25 +1074,17 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </configuration>
 +-----------------------------------------------+
 
-  <<combine.children="append">> results in the
-  concatenation of parent and child elements, in that order.
-  <<combine.self="override">>, on the other hand, completely
-  suppresses parent configuration. You cannot use both
-  <<combine.self="override">>
-  and <<combine.children="append">> on an element; if you try,
-  <override> will prevail.
+    <<combine.children="append">> results in the concatenation of parent and child elements, in that order.
+    <<combine.self="override">>, on the other hand, completely suppresses parent configuration. You cannot use both
+    <<combine.self="override">> and <<combine.children="append">> on an element; if you try,
+    <override> will prevail.
 
-  Note that these attributes only apply to the configuration element
-  they are declared on, and are not propagated to nested elements. That
-  is if the content of an <item> element from the child POM was a complex
-  structure instead of text, its sub-elements would still be
-  subject to the default merge strategy unless they were themselves
-  marked with attributes.
+    Note that these attributes only apply to the configuration element they are declared on, and are not propagated to nested elements. That
+    is if the content of an <item> element from the child POM was a complex structure instead of text, its sub-elements would still be
+    subject to the default merge strategy unless they were themselves marked with attributes.
 
-  The combine.* attributes are inherited from parent to child POMs.
-  Take care when adding those attributes to
-  a parent POM as this might affect child or
-  grand-child POMs.
+    The <<<combine.*>>> attributes are inherited from parent to child POMs.
+    Take care when adding those attributes to a parent POM as this might affect child or grand-child POMs.
 
   * <<dependencies>>:
   Dependencies are seen a lot within the POM, and are an element under all plugins element blocks.
@@ -1204,10 +1106,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   You would get an <<<execution>>> like this:
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     <plugins>
@@ -1236,24 +1136,24 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 </project>
 +------------------------------------------+
 
-  * <<id>>:
+    * <<id>>:
   Self explanatory. It specifies this execution block between all of the others. When the phase is run,
   it will be shown in the form: <<<[plugin:goal {execution: id}]>>>. In the case of this example:
   <<<[antrun:run {execution: echodir}]>>>
 
-  * <<goals>>:
+    * <<goals>>:
   Like all pluralized POM elements, this contains a list of singular elements. In this case, a list
   of plugin <<<goals>>> which are being specified by this <<<execution>>> block.
 
-  * <<phase>>:
+    * <<phase>>:
   This is the phase that the list of goals will execute in. This is a very powerful option, allowing one to bind
   any goal to any phase in the build lifecycle, altering the default behavior of Maven.
 
-  * <<inherited>>:
+    * <<inherited>>:
   Like the <<<inherited>>> element above, setting this to false will suppress Maven from passing this execution
   onto its children. This element is only meaningful to parent POMs.
 
-  * <<configuration>>:
+    * <<configuration>>:
   Same as above, but confines the configuration to this specific list of goals, rather than all goals
   under the plugin.
 
@@ -1269,10 +1169,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   []
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1308,10 +1206,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   So rather than the above mess included in every child <<<pom.xml>>>, only the following is required:
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1339,10 +1235,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
  for the POM as a whole. Since they do not exist in profile builds, these cannot be altered by profiles.
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
@@ -1370,10 +1264,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   are excellent for specifying one out of multiple implementations of a common plugin interface.
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
     ...
@@ -1409,10 +1301,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   also be suppressed in the following, more verbose, way, which effectively turns off project-info reports.
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
     <outputDirectory>${basedir}/target/site</outputDirectory>
@@ -1446,10 +1336,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   children, and set <<<inherited>>> to true. The <<<reportSet>>> would resemble the following:
 
 +------------------------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
     <plugins>
@@ -1478,38 +1366,36 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 
   Between build <<<executions>>> and reporting <<<reportSets>>>, it should be clear now as to why they exist.
   In the simplest sense, they drill down in configuration. The POM must have a way not only to
-  configure plugins, but they also must configure individual goals of those plugins. That is where these
+  configure plugins, but must also configure the goals of those plugins. That is where these
   elements come in, giving the POM ultimate granularity in control of its build destiny.
 
 {More Project Information}
 
-  Although the above information is enough to get a firm grasp on POM authoring, there are far more
-  elements to make developer's live easier. Many of these elements are related to site generation,
-  but like all POM declarations, they may be used for anything, depending upon how certain plugins use
-  it. The following are the simplest elements:
+  Several elements do not affect the build, but rather document the project for
+  the convenience of developers. Many of these elements are used to fill in project
+  details when generating the project's web site. However, like all POM declarations,
+  plugins can use them for anything. The following are the simplest elements:
 
   * <<name>>:
   Projects tend to have conversational names, beyond the <<<artifactId>>>. The Sun engineers did not
   refer to their project as "java-1.5", but rather just called it "Tiger". Here is where to set that value.
 
   * <<description>>:
-  Description of a project is always good. Although this should not replace formal documentation,
+  A short, human readable description of the project. Although this should not replace formal documentation,
   a quick comment to any readers of the POM is always helpful.
 
   * <<url>>:
-  The URL, like the name, is not required. This is a nice gesture for projects users, however, so
-  that they know where the project lives.
+  The project's home page.
 
   * <<inceptionYear>>:
-  This is another good documentation point. It will at least help you remember where you have spent
-  the last few years of your life.
+  The year the project was first created. 
 
 * {Licenses}
 
 +-------------------------+
 <licenses>
   <license>
-    <name>Apache License, Version 2.0</name>
+    <name>Apache-2.0</name>
     <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
     <distribution>repo</distribution>
     <comments>A business-friendly OSS license</comments>
@@ -1518,14 +1404,11 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
 +-------------------------+
 
   Licenses are legal documents defining how and when a project (or parts of a project) may be used.
-  Note that a project should list only licenses that may apply directly to this project, and not list
-  licenses that apply to this project's dependencies. Maven currently does little with these documents
-  other than displays them on generated sites. However, there is talk of flexing for different types
-  of licenses, forcing users to accept license agreements for certain types of (non open source)
-  projects.
+  A project should list licenses that apply directly to this project, and not list
+  licenses that apply to the project's dependencies.
 
   * <<name>>, <<url>> and <<comments>>:
-  are self explanatory, and have been encountered before in other capacities.
+  are self explanatory, and have been encountered before in other contexts.
   Using an {{{https://spdx.org/licenses/}SPDX identifier}} as the license <<name>> is recommended.
   The fourth license element is:
 
@@ -1539,10 +1422,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   where the most basic information is set.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <organization>
     <name>Codehaus Mojo</name>
@@ -1562,10 +1443,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   should not be contacted about the project, they do not need to be listed here.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <developers>
     <developer>
@@ -1620,10 +1499,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   than developers.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <contributors>
     <contributor>
@@ -1656,10 +1533,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   something, it's primarily used for generating project documentation.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <issueManagement>
     <system>Bugzilla</system>
@@ -1682,10 +1557,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   <<<sendOnFailure>>>, and not <<<sendOnSuccess>>> or <<<sendOnWarning>>>.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <ciManagement>
     <system>continuum</system>
@@ -1711,10 +1584,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   Most mailing lists are for developers and users.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <mailingLists>
     <mailingList>
@@ -1751,10 +1622,8 @@ Display parameters as parsed by Maven (in canonical form) and comparison result:
   (it does, doesn't it?) then here is where you would place that information into the POM.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <scm>
     <connection>scm:svn:http://127.0.0.1/svn/my-project</connection>
@@ -1787,30 +1656,25 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 -----------
 
   * <<tag>>:
-  Specifies the tag that this project lives under. HEAD (meaning, the SCM root) should be the default.
+  Specifies the tag that this project lives under. HEAD (meaning, the SCM root) is the default.
 
   * <<url>>:
   A publicly browsable repository. For example, via ViewCVS.
 
 * {Prerequisites}
 
-  The POM may have certain prerequisites in order to execute correctly.  For example,
-  perhaps there was a fix in Maven 2.0.3 that you need in order to deploy using sftp.
-
-  In Maven 3, use
+  The POM may have certain prerequisites in order to execute correctly.  
+  The only element that exists as a prerequisite in
+  POM 4.0.0 is the <<<maven>>> element, which takes a minimum version number.
+  
+  Use
   {{{/enforcer/enforcer-rules/requireMavenVersion.html} Maven Enforcer Plugin's <<<requireMavenVersion>>> rule}},
-  or other rules to check other aspects.
-
-  In Maven 2, here is where you give the prerequisites to building: if these are not met, Maven will
-  fail the build before even starting. The only element that exists as a prerequisite in
-  POM 4.0 is the <<<maven>>> element, which takes a minimum version number. It is checked with Maven 2, it is not any
-  more in Maven 3.
+  or other rules for <<build-time>> prerequisites. For packaging <<<maven-plugin>>> this is still used at <<run-time>> to make sure
+  that the minimum Maven version for the plugin is met (but only in the pom.xml of the referenced plugin).
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <prerequisites>
     <maven>2.0.6</maven>
@@ -1835,10 +1699,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   configured in the pom.xml `repositories` element. 
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <repositories>
     <repository>
@@ -1885,8 +1747,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<layout>>:
   In the above description of repositories, it was mentioned that they all follow a common layout. This
-  is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3; however, Maven 1.x had a different
-  layout. Use this element to specify which if it is <<<default>>> or <<<legacy>>>.
+  is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3.
+  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>.
 
 * {Plugin Repositories}
 
@@ -1905,10 +1767,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   and supporting files generated throughout the build process. Starting with the last elements first:
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -1953,10 +1813,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The repository elements will be used for snapshot distribution if the snapshotRepository is not defined.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     <repository>
@@ -2001,10 +1859,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   how to deploy the project's site and documentation.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -2026,10 +1882,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 ** {Relocation}
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
     ...
@@ -2062,10 +1916,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   the JDK version used. The elements of profiles are as follows:
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -2090,10 +1942,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   basic POM only under certain circumstances. Those circumstances are specified via an <<<activation>>> element.
 
 +-------------------------+
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <profiles>
     <profile>
@@ -2122,20 +1972,27 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 </project>
 +-------------------------+
 
-  Before Maven 3.2.2 Activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
-  Since Maven 3.2.2 Activation occurs when all of the specified criteria have been met.
+  Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
+  Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
   * <<jdk>>:
-  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. This will activate if the test
-  is run under a jdk version number that matches the prefix given. In the above example, <<<1.5.0_06>>>
-  will match. Ranges are also supported. See the {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} for more details about supported ranges.
+  <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
+  
+    * A version range according to the definition of {{{/enforcer/enforcer-rules/versionRanges.html} maven-enforcer-plugin}} in case the value starts with either <<<[>>> or <<<(>>>,
+    
+    * A negated prefix if the value starts with <<<!>>> or
+    
+    * A (non-negated) prefix for all other cases
+    
+  (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading <<<!>>>).
+  The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
 
   * <<os>>:
   The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
 
   * <<property>>:
-  The <<<profile>>> will activate if Maven detects a property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
-  of the corresponding <<<name=value>>> pair.
+  The <<<profile>>> will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
+  of the corresponding <<<name=value>>> pair and it matches the given value (if given). Since Maven 3.9.0 one can also evaluate the <<packaging value>> of the pom via property name <<<packaging>>>.
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it

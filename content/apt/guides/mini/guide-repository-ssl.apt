@@ -134,8 +134,6 @@ $>
    Not all the properties must be set depending of your precise settings: type of store may
    left to default, password may  be empty.
 
-*** Maven 2.0
-
   They may be set either on maven's command-line, in
   <<<.mavenrc>>> file  or in <<<MAVEN_OPTS>>> environment
   variable. For the setting defined in this document, here is an example

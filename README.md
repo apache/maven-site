@@ -19,7 +19,7 @@
 
 [![ASF Jira](https://img.shields.io/endpoint?url=https%3A%2F%2Fmaven.apache.org%2Fbadges%2Fasf_jira-MNGSITE.json)][jira]
 [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
-[![Jenkins Status](https://img.shields.io/jenkins/s/https/ci-builds.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/job/master.svg)][build]
+[![Jenkins Status](https://img.shields.io/jenkins/s/https/ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/job/master.svg)][build]
 
 This is the Git repository for the content of <https://maven.apache.org/>.
 
@@ -43,10 +43,10 @@ Additional Resources
 + [General GitHub documentation](https://help.github.com/)
 + [GitHub pull request documentation](https://help.github.com/send-pull-requests/)
 + [Apache Maven Twitter Account](https://twitter.com/ASFMavenProject)
-+ "#Maven" IRC channel on freenode.org
++ [Slack channel in ASF Workspace](https://infra.apache.org/slack.html)
 
 [jira]: https://issues.apache.org/jira/projects/MNGSITE/
 [license]: https://www.apache.org/licenses/LICENSE-2.0
 [ml-list]: https://maven.apache.org/mailing-lists.html
 [cla]: https://www.apache.org/licenses/#clas
-[build]: https://ci-builds.apache.org/job/Maven/job/maven-box/job/maven-site/job/master/
+[build]: https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/job/master/

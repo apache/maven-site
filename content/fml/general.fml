@@ -75,7 +75,7 @@
           <a href="/plugins/maven-help-plugin/describe-mojo.html"><code>describe</code></a> goal.
           For example, to find out the version of the install plugin:
         </p>
-        <source>mvn -Dplugin=install help:describe</source>
+        <code>mvn -Dplugin=install help:describe</code>
         <p>
           Note that you must give the plugin prefix as the argument to plugin, not it's artifact ID.
         </p>
@@ -233,7 +233,7 @@ Where: <path-to-file>  the path to the file to load
       <answer>
         <p>
         To unsubscribe from a Maven mailing list you simply send a message to
-        <source>[mailing-list]-unsubscribe@maven.apache.org</source>
+        <code>[mailing-list]-unsubscribe@maven.apache.org</code>
         </p>
         <p>
         So, if you have subscribed to <code>users@maven.apache.org</code> then you would
@@ -400,7 +400,7 @@ Where: <path-to-file>  the path to the file to load
         <p>
           You could call Maven with <i>-X</i> parameter or <i>-e</i> parameter. For more information,
           run:
-          <source>mvn --help</source>
+          <code>mvn --help</code>
         </p>
       </answer>
     </faq>

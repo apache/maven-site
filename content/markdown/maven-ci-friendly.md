@@ -253,7 +253,7 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
   <artifactId>ci-child</artifactId>
    ...
   <dependencies>
-		<dependency>
+    <dependency>
       <groupId>org.apache.maven.ci</groupId>
       <artifactId>child2</artifactId>
       <version>${project.version}</version>
@@ -326,7 +326,4 @@ mvn -Drevision=2.7.8 -Dchangelist= clean package
 </project>
 ```
 
-
-
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/ 
-
