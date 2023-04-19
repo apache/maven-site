@@ -174,8 +174,9 @@ Introduction to the Dependency Mechanism
    unit tests (src/test/java) but not in the model code (src/main/java).
 
  * <<system>>\
-   Maven does not add system-scoped dependencies to any classpath.
-   A system scoped dependency must be added to the classpath by means 
+   This scope indicates that the dependency is required for compilation and execution.
+   However, Maven will not download the dependency or add it to any classpath.
+   Instead Maven expects that Java will load the system scoped dependency by means 
    outside of Maven; for example, by placing its jar in the jre/lib/ext
    directory of the virtual machine. The artifact is not looked up in a repository.
 
