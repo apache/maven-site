@@ -2,6 +2,8 @@
 # links to components in https://maven.apache.org/components/
 ant-tasks=components/ant-tasks
 ant-tasks-archives=components/ant-tasks-archives
+apache-resource-bundles=components/apache-resource-bundles
+apache-resource-bundles-archives=components/apache-resource-bundles-archives
 archetype-archives=components/archetype-archives
 archetype=components/archetype
 archetypes-archives=components/archetypes-archives
@@ -9,6 +11,8 @@ archetypes=components/archetypes
 core-its=components/core-its
 enforcer-archives=components/enforcer-archives
 enforcer=components/enforcer
+extensions-archives=components/extensions-archives
+#extensions
 jxr-archives=components/jxr-archives
 jxr=components/jxr
 maven-eclipse-plugin=components/maven-eclipse-plugin
@@ -41,3 +45,5 @@ surefire-archives=components/surefire-archives
 surefire=components/surefire
 wagon-archives=components/wagon-archives
 wagon=components/wagon
+wrapper-archives=components/wrapper-archives
+wrapper=components/wrapper

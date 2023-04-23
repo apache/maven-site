@@ -33,7 +33,9 @@ Introduction
   This guide is intended to assist users in developing Java plugins for
   Maven.
 
-* Important Notice: {Plugin Naming Convention and Apache Maven Trademark}
+%{toc|fromDepth=2}
+
+* Important Notice: {{{../mini/guide-naming-conventions.html}Plugin Naming Convention and Apache Maven Trademark}}
 
   You will typically name your plugin <<<<yourplugin>-maven-plugin>>>.
 
@@ -156,6 +158,7 @@ public class GreetingMojo extends AbstractMojo
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
       <version>3.0</version>
+      <scope>provided</scope>
     </dependency>
 
     <!-- dependencies to annotations -->
@@ -200,22 +203,24 @@ public class GreetingMojo extends AbstractMojo
 +----+
 ...
   <build>
-    <plugins>
-      <plugin>
-        <groupId>sample.plugin</groupId>
-        <artifactId>hello-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>sample.plugin</groupId>
+          <artifactId>hello-maven-plugin</artifactId>
+          <version>1.0-SNAPSHOT</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
   </build>
 ...
 +----+
 
   And, you need to specify a fully-qualified goal in the form of:
 
-+----+
+------
 mvn groupId:artifactId:version:goal
-+----+
+------
 
   For example, to run the simple mojo in the sample plugin, you would enter
   "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
@@ -260,11 +265,19 @@ mvn groupId:artifactId:version:goal
 
 +-----+
   <build>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>sample.plugin</groupId>
+          <artifactId>hello-maven-plugin</artifactId>
+          <version>1.0-SNAPSHOT</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>  
     <plugins>
       <plugin>
         <groupId>sample.plugin</groupId>
         <artifactId>hello-maven-plugin</artifactId>
-        <version>1.0-SNAPSHOT</version>
         <executions>
           <execution>
             <phase>compile</phase>
@@ -287,13 +300,13 @@ mvn groupId:artifactId:version:goal
   To create a new plugin project, you could using the Mojo
   {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
 
-+---+
+-----
 mvn archetype:generate \
   -DgroupId=sample.plugin \
   -DartifactId=hello-maven-plugin \
   -DarchetypeGroupId=org.apache.maven.archetypes \
   -DarchetypeArtifactId=maven-archetype-plugin
-+---+
+-----
 
 * {Parameters}
 
@@ -357,330 +370,6 @@ mvn archetype:generate \
 
   <<Note>>: More details can be found in the
   {{{../mini/guide-configuring-plugins.html}Guide to Configuring Plugins}}.
-
-** Parameter Types With One Value
-
-  Listed below are the various types of simple variables which can be used as
-  parameters in your mojos, along with any rules on how the values in the
-  POM are interpreted.
-
-*** Boolean
-
-  This includes variables typed <<<boolean>>> and <<<Boolean>>>.  When reading
-  the configuration, the text "<<<true>>>" causes the parameter to be set to
-  true and all other text causes the parameter to be set to false. Example:
-
-+-----+
-    /**
-     * My boolean.
-     */
-    @Parameter
-    private boolean myBoolean;
-+-----+
-
-+-----+
-<myBoolean>true</myBoolean>
-+-----+
-
-*** Integer Numbers
-
-  This includes variables typed <<<byte>>>, <<<Byte>>>, <<<int>>>,
-  <<<Integer>>>, <<<long>>>, <<<Long>>>, <<<short>>>, and <<<Short>>>.  When
-  reading the configuration, the text in the XML file is converted to an
-  integer value using either <<<Integer.parseInt()>>> or the <<<valueOf()>>>
-  method of the appropriate class.  This means that the strings must be valid
-  decimal integer values, consisting only of the digits 0 to 9 with an optional
-  <<<->>> in front for a negative value. Example:
-
-+-----+
-    /**
-     * My Integer.
-     */
-    @Parameter
-    private Integer myInteger;
-+-----+
-
-+-----+
-<myInteger>10</myInteger>
-+-----+
-
-*** Floating-Point Numbers
-
-  This includes variables typed <<<double>>>, <<<Double>>>, <<<float>>>, and
-  <<<Float>>>.  When reading the configuration, the text in the XML file is
-  converted to binary form using the <<<valueOf()>>> method for the appropriate
-  class.  This means that the strings can take on any format specified in
-  section 3.10.2 of the Java Language Specification.  Some samples of valid
-  values are <<<1.0>>> and <<<6.02E+23>>>.
-
-+-----+
-    /**
-     * My Double.
-     */
-    @Parameter
-    private Double myDouble;
-+-----+
-
-+-----+
-<myDouble>1.0</myDouble>
-+-----+
-
-*** Dates
-
-  This includes variables typed <<<Date>>>.  When reading the configuration,
-  the text in the XML file is converted using one of the following date
-  formats: "<<<yyyy-MM-dd HH:mm:ss.S a>>>" (a sample date is "2005-10-06
-  2:22:55.1 PM") or "<<<yyyy-MM-dd HH:mm:ssa>>>" (a sample date is "2005-10-06
-  2:22:55PM").  Note that parsing is done using <<<DateFormat.parse()>>> which
-  allows some leniency in formatting.  If the method can parse a date and time
-  out of what is specified it will do so even if it doesn't exactly match the
-  patterns above. Example:
-
-+-----+
-    /**
-     * My Date.
-     */
-    @Parameter
-    private Date myDate;
-+-----+
-
-+-----+
-<myDate>2005-10-06 2:22:55.1 PM</myDate>
-+-----+
-
-*** Files and Directories
-
-  This includes variables typed <<<File>>>.  When reading the configuration,
-  the text in the XML file is used as the path to the desired file or
-  directory.  If the path is relative (does not start with <<</>>> or a drive
-  letter like <<<C:>>>), the path is relative to the directory containing
-  the POM. Example:
-
-+-----+
-    /**
-     * My File.
-     */
-    @Parameter
-    private File myFile;
-+-----+
-
-+-----+
-<myFile>c:\temp</myFile>
-+-----+
-
-*** URLs
-
-  This includes variables typed <<<URL>>>.  When reading the configuration, the
-  text in the XML file is used as the URL.  The format must follow the RFC 2396
-  guidelines, and looks like any web browser URL
-  (<<<scheme://host:port/path/to/file>>>).  No restrictions are placed on the
-  content of any of the parts of the URL while converting the URL.
-
-+-----+
-    /**
-     * My URL.
-     */
-    @Parameter
-    private URL myURL;
-+-----+
-
-+-----+
-<myURL>http://maven.apache.org</myURL>
-+-----+
-
-*** Plain Text
-
-  This includes variables typed <<<char>>>, <<<Character>>>, <<<StringBuffer>>>,
-  and <<<String>>>.  When reading the configuration, the text in the XML file is
-  used as the value to be assigned to the parameter.  For <<<char>>> and
-  <<<Character>>> parameters, only the first character of the text is used.
-
-*** Enums
-
-  Enumeration type parameters can also be used. First you need to define
-  your enumeration type and afterwards you can use the enumeration type
-  in the parameter definition:
-
-+-----+
-    public enum Color {
-      GREEN,
-      RED,
-      BLUE
-    }
-
-    /**
-     * My Enum
-     */
-    @Parameter
-    private Color myColor;
-+-----+
-
-  So lets have a look like you can use such enumeration in your pom configuration:
-
-+-----+
-<myColor>GREEN</myColor>
-+-----+
-
-  You can also use elements from the enumeration type as defaultValues like the
-  following:
-
-+-----+
-    public enum Color {
-      GREEN,
-      RED,
-      BLUE
-    }
-
-    /**
-     * My Enum
-     */
-    @Parameter(defaultValue = "GREEN")
-    private Color myColor;
-+-----+
-
-
-** Parameter Types With Multiple Values
-
-  Listed below are the various types of composite objects which can be used as
-  parameters in your mojos, along with any rules on how the values in the
-  POM are interpreted.  In general, the class of the object created to hold the
-  parameter value (as well as the class for each element within the parameter
-  value) is determined as follows (the first step which yields a valid class
-  is used):
-
-  [[1]] If the XML element contains an <<<implementation>>> hint attribute, that is used
-
-  [[2]] If the XML tag contains a <<<.>>>, try that as a fully qualified class name
-
-  [[3]] Try the XML tag (with capitalized first letter) as a class in the same package as the mojo/object being
-        configured
-
-  [[4]] For arrays, use the component type of the array (for example, use <<<String>>>
-        for a <<<String[]>>> parameter); for collections and maps, use the
-        class specified in the mojo configuration for the collection or map;
-        use <<<String>>> for entries in a collection and values in a map
-
-  []
-
-  Once the type for the element is defined, the text in the XML file is
-  converted to the appropriate type of object
-
-
-*** Arrays
-
-  Array type parameters are configured by specifying the parameter multiple
-  times. Example:
-
-+-----+
-    /**
-     * My Array.
-     */
-    @Parameter
-    private String[] myArray;
-+-----+
-
-+-----+
-<myArray>
-  <param>value1</param>
-  <param>value2</param>
-</myArray>
-+-----+
-
-*** Collections
-
-  This category covers any class which implements <<<java.util.Collection>>>
-  such as <<<ArrayList>>> or <<<HashSet>>>.  These parameters are configured by
-  specifying the parameter multiple times just like an array. Example:
-
-+-----+
-    /**
-     * My List.
-     */
-    @Parameter
-    private List myList;
-+-----+
-
-+-----+
-<myList>
-  <param>value1</param>
-  <param>value2</param>
-</myList>
-+-----+
-
-  For details on the mapping of the individual collection elements, see
-  {{{../mini/guide-configuring-plugins.html#Mapping_Lists}Mapping Lists}}.
-
-*** Maps
-
-  This category covers any class which implements <<<java.util.Map>>>
-  such as <<<HashMap>>> but does <<not>> implement <<<java.util.Properties>>>.
-  These parameters are configured by including XML tags in the form
-  <<< <key>value</key> >>> in the parameter configuration. Example:
-
-+-----+
-    /**
-     * My Map.
-     */
-    @Parameter
-    private Map myMap;
-+-----+
-
-+-----+
-<myMap>
-  <key1>value1</key1>
-  <key2>value2</key2>
-</myMap>
-+-----+
-
-*** Properties
-
-  This category covers any map which implements <<<java.util.Properties>>>.
-  These parameters are configured by including XML tags in the form
-  <<< <property><name>myName</name> <value>myValue</value> </property> >>>
-  in the parameter configuration. Example:
-
-+-----+
-    /**
-     * My Properties.
-     */
-    @Parameter
-    private Properties myProperties;
-+-----+
-
-+-----+
-<myProperties>
-  <property>
-    <name>propertyName1</name>
-    <value>propertyValue1</value>
-  <property>
-  <property>
-    <name>propertyName2</name>
-    <value>propertyValue2</value>
-  <property>
-</myProperties>
-+-----+
-
-*** Other Object Classes
-
-  This category covers any class which does not implement <<<java.util.Map>>>,
-  <<<java.util.Collection>>>, or <<<java.util.Dictionary>>>. Example:
-
-+-----+
-    /**
-     * My Object.
-     */
-    @Parameter
-    private MyObject myObject;
-+-----+
-
-+-----+
-<myObject>
-  <myField>test</myField>
-</myObject>
-+-----+
-
-  Please see {{{../mini/guide-configuring-plugins.html#Mapping_Complex_Objects}Mapping Complex Objects}} for details
-  on the strategy used to configure those kind of parameters.
 
 * Using Setters
 

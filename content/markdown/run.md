@@ -25,18 +25,18 @@ All available options are documented in the built-in help that you can access wi
 
     mvn -h
 
-The typical invocation for building a Maven project uses a Maven life cycle phase. E.g.  
+The typical invocation for building a Maven project uses a Maven life cycle phase. E.g.
 
-    mvn package
+    mvn verify
 
-The built-in lifecycles and their phases are in order are:
+The built-in lifecycles and their phases, in order, are:
 
 * clean - pre-clean, clean, post-clean
 
-* default - validate, initialize, generate-sources, process-sources, generate-resources, 
-process-resources, compile, process-classes, generate-test-sources, process-test-sources, 
-generate-test-resources, process-test-resources, test-compile, process-test-classes, 
-test, prepare-package, package, pre-integration-test, integration-test, post-integration-test, 
+* default - validate, initialize, generate-sources, process-sources, generate-resources,
+process-resources, compile, process-classes, generate-test-sources, process-test-sources,
+generate-test-resources, process-test-resources, test-compile, process-test-classes,
+test, prepare-package, package, pre-integration-test, integration-test, post-integration-test,
 verify, install, deploy
 
 * site - pre-site, site, post-site, site-deploy
@@ -65,6 +65,6 @@ or
 There are many different plugins available and they all implement different goals.
 
 
-Further resources: 
+Further resources:
 
 * [Building a Project with Maven](./run-maven/index.html)

@@ -33,15 +33,6 @@ under the License.
 
   <edit>${project.scm.url}</edit>
 
-  <custom>
-    <fluidoSkin>
-      <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
-      <googleSearch>
-        <sitesearch>https://maven.apache.org</sitesearch>
-      </googleSearch>
-    </fluidoSkin>
-  </custom>
-  
   <body>
     <links>
       <item name="Download" href="/download.cgi" />
@@ -73,11 +64,13 @@ under the License.
 
     <menu name="Documentation">
       <item name="Maven Plugins" href="/plugins/index.html" />
+      <item name="Maven Extensions" href="/extensions/index.html" />
       <item name="Index (category)" href="/guides/index.html" />
 
       <item name="User Centre" href="/users/index.html" collapse="true">
         <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html" />
         <item name="Getting Started Guide" href="/guides/getting-started/index.html" collapse="true">
+          <item name="Naming Conventions" href="/guides/mini/guide-naming-conventions.html" />
           <item name="The Build Lifecycle" href="/guides/introduction/introduction-to-the-lifecycle.html" />
           <item name="The POM" href="/guides/introduction/introduction-to-the-pom.html" />
           <item name="Profiles" href="/guides/introduction/introduction-to-profiles.html" />
@@ -93,6 +86,7 @@ under the License.
         <item name="Running Maven" href="/run-maven/index.html" />
         <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
           <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html" />
+          <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
         </item>
         <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
           <item name="Markup Formats" href="/doxia/references/index.html" />
@@ -105,7 +99,16 @@ under the License.
           <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html" />
           <item name="Deploy to Remote" href="/guides/mini/guide-3rd-party-jars-remote.html" />
           <item name="Repository Management" href="/repository-management.html" />
+          <item name="Using Multiple Repositories" href="/guides/mini/guide-multiple-repositories.html" />
+          <item name="Large Scale Centralized Deployments" href="/guides/mini/guide-large-scale-centralized-deployments.html" />
+          <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html" />
+          <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html" />
+          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
+          <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html" />
+          <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html" />
+          <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html" />
+          <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
           <item name="Relocation" href="/guides/mini/guide-relocation.html" />
         </item>
         <item name="Guides" href="/guides/mini/index.html" collapse="true">
@@ -113,25 +116,17 @@ under the License.
           <item name="Creating Assemblies" href="/guides/mini/guide-assemblies.html" />
           <item name="Configuring Archive Plugins" href="/guides/mini/guide-archive-configuration.html" />
           <item name="Configuring Maven" href="/guides/mini/guide-configuring-maven.html" />
-          <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html" />
-          <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html" />
           <item name="Generating Sources" href="/guides/mini/guide-generating-sources.html" />
           <item name="Working with Manifests" href="/guides/mini/guide-manifest.html" />
           <item name="Maven Classloading" href="/guides/mini/guide-maven-classloading.html" />
-          <item name="Using Modules" href="/guides/mini/guide-multiple-modules.html" />
-          <item name="Using Repositories" href="/guides/mini/guide-multiple-repositories.html" />
-          <item name="Using Proxies" href="/guides/mini/guide-proxies.html" />
+          <item name="Using Modules (Maven 3)" href="/guides/mini/guide-multiple-modules.html" />
+          <item name="Using Modules (Maven 4)" href="/guides/mini/guide-multiple-modules-4.html" />
           <item name="Using Release Plugin" href="/guides/mini/guide-releasing.html" />
           <item name="Using Ant" href="/guides/mini/guide-using-ant.html" />
           <item name="Using Modello" href="/guides/mini/guide-using-modello.html" />
           <item name="Using Extensions" href="/guides/mini/guide-using-extensions.html" />
           <item name="Building for Different Environments" href="/guides/mini/guide-building-for-different-environments.html" />
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html" />
-          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html" />
-          <item name="HTTP Connection Settings" href="/guides/mini/guide-http-settings.html" />
-          <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html" />
-          <item name="Building JDK 1.4 Projects Using JDK 1.5" href="/guides/mini/guide-building-jdk14-on-jdk15.html" />
-          <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
         </item>
         <item name="Settings Reference" href="/settings.html" /> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html" />
@@ -143,23 +138,26 @@ under the License.
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
         <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html" />
         <item name="Documenting Plugins" href="/plugin-developers/plugin-documenting.html" />
-        <item name="Plugins Cookbook" href="/plugin-developers/cookbook/index.html" collapse="true">
-          <item name="Build Time" href="/plugin-developers/cookbook/add-build-time-to-manifest.html" />
-          <item name="SVN Revision" href="/plugin-developers/cookbook/add-svn-revision-to-manifest.html" />
-          <item name="Attach Source + Javadoc" href="/plugin-developers/cookbook/attach-source-javadoc-artifacts.html" />
-          <item name="Assembly" href="/plugin-developers/cookbook/generate-assembly.html" />
-          <item name="Plexus Javadoc to Plexus Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
-          <item name="Using JSR-330" href="/maven-jsr330.html" />
-        </item>
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
+        <item name="Maven 3.1.x logging" href="/maven-logging.html" />
         <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />
         <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html" />
+        <item name="Plexus Javadoc to Plexus Annotations" href="/plugin-developers/cookbook/plexus-plugin-upgrade.html" />
+        <item name="Using JSR-330" href="/maven-jsr330.html" />
       </item>
-      <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
-        <item name="Maintaining your Metadata" href="/project-faq.html" />
-        <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html" />
-        <item name="Fixing Metadata" href="/repository/central-metadata.html" />
-        <item name="Central Index" href="/repository/central-index.html" />
+      <item name="Maven Repository Centre" href="/repositories/index.html" collapse="true">
+        <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
+          <item name="Maintaining your Metadata" href="/project-faq.html" />
+          <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html" />
+          <item name="Fixing Metadata" href="/repository/central-metadata.html" />
+          <item name="Central Index" href="/repository/central-index.html" />
+          <item name="Repository Layout" href="/repository/layout.html" />
+        </item>
+        <item name="Maven Artifacts" href="/repositories/artifacts.html" />
+        <item name="Maven Metadata" href="/repositories/metadata.html" />
+        <item name="Maven Layout" href="/repositories/layout.html" />
+        <item name="Maven Local Repository" href="/repositories/local.html" />
+        <item name="Maven Remote Repositories" href="/repositories/remote.html" />
       </item>
       <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html" />
@@ -168,6 +166,9 @@ under the License.
         <item name="Git Convention" href="/developers/conventions/git.html" />
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
+          <item name="Testing Development Plugins" href="/guides/development/guide-testing-development-plugins.html" />
+          <item name="Testing Staged Releases" href="/guides/development/guide-testing-releases.html" />
+          <item name="Becoming Committer" href="/guides/development/guide-committer-school.html" />
         </item>
         <item name="Release Process" href="/developers/release/index.html" collapse="true">
           <item name="Common Procedure" href="/developers/release/maven-project-release-procedure.html" />
@@ -184,7 +185,7 @@ under the License.
           <item name="Settings" href="/developers/committer-settings.html"/>
           <item name="Plugins Retirement Plan" href="/developers/retirement-plan-plugins.html"/>
           <item name="Maven Dependency Policies" href="/developers/dependency-policies.html"/>
-          <item name="Compatibility Plan" href="/developers/compatibility-plan.html"/>
+          <item name="Plugins Compatibility Plan" href="/developers/compatibility-plan.html"/>
         </item>
       </item>
       <item name="Books and Resources" href="/articles.html" />

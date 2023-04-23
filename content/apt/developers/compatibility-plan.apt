@@ -1,5 +1,5 @@
  ------
- Maven Compatibility Plan
+ Maven Plugins Compatibility Plan
  ------
  Hervé Boutemy
  ------
@@ -26,27 +26,31 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Maven Compatibility Plan
+Maven Plugins Compatibility Plan
 
 * Scope
 
-  This page describes the plan on:
+  This page describes the system requirements plan, which consists of:
 
-  [[1]] minimum <<Java>> runtime prerequisite for Maven components and plugins,
+  [[1]] minimum <<Java>> runtime prerequisite for Maven plugins, which can be extended to shared components,
 
   [[2]] minimum <<Maven>> runtime prerequisite for plugins.
 
   []
 
-  Current minimum runtime prerequisites for latest plugins release is visible in a {{{https://builds.apache.org/view/M-R/view/Maven/job/dist-tool-plugin/site/dist-tool-prerequisites.html}daily generated report}}.
+  Such requirements are displayed as "System Requirements" in every plugin info report (see {{{/plugins/maven-clean-plugin/plugin-info.html}this example}}).
+
+  Consolidated view for all LATEST plugins release is visible in a {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-prerequisites.html}daily generated report}}.
 
 * Maven Plan
 
   * Until 2012, Maven 2.2.1 + Java 5 prerequisites, with plugins versions in 2.x
 
-  * Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.0
+  * Since 2012, Maven 3.0 + Java 7 prerequisites, with plugins in 3.x.y
 
   * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}Technical details}}
+
+  * In March 2023, Maven before 3.2.5 has been {{{/docs/history.html#maven-before-3-2-5}marked as EOL}}, meaning that plugins should use 3.2.5 as minimum
 
   []
 
@@ -64,10 +68,12 @@ Maven Compatibility Plan
 
     * Java 8 (2014) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/jdk8u}at OpenJDK}} at least until September 2023
 
-    * Java 11 (LTS, 2019) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/JDKUpdates/JDK11u}at OpenJDK}} at least until ...
+    * Java 11 (LTS, 2018) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/JDKUpdates/JDK11u}at OpenJDK}} at least until September 2025
 
-    * see {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}}
-    
+    * see {{{https://javaalmanac.io/jdk/}Java Version Almanac}} for updated JDK releases
+
     []
+
+    see also {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}} for more details
 
   []

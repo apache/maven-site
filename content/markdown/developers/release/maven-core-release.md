@@ -19,12 +19,28 @@ under the License.
 -->
 Maven differs slightly in its release process due to several extra steps.
 
-The goal is to commit candidate release to svn tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Then once the vote passed, svn move to <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
+The goal is to commit candidate release to svn `dev` tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Once the vote has passed, svn move to `release` <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
 
 The tree directory is:
 
-- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/binaries
-- https://dist.apache.org/repos/dist/release/maven/maven-3/`$VERSION`/source (notice: singular...)
+```
+https://dist.apache.org/repos/dist/dev/maven/maven-3/
+  `-- $VERSION/
+      |-- binaries/
+      |   |-- apache-maven-$VERSION-bin.tar.gz
+      |   |-- apache-maven-$VERSION-bin.tar.gz.asc
+      |   |-- apache-maven-$VERSION-bin.tar.gz.sha512
+      |   |-- apache-maven-$VERSION-bin.zip
+      |   |-- apache-maven-$VERSION-bin.zip.asc
+      |   `-- apache-maven-$VERSION-bin.zip.sha512
+      `-- source/ (notice: singular...)
+          |-- apache-maven-$VERSION-src.tar.gz
+          |-- apache-maven-$VERSION-src.tar.gz.asc
+          |-- apache-maven-$VERSION-src.tar.gz.sha512
+          |-- apache-maven-$VERSION-src.zip
+          |-- apache-maven-$VERSION-src.zip.asc
+          `-- apache-maven-$VERSION-src.zip.sha512
+```
 
 Note that the policy for failed releases is to move forward with a new
 version. The tag that produced the failed released is left in place for
@@ -59,26 +75,14 @@ To produce a final release, the same process as for standard projects is followe
 
 Below describes the additional steps that need to be taken at the points where the website are updated in those instructions.
 
-#### Update the DOAP Information
-
-Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the new release.
-
-#### Update the Release Notes and Web Site
+#### Prepare the Release Notes
 
 Checkout Maven site source <https://github.com/apache/maven-site.git>.
 
-Note that release notes can be created and checked in, but other changes should not be checked in as it can be deployed 'live' at any time.
-
-- For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableReleaseDate` properties in `pom.xml`
-
-Next, create the release notes:
+Create the release notes:
 
 - create `content/markdown/docs/$version`
-- create `content/markdowndocs/$version/release-notes.md` (see other versions for an example)
-
-Next, update release history `content/markdown/docs/history.md.vm`.
-
-Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to [/ref/](/ref).
+- create `content/markdown/docs/$version/release-notes.md` (see other versions for an example)
 
 #### Stage the Latest Documentation
 
@@ -95,7 +99,7 @@ This will publish the Maven core site in [/ref/3-LATEST](/ref/3-LATEST).
 
 ### Complete the release
 
-After a succesful vote you should do the following steps to finish the release.
+After a successful vote you should do the following steps to finish the release.
 
 #### Add New Version to ASF Distribution Directory
 
@@ -103,8 +107,22 @@ In addition to promoting the repository, the release archives should be
 moved to the release svnpubsub tree:
 
 ```
-svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven Distribution Archives"
+svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven $VERSION Distribution Archives"
 ```
+
+#### Update the DOAP Information
+
+Edit <https://github.com/apache/maven/blob/master/doap_Maven.rdf> to list the new release.
+
+#### Update the Web Site
+
+Checkout Maven site source <https://github.com/apache/maven-site.git>.
+
+For 3.x: update the `versions3x`, `currentStableVersion` and `currentStableVersionDetails` properties in `pom.xml`
+
+Next, update release history `content/markdown/docs/history.md.vm`.
+
+Only deploy the site once the release is present on the mirrors, and the reference documentation has been deployed to [/ref/](/ref).
 
 #### Deploy the Latest Documentation to Target Versioned Location
 
@@ -113,7 +131,7 @@ The reference documentation for Maven core source code references and API docs h
 This consists in copying in website svn tree the staging /ref/3-LATEST directory to final /ref/`$VERSION`.
 
 ```
-svn cp https://svn.apache.org/repos/asf/maven/website/components/ref/3-LATEST https://svn.apache.org/repos/asf/maven/website/components/ref/$VERSION
+svn cp https://svn.apache.org/repos/asf/maven/website/components/ref/3-LATEST https://svn.apache.org/repos/asf/maven/website/components/ref/$VERSION -m "Maven $VERSION released"
 ```
 
 ### Information on `/ref/current` mechanism
@@ -128,7 +146,7 @@ Commit your changes and then [deploy the main Maven site](../website/deploy-mave
 
 #### Remove Old Versions from ASF Distribution Directory
 
-Next, any superceded releases should be removed from the above locations (after confirming that they exist in /www/archive.apache.org/dist/maven).
+Next, any superseded releases should be removed from the above locations (after confirming that they exist in /www/archive.apache.org/dist/maven).
 
 #### Proceed with Announcement
 

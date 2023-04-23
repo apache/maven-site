@@ -107,14 +107,16 @@ Using A Single Repository
 
 Advanced Mirror Specification
 
-  A single mirror can handle multiple repositories when used in conjunction with a repository manager.
+  A single mirror can handle multiple repositories. This is typically used in conjunction with a repository manager,
+  that gives easy centralised configuration of the list of repositories behind.
 
-  The syntax as of Maven 2.0.9:
+  The syntax:
 
  * <<<\*>>> matches all repo ids.
 
- * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used in conjunction
-  with a repository manager when you want to exclude redirecting repositories that are defined for Integration Testing.
+ * <<<external:\*>>> matches all repositories except those using localhost or file based repositories. This is used when you want to exclude redirecting repositories that are defined for Integration Testing.
+
+ * since Maven 3.8.0, <<<external:http:\*>>> matches all repositories using HTTP except those using localhost.
 
  * multiple repositories may be specified using a comma as the delimiter
 
@@ -129,7 +131,7 @@ Advanced Mirror Specification
   The position of wildcards within a comma separated list of repository identifiers is not important as the wildcards
   defer to further processing and explicit includes or excludes stop the processing, overruling any wildcard match.
 
-  When you use the advanced syntax and configure multiple mirrors, keep in mind that their declaration order matters.
+  When you use the advanced syntax and configure multiple mirrors, the declaration order matters.
   When Maven looks for a mirror of some repository, it first checks for a mirror whose <<<\<mirrorOf\>>>> exactly
   matches the repository identifier. If no direct match is found, Maven picks the first mirror declaration that matches
   according to the rules above (if any). Hence, you may influence match order by changing the order of the definitions
@@ -146,8 +148,6 @@ Advanced Mirror Specification
  *  <<<\*,!repo1>>> = everything except repo1
 
  []
-
- <<Note:>> This feature is only available in Maven 2.0.9+.
 
 +-----+
 <settings>
@@ -172,9 +172,7 @@ Advanced Mirror Specification
 
 Creating Your Own Mirror
 
-  The size of the central repository is {{{http://search.maven.org/#stats}increasing steadily}}
+  The size of the central repository is {{{https://search.maven.org/stats}increasing steadily}}
   To save us bandwidth and you time, mirroring the entire central repository is not allowed. 
-  (Doing so will get you automatically banned) Instead, we suggest you setup a
+  (Doing so will get you automatically banned.) Instead, we suggest you setup a
   {{{../../repository-management.html}repository manager}} as a proxy.
-
-  If you really want to become an official mirror, contact us at {{{https://issues.sonatype.org/browse/MVNCENTRAL}MVNCENTRAL}} with your location and we'll work to get you setup.

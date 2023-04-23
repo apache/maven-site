@@ -1,0 +1,5 @@
+Contact: mailto:security@apache.org
+Contact: mailto:private@maven.apache.org
+Expires: ${maven.security.expires}
+Preferred-Languages: en
+Policy: https://www.apache.org/security/

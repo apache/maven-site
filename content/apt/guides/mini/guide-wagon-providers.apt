@@ -50,9 +50,9 @@ Guide to Selecting Alternative Wagon Providers
   To specify the Wagon provider from the command line, simply use the 
   <<<-Dmaven.wagon.provider.\<protocol\>=\<provider-name\>>>> command-line option, like the following:
   
-+---+
+-----
 mvn -Dmaven.wagon.provider.http=httpclient clean install
-+---+
+-----
 
   This instructs Maven to use the HttpClient-based Wagon implementation for connections to HTTP repositories.
 
@@ -92,4 +92,4 @@ mvn -Dmaven.wagon.provider.http=httpclient clean install
 +---+
 
   <<NOTE:>> The default provider for HTTP/HTTPS Wagons is <<<lightweight>>>.
-  
+

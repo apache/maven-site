@@ -24,7 +24,7 @@ under the License.
     <title>Welcome to Apache Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
     <author email="jason@takari.io">Jason van Zyl</author>
-    <author email="olamy@apache.org">Olivier Lamy</author>    
+    <author email="olamy@apache.org">Olivier Lamy</author>
   </properties>
   <body>
 
@@ -49,18 +49,16 @@ under the License.
       <tr>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Use</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-          <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="run.html">Run</a> Maven
+          <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="configure.html">Configure</a>, <a href="run.html">Run</a> Maven
         </th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
-          <a href="configure.html">Configure</a>, <a href="users/index.html">Use</a> Maven and <a href="plugins/index.html">Maven Plugins</a>
+           <a href="plugins/index.html">Maven Plugins</a> and <a href="extensions/index.html">Maven Extensions</a>
         </th>
       </tr>
       <tr>
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
-            Information for developers using Maven to build their project, including a "10 minute test" that gives a
-            practical overview of Maven's main features and a <a href="plugins/index.html">plugin list</a>
-            for more information on each plugin.
+            Lists of plugins and extensions to help with your builds.
         </td>
       </tr>
       <tr>
@@ -117,7 +115,7 @@ under the License.
         will answer your questions there, and the answer will be archived for others in the future.
       </p>
       <p>
-        You can also reach the Maven developers on <a href="community.html">IRC</a>.
+        You can also reach the Maven developers on <a href="community.html">Slack</a>.
       </p>
 
       <h3>Apache Software Foundation</h3>

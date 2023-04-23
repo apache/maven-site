@@ -26,50 +26,29 @@
 ~~ NOTE: For help with the syntax of this file, see:
 ~~ https://maven.apache.org/doxia/references/apt-format.html
 
-Introduction
+Committer Environment
 
- This document is intended to set up the Maven committer environment.
+* Introduction
 
-{Source File Encoding}
+ This document describes how to set up the Maven committer environment.
+
+* Source File Encoding
 
  When editing source files, make sure you use the right file encoding. For the Maven project, UTF-8 has been chosen
- as the default file encoding. UTF-8 is an encoding scheme for the Unicode character set and as such allows to encode
- all characters that Java can handle. The source files should not contain the byte order mark (BOM). There can be
- exceptions to this general rule, e.g. properties files are usually encoded using ISO-8859-1 as per the JRE API, so
+ as the default file encoding. UTF-8 is an encoding scheme for the Unicode character set that can encode
+ all characters that Java can handle. The source files should not contain the byte order mark (BOM). There are
+ exceptions to this general rule. For instance, properties files are encoded using ISO-8859-1 as per the JRE API, so
  please keep this in mind, too.
 
-Subversion Configuration
+* Maven Code Style
 
- Before committing files in subversion repository, you need to read the
- {{{https://www.apache.org/dev/version-control.html#https-svn}Committer Subversion Access}}
- document and you must set your svn client with this properties file: {{{./svn-eol-style.txt}svn-eol-style.txt}}
+ Refer to {{{./conventions/code.html}Maven Code Style And Code Conventions}}
 
-{Maven Code Style}
+* Useful software
 
- The following sections show how to set up the code style for Maven in IDEA and Eclipse.
- It is strongly preferred that patches use this style before they are supplied.
+ The Maven Team uses assorted software. Here is a partial list:
 
-* IntelliJ IDEA 4.5+
-
- Download <<<{{{./maven-idea-codestyle.xml}maven-idea-codestyle.xml}}>>> and copy it to
- <<<~~/Library/Preferences/IntelliJIdeaxx/codestyles>>> then restart IDEA (with xx your idea version). On Windows, try
- <<<C:\Documents and Settings\\<username\>\.IntelliJIDEA\config\codestyles>>>
-
- After this, restart IDEA and open the settings to select the new code style.
-
-* Eclipse 3.2+
-
- Download <<<{{{./maven-eclipse-codestyle.xml}maven-eclipse-codestyle.xml}}>>>.
-
- After this, select Window \> Preferences, and open up the configuration for Java \> Code
- Style \> Code Formatter. Click on the button labeled Import... and select the file you
- downloaded. Give the style a name, and click OK.
-
-Useful software
-
- The Maven Team uses several software. Here is a partial list:
-
- * {{{http://www.cygwin.com/}Cygwin}}: collection of free software tools to allow various versions of Microsoft
+ * {{{https://www.cygwin.com/}Cygwin}}: collection of free software tools that allow various versions of Microsoft
    Windows to act somewhat like a Unix system
 
- * {{{http://www.gnupg.org/}GnuPG}}: GNU Privacy Guard.
+ * {{{https://www.gnupg.org/}GnuPG}}: GNU Privacy Guard.

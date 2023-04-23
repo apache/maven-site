@@ -43,7 +43,7 @@ Maven Developer Centre
 
   * {{{../scm.html}Source Code}}
 
-  * {{{https://ci-builds.apache.org/job/Maven/job/maven-box/}Continuous Integration}}
+  * {{{https://ci-maven.apache.org/job/Maven/job/maven-box/}Continuous Integration}}
 
   * {{{../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}
 
@@ -66,6 +66,8 @@ Maven Developer Centre
   * {{{./dependency-policies.html}Maven Dependency Policies}}
 
   * {{{./compatibility-plan.html}Maven Plugins and Components Compatibility Plan}}
+  
+  * {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=5964567}Maven Proposals/Backlog}}
 
   []
 

@@ -145,7 +145,7 @@ Introduction to Repositories
   <repositories>
     <repository>
       <id>my-internal-site</id>
-      <url>http://myserver/repo</url>
+      <url>https://myserver/repo</url>
     </repository>
   </repositories>
   ...

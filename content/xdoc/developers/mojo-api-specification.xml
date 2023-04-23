@@ -27,9 +27,9 @@ under the License.
   </properties>
   <body>
     <section name="Introduction">
-      <p>Starting with Maven, plugins can be written in Java or any of a
+      <p>Maven plugins can be written in Java or any of a
         number of scripting languages. Plugins consists of one or more Mojos,
-        each one being the implementation for one of the plugin's goals.
+        each one being the implementation for one of the plugin's <b>goals</b>.
         Maven tries to stay out of
         the way of the programmer with its new Mojo API. This opens up the
         opportunity for many Mojos to be reused outside of Maven, or bridged
@@ -55,32 +55,25 @@ under the License.
       <p>While this will satisfy the requirements for execution as a Mojo
         inside Maven, it is recommended that Mojos implement
          --> Basically, these Mojo requirements are embodied by the
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code></a>
-        interface, which the Mojo
-        must implement (or else extend its abstract base class counterpart
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html"><code>org.apache.maven.plugin.AbstractMojo</code></a>
-        ). This interface
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code> interface</a>, which the Mojo
+        must implement (or else extend its
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html">abstract base class counterpart <code>org.apache.maven.plugin.AbstractMojo</code></a>).
+        This interface
         guarantees the correct execution contract for the Mojo: no parameters,
         void return type, and a throws clause that allows only
         <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html"><code>org.apache.maven.plugin.MojoExecutionException</code></a>
         and its
         derivatives. It also guarantees that the Mojo will have access to the
         standard Maven user-feedback mechanism,
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>
-        , so the Mojo can
-        communicate important events to the console or other log sink.<!-- Using the
-        Plugin/Mojo API will give that Mojo access to the Maven-integrated Log,
-        along with tighter integration into the Maven build. -->
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>,
+        so the Mojo can communicate important events to the console or other log sink.
       </p>
       <p>As mentioned before, each Plugin - or packaged set of Mojos - must
-        provide a descriptor called
-        <a href="/ref/current/maven-plugin-api/plugin.html"><code>plugin.xml</code></a>
-        under the path
-        <code>META-INF/maven</code>
+        provide a <a href="/ref/current/maven-plugin-api/plugin.html"><code>META-INF/maven/plugin.xml</code> descriptor file</a>
         inside the Plugin jar file. Fortunately,
         Maven also provides a set of Javadoc annotations
         (named <a href="/plugin-tools/maven-plugin-tools-java/index.html">Mojo Javadoc Tags</a>),
-        Java 5 annotations
+        Java annotations
         (named <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">Maven Plugin Tools Java5 Annotations</a>)
         and tools (named <a href="/plugin-tools/">plugin-tools</a>) to generate
         this descriptor, so developers don't have to worry about directly
@@ -427,9 +420,7 @@ under the License.
           <td><code>executionStrategy</code></td>
           <td><code>@executionStrategy &lt;strategy&gt;</code></td>
           <td>No</td>
-          <td>Specify the execution strategy. <i>NOTE: Currently supports <b>once-per-session</b>,
-            <b>always</b>.</i>
-          </td>
+          <td>Specify the execution strategy. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>goal</code></td>
@@ -442,7 +433,7 @@ under the License.
           <td><code>inheritByDefault</code></td>
           <td><code>@inheritByDefault &lt;true|false&gt;</code></td>
           <td>No. Default: <code>true</code></td>
-          <td>Specify that the Mojo is inherited.</td>
+          <td>Specify that the Mojo is inherited. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>instantiationStrategy</code></td>
@@ -536,7 +527,7 @@ under the License.
           <td><code>requiresDirectInvocation</code></td>
           <td><code>@requiresDirectInvocation &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
-          <td>Flags this Mojo to be invoke directly.</td>
+          <td>Flags this Mojo to be invoke directly. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>requiresOnline</code></td>
@@ -554,7 +545,7 @@ under the License.
           <td><code>requiresReports</code></td>
           <td><code>@requiresReports &lt;true|false&gt;</code></td>
           <td>No. Default: <code>false</code></td>
-          <td>Flags this Mojo to require reports. Unsupported since Maven 3.0.</td>
+          <td>Flags this Mojo to require reports. <i>NOTE: Unsupported since Maven 3.0.</i></td>
         </tr>
         <tr>
           <td><code>threadSafe</code></td>
@@ -597,9 +588,9 @@ under the License.
           <td><code>deprecated</code></td>
           <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
           <td>No</td>
-          <td>Specify the version when the Mojo was deprecated to the API. Similar to Javadoc deprecated.
-            This will trigger a warning when a user tries to configure a parameter
-            marked as deprecated.</td>
+          <td>Description with the reason of Mojo deprecation. Similar to Javadoc deprecated.
+            This will trigger a warning when a user tries to use a Mojo marked as deprecated.
+          </td>
         </tr>
         <tr>
           <td><code>since</code></td>
@@ -740,9 +731,9 @@ under the License.
           <td><code>deprecated</code></td>
           <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
           <td>No</td>
-          <td>Specify the version when the Mojo was deprecated to the API. Similar to Javadoc deprecated.
-            This will trigger a warning when a user tries to configure a parameter
-            marked as deprecated.</td>
+          <td>Description with the reason of parameter deprecation. Similar to Javadoc deprecated.
+            This will trigger a warning when a user tries to configure a parameter marked as deprecated.
+          </td>
         </tr>
         <tr>
           <td><code>since</code></td>
@@ -820,7 +811,7 @@ under the License.
         </tr>
       </table>
       <p>After making the changes above, the developer can simply call</p>
-      <source>mvn install</source>
+      <code>mvn install</code>
       <p>
         to install the plugin to
         the local repository. (Any of the other standard lifecycle targets like

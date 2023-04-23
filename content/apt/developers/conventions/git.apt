@@ -50,7 +50,7 @@ Maven Git Convention
   [[2]] Make a fork of the official ASF clone from github.com. For
   example, <<<https://github.com/apache/maven-scm>>>.
 
-  [[3]] Make a branch named after your JIRA. This is not <required>,
+  [[3]] Make a branch named after your JIRA ticket. This is not <required>,
   but it makes it easier for Maven committers to keep track of your 
   contribution.
 
@@ -74,12 +74,12 @@ Maven Git Convention
 
   A commit message should use this template:
 
-+-----+
+-------
 [ISSUE-1] <<Summary field from JIRA>>
 Submitted by: <<Name of non-committer>>
 
 o Comments
-+-----+
+-------
 
   Where:
 
@@ -92,14 +92,14 @@ o Comments
 
   []
 
-eg:
+  eg:
 
-+-----+
+-------
 [MNG-1456] Added the foo to the bar
 Submitted by: Baz Bazman
 
 o Applied without change
-+-----+
+-------
 
 * Apply User Patch
 
@@ -115,15 +115,15 @@ o Applied without change
  closing that pull request. You do this by adding a note to a commit
  message:
 
-+----+
+------
   Closes #NNN.
-+----+
+------
 
   where NNN is the number of the pull request.
 
 * Edit Commit Message
 
-to edit last commit comment:
+  to edit last commit comment:
 
 ---
 $ git commit --amend -m "new comment"

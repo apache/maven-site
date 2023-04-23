@@ -17,23 +17,20 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-1.  [Introduction](#Introduction)
-    1.  [Quick Overview](#Quick_Overview)
-
-2.  [Settings Details](#Settings_Details)
-    1.  [Simple Values](#Simple_Values)
-    2.  [Plugin Groups](#Plugin_Groups)
-    3.  [Servers](#Servers)
-        1.  [Password Encryption](#Password_Encryption)
-
-    4.  [Mirrors](#Mirrors)
-    5.  [Proxies](#Proxies)
-    6.  [Profiles](#Profiles)
-        1.  [Activation](#Activation)
-        2.  [Repositories](#Repositories)
-        3.  [Plugin Repositories](#Plugin_Repositories)
-
-    7.  [Active Profiles](#Active_Profiles)
+- [Introduction](#introduction)
+    - [Quick Overview](#quick-overview)
+- [Settings Details](#settings-details)
+    - [Simple Values](#simple-values)
+    - [Plugin Groups](#plugin-groups)
+    - [Servers](#servers)
+        - [Password Encryption](#password-encryption)
+    - [Mirrors](#mirrors)
+    - [Proxies](#proxies)
+    - [Profiles](#profiles)
+        - [Activation](#activation)
+        - [Repositories](#repositories)
+        - [Plugin Repositories](#plugin-repositories)
+    -  [Active Profiles](#active-profiles)
 
 ## Introduction
 
@@ -64,19 +61,19 @@ your needs.
 
 Here is an overview of the top elements under `settings`:
 
-```
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      <localRepository/>
-      <interactiveMode/>
-      <offline/>
-      <pluginGroups/>
-      <servers/>
-      <mirrors/>
-      <proxies/>
-      <profiles/>
-      <activeProfiles/>
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <localRepository/>
+  <interactiveMode/>
+  <offline/>
+  <pluginGroups/>
+  <servers/>
+  <mirrors/>
+  <proxies/>
+  <profiles/>
+  <activeProfiles/>
+</settings>
 ```
 
 The contents of the `settings.xml` can be interpolated using the
@@ -123,14 +120,16 @@ groupId. The list is searched when a plugin is used and the groupId is
 not provided in the command line. This list automatically contains
 `org.apache.maven.plugins` and `org.codehaus.mojo`.
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      ...
-      <pluginGroups>
-        <pluginGroup>org.eclipse.jetty</pluginGroup>
-      </pluginGroups>
-      ...
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <pluginGroups>
+    <pluginGroup>org.eclipse.jetty</pluginGroup>
+  </pluginGroups>
+  ...
+</settings>
+```
 
 For example, given the above settings the Maven command line may execute
 `org.eclipse.jetty:jetty-maven-plugin:run` with the truncated command:
@@ -146,23 +145,25 @@ of the POM. However, certain settings such as `username` and `password`
 should not be distributed along with the `pom.xml`. This type of
 information should exist on the build server in the `settings.xml`.
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      ...
-      <servers>
-        <server>
-          <id>server001</id>
-          <username>my_login</username>
-          <password>my_password</password>
-          <privateKey>${user.home}/.ssh/id_dsa</privateKey>
-          <passphrase>some_passphrase</passphrase>
-          <filePermissions>664</filePermissions>
-          <directoryPermissions>775</directoryPermissions>
-          <configuration></configuration>
-        </server>
-      </servers>
-      ...
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <servers>
+    <server>
+      <id>server001</id>
+      <username>my_login</username>
+      <password>my_password</password>
+      <privateKey>${user.home}/.ssh/id_dsa</privateKey>
+      <passphrase>some_passphrase</passphrase>
+      <filePermissions>664</filePermissions>
+      <directoryPermissions>775</directoryPermissions>
+      <configuration></configuration>
+    </server>
+  </servers>
+  ...
+</settings>
+```
 
 -   **id**: This is the ID of the server *(not of the user to login as)*
     that matches the `id` element of the repository/mirror that Maven
@@ -191,19 +192,21 @@ page](./guides/mini/guide-encryption.html)
 
 ### Mirrors
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      ...
-      <mirrors>
-        <mirror>
-          <id>planetmirror.com</id>
-          <name>PlanetMirror Australia</name>
-          <url>http://downloads.planetmirror.com/pub/maven2</url>
-          <mirrorOf>central</mirrorOf>
-        </mirror>
-      </mirrors>
-      ...
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <mirrors>
+    <mirror>
+      <id>planetmirror.com</id>
+      <name>PlanetMirror Australia</name>
+      <url>http://downloads.planetmirror.com/pub/maven2</url>
+      <mirrorOf>central</mirrorOf>
+    </mirror>
+  </mirrors>
+  ...
+</settings>
+```
 
 -   **id**, **name**: The unique identifier and user-friendly name of
     this mirror. The `id` is used to differentiate between `mirror`
@@ -223,23 +226,25 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 
 ### Proxies
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      ...
-      <proxies>
-        <proxy>
-          <id>myproxy</id>
-          <active>true</active>
-          <protocol>http</protocol>
-          <host>proxy.somewhere.com</host>
-          <port>8080</port>
-          <username>proxyuser</username>
-          <password>somepassword</password>
-          <nonProxyHosts>*.google.com|ibiblio.org</nonProxyHosts>
-        </proxy>
-      </proxies>
-      ...
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <proxies>
+    <proxy>
+      <id>myproxy</id>
+      <active>true</active>
+      <protocol>http</protocol>
+      <host>proxy.somewhere.com</host>
+      <port>8080</port>
+      <username>proxyuser</username>
+      <password>somepassword</password>
+      <nonProxyHosts>*.google.com|ibiblio.org</nonProxyHosts>
+    </proxy>
+  </proxies>
+  ...
+</settings>
+```
 
 -   **id**: The unique identifier for this proxy. This is used to
     differentiate between `proxy` elements.
@@ -275,35 +280,37 @@ of a profile comes from its ability to modify some values only under
 certain circumstances; those circumstances are specified via an
 `activation` element.
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <profiles>
+    <profile>
+      <id>test</id>
+      <activation>
+        <activeByDefault>false</activeByDefault>
+        <jdk>1.5</jdk>
+        <os>
+          <name>Windows XP</name>
+          <family>Windows</family>
+          <arch>x86</arch>
+          <version>5.1.2600</version>
+        </os>
+        <property>
+          <name>mavenVersion</name>
+          <value>2.0.3</value>
+        </property>
+        <file>
+          <exists>${basedir}/file2.properties</exists>
+          <missing>${basedir}/file1.properties</missing>
+        </file>
+      </activation>
       ...
-      <profiles>
-        <profile>
-          <id>test</id>
-          <activation>
-            <activeByDefault>false</activeByDefault>
-            <jdk>1.5</jdk>
-            <os>
-              <name>Windows XP</name>
-              <family>Windows</family>
-              <arch>x86</arch>
-              <version>5.1.2600</version>
-            </os>
-            <property>
-              <name>mavenVersion</name>
-              <value>2.0.3</value>
-            </property>
-            <file>
-              <exists>${basedir}/file2.properties</exists>
-              <missing>${basedir}/file1.properties</missing>
-            </file>
-          </activation>
-          ...
-        </profile>
-      </profiles>
-      ...
-    </settings>
+    </profile>
+  </profiles>
+  ...
+</settings>
+```
 
 Activation occurs when all specified criteria have been met, though not
 all are required at once.
@@ -362,20 +369,22 @@ all accessible from the `settings.xml` file:
 
 <!-- -->
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <profiles>
+    <profile>
       ...
-      <profiles>
-        <profile>
-          ...
-          <properties>
-            <user.install>${user.home}/our-project</user.install>
-          </properties>
-          ...
-        </profile>
-      </profiles>
+      <properties>
+        <user.install>${user.home}/our-project</user.install>
+      </properties>
       ...
-    </settings>
+    </profile>
+  </profiles>
+  ...
+</settings>
+```
 
 The property `${user.install}` is accessible from a POM if this profile
 is active.
@@ -389,38 +398,50 @@ remote repositories may contain different projects, and under the active
 profile they may be searched for a matching release or snapshot
 artifact.
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <profiles>
+    <profile>
       ...
-      <profiles>
-        <profile>
-          ...
-          <repositories>
-            <repository>
-              <id>codehausSnapshots</id>
-              <name>Codehaus Snapshots</name>
-              <releases>
-                <enabled>false</enabled>
-                <updatePolicy>always</updatePolicy>
-                <checksumPolicy>warn</checksumPolicy>
-              </releases>
-              <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>never</updatePolicy>
-                <checksumPolicy>fail</checksumPolicy>
-              </snapshots>
-              <url>http://snapshots.maven.codehaus.org/maven2</url>
-              <layout>default</layout>
-            </repository>
-          </repositories>
-          <pluginRepositories>
-            ...
-          </pluginRepositories>
-          ...
-        </profile>
-      </profiles>
+      <repositories>
+        <repository>
+          <id>codehausSnapshots</id>
+          <name>Codehaus Snapshots</name>
+          <releases>
+            <enabled>false</enabled>
+            <updatePolicy>always</updatePolicy>
+            <checksumPolicy>warn</checksumPolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+            <checksumPolicy>fail</checksumPolicy>
+          </snapshots>
+          <url>http://snapshots.maven.codehaus.org/maven2</url>
+          <layout>default</layout>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>myPluginRepo</id>
+          <name>My Plugins repo</name>
+          <releases>
+            <enabled>true</enabled>
+          </releases>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <url>https://maven-central-eu....com/maven2/</url>
+        </pluginRepository>
+      </pluginRepositories>
       ...
-    </settings>
+    </profile>
+  </profiles>
+  ...
+</settings>
+```
 
 -   **releases**, **snapshots**: These are the policies for each type of
     artifact, Release or snapshot. With these two sets, a POM has the
@@ -458,13 +479,15 @@ Maven can find new plugins.
 
 ### Active Profiles
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      ...
-      <activeProfiles>
-        <activeProfile>env-test</activeProfile>
-      </activeProfiles>
-    </settings>
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  ...
+  <activeProfiles>
+    <activeProfile>env-test</activeProfile>
+  </activeProfiles>
+</settings>
+```
 
 The final piece of the `settings.xml` puzzle is the `activeProfiles`
 element. This contains a set of `activeProfile` elements, which each

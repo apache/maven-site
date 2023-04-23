@@ -38,21 +38,16 @@
         </p>
         <p>
           Whether you want to use Maven or not, users of your project - especially if you provide a framework or
-          reusable library - may choose to use <a href="/repository/">Central Maven repository</a>.
+          reusable library — may choose to use the <a href="/repository/">Central Maven repository</a>.
           The quality of the metadata in the Central Maven repository is important
           to your users, as they list dependencies on your metadata and link in the information into their own
           projects.
         </p>
         <p>
-          Maintaining the metadata for your project is not hard - you can submit it to Central Maven repository at release time (and
-          for large projects it can be setup automatically), and just need to describe your project, its location,
-          version and most importantly its dependencies. Not doing so, or providing incomplete or invalid information
+          Maintaining the metadata for your project is not hard, You can submit it to the Central Maven repository at release time,
+          and this can be automated. You just need to describe your project, its location,
+          version, and most importantly its dependencies. Not doing so, or providing incomplete or invalid information
           leaves this responsibility to the users of your project.
-        </p>
-        <p>
-          The Maven team does <a href="/guides/mini/guide-maven-evangelism.html">work on this metadata actively to improve its quality</a>, but with thousands of artifacts in
-          the repository and only a certain level of knowledge of other projects this is not ideal. Nobody knows your
-          project better than you.
         </p>
       </answer>
     </faq>
@@ -89,27 +84,15 @@
           The packaging is the type of your artifact, such as jar, war, ear, ejb, dll, etc.
         </p>
         <p>
-          Each dependency also contains their group ID and artifact ID, as well as version specification.
+          Each dependency also contains its group ID and artifact ID, as well as version specification.
           In particular, you should ensure that optional dependencies are marked as such, and that runtime and testing
-          only dependencies are marked with the given scope. Ranges can be used for version if that is appropriate,
-          such as commons-collections [2.0,3.0). Ensure that the dependency exists in the Maven system and matches
+          only dependencies are marked with the given scope. Ensure that the dependency exists in the Maven system and matches
           first.
         </p>
         <p>
           See the format of the
           <a href="/maven-model/maven.html">project descriptor</a>
           for more information.
-        </p>
-      </answer>
-    </faq>
-    <faq id="how-to-automatically-sync">
-      <question>How do I ensure my latest releases automatically appear in the Central Maven repository?</question>
-      <answer>
-        <p>
-          If you are able to publish your releases to a Maven2 style repository and make it available over rsync,
-          we can automatically publish them to ibiblio when released. This procedure requires that you take full
-          responsibility for your metadata, but also ensures the best service for your users. If this is interesting
-          to your project, contact dev@maven.apache.org.
         </p>
       </answer>
     </faq>

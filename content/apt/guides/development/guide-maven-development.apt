@@ -75,6 +75,10 @@ Developing Maven
  The most convenient way is to create a GitHub fork from the Git repository you are working with.
  When you have either completed an issue or just want some feedback on the work you have done, create a pull request.
  We have a couple of guidelines when submitting contributions:
+ 
+ * Verify the status of the <<<master>>> branch on {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-master-jobs.html}Maven CI}}.
+   If it is not SUCCESS, then first try to figure out the problem. Don't start with your own issue yet! You can use <<<git bisect>>> to figure out the problematic commit and help 
+   with that committer to solve the problem.
 
  * Create your branch from <<<master>>>, not from a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
    to the development head.
@@ -178,8 +182,9 @@ Developing Maven
 
  ** <<Maven Wagon>>
 
- Maven Wagon is a standalone API that deals with transporting files and directories. Maven Core uses the Wagon
- API to download and upload artifacts and artifact metadata. The site plug-in uses it to publish the site.
+ Maven Wagon is a standalone API that dealt with transporting files and directories in Maven 2.x. Maven Core today
+ uses the Resolver Transport API, that among other implementations, contains a wrapper for Wagon as well.
+ Also, the site plug-in uses it to publish the site.
 
  You can {{{/wagon/}read more about Wagon}}.
 

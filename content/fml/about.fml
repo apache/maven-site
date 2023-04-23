@@ -95,14 +95,7 @@
           Help for Maven can be obtained by subscribing and posting to the
           <a href="https://maven.apache.org/mailing-lists.html">Maven Users List</a>.
         </p>
-        <p>
-          You can also join us on IRC (Internet Relay Chat) at <code>irc.freenode.net</code>
-          on <code>#maven</code>. 
-          over <a href="irc://irc.freenode.net/#maven">IRC</a>
-          for those behind firewalls (enter <code>#maven</code> in the <i>Channel</i> box).
-        </p>
       </answer>
     </faq>
   </part>
 </faqs>
-

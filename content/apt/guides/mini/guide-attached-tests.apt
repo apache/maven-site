@@ -28,9 +28,9 @@
 
 Guide to using attached tests
 
- Many times you may want to reuse the tests that you have created for a project in another. For example if you have
- written <<<foo-core>>> and it contains test code in the <<<$\{basedir\}/src/test/java>>> it would be useful to package
- up those compiled tests in a JAR and deploy them for general reuse. To do this you would configure the
+ You can reuse the tests that you have created for one project in another. For example, suppose
+ <<<foo-core>>> contains test code in the <<<$\{basedir\}/src/test/java>>>. To package
+ up those compiled tests in a JAR and deploy them for general reuse, configure the
  <<<maven-jar-plugin>>> as follows:
 
 +----+
@@ -56,32 +56,10 @@ Guide to using attached tests
 
 +----+
 
-* Installing the attached test JAR
+  The attached test JAR can be installed and deployed like any other Maven artifact.
 
- In order to install the attached test JAR you simply use the standard <<<install>>> phase by executing
- the following command:
-
-+----+
-
-mvn install
-
-+----+
-
-* Deploying the attached test JAR
-
- In order to deploy the attached test JAR you simply use the standard <<<deploy>>> phase by executing
- the following command:
-
-+----+
-
-mvn deploy
-
-+----+
-
-* Using the attached test JAR
-
- In order to use the attached test JAR that was created above you simply specify a dependency on the main
- artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
+  To use the attached test JAR, specify a dependency on the main
+  artifact with a specified type of <<<test-jar>>> and the <<<classifier>>>.
 
 +----+
 
@@ -90,14 +68,42 @@ mvn deploy
   <dependencies>
     <dependency>
       <groupId>com.myco.app</groupId>
-      <artifactId>foo</artifactId>
+      <artifactId>foo-core</artifactId>
       <version>1.0-SNAPSHOT</version>
       <classifier>tests</classifier>
       <type>test-jar</type>
       <scope>test</scope>
     </dependency>
+
+    <dependency>
+      <!--
+        only needed if the test provider is not correctly autodetected by surefire
+        ... and you are using junit-jupiter (othewise, replace with your test framework)
+      -->
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version> <!-- remember to set version as needed -->
+      <scope>test</scope>
+    </dependency>
   </dependencies>
   ...
+  <build>
+    <plugins>
+      ...
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${surefire.version}</version> <!-- remember to set version as needed -->
+          <configuration>
+              <dependenciesToScan>
+                  <dependency>com.myco.app:foo-core:test-jar:tests</dependency>
+              </dependenciesToScan>
+          </configuration>
+      </plugin>
+      ...
+    </plugins>
+   </build>
+   ...
 </project>
 
 +----+

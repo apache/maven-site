@@ -91,6 +91,24 @@ under the License.
             <th>Published</th>
           </tr>
           <tr>
+            <td><a href="https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html">From Maven 3 to Maven 5</a></td>
+            <td><a href="https://www.javaadvent.com/">JVM Advent</a></td>
+            <td>Hervé Boutemy</td>
+            <td>December 2021</td>
+          </tr>
+          <tr>
+            <td><a href="https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/">Introduction to Maven Toolchains</a></td>
+            <td></td>
+            <td>Maarten Mulders</td>
+            <td>March 2021</td>
+          </tr>
+          <tr>
+              <td><a href="https://maarten.mulders.it/2020/11/whats-new-in-maven-4/">What's New in Maven 4</a></td>
+              <td></td>
+              <td>Maarten Mulders</td>
+              <td>November 2020</td>
+          </tr>
+          <tr>
             <td><a href="https://maarten.mulders.it/2020/01/customise-the-maven-release-process/">Customise the Maven Release process</a></td>
             <td></td>
             <td>Maarten Mulders</td>

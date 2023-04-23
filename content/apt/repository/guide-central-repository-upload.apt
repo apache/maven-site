@@ -32,7 +32,7 @@ Guide to uploading artifacts to the Central Repository
  In order for users of Maven to utilize artifacts produced by your project, you must deploy them to
  a remote repository. Many open source projects want to allow users of their projects who build with
  Maven to have transparent access to their project's artifacts. In order to allow for this, a project
- must have their artifacts deployed to {{{/repository/}the Central Repository}}.
+ should deploy their artifacts to the {{{/repository/}Central Repository}}.
 
 
 Requirements
@@ -161,23 +161,21 @@ Publishing your artifacts to the Central Repository
 
  Currently approved repository hosting locations:
 
-  * {{{http://www.apache.org/}Apache Software Foundation}} (for all Apache projects)
+  * {{{https://repository.apache.org/}Apache Software Foundation}} (for all Apache projects)
 
-  * {{{http://www.fusesource.org/forge/}FuseSource Forge}} (focused on FUSE related projects)
-
-  * {{{http://www.nuiton.org}Nuiton.org}}
+  * see {{{https://central.sonatype.org/publish/large-orgs/}the full list}}
 
  []
 
  Automatic publication will be provided for Forges that provide hosting services for OSS projects and other large project repositories
  that meet certain minimum criteria such as validation of PGP keys and pom contents as defined above. If you are interested in
- becoming an approved Forge, contact us at <<<repo-maintainers@maven.apache.org>>>.
+ becoming an approved Forge, {{{https://central.sonatype.org/publish/large-orgs/}contact us}}.
 
 * Other Projects
 
  The easiest way to upload another project is to use the
- {{{http://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}}, which is an approved repository provided
- by Sonatype for <any> OSS Project that want to get their artifacts into the Central Repository.
+ {{{https://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}}, which is an approved repository provided
+ by Sonatype for <any> OSS Project that wants to get its artifacts into the Central Repository.
 
 * Explanations
 
