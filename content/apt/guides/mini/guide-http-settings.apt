@@ -106,12 +106,9 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   
 **Configuring GET, HEAD, PUT, or All of the Above
 
-<<<<<<< HEAD
-=======
   <<Starting with Maven 3.9.0 native HTTP transport will pick up the "all" settings only (get, head, put are neglected!)"
-  but it will WARN about it's deprecation. For users sticking with Wagon nothing changes.>>
+  but it will WARN about its deprecation. For users sticking with Wagon nothing changes.>>
 
->>>>>>> master
   In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given
   server, or for only one method. To configure all methods for a server, use the following section of the <<<settings.xml>>> file:
   
@@ -133,8 +130,8 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+
 
-  On the other hand, if you can live with the default configuration for most requests - say, HEAD and GET requests, which are used to
-  check for the existence of a file and retrieve a file respectively - maybe you only need to configure the PUT method:
+  On the other hand, if you can live with the default configuration for most requests — say, HEAD and GET requests, which are used to
+  check for the existence of a file and retrieve a file respectively — maybe you only need to configure the PUT method:
   
 +---+
 <settings>
