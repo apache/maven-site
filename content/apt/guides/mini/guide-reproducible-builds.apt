@@ -163,7 +163,7 @@ mvn clean verify artifact:compare
 *----------------------------------------------------------------------------+-------+--------------+
 | Eclipse {{{https://www.eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/}Sisu Maven Plugin}} | 0.3.4 |
 *----------------------------------------------------------------------------+-------+--------------+
-| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/}springboot-maven-plugin}} |  | not reproducible
+| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/}springboot-maven-plugin}} | 2.3.0 |
 *----------------------------------------------------------------------------+-------+--------------+ 
 | MojoHaus {{{https://www.mojohaus.org/properties-maven-plugin/}properties-maven-plugin}} | 1.1.0 |
 *----------------------------------------------------------------------------+-------+--------------+
