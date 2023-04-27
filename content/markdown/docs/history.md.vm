@@ -80,7 +80,7 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2023-03-20" "4.0.0-alpha-5" "https://lists.apache.org/thread/5k5g70xcbbqck6y6dy2344ol4d2qd5my" "" "Java 8" "4" )
+#release( "2023-03-20" "4.0.0-alpha-5" "https://lists.apache.org/thread/5k5g70xcbbqck6y6dy2344ol4d2qd5my" "true" "Java 8" "4" )
 #release( "2023-01-31" "4.0.0-alpha-4" "https://lists.apache.org/thread/1pj6nqo10xddq26vyxj9p1q1s8m70bx2" "" "" "" )
 #release( "2022-12-15" "4.0.0-alpha-3" "https://lists.apache.org/thread/0j63n7o3lnlz9mmk39wqh1jx5h3r7vqv" "" "" "" )
 #release( "2022-10-24" "4.0.0-alpha-2" "https://lists.apache.org/thread/snnlfsk24wmdp8tp79b2k11ln34hk6ks" "" "" "" )
@@ -136,8 +136,8 @@ The following information is made available for reference.</p>
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "" "" )
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )
-#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "1" )
-#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" "Java 6" "3" )
+#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "4" )
+#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
 #release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
 #release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
 #release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "17" )
