@@ -1,0 +1,78 @@
+<!--
+ Licensed to the Apache Software Foundation (ASF) under one
+ or more contributor license agreements.  See the NOTICE file
+ distributed with this work for additional information
+ regarding copyright ownership.  The ASF licenses this file
+ to you under the Apache License, Version 2.0 (the
+ "License"); you may not use this file except in compliance
+ with the License.  You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+ Unless required by applicable law or agreed to in writing,
+ software distributed under the License is distributed on an
+ "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+ KIND, either express or implied.  See the License for the
+ specific language governing permissions and limitations
+ under the License.
+
+ NOTE: For help with the syntax of this file, see:
+ http://maven.apache.org/doxia/modules/index.html#Markdown
+-->
+
+# Release Notes &#x2013; Maven 3.9.2
+
+The Apache Maven team would like to announce the release of Maven 3.9.2.
+
+Maven 3.9.2 is [available for download][0].
+
+Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting, and documentation from a central place.
+
+The core release is independent of plugin releases. Further releases of plugins will be made separately. See the [PluginList][1] for more information.
+
+If you have any questions, please consult:
+
+- the web site: [https://maven.apache.org/][2]
+- the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
+- the reference documentation: [https://maven.apache.org/ref/3.9.2/](/ref/3.9.2/)
+
+## Overview About the Changes
+
+* Regression fixes from Maven 3.9.1
+* General performance and other fixes
+
+The full list of changes can be found in our [issue management system][4].
+
+### Notable New Features
+
+* Dependency upgrade [MNG-7769](https://issues.apache.org/jira/browse/MNG-7769) updated Resolver to version 1.9.10. Maven 3.9.1 used Resolver 1.9.7. For
+changes since Resolver 1.9.7 see release notes for Resolver [1.9.8](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12352986), 
+[1.9.9](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353151) and
+[1.9.10](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353177).
+* Task [MNG-7774](https://issues.apache.org/jira/browse/MNG-7774) implemented interpolation for configuration and command line, but also provides two new
+properties usable in configuration interpolation: `session.topDirectory` (reactor top directory) and `session.rootDirectory` (project root directory, usually where `.mvn`
+directory reside). It is recommended to create `.mvn` directory in project root directory, even if not used, as presence of this directory is used to 
+detect root directory location. Important note: if `.mvn` directory does not exists, root directory will not be detected, and if expression `session.rootDirectory`
+present, Maven will refuse to start (will report error). Important: due this above, it is recommended to have only one `.mvn` directory, at very root of project.
+In case of multiple `.mvn` directories, behavior is undefined and unsupported.
+
+### Potentially Breaking Core Changes (if migrating from 3.8.x)
+
+* The Maven Resolver transport has changed from Wagon to "native HTTP", see [Resolver Transport guide](/guides/mini/guide-resolver-transport.html).
+* Maven 2.x was auto-injecting an ancient version of `plexus-utils` dependency into the plugin classpath, and Maven 3.x continued doing this to preserve backward compatibility. Starting with Maven 3.9, it does not happen anymore. This change may lead to plugin breakage. The fix for affected plugin maintainers is to explicitly declare a dependency on `plexus-utils`. The workaround for affected plugin users is to add this dependency to plugin dependencies until issue is fixed by the affected plugin maintainer. See [MNG-6965](https://issues.apache.org/jira/browse/MNG-6965).
+* Mojos are prevented to boostrap new instance of `RepositorySystem` (for example by using deprecated `ServiceLocator`), they should reuse `RepositorySystem` instance provided by Maven instead. See [MNG-7471](https://issues.apache.org/jira/browse/MNG-7471).
+* Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
+
+## Known Issues
+
+None.
+
+## Complete Release Notes
+
+See [complete release notes for all versions][5]
+
+[0]: ../../download.html
+[1]: ../../plugins/index.html
+[2]: https://maven.apache.org/
+[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12352958
+[5]: ../../docs/history.html
