@@ -45,16 +45,14 @@ The full list of changes can be found in our [issue management system][4].
 
 ### Notable New Features
 
-* Dependency upgrade [MNG-7769](https://issues.apache.org/jira/browse/MNG-7769) updated Resolver to version 1.9.10. Maven 3.9.1 used Resolver 1.9.7. For
+* Dependency upgrade [MNG-7769](https://issues.apache.org/jira/browse/MNG-7769) lifted Resolver to version 1.9.10. Maven 3.9.1 used Resolver 1.9.7. For
 changes since Resolver 1.9.7 see release notes for Resolver [1.9.8](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12352986), 
 [1.9.9](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353151) and
 [1.9.10](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353177).
 * Task [MNG-7774](https://issues.apache.org/jira/browse/MNG-7774) implemented interpolation for configuration and command line, but also provides two new
 properties usable in configuration interpolation: `session.topDirectory` (reactor top directory) and `session.rootDirectory` (project root directory, usually where `.mvn`
-directory reside). It is recommended to create `.mvn` directory in project root directory, even if not used, as presence of this directory is used to 
-detect root directory location. Important note: if `.mvn` directory does not exists, root directory will not be detected, and if expression `session.rootDirectory`
-present, Maven will refuse to start (will report error). Important: due this above, it is recommended to have only one `.mvn` directory, at very root of project.
-In case of multiple `.mvn` directories, behavior is undefined and unsupported.
+directory reside). It is recommended to create `.mvn` directory in project root directory, as presence of this directory is used to 
+detect root directory location. If `.mvn` directory does not exists, root directory will not be detected, and in such case attempted use of expression `session.rootDirectory` in interpolation will make Maven refuse to start (will report error).
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
