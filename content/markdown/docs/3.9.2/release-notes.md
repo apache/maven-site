@@ -53,6 +53,7 @@ changes since Resolver 1.9.7 see release notes for Resolver [1.9.8](https://issu
 properties usable in configuration interpolation: `session.topDirectory` (reactor top directory) and `session.rootDirectory` (project root directory, usually where `.mvn`
 directory reside). It is recommended to create `.mvn` directory in project root directory, as presence of this directory is used to 
 detect root directory location. If `.mvn` directory does not exists, root directory will not be detected, and in such case attempted use of expression `session.rootDirectory` in interpolation will make Maven refuse to start (will report error).
+* Plugin validation warnings are not littered in build log flow, but are collected and reported at the build end.
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
