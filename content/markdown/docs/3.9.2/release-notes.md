@@ -57,8 +57,9 @@ detect root directory location. If `.mvn` directory does not exists, root direct
 have been extended, more warnings are to be expected if build contains plugins that may not work with upcoming Maven 4. The build end validation report
 verbosity can be controlled by `maven.plugin.validation` property values "brief", "default" and "verbose". The validation report cannot be turned off,
 only by not having validation issues in the build, when the report is not shown. See [MNG-7712](https://issues.apache.org/jira/browse/MNG-7712),
-[MNG-7754](https://issues.apache.org/jira/browse/MNG-7754) and [MNG-7767](https://issues.apache.org/jira/browse/MNG-7767). Almost all of the Maven Core plugins
-have been released with fixes to get rid of warnings, updating them is recommended. For non-ASF plugins, contact plugin maintainers to apply required changes.
+[MNG-7754](https://issues.apache.org/jira/browse/MNG-7754) and [MNG-7767](https://issues.apache.org/jira/browse/MNG-7767). Almost all of the ASF Maven plugins
+have been released with fixes to get rid of warnings, updating them is recommended. See [Available Plugins](https://maven.apache.org/plugins/) page for current
+plugin versions. For non-ASF plugins, contact plugin maintainers to apply required changes.
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
