@@ -53,7 +53,12 @@ changes since Resolver 1.9.7 see release notes for Resolver [1.9.8](https://issu
 properties usable in configuration interpolation: `session.topDirectory` (reactor top directory) and `session.rootDirectory` (project root directory, usually where `.mvn`
 directory reside). It is recommended to create `.mvn` directory in project root directory, as presence of this directory is used to 
 detect root directory location. If `.mvn` directory does not exists, root directory will not be detected, and in such case attempted use of expression `session.rootDirectory` in interpolation will make Maven refuse to start (will report error).
-* Plugin validation warnings are not littered in build log flow, but are collected and reported at the build end.
+* Plugin validation warnings change: they are not littered in console log anymore, but are collected and reported at the build end. Moreover, the validation checks
+have been extended, more warnings are to be expected if build contains plugins that may not work with upcoming Maven 4. The build end validation report
+verbosity can be controlled by `maven.plugin.validation` property values "brief", "default" and "verbose". The validation report cannot be turned off,
+only by not having validation issues in the build, when the report is not shown. See [MNG-7712](https://issues.apache.org/jira/browse/MNG-7712),
+[MNG-7754](https://issues.apache.org/jira/browse/MNG-7754) and [MNG-7767](https://issues.apache.org/jira/browse/MNG-7767). Almost all of the Maven Core plugins
+have been released with fixes to get rid of warnings, updating them is recommended. For non-ASF plugins, contact plugin maintainers to apply required changes.
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
