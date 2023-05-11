@@ -87,7 +87,7 @@ Date format is: YYYY-MM-DD
 
 </table>
 
-<h3><a name="Maven_38">Maven 3.8.8+</a></h3>
+<h3><a name="Maven_38">Maven 3.8.x+</a></h3>
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -100,11 +100,18 @@ Date format is: YYYY-MM-DD
 #release( "2023-05-11" "3.9.2" "https://lists.apache.org/thread/6bjn6hkwo612qsd9dt6qx4ob9q2q261k" "true" "Java 8" "3" )
 #release( "2023-03-14" "3.9.1" "https://lists.apache.org/thread/ppqvkt413fpsyh0kqjcr4dl5vy3m1lgg" "" "" "" )
 #release( "2023-01-31" "3.9.0" "https://lists.apache.org/thread/0tfr7t2j2ddbv4gjvxm47yohtk3dg6b3" "" "" "" )
-#release( "2023-03-08" "3.8.8" "announce/202303.mbox/%3C{uuid}@apache.org%3E" "true" "Java 7" "21" )
+#release( "2023-03-08" "3.8.8" "announce/202303.mbox/%3C{uuid}@apache.org%3E" "true" "Java 7" "8" )
+#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "" "" "" )
+#release( "2022-06-06" "3.8.6" "announce/202206.mbox/%3C850c94d3-c7d3-81a3-b6e2-5b6f0d268126@apache.org%3E" "" "" "" )
+#release( "2022-03-05" "3.8.5" "announce/202203.mbox/%3Cb5eab336-e5ba-73bb-1c0c-d063d919ce4d@apache.org%3E" "" "" "" )
+#release( "2021-11-14" "3.8.4" "announce/202111.mbox/%3C55867acd-a5d4-6f42-ef39-c82a4bcd9062@apache.org%3E" "" "" "" )
+#release( "2021-09-27" "3.8.3" "announce/202110.mbox/%3C8bf4d8cb-6a12-4423-f913-24ca2351b325@apache.org%3E" "" "" "" )
+#release( "2021-08-04" "3.8.2" "announce/202108.mbox/%3C85a7a3d4-c4ae-8e1e-f5c4-832017b79ca3@apache.org%3E" "" "" "" )
+#release( "2021-04-04" "3.8.1" "announce/202104.mbox/%3CMailbird-0918dc43-dc18-4008-b83b-8bc8b1528177%40apache.org%3E" "" "" "" )
 
 </table>
 
-<h3><a name="Maven_3">Maven before 3.8.8</a></h3>
+<h3><a name="Maven_3">Maven 3.6.x and before</a></h3>
 
 <p>Maven before 3.6.3 has now reached its end of life.
 New plugin releases will require Maven 3.2.5 or later.
@@ -117,14 +124,7 @@ The following information is made available for reference.</p>
 <th>Links</th>
 </tr>
 
-#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "" "Java 7" "20" )
-#release( "2022-06-06" "3.8.6" "announce/202206.mbox/%3C850c94d3-c7d3-81a3-b6e2-5b6f0d268126@apache.org%3E" "" "" "" )
-#release( "2022-03-05" "3.8.5" "announce/202203.mbox/%3Cb5eab336-e5ba-73bb-1c0c-d063d919ce4d@apache.org%3E" "" "" "" )
-#release( "2021-11-14" "3.8.4" "announce/202111.mbox/%3C55867acd-a5d4-6f42-ef39-c82a4bcd9062@apache.org%3E" "" "" "" )
-#release( "2021-09-27" "3.8.3" "announce/202110.mbox/%3C8bf4d8cb-6a12-4423-f913-24ca2351b325@apache.org%3E" "" "" "" )
-#release( "2021-08-04" "3.8.2" "announce/202108.mbox/%3C85a7a3d4-c4ae-8e1e-f5c4-832017b79ca3@apache.org%3E" "" "" "" )
-#release( "2021-04-04" "3.8.1" "announce/202104.mbox/%3CMailbird-0918dc43-dc18-4008-b83b-8bc8b1528177%40apache.org%3E" "" "" "" )
-#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "" "" )
+#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "Java 7" "13" )
 #release( "2019-08-27" "3.6.2" "announce/201909.mbox/%3CCACcefgc8DBFwq5vQ7EuZNGSeBxemz6Hd_2n%3DMV9T%3DpYgdUM5EA%40mail.gmail.com%3E" "" "" "" )
 #release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "" "" "" )
 #release( "2018-10-24" "3.6.0" "announce/201811.mbox/%3C20181101115259.168F4187BA%40minotaur.apache.org%3E" "" "" "" )
