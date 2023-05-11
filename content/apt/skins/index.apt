@@ -40,7 +40,7 @@ Available Skins
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
 | {{{/skins/maven-default-skin/} <<<Maven Default Skin>>>}}         | 1.3          | [3.5,)               | You get this skin if you don't specify any skin or template. | {{{http://gitbox.apache.org/repos/asf/maven-default-skin/}GitBox}}/{{{https://github.com/apache/maven-default-skin/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project = MSKINS AND status != Closed AND component = "Default Skin"}JIRA}}
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
-| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 1.11.2       | [3.7,)               | Skin based on Bootstrap CSS. | {{{http://gitbox.apache.org/repos/asf/maven-fluido-skin/}GitBox}} / {{{https://github.com/apache/maven-fluido-skin/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project = MSKINS AND status != Closed AND component = "Fluido+Skin"}JIRA}}
+| {{{/skins/maven-fluido-skin/} <<<Maven Fluido Skin>>>}}           | 2.0.0-M6     | [4,)                 | Skin based on Bootstrap CSS. | {{{http://gitbox.apache.org/repos/asf/maven-fluido-skin/}GitBox}} / {{{https://github.com/apache/maven-fluido-skin/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project = MSKINS AND status != Closed AND component = "Fluido+Skin"}JIRA}}
 *-------------------------------------------------------------------+--------------+----------------------+------------------+------------------------+--------------------+
 
 ** Retired

@@ -75,7 +75,7 @@
     <version4x>4.0.0-alpha-5,4.0.0-alpha-4,4.0.0-alpha-3,4.0.0-alpha-2</version4x>
     <site.output>${project.build.directory}/site</site.output>
     <!-- used by src/xdoc/errors/404.xml.vm -->
-    <fluidoVersion>2.0.0-M5</fluidoVersion>
+    <fluidoVersion>2.0.0-M6</fluidoVersion>
     <javaVersion>8</javaVersion>
     <siteDirectory>${project.basedir}/content</siteDirectory>
   </properties>
