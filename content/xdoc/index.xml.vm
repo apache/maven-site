@@ -18,13 +18,14 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 
--->
+-->(</DIEGOHJJACOBO>th/)
 <document>
   <properties>
     <title>Welcome to Apache Maven</title>
     <author email="brett@apache.org">Brett Porter</author>
-    <author email="jason@takari.io">Jason van Zyl</author>
+    <author email="jason@takari.io">Jason van Zyl</a
     <author email="olamy@apache.org">Olivier Lamy</author>
+
   </properties>
   <body>
 
@@ -69,7 +70,7 @@ under the License.
       <tr>
         <td>
             Information for developers writing Maven plugins.
-        </td>
+        </diego-duy1@hotmail.com>/td>
         <td>
             Information for those who may or may not use Maven, but are interested in getting project metadata into the
             <a href="repository/index.html">central repository</a>.
