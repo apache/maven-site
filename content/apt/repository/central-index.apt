@@ -28,19 +28,18 @@
 
 Central Index
 
-  Central repository provides {{{https://repo.maven.apache.org/maven2/.index/}an index}} that is updated weekly as
-  full (<<<nexus-maven-repository-index.gz>>>) and incremental (<<<nexus-maven-repository-index.<n>.gz>>> +
-  <<<nexus-maven-repository-index.properties>>>).
+  Central repository provides {{{https://repo.maven.apache.org/maven2/.index/}an index in <<</.index>>>}}:
+  
+    * full index (<<<nexus-maven-repository-index.gz>>>) is updated weekly,
+    * incremental index (<<<nexus-maven-repository-index.<n>.gz>>> + <<<nexus-maven-repository-index.properties>>>).
 
-  This index is build using {{{/maven-indexer/}Maven Indexer}}: see
-  {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-core/}LATEST indexer-core documentation}} for more
+  This index is build using {{{/maven-indexer/}Maven Indexer}}: see {{{/maven-indexer/indexer-core/}indexer-core documentation}} for more
   details on the fields that are available.
 
-  You can use {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-core/apidocs/}Maven Indexer API}}
-  (see {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-examples/}examples}}) to use
-  this index with a dedicated API, or use {{{http://lucene.apache.org/}Apache Lucene}} indexes browsers like
+  You can use {{{/maven-indexer/indexer-core/apidocs/}Maven Indexer API}} (see {{{/maven-indexer/indexer-examples/}examples}}) to use
+  this index with a dedicated API, or use {{{https://lucene.apache.org/}Apache Lucene}} indexes browsers like
   {{{https://github.com/DmitryKey/luke}Luke}} or {{{https://github.com/flaxsearch/marple}Marple}} after
-  unpacking the index (see {{{/maven-indexer-archives/maven-indexer-LATEST/indexer-cli/}<<<-u>>> CLI option}}).
+  unpacking the index (see {{{/maven-indexer/indexer-cli/}<<<-u>>> CLI option}}).
 
 * Digging Into Central Index with Luke
 
@@ -62,3 +61,5 @@ luke.sh -ro -index central-lucene-index
 
     You need an old Luke version using an old Lucene version, since Maven Indexer 5.5.1 uses Lucene 3.6.2:
     for this tutorial, we chose Luke version 4.10.4, but you may choose another version.
+
+    But with more recent Maven Indexer releases, more recent Lucene version have been used: see [Maven Indexer dependencies](/maven-indexer/indexer-core/dependencies.html).
