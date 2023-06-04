@@ -29,282 +29,58 @@ under the License.
     <section name="Introduction">
       <p>Maven plugins can be written in Java or any of a
         number of scripting languages. Plugins consists of one or more Mojos,
-        each one being the implementation for one of the plugin's <b>goals</b>.
-        Maven tries to stay out of
-        the way of the programmer with its new Mojo API. This opens up the
-        opportunity for many Mojos to be reused outside of Maven, or bridged
-        into Maven from external systems like Ant.</p>
-      <p>NOTE: For now, we will limit the discussion to Java-based Mojos, since
-        each scripting language will present these same basic requirements with
-        various forms of implementation.</p>
+        each one being the implementation for one of the plugin's <b>goals</b>.</p>
+      <p>NOTE: this documentation covers Mojo API introduced in Maven 2 and used by Maven 3. It does not cover the <a href="https://maven.apache.org/ref/4-LATEST/api/index.html">new Maven 4 API</a>.</p>
+
       <p>Although the requirements on Mojos are minimal by design, there are
-        still a very few requirements that Mojo developers must keep in mind. <!-- First, a Mojo must have a method named <code>execute</code> which
+        still a very few requirements that Mojo developers must keep in mind:</p>
+      <ol>
+      <li>a Mojo must have a method named <code>execute</code> which
         declares no parameters, and has a void return type. If this method
         throws an exception, that exception must either be a derivative of
         <code>java.lang.RuntimeException</code>, or a derivative of
-        <code>org.apache.maven.plugin.MojoExecutionException</code>. It goes
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html"><code>org.apache.maven.plugin.MojoExecutionException</code></a>. It goes
         without saying that in the latter case, the execute method must declare
-        that it throws this exception. Additionally, Mojos must declare a field
-        for each parameter they specify, and these parameter fields will be
-        populated before execute() is called (Maven does support other
-        mechanisms for parameter injection, but they are not considered part of
-        the preferred practice, and are therefore a topic for an advanced Mojo
-        developer's guide). Finally, all Mojos must be accompanied by metadata
+        that it throws this exception.</li>
+      <li> Additionally, Mojos must declare a field
+        for each goal <b>parameter</b> they specify, and these parameter fields will be
+        populated before <code>execute()</code> is called.</li>
+      <li>Finally, all Mojos must be accompanied by metadata in <code>META-INF/maven/plugin.xml</code>
         describing parameters, lifecycle bindings, etc. This descriptor will be
-        covered in more detail below.</p>
-      <p>While this will satisfy the requirements for execution as a Mojo
-        inside Maven, it is recommended that Mojos implement
-         --> Basically, these Mojo requirements are embodied by the
+        covered in more detail below.</li>
+      </ol>
+
+    <subsection name="Mojo Code">
+      <p>Basically, these Mojo requirements are embodied by the
         <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/Mojo.html"><code>org.apache.maven.plugin.Mojo</code> interface</a>, which the Mojo
-        must implement (or else extend its
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html">abstract base class counterpart <code>org.apache.maven.plugin.AbstractMojo</code></a>).
-        This interface
-        guarantees the correct execution contract for the Mojo: no parameters,
-        void return type, and a throws clause that allows only
-        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/MojoExecutionException.html"><code>org.apache.maven.plugin.MojoExecutionException</code></a>
-        and its
-        derivatives. It also guarantees that the Mojo will have access to the
-        standard Maven user-feedback mechanism,
+        must implement.<br />
+        Usually this is done by extending its
+        <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/AbstractMojo.html">abstract base class counterpart <code>org.apache.maven.plugin.AbstractMojo</code></a>.<br />
+        The Mojo will have access to the standard Maven user-feedback mechanism,
         <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/logging/Log.html"><code>org.apache.maven.plugin.logging.Log</code></a>,
         so the Mojo can communicate important events to the console or other log sink.
       </p>
+    </subsection>
+
+    <subsection name="The Descriptor and Annotations">
       <p>As mentioned before, each Plugin - or packaged set of Mojos - must
         provide a <a href="/ref/current/maven-plugin-api/plugin.html"><code>META-INF/maven/plugin.xml</code> descriptor file</a>
-        inside the Plugin jar file. Fortunately,
-        Maven also provides a set of Javadoc annotations
-        (named <a href="/plugin-tools/maven-plugin-tools-java/index.html">Mojo Javadoc Tags</a>),
-        Java annotations
+        inside the Plugin jar file.<br />
+        Fortunately, Maven also provides a set of Java annotations
         (named <a href="/plugin-tools/maven-plugin-tools-annotations/index.html">Maven Plugin Tools Java5 Annotations</a>)
-        and tools (named <a href="/plugin-tools/">plugin-tools</a>) to generate
+        and tools (named <a href="/plugin-tools/">Plugin Tools</a>) to generate
         this descriptor, so developers don't have to worry about directly
         authoring or maintaining a separate XML metadata file.
       </p>
-      <p>To serve as a quick reference for the developer, the rest of this page
-        will document these features (the API, along with the annotations)
-        which are considered the best practice for developing Mojos.</p>
+    </subsection>
+
+    <subsection name="Project Descriptor (POM) Requirements">
+      <p>The POM must declare a packaging element which describes this project as a Maven plugin project:
+      <code>&lt;packaging&gt;maven-plugin&lt;/packaging&gt;</code></p>
+    </subsection>
     </section>
 
-    <section name="API Documentation">
-      <subsection name="org.apache.maven.plugin.Mojo">
-        <p>This interface forms the contract required for Mojos to interact
-          with the Maven infrastructure. It features an
-          <code>execute()</code>
-          method, which triggers the Mojo's build-process behavior, and can
-          throw a
-          <code>MojoExecutionException</code>
-          if an error condition
-          occurs. See below for a discussion on proper use of this
-          <code>Exception</code>
-          class. Also included is the
-          <code>setLog(..)</code>
-          method, which simply allows Maven to inject a
-          logging mechanism which will allow the Mojo to communicate to the
-          outside world through standard Maven channels.
-        </p>
-        <h6>Method Summary:</h6>
-        <ul>
-          <li>
-            <code>
-              void setLog( org.apache.maven.plugin.logging.Log )
-            </code>
-            <p>Inject a standard Maven logging mechanism to allow this Mojo
-              to communicate events and feedback to the user.</p>
-          </li>
-          <li>
-            <code>
-              void execute() throws org.apache.maven.plugin.MojoExecutionException
-            </code>
-            <p>Perform whatever build-process behavior this Mojo implements.
-              This is the main trigger for the Mojo inside the Maven system,
-              and allows the Mojo to communicate fatal errors by throwing an
-              instance of <code>MojoExecutionException</code>.
-            </p>
-            <p>The
-              <code>MojoExecutionException</code> (and all error
-              conditions inside the Mojo) should be handled very carefully.
-              The simple wrapping of lower-level exceptions without providing
-              any indication of a user-friendly probable cause is strictly
-              discouraged. In fact, a much better course of action is to
-              provide error handling code (try/catch stanzas) for each
-              coherent step within the Mojo's execution. Developers are then
-              in a much better position to diagnose the cause of any error,
-              and provide user-friendly feedback in the message of the
-              <code>MojoExecutionException</code>.
-            </p>
-          </li>
-        </ul>
-      </subsection>
-      <subsection name="org.apache.maven.plugin.AbstractMojo">
-        <p>Currently, this abstract base class simply takes care of managing
-          the Maven log for concrete derivations. In keeping with this, it
-          provides a
-          <code>protected</code>
-          method,
-          <code>getLog():Log</code>
-          ,
-          to furnish Log access to these concrete implementations.
-        </p>
-        <h6>Method Summary:</h6>
-        <ul>
-          <li>
-            <code>
-              public void setLog( org.apache.maven.plugin.logging.Log )
-            </code>
-            <p>
-              <b>[IMPLEMENTED]</b>
-            </p>
-            <p>Inject a standard Maven logging mechanism to allow this Mojo
-              to communicate events and feedback to the user.</p>
-          </li>
-          <li>
-            <code>protected Log getLog()</code>
-            <p>
-              <b>[IMPLEMENTED]</b>
-            </p>
-            <p>Furnish access to the standard Maven logging mechanism which
-              is managed in this base class.</p>
-          </li>
-          <li>
-            <code>
-              void execute() throws org.apache.maven.plugin.MojoExecutionException
-            </code>
-            <p>
-              <b>[ABSTRACT]</b>
-            </p>
-            <p>Perform whatever build-process behavior this Mojo implements.
-              See the documentation for
-              <code>Mojo</code>
-              above for more
-              information.
-            </p>
-          </li>
-        </ul>
-      </subsection>
-      <subsection name="org.apache.maven.plugin.logging.Log">
-        <p>This interface supplies the API for providing feedback to the user
-          from the Mojo, using standard Maven channels. There should be no big
-          surprises here, although you may notice that the methods accept
-          <code>java.lang.CharSequence</code>
-          rather than
-          <code>java.lang.String</code>
-          . This is provided mainly as a
-          convenience, to enable developers to pass things like
-          <code>StringBuffer</code>
-          directly into the logger, rather than
-          formatting first by calling
-          <code>toString()</code>
-          .
-        </p>
-        <h6>Method Summary:</h6>
-        <ul>
-          <li>
-            <code>void debug( java.lang.CharSequence )</code>
-            <p>Send a message to the user in the
-              <b>debug</b>
-              error level.
-            </p>
-          </li>
-          <li>
-            <code>
-              void debug( java.lang.CharSequence, java.lang.Throwable )
-            </code>
-            <p>Send a message (and accompanying exception) to the user in the
-              <b>debug</b>
-              error level. The error's stacktrace will be output
-              when this error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void debug( java.lang.Throwable )</code>
-            <p>Send an exception to the user in the
-              <b>debug</b>
-              error level.
-              The stack trace for this exception will be output when this
-              error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void info( java.lang.CharSequence )</code>
-            <p>Send a message to the user in the
-              <b>info</b>
-              error level.
-            </p>
-          </li>
-          <li>
-            <code>
-              void info( java.lang.CharSequence, java.lang.Throwable )
-            </code>
-            <p>Send a message (and accompanying exception) to the user in the
-              <b>info</b>
-              error level. The error's stacktrace will be output
-              when this error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void info( java.lang.CharSequence )</code>
-            <p>Send an exception to the user in the
-              <b>info</b>
-              error level.
-              The stack trace for this exception will be output when this
-              error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void warn( java.lang.CharSequence )</code>
-            <p>Send a message to the user in the
-              <b>warn</b>
-              error level.
-            </p>
-          </li>
-          <li>
-            <code>
-              void warn( java.lang.CharSequence, java.lang.Throwable )
-            </code>
-            <p>Send a message (and accompanying exception) to the user in the
-              <b>warn</b>
-              error level. The error's stacktrace will be output
-              when this error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void warn( java.lang.CharSequence )</code>
-            <p>Send an exception to the user in the
-              <b>warn</b>
-              error level.
-              The stack trace for this exception will be output when this
-              error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void error( java.lang.CharSequence )</code>
-            <p>Send a message to the user in the
-              <b>error</b>
-              error level.
-            </p>
-          </li>
-          <li>
-            <code>
-              void error( java.lang.CharSequence, java.lang.Throwable )
-            </code>
-            <p>Send a message (and accompanying exception) to the user in the
-              <b>error</b>
-              error level. The error's stacktrace will be output
-              when this error level is enabled.
-            </p>
-          </li>
-          <li>
-            <code>void error( java.lang.CharSequence )</code>
-            <p>Send an exception to the user in the
-              <b>error</b>
-              error level.
-              The stack trace for this exception will be output when this
-              error level is enabled.
-            </p>
-          </li>
-        </ul>
-      </subsection>
-    </section>
-    <section name="The Descriptor and Annotations">
+    <!--section name="The Descriptor and Annotations">
       <p>In addition to the normal Java requirements in terms of interfaces
         and/or abstract base classes which need to be implemented, a plugin
         descriptor must accompany these classes inside the plugin jar. This
@@ -373,7 +149,7 @@ under the License.
       <p>Each Mojo specified inside a plugin descriptor must provide the
         following (annotations specified here are at the class level):</p>
       <table>
-        <!-- Annotations listed by specific, autodetect and Javadoc, all alphabetical -->
+        <!== Annotations listed by specific, autodetect and Javadoc, all alphabetical ==>
         <tr>
           <th>Descriptor Element</th>
           <th>Mojo Javadoc tag</th>
@@ -559,7 +335,7 @@ under the License.
           </td>
         </tr>
 
-        <!-- Autodetect -->
+        <!== Autodetect ==>
         <tr>
           <td><code>description</code></td>
           <td>none (detected)</td>
@@ -583,7 +359,7 @@ under the License.
           <td>The implementation language for this Mojo (Java, beanshell, etc.).</td>
         </tr>
 
-        <!-- Javadoc -->
+        <!== Javadoc ==>
         <tr>
           <td><code>deprecated</code></td>
           <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
@@ -617,7 +393,7 @@ under the License.
       <p>Each parameter for a Mojo must be specified in the
         plugin descriptor as follows:</p>
       <table>
-        <!-- Annotations listed by specific, autodetect and Javadoc, all alphabetical -->
+        <!== Annotations listed by specific, autodetect and Javadoc, all alphabetical ==>
         <tr>
           <th>Descriptor Element</th>
           <th>Mojo Javadoc tag</th>
@@ -695,7 +471,7 @@ under the License.
           </td>
         </tr>
 
-        <!-- Autodetect -->
+        <!== Autodetect ==>
         <tr>
           <td><code>description</code></td>
           <td>none (detected)</td>
@@ -726,7 +502,7 @@ under the License.
           </td>
         </tr>
 
-        <!-- Javadoc -->
+        <!== Javadoc ==>
         <tr>
           <td><code>deprecated</code></td>
           <td><code>@deprecated &lt;deprecated-text&gt;</code></td>
@@ -753,8 +529,9 @@ under the License.
         plugin descriptor are assumed to be runtime, because this is a
         runtime profile for the plugin).
       </p>
-    </section>
-    <section name="Plugin Tools">
+    </section-->
+
+    <!--section name="Plugin Tools">
       <p>By now, we've mentioned the plugin tools several times without telling
         you what they are or how to use them. Instead of manually writing (and
         maintaining) the metadata detailed above, Maven ships with some
@@ -767,8 +544,9 @@ under the License.
         enabling richer interactions between the Mojo and the user. The
         section below describes the changes to the POM which are necessary to
         create plugin artifacts.</p>
-    </section>
-    <section name="Project Descriptor (POM) Requirements">
+    </section-->
+
+    <!--section name="Project Descriptor (POM) Requirements">
       <p>From the POM, Maven plugin projects look quite similar to any other
         project. For pure Java plugins, the differences are even smaller than
         for script-based plugins. The following details the POM elements
@@ -817,8 +595,9 @@ under the License.
         the local repository. (Any of the other standard lifecycle targets like
         package, deploy, etc. are also available in like fashion.)
       </p>
-    </section>
-    <section name="IDE integration">
+    </section-->
+
+    <!--section name="IDE integration">
       <p>If you're using JetBrains IntelliJ IDEA to develop your plugin,
        you can use the following to configure the javadoc annotations as live
        templates.</p>
@@ -835,25 +614,17 @@ under the License.
           </ul>
         </li>
       </ol>
-    </section>
+    </section-->
     <section name="Resources">
       <p>This section simply gives a listing of pointers for more
         information.</p>
       <ul>
-        <li>QDox Project (Javadoc annotations) [
-          <a href="https://github.com/paul-hammant/qdox">link</a>
-          ]
-        </li>
-        <li>Plexus Project (Plexus container) [
-          <a href="https://codehaus-plexus.github.io/">link</a>
-          ]
-        </li>
         <li>Maven Plugin API [
-          <a href="https://maven.apache.org/ref/current/maven-plugin-api/apidocs/index.html">link</a>
+          <a href="/ref/current/maven-plugin-api/apidocs/index.html">link</a>
           ]
         </li>
         <li>MojoDescriptor API [
-          <a href="https://maven.apache.org/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/MojoDescriptor.html">link</a>
+          <a href="/ref/current/maven-plugin-api/apidocs/org/apache/maven/plugin/descriptor/MojoDescriptor.html">link</a>
           ]
         </li>
       </ul>
