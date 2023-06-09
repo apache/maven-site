@@ -64,7 +64,7 @@ $b_</td>
 The Apache Maven team maintains the last version of the last two series of GA releases.
 If last release is 3.9.2, the Apache Maven team project will maintain core versions:
 - 3.9.2
-- 3.8.7
+- 3.8.8
 
 Currently, plugins provides Maven API compatibility down to 3.2.5.
 
