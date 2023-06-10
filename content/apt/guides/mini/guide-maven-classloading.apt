@@ -68,9 +68,9 @@ Guide to Maven Classloading
  <<<{{{/ref/current/apidocs/org/apache/maven/project/MavenProject.html}MavenProject}}>>>
  belong to this classloader.
  
- You can add elements to this classloader by {{{/ref/current/maven-model/maven.html#class_extension}extensions}}. 
+ You can add elements to this classloader by the means outlined in {{{./guide-using-extensions.html}Core Extension}}. 
  These are loaded through the same classloader as <<<$\{maven.home\}/lib>>> and hence are available 
- to the Maven core and all plugins for the current project (through the API Classloader: see next paragraph).
+ to the Maven core and all plugins for the current project (through the API Classloader, see next paragraph).
  More information is available in {{{./guide-using-extensions.html}Core Extension}}.
 
 * {API Classloader}
@@ -84,10 +84,10 @@ Guide to Maven Classloading
 
 [../../buildExtensionClassRealm.svg] Build Extension Class Realm
 
- For every plugin which is marked with <<<\<extensions\>true\</extensions\>>>> or a build extension listed in the according section of the POM, there is
+ For every plugin which is marked with <<<\<extensions\>true\</extensions\>>>> and every {{{/ref/current/maven-model/maven.html#class_extension}build extension}} listed in the according section of the POM, there is
  a dedicated classloader. Those are isolated. That is, one build extension does not have access to other build extensions.
  It imports everything from the API classloader.
- All JSR 330 or Plexus components declared in the underlying JAR are registered as components in the global Plexus container
+ All JSR 330 or Plexus components declared in the underlying JAR are registered in the global Plexus container
  while creating the classloader.
  In addition all component references in the plugin descriptor are properly wired from the underlying Plexus container.
  Build extensions have limited effect as they are loaded late.
