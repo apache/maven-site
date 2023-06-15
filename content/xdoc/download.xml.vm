@@ -165,18 +165,18 @@ under the License.
               <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz">apache-maven-${current38xVersion}-bin.tar.gz</a>
                   (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.sha512">sha512</a>, 
                    <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.tar.gz.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip archives</td>
               <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip">apache-maven-${current38xVersion}-bin.zip</a>
                   (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.sha512">sha512</a>,
                    <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-src.zip.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.asc">asc</a>)</td>
             </tr>
           </tbody>
         </table>
@@ -223,18 +223,18 @@ under the License.
               <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz">apache-maven-${current4xVersion}-bin.tar.gz</a>
                   (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.sha512">sha512</a>, 
                    <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip archives</td>
               <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip">apache-maven-${current4xVersion}-bin.zip</a>
                   (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.sha512">sha512</a>,
                    <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
             </tr>
           </tbody>
         </table>
