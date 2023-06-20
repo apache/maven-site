@@ -35,7 +35,7 @@ Users should consult actual plugin documentation or try to update plugin to newe
 
 ## External Plugins Validation issues
 
-`External Plugins Validation issues (non-configuration) are issues detected in plugin itself, like:
+External Plugins Validation issues (non-configuration) are issues detected in plugin itself, like:
 
  - using old, deprecated Maven Api by plugin
  - declaring dependencies for Maven Core artifacts in wrong scope in plugin project
@@ -68,6 +68,10 @@ can also be added to `.mvn/maven.config` file in order to configure per project.
 
 Users can add such property to their `settings.xml` file to change configuration globally.
 
-Please consult [Configuring Apache Maven](/configure.html) guide.
+*NOTICE* as `maven.plugin.validation` is configuration item for Maven itself, it can not be used in project pom.xml
+
+Please consult: 
+ - [Configuring Apache Maven](/configure.html)
+ - [Settings reference](/settings.html)
 
 
