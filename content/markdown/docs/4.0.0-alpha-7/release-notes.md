@@ -20,13 +20,13 @@
  http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
-# Release Notes &#x2013; Maven 4.0.0-alpha-6
+# Release Notes &#x2013; Maven 4.0.0-alpha-7
 
-The Apache Maven team would like to announce the release of Maven 4.0.0-alpha-6.
+The Apache Maven team would like to announce the release of Maven 4.0.0-alpha-7.
 
 This is alpha release, not suitable for production.
 
-Maven 4.0.0-alpha-6 is [available for download][0].
+Maven 4.0.0-alpha-7 is [available for download][0].
 
 Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting, and documentation from a central place.
 
@@ -36,7 +36,7 @@ If you have any questions, please consult:
 
 - the web site: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
-- the reference documentation: [https://maven.apache.org/ref/4.0.0-alpha-6/](/ref/4.0.0-alpha-6/)
+- the reference documentation: [https://maven.apache.org/ref/4.0.0-alpha-7/](/ref/4.0.0-alpha-7/)
 
 ## Overview About the Changes
 
@@ -59,7 +59,7 @@ If you find any incompatibility with latest versions of plugins, do not hesitate
 
 See [complete release notes for all versions][5]
 
-[0]: https://dlcdn.apache.org/maven/maven-4/4.0.0-alpha-6/
+[0]: https://dlcdn.apache.org/maven/maven-4/4.0.0-alpha-7/
 [1]: ../../plugins/index.html
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353052
