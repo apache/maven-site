@@ -68,7 +68,7 @@ pages for more.
 
 ## Known Issues
 
-None.
+* [MNG-7826](https://issues.apache.org/jira/browse/MNG-7826) Discovered late in release process, plugin validation will now miss some plugins (like jacoco is for example, that have transitive dependencies, that should flag plugin).
 
 ## Complete Release Notes
 
