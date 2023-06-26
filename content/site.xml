@@ -84,6 +84,7 @@ under the License.
         -->
         <item name="Getting Help" href="/users/getting-help.html"/>
         <item name="Running Maven" href="/run-maven/index.html" />
+        <item name="Plugins Validation" href="/guides/plugins/validation/index.html"/>
         <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
           <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html" />
           <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html" />
