@@ -62,7 +62,7 @@ mvn artifact:check-buildplan
 * How to test my Maven build reproducibility?
 
  Using {{{/plugins/maven-artifact-plugin/compare-mojo.html}<<<maven-artifact-plugin>>>'s <<<compare>>> goal}},
- you can check that the second build of your project produce the same output than an initial build:
+ you can easily check that the second build of your project produce the same output than an initial build:
 
  [[1]] build and <<<install>>> your project (don't hesitate to customize arguments to better match your project):
  
@@ -77,6 +77,9 @@ mvn clean verify artifact:compare
 --------
 
  []
+
+ Notice that this does NOT really prove that your build is yet reproducible, because your build may still suffer from environment leaks (username, current directory, ...). But it is easy to do, and prevents basic non-reproducible issues like timestamps.
+ Really checking reproducibility requires to rebuild from a completely different setup: this is harder to do, even if containers may ease the task.
 
 * How to fix my Maven build reproducibility?
 
