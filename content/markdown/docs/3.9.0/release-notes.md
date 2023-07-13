@@ -61,8 +61,8 @@ If you have any questions, please consult:
 
 ### Notable Resolver 1.9.x Improvements
 
-* Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository)).
-* Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#split-local-repository)).
+* Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#Shared_Access_to_Local_Repository)).
+* Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#Split_Local_Repository)).
 * Switchable and alternative resolver transports included, with default switched to native transport.
 * Pluggable checksum algorithms API (is not tied to MessageDigest anymore, see [documentation](https://maven.apache.org/resolver/about-checksums.html)).
 * Choice of resolver collectors: a new BF collector (with parallel POM downloads) has been added along the existing DF one.
