@@ -162,7 +162,7 @@ mvn clean verify artifact:compare
 *----------------------------------------------------------------------------+-------+--------------+
 | {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#reproducible-builds}documentation}}
 *----------------------------------------------------------------------------+-------+--------------+ 
-| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.3 |
+| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.9 |
 *----------------------------------------------------------------------------+-------+--------------+
 | Eclipse {{{https://www.eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/}Sisu Maven Plugin}} | 0.3.4 |
 *----------------------------------------------------------------------------+-------+--------------+
