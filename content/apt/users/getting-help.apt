@@ -65,13 +65,30 @@ Getting Help
 
 *Submit an issue
 
-  If it turns out that there is indeed something wrong with Maven or one of
-  the plugins, you should report it to our issue management system JIRA.
+  If it turns out that there is indeed something wrong with Maven
+  or one of the plugins, you should report it to our issue management system JIRA.
 
-  First of all you need to create an account in JIRA. This is so that we can
-  communicate with you while we work together on the issue. Go to the
-  {{{https://issues.apache.org/jira/secure/Dashboard.jspa}sign up link}} to create an
-  account if you don't already have one.
+  You don't need create JIRA issue only to ask us something
+  - in such case please first ask on {{{https://maven.apache.org/mailing-lists.html}users-list}}
+
+**Request new JIRA account
+
+  Requesting for JIRA account is preferred if you plan to contribute to project by coding or testing by longer time.
+
+  This is so that we can communicate with you while we work together on the issue.
+
+  * please use your real name and surname if possible in public name field
+
+  * links to your public projects, social or professional profile can be appreciated
+
+  * you can also tell us a little about yourself and what you intend to use this account for
+
+  []
+
+  Such information is useful to verify that account is requested for real user not a bot.
+
+  Go to the {{{https://selfserve.apache.org/jira-account.html?project=maven}Request a JIRA account}}
+  to request for a new account if you don't already have one.
 
 **Where?
 
