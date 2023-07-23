@@ -99,6 +99,80 @@ for example to allow the user to tell Maven how long to wait before giving up on
   </servers>
 </settings>
 ```
+## Low-level Resolver configuration
+
+All configuration items mentioned in  [Configuration Options](https://maven.apache.org/resolver/configuration.html) 
+which are not mapped by `server/configuration` (eg.httpHeaders, timeout) tag must be provided in special way.
+
+Some resolver configuration properties has a flag `Supports Repo ID Suffix`.
+
+If you use property like:
+
+```
+aether.connector.http.preemptiveAuth=true
+```
+
+it means that `preemptiveAuth` will be applied for all of your repositories.
+
+You can also add suffix to property with your repository ID in order to configure only for selected repository.
+
+```
+aether.connector.http.preemptiveAuth.myRepositoryId=true
+```
+
+it means that `preemptiveAuth` will be applied only for repository or mirror which has `id` as `myRepositoryId`
+
+
+### System level
+
+Configuration can be provided on global level as properties in `settings.xml`
+
+```xml
+<settings>
+  <profiles>
+    <profile>
+      <id>resolver-config</id>
+      <properties>
+        <aether.dependencyCollector.impl>bf</aether.dependencyCollector.impl>
+        <!-- set preemptiveAuth for all repositories -->
+        <aether.connector.http.preemptiveAuth>true</aether.connector.http.preemptiveAuth>
+      </properties>
+    </profile>
+  </profiles>
+
+  <activeProfiles>
+    <!-- profile with configuration properties must be activated here -->
+    <activeProfile>resolver-config</activeProfile>
+  </activeProfiles>
+</settings>
+```
+
+**NOTICE**
+ - only profiles activated by `settings/activeProfiles` will be taken for consideration - you can not use `profile/activation` in such case
+
+You can also use environment variable `MAVEN_OPTS` ot `MAVEN_ARGS`
+
+```
+export MAVEN_ARGS="-Daether.connector.http.preemptiveAuth=true"
+```
+
+### Project level
+
+You can add configuration items per project in `.mvn/maven.config`, like:
+
+```
+-Daether.dependencyCollector.impl=bf
+```
+
+### Execution level
+
+For particular execution can be provided as user settings on command line:
+
+```
+$ mvn ... -Daether.enhancedLocalRepository.split \
+          -Daether.enhancedLocalRepository.localPrefix=maven-resolver/mresolver-253
+          -Daether.enhancedLocalRepository.splitRemoteRepository
+```
 
 ## How To Upgrade from Wagon? (or "native transport does not work")
 
