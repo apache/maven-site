@@ -38,13 +38,13 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-* Regression fixes from Maven 3.9.3
-
-The full list of changes can be found in our [issue management system][4].
+Regression fixes from Maven 3.9.3.
 
 This release focuses on regression fixes discovered and fixed in Resolver, released in [Resolver 1.9.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353358) that is included in Maven 3.9.4.
 
 Maven itself received one bug fix affecting users using plugins written in JRuby [MNG-7846](https://issues.apache.org/jira/browse/MNG-7846) and a Guava dependency upgrade [MNG-7828](https://issues.apache.org/jira/browse/MNG-7828).
+
+The full list of changes can be found in our [issue management system][4].
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
@@ -62,3 +62,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353369
 [5]: ../../docs/history.html
+
