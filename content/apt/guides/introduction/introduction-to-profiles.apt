@@ -88,11 +88,11 @@ Introduction to Build Profiles
 
   * Implicitly
   
-  ** Based on OS
+    * Based on OS
   
-  ** Based on system properties
+    * Based on system properties
   
-  ** Based on presence of files
+    * Based on presence of files
   
   []
 
@@ -131,6 +131,25 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 
   Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
   every time a project use it.
+
+  Profiles can also be active by default using a configuration like the following in a POM:
+
++---+
+<profiles>
+  <profile>
+    <id>profile-1</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+  This profile will automatically be active for all builds unless another profile in the same POM
+  is activated using one of the previously described methods.  All profiles that are active by
+  default are automatically deactivated when a profile in the POM is activated on the command line
+  or through its activation config.
 
 *** Implicit profile activation
 
@@ -323,25 +342,12 @@ mvn groupId:artifactId:goal -Denvironment=test
   properties and values defined in the POM itself are not available for interpolation here, e.g. the above example
   activator cannot use <<<$\{project.build.directory\}>>> but needs to hard-code the path <<<target>>>.
 
-  Profiles can also be active by default using a configuration like the following:
+*** Multiple conditions
 
-+---+
-<profiles>
-  <profile>
-    <id>profile-1</id>
-    <activation>
-      <activeByDefault>true</activeByDefault>
-    </activation>
-    ...
-  </profile>
-</profiles>
-+---+
+  Different implicit activation types can be combined in one profile.
+  The profile is then only active if all conditions are met (since Maven 3.2.2, {{{https://issues.apache.org/jira/browse/MNG-4565}MNG-4565}}).
+  Using the same type more than once in the same profile is not supported ({{{https://issues.apache.org/jira/browse/MNG-5909}MNG-5909}}, {{{https://issues.apache.org/jira/browse/MNG-3328}MNG-3328}}).
 
-  This profile will automatically be active for all builds unless another profile in the same POM
-  is activated using one of the previously described methods.  All profiles that are active by
-  default are automatically deactivated when a profile in the POM is activated on the command line
-  or through its activation config.
-  
 ** Deactivating a profile
 
   Starting with Maven 2.0.10, one or more profiles can be deactivated using the command line by prefixing their
