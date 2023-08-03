@@ -38,7 +38,7 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-Regression fixes from Maven 3.9.3.
+Regression fixes from Maven 3.9.3. All users already on Maven 3.9.x are advised to upgrade.
 
 This release focuses on regression fixes discovered and fixed in Resolver, released in [Resolver 1.9.14](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353358) that is included in Maven 3.9.4.
 
