@@ -43,6 +43,8 @@ Performing a Maven Project Release
 
   * follow Apache environment configuration steps outlined at: {{{https://www.apache.org/dev/publishing-maven-artifacts.html#dev-env}Publishing Maven Artifacts}}.
 
+  * check {{{./pmc-gpg-keys.html} your Public GPG key}} which will be used for release.
+
   []
 
 * Before you begin
@@ -60,6 +62,38 @@ Performing a Maven Project Release
   If the item you are planning to release is not using the most recent version of its parent
   (see {{{../../pom/}parent POMs}} index), consider taking this opportunity to update to it.
 
+* Consider updating the project dependencies
+
+  Generally it is a good that project use tha latest available versions of used dependencies.
+
+* Prepare release notes
+
+ * check all commits since latest release, all mentioned issue should be connected with release notes
+
+ * all issues should be <<assigned>> to responsible person, which fixed or merged fix
+
+ * all issues should be fixed and <<CLOSED>>
+
+ * check existing issues with <<Blocker>> priority, consider to fix it or change priority if reasonable
+
+ []
+
+** Check release note at GitHub
+
+  If a component has a history of release notes at <<GitHub>>, we should to continue maintain it in order to avoid user confusing.
+
+  We can maintain release notes at <<GitHub>>, by one of:
+
+  * use release-drafter to help prepare release notes - in such case all PRs should a proper label
+
+  * copy paste release notes from JIRA
+
+  * put link to release notes in JIRA
+
+  []
+
+  Draft of release notes at <<GitHub>> can be prepared before publishing.
+
 * Make sure that site compilation works
 
   Particularly if you update the parent or if you updated your javadoc,
@@ -74,8 +108,10 @@ mvn -Preporting site site:stage
 
 * Stage the Release
 
- [[1]] Follow the release preparation, staging and closing the repository steps outlined in
-       {{{https://infra.apache.org/publishing-maven-artifacts.html}Publishing Maven Releases}}. 
+ [[1]] Follow the release preparation, <<staging>> and <<closing>> the repository steps outlined in
+       {{{https://infra.apache.org/publishing-maven-artifacts.html}Publishing Maven Releases}}.
+
+       Staging repository <<<MUST>>> be closed with message like <<<VOTE Maven component name x.y.z>>>
 
  [[2]] Stage the latest documentation as explained in {{{../website/deploy-component-reference-documentation.html}deploying Maven components reference documentation}}.
 
@@ -240,7 +276,7 @@ wagon/wagon-2.2-source-release.zip.sha512
 
 * Promote the release
 
- Once the release is deemed fit for public consumption it can be transfered to a production repository where it will
+ Once the release is deemed fit for public consumption it can be transferred to a production repository where it will
  be available to all users.
 
  [[1]] See {{{https://www.apache.org/dev/publishing-maven-artifacts.html#promote}Promoting a Repo}} for details on promotion.
@@ -325,7 +361,9 @@ Enjoy,
  
  If releasing Maven Core, notify <<<announce@apache.org>>>
 
- [[7]] Celebrate :o)
+ [[7]] Publish release notes at <<GitHub>> if it is maintained.
+
+ [[8]] Celebrate :o)
 
  []
 
