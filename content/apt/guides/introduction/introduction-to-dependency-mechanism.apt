@@ -822,6 +822,48 @@ Introduction to the Dependency Mechanism
      artifact may not have a version specified. (This should be considered a best practice in any case as it
      keeps the versions of artifacts from changing from one build to the next).
 
+Starting from Maven 4.0, a new specific BOM packaging has been introduced. 
+It allows defining a BOMs which are not used as parent in a project leveraging
+the newer 4.1.0 model, while still providing full compatibility with Maven 3.X
+clients and projects.  This BOM packaging is translated into a more usual POM 
+packaging at installation / deployment time, leveraging the build/consumer POM 
+feature from Maven 4. This thus provides full compatibility with Maven 3.x.
+
++----+
+
+<project xmlns="http://maven.apache.org/POM/4.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+  <parent>
+    <groupId>com.test</groupId>
+    <version>1.0.0</version>
+    <artifactId>parent</artifactId>
+  </parent>
+  <groupId>com.test</groupId>
+  <artifactId>bom</artifactId>
+  <version>1.0.0</version>
+  <packaging>bom</packaging>
+  <properties>
+    <project1Version>1.0.0</project1Version>
+    <project2Version>1.0.0</project2Version>
+  </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.test</groupId>
+        <artifactId>project1</artifactId>
+        <version>${project1Version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.test</groupId>
+        <artifactId>project2</artifactId>
+        <version>${project2Version}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+ </project>
+
++----+
+
 * {System Dependencies}
 
  <<<Important note: This is deprecated.>>>
