@@ -86,7 +86,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   options to your Maven build every time you are calling Maven. Not very convenient as well.
 
 * From now on this can be done much more simpler and in a more Maven like way. So
-  you can define an `${maven.projectBasedir}/.mvn/extensions.xml` file which looks
+  you can define an `.mvn/extensions.xml` file in the project's top level directory which looks
   like the following:
 
 ``` xml
@@ -105,7 +105,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
    transitive dependencies of those extensions will automatically being downloaded
    from your repository. So no need to create a shaded artifact anymore.
 
-   An other advantage is that the `${maven.projectBasedir}/.mvn/`
+   An other advantage is that the `.mvn/`
    directory is located in the root of your Maven project and in conseuqence
    is part of your project which means you will check it in along with
    your project. So everyone who checks out your project automatically
@@ -122,12 +122,12 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 * It's really hard to define a general set of options for calling the maven
   command line. Usually this will be solved by putting this options to a script
   but this can now simple being done by defining
-  `${maven.projectBasedir}/.mvn/maven.config` file which contains the
+  `.mvn/maven.config` file which contains the
   configuration options for the command line. For example things like `-T3 -U
   --fail-at-end`. So you only have to call maven just by using `mvn clean
   package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss
-  the `-T3 -U --fail-at-end` options. The `${maven.projectBasedir}/.mvn/maven.config`
-  is located in the `${maven.projectBasedir}/.mvn/` directory which is in the root
+  the `-T3 -U --fail-at-end` options. The `.mvn/maven.config`
+  is located in the `.mvn` directory which is in the root
   of a multi module build. This directory is part of the project and will be checked
   in into your version control. This results in being picked by everybody who
   checks out the project and no need to remember to call this project
@@ -139,11 +139,11 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   option with the drawback of not being part of the project.
 
 * Starting with this release you can define JVM configuration via
-  `${maven.projectBasedir}/.mvn/jvm.config` file which means you can define the
+  `.mvn/jvm.config` file which means you can define the
   options for your build on a per project base. This file will become part of
   your project and will be checked in along with your project. So no need anymore
   for `MAVEN_OPTS`, `.mavenrc` files. So for example if you put the following JVM
-  options into the `${maven.projectBasedir}/.mvn/jvm.config` file
+  options into the `.mvn/jvm.config` file
 
 ```
 -Xmx2048m -Xms1024m -XX:MaxPermSize=512m -Djava.awt.headless=true
