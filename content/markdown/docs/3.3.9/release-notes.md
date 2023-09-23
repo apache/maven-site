@@ -126,7 +126,7 @@ Bugs
    `MAVEN_OPTS` and debugging options which has been fixed by [MNG-5813][MNG-5813].
 
  * Since Maven 3.3.1 it is possible to have configurations stored on a per project base in the
-   `${maven.projectBasedir}/.mvn` directory of the project. There you can use the `maven.config`
+   `.mvn` directory of the project. There you can use the `maven.config`
    file to store command line options instead of repeating them every time you call Maven.
    In cases where this file has been empty Maven ended with a failure. This has been fixed
    with [MNG-5816][MNG-5816].
