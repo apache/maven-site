@@ -39,7 +39,7 @@ Each core extension is loaded in a separate classloader and there is no mechanis
 
 Core extension can use `META-INF/maven/extension.xml` descriptor to declare packages and artifacts exported by the extension. If the descriptor is not present, no packages or artifacts are exported, but the extension can still contribute components to Maven Core extension points.
 
-Core extensions are configured in `${maven.projectBasedir}/.mvn/extensions.xml` configuration file.
+Core extensions are configured `.mvn/extensions.xml` configuration file in the project's top level.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>

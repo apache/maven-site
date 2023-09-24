@@ -62,9 +62,9 @@ $b_</td>
 ## Maven Releases History
 
 The Apache Maven team maintains the last version of the last two series of GA releases.
-If last release is 3.9.1, the Apache Maven team project will maintain core versions:
-- 3.9.1
-- 3.8.7
+If last release is 3.9.2, the Apache Maven team project will maintain core versions:
+- 3.9.2
+- 3.8.8
 
 Currently, plugins provides Maven API compatibility down to 3.2.5.
 
@@ -80,14 +80,15 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2023-03-20" "4.0.0-alpha-5" "https://lists.apache.org/thread/5k5g70xcbbqck6y6dy2344ol4d2qd5my" "" "Java 8" "4" )
+#release( "2023-06-28" "4.0.0-alpha-7" "https://lists.apache.org/thread/30jcjszl53jp1z8hzjkrnxyv3o362ngz" "true" "Java 8" "4" )
+#release( "2023-03-20" "4.0.0-alpha-5" "https://lists.apache.org/thread/5k5g70xcbbqck6y6dy2344ol4d2qd5my" "" "" "" )
 #release( "2023-01-31" "4.0.0-alpha-4" "https://lists.apache.org/thread/1pj6nqo10xddq26vyxj9p1q1s8m70bx2" "" "" "" )
 #release( "2022-12-15" "4.0.0-alpha-3" "https://lists.apache.org/thread/0j63n7o3lnlz9mmk39wqh1jx5h3r7vqv" "" "" "" )
 #release( "2022-10-24" "4.0.0-alpha-2" "https://lists.apache.org/thread/snnlfsk24wmdp8tp79b2k11ln34hk6ks" "" "" "" )
 
 </table>
 
-<h3><a name="Maven_38">Maven 3.8.8+</a></h3>
+<h3><a name="Maven_38">Maven 3.8.x+</a></h3>
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -97,13 +98,23 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2023-03-14" "3.9.1" "https://lists.apache.org/thread/ppqvkt413fpsyh0kqjcr4dl5vy3m1lgg" "true" "Java 8" "2" )
+#release( "2023-08-03" "3.9.4" "https://lists.apache.org/thread/8lj6byvgoo9939mt5xm0d0wsy2m5j2k9" "true" "Java 8" "5" )
+#release( "2023-06-26" "3.9.3" "https://lists.apache.org/thread/ydxl67r7ddh6tkhckkj51j8tksd8ok0m" "" "" "" )
+#release( "2023-05-11" "3.9.2" "https://lists.apache.org/thread/6bjn6hkwo612qsd9dt6qx4ob9q2q261k" "" "" "" )
+#release( "2023-03-14" "3.9.1" "https://lists.apache.org/thread/ppqvkt413fpsyh0kqjcr4dl5vy3m1lgg" "" "" "" )
 #release( "2023-01-31" "3.9.0" "https://lists.apache.org/thread/0tfr7t2j2ddbv4gjvxm47yohtk3dg6b3" "" "" "" )
-#release( "2023-03-08" "3.8.8" "announce/202303.mbox/%3C{uuid}@apache.org%3E" "true" "Java 7" "21" )
+#release( "2023-03-08" "3.8.8" "announce/202303.mbox/%3C{uuid}@apache.org%3E" "true" "Java 7" "8" )
+#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "" "" "" )
+#release( "2022-06-06" "3.8.6" "announce/202206.mbox/%3C850c94d3-c7d3-81a3-b6e2-5b6f0d268126@apache.org%3E" "" "" "" )
+#release( "2022-03-05" "3.8.5" "announce/202203.mbox/%3Cb5eab336-e5ba-73bb-1c0c-d063d919ce4d@apache.org%3E" "" "" "" )
+#release( "2021-11-14" "3.8.4" "announce/202111.mbox/%3C55867acd-a5d4-6f42-ef39-c82a4bcd9062@apache.org%3E" "" "" "" )
+#release( "2021-09-27" "3.8.3" "announce/202110.mbox/%3C8bf4d8cb-6a12-4423-f913-24ca2351b325@apache.org%3E" "" "" "" )
+#release( "2021-08-04" "3.8.2" "announce/202108.mbox/%3C85a7a3d4-c4ae-8e1e-f5c4-832017b79ca3@apache.org%3E" "" "" "" )
+#release( "2021-04-04" "3.8.1" "announce/202104.mbox/%3CMailbird-0918dc43-dc18-4008-b83b-8bc8b1528177%40apache.org%3E" "" "" "" )
 
 </table>
 
-<h3><a name="Maven_3">Maven before 3.8.8</a></h3>
+<h3><a name="Maven_3">Maven 3.6.x and before</a></h3>
 
 <p>Maven before 3.6.3 has now reached its end of life.
 New plugin releases will require Maven 3.2.5 or later.
@@ -116,14 +127,7 @@ The following information is made available for reference.</p>
 <th>Links</th>
 </tr>
 
-#release( "2022-12-24" "3.8.7" "announce/202212.mbox/%3C27650d65-28f1-f3d8-472d-7d1939e1c83f@apache.org%3E" "" "" "" )
-#release( "2022-06-06" "3.8.6" "announce/202206.mbox/%3C850c94d3-c7d3-81a3-b6e2-5b6f0d268126@apache.org%3E" "" "" "" )
-#release( "2022-03-05" "3.8.5" "announce/202203.mbox/%3Cb5eab336-e5ba-73bb-1c0c-d063d919ce4d@apache.org%3E" "" "" "" )
-#release( "2021-11-14" "3.8.4" "announce/202111.mbox/%3C55867acd-a5d4-6f42-ef39-c82a4bcd9062@apache.org%3E" "" "" "" )
-#release( "2021-09-27" "3.8.3" "announce/202110.mbox/%3C8bf4d8cb-6a12-4423-f913-24ca2351b325@apache.org%3E" "" "" "" )
-#release( "2021-08-04" "3.8.2" "announce/202108.mbox/%3C85a7a3d4-c4ae-8e1e-f5c4-832017b79ca3@apache.org%3E" "" "" "" )
-#release( "2021-04-04" "3.8.1" "announce/202104.mbox/%3CMailbird-0918dc43-dc18-4008-b83b-8bc8b1528177%40apache.org%3E" "" "" "" )
-#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "" "" )
+#release( "2019-11-25" "3.6.3" "announce/201911.mbox/%3CMailbird-b8a76b15-cad9-4f81-b834-17c4e8b4d6b8%40apache.org%3E" "true" "Java 7" "13" )
 #release( "2019-08-27" "3.6.2" "announce/201909.mbox/%3CCACcefgc8DBFwq5vQ7EuZNGSeBxemz6Hd_2n%3DMV9T%3DpYgdUM5EA%40mail.gmail.com%3E" "" "" "" )
 #release( "2019-04-04" "3.6.1" "announce/201904.mbox/%3Cop.zz6k0iklkdkhrr%40desktop-2khsk44.dynamic.ziggo.nl%3E" "" "" "" )
 #release( "2018-10-24" "3.6.0" "announce/201811.mbox/%3C20181101115259.168F4187BA%40minotaur.apache.org%3E" "" "" "" )
@@ -136,8 +140,8 @@ The following information is made available for reference.</p>
 #release( "2015-11-14" "3.3.9" "announce/201511.mbox/%3C20151118071117.A29D618223%40minotaur.apache.org%3E" "true" "" "" )
 #release( "2015-04-28" "3.3.3" "users/201504.mbox/%3C4B6DEAE5-A0C1-40F0-A290-FAF9B67753D2%40takari.io%3E" "" "" "" )
 #release( "2015-03-18" "3.3.1" "users/201503.mbox/%3CC490F64B-BB4A-48F9-98DD-4352A7FAE378%40takari.io%3E" "" "" "" )
-#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "1" )
-#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "true" "Java 6" "3" )
+#release( "2014-12-20" "3.2.5" "users/201412.mbox/%3C4CD625DB-6BC8-4BAE-8ABA-0A185CF81596%40apache.org%3E" "true" "Java 6" "4" )
+#release( "2014-08-17" "3.2.3" "users/201408.mbox/%3C18823F7B-09E9-43D3-9E32-F0F3F356E844%40maven.org%3E" "" "" "" )
 #release( "2014-06-26" "3.2.2" "users/201406.mbox/%3CBF05670C-F811-42E0-ABBE-34A93F78BC72%40takari.io%3E" "" "" "" )
 #release( "2014-02-21" "3.2.1" "users/201402.mbox/%3C2828F75B-F636-478A-A958-404672FFA1C7%40takari.io%3E" "" "" "" )
 #release( "2013-10-04" "3.1.1" "announce/201310.mbox/%3C0D117268-CE78-4051-9484-DE2EE770B120%40apache.org%3E" "true" "Java 5" "17" )

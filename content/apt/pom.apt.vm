@@ -1739,7 +1739,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<updatePolicy>>:
   This element specifies how often updates should attempt to occur. Maven will compare the local
   POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
-  <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>.
+  <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>
+  (only downloads if not yet existing in the local repository).
 
   * <<checksumPolicy>>:
   When Maven deploys files to the repository, it also deploys corresponding checksum files. Your options

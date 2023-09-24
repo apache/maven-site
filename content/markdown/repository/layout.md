@@ -22,6 +22,7 @@ Maven2 repository layout format is the default layout used since Maven 2 (see [R
 
 ```
 Repository root
+|-- archetype-catalog.xml
 `-- ${groupId as directory}/
     |-- maven-metadata.xml
     |--                   .${checksums}
@@ -87,3 +88,25 @@ HTTP/HTTPS protocol have 2 specific characteristics:
 
 2. [HTTP/1.1 Reason-Phrase](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html) is used to provide extended message when artifact access is rejected by remote repository.
 This usage of Reason-Phrase is nowadays legacy and is removed in HTTP/2, [MNG-6795](https://issues.apache.org/jira/browse/MNG-6795) is open to create a replacement.
+
+## Archetype Catalog
+
+`archetype-catalog.xml` file at root directory is a [catalog of all Maven Archetypes](/archetype/archetype-models/archetype-catalog/archetype-catalog.html) proposed in the repository.
+
+## Additional Content
+
+### Index
+
+[`.index`](https://repo.maven.apache.org/maven2/.index/) directory at root directory is an [index](/maven-indexer/indexer-core/) of the content, done by [Maven Indexer](/maven-indexer/).
+
+If contains index files in 2 flavours:
+
+- full index: `nexus-maven-repository-index.gz`
+- incremental index: `nexus-maven-repository-index.<n>.gz` + `nexus-maven-repository-index.properties`
+
+### Metadata
+
+[`.meta`](https://repo.maven.apache.org/maven2/.meta/) directory at root directory contains a few metadata files:
+
+- `prefixes.txt`
+- `repository-metadata.xml`

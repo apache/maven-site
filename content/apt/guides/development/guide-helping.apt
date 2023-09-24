@@ -41,10 +41,11 @@ Guide to helping with Maven
  * {{{./guide-maven-development.html#Creating_and_submitting_a_patch}Submit patches}} to reported issues (both those you find,
    or that others have filed)\
    To ease your first contribution, we have a {{{https://s.apache.org/for-the-grabs_maven}list of "up for grabs" issues}}, meaning that they should be easy to work on.
+   If you consider picking up larger chunks of work, please reach out on the {{{../../mailing-lists.html}dev@maven.apache.org list}} to discuss if the idea and solution strategy are still relevant.
 
- * {{{./guide-testing-releases.html} test releases}} help test releases that are being voted on (see the dev@maven.apache.org {{{../../mailing-lists.html} mailing list}} for release votes)
+ * {{{./guide-testing-releases.html} Test releases}} help test releases that are being voted on (see the {{{../../mailing-lists.html}dev@maven.apache.org list}} for release votes)
 
- * {{{./guide-testing-development-plugins.html} test snapshot plugins}} help test the latest development versions of plugins and report issues
+ * {{{./guide-testing-development-plugins.html} Test snapshot plugins}} help test the latest development versions of plugins and report issues
 
  * Help with the documentation by pointing out areas that are lacking or unclear, and if you can, submitting Pull Requests to correct it:
    use the "edit" button in the breadcrumb, just after the page title.

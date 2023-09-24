@@ -309,11 +309,11 @@ public class MyAnimalMojo
  Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections do not necessarily have
   a specific component type. In order to derive the type of a collection item, the following strategy is used:
 
-  [[1]] If the XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
+  [[1]] If the first item XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
 
-  [[2]] If the XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
+  [[2]] If the first item XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
 
-  [[3]] Try the XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
+  [[3]] Try the first item XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
         configured
 
   [[4]] Use the parameter type information from either
@@ -324,6 +324,18 @@ public class MyAnimalMojo
 
   []
 
+ The following collection implementations are being used when there is no <<<implementation>>> hint attribute in the XML element representing the collection:
+ 
+*---------------------*--------------*
+|| Collection Class   || Used for
+*---------------------*--------------*
+<<<TreeSet>>>   | for all types assignable to <<<SortedSet>>>
+*---------------------*--------------*
+<<<HashSet>>>   | for all types assignable to <<<Set>>>
+*---------------------*--------------*
+<<<ArrayList>>> | for every other <<<Collection>>> type which is not a <<<Map>>>
+*---------------------*--------------*
+ 
  Since Maven 3.3.9 ({{{https://issues.apache.org/jira/browse/MNG-5440}MNG-5440}}), you can list individual items alternatively as comma-separated list in the XML value of animals directly.
  This approach is also used if configuring collection/array parameters via command line
  The following example is equivalent to the example above:
@@ -381,6 +393,8 @@ public class MyAnimalMojo
  
  In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument. 
 
+ The map implementation class is by default <<<TreeMap>>> but can be overridden with an <<<implementation>>> attribute on the XML element representing the map.
+  
 **** {Mapping Properties}
 
  Properties should be defined like the following:

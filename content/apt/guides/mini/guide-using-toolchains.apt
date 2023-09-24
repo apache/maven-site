@@ -33,18 +33,18 @@ Guide to Using Toolchains
 
 * What is Toolchains?
 
-  The Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build,
+  Maven Toolchains provide a way for plugins to discover what JDK (or other tools) are to be used during the build,
   without the need to configure them in each plugin nor in every <<<pom.xml>>>, or forcing a precise location among every
   machine building the project.
 
-  With Maven Toolchains applied to JDK toolchain, a project can now be built using a specific version of JDK independent
+  With Maven Toolchains applied to JDK toolchain, a project can be built using a specific version of JDK independent
   from the one Maven is running with. Think how JDK versions can be set in IDEs like IDEA, NetBeans and Eclipse, or how you can
   compile with an older JDK from Maven running with a recent one.
 
 ** Prerequisites
 
-  Toolchains will only work in Maven 2.0.9 and higher versions. For more details about its design and implementation,
-  please see {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
+  For more details about Toolchains' design and implementation,
+  see {{{https://cwiki.apache.org/confluence/display/MAVENOLD/Toolchains}Toolchains}}.
 
   Below are some plugins which are toolchain-aware, with the toolchain-type used:
 

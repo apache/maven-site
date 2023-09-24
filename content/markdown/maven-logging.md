@@ -29,12 +29,12 @@ which allows others to use whatever logging implementation they like in their co
 while still being able to have integrated logging.
 
 The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][5] for logging
-combined with the [SLF4J Simple][2] implementation. Future versions may use a more advanced
+combined with the [SLF4J Simple][2] implementation (or [a customized version since 3.5.0][10]). Future versions may use a more advanced
 implementation, but we chose to start simple.
 
 Looking at the distribution you will
 see the following layout where the `simplelogger.properties`, `slf4j-api-x.y.z-jar` and
-`slf4j-simple-x.y.z.jar` specifically relate to the SLF4J implementation:
+`slf4j-simple-x.y.z.jar` (or `maven-slf4j-provider-3.x.y.jar` since 3.5.0) specifically relate to the SLF4J implementation:
 
 <div class="source"><pre>
 apache-maven-3.x.y
@@ -52,7 +52,7 @@ apache-maven-3.x.y
 └── lib
     ├── ...
     ├── slf4j-api-x.y.z.jar
-    ├── slf4j-simple-x.y.z.jar
+    ├── slf4j-simple-x.y.z.jar or maven-slf4j-provider-3.x.y.jar
     └── ...
 </pre></div>
 
@@ -62,17 +62,21 @@ To configure logging with the [SLF4J Simple][2], you can edit the properties in 
 `${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation
 for details.
 
-Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9]. 
-E.g. `MAVEN_OPTS=-Dorg.slf4j.simpleLogger.showThreadName=true mvn <goals>` will add the thread name to every logging line.
+Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9], for example:
 
-The default SLF4J configuration for Maven is listed [here][8].
+- `MAVEN_OPTS=-Dorg.slf4j.simpleLogger.showThreadName=true mvn <goals>` will add the thread name to every logging line,
+- `MAVEN_OPTS=-Dorg.slf4j.simpleLogger.showLogName=true mvn <goals>` will add the logger name to every logging line,
+
+The default SLF4J configuration for Maven is listed [here][8], where you can see other useful property names to customise logging.
 
 ## Changing the SLF4J implementation
 
 If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR
 from the `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
 
-See SLF4J documentation for more details on [swapping "SLF4J bindings"][7]. 
+See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
+
+Note: with the introduction of colors in Maven 3.5.0, perhaps an equivalent work to [`maven-slf4j-provider`][10] may be required or you'll loose colors.
 
 ## Maven implemenation details
 
@@ -87,3 +91,4 @@ See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 [7]: https://www.slf4j.org/manual.html#swapping
 [8]: https://github.com/apache/maven/blob/master/apache-maven/src/assembly/maven/conf/logging/simplelogger.properties
 [9]: https://maven.apache.org/configure.html
+[10]: https://maven.apache.org/ref/current/maven-slf4j-provider/
