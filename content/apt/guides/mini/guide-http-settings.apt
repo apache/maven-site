@@ -29,7 +29,7 @@
 Advanced configuration to HttpClient HTTP Wagon
 
   <<This page contains Wagon specific information, but the default transport in Maven 3.9.0+ is NOT Wagon anymore.
-  Make sure to check {{{./guide-resolver-transport.html}Resolver Transport guide}} first, as things have changed.>>
+  Make sure to check the {{{./guide-resolver-transport.html}Resolver Transport guide}} first, as things have changed.>>
 
 %{toc}
 
@@ -47,7 +47,7 @@ Advanced configuration to HttpClient HTTP Wagon
 
   * default Preemptive Authentication only with PUT (GET doesn't use anymore default Preemptive Authentication)
 
-**Introduction
+*Introduction
 
   The HttpClient-based HTTP wagon offers more control over the
   configuration used to access HTTP-based Maven repositories. For starters, you have fine-grained control over what HTTP headers
@@ -55,7 +55,7 @@ Advanced configuration to HttpClient HTTP Wagon
   of HttpClient itself. Best of all, you have the ability to control these headers and parameters for all requests, or individual 
   request types (GET, HEAD, and PUT).
   
-**The Basics
+*The Basics
 
   Without any special configuration, Maven's HTTP wagon uses some default HTTP headers and client parameters when managing
   artifacts. The default headers are:
@@ -104,7 +104,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   
   We'll discuss preemptive authentication in another example, below.
   
-**Configuring GET, HEAD, PUT, or All of the Above
+*Configuring GET, HEAD, PUT, or All of the Above
 
   <<Starting with Maven 3.9.0 native HTTP transport will pick up the "all" settings only (get, head, put are neglected!)"
   but it will WARN about its deprecation. For users sticking with Wagon nothing changes.>>
@@ -154,7 +154,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   For clarity, the other two sections are <<<\<get\>>>> for GET requests, and <<<\<head\>>>> for HEAD requests. I know that's going to
   be hard to remember...
 
-**Taking Control of Your HTTP Headers
+*Taking Control of Your HTTP Headers
 
   As you may have noticed above, the default HTTP headers do have the potential to cause problems. For instance, some websites 
   set the encoding for downloading GZipped files as <<<gzip>>>, in spite of the fact that the HTTP request itself isn't being
@@ -207,14 +207,14 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+
 
-**Fine-Tuning HttpClient Parameters
+*Fine-Tuning HttpClient Parameters
 
   Going beyond the power of HTTP request parameters, HttpClient provides a host of other configuration options. In most cases,
   you won't need to customize these. But in case you do, Maven provides access to specify your own fine-grained configuration
   for HttpClient. Again, you can specify these parameter customizations per-method (HEAD, GET, or PUT), or for all methods of
   interacting with a given server. For a complete list of supported parameters, see the link\[2\] in Resources section below.
 
-***Non-String Parameter Values
+**Non-String Parameter Values
 
   Many of the configuration parameters for HttpClient have simple string values; however, there are important exceptions to 
   this. In some cases, you may need to specify boolean, integer, or long values. In others, you may even need to specify
@@ -289,7 +289,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+ 
 
-***Example: Lifting auth scope restriction for external authentication systems
+**Example: Lifting auth scope restriction for external authentication systems
 
   Maven Wagon by default limits supplied credentials to the host:port combination
   scope, ignoring any other target servers. When the target server delegates
@@ -322,7 +322,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+
 
-***Ignoring Cookies
+**Ignoring Cookies
 
   Like the example above, telling the HttpClient to ignore cookies for all methods of request is a simple matter of
   configuring the <<<http.protocol.cookie-policy>>> parameter (it uses a regular string value, so no special syntax
@@ -356,13 +356,13 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   the one used by the client to access the server. If you have this problem, and know that you don't need to use
   this session cookie, you can ignore cookies from this server with the above configuration.
 
-**Support for General-Wagon Configuration Standards
+*Support for General-Wagon Configuration Standards
 
   It should be noted that configuration options previously available in the HttpClient-driven HTTP wagon are still
   supported in addition to this new, fine-grained approach. These include the configuration of HTTP headers
   and connection timeouts. Let's examine each of these briefly:
 
-***HTTP Headers
+**HTTP Headers
 
   In all HTTP Wagon implementations, you can add your own HTTP headers like this:
   
@@ -388,7 +388,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   does it allow you to specify headers on a per-method basis. However, this configuration remains available in both the 
   lightweight and httpclient-based Wagon implementations.
 
-***Connection Timeouts
+**Connection Timeouts
 
   All wagon implementations that extend the <<<AbstractWagon>>> class, including those for SCP, HTTP, FTP, and more,
   allow the configuration of a connection timeout, to allow the user to tell Maven how long to wait before giving 
@@ -432,9 +432,9 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
   parameter. If you need to separate timeout preferences according to HTTP method, you can use one more like that
   specified directly above.
 
-*** Read time out
+** Read time out
 
-  With Wagon 2.0 and Apache Maven 3.0.4, a default timeout of 30 minutes comes by default.
+  The default timeout is 30 minutes.
   If you want to change this value, you can add the following setup in your settings:
 
 +---+
@@ -454,7 +454,7 @@ problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
 </settings>
 +---+
 
-**Resources
+*Resources
 
     [[1]] {{{https://hc.apache.org/httpcomponents-client-4.5.x/}HttpClient website}}
     
