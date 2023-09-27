@@ -822,7 +822,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 -------------------------------
 <build>
   <defaultGoal>install</defaultGoal>
-  <directory>${basedir}/target</directory>
+  <directory>${project.basedir}/target</directory>
   <finalName>${artifactId}-${version}</finalName>
   <filters>
     <filter>filters/filter1.properties</filter>
@@ -837,7 +837,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   * <<directory>>:
   This is the directory where the build will dump its files or, in Maven parlance, the build's target.
-  It aptly defaults to <<<$\{basedir\}/target>>>.
+  It aptly defaults to <<<$\{project.basedir\}/target>>>.
 
   * <<finalName>>:
   This is the name of the bundled project when it is finally built (sans the file extension, for
@@ -852,7 +852,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   accept their settings (covered below). In other words, the "<<<name=value>>>" pairs defined within
   the filter files replace <<<$\{name\}>>> strings within resources on build. The example above defines
   the <<<filter1.properties>>> file under the <<<filters/>>> directory. Maven's default filter
-  directory is <<<$\{basedir\}/src/main/filters/>>>.
+  directory is <<<$\{project.basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
   {{{./guides/getting-started}quick start guide}}.
@@ -878,7 +878,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
       <resource>
         <targetPath>META-INF/plexus</targetPath>
         <filtering>false</filtering>
-        <directory>${basedir}/src/main/plexus</directory>
+        <directory>${project.basedir}/src/main/plexus</directory>
         <includes>
           <include>configuration.xml</include>
         </includes>
@@ -911,7 +911,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   * <<directory>>:
   This element's value defines where the resources are to be found. The default directory for a build is
-  <<<$\{basedir\}/src/main/resources>>>.
+  <<<$\{project.basedir\}/src/main/resources>>>.
 
   * <<includes>>:
   A set of files patterns which specify the files to include as resources under that specified directory, using *
@@ -925,7 +925,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   The <<<testResources>>> element block contains <<<testResource>>>
   elements. Their definitions are similar to <<<resource>>> elements, but are naturally used during test
   phases. The one difference is that the default (Super POM defined) test resource directory for a project is
-  <<<$\{basedir\}/src/test/resources>>>. Test resources are not deployed.
+  <<<$\{project.basedir\}/src/test/resources>>>. Test resources are not deployed.
 
 *** {Plugins}
 
@@ -1239,11 +1239,11 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
-    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-    <scriptSourceDirectory>${basedir}/src/main/scripts</scriptSourceDirectory>
-    <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
-    <outputDirectory>${basedir}/target/classes</outputDirectory>
-    <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
     ...
   </build>
 </project>
@@ -1251,7 +1251,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   If the values of a <<<*Directory>>> element above is set as an absolute path (when their
   properties are expanded) then that directory is used. Otherwise, it is relative to the
-  base build directory: <<<$\{basedir\}>>>. <<Please note that the>> <<<scriptSourceDirectory>>> <<is nowhere
+  base build directory: <<<$\{project.basedir\}>>>. <<Please note that the>> <<<scriptSourceDirectory>>> <<is nowhere
   used in Maven and is obsolete>>.
 
 *** {Extensions}
@@ -1305,7 +1305,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
-    <outputDirectory>${basedir}/target/site</outputDirectory>
+    <outputDirectory>${project.basedir}/target/site</outputDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -1321,7 +1321,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +------------------------------------------+
 
   The other difference is the <<<outputDirectory>>> element under <<<plugin>>>. In the case of reporting,
-  the output directory is <<<$\{basedir\}/target/site>>> by default.
+  the output directory is <<<$\{project.basedir\}/target/site>>> by default.
 
 ** {Report Sets}
 

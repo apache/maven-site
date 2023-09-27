@@ -1041,7 +1041,7 @@ NOTE: this may only work in the latest plugin version in SVN
                         <path refid="maven.compile.classpath"/>
                         <path refid="maven.plugin.classpath"/>
                     </path>
-                    <ant antfile="${basedir}/build.xml" dir="${basedir}" inheritRefs="true">
+                    <ant antfile="${project.basedir}/build.xml" dir="${project.basedir}" inheritRefs="true">
                         <target name="generate-sources"/>
                     </ant>
                 </tasks>
