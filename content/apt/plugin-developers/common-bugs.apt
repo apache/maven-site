@@ -309,7 +309,7 @@ public MyMojo extends AbstractMojo
 
   It is common practice for users of Maven to specify relative paths in the POM, not to mention that the Super POM does
   so, too. The intention is to resolve such relative paths against the base directory of the current project. In other
-  words, the paths <<<target/classes>>> and <<<$\{basedir\}/target/classes>>> should resolve to the same directory for a
+  words, the paths <<<target/classes>>> and <<<$\{project.basedir\}/target/classes>>> should resolve to the same directory for a
   given POM.
 
   Unfortunately, the class <<<{{{http://java.sun.com/javase/6/docs/api/java/io/File.html}java.io.File}}>>> does not

@@ -225,7 +225,7 @@ my-app
 
  As you can see, the project created from the archetype has a POM, a source tree for your application's sources and
  a source tree for your test sources. This is the standard layout for Maven projects (the application sources
- reside in <<<$\{basedir\}/src/main/java>>> and test sources reside in <<<$\{basedir\}/src/test/java>>>, where $\{basedir\}
+ reside in <<<$\{project.basedir\}/src/main/java>>> and test sources reside in <<<$\{project.basedir\}/src/test/java>>>, where $\{project.basedir\}
  represents the directory containing <<<pom.xml>>>).
 
  If you were to create a Maven project by hand this is the directory structure that we recommend using. This is a
@@ -272,7 +272,7 @@ mvn compile
  the output above, it took almost 4 minutes).  If you execute the command again, Maven will now have what it needs,
  so it won't need to download anything new and will be able to execute the command much more quickly.
 
- As you can see from the output, the compiled classes were placed in <<<$\{basedir\}/target/classes>>>, which is
+ As you can see from the output, the compiled classes were placed in <<<$\{project.basedir\}/target/classes>>>, which is
  another standard convention employed by Maven. So, if you're a keen observer, you'll notice that by using the
  standard conventions, the POM above is very small and you haven't had to tell Maven explicitly where any of
  your sources are or where the output should go. By following the standard Maven conventions, you can get
@@ -364,7 +364,7 @@ mvn test
 mvn package
 ------
 
- You can now take a look in the <<<$\{basedir\}/target>>> directory and you will see the generated JAR file.
+ You can now take a look in the <<<$\{project.basedir\}/target>>> directory and you will see the generated JAR file.
 
  Now you'll want to install the artifact you've generated (the JAR file) in your local repository
  (<<<$\{user.home\}/.m2/repository>>> is the default location). For more information on repositories you can refer to our
@@ -539,9 +539,9 @@ mvn clean
  standard Maven conventions you can package resources within JARs simply by placing those resources in a standard
  directory structure.
 
- You see below in our example we have added the directory <<<$\{basedir\}/src/main/resources>>> into which we place
+ You see below in our example we have added the directory <<<$\{project.basedir\}/src/main/resources>>> into which we place
  any resources we wish to package in our JAR. The simple rule employed by Maven is this: any directories or files
- placed within the <<<$\{basedir\}/src/main/resources>>> directory are packaged in your JAR with the exact same
+ placed within the <<<$\{project.basedir\}/src/main/resources>>> directory are packaged in your JAR with the exact same
  structure starting at the base of the JAR.
 
 ----
@@ -584,7 +584,7 @@ my-app
             `-- App.class
 ----
 
- As you can see, the contents of <<<$\{basedir\}/src/main/resources>>> can be found starting at the base of the
+ As you can see, the contents of <<<$\{project.basedir\}/src/main/resources>>> can be found starting at the base of the
  JAR and our <<<application.properties>>> file is there in the <<<META-INF>>> directory. You will also notice some other files there
  like <<<META-INF/MANIFEST.MF>>> as well as a <<<pom.xml>>> and <<<pom.properties>>> file. These come standard with
  generation of a JAR in Maven. You can create your own manifest if you choose, but Maven will generate one by
@@ -604,7 +604,7 @@ artifactId=my-app
 ----
 
  To add resources to the classpath for your unit tests, you follow the same pattern as you do for adding resources to the JAR
- except the directory you place resources in is $\{basedir\}/src/test/resources. At this point you would have a
+ except the directory you place resources in is $\{project.basedir\}/src/test/resources. At this point you would have a
  project directory structure that would look like the following:
 
 -----

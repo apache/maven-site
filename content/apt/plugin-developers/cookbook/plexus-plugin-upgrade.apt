@@ -73,12 +73,12 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 || goals  | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/descriptor-mojo.html}<<<descriptor>>>}}        | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/generate-metadata-mojo.html}<<<generate-metadata>>>}}
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
 |         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/merge-descriptors-mojo.html}<<<merge-descriptors>>>}} | see <<<staticMetadataDirectory>>> parameter \
-|         |                                                                                                         | default: <<<$\{basedir}/src/main/resources/META-INF/plexus>>>
+|         |                                                                                                         | default: <<<$\{project.basedir}/src/main/resources/META-INF/plexus>>>
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
 |         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/test-descriptor-mojo.html}<<<test-descriptor>>>}} | {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/generate-test-metadata-mojo.html}<<<generate-test-metadata>>>}}
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
 |         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/test-merge-descriptors-mojo.html}<<<test-merge-descriptors>>>}} | see <<<testStaticMetadataDirectory>>> parameter \
-|         |                                                                                                         | default: <<<$\{basedir}/src/test/resources/META-INF/plexus>>>
+|         |                                                                                                         | default: <<<$\{project.basedir}/src/test/resources/META-INF/plexus>>>
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
 |         | {{{https://codehaus-plexus.github.io/plexus-maven-plugin/components-report-mojo.html}<<<components-report>>>}} | reporting feature not available
 *---------+---------------------------------------------------------------------------------------------------------+--------------+
@@ -139,7 +139,7 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
 </project>
 +---------+
 
- If <<<merge-descriptors>>> is used, move the handwritten xml file to <<<$\{basedir}/src/main/resources/META-INF/plexus>>>.
+ If <<<merge-descriptors>>> is used, move the handwritten xml file to <<<$\{project.basedir}/src/main/resources/META-INF/plexus>>>.
 
 ** Replacing Plexus Javadoc Tags with Plexus Java 5 Annotations
 
