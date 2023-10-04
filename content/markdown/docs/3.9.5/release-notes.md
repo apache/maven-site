@@ -38,9 +38,9 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-Regression fixes from Maven 3.9.4. All users already on Maven 3.9.x are advised to upgrade.
+Regression fixes and other improvements from Maven 3.9.4. All users already on Maven 3.9.x are advised to upgrade.
 
-This release updates Resolver, released as [Resolver 1.9.16](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353482) that is included in Maven 3.9.5. Maven itself received new features for profile activation, transfer messages colorization and various minor but important code changes.
+This release updates Resolver to version [1.9.16](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353482). Maven itself received new features as transfer messages colorization, support for `${project.basedir}` in file profile activation and various minor code changes.
 
 The full list of changes can be found in our [issue management system][4].
 
