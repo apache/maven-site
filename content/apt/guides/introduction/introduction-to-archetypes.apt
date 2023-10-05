@@ -59,7 +59,7 @@ What is Archetype?
 mvn archetype:generate
 -----
 
-  Please refer to {{{/archetype/maven-archetype-plugin/usage.html}Archetype Plugin page}}.
+  Please refer to {{{/archetype/maven-archetype-plugin/}Archetype Plugin page}}.
 
 * Provided Archetypes
 
