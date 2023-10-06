@@ -822,6 +822,8 @@ Introduction to the Dependency Mechanism
      artifact may not have a version specified. (This should be considered a best practice in any case as it
      keeps the versions of artifacts from changing from one build to the next).
 
+ []
+
  Starting from Maven 4.0, a new specific BOM packaging has been introduced. 
  It allows defining a BOMs which are not used as parent in a project leveraging
  the newer 4.1.0 model, while still providing full compatibility with Maven 3.X
