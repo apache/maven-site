@@ -51,6 +51,7 @@ The full list of changes can be found in our [issue management system][4].
 * Mojos are prevented to bootstrap new instance of `RepositorySystem` (for example by using deprecated `ServiceLocator`), they should reuse `RepositorySystem` instance provided by Maven instead. See [MNG-7471](https://issues.apache.org/jira/browse/MNG-7471).
 * Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
 * System and user properties handling cleanup, see [MNG-7556](https://issues.apache.org/jira/browse/MNG-7556). As a consequence, this may introduce breakage in environments where the user properties were used to set system properties or other way around, for example see [MNG-7887](https://issues.apache.org/jira/projects/MNG/issues/MNG-7887).
+* Plugins and extensions used by your build are checked against Maven supported APIs and conventions: this "plugin validation" may report WARNINGs at the end of your build. See [plugin validation documentation](../../guides/plugins/validation/) to better understand what to do when your build suffers from such warnings.
 
 ## Complete Release Notes
 
@@ -61,4 +62,3 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353460
 [5]: ../../docs/history.html
-
