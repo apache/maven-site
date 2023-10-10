@@ -106,7 +106,7 @@ mvn clean verify artifact:compare
 
  []
 
- For detailed explanations, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318}Maven "Reproducible/Verifiable Builds" Wiki page}}.
+ For detailed explanations, see {{{https://s.apache.org/reproducible-builds}Maven "Reproducible/Verifiable Builds" Wiki page}}.
 
 * FAQ
 
