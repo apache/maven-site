@@ -117,7 +117,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 
 ### JVM and Command Line Options
 
-* [Project specific jvm and command line otions][MNG-5767]
+* [Project specific jvm and command line options][MNG-5767]
 
 * It's really hard to define a general set of options for calling the maven
   command line. Usually this will be solved by putting this options to a script
