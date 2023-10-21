@@ -44,23 +44,23 @@ This alpha release provides new cornerstone features for the future Maven evolut
 In particular, the POM model which was set in stone to a 4.0.0 version since Maven 3.0, is now able to evolve. For modules that have a packaging which is not POM, the flattened consumer POM is now installed/deployed instead of the main POM, eventually translated back into  a 4.0.0 model version for consumer compatibility.  The build POM is also installed / deployed unchanged. This allows the introduction of the 4.1.0 model which already brings a few improvements.
 
 The full list of changes can be found in our [issue management system][4]. Among those are:
- - switch from plexus-xml to stax / woodstox for XML parsing
+ - switch from [Plexus XML](https://codehaus-plexus.github.io/plexus-xml/) to StAX / [Woodstox](https://github.com/FasterXML/woodstox) for XML parsing
  - support for alternative POM syntaxes
  - introduce a 4.1.0 model version
  - add flexible goal ordering (in 4.1.0 model)
  - allow glob patterns in dependency exclusions
- - support proxy port interpolation in settings.xml
+ - support proxy port interpolation in `settings.xml`
  - add support for TRACE logging level (with style "bold,magenta")
  - add model version analysis and downgrade
- - attach the build POM and simplify the build/consumer implementation
+ - attach the build POM (with `build` clasifier) and simplify the build/consumer implementation
  - add a new BOM packaging
  - trim down the consumer POM
  - expose the rootDirectory for model processing
- - support configuration in extensions.xml / <extension> elements (in 4.1.0 model)
- - generic .uri suffix to get the URI representation of any file property
- - allow registering maven core extension in .m2 directory instead of MAVEN_HOME
+ - support configuration in `extensions.xml` / `\<extension>` elements (in 4.1.0 model)
+ - generic `.uri` suffix to get the URI representation of any file property
+ - allow registering Maven core extension in `.m2` directory instead of `MAVEN_HOME`
  - colorize transfer messages
- - the root attribute introduced in alpha-7 has been moved to the new 4.1.0 model
+ - the `root` attribute introduced in alpha-7 has been moved to the new 4.1.0 model
 
 ## Known Issues
 
