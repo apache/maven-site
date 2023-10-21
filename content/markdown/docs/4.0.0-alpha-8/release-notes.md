@@ -41,7 +41,7 @@ If you have any questions, please consult:
 ## Overview About the Changes
 
 This alpha release provides new cornerstone features for the future Maven evolution.  
-In particular, the POM model which was set in stone to a 4.0.0 version since Maven 3.0, is now able to evolve. For modules that have a packaging which is not POM, the flattened consumer POM is now installed/deployed instead of the main POM, eventually translated back into  a 4.0.0 model version for consumer compatibility.  The build POM is also installed / deployed unchanged. This allows the introduction of the 4.1.0 model which already brings a few improvements.
+In particular, the POM model which was set in stone to a 4.0.0 version since Maven 2.0, is now able to evolve. For modules that have a packaging which is not POM, the flattened consumer POM is now installed/deployed instead of the main POM, eventually translated back into a 4.0.0 model version for consumer compatibility.  The build POM is also installed / deployed unchanged with `build` classifier. This allows the introduction of the 4.1.0 model which already brings a few improvements.
 
 The full list of changes can be found in our [issue management system][4]. Among those are:
  - switch from [Plexus XML](https://codehaus-plexus.github.io/plexus-xml/) to StAX / [Woodstox](https://github.com/FasterXML/woodstox) for XML parsing
