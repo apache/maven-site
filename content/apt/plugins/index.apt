@@ -117,8 +117,6 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-doap-plugin/} <<<doap>>>}}                 | B          | 1.2          | 2015-03-17 | Generate a Description of a Project (DOAP) file from a POM. | {{{https://gitbox.apache.org/repos/asf/maven-doap-plugin.git}Git}} / {{{https://github.com/apache/maven-doap-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MDOAP}Jira MDOAP}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | 1.1          | 2015-04-03 | Documentation checker plugin. | {{{https://gitbox.apache.org/repos/asf/maven-docck-plugin.git}Git}} / {{{https://github.com/apache/maven-docck-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MDOCCK}Jira MDOCCK}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-javadoc-plugin/} <<<javadoc>>>}}           | B+R        | 3.6.0        | 2023-09-11 | Generate Javadoc for the project. | {{{https://gitbox.apache.org/repos/asf/maven-javadoc-plugin.git}Git}} / {{{https://github.com/apache/maven-javadoc-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MJAVADOC}Jira MJAVADOC}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jdeps-plugin/} <<<jdeps>>>}}               | B          | 3.1.2        | 2019-06-12 | Run JDK's JDeps tool on the project. | {{{https://gitbox.apache.org/repos/asf/maven-jdeps-plugin.git}Git}} / {{{https://github.com/apache/maven-jdeps-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MJDEPS}Jira MJDEPS}}
@@ -194,6 +192,8 @@ Available Plugins
 || <<Plugin>>                                                  || <<Type*>> || <<Version>> || <<Retired Date>> || <<Description>>
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-ant-plugin/} <<<ant>>>}}                   | B          | 2.4          | 2019-06-02        | Generate an Ant build file for the project.
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+| {{{/plugins/maven-docck-plugin/} <<<docck>>>}}               | B          | 1.2          | 2023-10-22        | Documentation checker plugin.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-eclipse-plugin/} <<<eclipse>>>}}           | B          | 2.10         | 2015-10-07        | Generate an Eclipse project files for the current project.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
