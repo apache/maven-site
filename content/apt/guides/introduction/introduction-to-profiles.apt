@@ -357,7 +357,7 @@ mvn groupId:artifactId:goal -Denvironment=test
   Also there is a known bug with command line option values starting with <<<->>> ({{{https://issues.apache.org/jira/browse/CLI-309}CLI-309}}), therefore it is recommended to use it with the syntax <<<-P=-profilename>>>.
   
 -----
-mvn groupId:artifactId:goal -P \\!profile-1,\\!profile-2,\\!?profile-3
+mvn groupId:artifactId:goal -P \!profile-1,\!profile-2,\!?profile-3
 -----
 
   or
