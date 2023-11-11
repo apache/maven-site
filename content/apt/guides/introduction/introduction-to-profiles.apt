@@ -351,16 +351,19 @@ mvn groupId:artifactId:goal -Denvironment=test
 ** Deactivating a profile
 
   One or more profiles can be deactivated using the command line by prefixing their
-  identifier with either the character '!' or '-' as shown below:
+  identifier with either the character '!' or '-' as shown below.
+
+  <<Note>> that <<<!>>> needs to be escaped with <<<\\>>> or quoted in Bash, ZSH and other shells as it has {{{https://www.gnu.org/software/bash/manual/html_node/Event-Designators.html}a special meaning}}.
+  Also there is a known bug with command line option values starting with <<<->>> ({{{https://issues.apache.org/jira/browse/CLI-309}CLI-309}}), therefore it is recommended to use it with the syntax <<<-P=-profilename>>>.
   
 -----
-mvn groupId:artifactId:goal -P !profile-1,!profile-2,!?profile-3
+mvn groupId:artifactId:goal -P \\!profile-1,\\!profile-2,\\!?profile-3
 -----
 
   or
 
 -----
-mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
+mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
 -----
 
   This can be used to deactivate profiles marked as activeByDefault or profiles that would 
