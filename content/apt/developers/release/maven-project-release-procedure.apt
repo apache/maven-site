@@ -153,15 +153,24 @@ Vote open for at least 72 hours.
 
 -----
 
- To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Road Map> link,
+ To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Releases> link, pick a version,
  and use the link to <Release Notes> that is next to the version being released.
 
  To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
 
- The vote is open for at least 72 hours means, that you need to wait at least 72 hours before proceeding.
- This gives others time to test your release and check that everything is good. If you have received after that
- not enough +1 votes to reach the quorum, this doesn't mean, the vote failed. It just takes a bit longer.
+ The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
+ This gives others time to test your release and check that everything is good. If after that period you have not received
+ enough +1 votes to reach the quorum, this doesn't mean the vote failed: it just takes a bit longer.
+
+ Checking binary output, ideally to control that the build is reproducible, can be done by running <<<verify>>> (NOT <<<install>>>)
+ followed by <<<artifact:compare>>> against the staged content:
+
+-----
+mvn -Papache-release -Dgpg.skip clean verify \
+    artifact:compare -Dreference.repo=https://repository.apache.org/content/repositories/staging/
+-----
+
 
 * Check the vote results
 
