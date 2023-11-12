@@ -1976,6 +1976,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
   Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
+  * <<activeByDefault>>:
+  Is <<<false>>> by default. Boolean flag which determines if the profile is active by default. This flag is only evaluated if no other profile is explicitly activated via command line or <<<settings.xml>>>, otherwise it has no effect.
+
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
   
@@ -2000,6 +2003,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{basedir\}>>>, System properties and request properties.
 
   []
+
+  The POM based profile activation only refers to the container profile (not all profiles with the same <<<id>>>).
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
