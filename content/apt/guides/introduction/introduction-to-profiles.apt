@@ -157,7 +157,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
   JDK version matching, operating system matching or
-  the presence/the value of a system property. Here are some examples.
+  the presence/the value of a system property. The implicit profile activation always only refers to the container profile (and not to profiles in other modules with the same id).
+  Here are some examples.
 
 **** JDK
 
