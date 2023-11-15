@@ -80,6 +80,12 @@ Introduction to Build Profiles
     (no longer supported in Maven 3.0 and above; see
     {{{https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes#Maven3.xCompatibilityNotes-profiles.xml} Maven 3 compatibility notes}})
 
+* Profile Inheritance
+  
+  The profiles are not inherited as other POM elements by child POMs. Instead they are resolved very early by the {{{/ref/current/maven-model-builder/}Maven Model Builder}}
+  and only the effects of active profiles are inherited (e.g. the plugins defined in the profile).
+  That also leads to the fact that implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
+
 * How can a profile be triggered? How does this vary according to the type of profile being used?
 
   A profile can be activated in several ways:

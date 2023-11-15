@@ -616,7 +616,6 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
     * reporting
 
-    * profiles
 
   Notable elements which are <<<not>>> inherited include:
 
@@ -625,6 +624,8 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
     * name
 
     * prerequisites
+
+    * profiles (but the effects of active profiles from parent POMs are)
 
     []
 
@@ -1914,7 +1915,8 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   activation (a profile trigger) and the set of changes to be made to the POM if that profile has been
   activated. For example, a project built for a test environment may point to a different database than
   that of the final deployment. Or dependencies may be pulled from different repositories based upon
-  the JDK version used. The elements of profiles are as follows:
+  the JDK version used. 
+  The elements of profiles are as follows:
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1977,7 +1979,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
 
   * <<activeByDefault>>:
-  Is <<<false>>> by default. Boolean flag which determines if the profile is active by default. This flag is only evaluated if no other profile is explicitly activated via command line or <<<settings.xml>>>, otherwise it has no effect.
+  Is <<<false>>> by default. Boolean flag which determines if the profile is active by default. This flag is only evaluated if no other profile is explicitly activated via command line, <<<settings.xml>>> or implicitly activated through some other activator, otherwise it has no effect.
 
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
