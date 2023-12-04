@@ -62,11 +62,11 @@ $b_</td>
 ## Maven Releases History
 
 The Apache Maven team maintains the last version of the last two series of GA releases.
-If last release is 3.9.2, the Apache Maven team project will maintain core versions:
-- 3.9.2
+If the last release is 3.9.6, the Apache Maven team project will maintain core versions:
+- 3.9.6
 - 3.8.8
 
-Currently, plugins provides Maven API compatibility down to 3.2.5.
+Currently, plugins provide Maven API compatibility down to 3.2.5.
 
 Date format is: YYYY-MM-DD
 
