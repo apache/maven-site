@@ -58,6 +58,6 @@ See [complete release notes for all versions][5]
 [0]: https://dlcdn.apache.org/maven/maven-4/4.0.0-alpha-9/
 [1]: ../../plugins/index.html
 [2]: https://maven.apache.org/
-[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353356
+[4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353746
 [5]: ../../docs/history.html
 
