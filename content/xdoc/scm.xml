@@ -515,6 +515,12 @@ repo start master --all</pre>
               <td></td>
             </tr>
             <tr>
+              <td><a href="/apache-resource-bundles/">Apache Resource Bundles</a></td>
+              <td><code><a href="https://gitbox.apache.org/repos/asf/maven-apache-resources.git">https://gitbox.apache.org/repos/asf/maven-apache-resources.git</a></code></td>
+              <td><a href="https://github.com/apache/maven-apache-resources/">(GitHub mirror)</a></td>
+              <td></td>
+            </tr>
+            <tr>
               <th>Shared Components</th>
             </tr>
             <tr>
@@ -696,11 +702,6 @@ repo start master --all</pre>
             <tr>
               <td>Maven Project (mainly KEYS)</td>
               <td><code><a href="https://svn.apache.org/viewvc/maven/project/">https://svn.apache.org/repos/asf/maven/project/</a></code></td>
-              <td><!--a href="https://github.com/apache/maven-sandbox/">(GitHub mirror)</a--></td>
-            </tr>
-            <tr>
-              <td><a href="/apache-resource-bundles/">Apache Resource Bundles</a></td>
-              <td><code><a href="https://svn.apache.org/viewvc/maven/resources/trunk/">https://svn.apache.org/repos/asf/maven/resources/trunk/</a></code></td>
               <td><!--a href="https://github.com/apache/maven-sandbox/">(GitHub mirror)</a--></td>
             </tr>
             <tr>
