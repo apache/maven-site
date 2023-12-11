@@ -99,7 +99,7 @@ Date format is: YYYY-MM-DD
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2023-12-01" "3.9.6" "https://lists.apache.org/thread/xkq066dfsz3tql4p72m4skj1c8szspgo" "true" "Java 8" "7" )
+#release( "2023-12-01" "3.9.6" "https://lists.apache.org/thread/p6y4nl4k1kw4hbhkjngrj3f4doz851v6" "true" "Java 8" "7" )
 #release( "2023-10-04" "3.9.5" "https://lists.apache.org/thread/xkq066dfsz3tql4p72m4skj1c8szspgo" "" "" "" )
 #release( "2023-08-03" "3.9.4" "https://lists.apache.org/thread/8lj6byvgoo9939mt5xm0d0wsy2m5j2k9" "" "" "" )
 #release( "2023-06-26" "3.9.3" "https://lists.apache.org/thread/ydxl67r7ddh6tkhckkj51j8tksd8ok0m" "" "" "" )
