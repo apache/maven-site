@@ -563,7 +563,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-----------------------------+
 
-  The <<<packaging>>> type required to be <<<pom>>> for
+  The <<<packaging>>> type is required to be <<<pom>>> for
   <parent> and <aggregation> (multi-module) projects. These types define the goals bound
   to a set of lifecycle stages. For example, if packaging is <<<jar>>>, then the
   <<<package>>> phase will execute the <<<jar:jar>>> goal. Now we may add values to the
@@ -650,8 +650,12 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   local and then remote repositories.
 
   To see inheritance in action, just have a look at the
-  {{{https://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
-  {{{https://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's.
+  {{{https://github.com/apache/maven-apache-parent/blob/master/pom.xml}ASF}} or
+  {{{https://github.com/apache/maven-parent/blob/master/pom.xml}Maven}} parent POM's.
+  
+  Detailed inheritance rules are outlined in {{{https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly}Maven Model Builder}}.
+  All URLs are transformed when being inherited by default. The other ones are just inherited as is.
+  For plugin configuration you can overwrite the inheritance behaviour with the attributes <<<combine.children>>> or <<<combine.self>>> outlined in {{{plugins}Plugins}}.
 
 *** {The Super POM}
 
@@ -719,8 +723,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   such that dependencies are always build before dependent modules.
 
   To see aggregation in action, have a look at the
-  {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
-  {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's.
+  {{{https://github.com/apache/maven/blob/master/pom.xml}Maven}} base POM.
 
 *** A final note on {Inheritance v. Aggregation}
 
