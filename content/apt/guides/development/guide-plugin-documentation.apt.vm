@@ -164,8 +164,8 @@ mvn site
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <version>2.5.1</version>
+        <artifactId>maven-plugin-report-plugin</artifactId>
+        <version>$context.get("version.maven-plugin-tools")</version>
       </plugin>
     </plugins>
   </reporting>    
@@ -177,15 +177,14 @@ mvn site
  names are extracted from the plugin source and rendered in the Plugin Info page. In order for the generated site to 
  be useful here are some guidelines you can follow when documenting your plugin.
  
- * all <<<@parameter>>> fields should have a descriptive comment, informative enough that even a regular user can understand
+ * all <<<@Parameter>>> fields should have a descriptive comment, informative enough that even a regular user can understand
  
 +--------------+  
     [...]
     /**
      * Put something informative here that a regular user can understand.
-     * 
-     * @parameter 
      */
+    @Parameter
     private boolean someparameter;
     [...]
 +--------------+   
@@ -196,10 +195,8 @@ mvn site
 [...]
 /**
  * Everything here will show up on the top of the generated plugin info page.
- *
- * @goal somegoal
- * @phase compile
  */
+@Mojo(name = "somegoal", defaultPhase = LifecyclePhase.COMPILE)
 public class ExampleMojo
     extends AbstractWarMojo
 {
@@ -209,7 +206,7 @@ public class ExampleMojo
 [...]
 +--------------+   
 
- * the <<<@component>>> and <<<@readonly>>> parameters are not required to have any comments but it's still a good practice to provide one
+ * the <<<@Component>>> and <<<readonly>>> parameters are not required to have any comments but it's still a good practice to provide one
  
 *Site Organization 
  
@@ -364,7 +361,7 @@ Plugin Name
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.4</version>
+        <version>$context.get("version.maven-javadoc-plugin")</version>
         <configuration>
           <minmemory>128m</minmemory>
           <maxmemory>512</maxmemory>
@@ -399,7 +396,7 @@ Plugin Name
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.1</version>
+        <version>3.3.1</version>
       </plugin>
     </plugins>
   </reporting>    

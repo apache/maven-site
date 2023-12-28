@@ -198,7 +198,7 @@ Introduction
         <dependency>
             <groupId>org.apache.maven.plugin-tools</groupId>
             <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.5</version>
+            <version>$context.get("version.maven-plugin-tools")</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -214,24 +214,20 @@ Introduction
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.7.0</version>
+                <version>$context.get("version.maven-compiler-plugin")</version>
             </plugin>
             <plugin>
                 <artifactId>maven-install-plugin</artifactId>
-                <version>2.5.2</version>
+                <version>$context.get("version.maven-install-plugin")</version>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.5.1</version>
+                <version>$context.get("version.maven-plugin-tools")</version>
                 <configuration>
                     <goalPrefix>simple</goalPrefix>
                 </configuration>
                 <executions>
-                    <execution>
-                        <id>default-descriptor</id>
-                        <phase>process-classes</phase>
-                    </execution>
                     <execution>
                         <id>generated-helpmojo</id>
                         <goals>
