@@ -141,6 +141,8 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Remove the <<<.Jenkinsfile>>> from all branches. This will remove the project from https://builds.apache.org/job/maven-box/
 
+  [[1]] Remove the <<<.github>>> directory from default branch. This will remove GitHub Actions
+
   [[1]] Ask INFRA for archive git repos (gitbox + github)
 
   [[1]] Republish documentation, postfix project name with (RETIRED)
@@ -153,6 +155,12 @@ but has moved to the <Organization> <Project> project.
   (Requires JIRA admin karma: e.g. ask Brian Fox)
 
   [[1]] Comment the {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool.conf.html}dist-tool configuration}} entry.
+
+  [[1]] Remove from <<<Source Repository>>>
+
+    [[A]] {{https://maven.apache.org/scm.html}}
+
+    [[A]] {{https://github.com/apache/maven-sources}}
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
   (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
