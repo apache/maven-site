@@ -1,0 +1,116 @@
+/*
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+*/
+@startuml
+!pragma layout smetana
+
+skinparam rectangle {
+  BackgroundColor LightBlue
+}
+
+
+package Plugins {
+
+  package Core {
+    rectangle clean
+    rectangle compiler
+    rectangle deploy
+    rectangle install
+    rectangle resources
+    rectangle site
+    rectangle surefire
+    rectangle verifier
+  }
+
+  package Packaging {
+    rectangle ear
+    rectangle ejb
+    rectangle jar
+    rectangle rar
+    rectangle war
+    rectangle acr
+    rectangle shade
+    rectangle source
+    rectangle jlink
+    rectangle jmod
+  }
+
+  package Reporting {
+    rectangle changelog
+    rectangle changes
+    rectangle checkstyle
+    rectangle doap
+    rectangle javadoc
+    rectangle jdeps
+    rectangle jxr
+    rectangle linkcheck
+    rectangle pmd
+    rectangle "project-info-reports"
+  }
+
+  package Tools {
+    rectangle antrun
+    rectangle archetype
+    rectangle assembly
+    rectangle dependency
+    rectangle enforcer
+    rectangle gpg
+    rectangle help
+    rectangle invoker
+    rectangle jarsigner
+    rectangle jdeprscan
+    rectangle patch
+    rectangle pdf
+    rectangle plugin
+    rectangle release
+    rectangle "remote-resource"
+    rectangle scm
+    rectangle "scm-ppublish"
+    rectangle scripting
+    rectangle stage
+    rectangle toolchains
+  }
+}
+
+'hidden dependencies to change layout
+Core      -[hidden]-> Packaging
+Packaging -[hidden]-> Reporting
+Reporting -[hidden]-> Tools
+
+clean     -[hidden]> compiler
+compiler  -[hidden]> deploy
+deploy    -[hidden]> install
+install   -[hidden]> resources
+resources -[hidden]> site
+site      -[hidden]> surefire
+surefire  -[hidden]> verifier
+
+ear       -[hidden]> ejb
+ejb       -[hidden]> jar
+jar       -[hidden]> rar
+rar       -[hidden]> war
+war       -[hidden]> acr
+acr       -[hidden]> shade
+shade     -[hidden]> source
+source    -[hidden]> jlink
+jlink     -[hidden]> jmod
+
+
+url of clean is [[https://github.com/apache/maven-clean-plugin]]
+
+@enduml
