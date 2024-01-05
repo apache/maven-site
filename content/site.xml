@@ -138,7 +138,6 @@ under the License.
         <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html" />
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html" />
         <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html" />
-        <item name="Documenting Plugins" href="/plugin-developers/plugin-documenting.html" />
         <item name="Mojo API" href="/developers/mojo-api-specification.html" />
         <item name="Maven 3.1.x logging" href="/maven-logging.html" />
         <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html" />

@@ -308,12 +308,6 @@ repo start master --all</pre>
               <td></td>
             </tr>
             <tr>
-              <td><a href="/plugins/maven-docck-plugin/">Apache Maven Documentation Checker Plugin</a></td>
-              <td><code><a href="https://gitbox.apache.org/repos/asf/maven-docck-plugin.git">https://gitbox.apache.org/repos/asf/maven-docck-plugin.git</a></code></td>
-              <td><a href="https://github.com/apache/maven-docck-plugin/">(GitHub mirror)</a></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><a href="/plugins/maven-ear-plugin/">Apache Maven EAR Plugin</a></td>
               <td><code><a href="https://gitbox.apache.org/repos/asf/maven-ear-plugin.git">https://gitbox.apache.org/repos/asf/maven-ear-plugin.git</a></code></td>
               <td><a href="https://github.com/apache/maven-ear-plugin/">(GitHub mirror)</a></td>
