@@ -73,6 +73,12 @@ repo start master --all</pre>
         <p>
           <object type="image/svg+xml" data="maven-sources/plugins.svg"/>
         </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/doxia.svg"/>
+        </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/misc.svg"/>
+        </p>
 
         <p align="center">
           <img src="maven-sources.png" width="843" height="837" border="0" usemap="#maven-sources" />
