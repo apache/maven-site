@@ -46,8 +46,6 @@ Plugin Developers Centre
 
   * {{{./plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
 
-  * {{{./plugin-documenting.html} Documenting your Plugin}} - How to write documentation for your plugins
-
   * TODO: creating and using custom packaging (like {{{/archetype/archetype-packaging/}<<<maven-archetype>>> packaging}})
 
   * {{{./common-bugs.html} Common Bugs and Pitfalls}} - Overview of problematic coding patterns
