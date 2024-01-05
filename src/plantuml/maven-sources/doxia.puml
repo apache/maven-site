@@ -23,21 +23,21 @@ skinparam rectangle {
   BackgroundColor LightBlue
 }
 
-package "Maven Core" {
-  rectangle Maven
-  rectangle "Core ITs"
-  rectangle Resolver
-  rectangle "Ant Tasks"
+package "Maven Doxia" {
+  rectangle Doxia
+  rectangle "Site Tools"
+  rectangle Site #LightGrey
+  package Tools {
+    rectangle Converter
+    rectangle LinkCheck
+  }
 }
 
 'hidden dependencies to change layout
-Maven -[hidden]right-> "Core ITs"
-"Core ITs" -[hidden]right-> Resolver
-Resolver -[hidden]right-> "Ant Tasks"
+Doxia -[hidden]right-> "Site Tools"
+"Site Tools" -[hidden]right-> Site
+"Site Tools" -[hidden]right-> Tools
 
-url of Maven is [[https://github.com/apache/maven]]
-url of "Core ITs" is [[https://github.com/apache/maven-integration-testing]]
-url of Resolver is [[https://github.com/apache/maven-resolver]]
-url of "Ant Tasks" is [[https://github.com/maven-resolver-ant-tasks]]
+'url of "Ant Tasks" is [[https://github.com/maven-resolver-ant-tasks]]
 
 @enduml

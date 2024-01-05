@@ -80,7 +80,7 @@ package Plugins {
     rectangle release
     rectangle "remote-resource"
     rectangle scm
-    rectangle "scm-ppublish"
+    rectangle "scm-publish"
     rectangle scripting
     rectangle stage
     rectangle toolchains
