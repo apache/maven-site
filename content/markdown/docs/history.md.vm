@@ -66,7 +66,8 @@ If the last release is 3.9.6, the Apache Maven team project will maintain core v
 - 3.9.6
 - 3.8.8
 
-Currently, plugins provide Maven API compatibility down to 3.2.5.
+Currently, plugins provide Maven API compatibility down to **3.2.5**. 
+New plugin releases will require Maven **3.6.3** or later.
 
 Date format is: YYYY-MM-DD
 
@@ -122,7 +123,7 @@ Date format is: YYYY-MM-DD
 <h3><a name="Maven_3">Maven 3.6.x and before</a></h3>
 
 <p>Maven before 3.6.3 has now reached its end of life.
-New plugin releases will require Maven 3.2.5 or later.
+New plugin releases will require Maven 3.6.3 or later.
 The following information is made available for reference.</p>
 
 <table>
