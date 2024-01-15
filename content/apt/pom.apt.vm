@@ -1710,12 +1710,10 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
     <repository>
       <releases>
         <enabled>false</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
       </releases>
       <snapshots>
         <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
+        <updatePolicy>always</updatePolicy>
         <checksumPolicy>fail</checksumPolicy>
       </snapshots>
       <name>Nexus Snapshots</name>
@@ -1738,22 +1736,33 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<enabled>>:
   <<<true>>> or <<<false>>> for whether this repository is enabled for the respective
-  type (<<<releases>>> or <<<snapshots>>>).
+  type (<<<releases>>> or <<<snapshots>>>). By default this is <<<true>>>.
 
   * <<updatePolicy>>:
-  This element specifies how often updates should attempt to occur. Maven will compare the local
-  POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
+  This element specifies how often Maven tries to update its local repository from the remote repositories. 
+  Maven will compare the local POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
   <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>
-  (only downloads if not yet existing in the local repository).
+  (only downloads if not yet existing in the local repository). As this affects both artifacts and metadata 
+  ({{{https://issues.apache.org/jira/browse/MRESOLVER-377}supposed to be changed in Maven 4}})
+  be careful with <<<never>>>, as metadata changes over time (even for release repositories).
 
   * <<checksumPolicy>>:
   When Maven deploys files to the repository, it also deploys corresponding checksum files. Your options
-  are to <<<ignore>>>, <<<fail>>>, or <<<warn>>> on missing or incorrect checksums.
+  are to <<<ignore>>>, <<<fail>>>, or <<<warn>>> on missing or incorrect checksums. The default value is <<<warn>>>.
+
+  * <<id>>:
+  The repository id is mandatory and connects the repository with the servers from <<<settings.xml>>>. Its default value is <<<default>>>.
+  The id is used also in the {{{https://maven.apache.org/ref/3-LATEST/maven-repository-metadata/}local repository metadata}} to store the origin.
+
+  * <<name>>:
+  An optional name for the repository. Used as label when emitting log messages related to this repository.
 
   * <<layout>>:
   In the above description of repositories, it was mentioned that they all follow a common layout. This
   is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3.
-  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>.
+  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>. 
+  Its default value is <<<default>>>.
+
 
 * {Plugin Repositories}
 
