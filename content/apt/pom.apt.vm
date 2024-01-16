@@ -363,11 +363,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   plus sign or consider build identifiers.
 
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
-  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
+  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscore ('<<<_>>>') and transitions between digits and characters.
   The separator is recorded and will have effect on the order. A transition 
   between digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-  with "<<<.>>>" or "<<<->>>" prefixes.
+  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with numbers.
 
   Splitting and Replacing Examples:
 
@@ -441,7 +441,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" = "<<<1.1>>>"
 
   * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
@@ -449,7 +449,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
-  * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
+  * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
