@@ -164,7 +164,7 @@ mvn -B archetype:generate -DgroupId=com.mycompany.app -DartifactId=my-app -Darch
   This is a very simple POM but still displays the key elements every POM contains, so let's walk through each of them
   to familiarize you with the POM essentials:
 
-  * <<project>> This is the top-level element in all Maven pom.xml files.
+  * <<project>> This is the top-level element in all Maven <<<pom.xml>>> files.
 
   * <<modelVersion>> This element indicates what version of the object model this POM is using. The version of the
     model itself changes very infrequently but it is mandatory in order to ensure stability of use if and when
@@ -225,7 +225,7 @@ my-app
 
  As you can see, the project created from the archetype has a POM, a source tree for your application's sources and
  a source tree for your test sources. This is the standard layout for Maven projects (the application sources
- reside in <<<$\{project.basedir\}/src/main/java>>> and test sources reside in <<<$\{project.basedir\}/src/test/java>>>, where $\{project.basedir\}
+ reside in <<<$\{project.basedir\}/src/main/java>>> and test sources reside in <<<$\{project.basedir\}/src/test/java>>>, where <<<$\{project.basedir\}>>>
  represents the directory containing <<<pom.xml>>>).
 
  If you were to create a Maven project by hand this is the directory structure that we recommend using. This is a
@@ -236,7 +236,7 @@ my-app
 
 * {How do I compile my application sources?}
 
- Change to the directory where pom.xml is created by archetype:generate and execute the following command to compile
+ Change to the directory where <<<pom.xml>>> is created by archetype:generate and execute the following command to compile
  your application sources:
 
 -------
@@ -604,7 +604,7 @@ artifactId=my-app
 ----
 
  To add resources to the classpath for your unit tests, you follow the same pattern as you do for adding resources to the JAR
- except the directory you place resources in is $\{project.basedir\}/src/test/resources. At this point you would have a
+ except the directory you place resources in is <<<$\{project.basedir\}/src/test/resources>>>. At this point you would have a
  project directory structure that would look like the following:
 
 -----
@@ -648,7 +648,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 
  Sometimes a resource file will need to contain a value that can only be supplied at build time.  To accomplish this in
  Maven, put a reference to the property that will contain the value into your resource file using the syntax <<<$\{<property name>\}>>>.
- The property can be one of the values defined in your pom.xml, a value defined in the user's settings.xml, a property
+ The property can be one of the values defined in your <<<pom.xml>>>, a value defined in the user's <<<settings.xml>>>, a property
  defined in an external properties file, or a system property.
 
  To have Maven filter resources when copying, simply set <<<filtering>>> to true for the resource directory in your <<<pom.xml>>>:
@@ -689,9 +689,9 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
  You'll notice that we had to add the <<<build>>>, <<<resources>>>, and <<<resource>>> elements which weren't there before.
  In addition, we had to explicitly state that the resources are located in the src/main/resources directory.  All of this
  information was provided as default values previously, but because the default value for <<<filtering>>> is false, we had
- to add this to our pom.xml in order to override that default value and set <<<filtering>>> to true.
+ to add this to our <<<pom.xml>>> in order to override that default value and set <<<filtering>>> to true.
 
- To reference a property defined in your pom.xml, the property name uses the names of the XML elements that define the value,
+ To reference a property defined in your <<<pom.xml>>>, the property name uses the names of the XML elements that define the value,
  with "pom" being allowed as an alias for the project (root) element.  So <<<$\{project.name\}>>> refers to the name of the project,
  <<<$\{project.version\}>>> refers to the version of the project, <<<$\{project.build.finalName\}>>> refers to the final name of the file created
  when the built project is packaged, etc.  Note that some elements of the POM have default values, so don't need to be explicitly
@@ -723,7 +723,7 @@ application.name=Maven Quick Start Archetype
 application.version=1.0-SNAPSHOT
 ------
 
- To reference a property defined in an external file, all you need to do is add a reference to this external file in your pom.xml.
+ To reference a property defined in an external file, all you need to do is add a reference to this external file in your <<<pom.xml>>>.
  First, let's create our external properties file and call it <<<src/main/filters/filter.properties>>>:
 
 ------
@@ -844,7 +844,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  works in a bit more detail. For a more thorough introduction, please refer to our
  {{{../introduction/introduction-to-dependency-mechanism.html}Introduction to Dependency Mechanism}}.
 
- The <<<dependencies>>> section of the pom.xml lists all of the external dependencies that our project needs
+ The <<<dependencies>>> section of the <<<pom.xml>>> lists all of the external dependencies that our project needs
  in order to build (whether it needs that dependency at compile time, test time, run time, or whatever).  Right
  now, our project is depending on JUnit only (I took out all of the resource filtering stuff for clarity):
 
@@ -884,7 +884,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  Maven reference the dependency from?  Maven looks in your local repository (<<<$\{user.home\}/.m2/repository>>> is the default location) to find
  all dependencies.  In a {{{How_do_I_create_a_JAR_and_install_it_in_my_local_repository}previous section}}, we installed the artifact
  from our project (my-app-1.0-SNAPSHOT.jar) into the local repository.  Once it's installed there, another project can reference that jar
- as a dependency simply by adding the dependency information to its pom.xml:
+ as a dependency simply by adding the dependency information to its <<<pom.xml>>>:
 
 +----+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -942,7 +942,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  to choose from; for now, we'll just use the latest version, 1.2.12 (some maven-metadata.xml files may also specify which version is
  the current release version: see {{{/ref/current/maven-repository-metadata/repository-metadata.html}repository metadata reference}}).
  Alongside the maven-metadata.xml file, we can see a directory corresponding to each version of the
- log4j library.  Inside each of these, we'll find the actual jar file (e.g. log4j-1.2.12.jar) as well as a pom file (this is the pom.xml
+ log4j library.  Inside each of these, we'll find the actual jar file (e.g. log4j-1.2.12.jar) as well as a pom file (this is the <<<pom.xml>>>
  for the dependency, indicating any further dependencies it might have and other information) and another maven-metadata.xml file.
  There's also an md5 file corresponding to each of these, which contains an MD5 hash for these files.  You can use this to authenticate
  the library or to figure out which version of a particular library you may be using already.
@@ -985,8 +985,8 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 * {How do I deploy my jar in my remote repository?}
 
- For deploying jars to an external repository, you have to configure the repository url in the pom.xml
- and the authentication information for connecting to the repository in the settings.xml.
+ For deploying jars to an external repository, you have to configure the repository url in the <<<pom.xml>>>
+ and the authentication information for connecting to the repository in the <<<settings.xml>>>.
 
  Here is an example using scp and username/password authentication:
 
