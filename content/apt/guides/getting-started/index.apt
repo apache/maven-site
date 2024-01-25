@@ -687,7 +687,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 +----+
 
  You'll notice that we had to add the <<<build>>>, <<<resources>>>, and <<<resource>>> elements which weren't there before.
- In addition, we had to explicitly state that the resources are located in the src/main/resources directory.  All of this
+ In addition, we had to explicitly state that the resources are located in the <<<src/main/resources>>> directory.  All of this
  information was provided as default values previously, but because the default value for <<<filtering>>> is false, we had
  to add this to our <<<pom.xml>>> in order to override that default value and set <<<filtering>>> to true.
 
