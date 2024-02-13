@@ -133,4 +133,8 @@ mvn -Pmyprofile ...
 
   Effective settings and local build POM, with profile taken into account, can easily be reviewed to see their repositories order with
   <<<mvn help:effective-settings>>> and <<<mvn help:effective-pom -Dverbose>>>.
-  
+
+* Repository IDs
+
+  Each repository must have a <<unique ID>>. Clashing repository IDs within either effective settings or effective POMs lead to build failures. However, repositories from POM get
+  overwritten by repositories with the same ID from effective settings. Repository IDs are also used in the {{{https://maven.apache.org/ref/3-LATEST/maven-repository-metadata/}local repository metadata}}.
