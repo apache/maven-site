@@ -60,8 +60,8 @@ options to your Maven build every time you are calling Maven. Not very convenien
 From now on this can be done much more simpler and in a more Maven like way. So you can define an `.mvn/extensions.xml` file which looks like the following:
 
 ```xml
-<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
+<extensions xmlns="http://maven.apache.org/EXTENSIONS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.1.0 https://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
   <extension>
     <groupId/>
     <artifactId/>
