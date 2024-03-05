@@ -54,11 +54,9 @@ The following list (alphabetical order) of open source and commercial repository
  managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 
 and the features provided by these products.
 
-* <a href="https://archiva.apache.org/" target="_blank">Apache Archiva</a> (open source)
 * <a href="https://bytesafe.dev/" target="_blank">Bytesafe</a> (commercial)
 * <a href="https://www.cloudrepo.io" target="_blank">CloudRepo</a> (commercial)
 * <a href="https://www.cloudsmith.io" target="_blank">Cloudsmith Package</a> (commercial)
-* <a href="https://www.dist.cloud" target="_blank">Dist</a> (commercial)
 * <a href="https://docs.gitea.com/packages/usage/packages/maven" target="_blank">Gitea</a> (open source)
 * <a href="https://inedo.com/proget" target="_blank">Inedo ProGet</a> (commercial)
 * <a href="https://www.jfrog.com/open-source" target="_blank">JFrog Artifactory Open Source</a> (open source)
