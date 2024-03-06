@@ -54,6 +54,8 @@ Maven Plugins Compatibility Plan
 
   * In April 2023, Maven before 3.6.3 has been {{{/docs/history.html#maven-3-6-x-and-before}marked as EOL}}, meaning that plugins should use 3.6.3 as minimum
 
+  * In February 2024, Maven 4 after 4.0.0-alpha-12 will require Java 17 (as per {{{https://lists.apache.org/thread/bfkvvjftrxypp06yj8zj919fcz0dt2zt}vote on the Mailing List}}).
+
   []
 
 * Context
