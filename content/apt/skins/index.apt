@@ -68,6 +68,8 @@ Available Skins
 *-------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://stevecrox.github.io/maven-site-bootstrap-skin//} <<<Bootstrap Site Skin>>>}} | {{{https://github.com/stevecrox/maven-site-bootstrap-skin} Stephen Crocker}} | Responsive Maven Bootstrap Skin which has toggleable elements implemented based on the boostrap reference layouts.
 *-------------------------------------------------------------------+----------------+-----------------------+
+| {{{https://sentrysoftware.org/sentry-maven-skin/} <<<Sentry Maven Skin>>>}} | {{{https://github.com/sentrysoftware/sentry-maven-skin} Sentry Software}} | Responsive skin, Bootstrap-based, with local search, light/dark colors switch, WEBP conversion, etc.
+*-------------------------------------------------------------------+----------------+-----------------------+
 
 * Instructions
 
