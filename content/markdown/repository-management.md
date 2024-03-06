@@ -54,15 +54,17 @@ The following list (alphabetical order) of open source and commercial repository
  managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 
 and the features provided by these products.
 
+* <a href="https://github.com/artipie" target="_blank">Artipie</a> (open source)
 * <a href="https://bytesafe.dev/" target="_blank">Bytesafe</a> (commercial)
 * <a href="https://www.cloudrepo.io" target="_blank">CloudRepo</a> (commercial)
 * <a href="https://www.cloudsmith.io" target="_blank">Cloudsmith Package</a> (commercial)
 * <a href="https://docs.gitea.com/packages/usage/packages/maven" target="_blank">Gitea</a> (open source)
 * <a href="https://inedo.com/proget" target="_blank">Inedo ProGet</a> (commercial)
-* <a href="https://www.jfrog.com/open-source" target="_blank">JFrog Artifactory Open Source</a> (open source)
+* <a href="https://www.jfrog.com/open-source" target="_blank">JFrog Artifactory Open Source</a> (free, not open source)
 * <a href="https://www.jfrog.com/artifactory/" target="_blank">JFrog Artifactory Pro</a> (commercial)
 * <a href="https://www.myget.org" target="_blank">MyGet</a> (commercial)
-* <a href="https://www.sonatype.com/products/repository-oss-download" target="_blank">Sonatype Nexus OSS</a> (open source)
+* <a href="https://docs.onedev.io/tutorials/package/working-with-maven" target="_blank">OneDev</a> (open source)
+* <a href="https://www.sonatype.com/products/repository-oss-download" target="_blank">Sonatype Nexus OSS</a> (free, not open source)
 * <a href="https://links.sonatype.com/products/nexus/pro/home" target="_blank">Sonatype Nexus Pro</a> (commercial)
 * <a href="https://packagecloud.io" target="_blank">packagecloud.io</a> (commercial)
 * <a href="https://reposilite.com" target="_blank">Reposilite</a> (open source)
