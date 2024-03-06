@@ -54,6 +54,7 @@ The following list (alphabetical order) of open source and commercial repository
  managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 
 and the features provided by these products.
 
+* <a href="https://github.com/artipie" target="_blank">Artipie</a> (open source)
 * <a href="https://bytesafe.dev/" target="_blank">Bytesafe</a> (commercial)
 * <a href="https://www.cloudrepo.io" target="_blank">CloudRepo</a> (commercial)
 * <a href="https://www.cloudsmith.io" target="_blank">Cloudsmith Package</a> (commercial)
