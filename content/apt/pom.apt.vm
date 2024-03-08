@@ -318,6 +318,12 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   In the shortest terms, <<<optional>>> lets other projects know that, when you use this project, you
   do not require this dependency in order to work correctly.
 
+*** {Dependency Management}
+
+  Dependencies can be managed in the <<<dependencyManagement>>> section to affect the resolution of dependencies
+  which are not fully qualified or to enforce the usage of a specific transitive dependency version. Further information
+  in {{{./guides/introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}.
+
 *** {Dependency Version Requirement Specification}
 
   Dependencies' <<<version>>> elements define version requirements, which are used to compute dependency versions. Soft requirements can be replaced by

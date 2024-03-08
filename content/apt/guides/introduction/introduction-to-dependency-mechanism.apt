@@ -475,6 +475,9 @@ Introduction to the Dependency Mechanism
 
  []
 
+ <<NOTE:>> The dependency management won't affect the (transitive) dependencies of any <plugins>
+ used in the same effective POM but only the (transitive) project dependencies.
+
  The reference information about the dependency management tags is available from the
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
