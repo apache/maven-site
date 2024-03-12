@@ -24,6 +24,8 @@
 
 The Apache Maven team would like to announce the release of Maven 4.0.0-alpha-13.
 
+This is the first Maven 4 preview release that **requires Java 17 for runtime**.
+
 This is alpha release, not suitable for production.
 
 Maven 4.0.0-alpha-13 is [available for download][0].
@@ -43,7 +45,7 @@ If you have any questions, please consult:
 The full list of changes can be found in our [issue management system][4].
 
 Notable changes include:
-* requires Java 17 as "minimum runtime Java requirement"
+* **requires Java 17 as "minimum runtime Java requirement"**
 * brings the latest Maven Resolver 2.0.0-alpha-8
 * new features like Profile OS activation with wildcards, Profile activation by packaging, SPI for user properties
 * improvements related to dependencyManagement and BOM handling, new APIs for "dependency path control"
