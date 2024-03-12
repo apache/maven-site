@@ -149,3 +149,68 @@ Guide to relocation
   (see {{{https://repo.maven.apache.org/maven2/poi/poi/}repository content}}).
 
 []
+
+** Testing
+
+  Using <<<pom.xml>>>
+
++-----+
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>test</groupId>
+    <artifactId>relocation-test</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>ant</groupId>
+            <artifactId>ant</artifactId>
+            <version>1.7.0</version><!-- https://repo.maven.apache.org/maven2/ant/ant/1.7.0/ -->
+    	</dependency>
+        <dependency>
+            <groupId>poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>3.0-FINAL</version><!-- https://repo.maven.apache.org/maven2/poi/poi/3.0-FINAL/ -->
+    	</dependency>
+    </dependencies>
+</project>
++-----+
+
+  Dependency resolution of these relocated artifacts follows to the new relocated coordinates, issuing a warning:
+
+------
+$ mvn dependency:list dependency:tree
+[INFO] Scanning for projects...
+[INFO]
+[INFO] ------------------------< test:relocation-test >------------------------
+[INFO] Building relocation-test 1.0-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] The artifact ant:ant:jar:1.7.0 has been relocated to org.apache.ant:ant:jar:1.7.0
+[WARNING] The artifact poi:poi:jar:3.0-FINAL has been relocated to org.apache.poi:poi:jar:3.0-FINAL
+[INFO]
+[INFO] --- dependency:3.6.0:list (default-cli) @ relocation-test ---
+[INFO]
+[INFO] The following files have been resolved:
+[INFO]    org.apache.ant:ant:jar:1.7.0:compile -- module ant (auto)
+[INFO]    org.apache.ant:ant-launcher:jar:1.7.0:compile -- module ant.launcher (auto)
+[INFO]    org.apache.poi:poi:jar:3.0-FINAL:compile -- module poi (auto)
+[INFO]    commons-logging:commons-logging:jar:1.1:compile -- module commons.logging (auto)
+[INFO]    log4j:log4j:jar:1.2.13:compile -- module log4j (auto)
+[INFO]
+[INFO]
+[INFO] --- dependency:3.6.0:tree (default-cli) @ relocation-test ---
+[WARNING] The artifact ant:ant:jar:1.7.0 has been relocated to org.apache.ant:ant:jar:1.7.0
+[WARNING] The artifact poi:poi:jar:3.0-FINAL has been relocated to org.apache.poi:poi:jar:3.0-FINAL
+[INFO] test:relocation-test:jar:1.0-SNAPSHOT
+[INFO] +- org.apache.ant:ant:jar:1.7.0:compile
+[INFO] |  \- org.apache.ant:ant-launcher:jar:1.7.0:compile
+[INFO] \- org.apache.poi:poi:jar:3.0-FINAL:compile
+[INFO]    +- commons-logging:commons-logging:jar:1.1:compile
+[INFO]    \- log4j:log4j:jar:1.2.13:compile
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+------
