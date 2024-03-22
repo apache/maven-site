@@ -70,10 +70,10 @@ The artifactId level metadata (found in directory of artifactId) serves purpose 
 contains list of versions of given GA coordinates. The XML bit considered for this kind of metadata are only:
 * `metadata/groupId`
 * `metadata/artifactId`
-* `metadata/versionining/latest`
-* `metadata/versionining/release`
-* `metadata/versionining/versions/*`
-* `metadata/versionining/lastUpdated`
+* `metadata/versioning/latest`
+* `metadata/versioning/release`
+* `metadata/versioning/versions/*`
+* `metadata/versioning/lastUpdated`
 
 Example: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml
 
@@ -90,7 +90,7 @@ purpose of snapshot timestamped version resolution. This metadata contains mappi
 directory with corresponding timestamps. The XML bit considered for this kind of metadata are only:
 * `metadata/groupId`
 * `metadata/artifactId`
-* `metadata/versionining/snapshot/*`
-* `metadata/versionining/snapshotVersions/*`
+* `metadata/versioning/snapshot/*`
+* `metadata/versioning/snapshotVersions/*`
 
 Example: https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.3.0-SNAPSHOT/maven-metadata.xml
