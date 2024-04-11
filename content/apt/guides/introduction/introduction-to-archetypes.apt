@@ -36,7 +36,7 @@ What is Archetype?
  Maven project templates for users, and provides users with the means to generate parameterized versions
  of those project templates.
 
- Using archetypes provides a great way to enable developers quickly in a way consistent with best practices employed
+ Using archetypes provides a great way to enable developers work quickly in a way consistent with best practices employed
  by your project or organization. Within the Maven project, we use archetypes to try and get our users up and running
  as quickly as possible by providing a sample project that demonstrates many of the features of Maven, while introducing
  new users to the best practices employed by Maven. In a matter of seconds, a new user can have a working Maven project
