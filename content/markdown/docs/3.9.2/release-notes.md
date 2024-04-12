@@ -53,6 +53,8 @@ changes since Resolver 1.9.7 see release notes for Resolver [1.9.8](https://issu
 properties usable in configuration interpolation: `session.topDirectory` (reactor top directory) and `session.rootDirectory` (project root directory, usually where `.mvn`
 directory reside). It is recommended to create `.mvn` directory in project root directory, as presence of this directory is used to 
 detect root directory location. If `.mvn` directory does not exists, root directory will not be detected, and in such case attempted use of expression `session.rootDirectory` in interpolation will make Maven refuse to start (will report error).
+It is important to mention, that those two new properties, are only working within the `maven.config` file and
+via the command line. They are **NOT** usable as configuration properties within your plugin configuration in your `pom.xml` file.
 * Plugin validation warnings change: they are not littered in console log anymore, but are collected and reported at the build end. Moreover, the validation checks
 have been extended, more warnings are to be expected if build contains plugins that may not work with upcoming Maven 4. The build end validation report
 verbosity can be controlled by `maven.plugin.validation` property values "brief", "default" and "verbose". The validation report cannot be turned off,
