@@ -36,44 +36,31 @@ Releasing A Parent POM
 * Rationale
 
   To be able to publish a documentation for the parent POM without affecting released <<<pom.xml>>> and <<<site.xml>>>,
-  parent POM projects have a specific structure, with the addition of <<<site-pom.xml>>> and <<<src/site-docs>>>
-  to provide <<<mvn -f site-pom.xml site>>> with useful documentation content:
-
-------
-|-- pom.xml
-|-- site-pom.xml
-`-- src
-    |-- site
-    |   `-- site.xml
-    `-- site-docs
-        |-- apt
-        |   `-- index.apt
-        `-- site.xml
-------
-
-  Specific step is done to maintain <<<site-pom.xml>>>  in sync with the release being released.
+  parent POM projects have a specific module, with the documentations <<<docs>>>.
 
 * Stage the release
 
-  Before staging the release with usual procedure, you need to update <<<site-pom.xml>>> to
-  take the future release into account - update <<<site-pom.xml>>>
-  parent POM version to match the version being released,
-
-  Once these modifications are done, you can follow {{{../website/deploy-component-reference-documentation.html}standard component documentation staging steps}},
-  taking care to use the <<<site-pom.xml>>> POM, with <<<mvn -f site-pom.xml ...>>> command, each time the parent POM's site is
-  generated or published.
-
   Then the only difference is with commands to stage the site:
+
+  In Maven Apache Parent POM:
 
 --------
 cd target/checkout
-mvn -f site-pom.xml site
-mvn -f site-pom.xml scm-publish:publish-scm
+mvn -f docs site
+mvn -f docs scm-publish:publish-scm
+--------
+
+  In Maven Projects Parent POM:
+
+--------
+cd target/checkout
+mvn -f docs site site:stage
+mvn -f docs scm-publish:publish-scm
 --------
 
 * Call the vote
 
-  In the vote, instead of providing links to JIRA, the parent POMs should include a link to the Git changes since the
+  In the vote, additional to  providing links to JIRA, the parent POMs should include a link to the Git changes since the
   last release:
 
 -------
