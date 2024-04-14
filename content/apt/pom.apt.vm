@@ -1784,47 +1784,24 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 * {Distribution Management}
 
   Distribution management acts precisely as it sounds: it manages the distribution of the artifact
-  and supporting files generated throughout the build process. Starting with the last elements first:
-
+  and supporting files generated throughout the build process.
+  
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
-    ...
-    <downloadUrl>http://mojo.codehaus.org/my-project</downloadUrl>
-    <status>deployed</status>
+    <repository>...</repository>
+    <snapshotRepository>...<snapshotRepository>
+    <site>...</site>
+    <relocation>...</relocation>
+    <downloadUrl>...</downloadUrl>
+    <status>...</status>
   </distributionManagement>
   ...
 </project>
 +-------------------------+
-
-  * <<downloadUrl>>:
-  is the URL of the repository which another POM can point to in order to grab this POM's
-  artifact. In the simplest terms, we told the POM how to upload it (through repository/url),
-  but from where can the public download it? This element answers that question.
-
-  * <<status>>:
-  Warning! Like a baby bird in a nest, the status should never be touched by human hands! The
-  reason for this is that Maven will set the status of the project when it is transported out
-  to the repository. Its valid types are as follows.
-
-    * <<none>>:
-    No special status. This is the default for a POM.
-
-    * <<converted>>:
-    The manager of the repository converted this POM from an earlier version to Maven 2.
-
-    * <<partner>>:
-    This artifact has been synchronized with a partner repository.
-
-    * <<deployed>>:
-    By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
-
-    * <<verified>>:
-    This project has been verified, and should be considered finalized.
-
-
+  
 ** {Repository}
 
   Whereas the repositories element specifies in the POM the location and manner in which Maven may
@@ -1925,6 +1902,59 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   the Apache umbrella, it would be good to give users a heads-up that the project is
   being renamed to <<<org.apache:my-project:1.0>>>. Besides specifying the new address, it
   is also good form to provide a message explaining why.
+
+** {downloadUrl}
+
++-------------------------+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <distributionManagement>
+    ...
+    <downloadUrl>http://mojo.codehaus.org/my-project/download.html</downloadUrl>
+  </distributionManagement>
+  ...
+</project>
++-------------------------+
+
+  <<downloadUrl>> is the URL of the project's download page. If not given users will be referred to the homepage given by url.
+  This is given to assist in locating artifacts that are not in the repository due to licensing restrictions.
+  See for example {{{https://issues.apache.org/jira/browse/MNG-2083}MNG-2083}} for a typical workflow.
+
+** {status}
+
++-------------------------+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <distributionManagement>
+    ...
+    <status>deployed</status>
+  </distributionManagement>
+  ...
+</project>
++-------------------------+
+
+  Warning! Like a baby bird in a nest, the status should never be touched by human hands! The
+  reason for this is that Maven will set the status of the project when it is transported out
+  to the repository. It is described here just for understanding, but should never be configured in your <<<pom.xml>>>.
+
+  <<Status>> valid values are as follows:
+
+    * <<none>>:
+    No special status. This is the default for a POM.
+
+    * <<converted>>:
+    The manager of the repository converted this POM from an earlier version to Maven 2.
+
+    * <<partner>>:
+    This artifact has been synchronized with a partner repository.
+
+    * <<deployed>>:
+    By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
+
+    * <<verified>>:
+    This project has been verified, and should be considered finalized.
 
 * {Profiles}
 
