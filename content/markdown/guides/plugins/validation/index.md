@@ -54,6 +54,18 @@ External Plugins issues require to be fixed by plugin authors first.
 In such cases users can try to update plugin to newer version.
 If the newest version of plugin still has such an issue, users should report problem to plugin authors.
 
+## Exclude plugins from validation
+
+In some case we know about issues in some plugin and we want exclude it from validation.
+We can do it by property `maven.plugin.validation.excludes`, eg:
+
+```
+mvn -Dmaven.plugin.validation.excludes=plugin1-goupId:plugin1-artifactId:plugin1-version,plugin2-goupId:plugin2-artifactId:plugin2-version
+```
+
+Property `maven.plugin.validation` has tha same rule as `maven.plugin.validation` - can only be used on command line (not as property in POM)
+
+
 ## Manage Plugin Validation verbosity
 
 In order to manage Plugin Validation verbosity, a Maven user property `-Dmaven.plugin.validation=...` can be used on command line (or injected: see below).
