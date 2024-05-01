@@ -86,7 +86,7 @@ Introduction to the POM
  The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified
  in the Super POM is inherited by the POMs you created for your projects.
 
- You can see the {{{/ref/3.6.3/maven-model-builder/super-pom.html}Super POM for Maven 3.6.3}} in Maven Core reference documentation.
+ You can see the {{{/maven-model-builder/super-pom.html}Super POM for the latest Maven 3 release}} in Maven Core reference documentation.
 
  {{{./introduction-to-the-pom.html}[top]}}
 
