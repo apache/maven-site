@@ -287,7 +287,7 @@ mvn site-deploy
   the site those items will appear in the menu.
 
   Many other plugins provide reporting goals: look for "R" (Reporting) value in the "Type" column of the {{{/plugins/} list of plugins}}.
-  When plugins are both Build and Reporting plugins, defining explicitely the version in the reporting section is usually not
+  When plugins are both Build and Reporting plugins, defining explicitly the version in the reporting section is usually not
   necessary since reporting will use the version from <<<build/plugins>>> or <<<build/pluginManagement>>>. Since Maven Site Plugin 3.4,
   reporting plugin also get configuration from <<<build/pluginManagement>>>.
 
