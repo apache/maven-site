@@ -130,7 +130,7 @@
 </project>]]></source>
         <p>
           Or if a parent pom overrides for compiler plugin default values and you can't fix it,
-          you'll have to explicitely force the values in the compiler plugin configuration:
+          you'll have to explicitly force the values in the compiler plugin configuration:
         </p>
         <source><![CDATA[<project>
   ...
@@ -284,7 +284,7 @@ Where: <path-to-file>  the path to the file to load
   </properties>
   ...
 </project>]]></source>
-        or if default encoding is overridden in a parent pom that you can't change, configure the site plugin explicitely:
+        or if default encoding is overridden in a parent pom that you can't change, configure the site plugin explicitly:
       <source><![CDATA[<project>
   ...
   <plugin>
