@@ -910,9 +910,9 @@ mvn process-resources "-Dcommand.line.prop=hello again"
  various plugins used to build the project).  By default, the remote repository Maven uses can be found (and browsed) at
  {{https://repo.maven.apache.org/maven2/}}.  You can also set up your own remote repository (maybe a central repository for your company) to
  use instead of or in addition to the default remote repository.  For more information on repositories you can refer to the
- {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}}. The best way to find information about dependencies is
+ {{{../introduction/introduction-to-repositories.html}Introduction to Repositories}}. One aggregated way to find information about dependencies is
  {{{https://mvnrepository.com/}mvnrepository.com}}, where you can find not only all the groups and artifacts in Maven Central, but also those
- from several hundred other repositories.
+ from several hundred other repositories. However, the information provided may not be up to date as the website is not always synchronized with Maven Central.
 
  Let's add another dependency to our project.  Let's say we've added some logging to the code and need to add log4j as a dependency.
  First, we need to know what the groupId, artifactId, and version are for log4j. The appropriate directory on Maven Central is called
