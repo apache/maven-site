@@ -43,7 +43,7 @@ Guide to Configuring Plug-ins
 
   []
 
-  All plugins should have minimal required
+  All plugins should have at least the minimal required
   {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
@@ -146,7 +146,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 
 ** {Configuring Parameters}
 
-  Parametrisation of Mojos is relying internally on Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
+  Parameterization of Mojos relies internally on the Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
 
 *** {Mapping Value Objects}
 
