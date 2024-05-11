@@ -71,7 +71,7 @@ Guide to Using Toolchains
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 | jdk             | <<<{{{https://www.mojohaus.org/keytool/keytool-maven-plugin/}keytool-maven-plugin}}>>>       | 1.4                 | MojoHaus
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
-| protobuf        | <<<{{{https://www.xolstice.org/protobuf-maven-plugin/examples/protobuf-toolchain.html}protobuf-maven-plugin}}>>> | 0.3.2 | github
+| protobuf        | <<<{{{https://www.xolstice.org/protobuf-maven-plugin/examples/protobuf-toolchain.html}protobuf-maven-plugin}}>>> | 0.6.1 | github
 *-----------------*----------------------------------------------------------------------------------------------+---------------------+----------------+
 
 * Using Toolchains in Your Project
