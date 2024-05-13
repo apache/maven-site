@@ -112,10 +112,6 @@ under the License.
         <li><a href="./scm.html">latest source code from source repository</a></li>
         <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
         <li>other:<ul>
-        <li><a href="./maven-site-1.0-site.jar">Apache Maven Website As Documentation Archive</a></li>
-        <!-- not currently generated on the CMS due to the profile, probably also badly formattted
-           <li>a <a href="./apache-maven.pdf">PDF file.</a></li>
-        -->
         <li><a href="[preferred]maven/">All current release sources (plugins, shared libraries,...) available at https://downloads.apache.org/maven/</a></li>
         </ul></li>
       </ul>

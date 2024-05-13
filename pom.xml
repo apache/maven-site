@@ -303,25 +303,6 @@
       </plugin>
 
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>jar</id>
-            <goals>
-              <goal>jar</goal>
-            </goals>
-            <phase>site</phase>
-            <configuration>
-              <jarOutputDirectory>${project.reporting.outputDirectory}</jarOutputDirectory>
-              <archiveExcludes>
-                <archiveExclude>*.jar</archiveExclude>
-              </archiveExcludes>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <configuration>
