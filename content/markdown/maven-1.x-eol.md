@@ -1,4 +1,4 @@
-## End Of Life Apache Maven 1.x
+# End Of Life Apache Maven 1.x
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file

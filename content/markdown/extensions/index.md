@@ -1,4 +1,4 @@
-## Available Extensions
+# Available Extensions
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -25,18 +25,18 @@ it is possible to hook into Maven, e.g. to manipulate the lifecycle.
 * [Configure Extensions](/guides/mini/guide-using-extensions.html)
 * [Write Extensions](/examples/maven-3-lifecycle-extensions.html)
 
-### Maintained By The Maven Project
+## Maintained By The Maven Project
 
 | Extension                                      | Version | Release Date | Description                                                                             | Source Repository                                                                                                   | Issue Tracker
 |------------------------------------------------|---------|--------------|-----------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------|-----------------|
 |[Build Cache](./maven-build-cache-extension/)   | 1.1.0   | 2023-11-27   | Maven Incremental Build and Cache (local and remote). | [Git](https://gitbox.apache.org/repos/asf/maven-build-cache-extension.git) / [GitHub](https://github.com/apache/maven-build-cache-extension/) | [Jira MBUILDCACHE](https://issues.apache.org/jira/browse/MBUILDCACHE)
 |[Enforcer](/enforcer/maven-enforcer-extension/) | 3.4.1   | 2023-09-07   | Environmental constraint checking (Maven Version, JDK etc), User Custom Rule Execution. | [Git](https://gitbox.apache.org/repos/asf/maven-enforcer.git) / [GitHub](https://github.com/apache/maven-enforcer/) | [Jira MENFORCER](https://issues.apache.org/jira/browse/MENFORCER)
 
-### Outside The Maven Land
+## Outside The Maven Land
 
 A number of other projects provide their own Maven extensions. This includes:
 
-#### Open Source
+### Open Source
 
 | Extension                                                 | Maintainer          | Description
 |-----------------------------------------------------------|---------------------|-----------
@@ -47,7 +47,7 @@ A number of other projects provide their own Maven extensions. This includes:
 | [smart-builder](https://github.com/takari/takari-smart-builder) | Takari        | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.
 | [opentelemetry-maven-extension](https://github.com/open-telemetry/opentelemetry-java-contrib/tree/main/maven-extension)  | The OpenTelemetry project       | The OpenTelemetry Maven Extension instruments builds to gather execution details as traces for build performance optimization and for troubleshooting. <br/>OpenTelemetry traces can be visualized in open source observability solutions such as [Jaeger Tracing](https://www.jaegertracing.io) as well as in commercial solutions.
 
-#### Commercial
+### Commercial
 
 | Extension                                                                | Maintainer  | Description
 |--------------------------------------------------------------------------|-------------|-----------

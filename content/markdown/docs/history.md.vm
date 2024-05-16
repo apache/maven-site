@@ -1,5 +1,4 @@
 # Maven Releases History
-
 <!--
  Licensed to the Apache Software Foundation (ASF) under one
  or more contributor license agreements.  See the NOTICE file
@@ -17,9 +16,6 @@
  KIND, either express or implied.  See the License for the
  specific language governing permissions and limitations
  under the License.
-
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
 -->
 #set ( $archive = 'https://mail-archives.apache.org/mod_mbox/maven-' )
 #macro ( release $date $version $announce $bold $jdk $rowspan )
@@ -59,8 +55,6 @@ $b_</td>
 </tr>
 #end
 
-## Maven Releases History
-
 The Apache Maven team maintains the last version of the last two series of GA releases.
 If the last release is 3.9.6, the Apache Maven team project will maintain core versions:
 - 3.9.6
@@ -69,9 +63,9 @@ If the last release is 3.9.6, the Apache Maven team project will maintain core v
 Currently, plugins provide Maven API compatibility down to **3.2.5**. 
 New plugin releases will require Maven **3.6.3** or later.
 
-Date format is: YYYY-MM-DD
+Date format is YYYY-MM-DD
 
-<h3><a name="Maven_40">Maven 4.0+</a></h3>
+$esc.h$esc.h Maven 4.0+
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -94,7 +88,7 @@ Date format is: YYYY-MM-DD
 
 </table>
 
-<h3><a name="Maven_38">Maven 3.8.x+</a></h3>
+$esc.h$esc.h Maven 3.8.x+
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
@@ -122,7 +116,7 @@ Date format is: YYYY-MM-DD
 
 </table>
 
-<h3><a name="Maven_3">Maven 3.6.x and before</a></h3>
+$esc.h$esc.h Maven 3.6.x and before
 
 <p>Maven before 3.6.3 has now reached its end of life.
 New plugin releases will require Maven 3.6.3 or later.
@@ -172,7 +166,7 @@ The following information is made available for reference.</p>
 
 </table>
 
-<h3><a name="Maven_2">Maven 2</a></h3>
+$esc.h$esc.h Maven 2
 <p>Maven 2.x has now reached its <a href="../maven-2.x-eol.html">end of life</a>.
   The following <a href="/archives/maven-2.x/index.html">Maven 2.x specific documentation</a> is archived for reference.</p>
 <table>
@@ -201,7 +195,7 @@ The following information is made available for reference.</p>
 
 </table>
 
-<h3><a name="Maven_1">Maven 1</a></h3>
+$esc.h$esc.h Maven 1
 <p>Maven 1.x has now reached its <a href="../maven-1.x-eol.html">end of life</a>.
   <a href="/archives/maven-1.x/index.html">Maven 1.x documentation</a> is archived for reference.</p>
 #macro ( announce $date $version $page )

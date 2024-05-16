@@ -56,7 +56,7 @@ apache-maven-3.x.y
     └── ...
 </pre></div>
 
-## Configuring logging 
+## Configuring logging
 
 To configure logging with the [SLF4J Simple][2], you can edit the properties in the
 `${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation

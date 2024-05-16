@@ -1,4 +1,4 @@
-## Code Quality Management
+# Code Quality Management
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -22,7 +22,7 @@ Some existing Maven plugins use code analysis technologies (like
 page lists technologies and platforms that know how to aggregate all
 this information to offer enhanced quality management functionalities.
 
-### Quality management technologies and platforms
+## Quality management technologies and platforms
 
 Following is an alphabetical list of those we've heard mentioned around
 the Maven community:

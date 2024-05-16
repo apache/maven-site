@@ -1,4 +1,4 @@
-## Best Practice - Using a Repository Manager
+# Best Practice - Using a Repository Manager
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -24,7 +24,7 @@ The usage of a repository manager is
 considered an essential best practice for any significant usage of Maven.
 
 
-### Purpose
+## Purpose
 
 A repository manager serves these essential purposes:
 
@@ -33,7 +33,7 @@ A repository manager serves these essential purposes:
 * provide repositories as a deployment destination for your Maven project 
 outputs
 
-### Benefits and Features
+## Benefits and Features
 
 Using a repository manager provides the following benefits and features:
 
@@ -48,7 +48,7 @@ also QA or operations teams or even customers
 * provides an effective platform for exchanging binary artifacts within 
 your organization and beyond without the need for building artifact from source
 
-### Available Repository Managers
+## Available Repository Managers
 
 The following list (alphabetical order) of open source and commercial repository
  managers are known to support the repository format used by Maven. Please refer to the respective linked web sites for further information about repository management in general 

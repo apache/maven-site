@@ -1,4 +1,4 @@
-## Maven Security
+# Maven Security
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -17,7 +17,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-### Security Model
+## Security Model
 
 The purpose of Maven is to perform the actions defined in the supplied
 `pom.xml`, which commonly includes compiling and running the associated
@@ -29,7 +29,7 @@ the code, dependencies and repositories that are used in your build.
 If you want to use Maven to build untrusted code, it is up to you to
 provide the required isolation.
 
-### Security Vulnerabilities
+## Security Vulnerabilities
 
 Please note that binary patches are not produced for individual
 vulnerabilities. To obtain the binary fix for a particular vulnerability
@@ -39,7 +39,7 @@ has been fixed.
 For more information about reporting vulnerabilities, see the [Apache
 Security Team](https://www.apache.org/security/) page.
 
-#### CVE-2021-26291 Apache Maven 3.8.1
+### CVE-2021-26291 Apache Maven 3.8.1
 
 Severity: Medium
 
@@ -58,7 +58,7 @@ and we added a new `external:http:*` mirror selector (like existing `external:*`
 The decision was made to block such external HTTP repositories by default: this is done by providing a mirror in the `conf/settings.xml` blocking insecure HTTP external URLs.
 Note: this is a vulnerability in case you're connectioning directly to remote repositories instead of using an artifact repository manager.
 
-#### Maven Dependency, EAR, Javadoc, WAR and Plugin Plugins
+### Maven Dependency, EAR, Javadoc, WAR and Plugin Plugins
 
 Severity: Low
 
@@ -86,7 +86,7 @@ See [full description](./security-plexus-archiver.html) for more details.
 
 Credit: This issue was identified by the Snyk Security Research Team
 
-#### CVE-2013-0253 Apache Maven 3.0.4
+### CVE-2013-0253 Apache Maven 3.0.4
 
 Severity: Medium
 
@@ -110,7 +110,7 @@ All users are recommended to upgrade to [Apache Maven
 
 Credit: This issue was identified by Graham Leggett
 
-#### CVE-2012-6153 Apache Maven Wagon :: WebDAV Provider
+### CVE-2012-6153 Apache Maven Wagon :: WebDAV Provider
 
 Severity: Medium
 

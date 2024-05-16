@@ -1,4 +1,4 @@
-## Guide to Working with Multiple Modules in Maven 4
+# Guide to Working with Multiple Modules in Maven 4
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
