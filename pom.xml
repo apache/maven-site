@@ -57,7 +57,7 @@
     <maven.site.path>maven-site</maven.site.path>
     <project.build.outputTimestamp>x</project.build.outputTimestamp>
     <!-- disable Reproducible Builds that makes the site build time fixed at last release time -->
-    <currentStableVersion>3.9.6</currentStableVersion>
+    <currentStableVersion>3.9.7</currentStableVersion>
     <currentStableVersionDetails>8b094c9513efc1b9ce2d952b3b9c8eaedaf8cbf0</currentStableVersionDetails>
     <current4xVersion>4.0.0-alpha-13</current4xVersion>
     <current39xVersion>3.9.7</current39xVersion>
