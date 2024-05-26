@@ -183,7 +183,7 @@ under the License.
         </ul>
       </subsection>
 
-      <subsection name="Alpha 4.x Release">
+      <subsection name="Preview 4.x Release">
         <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
 
         <p>
