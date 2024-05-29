@@ -48,9 +48,9 @@ There are two locations where a `settings.xml` file may live:
 -   The Maven install: `${maven.home}/conf/settings.xml`
 -   A user's install: `${user.home}/.m2/settings.xml`
 
-The former `settings.xml` are also called global settings, the latter
-`settings.xml` are referred to as user settings. If both files exists,
-their contents gets merged, with the user-specific `settings.xml` being
+The former `settings.xml` is also called global settings, the latter
+`settings.xml` is referred to as user settings. If both files exist,
+their contents get merged, with the user-specific `settings.xml` being
 dominant.
 
 Tip: If you need to create user-specific settings from scratch, it's
@@ -76,13 +76,13 @@ Here is an overview of the top elements under `settings`:
 </settings>
 ```
 
-The contents of the `settings.xml` can be interpolated using the
+The contents of `settings.xml` can be interpolated using the
 following expressions:
 
-1.  `${user.home}` and all other system properties *(since Maven 3.0)*
+1.  `${user.home}` and all other system properties
 2.  `${env.HOME}` etc. for environment variables
 
-Note that properties defined in profiles within the `settings.xml`
+Note that properties defined in profiles within `settings.xml`
 cannot be used for interpolation.
 
 ## Settings Details
