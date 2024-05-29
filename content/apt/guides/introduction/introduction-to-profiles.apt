@@ -73,13 +73,6 @@ Introduction to Build Profiles
     - Defined in the {{{/ref/current/maven-settings/settings.html} global Maven-settings}}
     <<<($\{maven.home\}/conf/settings.xml)>>>.
 
-  * Profile descriptor
-
-    - a descriptor located in
-    {{{/ref/2.2.1/maven-profile/profiles.html}project basedir <<<(profiles.xml)>>>}}
-    (no longer supported in Maven 3.0 and above; see
-    {{{https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes#Maven3.xCompatibilityNotes-profiles.xml} Maven 3 compatibility notes}})
-
 * Profile Inheritance
   
   The profiles are not inherited as other POM elements by child POMs. Instead they are resolved very early by the {{{/ref/current/maven-model-builder/}Maven Model Builder}}
@@ -314,7 +307,7 @@ mvn groupId:artifactId:goal -Ddebug=false
 mvn groupId:artifactId:goal -Denvironment=test
 -----
 
-  As of Maven 3.0, profiles in the POM can also be activated based on properties from active profiles from the
+  Profiles in the POM can also be activated based on properties from active profiles from the
   <<<settings.xml>>>.
 
   <<Note>>: Environment variables like <<<FOO>>> are available as properties of the form <<<env.FOO>>>. Further note
