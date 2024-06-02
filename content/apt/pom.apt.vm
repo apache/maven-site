@@ -282,7 +282,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   defined by plugins that set <<<extensions>>> to true, so this is not a complete list.
   
   In case there is an artifact handler defined there are <two> different ways of referencing the same dependency:
-  By using the <extension> or by using the registered <type> value. The former considers all attributes from the artifact handler, while the latter
+  By using the artifact's <extension> or by using the registered <type> value. The latter considers all attributes from the artifact handler, while the former
   never adds the dependency to the classpath nor includes its dependencies. Further information in
   {{{/repositories/artifacts.html#but-where-do-i-set-artifact-extension}Maven Artifacts}}.
 
