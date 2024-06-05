@@ -218,11 +218,11 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   <<<os.name>>>, <<<os.arch>>>, <<<os.version>>> and the family being derived from those.
 
   Each value can be prefixed with <<<!>>> to negate the matching. 
-  The values match if they are (not) equal to the actual String value.
+  The values match if they are (not) equal to the actual String value (<<case insensitive>>).
   All given OS conditions must match for the profile to be considered for activation.
 
   Since {{{https://issues.apache.org/jira/browse/MNG-5726}Maven 3.9.7}} the value for <<<version>>> may be prefixed with <<<regex:>>>.
-  In that case {{{https://docs.oracle.com/javase/tutorial/essential/regex/}regular pattern matching}} is applied for the version matching.
+  In that case {{{https://docs.oracle.com/javase/tutorial/essential/regex/}regular pattern matching}} is applied for the version matching and applied against the <<lower case>> <<<os.version>>> value.
 
   The actual OS values which need to match the given values are emitted when executing <<<mvn --version>>>.
 
