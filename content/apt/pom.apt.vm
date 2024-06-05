@@ -2044,7 +2044,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<os>>:
   The <<<os>>> element can require some operating system specific properties having specific values. 
   Each value may start with <<<!>>> which means the condition is fulfilled if the value following does <not> equal the actual value,
-  otherwise the condition is fulfilled if the value equals the according system property (or derived value).
+  otherwise the condition is fulfilled if the value equals the according system property (or derived value). In both cases the check is <<case insensitive>>.
   
     * <<name>>, is matched against system property <<<os.name>>>
     
@@ -2054,7 +2054,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
     
     * <<version>>, is matched against system property <<<os.version>>>. Since {{{https://issues.apache.org/jira/browse/MNG-5726}Maven 3.9.7}} 
     the value for <<<version>>> may be prefixed with <<<regex:>>>. In that case {{{https://docs.oracle.com/javase/tutorial/essential/regex/}regular pattern matching}}
-    is applied for the version matching.
+    is applied for the version matching. Note that system property <<<os.version>>> is converted to <<lower case>> prior to the matching.
 
   See the maven-enforcer-plugin's {{{/enforcer/enforcer-rules/requireOS.html}Require OS Rule}} for more details about OS values.
 
