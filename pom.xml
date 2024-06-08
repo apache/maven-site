@@ -29,7 +29,6 @@
 
   <artifactId>maven-site</artifactId>
   <version>1.0</version>
-  <packaging>pom</packaging>
 
   <name>Apache Maven Site</name>
   <url>https://maven.apache.org/</url>
@@ -390,6 +389,39 @@
           </plugin>
         </plugins>
       </reporting>
+    </profile>
+    <profile>
+      <id>update</id>
+      <activation>
+        <property>
+          <name>update</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+              <mainClass>org.apache.maven.site.update.Update</mainClass>
+              <arguments>
+                <argument>plugins</argument>
+                <argument>shared</argument>
+              </arguments>
+            </configuration>
+            <executions>
+              <execution>
+                <id>update-releases</id>
+                <goals>
+                  <goal>java</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
     </profile>
   </profiles>
 </project>
