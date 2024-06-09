@@ -79,6 +79,14 @@
     <siteDirectory>${project.basedir}/content</siteDirectory>
   </properties>
 
+  <dependencies>
+    <dependency>
+      <groupId>org.jsoup</groupId>
+      <artifactId>jsoup</artifactId>
+      <version>1.15.3</version>
+    </dependency>
+  </dependencies>
+
   <repositories>
     <repository>
       <!-- useful to resolve parent pom when it is a SNAPSHOT -->

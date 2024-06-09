@@ -25,8 +25,13 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+
 /**
- * Updater for /plugins/index.apt and /shared/index.apt release numbers against effective site content.
+ * Updater for /plugins/index.apt and /shared/index.apt release numbers against
+ * effective site content.
  */
 public class Update {
     public static void main(String[] args) throws IOException {
@@ -66,6 +71,62 @@ public class Update {
         }
 
         System.out.print("  " + component + "  " + version + " => checking against " + url + "\33[2K\r");
+        String[] result = lookupRelease(url);
+
+        if ((result != null) && (!result[0].equals(version))) {
+            // found an updated version
+            System.out.println(
+                    "  " + component + "  " + version + " => " + result[0] + " on " + result[1] + " from " + url);
+            cols[column] = String.format(" %-" + (cols[column].length() - 2) + "s ", result[0]);
+            cols[column + 1] = String.format(" %-" + (cols[column + 1].length() - 2) + "s ", result[1]);
+            line = String.join("|", cols);
+        }
         return line;
+    }
+
+    /**
+     * Lookup component page and extract release version and publication date
+     */
+    private String[] lookupRelease(String url) {
+        Document doc;
+        try {
+            System.out.println();
+            doc = Jsoup.connect(url).get();
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+        String version;
+        String date;
+
+        // Fluido skin
+        Element links = doc.select("li#projectVersion").first();
+        if (links != null) {
+            String txt = links.text();
+            version = txt.substring(txt.lastIndexOf(' ')).trim();
+            txt = doc.select("li#publishDate").first().text();
+            date = txt.substring(txt.lastIndexOf(' ')).trim();
+        } else {
+            // Stylus right or left
+            links = doc.select("div.xright").first();
+            if (links == null) {
+                links = doc.select("div.xleft").first();
+            }
+            if (links == null) {
+                System.out.println("could not find version in " + url);
+                return null;
+            }
+            String txt = links.text();
+            version = txt.substring(txt.lastIndexOf(' ')).trim();
+            txt = txt.substring(txt.indexOf("Last Published:") + 16);
+            date = txt.substring(0, 10);
+        }
+
+        if (version.endsWith("-SNAPSHOT")) {
+            return null;
+        }
+
+        return new String[] {version, date};
     }
 }
