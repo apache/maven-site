@@ -90,9 +90,9 @@ public class Update {
     private String[] lookupRelease(String url) {
         Document doc;
         try {
-            System.out.println();
             doc = Jsoup.connect(url).get();
         } catch (IOException e) {
+            System.out.println();
             e.printStackTrace();
             return null;
         }
