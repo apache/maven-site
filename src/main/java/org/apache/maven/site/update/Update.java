@@ -70,7 +70,7 @@ public class Update {
             version = versionCol.trim();
         }
 
-        System.out.print("  " + component + "  " + version + " => checking against " + url + "\33[2K\r");
+        System.out.print("\r\33[2K  " + component + "  " + version + " => checking against " + url);
         String[] result = lookupRelease(url);
 
         if ((result != null) && (!result[0].equals(version))) {
