@@ -52,6 +52,8 @@ Finally, Maven 3.9.8 went thru a "diet", and lost commons-lang from it's constit
 commons-lang was never published artifact by Core), while extensions, that do depend on presence of it hopefully did declare it as
 dependency (as would be best practice).
 
+Mild updates happened to default plugin bindings as well.
+
 The full list of changes can be found in our [issue management system][4].
 
 ### Known issues ###
