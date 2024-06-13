@@ -43,11 +43,11 @@ Regression fixes and other improvements from Maven 3.9.7. All users already on M
 Bug fixes ranges from restored ability (lost in 3.9.7) to build some project that depends on artifact with invalid POMs,
 OS profile activation issues and many other minor but annoying bugs.
 
+The "known issue" (bug) from 3.9.7, [MNG-8116](https://issues.apache.org/jira/browse/MNG-8116) was fixed as well, by updating to 
+latest Eclipse Sisu release 0.9.0.M3, that carries ASM 9.7 (Java 23).
+
 Improvements on other hand include added logging of those invalid POMs (in DEBUG even telling what is the problem with them),
 improved output for plugin validation and alike.
-
-The "known issue" from 3.9.7, the [MNG-8116](https://issues.apache.org/jira/browse/MNG-8116) bug was fixed as well, by updating to 
-latest Eclipse Sisu release 0.9.0.M3 that carries ASM 9.7 (Java 23).
 
 Finally, Maven 3.9.8 went thru a "diet", and lost commons-lang from it's constituents. This change has no effect on plugins (as
 commons-lang was never published artifact by Core), while extensions, that do depend on presence of it hopefully did declare it as
