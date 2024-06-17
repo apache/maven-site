@@ -37,6 +37,7 @@ public class Update {
     public static void main(String[] args) throws IOException {
         for (String dir : args) {
             new Update().doUpdate(Paths.get("content/apt/" + dir + "/index.apt"));
+            System.out.println("\r\33[2K");
         }
     }
 
@@ -75,8 +76,8 @@ public class Update {
 
         if ((result != null) && (!result[0].equals(version))) {
             // found an updated version
-            System.out.println(
-                    "  " + component + "  " + version + " => " + result[0] + " on " + result[1] + " from " + url);
+            System.out.println("\r\33[2K  " + component + "  " + version + " => " + result[0] + " on " + result[1]
+                    + " from " + url);
             cols[column] = String.format(" %-" + (cols[column].length() - 2) + "s ", result[0]);
             cols[column + 1] = String.format(" %-" + (cols[column + 1].length() - 2) + "s ", result[1]);
             line = String.join("|", cols);
@@ -92,8 +93,9 @@ public class Update {
         try {
             doc = Jsoup.connect(url).get();
         } catch (IOException e) {
-            System.out.println();
+            System.out.print("\r\33[2K");
             e.printStackTrace();
+            System.out.println();
             return null;
         }
 
