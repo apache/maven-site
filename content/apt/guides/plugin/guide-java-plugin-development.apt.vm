@@ -100,7 +100,7 @@ public class GreetingMojo extends AbstractMojo
   * The annotation "<<<@Mojo>>>" is required and control how and
     when the mojo is executed.
 
-  * The <<<execute>>> method can throw <<<org.apache.maven.plugin.MojoExecutionException>>> if an problem occurs.
+  * The <<<execute>>> method can throw <<<org.apache.maven.plugin.MojoExecutionException>>> if a problem occurs.
     Throwing this exception causes a <<<BUILD FAILURE>>> message to be displayed.
 
   * The <<<getLog>>> method (defined in <<<AbstractMojo>>>) returns a
