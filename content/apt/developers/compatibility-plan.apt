@@ -62,22 +62,4 @@ Maven Plugins Compatibility Plan
 
   * Maven core history with Java prerequisite is available in the {{{/docs/history.html}release notes}}
 
-  * JDK/JRE availability dates:
-
-    * Java 5 (2004) is closed source, End of Public Update in 2009
-
-    * Java 6 (2006) is Open Source, maintained at OpenJDK until 2018
-
-    * Java 7 (2011) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/jdk7u}at OpenJDK}} at least until June 2020 
-
-    * Java 8 (2014) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/jdk8u}at OpenJDK}} at least until September 2023
-
-    * Java 11 (LTS, 2018) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/JDKUpdates/JDK11u}at OpenJDK}} at least until September 2025
-
-    * see {{{https://javaalmanac.io/jdk/}Java Version Almanac}} for updated JDK releases
-
-    []
-
-    see also {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}} for more details
-
   []
