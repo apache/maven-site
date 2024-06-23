@@ -295,7 +295,7 @@ public class SimpleReport extends AbstractMavenReport {
     /**
      * Practical reference to the Maven project
      */
-    @Parameter(defaultValue = "${project}", readonly = true)
+    @Parameter(defaultValue = "\${project}", readonly = true)
     private MavenProject project;
 
     @Override
