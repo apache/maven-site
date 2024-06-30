@@ -1,0 +1,935 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" width="801.562" height="775.597" fill-rule="evenodd" stroke-linejoin="round" stroke-width="28.222" preserveAspectRatio="xMidYMid" version="1.2" viewBox="995 1090 21208 20521">
+ <g>
+  <g>
+   <path fill="none" d="M999 20567h15002v1044H999z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus">
+    <path fill="#FFC" fill-opacity=".4" stroke="#FFF" stroke-opacity=".4" d="M8500 21609H1000v-1041h14999v1041z"/>
+    <path fill="none" stroke="#000" d="M8500 21609H1000v-1041h14999v1041z"/>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M999 14810h20934v5466H999z"/>
+   <a target="_parent" xlink:href="/shared/">
+    <path fill="#E6E6FF" d="M11466 20274H1000v-5463h20931v5463z"/>
+    <path fill="none" stroke="#000" d="M11466 20274H1000v-5463h20931v5463z"/>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M999 3265h21204v8250H999z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <path fill="#E6E6FF" d="M11601 11513H1000V3266h21201v8247z"/>
+    <path fill="none" stroke="#000" d="M11601 11513H1000V3266h21201v8247z"/>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 2132h2246v834H1000z"/>
+   <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="2720" class="TextPosition"><tspan style="white-space:pre">Core:</tspan></tspan></tspan></text>
+  </g>
+  <g>
+   <path fill="none" d="M3244 2131h2045v838H3244z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven">
+    <path fill="#9CF" d="M4266 2967H3245v-835h2042v835z"/>
+    <path fill="none" stroke="#000" d="M4266 2967H3245v-835h2042v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3523" y="2721" class="TextPosition"><tspan style="white-space:pre">Maven</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5490 2131h2396v838H5490z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-integration-testing/">
+    <path fill="#9CF" d="M6688 2967H5491v-835h2393v835z"/>
+    <path fill="none" stroke="#000" d="M6688 2967H5491v-835h2393v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="5763" y="2721" class="TextPosition"><tspan style="white-space:pre">Core ITs</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8145 2131h2556v838H8145z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-resolver/">
+    <path fill="#9CF" d="M9423 2967H8146v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M9423 2967H8146v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8445" y="2721" class="TextPosition"><tspan style="white-space:pre">Resolver</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10902 2131h2556v838h-2556z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-resolver-ant-tasks/">
+    <path fill="#9CF" d="M12180 2967h-1277v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M12180 2967h-1277v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="11106" y="2721" class="TextPosition"><tspan style="white-space:pre">Ant Tasks</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 11719h2246v834H1000z"/>
+   <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="12307" class="TextPosition"><tspan style="white-space:pre">Doxia:</tspan></tspan></tspan></text>
+  </g>
+  <g>
+   <path fill="none" d="M3044 11718h2045v838H3044z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doxia/">
+    <path fill="#9CF" d="M4066 12554H3045v-835h2042v835z"/>
+    <path fill="none" stroke="#000" d="M4066 12554H3045v-835h2042v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3433" y="12308" class="TextPosition"><tspan style="white-space:pre">Doxia</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5290 11718h2658v838H5290z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doxia-sitetools/">
+    <path fill="#9CF" d="M6619 12554H5291v-835h2655v835z"/>
+    <path fill="none" stroke="#000" d="M6619 12554H5291v-835h2655v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="5548" y="12308" class="TextPosition"><tspan style="white-space:pre">Site Tools</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8150 11718h1841v838H8150z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doxia-site/">
+    <path fill="#DEE6EF" d="M9070 12554h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M9070 12554h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8643" y="12308" class="TextPosition"><tspan style="white-space:pre">Site</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10188 11719h2246v834h-2246z"/>
+   <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="10657" y="12307" class="TextPosition"><tspan style="white-space:pre">Tools:</tspan></tspan></tspan></text>
+  </g>
+  <g>
+   <path fill="none" d="M12230 11718h2556v838h-2556z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doxia-converter/">
+    <path fill="#9CF" d="M13508 12554h-1277v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M13508 12554h-1277v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12419" y="12308" class="TextPosition"><tspan style="white-space:pre">Converter</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M14987 11718h2556v838h-2556z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doxia-linkcheck/">
+    <path fill="#9CF" d="M16265 12554h-1277v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M16265 12554h-1277v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="15159" y="12308" class="TextPosition"><tspan style="white-space:pre">Linkcheck</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 12750h2246v834H1000z"/>
+   <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="13338" class="TextPosition"><tspan style="white-space:pre">Misc:</tspan></tspan></tspan></text>
+  </g>
+  <g>
+   <path fill="none" d="M1000 3266h2246v834H1000z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="3854" class="TextPosition"><tspan style="white-space:pre">Plugins:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 4194h2246v834H1000z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="1250" y="4782" class="TextPosition"><tspan style="white-space:pre">- Core:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 5224h2979v834H1000z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="1250" y="5812" class="TextPosition"><tspan style="white-space:pre">- Packaging:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M996 6255h2815v834H996z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="1246" y="6843" class="TextPosition"><tspan style="white-space:pre">- Reporting:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M995 8317h2246v834H995z"/>
+   <a target="_parent" xlink:href="./plugins/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="1245" y="8905" class="TextPosition"><tspan style="white-space:pre">- Tools:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3040 4193h1841v838H3040z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-clean-plugin/">
+    <path fill="#9CF" d="M3960 5029h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M3960 5029h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3368" y="4783" class="TextPosition"><tspan style="white-space:pre">clean</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5103 4193h2228v838H5103z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-compiler-plugin/">
+    <path fill="#9CF" d="M6217 5029H5104v-835h2225v835z"/>
+    <path fill="none" stroke="#000" d="M6217 5029H5104v-835h2225v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="5281" y="4783" class="TextPosition"><tspan style="white-space:pre">compiler</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M7534 4193h1841v838H7534z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-deploy-plugin/">
+    <path fill="#9CF" d="M8454 5029h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M8454 5029h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7723" y="4783" class="TextPosition"><tspan style="white-space:pre">deploy</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9576 4193h1841v838H9576z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-install-plugin/">
+    <path fill="#9CF" d="M10496 5029h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M10496 5029h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9861" y="4783" class="TextPosition"><tspan style="white-space:pre">install</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M11618 4193h2453v838h-2453z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-resources-plugin/">
+    <path fill="#9CF" d="M12844 5029h-1225v-835h2450v835z"/>
+    <path fill="none" stroke="#000" d="M12844 5029h-1225v-835h2450v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="11754" y="4783" class="TextPosition"><tspan style="white-space:pre">resources</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M14273 4193h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-site-plugin/">
+    <path fill="#9CF" d="M14938 5029h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M14938 5029h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14551" y="4783" class="TextPosition"><tspan style="white-space:pre">site</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15801 4193h2049v838h-2049z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-surefire">
+    <path fill="#9CF" d="M16825 5029h-1023v-835h2046v835z"/>
+    <path fill="none" stroke="#000" d="M16825 5029h-1023v-835h2046v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="15997" y="4783" class="TextPosition"><tspan style="white-space:pre">surefire</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18051 4193h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-verifier-plugin/">
+    <path fill="#9CF" d="M18971 5029h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M18971 5029h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="18226" y="4783" class="TextPosition"><tspan style="white-space:pre">verifier</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M4265 5224h1331v838H4265z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-ear-plugin/">
+    <path fill="#9CF" d="M4930 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M4930 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="4573" y="5814" class="TextPosition"><tspan style="white-space:pre">ear</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5798 5224h1331v838H5798z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-ejb-plugin/">
+    <path fill="#9CF" d="M6463 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M6463 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="6133" y="5814" class="TextPosition"><tspan style="white-space:pre">ejb</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M7329 5224h1331v838H7329z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jar-plugin/">
+    <path fill="#9CF" d="M7994 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M7994 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7719" y="5814" class="TextPosition"><tspan style="white-space:pre">jar</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8860 5224h1331v838H8860z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-rar-plugin/">
+    <path fill="#9CF" d="M9525 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M9525 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9223" y="5814" class="TextPosition"><tspan style="white-space:pre">rar</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10393 5224h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-war-plugin/">
+    <path fill="#9CF" d="M11058 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M11058 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10660" y="5814" class="TextPosition"><tspan style="white-space:pre">war</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M11924 5224h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-acr-plugin/">
+    <path fill="#9CF" d="M12589 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M12589 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12244" y="5814" class="TextPosition"><tspan style="white-space:pre">acr</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13456 5224h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shade-plugin/">
+    <path fill="#9CF" d="M14376 6060h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M14376 6060h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13701" y="5814" class="TextPosition"><tspan style="white-space:pre">shade</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15499 5224h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-source-plugin/">
+    <path fill="#9CF" d="M16419 6060h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M16419 6060h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="15674" y="5814" class="TextPosition"><tspan style="white-space:pre">source</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M17540 5224h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jlink-plugin/">
+    <path fill="#9CF" d="M18205 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M18205 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="17777" y="5814" class="TextPosition"><tspan style="white-space:pre">jlink</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M19072 5224h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jmod-plugin/">
+    <path fill="#9CF" d="M19737 6060h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M19737 6060h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="19201" y="5814" class="TextPosition"><tspan style="white-space:pre">jmod</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M4081 6254h2534v838H4081z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-changelog-plugin/">
+    <path fill="#9CF" d="M5348 7090H4082v-835h2531v835z"/>
+    <path fill="none" stroke="#000" d="M5348 7090H4082v-835h2531v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="4204" y="6844" class="TextPosition"><tspan style="white-space:pre">changelog</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M6840 6254h2331v838H6840z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-changes-plugin/">
+    <path fill="#9CF" d="M8005 7090H6841v-835h2328v835z"/>
+    <path fill="none" stroke="#000" d="M8005 7090H6841v-835h2328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7067" y="6844" class="TextPosition"><tspan style="white-space:pre">changes</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9393 6254h2841v838H9393z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-checkstyle-plugin/">
+    <path fill="#9CF" d="M10813 7090H9394v-835h2838v835z"/>
+    <path fill="none" stroke="#000" d="M10813 7090H9394v-835h2838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9651" y="6844" class="TextPosition"><tspan style="white-space:pre">checkstyle</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12457 6254h1309v838h-1309z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-doap-plugin/">
+    <path fill="#9CF" d="M13111 7090h-653v-835h1306v835z"/>
+    <path fill="none" stroke="#000" d="M13111 7090h-653v-835h1306v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12560" y="6844" class="TextPosition"><tspan style="white-space:pre">doap</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13987 6254h1820v838h-1820z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-docck-plugin/">
+    <path fill="#9CF" d="M14897 7090h-909v-835h1817v835z"/>
+    <path fill="none" stroke="#000" d="M14897 7090h-909v-835h1817v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14247" y="6844" class="TextPosition"><tspan style="white-space:pre">docck</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M16030 6254h2111v838h-2111z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-javadoc-plugin/">
+    <path fill="#9CF" d="M17085 7090h-1054v-835h2108v835z"/>
+    <path fill="none" stroke="#000" d="M17085 7090h-1054v-835h2108v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16230" y="6844" class="TextPosition"><tspan style="white-space:pre">javadoc</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18379 6254h1513v838h-1513z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jdeps-plugin/">
+    <path fill="#9CF" d="M19135 7090h-755v-835h1510v835z"/>
+    <path fill="none" stroke="#000" d="M19135 7090h-755v-835h1510v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="18542" y="6844" class="TextPosition"><tspan style="white-space:pre">jdeps</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M4081 7286h1050v838H4081z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jxr">
+    <path fill="#9CF" d="M4606 8122h-524v-835h1047v835z"/>
+    <path fill="none" stroke="#000" d="M4606 8122h-524v-835h1047v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="4343" y="7876" class="TextPosition"><tspan style="white-space:pre">jxr</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5307 7286h2636v838H5307z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-linkcheck-plugin/">
+    <path fill="#9CF" d="M6625 8122H5308v-835h2633v835z"/>
+    <path fill="none" stroke="#000" d="M6625 8122H5308v-835h2633v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="5602" y="7876" class="TextPosition"><tspan style="white-space:pre">linkcheck</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8167 7286h1309v838H8167z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-pmd-plugin/">
+    <path fill="#9CF" d="M8821 8122h-653v-835h1306v835z"/>
+    <path fill="none" stroke="#000" d="M8821 8122h-653v-835h1306v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8340" y="7876" class="TextPosition"><tspan style="white-space:pre">pmd</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9700 7286h4577v838H9700z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-project-info-reports-plugin/">
+    <path fill="#9CF" d="M11988 8122H9701v-835h4574v835z"/>
+    <path fill="none" stroke="#000" d="M11988 8122H9701v-835h4574v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9905" y="7876" class="TextPosition"><tspan style="white-space:pre">project-info-reports</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3142 8316h1331v838H3142z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-ant-plugin/">
+    <path fill="#9CF" d="M3807 9152h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M3807 9152h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3462" y="8906" class="TextPosition"><tspan style="white-space:pre">ant</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M4674 8316h1943v838H4674z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-antrun-plugin/">
+    <path fill="#9CF" d="M5645 9152h-970v-835h1940v835z"/>
+    <path fill="none" stroke="#000" d="M5645 9152h-970v-835h1940v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="4943" y="8906" class="TextPosition"><tspan style="white-space:pre">antrun</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M6819 8316h2591v838H6819z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-archetype/">
+    <path fill="#9CF" d="M8114 9152H6820v-835h2588v835z"/>
+    <path fill="none" stroke="#000" d="M8114 9152H6820v-835h2588v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7024" y="8906" class="TextPosition"><tspan style="white-space:pre">archetype</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9576 8316h2591v838H9576z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-assembly-plugin/">
+    <path fill="#9CF" d="M10871 9152H9577v-835h2588v835z"/>
+    <path fill="none" stroke="#000" d="M10871 9152H9577v-835h2588v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9823" y="8906" class="TextPosition"><tspan style="white-space:pre">assembly</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12332 8316h3142v838h-3142z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-dependency-plugin/">
+    <path fill="#9CF" d="M13903 9152h-1570v-835h3139v835z"/>
+    <path fill="none" stroke="#000" d="M13903 9152h-1570v-835h3139v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12552" y="8906" class="TextPosition"><tspan style="white-space:pre">dependency</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15600 8316h2250v838h-2250z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-enforcer">
+    <path fill="#9CF" d="M16725 9152h-1124v-835h2247v835z"/>
+    <path fill="none" stroke="#000" d="M16725 9152h-1124v-835h2247v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="15814" y="8906" class="TextPosition"><tspan style="white-space:pre">enforcer</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18051 8316h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-gpg-plugin/">
+    <path fill="#9CF" d="M18716 9152h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M18716 9152h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="18303" y="8906" class="TextPosition"><tspan style="white-space:pre">gpg</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M19583 8316h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-help-plugin/">
+    <path fill="#9CF" d="M20248 9152h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M20248 9152h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="19780" y="8906" class="TextPosition"><tspan style="white-space:pre">help</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3142 9347h1943v838H3142z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-invoker-plugin/">
+    <path fill="#9CF" d="M4113 10183h-970v-835h1940v835z"/>
+    <path fill="none" stroke="#000" d="M4113 10183h-970v-835h1940v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3313" y="9937" class="TextPosition"><tspan style="white-space:pre">invoker</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5286 9347h2352v838H5286z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jarsigner-plugin/">
+    <path fill="#9CF" d="M6462 10183H5287v-835h2349v835z"/>
+    <path fill="none" stroke="#000" d="M6462 10183H5287v-835h2349v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="5511" y="9937" class="TextPosition"><tspan style="white-space:pre">jarsigner</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M7839 9347h2862v838H7839z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jdeprscan-plugin/">
+    <path fill="#9CF" d="M9270 10183H7840v-835h2859v835z"/>
+    <path fill="none" stroke="#000" d="M9270 10183H7840v-835h2859v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8194" y="9937" class="TextPosition"><tspan style="white-space:pre">jdeprscan</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10903 9347h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-patch-plugin/">
+    <path fill="#9CF" d="M11823 10183h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M11823 10183h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="11216" y="9937" class="TextPosition"><tspan style="white-space:pre">patch</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12945 9347h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-pdf-plugin/">
+    <path fill="#9CF" d="M13610 10183h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M13610 10183h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13265" y="9937" class="TextPosition"><tspan style="white-space:pre">pdf</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M14477 9347h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-plugin-tools/">
+    <path fill="#9CF" d="M15397 10183h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M15397 10183h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14737" y="9937" class="TextPosition"><tspan style="white-space:pre">plugin</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M16519 9347h2352v838h-2352z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-release/">
+    <path fill="#9CF" d="M17695 10183h-1175v-835h2349v835z"/>
+    <path fill="none" stroke="#000" d="M17695 10183h-1175v-835h2349v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16882" y="9937" class="TextPosition"><tspan style="white-space:pre">release</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3141 10377h4496v838H3141z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-remote-resources-plugin/">
+    <path fill="#9CF" d="M5389 11213H3142v-835h4493v835z"/>
+    <path fill="none" stroke="#000" d="M5389 11213H3142v-835h4493v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3446" y="10967" class="TextPosition"><tspan style="white-space:pre">remote-resources</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M7839 10377h2590v838H7839z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-repository-plugin/">
+    <path fill="#9CF" d="M9134 11213H7840v-835h2587v835z"/>
+    <path fill="none" stroke="#000" d="M9134 11213H7840v-835h2587v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8090" y="10967" class="TextPosition"><tspan style="white-space:pre">repository</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10597 10377h1331v838h-1331z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-scm/">
+    <path fill="#9CF" d="M11262 11213h-664v-835h1328v835z"/>
+    <path fill="none" stroke="#000" d="M11262 11213h-664v-835h1328v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10807" y="10967" class="TextPosition"><tspan style="white-space:pre">scm</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12128 10377h2971v838h-2971z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-scm-publish-plugin/">
+    <path fill="#9CF" d="M13613 11213h-1484v-835h2968v835z"/>
+    <path fill="none" stroke="#000" d="M13613 11213h-1484v-835h2968v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12290" y="10967" class="TextPosition"><tspan style="white-space:pre">scm-publish</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15294 10377h2045v838h-2045z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-scripting-plugin/">
+    <path fill="#9CF" d="M16316 11213h-1021v-835h2042v835z"/>
+    <path fill="none" stroke="#000" d="M16316 11213h-1021v-835h2042v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="15391" y="10967" class="TextPosition"><tspan style="white-space:pre">scripting</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M17541 10377h1655v838h-1655z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-stage-plugin/">
+    <path fill="#9CF" d="M18368 11213h-826v-835h1652v835z"/>
+    <path fill="none" stroke="#000" d="M18368 11213h-826v-835h1652v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="17792" y="10967" class="TextPosition"><tspan style="white-space:pre">stage</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M19378 10377h2556v838h-2556z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-toolchains-plugin/">
+    <path fill="#9CF" d="M20656 11213h-1277v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M20656 11213h-1277v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="19538" y="10967" class="TextPosition"><tspan style="white-space:pre">toolchains</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 15017h2246v834H1000z"/>
+   <a target="_parent" xlink:href="./shared/">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="15605" class="TextPosition"><tspan style="white-space:pre">Shared:</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3242 15016h2453v838H3242z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-archiver/">
+    <path fill="#9CF" d="M4468 15852H3243v-835h2450v835z"/>
+    <path fill="none" stroke="#000" d="M4468 15852H3243v-835h2450v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3586" y="15606" class="TextPosition"><tspan style="white-space:pre">archiver</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5898 15016h3883v838H5898z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-artifact-resolver/">
+    <path fill="#9CF" d="M7839 15852H5899v-835h3880v835z"/>
+    <path fill="none" stroke="#000" d="M7839 15852H5899v-835h3880v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="6126" y="15606" class="TextPosition"><tspan style="white-space:pre">artifact-resolver</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9982 15016h3883v838H9982z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-artifact-transfer/">
+    <path fill="#9CF" d="M11923 15852H9983v-835h3880v835z"/>
+    <path fill="none" stroke="#000" d="M11923 15852H9983v-835h3880v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10251" y="15606" class="TextPosition"><tspan style="white-space:pre">artifact-transfer</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M14065 15016h3372v838h-3372z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-artifact-filters/">
+    <path fill="#9CF" d="M15751 15852h-1685v-835h3369v835z"/>
+    <path fill="none" stroke="#000" d="M15751 15852h-1685v-835h3369v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14326" y="15606" class="TextPosition"><tspan style="white-space:pre">artifact-filters</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3242 16047h5007v838H3242z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-dependency-analyzer/">
+    <path fill="#9CF" d="M5745 16883H3243v-835h5004v835z"/>
+    <path fill="none" stroke="#000" d="M5745 16883H3243v-835h5004v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3374" y="16637" class="TextPosition"><tspan style="white-space:pre">dependency-analyzer</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8449 16047h4394v838H8449z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-dependency-tree/">
+    <path fill="#9CF" d="M10646 16883H8450v-835h4391v835z"/>
+    <path fill="none" stroke="#000" d="M10646 16883H8450v-835h4391v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8785" y="16637" class="TextPosition"><tspan style="white-space:pre">dependency-tree</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13044 16047h2862v838h-2862z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-downloader/">
+    <path fill="#9CF" d="M14475 16883h-1430v-835h2859v835z"/>
+    <path fill="none" stroke="#000" d="M14475 16883h-1430v-835h2859v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13196" y="16637" class="TextPosition"><tspan style="white-space:pre">downloader</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M16108 16047h3044v838h-3044z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-file-manager/">
+    <path fill="#9CF" d="M17630 16883h-1521v-835h3041v835z"/>
+    <path fill="none" stroke="#000" d="M17630 16883h-1521v-835h3041v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16253" y="16637" class="TextPosition"><tspan style="white-space:pre">file-manager</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M19376 16047h2148v838h-2148z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-filtering/">
+    <path fill="#9CF" d="M20450 16883h-1073v-835h2145v835z"/>
+    <path fill="none" stroke="#000" d="M20450 16883h-1073v-835h2145v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="19650" y="16637" class="TextPosition"><tspan style="white-space:pre">filtering</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3242 17079h2453v838H3242z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-invoker/">
+    <path fill="#9CF" d="M4468 17915H3243v-835h2450v835z"/>
+    <path fill="none" stroke="#000" d="M4468 17915H3243v-835h2450v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3668" y="17669" class="TextPosition"><tspan style="white-space:pre">invoker</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5898 17079h2453v838H5898z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jarsigner/">
+    <path fill="#9CF" d="M7124 17915H5899v-835h2450v835z"/>
+    <path fill="none" stroke="#000" d="M7124 17915H5899v-835h2450v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="6174" y="17669" class="TextPosition"><tspan style="white-space:pre">jarsigner</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8553 17079h2453v838H8553z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-mapping/">
+    <path fill="#9CF" d="M9779 17915H8554v-835h2450v835z"/>
+    <path fill="none" stroke="#000" d="M9779 17915H8554v-835h2450v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8831" y="17669" class="TextPosition"><tspan style="white-space:pre">mapping</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M11206 17079h1290v838h-1290z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-osgi/">
+    <path fill="#9CF" d="M11851 17915h-644v-835h1287v835z"/>
+    <path fill="none" stroke="#000" d="M11851 17915h-644v-835h1287v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="11395" y="17669" class="TextPosition"><tspan style="white-space:pre">osgi</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12739 17079h2943v838h-2943z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-project-utils/">
+    <path fill="#9CF" d="M14210 17915h-1470v-835h2940v835z"/>
+    <path fill="none" stroke="#000" d="M14210 17915h-1470v-835h2940v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12940" y="17669" class="TextPosition"><tspan style="white-space:pre">project-utils</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3242 18109h3475v838H3242z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-reporting-api/">
+    <path fill="#9CF" d="M4979 18945H3243v-835h3472v835z"/>
+    <path fill="none" stroke="#000" d="M4979 18945H3243v-835h3472v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3589" y="18699" class="TextPosition"><tspan style="white-space:pre">reporting-api</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M6919 18109h3475v838H6919z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-reporting-exec/">
+    <path fill="#9CF" d="M8656 18945H6920v-835h3472v835z"/>
+    <path fill="none" stroke="#000" d="M8656 18945H6920v-835h3472v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7070" y="18699" class="TextPosition"><tspan style="white-space:pre">reporting-exec</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10595 18109h3475v838h-3475z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-reporting-impl/">
+    <path fill="#9CF" d="M12332 18945h-1736v-835h3472v835z"/>
+    <path fill="none" stroke="#000" d="M12332 18945h-1736v-835h3472v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10818" y="18699" class="TextPosition"><tspan style="white-space:pre">reporting-impl</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M14270 18109h4190v838h-4190z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-repository-builder/">
+    <path fill="#9CF" d="M16365 18945h-2094v-835h4187v835z"/>
+    <path fill="none" stroke="#000" d="M16365 18945h-2094v-835h4187v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14449" y="18699" class="TextPosition"><tspan style="white-space:pre">repository-builder</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18660 18109h2192v838h-2192z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-runtime/">
+    <path fill="#9CF" d="M19756 18945h-1095v-835h2189v835z"/>
+    <path fill="none" stroke="#000" d="M19756 18945h-1095v-835h2189v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="18930" y="18699" class="TextPosition"><tspan style="white-space:pre">runtime</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3241 19140h3986v838H3241z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-script-interpreter/">
+    <path fill="#9CF" d="M5234 19976H3242v-835h3983v835z"/>
+    <path fill="none" stroke="#000" d="M5234 19976H3242v-835h3983v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3426" y="19730" class="TextPosition"><tspan style="white-space:pre">script-interpreter</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M7531 19140h3015v838H7531z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shared-incremental/">
+    <path fill="#9CF" d="M9038 19976H7532v-835h3012v835z"/>
+    <path fill="none" stroke="#000" d="M9038 19976H7532v-835h3012v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="7757" y="19730" class="TextPosition"><tspan style="white-space:pre">incremental</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10798 19140h1024v838h-1024z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shared-io/">
+    <path fill="#9CF" d="M11310 19976h-511v-835h1021v835z"/>
+    <path fill="none" stroke="#000" d="M11310 19976h-511v-835h1021v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="11117" y="19730" class="TextPosition"><tspan style="white-space:pre">io</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M12023 19140h1024v838h-1024z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shared-jar/">
+    <path fill="#9CF" d="M12535 19976h-511v-835h1021v835z"/>
+    <path fill="none" stroke="#000" d="M12535 19976h-511v-835h1021v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="12259" y="19730" class="TextPosition"><tspan style="white-space:pre">jar</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13250 19140h2487v838h-2487z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shared-resources/">
+    <path fill="#9CF" d="M14493 19976h-1242v-835h2484v835z"/>
+    <path fill="none" stroke="#000" d="M14493 19976h-1242v-835h2484v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13403" y="19730" class="TextPosition"><tspan style="white-space:pre">resources</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15903 19140h1534v838h-1534z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-shared-utils/">
+    <path fill="#9CF" d="M16670 19976h-766v-835h1531v835z"/>
+    <path fill="none" stroke="#000" d="M16670 19976h-766v-835h1531v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16227" y="19730" class="TextPosition"><tspan style="white-space:pre">utils</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M17640 19140h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-verifier/">
+    <path fill="#9CF" d="M18560 19976h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M18560 19976h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="17815" y="19730" class="TextPosition"><tspan style="white-space:pre">verifier</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1202 1090h1841v838H1202z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-site/">
+    <path fill="#DEE6EF" d="M2122 1926h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M2122 1926h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="1695" y="1680" class="TextPosition"><tspan style="white-space:pre">Site</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M2730 12748h3067v838H2730z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-archetypes/">
+    <path fill="#9CF" d="M4263 13584H2731v-835h3064v835z"/>
+    <path fill="none" stroke="#000" d="M4263 13584H2731v-835h3064v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3021" y="13338" class="TextPosition"><tspan style="white-space:pre">Archetypes</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13658 12748h2352v838h-2352z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-indexer/">
+    <path fill="#9CF" d="M14834 13584h-1175v-835h2349v835z"/>
+    <path fill="none" stroke="#000" d="M14834 13584h-1175v-835h2349v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="14006" y="13338" class="TextPosition"><tspan style="white-space:pre">Indexer</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5998 12748h1841v838H5998z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-parent/">
+    <path fill="#9CF" d="M6918 13584h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M6918 13584h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="6285" y="13338" class="TextPosition"><tspan style="white-space:pre">Poms</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M8040 12748h1841v838H8040z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-fluido-skin/">
+    <path fill="#9CF" d="M8960 13584h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M8960 13584h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8353" y="13338" class="TextPosition"><tspan style="white-space:pre">Skins</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M16210 12748h2352v838h-2352z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-wagon/">
+    <path fill="#9CF" d="M17386 13584h-1175v-835h2349v835z"/>
+    <path fill="none" stroke="#000" d="M17386 13584h-1175v-835h2349v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16611" y="13338" class="TextPosition"><tspan style="white-space:pre">Wagon</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18764 12748h3271v838h-3271z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-plugin-testing/">
+    <path fill="#9CF" d="M20399 13584h-1634v-835h3268v835z"/>
+    <path fill="none" stroke="#000" d="M20399 13584h-1634v-835h3268v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="18909" y="13338" class="TextPosition"><tspan style="white-space:pre">Plugin testing</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10899 12748h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-studies/">
+    <path fill="#9CF" d="M11819 13584h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M11819 13584h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10991" y="13338" class="TextPosition"><tspan style="white-space:pre">Studies</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M2729 13780h2352v838H2729z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-dist-tool/">
+    <path fill="#9CF" d="M3905 14616H2730v-835h2349v835z"/>
+    <path fill="none" stroke="#000" d="M3905 14616H2730v-835h2349v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3035" y="14370" class="TextPosition"><tspan style="white-space:pre">dist-tool</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M5691 13781h2246v834H5691z"/>
+   <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="400"><tspan x="5901" y="14369" class="TextPosition"><tspan style="white-space:pre">Jenkins:</tspan></tspan></tspan></text>
+  </g>
+  <g>
+   <path fill="none" d="M8040 13780h1841v838H8040z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jenkins-env/">
+    <path fill="#9CF" d="M8960 14616h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M8960 14616h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="8560" y="14370" class="TextPosition"><tspan style="white-space:pre">env</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M10082 13780h1841v838h-1841z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-jenkins-lib/">
+    <path fill="#9CF" d="M11002 14616h-919v-835h1838v835z"/>
+    <path fill="none" stroke="#000" d="M11002 14616h-919v-835h1838v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="10755" y="14370" class="TextPosition"><tspan style="white-space:pre">lib</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3550 1090h2556v838H3550z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-sources/">
+    <path fill="#9CF" d="M4828 1926H3551v-835h2553v835z"/>
+    <path fill="none" stroke="#000" d="M4828 1926H3551v-835h2553v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3918" y="1680" class="TextPosition"><tspan style="white-space:pre">Sources</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M3243 20687h1258v837H3243z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus/plexus-utils/">
+    <path fill="#FF9" d="M3872 21522h-628v-834h1255v834z"/>
+    <path fill="none" stroke="#000" d="M3872 21522h-628v-834h1255v834z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="3429" y="21277" class="TextPosition"><tspan style="white-space:pre">utils</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M1000 20679h2246v834H1000z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus">
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-style="italic" font-weight="700"><tspan x="1250" y="21267" class="TextPosition"><tspan style="white-space:pre">Plexus</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M6089 20687h3271v837H6089z"/>
+   <a target="_parent" xlink:href="https://codehaus-plexus.github.io/">
+    <path fill="#FF9" d="M7724 21522H6090v-834h3268v834z"/>
+    <path fill="none" stroke="#000" d="M7724 21522H6090v-834h3268v834z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="6320" y="21277" class="TextPosition"><tspan style="white-space:pre">Components</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M9561 20687h3271v837H9561z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus/plexus-classworlds/">
+    <path fill="#FF9" d="M11196 21522H9562v-834h3268v834z"/>
+    <path fill="none" stroke="#000" d="M11196 21522H9562v-834h3268v834z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="9809" y="21277" class="TextPosition"><tspan style="white-space:pre">ClassWorlds</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13033 20687h2453v837h-2453z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus/modello/">
+    <path fill="#FF9" d="M14259 21522h-1225v-834h2450v834z"/>
+    <path fill="none" stroke="#000" d="M14259 21522h-1225v-834h2450v834z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13394" y="21277" class="TextPosition"><tspan style="white-space:pre">Modello</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M18703 2131h3299v838h-3299z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-build-cache-extension/">
+    <path fill="#9CF" d="M20352 2967h-1648v-835h3296v835z"/>
+    <path fill="none" stroke="#000" d="M20352 2967h-1648v-835h3296v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="19017" y="2721" class="TextPosition"><tspan style="white-space:pre">Build Cache</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M13644 2131h2045v838h-2045z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-wrapper/">
+    <path fill="#9CF" d="M14666 2967h-1021v-835h2042v835z"/>
+    <path fill="none" stroke="#000" d="M14666 2967h-1021v-835h2042v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="13722" y="2721" class="TextPosition"><tspan style="white-space:pre">Wrapper</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M15843 2131h1658v838h-1658z"/>
+   <a target="_parent" xlink:href="https://github.com/apache/maven-mvnd/">
+    <path fill="#9CF" d="M16672 2967h-828v-835h1655v835z"/>
+    <path fill="none" stroke="#000" d="M16672 2967h-828v-835h1655v835z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="16066" y="2721" class="TextPosition"><tspan style="white-space:pre">Mvnd</tspan></tspan></tspan></text>
+   </a>
+  </g>
+  <g>
+   <path fill="none" d="M4743 20687h1158v837H4743z"/>
+   <a target="_parent" xlink:href="https://github.com/codehaus-plexus/plexus-xml/">
+    <path fill="#FF9" d="M5322 21522h-578v-834h1155v834z"/>
+    <path fill="none" stroke="#000" d="M5322 21522h-578v-834h1155v834z"/>
+    <text class="SVGTextShape"><tspan class="TextParagraph" font-family="Arial, sans-serif" font-size="494" font-weight="400"><tspan x="4936" y="21277" class="TextPosition"><tspan style="white-space:pre">xml</tspan></tspan></tspan></text>
+   </a>
+  </g>
+ </g>
+</svg>
