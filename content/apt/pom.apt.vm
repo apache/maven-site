@@ -271,13 +271,20 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   you browse the Maven central repository, you will notice that the classifiers <<<sources>>> and <<<javadoc>>> are used
   to deploy the project source code and API docs along with the packaged class files.
 
+  The classifier may also be derived from the <<type>> in case the related {{{/ref/current/maven-core/artifact-handlers.html} artifact handler}} defines one.
+
   * <<type>>:\
   Corresponds to the chosen dependency type. This defaults to <<<jar>>>. While it usually represents
-  the extension on the filename of the dependency, that is not always the case: a type can be mapped to a
+  the extension of the referenced artifact, that is not always the case: a type can be mapped to a
   different extension and a classifier. The type often corresponds to the packaging used, though this is
   also not always the case. Some examples are <<<jar>>>, <<<ejb-client>>> and <<<test-jar>>>:
   see {{{/ref/current/maven-core/artifact-handlers.html}default artifact handlers}} for a list. New types can be
   defined by plugins that set <<<extensions>>> to true, so this is not a complete list.
+  
+  In case there is an artifact handler defined there are <two> different ways of referencing the same dependency:
+  By using the artifact's <extension> or by using the registered <type> value. The latter considers all attributes from the artifact handler, while the former
+  never adds the dependency to the classpath nor includes its dependencies. Further information in
+  {{{/repositories/artifacts.html#but-where-do-i-set-artifact-extension}Maven Artifacts}}.
 
   * <<scope>>:\
   This element refers to the classpath of the task at hand (compiling and runtime, testing, etc.) as well as
