@@ -832,7 +832,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 -------------------------------
 <build>
   <defaultGoal>install</defaultGoal>
-  <directory>${project.basedir}/target</directory>
+  <directory>\${project.basedir}/target</directory>
   <finalName>${artifactId}-${version}</finalName>
   <filters>
     <filter>filters/filter1.properties</filter>
@@ -888,7 +888,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
       <resource>
         <targetPath>META-INF/plexus</targetPath>
         <filtering>false</filtering>
-        <directory>${project.basedir}/src/main/plexus</directory>
+        <directory>\${project.basedir}/src/main/plexus</directory>
         <includes>
           <include>configuration.xml</include>
         </includes>
@@ -1134,7 +1134,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
             <inherited>false</inherited>
             <configuration>
               <tasks>
-                <echo>Build Dir: ${project.build.directory}</echo>
+                <echo>Build Dir: \${project.build.directory}</echo>
               </tasks>
             </configuration>
           </execution>
@@ -1249,11 +1249,11 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
-    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
-    <scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
-    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
-    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
-    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
+    <sourceDirectory>\${project.basedir}/src/main/java</sourceDirectory>
+    <scriptSourceDirectory>\${project.basedir}/src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>\${project.basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>\${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>\${project.basedir}/target/test-classes</testOutputDirectory>
     ...
   </build>
 </project>
