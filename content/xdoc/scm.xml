@@ -66,6 +66,22 @@ repo start master --all</pre>
       </subsection>
 
       <subsection name="Maven Sources Overview">
+        <p>
+          <object type="image/svg+xml" data="maven-sources/site.svg"/>
+        </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/core.svg"/>
+        </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/plugins.svg"/>
+        </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/doxia.svg"/>
+        </p>
+        <p>
+          <object type="image/svg+xml" data="maven-sources/misc.svg"/>
+        </p>
+
         <p align="center">
           <img src="maven-sources.png" width="843" height="837" border="0" usemap="#maven-sources" />
           <map name="maven-sources">
