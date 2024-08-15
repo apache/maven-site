@@ -1233,7 +1233,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +------------------------------------------+
 
 
-** The {Build Element} Set
+** {The Build Element Set}
 
   The <<<Build>>> type in the XSD denotes those elements that are available only for the "project build". Despite
   the number of extra elements (six), there are really only two groups of elements that project build contains
