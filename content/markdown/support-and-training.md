@@ -38,6 +38,15 @@ Remember to add you company to both sections if you provide support and training
 
 ## Training
 
+### Info Support
+![Info Support logo][5]
+
+In our [Maven in Practice training][6], we will work with concrete Java projects.
+You will learn how to use Maven for everyday tasks, even if you don't have an IDE handy.
+Finally, we end with a few advanced topics that show the true power of Maven.
+
+This training is available as a classroom training and as a live virtual class training.
+
 ### Takari
 
 ![Takari](http://takari.io/assets/img/takari_logo.png)  
@@ -76,3 +85,5 @@ There are several options for training, including traditional classroom courses,
 [2]: http://takari.io/training-outline.html
 [3]: http://takari.io/
 [4]: mailto:training@takari.io
+[5]: https://training.infosupport.com/wp-content/themes/roots.ist28062024/assets/img/logo-infosupport.svg
+[6]: https://training.infosupport.com/en/trainingen/MAVEN/maven-in-practice/
