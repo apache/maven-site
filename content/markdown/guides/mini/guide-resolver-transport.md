@@ -26,12 +26,12 @@ Plexus XML, which is not type safe, nor validated, nor future-proof.
 **Starting with Maven 3.9.0 release, the _default transport_ (the default transport used by Maven Resolver)
 changed from ancient Wagon to modern `maven-resolver-transport-http` aka _native HTTP_ transport.**
 
-Take a peek at the Resolver [architecture diagram](https://maven.apache.org/resolver/) and the _transport_ box
+Take a peek at the Resolver [architecture diagram](https://maven.apache.org/resolver-archives/resolver-LATEST-1.x/) and the _transport_ box
 contains several implementations, and this number will probably increase.
 
 The Resolver contains configuration for many aspects, including transport (see the keys
 prefixed with `aether.connector.`). They can be found on 
-[resolver configuration page](https://maven.apache.org/resolver/configuration.html).
+[resolver configuration page](https://maven.apache.org/resolver-archives/resolver-LATEST-1.x/configuration.html).
 
 **This page applies only to Maven 3.9.0 and newer.**
 
@@ -101,7 +101,7 @@ for example to allow the user to tell Maven how long to wait before giving up on
 ```
 ## Low-level Resolver configuration
 
-All configuration items mentioned in  [Configuration Options](https://maven.apache.org/resolver/configuration.html) 
+All configuration items mentioned in  [Configuration Options](https://maven.apache.org/resolver-archives/resolver-LATEST-1.x/configuration.html) 
 which are not mapped by `server/configuration` (eg.httpHeaders, timeout) tag must be provided in special way.
 
 Some resolver configuration properties has a flag `Supports Repo ID Suffix`.
@@ -185,6 +185,6 @@ to stick with Wagon, but migration to new transport is warmly recommended.
 Depending on which transport you use (`native`, `wagon` or something else), you will want to refer to the corresponding
 page(s) for detailed configuration options:
 
-* For Native HTTP transport detailed configuration user properties are [collected on this page](https://maven.apache.org/resolver/configuration.html).
+* For Native HTTP transport detailed configuration user properties are [collected on this page](https://maven.apache.org/resolver-archives/resolver-LATEST-1.x/configuration.html).
 * For Wagon you want to use `-Dmaven.resolver.transport=wagon` user property and [configuration from this page](https://maven.apache.org/guides/mini/guide-http-settings.html).
 * For any third party transport, please refer to its own documentation.
