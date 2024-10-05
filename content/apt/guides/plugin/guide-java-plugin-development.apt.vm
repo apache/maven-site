@@ -170,20 +170,22 @@ public class GreetingMojo extends AbstractMojo
 
   <build>
     <pluginManagement>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-plugin-plugin</artifactId>
-        <version>${esc.dollar}{maven-plugin-tools.version}</version>
-        <executions>
-          <execution>
-            <id>help-mojo</id>
-            <goals>
-              <!-- good practice is to generate help mojo for plugin -->
-              <goal>helpmojo</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-plugin-plugin</artifactId>
+          <version>${esc.dollar}{maven-plugin-tools.version}</version>
+          <executions>
+            <execution>
+              <id>help-mojo</id>
+              <goals>
+                <!-- good practice is to generate help mojo for plugin -->
+                <goal>helpmojo</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+      </plugins>
     </pluginManagement>
   </build>
 </project>
