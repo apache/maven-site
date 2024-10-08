@@ -75,6 +75,30 @@ under the License.
       
     </section>
 
+    <section name="Videos on Maven">
+      <p>
+        If you have made videos on Maven we suggest contacting the developers on the mailing list as we would be happy
+        to provide feedback to help ensure accuracy in your videos. Just ping us on the <a href="mailing-lists.html">dev mailing list</a>
+        to get in touch.
+      </p>
+
+      <div style="margin-top: 1.5em;">
+        <table>
+          <tr>
+            <th>Title</th>
+            <th>Publisher</th>
+            <th>Author</th>
+            <th>Published</th>
+          </tr>
+          <tr>
+            <td><a href="https://youtu.be/-KbDcJcglPc">How to use Apache Maven Toolchains in an Apache Maven Project.</a></td>
+            <td>Karl Heinz Marbaise</td>
+            <td>July 2022</td>
+          </tr>
+        </table>
+      </div>
+    </section>
+
     <section name="Articles on Maven">
       <p>
         If you are writing an article on Maven we suggest contacting the developers on the mailing list as we would be happy
