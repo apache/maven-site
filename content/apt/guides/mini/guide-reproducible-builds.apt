@@ -57,6 +57,9 @@ mvn artifact:check-buildplan
 
  []
 
+ Notice: starting with Maven 4.0.0-beta-5, Reproducible Builds mode will be active by default (see {{{https://issues.apache.org/jira/browse/MNG-8258}MNG-8258}}), without modifying project's <<<pom.xml>>>.
+ Setting a value in your <<<pom.xml>>> will only be useful if you want to override the inherited value.
+
  You have the basics configured. The output should be mostly reproducible now.
  
 * How to test my Maven build reproducibility?
@@ -78,7 +81,7 @@ mvn clean verify artifact:compare
 
  []
 
- Notice that this does NOT really prove that your build is yet reproducible, because your build may still suffer from environment leaks (username, current directory, ...). But it is easy to do, and prevents basic non-reproducible issues like timestamps.
+ Notice that this local test does NOT really prove that your build is yet reproducible by a third party, because it may still suffer from environment leaks (username, current directory, ...). But it is easy to do, and prevents basic non-reproducible issues like timestamps.
  Really checking reproducibility requires to rebuild from a completely different setup: this is harder to do, even if containers may ease the task.
 
 * How to fix my Maven build reproducibility?
@@ -131,44 +134,4 @@ mvn clean verify artifact:compare
  
  * Q. Which additional plugins need to be updated for Reproducible Builds?
  
-   A. Here is a simplified list:
-
-*----------------------------------------------------------------------------+-------+--------------+
-| <<plugin>>                                                   | <<minimum version>> | <<comments>>
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-assembly-plugin/}maven-assembly-plugin}}                 | 3.2.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-jar-plugin/}maven-jar-plugin}}                           | 3.2.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-ejb-plugin/}maven-ejb-plugin}}                           | 3.1.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-javadoc-plugin/}maven-javadoc-plugin}}                   | 3.2.0 | requires also <<<\<notimestamp\>true\</notimestamp\>>>> configuration in <<<pluginManagement>>> (for automatic use both from plugins and reports)
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugin-tools/maven-plugin-plugin/}maven-plugin-plugin}}                | 3.5.1 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-remote-resources-plugin/}maven-remote-resources-plugin}} | 1.7.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-shade-plugin/}maven-shade-plugin}}                       | 3.2.3 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-site-plugin/}maven-site-plugin}}                         | 3.9.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-source-plugin/}maven-source-plugin}}                     | 3.2.1 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-war-plugin/}maven-war-plugin}}                           | 3.3.1 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{/plugins/maven-ear-plugin/}maven-ear-plugin}}                           | 3.1.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/}plexus-component-metadata}} | 2.1.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin}bnd-maven-plugin}} |   | see {{{https://github.com/bndtools/bnd/tree/master/maven-plugins/bnd-maven-plugin#reproducible-builds}documentation}}
-*----------------------------------------------------------------------------+-------+--------------+ 
-| Apache Felix {{{https://felix.apache.org/documentation/subprojects/apache-felix-maven-bundle-plugin-bnd.html}maven-bundle-plugin}} | 5.1.9 |
-*----------------------------------------------------------------------------+-------+--------------+
-| Eclipse {{{https://www.eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/}Sisu Maven Plugin}} | 0.3.4 |
-*----------------------------------------------------------------------------+-------+--------------+
-| {{{https://docs.spring.io/spring-boot/docs/current/maven-plugin/reference/htmlsingle/}springboot-maven-plugin}} | 2.3.0 |
-*----------------------------------------------------------------------------+-------+--------------+ 
-| MojoHaus {{{https://www.mojohaus.org/properties-maven-plugin/}properties-maven-plugin}} | 1.1.0 |
-*----------------------------------------------------------------------------+-------+--------------+
-
-  For more details, see {{{https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-Whataretheissuestosolve?}Maven "Reproducible/Verifiable Builds" Wiki page}}
+   A. See the list of {{{/plugins/maven-artifact-plugin/plugin-issues.html}required upgrades}}
