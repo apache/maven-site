@@ -101,7 +101,7 @@ mvn verify
   This command executes each default lifecycle phase in order (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), 
   before executing <<<verify>>>.  You only need to call the last build phase to be executed, in this case, <<<verify>>>.
   In most cases the effect is the same as <<<package>>>. However, in case there are integration tests, these will be
-  executed as well. And during the <<<verify>>> phase additional checks can be done, e.g. if your is code written
+  executed as well. And during the <<<verify>>> phase additional checks can be done, e.g. if your code is written
   according to predefined checkstyle rules.
 
   In a build environment, use the following call to cleanly build and deploy artifacts into the shared repository.
