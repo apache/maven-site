@@ -26,7 +26,7 @@ The Apache Maven team would like to announce the release of Maven 4.0.0-beta-5.
 
 Maven 4 release **requires Java 17 for runtime**.
 
-This is beta release, not suitable for production.
+This is beta release with known issues, **is not suitable for production**.
 
 Maven 4.0.0-beta-5 is [available for download][0].
 
@@ -52,9 +52,9 @@ Notable changes include:
 
 ## Known Issues
 
-No known issues so far.
+There are several issues discovered after staging the release, hence, this version is **not recommended version**. Known [issues are recorded in JIRA](https://issues.apache.org/jira/issues/?jql=project%20%3D%20MNG%20AND%20affectedVersion%20%3D%204.0.0-beta-5%20ORDER%20BY%20key%20ASC%2C%20priority%20DESC%2C%20updated%20DESC).
 
-If you find any incompatibility with latest versions of plugins, do not hesitate to report those.
+Still, please do test and report any discovered issue to JIRA (or mailing list).
 
 ## Complete Release Notes
 
