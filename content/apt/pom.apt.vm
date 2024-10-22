@@ -2104,4 +2104,4 @@ mvn help:active-profiles
 ======================
 
   Aspects of this guide were originally published in the
-  {{{http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}Maven 2 Pom Demystified}}.
+  {{{https://web.archive.org/web/20100327140148/https://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}Maven 2 Pom Demystified}}.
