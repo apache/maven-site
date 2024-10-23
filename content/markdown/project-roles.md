@@ -134,7 +134,7 @@ These are those people who have been given write access to the
 Apache Maven code repository and have a signed 
 [Contributor License Agreement (CLA)][4] on file with the ASF.
 
-The Apache Maven project uses a Commit then Review policy and has
+The Apache Maven project has
 [a number of conventions][5] which should be followed.
 
 Committers are responsible for ensuring that every file they 
