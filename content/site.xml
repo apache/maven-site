@@ -25,12 +25,6 @@ under the License.
   name="Maven">
   <version position="none" />
 
-  <skin>
-    <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-fluido-skin</artifactId>
-    <version>${fluidoVersion}</version><!-- modify pom.xml property if necessary -->
-  </skin>
-
   <edit>${project.scm.url}</edit>
 
   <body>
