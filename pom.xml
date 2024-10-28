@@ -278,7 +278,7 @@
           <dependency>
             <groupId>it.mulders.puml</groupId>
             <artifactId>plantuml-v1-adapter</artifactId>
-            <version>0.2</version>
+            <version>0.3</version>
           </dependency>
           <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
