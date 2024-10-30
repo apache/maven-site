@@ -26,8 +26,7 @@ date: 2017-05-05
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Available Plugins
 
 Maven is \- at its heart \- a plugin execution framework; all work is done by plugins\. Looking for a specific goal to execute? This page lists the core plugins and others\. There are the build and the reporting plugins:

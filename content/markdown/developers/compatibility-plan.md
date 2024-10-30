@@ -21,8 +21,7 @@ date: 2020-05-20
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Maven Plugins Compatibility Plan
 
 ## Scope

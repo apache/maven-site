@@ -21,8 +21,7 @@ date: 2013-07-26
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Retirement Plan for Plugins
 
 ## Decide to retire

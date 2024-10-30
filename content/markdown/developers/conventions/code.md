@@ -21,8 +21,7 @@ date: 2008-07-05
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Maven Code Style And Code Conventions
 
 This document describes the rules for how the sources should be formatted in order to improve consistency, readability and maintainability\.

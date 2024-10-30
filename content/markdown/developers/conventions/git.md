@@ -21,8 +21,7 @@ date: 2012-09-12
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Maven Git Convention
 
 This document describes how developers should use Git\. 

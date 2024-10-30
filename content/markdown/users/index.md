@@ -21,8 +21,7 @@ date: 2006-11-03
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Maven Users Centre
 
 This documentation centre is for those that have decided to use Maven to build their project, and would like to get started quickly, or are already using Maven and would like to add new functionality or fix a problem in their build\.

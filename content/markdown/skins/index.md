@@ -23,8 +23,7 @@ date: 2012-04-05
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Available Skins
 
 The following table lists skins that are available for you to use in your Maven generated site\.

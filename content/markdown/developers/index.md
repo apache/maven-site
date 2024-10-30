@@ -22,8 +22,7 @@ date: 2015-02-14
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Maven Developer Centre
 
 This documentation centre is for people who are Maven developers, or would like to contribute\.

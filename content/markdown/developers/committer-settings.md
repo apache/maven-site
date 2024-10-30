@@ -22,8 +22,7 @@ date: 2011-05-23
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Introduction
 
 This document is intended to set up the Maven committer settings, i\.e\. the `${user.home}/.m2/settings.xml`\.

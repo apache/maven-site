@@ -21,8 +21,7 @@ date: 2017-04-23
 <!-- KIND, either express or implied.  See the License for the-->
 <!-- specific language governing permissions and limitations-->
 <!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+
 # Central Index
 
 Central repository provides [an index in `/.index`](https://repo\.maven\.apache\.org/maven2/\.index/):
