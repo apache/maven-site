@@ -31,10 +31,10 @@ under the License.
     <title>Page Not Found</title>
     <base href="https://maven.apache.org/errors" />
     <!-- need to import styles by hand since the generated html has them relative and before the base tag -->
-    <link rel="stylesheet" href="https://maven.apache.org/css/apache-maven-fluido-${fluidoVersion}.min.css" />
+    <link rel="stylesheet" href="https://maven.apache.org/css/apache-maven-fluido-${context.get("version.maven-fluido-skin")}.min.css" />
     <link rel="stylesheet" href="https://maven.apache.org/css/site.css" />
     <link rel="stylesheet" href="https://maven.apache.org/css/print.css" media="print" />
-    <script type="text/javascript" src="https://maven.apache.org/js/apache-maven-fluido-${fluidoVersion}.min.js" />
+    <script type="text/javascript" src="https://maven.apache.org/js/apache-maven-fluido-${context.get("version.maven-fluido-skin")}.min.js" />
   </head>
 
   <body>
