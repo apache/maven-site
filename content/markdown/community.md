@@ -88,5 +88,5 @@ Maven things.
 ### Slack
 
 For people actively contributing to Maven, especially committers, there
-is [the ASF Slack workspace](https://infra.apache.org) available to discuss
-issues, solve problems and build community in real-time.
+is [the ASF Slack workspace](https://infra.apache.org/slack.html) available to discuss
+issues, solve problems, and build community in real-time.
