@@ -72,8 +72,6 @@ mvn archetype:generate
 *-----------------------------+----------------+
 | maven-archetype-j2ee-simple | An archetype to generate a simplifed sample J2EE application. |
 *-----------------------------+----------------+
-| maven-archetype-mojo        | An archetype to generate a sample a sample Maven plugin. |
-*-----------------------------+----------------+
 | maven-archetype-plugin      | An archetype to generate a sample Maven plugin. |
 *-----------------------------+----------------+
 | maven-archetype-plugin-site | An archetype to generate a sample Maven plugin site. |
