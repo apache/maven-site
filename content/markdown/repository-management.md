@@ -58,6 +58,7 @@ and the features provided by these products.
 * <a href="https://bytesafe.dev/" target="_blank">Bytesafe</a> (commercial)
 * <a href="https://www.cloudrepo.io" target="_blank">CloudRepo</a> (commercial)
 * <a href="https://www.cloudsmith.io" target="_blank">Cloudsmith Package</a> (commercial)
+* <a href="https://forgejo.org/docs/latest/user/packages/maven/" target="_blank">Forgejo</a> (open source)
 * <a href="https://docs.gitea.com/packages/usage/packages/maven" target="_blank">Gitea</a> (open source)
 * <a href="https://inedo.com/proget" target="_blank">Inedo ProGet</a> (commercial)
 * <a href="https://www.jfrog.com/open-source" target="_blank">JFrog Artifactory Open Source</a> (free, not open source)
