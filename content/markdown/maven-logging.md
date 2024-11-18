@@ -17,8 +17,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-Maven uses [Plexus logging API][6] with basic Maven implementation writing
-to stdout.
 
 We have reached the decision that [SLF4J][1] is the best option for a logging API:
 SLF4J has reached a certain level of ubiquity and while SLF4J may not be perfect,
