@@ -661,7 +661,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   
   Detailed inheritance rules are outlined in {{{https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly}Maven Model Builder}}.
   All URLs are transformed when being inherited by default. The other ones are just inherited as is.
-  For plugin configuration you can overwrite the inheritance behaviour with the attributes <<<combine.children>>> or <<<combine.self>>> outlined in {{{plugins}Plugins}}.
+  For plugin configuration you can overwrite the inheritance behaviour with the attributes <<<combine.children>>> or <<<combine.self>>> outlined in {{Plugins}}.
 
 *** {The Super POM}
 
