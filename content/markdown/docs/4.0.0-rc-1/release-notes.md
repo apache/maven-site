@@ -52,7 +52,10 @@ Notable changes include:
 
 ## Known Issues
 
-None. Still, please do test and report any discovered issue to JIRA (or mailing list).
+Several minor issues were found post release, with most of them having simple workarounds. Search the JIRA
+for known issues and workarounds. 
+
+Also, please test and report issues, if you happen to find any problem.
 
 ## Complete Release Notes
 
