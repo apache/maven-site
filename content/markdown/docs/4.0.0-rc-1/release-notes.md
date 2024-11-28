@@ -38,7 +38,7 @@ If you have any questions, please consult:
 
 - the web site: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
-- the reference documentation: [https://maven.apache.org/ref/4.0.0-rc-1/](/ref/4.0.0-beta-5/)
+- the reference documentation: [https://maven.apache.org/ref/4.0.0-rc-1/](/ref/4.0.0-rc-1/)
 
 ## Overview About the Changes
 
