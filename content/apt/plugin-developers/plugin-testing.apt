@@ -48,13 +48,20 @@ Unit Tests
 
  In principle, you can write a unit test of a plugin Mojo the same way you'd write any other JUnit test case, by writing a class that <<<extends TestCase>>>.
 
- However, most mojos need more information to work properly.  For example, you'll probably need to inject a reference to a MavenProject, so your mojo can query project variables.
+ However, many mojo methods need more information to work properly. For example, you'll probably need to inject a reference
+ to a MavenProject, so your mojo can query project variables.
 
 * Using PlexusTestCase
 
- Mojo variables are injected using Plexus, and many Mojos are written to take specific advantage of the Plexus container (by executing a lifecycle or having various injected dependencies).
-
- If all you need are Plexus container services, you can write your class with <<<extends PlexusTestCase>>> instead of TestCase.
+ Mojo variables are injected by Guice, sometimes with a Plexus adapter to support the legacy <<<@Component>>> annotation.
+ Currently some mojos are fully guicified with constructor 
+ injection, while others that have not yet been converted use Plexus field injection.
+ 
+ Both Guice-based and Plexus-based mojos can use the <<<lookup()>>> method of the  Guice Plexus adapter to inject dependencies
+ by having the test class extend <<<PlexusTestCase>>> instead of <<<TestCase>>>. Test for fully Guicified mojos can also
+ inject dependencies directly into  the constructor without extending <<<PlexusTestCase>>>. These dependencies can be Mockito
+ mocks or instances of the actual model classes. If a particular test does not access the injected field — that is, it's only
+ injected to fit the constructor signature — you can usually also pass null as the value of that argument. 
 
  With that said, if you need to inject Maven objects into your mojo, you'll probably prefer to use the maven-plugin-testing-harness.
 
@@ -63,8 +70,8 @@ Unit Tests
  The {{{/plugin-testing/maven-plugin-testing-harness/}maven-plugin-testing-harness}}
  is explicitly intended to test the <<<org.apache.maven.reporting.AbstractMavenReport#execute()>>> implementation.
 
- In general, you need to include <<<maven-plugin-testing-harness>>> as a dependency,
- and create a *MojoTest (by convention) class which <<<extends AbstractMojoTestCase>>>.
+ In general, you need to include <<<maven-plugin-testing-harness>>> as a test-scoped dependency,
+ and create a MojoTest (by convention) class which <<<extends AbstractMojoTestCase>>>.
 
 +-----+
 ...
@@ -108,15 +115,15 @@ public class YourMojoTest
 }
 +-----+
 
- For more information, refer to {{{http://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
+ For more information, refer to {{{https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness}Maven Plugin Harness Wiki}}
 
 Integration/Functional testing
 
 * maven-verifier
 
- maven-verifier tests are run using JUnit or TestNG, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.  It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it. Follow the {{{/shared/maven-verifier/getting-started.html}Getting Started}} guide to learn more about creating maven-verifier tests.
+ maven-verifier tests are run using JUnit, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.  It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it. Follow the {{{/shared/maven-verifier/getting-started.html}Getting Started}} guide to learn more about creating maven-verifier tests.
 
- Maven itself uses maven-verifier to run its core integration tests.  For more information, please refer to {{{https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
+ Maven itself uses maven-verifier to run its core integration tests.  For more information, see {{{https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
 
  <<Note>>: maven-verifier and maven-verifier-plugin sound similar, but are totally different unrelated pieces of code.  maven-verifier-plugin simply verifies the existence/absence of files on the filesystem.  You could use it for functional testing, but you may need more features than maven-verifier-plugin provides.
 
@@ -127,7 +134,7 @@ Integration/Functional testing
  this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
 
  You can take a look at the {{{https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/}maven-install-plugin}}
- how there are integration tests are written.
+ to see how integration tests are written.
 
 +-----+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
