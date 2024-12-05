@@ -121,7 +121,10 @@ Integration/Functional testing
 
 * maven-verifier
 
- maven-verifier tests are run using JUnit, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.  It also provides a ResourceExtractor, which extracts a Maven project from your src/test/resources directory into a temporary working directory where you can do tricky stuff with it. Follow the {{{/shared/maven-verifier/getting-started.html}Getting Started}} guide to learn more about creating maven-verifier tests.
+ maven-verifier tests are run using JUnit, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.
+ It also provides a <<<ResourceExtractor>>>, which extracts a Maven project from the src/test/resources directory into a temporary working directory
+ where you can do tricky stuff with it. Follow the {{{/shared/maven-verifier/getting-started.html}Getting Started}} guide to learn more about creating 
+ maven-verifier tests.
 
  Maven itself uses maven-verifier to run its core integration tests.  For more information, see {{{https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test}Creating a Maven Integration Test}}.
 
