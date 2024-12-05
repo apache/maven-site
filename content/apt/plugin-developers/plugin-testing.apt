@@ -57,7 +57,7 @@ Unit Tests
  Currently some mojos are fully guicified with constructor 
  injection, while others that have not yet been converted use Plexus field injection.
  
- Both Guice-based and Plexus-based mojos the Guice Plexus adapter to inject dependencies
+ Both Guice-based and Plexus-based mojos rely on the Guice Plexus adapter to inject dependencies
  by having the test class extend <<<PlexusTestCase>>> and calling the <<lookup()>>> method to instantiate the mojo.
  Tests for fully Guicified mojos can also inject dependencies directly into  the constructor without extending <<<PlexusTestCase>>>.
  These dependencies can be Mockito mocks or instances of the actual model classes. If a particular test does not access the injected
