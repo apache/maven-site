@@ -260,8 +260,6 @@
             <phase>site</phase>
             <configuration>
               <target>
-                <!-- mirror cgi script: see http://www.apache.org/dev/release-download-pages.html#custom -->
-                <chmod file="${project.reporting.outputDirectory}/download.cgi" perm="ugo+rx" />
                 <!-- links to components directories containing releases documentation: http://maven.apache.org/developers/website/ -->
                 <symlink action="recreate" overwrite="true">
                   <fileset dir="${project.reporting.outputDirectory}" includes="**/components.links" />
