@@ -137,7 +137,9 @@ Introduction to the POM
 
  Elements in the POM that are merged are the following:
 
- * dependencies
+ * dependencies and dependencyManagement
+
+ * variables
 
  * developers and contributors
 
