@@ -201,11 +201,11 @@ Hi,
 
 The vote has passed with the following result:
 
-+1 : <<list of names>>
++1: <<list of names>>
 
-PMC quorum: ...
+PMC quorum: reached
 
-I will promote the source release zip file to Apache distribution area and the artifacts to the central repo.
+I will promote the source release zip file to the Apache distribution area and the artifacts to the central repo.
 -----
 
  Follow the procedure to the end.
