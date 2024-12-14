@@ -157,8 +157,6 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-jdeprscan-plugin/} <<<jdeprscan>>>}}       | B          | 3.0.0-alpha-1| 2017-11-15 | Run JDK's JDeprScan tool on the project. | {{{https://gitbox.apache.org/repos/asf/maven-jdeprscan-plugin.git}Git}} / {{{https://github.com/apache/maven-jdeprscan-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MJDEPRSCAN}Jira MJDEPRSCAN}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | 1.2          | 2015-03-09 | Use the gnu patch tool to apply patch files to source code. | {{{https://gitbox.apache.org/repos/asf/maven-patch-plugin.git}Git}} / {{{https://github.com/apache/maven-patch-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPATCH}Jira MPATCH}}
-*--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-pdf-plugin/} <<<pdf>>>}}                   | B          | 1.6.1        | 2022-08-16 | Generate a PDF version of your project's documentation. | {{{https://gitbox.apache.org/repos/asf/maven-pdf-plugin.git}Git}} / {{{https://github.com/apache/maven-pdf-plugin/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPDF}Jira MPDF}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugin-tools/maven-plugin-plugin/} <<<plugin>>>}}        | B          | 3.15.1       | 2024-10-22 | Create a Maven plugin descriptor for any mojos found in the source tree, to include in the JAR. | {{{https://gitbox.apache.org/repos/asf/maven-plugin-tools.git}Git}} / {{{https://github.com/apache/maven-plugin-tools/}GitHub}} | {{{https://issues.apache.org/jira/browse/MPLUGIN}Jira MPLUGIN}}
@@ -200,6 +198,8 @@ Available Plugins
 | {{{/plugins/maven-idea-plugin/} <<<idea>>>}}                 | B          | 2.2.1        | 2013-07-26        | Create/update an IDEA workspace for the current project (individual modules are created as IDEA modules)
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-one-plugin/} <<<one>>>}}                   | B          | 1.3          | 2013-07-30        | A plugin for interacting with legacy Maven 1.x repositories and builds.
+*--------------------------------------------------------------+------------+--------------+-------------------+------------------+
+| {{{/plugins/maven-patch-plugin/} <<<patch>>>}}               | B          | 1.3          | 2024-12-10        | Use the gnu patch tool to apply patch files to source code.
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
 | {{{/plugins/maven-reactor-plugin/} <<<reactor>>>}}           | B          | 1.1          | 2014-03-24        | Build a subset of interdependent projects in a reactor (Maven 2 only).
 *--------------------------------------------------------------+------------+--------------+-------------------+------------------+
