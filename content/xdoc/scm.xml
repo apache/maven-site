@@ -390,12 +390,6 @@ repo start master --all</pre>
               <td></td>
             </tr>
             <tr>
-              <td><a href="/plugins/maven-patch-plugin/">Apache Maven Patch Plugin</a></td>
-              <td><code><a href="https://gitbox.apache.org/repos/asf/maven-patch-plugin.git">https://gitbox.apache.org/repos/asf/maven-patch-plugin.git</a></code></td>
-              <td><a href="https://github.com/apache/maven-patch-plugin/">(GitHub mirror)</a></td>
-              <td></td>
-            </tr>
-            <tr>
               <td><a href="/plugins/maven-pdf-plugin/">Apache Maven PDF Plugin</a></td>
               <td><code><a href="https://gitbox.apache.org/repos/asf/maven-pdf-plugin.git">https://gitbox.apache.org/repos/asf/maven-pdf-plugin.git</a></code></td>
               <td><a href="https://github.com/apache/maven-pdf-plugin/">(GitHub mirror)</a></td>
