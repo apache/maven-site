@@ -144,7 +144,7 @@ Thank you for your time and feedback.
 - Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}` has been
   fixed [MNG-6057][], [MNG-6090][] and [MNG-5895][]. It is very important to know if you are using the previously named
   properties for a version in your pom you have to use [flatten-maven-plugin] if you like to do an `mvn install` or
-  `mvn deploy` more details can be found at [Maven CI Friendly Versions](/maven-ci-friendly.html).
+  `mvn deploy` more details can be found at [Maven CI Friendly Versions](/guides/mini/guide-maven-ci-friendly.html).
 
 ## Improvements
 
