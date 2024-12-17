@@ -1,9 +1,8 @@
-Redirect /xsd/core-extensions-1.2.0.xsd /xsd/core-extensions-1.2.0-rc-1.xsd
-Redirect /xsd/lifecycle-1.0.0.xsd /xsd/lifecycle-1.0.0-rc-1.xsd
-Redirect /xsd/maven-4.1.0.xsd /xsd/maven-4.1.0-rc-1.xsd
-Redirect /xsd/plugin-2.0.0.xsd /xsd/plugin-2.0.0-rc-1.xsd
-Redirect /xsd/repository-metadata-1.2.0.xsd /xsd/repository-metadata-1.2.0-rc-1.xsd
-Redirect /xsd/settings-1.3.0.xsd /xsd/settings-1.3.0-beta-5.xsd
-Redirect /xsd/settings-2.0.0.xsd /xsd/settings-2.0.0-rc-1.xsd
-Redirect /xsd/toolchains-1.1.0.xsd /xsd/toolchains-1.1.0-rc-1.xsd
+Redirect /xsd/core-extensions-1.2.0.xsd /xsd/core-extensions-1.2.0-rc-2.xsd
+Redirect /xsd/lifecycle-1.0.0.xsd /xsd/lifecycle-1.0.0-rc-2.xsd
+Redirect /xsd/maven-4.1.0.xsd /xsd/maven-4.1.0-rc-2.xsd
+Redirect /xsd/plugin-2.0.0.xsd /xsd/plugin-2.0.0-rc-2.xsd
+Redirect /xsd/repository-metadata-1.2.0.xsd /xsd/repository-metadata-1.2.0-rc-2.xsd
+Redirect /xsd/settings-2.0.0.xsd /xsd/settings-2.0.0-rc-2.xsd
+Redirect /xsd/toolchains-1.1.0.xsd /xsd/toolchains-1.1.0-rc-2.xsd
 
