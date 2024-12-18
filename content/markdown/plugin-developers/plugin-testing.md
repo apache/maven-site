@@ -91,7 +91,8 @@ public class YourMojoTest {
 #### deprecated JUnit4 style tests
 There is the deprecated way to write tests using JUnit4 style. 
 This is not recommended, but you can still use it on Maven 3. 
-For Maven 4 only JUnit4 style tests will not be supported. 
+For Maven 4 only JUnit5 style tests are available and JUnit4 will not be supported there anymore.
+Please consider migrating your JUnit4 MojoTests to JUnit5.
 Below is an example:
 
 ```java
