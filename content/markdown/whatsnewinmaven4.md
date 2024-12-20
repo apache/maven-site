@@ -79,9 +79,9 @@ the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2
 
 **Note**: With Maven 4 it's also possible to exclude dependencies which are declared by BOMs using the existing
 `<exclusions>` element.
-Also note that in Maven4 importing BOMs with classifier is now possible.
-Therefore, Maven team suggests that projects BOMs be generated as classified artifacts (see Maven build "skinny" vs "
-fat" BOM).
+Also note that in Maven 4 importing BOMs with classifier is now possible.
+Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts (see Maven build "
+skinny" vs "fat" BOM).
 
 ### Comparing Build-POM and Consumer-POM
 
@@ -373,7 +373,7 @@ Maven 3's password encryption has several serious issues and could rather be cal
 Maven 4 instead got a fully redone encryption, based on Maven Encryption (`mvnenc`) - a standalone CLI tool.
 As for now it provides functionally equivalent operations as Maven 3 (see ["Maven: Password Encryption"][30]), but adds
 improvements like a `decrypt` functionality.
-A brought overview about the problems in Maven 3 and the solution in Maven 4 can be found in the
+A broad overview about the problems in Maven 3 and the solution in Maven 4 can be found in the
 article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cservenák.
 
 ### Maven Resolver
@@ -381,17 +381,6 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
 Maven 4 will include the new 2.0 release of this library, which contains more than 150 fixes, upgrades and improvements,
 e.g. a Java native HTTP-Client - thanks to lift of the Java version to JDK 17!
-See the project page for more information!
-
-### Maven Shell
-
-When you run any `mvn` the full chain of booting Java, Maven, load config, do the work, tear down and exit the process
-is done - **every single time**.
-To improve performance and reduce build time you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of N
-resident Maven processes.
-With Maven 4 you can also use the brightly polished "Maven Shell" (`mvnsh`), which will keep exactly one resident Maven
-process as long as the shell is opened.
-Stay tuned for more information about this!
 
 ## Issue overview
 
