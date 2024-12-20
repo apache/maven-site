@@ -1,10 +1,10 @@
 # What's New in Maven 4?
 
 Maven is over 20 years old and is one of the most used build tools in the Java world.
-Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially with
-its [POM-schema with Model version 4.0.0][2], used not only for the build itself but also by consumers.
-This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the Maven Central
-repository, other build tools, and IDEs.
+Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially
+with its [POM-schema with Model version 4.0.0][2], used not only for the build itself but also by consumers.
+This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the Maven
+Central repository, other build tools, and IDEs.
 But this stable schema comes at a price - the lack of flexibility.
 
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
@@ -27,8 +27,8 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 As written in the introduction, Model version 4.0.0 is used not only for the build but also by consumers of the
 artifact.
-However, several contents of the POM are only necessary for the build while others, like the dependencies, are also needed by
-the consumer.
+However, several contents of the POM are only necessary for the build while others, like the dependencies, are also
+needed by the consumer.
 Maven 4 will therefore differentiate between a "Build-POM" and a "Consumer-POM".
 As the names suggest, the "Build-POM" will contain all information needed to build the artifact, e.g., used plugins and
 their configuration, while the "Consumer-POM", which is created during the Maven build, will not contain those.
@@ -53,13 +53,15 @@ features are removed in future updates.
 
 ### Modules are now subprojects
 
-From the early days of Maven 1 until today, all build information is stored in the POM, short for "Project Object Model".
+From the early days of Maven 1 until today, all build information is stored in the POM, short for "Project Object
+Model".
 Together with build folders and other files, the wording "Maven project" is used.
-However, for projects containing multiple parts, e.g., an API and a client, each of those parts was called a "module" and listed
-in the `<modules>` section of the POM, leading to the terms "multi-module project".
+However, for projects containing multiple parts, e.g., an API and a client, each of those parts was called a "module"
+and listed in the `<modules>` section of the POM, leading to the terms "multi-module project".
 This wording introduced some inconsistency, especially as projects without any `<modules>` section are often called "
 single-module".
-Since the introduction of the [Java Platform Module System][3] in Java 9, the term "module" has raised additional confusion.
+Since the introduction of the [Java Platform Module System][3] in Java 9, the term "module" has raised additional
+confusion.
 
 Maven 4 gets rid of this by naming "modules" as what they are - subprojects.
 Model version 4.1.0 contains a new element `<subprojects>` analogous to the now deprecated, but still usable, element
@@ -72,7 +74,7 @@ Maven project with or without subprojects.
 
 Maven 4 introduces a dedicated packaging type to provide a [Bill of Material BOM][4] called "bom" to differentiate more
 precisely between "parent POMs" and dependency-managing BOMs.
-While the new type is only available with Model Version 4.1.0, the final outcome is a fully Maven 3 compatible (model
+While the new type is only available with Model Version 4.1.0, the final outcome is a full Maven 3 compatible (model
 4.0.0) POM file!
 For an example, see the link above or
 the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2024][5].
@@ -123,9 +125,9 @@ With Maven 4, there is a second option to clearly define the root folder.
 Model version 4.1.0, usable for the Build-POM, adds a boolean attribute called `root` in the `<project>` element.
 When this attribute is set to true (default is false), the directory of this POM file is considered the root directory.
 
-Another pain point in relation to the root directory is that until Maven 4, there was no official variable to make use of
-the root folder in your POM files, e.g., when you want to define the path to a `checkstyle-suppressions.xml` file for the
-checkstyle plugin.
+Another pain point in relation to the root directory is that until Maven 4, there was no official variable to make use
+of the root folder in your POM files, e.g., when you want to define the path to a `checkstyle-suppressions.xml` file for
+the checkstyle plugin.
 Maven 4 now provides official variables to reference the root directory in your POM configuration.
 The following table shows the official variables.
 
@@ -155,8 +157,8 @@ See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] fo
 
 ### Alternate POM syntaxes
 
-While the syntax for the 4.0.0 Consumer-POM is set in stone for accessing the central repository, the Build-POM should be
-able to evolve.
+While the syntax for the 4.0.0 Consumer-POM is set in stone for accessing the central repository, the Build-POM should
+be able to evolve.
 This includes allowing the use of alternate syntaxes by having Maven 4 provide a ModelParser SPI ([MNG-7836][24]),
 which can be implemented as a core extension and allow the usage of a different file as the POM and allow a custom
 syntax.
@@ -177,6 +179,7 @@ versions even more!
 The following code snippet shows the parent and dependency definition without the version tag.
 
 ```xml
+
 <project xmlns="http://maven.apache.org/POM/4.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
   <modelVersion>4.1.0</modelVersion>
@@ -205,13 +208,14 @@ Since Maven 4, no additional plugin is needed anymore; full built-in support is 
 You can now use variables as versions in your configuration, e.g.,
 
 ```xml
+
 <groupId>my.groupId</groupId>
 <artifactId>my.artifactId</artifactId>
 <version>${revision}</version>
 ```
 
-Of course, you have to provide a value for this variable when starting the build, for example by using a `maven.config` file
-or as a parameter, e.g., `mvn verify -Drevision=4.0.1`, which is commonly done in CI pipelines.
+Of course, you have to provide a value for this variable when starting the build, for example by using a `maven.config`
+file or as a parameter, e.g., `mvn verify -Drevision=4.0.1`, which is commonly done in CI pipelines.
 
 Maven maintainer Karl Heinz Marbaise shows a larger example in
 his [article "Maven 4 - Part I - Easier Versions" (2024)][21].
@@ -264,8 +268,8 @@ the [Guide to Using Toolchains][7] (or the article [Introduction to Maven Toolch
 Mulders).
 
 *Side information: The ballot about the required Java version was held in March 2024, shortly before Java 22 was
-released. One reason Java 17 was chosen over Java 21 was that it was (at this time) the second-last Java version for which many
-vendors offer long-term support.*
+released. One reason Java 17 was chosen over Java 21 was that it was (at this time) the second-last Java version for
+which many vendors offer long-term support.*
 
 ### Application maintenance
 
@@ -278,8 +282,8 @@ This also includes removing features that either should never have worked or wer
 already in Maven 3, e.g., using `${pom.*}` expressions.
 Maven's own Super POM was also upgraded, which declares new default versions of Maven's core plugins.
 
-**Note**: Due to upgrading the default versions of Maven plugins, your build might behave differently than before, even if
-you didn't purposely change anything.
+**Note**: Due to upgrading the default versions of Maven plugins, your build might behave differently than before, even
+if you didn't purposely change anything.
 To avoid this situation, you should always define fixed versions of all the plugins you use!
 By doing this, you are in control of your build - at the cost of being responsible for upgrading the versions yourself.
 Maven 4 will issue a warning if you rely on default versions defined in Maven's Super POM!
@@ -325,11 +329,11 @@ See [MNG-8286][27] for more information about supported functions.
 
 #### Lifecycle changed from graph to tree
 
-Up to Maven 3, the lifecycle was a mathematical graph.
+Up to Maven 3 the lifecycle was a literally an ordered list which contains all phases.
 This changed with Maven 4, where the lifecycle is defined as a tree of phases.
 This allows for more consistent execution of dependent phases, e.g., `compile` must execute after `compile-only` project
-dependencies have reached the `ready` phase, and also allows "skipping" phases (in comparison to the old graph), e.g., `deploy`
-an artifact without `install`ing it to the user repository.
+dependencies have reached the `ready` phase, and also allows "skipping" phases (in comparison to the old graph), e.g.,
+`deploy` an artifact without `install`ing it to the user repository.
 
 #### Pre- and post-phases, ordering of executions
 
@@ -338,16 +342,16 @@ prefixes to the name of the main phase.
 For example, if you want to set up test data before running your integration tests, you could execute tasks during the
 `before-integration-test` phase.
 
-If this is not enough, perhaps because you want to do multiple things inside the same phase, you can order each execution
-inside a phase by using square brackets with an integer at the end of the phase name, e.g.,
+If this is not enough, perhaps because you want to do multiple things inside the same phase, you can order each
+execution inside a phase by using square brackets with an integer at the end of the phase name, e.g.,
 
 ```
 before-integration-test[100]
 before-integration-test[200]
 ```
 
-**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had inconsistent
-naming, are deprecated - don't use them (anymore)!
+**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
+inconsistent naming, are deprecated - don't use them (anymore)!
 This becomes even more important if you were binding a plugin to the `post-*` phase of a lifecycle phase because the
 `pre-*` phase of the phase you really wanted to bind to did not exist, e.g., binding to `process-resources` phase
 because there was no `pre-compile` phase.
@@ -356,8 +360,8 @@ because there was no `pre-compile` phase.
 
 ### Maven plugins
 
-As mentioned above, Maven 4 will contain significant code and API updates, resulting in breaking changes for (very) old Maven plugins that
-were not updated to use the recommended APIs.
+As mentioned above, Maven 4 will contain significant code and API updates, resulting in breaking changes for (very) old
+Maven plugins that were not updated to use the recommended APIs.
 Major changes regarding plugins include a proper immutable plugin model together with a revised plugin API.
 The updated API provides hints as preparation for Maven 4.
 You can enable them by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`.
@@ -381,15 +385,17 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 ### Maven Resolver
 
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
-Maven 4 will include the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and improvements,
-e.g., a Java native HTTP-Client - thanks to raising the Java version requirement to JDK 17!
+Maven 4 will include the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
+improvements, e.g., a Java native HTTP-Client - thanks to raising the Java version requirement to JDK 17!
+Another big difference in comparison with Maven 3 is that with the new major version the resolver aims to be hidden
+behind the new Maven API and thus not used directly anymore.
 
 ## Issue overview
 
 The Maven issue tracker provides a [full list of all resolved issues of Maven 4.0.0][22].
 As of 2024-12-14, not all issues are properly linked to the final release and therefore may not be shown in that list.
-If you want to see issues resolved in each individual (alpha/beta/RC) release, please see the [Maven releases history][10],
-starting with the alpha versions for Maven 4.0.0.
+If you want to see issues resolved in each individual (alpha/beta/RC) release, please see
+the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 
 <!--- Links -->
