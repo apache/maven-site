@@ -80,8 +80,13 @@ the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2
 **Note**: With Maven 4 it's also possible to exclude dependencies which are declared by BOMs using the existing
 `<exclusions>` element.
 Also note that in Maven 4 importing BOMs with classifier is now possible.
-Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts (see Maven build "
-skinny" vs "fat" BOM).
+Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts, using the
+`<bomClassifier>` element.
+This means that an imported BOM must **not** come from the same reactor as the current build, but be available outside
+the project before the build (in other words "you should import only external BOMs") or it may break you build (e.g.
+shown in [MNG-8009][32]).
+That's why Maven 4.0 will show a warning if a BOM comes from the same reactor.
+In the future this will most probably changed to make the build fail.
 
 ### Comparing Build-POM and Consumer-POM
 
@@ -453,3 +458,5 @@ starting with the alpha versions for Maven 4.0.0.
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
 
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
+
+[32]: https://issues.apache.org/jira/browse/MNG-8009
