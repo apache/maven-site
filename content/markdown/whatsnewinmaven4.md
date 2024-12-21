@@ -392,12 +392,12 @@ Maven API and is no longer used directly by plugins.
 
 ### Maven Shell
 
-When you run any `mvn` command, the full chain of booting Java, Maven, load config, do the work, tear down and exit the
-process is done - **every single time**.
-To improve performance and reduce build time, you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of N
+Each time you run an `mvn` command, the entire process chain is executed: booting Java, starting Maven, loading the
+configuration, performing the task, tearing down, and exiting — **every single time**.
+To improve performance and reduce build times, you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of
 resident Maven processes.
-With Maven 4 you can also use the brightly polished "Maven Shell" (`mvnsh`), which will keep exactly one resident Maven
-process as long as the shell is opened.
+With Maven 4, you can also take advantage of the newly defined "Maven Shell" (`mvnsh`), which keeps a single Maven
+process running for as long as the shell remains open.
 
 ## Issue overview
 
