@@ -390,6 +390,15 @@ improvements, e.g., a Java native HTTP-Client - thanks to raising the Java versi
 Another major difference compared to Maven 3 is that in the new major version, the resolver is hidden behind the new
 Maven API and is no longer used directly by plugins.
 
+### Maven Shell
+
+When you run any `mvn` command, the full chain of booting Java, Maven, load config, do the work, tear down and exit the
+process is done - **every single time**.
+To improve performance and reduce build time, you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of N
+resident Maven processes.
+With Maven 4 you can also use the brightly polished "Maven Shell" (`mvnsh`), which will keep exactly one resident Maven
+process as long as the shell is opened.
+
 ## Issue overview
 
 The Maven issue tracker provides a [full list of all resolved issues of Maven 4.0.0][22].
