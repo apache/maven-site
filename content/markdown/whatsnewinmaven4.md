@@ -329,7 +329,7 @@ See [MNG-8286][27] for more information about supported functions.
 
 #### Lifecycle changed from graph to tree
 
-Up to Maven 3 the lifecycle was a literally an ordered list which contains all phases.
+Up to Maven 3, the lifecycle was literally an ordered list containing all phases.
 This changed with Maven 4, where the lifecycle is defined as a tree of phases.
 This allows for more consistent execution of dependent phases, e.g., `compile` must execute after `compile-only` project
 dependencies have reached the `ready` phase, and also allows "skipping" phases (in comparison to the old graph), e.g.,
@@ -387,8 +387,8 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
 Maven 4 will include the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
 improvements, e.g., a Java native HTTP-Client - thanks to raising the Java version requirement to JDK 17!
-Another big difference in comparison with Maven 3 is that with the new major version the resolver aims to be hidden
-behind the new Maven API and thus not used directly anymore.
+Another major difference compared to Maven 3 is that in the new major version, the resolver is hidden behind the new
+Maven API and is no longer used directly by plugins.
 
 ## Issue overview
 
