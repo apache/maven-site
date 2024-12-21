@@ -42,8 +42,8 @@
   </scm>
 
   <issueManagement>
-    <system>jira</system>
-    <url>https://issues.apache.org/jira/browse/MNGSITE</url>
+    <system>GitHub</system>
+    <url>https://github.com/apache/maven-site/issues</url>
   </issueManagement>
   <distributionManagement>
     <site>
