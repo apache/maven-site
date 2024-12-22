@@ -34,7 +34,7 @@ Developing Maven
  This document describes how to get started developing Maven itself. There is a separate page describing how
  to {{{./guide-building-maven.html}build Maven}}.
 
- %{toc|section=0|fromDepth=2|toDepth=5}
+%{toc|section=0|fromDepth=2|toDepth=5}
 
 * Finding some work to do
 

@@ -60,14 +60,14 @@ Maven Code Style And Code Conventions
 
  <<Note>>: The specific styles and conventions, listed in the next sections, can override these generic rules.
 
-* {Java}
+* Java
 
-** {Java Code Style}
+** Java Code Style
 
  Maven adopts the {{{https://github.com/palantir/palantir-java-format}palantir Java format}}.
 
 
-** {Java Code Convention}
+** Java Code Convention
 
  For consistency reasons, our Java code convention is mainly:
 
@@ -89,7 +89,7 @@ Maven Code Style And Code Conventions
 
  []
 
-** {Java Code Convention - import layouts}
+** Java Code Convention - import layouts
 
  For consistency reasons, Java imports should be organized as:
 
@@ -110,13 +110,13 @@ Maven Code Style And Code Conventions
  navigate to <Java \> Code Style \> Organize Imports>. Click on <Import...> and select the downloaded
  file to change the import order.
 
-** {JavaDoc Convention}
+** JavaDoc Convention
 
  TO BE DISCUSSED
 
-* {XML}
+* XML
 
-** {XML Code Style}
+** XML Code Style
 
  The Maven style for XML files is mainly:
 
@@ -152,11 +152,11 @@ Maven Code Style And Code Conventions
 
  []
 
-** {Generic XML Code Convention}
+** Generic XML Code Convention
 
  No generic code convention exists yet for XML files.
 
-** {POM Code Convention}
+** POM Code Convention
 
  The team has {{{https://lists.apache.org/thread/h8px5t6f3q59cnkzpj1t02wsoynr3ygk}voted}}
  during the end of June 2008 to follow a specific POM convention to ordering POM elements.
@@ -225,7 +225,7 @@ Maven Code Style And Code Conventions
     []
 
 
-** {XDOC Code Convention}
+** XDOC Code Convention
 
  For consistency and readability reasons, XDOC files should respect:
 
@@ -235,7 +235,7 @@ Maven Code Style And Code Conventions
 
  []
 
-** {FML Code Convention}
+** FML Code Convention
 
  For readability reasons, FML files should respect:
 
