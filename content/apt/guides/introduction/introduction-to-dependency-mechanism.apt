@@ -38,21 +38,8 @@ Introduction to the Dependency Mechanism
 
   Learn more about:
 
- * {{{Transitive_Dependencies}Transitive Dependencies}}
+%{toc|section=0|fromDepth=2|toDepth=3}
 
-   * Excluded/Optional Dependencies
-
- * {{{Dependency_Scope}Dependency Scope}}
-
- * {{{Dependency_Management}Dependency Management}}
-
-   * {{{Importing_Dependencies}Importing Dependencies}}
-
-   * {{{bill-of-materials-bom-poms}Bill of Materials (BOM) POMs}}
-
- * {{{System_Dependencies}System Dependencies}}
-
- []
 
 * {Transitive Dependencies}
 
