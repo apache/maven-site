@@ -67,7 +67,7 @@ Maven Git Convention
   For complex changes, you may find it valuable to make a pull request
   at github to make it easier to collaborate with others.
 
-*** {Commit Message Template}
+*** Commit Message Template
 
   Commits should be focused on one issue at a time, because that makes it easier
   for others to review the commit.

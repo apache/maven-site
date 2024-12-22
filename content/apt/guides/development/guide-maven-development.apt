@@ -34,6 +34,8 @@ Developing Maven
  This document describes how to get started developing Maven itself. There is a separate page describing how
  to {{{./guide-building-maven.html}build Maven}}.
 
+ %{toc|section=0|fromDepth=2|toDepth=5}
+
 * Finding some work to do
 
  First of all you need something to work on! Issues can be found in
@@ -70,7 +72,7 @@ Developing Maven
   case, you should run all of the integration tests. The tests require an empty local repository.
   See {{{/core-its/core-it-suite/}Core IT Suite documentation}} for more details.
 
-* {Creating and submitting a patch}
+* Creating and submitting a patch
 
  The most convenient way is to create a GitHub fork from the Git repository you are working with.
  When you have either completed an issue or just want some feedback on the work you have done, create a pull request.
@@ -188,7 +190,7 @@ Developing Maven
 
  You can {{{/wagon/}read more about Wagon}}.
 
-* {Further Links}
+* Further Links
 
   * {{{../../developers/conventions/code.html}Maven Code Style And Code Convention}}
 
