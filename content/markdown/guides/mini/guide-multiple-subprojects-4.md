@@ -39,7 +39,7 @@ This part of the Maven core does the following:
 
 Subprojects collection starts from one aggregator project.
 That project defines the subprojects of which it consists using the `<subproject>` element.
-This is a recursive process, so aggregators can have child subproject which are aggregators themselves.
+This is a recursive process, so aggregators can have child subprojects which are aggregators themselves.
 
 For this process to work, it does not matter which POM you start with.
 Maven attempts to find the root of a multi-project setup, by traversing upwards in the directory structure until it
@@ -57,8 +57,7 @@ Using the file parameter (`--file` or `-f`), you can point to another POM.
 ### Sorting subprojects
 
 Because subprojects within a multi-project setup build can depend on each other, it is important that the reactor sorts
-all the
-projects in a way that guarantees any project is built before it is required.
+all the projects in a way that guarantees each project is built before it is required.
 
 The following relationships are honoured when sorting projects:
 
@@ -108,13 +107,13 @@ To prevent this recursive behaviour, combine `--projects` with `--non-recursive`
 
 Maven knows about the dependencies between subprojects inside the multi-project setup.
 Using `--also-make`, Maven includes all dependencies of the selected projects in the build.
-Similarly, `--also-make-dependents` lets Maven include all subprojects which are dependent on the selected projects.
+Similarly, `--also-make-dependents` lets Maven include all subprojects which depend on the selected projects.
 
 #### Dealing with failures
 
 There are several ways to customize how the reactor deals with failures.
 `--fail-at-end` fails the build after building as many subprojects as possible.
-In this case, subprojects that do not depend on a failed subproject, will still be built.
+In this case, subprojects that do not depend on a failed subproject will still be built.
 `--fail-fast`, in contrast, fails the build as soon as one subproject has failed.
 This is the default behaviour.
 `--fail-never` ignores build failures.
