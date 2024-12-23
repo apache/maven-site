@@ -160,8 +160,8 @@ Bugs:
 * [MNG-6170] - NPE in cases using Multithreaded -T X versions:set -DnewVersion=1.0-SNAPSHOT
 * [MNG-6173] - MavenSession.getAllProjects() should return all projects in the reactor
 * [MNG-6176] - Javadoc errors prevent release with Java 8
-* [MNG-6177] - The --file command line option of the Windows and Unix launchers does not work for directory names like "
-  Spaces & Special Char"
+* [MNG-6177] - The `--file` command line option of the Windows and Unix launchers does not work for directory names like
+  "Spaces & Special Char"
 * [MNG-6180] - groupId has plain color when goal fails
 * [MNG-6181] - HttpClient produces a lot of noise at debug loglevel
 * [MNG-6183] - Dependency management debug message corrections.
