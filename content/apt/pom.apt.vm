@@ -2103,4 +2103,5 @@ mvn help:active-profiles
 
 ======================
 
-  Aspects of this guide were originally published in the article "Maven 2 Pom Demystified The evolution of a project model" by Eric Redmond (JavaWorld.com, 2006-05-29).
+  Aspects of this guide were originally published in the article "Maven 2 Pom Demystified The evolution of a project
+  model" by Eric Redmond (JavaWorld.com, 2006-05-29).
