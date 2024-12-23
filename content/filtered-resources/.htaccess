@@ -81,3 +81,5 @@ Redirect Permanent /guides/mini/guide-apt-format.html /doxia/references/apt-form
 RedirectMatch ^/maven-1.x/(.*)$ /archives/maven-1.x/$1
 
 Redirect Permanent /maven-ci-friendly.html /guides/mini/guide-maven-ci-friendly.html
+
+Redirect Permanent /guides/mini/guide-multiple-modules-4.html /guides/mini/guide-multiple-subprojects-4.html
