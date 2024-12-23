@@ -2103,5 +2103,4 @@ mvn help:active-profiles
 
 ======================
 
-  Aspects of this guide were originally published in the
-  {{{http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}Maven 2 Pom Demystified}}.
+  Aspects of this guide were originally published in the article "Maven 2 Pom Demystified The evolution of a project model" by Eric Redmond (JavaWorld.com, 2006-05-29).
