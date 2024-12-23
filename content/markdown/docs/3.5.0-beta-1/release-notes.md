@@ -143,10 +143,9 @@ you are expecting to build your project with, instead of using `prerequisites`
   [MNG-6110], [MNG-6140].
 
 * Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}`
-  has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. It is very important to
-  know if you are using the previously named properties for a version in your
-  pom you have to use [flatten-maven-plugin] if you like to do an `mvn install`
-  or `mvn deploy` more details can be found at [Maven CI Friendly](/maven-ci-friendly.html).
+  has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. If you are using the previously named properties for a version
+  in your pom, you have to use [flatten-maven-plugin] to do an `mvn install` or `mvn deploy`. More details can be found
+  at [Maven CI Friendly Versions](/guides/mini/guide-maven-ci-friendly.html).
 
 * The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
 
@@ -160,9 +159,8 @@ Bugs:
 * [MNG-6170] - NPE in cases using Multithreaded -T X versions:set -DnewVersion=1.0-SNAPSHOT
 * [MNG-6173] - MavenSession.getAllProjects() should return all projects in the reactor
 * [MNG-6176] - Javadoc errors prevent release with Java 8
-* [MNG-6177] - The `--file` command line option of the Windows and Unix launchers does not work for directory names
-  like "
-  Spaces & Special Char"
+* [MNG-6177] - The `--file` command line option of the Windows and Unix launchers does not work for directory names like
+  "Spaces & Special Char"
 * [MNG-6180] - groupId has plain color when goal fails
 * [MNG-6181] - HttpClient produces a lot of noise at debug loglevel
 * [MNG-6183] - Dependency management debug message corrections.

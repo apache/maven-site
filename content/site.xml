@@ -127,6 +127,7 @@ under the License.
           <item name="Building for Different Environments"
             href="/guides/mini/guide-building-for-different-environments.html"/>
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html"/>
+          <item name="Maven CI Friendly Version" href="/guides/mini/guide-maven-ci-friendly.html"/>
         </item>
         <item name="Settings Reference"
           href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
