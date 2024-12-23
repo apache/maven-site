@@ -366,7 +366,7 @@ Major changes regarding plugins include a proper immutable plugin model together
 The updated API provides hints as preparation for Maven 4.
 You can enable them by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`.
 You should also only rely on the official Maven BOMs when developing plugins.
-If a plugin still relies on long-deprecated and now removed Plexus dependency resolution, it will no longer work.
+If a plugin still relies on long-deprecated and now removed Plexus dependency injection, it will no longer work.
 It needs to be updated to use JSR-330 - see [Maven & JSR-330][26] for further information.
 
 **Advice**: If you are maintaining a Maven plugin, you should test it with Maven 3.9.x, pay close attention to upcoming
