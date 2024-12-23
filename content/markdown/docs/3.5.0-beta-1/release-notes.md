@@ -143,10 +143,9 @@ you are expecting to build your project with, instead of using `prerequisites`
   [MNG-6110], [MNG-6140].
 
 * Using of CI friendly versions via `${revision}`, `${sha1}` and/or `${changelist}`
-  has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. It is very important to
-  know if you are using the previously named properties for a version in your
-  pom you have to use [flatten-maven-plugin] if you like to do an `mvn install`
-  or `mvn deploy` more details can be found at [Maven CI Friendly Versions](/guides/mini/guide-maven-ci-friendly.html).
+  has been fixed [MNG-6057], [MNG-6090] and [MNG-5895]. If you are using the previously named properties for a version
+  in your pom, you have to use [flatten-maven-plugin] to do an `mvn install` or `mvn deploy`. More details can be found
+  at [Maven CI Friendly Versions](/guides/mini/guide-maven-ci-friendly.html).
 
 * The two known issues from 3.5.0-alpha-1 have been fixed [MNG-6177], [MNG-6115]
 
