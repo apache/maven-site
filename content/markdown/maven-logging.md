@@ -30,7 +30,7 @@ The standard Maven distribution, from Maven 3.1.0 onward, uses the [SLF4J API][5
 combined with the [SLF4J Simple][2] implementation (or [a customized version since 3.5.0][10]). Future versions may use a more advanced
 implementation, but we chose to start simple.
 
-Looking at the distribution you will
+Looking at the distribution, you will
 see the following layout where the `simplelogger.properties`, `slf4j-api-x.y.z-jar` and
 `slf4j-simple-x.y.z.jar` (or `maven-slf4j-provider-3.x.y.jar` since 3.5.0) specifically relate to the SLF4J implementation:
 
@@ -56,8 +56,8 @@ apache-maven-3.x.y
 
 ## Configuring logging
 
-To configure logging with the [SLF4J Simple][2], you can edit the properties in the
-`${maven.home}/conf/logging/simplelogger.properties` file. Please see the linked reference documentation
+To configure logging with [SLF4J Simple][2], edit the properties in the
+`${maven.home}/conf/logging/simplelogger.properties` file. See the linked reference documentation
 for details.
 
 Every entry in this file can be overridden via Maven's JVM system properties by using the `-D` flag in [MAVEN_OPTS][9], for example:
@@ -69,12 +69,12 @@ The default SLF4J configuration for Maven is listed [here][8], where you can see
 
 ## Changing the SLF4J implementation
 
-If you want use a different logging implementation it is simply a matter of removing the slf4j-simple JAR
-from the `lib` directory and replacing it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
+If you want use a different logging implementation, remove the slf4j-simple JAR
+from the `lib` directory and replace it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
 
 See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 
-Note: with the introduction of colors in Maven 3.5.0, perhaps an equivalent work to [`maven-slf4j-provider`][10] may be required or you'll loose colors.
+Note: with the introduction of colors in Maven 3.5.0, equivalent work to [`maven-slf4j-provider`][10] may be required or you'll lose colors.
 
 ## Maven implemenation details
 
