@@ -361,7 +361,7 @@ because there was no `pre-compile` phase.
 ### Maven plugins
 
 As mentioned above, Maven 4 contains significant code and API updates, resulting in breaking changes for (very) old
-Maven plugins that were not updated to use the recommended APIs.
+Maven plugins that have not been updated to use the recommended APIs.
 Major changes regarding plugins include a proper immutable plugin model together with a revised plugin API.
 The updated API provides hints as preparation for Maven 4.
 You can enable them by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`.
