@@ -37,7 +37,7 @@ This part of the Maven core does the following:
 
 ### Collecting subprojects
 
-Subprojects collection starts from one aggregator project.
+Subproject collection starts from one aggregator project.
 That project defines the subprojects of which it consists using the `<subproject>` element.
 This is a recursive process, so aggregators can have child subprojects which are aggregators themselves.
 
@@ -56,7 +56,7 @@ Using the file parameter (`--file` or `-f`), you can point to another POM.
 
 ### Sorting subprojects
 
-Because subprojects within a multi-project setup build can depend on each other, it is important that the reactor sorts
+Because subprojects within a multi-project build can depend on each other, it is important that the reactor sorts
 all the projects in a way that guarantees each project is built before it is required.
 
 The following relationships are honoured when sorting projects:
@@ -112,15 +112,15 @@ Similarly, `--also-make-dependents` lets Maven include all subprojects which dep
 #### Dealing with failures
 
 There are several ways to customize how the reactor deals with failures.
-`--fail-at-end` fails the build after building as many subprojects as possible.
-In this case, subprojects that do not depend on a failed subproject will still be built.
-`--fail-fast`, in contrast, fails the build as soon as one subproject has failed.
-This is the default behaviour.
-`--fail-never` ignores build failures.
+
+* `--fail-at-end` fails the build after building as many subprojects as possible.
+  In this case, subprojects that do not depend on a failed subproject will still be built.
+* `--fail-fast`, in contrast, fails the build as soon as one subproject has failed.
+  This is the default behaviour.
+* `--fail-never` ignores build failures.
 
 When a build has failed, and you want to start it again, you can skip building the subprojects that were previously
-built
-successfully using `--resume` (or `-r`).
+built successfully using `--resume` (or `-r`).
 To resume a build from a specific subproject, you can use `--resume-from <selector>`.
 
 #### Bringing it together
