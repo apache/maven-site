@@ -1,6 +1,6 @@
 # What's New in Maven 4?
 
-Maven is over 20 years old and is one of the most used build tools in the Java world.
+Maven is over 20 years old, and is one of the most used build tools in the Java world.
 Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially
 with its [POM-schema with Model version 4.0.0][2], used not only for the build itself but also by consumers.
 This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the Maven
@@ -13,9 +13,9 @@ But this stable schema comes at a price - the lack of flexibility.
 
 Maven 4 will prepare for changes which are impossible nowadays, like a completely new build schema.
 
-Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, non-performant, and duplicated code
+Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, non-performant, and duplicate code
 which costs the volunteers who maintain Maven a lot of time.
-This not only means that the Maven codebase contains old Java code that can be optimized nowadays but also old
+This means that the Maven codebase contains not only old Java code that can be optimized nowadays but also old
 dependencies and poor API design of its own APIs, especially for Maven plugins.
 Therefore, Maven 4 will also be a maintenance release.
 
@@ -25,7 +25,7 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 ### Build-POM and Consumer-POM
 
-As written in the introduction, Model version 4.0.0 is used not only for the build but also by consumers of the
+As written in the introduction, Model version 4.0.0 is used not only by the build but also by consumers of the
 artifact.
 However, several contents of the POM are only necessary for the build while others, like the dependencies, are also
 needed by the consumer.
@@ -329,7 +329,7 @@ See [MNG-8286][27] for more information about supported functions.
 
 #### Lifecycle changed from graph to tree
 
-Up to Maven 3, the lifecycle was literally an ordered list containing all phases.
+Up to Maven 3, the lifecycle was an ordered list containing all phases.
 This changed with Maven 4, where the lifecycle is defined as a tree of phases.
 This allows for more consistent execution of dependent phases, e.g., `compile` must execute after `compile-only` project
 dependencies have reached the `ready` phase, and also allows "skipping" phases (in comparison to the old graph), e.g.,
@@ -351,7 +351,7 @@ before-integration-test[200]
 ```
 
 **Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
-inconsistent naming, are deprecated - don't use them (anymore)!
+inconsistent naming, are deprecated - don't use them!
 This becomes even more important if you were binding a plugin to the `post-*` phase of a lifecycle phase because the
 `pre-*` phase of the phase you really wanted to bind to did not exist, e.g., binding to `process-resources` phase
 because there was no `pre-compile` phase.
@@ -360,14 +360,14 @@ because there was no `pre-compile` phase.
 
 ### Maven plugins
 
-As mentioned above, Maven 4 will contain significant code and API updates, resulting in breaking changes for (very) old
+As mentioned above, Maven 4 contains significant code and API updates, resulting in breaking changes for (very) old
 Maven plugins that were not updated to use the recommended APIs.
 Major changes regarding plugins include a proper immutable plugin model together with a revised plugin API.
 The updated API provides hints as preparation for Maven 4.
 You can enable them by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`.
 You should also only rely on the official Maven BOMs when developing plugins.
-If a plugin still relies on long-deprecated and now removed Plexus dependency resolution, it will no longer work
-and needs to be updated to use JSR-330 - see [Maven & JSR-330][26] for further information.
+If a plugin still relies on long-deprecated and now removed Plexus dependency resolution, it will no longer work.
+It needs to be updated to use JSR-330 - see [Maven & JSR-330][26] for further information.
 
 **Advice**: If you are maintaining a Maven plugin, you should test it with Maven 3.9.x, pay close attention to upcoming
 warnings, and update the plugin accordingly.
