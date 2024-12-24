@@ -13,8 +13,8 @@ But this stable schema comes at a price - the lack of flexibility.
 
 Maven 4 will prepare for changes which are impossible nowadays, like a completely new build schema.
 
-Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, non-performant, and duplicate code
-which costs the volunteers who maintain Maven a lot of time.
+Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, and duplicate code
+which costs the developers who maintain Maven a lot of time.
 This means that the Maven codebase contains not only old Java code that can be optimized nowadays but also old
 dependencies and poor API design of its own APIs, especially for Maven plugins.
 Therefore, Maven 4 will also be a maintenance release.
