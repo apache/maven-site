@@ -29,7 +29,10 @@
 
 Maven Developer Centre
 
-  This documentation centre is for people who are Maven developers, or would like to contribute.
+  This documentation centre is for people who work on the source code of
+  Maven itself and its core plugins, or who would like to contribute.
+  If you simply use Maven to build your own projects, it won't be
+  very helpful.
 
   If you cannot find your answers here, feel free to ask the {{{mailto:dev@maven.apache.org}Maven Developer List}}.
 
