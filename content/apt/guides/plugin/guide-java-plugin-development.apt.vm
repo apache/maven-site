@@ -63,7 +63,7 @@ Guide to Developing Java Plugins
   superclass for the mojos to consolidate code common to all mojos.
 
   When processing the source tree to find mojos, {{{/plugin-tools/} <<<plugin-tools>>>}}
-  looks for classes with <<<@Mojo>>> Java 5 annotation.
+  looks for classes with <<<@Mojo>>> annotation.
   Any class with this annotation are included in the plugin configuration file.
 
 *** A Simple Mojo
@@ -193,7 +193,7 @@ public class GreetingMojo extends AbstractMojo
 
 ** Building a Plugin
 
-  There are few plugins goals bound to the standard build lifecycle
+  There are few plugin goals bound to the standard build lifecycle
   defined with the <<<maven-plugin>>> packaging:
 
 *-------------+----------------------------------------------------+
@@ -394,13 +394,13 @@ mvn archetype:generate \
 
 * Using Setters
 
- You are not restricted to using private field mapping which is good if you are trying to make you Mojos resuable
+ You are not restricted to using private field mapping which is good if you are trying to make your Mojos resuable
  outside the context of Maven.
- Using the example above we could define public setters methods that the configuration mapping mechanism can use.
- You can also add <<<@Parameter>>> annotation on setter method (from version 3.7.0 of `plugin-tools`)
+ Using the example above, we could define public setter methods that the configuration mapping mechanism can use.
+ You can also add an <<<@Parameter>>> annotation on the setter method (from version 3.7.0 of `plugin-tools`)
 
 
- So our Mojo would look like the following:
+ So the Mojo would look like the following:
 
 +----+
 
@@ -438,8 +438,8 @@ public class MyQueryMojo extends AbstractMojo {
 
 +----+
 
- Note the specification of the property name for each parameter which tells Maven what setter and getter to use when
- the field's name does not match the intended name of the parameter in the plugin configuration.
+ Note the specification of the property name for each parameter which tells Maven which setter and getter to use when
+ the field's name does not match the name of the parameter in the plugin configuration.
 
 * Resources
 
