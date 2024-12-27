@@ -5,7 +5,6 @@ Throughout the years, one important rule has been maintaining the highest backwa
 with its [POM-schema with Model version 4.0.0][2], used not only for the build itself but also by consumers.
 This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the Maven
 Central repository, other build tools, and IDEs.
-But this stable schema comes at a price - the lack of flexibility.
 
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 > unable to implement improvements that we imagine will require seriously updating the POM schema…"
@@ -15,8 +14,8 @@ Maven 4 will prepare for changes which are impossible nowadays, like a completel
 
 Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, and duplicate code
 which costs the developers who maintain Maven a lot of time.
-This means that the Maven codebase contains not only old Java code that can be optimized nowadays but also old
-dependencies and poor API design of its own APIs, especially for Maven plugins.
+This means that the Maven codebase contains not only old Java code but also old dependencies and poor API design of its
+own APIs, especially for Maven plugins.
 Therefore, Maven 4 will also be a maintenance release.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
