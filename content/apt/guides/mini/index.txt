@@ -39,8 +39,6 @@
 
  * {{{$prefix/guide-using-extensions.html}Using Extensions}}
 
- * {{{$prefix/guide-building-for-different-environments.html}Building For Different Environments with Maven 2}}
-
  * {{{$prefix/guide-using-toolchains.html}Using Toolchains}}
 
  * {{{/examples/injecting-properties-via-settings.html}Injecting POM Properties via settings.xml}}
