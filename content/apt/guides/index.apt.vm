@@ -79,7 +79,7 @@ Documentation
 
  * {{{./mini/guide-relocation.html}Relocation of Artifacts}}
 
-** {{{/introduction/introduction-to-repositories.html}Repositories}}
+** {{{./introduction/introduction-to-repositories.html}Repositories}}
 
  * {{{./mini/guide-3rd-party-jars-local.html}Installing 3rd party JARs to Local Repository}}
 
