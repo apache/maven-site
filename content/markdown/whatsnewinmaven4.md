@@ -26,29 +26,27 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 As written in the introduction, Model version 4.0.0 is used not only by the build but also by consumers of the
 artifact.
-However, several contents of the POM are only necessary for the build while others, like the dependencies, are also
-needed by the consumer.
+However, several parts of the POM are only necessary for the build while others, like the dependencies, are also
+needed by the consumers.
 Maven 4 will therefore differentiate between a "Build-POM" and a "Consumer-POM".
-As the names suggest, the "Build-POM" will contain all information needed to build the artifact, e.g., used plugins and
-their configuration, while the "Consumer-POM", which is created during the Maven build, will not contain those.
+As the names suggest, the "Build-POM" will contain all information needed to build the artifact, e.g., applied plugins
+and their configuration, while the "Consumer-POM", which is created during the Maven build, only contains what is
+necessary.
 This POM will only keep what is really needed to use the artifact, e.g., dependency information.
 
 **Note**: See below for a comparison of the content of both POMs.
 
 ### Model version 4.1.0
 
-With now having two types of POM, Maven 4 can already make additions to the Build-POM as it will only be used by Maven (
-and of course IDEs).
+With two types of POM, Maven 4 can make additions to the Build-POM as it is only be used by Maven.
 Therefore, with Maven 4, a new Model version 4.1.0 is introduced.
-This version introduces some new elements and attributes, while others are marked as deprecated.
+This version adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the Build-POM, while the Consumer-POM will still use
 version 4.0.0.
-This means Maven will generate the Consumer-POM during the build.
+Maven generates the Consumer-POM during the build from the build POM.
 
-**Note**: Maven 4 will of course continue to build your model version 4.0.0 project!
+**Note**: Maven 4 will continue to build your model version 4.0.0 project.
 There is no need to update your POMs to 4.1.0 as long as you don't want to make use of the new features.
-But as with every software update - it's suggested to update them to 4.1.0, e.g., to avoid problems when deprecated
-features are removed in future updates.
 
 ### Modules are now subprojects
 
@@ -63,18 +61,18 @@ Since the introduction of the [Java Platform Module System][3] in Java 9, the te
 confusion.
 
 Maven 4 gets rid of this by naming "modules" as what they are - subprojects.
-Model version 4.1.0 contains a new element `<subprojects>` analogous to the now deprecated, but still usable, element
-`<modules>`.
+Model version 4.1.0 contains a new `<subprojects>` element analogous to the now deprecated, but still usable,
+`<modules>` element.
 
-**Note**: It's suggested to use the terms `multi-project setup` and `single-project setup` to differentiate between a
-Maven project with or without subprojects.
+**Note**: Use the terms `multi-project setup` and `single-project setup` to differentiate between a Maven project with
+or without subprojects.
 
 ### New packaging type: bom
 
-Maven 4 introduces a dedicated packaging type to provide a [Bill of Material BOM][4] called "bom" to differentiate more
+Maven 4 introduces a dedicated packaging type to provide a [Bill of Materials BOM][4] called "bom" to differentiate more
 precisely between "parent POMs" and dependency-managing BOMs.
 While the new type is only available with Model Version 4.1.0, the final outcome is a full Maven 3 compatible (model
-4.0.0) POM file!
+4.0.0) POM file.
 For an example, see the link above or
 the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2024][5].
 
@@ -84,7 +82,7 @@ Also note that in Maven 4, importing BOMs with a classifier is now possible.
 Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts, using the
 `<bomClassifier>` element.
 This means that an imported BOM must **not** come from the same reactor as the current build but be available outside
-the project before the build (in other words, "you should import only external BOMs") or it may break your build (as
+the project before the build (in other words: you should import only external BOMs) or it may break your build (as
 shown in [MNG-8009][32]).
 That's why Maven 4.0 will show a warning if a BOM comes from the same reactor.
 In the future, this will most probably be changed to make the build fail.
@@ -95,7 +93,8 @@ The following table shows a rough comparison of which content is available in wh
 
 **Notes**:
 
-* The column "Consumer-POM" obviously does not apply to artifacts that are of type "pom"!
+* The column "Consumer-POM" does not apply to artifacts that are of type "pom", because "pom"-artifacts are designed to
+  contain build information, e.g. plugin configuration!
 * Some of the build-related content which is (as of now) still available in the Consumer-POM might be available only in
   the Build-POM in the future.
 
@@ -109,13 +108,13 @@ The following table shows a rough comparison of which content is available in wh
 | Project information / environment settings |     ✅     |      ✅       |
 | Deployment to remote repository            |     ✅     |      ✅       |
 
-**Warning**: There are rare situations where Maven 4 might produce a Consumer-POM based on version 4.1.0, e.g., when
+**Warning**: There are rare situations where Maven 4 will produce a Consumer-POM based on version 4.1.0, e.g., when
 condition-based profiles (see below) can't be transformed to version 4.0.0.
 Maven will show a warning in such situations.
 
-### Declaring the root directory and directory variables
+### Declaring the root directory and directory properties
 
-Every time a Maven build is executed, it has to determine the project's root to identify things like the parent project,
+Every time Maven executes a build, it has to determine the project's root to identify things like the parent project,
 directory information, and so on.
 To "help" Maven find the root folder, you can create a `.mvn` folder in your root directory.
 This folder is intended to contain project-specific configuration to run Maven, e.g., a `maven.config` or `jvm.config`
@@ -124,43 +123,41 @@ With Maven 4, there is a second option to clearly define the root folder.
 Model version 4.1.0, usable for the Build-POM, adds a boolean attribute called `root` in the `<project>` element.
 When this attribute is set to true (default is false), the directory of this POM file is considered the root directory.
 
-Another pain point in relation to the root directory is that until Maven 4, there was no official variable to make use
+Another pain point in relation to the root directory is that until Maven 4, there was no official property to make use
 of the root folder in your POM files, e.g., when you want to define the path to a `checkstyle-suppressions.xml` file for
 the checkstyle plugin.
-Maven 4 now provides official variables to reference the root directory in your POM configuration.
-The following table shows the official variables.
+Maven 4 now provides official properties to reference the root directory in your POM configuration.
+The following table shows the official properties.
 
-| Variable                   |  Scope  | Definition                                                              | Always |
+| Property                   |  Scope  | Definition                                                              | Always |
 |:---------------------------|:-------:|:------------------------------------------------------------------------|:------:|
 | `${project.rootDirectory}` | Project | `.mvn` folder or `root` attribute in pom                                |   No   |
 | `${session.topDirectory}`  | Session | Current directory or `--file` argument                                  |  Yes   |
 | `${session.rootDirectory}` | Session | `.mvn` folder or `root` attribute in pom for the `topDirectory` project |   No   |
 
-As you can see, these variables differentiate by their scope, where `project` is always related to the Maven project's
+As you can see, these properties differentiate by their scope, where `project` is always related to the Maven project's
 definition (you could interpret this as the POM files) and `session` is the actual execution of a Maven build and is
 therefore related to the folder from where you start Maven.
 As a consequence of the definition, it's clear that the `rootDirectory` can only contain a value when either a `.mvn`
 folder is defined or the `root` attribute is set to true.
 However, if defined, it should always have the same value for a given project, whereas the value of the `topDirectory`
-variable can change depending on the execution point.
+property can change depending on the execution point.
 
 Keep in mind that the root directory of the whole project (when considering multiple subprojects) is different from each
-subproject's own base directory, which was and is still accessible via the `${basedir}` property for use in POM
+subproject's own base directory, which is still accessible via the `${basedir}` property for use in POM
 files and will always have a value.
 
-**Note:** In the past, some people "hacked" workarounds for the `rootDirectory` variables, mostly by using internal
-variables.
-Starting with Maven 4, those "hacks" will most probably not work anymore because some of those variables were removed or
-at least marked as deprecated.
+**Note:** In the past, some people "hacked" workarounds for the `rootDirectory` properties, mostly by using internal
+properties.
+Starting with Maven 4, those "hacks" will most probably not work anymore because some of those properties were removed
+or at least marked as deprecated.
 See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] for more information.
 
 ### Alternate POM syntaxes
 
-While the syntax for the 4.0.0 Consumer-POM is set in stone for accessing the central repository, the Build-POM should
-be able to evolve.
+While the syntax for the 4.0.0 Consumer-POM is set in stone, the Build-POM should be able to evolve.
 This includes allowing the use of alternate syntaxes by having Maven 4 provide a ModelParser SPI ([MNG-7836][24]),
-which can be implemented as a core extension and allow the usage of a different file as the POM and allow a custom
-syntax.
+which can be implemented as a core extension and allow a custom syntax.
 
 One of the first projects that uses this feature is the [Apache Maven Hocon Extension][25].
 
@@ -172,8 +169,8 @@ Maven 4 finally ships one of the oldest improvement requests - automatic parent 
 July 2005 and originally planned for Maven 2)!
 As expected, it's no longer required to define the parent versions in each subproject when using the new model version
 4.1.0.
-This is also extended to dependencies of project own subprojects and reduces the need to update POM files for new
-versions even more!
+This also extends to dependencies of project's own subprojects and reduces the need to update POM files for new
+versions even more.
 
 The following code snippet shows the parent and dependency definition without the version tag.
 
@@ -203,7 +200,7 @@ The following code snippet shows the parent and dependency definition without th
 
 Maven 3.5.0 introduced partial support for CI-friendly variables, e.g., `${revision}`, in your POM files.
 However, this still required the usage of the [Flatten Maven Plugin][20] for full functionality.
-Since Maven 4, no additional plugin is needed anymore; full built-in support is provided.
+Since Maven 4, no additional plugin is needed; full built-in support is provided.
 You can now use variables as versions in your configuration, e.g.,
 
 ```xml
@@ -213,8 +210,8 @@ You can now use variables as versions in your configuration, e.g.,
 <version>${revision}</version>
 ```
 
-Of course, you have to provide a value for this variable when starting the build, for example by using a `maven.config`
-file or as a parameter, e.g., `mvn verify -Drevision=4.0.1`, which is commonly done in CI pipelines.
+You have to provide a value for this variable when starting the build, for example by using a `maven.config` file.
+In CI pipelines it's commonly done using a parameter, e.g., `mvn verify -Drevision=4.0.1`.
 
 Maven maintainer Karl Heinz Marbaise shows a larger example in
 his [article "Maven 4 - Part I - Easier Versions" (2024)][21].
@@ -229,7 +226,7 @@ couldn't be found (as it was not rebuilt).
 Using `--also-make :<nameOfTheDependentSubproject>` was no help in the past as it was ignored due to the long-standing
 bug [MNG-6863][11] - which is finally fixed with Maven 4!
 
-**It is recommended not to use `mvn clean install`, but `mvn verify` for your regular builds!**
+**Recommendation: Do not use `mvn clean install`, but `mvn verify` for your regular builds!**
 
 To improve usability when resuming a failed build, you can now use `--resume` or its short parameter `-r` to resume a
 build from the subproject that last failed.
@@ -261,21 +258,17 @@ JDK but also comes with a more secure runtime as Java 17 includes more security 
 
 **Important note**: Java 17 will only be needed to **run Maven**!
 You will still be able to compile against older Java versions using the same [compiler plugin configuration][6] as
-before!
-If this does not fit your requirements because you need to compile against or use another JDK, please look at
+before.
+If this does not fit your requirements because you need to compile against or use another JDK, see
 the [Guide to Using Toolchains][7] (or the article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten
 Mulders).
-
-*Side information: The ballot about the required Java version was held in March 2024, shortly before Java 22 was
-released. One reason Java 17 was chosen over Java 21 was that it was (at this time) the second-last Java version for
-which many vendors offer long-term support.*
 
 ### Application maintenance
 
 As with every major update, extensive application maintenance has occurred, including significant code, API, and
-dependency updates and even removals.
+dependency updates.
 For example, the "Plexus Containers" dependency injection was removed - after being deprecated since Maven 3.2 (2010)!
-Code updates include not only the use of newer Java language features but also changes to make maintenance easier and
+Code updates include not only newer Java language features but also changes to make maintenance easier and
 less time-consuming.
 This also includes removing features that either should never have worked or were only kept for backward compatibility
 already in Maven 3, e.g., using `${pom.*}` expressions.
@@ -283,14 +276,14 @@ Maven's own Super POM was also upgraded, which declares new default versions of 
 
 **Note**: Due to upgrading the default versions of Maven plugins, your build might behave differently than before, even
 if you didn't purposely change anything.
-To avoid this situation, you should always define fixed versions of all the plugins you use!
-By doing this, you are in control of your build - at the cost of being responsible for upgrading the versions yourself.
-Maven 4 will issue a warning if you rely on default versions defined in Maven's Super POM!
+To avoid this situation, always define fixed versions of all the plugins you use.
+By doing this, you are in control of your build.
+Maven 4 will issue a warning if you rely on default versions defined in Maven's Super POM.
 
 ### "Fail on severity" parameter
 
-Maven 4 introduces a "fail on severity" build parameter, which will break the build when at least one log message
-matches the given argument.
+Maven 4 introduces a "fail on severity" build parameter, which breaks the build when the severity of at least one log
+message matches the given argument.
 
 The parameter can either be used by its full name (`--fail-on-severity`) or as a short handle (`-fos`).
 The parameter is followed by an argument specifying a log level severity, e.g., `WARN`.
