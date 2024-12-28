@@ -33,7 +33,7 @@ under the License.
       <p>Apache Maven ${currentStableVersion} is the latest release: it is the recommended version for all users.</p>
 
       <a name="Requirements"/>
-      <subsection name="System Requirements" id="Requirements">
+      <subsection name="System Requirements" id="SystemRequirements">
         <p>
           <table>
             <tr>
