@@ -215,12 +215,21 @@ public class ExampleMojo
  
 **Site Descriptor 
  
- The site descriptor describes the navigation links and can be found in <<<src/site/site.xml>>>. Below is the suggested site 
- descriptor template.
+ The site descriptor describes the navigation links and can be found in <<<src/site/site.xml>>>.
+ You must define a {{{../../skins/}skin}}, if you are using a site descriptor.
+ There is no default skin applied automatically.
+
+ Below is the suggested site descriptor template (with maven-fluido-skin).
  
 +--------------+  
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>2.0.1</version>
+  </skin>
+
   <body>
     <menu name="Overview">
       <item name="Introduction" href="index.html"/>
