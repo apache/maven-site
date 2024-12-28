@@ -215,7 +215,9 @@ public class ExampleMojo
  
 **Site Descriptor 
  
- The site descriptor describes the navigation links and can be found in <<<src/site/site.xml>>>.
+ The {{{/plugins/maven-site-plugin/examples/sitedescriptor.html}site descriptor}} describes the navigation links and the layout of the page.
+ It can be found in <<<src/site/site.xml>>>.
+
  You must define a {{{../../skins/}skin}}, if you are using a site descriptor.
  There is no default skin applied automatically.
 
