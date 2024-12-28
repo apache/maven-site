@@ -23,41 +23,9 @@ Maven Getting Started Guide
 
 Sections
 
- * {{{./index.html#what-is-maven}What is Maven?}}
+%{toc|section=0|fromDepth=2|toDepth=3}
 
- * {{{./index.html#how-can-maven-benefit-my-development-process}How can Maven benefit my development process?}}
-
- * {{{./index.html#how-do-i-setup-maven}How do I setup Maven?}}
-
- * {{{./index.html#how-do-i-make-my-first-maven-project}How do I make my first Maven project?}}
-
- * {{{./index.html#how-do-i-compile-my-application-sources}How do I compile my application sources?}}
-
- * {{{./index.html#how-do-i-compile-my-test-sources-and-run-my-unit-tests}How do I compile my test sources and run my unit tests?}}
-
- * {{{./index.html#how-do-i-create-a-jar-and-install-it-in-my-local-repository}How do I create a JAR and install it in my local repository?}}
-
- * {{{./index.html#what-is-a-snapshot-version}What is a SNAPSHOT version?}}
-
- * {{{./index.html#how-do-i-use-plugins}How do I use plugins?}}
-
- * {{{./index.html#how-do-i-add-resources-to-my-jar}How do I add resources to my JAR?}}
-
- * {{{./index.html#how-do-i-filter-resource-files}How do I filter resource files?}}
-
- * {{{./index.html#how-do-i-use-external-dependencies}How do I use external dependencies?}}
-
- * {{{./index.html#how-do-i-deploy-my-jar-in-my-remote-repository}How do I deploy my jar in my remote repository?}}
-
- * {{{./index.html#how-do-i-create-documentation}How do I create documentation?}}
-
- * {{{./index.html#how-do-i-build-other-types-of-projects}How do I build other types of projects?}}
-
- * {{{./index.html#how-do-i-build-more-than-one-project-at-once}How do I build more than one project at once?}}
-
- []
-
-* {What is Maven?}
+* What is Maven?
 
  At first glance Maven can appear to be many things, but in a nutshell Maven is an attempt <to apply patterns to
  a project's build infrastructure in order to promote comprehension and productivity by providing a clear path in the
@@ -85,7 +53,7 @@ Sections
  {{{../../background/history-of-maven.html}The History of Maven}}. Now let's move on to how you, the user, can benefit from
  using Maven.
 
-* {How can Maven benefit my development process?}
+* How can Maven benefit my development process?
 
  Maven can provide benefits for your build process by employing standard conventions and practices to accelerate your development
  cycle while at the same time helping you achieve a higher rate of success.
@@ -93,13 +61,13 @@ Sections
  Now that we have covered a little bit of the history and purpose of Maven let's get into some real examples to
  get you up and running with Maven!
 
-* {How do I setup Maven?}
+* How do I setup Maven?
 
   The defaults for Maven are often sufficient, but if you need to change the cache location or are behind a HTTP proxy,
   you will need to create configuration. See the {{{../mini/guide-configuring-maven.html} Guide to Configuring Maven}} for
   more information.
 
-* {How do I make my first Maven project?}
+* How do I make my first Maven project?
 
  We are going to jump headlong into creating your first Maven project!
  To create our first Maven project we are going to use Maven's archetype mechanism. An archetype is defined as
@@ -250,7 +218,7 @@ my-app
 
  Now that we have a POM, some application sources, and some test sources you are probably asking...
 
-* {How do I compile my application sources?}
+* How do I compile my application sources?
 
  Change to the directory where <<<pom.xml>>> is created by archetype:generate and execute the following command to compile
  your application sources:
@@ -298,7 +266,7 @@ mvn compile
  Now, this is simply to compile a single tree of application sources and the Ant script shown is pretty much the same
  size as the POM shown above. But we'll see how much more we can do with just that simple POM!
 
-* {How do I compile my test sources and run my unit tests?}
+* How do I compile my test sources and run my unit tests?
 
  Now you're successfully compiling your application's sources and now you've got some unit tests that you want to compile
  and execute (because every programmer always writes and executes their unit tests *nudge nudge wink wink*).
@@ -370,7 +338,7 @@ mvn test
  Now that you can compile your application sources, compile your tests, and execute the tests, you'll want to move
  on to the next logical step so you'll be asking ...
 
-* {How do I create a JAR and install it in my local repository?}
+* How do I create a JAR and install it in my local repository?
 
  Making a JAR file is straight forward enough and can be accomplished by executing the following command:
 
@@ -482,7 +450,7 @@ mvn clean
 
   This will remove the <<<target>>> directory with all the build data before starting so that it is fresh.
 
-* {What is a SNAPSHOT version?}
+* What is a SNAPSHOT version?
 
   Notice the value of the <<version>> tag in the <<<pom.xml>>> file shown below has the suffix: <<<-SNAPSHOT>>>.
 
@@ -509,7 +477,7 @@ mvn clean
   For example, version <<1.0-SNAPSHOT>> is released as version <<1.0>>, and the new development version is
   version <<1.1-SNAPSHOT>>.
 
-* {How do I use plugins?}
+* How do I use plugins?
 
   Whenever you want to customise the build for a Maven project, this is done by adding or reconfiguring plugins.
 
@@ -547,7 +515,7 @@ mvn clean
   to the plugin and goal you are using. For general information about how to configure the available parameters of a
   plugin, have a look at the {{{../mini/guide-configuring-plugins.html}Guide to Configuring Plugins}}.
 
-* {How do I add resources to my JAR?}
+* How do I add resources to my JAR?
 
  Another common use case that can be satisfied which requires no changes to the POM that we have
  above is packaging resources in the JAR file. For this common task, Maven again relies on the
@@ -660,7 +628,7 @@ InputStream is = getClass().getResourceAsStream( "/test.properties" );
 ...
 +----+
 
-* {How do I filter resource files?}
+* How do I filter resource files?
 
  Sometimes a resource file will need to contain a value that can only be supplied at build time.  To accomplish this in
  Maven, put a reference to the property that will contain the value into your resource file using the syntax <<<$\{<property name>\}>>>.
@@ -853,7 +821,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 ------
 
 
-* {How do I use external dependencies?}
+* How do I use external dependencies?
 
  You've probably already noticed a <<<dependencies>>> element in the POM we've been using as an example.
  You have, in fact, been using an external dependency all this time, but here we'll talk about how this
@@ -999,7 +967,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
 ~~DJ: Current
 
-* {How do I deploy my jar in my remote repository?}
+* How do I deploy my jar in my remote repository?
 
  For deploying jars to an external repository, you have to configure the repository url in the <<<pom.xml>>>
  and the authentication information for connecting to the repository in the <<<settings.xml>>>.
@@ -1083,7 +1051,7 @@ mvn process-resources "-Dcommand.line.prop=hello again"
 
  Care should be taken if using passwords in <<<settings.xml>>>. For more information, see {{{../mini/guide-encryption.html} Password Encryption}}.
 
-* {How do I create documentation?}
+* How do I create documentation?
 
  To get you jump started with Maven's documentation system you can use the archetype mechanism to generate a site
  for your existing project using the following command:
@@ -1099,7 +1067,7 @@ mvn archetype:generate \
  Now head on over to the {{{../mini/guide-site.html}Guide to creating a site}}
  to learn how to create the documentation for your project.
 
-* {How do I build other types of projects?}
+* How do I build other types of projects?
 
   Note that the lifecycle applies to any project type. For example, back in the base directory we can create a
   simple web application:
@@ -1149,7 +1117,7 @@ mvn package
 
   You'll see <<<target/my-webapp.war>>> is built, and that all the normal steps were executed.
 
-* {How do I build more than one project at once?}
+* How do I build more than one project at once?
 
   The concept of dealing with multiple modules is built in to Maven.
   In this section, we will show how to build the WAR above, and include the previous JAR as well in one step.
