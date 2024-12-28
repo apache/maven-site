@@ -71,8 +71,8 @@ or without subprojects.
 
 Maven 4 introduces a dedicated packaging type to provide a [Bill of Materials BOM][4] called "bom" to differentiate more
 precisely between "parent POMs" and dependency-managing BOMs.
-While the new type is only available with Model Version 4.1.0, the final outcome is a full Maven 3 compatible (model
-4.0.0) POM file.
+The new type is only available as a Build-POM in Model Version 4.1.0 and later, but Maven generates a full Maven 3
+compatible Consumer-POM during the build.
 For an example, see the link above or
 the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2024][5].
 
@@ -82,8 +82,7 @@ Also note that in Maven 4, importing BOMs with a classifier is now possible.
 Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts, using the
 `<bomClassifier>` element.
 This means that an imported BOM must **not** come from the same reactor as the current build but be available outside
-the project before the build (in other words: you should import only external BOMs) or it may break your build (as
-shown in [MNG-8009][32]).
+the project before the build (in other words: you should import only external BOMs).
 That's why Maven 4.0 will show a warning if a BOM comes from the same reactor.
 In the future, this will most probably be changed to make the build fail.
 
@@ -136,10 +135,10 @@ The following table shows the official properties.
 | `${session.rootDirectory}` | Session | `.mvn` folder or `root` attribute in pom for the `topDirectory` project |   No   |
 
 As you can see, these properties differentiate by their scope, where `project` is always related to the Maven project's
-definition (you could interpret this as the POM files) and `session` is the actual execution of a Maven build and is
-therefore related to the folder from where you start Maven.
+definition (you could interpret this as the POM files) and `session` is the actual execution of a Maven build and is the
+directory from where you start Maven.
 As a consequence of the definition, it's clear that the `rootDirectory` can only contain a value when either a `.mvn`
-folder is defined or the `root` attribute is set to true.
+directory is defined or the `root` attribute is set to true.
 However, if defined, it should always have the same value for a given project, whereas the value of the `topDirectory`
 property can change depending on the execution point.
 
