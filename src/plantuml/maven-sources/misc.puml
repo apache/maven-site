@@ -34,10 +34,10 @@ package Misc {
   rectangle Indexer
   rectangle Wagon
   rectangle "Plugin testing"
-  rectangle "dist-tool"
+  rectangle "Distribution Tool Plugin"
   package Jenkins {
-    rectangle env
-    rectangle lib
+    rectangle Environment
+    rectangle "Shared Libraries"
   }
 }
 
@@ -49,8 +49,8 @@ Studies -[hidden]right-> Indexer
 Indexer -[hidden]right-> Wagon
 Wagon -[hidden]right-> "Plugin testing"
 
-Archetypes -[hidden]down-> "dist-tool"
-"dist-tool" -[hidden]right-> Jenkins
+Archetypes -[hidden]down-> "Distribution Tool Plugin"
+"Distribution Tool Plugin" -[hidden]right-> Jenkins
 
 url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
 url of Poms is [[https://github.com/apache/maven-parent]]
@@ -59,8 +59,8 @@ url of Studies is [[https://github.com/apache/maven-studies]]
 url of Indexer is [[https://github.com/apache/maven-indexer]]
 url of Wagon is [[hhttps://github.com/apache/maven-wagon]]
 url of "Plugin testing" is [[https://github.com/apache/maven-plugin-testing]]
-url of "dist-tool" is [[https://github.com/apache/maven-dist-tool]]
-url of env is [[https://github.com/apache/maven-jenkins-env]]
-url of lib is [[https://github.com/apache/maven-jenkins-lib]]
+url of "Distribution Tool Plugin" is [[https://github.com/apache/maven-dist-tool]]
+url of Environment is [[https://github.com/apache/maven-jenkins-env]]
+url of "Shared Libraries" is [[https://github.com/apache/maven-jenkins-lib]]
 
 @enduml
