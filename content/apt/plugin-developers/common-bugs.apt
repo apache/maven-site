@@ -408,34 +408,3 @@ public MyReportMojo extends AbstractMavenReport
   effective output directory for the report. The implementation of <<<AbstractMavenReport.getOutputDirectory()>>>
   is only intended as a fallback in case the mojo is not run as part of the site generation.
 
-* Retrieving the Mojo Logger
-
-  Maven employs an IoC container named Plexus to setup a plugin's mojos before their execution. In other words,
-  components required by a mojo will be provided by means of dependency injection, more precisely field injection. The
-  important point to keep in mind is that this field injection happens <after> the mojo's constructor has finished.
-  This means that references to injected components are invalid during the construction time of the mojo.
-
-  For example, the next snippet tries to retrieve the mojo logger during construction time but the mojo logger is an
-  injected component and as such has not been properly initialized yet:
-
-+---
-public MyMojo extends AbstractMojo
-{
-    /*
-     * FIXME: This will retrieve a wrong logger instead of the intended mojo logger.
-     */
-    private Log log = getLog();
-
-    public void execute()
-    {
-        log.debug( "..." );
-    }
-}
-+---
-
-  In case of the logger, the above mojo will simply use a default console logger, i.e. the code defect is not
-  immediately noticeable by a <<<NullPointerException>>>. This default logger will however use a different message
-  format for its output and also outputs debug messages even if Maven's debug mode was not enabled. For this reason,
-  developers must not try to cache the logger during construction time. The method <<<getLog()>>> is fast enough and
-  can simply be called whenever one needs it.
-+---
