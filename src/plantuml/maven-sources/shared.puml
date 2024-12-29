@@ -1,0 +1,109 @@
+/*
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+*/
+@startuml
+!pragma layout smetana
+
+<style>
+
+    rectangle {
+        BackgroundColor LightBlue
+    }
+}
+</style>
+
+package "Shared" {
+
+left to right direction
+
+  rectangle "archiver"
+  rectangle "artifact-resolver"
+  rectangle "artifact-transfer"
+  rectangle "artifact-filters"
+  rectangle "dependency-analyzer"
+  rectangle "dependency-tree"
+  rectangle "file-manager"
+  rectangle "filtering"
+  rectangle "invoker"
+  rectangle "jarsigner"
+  rectangle "mapping"
+  rectangle "project-utils"
+  rectangle "reporting-api"
+  rectangle "reporting-exec"
+  rectangle "reporting-impl"
+  rectangle "script-interpreter"
+  rectangle "incremental"
+  rectangle "io"
+  rectangle "jar"
+  rectangle "resources"
+  rectangle "utils"
+  rectangle "verifier"
+}
+
+'hidden dependencies to change layout
+"archiver" -[hidden]down- "artifact-resolver"
+"artifact-resolver" -[hidden]down- "artifact-transfer"
+"artifact-transfer" -[hidden]down- "artifact-filters"
+
+"archiver"  -[hidden]left- "dependency-analyzer"
+"dependency-analyzer" -[hidden]down- "dependency-tree"
+"dependency-tree" -[hidden]down- "file-manager"
+"file-manager" -[hidden]down- "filtering"
+
+"dependency-analyzer" -[hidden]left- "invoker"
+"invoker" -[hidden]down- "jarsigner"
+"jarsigner" -[hidden]down- "mapping"
+"mapping" -[hidden]down- "project-utils"
+
+"invoker" -[hidden]left- "reporting-api"
+"reporting-api" -[hidden]down- "reporting-exec"
+"reporting-exec" -[hidden]down- "reporting-impl"
+
+"reporting-api" -[hidden]left- "script-interpreter"
+"script-interpreter" -[hidden]down- "incremental"
+"incremental" -[hidden]down- "io"
+"io" -[hidden]down- "jar"
+"jar" -[hidden]down- "resources"
+"resources" -[hidden]down- "utils"
+"utils" -[hidden]down- "verifier"
+
+
+url of "archiver" is [[https://github.com/apache/maven-archiver]]
+url of "artifact-resolver" is [[https://github.com/apache/maven-resolver]]
+url of "artifact-transfer" is [[https://github.com/apache/maven-artifact-transfer]]
+url of "artifact-filters" is [[https://github.com/apache/maven-common-artifact-filters]]
+url of "dependency-analyzer" is [[https://github.com/apache/maven-dependency-analyzer]]
+url of "dependency-tree" is [[https://github.com/apache/maven-dependency-tree]]
+url of "file-manager" is [[https://github.com/apache/maven-file-management]]
+url of "filtering" is [[https://github.com/apache/maven-filtering]]
+url of "invoker" is [[https://github.com/apache/maven-invoker]]
+url of "jarsigner" is [[https://github.com/apache/maven-jarsigner]]
+url of "mapping" is [[https://github.com/apache/maven-mapping]]
+url of "project-utils" is [[https://github.com/apache/maven-project-utils]]
+url of "reporting-api" is [[https://github.com/apache/maven-reporting-api]]
+url of "reporting-exec" is [[https://github.com/apache/maven-reporting-exec]]
+url of "reporting-impl" is [[https://github.com/apache/maven-reporting-impl]]
+url of "script-interpreter" is [[https://github.com/apache/maven-script-interpreter]]
+url of "incremental" is [[https://github.com/apache/maven-shared-incremental]]
+url of "io" is [[https://github.com/apache/maven-shared-io]]
+url of "jar" is [[https://github.com/apache/maven-shared-jar]]
+url of "resources" is [[https://github.com/apache/maven-shared-resources]]
+url of "utils" is [[https://github.com/apache/maven-shared-utils]]
+url of "verifier" is [[https://github.com/apache/maven-verifier]]
+@enduml
+

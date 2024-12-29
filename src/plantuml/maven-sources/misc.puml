@@ -19,9 +19,12 @@ under the License.
 @startuml
 !pragma layout smetana
 
-skinparam rectangle {
-  BackgroundColor LightBlue
+<style>
+    rectangle {
+        BackgroundColor LightBlue
+    }
 }
+</style>
 
 package Misc {
   rectangle Archetypes
@@ -49,6 +52,15 @@ Wagon -[hidden]right-> "Plugin testing"
 Archetypes -[hidden]down-> "dist-tool"
 "dist-tool" -[hidden]right-> Jenkins
 
-'url of "Ant Tasks" is [[https://github.com/maven-resolver-ant-tasks]]
+url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
+url of Poms is [[https://github.com/apache/maven-parent]]
+url of Skins is [[https://github.com/apache/maven-skins]]
+url of Studies is [[https://github.com/apache/maven-studies]]
+url of Indexer is [[https://github.com/apache/maven-indexer]]
+url of Wagon is [[hhttps://github.com/apache/maven-wagon]]
+url of "Plugin testing" is [[https://github.com/apache/maven-plugin-testing]]
+url of "dist-tool" is [[https://github.com/apache/maven-dist-tool]]
+url of env is [[https://github.com/apache/maven-jenkins-env]]
+url of lib is [[https://github.com/apache/maven-jenkins-lib]]
 
 @enduml

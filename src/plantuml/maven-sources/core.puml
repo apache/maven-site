@@ -19,9 +19,12 @@ under the License.
 @startuml
 !pragma layout smetana
 
-skinparam rectangle {
-  BackgroundColor LightBlue
+<style>
+    rectangle {
+        BackgroundColor LightBlue
+    }
 }
+</style>
 
 package "Maven Core" {
   rectangle Maven

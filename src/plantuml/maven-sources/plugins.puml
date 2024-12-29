@@ -19,10 +19,12 @@ under the License.
 @startuml
 !pragma layout smetana
 
-skinparam rectangle {
-  BackgroundColor LightBlue
+<style>
+    rectangle {
+        BackgroundColor LightBlue
+    }
 }
-
+</style>
 
 package Plugins {
 
@@ -63,7 +65,7 @@ package Plugins {
     rectangle "project-info-reports"
   }
 
-  package Tools {
+  package Tools{
     rectangle antrun
     rectangle archetype
     rectangle assembly
@@ -74,11 +76,10 @@ package Plugins {
     rectangle invoker
     rectangle jarsigner
     rectangle jdeprscan
-    rectangle patch
     rectangle pdf
     rectangle plugin
     rectangle release
-    rectangle "remote-resource"
+    rectangle "remote-resources"
     rectangle scm
     rectangle "scm-publish"
     rectangle scripting
@@ -88,9 +89,10 @@ package Plugins {
 }
 
 'hidden dependencies to change layout
-Core      -[hidden]-> Packaging
-Packaging -[hidden]-> Reporting
-Reporting -[hidden]-> Tools
+Core      -[hidden]down-> Packaging
+Packaging -[hidden]down-> Reporting
+Packaging -[hidden]down-> Tools
+Reporting -[hidden]down-> Tools
 
 clean     -[hidden]> compiler
 compiler  -[hidden]> deploy
@@ -110,7 +112,88 @@ shade     -[hidden]> source
 source    -[hidden]> jlink
 jlink     -[hidden]> jmod
 
+changelog -[hidden]> changes
+changes  -[hidden]> checkstyle
+checkstyle -[hidden]> doap
+doap -[hidden]> javadoc
+javadoc -[hidden]> jdeps
+jdeps -[hidden]> jxr
+jxr  -[hidden]> linkcheck
+linkcheck -[hidden]> pmd
+pmd -[hidden]> "project-info-reports"
+
+antrun -[hidden]> archetype
+archetype -[hidden]> assembly
+assembly -[hidden]> dependency
+dependency -[hidden]> enforcer
+enforcer -[hidden]> gpg
+gpg -[hidden]> help
+
+antrun -[hidden]down->invoker
+invoker -[hidden]> jarsigner
+jarsigner -[hidden]> jdeprscan
+jdeprscan -[hidden]> pdf
+pdf -[hidden]> plugin
+plugin -[hidden]> release
+invoker -[hidden]down->"remote-resources"
+"remote-resources" -[hidden]> scm
+scm -[hidden]> "scm-publish"
+"scm-publish" -[hidden]> scripting
+scripting -[hidden]> stage
+stage -[hidden]> toolchains
+
+
 
 url of clean is [[https://github.com/apache/maven-clean-plugin]]
+url of compiler is [[https://github.com/apache/maven-compiler-plugin]]
+url of deploy is [[https://github.com/apache/maven-deploy-plugin]]
+url of install is [[https://github.com/apache/maven-install-plugin]]
+url of resources is [[https://github.com/apache/maven-resources-plugin]]
+url of site is [[https://github.com/apache/maven-site-plugin]]
+url of surefire is [[https://github.com/apache/maven-surefire]]
+url of verifier is [[https://github.com/apache/maven-verifier-plugin]]
+
+url of ear is [[https://github.com/apache/maven-ear-plugin]]
+url of ejb is [[https://github.com/apache/maven-ejb-plugin]]
+url of jar is [[https://github.com/apache/maven-jar-plugin]]
+url of rar is [[https://github.com/apache/maven-rar-plugin]]
+url of war is [[https://github.com/apache/maven-war-plugin]]
+url of acr is [[https://github.com/apache/maven-acr-plugin]]
+url of shade is [[https://github.com/apache/maven-shade-plugin]]
+url of source is [[https://github.com/apache/maven-source-plugin]]
+url of jlink is [[https://github.com/apache/maven-jlink-plugin]]
+url of jmod is [[https://github.com/apache/maven-jmod-plugin]]
+
+url of changelog is [[https://github.com/apache/maven-changelog-plugin]]
+url of changes is [[https://github.com/apache/maven-changes-plugin]]
+url of checkstyle is [[https://github.com/apache/maven-checkstyle-plugin]]
+url of doap is [[https://github.com/apache/maven-doap-plugin]]
+url of javadoc is [[https://github.com/apache/maven-javadoc-plugin]]
+url of jdeps is [[https://github.com/apache/maven-jdeps-plugin]]
+url of jxr is [[https://github.com/apache/maven-jxr]]
+url of linkcheck is [[https://github.com/apache/maven-linkcheck-plugin]]
+url of pmd is [[https://github.com/apache/maven-pmd-plugin]]
+url of "project-info-reports" is [[https://github.com/apache/maven-project-info-reports-plugin]]
+
+url of antrun is [[https://github.com/apache/maven-antrun-plugin]]
+url of archetype is [[https://github.com/apache/maven-archetype]]
+url of assembly is [[https://github.com/apache/maven-assembly-plugin]]
+url of dependency is [[https://github.com/apache/maven-dependency-plugin]]
+url of enforcer is [[https://github.com/apache/maven-enforcer]]
+url of gpg is [[https://github.com/apache/maven-gpg-plugin]]
+url of help is [[https://github.com/apache/maven-help-plugin]]
+url of invoker is [[https://github.com/apache/maven-invoker-plugin]]
+url of jarsigner is [[https://github.com/apache/maven-jarsigner-plugin]]
+url of jdeprscan is [[https://github.com/apache/maven-jdeprscan-plugin]]
+url of pdf is [[https://github.com/apache/maven-pdf-plugin]]
+url of plugin is [[https://github.com/apache/maven-plugin-tools]]
+url of release is [[https://github.com/apache/maven-release]]
+url of "remote-resources" is [[https://github.com/apache/maven-remote-resources-plugin]]
+url of scm is [[https://github.com/apache/maven-scm]]
+url of "scm-publish" is [[https://github.com/apache/maven-scm-publish-plugin]]
+url of scripting is [[https://github.com/apache/maven-scripting-plugin]]
+url of stage is [[https://github.com/apache/maven-stage-plugin]]
+url of toolchains is [[https://github.com/apache/maven-toolchains-plugin]]
+
 
 @enduml

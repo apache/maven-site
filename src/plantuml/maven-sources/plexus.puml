@@ -21,30 +21,27 @@ under the License.
 
 <style>
     rectangle {
-        BackgroundColor LightBlue
+        BackgroundColor Yellow
     }
 }
 </style>
 
-package "Maven Doxia" {
-  rectangle Doxia
-  rectangle "Site Tools"
-  rectangle Site #LightGrey
-  package Tools {
-    rectangle Converter
-    rectangle LinkCheck
-  }
+package "Plexus" {
+  rectangle "utils"
+  ' rectangle "Components"
+  rectangle "Classworlds"
+  rectangle "Modello"
 }
 
 'hidden dependencies to change layout
-Doxia -[hidden]right-> "Site Tools"
-"Site Tools" -[hidden]right-> Site
-"Site Tools" -[hidden]right-> Tools
+' "utils" -[hidden]right-> "Components"
+' "Components" -[hidden]right-> "Classworlds"
+"utils" -[hidden]right-> "Classworlds"
+"Classworlds" -[hidden]right-> "Modello"
 
-url of Doxia is [[https://github.com/apache/maven-doxia]]
-url of "Site Tools" is [[https://github.com/apache/maven-doxia-sitetools]]
-url of Site is [[https://github.com/apache/maven-doxia-site]]
-url of Converter is [[https://github.com/apache/maven-doxia-converter]]
-url of LinkCheck is [[https://github.com/apache/maven-doxia-linkcheck]]
+url of "utils" is [[https://github.com/codehaus-plexus/plexus-utils]]
+' url of "Components" is [[https://github.com/codehaus-plexus/plexus-components]]
+url of "Classworlds" is [[https://github.com/codehaus-plexus/plexus-classworlds]]
+url of "Modello" is [[https://github.com/codehaus-plexus/modello]]
 
 @enduml
