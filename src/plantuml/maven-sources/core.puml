@@ -41,6 +41,6 @@ Resolver -[hidden]right-> "Ant Tasks"
 url of Maven is [[https://github.com/apache/maven]]
 url of "Core ITs" is [[https://github.com/apache/maven-integration-testing]]
 url of Resolver is [[https://github.com/apache/maven-resolver]]
-url of "Ant Tasks" is [[https://github.com/maven-resolver-ant-tasks]]
+url of "Ant Tasks" is [[https://github.com/apache/maven-resolver-ant-tasks]]
 
 @enduml
