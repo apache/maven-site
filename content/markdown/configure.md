@@ -17,14 +17,14 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-The configuration for Apache Maven usage itself and projects built with resides 
+The configuration for Apache Maven itself and projects built with it resides 
 in a number of places: 
 
 ## `MAVEN_OPTS` environment variable:
 
 This variable contains parameters used to start up the JVM running Maven and
 can be used to supply additional options to it. E.g. JVM memory
-settings could be defined with the value `-Xms256m -Xmx512m`.
+settings can be defined with the value `-Xms256m -Xmx512m`.
 
 ## `MAVEN_ARGS` environment variable:
 
@@ -34,7 +34,7 @@ CLI arguments. E.g., options and goals could be defined with the value
 
 ## `settings.xml` file:
 
-Located in USER_HOME/.m2 the settings files is designed to contain any
+Located in USER_HOME/.m2, the settings files is designed to contain any
 configuration for Maven usage across projects.
 
 ## `.mvn` directory:
@@ -47,17 +47,17 @@ Located within the project's **top level directory**, the files
 
 contain project specific configuration for running Maven.
 
-This directory is part of the project and may be checked in into your version control.
+This directory is part of the project and may be checked into version control.
 
 ### `.mvn/extensions.xml` file:
 
 The old way (up to Maven 3.2.5) was to create a jar (must be shaded if you have other dependencies) which contains the extension and put 
 it manually into the `${MAVEN_HOME}/lib/ext` directory. This means you had to change the Maven installation. The consequence was that everyone
-who likes to use this needed to change it’s installation and makes the on-boarding for a developer much more inconvenient. The other 
+who likes to use this needed to change its installation and on-boarding a developer was more inconvenient. The other 
 option was to give the path to the jar on command line via `mvn -Dmaven.ext.class.path=extension.jar`. This has the drawback giving those 
-options to your Maven build every time you are calling Maven. Not very convenient as well.
+options to your Maven build every time you call Maven. Not very convenient as well.
 
-From now on this can be done much more simpler and in a more Maven like way. So you can define an `.mvn/extensions.xml` file which looks like the following:
+From now on this can be done much more simpler and more Maven like way. Define an `.mvn/extensions.xml` file which looks like the following:
 
 ```xml
 <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -70,20 +70,20 @@ From now on this can be done much more simpler and in a more Maven like way. So 
 </extensions>
 ```
 
-Now you can simply use an extension by defining the usual maven coordinates groupId, artifactId, version as any other artifact. Furthermore all transitive dependencies of those extensions will automatically being downloaded from your repository. So no need to create a shaded artifact anymore.
+Now you can simply use an extension by defining the usual maven coordinates groupId, artifactId, version as any other artifact. Furthermore, all transitive dependencies of those extensions will automatically being downloaded from your repository. So no need to create a shaded artifact anymore.
 
 ### `.mvn/maven.config` file:
 
-It’s really hard to define a general set of options for calling the maven command line. Starting with Maven 3.3.1+, this can be solved by 
-putting this 
-options to a script but this can now simple being done by defining `.mvn/maven.config` file which contains the 
+It’s really hard to define a general set of options for calling the maven command line. Starting with Maven 3.3.1+, this could be solved by 
+putting these 
+options into a script, but this can now simply be done by defining `.mvn/maven.config` file which contains the 
 configuration options for the `mvn` command line. 
 
-For example things like `-T3 -U --fail-at-end`. So you only have to call Maven just by using `mvn 
+For example things like `-T3 -U --fail-at-end`. So you only have to call Maven by using `mvn 
 clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call. 
-The `.mvn/maven.config` is located in the project's top level `.mvn` directory also works if in the root of a multi module build.
+The `.mvn/maven.config` is located in the project's top level `.mvn` directory and also works in the root of a multi module build.
 
-**NOTICE** starting with Maven **3.9.0** each single argument must be put in new line, so for the mentioned example your file will have content like:
+**NOTICE** starting with Maven **3.9.0** each single argument must be put on a new line, so for the mentioned example your file will have content like:
 
 ```
 -T3
