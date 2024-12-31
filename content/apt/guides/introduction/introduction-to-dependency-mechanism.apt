@@ -38,23 +38,10 @@ Introduction to the Dependency Mechanism
 
   Learn more about:
 
- * {{{Transitive_Dependencies}Transitive Dependencies}}
+%{toc|section=0|fromDepth=2|toDepth=3}
 
-   * Excluded/Optional Dependencies
 
- * {{{Dependency_Scope}Dependency Scope}}
-
- * {{{Dependency_Management}Dependency Management}}
-
-   * {{{Importing_Dependencies}Importing Dependencies}}
-
-   * {{{bill-of-materials-bom-poms}Bill of Materials (BOM) POMs}}
-
- * {{{System_Dependencies}System Dependencies}}
-
- []
-
-* {Transitive Dependencies}
+* Transitive Dependencies
 
  Maven avoids the need to discover and
  specify the libraries that your own dependencies require by including transitive dependencies automatically.
@@ -143,7 +130,7 @@ Introduction to the Dependency Mechanism
  provides {{{/plugins/maven-dependency-plugin/analyze-mojo.html}dependency:analyze}} plugin goal
  for analyzing the dependencies: it helps making this best practice more achievable.
 
-* {Dependency Scope}
+* Dependency Scope
 
  Dependency scope is used to limit the transitivity of a dependency and to determine when a dependency is
  included in a classpath.
@@ -209,7 +196,7 @@ Introduction to the Dependency Mechanism
  library, both must be available at compile time. For this reason, compile time dependencies remain
  as compile scope even when they are transitive.
 
-* {Dependency Management}
+* Dependency Management
 
  The dependency management section is a mechanism for centralizing dependency information. When you have
  a set of projects that inherit from a common parent, it's possible to put all information about the dependency
@@ -481,7 +468,7 @@ Introduction to the Dependency Mechanism
  The reference information about the dependency management tags is available from the
  {{{../../ref/current/maven-model/maven.html#class_DependencyManagement}project descriptor reference}}.
 
-** {Importing Dependencies}
+** Importing Dependencies
 
  The examples in the previous section describe how to specify managed dependencies through inheritance. However,
  in larger projects it may be impossible to accomplish this since a project can only inherit from a single parent.
@@ -639,7 +626,7 @@ Introduction to the Dependency Mechanism
  This process is recursive. For example, if X imports another POM, Q, when Z is processed it will simply appear that all
  of Q's managed dependencies are defined in X.
 
-** {Bill of Materials (BOM) POMs}
+** Bill of Materials (BOM) POMs
 
  Imports are most effective when used for defining a "library" of related artifacts that are generally part of a
  multiproject build. It is fairly common for one project to use one or more artifacts from these libraries.
@@ -869,7 +856,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-* {System Dependencies}
+* System Dependencies
 
  <<<Important note: This is deprecated.>>>
 

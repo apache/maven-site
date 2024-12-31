@@ -77,6 +77,10 @@ Guide to Testing Development Versions of Plugins
     <pluginRepository>
       <id>apache.snapshots</id>
       <url>https://repository.apache.org/snapshots/</url>
+      <snapshots>
+          <enabled>true</enabled>
+          <updatePolicy>interval:15</updatePolicy>
+      </snapshots>
     </pluginRepository>
   </pluginRepositories>
   ...

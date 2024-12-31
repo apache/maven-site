@@ -39,7 +39,7 @@
 
  * {{{$prefix/guide-using-extensions.html}Using Extensions}}
 
- * {{{$prefix/guide-building-for-different-environments.html}Building For Different Environments with Maven 2}}
+ * {{{$prefix/guide-building-for-different-environments.html}Building For Different Environments}}
 
  * {{{$prefix/guide-using-toolchains.html}Using Toolchains}}
 

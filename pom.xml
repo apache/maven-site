@@ -77,14 +77,14 @@
     <siteDirectory>${project.basedir}/content</siteDirectory>
     <!-- used by src/xdoc/errors/404.xml.vm as well -->
     <version.maven-fluido-skin>2.0.1</version.maven-fluido-skin>
-    <version.plantuml-maven-plugin>0.2</version.plantuml-maven-plugin>
+    <version.plantuml-maven-plugin>0.3</version.plantuml-maven-plugin>
   </properties>
 
   <dependencies>
     <dependency>
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
-      <version>1.17.2</version>
+      <version>1.18.3</version>
     </dependency>
   </dependencies>
 
@@ -282,7 +282,7 @@
           <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml</artifactId>
-            <version>1.2024.5</version>
+            <version>1.2024.8</version>
           </dependency>
         </dependencies>
         <executions>

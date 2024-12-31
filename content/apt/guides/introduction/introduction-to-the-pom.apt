@@ -30,43 +30,9 @@
 
 Introduction to the POM
 
-  * {{{./introduction-to-the-pom.html#What_is_a_POM}What is a POM}}?
+%{toc|section=0|fromDepth=2|toDepth=3}
 
-  * {{{./introduction-to-the-pom.html#Super_POM}Super POM}}
-
-  * {{{./introduction-to-the-pom.html#Minimal_POM}Minimal POM}}
-
-  * {{{./introduction-to-the-pom.html#Project_Inheritance}Project Inheritance}}
-
-    * {{{./introduction-to-the-pom.html#Example_1}Example 1}}
-
-    * {{{./introduction-to-the-pom.html#Example_2}Example 2}}
-
-    []
-
-  * {{{./introduction-to-the-pom.html#Project_Aggregation}Project Aggregation}}
-
-    * {{{./introduction-to-the-pom.html#Example_3}Example 3}}
-
-    * {{{./introduction-to-the-pom.html#Example_4}Example 4}}
-
-    []
-
-  * {{{./introduction-to-the-pom.html#Project_Inheritance_vs_Project_Aggregation}Project Inheritance vs Project Aggregation}}
-
-    * {{{./introduction-to-the-pom.html#Example_5}Example 5}}
-
-    []
-
-  * {{{./introduction-to-the-pom.html#Project_Interpolation}Project Interpolation and Variables}}
-
-    * {{{./introduction-to-the-pom.html#Available_Variables}Available Variables}}
-
-    []
-
-  []
-
-* {What is a POM}?
+* What is a POM?
 
  A Project Object Model or POM is the fundamental unit of work in Maven. It is an XML file that contains information
  about the project and configuration details used by Maven to build the project. It contains default values for most projects.
@@ -81,7 +47,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-* {Super POM}
+* Super POM
 
  The Super POM is Maven's default POM. All POMs extend the Super POM unless explicitly set, meaning the configuration specified
  in the Super POM is inherited by the POMs you created for your projects.
@@ -90,7 +56,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-* {Minimal POM}
+* Minimal POM
 
  The minimum requirement for a POM are the following:
 
@@ -133,7 +99,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-* {Project Inheritance}
+* Project Inheritance
 
  Elements in the POM that are merged are the following:
 
@@ -156,7 +122,7 @@ Introduction to the POM
 
  []
 
-** {Example 1}
+** Example 1
 
 *** The Scenario
 
@@ -233,7 +199,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-** {Example 2}
+** Example 2
 
 *** The Scenario
 
@@ -272,7 +238,7 @@ Introduction to the POM
 
  As the name suggests, it's the relative path from the module's <<<pom.xml>>> to the parent's <<<pom.xml>>>.
 
-* {Project Aggregation}
+* Project Aggregation
 
  Project Aggregation is similar to {{{Project_Inheritance}Project Inheritance}}. But
  instead of specifying the parent POM from the module, it specifies the modules from the parent POM. By doing so, the
@@ -287,7 +253,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-** {Example 3}
+** Example 3
 
 *** The Scenario
 
@@ -356,7 +322,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-** {Example 4}
+** Example 4
 
 *** The Scenario
 
@@ -391,7 +357,7 @@ Introduction to the POM
 </project>
 +-----+
 
-* {Project Inheritance vs Project Aggregation}
+* Project Inheritance vs Project Aggregation
 
  If you have several Maven projects, and they all have similar configurations, you can refactor your projects by pulling
  out those similar configurations and making a parent project. Thus, all you have to do is to let your Maven projects
@@ -415,7 +381,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-** {Example 5}
+** Example 5
 
 *** The Scenario
 
@@ -497,7 +463,7 @@ Introduction to the POM
 
  {{{./introduction-to-the-pom.html}[top]}}
 
-* {Project Interpolation} and Variables
+* Project Interpolation and Variables
 
   One of the practices that Maven encourages is <don't repeat yourself>. However, there are circumstances where you will need to use the same value in several different locations.
   To assist in ensuring the value is only specified once, Maven allows you to use both your own and pre-defined variables in the POM.
@@ -510,7 +476,7 @@ Introduction to the POM
 
   One factor to note is that these variables are processed <after> inheritance as outlined above. This means that if a parent project uses a variable, then its definition in the child, not the parent, will be the one eventually used.
 
-** {Available Variables}
+** Available Variables
 
 *** Project Model Variables
 
