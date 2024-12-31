@@ -32,18 +32,18 @@ under the License.
 rectangle parent {
 }
 
-rectangle subprojectA {
+rectangle "subproject-a" as subprojectA {
 }
 
-rectangle subprojectB {
+rectangle "subproject-b" as subprojectB {
 }
-rectangle subprojectC {
-}
-
-rectangle subprojectC1 {
+rectangle "subproject-c" as subprojectC {
 }
 
-rectangle subprojectC2 {
+rectangle "subproject-c-1" as subprojectC1 {
+}
+
+rectangle "subproject-c-2" as subprojectC2 {
 }
 
 
