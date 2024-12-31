@@ -1995,29 +1995,29 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  ...
+  <!-- ... -->
   <profiles>
     <profile>
       <id>test</id>
       <activation>
         <activeByDefault>false</activeByDefault>
-        <jdk>1.5</jdk>
+        <jdk>21</jdk>
         <os>
-          <name>Windows XP</name>
+          <name>Windows 10</name>
           <family>Windows</family>
-          <arch>x86</arch>
-          <version>5.1.2600</version>
+          <arch>amd64</arch>
+          <version>10.0.19045.5247</version>
         </os>
         <property>
           <name>sparrow-type</name>
           <value>African</value>
         </property>
         <file>
-          <exists>${basedir}/file2.properties</exists>
-          <missing>${basedir}/file1.properties</missing>
+          <exists>${project.basedir}/file2.properties</exists>
+          <missing>${project.basedir}/file1.properties</missing>
         </file>
       </activation>
-      ...
+      <!-- ... -->
     </profile>
   </profiles>
 </project>
@@ -2064,7 +2064,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
-  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{basedir\}>>>, System properties and request properties.
+  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{project.basedir\}>>>, System properties and request properties.
 
   []
 
