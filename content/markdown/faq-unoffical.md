@@ -1084,7 +1084,7 @@ To do so, simply add the following fragment to your pom:
 Now, to specify a different output directory at runtime simply use the directory property as a mvn command line parameter;
 {code}mvn -Ddirectory=tmp package
 ```
-This will send the build's output files to the $\{basedir}/tmp directory.
+This will send the build's output files to the $\{project.basedir}/tmp directory.
 
 _POM, Command Line_
 

@@ -271,32 +271,32 @@ certain circumstances; those circumstances are specified via an
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  ...
+  <!-- ... -->
   <profiles>
     <profile>
       <id>test</id>
       <activation>
         <activeByDefault>false</activeByDefault>
-        <jdk>1.5</jdk>
+        <jdk>21</jdk>
         <os>
-          <name>Windows XP</name>
+          <name>Windows 10</name>
           <family>Windows</family>
-          <arch>x86</arch>
-          <version>5.1.2600</version>
+          <arch>amd64</arch>
+          <version>10.0.19045.5247</version>
         </os>
         <property>
           <name>mavenVersion</name>
-          <value>2.0.3</value>
+          <value>3.9.9</value>
         </property>
         <file>
-          <exists>${basedir}/file2.properties</exists>
-          <missing>${basedir}/file1.properties</missing>
+          <exists>${project.basedir}/file2.properties</exists>
+          <missing>${project.basedir}/file1.properties</missing>
         </file>
       </activation>
-      ...
+      <!-- ... -->
     </profile>
   </profiles>
-  ...
+  <!-- ... -->
 </settings>
 ```
 
@@ -306,7 +306,7 @@ all are required at once.
 -   **jdk**: `activation` has a built in, Java-centric check in the
     `jdk` element. This will activate if the test is run under a jdk
     version number that matches the prefix given. In the above example,
-    `1.5.0_06` will match. Ranges are also supported.
+    `21.0.1` will match. Ranges are also supported.
     See the
     [maven-enforcer-plugin](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
     for more details about supported ranges.
