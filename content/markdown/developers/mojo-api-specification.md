@@ -18,7 +18,8 @@ under the License.
 -->
 
 <head>
-    <meta name="author" content="John Casey" />
+   <title>Mojo API Specification</title>
+   <meta name="author" content="John Casey" />
 </head>
 
 # Mojo API Specification (Maven 3)

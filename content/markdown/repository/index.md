@@ -18,6 +18,7 @@ under the License.
 -->
 
 <head>
+   <title>Maven Central Repository</title>
    <meta name="author" content="Brett Porter" />
    <meta name="author" content="Hervé Boutemy" />
 </head>
