@@ -78,7 +78,7 @@ The sources for this site are available in a distinct Git repository:
 
 | Content                |                                                 Repository                                                 | Mirror                                          |                              Issues                              |
 |:-----------------------|:----------------------------------------------------------------------------------------------------------:|:------------------------------------------------|:----------------------------------------------------------------:|
-| [Apache Maven Site](/) | [`https://gitbox.apache.org/repos/asf/maven-site.git`](https://gitbox.apache.org/repos/asf/maven-site.git) | [GitHub](https://github.com/apache/maven-site/) | [JIRA MNGSITE](https://issues.apache.org/jira/projects/MNGSITE/) |
+| [Apache Maven Site](/) | [`https://gitbox.apache.org/repos/asf/maven-site.git`](https://gitbox.apache.org/repos/asf/maven-site.git) | [GitHub](https://github.com/apache/maven-site/) | [GitHub Issues](https://github.com/apache/maven-site/issues/) |
 
 ## Maven Core
 
