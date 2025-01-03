@@ -21,9 +21,8 @@ This page lists some of the companies that provide support and training for Apac
 
 The ASF does not endorse any of the organisations listed on this page nor any services that they may provide.
 
-If you would like to add your company to this page, feel free to do so. You will need to create a patch or a pull request:
+If you would like to add your company to this page, feel free to do so. You will need to create a pull request:
 
-* [Attach a patch in a Jira issue](https://issues.apache.org/jira/browse/MNGSITE)
 * [Create a pull request](https://github.com/apache/maven-site)
 
 The page to modify is: content/markdown/support-and-training.md

@@ -47,7 +47,7 @@ under the License.
         <li>You followed a link from another site that pointed to this page.</li>
       </ul>
 
-      <p>If you came to this page by following a broken link on our site, you can report the <a href="https://issues.apache.org/jira/browse/MNGSITE">problem</a>.</p>
+      <p>If you came to this page by following a broken link on our site, you can report the <a href="https://github.com/apache/maven-site/issues">problem</a>.</p>
 
     </section>
   </body>
