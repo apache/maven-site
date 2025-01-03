@@ -105,6 +105,12 @@ So for example if you put the following JVM options into the `.mvn/jvm.config` f
 
 You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 
+
+### `.mavenrc` file:
+
+Located in `$HOME/.mavenrc` (or `%HOME%\mavenrc_pre.bat` on Windows) this file defines environment variables and system properties used when Maven builds the project. With this users can define variables in either the settings.xml or pom.xml and have them read the property that was set by the .mavenrc file.
+
+
 ## Other guides
 
 The following guides contain further information to specific configuration aspects:
