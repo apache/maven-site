@@ -30,7 +30,7 @@ issue management systems depending on which component is involved:
 
 * Maven "core": <https://issues.apache.org/jira/browse/MNG>
 
-* Maven Website: <https://issues.apache.org/jira/browse/MNGSITE>
+* Maven Website: <https://github.com/apache/maven-site/issues>
 
 * Maven Plugins: Please refer to the [Available Plugins](./plugins/index.html) page
 

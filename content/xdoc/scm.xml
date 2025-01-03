@@ -98,7 +98,7 @@ repo start master --all</pre>
               <td><a href="/">Apache Maven Site</a></td>
               <td><code><a href="https://gitbox.apache.org/repos/asf/maven-site.git">https://gitbox.apache.org/repos/asf/maven-site.git</a></code></td>
               <td><a href="https://github.com/apache/maven-site/">(GitHub mirror)</a></td>
-              <td><a href="https://issues.apache.org/jira/projects/MNGSITE/">Jira MNGSITE</a></td>
+              <td><a href="https://github.com/apache/maven-site/issues">GitHub Issues</a></td>
             </tr>
           </table>
         </p>
