@@ -135,15 +135,15 @@ POM Reference
   * <<artifactId>>:
   The artifactId is generally the name that the project is known by. Although the groupId is
   important, people within the group will rarely mention the groupId in discussion (they are often all be the
-  same ID, such as the {{{http://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
+  same ID, such as the {{{https://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
   It, along with the groupId, creates a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
-  the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
+  the artifact's relative path within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
 
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denotes a single project but
-  they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
+  it dopes not indicate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
