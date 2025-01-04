@@ -28,7 +28,7 @@ If you would like to add your company to this page, feel free to do so. You will
 
 The page to modify is: `content/markdown/support-and-training.md`
 
-There aren't any hard and fast rules about what is acceptable but please keep your entry to a few lines, a link and a
+There aren't any hard and fast rules about what is acceptable, but please keep your entry to a few lines, a link and a
 small logo.
 
 Remember to add you company to both sections if you provide support and training.
