@@ -1,4 +1,5 @@
 # Maven Security
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 ## Security Model
 
 The purpose of Maven is to perform the actions defined in the supplied
@@ -50,8 +52,8 @@ Versions Affected:
 - Apache Maven 3.6.3 and earlier
 
 Description: More and more repositories use HTTPS nowadays, but this hasn't always been the case. This means that Maven Central contains POMs with custom repositories that refer to a URL over HTTP.
-This makes downloads via such repository a target for a MITM attack. 
-At the same time, developers are probably not aware that for some downloads an insecure URL is being used. 
+This makes downloads via such repository a target for a MITM attack.
+At the same time, developers are probably not aware that for some downloads an insecure URL is being used.
 Because uploaded POMs to Maven Central are immutable, a change for Maven was required.
 To solve this, we extended the mirror configuration with `<blocked>` parameter,
 and we added a new `external:http:*` mirror selector (like existing `external:*`), meaning "any external URL using HTTP".\
@@ -73,10 +75,10 @@ Versions Affected:
 - Maven Plugin Plugin 3.0 to 3.5.1
 
 Description: As part of a broader research, the Snyk Security Research Team discovered
-an arbitrary file write generic vulnerability, that can be achieved using a 
-specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
-path traversal filenames. So when the filename gets concatenated to the 
-target extraction directory, if the extraction tool used does not make 
+an arbitrary file write generic vulnerability, that can be achieved using a
+specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds
+path traversal filenames. So when the filename gets concatenated to the
+target extraction directory, if the extraction tool used does not make
 sufficient checks, the final path ends up outside of the target directory.
 The affected plugins use plexus-archiver to unpack dependencies to disk
 and have been identified as potential triggers for exposing the vulnerability
@@ -94,8 +96,8 @@ Vendor: The Apache Software Foundation
 
 Versions Affected:
 
--   Apache Maven 3.0.4
--   Apache Maven Wagon 2.1, 2.2, 2.3
+- Apache Maven 3.0.4
+- Apache Maven Wagon 2.1, 2.2, 2.3
 
 Description: Apache Maven 3.0.4 (with Apache Maven Wagon 2.1) has
 introduced a non-secure SSL mode by default. This mode disables all SSL
@@ -118,16 +120,16 @@ Vendor: The Apache Software Foundation
 
 Versions Affected:
 
--   Apache Maven Wagon WebDAV Provider 2.12 and earlier
+- Apache Maven Wagon WebDAV Provider 2.12 and earlier
 
-Description: http/conn/ssl/AbstractVerifier.java in Apache Commons HttpClient 
-before 4.2.3 does not properly verify that the server hostname matches a 
-domain name in the subject's Common Name (CN) or subjectAltName field of the 
-X.509 certificate, which allows man-in-the-middle attackers to spoof SSL 
-servers via a certificate with a subject that specifies a common name in a 
+Description: http/conn/ssl/AbstractVerifier.java in Apache Commons HttpClient
+before 4.2.3 does not properly verify that the server hostname matches a
+domain name in the subject's Common Name (CN) or subjectAltName field of the
+X.509 certificate, which allows man-in-the-middle attackers to spoof SSL
+servers via a certificate with a subject that specifies a common name in a
 field that is not the CN field.
 
 [CVE-2012-6153](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2012-6153)
 
-Users of this provider are recommended to upgrade to [Apache Maven Wagon :: 
+Users of this provider are recommended to upgrade to [Apache Maven Wagon ::
 WebDAV Provider 3.0.0](./download.cgi)

@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 # Release Notes &#x2013; Maven 3.5.0-beta-1
@@ -183,99 +183,52 @@ The full list of changes can be found in our [issue management system][4].
 See [complete release notes for all versions][5]
 
 [0]: ../../download.html
-
 [1]: ../../plugins/index.html
-
 [2]: http://maven.apache.org/
-
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12339664&amp;styleName=Text
-
 [5]: ../../docs/history.html
-
 [maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
-
 [maven-resources-plugin]: /enforcer/maven-resources-plugin/
-
 [maven-aether-provider]: /ref/3.5.0-alpha-1/maven-aether-provider/
-
 [maven-compat]: /ref/3.5.0-alpha-1/maven-compat/
-
 [maven-resolver]: /resolver/
-
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507
-
 [MNG-5607]: https://issues.apache.org/jira/browse/MNG-5607
-
 [MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
-
 [MNG-5815]: https://issues.apache.org/jira/browse/MNG-5815
-
 [MNG-5823]: https://issues.apache.org/jira/browse/MNG-5823
-
 [MNG-5836]: https://issues.apache.org/jira/browse/MNG-5836
-
 [MNG-5852]: https://issues.apache.org/jira/browse/MNG-5852
-
 [MNG-5878]: https://issues.apache.org/jira/browse/MNG-5878
-
 [MNG-5895]: https://issues.apache.org/jira/browse/MNG-5895
-
 [MNG-5904]: https://issues.apache.org/jira/browse/MNG-5904
-
 [MNG-5963]: https://issues.apache.org/jira/browse/MNG-5963
-
 [MNG-6001]: https://issues.apache.org/jira/browse/MNG-6001
-
 [MNG-6003]: https://issues.apache.org/jira/browse/MNG-6003
-
 [MNG-6014]: https://issues.apache.org/jira/browse/MNG-6014
-
 [MNG-6017]: https://issues.apache.org/jira/browse/MNG-6017
-
 [MNG-6022]: https://issues.apache.org/jira/browse/MNG-6022
-
 [MNG-6030]: https://issues.apache.org/jira/browse/MNG-6030
-
 [MNG-6057]: https://issues.apache.org/jira/browse/MNG-6057
-
 [MNG-6078]: https://issues.apache.org/jira/browse/MNG-6078
-
 [MNG-6090]: https://issues.apache.org/jira/browse/MNG-6090
-
 [MNG-6092]: https://issues.apache.org/jira/browse/MNG-6092
-
 [MNG-6093]: https://issues.apache.org/jira/browse/MNG-6093
-
 [MNG-6110]: https://issues.apache.org/jira/browse/MNG-6110
-
 [MNG-6115]: https://issues.apache.org/jira/browse/MNG-6115
-
 [MNG-6140]: https://issues.apache.org/jira/browse/MNG-6140
-
 [MNG-6170]: https://issues.apache.org/jira/browse/MNG-6170
-
 [MNG-6173]: https://issues.apache.org/jira/browse/MNG-6173
-
 [MNG-6176]: https://issues.apache.org/jira/browse/MNG-6176
-
 [MNG-6177]: https://issues.apache.org/jira/browse/MNG-6177
-
 [MNG-6179]: https://issues.apache.org/jira/browse/MNG-6179
-
 [MNG-6180]: https://issues.apache.org/jira/browse/MNG-6180
-
 [MNG-6181]: https://issues.apache.org/jira/browse/MNG-6181
-
 [MNG-6182]: https://issues.apache.org/jira/browse/MNG-6182
-
 [MNG-6183]: https://issues.apache.org/jira/browse/MNG-6183
-
 [MNG-6189]: https://issues.apache.org/jira/browse/MNG-6189
-
 [MNG-6190]: https://issues.apache.org/jira/browse/MNG-6190
-
 [MNG-6191]: https://issues.apache.org/jira/browse/MNG-6191
-
 [MNG-6192]: https://issues.apache.org/jira/browse/MNG-6192
-
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
+

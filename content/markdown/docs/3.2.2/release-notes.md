@@ -1,25 +1,25 @@
 # Release Notes &#x2013; Maven 3.2.2
 
 <!-- 
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 ## Maven 3.2.2
@@ -74,34 +74,34 @@ Multiple profile activation conditions are now ANDed instead of ORed. We believe
 
 ### Support resolution of Import Scope POMs from Repo that contains a ${parameter} ([MNG-5639][MNG-5639])
 
-This feature helps support the pattern where many streams of development are setup with an individually sandboxed repository holding specific version of several shared components. A repository configuration might use the pattern ${nexus.baseurl}/content/groups/${stream.name} where the properties are set in settings.xml file. 
+This feature helps support the pattern where many streams of development are setup with an individually sandboxed repository holding specific version of several shared components. A repository configuration might use the pattern ${nexus.baseurl}/content/groups/${stream.name} where the properties are set in settings.xml file.
 
 ### Update maven-plugin-plugin:descriptor default binding from generate-resources phase to process-classes ([MNG-5346][MNG-5346])
 
 Now when you use create plugins that strictly use annotation processing to generate the descriptor, you can avoid the confusing configuration previously required. This is what you typically needed to include in order to run the descriptor generator on compiled classes and avoid errors.
 
 ```
-    <pluginManagement>
-      <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-plugin-plugin</artifactId>
-          <version>${mavenPluginPluginVersion}</version>
-          <configuration>
-            <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
-          </configuration>
-          <executions>
-            <execution>
-              <id>mojo-descriptor</id>
-              <phase>process-classes</phase>
-              <goals>
-                <goal>descriptor</goal>
-              </goals>
-            </execution>
-          </executions>
-        </plugin>
-      </plugins>
-    </pluginManagement>
+<pluginManagement>
+  <plugins>
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-plugin-plugin</artifactId>
+      <version>${mavenPluginPluginVersion}</version>
+      <configuration>
+        <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
+      </configuration>
+      <executions>
+        <execution>
+          <id>mojo-descriptor</id>
+          <phase>process-classes</phase>
+          <goals>
+            <goal>descriptor</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</pluginManagement>
 ```
 
 This is no longer required and can be omitted when you use version 3.2+ of the maven-plugin-plugin.
@@ -129,5 +129,5 @@ See [complete release notes for all versions][5]
 [MNG-5452]: https://issues.apache.org/jira/browse/MNG-5452
 [MNG-5639]: https://issues.apache.org/jira/browse/MNG-5639
 [MNG-5647]: https://issues.apache.org/jira/browse/MNG-5647
-
 [mvel]: http://mvel.codehaus.org
+

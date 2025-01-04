@@ -1,4 +1,5 @@
 # Zip Slip Vulnerability
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,33 +18,33 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 As part of [a broader research](https://snyk.io/research/zip-slip-vulnerability),
 the Snyk Security Research Team discovered
-an arbitrary file write generic vulnerability, that can be achieved using a 
-specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds 
-path traversal filenames. So when the filename gets concatenated to the 
-target extraction directory, if the extraction tool used does not make 
+an arbitrary file write generic vulnerability, that can be achieved using a
+specially crafted zip (or bzip2, gzip, tar, xz, war) archive, that holds
+path traversal filenames. So when the filename gets concatenated to the
+target extraction directory, if the extraction tool used does not make
 sufficient checks, the final path ends up outside of the target directory.
 
-The Apache Maven team has been informed because the plexus-archiver library 
-did not make sufficient checks and it is a library used by most of the 
+The Apache Maven team has been informed because the plexus-archiver library
+did not make sufficient checks and it is a library used by most of the
 packaging plugins.
 Affected versions of plexus-archiver are [,3.4]+[3.5], fixed versions are 3.4.1 & 3.6.0,
 with issue management [plexus-archiver #87](https://github.com/codehaus-plexus/plexus-archiver/pull/87) and
 Snyk vulnerability report [SNYK-JAVA-ORGCODEHAUSPLEXUS-31680](https://snyk.io/vuln/SNYK-JAVA-ORGCODEHAUSPLEXUS-31680)
-
 
 ## What parts of Maven are vulnerable?
 
 Apache Maven itself is not vulnerable, since Maven doesn't unpack by itself:
 unpacking actions are done by plugins.
 
-Reading malicious archives in memory is also not an issue, only when 
-unpacking such archives to disk may cause issues, however in general 
+Reading malicious archives in memory is also not an issue, only when
+unpacking such archives to disk may cause issues, however in general
 Maven plugins don't unpack archives.
 
 The issue is regarding malicious artifacts and we haven't been able to create
-such artifacts with our Maven plugins, hence there's no additional action 
+such artifacts with our Maven plugins, hence there's no additional action
 required to prevent the creation of malicious archives at this level.
 
 The following plugins use plexus-archiver to unpack dependencies to disk
@@ -96,7 +97,6 @@ which versions contain the fixed and the link to the corresponding issue.
   </tr>
 </table>
 
-
 Apache Ant up to 1.9.11 has the same issue with its unzip task: it will be fixed in 1.9.12 <a href="https://github.com/apache/ant/commit/857095da5153fd18504b46f276d84f1e76a66970">857095da5153fd18504b46f276d84f1e76a66970</a>.
 
 Then following Maven plugins using Ant are affected:
@@ -124,7 +124,7 @@ Then following Maven plugins using Ant are affected:
 	<td><a href="/plugin-tools/maven-plugin-plugin/examples/ant-mojo.html">Ant Mojo Wrapper</a></td>
   </tr>
 </table>
-	 
+
 Following plugins use plexus-archiver but are not affected since they only _create_ archives:
 
 - maven-acr-plugin
@@ -140,7 +140,7 @@ Following plugins use plexus-archiver but are not affected since they only _crea
 ## When are you affected by this vulnerability?
 
 The vulnerability is like a Trojan Horse, the malicious archive must first enter the system, normally achieved
-with a downloaded of a dependency. Once downloaded there's no direct danger, the user must take some specific 
+with a downloaded of a dependency. Once downloaded there's no direct danger, the user must take some specific
 actions before becoming a victim. This only happens when all of the following criteria are met:
 
 - There's an archive available in a repository that is malicious.

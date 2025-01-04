@@ -7,7 +7,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -118,7 +118,7 @@ you'll have to explicitly force the values in the compiler plugin configuration:
   </build>
   <!-- ... -->
 </project>
-``` 
+```
 
 ## Is it possible to create my own directory structure?
 
@@ -327,7 +327,4 @@ You could use the following search engines:
 
 With MNG-5940 the release profile goal of the Maven Javadoc Plugin has been changed to `jar-no-fork`.
 Revise your configuration to avoid duplicate JAR upload.
-
-
-
 

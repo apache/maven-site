@@ -7,7 +7,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -92,21 +92,21 @@ result:
 The usual cause of this is configuring maven-project-info-reports plugin and leaving out the 'index' report.
 
 ```
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-project-info-reports-plugin</artifactId>
-        <reportSets>
-           <reportSet>
-              <reports>
-                 <report>index</report>                <--------- here!
-                 <report>dependencies</report>
-                 <report>cim</report>
-                 <report>scm-list</report>
-                 <report>issue-tracking</report>
-              </reports>
-           </reportSet>
-        </reportSets>
-      </plugin>
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-project-info-reports-plugin</artifactId>
+  <reportSets>
+     <reportSet>
+        <reports>
+           <report>index</report>                <--------- here!
+           <report>dependencies</report>
+           <report>cim</report>
+           <report>scm-list</report>
+           <report>issue-tracking</report>
+        </reports>
+     </reportSet>
+  </reportSets>
+</plugin>
 ```
 
 ### How do I resolve the "< plugin name > does not exist or no valid version" error?
@@ -223,7 +223,7 @@ public class MyMojo
     }
   }
 }
-``` 
+```
 
 ### Does the v4.0.0 POM include a < versions/ > element?
 
@@ -631,7 +631,7 @@ _Sites & Reporting, Plugins and Lifecycle, Command Line_
 
 ### How do I deploy my binary during the deploy phase?
 
-``` xml
+```xml
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-assembly-plugin</artifactId>
@@ -668,7 +668,7 @@ Configure the maven-jar-plugin and add your main class.
     </archive>
   </configuration>
 </plugin>
-``` 
+```
 
 ### How do I install artifacts to a remote repository?
 
@@ -831,7 +831,8 @@ Run the mvn command with `-Dmaven.test.skip=true` argument.
 
 Also
 see [How do I run a build/package/deploy process without waiting for reports or unit tests, so that I can quickly deploy to an integration box?](
-#How_do_I_run_a_process_without_waiting_for_reports_or_unit_tests.3F).
+
+# How_do_I_run_a_process_without_waiting_for_reports_or_unit_tests.3F).
 
 _Sites & Reporting, General_
 
@@ -1039,7 +1040,7 @@ You need to specify the `<compilerVersion>` element to 1.3, i.e.
   </build>
   <!--...-->
 </project>
-``` 
+```
 
 ### How do I change the default remote repository?
 
@@ -1982,6 +1983,7 @@ So there is a significant difference between the copying the file and using depl
 ### When I run `mvn release:prepare`, I get a build failure saying "Unable to tag SCM, File (...) already exists".
 
 When I run `mvn release:prepare`, I get a build failure saying
+
 > Unable to tag SCM, File (...) already exists
 
 However, the tag does not exist. What is wrong?
