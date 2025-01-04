@@ -143,7 +143,7 @@ POM Reference
 
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denotes a single project but
-  it dopes not indicate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
+  it does not indicate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
