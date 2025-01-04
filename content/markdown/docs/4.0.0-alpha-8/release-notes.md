@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 4.0.0-alpha-8
@@ -44,23 +44,23 @@ This alpha release provides new cornerstone features for the future Maven evolut
 In particular, the POM model which was set in stone to a 4.0.0 version since Maven 2.0, is now able to evolve. For modules that have a packaging which is not POM, the flattened consumer POM is now installed/deployed instead of the main POM, eventually translated back into a 4.0.0 model version for consumer compatibility.  The build POM is also installed / deployed unchanged with `build` classifier. This allows the introduction of the 4.1.0 model which already brings a few improvements.
 
 The full list of changes can be found in our [issue management system][4]. Among those are:
- - switch from [Plexus XML](https://codehaus-plexus.github.io/plexus-xml/) to StAX / [Woodstox](https://github.com/FasterXML/woodstox) for XML parsing
- - support for alternative POM syntaxes
- - introduce a 4.1.0 model version
- - add flexible goal ordering (in 4.1.0 model)
- - allow glob patterns in dependency exclusions
- - support proxy port interpolation in `settings.xml`
- - add support for TRACE logging level (with style "bold,magenta")
- - add model version analysis and downgrade
- - attach the build POM (with `build` clasifier) and simplify the build/consumer implementation
- - add a new BOM packaging
- - trim down the consumer POM
- - expose the rootDirectory for model processing
- - support configuration in `extensions.xml` / `\<extension>` elements (in 4.1.0 model)
- - generic `.uri` suffix to get the URI representation of any file property
- - allow registering Maven core extension in `.m2` directory instead of `MAVEN_HOME`
- - colorize transfer messages
- - the `root` attribute introduced in alpha-7 has been moved to the new 4.1.0 model
+- switch from [Plexus XML](https://codehaus-plexus.github.io/plexus-xml/) to StAX / [Woodstox](https://github.com/FasterXML/woodstox) for XML parsing
+- support for alternative POM syntaxes
+- introduce a 4.1.0 model version
+- add flexible goal ordering (in 4.1.0 model)
+- allow glob patterns in dependency exclusions
+- support proxy port interpolation in `settings.xml`
+- add support for TRACE logging level (with style "bold,magenta")
+- add model version analysis and downgrade
+- attach the build POM (with `build` clasifier) and simplify the build/consumer implementation
+- add a new BOM packaging
+- trim down the consumer POM
+- expose the rootDirectory for model processing
+- support configuration in `extensions.xml` / `\<extension>` elements (in 4.1.0 model)
+- generic `.uri` suffix to get the URI representation of any file property
+- allow registering Maven core extension in `.m2` directory instead of `MAVEN_HOME`
+- colorize transfer messages
+- the `root` attribute introduced in alpha-7 has been moved to the new 4.1.0 model
 
 ## Known Issues
 

@@ -1,4 +1,4 @@
-# History of Maven 
+# History of Maven
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -9,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -19,9 +19,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 <!--
- Allow front-matter here eventually. Just copy Jekyll
- Jason van Zyl
- 12 October 2005
+Allow front-matter here eventually. Just copy Jekyll
+Jason van Zyl
+12 October 2005
 -->
 
 ## History of Maven by Jason van Zyl
@@ -108,3 +108,4 @@ was written by myself with lots of help from Bob McWhirter
 [7]: http://turbine.apache.org/
 [8]: http://www.oreillynet.com/pub/a/network/2005/08/30/ruby-rails-david-heinemeier-hansson.html
 [9]: http://www.ibiblio.org
+

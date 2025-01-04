@@ -9,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -18,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 This page lists some of the companies that provide support and training for Apache Maven.
 
 The ASF does not endorse any of the organisations listed on this page nor any services that they may provide.
@@ -94,15 +95,10 @@ There are several options for training, including traditional classroom courses,
 video training.
 
 [1]: http://takari.io/training.html
-
 [2]: http://takari.io/training-outline.html
-
 [3]: http://takari.io/
-
 [4]: mailto:training@takari.io
-
 [5]: https://www.vogella.com/training/testbuild/maven.html
-
 [6]: https://training.infosupport.com/en/courses/MAVEN/maven-in-practice
-
 [7]: https://www.webagesolutions.com/search?q=Maven
+

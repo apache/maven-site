@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 4.0.0-rc-2
@@ -68,6 +68,7 @@ Contact the extensions' developers team to know their plans regarding supporting
 # Change log
 
 ## Improvements
+
 * [[MNG-5729]](https://issues.apache.org/jira/browse/MNG-5729) Use monotonic time measurements by @gnodet in [#1965](https://github.com/apache/maven/pull/1965)
 * [[MNG-8394]](https://issues.apache.org/jira/browse/MNG-8394) Event bridge and properties fix by @cstamas in [#1937](https://github.com/apache/maven/pull/1937)
 * [[MNG-8403]](https://issues.apache.org/jira/browse/MNG-8403) Maven ITs use maven-executor by @cstamas in [#1940](https://github.com/apache/maven/pull/1940)
@@ -76,6 +77,7 @@ Contact the extensions' developers team to know their plans regarding supporting
 * [[MNG-8419]](https://issues.apache.org/jira/browse/MNG-8419)[[MNG-8424]](https://issues.apache.org/jira/browse/MNG-8424) Too aggressive warning for pre-Maven4 passwords by @cstamas in [#1970](https://github.com/apache/maven/pull/1970)
 
 ## Bug fixes
+
 * IT: Move ITs off maven-shared-utils by @cstamas in [#1941](https://github.com/apache/maven/pull/1941)
 * [[MNG-8389]](https://issues.apache.org/jira/browse/MNG-8389) MavenExReq lacks u/p/i settings file paths by @cstamas in [#1939](https://github.com/apache/maven/pull/1939)
 * [[MNG-8391]](https://issues.apache.org/jira/browse/MNG-8391) Wrong effective model when conflicting values come from parents and profiles by @gnodet in [#1942](https://github.com/apache/maven/pull/1942)
@@ -105,11 +107,13 @@ Contact the extensions' developers team to know their plans regarding supporting
 * [[MNG-8414]](https://issues.apache.org/jira/browse/MNG-8414) The consumer pom should warn if not able to downgrade the model version to 4.0.0 by @gnodet in [#1981](https://github.com/apache/maven/pull/1981)
 
 ## Dependency upgrade
+
 * [[MNG-8420]](https://issues.apache.org/jira/browse/MNG-8420) Bump jlineVersion from 3.27.1 to 3.28.0 by @dependabot in [#1962](https://github.com/apache/maven/pull/1962)
 * [[MNG-8430]](https://issues.apache.org/jira/browse/MNG-8430) Resolver 2.0.5 by @cstamas in [#1975](https://github.com/apache/maven/pull/1975)
 * [[MNG-8427]](https://issues.apache.org/jira/browse/MNG-8427) Bump PlexusSecDispatcher to 4.0.3 by @cstamas in [#1959](https://github.com/apache/maven/pull/1959)
 
 ## Full changelog
+
 https://github.com/apache/maven/compare/maven-4.0.0-rc-1...maven-4.0.0-rc-2
 
 See [complete release notes for all versions][5]

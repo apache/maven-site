@@ -1,4 +1,5 @@
 # Maven 3.1.x logging
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -90,3 +91,4 @@ Note: with the introduction of colors in Maven 3.5.0, equivalent work to [`maven
 [8]: https://github.com/apache/maven/blob/master/apache-maven/src/assembly/maven/conf/logging/simplelogger.properties
 [9]: https://maven.apache.org/configure.html
 [10]: https://maven.apache.org/ref/current/maven-slf4j-provider/
+
