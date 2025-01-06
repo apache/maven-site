@@ -138,23 +138,25 @@ For more information, please refer to the [Maven Plugin Harness Wiki](https://cw
 
 ### maven-verifier
 
-maven-verifier tests are run using JUnit, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts.
+maven-verifier tests are run using JUnit.
+They provide a simple class allowing you to launch Maven and assert on its log file and its build artifacts.
 It also provides a `ResourceExtractor`, which extracts a Maven project from the src/test/resources directory into a temporary working directory where you can do tricky stuff with it.
 Follow the [Getting Started](/shared/maven-verifier/getting-started.html) guide to learn more about creating maven-verifier tests.
 
 Maven itself uses maven-verifier to run its core integration tests.
 For more information, see [Creating a Maven Integration Test](https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test).
 
-**Note**: maven-verifier and maven-verifier-plugin sound similar, but are totally different unrelated pieces of code.
-maven-verifier-plugin simply verifies the existence/absence of files on the filesystem.
-You could use it for functional testing, but you may need more features than maven-verifier-plugin provides.
+**Note**: maven-verifier and maven-verifier-plugin sound similar, but are totally different and unrelated pieces of code.
+The maven-verifier-plugin simply verifies the existence/absence of files on the filesystem.
+You could use it for functional testing, but you may need more features than the maven-verifier-plugin provides.
 
 ### maven-invoker-plugin
 
-You can use [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoker-plugin/) to invoke Maven and to provide some BeanShell/Groovy tests.
-Tests written in this way don’t run under JUnit/TestNG; instead, they’re run by Maven itself.
+You can use the [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoker-plugin/) to invoke Maven and to provide some BeanShell/Groovy tests.
+Tests written in this way don’t run with a testing framework.
+Instead, they’re run by Maven itself.
 
-You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/) to see how integration tests are written.
+You can take a look at the [maven-install-plugin](https://github.com/apache/maven-install-plugin/tree/master/src/it) to see how integration tests are written.
 
 ```xml
   ...
