@@ -1,23 +1,23 @@
 <!-- 
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 # Release Notes &#x2013; Maven 3.5.2
@@ -89,10 +89,12 @@ The full list of changes as well as detailed descriptions of same can be found i
 - [MNG-6242][] - No color for maven on Cygwin
 
 ### Sub-tasks
+
 - [MNG-6186][] - switch to improved HawtJNI
 - [MNG-6280][] - ArrayIndexOutOfBoundsException caused by pom.xml with process instructions
 
 ### Improvements
+
 - [MNG-5457][] - Show repository id when downloading or uploading from/to a remote repository
 - [MNG-6025][] - Add a ProjectArtifactsCache similar to PluginArtifactsCache
 - [MNG-6123][] - detect self references in POM and fail fast
@@ -104,10 +106,12 @@ The full list of changes as well as detailed descriptions of same can be found i
 - [MNG-6228][] - Optionality not displayed in dependency tree when run in debug mode
 
 ### New Features
+
 - [MNG-6084][] - Support JSR 250 annotations
 - [MNG-6220][] - Add CLI options to control color output
 
 ### Tasks
+
 - [MNG-6167][] - Clean up dependency mess (reported by dependency:analyze)
 - [MNG-6258][] - Upgrade to Maven Resolver 1.1.0
 
@@ -148,3 +152,4 @@ See [complete release notes for all versions][7]
 [MNG-6242]: https://issues.apache.org/jira/browse/MNG-6242
 [MNG-6258]: https://issues.apache.org/jira/browse/MNG-6258
 [MNG-6280]: https://issues.apache.org/jira/browse/MNG-6280
+

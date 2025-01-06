@@ -1,4 +1,5 @@
 # Overview
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -30,7 +31,7 @@ issue management systems depending on which component is involved:
 
 * Maven "core": <https://issues.apache.org/jira/browse/MNG>
 
-* Maven Website: <https://issues.apache.org/jira/browse/MNGSITE>
+* Maven Website: <https://github.com/apache/maven-site/issues>
 
 * Maven Plugins: Please refer to the [Available Plugins](./plugins/index.html) page
 

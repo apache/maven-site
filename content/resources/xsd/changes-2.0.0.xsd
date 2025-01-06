@@ -120,7 +120,7 @@
         A single action done on the project, during this release.
       </xs:documentation>
         </xs:annotation>
-        <xs:attribute name="dev" type="xs:string" use="required">
+        <xs:attribute name="dev" type="xs:string" default="" use="optional">
           <xs:annotation>
             <xs:documentation source="version">1.0.0+</xs:documentation>
             <xs:documentation source="description">
@@ -194,7 +194,7 @@
             <xs:documentation source="description">fix date</xs:documentation>
           </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="fixedIssues" type="xs:string" use="optional">
+        <xs:attribute name="fixed-issues" type="xs:string" use="optional">
           <xs:annotation>
             <xs:documentation source="version">2.0.0+</xs:documentation>
             <xs:documentation source="description">A comma separated list of fixed issues.</xs:documentation>

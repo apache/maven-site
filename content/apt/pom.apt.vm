@@ -135,15 +135,15 @@ POM Reference
   * <<artifactId>>:
   The artifactId is generally the name that the project is known by. Although the groupId is
   important, people within the group will rarely mention the groupId in discussion (they are often all be the
-  same ID, such as the {{{http://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
+  same ID, such as the {{{https://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
   It, along with the groupId, creates a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
-  the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
+  the artifact's relative path within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
 
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denotes a single project but
-  they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
+  it does not indicate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
@@ -1995,29 +1995,29 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  ...
+  <!-- ... -->
   <profiles>
     <profile>
       <id>test</id>
       <activation>
         <activeByDefault>false</activeByDefault>
-        <jdk>1.5</jdk>
+        <jdk>21</jdk>
         <os>
-          <name>Windows XP</name>
+          <name>Windows 10</name>
           <family>Windows</family>
-          <arch>x86</arch>
-          <version>5.1.2600</version>
+          <arch>amd64</arch>
+          <version>10.0.19045.5247</version>
         </os>
         <property>
           <name>sparrow-type</name>
           <value>African</value>
         </property>
         <file>
-          <exists>${basedir}/file2.properties</exists>
-          <missing>${basedir}/file1.properties</missing>
+          <exists>${project.basedir}/file2.properties</exists>
+          <missing>${project.basedir}/file1.properties</missing>
         </file>
       </activation>
-      ...
+      <!-- ... -->
     </profile>
   </profiles>
 </project>
@@ -2064,7 +2064,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
-  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{basedir\}>>>, System properties and request properties.
+  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{project.basedir\}>>>, System properties and request properties.
 
   []
 

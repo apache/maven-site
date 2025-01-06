@@ -1,4 +1,5 @@
 # Settings Reference
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,7 +18,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
 <!--MACRO{toc|fromDepth=2}-->
 
 ## Introduction
@@ -33,8 +33,8 @@ authentication information.
 
 There are two locations where a `settings.xml` file may live:
 
--   The Maven install: `${maven.home}/conf/settings.xml`
--   A user's install: `${user.home}/.m2/settings.xml`
+- The Maven install: `${maven.home}/conf/settings.xml`
+- A user's install: `${user.home}/.m2/settings.xml`
 
 The former `settings.xml` is also called global settings, the latter
 `settings.xml` is referred to as user settings. If both files exist,
@@ -67,8 +67,8 @@ Here is an overview of the top elements under `settings`:
 The contents of `settings.xml` can be interpolated using the
 following expressions:
 
-1.  `${user.home}` and all other system properties
-2.  `${env.HOME}` etc. for environment variables
+1. `${user.home}` and all other system properties
+2. `${env.HOME}` etc. for environment variables
 
 Note that properties defined in profiles within `settings.xml`
 cannot be used for interpolation.
@@ -81,25 +81,25 @@ Half of the top-level `settings` elements are simple values,
 representing a range of values which describe elements of the build
 system that are active full-time.
 
-    <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-      <localRepository>${user.home}/.m2/repository</localRepository>
-      <interactiveMode>true</interactiveMode>
-      <offline>false</offline>
-      ...
-    </settings>
+        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+          <localRepository>${user.home}/.m2/repository</localRepository>
+          <interactiveMode>true</interactiveMode>
+          <offline>false</offline>
+          ...
+        </settings>
 
--   **localRepository**: This value is the path of this build system's
-    local repository. The default value is
-    `${user.home}/.m2/repository`. This element is especially useful for
-    a main build server allowing all logged-in users to build from a
-    common local repository.
--   **interactiveMode**: `true` if Maven should attempt to interact with
-    the user for input, `false` if not. Defaults to `true`.
--   **offline**: `true` if this build system should operate in offline
-    mode, defaults to `false`. This element is useful for build servers
-    which cannot connect to a remote repository, either because of
-    network setup or security reasons.
+- **localRepository**: This value is the path of this build system's
+  local repository. The default value is
+  `${user.home}/.m2/repository`. This element is especially useful for
+  a main build server allowing all logged-in users to build from a
+  common local repository.
+- **interactiveMode**: `true` if Maven should attempt to interact with
+  the user for input, `false` if not. Defaults to `true`.
+- **offline**: `true` if this build system should operate in offline
+  mode, defaults to `false`. This element is useful for build servers
+  which cannot connect to a remote repository, either because of
+  network setup or security reasons.
 
 ### Plugin Groups
 
@@ -122,7 +122,7 @@ not provided in the command line. This list automatically contains
 For example, given the above settings the Maven command line may execute
 `org.eclipse.jetty:jetty-maven-plugin:run` with the truncated command:
 
-    mvn jetty:run
+        mvn jetty:run
 
 ### Servers
 
@@ -153,21 +153,21 @@ information should exist on the build server in the `settings.xml`.
 </settings>
 ```
 
--   **id**: This is the ID of the server *(not of the user to login as)*
-    that matches the `id` element of the repository/mirror that Maven
-    tries to connect to.
--   **username**, **password**: These elements appear as a pair denoting
-    the login and password required to authenticate to this server.
--   **privateKey**, **passphrase**: Like the previous two elements, this
-    pair specifies a path to a private key (default is
-    `${user.home}/.ssh/id_dsa`) and a `passphrase`, if required. The
-    `passphrase` and `password` elements may be externalized in the
-    future, but for now they must be set plain-text in the
-    `settings.xml` file.
--   **filePermissions**, **directoryPermissions**: When a repository
-    file or directory is created on deployment, these are the
-    permissions to use. The legal values of each is a three digit number
-    corresponding to \*nix file permissions, e.g. 664, or 775.
+- **id**: This is the ID of the server *(not of the user to login as)*
+  that matches the `id` element of the repository/mirror that Maven
+  tries to connect to.
+- **username**, **password**: These elements appear as a pair denoting
+  the login and password required to authenticate to this server.
+- **privateKey**, **passphrase**: Like the previous two elements, this
+  pair specifies a path to a private key (default is
+  `${user.home}/.ssh/id_dsa`) and a `passphrase`, if required. The
+  `passphrase` and `password` elements may be externalized in the
+  future, but for now they must be set plain-text in the
+  `settings.xml` file.
+- **filePermissions**, **directoryPermissions**: When a repository
+  file or directory is created on deployment, these are the
+  permissions to use. The legal values of each is a three digit number
+  corresponding to \*nix file permissions, e.g. 664, or 775.
 
 *Note:* If you use a private key to login to the server, make sure you
 omit the `<password>` element. Otherwise, the key will be ignored.
@@ -196,18 +196,18 @@ page](./guides/mini/guide-encryption.html)
 </settings>
 ```
 
--   **id**, **name**: The unique identifier and user-friendly name of
-    this mirror. The `id` is used to differentiate between `mirror`
-    elements and to pick the corresponding credentials from the
-    [`<servers>`](#Servers) section when connecting to the mirror.
--   **url**: The base URL of this mirror. The build system will use this
-    URL to connect to a repository rather than the original repository
-    URL.
--   **mirrorOf**: The `id` of the repository that this is a mirror of.
-    For example, to point to a mirror of the Maven `central` repository
-    (`https://repo.maven.apache.org/maven2/`), set this element to
-    `central`. More advanced mappings like `repo1,repo2` or `*,!inhouse`
-    are also possible. This must not match the mirror `id`.
+- **id**, **name**: The unique identifier and user-friendly name of
+  this mirror. The `id` is used to differentiate between `mirror`
+  elements and to pick the corresponding credentials from the
+  [`<servers>`](#Servers) section when connecting to the mirror.
+- **url**: The base URL of this mirror. The build system will use this
+  URL to connect to a repository rather than the original repository
+  URL.
+- **mirrorOf**: The `id` of the repository that this is a mirror of.
+  For example, to point to a mirror of the Maven `central` repository
+  (`https://repo.maven.apache.org/maven2/`), set this element to
+  `central`. More advanced mappings like `repo1,repo2` or `*,!inhouse`
+  are also possible. This must not match the mirror `id`.
 
 For a more in-depth introduction of mirrors, please read the [Guide to
 Mirror Settings](./guides/mini/guide-mirror-settings.html).
@@ -234,19 +234,19 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 </settings>
 ```
 
--   **id**: The unique identifier for this proxy. This is used to
-    differentiate between `proxy` elements.
--   **active**: `true` if this proxy is active. This is useful for
-    declaring a set of proxies, but only one may be active at a time.
--   **protocol**, **host**, **port**: The `protocol://host:port` of the
-    proxy, separated into discrete elements.
--   **username**, **password**: These elements appear as a pair denoting
-    the login and password required to authenticate to this proxy
-    server.
--   **nonProxyHosts**: This is a list of hosts which should not be
-    proxied. The delimiter of the list is the expected type of the proxy
-    server; the example above is pipe delimited - comma delimited is
-    also common.
+- **id**: The unique identifier for this proxy. This is used to
+  differentiate between `proxy` elements.
+- **active**: `true` if this proxy is active. This is useful for
+  declaring a set of proxies, but only one may be active at a time.
+- **protocol**, **host**, **port**: The `protocol://host:port` of the
+  proxy, separated into discrete elements.
+- **username**, **password**: These elements appear as a pair denoting
+  the login and password required to authenticate to this proxy
+  server.
+- **nonProxyHosts**: This is a list of hosts which should not be
+  proxied. The delimiter of the list is the expected type of the proxy
+  server; the example above is pipe delimited - comma delimited is
+  also common.
 
 ### Profiles
 
@@ -271,54 +271,54 @@ certain circumstances; those circumstances are specified via an
 ```xml
 <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  ...
+  <!-- ... -->
   <profiles>
     <profile>
       <id>test</id>
       <activation>
         <activeByDefault>false</activeByDefault>
-        <jdk>1.5</jdk>
+        <jdk>21</jdk>
         <os>
-          <name>Windows XP</name>
+          <name>Windows 10</name>
           <family>Windows</family>
-          <arch>x86</arch>
-          <version>5.1.2600</version>
+          <arch>amd64</arch>
+          <version>10.0.19045.5247</version>
         </os>
         <property>
           <name>mavenVersion</name>
-          <value>2.0.3</value>
+          <value>3.9.9</value>
         </property>
         <file>
-          <exists>${basedir}/file2.properties</exists>
-          <missing>${basedir}/file1.properties</missing>
+          <exists>${project.basedir}/file2.properties</exists>
+          <missing>${project.basedir}/file1.properties</missing>
         </file>
       </activation>
-      ...
+      <!-- ... -->
     </profile>
   </profiles>
-  ...
+  <!-- ... -->
 </settings>
 ```
 
 Activation occurs when all specified criteria have been met, though not
 all are required at once.
 
--   **jdk**: `activation` has a built in, Java-centric check in the
-    `jdk` element. This will activate if the test is run under a jdk
-    version number that matches the prefix given. In the above example,
-    `1.5.0_06` will match. Ranges are also supported.
-    See the
-    [maven-enforcer-plugin](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
-    for more details about supported ranges.
--   **os**: The `os` element can define some operating system specific
-    properties shown above. See the
-    [maven-enforcer-plugin](https://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html)
-    for more details about OS values.
--   **property**: The `profile` will activate if Maven detects a
-    property (a value which can be dereferenced within the POM by
-    `${name}`) of the corresponding `name=value` pair.
--   **file**: Finally, a given filename may activate the `profile` by
-    the `existence` of a file, or if it is `missing`.
+- **jdk**: `activation` has a built in, Java-centric check in the
+  `jdk` element. This will activate if the test is run under a jdk
+  version number that matches the prefix given. In the above example,
+  `21.0.1` will match. Ranges are also supported.
+  See the
+  [maven-enforcer-plugin](https://maven.apache.org/enforcer/enforcer-rules/versionRanges.html)
+  for more details about supported ranges.
+- **os**: The `os` element can define some operating system specific
+  properties shown above. See the
+  [maven-enforcer-plugin](https://maven.apache.org/plugins/maven-enforcer-plugin/rules/requireOS.html)
+  for more details about OS values.
+- **property**: The `profile` will activate if Maven detects a
+  property (a value which can be dereferenced within the POM by
+  `${name}`) of the corresponding `name=value` pair.
+- **file**: Finally, a given filename may activate the `profile` by
+  the `existence` of a file, or if it is `missing`.
 
 The `activation` element is not the only way that a `profile` may be
 activated. The `settings.xml` file's `activeProfile` element may contain
@@ -329,7 +329,7 @@ command line via a comma separated list after the `-P` flag (e.g.
 *To see which profile will activate in a certain build, use the*
 `maven-help-plugin`.
 
-    mvn help:active-profiles
+        mvn help:active-profiles
 
 #### Properties
 
@@ -338,22 +338,22 @@ values are accessible anywhere within a POM by using the notation
 `${X}`, where `X` is the property. They come in five different styles,
 all accessible from the `settings.xml` file:
 
-1.  `env.X`: Prefixing a variable with "env." will return the shell's
-    environment variable. For example, `${env.PATH}` contains the \$path
-    environment variable (`%PATH%` in Windows).
-2.  `project.x`: A dot (.) notated path in the POM will contain the
-    corresponding element's value. For example:
-    `<project><version>1.0</version></project>` is accessible via
-    `${project.version}`.
-3.  `settings.x`: A dot (.) notated path in the `settings.xml` will
-    contain the corresponding element's value. For example:
-    `<settings><offline>false</offline></settings>` is accessible via
-    `${settings.offline}`.
-4.  Java System Properties: All properties accessible via
-    `java.lang.System.getProperties()` are available as POM properties,
-    such as `${java.home}`.
-5.  `x`: Set within a \<properties /\> element or an external files, the
-    value may be used as `${someVar}`.
+1. `env.X`: Prefixing a variable with "env." will return the shell's
+   environment variable. For example, `${env.PATH}` contains the \$path
+   environment variable (`%PATH%` in Windows).
+2. `project.x`: A dot (.) notated path in the POM will contain the
+   corresponding element's value. For example:
+   `<project><version>1.0</version></project>` is accessible via
+   `${project.version}`.
+3. `settings.x`: A dot (.) notated path in the `settings.xml` will
+   contain the corresponding element's value. For example:
+   `<settings><offline>false</offline></settings>` is accessible via
+   `${settings.offline}`.
+4. Java System Properties: All properties accessible via
+   `java.lang.System.getProperties()` are available as POM properties,
+   such as `${java.home}`.
+5. `x`: Set within a \<properties /\> element or an external files, the
+   value may be used as `${someVar}`.
 
 <!-- -->
 
@@ -431,26 +431,26 @@ artifact.
 </settings>
 ```
 
--   **releases**, **snapshots**: These are the policies for each type of
-    artifact, Release or snapshot. With these two sets, a POM has the
-    power to alter the policies for each type independent of the other
-    within a single repository. For example, one may decide to enable
-    only snapshot downloads, possibly for development purposes.
--   **enabled**: `true` or `false` for whether this repository is
-    enabled for the respective type (`releases` or `snapshots`).
--   **updatePolicy**: This element specifies how often updates should
-    attempt to occur. Maven will compare the local POM's timestamp
-    (stored in a repository's maven-metadata file) to the remote. The
-    choices are: `always`, `daily` (default), `interval:X` (where X is
-    an integer in minutes) or `never`.
--   **checksumPolicy**: When Maven deploys files to the repository, it
-    also deploys corresponding checksum files. Your options are to
-    `ignore`, `fail`, or `warn` on missing or incorrect checksums.
--   **layout**: In the above description of repositories, it was
-    mentioned that they all follow a common layout. This is mostly
-    correct. Maven 2 has a default layout for its repositories; however,
-    Maven 1.x had a different layout. Use this element to specify which
-    if it is `default` or `legacy`.
+- **releases**, **snapshots**: These are the policies for each type of
+  artifact, Release or snapshot. With these two sets, a POM has the
+  power to alter the policies for each type independent of the other
+  within a single repository. For example, one may decide to enable
+  only snapshot downloads, possibly for development purposes.
+- **enabled**: `true` or `false` for whether this repository is
+  enabled for the respective type (`releases` or `snapshots`).
+- **updatePolicy**: This element specifies how often updates should
+  attempt to occur. Maven will compare the local POM's timestamp
+  (stored in a repository's maven-metadata file) to the remote. The
+  choices are: `always`, `daily` (default), `interval:X` (where X is
+  an integer in minutes) or `never`.
+- **checksumPolicy**: When Maven deploys files to the repository, it
+  also deploys corresponding checksum files. Your options are to
+  `ignore`, `fail`, or `warn` on missing or incorrect checksums.
+- **layout**: In the above description of repositories, it was
+  mentioned that they all follow a common layout. This is mostly
+  correct. Maven 2 has a default layout for its repositories; however,
+  Maven 1.x had a different layout. Use this element to specify which
+  if it is `default` or `legacy`.
 
 #### Plugin Repositories
 

@@ -9,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -146,7 +146,7 @@ No special configuration is required to take advantage of the reactor, however i
 
 The following command line switches are available:
 
-| Long                     | Short  | Summary                                                                                                                                        | Details                                                                                                                      |
+|           Long           | Short  |                                                                    Summary                                                                     |                                                           Details                                                            |
 |--------------------------|--------|------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------|
 | `--file`                 | `-f`   | Selects an alternative POM file or directory containing a POM file.                                                                            | [Collecting subprojects](#collecting-subprojects)                                                                            |
 | `--non-recursive`        | `-N`   | Ignores any child subprojects that may be present in the starting POM. When combined with `-pl`, ignores the children of selected subprojects. | [Collecting subprojects](#collecting-subprojects) and [Relationships between subprojects](relationships-between-subprojects) |
@@ -161,12 +161,12 @@ The following command line switches are available:
 
 ## Differences between Maven 3 and 4
 
-![Sample multi-project setup](multi-subprojects.png)
+![Sample multi-subproject setup](../../multi-subproject.svg)
 
 The table below illustrates multiple scenarios which have changed between Maven 3 and 4. They assume a project structure
 as depicted above.
 
-| Scenario                                                           | Outcome (in order)                                               | Maven 3                                                        | Maven 4                                                       |
+|                              Scenario                              |                        Outcome (in order)                        |                            Maven 3                             |                            Maven 4                            |
 |--------------------------------------------------------------------|------------------------------------------------------------------|----------------------------------------------------------------|---------------------------------------------------------------|
 | Build an aggregator and its children                               | subproject-c, subproject-c-1, subproject-c-2                     | `mvn compile -pl subproject-c, subproject-c-1, subproject-c-2` | `mvn compile -pl subproject-c`                                |
 | Build an aggregator and ignore its children                        | subproject-c, subproject-c-1, subproject-c-2                     | `mvn compile -pl subproject-c`                                 | `mvn compile -pl subproject-c -N`                             |
@@ -179,5 +179,4 @@ as depicted above.
 
 * [Chapter 6. A Multi-module Project (Maven by Example)](http://books.sonatype.com/mvnex-book/reference/multimodule.html) -
   does not include Maven 4 changes!
-
 

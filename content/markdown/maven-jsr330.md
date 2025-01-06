@@ -1,4 +1,5 @@
 # Maven & JSR-330
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 ## Why JSR-330?
 
 Maven has a long history of using dependency injection (DI) by way of [Plexus][plexus], so the intent of using
@@ -41,10 +43,10 @@ If you are interested in migrating from Plexus Annotations to JSR-330, Sisu has 
 When you use JSR-330 in Maven plugins or extensions, there are two things you need to setup in your build:
 
 1. First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations
-in your plugins and extensions (eventually in addition to [Plexus annotations][plexus-annotations]).
+   in your plugins and extensions (eventually in addition to [Plexus annotations][plexus-annotations]).
 
 2. Second you need to setup the [`sisu-maven-plugin`][sisu-maven-plugin] to index the JSR-330 components
-you want made available to Maven. The [`sisu-maven-plugin`][sisu-maven-plugin] creates its index in `META-INF/sisu/javax.inject.Named` (eventually in addition to [`plexus-component-metadata`][plexus-component-metadata]).
+   you want made available to Maven. The [`sisu-maven-plugin`][sisu-maven-plugin] creates its index in `META-INF/sisu/javax.inject.Named` (eventually in addition to [`plexus-component-metadata`][plexus-component-metadata]).
 
 ### Implementation Details
 
@@ -55,7 +57,6 @@ startup time fast. Note that our container is configured by default to only use 
 if you use JSR-330 components in dependencies that do not contain an index, those implementations will currently
 not be discovered. This is a compromise that is reasonable given Maven is a command-line tool where startup speed
 is important.
-
 
 ## How to use JSR-330 in plugins
 
@@ -209,3 +210,4 @@ public class Jsr330Mojo
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
 [SisuPlexusMigration]: https://eclipse-sisu.github.io/sisu-project/plexus/index.html
+

@@ -1,4 +1,5 @@
 # Releasing Maven
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 Maven differs slightly in its release process due to several extra steps.
 
 The goal is to commit candidate release to svn `dev` tree <https://dist.apache.org/repos/dist/dev/maven/maven-3>/`$VERSION`. Once the vote has passed, svn move to `release` <https://dist.apache.org/repos/dist/release/maven/maven-3>/`$VERSION`.
@@ -57,7 +59,7 @@ Copy the binaries and src-tar.gz with their sha512/asc to the created directorie
 
 To produce a release candidate, follow the first seven steps only from the following procedure:
 
--   [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+- [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
 
 The version used should be the eventual version with -RC1, -RC2, etc. appended.
 
@@ -71,7 +73,7 @@ Once happy with a release candidate, the full release is performed, with the fin
 
 To produce a final release, the same process as for standard projects is followed:
 
--   [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+- [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
 
 Below describes the additional steps that need to be taken at the points where the website are updated in those instructions.
 

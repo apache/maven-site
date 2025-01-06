@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 3.9.7
@@ -43,7 +43,7 @@ Regression fixes and other improvements from Maven 3.9.6. All users already on M
 This release updates Resolver to version [1.9.20](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353946) (includes fixes from [1.9.19](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12353946) as well).
 Resolver upgrade includes two critical fixes, one related to "file locking" and other to "Maven metadata corruption".
 
-Maven Core also got bug fixes, focusing on remote repository metadata handling, see [MNG-8106](https://issues.apache.org/jira/browse/MNG-8106) and [MNG-8121](https://issues.apache.org/jira/browse/MNG-8121). Latter issue should improve compatibility with some Maven Plugin projects that had no prefix, that is now mandatory. 
+Maven Core also got bug fixes, focusing on remote repository metadata handling, see [MNG-8106](https://issues.apache.org/jira/browse/MNG-8106) and [MNG-8121](https://issues.apache.org/jira/browse/MNG-8121). Latter issue should improve compatibility with some Maven Plugin projects that had no prefix, that is now mandatory.
 
 Maven itself received new features (backports from Maven 4.x) as ability to ignore transitive dependency introduced repositories and profile activation improvements.
 
@@ -72,3 +72,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353964
 [5]: ../../docs/history.html
+
