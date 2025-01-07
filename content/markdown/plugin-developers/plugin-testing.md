@@ -43,7 +43,6 @@ For example, you’ll probably need to inject or mock a reference to a `MavenPro
 ### Using PlexusTestCase
 
 Mojo variables are injected by Guice (an open-source software framework for the Java platform), sometimes with a Codehaus Plexus (a collection of components used by Apache Maven) adapter. 
-Currently some mojos are fully guicified with constructor injection, while others that have not yet been converted use Plexus field injection.
 
 Both Guice-based and Plexus-based mojos rely on the Guice Plexus adapter to inject dependencies by having the test class extend `PlexusTestCase` and calling the **lookup()** method to instantiate the mojo.
 Tests for fully guicified mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`.
@@ -54,9 +53,9 @@ With that said, if you need to inject Maven objects into your mojo, you’ll pro
 
 ### Using the maven-plugin-testing-harness
 
-The [maven-plugin-testing-harness](/plugin-testing/maven-plugin-testing-harness/) is explicitly intended to test the implementation of the `org.apache.maven.reporting.AbstractMavenReport#execute()` method.
+The [maven-plugin-testing-harness](/plugin-testing/maven-plugin-testing-harness/) is designed to test the implementation of the `org.apache.maven.reporting.AbstractMavenReport#execute()` method.
 
-In general, you need to include `maven-plugin-testing-harness` as a test-scoped dependency.
+You have to include `maven-plugin-testing-harness` as a test-scoped dependency.
 
 ```xml
 ...
@@ -76,8 +75,8 @@ In general, you need to include `maven-plugin-testing-harness` as a test-scoped 
 
 #### JUnit Jupiter (JUnit 5) style tests
 
-JUnit Jupiter uses an extension framework for which the `MojoExtension` is provided by the `maven-plugin-testing-harness`. 
-You can annotate your JUnit Jupiter test with `@MojoTest` and with that leverage the `MojoExtension` to inject the Mojo under test.
+JUnit Jupiter uses an extension framework for which `MojoExtension` is provided by the `maven-plugin-testing-harness`. 
+You can annotate your JUnit Jupiter test with `@MojoTest`; then inject the mojo under test into the test method with the `@InjectMojo` annotation.
 This functionality was introduced in version `3.4.0` of the `maven-plugin-testing-harness`.
 Below is an example:
 
@@ -96,28 +95,9 @@ public class YourMojoTest {
 ```
 
 #### JUnit 4 style tests (deprecated)
-There is the deprecated way to write tests using JUnit 4 style. 
-This is not recommended, but you can still use it on Maven 3. 
+For Maven 3 there is the deprecated way to write tests using JUnit 4 style.
 For Maven 4 only JUnit Jupiter style tests are available.
 JUnit 4 is no longer supported.
-Please consider migrating your JUnit 4 style MojoTests to JUnit Jupiter tests.
-Below is an example:
-
-```java
-public class YourMojoTest
-    extends AbstractMojoTestCase
-{
-    public void testMojoGoal() throws Exception
-    {
-        File testPom = new File( getBasedir(),
-          "src/test/resources/unit/basic-test/basic-test-plugin-config.xml" );
-
-        YourMojo mojo = (YourMojo) lookupMojo("yourGoal", testPom);
-
-        assertNotNull(mojo);
-    }
-}
-```
 
 ## Integration/Functional testing
 
