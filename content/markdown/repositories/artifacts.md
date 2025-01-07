@@ -19,8 +19,8 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-An artifact is a file (more precisely, a sequence of bytes) that can be addressed using its coordinates which Maven downloads, installs, or
-deploys for you. Most artifacts are POMs and JARs, but
+An artifact is a file (more precisely, a sequence of bytes) that can be addressed using its coordinates
+and which Maven downloads, installs, or deploys for you. Most artifacts are POMs and JARs, but
 an artifact can be really any file. A very important thing about artifacts is that they have coordinates,
 so they are not "just files", but they are files that are in some way addressable by Maven.
 
