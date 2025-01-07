@@ -89,7 +89,7 @@ public class YourMojoTest {
     @Test
     @InjectMojo(goal = "generate", pom = POM)
     void simpleMojo(YourMojo mojo) {
-        assertNotNull( mojo );
+        assertNotNull(mojo);
     }
 }
 ```
