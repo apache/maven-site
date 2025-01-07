@@ -31,7 +31,7 @@ but do not specify anything about its source. It is up to Maven to figure out (o
 how to figure out) how and from where to retrieve the artifact.
 
 A word about uniqueness: as stated above, GAV coordinates uniquely identify an artifact, but only **within one repository**.
-Different repositories can contain artifacts the same GAV. (This is normal with
+Different repositories can contain artifacts with the same GAV. (This is normal with
 mirror repositories.) If those files are not identical, it can cause severe
 issues without you noticing it. In short, these cases should be avoided.
 
