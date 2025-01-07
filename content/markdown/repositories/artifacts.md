@@ -19,19 +19,19 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-An artifact is "anything" (any file) that can be addressed using its coordinates which Maven downloads, installs, or
+An artifact is a file (more precisely, a sequence of bytes) that can be addressed using its coordinates which Maven downloads, installs, or
 deploys for you. Most artifacts are POMs and JARs, but
 an artifact can be really any file. A very important thing about artifacts is that they have coordinates,
 so they are not "just files", but they are files that are in some way addressable by Maven.
 
-Artifact coordinates are most often represented as `groupId:artifactId:version`, or GAV in short or when
-informally used. (Please note that artifact coordinates have more fields, but for brevity we still call the
-coordinates "GAV", not "GAVCE"). The artifact coordinates uniquely identify as artifact,
-but do not specify anything about its source (or origin). It is up to Maven to figure out (or you to tell Maven
+Artifact coordinates are most often represented as `groupId:artifactId:version`, or GAV in short.
+(Please note that artifact coordinates have more fields, but for brevity we still call the
+coordinates "GAV", not "GAVCE"). The artifact coordinates uniquely identify an artifact,
+but do not specify anything about its source. It is up to Maven to figure out (or you to tell Maven
 how to figure out) how and from where to retrieve the artifact.
 
 A word about uniqueness: as stated above, GAV coordinates uniquely identify an artifact, but only **within one repository**.
-Different repositories can contain artifacts the same GAV. (This is normal with 
+Different repositories can contain artifacts the same GAV. (This is normal with
 mirror repositories.) If those files are not identical, it can cause severe
 issues without you noticing it. In short, these cases should be avoided.
 
@@ -39,14 +39,14 @@ issues without you noticing it. In short, these cases should be avoided.
 
 The artifacts that Maven uses internally have following properties:
 
-|    Name     |                    Description                    |
-|-------------|---------------------------------------------------|
-| groupId     | The artifact group                                |
-| artifactId  | The artifact id                                   |
-| version     | The artifact version (linked with baseVersion)    |
-| baseVersion | The artifact base version (linked with version)   |
-| classifier  | The artifact classifier (optional)                |
-| extension   | The artifact extension (default: "jar")           |
+|    Name     |                   Description                   |
+|-------------|-------------------------------------------------|
+| groupId     | The artifact group                              |
+| artifactId  | The artifact id                                 |
+| version     | The artifact version (linked with baseVersion)  |
+| baseVersion | The artifact base version (linked with version) |
+| classifier  | The artifact classifier (optional)              |
+| extension   | The artifact extension (default: "jar")         |
 
 One property worth explaining is a bit of special one: `baseVersion` is derived from/linked to
 `version` (or the other way around, depending on the context). For release artifacts, it has the same value as
