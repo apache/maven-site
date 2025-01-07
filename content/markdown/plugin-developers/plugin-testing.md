@@ -16,11 +16,10 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-# Developers Centre - Testing Plugins Strategies
+# Developers Centre - Testing Plugins
 
 ## Introduction
 
-Currently, Maven only supports unit testing out of the box.
 This document is intended to help Maven Developers test plugins with unit tests, integration tests, and functional tests.
 
 ## Testing Styles: Unit Testing vs. Functional/Integration Testing
@@ -28,10 +27,7 @@ This document is intended to help Maven Developers test plugins with unit tests,
 A unit test attempts to verify a mojo as an isolated unit, by mocking out the rest of the Maven environment.
 A mojo unit test does not attempt to run your plugin in the context of a real Maven build. Unit tests are designed to be fast.
 
-A functional/integration test attempts to use a mojo in a real Maven build, by launching a real instance of Maven in a real project.
-Normally this requires you to construct special dummy Maven projects with real POM files.
-Often this requires you to have already installed your plugin into your local repository so it can be used in a real Maven build.
-Functional tests run much more slowly than unit tests, but they can catch bugs that you may not catch with unit tests.
+Functional tests run much more slowly than unit tests, but they can catch bugs or detect issues that you may not catch with unit tests.
 
 The general wisdom is that your code should be mostly tested with unit tests, but should also have some functional tests.
 
@@ -41,16 +37,16 @@ The general wisdom is that your code should be mostly tested with unit tests, bu
 
 In principle, you can write a unit test of a plugin Mojo the same way you’d write any other JUnit test case.
 
-However, many mojo methods need more information to work properly.
+However, many mojo methods need more dependencies to work properly.
 For example, you’ll probably need to inject or mock a reference to a `MavenProject`, so your mojo can query project variables.
 
 ### Using PlexusTestCase
 
-Mojo variables are injected by Guice (an open-source software framework for the Java platform), sometimes with a Codehaus Plexus (a collection of components used by Apache Maven) adapter to support the legacy `@Component` annotation. 
+Mojo variables are injected by Guice (an open-source software framework for the Java platform), sometimes with a Codehaus Plexus (a collection of components used by Apache Maven) adapter. 
 Currently some mojos are fully guicified with constructor injection, while others that have not yet been converted use Plexus field injection.
 
 Both Guice-based and Plexus-based mojos rely on the Guice Plexus adapter to inject dependencies by having the test class extend `PlexusTestCase` and calling the **lookup()** method to instantiate the mojo.
-Tests for fully Guicified mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`.
+Tests for fully guicified mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`.
 These dependencies can be Mockito mocks or instances of the actual model classes.
 If a particular test does not access the injected field — that is, it’s only injected to fulfill the constructor signature — you can usually also pass null as the value of that argument. 
 
@@ -102,7 +98,8 @@ public class YourMojoTest {
 #### JUnit 4 style tests (deprecated)
 There is the deprecated way to write tests using JUnit 4 style. 
 This is not recommended, but you can still use it on Maven 3. 
-For Maven 4 only JUnit Jupiter style tests are available and JUnit 4 is not supported there anymore.
+For Maven 4 only JUnit Jupiter style tests are available.
+JUnit 4 is no longer supported.
 Please consider migrating your JUnit 4 style MojoTests to JUnit Jupiter tests.
 Below is an example:
 
@@ -110,36 +107,24 @@ Below is an example:
 public class YourMojoTest
     extends AbstractMojoTestCase
 {
-    /**
-     * @see junit.framework.TestCase#setUp()
-     */
-    protected void setUp() throws Exception
-    {
-        // required for mojo lookups to work
-        super.setUp();
-    }
-
     public void testMojoGoal() throws Exception
     {
         File testPom = new File( getBasedir(),
           "src/test/resources/unit/basic-test/basic-test-plugin-config.xml" );
 
-        YourMojo mojo = (YourMojo) lookupMojo( "yourGoal", testPom );
+        YourMojo mojo = (YourMojo) lookupMojo("yourGoal", testPom);
 
-        assertNotNull( mojo );
+        assertNotNull(mojo);
     }
 }
 ```
 
-#### More information
-For more information, please refer to the [Maven Plugin Harness Wiki](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness)
-
 ## Integration/Functional testing
 
-### maven-verifier
+### Maven Verifier Component
 
-maven-verifier tests are run using JUnit.
-They provide a simple class allowing you to launch Maven and assert on its log file and its build artifacts.
+The Apache Maven Verifier Component (maven-verifier) tests are run using JUnit.
+It provides a simple class allowing you to launch Maven and assert on its log file and its build artifacts.
 It also provides a `ResourceExtractor`, which extracts a Maven project from the src/test/resources directory into a temporary working directory where you can do tricky stuff with it.
 Follow the [Getting Started](/shared/maven-verifier/getting-started.html) guide to learn more about creating maven-verifier tests.
 
