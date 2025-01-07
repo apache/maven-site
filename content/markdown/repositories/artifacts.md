@@ -37,12 +37,12 @@ issues without you noticing it. In short, these cases should be avoided.
 
 ## Artifact Properties
 
-The artifacts that Maven uses internally have following properties:
+The artifacts that Maven uses internally have the following properties:
 
 |    Name     |                   Description                   |
 |-------------|-------------------------------------------------|
 | groupId     | The artifact group                              |
-| artifactId  | The artifact id                                 |
+| artifactId  | The artifact ID                                 |
 | version     | The artifact version (linked with baseVersion)  |
 | baseVersion | The artifact base version (linked with version) |
 | classifier  | The artifact classifier (optional)              |
@@ -51,7 +51,7 @@ The artifacts that Maven uses internally have following properties:
 One property worth explaining is a bit of special one: `baseVersion` is derived from/linked to
 `version` (or the other way around, depending on the context). For release artifacts, it has the same value as
 `version`, whereas for snapshot artifacts, it has the "non-timestamped snapshot version". For example,
-for snapshot version "1.0-20220119.164608-1", the `baseVersion` would have the value "1.0-SNAPSHOT".
+snapshot version "1.0-20220119.164608-1" has the `baseVersion` "1.0-SNAPSHOT".
 So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in the
 case of snapshots**.
 
@@ -93,10 +93,12 @@ And finally, in the case of "dependencies", this is the mapping (no, scope is NO
 
 Here, we need to make a short detour to explain "dependency type" and how it becomes an artifact extension.
 
-A dependency type describes what that dependency is. For example, should it be added to classpath? Plugins and extensions may define new types. This is usually requiredfor plugins introducing
+A dependency type determines how the artifact referenced by the dependency is used.
+For example, should it be added to comple-time classpath, the test classpath, or both?
+Plugins and extensions may define new types. This is usually required for plugins introducing
 a "packaging" (lifecycle mapping) by providing `ArtifactHandler` components with a name corresponding to type name.
 
-Out of the box Maven Core defines the [following "types" (handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
+Out of the box, Maven Core defines the [following "types" (handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
 
 |  Type Name   | Extension |  Classifier  |
 |--------------|-----------|--------------|
@@ -115,7 +117,7 @@ Out of the box Maven Core defines the [following "types" (handled by the same na
 
 From the table above, we can see that if we define the dependency type as "war", we will hit the "war" handler. That will
 result in using the `war` extension (which may not be obvious, as the type and extension we end up with are the same, but internally this
-indirection does happen). The "test-jar" is more obvious, as it translates to `jar` extension. Finally, the **any**
+indirection does happen). The "test-jar" is more obvious, as it translates to the `jar` extension. Finally, the **any**
 last row will be used if none of the above match. Hence in that case the "type" is used as the "extension". For example.
 if the dependency type is `<type>tar.gz</type>`, the extension will also be `tar.gz`.
 This table may be extended by plugins and extensions used in the build.
