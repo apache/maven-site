@@ -24,8 +24,8 @@ This document is intended to help Maven Developers test plugins with unit tests,
 
 ## Testing Styles: Unit Testing vs. Functional/Integration Testing
 
-A unit test attempts to verify a mojo as an isolated unit, by mocking out the rest of the Maven environment.
-A mojo unit test does not attempt to run your plugin in the context of a real Maven build. Unit tests are designed to be fast.
+A unit test attempts to verify a Mojo as an isolated unit, by mocking out the rest of the Maven environment.
+A Mojo unit test does not attempt to run your plugin in the context of a real Maven build. Unit tests are designed to be fast.
 
 Functional tests run much more slowly than unit tests, but they can catch bugs or detect issues that you may not catch with unit tests.
 
@@ -37,19 +37,19 @@ The general wisdom is that your code should be mostly tested with unit tests, bu
 
 In principle, you can write a unit test of a plugin Mojo the same way you’d write any other JUnit test case.
 
-However, many mojo methods need more dependencies to work properly.
-For example, you’ll probably need to inject or mock a reference to a `MavenProject`, so your mojo can query project variables.
+However, many Mojo methods need more dependencies to work properly.
+For example, you’ll probably need to inject a reference to a `MavenProject`, so your Mojo can query project variables.
 
 ### Using PlexusTestCase
 
 Mojo variables are injected by Guice (an open-source software framework for the Java platform), sometimes with a Codehaus Plexus (a collection of components used by Apache Maven) adapter. 
 
-Both Guice-based and Plexus-based mojos rely on the Guice Plexus adapter to inject dependencies by having the test class extend `PlexusTestCase` and calling the **lookup()** method to instantiate the mojo.
-Tests for fully guicified mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`.
+Both Guice-based and Plexus-based Mojos inject dependencies by having the test class extend `PlexusTestCase` and calling the **lookup()** method to instantiate the Mojo.
+Tests for fully guicified Mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`.
 These dependencies can be Mockito mocks or instances of the actual model classes.
-If a particular test does not access the injected field — that is, it’s only injected to fulfill the constructor signature — you can usually also pass null as the value of that argument. 
+If a particular test does not access the injected field — that is, it’s only injected to fulfill the constructor signature — you can usually pass null as the value of that argument. 
 
-With that said, if you need to inject Maven objects into your mojo, you’ll probably prefer to use the maven-plugin-testing-harness.
+With that said, if you need to inject Maven objects into your Mojo, you’ll probably prefer to use the maven-plugin-testing-harness.
 
 ### Using the maven-plugin-testing-harness
 
@@ -76,7 +76,7 @@ You have to include `maven-plugin-testing-harness` as a test-scoped dependency.
 #### JUnit Jupiter (JUnit 5) style tests
 
 JUnit Jupiter uses an extension framework for which `MojoExtension` is provided by the `maven-plugin-testing-harness`. 
-You can annotate your JUnit Jupiter test with `@MojoTest`; then inject the mojo under test into the test method with the `@InjectMojo` annotation.
+You can annotate your JUnit Jupiter test with `@MojoTest`; then inject the Mojo under test into the test method with the `@InjectMojo` annotation.
 This functionality was introduced in version `3.4.0` of the `maven-plugin-testing-harness`.
 Below is an example:
 
