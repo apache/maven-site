@@ -44,11 +44,11 @@ manifest:
 | Apache Maven [full source code](https://github.com/apache/maven-sources/blob/master/default.xml) | [`https://gitbox.apache.org/repos/asf/maven-sources.git`](https://gitbox.apache.org/repos/asf/maven-sources.git) | [GitHub](https://github.com/apache/maven-sources/) |
 
 1. Install a Git client if needed and the [Google repo](https://android.googlesource.com/tools/repo) tool
-   (see [manual install instructions](https://source.android.com/setup/build/downloading#installing-repo)).
+   (see [manual install instructions](https://android.googlesource.com/tools/repo#install)).
 2. Check out a new repo workspace and prepare master branch:
 
    ```
-   repo init -u https://gitbox.apache.org/repos/asf/maven-sources.git`
+   repo init -u https://gitbox.apache.org/repos/asf/maven-sources.git
    repo sync
    repo start master --all
    ```
