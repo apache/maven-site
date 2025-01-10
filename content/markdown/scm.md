@@ -48,7 +48,7 @@ manifest:
 2. Check out a new repo workspace and prepare master branch:
 
    ```
-   repo init -u https://gitbox.apache.org/repos/asf/maven-sources.git
+   repo init -u https://github.com/apache/maven-sources.git
    repo sync
    repo start master --all
    ```
