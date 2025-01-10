@@ -59,6 +59,7 @@ under the License.
     <menu name="Documentation">
       <item name="Maven Plugins" href="/plugins/index.html"/>
       <item name="Maven Extensions" href="/extensions/index.html"/>
+      <item name="Maven Tools" href="/tools/index.html"/>
       <item name="Index (category)" href="/guides/index.html"/>
 
       <item name="User Centre" href="/users/index.html" collapse="true">
@@ -166,7 +167,7 @@ under the License.
         <item name="Code Style and Conventions" href="/developers/conventions/code.html"/>
         <item name="JIRA Convention" href="/developers/conventions/jira.html"/>
         <item name="Git Convention" href="/developers/conventions/git.html"/>
-        <item name="GitHub Convention" href="/developers/conventions/github.html" />
+        <item name="GitHub Convention" href="/developers/conventions/github.html"/>
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
           <item name="Testing Development Plugins" href="/guides/development/guide-testing-development-plugins.html"/>
