@@ -35,17 +35,17 @@ When fixing the issue by providing Pull Request, reference the issue in the comm
 A GitHub Issue and Pull Request should have a label with the type, like `bug`, `enhancement` and so on.
 Pull Request without labels will be not categorized in Release Notes.
 
-Closed GitHub Issue and Pull Request should have milestone in which was resolved.
+Closed GitHub Issue and Pull Request should have [Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/creating-and-editing-milestones-for-issues-and-pull-requests) in which was resolved.
 
 Pull Request title is used to generate Release Notes - should be similar or the same as merged commit.
 
-We should always provide changes by Pull Request. Direct commits will be not visible in Release Notes.
+We should always provide changes by Pull Request. Direct commits will be not visible in Milestones issues list nor Release Notes.
 
 ## Release Notes
 
 Only Pull Requests with status **Merged** will be visible in Release Notes.
 
-We use GitHub Release Notes.
+We use GitHub [Release Notes](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository).
 
 We use the [Release Drafter Action](https://github.com/marketplace/actions/release-drafter)
 to prepare Release Notes.
@@ -94,7 +94,8 @@ Milestones are public available so we can use it during voting.
 
 ## Further Links
 
-- [GitHUb Pull requests documentation](https://docs.github.com/en/pull-requests)
+- [GitHub Pull requests documentation](https://docs.github.com/en/pull-requests)
 - [GitHub Issues documentation](https://docs.github.com/en/issues)
+- [GitHub Repository releases documentation](https://docs.github.com/en/repositories/releasing-projects-on-github/about-releases)
 - [release-drafter](https://github.com/release-drafter/release-drafter)
 
