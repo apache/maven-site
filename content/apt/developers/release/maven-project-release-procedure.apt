@@ -153,11 +153,27 @@ Vote open for at least 72 hours.
 
 -----
 
+** JIRA issues
+
  To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Releases> link, pick a version,
  and use the link to <Release Notes> that is next to the version being released.
 
  To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
+
+** GitHub issues
+
+ We link to the <GitHub milestone> for issues resolved in the release, and link to <GitHub issues> for issues that are still open:
+
+-----
+
+We solved N issues:
+https://github.com/apache/<repository-name>/milestone/<milestone-id>?closed=1
+
+There are still a couple of issues left:
+https://github.com/apache/<repository-name>/issues
+
+-----
 
  The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
  This gives others time to test your release and check that everything is good. If after that period you have not received
