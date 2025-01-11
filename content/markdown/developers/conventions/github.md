@@ -32,7 +32,7 @@ When you provide a Pull Request - creating separate issue is not necessary as yo
 
 When fixing the issue by providing Pull Request, reference the issue in the commit message by `#issue-number`.
 
-A GitHub Issue and Pull Request should have a label with the type, like `bug`, `enhancement` and so on.
+A GitHub Issue and Pull Request should have a [label](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels) with the type, like `bug`, `enhancement` and so on.
 Pull Request without labels will be not categorized in Release Notes.
 
 Closed GitHub Issue and Pull Request should have [Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/creating-and-editing-milestones-for-issues-and-pull-requests) in which was resolved.
@@ -65,7 +65,7 @@ We should invite persons to review for every change, even it is simply one, revi
 
 ### Priority
 
-For priority, we can use labels:
+For priority (equivqlent to [Jira Priority](https://confluence.atlassian.com/adminjiraserver/defining-priority-field-values-938847101.html)), we can use GitHub Issues [labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels):
 
 - `priority:low`
 - `priority:medium`
@@ -74,7 +74,7 @@ For priority, we can use labels:
 
 ### Type
 
-For GitHub Issue and Pull Requests we use labels, like:
+For GitHub Issue and Pull Requests we use [labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels), like:
 
 - `bug`
 - `dependencies`
@@ -84,13 +84,13 @@ For GitHub Issue and Pull Requests we use labels, like:
 
 ### Component/s
 
-To assign an issue/PR to component we can use labels, like: `component:name`
+To assign an issue/PR to component we can use [labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels), like: `component:name`
 
 ### Fix Version/s
 
-We use `Milestones` to assign to fix versions.
+We use [GitHub Issues `Milestones`](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) to assign to fix versions.
 
-Milestones are public available so we can use it during voting.
+[Issues and PR associated to a Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/viewing-your-milestones-progress) are publicly available, so we can use Milestone view during voting.
 
 ## Further Links
 
