@@ -67,10 +67,11 @@ We should invite persons to review for every change, even it is simply one, revi
 
 For priority (equivqlent to [Jira Priority](https://confluence.atlassian.com/adminjiraserver/defining-priority-field-values-938847101.html)), we can use GitHub Issues [labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels):
 
-- `priority:low`
-- `priority:medium`
-- `priority:high`
+- `priority:trivial`
+- `priority:minor`
+- `priority:major`
 - `priority:critical`
+- `priority:blocker`
 
 ### Type
 
