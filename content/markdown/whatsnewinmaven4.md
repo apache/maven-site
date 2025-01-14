@@ -19,25 +19,36 @@ under the License.
 
 <head>
    <title>What's new in Maven 4?</title>
+   <meta name="author" content="Matthias Bünger" />
 </head>
 
-# What's New in Maven 4?
+# What's new in Maven 4?
 
 Maven is over 20 years old, and is one of the most used build tools in the Java world.
-Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially
-with its [POM-schema with Model version 4.0.0][2], used not only for the build itself but also by consumers.
-This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the Maven
-Central repository, other build tools, and IDEs.
+Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially of
+its [POM file][2] with Model version 4.0.0.
 
-> "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases, unable to implement improvements that we imagine will require seriously updating the POM schema…" &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+The POM file fulfills two elementary needs.
+On the one side, the POM holds all the information and configuration, which are only needed to build the artifact.
+After the artifact was created, these build information are not relevant anymore.
+On the other side, the POM also contains information, e.g. dependencies, which are needed by projects, which want to use
+the artifact, e.g. dependencies.
+These dependent projects, which "consume" an artifact (and its POM), are called the "consumers" (of an artifact).
 
-Maven 4 will prepare for changes which are impossible nowadays, like a completely new build schema.
+This made the Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the
+Maven Central repository, other build tools, and IDEs.
+This results in the situation, that any change in the POM's schema forces each participant of the ecosystem to either
+adopt the change or drop support.
+So Maven's POM file got cemented, not able to change.
 
-Another pain point of Maven 3 is a codebase with a lot of deprecated, convoluted, and duplicate code
-which costs the developers who maintain Maven a lot of time.
-This means that the Maven codebase contains not only old Java code but also old dependencies and poor API design of its
-own APIs, especially for Maven plugins.
-Therefore, Maven 4 will also be a maintenance release.
+> "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
+> unable to implement improvements that we imagine will require seriously updating the POM schema…"
+> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+
+But Maven should be able to advance.
+For this, one important thing that's needed is to separate the information needed for the build from those needed by the
+consumers, but without breaking in the ecosystem.
+Maven 4 will prepare for this and more.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
 
@@ -419,35 +430,67 @@ If you want to see issues resolved in each individual (alpha/beta/RC) release, p
 the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 <!--- Links -->
+
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
+
 [2]: https://maven.apache.org/pom.html
+
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
+
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
+
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
+
 [6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
+
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
+
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
+
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061
+
 [10]: https://maven.apache.org/docs/history.html
+
 [11]: https://issues.apache.org/jira/browse/MNG-6863
+
 [12]: https://issues.apache.org/jira/browse/MNG-6118
+
 [13]: https://maarten.mulders.it/2020/11/whats-new-in-maven-4/
+
 [14]: https://issues.apache.org/jira/browse/MNG-6754
+
 [15]: https://issues.apache.org/jira/browse/MNG-7038
+
 [16]: https://github.com/apache/maven/pull/1061
+
 [17]: https://issues.apache.org/jira/browse/MNG-624
+
 [18]: https://issues.apache.org/jira/browse/MNG-6656
+
 [19]: https://issues.apache.org/jira/browse/MNG-7051
+
 [20]: https://www.mojohaus.org/flatten-maven-plugin/
+
 [21]: https://blog.soebes.io/posts/2024/03/2024-03-31-maven-4-part-i/
+
 [22]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346477
+
 [23]: https://issues.apache.org/jira/browse/MNG-7879
+
 [24]: https://issues.apache.org/jira/browse/MNG-7836
+
 [25]: https://github.com/apache/maven-hocon-extension
+
 [26]: https://maven.apache.org/maven-jsr330.html
+
 [27]: https://issues.apache.org/jira/browse/MNG-8286
+
 [28]: https://maven.apache.org/resolver/
+
 [29]: https://github.com/apache/maven-mvnd
+
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
+
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
+
 [32]: https://issues.apache.org/jira/browse/MNG-8-->
