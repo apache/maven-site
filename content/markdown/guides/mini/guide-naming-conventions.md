@@ -23,18 +23,19 @@ under the License.
 
 # Naming convention of Maven coordinates
 
-So that Maven can identify and utilise any artifact (e.g. an `.jar` file), this artifact must be identifiable through a
+So that Maven can identify and utilise any artifact (e.g. a `.jar` file), this artifact must be identifiable through a
 unique combination of three identifiers.
-This combination is called the "[Maven coordinates][4]" and consists of a project identifier (`groupId`), an artifact
-identifier (`artifactId`) and the version identifier (`version`).
+This combination is called the "[Maven coordinates][4]".
+Maven coordinates consist of a project identifier named `groupId`, an artifact
+identifier named `artifactId`, and the version identifier named `version`.
 
 This document defines the naming conventions of Maven coordinates.
 
-You should follow this convention, whenever you create a new artifact, however Maven does not enforce any.
+You should follow this convention whenever you create a new artifact.
 
 ## Project identifier
 
-The `groupId` uniquely identifies your project across all projects.
+The `groupId` uniquely identifies the project across all projects.
 Each `groupId` should follow [Java's package name rules][1].
 This means it starts with a reversed domain name you control.
 
@@ -66,7 +67,7 @@ org.apache.maven.reporting
 
 ## Artifact identifier
 
-The `artifactId` is the name of the artifact (without version) and therefore should describe the artifacts content.
+The `artifactId` is the name of the artifact and therefore should describe the artifacts content.
 The identifiers should only consist of *lowercase* letters, digits, and hyphens only.
 
 Examples
@@ -116,7 +117,10 @@ Maven treats artifacts with such versions in a special way during deployment and
 if one is defined in the [POM file][3].
 
 [1]:https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html#d5e8762
+
 [2]:https://semver.org/
+
 [3]:/pom.html#Repository
+
 [4]:/pom.html#Maven_Coordinates
 
