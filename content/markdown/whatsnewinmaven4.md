@@ -284,8 +284,8 @@ Only deploy when all subprojects are built successfully.
 ### Java 17 required to run Maven
 
 The required Java version to run Maven 4 will be Java 17.
-This not only allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
-JDK but also comes with a more secure runtime as Java 17 includes more security features than earlier versions.
+This allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
+JDK.
 
 **Important note**: Java 17 will only be needed to **run Maven**!
 You will still be able to compile against older Java versions using the same [compiler plugin configuration][6] as
