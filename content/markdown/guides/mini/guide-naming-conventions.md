@@ -68,7 +68,7 @@ org.apache.maven.reporting
 ## Artifact identifier
 
 The `artifactId` is the name of the artifact and therefore should describe the artifacts content.
-The identifiers should only consist of *lowercase* letters, digits, and hyphens only.
+The identifiers should only consist of *lowercase* letters, digits, and hyphens.
 
 Examples
 
@@ -79,7 +79,7 @@ maven-clean-plugin
 
 ## Version identifier
 
-The `version` should follow the rules of [Semantic Versioning][2].
+We recommend that the `version` follows the rules of [Semantic Versioning 1.0.0][2].
 It should start with the major version, followed by the minor version and the patch version.
 All three are numeric, separated by a dot.
 
@@ -109,18 +109,15 @@ Examples
 
 ### Unstable versions (SNAPSHOT)
 
-The "latest" code on a development branch might probably change.
-Maybe it's even unstable and not ready for use.
+The "latest" code on a development branch might change.
+Maybe it's unstable and not ready for use.
 Projects in such a state can add the `-SNAPSHOT` label, e.g. `1.0.1-SNAPSHOT`.
 
 Maven treats artifacts with such versions in a special way during deployment and stores them in the `snapshotRepository`
 if one is defined in the [POM file][3].
 
 [1]:https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html#d5e8762
-
-[2]:https://semver.org/
-
+[2]:https://semver.org/spec/v1.0.0.html
 [3]:/pom.html#Repository
-
 [4]:/pom.html#Maven_Coordinates
 
