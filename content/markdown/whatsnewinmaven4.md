@@ -29,26 +29,26 @@ Throughout the years, one important rule has been maintaining the highest backwa
 its [POM file][2] with Model version 4.0.0.
 
 The POM file fulfills two elementary needs.
-On the one side, the POM holds all the information and configuration, which are only needed to build the artifact.
-After the artifact was created, these build information are not relevant anymore.
-On the other side, the POM also contains information, e.g. dependencies, which are needed by projects, which want to use
-the artifact, e.g. dependencies.
-These dependent projects, which "consume" an artifact (and its POM), are called the "consumers" (of an artifact).
+First, the POM holds all the information and configuration, which are only needed to build the artifact.
+After the artifact is created, this build information is not relevant anymore.
+Second, the POM also contains information, e.g. dependencies, which are needed by projects which want to use the
+artifact.
+These dependent projects are called the "consumers" (of an artifact).
 
 This made the Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the
 Maven Central repository, other build tools, and IDEs.
-This results in the situation, that any change in the POM's schema forces each participant of the ecosystem to either
+This results in the situation that any change in the POM's schema forces each participant of the ecosystem to either
 adopt the change or drop support.
-So Maven's POM file got cemented, not able to change.
+Thus, the Maven POM syntax became fixed, unable to change.
 
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 > unable to implement improvements that we imagine will require seriously updating the POM schema…"
 > &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
 But Maven should be able to advance.
-For this, one important thing that's needed is to separate the information needed for the build from those needed by the
-consumers, but without breaking in the ecosystem.
-Maven 4 will prepare for this and more.
+For this, one important thing that's needed is to separate the information needed for the build from the information
+needed by the consumers, but without breaking the ecosystem.
+Maven 4 prepares for this and more.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
 
@@ -56,14 +56,13 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 ### Build-POM and Consumer-POM
 
-As written in the introduction, Model version 4.0.0 is used not only by the build but also by consumers of the
-artifact.
+Maven 3 uses Model version 4.0.0 not only by the build but also by consumers of the artifact.
 However, several parts of the POM are only necessary for the build while others, like the dependencies, are also
 needed by the consumers.
-Maven 4 will therefore differentiate between a "Build-POM" and a "Consumer-POM".
-As the names suggest, the "Build-POM" will contain all information needed to build the artifact, e.g., applied plugins
+Maven 4 therefore differentiates between a "Build-POM" and a "Consumer-POM".
+As the names suggest, the "Build-POM" contains all information needed to build the artifact, e.g., applied plugins
 and their configuration, while the "Consumer-POM", which is created during the Maven build, only contains what is
-necessary.
+necessary to use an artifact as a dependency.
 This POM will only keep what is really needed to use the artifact, e.g., dependency information.
 
 **Note**: See below for a comparison of the content of both POMs.
@@ -133,7 +132,7 @@ The following table shows a rough comparison of which content is available in wh
 |:-------------------------------------------|:---------:|:------------:|
 | Model version                              |   4.1.0   |    4.0.0     |
 | 3rd party dependency information           |     ✅     |      ✅       |
-| Properties                                 |     ✅     |      ❌       |
+| POM properties                             |     ✅     |      ❌       |
 | Plugin configuration                       |     ✅     |      ❌       |
 | Repository information                     |     ✅     |      ✅       |
 | Project information / environment settings |     ✅     |      ✅       |
@@ -249,15 +248,16 @@ his [article "Maven 4 - Part I - Easier Versions" (2024)][21].
 
 ### Reactor improvements and fixes
 
-Building a project with multiple subprojects could cause trouble when one subproject was dependent on one of the
+Building a project with multiple subprojects could cause trouble when one subproject depended on one of the
 others and its own build failed for whatever reason.
-Maven was telling the user to (fix the error and then) resume the build with
+Maven was telling the user to fix the error and then resume the build with
 `--resume-from :<nameOfTheFailingSubproject>`, which instantly fails the build again as the needed other subproject
 couldn't be found (as it was not rebuilt).
 Using `--also-make :<nameOfTheDependentSubproject>` was no help in the past as it was ignored due to the long-standing
 bug [MNG-6863][11] - which is finally fixed with Maven 4!
 
-**Recommendation: Do not use `mvn clean install`, but `mvn verify` for your regular builds!**
+**Recommendation: Do not use `mvn clean install`.
+Instead, use `mvn verify` for your regular builds!**
 
 To improve usability when resuming a failed build, you can now use `--resume` or its short parameter `-r` to resume a
 build from the subproject that last failed.
