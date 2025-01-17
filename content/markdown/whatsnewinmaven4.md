@@ -44,7 +44,7 @@ Thus, the Maven POM syntax became fixed, unable to change.
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 >
 >> unable to implement improvements that we imagine will require seriously updating the POM schema…"
->> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+> > &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
 But Maven should be able to advance.
 For this, one important thing that's needed is to separate the information needed for the build from the information
@@ -70,9 +70,9 @@ This POM will only keep what is really needed to use the artifact, e.g., depende
 
 ### Model version 4.1.0
 
+Maven 4 introduces a new POM version 4.1.0.
 With two types of POM, Maven 4 can make additions to the Build-POM as it is only be used by Maven.
-Therefore, with Maven 4, a new Model version 4.1.0 is introduced.
-This version adds some new elements and attributes, while others are marked as deprecated.
+Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the Build-POM, while the Consumer-POM will still use
 version 4.0.0.
 Maven generates the Consumer-POM during the build from the build POM.
@@ -87,12 +87,12 @@ Model".
 Together with build folders and other files, the wording "Maven project" is used.
 However, for projects containing multiple parts, e.g., an API and a client, each of those parts was called a "module"
 and listed in the `<modules>` section of the POM, leading to the terms "multi-module project".
-This wording introduced some inconsistency, especially as projects without any `<modules>` section are often called "
-single-module".
+This wording introduced some inconsistency, especially as projects without any `<modules>` section are often called
+"single-module".
 Since the introduction of the [Java Platform Module System][3] in Java 9, the term "module" has raised additional
 confusion.
 
-Maven 4 gets rid of this by naming "modules" as what they are - subprojects.
+Maven 4 gets rid of this by renaming modules to projects and submodules to subprojects.
 Model version 4.1.0 contains a new `<subprojects>` element analogous to the now deprecated, but still usable,
 `<modules>` element.
 
@@ -431,35 +431,67 @@ If you want to see issues resolved in each individual (alpha/beta/RC) release, p
 the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 <!--- Links -->
+
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
+
 [2]: https://maven.apache.org/pom.html
+
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
+
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
+
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
+
 [6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
+
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
+
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
+
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061
+
 [10]: https://maven.apache.org/docs/history.html
+
 [11]: https://issues.apache.org/jira/browse/MNG-6863
+
 [12]: https://issues.apache.org/jira/browse/MNG-6118
+
 [13]: https://maarten.mulders.it/2020/11/whats-new-in-maven-4/
+
 [14]: https://issues.apache.org/jira/browse/MNG-6754
+
 [15]: https://issues.apache.org/jira/browse/MNG-7038
+
 [16]: https://github.com/apache/maven/pull/1061
+
 [17]: https://issues.apache.org/jira/browse/MNG-624
+
 [18]: https://issues.apache.org/jira/browse/MNG-6656
+
 [19]: https://issues.apache.org/jira/browse/MNG-7051
+
 [20]: https://www.mojohaus.org/flatten-maven-plugin/
+
 [21]: https://blog.soebes.io/posts/2024/03/2024-03-31-maven-4-part-i/
+
 [22]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346477
+
 [23]: https://issues.apache.org/jira/browse/MNG-7879
+
 [24]: https://issues.apache.org/jira/browse/MNG-7836
+
 [25]: https://github.com/apache/maven-hocon-extension
+
 [26]: https://maven.apache.org/maven-jsr330.html
+
 [27]: https://issues.apache.org/jira/browse/MNG-8286
+
 [28]: https://maven.apache.org/resolver/
+
 [29]: https://github.com/apache/maven-mvnd
+
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
+
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
+
 [32]: https://issues.apache.org/jira/browse/MNG-8-->
