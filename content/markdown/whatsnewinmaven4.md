@@ -44,13 +44,24 @@ Thus, the Maven POM syntax became fixed, unable to change.
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 >
 >> unable to implement improvements that we imagine will require seriously updating the POM schema…"
-> > &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+>> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
 In order for Maven to evolve, it's necessary to separate the information needed for the build from the information
 needed by the consumers, but without breaking the ecosystem.
 Maven 4 prepares for this and more.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
+
+## Required Java version
+
+The required Java version to run Maven 4 is Java 17.
+This allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
+JDK.
+
+**Important note**: Java 17 is only needed to **run Maven**!
+You can still compile against older Java versions using the same [compiler plugin configuration][6] as before.
+If you need to compile against or use another JDK, see the [Guide to Using Toolchains][7] (or the
+article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulders).
 
 ## POM Changes
 
@@ -82,7 +93,7 @@ There is no need to update your POMs to 4.1.0 if you don't need to use the new f
 ### Modules are now subprojects
 
 A Maven project is any Java project built with Maven.
-The [root directory][33] of a Maven project contains at least the source folder `src` and the project's POM file
+The [root directory][32] of a Maven project contains at least the source folder `src` and the project's POM file
 `pom.xml`.
 A Maven project may have other Maven projects within subdirectories, each with its own `pom.xml` file.
 Each project within a subdirectory is called a "subproject".
@@ -258,11 +269,11 @@ his [article "Maven 4 - Part I - Easier Versions" (2024)][21].
 
 ### Reactor improvements and fixes
 
-Building a project with multiple subprojects could cause trouble when one subproject depended on one of the
-others and its own build failed for whatever reason.
-Maven was telling the user to fix the error and then resume the build with
-`--resume-from :<nameOfTheFailingSubproject>`, which instantly fails the build again as the needed other subproject
-couldn't be found (as it was not rebuilt).
+Building a project with multiple subprojects can cause confusion in Maven 3.
+When the build of subproject B, which requires subproject A, is failing for whatever reason, Maven 3 is telling
+the user to fix the error and then resume the build with `--resume-from :<nameOfTheFailingSubproject>`.
+But doing this instantly fails the build again, because the required subproject A couldn't be found (as it was not
+rebuilt).
 Using `--also-make :<nameOfTheDependentSubproject>` was no help in the past as it was ignored due to the long-standing
 bug [MNG-6863][11] - which is finally fixed with Maven 4!
 
@@ -290,17 +301,6 @@ This was finally changed in Maven 4 to what most users expect:
 Only deploy when all subprojects are built successfully.
 
 ## Workflow, lifecycle and runtime changes
-
-### Java 17 required to run Maven
-
-The required Java version to run Maven 4 is Java 17.
-This allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
-JDK.
-
-**Important note**: Java 17 is only needed to **run Maven**!
-You can still compile against older Java versions using the same [compiler plugin configuration][6] as before.
-If you need to compile against or use another JDK, see the [Guide to Using Toolchains][7] (or the
-article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulders).
 
 ### Application maintenance
 
@@ -370,8 +370,7 @@ For example, it's possible to `deploy` an artifact without `install`ing it to th
 
 #### Pre- and post-phases, ordering of executions
 
-Every lifecycle phase now has a `before` and an `after` phase, allowing plugins to bind themselves to those by adding
-their prefixes to the name of the main phase.
+Every lifecycle phase now has a `before-` and an `after-` phase, allowing plugins to bind themselves to those.
 For example, if you want to set up test data before running your integration tests, you could execute tasks during the
 `before-integration-test` phase.
 
@@ -405,8 +404,8 @@ You should also only rely on the official Maven BOMs when developing plugins.
 If a plugin still relies on long-deprecated and now removed Plexus dependency injection, it will no longer work.
 It needs to be updated to use JSR-330 - see [Maven & JSR-330][26] for further information.
 
-**Advice**: If you are maintaining a Maven plugin, you should test it with Maven 3.9.x, pay close attention to upcoming
-warnings, and update the plugin accordingly.
+**Advice**: If you are maintaining a Maven plugin, you should test it with Maven 3.9.x.
+Pay close attention to upcoming warnings and update the plugin accordingly.
 
 ### Improved encryption
 
@@ -442,70 +441,36 @@ As of 2024-12-14, not all issues are properly linked to the final release and th
 If you want to see issues resolved in each individual (alpha/beta/RC) release, please see
 the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
-<!--- Links -->
-
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
-
 [2]: https://maven.apache.org/pom.html
-
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
-
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
-
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
-
 [6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
-
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
-
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
-
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061
-
 [10]: https://maven.apache.org/docs/history.html
-
 [11]: https://issues.apache.org/jira/browse/MNG-6863
-
 [12]: https://issues.apache.org/jira/browse/MNG-6118
-
 [13]: https://maarten.mulders.it/2020/11/whats-new-in-maven-4/
-
 [14]: https://issues.apache.org/jira/browse/MNG-6754
-
 [15]: https://issues.apache.org/jira/browse/MNG-7038
-
 [16]: https://github.com/apache/maven/pull/1061
-
 [17]: https://issues.apache.org/jira/browse/MNG-624
-
 [18]: https://issues.apache.org/jira/browse/MNG-6656
-
 [19]: https://issues.apache.org/jira/browse/MNG-7051
-
 [20]: https://www.mojohaus.org/flatten-maven-plugin/
-
 [21]: https://blog.soebes.io/posts/2024/03/2024-03-31-maven-4-part-i/
-
 [22]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346477
-
 [23]: https://issues.apache.org/jira/browse/MNG-7879
-
 [24]: https://issues.apache.org/jira/browse/MNG-7836
-
 [25]: https://github.com/apache/maven-hocon-extension
-
 [26]: https://maven.apache.org/maven-jsr330.html
-
 [27]: https://issues.apache.org/jira/browse/MNG-8286
-
 [28]: https://maven.apache.org/resolver/
-
 [29]: https://github.com/apache/maven-mvnd
-
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
-
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
+[32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 
-[32]: https://issues.apache.org/jira/browse/MNG-8-->
-
-[33]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.h-->
