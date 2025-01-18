@@ -45,6 +45,7 @@ Examples
 ```
 org.apache.maven
 org.apache.commons
+com.google.guava
 ```
 
 There are many legacy projects that do not follow this convention and instead use single word group IDs.
@@ -68,7 +69,7 @@ org.apache.maven.reporting
 
 ## Artifact identifier
 
-The `artifactId` is the name of the artifact and therefore should describe the artifacts content.
+The `artifactId` is the name of the artifact.
 The identifiers should only consist of *lowercase* letters, digits, and hyphens.
 
 Examples
@@ -80,7 +81,7 @@ maven-clean-plugin
 
 ## Version identifier
 
-We recommend that the `version` follows the rules of [Semantic Versioning 1.0.0][2].
+We recommend that the `version` follow the rules of [Semantic Versioning 1.0.0][2].
 It should start with the major version, followed by the minor version and the patch version.
 All three are numeric, separated by a dot.
 
@@ -93,7 +94,7 @@ Examples
 ```
 
 You can add labels for pre-releases or build metadata after the patch version.
-Avoid using dates in those labels, because they are usually associated with unstable versions (see below).
+Avoid using dates in those labels, because they are usually associated with unstable versions.
 
 Examples
 
@@ -110,9 +111,12 @@ Examples
 
 ### Unstable versions (SNAPSHOT)
 
-The "latest" code on a development branch might change.
-Maybe it's unstable and not ready for use.
-Projects in such a state can add the `-SNAPSHOT` label, e.g. `1.0.1-SNAPSHOT`.
+`SNAPSHOT`s are artifacts built in between releases.
+They may be built from a particular commit or from code that isn't even committed to the source repository.
+They are a snapshot of the project at a particular point in time, generally used for testing.
+Unlike release versions, snapshot artifacts can and do change over time.
+
+Usually the snapshot has the version of the next anticipated release followed by `-SNAPSHOT`, e.g. `1.0.1-SNAPSHOT`.
 
 Maven treats artifacts with such versions in a special way during deployment and stores them in the `snapshotRepository`
 if one is defined in the [POM file][3].
