@@ -26,16 +26,17 @@ under the License.
 So that Maven can identify and utilise any artifact (e.g. a `.jar` file), this artifact must be identifiable through a
 unique combination of three identifiers.
 This combination is called the "[Maven coordinates][4]".
-Maven coordinates consist of a project identifier named `groupId`, an artifact
-identifier named `artifactId`, and the version identifier named `version`.
+Maven coordinates consist of a project group identifier named `groupId`, an artifact identifier named `artifactId`, and
+the version identifier named `version`.
 
 This document defines the naming conventions of Maven coordinates.
 
 You should follow this convention whenever you create a new artifact.
 
-## Project identifier
+## Project group identifier
 
-The `groupId` uniquely identifies the project across all projects.
+When projects of the same organization are topically related, we say they belong to the same "project group".
+The `groupId` uniquely identifies a project group across all other groups.
 Each `groupId` should follow [Java's package name rules][1].
 This means it starts with a reversed domain name you control.
 
@@ -50,17 +51,17 @@ There are many legacy projects that do not follow this convention and instead us
 However, it will be difficult to get a new single word group ID approved for inclusion in the Maven Central repository.
 
 You can create as many subgroups as you want.
-A good way to determine the granularity of the `groupId` is to use the project structure.
-If the current project contains multiple subprojects, each subproject should append a new identifier to the parent's
-`groupId`.
+A good way to determine the granularity of the `groupId` is to look at the project group's structure.
+If there are multiple projects of the same topic or type, e.g. plugins, those may be grouped in a subgroup.
+Each subgroup should append a new identifier to the parent's `groupId`.
 
 Example
 
 ```
-// Parent
+// Parent project group
 org.apache.maven
 
-// Subprojects
+// Subgroups
 org.apache.maven.plugins
 org.apache.maven.reporting
 ```
