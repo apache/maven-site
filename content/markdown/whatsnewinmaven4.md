@@ -24,30 +24,28 @@ under the License.
 
 # What's new in Maven 4?
 
-Maven is over 20 years old, and is one of the most used build tools in the Java world.
-Throughout the years, one important rule has been maintaining the highest backward compatibility possible, especially of
-its [POM file][2] with Model version 4.0.0.
+Maven is over 20 years old, and is the most widely used build tool in the Java world.
+Throughout the years, Maven has maintained backward compatibility, especially of its [POM file][2] with Model version
+4.0.0.
 
-The POM file fulfills two elementary needs.
-First, the POM holds all the information and configuration, which are only needed to build the artifact.
+The POM file fulfills two needs.
+First, the POM holds all the information and configuration, which are needed to build the artifact.
 After the artifact is created, this build information is not relevant anymore.
-Second, the POM also contains information, e.g. dependencies, which are needed by projects which want to use the
-artifact.
-These dependent projects are called the "consumers" (of an artifact).
+Second, the POM also contains information, e.g. dependencies, which are needed by projects which depend on the artifact.
+These dependent projects are called the "consumers".
 
-This made the Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the
+This made Maven more than a tool; it became a whole ecosystem with many dependencies on the POM, especially the
 Maven Central repository, other build tools, and IDEs.
-This results in the situation that any change in the POM's schema forces each participant of the ecosystem to either
-adopt the change or drop support.
+Thus, any change in the POM's schema forces each participant of the ecosystem to either adopt the change or drop
+support.
 Thus, the Maven POM syntax became fixed, unable to change.
 
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 >
 >> unable to implement improvements that we imagine will require seriously updating the POM schema…"
->> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+> > &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
-But Maven should be able to advance.
-For this, one important thing that's needed is to separate the information needed for the build from the information
+In order for Maven to evolve, it's necessary to separate the information needed for the build from the information
 needed by the consumers, but without breaking the ecosystem.
 Maven 4 prepares for this and more.
 
@@ -55,14 +53,14 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 ## POM Changes
 
-### Build-POM and Consumer-POM
+### Build POM and consumer POM
 
-Maven 3 uses Model version 4.0.0 not only by the build but also by consumers of the artifact.
+In Maven 3 both the build and consumers use the same POM file with model version 4.0.0.
 However, several parts of the POM are only necessary for the build while others, like the dependencies, are also
 needed by the consumers.
-Maven 4 therefore differentiates between a "Build-POM" and a "Consumer-POM".
-As the names suggest, the "Build-POM" contains all information needed to build the artifact, e.g., applied plugins
-and their configuration, while the "Consumer-POM", which is created during the Maven build, only contains what is
+Maven 4 therefore differentiates between a build POM and a consumer POM.
+As the names suggest, the build POM contains all information needed to build the artifact, e.g., applied plugins
+and their configuration, while the consumer POM, which is created during the Maven build, only contains what is
 necessary to use an artifact as a dependency.
 This POM will only keep what is really needed to use the artifact, e.g., dependency information.
 
@@ -71,31 +69,30 @@ This POM will only keep what is really needed to use the artifact, e.g., depende
 ### Model version 4.1.0
 
 Maven 4 introduces a new POM version 4.1.0.
-With two types of POM, Maven 4 can make additions to the Build-POM as it is only be used by Maven.
+With two types of POM, Maven 4 can make additions to the build POM as it is only be used by Maven.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
-To not break the ecosystem, this version is only available for the Build-POM, while the Consumer-POM will still use
+To not break the ecosystem, this version is only available for the build POM, while the consumer POM will still use
 version 4.0.0.
-Maven generates the Consumer-POM during the build from the build POM.
+Maven generates the consumer POM during the build from the build POM.
 
 **Note**: Maven 4 will continue to build your model version 4.0.0 project.
-There is no need to update your POMs to 4.1.0 as long as you don't want to make use of the new features.
+There is no need to update your POMs to 4.1.0 if you don't need to use the new features.
 
 ### Modules are now subprojects
 
-A Maven project is any Java project build with Maven.
-The [directory][33] of a Maven project contains at least the source folder, the test source folder and the project's POM
-file.
-A Maven project may have other Maven projects within subdirectories.
-Each project within a subdirectories is called "subproject".
+A Maven project is any Java project built with Maven.
+The [root directory][33] of a Maven project contains at least the source folder `src` and the project's POM file
+`pom.xml`.
+A Maven project may have other Maven projects within subdirectories, each with its own `pom.xml` file.
+Each project within a subdirectory is called a "subproject".
 
 Example: A project A contains a subdirectory which contains its own POM file for project B.
 We say that B is a subproject of A.
 
-However, Maven does not build subprojects as long as they are not linked as such in the POM file.
+However, Maven does not build subprojects unless they are linked from the root POM file.
 In the past this was done by listing each subproject in the `<modules>` section of the parent's POM.
-The inconsistent wording led to the situation that many people calling subprojects "modules".
-Projects which have at least one subproject are often called "multi-module project", while those which don't have any
-are "single-module project".
+Projects which have at least one subproject are called "multi-module projects", while those which have any subprojects
+are called "single module projects".
 Since the introduction of the [Java Platform Module System][3] in Java 9, the term "module" has raised additional
 confusion inside the Maven community.
 
@@ -108,10 +105,10 @@ or without subprojects.
 
 ### New packaging type: bom
 
-Maven 4 introduces a dedicated packaging type to provide a [Bill of Materials BOM][4] called "bom" to differentiate more
-precisely between "parent POMs" and dependency-managing BOMs.
-The new type is only available as a Build-POM in Model Version 4.1.0 and later, but Maven generates a full Maven 3
-compatible Consumer-POM during the build.
+Maven 4 introduces a dedicated `bom` packaging type to provide a [Bill of Materials BOM][4].
+This now differentiates between parent POMs and dependency-managing BOMs.
+The new type is only available as a build POM in Model Version 4.1.0 and later, but Maven generates a full Maven 3
+compatible consumer POM during the build.
 For an example, see the link above or
 the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2024][5].
 
@@ -121,22 +118,23 @@ Also note that in Maven 4, importing BOMs with a classifier is now possible.
 Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts, using the
 `<bomClassifier>` element.
 This means that an imported BOM must **not** come from the same reactor as the current build but be available outside
-the project before the build (in other words: you should import only external BOMs).
+the project before the build.
+In other words: you should only import external BOMs.
 That's why Maven 4.0 will show a warning if a BOM comes from the same reactor.
 In the future, this will most probably be changed to make the build fail.
 
-### Comparing Build-POM and Consumer-POM
+### Comparing build POM and consumer POM
 
 The following table shows a rough comparison of which content is available in which POM type when using Maven 4.
 
 **Notes**:
 
-* The column "Consumer-POM" does not apply to artifacts that are of type "pom", because "pom"-artifacts are designed to
+* The column "consumer POM" does not apply to artifacts that are of type "pom", because "pom"-artifacts are designed to
   contain build information, e.g. plugin configuration!
-* Some of the build-related content which is (as of now) still available in the Consumer-POM might be available only in
-  the Build-POM in the future.
+* Some of the build-related content which is (as of now) still available in the consumer POM might be available only in
+  the build POM in the future.
 
-| Content                                    | Build-POM | Consumer-POM |
+| Content                                    | Build POM | Consumer POM |
 |:-------------------------------------------|:---------:|:------------:|
 | Model version                              |   4.1.0   |    4.0.0     |
 | 3rd party dependency information           |     ✅     |      ✅       |
@@ -146,7 +144,7 @@ The following table shows a rough comparison of which content is available in wh
 | Project information / environment settings |     ✅     |      ✅       |
 | Deployment to remote repository            |     ✅     |      ✅       |
 
-**Warning**: There are rare situations where Maven 4 will produce a Consumer-POM based on version 4.1.0, e.g., when
+**Warning**: There are rare situations where Maven 4 will produce a consumer POM based on version 4.1.0, e.g., when
 condition-based profiles (see below) can't be transformed to version 4.0.0.
 Maven will show a warning in such situations.
 
@@ -158,7 +156,7 @@ To "help" Maven find the root folder, you can create a `.mvn` folder in your roo
 This folder is intended to contain project-specific configuration to run Maven, e.g., a `maven.config` or `jvm.config`
 file, and therefore was also considered as the root folder.
 With Maven 4, there is a second option to clearly define the root folder.
-Model version 4.1.0, usable for the Build-POM, adds a boolean attribute called `root` in the `<project>` element.
+Model version 4.1.0, usable for the build POM, adds a boolean attribute called `root` in the `<project>` element.
 When this attribute is set to true (default is false), the directory of this POM file is considered the root directory.
 
 Another pain point in relation to the root directory is that until Maven 4, there was no official property to make use
@@ -193,7 +191,7 @@ See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] fo
 
 ### Alternate POM syntaxes
 
-While the syntax for the 4.0.0 Consumer-POM is set in stone, the Build-POM should be able to evolve.
+While the syntax for the 4.0.0 consumer POM is set in stone, the build POM should be able to evolve.
 This includes allowing the use of alternate syntaxes by having Maven 4 provide a ModelParser SPI ([MNG-7836][24]),
 which can be implemented as a core extension and allow a custom syntax.
 
@@ -438,36 +436,69 @@ If you want to see issues resolved in each individual (alpha/beta/RC) release, p
 the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 <!--- Links -->
+
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
+
 [2]: https://maven.apache.org/pom.html
+
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
+
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
+
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
+
 [6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
+
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
+
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
+
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061
+
 [10]: https://maven.apache.org/docs/history.html
+
 [11]: https://issues.apache.org/jira/browse/MNG-6863
+
 [12]: https://issues.apache.org/jira/browse/MNG-6118
+
 [13]: https://maarten.mulders.it/2020/11/whats-new-in-maven-4/
+
 [14]: https://issues.apache.org/jira/browse/MNG-6754
+
 [15]: https://issues.apache.org/jira/browse/MNG-7038
+
 [16]: https://github.com/apache/maven/pull/1061
+
 [17]: https://issues.apache.org/jira/browse/MNG-624
+
 [18]: https://issues.apache.org/jira/browse/MNG-6656
+
 [19]: https://issues.apache.org/jira/browse/MNG-7051
+
 [20]: https://www.mojohaus.org/flatten-maven-plugin/
+
 [21]: https://blog.soebes.io/posts/2024/03/2024-03-31-maven-4-part-i/
+
 [22]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346477
+
 [23]: https://issues.apache.org/jira/browse/MNG-7879
+
 [24]: https://issues.apache.org/jira/browse/MNG-7836
+
 [25]: https://github.com/apache/maven-hocon-extension
+
 [26]: https://maven.apache.org/maven-jsr330.html
+
 [27]: https://issues.apache.org/jira/browse/MNG-8286
+
 [28]: https://maven.apache.org/resolver/
+
 [29]: https://github.com/apache/maven-mvnd
+
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
+
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
+
 [32]: https://issues.apache.org/jira/browse/MNG-8-->
+
 [33]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.h-->
