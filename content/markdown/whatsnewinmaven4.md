@@ -54,7 +54,7 @@ This article presents and explains major changes brought by Maven 4, grouped int
 
 ## Required Java version
 
-The required Java version to run Maven 4 is Java 17.
+Maven 4 requires Java 17.
 This allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
 JDK.
 
@@ -74,14 +74,13 @@ Maven 4 therefore differentiates between a build POM and a consumer POM.
 As the names suggest, the build POM contains all information needed to build the artifact, for example applied plugins
 and their configuration, while the consumer POM, which is created during the Maven build, only contains what is
 necessary to use an artifact as a dependency.
-This POM will only keep what is really needed to use the artifact, for example dependency information.
 
 **Note**: See below for a comparison of the content of both POMs.
 
 ### Model version 4.1.0
 
 Maven 4 introduces a new POM version 4.1.0.
-With two types of POM, Maven 4 can make additions to the build POM as it is only be used by Maven.
+With two types of POM, Maven 4 can make additions to the build POM as it is only used by Maven.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the build POM, while the consumer POM will still use
 version 4.0.0.
