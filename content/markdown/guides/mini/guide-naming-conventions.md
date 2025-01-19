@@ -122,10 +122,7 @@ Maven treats artifacts with such versions in a special way during deployment and
 if one is defined in the [POM file][3].
 
 [1]:https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html#d5e8762
-
 [2]:https://semver.org/spec/v1.0.0.html
-
 [3]:/pom.html#Repository
-
 [4]:/pom.html#Maven_Coordinates
 
