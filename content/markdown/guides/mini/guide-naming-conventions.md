@@ -23,7 +23,7 @@ under the License.
 
 # Naming convention of Maven coordinates
 
-So that Maven can identify and utilise any artifact (e.g. a `.jar` file), this artifact must be identifiable through a
+So that Maven can identify and utilise any artifact (e.g. a `.jar` file), every artifact must be identifiable through a
 unique combination of three identifiers.
 This combination is called the "[Maven coordinates][4]".
 Maven coordinates consist of a project group identifier named `groupId`, an artifact identifier named `artifactId`, and
@@ -122,7 +122,10 @@ Maven treats artifacts with such versions in a special way during deployment and
 if one is defined in the [POM file][3].
 
 [1]:https://docs.oracle.com/javase/specs/jls/se21/html/jls-6.html#d5e8762
+
 [2]:https://semver.org/spec/v1.0.0.html
+
 [3]:/pom.html#Repository
+
 [4]:/pom.html#Maven_Coordinates
 
