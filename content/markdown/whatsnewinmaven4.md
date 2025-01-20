@@ -65,22 +65,15 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 
 ## POM Changes
 
-### Build POM and consumer POM
+### Consumer POM
 
-In Maven 3 both the build and consumers use the same POM file with model version 4.0.0.
-However, several parts of the POM are only necessary for the build while others, like the dependencies, are also
-needed by the consumers.
-Maven 4 therefore differentiates between a build POM and a consumer POM.
-As the names suggest, the build POM contains all information needed to build the artifact, for example applied plugins
-and their configuration, while the consumer POM, which is created during the Maven build, only contains what is
-necessary to use an artifact as a dependency.
-
-**Note**: See below for a comparison of the content of both POMs.
+Maven 4 generates a stripped down consumer POM that removes build information not needed by consumers, and deploys this
+to the remote repository.
+It does not deploy the `pom.xml` used to build the project.
 
 ### Model version 4.1.0
 
-Maven 4 introduces a new POM version 4.1.0.
-With two types of POM, Maven 4 can make additions to the build POM as it is only used by Maven.
+Maven 4 updates the POM version to 4.1.0.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the build POM, while the consumer POM will still use
 version 4.0.0.
@@ -92,18 +85,18 @@ There is no need to update your POMs to 4.1.0 if you don't need to use the new f
 ### Modules are now subprojects
 
 A Maven project is any Java project built with Maven.
-The [root directory][32] of a Maven project contains at least the source folder `src` and the project's POM file
+The [top level directory][32] of a Maven project contains at least the source folder `src` and the project's POM file
 `pom.xml`.
 A Maven project may have other Maven projects within subdirectories, each with its own `pom.xml` file.
 Each project within a subdirectory is called a "subproject".
 
-Example: A project A contains a subdirectory which contains its own POM file for project B.
+Example: Project A contains a subdirectory which contains its own POM file for project B.
 We say that B is a subproject of A.
 
 However, Maven does not build subprojects unless they are linked from the root POM file.
 In the past this was done by listing each subproject in the `<modules>` section of the parent's POM.
-Projects which have at least one subproject are called "multi-module projects", while those which have any subprojects
-are called "single module projects".
+Projects which have at least one subproject are called "multi-module projects", while those which do not have any
+subprojects are called "single module projects".
 Since the introduction of the [Java Platform Module System][3] in Java 9, the term "module" has raised additional
 confusion inside the Maven community.
 
@@ -187,8 +180,8 @@ The following table shows the official properties.
 As you can see, these properties differentiate by their scope, where `project` is always related to the Maven project's
 definition (you could interpret this as the POM files) and `session` is the actual execution of a Maven build and is the
 current working directory.
-As a consequence of the definition, it's clear that the `rootDirectory` can only contain a value when either a `.mvn`
-directory is defined or the `root` attribute is set to true.
+The `rootDirectory` can only contain a value when either a `.mvn` directory is defined or the `root` attribute is set to
+true.
 However, if defined, it should always have the same value for a given project, whereas the value of the `topDirectory`
 property can change depending on the execution point.
 
@@ -419,7 +412,7 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 ### Maven Resolver
 
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
-Maven 4 will include the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
+Maven 4 includes the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
 improvements, for example, a Java native HTTP-Client - thanks to raising the Java version requirement to JDK 17!
 Another major difference compared to Maven 3 is that in the new major version, the resolver is hidden behind the new
 Maven API and is no longer used directly by plugins.
