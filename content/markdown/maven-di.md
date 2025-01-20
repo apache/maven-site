@@ -19,29 +19,25 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-## Why Maven DI?
+## What is Maven DI?
 
-TBD
+Maven DI is the dependency injection framework of Maven, that is introduced in Maven 4.
+
+It is the successor for Plexus DI (used in Maven 2) and JSR 330/Eclipse Sisu (used in Maven 3) in Maven. 
+It based on [Google Guice][guice]. (?)
+
+
+
+
 
 ## How to use Maven DI
 
 When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@Inject`, `@Named`, and `@Singleton` annotations in your plugins and extensions.
-
-[//]: # (When you use JSR-330 in Maven plugins or extensions, there are two things you need to setup in your build:)
-
-[//]: # ()
-[//]: # (1. First you want a dependency on `javax.inject` so you can use the `@Inject`, `@Named`, and `@Singleton` annotations)
-
-[//]: # (   in your plugins and extensions &#40;eventually in addition to [Plexus annotations][plexus-annotations]&#41;.)
-
-[//]: # ()
-[//]: # (2. Second you need to setup the [`sisu-maven-plugin`][sisu-maven-plugin] to index the JSR-330 components)
-
-[//]: # (   you want made available to Maven. The [`sisu-maven-plugin`][sisu-maven-plugin] creates its index in `META-INF/sisu/javax.inject.Named` &#40;eventually in addition to [`plexus-component-metadata`][plexus-component-metadata]&#41;.)
+The annotations of Maven DI are similiar to JSR 330.
 
 ### Implementation Details
 
-TBD
+TBD (need help)
 
 ## How to use Maven DI in plugins
 
@@ -163,6 +159,7 @@ public class MavenDIComponent {
     }
 }
 ```
-
+[maven-di]: tbd
+[guice]: tbd
 [maven-di-plugin]: tbd
 
