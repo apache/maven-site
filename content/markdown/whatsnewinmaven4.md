@@ -355,16 +355,25 @@ See [MNG-8286][27] for more information about supported functions.
 
 In Maven 3 the lifecycle is an ordered list containing all phases.
 This changed with Maven 4, where the lifecycle is defined as a tree of phases.
-This allows for more consistent execution of dependent phases.
+This allows for more fine-grained execution of dependent phases.
 For example, the `compile` phase must execute after `compile-only` project dependencies have reached the `ready` phase.
 Maven 4 also allows to skip phases (in comparison to the old graph).
 For example, it's possible to `deploy` an artifact without `install`ing it to the user repository.
 
+For compatibility, the execution behavior is not really changed by default compared to Maven 3.
+In order to actually leverage the new tree-based lifecycle, the user has to enable the concurrent builder using
+`-b concurrent`.
+Running with the concurrent builder will allow finer grained dependency instead of the usual Maven 3 per-project
+dependency.
+With the usual builders and run `mvn verify`, a project will run up to the verify phase, before a dependent project can
+start being built, whereas the concurrent builder will allow a dependant project to be built as soon as the dependencies
+are at the `ready` phase.
+
 #### Pre- and post-phases, ordering of executions
 
-Every lifecycle phase now has a `before-` and an `after-` phase, allowing plugins to bind themselves to those.
+Every lifecycle phase now has a `before:` and an `after:` phase, allowing plugins to bind themselves to those.
 For example, if you want to set up test data before running your integration tests, you could execute tasks during the
-`before-integration-test` phase.
+`before:integration-test` phase.
 
 If this is not enough, perhaps because you want to do multiple things inside the same phase, you can order each
 execution inside a phase by using square brackets with an integer at the end of the phase name.
@@ -372,8 +381,8 @@ execution inside a phase by using square brackets with an integer at the end of 
 Example
 
 ```
-before-integration-test[100]
-before-integration-test[200]
+before:integration-test[100]
+before:integration-test[200]
 ```
 
 **Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
