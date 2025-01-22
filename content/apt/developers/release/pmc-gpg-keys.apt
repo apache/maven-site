@@ -28,146 +28,53 @@
 
 Introduction
 
- You need to add your GPG keys in {{https://svn.apache.org/repos/asf/maven/project/KEYS}} before a release. Here are some
- useful {{{http://www.gnupg.org/}GnuPG}} commands to generate your Keys.
+  <<Before>> a release You need to publish your Public GPG Keys in several place used by different tools for verifying release signatures.
 
-* gpg --gen-key
+  All Your historical Public Keys should be available for verifying historical releases, so please <<don't remove>> any key used sometime.
 
--------
->gpg --gen-key
-gpg (GnuPG) 1.4.5; Copyright (C) 2006 Free Software Foundation, Inc.
-This program comes with ABSOLUTELY NO WARRANTY.
-This is free software, and you are welcome to redistribute it
-under certain conditions. See the file COPYING for details.
+  All new <<RSA>> keys generated should be at least <<4096>> bits. Do not generate new DSA keys.
 
-gpg: keyring `C:/Documents and Settings/Siveton Vincent/Application Data/gnupg\secring.gpg'
-created
-gpg: keyring `C:/Documents and Settings/Siveton Vincent/Application Data/gnupg\pubring.gpg'
-created
-Please select what kind of key you want:
-   (1) DSA and Elgamal (default)
-   (2) DSA (sign only)
-   (5) RSA (sign only)
-Your selection? 1
-DSA keypair will have 1024 bits.
-ELG-E keys may be between 1024 and 4096 bits long.
-What keysize do you want? (2048) 2048
-Requested keysize is 2048 bits
-Please specify how long the key should be valid.
-         0 = key does not expire
-      <n>  = key expires in n days
-      <n>w = key expires in n weeks
-      <n>m = key expires in n months
-      <n>y = key expires in n years
-Key is valid for? (0) 0
-Key does not expire at all
-Is this correct? (y/N) y
+* Maven Project Keys
 
-You need a user ID to identify your key; the software constructs the user ID
-from the Real Name, Comment and Email Address in this form:
-    "Heinrich Heine (Der Dichter) <heinrichh@duesseldorf.de>"
+  Public Keys used for signing Maven core, plugins and shared components are available for users at:\
+  {{https://downloads.apache.org/maven/KEYS}}
 
-Real name: Vincent Siveton
-Email address: vsiveton@apache.org
-Comment:
-You selected this USER-ID:
-    "Vincent Siveton <vsiveton@apache.org>"
+  You need edit a file and follow provided instructions in SVN at:\
+  {{https://svn.apache.org/repos/asf/maven/project/KEYS}}
 
-Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
-You need a Passphrase to protect your secret key.
+  General ASF instruction
 
-You don't want a passphrase - this is probably a *bad* idea!
-I will do it anyway.  You can change your passphrase at any time,
-using this program with the option "--edit-key".
+   * {{{https://infra.apache.org/openpgp.html#update-KEYS}Update keys on the next release}}
 
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-++++++++++++++++++++.++++++++++..+++++++++++++++++++++++++++++++++++++++++++++++
-+++.+++++++++++++++.++++++++++++++++++++..+++++++++++++++>++++++++++............
-.........................+++++
-We need to generate a lot of random bytes. It is a good idea to perform
-some other action (type on the keyboard, move the mouse, utilize the
-disks) during the prime generation; this gives the random number
-generator a better chance to gain enough entropy.
-.+++++++++++++++..++++++++++++++++++++....+++++.++++++++++.++++++++++.++++++++++
-+++++.+++++++++++++++++++++++++++++++++++.+++++.++++++++++++++++++++++++++++++>+
-+++++++++>+++++>+++++......................................................>++++
-+......<.+++++........................+++++^^^
-gpg: C:/Documents and Settings/Siveton Vincent/Application Data/gnupg\trustdb.gpg: trustdb
-created
-gpg: key 07DDB702 marked as ultimately trusted
-public and secret key created and signed.
+   * {{{https://infra.apache.org/release-signing.html#keys-policy}The KEYS File}}
 
-gpg: checking the trustdb
-gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
-gpg: depth: 0  valid:   1  signed:   0  trust: 0-, 0q, 0n, 0m, 0f, 1u
-pub   1024D/07DDB702 2006-10-10
-      Key fingerprint = 71F6 F555 8A61 71C4 330D  B868 84F4 D470 07DD B702
-uid                  Vincent Siveton <vsiveton@apache.org>
-sub   2048g/D2814A59 2006-10-10
+   []
 
--------
+* Distributing Your Public Keys
 
-* gpg --list-sigs && gpg --armor --export
+ Your Public Keys <<MUST>> be available at public key server,
+ you can use one or even all of currently common used key server
 
-----------------
->gpg --list-sigs "Vincent Siveton" && gpg --armor --export "Vincent Siveton"
-pub   1024D/07DDB702 2006-10-10
-uid                  Vincent Siveton <vsiveton@apache.org>
-sig 3        07DDB702 2006-10-10  Vincent Siveton <vsiveton@apache.org>
-sub   2048g/D2814A59 2006-10-10
-sig          07DDB702 2006-10-10  Vincent Siveton <vsiveton@apache.org>
+  * {{https://keys.openpgp.org}}
 
------BEGIN PGP PUBLIC KEY BLOCK-----
-Version: GnuPG v1.4.5 (MingW32)
+  * {{https://keyserver.ubuntu.com}}
 
-mQGiBEUrnAsRBACQDiYGc1IQmkENLO9iznBg8otGPEbzqQozT5tsip5mB30f6Mc/
-uuLxJkLdna7Ul3goIXDtCeLJq38gHvruNtVNR6S+juJFkd5sLEH8UJ18PbKuo/9I
-KGlzjtCYUUDC48czRr0efhqd54NH8ydNdpaZ76NGPPYfpXtk7kKgH/nPiwCgxozK
-IG2frMuWIvdFafbqdAl7y/sD/1Csf0r9jtHEeXOuyhm8jCGrSwzLbHUGKPUQP37P
-ajECHoWp6HnvHEEEpgVl+UjfZvrcVhzUoP+3r5HAugqERfkzK8AWc7qjIRjf64kU
-sjvto31G2KYz17Y8K9y4LkRkUspu8uw903pKnW/QELg4vvPVaEYpVVIdS6+cUreu
-V0hOA/4tW7T/GpzSbQmjvnIRQ7GVHbQeXsANwrS6NmGYIxafN9P9dfHV+eUieTu6
-rvMP9coOhTYyEKZksrXw2MmXx5SzgxsXT0g4wDXbwxPYFfIdGUzFMobnVXiZ3G8l
-JEl9cML0cg3ZL1SoDmVf2iG3e3Yxxsne4AE1SU+0bbq0t7rqALQlVmluY2VudCBT
-aXZldG9uIDx2c2l2ZXRvbkBhcGFjaGUub3JnPohgBBMRAgAgBQJFK5wLAhsDBgsJ
-CAcDAgQVAggDBBYCAwECHgECF4AACgkQhPTUcAfdtwLP3gCbB/V1afp8hzxgirCS
-d2r6zCkJQ2IAoLKD/RIkkerNintYzrubJliJKBsRuQINBEUrnBgQCAD1+Sx+sBDL
-1XCDtxQGsrZmMnJJVK/w4TPa/8weJkuZ1GSpINOjInmqESuehvCLoOoyfcuDVXlR
-PUZhKZLPEKfJlFptGNK19oTO/CoQN+SJLwR41FoumsBaf1YSSRpAukyx2J6cUxqf
-uWrK/T8PmgDw4YzmY96tev//41eZ5tSOxpoUM8ypnTaShtS9pjgHijEG0b7wBqeU
-e1OGOiLHgKyjEJUmlTaLm1SxJ84eq0uAvYb+rb/QoWWLpjvr2/mo1kzUvCPgo3fh
-kgOxCxsC9QD836Mi5HFK6CRYU3yAFu5+/jM+LJzELy3u7uMuOSP6yuiK8WXopdbN
-WHOiJQfdc2gTAAMFCADdljjAG7L+8de6JzsEduKErKqWlTEWa99n1knaGKzdUUOP
-WrKxwqgI6PAJbxOfG4vBdDa6M6+nySJDMybQsOCFyNx91/7jYkgkmv8Jkt8CTW4z
-P4HKlFYMAFpU95ftpTAAMAlr+t+nZRTHi94/VHMv4yLGzB/xapbzToHKuUt1Yqom
-Ncio5px7RVoicn13/i/GeY72fIdC2LRGo6PXlmmDQemoAnUw0RJoEtzapb0j/tWd
-BdAtQQX/Ks7qhk4aDDHGgO+CdHAB8PLHDpMpUX5Zc9JX1xhyJcS8d/LPUpXtt9WN
-eekqDpx+jNmySJr6os7rPAkjx6jDUvHPiuKdT4aviEkEGBECAAkFAkUrnBgCGwwA
-CgkQhPTUcAfdtwJL9ACgmLuDxE+oZaMhyFSmXWN0fM36Bd8AoLYrvwydB9+nNnhJ
-85TjkMPTgjp9
-=Hg4C
------END PGP PUBLIC KEY BLOCK-----
-----------------
+  * {{https://pgp.mit.edu}}
 
- You need to append this result to {{https://svn.apache.org/repos/asf/maven/project/KEYS}}.
+  []
 
- You also need to upload your key to the public server: {{http://pgp.mit.edu/}}
- by copying the same you appended in the text field and submit.
- You can ensure by searching your email in key search engine.
+* Committer public key files
 
-* gpg --fingerprint
+  You should also add Your Public Keys to  {{{https://people.apache.org/keys/committer}ASF Committer public key files}}
 
--------
->gpg --fingerprint vsiveton
-pub   1024D/07DDB702 2006-10-10     
-      Key fingerprint = 0000 0000 0000 0000 0000  0000 0000 0000 0000 0000
-uid                  Vincent Siveton <vsiveton@apache.org>
-sub   2048g/D2814A59 2006-10-10
--------
+  Please follow instructions at: {{https://people.apache.org/keys}}
 
- Go to {{https://id.apache.org}}, log in and fill <<<OpenPGP Public Key Primary Fingerprint:>>> with the value of <<<Key fingerprint>>>.
+* Generate a new key
 
- You can read more about {{{https://www.apache.org/dev/release-signing.html#faq}Checksums And Signatures}}.
+  Please follow ASF infrastructure instruction:
+
+  * {{{https://infra.apache.org/openpgp.html#key-gen-generate-key}Generate a new key}}
+
+  * {{{https://infra.apache.org/openpgp.html#generate-key}How to generate a strong key}}
+
+  []

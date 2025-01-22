@@ -32,11 +32,11 @@ Example: Using Maven 3 lifecycle extension
 
   You can extend multiple classes depending on your needs:
 
-  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/execution/AbstractExecutionListener.html}<<<org.apache.maven.execution.AbstractExecutionListener>>>}},
+  * {{{/ref/current/maven-core/apidocs/org/apache/maven/execution/AbstractExecutionListener.html}<<<org.apache.maven.execution.AbstractExecutionListener>>>}},
 
-  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/AbstractMavenLifecycleParticipant.html}<<<org.apache.maven.AbstractMavenLifecycleParticipant>>>}},
+  * {{{/ref/current/maven-core/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html}<<<org.apache.maven.AbstractMavenLifecycleParticipant>>>}},
 
-  * {{{/ref/current/maven-core/apidocs/index.html?org/apache/maven/eventspy/AbstractEventSpy.html}<<<org.apache.maven.eventspy.AbstractEventSpy>>>}}
+  * {{{/ref/current/maven-core/apidocs/org/apache/maven/eventspy/AbstractEventSpy.html}<<<org.apache.maven.eventspy.AbstractEventSpy>>>}}
 
   []
 

@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 3.9.0
@@ -51,6 +51,7 @@ If you have any questions, please consult:
 * Maven 2.x was auto-injecting an ancient version of `plexus-utils` dependency into the plugin classpath, and Maven 3.x continued doing this to preserve backward compatibility. Starting with Maven 3.9, it does not happen anymore. This change may lead to plugin breakage. The fix for affected plugin maintainers is to explicitly declare a dependency on `plexus-utils`. The workaround for affected plugin users is to add this dependency to plugin dependencies until issue is fixed by the affected plugin maintainer. See [MNG-6965](https://issues.apache.org/jira/browse/MNG-6965).
 * Mojos are prevented to boostrap new instance of `RepositorySystem` (for example by using deprecated `ServiceLocator`), they should reuse `RepositorySystem` instance provided by Maven instead. See [MNG-7471](https://issues.apache.org/jira/browse/MNG-7471).
 * Each line in `.mvn/maven.config` is now interpreted as a single argument. That is, if the file contains multiple arguments, these must now be placed on separate lines, see [MNG-7684](https://issues.apache.org/jira/browse/MNG-7684).
+* System and user properties handling cleanup, see [MNG-7556](https://issues.apache.org/jira/browse/MNG-7556). As a consequence, this may introduce breakage in environments where the user properties were used to set system properties or other way around, for example see [MNG-7887](https://issues.apache.org/jira/projects/MNG/issues/MNG-7887).
 
 ### Notable Core Improvements
 
@@ -61,8 +62,8 @@ If you have any questions, please consult:
 
 ### Notable Resolver 1.9.x Improvements
 
-* Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#shared-access-to-local-repository)).
-* Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#split-local-repository)).
+* Shared local repository (advisory file locking, Hazelcast or Redis, see [documentation](https://maven.apache.org/resolver/local-repository.html#Shared_Access_to_Local_Repository)).
+* Split local repository, plus "workspace" support for branched development (see [documentation](https://maven.apache.org/resolver/local-repository.html#Split_Local_Repository)).
 * Switchable and alternative resolver transports included, with default switched to native transport.
 * Pluggable checksum algorithms API (is not tied to MessageDigest anymore, see [documentation](https://maven.apache.org/resolver/about-checksums.html)).
 * Choice of resolver collectors: a new BF collector (with parallel POM downloads) has been added along the existing DF one.
@@ -87,3 +88,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12350913
 [5]: ../../docs/history.html
+

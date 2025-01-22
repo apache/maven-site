@@ -35,17 +35,17 @@ Parent POMs
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 || <<POM>>                                   || <<Version>> || <<Release Date>> || <<Parent POM Description>> || <<Source Repository>> || <<Issue Tracking>>
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                     | 29           | 2022-12-11 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://issues.apache.org/jira/issues/?jql=project = MPOM AND status != Closed AND component = asf}Jira MPOM}}
+| {{{./asf/} <<<ASF>>>}}                     | 33           | 2024-07-04 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://github.com/apache/maven-apache-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-|| <<Maven Parent POMs>>                     | 39           | 2022-12-11 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
+|| <<Maven Parent POMs>>                     | 43           | 2024-07-04 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./maven/} <<<Maven>>>}}                 |              |            | Maven wide configuration.          |                        | {{{https://issues.apache.org/jira/issues/?jql=project = MPOM AND status != Closed AND component = maven}Jira MPOM}}
+| {{{./maven/} <<<Maven>>>}}                 |              |            | Maven wide configuration.          |                        | {{{https://github.com/apache/maven-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./maven-plugins/} <<<Maven Plugins>>>}} |              |            | {{{/plugins/}Maven plugins}} configuration. |               | {{{https://issues.apache.org/jira/issues/?jql=project = MPOM AND status != Closed AND component = maven-plugins}Jira MPOM}}
+| {{{./maven-plugins/} <<<Maven Plugins>>>}} |              |            | {{{/plugins/}Maven plugins}} configuration. |               | {{{https://github.com/apache/maven-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./maven-shared-components/} <<<Maven Shared Components>>>}} | |     | {{{/shared/}Maven shared components}} configuration. |      | {{{https://issues.apache.org/jira/issues/?jql=project = MPOM AND status != Closed AND component = maven-shared-components}Jira MPOM}}
+| {{{./maven-shared-components/} <<<Maven Shared Components>>>}} | |     | {{{/shared/}Maven shared components}} configuration. |      | {{{https://github.com/apache/maven-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./skins/} <<<Maven Skins>>>}}           |              |            | {{{/skins/}Maven skins}} configuration. |                   | {{{https://issues.apache.org/jira/issues/?jql=project = MPOM AND status != Closed AND component = maven-skins}Jira MPOM}}
+| {{{./skins/} <<<Maven Skins>>>}}           |              |            | {{{/skins/}Maven skins}} configuration. |                   | {{{https://github.com/apache/maven-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 
  Parent POMs reference documentations are {{{../pom-archives/}archived here}}.

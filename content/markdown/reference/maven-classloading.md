@@ -1,4 +1,5 @@
 # Maven classloading
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 ![](maven-classloading.png)
 
 ## ClassWorlds bootstrap classloader
@@ -39,7 +41,7 @@ Each core extension is loaded in a separate classloader and there is no mechanis
 
 Core extension can use `META-INF/maven/extension.xml` descriptor to declare packages and artifacts exported by the extension. If the descriptor is not present, no packages or artifacts are exported, but the extension can still contribute components to Maven Core extension points.
 
-Core extensions are configured in `${maven.projectBasedir}/.mvn/extensions.xml` configuration file.
+Core extensions are configured `.mvn/extensions.xml` configuration file in the project's top level.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -60,7 +62,7 @@ Core extensions are loaded as part of Maven runtime startup and disposed of as p
 
 Maven extensions classloader aggregates packages exported by core extensions realms. It also loads additional classpath entries specified in `-Dmaven.ext.class.path` command line parameter.
 
-Maven extensions classloader is created only when core extensions are configured for the build. If created, it will be set as "container realm" in the Plexus container. 
+Maven extensions classloader is created only when core extensions are configured for the build. If created, it will be set as "container realm" in the Plexus container.
 
 ## Maven API classloader
 
@@ -78,7 +80,7 @@ Build extension classloaders use ClassWorld bootstrap classloader as the parent,
 
 ## Project classloaders
 
-Project classloader aggregates Maven API packages, packages exported by project build extensions. 
+Project classloader aggregates Maven API packages, packages exported by project build extensions.
 
 Project classloaders use Maven API classloader as the parent and import exported classes from project build extension realms. Legacy Maven 2.x build extensions, i.e. extensions that consist of single artifact which does not include `META-INF/maven/extension.xml` descriptor, are directly in project classloaders.
 
@@ -98,8 +100,7 @@ Reporting plugins are wired differently still, but reporting plugins are a speci
 
 ## Exported artifacts and packages
 
-Maven Core, Session and Build Extensions use `META-INF/maven/extension.xml` descriptor to declare API packages and artifacts exported by the classloader. 
-
+Maven Core, Session and Build Extensions use `META-INF/maven/extension.xml` descriptor to declare API packages and artifacts exported by the classloader.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -119,3 +120,4 @@ Maven Core, Session and Build Extensions use `META-INF/maven/extension.xml` desc
  </exportedArtifacts>
 </extension>
 ```
+

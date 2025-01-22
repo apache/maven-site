@@ -26,14 +26,14 @@
 
 POM Reference
 
-%{toc|section=0|fromDepth=1|toDepth=3}
+%{toc|section=0|fromDepth=2|toDepth=5}
 
-{Introduction}
+* Introduction
 
-  * {{{/xsd/maven-4.0.0.xsd}The POM 4.0.0 XSD}} and
+  {{{/xsd/maven-4.0.0.xsd}The POM 4.0.0 XSD}} and
     {{{/ref/current/maven-model/maven.html}descriptor reference documentation}}
 
-* {What is the POM?}
+** What is the POM?
 
   POM stands for "Project Object Model". It is an XML representation of a Maven project held in a file
   named <<<pom.xml>>>. When in the presence of Maven folks, speaking of a project is speaking in the philosophical
@@ -43,7 +43,7 @@ POM Reference
   pieces that come into play to give code life. It is a one-stop-shop for all things concerning the project.
   In fact, in the Maven world, a project does not need to contain any code at all, merely a <<<pom.xml>>>.
 
-* {Quick Overview}
+** Quick Overview
 
   This is a listing of the elements directly under the POM's project element. Notice that <<<modelVersion>>>
   contains 4.0.0. That is currently the only supported POM version, and is always required.
@@ -91,7 +91,7 @@ POM Reference
 </project>
 +--------------------------+
 
-{The Basics}
+* The Basics
 
   The POM contains all necessary information about a project, as well as configurations of plugins to be
   used during the build process. It is the declarative manifestation of the "who", "what",
@@ -114,7 +114,7 @@ POM Reference
 </project>
 +--------------------------+
 
-* {Maven Coordinates}
+** Maven Coordinates
 
   The POM defined above is the bare minimum that Maven allows. <<<groupId:artifactId:version>>> are all
   required fields (although, groupId and version do not need to be explicitly defined if they are inherited
@@ -135,15 +135,15 @@ POM Reference
   * <<artifactId>>:
   The artifactId is generally the name that the project is known by. Although the groupId is
   important, people within the group will rarely mention the groupId in discussion (they are often all be the
-  same ID, such as the {{{http://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
+  same ID, such as the {{{https://www.mojohaus.org/}MojoHaus}} project groupId: <<<org.codehaus.mojo>>>).
   It, along with the groupId, creates a key that separates this project from every other project
   in the world (at least, it should :) ). Along with the groupId, the artifactId fully defines
-  the artifact's living quarters within the repository. In the case of the above project, <<<my-project>>> lives
+  the artifact's relative path within the repository. In the case of the above project, <<<my-project>>> lives
   in <<<$M2_REPO/org/codehaus/mojo/my-project>>>.
 
   * <<version>>:
   This is the last piece of the naming puzzle. <<<groupId:artifactId>>> denotes a single project but
-  they cannot delineate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
+  it does not indicate which incarnation of that project we are talking about. Do we want the <<<junit:junit>>>
   of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. <<<my-project>>> version 1.0 files live in the directory
@@ -154,7 +154,7 @@ POM Reference
   The three elements given above point to a specific version of a project, letting Maven know <who> we
   are dealing with, and <when> in its software lifecycle we want them.
 
-* {Packaging}
+** Packaging
 
   Now that we have our address structure of <<<groupId:artifactId:version>>>, there is one more standard
   label to give us a really complete <what>: that is the project's packaging. In our
@@ -178,7 +178,7 @@ POM Reference
   a particular package structure:
   see {{{/ref/current/maven-core/default-bindings.html}Plugin Bindings for default Lifecycle Reference}} for details.
 
-* {POM Relationships}
+** POM Relationships
 
   One powerful aspect of Maven is its handling of project relationships: this includes
   dependencies (and transitive dependencies), inheritance, and aggregation (multi-module projects).
@@ -192,7 +192,7 @@ POM Reference
   Maven solves both problems through a common local repository
   from which to link projects correctly, versions and all.
 
-** {Dependencies}
+*** Dependencies
 
   The cornerstone of the POM is its {{{/ref/current/maven-model/maven.html#class_dependency}dependency}} list.
   Most projects depend on others to build
@@ -318,7 +318,13 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   In the shortest terms, <<<optional>>> lets other projects know that, when you use this project, you
   do not require this dependency in order to work correctly.
 
-*** {Dependency Version Requirement Specification}
+**** Dependency Management
+
+  Dependencies can be managed in the <<<dependencyManagement>>> section to affect the resolution of dependencies
+  which are not fully qualified or to enforce the usage of a specific transitive dependency version. Further information
+  in {{{./guides/introduction/introduction-to-dependency-mechanism.html}Introduction to the Dependency Mechanism}}.
+
+**** Dependency Version Requirement Specification
 
   Dependencies' <<<version>>> elements define version requirements, which are used to compute dependency versions. Soft requirements can be replaced by
   different versions of the same artifact found elsewhere in the dependency 
@@ -349,7 +355,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   hard requirements of the dependencies on that project. If no version
   satisfies all the hard requirements, the build fails.
 
-*** {Version Order Specification}:
+**** Version Order Specification
 
   If version strings are syntactically correct  {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
   version numbers, then in almost all cases version comparison follows the precedence rules outlined in that specification.
@@ -363,11 +369,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   plus sign or consider build identifiers.
 
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
-  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>') and transitions between digits and characters.
+  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscore ('<<<_>>>') and transitions between digits and characters.
   The separator is recorded and will have effect on the order. A transition 
   between digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-  with "<<<.>>>" or "<<<->>>" prefixes.
+  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with numbers.
 
   Splitting and Replacing Examples:
 
@@ -441,7 +447,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" = "<<<1.1>>>"
 
   * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
@@ -449,7 +455,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
-  * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>" = "<<<1-1>>>" (trailing "null" values at each hyphen)
+  * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
@@ -459,7 +465,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   what most people expect. In addition, Gradle interprets it differently, resulting in different dependency trees for the same POM.
   If the intention is to restrict it to <1.*> versions, the better version requirement is <<<[1,1.999999)>>>.
 
-*** {Version Order Testing}:
+**** Version Order Testing
 
     The maven distribution includes a tool to check version order. It was used to produce the examples in the previous paragraphs. Feel free to run it yourself when in doubt. You can run it like this:
 
@@ -479,7 +485,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 3. 1.1 -> 1.1; tokens: [1, 1]
 ----------------------------------------
 
-*** {Exclusions}
+**** Exclusions
 
   It is sometimes useful to limit a dependency's transitive dependencies. A dependency may have incorrectly
   specified scopes, or dependencies that conflict with other dependencies in your project. Exclusions tell Maven not to include a
@@ -545,7 +551,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   <<<artifactId>>> denoting a dependency to exclude. Unlike <<<optional>>>, which may or may not
   be installed and used, <<<exclusions>>> actively remove artifacts from the dependency tree.
 
-** {Inheritance}
+*** Inheritance
 
   One powerful addition that Maven brings to build management is the concept of project inheritance.
   Although in build systems such as Ant inheritance can be simulated, Maven 
@@ -563,7 +569,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-----------------------------+
 
-  The <<<packaging>>> type required to be <<<pom>>> for
+  The <<<packaging>>> type is required to be <<<pom>>> for
   <parent> and <aggregation> (multi-module) projects. These types define the goals bound
   to a set of lifecycle stages. For example, if packaging is <<<jar>>>, then the
   <<<package>>> phase will execute the <<<jar:jar>>> goal. Now we may add values to the
@@ -616,7 +622,6 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
     * reporting
 
-    * profiles
 
   Notable elements which are <<<not>>> inherited include:
 
@@ -625,6 +630,8 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
     * name
 
     * prerequisites
+
+    * profiles (but the effects of active profiles from parent POMs are)
 
     []
 
@@ -649,10 +656,14 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   local and then remote repositories.
 
   To see inheritance in action, just have a look at the
-  {{{https://svn.apache.org/viewvc/maven/pom/trunk/asf/pom.xml?view=markup}ASF}} or
-  {{{https://svn.apache.org/viewvc/maven/pom/trunk/maven/pom.xml?view=markup}Maven}} parent POM's.
+  {{{https://github.com/apache/maven-apache-parent/blob/master/pom.xml}ASF}} or
+  {{{https://github.com/apache/maven-parent/blob/master/pom.xml}Maven}} parent POM's.
+  
+  Detailed inheritance rules are outlined in {{{https://maven.apache.org/ref/3-LATEST/maven-model-builder/index.html#Inheritance_Assembly}Maven Model Builder}}.
+  All URLs are transformed when being inherited by default. The other ones are just inherited as is.
+  For plugin configuration you can overwrite the inheritance behaviour with the attributes <<<combine.children>>> or <<<combine.self>>> outlined in {{Plugins}}.
 
-*** {The Super POM}
+**** The Super POM
 
   Similar to the inheritance of objects in object oriented programming, POMs that extend
   a parent POM inherit certain values from that parent. Moreover, just as Java objects
@@ -664,7 +675,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   You can take a look at how the Super POM affects your Project Object Model by creating a
   minimal <<<pom.xml>>> and executing on the command line: <<<mvn help:effective-pom>>>
 
-*** {Dependency Management}
+**** Dependency Management
 
   Besides inheriting certain top-level elements, parents have elements to configure values for
   child POMs and transitive dependencies. One of those elements is
@@ -688,7 +699,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   <<<mvn dependency:tree>>> is helpful.
 
 
-** {Aggregation} (or Multi-Module)
+*** Aggregation (or Multi-Module)
 
   A project with modules is known as a multi-module, or aggregator project. Modules are projects
   that this POM lists, and are executed as a group. A <<<pom>>> packaged project may
@@ -718,10 +729,9 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   such that dependencies are always build before dependent modules.
 
   To see aggregation in action, have a look at the
-  {{{https://svn.apache.org/viewvc/maven/maven-3/trunk/pom.xml?view=markup}Maven}} or
-  {{{https://svn.apache.org/viewvc/maven/plugins/trunk/pom.xml?view=markup}Maven Core Plugins}} base POM's.
+  {{{https://github.com/apache/maven/blob/master/pom.xml}Maven}} base POM.
 
-*** A final note on {Inheritance v. Aggregation}
+**** A final note on {Inheritance v. Aggregation}
 
   Inheritance and aggregation create a nice dynamic to control builds through a single,
   high-level POM. You often see projects that are both parents and aggregators.
@@ -733,7 +743,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   not necessarily have - any modules that it aggregates. Conversely, a POM project may aggregate
   projects that do not inherit from it.
 
-* {Properties}
+** Properties
 
   Properties are the last required piece to understand POM basics. Maven properties
   are value placeholders, like properties in Ant. Their values are accessible anywhere
@@ -781,14 +791,14 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   []
 
-{Build Settings}
+* Build Settings
 
   Beyond the basics of the POM given above, there are two more elements that must be understood before
   claiming basic competency of the POM. They are the <<<build>>> element, that handles things like
   declaring your project's directory structure and managing plugins; and the <<<reporting>>> element,
   that largely mirrors the build element for reporting purposes.
 
-* {Build}
+** Build
 
   According to the POM 4.0.0 XSD, the <<<build>>> element is conceptually divided into two parts:
   there is a <<<BaseBuild>>> type which contains the set of elements common to both <<<build>>> elements
@@ -815,14 +825,14 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-----------------------+
 
-** The {BaseBuild Element} Set
+*** The BaseBuild Element Set
 
   <<<BaseBuild>>> is exactly as it sounds: the base set of elements between the two <<<build>>> elements in the POM.
 
 -------------------------------
 <build>
   <defaultGoal>install</defaultGoal>
-  <directory>${basedir}/target</directory>
+  <directory>\${project.basedir}/target</directory>
   <finalName>${artifactId}-${version}</finalName>
   <filters>
     <filter>filters/filter1.properties</filter>
@@ -837,7 +847,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   * <<directory>>:
   This is the directory where the build will dump its files or, in Maven parlance, the build's target.
-  It aptly defaults to <<<$\{basedir\}/target>>>.
+  It aptly defaults to <<<$\{project.basedir\}/target>>>.
 
   * <<finalName>>:
   This is the name of the bundled project when it is finally built (sans the file extension, for
@@ -852,12 +862,12 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   accept their settings (covered below). In other words, the "<<<name=value>>>" pairs defined within
   the filter files replace <<<$\{name\}>>> strings within resources on build. The example above defines
   the <<<filter1.properties>>> file under the <<<filters/>>> directory. Maven's default filter
-  directory is <<<$\{basedir\}/src/main/filters/>>>.
+  directory is <<<$\{project.basedir\}/src/main/filters/>>>.
 
   For a more comprehensive look at what filters are and what they can do, take a look at the
   {{{./guides/getting-started}quick start guide}}.
 
-*** {Resources}
+**** Resources
 
   Another feature of <<<build>>> elements is specifying where resources exist within your project.
   Resources are not (usually) code. They are not compiled, but are items meant to be
@@ -878,7 +888,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
       <resource>
         <targetPath>META-INF/plexus</targetPath>
         <filtering>false</filtering>
-        <directory>${basedir}/src/main/plexus</directory>
+        <directory>\${project.basedir}/src/main/plexus</directory>
         <includes>
           <include>configuration.xml</include>
         </includes>
@@ -911,7 +921,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   * <<directory>>:
   This element's value defines where the resources are to be found. The default directory for a build is
-  <<<$\{basedir\}/src/main/resources>>>.
+  <<<$\{project.basedir\}/src/main/resources>>>.
 
   * <<includes>>:
   A set of files patterns which specify the files to include as resources under that specified directory, using *
@@ -925,9 +935,9 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   The <<<testResources>>> element block contains <<<testResource>>>
   elements. Their definitions are similar to <<<resource>>> elements, but are naturally used during test
   phases. The one difference is that the default (Super POM defined) test resource directory for a project is
-  <<<$\{basedir\}/src/test/resources>>>. Test resources are not deployed.
+  <<<$\{project.basedir\}/src/test/resources>>>. Test resources are not deployed.
 
-*** {Plugins}
+**** Plugins
 
 +------------------------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1124,7 +1134,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
             <inherited>false</inherited>
             <configuration>
               <tasks>
-                <echo>Build Dir: ${project.build.directory}</echo>
+                <echo>Build Dir: \${project.build.directory}</echo>
               </tasks>
             </configuration>
           </execution>
@@ -1157,7 +1167,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   Same as above, but confines the configuration to this specific list of goals, rather than all goals
   under the plugin.
 
-*** {Plugin Management}
+**** Plugin Management
 
   * <<pluginManagement>>:
   is an element that is seen along side plugins. Plugin Management contains plugin elements in much
@@ -1223,13 +1233,13 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +------------------------------------------+
 
 
-** The {Build Element} Set
+*** The Build Element Set
 
   The <<<Build>>> type in the XSD denotes those elements that are available only for the "project build". Despite
   the number of extra elements (six), there are really only two groups of elements that project build contains
   that are missing from the profile build: directories and extensions.
 
-*** {Directories}
+**** Directories
 
  The set of directory elements live in the parent build element, which set various directory structures
  for the POM as a whole. Since they do not exist in profile builds, these cannot be altered by profiles.
@@ -1239,11 +1249,11 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <build>
-    <sourceDirectory>${basedir}/src/main/java</sourceDirectory>
-    <scriptSourceDirectory>${basedir}/src/main/scripts</scriptSourceDirectory>
-    <testSourceDirectory>${basedir}/src/test/java</testSourceDirectory>
-    <outputDirectory>${basedir}/target/classes</outputDirectory>
-    <testOutputDirectory>${basedir}/target/test-classes</testOutputDirectory>
+    <sourceDirectory>\${project.basedir}/src/main/java</sourceDirectory>
+    <scriptSourceDirectory>\${project.basedir}/src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>\${project.basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>\${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>\${project.basedir}/target/test-classes</testOutputDirectory>
     ...
   </build>
 </project>
@@ -1251,10 +1261,10 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   If the values of a <<<*Directory>>> element above is set as an absolute path (when their
   properties are expanded) then that directory is used. Otherwise, it is relative to the
-  base build directory: <<<$\{basedir\}>>>. <<Please note that the>> <<<scriptSourceDirectory>>> <<is nowhere
+  base build directory: <<<$\{project.basedir\}>>>. <<Please note that the>> <<<scriptSourceDirectory>>> <<is nowhere
   used in Maven and is obsolete>>.
 
-*** {Extensions}
+**** Extensions
 
   Extensions are a list of artifacts that are to be used in this build. They will be included
   in the running build's classpath. They can enable extensions to the build process (such as add an
@@ -1281,7 +1291,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +------------------------------------------+
 
-* {Reporting}
+** Reporting
 
   Reporting contains the elements that correspond specifically for the <<<site>>> generation phase.
   Certain Maven plugins can generate reports defined and configured under the reporting element,
@@ -1305,7 +1315,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <reporting>
-    <outputDirectory>${basedir}/target/site</outputDirectory>
+    <outputDirectory>${project.basedir}/target/site</outputDirectory>
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
@@ -1321,9 +1331,9 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 +------------------------------------------+
 
   The other difference is the <<<outputDirectory>>> element under <<<plugin>>>. In the case of reporting,
-  the output directory is <<<$\{basedir\}/target/site>>> by default.
+  the output directory is <<<$\{project.basedir\}/target/site>>> by default.
 
-** {Report Sets}
+*** Report Sets
 
   It is important to keep in mind that an individual plugin may have multiple goals. Each goal may have a
   separate configuration. Report sets configure execution of a report plugin's goals. Does this sound familiar
@@ -1369,7 +1379,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   configure plugins, but must also configure the goals of those plugins. That is where these
   elements come in, giving the POM ultimate granularity in control of its build destiny.
 
-{More Project Information}
+* More Project Information
 
   Several elements do not affect the build, but rather document the project for
   the convenience of developers. Many of these elements are used to fill in project
@@ -1390,7 +1400,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   * <<inceptionYear>>:
   The year the project was first created. 
 
-* {Licenses}
+** Licenses
 
 +-------------------------+
 <licenses>
@@ -1416,7 +1426,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   This describes how the project may be legally distributed. The two stated methods are repo (they may be
   downloaded from a Maven repository) or manual (they must be manually installed).
 
-* {Organization}
+** Organization
 
   Most projects are run by some sort of organization (business, private group, etc.). Here is
   where the most basic information is set.
@@ -1432,7 +1442,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-------------------------+
 
-* {Developers}
+** Developers
 
   All projects consist of files that were created, at some time, by a person. Like the other systems
   that surround a project, so to do the people involved with a project have a stake in the project.
@@ -1491,7 +1501,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   image or an instant messenger handle. Different plugins may use these properties, or they may simply
   be for other developers who read the POM.
 
-* {Contributors}
+** Contributors
 
   Contributors are like developers
   yet play an ancillary role in a project's lifecycle. Perhaps the contributor sent in a bug fix,
@@ -1524,9 +1534,9 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 
   Contributors contain the same set of elements than developers sans the <<<id>>> element.
 
-{Environment Settings}
+* Environment Settings
 
-* {Issue Management}
+** Issue Management
 
   This defines the defect tracking system (<Bugzilla>, <TestTrack>, <ClearQuest>, etc)
   used. Although there is nothing stopping a plugin from using this information for
@@ -1544,7 +1554,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-------------------------+
 
-* {Continuous Integration Management}
+** Continuous Integration Management
 
   Continuous integration build systems based upon triggers or timings (such as, hourly or daily)
   have grown in favor over manual builds in the past few years. As build systems have become more
@@ -1578,7 +1588,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +-------------------------+
 
-* {Mailing Lists}
+** Mailing Lists
 
   Mailing lists are a great tool for keeping in touch with people about a project.
   Most mailing lists are for developers and users.
@@ -1615,7 +1625,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   The email address which one would use in order to post to the mailing list. Note that not all
   mailing lists have the ability to post to (such as a build failure list).
 
-* {SCM}
+** SCM
 
   SCM (Software Configuration Management, also called Source Code/Control Management or, succinctly,
   version control) is an integral part of any healthy project. If your Maven project uses an SCM system
@@ -1661,7 +1671,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   * <<url>>:
   A publicly browsable repository. For example, via ViewCVS.
 
-* {Prerequisites}
+** Prerequisites
 
   The POM may have certain prerequisites in order to execute correctly.  
   The only element that exists as a prerequisite in
@@ -1683,7 +1693,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 </project>
 +-------------------------+
 
-* {Repositories}
+** Repositories
 
   Repositories are collections of artifacts which adhere to the Maven repository directory
   layout. In order to be a Maven repository artifact, a POM file must live within the structure
@@ -1706,12 +1716,10 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
     <repository>
       <releases>
         <enabled>false</enabled>
-        <updatePolicy>always</updatePolicy>
-        <checksumPolicy>warn</checksumPolicy>
       </releases>
       <snapshots>
         <enabled>true</enabled>
-        <updatePolicy>never</updatePolicy>
+        <updatePolicy>always</updatePolicy>
         <checksumPolicy>fail</checksumPolicy>
       </snapshots>
       <name>Nexus Snapshots</name>
@@ -1734,23 +1742,35 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<enabled>>:
   <<<true>>> or <<<false>>> for whether this repository is enabled for the respective
-  type (<<<releases>>> or <<<snapshots>>>).
+  type (<<<releases>>> or <<<snapshots>>>). By default this is <<<true>>>.
 
   * <<updatePolicy>>:
-  This element specifies how often updates should attempt to occur. Maven will compare the local
-  POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
-  <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>.
+  This element specifies how often Maven tries to update its local repository from the remote repositories. 
+  Maven will compare the local POM's timestamp (stored in a repository's maven-metadata file) to the remote. The choices are:
+  <<<always>>>, <<<daily>>> (default), <<<interval:X>>> (where X is an integer in minutes) or <<<never>>>
+  (only downloads if not yet existing in the local repository). As this affects both artifacts and metadata 
+  ({{{https://issues.apache.org/jira/browse/MRESOLVER-377}supposed to be changed in Maven 4}})
+  be careful with <<<never>>>, as metadata changes over time (even for release repositories).
 
   * <<checksumPolicy>>:
   When Maven deploys files to the repository, it also deploys corresponding checksum files. Your options
-  are to <<<ignore>>>, <<<fail>>>, or <<<warn>>> on missing or incorrect checksums.
+  are to <<<ignore>>>, <<<fail>>>, or <<<warn>>> on missing or incorrect checksums. The default value is <<<warn>>>.
+
+  * <<id>>:
+  The repository id is mandatory and connects the repository with the servers from <<<settings.xml>>>. Its default value is <<<default>>>.
+  The id is used also in the {{{https://maven.apache.org/ref/3-LATEST/maven-repository-metadata/}local repository metadata}} to store the origin.
+
+  * <<name>>:
+  An optional name for the repository. Used as label when emitting log messages related to this repository.
 
   * <<layout>>:
   In the above description of repositories, it was mentioned that they all follow a common layout. This
   is mostly correct. The layout introduced with Maven 2 is the default layout for repositories used by Maven both 2 & 3.
-  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>.
+  However, Maven 1.x had a different layout. Use this element to specify whether it is <<<default>>> or <<<legacy>>>. 
+  Its default value is <<<default>>>.
 
-* {Plugin Repositories}
+
+** Plugin Repositories
 
   Repositories are home to two major types of artifacts. The first are artifacts that are used as
   dependencies of other artifacts. These are the majority of artifacts that reside within central.
@@ -1761,51 +1781,28 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   remote location of where Maven can find new plugins.
 
 
-* {Distribution Management}
+** Distribution Management
 
   Distribution management acts precisely as it sounds: it manages the distribution of the artifact
-  and supporting files generated throughout the build process. Starting with the last elements first:
-
+  and supporting files generated throughout the build process.
+  
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <distributionManagement>
-    ...
-    <downloadUrl>http://mojo.codehaus.org/my-project</downloadUrl>
-    <status>deployed</status>
+    <repository>...</repository>
+    <snapshotRepository>...<snapshotRepository>
+    <site>...</site>
+    <relocation>...</relocation>
+    <downloadUrl>...</downloadUrl>
+    <status>...</status>
   </distributionManagement>
   ...
 </project>
 +-------------------------+
-
-  * <<downloadUrl>>:
-  is the URL of the repository which another POM can point to in order to grab this POM's
-  artifact. In the simplest terms, we told the POM how to upload it (through repository/url),
-  but from where can the public download it? This element answers that question.
-
-  * <<status>>:
-  Warning! Like a baby bird in a nest, the status should never be touched by human hands! The
-  reason for this is that Maven will set the status of the project when it is transported out
-  to the repository. Its valid types are as follows.
-
-    * <<none>>:
-    No special status. This is the default for a POM.
-
-    * <<converted>>:
-    The manager of the repository converted this POM from an earlier version to Maven 2.
-
-    * <<partner>>:
-    This artifact has been synchronized with a partner repository.
-
-    * <<deployed>>:
-    By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
-
-    * <<verified>>:
-    This project has been verified, and should be considered finalized.
-
-
-** {Repository}
+  
+*** Repository
 
   Whereas the repositories element specifies in the POM the location and manner in which Maven may
   download remote artifacts for use by the current project, distributionManagement specifies where
@@ -1853,7 +1850,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   These are the same types and purpose as the layout element defined in the repository element.
   They are <<<default>>> and <<<legacy>>>.
 
-** {Site Distribution}
+*** Site Distribution
 
   More than distribution to the repositories, <<<distributionManagement>>> is responsible for defining
   how to deploy the project's site and documentation.
@@ -1879,7 +1876,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   These elements are similar to their counterparts above in the <<<distributionManagement>>>
   <<<repository>>> element.
 
-** {Relocation}
+*** Relocation
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0"1 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1906,14 +1903,68 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   being renamed to <<<org.apache:my-project:1.0>>>. Besides specifying the new address, it
   is also good form to provide a message explaining why.
 
-* {Profiles}
+*** downloadUrl
+
++-------------------------+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <distributionManagement>
+    ...
+    <downloadUrl>http://mojo.codehaus.org/my-project/download.html</downloadUrl>
+  </distributionManagement>
+  ...
+</project>
++-------------------------+
+
+  <<downloadUrl>> is the URL of the project's download page. If not given users will be referred to the homepage given by url.
+  This is given to assist in locating artifacts that are not in the repository due to licensing restrictions.
+  See for example {{{https://issues.apache.org/jira/browse/MNG-2083}MNG-2083}} for a typical workflow.
+
+*** status
+
++-------------------------+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  ...
+  <distributionManagement>
+    ...
+    <status>deployed</status>
+  </distributionManagement>
+  ...
+</project>
++-------------------------+
+
+  Warning! Like a baby bird in a nest, the status should never be touched by human hands! The
+  reason for this is that Maven will set the status of the project when it is transported out
+  to the repository. It is described here just for understanding, but should never be configured in your <<<pom.xml>>>.
+
+  <<Status>> valid values are as follows:
+
+    * <<none>>:
+    No special status. This is the default for a POM.
+
+    * <<converted>>:
+    The manager of the repository converted this POM from an earlier version to Maven 2.
+
+    * <<partner>>:
+    This artifact has been synchronized with a partner repository.
+
+    * <<deployed>>:
+    By far the most common status, meaning that this artifact was deployed from a Maven 2 or 3 instance. This is what you get when you manually deploy using the command-line deploy phase.
+
+    * <<verified>>:
+    This project has been verified, and should be considered finalized.
+
+* Profiles
 
   A new feature of the POM 4.0 is the ability of a project to change settings depending
   on the environment where it is being built. A <<<profile>>> element contains both an optional
   activation (a profile trigger) and the set of changes to be made to the POM if that profile has been
   activated. For example, a project built for a test environment may point to a different database than
   that of the final deployment. Or dependencies may be pulled from different repositories based upon
-  the JDK version used. The elements of profiles are as follows:
+  the JDK version used. 
+  The elements of profiles are as follows:
 
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -1936,7 +1987,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 </project>
 +-------------------------+
 
-** {Activation}
+** Activation
 
   Activations are the key of a profile. The power of a profile comes from its ability to modify the
   basic POM only under certain circumstances. Those circumstances are specified via an <<<activation>>> element.
@@ -1944,29 +1995,29 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 +-------------------------+
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  ...
+  <!-- ... -->
   <profiles>
     <profile>
       <id>test</id>
       <activation>
         <activeByDefault>false</activeByDefault>
-        <jdk>1.5</jdk>
+        <jdk>21</jdk>
         <os>
-          <name>Windows XP</name>
+          <name>Windows 10</name>
           <family>Windows</family>
-          <arch>x86</arch>
-          <version>5.1.2600</version>
+          <arch>amd64</arch>
+          <version>10.0.19045.5247</version>
         </os>
         <property>
           <name>sparrow-type</name>
           <value>African</value>
         </property>
         <file>
-          <exists>${basedir}/file2.properties</exists>
-          <missing>${basedir}/file1.properties</missing>
+          <exists>${project.basedir}/file2.properties</exists>
+          <missing>${project.basedir}/file1.properties</missing>
         </file>
       </activation>
-      ...
+      <!-- ... -->
     </profile>
   </profiles>
 </project>
@@ -1974,6 +2025,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
   Since Maven 3.2.2 activation occurs when all of the specified criteria have been met.
+
+  * <<activeByDefault>>:
+  Is <<<false>>> by default. Boolean flag which determines if the profile is active by default. This flag is only evaluated if no other profile is explicitly activated via command line, <<<settings.xml>>> or implicitly activated through some other activator, otherwise it has no effect.
 
   * <<jdk>>:
   <<<activation>>> has a built in, Java-centric check in the <<<jdk>>> element. The value is one of the following three types:
@@ -1988,7 +2042,21 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
 
   * <<os>>:
-  The <<<os>>> element can define some operating system specific properties shown above. See the maven-enforcer-plugins {{{https://maven.apache.org/enforcer/enforcer-rules/requireOS.html}RequireOS Rule}} for more details about OS values.
+  The <<<os>>> element can require some operating system specific properties having specific values. 
+  Each value may start with <<<!>>> which means the condition is fulfilled if the value following does <not> equal the actual value,
+  otherwise the condition is fulfilled if the value equals the according system property (or derived value). In both cases the check is <<case insensitive>>.
+  
+    * <<name>>, is matched against system property <<<os.name>>>
+    
+    * <<family>>, is matched against the family derived from the other <<os.*>> system properties 
+    
+    * <<arch>>, is matched against system property <<<os.arch>>>
+    
+    * <<version>>, is matched against system property <<<os.version>>>. Since {{{https://issues.apache.org/jira/browse/MNG-5726}Maven 3.9.7}} 
+    the value for <<<version>>> may be prefixed with <<<regex:>>>. In that case {{{https://docs.oracle.com/javase/tutorial/essential/regex/}regular pattern matching}}
+    is applied for the version matching. Note that system property <<<os.version>>> is converted to <<lower case>> prior to the matching.
+
+  See the maven-enforcer-plugin's {{{/enforcer/enforcer-rules/requireOS.html}Require OS Rule}} for more details about OS values.
 
   * <<property>>:
   The <<<profile>>> will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by <<<$\{name\}>>>)
@@ -1996,9 +2064,11 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 
   * <<file>>:
   Finally, a given filename may activate the <<<profile>>> by the <<<existence>>> of a file, or if it
-  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{basedir\}>>>, System properties and request properties.
+  is <<<missing>>>. <<NOTE>>: interpolation for this element is limited to <<<$\{project.basedir\}>>>, System properties and request properties.
 
   []
+
+  The POM based profile activation only refers to the container profile (not all profiles with the same <<<id>>>).
 
   The <<<activation>>> element is not the only way that a <<<profile>>> may be activated.
   The <<<settings.xml>>> file's <<<activeProfile>>> element may contain the profile's <<<id>>>. They may also be
@@ -2010,7 +2080,9 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
 mvn help:active-profiles
 -------
 
-** {The BaseBuild Element Set} <(revisited)>
+  Further information about profiles is available in {{{./guides/introduction/introduction-to-profiles.html}Introduction to Build Profiles}}.
+
+* The BaseBuild Element Set (revisited)
 
   As mentioned above, the reason for the two types of build elements reside in the fact that it does
   not make sense for a profile to configure build directories or
@@ -2019,7 +2091,7 @@ mvn help:active-profiles
   <If you find your project needing to keep two sets of code for different environments, it may be
   prudent to investigate refactoring the project into two or more separate projects.>
 
-{Final}
+* Final
 
   The Maven POM is big. However, its size is also a testament to its versatility. The ability
   to abstract all of the aspects of a project into a single artifact is powerful, to say the least.
@@ -2031,5 +2103,5 @@ mvn help:active-profiles
 
 ======================
 
-  Aspects of this guide were originally published in the
-  {{{http://www.javaworld.com/javaworld/jw-05-2006/jw-0529-maven.html}Maven 2 Pom Demystified}}.
+  Aspects of this guide were originally published in the article "Maven 2 Pom Demystified The evolution of a project
+  model" by Eric Redmond (JavaWorld.com, 2006-05-29).

@@ -62,6 +62,15 @@ Guide to Testing Staged Releases
   release is made again. This is why clearing the local repository is necessary, but if you are using a repository manager this is also
   important to clear. The following provides instructions for setting Archiva up in such a way that the artifacts are isolated already.
 
+Checking Reproducible Builds
+
+  Checking binary output, ideally to control that the build is reproducible, can be done by running <<<verify>>> (NOT <<<install>>>) followed by <<<artifact:compare>>> against the staged content:
+
+-----
+mvn -Papache-release -Dgpg.skip clean verify \
+    artifact:compare -Dreference.repo=https://repository.apache.org/content/groups/staging/
+-----
+
 * Setting up Archiva to Test Staged Releases
 
   These steps will be similar for any repository manager - please refer to their individual documentation for instructions on how to

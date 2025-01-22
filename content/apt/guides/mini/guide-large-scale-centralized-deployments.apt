@@ -46,7 +46,7 @@ Guide to Large Scale Centralized Deployments
     [[3]] Centrally manage the <<<settings.xml>>> files, and distribute them via automation.
 
 
-* {Repository Manager Layout}
+* Repository Manager Layout
 
   Repository managers generally have at least three types of repositories:
 
@@ -79,7 +79,7 @@ Guide to Large Scale Centralized Deployments
 
     * {{{Managing_Uploads_to_the_Repository_Manager}Upload}} artifacts to one of the hosted repositories.
 
-* {Managing Downloads from the Repository Manager}
+* Managing Downloads from the Repository Manager
 
   All artifacts used by Maven projects in the organization should be downloaded
   from the single virtual repository of the repository manager.
@@ -106,7 +106,7 @@ Guide to Large Scale Centralized Deployments
 </settings>
 +-----+
 
-* {Managing Uploads to the Repository Manager}
+* Managing Uploads to the Repository Manager
 
   All proprietary artifacts produced by Maven projects in the organization should be uploaded
   to the repository manager's hosted repositories.
@@ -221,7 +221,7 @@ Guide to Large Scale Centralized Deployments
 +-----+
 
 
-* {Settings File Locations}
+* Settings File Locations
 
   Maven <<<settings.xml>>> files need to be available wherever Maven builds are performed, typically:
 

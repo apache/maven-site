@@ -26,23 +26,9 @@
 
 Introduction to the Build Lifecycle
 
-* Table Of Contents
+%{toc|section=0|fromDepth=2|toDepth=2}
 
- * {{{Build_Lifecycle_Basics}Build Lifecycle Basics}}
-
- * {{{Setting_Up_Your_Project_to_Use_the_Build_Lifecycle}Setting Up Your Project to Use the Build Lifecycle}}
-
-   * {{{Packaging}Packaging}}
-
-   * {{{Plugins}Plugins}}
-
- * {{{Lifecycle_Reference}Lifecycle Reference}}
-
- * {{{Built-in_Lifecycle_Bindings}Built-in Lifecycle Bindings}}
-
- []
-
-* {Build Lifecycle Basics}
+* Build Lifecycle Basics
 
   Maven is based around the central concept of a build lifecycle. What this means is that the process for building
   and distributing a particular artifact (project) is clearly defined.
@@ -54,7 +40,7 @@ Introduction to the Build Lifecycle
   deployment, the <<<clean>>> lifecycle handles project cleaning, while the <<<site>>> lifecycle handles the creation of your
   project's web site.
 
-** {A Build Lifecycle is Made Up of Phases}
+** A Build Lifecycle is Made Up of Phases
 
   Each of these build lifecycles is defined by a different list of build phases, wherein a build phase represents a
   stage in the lifecycle.
@@ -87,7 +73,7 @@ Introduction to the Build Lifecycle
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-** {Usual Command Line Calls}
+** Usual Command Line Calls
 
   You should select the phase that matches your outcome. If you want your jar, run <<<package>>>. If you want to run the 
   unit tests, run <<<test>>>.
@@ -100,9 +86,9 @@ mvn verify
 
   This command executes each default lifecycle phase in order (<<<validate>>>, <<<compile>>>, <<<package>>>, etc.), 
   before executing <<<verify>>>.  You only need to call the last build phase to be executed, in this case, <<<verify>>>.
-  In most cases the effect is the same as <<<package>>>. However, in case there are integration-tests, these will be
-  executed as well. And during the <<<verify>>> phase some additional checks can be done, e.g. if your code written
-  according to the predefined checkstyle rules.
+  In most cases the effect is the same as <<<package>>>. However, in case there are integration tests, these will be
+  executed as well. And during the <<<verify>>> phase additional checks can be done, e.g. if your code is written
+  according to predefined checkstyle rules.
 
   In a build environment, use the following call to cleanly build and deploy artifacts into the shared repository.
 
@@ -116,7 +102,7 @@ mvn clean deploy
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-** {A Build Phase is Made Up of Plugin Goals}
+** A Build Phase is Made Up of Plugin Goals
 
   However, even though a build phase is responsible for a specific step in the build lifecycle, the manner in which it
   carries out those responsibilities may vary. And this is done by declaring the plugin goals bound to those build phases.
@@ -140,15 +126,13 @@ mvn clean dependency:copy-dependencies package
   Furthermore, a build phase can also have zero or more goals bound to it. If a build phase has no goals bound to it,
   that build phase will not execute. But if it has one or more goals bound to it, it will execute all those goals.
 ~~~
-~~~ Check if the following is true for Maven 3...
-  (<Note: In Maven 2.0.5 and above, multiple goals bound to a phase are executed in the same order as they are declared in the
-  POM, however multiple instances of the same plugin are not supported. Multiple instances of the same plugin are grouped to execute together and ordered in
-  Maven 2.0.11 and above>).
+  Multiple goals bound to a phase are executed in the same order as they are declared in the
+  POM. Multiple instances of the same plugin are grouped to execute together.
 ~~~
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-** {Some Phases Are Not Usually Called From the Command Line}
+** Some Phases Are Not Usually Called From the Command Line
 
  The phases named with hyphenated-words (<<<pre-*>>>, <<<post-*>>>, or <<<process-*>>>) are not usually directly
  called from the command line. These phases sequence the build, producing intermediate results that are not useful outside
@@ -165,12 +149,12 @@ mvn clean dependency:copy-dependencies package
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-* {Setting Up Your Project to Use the Build Lifecycle}
+* Setting Up Your Project to Use the Build Lifecycle
 
  The build lifecycle is simple enough to use, but when you are constructing a Maven build for a project, how do you go
  about assigning tasks to each of those build phases?
 
-** {Packaging}
+** Packaging
 
  The first, and most common way, is to set the packaging for your project via the equally named POM element <<<\<packaging\>>>>. Some of the valid
  packaging values are <<<jar>>>, <<<war>>>, <<<ear>>> and <<<pom>>>. If no packaging value has been specified, it will default
@@ -180,7 +164,7 @@ mvn clean dependency:copy-dependencies package
  goals to build phases of the default lifecycle.
 
 *------------------------------+---------------------------------------------------------------------------------------+
-|| Phase                       || plugin:goal
+|| Phase                       || plugin:goal for the <<<jar>>> packaging
 *------------------------------+---------------------------------------------------------------------------------------+
 | <<<process-resources>>>      | <<<resources:resources>>>
 *------------------------------+---------------------------------------------------------------------------------------+
@@ -212,7 +196,7 @@ mvn clean dependency:copy-dependencies package
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-** {Plugins}
+** Plugins
 
   The second way to add goals to phases is to configure plugins in your project. Plugins are artifacts that provide
   goals to Maven. Furthermore, a plugin may have one or more goals wherein each goal represents a capability of that
@@ -285,7 +269,7 @@ mvn clean dependency:copy-dependencies package
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-* {Lifecycle Reference}
+* Lifecycle Reference
 
   The following lists all build phases of the <<<default>>>, <<<clean>>> and <<<site>>> lifecycles, which are executed in the order given
   up to the point of the one specified.
@@ -370,7 +354,7 @@ mvn clean dependency:copy-dependencies package
 
   <{{{./introduction-to-the-lifecycle.html}[top]}}.>
 
-* {Built-in Lifecycle Bindings}
+* Built-in Lifecycle Bindings
 
   Some phases have goals bound to them by default. And for the default lifecycle, these bindings depend on
   the packaging value. Here are some of the goal-to-build-phase bindings.

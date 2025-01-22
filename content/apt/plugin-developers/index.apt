@@ -46,8 +46,6 @@ Plugin Developers Centre
 
   * {{{./plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
 
-  * {{{./plugin-documenting.html} Documenting your Plugin}} - How to write documentation for your plugins
-
   * TODO: creating and using custom packaging (like {{{/archetype/archetype-packaging/}<<<maven-archetype>>> packaging}})
 
   * {{{./common-bugs.html} Common Bugs and Pitfalls}} - Overview of problematic coding patterns
@@ -60,7 +58,7 @@ Plugin Developers Centre
 
   * {{{../developers/mojo-api-specification.html} Mojo API and Annotation Reference}}
 
-  * {{{/plugin-tools/examples/using-annotations.html} Maven Plugin Tools and annotations}}
+  * {{{/plugin-tools/maven-plugin-tools-annotations/index.html} Maven Plugin Tools and annotations}}
 
   * {{{../ref/current/index.html} Maven API Reference}}
 

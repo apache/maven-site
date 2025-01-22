@@ -43,7 +43,7 @@ Guide to Configuring Plug-ins
 
   []
 
-  All plugins should have minimal required
+  All plugins should have at least the minimal required
   {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
@@ -53,7 +53,7 @@ Guide to Configuring Plug-ins
   For reporting plugins, specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> element
   (and in the <<<\<build\>\<pluginManagement/\>\</build\>>>> element too).
 
-* {Generic Configuration}
+* Generic Configuration
 
  Maven plugins (build and reporting) are configured by specifying a <<<\<configuration\>>>> element where the child elements of the
  <<<\<configuration\>>>> element are mapped to fields, or setters, inside your Mojo. (Remember that a plug-in consists of
@@ -131,7 +131,7 @@ mvn myquery:query -Dquery.url=http://maven.apache.org
   reasons) employ system properties which are completely unrelated to the parameter name. So be sure to have a close
   look at the plugin documentation.
 
-** {Help Goal}
+** Help Goal
 
   Most Maven plugins have a <<<help>>> goal that prints a description
   of the plugin and its parameters and types. For instance, to see help
@@ -144,11 +144,11 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   And you will see all parameters for the javadoc:javadoc goal, similar to this
   {{{/plugins/maven-javadoc-plugin/javadoc-mojo.html}page}}.
 
-** {Configuring Parameters}
+** Configuring Parameters
 
-  Parametrisation of Mojos is relying internally on Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
+  Parameterization of Mojos relies internally on the Plexus Component Configuration API provided by {{{https://github.com/eclipse/sisu.plexus}sisu-plexus}}.
 
-*** {Mapping Value Objects}
+*** Mapping Value Objects
 
   Mapping value types, like Boolean or Integer, is very simple. The <<<\<configuration\>>>> element might look like
   the following:
@@ -209,7 +209,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
  <<<java.net.URL>>>   | {{{https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-}<<<new URL(String)>>>}}
 *---------------------*--------------*
 
-*** {Mapping Complex Objects}
+*** Mapping Complex Objects
 
   Mapping complex types is also fairly straight forward. Let's look at a simple example where we
   are trying to map a configuration for Person object. The <<<\<configuration/\>>>> element might look like the
@@ -257,12 +257,12 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
 </project>
 +----+
 
-*** {Mapping Collection Types}
+*** Mapping Collection Types
 
  The configuration mapping mechanism can easily deal with most collections so let's go through a few examples
  to show you how it's done:
 
-**** {Mapping Collections and Arrays}
+**** Mapping Collections and Arrays
 
  Mapping to collections works in much the same way as mapping to arrays. Each item is given in the XML
  as dedicated element. The element name does not matter in that case. So if you have a mojo like the following:
@@ -309,11 +309,11 @@ public class MyAnimalMojo
  Where each of the animals listed would be entries in the <<<animals>>> field. Unlike arrays, collections do not necessarily have
   a specific component type. In order to derive the type of a collection item, the following strategy is used:
 
-  [[1]] If the XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
+  [[1]] If the first item XML element contains an <<<implementation>>> hint attribute, try to load the class with the given fully qualified class name from the attribute value
 
-  [[2]] If the XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
+  [[2]] If the first item XML element contains a <<<.>>>, try to load the class with the fully qualified class name given in the element name
 
-  [[3]] Try the XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
+  [[3]] Try the first item XML element name (with capitalized first letter) as a class in the same package as the mojo/object being
         configured
 
   [[4]] Use the parameter type information from either
@@ -324,6 +324,18 @@ public class MyAnimalMojo
 
   []
 
+ The following collection implementations are being used when there is no <<<implementation>>> hint attribute in the XML element representing the collection:
+ 
+*---------------------*--------------*
+|| Collection Class   || Used for
+*---------------------*--------------*
+<<<TreeSet>>>   | for all types assignable to <<<SortedSet>>>
+*---------------------*--------------*
+<<<HashSet>>>   | for all types assignable to <<<Set>>>
+*---------------------*--------------*
+<<<ArrayList>>> | for every other <<<Collection>>> type which is not a <<<Map>>>
+*---------------------*--------------*
+ 
  Since Maven 3.3.9 ({{{https://issues.apache.org/jira/browse/MNG-5440}MNG-5440}}), you can list individual items alternatively as comma-separated list in the XML value of animals directly.
  This approach is also used if configuring collection/array parameters via command line
  The following example is equivalent to the example above:
@@ -349,7 +361,7 @@ public class MyAnimalMojo
  Each item is mapped again according to the rules of this section depending on the type of the collection/array.
 
 
-**** {Mapping Maps}
+**** Mapping Maps
 
  In the same way, you could define maps like the following:
 
@@ -381,7 +393,9 @@ public class MyAnimalMojo
  
  In contrast to value objects and collections/arrays there is no string coercion defined for maps, i.e. you cannot give parameters of that type via CLI argument. 
 
-**** {Mapping Properties}
+ The map implementation class is by default <<<TreeMap>>> but can be overridden with an <<<implementation>>> attribute on the XML element representing the map.
+  
+**** Mapping Properties
 
  Properties should be defined like the following:
 
@@ -413,11 +427,11 @@ public class MyAnimalMojo
 
  In contrast to value objects and collections/arrays there is no string coercion defined for properties, i.e. you cannot give parameters of those type via CLI argument. 
 
-* {Configuring Build Plugins}
+* Configuring Build Plugins
 
   The following is only to configure Build plugins in the <<<\<build\>>>> element.
 
-** {Using the <<<\<executions\>>>> Tag}
+** Using the <<<\<executions\>>>> Tag
 
   You can also configure a mojo using the <<<\<executions\>>>> tag. This is most commonly used for mojos that are
   intended to participate in some phases of the {{{../introduction/introduction-to-the-lifecycle.html}build lifecycle}}.
@@ -607,7 +621,7 @@ public class MyBoundQueryMojo
 mvn myquery:query@execution1
 ------
 
-** {Using the <<<\<dependencies\>>>> Tag}
+** Using the <<<\<dependencies\>>>> Tag
 
   You could configure the dependencies of the Build plugins, commonly to use a more recent dependency version.
 
@@ -643,7 +657,7 @@ mvn myquery:query@execution1
 </project>
 +----+
 
-** {Using the <<<\<inherited\>>>> Tag In Build Plugins}
+** Using the <<<\<inherited\>>>> Tag In Build Plugins
 
   By default, plugin configuration should be propagated to child POMs, so to break the inheritance, you could use
   the <<<\<inherited\>>>> tag:
@@ -667,11 +681,11 @@ mvn myquery:query@execution1
 +----+
 
 
-* {Configuring Reporting Plugins}
+* Configuring Reporting Plugins
 
   The following is only to configure Reporting plugins in the <<<\<reporting\>>>> element.
 
-** {Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag}
+** Using the <<<\<reporting\>>>> Tag VS <<<\<build\>>>> Tag
 
   Configuring a reporting plugin in the <<<\<reporting\>>>> or <<<\<build\>>>> elements in the pom does not exactly have the same results.
 
@@ -685,7 +699,7 @@ mvn myquery:query@execution1
 
   []
 
-** {Using the <<<\<reportSets\>>>> Tag}
+** Using the <<<\<reportSets\>>>> Tag
 
   You can configure a reporting plugin using the <<<\<reportSets\>>>> tag. This is most commonly used to generate
   reports selectively when running <<<mvn site>>>. The following will generate only the project team report.
@@ -729,7 +743,7 @@ mvn myquery:query@execution1
 
   []
 
-** {Using the <<<\<inherited\>>>> Tag In Reporting Plugins}
+** Using the <<<\<inherited\>>>> Tag In Reporting Plugins
 
   Similar to the build plugins, to break the inheritance, you can use the <<<\<inherited\>>>> tag:
 

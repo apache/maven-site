@@ -73,12 +73,11 @@ Introduction to Build Profiles
     - Defined in the {{{/ref/current/maven-settings/settings.html} global Maven-settings}}
     <<<($\{maven.home\}/conf/settings.xml)>>>.
 
-  * Profile descriptor
-
-    - a descriptor located in
-    {{{/ref/2.2.1/maven-profile/profiles.html}project basedir <<<(profiles.xml)>>>}}
-    (no longer supported in Maven 3.0 and above; see
-    {{{https://cwiki.apache.org/confluence/display/MAVEN/Maven+3.x+Compatibility+Notes#Maven3.xCompatibilityNotes-profiles.xml} Maven 3 compatibility notes}})
+* Profile Inheritance
+  
+  The profiles are not inherited as other POM elements by child POMs. Instead they are resolved very early by the {{{/ref/current/maven-model-builder/}Maven Model Builder}}
+  and only the effects of active profiles are inherited (e.g. the plugins defined in the profile).
+  That also leads to the fact that implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
 
 * How can a profile be triggered? How does this vary according to the type of profile being used?
 
@@ -88,11 +87,11 @@ Introduction to Build Profiles
 
   * Implicitly
   
-  ** Based on OS
+    * Based on OS
   
-  ** Based on system properties
+    * Based on system properties
   
-  ** Based on presence of files
+    * Based on presence of files
   
   []
 
@@ -132,13 +131,33 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   Profiles listed in the <<<\<activeProfiles\>>>> tag would be activated by default
   every time a project use it.
 
+  Profiles can also be active by default using a configuration like the following in a POM:
+
++---+
+<profiles>
+  <profile>
+    <id>profile-1</id>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+  This profile will automatically be active for all builds unless another profile in the same POM
+  is activated using one of the previously described methods.  All profiles that are active by
+  default are automatically deactivated when a profile in the POM is activated on the command line
+  or through its activation config.
+
 *** Implicit profile activation
 
   Profiles can be automatically triggered based on the detected state of
   the build environment. These triggers are specified via an <<<\<activation\>>>>
   section in the profile itself. Currently, this detection is limited to
   JDK version matching, operating system matching or
-  the presence/the value of a system property. Here are some examples.
+  the presence/the value of a system property. The implicit profile activation always only refers to the container profile (and not to profiles in other modules with the same id).
+  Here are some examples.
 
 **** JDK
 
@@ -157,8 +176,8 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 </profiles>
 +---+
 
-  Ranges can also be used as of Maven 2.1 (refer to the {{{/enforcer/enforcer-rules/versionRanges.html} Enforcer Version Range Syntax}} for more information).
-  Range values must start with either <<<[>>> or <<<(>>> otherwise the value is interpreted as prefix.
+  {{{/enforcer/enforcer-rules/versionRanges.html} Ranges}}  can also be used.
+  Range values must start with either <<<[>>> or <<<(>>>. Otherwise, the value is interpreted as a prefix.
   The following honours versions 1.3, 1.4 and 1.5.
 
 +---+
@@ -194,6 +213,18 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
   </profile>
 </profiles>
 +---+
+
+  The values are interpreted as Strings and are matched against the {{{https://docs.oracle.com/javase/tutorial/essential/environment/sysprop.html}Java System properties}}
+  <<<os.name>>>, <<<os.arch>>>, <<<os.version>>> and the family being derived from those.
+
+  Each value can be prefixed with <<<!>>> to negate the matching. 
+  The values match if they are (not) equal to the actual String value (<<case insensitive>>).
+  All given OS conditions must match for the profile to be considered for activation.
+
+  Since {{{https://issues.apache.org/jira/browse/MNG-5726}Maven 3.9.7}} the value for <<<version>>> may be prefixed with <<<regex:>>>.
+  In that case {{{https://docs.oracle.com/javase/tutorial/essential/regex/}regular pattern matching}} is applied for the version matching and applied against the <<lower case>> <<<os.version>>> value.
+
+  The actual OS values which need to match the given values are emitted when executing <<<mvn --version>>>.
 
 **** Property
 
@@ -276,7 +307,7 @@ mvn groupId:artifactId:goal -Ddebug=false
 mvn groupId:artifactId:goal -Denvironment=test
 -----
 
-  As of Maven 3.0, profiles in the POM can also be activated based on properties from active profiles from the
+  Profiles in the POM can also be activated based on properties from active profiles from the
   <<<settings.xml>>>.
 
   <<Note>>: Environment variables like <<<FOO>>> are available as properties of the form <<<env.FOO>>>. Further note
@@ -318,43 +349,33 @@ mvn groupId:artifactId:goal -Denvironment=test
 </profiles>
 +---+
 
-  As of Maven 2.0.9, the tags <<<\<exists\>>>> and <<<\<missing\>>>> could be interpolated. Supported variables are
+  The tags <<<\<exists\>>>> and <<<\<missing\>>>> can be interpolated. Supported variables are
   system properties like <<<$\{user.home\}>>> and environment variables like <<<$\{env.HOME\}>>>. Please note that
   properties and values defined in the POM itself are not available for interpolation here, e.g. the above example
   activator cannot use <<<$\{project.build.directory\}>>> but needs to hard-code the path <<<target>>>.
 
-  Profiles can also be active by default using a configuration like the following:
+*** Multiple conditions
 
-+---+
-<profiles>
-  <profile>
-    <id>profile-1</id>
-    <activation>
-      <activeByDefault>true</activeByDefault>
-    </activation>
-    ...
-  </profile>
-</profiles>
-+---+
+  Different implicit activation types can be combined in one profile.
+  The profile is then only active if all conditions are met (since Maven 3.2.2, {{{https://issues.apache.org/jira/browse/MNG-4565}MNG-4565}}).
+  Using the same type more than once in the same profile is not supported ({{{https://issues.apache.org/jira/browse/MNG-5909}MNG-5909}}, {{{https://issues.apache.org/jira/browse/MNG-3328}MNG-3328}}).
 
-  This profile will automatically be active for all builds unless another profile in the same POM
-  is activated using one of the previously described methods.  All profiles that are active by
-  default are automatically deactivated when a profile in the POM is activated on the command line
-  or through its activation config.
-  
 ** Deactivating a profile
 
-  Starting with Maven 2.0.10, one or more profiles can be deactivated using the command line by prefixing their
-  identifier with either the character '!' or '-' as shown below:
+  One or more profiles can be deactivated using the command line by prefixing their
+  identifier with either the character '!' or '-' as shown below.
+
+  <<Note>> that <<<!>>> needs to be escaped with <<<\\>>> or quoted in Bash, ZSH and other shells as it has {{{https://www.gnu.org/software/bash/manual/html_node/Event-Designators.html}a special meaning}}.
+  Also there is a known bug with command line option values starting with <<<->>> ({{{https://issues.apache.org/jira/browse/CLI-309}CLI-309}}), therefore it is recommended to use it with the syntax <<<-P=-profilename>>>.
   
 -----
-mvn groupId:artifactId:goal -P !profile-1,!profile-2,!?profile-3
+mvn groupId:artifactId:goal -P \!profile-1,\!profile-2,\!?profile-3
 -----
 
   or
 
 -----
-mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
+mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
 -----
 
   This can be used to deactivate profiles marked as activeByDefault or profiles that would 
@@ -447,19 +468,17 @@ mvn groupId:artifactId:goal -P -profile-1,-profile-2,-?profile-3
   Another reason is that this POM info is sometimes being reused from the
   parent POM.
 
-  External files such as <<<settings.xml>>> and <<<profiles.xml>>> also does not support elements
+  External files such as <<<settings.xml>>> and <<<profiles.xml>>> also do not support elements
   outside the POM-profiles. Let us take this scenario for elaboration. When the
-  effective POM get deployed to a remote repository, any person can pickup
+  effective POM is deployed to a remote repository, any person can pickup
   its info out of the repository and use it to build a Maven project directly.
   Now, imagine that if we can set profiles in dependencies, which is very
   important to a build, or in any other elements outside POM-profiles in
   <<<settings.xml>>> then most probably we cannot expect someone else to use that
   POM from the repository and be able to build it. And we have to also think about
   how to share the <<<settings.xml>>> with others. Note that too many files to
-  configure is very confusing and very hard to maintain.
+  configure are very confusing and very hard to maintain.
   Bottom line is that since this is build data, it should be in the POM.
-  One of the goals in Maven 2 is to consolidate all the information needed to
-  run a build into a single file, or file hierarchy which is the POM.
 
 * Profile Order
 

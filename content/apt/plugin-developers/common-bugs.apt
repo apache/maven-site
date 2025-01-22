@@ -34,25 +34,9 @@ Common Bugs and Pitfalls
   bugs. Note that the primary focus is on pointing out problems that are subtle in their nature rather than giving a
   comprehensive guide for Java or Maven development.
 
-  * {{{Reading_and_Writing_Text_Files}Reading and Writing Text Files}}
+%{toc|section=0|fromDepth=2|toDepth=5}
 
-  * {{{Converting_between_URLs_and_Filesystem_Paths}Converting between URLs and Filesystem Paths}}
-
-  * {{{Handling_Strings_Case-insensitively}Handling Strings Case-insensitively}}
-
-  * {{{Creating_Resource_Bundle_Families}Creating Resource Bundle Families}}
-
-  * {{{Using_System_Properties}Using System Properties}}
-
-  * {{{Using_Shutdown_Hooks}Using Shutdown Hooks}}
-
-  * {{{Resolving_Relative_Paths}Resolving Relative Paths}}
-
-  * {{{Determining_the_Output_Directory_for_a_Site_Report}Determining the Output Directory for a Site Report}}
-
-  * {{{Retrieving_the_Mojo_Logger}Retrieving the Mojo Logger}}
-
-* {Reading and Writing Text Files}
+* Reading and Writing Text Files
 
   Textual content is composed of characters while file systems merely store byte streams. A file encoding (aka charset)
   is used to convert between bytes and characters. The challenge is using the right file encoding.
@@ -106,7 +90,7 @@ writer.write( xmlContent );
   <<<{{{https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/WriterFactory.html#newXmlWriter(java.io.File)}WriterFactory.newXmlWriter()}}>>>
   from the Plexus Utilities.
 
-* {Converting between URLs and Filesystem Paths}
+* Converting between URLs and Filesystem Paths
 
   URLs and filesystem paths are really two different things and converting between them is not trivial. The main source
   of problems is that different encoding rules apply for the strings that make up a URL or filesystem path. For example,
@@ -187,7 +171,7 @@ File path = new File( new URI( url.toExternalForm() ) );
   <<<{{{https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/FileUtils.html#toFile(java.net.URL)}FileUtils.toFile()}}>>>
   from a recent Plexus Utilities.
 
-* {Handling Strings Case-insensitively}
+* Handling Strings Case-insensitively
 
   When developers need to compare strings without regard to case or want to realize a map with case-insensitive string
   keys, they often employ
@@ -223,7 +207,7 @@ if ( "info".equals( debugLevel.toLowerCase() ) )
   will still run on Non-English systems, the parameter only locks down the casing rules used for the string comparison
   such that the code delivers the same results on all platforms.
 
-* {Creating Resource Bundle Families}
+* Creating Resource Bundle Families
 
   Especially reporting plugins employ resource bundles to support internationalization. One language (usually English)
   is provided as the fallback/default language in the base resource bundle. Due to the lookup strategy performed by
@@ -251,7 +235,7 @@ src/
   will have the Maven Site Plugin change the JVM's default locale to <<<xy>>> which in turn causes the lookup for
   <<<en>>> to fail as outlined above unless the plugin has a dedicated resource bundle for English.
 
-* {Using System Properties}
+* Using System Properties
 
   Maven's command line supports the definition of system properties via arguments of the form <<<-D key=value>>>.
   While these properties are called system properties, plugins should never use
@@ -277,7 +261,7 @@ public MyMojo extends AbstractMojo
   execution properties. These can be obtained from
   <<<{{{https://maven.apache.org/ref/current/maven-core/apidocs/org/apache/maven/execution/MavenSession.html#getExecutionProperties()}MavenSession.getExecutionProperties()}}>>>.
 
-* {Using Shutdown Hooks}
+* Using Shutdown Hooks
 
   People occasionally employ shutdown hooks to perform cleanup tasks, e.g. to delete temporary files as shown in the
   example below:
@@ -305,11 +289,11 @@ public MyMojo extends AbstractMojo
   For this reason, plugin developers should avoid usage of shutdown hooks and rather use <<<try>>>/<<<finally>>> blocks
   to perform cleanup as soon as the resources are no longer needed.
 
-* {Resolving Relative Paths}
+* Resolving Relative Paths
 
   It is common practice for users of Maven to specify relative paths in the POM, not to mention that the Super POM does
   so, too. The intention is to resolve such relative paths against the base directory of the current project. In other
-  words, the paths <<<target/classes>>> and <<<$\{basedir\}/target/classes>>> should resolve to the same directory for a
+  words, the paths <<<target/classes>>> and <<<$\{project.basedir\}/target/classes>>> should resolve to the same directory for a
   given POM.
 
   Unfortunately, the class <<<{{{http://java.sun.com/javase/6/docs/api/java/io/File.html}java.io.File}}>>> does not
@@ -375,7 +359,7 @@ if ( !file.isAbsolute() )
   feature known as <path translation>, i.e. the Maven core will automatically resolve relative paths when it pumps the
   XML configuration into a mojo.
 
-* {Determining the Output Directory for a Site Report}
+* Determining the Output Directory for a Site Report
 
   Most reporting plugins inherit from <<<AbstractMavenReport>>>. In doing so, they need to implement the inherited but
   abstract method <<<getOutputDirectory()>>>. To implement this method, plugins usually declare a field named
@@ -424,34 +408,3 @@ public MyReportMojo extends AbstractMavenReport
   effective output directory for the report. The implementation of <<<AbstractMavenReport.getOutputDirectory()>>>
   is only intended as a fallback in case the mojo is not run as part of the site generation.
 
-* {Retrieving the Mojo Logger}
-
-  Maven employs an IoC container named Plexus to setup a plugin's mojos before their execution. In other words,
-  components required by a mojo will be provided by means of dependency injection, more precisely field injection. The
-  important point to keep in mind is that this field injection happens <after> the mojo's constructor has finished.
-  This means that references to injected components are invalid during the construction time of the mojo.
-
-  For example, the next snippet tries to retrieve the mojo logger during construction time but the mojo logger is an
-  injected component and as such has not been properly initialized yet:
-
-+---
-public MyMojo extends AbstractMojo
-{
-    /*
-     * FIXME: This will retrieve a wrong logger instead of the intended mojo logger.
-     */
-    private Log log = getLog();
-
-    public void execute()
-    {
-        log.debug( "..." );
-    }
-}
-+---
-
-  In case of the logger, the above mojo will simply use a default console logger, i.e. the code defect is not
-  immediately noticeable by a <<<NullPointerException>>>. This default logger will however use a different message
-  format for its output and also outputs debug messages even if Maven's debug mode was not enabled. For this reason,
-  developers must not try to cache the logger during construction time. The method <<<getLog()>>> is fast enough and
-  can simply be called whenever one needs it.
-+---

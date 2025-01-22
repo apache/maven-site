@@ -1,4 +1,5 @@
 ## Preparing Component Release Documentation
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,6 +18,7 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 select component category, then type artifact id and version to generate svn commands:
 
 <table>
@@ -34,7 +36,7 @@ select component category, then type artifact id and version to generate svn com
 <li><a href="?doxia-tools">Doxia Tools</a></li>
 <li><a href="?others">others</a></li>
 </ul>
- 
+
 </td><td>
 
 <h3>Component information</h3>
@@ -125,3 +127,4 @@ if (category == "core") {
   selectCategory(category + '/', category+'-archives/');
 }
 //]]></script>
+

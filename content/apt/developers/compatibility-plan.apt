@@ -50,30 +50,16 @@ Maven Plugins Compatibility Plan
 
   * Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites {{{https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1}Technical details}}
 
-  * In March 2023, Maven before 3.2.5 has been {{{/docs/history.html#maven-before-3-2-5}marked as EOL}}, meaning that plugins should use 3.2.5 as minimum
+  * In March 2023, Maven before 3.2.5 has been {{{/docs/history.html#maven-3-6-x-and-before}marked as EOL}}, meaning that plugins should use 3.2.5 as minimum
+
+  * In April 2023, Maven before 3.6.3 has been {{{/docs/history.html#maven-3-6-x-and-before}marked as EOL}}, meaning that plugins should use 3.6.3 as minimum
+
+  * In February 2024, Maven 4 after 4.0.0-alpha-12 will require Java 17 (as per {{{https://lists.apache.org/thread/bfkvvjftrxypp06yj8zj919fcz0dt2zt}vote on the Mailing List}}).
 
   []
 
 * Context
 
   * Maven core history with Java prerequisite is available in the {{{/docs/history.html}release notes}}
-
-  * JDK/JRE availability dates:
-
-    * Java 5 (2004) is closed source, End of Public Update in 2009
-
-    * Java 6 (2006) is Open Source, maintained at OpenJDK until 2018
-
-    * Java 7 (2011) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/jdk7u}at OpenJDK}} at least until June 2020 
-
-    * Java 8 (2014) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/jdk8u}at OpenJDK}} at least until September 2023
-
-    * Java 11 (LTS, 2018) is Open Source, maintained {{{https://wiki.openjdk.java.net/display/JDKUpdates/JDK11u}at OpenJDK}} at least until September 2025
-
-    * see {{{https://javaalmanac.io/jdk/}Java Version Almanac}} for updated JDK releases
-
-    []
-
-    see also {{{https://docs.google.com/document/d/1nFGazvrCvHMZJgFstlbzoHjpAVwv5DEdnaBr_5pKuHo}Java Is Still Free}} for more details
 
   []

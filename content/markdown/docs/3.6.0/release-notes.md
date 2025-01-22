@@ -1,23 +1,23 @@
 <!-- 
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 # Release Notes &#x2013; Maven 3.6.0
@@ -44,22 +44,22 @@ the [end of these release notes](#Details).
 
 Code Contributors of this release:
 
- * [MNG-6383] Christoph Kunze
- * [MNG-6311] David Churcher
+* [MNG-6383] Christoph Kunze
+* [MNG-6311] David Churcher
 
 Issue Reporters of this release:
 
- * [MNG-4508] Richard van der Hoff
- * [MNG-5951] Jörg Sesterhenn
- * [MNG-6311] David Churcher
- * [MNG-6358] Adam John Burley
- * [MNG-6383] Christoph Kunze
- * [MNG-6391] Alexander Griesbaum
- * [MNG-6412] Christoph Amshoff
- * [MNG-6415] Seckin Onur Selamet
- * [MNG-6475] Phillip Webb
- * [MNG-6490] John Canny
- * [MNG-6492] Hoa Phan
+* [MNG-4508] Richard van der Hoff
+* [MNG-5951] Jörg Sesterhenn
+* [MNG-6311] David Churcher
+* [MNG-6358] Adam John Burley
+* [MNG-6383] Christoph Kunze
+* [MNG-6391] Alexander Griesbaum
+* [MNG-6412] Christoph Amshoff
+* [MNG-6415] Seckin Onur Selamet
+* [MNG-6475] Phillip Webb
+* [MNG-6490] John Canny
+* [MNG-6492] Hoa Phan
 
 Many thanks to all reporters and contributors for their time and support.
 
@@ -67,7 +67,7 @@ Many thanks to all reporters and contributors for their time and support.
 
 Thanks to the following preliminary testers:
 
-- Filipe Sousa 
+- Filipe Sousa
 - Eric Lilja
 - Enrico Olivelli
 - Gary Gregory
@@ -83,7 +83,7 @@ At the time of release, there are no known regressions introduced by this releas
   been increased in previous version which influenced some of our users.
   This should have been fixed [MNG-6311], [MNG-6383] and [MNG-6412].
 
-- The output in the reactor summary has been improved [MNG-6391] 
+- The output in the reactor summary has been improved [MNG-6391]
   cause it confused people. In Maven 3.6.0 the reactor summary now
   looks like the following:
 
@@ -108,12 +108,13 @@ At the time of release, there are no known regressions introduced by this releas
 [INFO] ------------------------------------------------------------------------
 ```
 
-  The `parent` in the above output is the artifact name of the root module and 
-  the `5.0.4-SNAPSHOT` is the versions number for all modules in this
-  reactor build.
+The `parent` in the above output is the artifact name of the root module and
+the `5.0.4-SNAPSHOT` is the versions number for all modules in this
+reactor build.
 
-  If you have an aggregator pom which contains different modules with different
-  versions each line will contain the appropriate versions which looks like this:
+If you have an aggregator pom which contains different modules with different
+versions each line will contain the appropriate versions which looks like this:
+
 ```
 [INFO] ------------------------------------------------------------------------
 [INFO] Reactor Summary:
@@ -131,7 +132,7 @@ At the time of release, there are no known regressions introduced by this releas
 ...
 ```
 
-- There was an issue related to the classpath ordering [MNG-6415] in Maven which 
+- There was an issue related to the classpath ordering [MNG-6415] in Maven which
   can cause issues which has been fixed.
 
 ## [The detailed issue list](#Details)
@@ -211,3 +212,4 @@ See [complete release notes for all versions][5]
 [MNG-6492]: https://issues.apache.org/jira/browse/MNG-6492
 [MNG-6496]: https://issues.apache.org/jira/browse/MNG-6496
 [MNG-6497]: https://issues.apache.org/jira/browse/MNG-6497
+

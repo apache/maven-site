@@ -9,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -28,7 +28,7 @@ Links:
 * [Reference documentation](/ref/current/maven-repository-metadata/)
 * [XML Schema](/xsd/repository-metadata-1.1.0.xsd)
 * [Modello model](https://gitbox.apache.org/repos/asf?p=maven.git;a=blob_plain;f=maven-repository-metadata/src/main/mdo/metadata.mdo;hb=HEAD)
-  and its [descriptor documentation](/ref/current/maven-repository-metadata/repository-metadata.html)
+and its [descriptor documentation](/ref/current/maven-repository-metadata/repository-metadata.html)
 
 We distinguish 3 different kinds of metadata files (using GAV coordinates):
 * G level metadata
@@ -42,7 +42,7 @@ Note: this is extreme example, and such artifact naming should be avoided!
 
 ## The G Level Metadata
 
-| What                       | How                           |
+|            What            |              How              |
 |----------------------------|-------------------------------|
 | Location                   | Path corresponding to groupId |
 | Repositories containing it | Release and Snapshots         |
@@ -60,7 +60,7 @@ coordinates of plugin, and will go for given version, or attempt to discover "la
 
 ## The A Level Metadata
 
-| What                       | How                              |
+|            What            |               How                |
 |----------------------------|----------------------------------|
 | Location                   | Path corresponding to artifactId |
 | Repositories containing it | Release and Snapshots            |
@@ -70,16 +70,16 @@ The artifactId level metadata (found in directory of artifactId) serves purpose 
 contains list of versions of given GA coordinates. The XML bit considered for this kind of metadata are only:
 * `metadata/groupId`
 * `metadata/artifactId`
-* `metadata/versionining/latest`
-* `metadata/versionining/release`
-* `metadata/versionining/versions/*`
-* `metadata/versionining/lastUpdated`
+* `metadata/versioning/latest`
+* `metadata/versioning/release`
+* `metadata/versioning/versions/*`
+* `metadata/versioning/lastUpdated`
 
 Example: https://repo.maven.apache.org/maven2/org/apache/maven/plugins/maven-jar-plugin/maven-metadata.xml
 
 ## The V Level Metadata
 
-| What                       | How                               |
+|            What            |                How                |
 |----------------------------|-----------------------------------|
 | Location                   | Path corresponding to baseVersion |
 | Repositories containing it | Snapshots only                    |
@@ -90,7 +90,7 @@ purpose of snapshot timestamped version resolution. This metadata contains mappi
 directory with corresponding timestamps. The XML bit considered for this kind of metadata are only:
 * `metadata/groupId`
 * `metadata/artifactId`
-* `metadata/versionining/snapshot/*`
-* `metadata/versionining/snapshotVersions/*`
+* `metadata/versioning/snapshot/*`
+* `metadata/versioning/snapshotVersions/*`
 
 Example: https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.3.0-SNAPSHOT/maven-metadata.xml
