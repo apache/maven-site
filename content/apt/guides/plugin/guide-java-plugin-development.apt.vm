@@ -447,12 +447,14 @@ public class MyQueryMojo extends AbstractMojo {
 
     [[2]] {{{/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
 
-    [[3]] {{{https://codehaus-plexus.github.io/}Plexus}}: The IoC container used by Maven.
+    [[3]] {{{https://eclipse.dev/sisu/index.html}Eclipse Sisu}}: The IoC container used by Maven 3.
 
-    [[4]] {{{https://codehaus-plexus.github.io/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
+    [[4]] {{{../../maven-jsr330.html}Maven & JSR 330}}: How to use JSR 330 in Plugins
 
-    [[5]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
+    [[5]] {{{https://codehaus-plexus.github.io/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
 
-    [[6]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
+    [[6]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
+
+    [[7]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
 
     []
