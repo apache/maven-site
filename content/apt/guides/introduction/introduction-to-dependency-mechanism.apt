@@ -161,9 +161,9 @@ Introduction to the Dependency Mechanism
    unit tests (src/test/java) but not in the model code (src/main/java).
 
  * <<system>>\
-   This scope is similar to <<<provided>>> except that you have to provide the JAR
-   which contains it explicitly. The artifact is always available and is not
-   looked up in a repository.
+   This scope indicates that the dependency is required for compilation and execution.
+   However, Maven will not download the dependency from the repository system.
+   Instead it looks for a jar in the local file system at a specified path.
 
  * <<import>>\
    This scope is only supported on a dependency of type <<<pom>>> in the <<<\<dependencyManagement\>>>> section. It
@@ -860,15 +860,14 @@ Introduction to the Dependency Mechanism
 
  <<<Important note: This is deprecated.>>>
 
- Dependencies with the scope <system> are always available and are not looked
- up in repository. They are usually used to tell Maven about dependencies which
- are provided by the JDK or the VM. Thus, system dependencies are especially
- useful for resolving dependencies on artifacts which are now provided by the
- JDK, but were available as separate downloads earlier. Typical examples are
- the JDBC standard extensions or the Java Authentication and Authorization
- Service (JAAS).
-
- A simple example would be:
+ Dependencies with the scope <system> are not looked up in the Maven repository system.
+ Instead the `dependency` element contains a `systemPath` pointing to a jar on the local
+ file system.
+ 
+ The system scope is commonly used to tell Maven about dependencies provided by the JDK or the VM. 
+ System dependencies are especially useful for resolving dependencies on artifacts which
+ are now provided by the JDK, but were available as separate downloads earlier. A typical
+ examples is the Java Authentication and Authorization Service (JAAS):
 
 +----+
 
@@ -876,9 +875,9 @@ Introduction to the Dependency Mechanism
   ...
   <dependencies>
     <dependency>
-      <groupId>javax.sql</groupId>
-      <artifactId>jdbc-stdext</artifactId>
-      <version>2.0</version>
+      <groupId>javax.security</groupId>
+      <artifactId>jaas</artifactId>
+      <version>1.0.01</version>
       <scope>system</scope>
       <systemPath>${java.home}/lib/rt.jar</systemPath>
     </dependency>
