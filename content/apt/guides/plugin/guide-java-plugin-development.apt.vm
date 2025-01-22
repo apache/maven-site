@@ -435,7 +435,7 @@ public class MyQueryMojo extends AbstractMojo {
 
 +----+
 
- The property annotstion for each parameter tells Maven which setter and getter to use when
+ The property annotation for each parameter tells Maven which setter and getter to use when
  the field's name does not match the name of the parameter in the plugin configuration.
 
 * Resources
@@ -444,8 +444,10 @@ public class MyQueryMojo extends AbstractMojo {
 
     [[2]] {{{/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
 
-    [[3]] {{{https://codehaus-plexus.github.io/}Plexus}}: The IoC container used by Maven 3.
+    [[3]] {{{https://eclipse.dev/sisu/index.html}Eclipse Sisu}}: The IoC container used by Maven 3.
 
-    [[4]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
+    [[4]] {{{../../maven-jsr330.html}Maven & JSR 330}}: How to use JSR 330 in Plugins
+
+    [[5]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
 
     []
