@@ -832,11 +832,8 @@ Introduction to the Dependency Mechanism
  
  The system scope is commonly used to tell Maven about dependencies provided by the JDK or the VM. 
  System dependencies are especially useful for resolving dependencies on artifacts which
- are now provided by the JDK, but were available as separate downloads earlier. Typical
- examples are the JDBC standard extensions or the Java Authentication and Authorization
- Service (JAAS).
-
- A simple example would be:
+ are now provided by the JDK, but were available as separate downloads earlier. A typical
+ examples is the Java Authentication and Authorization Service (JAAS):
 
 +----+
 
@@ -844,9 +841,9 @@ Introduction to the Dependency Mechanism
   ...
   <dependencies>
     <dependency>
-      <groupId>javax.sql</groupId>
-      <artifactId>jdbc-stdext</artifactId>
-      <version>2.0</version>
+      <groupId>javax.security</groupId>
+      <artifactId>jaas</artifactId>
+      <version>1.0.01</version>
       <scope>system</scope>
       <systemPath>${java.home}/lib/rt.jar</systemPath>
     </dependency>
