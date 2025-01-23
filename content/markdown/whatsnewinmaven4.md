@@ -73,7 +73,7 @@ It does not deploy the `pom.xml` used to build the project.
 
 ### Model version 4.1.0
 
-Maven 4 updates the POM version to 4.1.0.
+Maven 4 updates the POM version to 4.1.0 which defines the namespace `http://maven.apache.org/POM/4.1.0`.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the build POM, while the consumer POM will still use
 version 4.0.0.
