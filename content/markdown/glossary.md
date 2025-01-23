@@ -23,12 +23,17 @@ This document describes some of the most common terms encountered while
 using Maven. These terms, that have an explicit meaning for Maven, can
 sometimes be confusing for newcomers.
 
-- **Project**: Maven thinks in terms of projects. Everything that you
-  will build are projects. Those projects follow a well defined
-  "Project Object Model". Projects can depend on other projects, in
-  which case the latter are called "dependencies". A project may
-  consist of several subprojects, however these subprojects are
-  still treated equally as projects.
+<a id="Project"></a>
+
+- **Project**:
+  A Maven project is any Java project built with Maven.
+  The [top level directory](./guides/introduction/introduction-to-the-standard-directory-layout.html) of a Maven project
+  contains at least the source folder `src` and the project's POM file `pom.xml`.
+  A Maven project may have other Maven projects within subdirectories, each with its own `pom.xml` file.
+  Each project within a subdirectory is called a "subproject".
+
+  Example: Project A contains a subdirectory which contains its own POM file for project B.
+  We say that B is a subproject of A.
 
 - **Project Object Model (POM)**: The Project Object Model, almost
   always referred as the POM for brevity, is the metadata that Maven
