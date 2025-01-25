@@ -130,6 +130,8 @@ consider taking a formal role in our project.
 
 ## Formal roles
 
+Formal data for Apache Maven is summarised in [projects directory][12].
+
 ### [Committers](https://www.apache.org/foundation/how-it-works.html#committers)
 
 These are those people who have been given write access to the
@@ -182,15 +184,15 @@ are kept confidential.
 
 The Project Management Committee has the following responsibilities:
 
-* Active management of those projects identified by the resolution of the Board
-  of Directors of the Apache Foundation;
+* Active management of those projects identified by [the resolution of the Board
+  of Directors of the Apache Foundation](https://whimsy.apache.org/board/minutes/Maven.html#2003-02-19);
 * Ensure the project remains a healthy top-level project of the Apache Foundation
   (if a PMC member wants the project to be hosted elsewhere they should resign
   from the PMC stating their reason - if the PMC shrinks beyond the minimal viable
   size then as a result of a desire by the bulk of the PMC to move the project
   elsewhere, the Board of the Apache Foundation will take that into account
-  when moving the project into the Foundation's Attic)
-* Prepare reports as required by the Board of the Apache Foundation and
+  when moving the project into the Foundation's [Attic][9]);
+* Prepare [reports][10] as required by the Board of the Apache Foundation and
   ensure those reports are ready for presentation by the PMC Chair in a timely
   manner;
 * Defend the trademarks belonging to the project;
@@ -204,11 +206,11 @@ The Project Management Committee has the following responsibilities:
   are assumed to be submitted with the intent of being covered by the Apache
   License unless the submitter clearly marks those patches as not being covered)
 * Ensure that third party dependencies shipped as part of the project's releases
-  are covered by a compatible license.
+  are covered by a compatible license;
 * Voting on release artifacts;
 * Ensure [Developers Conventions][5] are followed, or updated/improved if necessary;
 * Knows and respects the goals and processes of the community and helps educate
-  newer members about them.
+  newer members about them and their [internal details][https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt].
 
 #### Standards for Community Commitment
 
@@ -292,7 +294,7 @@ large set of changes being too difficult/time-consuming.
 ### [Project Management Chair](https://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
 For various legal reasons, there are certain things that the Apache
-Software Foundation can only delegate to an officer of the foundation.
+Software Foundation can only delegate to an [officer of the foundation][11].
 
 The Project Management Committee is responsible for nominating
 the lucky victim who gets made an officer of the foundation (subject
@@ -319,4 +321,8 @@ should be actively monitoring the chair.
 [6]: https://www.apache.org/legal/3party.html
 [7]: https://www.apache.org/legal/3party.html#category-a
 [8]: https://www.apache.org/legal/3party.html#category-b
-
+[9]: https://attic.apache.org
+[10]: https://whimsy.apache.org/board/minutes/Maven.html
+[11]: https://apache.org/foundation/leadership
+[12]: https://projects.apache.org/committee.html?maven
+[13]: https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt
