@@ -50,8 +50,10 @@ In addition, we add a Maven plugin dependency `maven-api-core` to implement the 
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <modelVersion>4.0.0</modelVersion>
+<project xmlns="http://maven.apache.org/POM/4.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 https://maven.apache.org/xsd/maven-4.1.0.xsd">
+    <modelVersion>4.1.0</modelVersion>
+
+    <groupId>org.apache.maven.its</groupId>
 
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>mavendi-maven-plugin</artifactId>
@@ -64,7 +66,7 @@ In addition, we add a Maven plugin dependency `maven-api-core` to implement the 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <javaVersion>17</javaVersion>
-        <mavenVersion>4.0.0-rc-1</mavenVersion>
+        <mavenVersion>4.0.0-beta-5</mavenVersion>
         <mavenPluginPluginVersion>4.0.0-beta-1</mavenPluginPluginVersion>
     </properties>
 
@@ -130,7 +132,9 @@ We are using field injection to add the `MavenDIComponent` to our Mojo.
 ```java
 import org.apache.maven.api.Lifecycle.Phase;
 import org.apache.maven.api.di.Inject;
+import org.apache.maven.api.plugin.Log;
 import org.apache.maven.api.plugin.annotations.Mojo;
+import org.apache.maven.api.plugin.annotations.Parameter;
 
 @Mojo(name = "hello", defaultPhase = Phase.VALIDATE, projectRequired = false)
 public class HelloMojo implements org.apache.maven.api.plugin.Mojo {
@@ -138,8 +142,18 @@ public class HelloMojo implements org.apache.maven.api.plugin.Mojo {
     @Inject
     private MavenDIComponent component;
 
+    @Inject
+    private Log logger;
+
+    @Parameter(property = "name")
+    private String name;
+
     public void execute() {
-        component.hello();
+        //
+        // Say hello to the world, my little constructor injected component!
+        //
+        String message = component.hello(name);
+        logger.info(message);
     }
 }
 ```
@@ -154,12 +168,151 @@ import org.apache.maven.api.di.Singleton;
 @Singleton
 public class MavenDIComponent {
 
-    public void hello() {
-        System.out.println("Hello! I am a component that is being used via field injection!");
+    public String hello(String name) {
+        return "Hello " + name + "! I am a component that is being used via field injection!";
     }
 }
 ```
+
+The next question is how to write a unit test for our Mojo.
+Maven DI introduces new helper classes for testing.
+They are packaged in [Maven Plugin Testing Harness](maven-plugin-testing-harness)
+They have a good integration to de facto standard testing framework [JUnit Jupiter](junit-jupiter).
+
+So the next step is to add all dependencies that are needed for testing.
+
+For the helper classes, we are adding `maven-plugin-testing-harness`.
+The dependencies to `maven-core`, `maven-resolver-api`, `maven-api-impl` and `guice` are only needed for the test runtime.
+`junit-jupiter` is the used test framework, `mockito-*` is the used mock framework and `assertj` is the used annotation lib. 
+The last two mention dependencies are optional, but helpful.
+
+```xml
+
+<!-- ... -->
+  <properties>
+    <!-- ... -->
+    <mavenPluginTestingVersion>4.0.0-beta-2</mavenPluginTestingVersion>
+    <guiceVersion>6.0.0</guiceVersion>
+    <mavenResolverVersion>2.0.2</mavenResolverVersion>
+  </properties>
+
+  <dependencies>
+  <!-- ... -->
+
+      <dependency>
+          <groupId>org.apache.maven.plugin-testing</groupId>
+          <artifactId>maven-plugin-testing-harness</artifactId>
+          <version>${mavenPluginTestingVersion}</version>
+          <scope>test</scope>
+      </dependency>
+
+
+      <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>${mavenVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.resolver</groupId>        
+            <artifactId>maven-resolver-api</artifactId>
+            <version>${mavenResolverVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-api-impl</artifactId>
+            <version>${mavenVersion}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.inject</groupId>
+            <artifactId>guice</artifactId>
+            <version>${guiceVersion}</version>
+            <scope>test</scope>
+        </dependency>
+
+      <dependency>
+          <groupId>org.junit.jupiter</groupId>
+          <artifactId>junit-jupiter-api</artifactId>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-core</artifactId>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.mockito</groupId>
+          <artifactId>mockito-junit-jupiter</artifactId>
+          <scope>test</scope>
+      </dependency>
+      <dependency>
+          <groupId>org.assertj</groupId>
+          <artifactId>assertj-core</artifactId>
+          <version>3.27.2</version>
+          <scope>test</scope>
+      </dependency>
+    </dependencies>
+
+<!-- ... -->
+
+
+```
+
+After you configure the test dependencies, you can write the first unit test for you mojo.
+
+```java
+
+import org.apache.maven.api.di.Inject;
+import org.apache.maven.api.di.Priority;
+import org.apache.maven.api.di.Provides;
+import org.apache.maven.api.di.Singleton;
+import org.apache.maven.api.plugin.testing.InjectMojo;
+import org.apache.maven.api.plugin.testing.MojoParameter;
+import org.apache.maven.api.plugin.testing.MojoTest;
+import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentCaptor;
+
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+
+@MojoTest
+public class HelloMojoTest {
+
+    @Inject
+    private MavenDIComponent componentMock;
+
+    @Test
+    @InjectMojo(goal = "hello")
+    @MojoParameter(name = "name", value = "World")
+    public void testHello(HelloMojo mojoUnderTest) {
+
+        mojoUnderTest.execute();
+
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(componentMock).hello(captor.capture());
+        assertThat(captor.getValue()).isEqualTo("World");
+    }
+
+    @Singleton
+    @Provides
+    @Priority(10)
+    private MavenDIComponent createMavenDIComponent() {
+        return mock(MavenDIComponent.class);
+    }
+}
+
+```
+
+If you want to mock your injected commponent, you have to write a method that create the mock for this component.
+This method has to be annotated with `@Singleton`, `@Provides` and `@Priority(10)`, so that the DI framework selected it before the real component.
+
+
+
 [maven-di]: tbd
 [guice]: tbd
 [maven-di-plugin]: tbd
-
+[maven-plugin-testing-harness]: TBD
+[junit-jupiter]: tbd
