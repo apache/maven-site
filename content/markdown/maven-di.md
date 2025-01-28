@@ -311,8 +311,7 @@ This method has to be annotated with `@Singleton`, `@Provides` and `@Priority(10
 
 
 
-[maven-di]: tbd
-[guice]: tbd
-[maven-di-plugin]: tbd
-[maven-plugin-testing-harness]: TBD
-[junit-jupiter]: tbd
+[guice]: https://github.com/google/guice
+[maven-di-plugin]: https://github.com/apache/maven/tree/master/its/core-it-suite/src/test/resources/mng-8525-maven-di-plugin
+[maven-plugin-testing-harness]: https://maven.apache.org/plugin-testing/maven-plugin-testing-harness/index.html
+[junit-jupiter]: https://junit.org/junit5/
