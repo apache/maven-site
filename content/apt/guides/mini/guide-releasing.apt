@@ -235,12 +235,11 @@ checkpoint.prepared-release=OK
 checkpoint.check-in-development-version=OK
 -----
 
-  The <release.properties> file is created while preparing the release. The <release.properties> file can be given to any developer within the team and
-  by simply executing the <<<release:perform>>> goal can create and deploy a new instance of the project artifact time and again.
+  The <release.properties> file is created while preparing the release.
   By default the file gets deleted after a successful release.
   
-  During the execution of the <<<release:perform>>> goal the entire maven build lifecycle is executed on the project.  
-  The tagged project source code is extracted, compiled, tested, documented and deployed.  An instance of the release artifact is deployed 
+  During the execution of the <<<release:perform>>> goal, the entire maven build lifecycle is executed on the project.
+  The tagged project source code is extracted, compiled, tested, documented, and deployed.  An instance of the release artifact is deployed
   to the machine's local repository.  An another instance of the release can be deployed to a remote repository by configuring the 
   <distributionManagement> element within the <pom.xml> file.
 
