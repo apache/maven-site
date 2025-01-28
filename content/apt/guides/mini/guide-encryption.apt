@@ -29,8 +29,9 @@
 
 {Password Encryption}
 
-%{toc|section=0|fromDepth=2|toDepth=3}
+ (If you're working with Maven 4, please refer to the {{{./guide-encryption-4.html}Maven 4 edition of this guide}})
 
+%{toc|section=0|fromDepth=2|toDepth=3}
 
 * Introduction
 
