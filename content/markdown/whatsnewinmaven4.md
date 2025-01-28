@@ -55,8 +55,7 @@ This article presents and explains major changes brought by Maven 4, grouped int
 ## Required Java version
 
 Maven 4 requires Java 17.
-This allows Maven (and its maintainers) to make use of newer language features and improvements brought by the
-JDK.
+This allows Maven (and its maintainers) to make use of newer language features and improvements.
 
 **Important note**: Java 17 is only needed to **run Maven**!
 You can still compile against older Java versions using the same [compiler plugin configuration][6] as before.
