@@ -31,7 +31,7 @@ Guide to Working with Multiple Modules
 
   (If you're working with Maven 4, please refer to the {{{./guide-multiple-modules-4.html} Maven 4 edition of this guide}})
 
-  As seen in the introduction to the POM, Maven supports project aggregation in addition to project inheritance. This section outlines how Maven processes projects with multiple modules, and how you can work with them more effectively.
+  As seen in the introduction to the POM, Maven supports {{{/glossary.html#Project} project}} aggregation in addition to project inheritance. This section outlines how Maven processes projects with multiple modules, and how you can work with them more effectively.
 
 * The Reactor
 

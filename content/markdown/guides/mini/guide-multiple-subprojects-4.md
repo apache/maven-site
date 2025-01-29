@@ -22,8 +22,8 @@ under the License.
 (If you're working with Maven 3, please refer to the [Maven 3 edition of this guide](./guide-multiple-modules.html))
 
 As seen in the introduction to the POM, Maven supports project aggregation in addition to project inheritance.
-This section outlines how Maven processes projects with multiple subprojects, and how you can work with them more
-effectively.
+This section outlines how Maven processes [projects](/glossary.html#Project) with multiple subprojects, and how you can
+work with them more effectively.
 
 ## The Reactor
 
