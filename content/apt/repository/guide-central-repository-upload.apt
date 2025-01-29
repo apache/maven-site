@@ -30,21 +30,22 @@
 Guide to uploading artifacts to the Central Repository
 
  In order for Maven users to depend on your project, you must deploy
- both the artifact, the POM, and their PGP signatures to
+ the artifact, the POM, and their PGP signatures to
  a remote repository. The most common public shared repository is
  {{{/repository/}Maven Central}}.
 
 Requirements
 
- [[1]] <<releases>>: Only <releases> can be uploaded to the Central Repository. That means files that won't change and that only depend on other files
- already released and available in the repository,
+ [[1]] <<releases>>: Only <releases> can be uploaded to the Central Repository.
+ A release can only depend on other files already released and available in the repository.
+ The Central Repository will not change or replace a release after it is published.
 
- [[2]] <<javadoc and sources>> for IDE lookup,
+ [[2]] <<javadoc and sources>> for IDE lookup
 
- [[3]] <<PGP signature>>,
+ [[3]] <<PGP signature>>
 
  [[4]] <<minimum POM information>>: There are some requirements for the minimal information in the POMs that are in the Central Repository,
- see {{{https://central.sonatype.org/pages/requirements.html}"Why do we have Requirements"}}, 
+ see {{{https://central.sonatype.org/pages/requirements.html}"Why do we have Requirements"}}
 
  [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See 
  {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}the guidelines}}, particularly
@@ -159,6 +160,6 @@ Publishing your artifacts to the Central Repository
 * Other Projects
 
  The easiest way to upload another project is to use the
- {{{https://central.sonatype.org/pages/ossrh-guide.html}Open Source Software Repository Hosting (OSSRH)}},
+ {{{https://central.sonatype.org/publish/publish-guide/}Open Source Software Repository Hosting (OSSRH)}},
  which is an approved repository provided
  by Sonatype for <any> OSS Project that wants to get its artifacts into the Central Repository.
