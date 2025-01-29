@@ -211,7 +211,7 @@ The Project Management Committee has the following responsibilities:
 * Ensure [Developers Conventions][5] are followed, or updated/improved if necessary.
 * Know and respect the goals and processes of the community and help educate
   newer members about them and their
-  [internal details][https://maven.apache.org/developers/conventions/code.html].
+  [internal details][https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt].
 
 #### Standards for Community Commitment
 
