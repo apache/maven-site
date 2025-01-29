@@ -44,15 +44,15 @@ Requirements
  [[3]] <<PGP signature>>,
 
  [[4]] <<minimum POM information>>: There are some requirements for the minimal information in the POMs that are in the Central Repository,
- see {{{https://central.sonatype.org/pages/requirements.html#sufficient-metadata}here}}, 
+ see {{{https://central.sonatype.org/pages/requirements.html}"Why do we have Requirements"}}, 
 
- [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See the guidelines
- {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}here}}, particularly
- on {{{https://central.sonatype.org/pages/producers.html#individual-projects-open-source-software-repository-hosting-ossrh}groupId and domain ownership}}.
+ [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See 
+ {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}the guidelines}}, particularly
+ the details about group ID and domain ownership.
 
  []
 
- The updated list of requirements can be found <<{{{https://central.sonatype.org/pages/requirements.html}here}}>>.
+<<{{{https://central.sonatype.org/publish/requirements/} The updated list of requirements}}>> can be found at Sonatype.
 
 * A basic sample:
 
@@ -67,7 +67,7 @@ Requirements
 
   <name>Maven core</name>
   <description>The maven main core project description</description>
-  <url>http://maven.apache.org</url>
+  <url>https://maven.apache.org</url>
 
   <licenses>
     <license>
@@ -109,7 +109,7 @@ Requirements
  The Central Repository requires PGP signatures for all artifacts (all
  files except checksums) with a public key available from a key server
  like {{{https://pgp.mit.edu}https://pgp.mit.edu}}. Read
- {{{https://central.sonatype.org/pages/working-with-pgp-signatures.html}Working with PGP Signatures}}
+ {{{https://central.sonatype.org/publish/requirements/gpg/}Working with PGP Signatures}}
  for more information.
 
 * FAQ and common mistakes
@@ -118,7 +118,7 @@ Requirements
 
  At present, this won't preclude your project from being included, but we do strongly encourage making sure all your dependencies
  are included in the Central Repository. If you rely on sketchy repositories that have junk in them or disappear, it creates havok for
- downstream users. Try to keep your dependencies among reliable repos like Central, Jboss, etc.
+ downstream users. Try to keep your dependencies among reliable repos like Central, JBoss, etc.
 
  * What about artifacts that can't be distributed because of their license?
  
