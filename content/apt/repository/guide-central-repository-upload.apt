@@ -44,8 +44,9 @@ Requirements
 
  [[3]] <<PGP signature>>
 
- [[4]] <<minimum POM information>>: There are some requirements for the minimal information in the POMs that are in the Central Repository,
- see {{{https://central.sonatype.org/pages/requirements.html}"Why do we have Requirements"}}
+ [[4]] <<minimum POM information>>: Maven Central requires that a POM contain
+ certain minimal information before it will publish a release.
+ See {{{https://central.sonatype.org/pages/requirements.html}"Why do we have Requirements"}}
 
  [[5]] <<coordinates>>: Picking the appropriate coordinates for your project is important. See 
  {{{https://central.sonatype.org/pages/choosing-your-coordinates.html}the guidelines}}, particularly
