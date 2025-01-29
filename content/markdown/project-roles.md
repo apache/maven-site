@@ -24,15 +24,15 @@ The Apache Foundation has a phrase: "Community over code" which
 is about how it is the community that grows around a project
 that is the most important thing.
 
-Everyone reading this is part of the Apache Maven community,
-and even if you are an invisible part of the Apache Maven
-community you are still part of the community.
+Everyone reading this is part of the Apache Maven community.
+Even if you are an invisible part of the Apache Maven
+community, you are still part of the community.
 
 There are many ways we can sort the people in our
-community, we present the following as one such way.
+community. We present the following as one such way.
 Please do not take offence if you disagree with this
 categorisation. It is important to remember that we are
-a *community* not a *clique* so you are entitled to disagree
+a *community*, not a *clique*, so you are entitled to disagree
 with others in the community.
 
 *Note:* the right to disagree with other people's opinions
@@ -49,13 +49,13 @@ competing software tools to Apache Maven.
 
 It would be great if the lurkers would come out of the shadows
 and make themselves visible, but every community needs its
-lurkers, so if you are a lurker sulking about on the fringes
+lurkers, so if you are lurking on the fringes
 of the Apache Maven project, know that you are a valued member
 of our community. If you ever feel the need to change your role,
-we will welcome you with open arms… (and if we don't welcome you
+we will welcome you with open arms (and if we don't welcome you
 with open arms, please advise the [Project management committee][3]
 who are responsible for ensuring that the community is a healthy
-one)
+one).
 
 ### Consumers
 
@@ -67,8 +67,8 @@ something like [stackoverflow][1]; submitting bug reports; etc.).
 Maybe Apache Maven is the perfect product for you and does
 exactly what you need and want, and you never have a need
 to ask questions about how to use Maven as it is immediately
-obvious to you how one is supposed to use Maven… If that is the
-case, could you please consider taking a more active role in
+obvious to you. If that is the
+case, please consider taking a more active role in
 our community, as Maven is none of the above to our minds
 and you might have a point of view that we have missed.
 
@@ -99,20 +99,20 @@ We hope your bug report has received some attention. If it
 hasn't, why don't you see if you can fix the issue yourself
 and submit a patch?
 
-We hope your question was answered. If it hasn't, think of
-all the other users who's questions sit unanswered, how many
-of them do you know an answer for (even if only a partial
-answer)? Why don't you respond to their questions with the
+We hope your question was answered. If it wasn't, think of
+all the other users who's questions sit unanswered. How many
+of them do you know an answer for, even if only a partial
+answer? Why not respond to their questions with the
 answers you know? If everybody did that, your question would
 have an answer. Pay it forward!
 
 We hope your experience in one of the other Maven user
-communities is a positive one, so why not join the canonical
-Maven user community and subscribe to the [Maven user list][2]?
+communities is a positive one, so consider joining the canonical
+Maven user community and subscribe to the [Maven user list][2].
 
 ### Contributors
 
-People who use Maven, have joined the Maven community and contribute
+People who use Maven, have joined the Maven community, and contribute
 back to the community. This includes people who:
 
 * Submit reports of the results of testing proposed releases of
@@ -124,9 +124,9 @@ back to the community. This includes people who:
 
 We wrote [a guide for contributors](/guides/development/guide-helping.html).
 
-Keep up the contributions, you are a critical member of our
+Keep up the contributions. You are a critical member of our
 community. If we like what we see, we may even ask you to
-consider taking a formal role in our project.
+take a formal role in our project.
 
 ## Formal roles
 
@@ -173,8 +173,8 @@ approximately every 6 months with a view to determining whether
 any of those committers would be suitable candidates to
 recommend to the board for inclusion on the PMC. It should be
 noted that this is simply a tradition and not a right. There
-are significant responsibilities that accompany the PMC role
-and as such, if a person is not demonstrating those responsibilities,
+are significant responsibilities that accompany the PMC role.
+As such if a person is not demonstrating those responsibilities,
 they may not be nominated or their nomination
 may be rejected by the board. Such decisions are not a
 reflection of the technical competence of the person, and
@@ -187,30 +187,31 @@ The Project Management Committee has the following responsibilities:
 * Active management of those projects identified by [the resolution of the Board
   of Directors of the Apache Foundation](https://whimsy.apache.org/board/minutes/Maven.html#2003-02-19);
 * Ensure the project remains a healthy top-level project of the Apache Foundation
-  (if a PMC member wants the project to be hosted elsewhere they should resign
-  from the PMC stating their reason - if the PMC shrinks beyond the minimal viable
-  size then as a result of a desire by the bulk of the PMC to move the project
+  If a PMC member wants the project to be hosted elsewhere they should resign.
+  from the PMC stating their reason. If the PMC shrinks beyond the minimal viable
+  size, then as a result of a desire by the bulk of the PMC to move the project
   elsewhere, the Board of the Apache Foundation will take that into account
   when moving the project into the Foundation's [Attic][9]);
 * Prepare [reports][10] as required by the Board of the Apache Foundation and
   ensure those reports are ready for presentation by the PMC Chair in a timely
-  manner;
-* Defend the trademarks belonging to the project;
-* Proposing active contributors for committership;
+  manner.
+* Defend the trademarks belonging to the project.
+* Propose active contributors for committership.
 * Ensure that votes in the community are used as a tool to establish consensus
-  and not a weapon to disenfranchise or alienate a minority of the community;
-* Binding votes in project decisions;
+  and not a weapon to disenfranchise or alienate a minority of the community.
+* Binding votes in project decisions
 * Ensure that code committed to the project is either committed under a valid CLA
   or is code that was contributed with a clear indication that the Apache License
   applied (i.e. small patches submitted to the issue tracker or to the mailing list
   are assumed to be submitted with the intent of being covered by the Apache
   License unless the submitter clearly marks those patches as not being covered)
 * Ensure that third party dependencies shipped as part of the project's releases
-  are covered by a compatible license;
-* Voting on release artifacts;
-* Ensure [Developers Conventions][5] are followed, or updated/improved if necessary;
-* Knows and respects the goals and processes of the community and helps educate
-  newer members about them and their [internal details][https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt].
+  are covered by a compatible license
+* Vote on release artifacts;
+* Ensure [Developers Conventions][5] are followed, or updated/improved if necessary.
+* Know and respect the goals and processes of the community and help educate
+  newer members about them and their
+  [internal details][https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt].
 
 #### Standards for Community Commitment
 
@@ -222,11 +223,10 @@ functioning of the committee itself.
 
 The Apache Foundation currently does not have a policy requiring projects to
 cross-promote. For example Subversion is an Apache project, yet projects
-are free to choose from Subversion and Git (a non-Apache project) for source
-control.
+are free to choose Git (a non-Apache project) for source control.
 
 When considering integration of technologies within Maven, there is
-thus no requirement that other Apache projects be picked over non-Apache projects.
+no requirement that other Apache projects be picked over non-Apache projects.
 
 The primary requirements for picking technologies to integrate with Maven
 are thus:
@@ -238,7 +238,7 @@ are thus:
 
 Where a PMC member is advocating a specific technology, they should declare
 any interest / involvement that they have in that technology or a competing
-technology - irrespective of whether the project is an Apache project or a
+technology, irrespective of whether the project is an Apache project or a
 project hosted elsewhere.
 
 PMC members with a stated interest / involvement should try to abstain from
@@ -256,7 +256,7 @@ for review both:
   direction and quality is in line with the consensus roadmap (where such a
   roadmap has been agreed).
 
-It is self evident that the opportunity for review is much greater if the code
+The opportunity for review is much greater if the code
 is committed to the project's source control as early as possible. Similarly
 small commits are easier to review than large commits.
 
@@ -267,7 +267,7 @@ can throw away failed experiments with less visibility (though it could be
 argued that the visibility of such failed experiments can be valuable
 documentation for others). As soon as changes in that
 fork are identified (by the people maintaining the fork) which should be
-brought back to the project those changes should be introduced into at
+brought back to the project, those changes should be introduced into at
 least a branch hosted on the Apache Maven source control in order to
 facilitate the easier review by the community. The PMC should encourage
 by example the early committing of such changes from a fork (that they
@@ -278,18 +278,17 @@ from other talented individuals, the PMC members should endeavour to bring
 those individuals and their talent to the project as committers.
 
 Finally, where a fork is hosted outside of Apache hardware, there is less
-traceability of the code provenance, for example Git commits can be squashed
+traceability of the code provenance. For example, Git commits can be squashed
 and history re-written to mask or otherwise hide the source of contributions.
 This does not mean that code coming from an external fork inherently has
-such issues, instead it means that the requirements for review and verification
+such issues. Instead it means that the requirements for review and verification
 of provenance grow exponentially when dealing with large sets of changes
 originating from a long running fork hosted outside of Apache foundation
 source control. Anybody maintaining a long running fork should be aware
-of the risk that review obligations may grow above the time capabilities
-of the PMC and committers such that when they eventually decide to try and
-bring the changes in their fork back to the Apache Maven project their
-contribution may end up being rejected on the basis of the review of a
-large set of changes being too difficult/time-consuming.
+that review obligations may grow above the time capabilities
+of the PMC and committers. When they eventually try to
+bring the changes in their fork back to the Apache Maven project, their
+contribution may end up being rejected because the review is too difficult or time-consuming.
 
 ### [Project Management Chair](https://www.apache.org/foundation/how-it-works.html#pmc-chair)
 
@@ -297,19 +296,19 @@ For various legal reasons, there are certain things that the Apache
 Software Foundation can only delegate to an [officer of the foundation][11].
 
 The Project Management Committee is responsible for nominating
-the lucky victim who gets made an officer of the foundation (subject
+the person who gets made an officer of the foundation (subject
 to the approval of the board).
 
 This person then becomes the interface between the board and
 the project management committee. They do not have any other
-additional gravitas in the project, it is the Project Management
+additional gravitas in the project. It is the Project Management
 Committee as a whole that is responsible for the direction of the project.
 
 If things break down and there is no consensus and there is no clear
 ability to reach any conclusion *and* it is in the interest of the
 foundation because damage is done and the board expects the chair
 to act as an officer of the foundation and clean things up, then the chair
-can act as an ultimate decision maker, however, by this point the
+can act as an ultimate decision maker. However, by this point the
 board of the foundation must already be well aware of the situation and
 should be actively monitoring the chair.
 
