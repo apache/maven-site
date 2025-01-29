@@ -41,6 +41,13 @@ TBD (need help)
 
 ## How to use Maven DI in plugins
 
+---
+**NOTE**
+
+If your plugin should also run with Maven 3.x, please look at [Maven & JSR-330](maven-jsr330).
+Pluings that are using Maven DI are only compatible with Maven 4.
+---
+
 Let's take a look at an example plugin: If you want to look at this example project, you can find the code [in Maven Core ITs][maven-di-plugin].
 
 The POM is setup for Maven DI as previously mentioned, with the `maven-api-di` dependency
@@ -312,6 +319,7 @@ This method has to be annotated with `@Singleton`, `@Provides` and `@Priority(10
 
 
 [guice]: https://github.com/google/guice
+[maven-jsr330]: maven-jsr330.html
 [maven-di-plugin]: https://github.com/apache/maven/tree/master/its/core-it-suite/src/test/resources/mng-8525-maven-di-plugin
 [maven-plugin-testing-harness]: https://maven.apache.org/plugin-testing/maven-plugin-testing-harness/index.html
 [junit-jupiter]: https://junit.org/junit5/
