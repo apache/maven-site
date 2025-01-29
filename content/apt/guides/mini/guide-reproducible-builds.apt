@@ -84,6 +84,14 @@ mvn clean verify artifact:compare
  Notice that this local test does NOT really prove that your build is yet reproducible by a third party, because it may still suffer from environment leaks (username, current directory, ...). But it is easy to do, and prevents basic non-reproducible issues like timestamps.
  Really checking reproducibility requires to rebuild from a completely different setup: this is harder to do, even if containers may ease the task.
 
+** Staging
+
+ If the first build is done with `deploy` to a private remote repository, the rebuild and its verification can be done by someone else referencing the staging location, like for example at Apache during votes on staged releases candidates:
+
+--------
+mvn verify artifact:compare -Dreference.repo=https://repository.apache.org/content/repositories/staging/
+--------
+
 * How to fix my Maven build reproducibility?
 
  If something is still not reproducible after initial setup and {{{/plugins/maven-artifact-plugin/plugin-issues.html}automatic check from <<<artifact:check-buildplan>>>}}:
