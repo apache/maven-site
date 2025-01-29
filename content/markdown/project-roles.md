@@ -1,5 +1,3 @@
-# Apache Maven Project Roles
-
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -18,6 +16,8 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
+# Apache Maven Project Roles
 
 The Apache Maven project is not just the software it produces.
 The Apache Foundation has a phrase: "Community over code" which
@@ -326,3 +326,4 @@ should be actively monitoring the chair.
 [11]: https://apache.org/foundation/leadership
 [12]: https://projects.apache.org/committee.html?maven
 [13]: https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt
+
