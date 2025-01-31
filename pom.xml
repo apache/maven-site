@@ -292,6 +292,7 @@
             <exclude>content/apt/guides/plugin/notes.txt</exclude>
             <exclude>content/apt/guides/suggestions/non-standard-directories.txt</exclude>
             <exclude>content/filtered-resources/.htaccess</exclude>
+            <exclude>content/filtered-resources/.well-known/atproto-did</exclude>
             <exclude>content/filtered-resources/.well-known/security.txt</exclude>
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
