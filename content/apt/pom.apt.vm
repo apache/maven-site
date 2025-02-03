@@ -419,6 +419,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
+    * Alphabetic tokens other than the special cases described above come before numeric tokens.
+
   * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
 
   * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
@@ -458,6 +460,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
+
+  * "<<<1.7>>>" \> "1.K"
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
