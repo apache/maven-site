@@ -463,6 +463,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1.7>>>" \> "1.K"
 
+  * "<<5.zebra>>>" \> "5.aardvark"
+
+  * "<<1.α>>>" \> "1.b" (Note the Greek letter alpha.)
+
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
   Note: As <<<2.0-rc1>>> \< <<<2.0>>>, the version requirement <<<[1.0,2.0)>>> excludes <<<2.0>>> but includes version <<<2.0-rc1>>>, which is contrary to
