@@ -439,6 +439,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    
    * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
+   * Avoid non-ASCII characters, including non-ASCII digits, which may sort in surprising ways.
+
   []
 
   End Result Examples:
