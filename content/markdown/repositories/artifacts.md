@@ -41,7 +41,7 @@ The artifacts that Maven uses internally have the following properties:
 
 |    Name     |                   Description                   |
 |-------------|-------------------------------------------------|
-| groupId     | The artifact group                              |
+| groupId     | The project group                               |
 | artifactId  | The artifact ID                                 |
 | version     | The artifact version (linked with baseVersion)  |
 | baseVersion | The artifact base version (linked with version) |
