@@ -19,55 +19,48 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-An Artifact is "anything" (any file) that can be addressed using its coordinates, and Maven downloads, installs or
-deploys for you. Most of them are POMs and JARs but
-an artifact can be really anything. A very important thing about artifacts is that they have coordinates,
+An artifact is a file (more precisely, a sequence of bytes) that can be addressed using its coordinates
+and which Maven downloads, installs, or deploys for you. Most artifacts are POMs and JARs, but
+an artifact can be really any file. A very important thing about artifacts is that they have coordinates,
 so they are not "just files", but they are files that are in some way addressable by Maven.
 
-Artifact coordinates, are most often represented as `groupId:artifactId:version`, or GAV in short or when
-informally used (please note that Artifact coordinates has more fields, but for brevity we still call the
-coordinates "GAV", not "GAVCE"). The artifact coordinates uniquely describe the artifact you are referring to,
-but does not tell anything about its source (or origin). It is up to Maven to figure out (or you to tell Maven
-how to figure it out).
+Artifact coordinates are most often represented as `groupId:artifactId:version`, or GAV in short.
+(Please note that artifact coordinates have more fields, but for brevity we still call the
+coordinates "GAV", not "GAVCE"). The artifact coordinates uniquely identify an artifact,
+but do not specify anything about its source. It is up to Maven to figure out (or you to tell Maven
+how to figure out) how and from where to retrieve the artifact.
 
-A word about uniqueness: as stated above, GAV coordinates uniquely identifies artifact, but only **within one repository**.
-It is clearly possible (but discouraged) to have multiple repositories with overlapping content (so R1 and R2 both
-contain artifact with same GAV). If those files are not-identical (truly, ie. hash wise), it may cause severe
+A word about uniqueness: as stated above, GAV coordinates uniquely identify an artifact, but only **within one repository**.
+Different repositories can contain artifacts with the same GAV. (This is normal with
+mirror repositories.) If those files are not identical, it can cause severe
 issues without you noticing it. In short, these cases should be avoided.
-
-While Maven internally uses the notion of "artifact" thoroughly (just look at sources!), end users may never hit this term.
-That's due the fact, that while for Maven, "everything is artifact" (internally), Maven end users actually speak about
-"projects", "parent projects", "dependencies", "build plugins", "reporting plugins", "build extensions" and so on.
 
 ## Artifact Properties
 
-The artifacts that Maven (internally) uses has following (for our topic related) properties:
+The artifacts that Maven uses internally have the following properties:
 
-|    Name     |                    Description                    |
-|-------------|---------------------------------------------------|
-| groupId     | The artifact group                                |
-| artifactId  | The artifact id                                   |
-| version     | The artifact version (linked w/ baseVersion)      |
-| baseVersion | The artifact base version (linked w/ version)     |
-| classifier  | The artifact distinguishing classifier (optional) |
-| extension   | The artifact extension (default: "jar")           |
+|    Name     |                   Description                   |
+|-------------|-------------------------------------------------|
+| groupId     | The project group                               |
+| artifactId  | The artifact ID                                 |
+| version     | The artifact version (linked with baseVersion)  |
+| baseVersion | The artifact base version (linked with version) |
+| classifier  | The artifact classifier (optional)              |
+| extension   | The artifact extension (default: "jar")         |
 
-One property worth explaining is a bit of special one: `baseVersion` that is actually derived/linked to
-`version` (or the other way around, depending on the context): for release artifacts, it holds the same value as
-`version`, whereas for snapshot artifacts, it holds the "non-timestamped snapshot version". For example,
-for snapshot version "1.0-20220119.164608-1", the `baseVersion` would have the value "1.0-SNAPSHOT".
-So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in
+One property worth explaining is a bit of special one: `baseVersion` is derived from/linked to
+`version` (or the other way around, depending on the context). For release artifacts, it has the same value as
+`version`, whereas for snapshot artifacts, it has the "non-timestamped snapshot version". For example,
+snapshot version "1.0-20220119.164608-1" has the `baseVersion` "1.0-SNAPSHOT".
+So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in the
 case of snapshots**.
 
-Important note about Artifacts: the fact is an artifact a snapshot or not, should be queried with method
-`Artifact#isSnapshot()`.
+## But where do I set the Artifact extension?
 
-## But where do I set Artifact extension?
+In short, nowhere. Or maybe "you rarely have to". The Maven POM (where you declare your project, parent project,
+dependencies, plugins and other items), maps those elements onto artifact extensions with some extra logic.
 
-In short, nowhere. Or maybe "you rarely have to". Maven POM (where you declare your project, parent project,
-dependencies, plugins and other), maps those elements onto artifact coordinates with some extra logic.
-
-In case of "project" and "parent project" aka POMs (after POM made into effective POM, ie. parent values inherited):
+In case of "project" and "parent project" POMs (after the POM is made into an effective POM, that is, parent values have been inherited):
 
 | Artifact Property | Project POM (pom.xml) |  POM Artifact  |
 |-------------------|-----------------------|----------------|
@@ -77,7 +70,7 @@ In case of "project" and "parent project" aka POMs (after POM made into effectiv
 | classifier        | -                     | "" (always)    |
 | extension         | -                     | `pom` (always) |
 
-In case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped
+In the case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped
 (for build extension change the XML path prefix to `project/build/extensions/extension[x]`):
 
 | Artifact Property |            Plugin in Project POM             | Plugin/Extension Artifact |
@@ -88,7 +81,7 @@ In case of "build plugins" and "build extensions", as they are JARs, this is how
 | classifier        | -                                            | -> "" (always)            |
 | extension         | -                                            | -> `jar` (always)         |
 
-And finally, in case of "dependencies", this is the mapping (no, scope is NOT part of artifact coordinates):
+And finally, in the case of "dependencies", this is the mapping (no, scope is NOT part of artifact coordinates):
 
 | Artifact Property |            Dependency in Project POM            |            Dependency Artifact            |
 |-------------------|-------------------------------------------------|-------------------------------------------|
@@ -98,13 +91,14 @@ And finally, in case of "dependencies", this is the mapping (no, scope is NOT pa
 | classifier        | `project/dependencies/dependency[x]/classifier` | -> classifier                             |
 | extension         | `project/dependencies/dependency[x]/type`       | -> type handler provided, or same as type |
 
-Here, we need to make a short detour to explain "type" (of a dependency) and how it becomes artifact extension.
+Here, we need to make a short detour to explain "dependency type" and how it becomes an artifact extension.
 
-Maven for dependencies defines "type", that describes what that dependency is (should it be added to classpath and
-many other things). Plugins and extensions may define new types, that is usually a must for plugins introducing
-a "packaging" (lifecycle mapping) by providing `ArtifactHandler` components with name corresponding to type name.
+A dependency type determines how the artifact referenced by the dependency is used.
+For example, should it be added to comple-time classpath, the test classpath, or both?
+Plugins and extensions may define new types. This is usually required for plugins introducing
+a "packaging" (lifecycle mapping) by providing `ArtifactHandler` components with a name corresponding to type name.
 
-Maven Core out of the box [defines following "types" (handled by same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
+Out of the box, Maven Core defines the [following "types" (handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
 
 |  Type Name   | Extension |  Classifier  |
 |--------------|-----------|--------------|
@@ -121,16 +115,15 @@ Maven Core out of the box [defines following "types" (handled by same named `Art
 | war          | `war`     |              |
 | **any**      | any       |              |
 
-From table above, we can see that if we define the dependency type as "war", we will hit the "war" handler, that will
+From the table above, we can see that if we define the dependency type as "war", we will hit the "war" handler. That will
 result in using the `war` extension (which may not be obvious, as the type and extension we end up with are the same, but internally this
-indirection does happen). The "test-jar" is more obvious, as it translates to `jar` extension. Finally, the **any**
-last row will be used if none above matches, hence in that case your "type" is used just as "extension", for example
-you can write `<type>tar.gz</type>` for dependency, and you will end up with extension `tar.gz` (all this happens
-because as there is no artifact handler named "tar.gz" in table above). Still, you should be aware that this table
-above may be extended by various plugins and extensions you use in your build!
+indirection does happen). The "test-jar" is more obvious, as it translates to the `jar` extension. Finally, the **any**
+last row will be used if none of the above match. Hence in that case the "type" is used as the "extension". For example.
+if the dependency type is `<type>tar.gz</type>`, the extension will also be `tar.gz`.
+This table may be extended by plugins and extensions used in the build.
 
-Also, this has "interesting" consequences, consider for example following Artifact:
-`org.project:reusable-test-support:1.0:tests:jar`. With type handlers above, maybe surprisingly, the dependency to
+Also, this has "interesting" consequences. Consider the artifact
+`org.project:reusable-test-support:1.0:tests:jar`. With the type handlers above, maybe surprisingly, the dependency to
 this very same artifact can be described in two ways:
 
 ```xml
@@ -153,13 +146,12 @@ and the equivalent dependency would be:
 </dependency>
 ```
 
-Obvious difference is presence of `classifier` in first case, while in second lack of it but presence of `type` "test-jar",
-that in the other hand, implies classifier of "tests". In both cases, extension is "jar" (in first it uses the default
-value for this property, while in second type defines it).
+The obvious difference is presence of `classifier` in first case, while in second lack of it but presence of `type` "test-jar",
+that in the other hand, implies a classifier of "tests". In both cases, the extension is "jar". The first it uses the default value for this property, while the second type defines it.
 
-Note: In this very case, using the first way is somewhat "explicit", and is recommended way. Not so for the
+Note: In this very case, the first way is somewhat "explicit", and is recommended. Not so for the
 cases when type handler carries some important extra information (like some custom packaging), where using `type`
-is more appropriate. Simply put, in this case the type "test-jar" is like an alias for ordinary JARs with "tests"
+is more appropriate. Simply put, in this case the type "test-jar" is like an alias for ordinary JARs with the "tests"
 classifier.
 
 ## Summary
