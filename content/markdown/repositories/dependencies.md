@@ -92,7 +92,7 @@ artifact nu.xom:xom:1.3.9::jar to all of the project's classpaths:
 
 A dependency element does not say in which repository to look for the corresponding artifact.
 That is determined by the settings.xml file and the `repositories` element in the
-pom.xml file and its ancestors. 
+pom.xml file and its ancestors.
 
 ## Dependency Scopes
 
