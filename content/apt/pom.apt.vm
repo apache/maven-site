@@ -309,8 +309,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<optional>>:\
   Marks a dependency optional when this project itself is a dependency.
   For example, imagine a project <<<A>>> that depends upon project <<<B>>> to
-  compile a portion of code that may not be used at runtime, then we may have no need for project <<<B>>>
-  for all project. So if project <<<X>>> adds project <<<A>>> as its own dependency, then Maven does
+  compile a portion of code that may not be used at runtime. In that case, if project <<<X>>> adds
+  project <<<A>>> as its own dependency, project <<<X>>> does not need project <<<B>>> on the classpath and Maven does
   not need to install project <<<B>>> at all. Symbolically, if <<<=\>>>> represents a required dependency,
   and <<<--\>>>> represents optional, although <<<A=\>B>>> may be the case when building A
   <<<X=\>A--\>B>>> would be the case when building <<<X>>>.
