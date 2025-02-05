@@ -19,11 +19,15 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-A dependency is a connection between a Maven project and an artifact that Maven
-adds to some classpaths. It is defined by a `dependency`
-element in the project's pom.xml file that provides the
-coordinates of the artifact to depend on and the scope in which that dependency applies.
-For example,
+A dependency is a connection between a Maven project and an artifact
+that Maven adds to some classpaths. It has both an artifact and a scope:
+the artifact that is depended on and the scope in which the artifact is
+added to the classpath.
+
+A dependency is defined by a `dependency` element in the project's
+pom.xml file. The child elements of the `dependency` specify the
+coordinates of the artifact to depend on and the scope in which that
+dependency applies. Consider the `dependency` element: 
 
 ```xml
 <dependency>
@@ -34,21 +38,16 @@ For example,
 </dependency>
 ```
 
-This element says that the artifact com.google.guava:guava:33.4.0-jre should
-be loaded from the Maven repository system and added to the classpath used to
-run tests.
+This element says that the artifact com.google.guava:guava:33.4.0-jre
+should be loaded from the Maven repository system and added to the
+classpath used to run tests.
 
-Maven defines these dependency scopes:
-
-copy table from other page????
-
-Note that Maven does not have a compileOnly scope that is available at compile time
-but not at runtime. Compile scope dependencies are available in all classpaths.
-
-Occasionally, the group ID, artifact ID, and version do not uniquely identify an artifact.
-Sometimes you also need to add an extension and/or a classifier. Classifiers can be added
-directly to the dependency element as in this dependency on the
-io.netty:netty-transport-native-epoll native library for Linux 64-bit X86 chips:
+Occasionally, the group ID, artifact ID, and version are not enough to
+uniquely identify an artifact. Sometimes you also need an extension
+and/or a classifier. Classifiers are added directly to the `dependency`
+element as in this dependency on the
+io.netty:netty-transport-native-epoll native library for Linux 64-bit
+X86 chips:
 
 ```xml
 <dependency>
@@ -59,9 +58,10 @@ io.netty:netty-transport-native-epoll native library for Linux 64-bit X86 chips:
 </dependency>
 ```
 
-Extensions are a little more complicated. The `dependency` element does not have an extension
-child element. Instead it has a `type` element which maps to an extension and
-sometimes a classifier. For example, here is a dependency with type test-jar:
+Extensions are a little more complicated. The `dependency` element does
+not have an `extension` child element. Instead it has a `type` element
+which maps to an extension and sometimes a classifier. For example, here
+is a dependency with type test-jar:
 
 ```xml
 <dependency>
@@ -72,15 +72,15 @@ sometimes a classifier. For example, here is a dependency with type test-jar:
 </dependency>
 ```
 
-This element says that the artifact org.example:reusable-test-support:2.3::jar should
-be loaded from the Maven repository systems. Although the type is
-`test-jar`, the extension is `jar`. Dependency types do not one-to-one match
-artifact extensions.
+This element says that the artifact
+org.example:reusable-test-support:2.3::jar should be loaded from the
+Maven repository systems. Although the type is `test-jar`, the extension
+is `jar`. Dependency types do not one-to-one match artifact extensions.
 
-The classifier, type, and scope elements all have defaults and are often omitted.
-The default classifier is the empty string. The default type is jar.
-The default scope is compile. Thus this dependency element adds the artifact nu.xom:xom:1.3.9::jar
-to all of the project's classpaths:
+The classifier, type, and scope elements all have defaults and are often
+omitted. The default classifier is the empty string. The default type is
+jar. The default scope is compile. Thus this dependency element adds the
+artifact nu.xom:xom:1.3.9::jar to all of the project's classpaths:
 
 ```xml
 <dependency>
@@ -95,20 +95,34 @@ That is determined by ????
 
 ## Dependency Scopes
 
-Every dependency has a scope that determines which classpaths the artifact referenced by the dependency
-will be added to. For example, should it be added to compile-time classpath,
-the test classpath, or both? The default scope when none is explicitly
-specified is `compile`.
+Every dependency has a scope that determines which classpaths the
+artifact referenced by the dependency will be added to. For example,
+should it be added to compile-time classpath, the test classpath, or
+both? The default scope when none is explicitly specified is `compile`.
 
-Different projects may assign different scopes to the same artifact. For instance, one
-project might use com.google.guava:34.4.0-jre only for tests and thus set the scope to `test`.
-Another might need it at runtime but not whee the project is compiled, and thus
-set the scope to `runtime`. A third project might need it for compiling, running, and testing
-and thus set the scope to `compile`.
+Different projects may assign different scopes to the same artifact. For
+instance, one project might use com.google.guava:34.4.0-jre only for
+tests and thus set the scope to `test`. Another might need it at runtime
+but not whee the project is compiled, and thus set the scope to
+`runtime`. A third project might need it for compiling, running, and
+testing and thus set the scope to `compile`.
 
-Unlike the other elements, the scope does not have any effect on which artifact is loaded
-from the Maven repository system. It only determines whether the artifact is loaded and
-added to a given classpath for the project.
+Unlike the other elements, the scope does not have any effect on which
+artifact is loaded from the Maven repository system. It only determines
+whether the artifact is loaded and added to a given classpath for the
+project.
+
+Maven has five dependency scopes:
+
+* compile - Compile scope artifacts are available in all classpaths. This is the default if no scope is provided.
+* provided - Maven expects the JDK or a container to provide the artifact at runtime. It does not add it to the classpath.
+* runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
+* test - The artifact is needed for tests but not by non-test code. 
+* system - The artifact is loaded from a specified path on then local system.
+
+Maven does not have a compileOnly scope that is available at compile time
+but not at runtime. Compile scope dependencies are available in all classpaths.
+
 
 ## Dependency Types
 
@@ -132,7 +146,7 @@ This dependency element retrieves com.google.guava:guava:31.0.0::pom.
 
 Here the type of the dependency and the extension of the artifact are the same,
 but that is not always the case.
-For instance, the test-jar type maps selects an artifact with the extension `jar`.
+For instance, the test-jar type selects an artifact with the extension `jar`.
 
 Out of the box, Maven defines 11 dependency types:
 
