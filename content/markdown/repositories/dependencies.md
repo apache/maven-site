@@ -27,7 +27,7 @@ added to the classpath.
 A dependency is defined by a `dependency` element in the project's
 pom.xml file. The child elements of the `dependency` specify the
 coordinates of the artifact to depend on and the scope in which that
-dependency applies. Consider the `dependency` element: 
+dependency applies. Consider the `dependency` element:
 
 ```xml
 <dependency>
@@ -117,12 +117,11 @@ Maven has five dependency scopes:
 * compile - Compile scope artifacts are available in all classpaths. This is the default if no scope is provided.
 * provided - Maven expects the JDK or a container to provide the artifact at runtime. It does not add it to the classpath.
 * runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
-* test - The artifact is needed for tests but not by non-test code. 
+* test - The artifact is needed for tests but not by non-test code.
 * system - The artifact is loaded from a specified path on then local system.
 
 Maven does not have a compileOnly scope that is available at compile time
 but not at runtime. Compile scope dependencies are available in all classpaths.
-
 
 ## Dependency Types
 
