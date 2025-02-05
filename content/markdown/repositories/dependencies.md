@@ -198,11 +198,11 @@ and a completely equivalent dependency is:
 ```
 
 The obvious difference is presence of `classifier` in the first case,
-and the lack of it in the second. However, in the second the `type` "test-jar"
+and the lack of it in the second. However, in the second case, the `type` "test-jar"
 implies a classifier of "tests". In both cases, the extension is "jar".
 The first uses the default value for this property, while the second infers it from the type.
 
-Note: In this very case, the first way is somewhat "explicit", and is recommended. Not so for the
+Note: The first way is more "explicit", and is recommended. Not so for the
 cases when type handler carries some important extra information (like some custom packaging), where using `type`
 is more appropriate. Simply put, in this case the type "test-jar" is like an alias for ordinary JARs with the "tests"
 classifier.
