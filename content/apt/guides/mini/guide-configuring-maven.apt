@@ -71,7 +71,8 @@ Configuring Maven
 
 * Configuring Parallel Artifact Resolution
 
-  By default, Maven will download up to 5 artifacts (from different groups) at once. To change the size of the thread pool, start Maven using
+  By default, Maven will download up to five artifacts (from different groups) at once.
+  To change the size of the thread pool, start Maven using
   <<<-Dmaven.artifact.threads>>>. For example, to only download one artifact at a time:
 
 ----
