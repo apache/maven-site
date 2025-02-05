@@ -103,7 +103,8 @@ under the License.
             href="/guides/mini/guide-large-scale-centralized-deployments.html"/>
           <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html"/>
           <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html"/>
-          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html"/>
+          <item name="Encrypting Passwords (Maven 3)" href="/guides/mini/guide-encryption.html"/>
+          <item name="Encrypting Passwords (Maven 4)" href="/guides/mini/guide-encryption-4.html"/>
           <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
           <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
