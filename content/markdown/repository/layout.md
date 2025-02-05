@@ -1,4 +1,4 @@
-# Maven2 Repository Layout
+# Maven Repository Layout
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -19,7 +19,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven2 repository layout format is the default layout used since Maven 2 (see [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final) in [Maven 2.0 Design Documents](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+2.0+Design+Documents)), superceding old Maven 1 layout:
+(See [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final))
+
+The Maven repository layout format has this hierarchy:
 
 ```
 Repository root
