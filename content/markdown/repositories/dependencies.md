@@ -20,7 +20,7 @@ under the License.
 -->
 
 A dependency is a connection between a Maven project and an artifact
-that Maven adds to some classpaths. It has both an artifact and a scope:
+that Maven adds to a classpath. A dependency has both an artifact and a scope:
 the artifact that is depended on and the scope in which the artifact is
 added to the classpath.
 
@@ -91,7 +91,8 @@ artifact nu.xom:xom:1.3.9::jar to all of the project's classpaths:
 ```
 
 A dependency element does not say in which repository to look for the corresponding artifact.
-That is determined by ????
+That is determined by the settings.xml file and the `repositories` element in the
+pom.xml file and its ancestors. 
 
 ## Dependency Scopes
 
