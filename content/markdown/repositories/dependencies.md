@@ -25,7 +25,6 @@ element in the project's pom.xml file that provides the
 coordinates of the artifact to depend on and the scope in which that dependency applies.
 For example,
 
-
 ```xml
 <dependency>
   <groupId>com.google.guava</groupId>
@@ -36,14 +35,14 @@ For example,
 ```
 
 This element says that the artifact com.google.guava:guava:33.4.0-jre should
-be loaded from the Maven repository system and added to the classpath used to 
+be loaded from the Maven repository system and added to the classpath used to
 run tests.
 
 Maven defines these dependency scopes:
 
 copy table from other page????
 
-Note that Maven does not have a compileOnly scope that is available at compile time 
+Note that Maven does not have a compileOnly scope that is available at compile time
 but not at runtime. Compile scope dependencies are available in all classpaths.
 
 Occasionally, the group ID, artifact ID, and version do not uniquely identify an artifact.
@@ -52,18 +51,17 @@ directly to the dependency element as in this dependency on the
 io.netty:netty-transport-native-epoll native library for Linux 64-bit X86 chips:
 
 ```xml
-    <dependency>
-      <groupId>io.netty</groupId>
-      <artifactId>netty-transport-native-epoll</artifactId>
-      <version>4.1.192</version>
-      <classifier>linux-x86_64</classifier>
-    </dependency>
+<dependency>
+  <groupId>io.netty</groupId>
+  <artifactId>netty-transport-native-epoll</artifactId>
+  <version>4.1.192</version>
+  <classifier>linux-x86_64</classifier>
+</dependency>
 ```
 
 Extensions are a little more complicated. The `dependency` element does not have an extension
 child element. Instead it has a `type` element which maps to an extension and
 sometimes a classifier. For example, here is a dependency with type test-jar:
-
 
 ```xml
 <dependency>
@@ -79,10 +77,9 @@ be loaded from the Maven repository systems. Although the type is
 `test-jar`, the extension is `jar`. Dependency types do not one-to-one match
 artifact extensions.
 
-
-The classifier, type, and scope elements all have defaults and are often omitted. 
+The classifier, type, and scope elements all have defaults and are often omitted.
 The default classifier is the empty string. The default type is jar.
-The default scope is compile. Thus this dependency element adds the artifact nu.xom:xom:1.3.9::jar 
+The default scope is compile. Thus this dependency element adds the artifact nu.xom:xom:1.3.9::jar
 to all of the project's classpaths:
 
 ```xml
@@ -101,7 +98,7 @@ That is determined by ????
 Every dependency has a scope that determines which classpaths the artifact referenced by the dependency
 will be added to. For example, should it be added to compile-time classpath,
 the test classpath, or both? The default scope when none is explicitly
-specified is `compile`. 
+specified is `compile`.
 
 Different projects may assign different scopes to the same artifact. For instance, one
 project might use com.google.guava:34.4.0-jre only for tests and thus set the scope to `test`.
@@ -119,8 +116,8 @@ Every dependency has a type that indicates the extension and the classifier
 for the artifact, though the type-specified classifier can be overridden by
 an explicit classifier element.
 The type is set by the `type` element.
-The default type when no `type` element is present is `jar`. 
-Different projects may assign different types to the same artifact. 
+The default type when no `type` element is present is `jar`.
+Different projects may assign different types to the same artifact.
 
 This dependency element retrieves com.google.guava:guava:31.0.0::pom.
 
@@ -139,7 +136,6 @@ For instance, the test-jar type maps selects an artifact with the extension `jar
 
 Out of the box, Maven defines 11 dependency types:
 
-
 |  Type Name   | Extension |  Classifier  |
 |--------------|-----------|--------------|
 | jar          | `jar`     |              |
@@ -156,9 +152,9 @@ Out of the box, Maven defines 11 dependency types:
 
 From the table above, you can see that if the dependency type is "war", Maven retrieves
 an artifact with the `war` extension. If the dependency type is "test-jar", Maven retrieves
-an artifact with the `jar` extension and the classifier `tests`. 
+an artifact with the `jar` extension and the classifier `tests`.
 
-Finally, if Maven does not recognize a type, then the type becomes the extension and the 
+Finally, if Maven does not recognize a type, then the type becomes the extension and the
 classifier is empty.  For example.
 if the dependency type is `<type>tar.gz</type>`, the extension will also be `tar.gz`.
 These mappings may be extended by plugins and extensions used in the build.
@@ -187,7 +183,7 @@ and a completely equivalent dependency is:
 </dependency>
 ```
 
-The obvious difference is presence of `classifier` in the first case, 
+The obvious difference is presence of `classifier` in the first case,
 and the lack of it in the second. However, in the second the `type` "test-jar"
 implies a classifier of "tests". In both cases, the extension is "jar".
 The first uses the default value for this property, while the second infers it from the type.
@@ -200,6 +196,4 @@ classifier.
 Plugins and extensions may define new dependency types. This is usually required for
 plugins that introduce a "packaging" (lifecycle mapping) by providing an `ArtifactHandler`
 component with a name corresponding to the type name.
-
-
 
