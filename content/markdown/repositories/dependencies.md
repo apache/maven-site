@@ -116,13 +116,14 @@ The scope does not have any effect on which
 artifact is loaded from the Maven repository system. It only determines
 whether the artifact is loaded and added to a given classpath.
 
-Maven has five dependency scopes:
+Maven has six dependency scopes:
 
 * compile - Compile scope artifacts are available in all classpaths. This is the default if no scope is provided.
 * provided - Maven expects the JDK or a container to provide the artifact at runtime. It does not add it to the classpath.
 * runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
 * test - The artifact is needed for tests but not by non-test code.
 * system - The artifact is loaded from a specified path on the local system.
+* import - The artifact is loaded from a specified path on the local system.
 
 Maven does not have a compileOnly scope that is available at compile time
 but not at runtime. Compile scope dependencies are available in all classpaths.
@@ -210,7 +211,7 @@ serves as an alias for ordinary JARs with the "tests" classifier. If the
 type handler carries important extra information such as custom packaging, using `type`
 is more appropriate.
 
-Plugins and extensions may define new dependency types. This is usually required for
+Plugins and extensions can define new dependency types. This is usually required for
 plugins that introduce a "packaging" (lifecycle mapping) by providing an `ArtifactHandler`
 component with a name corresponding to the type name.
 
