@@ -117,22 +117,18 @@ Introduction to Repositories
 
 * Setting up the Internal Repository
 
- To set up an internal repository just requires that you have a place to put it, and then copy
+ Setting up an internal repository just requires that you have a place to put it, and then copy
  required artifacts there using the same layout as in a remote repository such as {{{https://repo.maven.apache.org/maven2/}repo.maven.apache.org}}.
 
- It is <not> recommended that you scrape or <<<rsync://>>> a full copy of central as there is a large amount
+ Do <not> scrape or <<<rsync://>>> a full copy of central as there is a large amount
  of data there and doing so will get you banned. You can use a program such as those described on the {{{../../repository-management.html}Repository Management}} page to
  run your internal repository's server, download from the internet as required, and then hold
  the artifacts in your internal repository for faster downloading later.
 
- The other options available are to manually download and vet releases, then copy them to the internal
- repository, or to have Maven download them for a user, and manually upload the vetted artifacts to the
- internal repository which is used for releases. This step is the only one available for artifacts where
- the license forbids their distribution automatically, such as several J2EE JARs provided by Sun.
- Refer to the {{{../mini/guide-coping-with-sun-jars.html}Guide to coping with SUN JARs}} document for more information.
-
- It should be noted that Maven intends to include enhanced support for such features in the future,
- including click through licenses on downloading, and verification of signatures.
+ The other options are to manually download and vet releases, then copy them to the internal
+ repository; or to have Maven download them for a user, then manually upload the vetted artifacts to the
+ internal repository which is used for releases. This step is useful for artifacts whose
+ license forbids their automatic distribution, such as several J2EE JARs.
 
 * Using the Internal Repository
 
