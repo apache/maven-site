@@ -129,14 +129,14 @@ Maven has six dependency scopes:
 * import - Replace this dependency with the dependencies in the specified POM's `dependencyManagement` element. Only used when the type is pom.
 
 <!-- As I write this, I'm realizing that Maven overloads dependency scope
-     for multiple different purposes. In particular we've confused the scope in the
-     classpath with where the artifact lives and how it's found.
-     Scope should be one of compile, runtime, test, or all.
-     system should be replaced by systempath. provided and import should be separate elements.
-     Or perhaps we should have a separate source element that has values
-     repository, system (or url),  provided, and import.
-     Not that we're going to fix any of this now, but it is worth
-     understanding why this is confusing.
+for multiple different purposes. In particular we've confused the scope in the
+classpath with where the artifact lives and how it's found.
+Scope should be one of compile, runtime, test, or all.
+system should be replaced by systempath. provided and import should be separate elements.
+Or perhaps we should have a separate source element that has values
+repository, system (or url),  provided, and import.
+Not that we're going to fix any of this now, but it is worth
+understanding why this is confusing.
 -->
 
 Maven does not have a compileOnly scope that is available at compile time
