@@ -124,7 +124,7 @@ Maven has six dependency scopes:
 * provided - Maven expects the JDK or a container to provide the artifact at runtime. It does not add it to the classpath.
 * runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
 * test - The artifact is needed for tests but not by non-test code.
-* system - The artifact is loaded from a specified path on the local system.
+* system - The artifact is loaded from the local file system. The path to the file is specified by the `systempath` child of the `dependency` element.
 * import - Replace this dependency with the dependencies in the specified POM's `dependencyManagement` element. Only used when the type is pom.
 
 <!-- As I write this, I'm realizing that Maven overloads dependency scope
@@ -134,6 +134,8 @@ Maven has six dependency scopes:
      system should be replaced by systempath. provided and import should be separate elements.
      Or perhaps we should have a separate source element that has values
      repository, system (or url),  provided, and import.
+     Not that we're going to fix any of this now, but it is worth
+     understanding why this is confusing.
 -->
 
 Maven does not have a compileOnly scope that is available at compile time
