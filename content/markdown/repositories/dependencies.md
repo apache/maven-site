@@ -20,14 +20,17 @@ under the License.
 -->
 
 A dependency is a connection between a Maven project and an artifact
-that Maven adds to a classpath. A dependency has both an artifact and a scope:
-the artifact that is depended on and the scope in which the artifact is
-added to the classpath.
+that Maven adds to a classpath. A dependency has both an artifact and metadata
+about how the artifact is used by the project. This metadata includes 
+the scope in which the artifact is
+added to the classpath and whether the artifact is required or optional.
+Different projects can have dependencies on the same artifact with different scopes
+and optionality. That is, a dependency is a property of a project, not an artifact.
 
 A dependency is defined by a `dependency` element in the project's
 pom.xml file. The child elements of the `dependency` specify the
 coordinates of the artifact to depend on and the scope in which that
-dependency applies. Consider the `dependency` element:
+dependency applies. Consider this `dependency` element:
 
 ```xml
 <dependency>
@@ -77,10 +80,11 @@ org.example:reusable-test-support:2.3::jar should be loaded from the
 Maven repository systems. Although the type is `test-jar`, the extension
 is `jar`. Dependency types do not one-to-one match artifact extensions.
 
-The classifier, type, and scope elements all have defaults and are often
+The `classifier`, `type`, `optional`, and `scope` elements all have defaults and are often
 omitted. The default classifier is the empty string. The default type is
-jar. The default scope is compile. Thus this dependency element adds the
-artifact nu.xom:xom:1.3.9::jar to all of the project's classpaths:
+jar. The default opitonality is false. The default scope is compile.
+Thus this dependency element adds the artifact nu.xom:xom:1.3.9::jar to all of the
+project's classpaths as a required dependency:
 
 ```xml
 <dependency>
@@ -97,21 +101,20 @@ pom.xml file and its ancestors.
 ## Dependency Scopes
 
 Every dependency has a scope that determines which classpaths the
-artifact referenced by the dependency will be added to. For example,
+artifact referenced by the dependency is added to. For example,
 should it be added to compile-time classpath, the test classpath, or
 both? The default scope when none is explicitly specified is `compile`.
 
 Different projects may assign different scopes to the same artifact. For
 instance, one project might use com.google.guava:34.4.0-jre only for
 tests and thus set the scope to `test`. Another might need it at runtime
-but not whee the project is compiled, and thus set the scope to
+but not when the project is compiled, and thus set the scope to
 `runtime`. A third project might need it for compiling, running, and
 testing and thus set the scope to `compile`.
 
-Unlike the other elements, the scope does not have any effect on which
+The scope does not have any effect on which
 artifact is loaded from the Maven repository system. It only determines
-whether the artifact is loaded and added to a given classpath for the
-project.
+whether the artifact is loaded and added to a given classpath.
 
 Maven has five dependency scopes:
 
@@ -119,7 +122,7 @@ Maven has five dependency scopes:
 * provided - Maven expects the JDK or a container to provide the artifact at runtime. It does not add it to the classpath.
 * runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
 * test - The artifact is needed for tests but not by non-test code.
-* system - The artifact is loaded from a specified path on then local system.
+* system - The artifact is loaded from a specified path on the local system.
 
 Maven does not have a compileOnly scope that is available at compile time
 but not at runtime. Compile scope dependencies are available in all classpaths.
@@ -128,7 +131,7 @@ but not at runtime. Compile scope dependencies are available in all classpaths.
 
 Every dependency has a type that indicates the extension and the classifier
 for the artifact, though the type-specified classifier can be overridden by
-an explicit classifier element.
+an explicit `classifier` element.
 The type is set by the `type` element.
 The default type when no `type` element is present is `jar`.
 Different projects may assign different types to the same artifact.
@@ -173,9 +176,9 @@ classifier is empty.  For example.
 if the dependency type is `<type>tar.gz</type>`, the extension will also be `tar.gz`.
 These mappings may be extended by plugins and extensions used in the build.
 
-Also, this has "interesting" consequences. Consider the artifact
-`org.project:reusable-test-support:1.0:tests:jar`. With the type handlers above, maybe surprisingly, the dependency to
-this very same artifact can be described in two ways:
+Consider the artifact
+`org.project:reusable-test-support:1.0:tests:jar`. With the type handlers above,
+maybe surprisingly, a dependency on this very same artifact can be described in two ways:
 
 ```xml
 <dependency>
@@ -202,10 +205,10 @@ and the lack of it in the second. However, in the second case, the `type` "test-
 implies a classifier of "tests". In both cases, the extension is "jar".
 The first uses the default value for this property, while the second infers it from the type.
 
-Note: The first way is more "explicit", and is recommended. Not so for the
-cases when type handler carries some important extra information (like some custom packaging), where using `type`
-is more appropriate. Simply put, in this case the type "test-jar" is like an alias for ordinary JARs with the "tests"
-classifier.
+The first way is more explicit and therefore preferred. In this case the type "test-jar"
+serves as an alias for ordinary JARs with the "tests" classifier. If the
+type handler carries important extra information such as custom packaging, using `type`
+is more appropriate.
 
 Plugins and extensions may define new dependency types. This is usually required for
 plugins that introduce a "packaging" (lifecycle mapping) by providing an `ArtifactHandler`
