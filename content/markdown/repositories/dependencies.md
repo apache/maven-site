@@ -112,9 +112,11 @@ but not when the project is compiled, and thus set the scope to
 `runtime`. A third project might need it for compiling, running, and
 testing and thus set the scope to `compile`.
 
-The scope does not have any effect on which
-artifact is loaded from the Maven repository system. It only determines
-whether the artifact is loaded and added to a given classpath.
+The scope does not have any effect on which artifact is loaded. Instead it determines:
+
+1. Where the artifact is loaded from
+2. Which classpaths the artifact is added to
+3. Whether the artifact's own dependencies are also added to this project's classpath
 
 Maven has six dependency scopes:
 
@@ -123,7 +125,16 @@ Maven has six dependency scopes:
 * runtime - The artifact is required for execution but not for compilation. It is in the runtime and test classpaths, but not the compile classpath.
 * test - The artifact is needed for tests but not by non-test code.
 * system - The artifact is loaded from a specified path on the local system.
-* import - The artifact is loaded from a specified path on the local system.
+* import - Replace this dependency with the dependencies in the specified POM's `dependencyManagement` element. Only used when the type is pom.
+
+<!-- As I write this, I'm realizing that Maven overloads dependency scope
+     for multiple different purposes. In particular we've confused the scope in the
+     classpath with where the artifact lives and how it's found.
+     Scope should be one of compile, runtime, test, or all.
+     system should be replaced by systempath. provided and import should be separate elements.
+     Or perhaps we should have a separate source element that has values
+     repository, system (or url),  provided, and import.
+-->
 
 Maven does not have a compileOnly scope that is available at compile time
 but not at runtime. Compile scope dependencies are available in all classpaths.
@@ -201,8 +212,8 @@ and a completely equivalent dependency is:
 </dependency>
 ```
 
-The obvious difference is presence of `classifier` in the first case,
-and the lack of it in the second. However, in the second case, the `type` "test-jar"
+The obvious difference is the presence of `classifier` in the first case,
+and the absence of it in the second. However, in the second case, the `type` "test-jar"
 implies a classifier of "tests". In both cases, the extension is "jar".
 The first uses the default value for this property, while the second infers it from the type.
 
