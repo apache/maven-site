@@ -861,7 +861,7 @@ Introduction to the Dependency Mechanism
  <<<Important note: This is deprecated.>>>
 
  Dependencies with the scope <system> are not looked up in the Maven repository system.
- Instead the `dependency` element contains a `systemPath` pointing to a jar on the local
+ Instead the <<<dependency>>> element contains a <<<systemPath>>> pointing to a jar on the local
  file system.
  
  The system scope is commonly used to tell Maven about dependencies provided by the JDK or the VM. 
