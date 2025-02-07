@@ -44,7 +44,7 @@ Thus, the Maven POM syntax became fixed, unable to change.
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
 >
 >> unable to implement improvements that we imagine will require seriously updating the POM schema…"
-> > &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+>> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
 In order for Maven to evolve, it's necessary to separate the information needed for the build from the information
 needed by the consumers, but without breaking the ecosystem.
@@ -286,6 +286,10 @@ Further improvements to subprojects will also improve daily work with them.
 Thanks to [MNG-6754][14], all subprojects will now have consistent timestamps in their packaged archives, while in Maven
 3, each subproject had a different one.
 This should make it easier to identify the archives that belong together.
+When using Maven 3, deploying a project with multiple subprojects could end up in a situation where successfully
+built subprojects were deployed to the (local or remote) repository, but failed subprojects were not.
+This was finally changed in Maven 4 to what most users expect:
+Only deploy when all subprojects are built successfully.
 
 ## Workflow, lifecycle and runtime changes
 
@@ -438,66 +442,35 @@ If you want to see issues resolved in each individual (alpha/beta/RC) release, p
 the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
-
 [2]: https://maven.apache.org/pom.html
-
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
-
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
-
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
-
 [6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
-
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
-
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
-
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061
-
 [10]: https://maven.apache.org/docs/history.html
-
 [11]: https://issues.apache.org/jira/browse/MNG-6863
-
 [12]: https://issues.apache.org/jira/browse/MNG-6118
-
 [13]: https://maarten.mulders.it/2020/11/whats-new-in-maven-4/
-
 [14]: https://issues.apache.org/jira/browse/MNG-6754
-
 [15]: https://issues.apache.org/jira/browse/MNG-7038
-
 [16]: https://github.com/apache/maven/pull/1061
-
 [17]: https://issues.apache.org/jira/browse/MNG-624
-
 [18]: https://issues.apache.org/jira/browse/MNG-6656
-
 [19]: https://issues.apache.org/jira/browse/MNG-7051
-
 [20]: https://www.mojohaus.org/flatten-maven-plugin/
-
 [21]: https://blog.soebes.io/posts/2024/03/2024-03-31-maven-4-part-i/
-
 [22]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12346477
-
 [23]: https://issues.apache.org/jira/browse/MNG-7879
-
 [24]: https://issues.apache.org/jira/browse/MNG-7836
-
 [25]: https://github.com/apache/maven-hocon-extension
-
 [26]: https://maven.apache.org/maven-jsr330.html
-
 [27]: https://issues.apache.org/jira/browse/MNG-8286
-
 [28]: https://maven.apache.org/resolver/
-
 [29]: https://github.com/apache/maven-mvnd
-
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
-
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
-
 [32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 
