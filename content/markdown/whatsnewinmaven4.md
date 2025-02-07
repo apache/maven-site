@@ -290,6 +290,7 @@ When using Maven 3, deploying a project with multiple subprojects could end up i
 built subprojects were deployed to the (local or remote) repository, but failed subprojects were not.
 This was finally changed in Maven 4 to what most users expect:
 Only deploy when all subprojects are built successfully.
+This means that the default value of the `deployAtEnd` parameter is now `true`.
 
 ## Workflow, lifecycle and runtime changes
 
