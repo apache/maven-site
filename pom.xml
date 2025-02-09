@@ -154,6 +154,13 @@
               <version>${version.maven-shared-resources}</version>
             </dependency>
           </dependencies>
+          <executions>
+            <execution>
+              <id>default</id>
+              <!-- overwrite phase from parent POM -->
+              <phase>pre-site</phase>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
