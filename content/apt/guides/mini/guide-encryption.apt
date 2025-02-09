@@ -84,7 +84,7 @@ mvn --encrypt-master-password <password>
 +------------------------------------+
 
  <The encrypted version of the master password is encrypted with a hardcoded key, so please treat it as if the password is stored in the file in plain text
- (anyone get the original master password from the encrypted version).>
+ (anyone can decrypt the original master password from the encrypted version).>
 
  When this is done, you can start encrypting existing server passwords.
 
