@@ -83,8 +83,7 @@ mvn --encrypt-master-password <password>
 </settingsSecurity>
 +------------------------------------+
 
- <The encrypted version of the master password is encrypted with a hardcoded key, so please treat it as if the password is stored in the file in plain text
- (anyone can decrypt the original master password from the encrypted version).>
+ <The encrypted version of the master password is encrypted with a {{{https://github.com/apache/maven/blob/fe25a2627c1dafeb44188dad9f45dfd5fe965a98/maven-embedder/src/main/java/org/apache/maven/cli/MavenCli.java#L856}hardcoded key}}, so please treat it as if the password is stored in the file in plain text.>
 
  When this is done, you can start encrypting existing server passwords.
 
