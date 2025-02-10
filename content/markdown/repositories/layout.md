@@ -20,9 +20,9 @@ under the License.
 -->
 
 The layout is responsible for translating the [artifact coordinates](artifacts.md) into generic paths, that is later used to construct some
-URI (file path, URL, it depends on context). Obviously, since Maven inception in 2002 the layout evolved as well.
+URI (file path, URL, it depends on context). Since Maven inception in 2002, the layout evolved only once as it is shared among the wider ecosystem: when Maven 2 was released.
 For simplicity, we will cover current layout (aka "maven2" or "default"), as since Maven 3.x release, the deprecated
-"Maven1 layout" (aka "legacy") is not supported anymore.
+["Maven1 layout"](/archives/maven-1.x/using/repositories.html) (aka "legacy" in Maven 2.x) is not supported anymore.
 
 This above implies following: if the repository contains a file that is "not on layout" (does not obey layout
 transformation rules discussed below), that file is "not addressable" by Maven coordinates, you cannot address that file

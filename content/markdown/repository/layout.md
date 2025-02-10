@@ -19,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven2 repository layout format is the default layout used since Maven 2 (see [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final) in [Maven 2.0 Design Documents](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+2.0+Design+Documents)), superceding old Maven 1 layout:
+Maven2 repository layout format is the default layout used since Maven 2 (see [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final) in [Maven 2.0 Design Documents](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+2.0+Design+Documents)), superceding [old Maven (implicitely 1) layout](https://maven.apache.org/archives/maven-1.x/using/repositories.html):
 
 ```
 Repository root

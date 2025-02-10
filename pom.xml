@@ -78,6 +78,8 @@
     <!-- used by src/xdoc/errors/404.xml.vm as well -->
     <version.maven-fluido-skin>2.0.1</version.maven-fluido-skin>
     <version.plantuml-maven-plugin>0.3</version.plantuml-maven-plugin>
+    <!-- required by plantuml-m-p 0.3 -->
+    <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
   </properties>
 
   <dependencies>
@@ -112,6 +114,16 @@
   <build>
     <pluginManagement>
       <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-enforcer-plugin</artifactId>
+          <executions>
+            <execution>
+              <id>enforce-java-version</id>
+              <phase>pre-site</phase>
+            </execution>
+          </executions>
+        </plugin>
         <!-- publish mono-module site with "mvn site-deploy" -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
@@ -127,7 +139,7 @@
           <groupId>com.diffplug.spotless</groupId>
           <artifactId>spotless-maven-plugin</artifactId>
           <version>2.44.2</version>
-          <configuration combine.self="append">
+          <configuration>
             <markdown>
               <includes>
                 <include>**/*.md</include>
@@ -142,6 +154,13 @@
               <version>${version.maven-shared-resources}</version>
             </dependency>
           </dependencies>
+          <executions>
+            <execution>
+              <id>default</id>
+              <!-- overwrite phase from parent POM -->
+              <phase>pre-site</phase>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
