@@ -100,15 +100,6 @@
       <name>Apache Snapshot Repository</name>
       <url>https://repository.apache.org/snapshots</url>
     </repository>
-    <repository>
-      <!-- to test with ASF staging repo -->
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <id>apache.staging</id>
-      <name>Apache Staging Repository</name>
-      <url>https://repository.apache.org/content/repositories/maven-1906/</url>
-    </repository>
   </repositories>
 
   <build>
