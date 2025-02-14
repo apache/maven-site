@@ -357,7 +357,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 **** Version Order Specification
 
-  If version strings are syntactically correct  {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
+  If version strings are syntactically correct {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
   version numbers, then in almost all cases version comparison follows the precedence rules outlined in that specification.
   These versions are the commonly encountered alphanumeric ASCII strings such as 2.15.2-alpha.
   More precisely, this is true if both version numbers to be compared match the "valid semver"
@@ -369,11 +369,11 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   plus sign or consider build identifiers.
 
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
-  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscore ('<<<_>>>') and transitions between digits and characters.
+  The Maven coordinate is split into tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscores ('<<<_>>>'), and transitions between digits and characters.
   The separator is recorded and will have effect on the order. A transition 
   between digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with numbers.
+  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with ASCII digits.
 
   Splitting and Replacing Examples:
 
@@ -411,13 +411,15 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * if the prefix is the same, then compare the token:
 
-    * Numeric tokens have the natural order.
+    * Tokens comprised of the ASCII digits 0-9 (numeric tokens) have the natural order.
 
-    * Non-numeric tokens ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
+    * Non-numeric tokens inlcuding non-ASCII digits ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
 
     "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
+
+    * Alphabetic tokens other than the special cases described above come before numeric tokens.
 
   * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
 
@@ -436,6 +438,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    * The usage of '<<<final>>>', '<<<ga>>>', and '<<<release>>>' qualifiers is discouraged. Use no qualifier instead.
    
    * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
+
+   * Avoid non-ASCII characters, including non-ASCII digits, which may sort in surprising ways.
 
   []
 
@@ -458,6 +462,12 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
+
+  * "<<<1.7>>>" \> "1.K"
+
+  * "<<5.zebra>>>" \> "5.aardvark"
+
+  * "<<1.α>>>" \> "1.b" (Note the Greek letter alpha.)
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
