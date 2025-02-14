@@ -318,14 +318,31 @@ wagon/wagon-2.2-source-release.zip.sha512
 
   For plugins and shared, you can also run <<<mvn -Pupdate package>>> of the site, then review and commit proposed <<<index.apt>>> updates.
 
- [[3]] Update the version tracking in JIRA
+ [[3]] Update the version tracking
 
- In the relevant project, go to Administration, then Versions. Mark
- the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
- been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+   [[a]] Update the version tracking in JIRA
 
- Note: Currently this requires to be in the maven-pmc group. So, if you don't see the Administration option in JIRA, kindly ask <private@maven.apache.org> to do this step for you.
+     In the relevant project, go to Administration, then Versions. Mark
+     the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
+     been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
+     Note: Currently this requires to be in the maven-pmc group. So, if you don't see the Administration option in JIRA, kindly ask <private@maven.apache.org> to do this step for you.
+
+   [[b]] Update milestone in GitHub
+
+     Close released milestone and open new one for next version.
+
+     Note: For projects, which maintain multiple versions, add the branch name (<<<branch: branch-name>>>) to the milestone description.
+
+   [[c]] Publish release notes draft in GitHub
+
+      Check or adapt content to match what you are releasing.
+
+      Check version and tag fulfilled in release notes - if not match with published release adjust it.
+
+      Note: PR merged after release but before publishing can add next items to release notes draft.
+
+   []
 
  [[4]] Wait for everything to sync
 
@@ -373,7 +390,7 @@ https://maven.apache.org/plugins/maven-XXX-plugin/download.cgi
 
 Release Notes - Maven XXX Plugin - Version Y.Z
 
-(Copy Here Release Notes in Text Format from JIRA)
+(Copy Here Release Notes in Text Format from JIRA or put a link to GitHub release notes)
 
 Enjoy,
 
