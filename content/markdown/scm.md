@@ -92,7 +92,7 @@ The sources for this site are available in a distinct Git repository.
 
 *Note*: If you want to submit small site amendments, for example correct a spelling mistake, you don't have to install Git locally.
 You can simply hit the "Edit" button after the page's title the breadcrumb section on the top of the page.
-This will open the page's source file on GitHub where you can edit it and easily open a pull request containing your change.
+This will open the page's source file on GitHub, where you can edit it and easily open a pull request containing your change.
 
 ## Maven Core
 
