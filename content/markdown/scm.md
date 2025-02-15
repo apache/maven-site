@@ -24,7 +24,7 @@ under the License.
 
 # Source Repository
 
-Maven projects use [Git](http://git-scm.com/) to manage their source code:
+Maven projects use [Git](http://git-scm.com/) to manage their source code.
 
 Instructions on Git use can be found in the online book [Pro Git](http://git-scm.com/book/).
 Instructions for using the Apache Software Foundation Git repositories are
@@ -84,11 +84,15 @@ the [Issue Management report](/issue-management.html) to get a summary.
 
 ## Maven Site
 
-The sources for this site are available in a distinct Git repository:
+The sources for this site are available in a distinct Git repository.
 
 | Content                |                                                 Repository                                                 | Mirror                                          |                            Issues                             |
 |:-----------------------|:----------------------------------------------------------------------------------------------------------:|:------------------------------------------------|:-------------------------------------------------------------:|
 | [Apache Maven Site](/) | [`https://gitbox.apache.org/repos/asf/maven-site.git`](https://gitbox.apache.org/repos/asf/maven-site.git) | [GitHub](https://github.com/apache/maven-site/) | [GitHub Issues](https://github.com/apache/maven-site/issues/) |
+
+*Note*: If you want to submit small site amendments, for example correct a spelling mistake, you don't have to install Git locally.
+You can simply hit the "Edit" button after the page's title the breadcrumb section on the top of the page.
+This will open the page's source file on GitHub where you can edit it and easily open a pull request containing your change.
 
 ## Maven Core
 
