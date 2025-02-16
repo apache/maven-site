@@ -100,7 +100,12 @@ Developing Maven
 
  * Make sure that you follow our code style, see {{{Further_Links}Further Links}}.
 
- []
+
+** Small amendments of the documentation
+
+    If you want to submit small site amendments, for example correct a spelling mistake, you don't have to do the full setup described before.
+    You can simply hit the "Edit" button after the page's title in the breadcrumb section on the top of the page.
+    This will open the page's source file on GitHub, where you can edit it and easily open a pull request containing your change.
 
 * Pull request acceptance criteria
 
