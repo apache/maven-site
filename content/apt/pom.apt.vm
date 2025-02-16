@@ -413,7 +413,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
     * Tokens comprised of the ASCII digits 0-9 (numeric tokens) have the natural order.
 
-    * Non-numeric tokens inlcuding non-ASCII digits ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
+    * Non-numeric tokens including non-ASCII digits ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
 
     "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
 
