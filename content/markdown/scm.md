@@ -91,7 +91,7 @@ The sources for this site are available in a distinct Git repository.
 | [Apache Maven Site](/) | [`https://gitbox.apache.org/repos/asf/maven-site.git`](https://gitbox.apache.org/repos/asf/maven-site.git) | [GitHub](https://github.com/apache/maven-site/) | [GitHub Issues](https://github.com/apache/maven-site/issues/) |
 
 *Note*: If you want to submit small site amendments, for example correct a spelling mistake, you don't have to install Git locally.
-You can simply hit the "Edit" button after the page's title the breadcrumb section on the top of the page.
+You can simply hit the "Edit" ![Edit button](../images/accessories-text-editor.png "Edit button") button after the page's title in the breadcrumb section on the top of the page.
 This will open the page's source file on GitHub, where you can edit it and easily open a pull request containing your change.
 
 ## Maven Core
