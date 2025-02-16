@@ -358,15 +358,19 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 **** Version Order Specification
 
   If version strings are syntactically correct {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
-  version numbers, then in almost all cases version comparison follows the precedence rules outlined in that specification.
+  version numbers, then in most cases version comparison follows the precedence rules outlined in that specification.
   These versions are the commonly encountered alphanumeric ASCII strings such as 2.15.2-alpha.
-  More precisely, this is true if both version numbers to be compared match the "valid semver"
-  production in the BNF grammar in the semantic versioning specification.
-  Maven does not consider any semantics implied by that specification.
+  More precisely, this is true if both version strings to be compared match the "valid semver"
+  production in the BNF grammar for semantic versioning and both version strings only
+  use lower case letters. Maven does not consider any semantics implied by Semantic Versioning.
   
   <<Important>>: This is only true for Semantic Versioning <1.0.0>. The Maven version order algorithm
   is not compatible with Semantic Versioning <2.0.0>. In particular, Maven does not special case the
   plus sign or consider build identifiers.
+
+  <<Important>>: Maven compares version strings using case insensitive rules. Semver is
+  case sensitive. Thus in Semver, 3.2-ALPHA1 compares greater than 3.2-alpha1. In Maven
+  3.2-ALPHA1 compares equal to 3.2-alpha1.
 
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
   The Maven coordinate is split into tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscores ('<<<_>>>'), and transitions between digits and characters.
@@ -405,8 +409,9 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   []
 
-  The version order is the <<<lexicographical order>>> on this sequence of prefixed tokens, the shorter one
-  padded with enough "null" values with matching prefix to have the same length as the longer one. Padded "null" values depend on the prefix of the other version: 0 for '.', "" for '-'.
+  The version order is the <<<lexicographic order>>> on this sequence of prefixed tokens, the shorter one
+  padded with enough "null" values with matching prefix to have the same length as the longer one.
+  Padded "null" values depend on the prefix of the other version: 0 for '.', "" for '-'.
   The prefixed token order is:
 
   * if the prefix is the same, then compare the token:
@@ -420,6 +425,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
     * Alphabetic tokens other than the special cases described above come before numeric tokens.
+
+    * Alphabetic tokens are compared in a case insensitive fashion in the {{{https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#ENGLISH}English locale}}}. For example, "A" and "a" are treated the same as are "i" and "I" and "é" and "É". 
 
   * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
 
@@ -440,6 +447,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
    * Avoid non-ASCII characters, including non-ASCII digits, which may sort in surprising ways.
+
+   * Avoid upper case characters.
 
   []
 
@@ -462,6 +471,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
+
+  * "<<<1.0-alpha1>>>" = "<<<1.0-ALPHA1>>>" (case insensitivity)
 
   * "<<<1.7>>>" \> "1.K"
 
