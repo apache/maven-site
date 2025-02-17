@@ -19,8 +19,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-A dependency is a connection between a Maven project and an artifact
-that Maven adds to a classpath or uses when building the project.
+A dependency is a connection between a Maven project and an artifact.
+Maven will add the artifact to one or more of the project's classpaths 
+or otherwise use it when building the project.
 A dependency includes the artifact coordinates (group ID, artifact ID, and version)
 and metadata about how the artifact is used by the project. This metadata includes
 the scope in which the artifact is
@@ -50,8 +51,8 @@ Occasionally, the group ID, artifact ID, and version are not enough to
 uniquely identify an artifact. Sometimes you also need an extension
 and/or a classifier. Classifiers are added directly to the `dependency`
 element as in this dependency on the
-io.netty:netty-transport-native-epoll native library for Linux 64-bit
-X86 chips:
+io.netty:netty-transport-native-epoll native library for Linux on the 64-bit
+X86 architecture:
 
 ```xml
 <dependency>
