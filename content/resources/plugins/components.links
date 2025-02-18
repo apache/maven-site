@@ -9,6 +9,7 @@ maven-changelog-plugin=../components/plugins/maven-changelog-plugin
 maven-changes-plugin=../components/plugins/maven-changes-plugin
 maven-checkstyle-plugin=../components/plugins/maven-checkstyle-plugin
 maven-clean-plugin=../components/plugins/maven-clean-plugin
+maven-clean-plugin-4.x=../components/plugins/maven-clean-plugin-4.x
 maven-compiler-plugin=../components/plugins/maven-compiler-plugin
 maven-dependency-plugin=../components/plugins/maven-dependency-plugin
 maven-deploy-plugin=../components/plugins/maven-deploy-plugin
