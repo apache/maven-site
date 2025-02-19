@@ -58,7 +58,7 @@ case of snapshots**.
 ## But where do I set the artifact extension?
 
 In short, nowhere. Or maybe "you rarely have to". The Maven POM
-derives artifact extensions from dependency elements with some extra logic.
+derives artifact extensions from pom elements with some extra logic.
 
 In the case of "project" and "parent project" POMs
 (after the POM is made into an effective POM, that is, parent values have been inherited):
