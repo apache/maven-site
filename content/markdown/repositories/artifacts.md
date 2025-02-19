@@ -69,7 +69,7 @@ In the case of "project" and "parent project" POMs
 | artifactId        | `project/artifactId`  | -> artifact ID    |
 | version           | `project/version`     | -> version string |
 | classifier        | -                     | "" (always)       |
-| extension         | -                     | `pom` (always)    |
+| extension         | -                     | "pom" (always)    |
 
 In the case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped
 (for build extension change the XML path prefix to `project/build/extensions/extension[x]`):
@@ -80,7 +80,7 @@ In the case of "build plugins" and "build extensions", as they are JARs, this is
 | artifactId        | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
 | version           | `project/build/plugins/plugin/version`    | -> version string |
 | classifier        | -                                         | -> "" (always)    |
-| extension         | -                                         | -> `jar` (always) |
+| extension         | -                                         | -> "jar" (always) |
 
 Finally, in the case of "dependencies", this is the mapping (no, scope is NOT part of artifact coordinates):
 
@@ -118,7 +118,7 @@ the extension is also `war` and the classifier is the value of the
 is not present. If the type is "test-jar", the extension is
 "jar" and the classifier is "tests". If the type is not one of these 11 names, then the
 value of the "type" is used as the "extension". For example, if the `type` element
-is `<type>tar.gz</type>`, the extension will also be `tar.gz`, and the classifier will
+is `<type>tar.gz</type>`, the extension will be `tar.gz`, and the classifier will
 be set by the `classifier` element. This
 table may be extended by plugins and extensions used in the build.
 
