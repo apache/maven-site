@@ -113,7 +113,7 @@ Out of the box, Maven Core defines the [following "types" (handled by the same n
 | **any**      | any       |              |
 
 From the table above, you can see that if the dependency type is "war",
-the extension is also `war` ands the classifier is the value of the
+the extension is also `war` and the classifier is the value of the
 `classifier` element (if present) or the empty string if the `classifier` element
 is not present. If the type is "test-jar", the extension is
 "jar" and the classifier is "tests". If the type is not one of these 11 names, then the
