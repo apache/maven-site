@@ -20,7 +20,7 @@ under the License.
 -->
 
 A dependency is a connection between a Maven project and an artifact.
-Maven will add the artifact to one or more of the project's classpaths 
+Maven will add the artifact to one or more of the project's classpaths
 or otherwise use it when building the project.
 A dependency includes the artifact coordinates (group ID, artifact ID, and version)
 and metadata about how the artifact is used by the project. This metadata includes
