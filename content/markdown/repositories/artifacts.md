@@ -37,7 +37,7 @@ issues without you noticing it. In short, these cases should be avoided.
 
 ## Artifact Properties
 
-The artifacts that Maven uses internally have the following properties:
+The artifacts that Maven uses internally have the following coordinate properties:
 
 |    Name     |                   Description                   |
 |-------------|-------------------------------------------------|
@@ -55,42 +55,51 @@ snapshot version "1.0-20220119.164608-1" has the `baseVersion` "1.0-SNAPSHOT".
 So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in the
 case of snapshots**.
 
-## But where do I set the artifact extension?
+For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
+as follows:
 
-In short, nowhere. Or maybe "you rarely have to". The Maven POM
-derives artifact extensions from pom elements with some extra logic.
+| Artifact Coordinate | Project POM (pom.xml) |  Coordinate Value   |
+|---------------------|-----------------------|---------------------|
+| groupId             | `project/groupId`     | -> group ID         |
+| artifactId          | `project/artifactId`  | -> artifact ID      |
+| version             | `project/version`     | -> version string   |
+| classifier          | -                     | "" (always)         |
+| extension           | -                     | "pom" (always)      |
 
-In the case of "project" and "parent project" POMs
-(after the POM is made into an effective POM, that is, parent values have been inherited):
+Coordinate values are computed after the POM is made into an effective POM;
+that is, after parent values have been inherited.
 
-| Artifact Property | Project POM (pom.xml) |  Property Value   |
-|-------------------|-----------------------|-------------------|
-| groupId           | `project/groupId`     | -> group ID       |
-| artifactId        | `project/artifactId`  | -> artifact ID    |
-| version           | `project/version`     | -> version string |
-| classifier        | -                     | "" (always)       |
-| extension         | -                     | "pom" (always)    |
+Build plugin and build extension artifacts are JARs. For build plugins,
+this is how the corresponding coordinates are computed from a `plugin` element:
 
-In the case of "build plugins" and "build extensions", as they are JARs, this is how corresponding elements are mapped
-(for build extension change the XML path prefix to `project/build/extensions/extension[x]`):
+| Artifact Coordinate |           Plugin in Project POM           |  Coordinate Value |
+|---------------------|-------------------------------------------|-------------------|
+| groupId             | `project/build/plugins/plugin/groupId`    | -> group ID       |
+| artifactId          | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
+| version             | `project/build/plugins/plugin/version`    | -> version string |
+| classifier          | -                                         | -> "" (always)    |
+| extension           | -                                         | -> "jar" (always) |
 
-| Artifact Property |           Plugin in Project POM           |  Property Value   |
-|-------------------|-------------------------------------------|-------------------|
-| groupId           | `project/build/plugins/plugin/groupId`    | -> group ID       |
-| artifactId        | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
-| version           | `project/build/plugins/plugin/version`    | -> version string |
-| classifier        | -                                         | -> "" (always)    |
-| extension         | -                                         | -> "jar" (always) |
+Build extensions are similarly computed from an `extension` element:
 
-Finally, in the case of "dependencies", this is the mapping (no, scope is NOT part of artifact coordinates):
+| Artifact Coordinate |           Extension in Project POM              |  Coordinate Value |
+|---------------------|-------------------------------------------------|-------------------|
+| groupId             | `project/build/extensions/extension/groupId`    | -> group ID       |
+| artifactId          | `project/build/extensions/extension/artifactId` | -> artifact ID    |
+| version             | `project/build/extensions/extension/version`    | -> version string |
+| classifier          | -                                               | -> "" (always)    |
+| extension           | -                                               | -> "jar" (always) |
 
-| Artifact Property |          Dependency in Project POM           |              Property Value               |
-|-------------------|----------------------------------------------|-------------------------------------------|
-| groupId           | `project/dependencies/dependency/groupId`    | -> group ID                               |
-| artifactId        | `project/dependencies/dependency/artifactId` | -> artifact ID                            |
-| version           | `project/dependencies/dependency/version`    | -> version string                         |
-| classifier        | `project/dependencies/dependency/classifier` | -> classifier, or type handler provided   |
-| extension         | `project/dependencies/dependency/type`       | -> type handler provided, or same as type |
+Finally, in the case of "dependencies", this is how artifact coordinates are calculated
+from a `dependency` element: 
+
+| Artifact Coordinate |          Dependency in Project POM           |            Coordinate Value               |
+|---------------------|----------------------------------------------|-------------------------------------------|
+| groupId             | `project/dependencies/dependency/groupId`    | -> group ID                               |
+| artifactId          | `project/dependencies/dependency/artifactId` | -> artifact ID                            |
+| version             | `project/dependencies/dependency/version`    | -> version string                         |
+| classifier          | `project/dependencies/dependency/classifier` | -> classifier, or type handler provided   |
+| extension           | `project/dependencies/dependency/type`       | -> type handler provided, or same as type |
 
 Here, we need to make a short detour to explain how "dependency type"
 provides an artifact extension and classifier.
