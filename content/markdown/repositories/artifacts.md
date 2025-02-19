@@ -166,8 +166,8 @@ The first uses the default value for the extension, while the second
 derives it from the type.
 
 Note: In this case, the first way is somewhat "explicit", and is
-recommended. Not so for the cases when type handler carries important
-extra information (such as custom packaging), where using `type` is more
+recommended. When the type handler carries important
+extra information such as custom packaging, using `type` is more
 appropriate. Simply put, in this example the type "test-jar" is like an
 alias for ordinary JARs with the "tests" classifier.
 
