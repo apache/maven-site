@@ -37,7 +37,7 @@ issues without you noticing it. In short, these cases should be avoided.
 
 ## Artifact Properties
 
-The artifacts that Maven uses internally have the following coordinate properties:
+The artifacts that Maven uses have the following coordinate properties:
 
 |    Name     |                   Description                   |
 |-------------|-------------------------------------------------|
@@ -58,7 +58,7 @@ case of snapshots**.
 For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
 as follows:
 
-| Artifact Coordinate | Project POM (pom.xml) |  Coordinate Value   |
+| Artifact Coordinate |      POM element      |  Coordinate Value   |
 |---------------------|-----------------------|---------------------|
 | groupId             | `project/groupId`     | -> group ID         |
 | artifactId          | `project/artifactId`  | -> artifact ID      |
@@ -72,7 +72,7 @@ that is, after parent values have been inherited.
 Build plugin and build extension artifacts are JARs. For build plugins,
 this is how the corresponding coordinates are computed from a `plugin` element:
 
-| Artifact Coordinate |           Plugin in Project POM           |  Coordinate Value |
+| Artifact Coordinate |                POM element                |  Coordinate Value |
 |---------------------|-------------------------------------------|-------------------|
 | groupId             | `project/build/plugins/plugin/groupId`    | -> group ID       |
 | artifactId          | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
@@ -82,7 +82,7 @@ this is how the corresponding coordinates are computed from a `plugin` element:
 
 Build extensions are similarly computed from an `extension` element:
 
-| Artifact Coordinate |           Extension in Project POM              |  Coordinate Value |
+| Artifact Coordinate |                 POM element                     |  Coordinate Value |
 |---------------------|-------------------------------------------------|-------------------|
 | groupId             | `project/build/extensions/extension/groupId`    | -> group ID       |
 | artifactId          | `project/build/extensions/extension/artifactId` | -> artifact ID    |
@@ -93,7 +93,7 @@ Build extensions are similarly computed from an `extension` element:
 Finally, in the case of "dependencies", this is how artifact coordinates are calculated
 from a `dependency` element: 
 
-| Artifact Coordinate |          Dependency in Project POM           |            Coordinate Value               |
+| Artifact Coordinate |                 POM element                  |            Coordinate Value               |
 |---------------------|----------------------------------------------|-------------------------------------------|
 | groupId             | `project/dependencies/dependency/groupId`    | -> group ID                               |
 | artifactId          | `project/dependencies/dependency/artifactId` | -> artifact ID                            |
@@ -101,10 +101,11 @@ from a `dependency` element:
 | classifier          | `project/dependencies/dependency/classifier` | -> classifier, or type handler provided   |
 | extension           | `project/dependencies/dependency/type`       | -> type handler provided, or same as type |
 
-Here, we need to make a short detour to explain how "dependency type"
-provides an artifact extension and classifier.
+This also applies when the `dependency` element is a child of a `dependencyManagement` element.
 
-Out of the box, Maven Core defines the [following "types" (handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
+Notice that there is no `extension` element. Instead there is a `type` element which is
+used to derive the extension and sometimes the classifier. 
+Out of the box, Maven Core defines 11 "types" [(handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
 
 |  Type Name   | Extension |  Classifier  |
 |--------------|-----------|--------------|
