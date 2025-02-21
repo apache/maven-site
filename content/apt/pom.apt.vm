@@ -983,6 +983,10 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
 </project>
 +------------------------------------------+
 
+  Plugins are also identified by coordinates.
+  Unlike dependencies, there is a default <<<groupId>>> for plugins.
+  See {{{/guides/mini/guide-configuring-plugins.html}Configuring Plugins}}.
+
   Beyond the standard coordinate of <<<groupId:artifactId:version>>>, there are elements which
   configure the plugin or this builds interaction with it.
 
