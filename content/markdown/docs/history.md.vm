@@ -131,7 +131,7 @@ $esc.h$esc.h Maven 3.8.x+
 
 $esc.h$esc.h Maven 3.6.x and before
 
-<p>Maven before 3.6.3 has now reached its end of life and is no longer supported in any way.
+<p>Maven 3.6.3 and before has now reached its end of life and is no longer supported in any way.
 New plugin releases will require Maven 3.6.3 or later.
 The following information is made available for reference.</p>
 
