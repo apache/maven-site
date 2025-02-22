@@ -285,6 +285,9 @@
               <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
               <format>SVG</format>
               <stripPath>src/plantuml</stripPath>
+              <pragmas>
+                <pragma>layout=smetana</pragma>
+              </pragmas>
             </configuration>
           </execution>
         </executions>
