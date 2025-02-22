@@ -38,7 +38,7 @@ Retirement Plan for Plugins
   The vote must contain one or more options on how to retire the plugin. There
   are multiple scenarios available. Here are a couple that have been suggested:
 
-    [[A]] Move to our retired area in svn
+    [[A]] Repository will be archived (read only)
 
     [[A]] Move to another Apache project
 
@@ -62,7 +62,7 @@ I therefore propose that we retire maven-foo-plugin.
 
 If this vote is successful I will make one final release of the plugin, making
 it clear on the plugin site that it has been retired. After that the source code
-will be moved into the "retired" area in Subversion.
+repository will get archived, meaning it's read only in the future.
 
 The process for retiring a plugin is described here:
 https://maven.apache.org/developers/retirement-plan-plugins.html
