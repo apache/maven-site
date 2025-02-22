@@ -369,15 +369,16 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   plus sign or consider build identifiers.
 
   <<Important>>: Maven compares version strings using case insensitive rules. Semver is
-  case sensitive. Thus in Semver, 3.2-ALPHA1 compares greater than 3.2-alpha1. In Maven
+  case sensitive. Thus in Semver, 3.2-ALPHA1 compares greater than 3.2-alpha1. In Maven,
   3.2-ALPHA1 compares equal to 3.2-alpha1.
 
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
-  The Maven coordinate is split into tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscores ('<<<_>>>'), and transitions between digits and characters.
+  Each Maven version string is split into tokens
+  between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscores ('<<<_>>>'), and transitions between ASCII digits and characters.
   The separator is recorded and will have effect on the order. A transition 
-  between digits and characters is equivalent to a hyphen.
+  between ASCII digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with ASCII digits.
+  with "<<<.>>>" or "<<<->>>" prefixes.
 
   Splitting and Replacing Examples:
 
@@ -409,16 +410,34 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   []
 
-  The version order is the <<<lexicographic order>>> on this sequence of prefixed tokens, the shorter one
+
+  Following tokenization and trimming, the shorter token sequence is 
   padded with enough "null" values with matching prefix to have the same length as the longer one.
-  Padded "null" values depend on the prefix of the other version: 0 for '.', "" for '-'.
-  The prefixed token order is:
+  Padded "null" values depend on the separator of the other version: 0 for '.', "" for '-' and a 
+  transition between ASCII digits and characters.
 
-  * if the prefix is the same, then compare the token:
+  Then the two sequences are compared token by token from beginning to end
+  (left-to-right in the original strings). If each token 
+  in one sequence compares equal to the corresponding token in the other sequence, then the
+  then the two version strings are equals. Otherwise, the result is the comparison
+  of the tokens from the first position in the sequences where they are not equal:
+  less than if the first non-matching token in the first string is less than the
+  corresponding token in the second string, greater than if the 
+  first non-matching token in the first string is greater than the
+  corresponding token in the second string, 
 
-    * Tokens comprised of the ASCII digits 0-9 (numeric tokens) have the natural order.
+  Individual tokens are compared according to the following rules:
 
-    * Non-numeric tokens including non-ASCII digits ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
+  * Tokens comprised of the ASCII digits 0-9 are called "numeric tokens".
+    Tokens comprised of any other characters, including non-ASCII digits, are called "qualifiers". 
+
+  * If the separator is the same, then compare the token:
+
+    * Numeric tokens have the usual ordering of integers.
+
+    * Qualifiers are first converted to lower case in the English locale. 
+      Then they are ordered as by the `compareTo()` method of `java.lang.String`,
+      except for the following tokens which come first in this order:
 
     "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
 
