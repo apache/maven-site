@@ -17,7 +17,6 @@ specific language governing permissions and limitations
 under the License.  
 '/
 @startuml
-!pragma layout smetana
 Platform o-- Bootstrap
 Bootstrap  "1" o-- "many" BuildExtension
 API "1" o-- "many" BuildExtension
