@@ -47,8 +47,9 @@ Guide to Configuring Plug-ins
   {{{/ref/current/maven-model/maven.html#class_plugin}information}}:
   <<<groupId>>>, <<<artifactId>>> and <<<version>>>.
 
-  If no <<<groupId>>> is defined for a plugin in the <<<build>>> or <<<reporting>>> section of POM file, Maven uses the group ID <<<org.apache.maven.plugins>>> to find the plugin.
+  If no <<<groupId>>> is defined for a plugin in the <<<build>>> or <<<reporting>>> section of the POM file, Maven uses the group ID <<<org.apache.maven.plugins>>>.
   This means that Maven assumes an official Maven plugin will be used.
+
   If a plugin is called from the command line without a fully qualified name, for example <<<mvn versions:set>>>, Maven searches for plugins with the group ID <<<org.apache.maven.plugins>>> or <<<org.codehaus.mojo>>>.
 
   <<Important Note>>: Always define the version of each plugin to guarantee
