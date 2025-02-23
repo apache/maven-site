@@ -94,6 +94,9 @@ Performing a Maven Project Release
 
   Draft of release notes at <<GitHub>> can be prepared before publishing.
 
+  You can disable <<Release Drafter>> workflow on <<GitHub>> to avoid adding new items to release notes
+  after vote starts but before publishing release notes.
+
 * Make sure that site compilation works
 
   Particularly if you update the parent or if you updated your javadoc,
@@ -344,6 +347,8 @@ wagon/wagon-2.2-source-release.zip.sha512
       Check version and tag fulfilled in release notes - if not match with published release adjust it.
 
       Note: PR merged after release but before publishing can add next items to release notes draft.
+
+      Enable <<Release Drafter>> workflow on <<GitHub>> if was disabled during vote.
 
    []
 
