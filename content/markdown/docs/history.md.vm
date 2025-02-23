@@ -56,21 +56,16 @@ $b_</td>
 #end
 
 The Apache Maven team maintains the last version of the last two series of GA releases.
-The last release is ${current39xVersion}, the Apache Maven team project will maintain core versions:
-- ${current39xVersion}
-- ${current38xVersion}
+The last release is currently ${current39xVersion}, the Apache Maven team project will currently maintain two core versions: **${current39xVersion}** and **${current38xVersion}**.
 
 Older versions have reached their end of life and are no longer supported in any way.
 This means the Maven team will not provide any bug or security fixes or add new features.
 Note: Maven does not differentiate between "end of life" (EOL) and "end of support" (EOS), but only uses the term "end of life".
 
-Currently, plugins provide Maven API compatibility down to **3.2.5**. 
-New plugin releases will require Maven **3.6.3** or later. See [Maven Plugins Compatibility Plan](/developers/compatibility-plan.html) for more details.
-
-Date format is YYYY-MM-DD
+Currently, plugins provide Maven API compatibility down to **3.6.3**. See [Maven Plugins Compatibility Plan](/developers/compatibility-plan.html) for more details.
 
 
-$esc.h$esc.h Maven 4.0+
+$esc.h$esc.h Maven 4.0+ (not yet GA)
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
