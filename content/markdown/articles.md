@@ -34,11 +34,11 @@ under the License.
 
 ## Videos on Maven
 
-|                                                                                                                                                    | Title                                                         |         Covers         |               Published               | Authors                  | Watch the Video                                                                   |
-|:--------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------|:----------------------:|:-------------------------------------:|:-------------------------|:----------------------------------------------------------------------------------|
-|                                                                                                                                                    | Maven Marvels: Project Generation at Warp Speed               |   Maven 3 and above    |             October 2024              | Giovanni van der Schelde | [Youtube](https://www.youtube.com/watch?v=R_MJTwish2c)                            |
-|                                                                                                                                                    | How to use Apache Maven Toolchains in an Apache Maven Project | Maven 3.8.6 and above  |               July 2022               | Karl Heinz Marbaise      | [Youtube](https://www.youtube.com/watch?v=-KbDcJcglPc)                            |
-| [![Getting started with Apache Maven](images/books/getting_started.png)](https://www.youtube.com/playlist?list=PLTgRMOcmRb3OGBIfqPSZFk0Nn0B4xGZqs) | Getting started with Apache Maven                             | Maven 2.2.1, and above | Packt Publishing (September 30, 2013) | Russell Gold             | [Packt](https://www.youtube.com/playlist?list=PLTgRMOcmRb3OGBIfqPSZFk0Nn0B4xGZqs) |
+| Title                                                         |         Covers         |               Published               | Authors                  | Watch the Video                                                                   |
+|:--------------------------------------------------------------|:----------------------:|:-------------------------------------:|:-------------------------|:----------------------------------------------------------------------------------|
+| Maven Marvels: Project Generation at Warp Speed               |   Maven 3 and above    |             October 2024              | Giovanni van der Schelde | [Youtube](https://www.youtube.com/watch?v=R_MJTwish2c)                            |
+| How to use Apache Maven Toolchains in an Apache Maven Project | Maven 3.8.6 and above  |               July 2022               | Karl Heinz Marbaise      | [Youtube](https://www.youtube.com/watch?v=-KbDcJcglPc)                            |
+| Getting started with Apache Maven                             | Maven 2.2.1, and above | Packt Publishing (September 30, 2013) | Russell Gold             | [Packt](https://www.youtube.com/playlist?list=PLTgRMOcmRb3OGBIfqPSZFk0Nn0B4xGZqs) |
 
 ## Articles on Maven
 
