@@ -55,6 +55,16 @@ snapshot version "1.0-20220119.164608-1" has the `baseVersion` "1.0-SNAPSHOT".
 So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in the
 case of snapshots**.
 
+Maven pom.xml files identify artifacts via coordinates in four different ways, depending 
+on what the artifact is and how it will be used.
+
+* A dependency of the project, often though not always a jar archive, is referenced by 
+  a `dependency` element in either the `dependencies` or `dependenciesManagement` section. 
+* The pom.xml file itself has coordinates given by the top-level `groupId`,
+  `artifactId`, and `version` elements.
+* A build plugin is referenced by a `plugin` element in the `plugins` section. 
+* A build extension is referenced by an `extension` element in the `extensions` section. 
+
 For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
 as follows:
 
@@ -80,7 +90,8 @@ this is how the corresponding coordinates are computed from a `plugin` element:
 | classifier          | -                                         | -> "" (always)    |
 | extension           | -                                         | -> "jar" (always) |
 
-Build extensions are similarly computed from an `extension` element:
+Build extensions are similarly computed from an `extension` element (which is not the 
+same as and should not be confused with the extension artifact coordinate):
 
 | Artifact Coordinate |                   POM element                   | Coordinate Value  |
 |---------------------|-------------------------------------------------|-------------------|
@@ -89,6 +100,15 @@ Build extensions are similarly computed from an `extension` element:
 | version             | `project/build/extensions/extension/version`    | -> version string |
 | classifier          | -                                               | -> "" (always)    |
 | extension           | -                                               | -> "jar" (always) |
+
+Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different 
+things that unfortunately share the name "extension". A
+[Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is 
+typically a JAR file that is added to the project class loader's classpath.
+It is referenced by an `extension` element in pom.xml. An extension coordinate 
+is usually the filename extension of an artifact's jar file such as jar, zip, or txt.
+This is often a default value, but can be changed by the `type` child of a 
+`dependency` element.  
 
 Finally, in the case of "dependencies", this is how artifact coordinates are calculated
 from a `dependency` element:
@@ -103,7 +123,8 @@ from a `dependency` element:
 
 This also applies when the `dependency` element is a child of a `dependencyManagement` element.
 
-Notice that there is no `extension` element. Instead there is a `type` element which is
+Notice that the `dependency` element does not have an `extension` element.
+Instead it has a `type` element which is
 used to derive the extension and sometimes the classifier.
 Out of the box, Maven Core defines 11 "types" [(handled by the same named `ArtifactHandler` components)](/ref/current/maven-core/artifact-handlers.html):
 
@@ -127,13 +148,10 @@ the extension is also `war` and the classifier is the value of the
 `classifier` element (if present) or the empty string if the `classifier` element
 is not present. If the type is "test-jar", the extension is
 "jar" and the classifier is "tests". If the type is not one of these 11 names, then the
-value of the "type" is used as the "extension". For example, if the `type` element
+value of the "type" is used as the extension. For example, if the `type` element
 is `<type>tar.gz</type>`, the extension will be `tar.gz`, and the classifier will
 be set by the `classifier` element. This
 table may be extended by plugins and extensions used in the build.
-
-<!-- TODO what if an explicit classifier element conflicts with the
-classifier inferred from the type? Which wins? -->
 
 This has "interesting" consequences. Consider the artifact
 `org.project:reusable-test-support:1.0:tests:jar`. Maybe surprisingly,
