@@ -55,15 +55,15 @@ snapshot version "1.0-20220119.164608-1" has the `baseVersion` "1.0-SNAPSHOT".
 So, `version` and `baseVersion` are linked, derived from each other, but **they have different values only in the
 case of snapshots**.
 
-Maven pom.xml files identify artifacts via coordinates in four different ways, depending 
+Maven pom.xml files identify artifacts via coordinates in four different ways, depending
 on what the artifact is and how it will be used.
 
-* A dependency of the project, often though not always a jar archive, is referenced by 
-  a `dependency` element in either the `dependencies` or `dependenciesManagement` section. 
+* A dependency of the project, often though not always a jar archive, is referenced by
+  a `dependency` element in either the `dependencies` or `dependenciesManagement` section.
 * The pom.xml file itself has coordinates given by the top-level `groupId`,
   `artifactId`, and `version` elements.
-* A build plugin is referenced by a `plugin` element in the `plugins` section. 
-* A build extension is referenced by an `extension` element in the `extensions` section. 
+* A build plugin is referenced by a `plugin` element in the `plugins` section.
+* A build extension is referenced by an `extension` element in the `extensions` section.
 
 For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
 as follows:
@@ -90,7 +90,7 @@ this is how the corresponding coordinates are computed from a `plugin` element:
 | classifier          | -                                         | -> "" (always)    |
 | extension           | -                                         | -> "jar" (always) |
 
-Build extensions are similarly computed from an `extension` element (which is not the 
+Build extensions are similarly computed from an `extension` element (which is not the
 same as and should not be confused with the extension artifact coordinate):
 
 | Artifact Coordinate |                   POM element                   | Coordinate Value  |
@@ -101,14 +101,14 @@ same as and should not be confused with the extension artifact coordinate):
 | classifier          | -                                               | -> "" (always)    |
 | extension           | -                                               | -> "jar" (always) |
 
-Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different 
+Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different
 things that unfortunately share the name "extension". A
-[Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is 
+[Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is
 typically a JAR file that is added to the project class loader's classpath.
-It is referenced by an `extension` element in pom.xml. An extension coordinate 
+It is referenced by an `extension` element in pom.xml. An extension coordinate
 is usually the filename extension of an artifact's jar file such as jar, zip, or txt.
-This is often a default value, but can be changed by the `type` child of a 
-`dependency` element.  
+This is often a default value, but can be changed by the `type` child of a
+`dependency` element.
 
 Finally, in the case of "dependencies", this is how artifact coordinates are calculated
 from a `dependency` element:
