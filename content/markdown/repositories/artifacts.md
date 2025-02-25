@@ -107,8 +107,8 @@ things that unfortunately share the name "extension". A
 a JAR archive that is added to the project class loader's classpath.
 It is referenced by an `extension` element in pom.xml. An extension coordinate
 is usually the filename extension of an artifact's JAR file such as jar, zip, or txt.
-This extension is usually set by default, but can be changed by the `type` child of a
-`dependency` element.
+This extension is most often set to an implicit default value,
+but can be changed by the `type` child of a `dependency` element.
 
 Finally, in the case of "dependencies", this is how artifact coordinates are calculated
 from a `dependency` element:
