@@ -104,10 +104,10 @@ same as and should not be confused with the extension artifact coordinate):
 Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different
 things that unfortunately share the name "extension". A
 [Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is
-typically a JAR file that is added to the project class loader's classpath.
+a JAR archive that is added to the project class loader's classpath.
 It is referenced by an `extension` element in pom.xml. An extension coordinate
-is usually the filename extension of an artifact's jar file such as jar, zip, or txt.
-This is often a default value, but can be changed by the `type` child of a
+is usually the filename extension of an artifact's JAR file such as jar, zip, or txt.
+This extension is usually set by default, but can be changed by the `type` child of a
 `dependency` element.
 
 Finally, in the case of "dependencies", this is how artifact coordinates are calculated
