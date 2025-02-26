@@ -436,20 +436,20 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
     * Numeric tokens have the usual ordering of integers.
 
     * Qualifiers are first converted to lower case in the English locale. 
-      Then they are ordered as by the `compareTo()` method of `java.lang.String`,
+      Then they are ordered as by the <<<compareTo()>>> method of <<<java.lang.String>>>,
       except for the following tokens which come first in this order:
 
-    "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
+    "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" = "<<<release>>>" \< "<<<sp>>>"
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
     * Alphabetic tokens other than the special cases described above come before numeric tokens.
 
-    * Alphabetic tokens are compared in a case insensitive fashion in the {{{https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#ENGLISH}English locale}}}. For example, "A" and "a" are treated the same as are "i" and "I" and "é" and "É". 
+    * Alphabetic tokens are compared in a case insensitive fashion in the {{{https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#ENGLISH}English locale}}. For example, "<<<A>>>" and "<<<a>>>" are treated the same as are "<<<i>>>" and "<<<I>>>" and "<<<é>>>" and "<<<É>>>". 
 
   * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
 
-  * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
+  * <<<alpha>>> \< <<<a1>>> \< <<<beta>>> \< <<<b1>>> \< <<<milestone>>> \< <<<m1>>> \< <<<rc>>> = <<<cr>>> \< <<<snapshot>>> \< <<<>>> = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
 
   []
 
@@ -479,7 +479,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" = "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
 
   * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
@@ -487,23 +487,23 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
-  * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
+  * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
 
   * "<<<1.0-alpha1>>>" = "<<<1.0-ALPHA1>>>" (case insensitivity)
 
-  * "<<<1.7>>>" \> "1.K"
+  * "<<<1.7>>>" \> "<<<1.K>>>"
 
-  * "<<5.zebra>>>" \> "5.aardvark"
+  * "<<<5.zebra>>>" \> "<<<5.aardvark>>>"
 
-  * "<<1.α>>>" \> "1.b" (Note the Greek letter alpha.)
+  * "<<<1.α>>>" \> "<<<1.b>>>" (Note the Greek letter alpha.)
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
   Note: As <<<2.0-rc1>>> \< <<<2.0>>>, the version requirement <<<[1.0,2.0)>>> excludes <<<2.0>>> but includes version <<<2.0-rc1>>>, which is contrary to
   what most people expect. In addition, Gradle interprets it differently, resulting in different dependency trees for the same POM.
-  If the intention is to restrict it to <1.*> versions, the better version requirement is <<<[1,1.999999)>>>.
+  If the intention is to restrict it to <<<1.*>>> versions, the better version requirement is <<<[1,1.999999]>>> or <<<[1,2-alpha)>>>.
 
 **** Version Order Testing
 
