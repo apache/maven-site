@@ -24,6 +24,8 @@ under the License.
 
 # What's new in Maven 4?
 
+**Note**: This article will continuously be updated at least until Maven 4.0.0 is released.
+
 Maven is over 20 years old, and is the most widely used build tool in the Java world.
 Throughout the years, Maven has maintained backward compatibility, especially of its [POM file][2] with Model version
 4.0.0.
@@ -438,9 +440,6 @@ process running for as long as the shell remains open.
 ## Issue overview
 
 The Maven issue tracker provides a [full list of all resolved issues of Maven 4.0.0][22].
-As of 2024-12-14, not all issues are properly linked to the final release and therefore may not be shown in that list.
-If you want to see issues resolved in each individual (alpha/beta/RC) release, please see
-the [Maven releases history][10], starting with the alpha versions for Maven 4.0.0.
 
 [1]: https://www.javaadvent.com/2021/12/from-maven-3-to-maven-5.html
 [2]: https://maven.apache.org/pom.html
