@@ -19,10 +19,10 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Apache Maven uses repositories to store artifacts. Your dependencies are being downloaded from repositories,
-and artifacts you build are being stored (installed, uploaded) into repositories as well. This is one of the
-fundamental concepts of Maven since its inception: Maven command line tool and Maven Repositories were mold together
-and developed since the beginning of Maven project itself.
+Apache Maven uses repositories to store artifacts. Your dependencies are downloaded from repositories,
+and artifacts you build are stored (installed, uploaded) into repositories as well. This is one of the
+fundamental concepts of Maven since its inception: Maven command line tool and Maven Repositories
+were molded together and developed since the beginning of Maven project itself.
 
 <p align="center">
 <img src="../repository/maven-repositories.png" border="0" usemap="#map" />
@@ -41,14 +41,16 @@ and developed since the beginning of Maven project itself.
 
 See also the [Introduction to Repositories](/guides/introduction/introduction-to-repositories.html) and [Repository Layout](../repository/layout.html).
 
-As you may know, Maven addresses artifacts using artifact coordinates. The artifact coordinates uniquely describe the artifact
-you are referring to, but does not tell anything about its source (or origin). This is where
-Maven Repositories come into picture, that holds the artifacts laid out (published) according to Maven Repository
-Layout. And this is where the circle closes: artifacts, being laid out in defined layout, consumed and published
-by Maven.
+Maven addresses artifacts using artifact coordinates. The artifact coordinates uniquely
+identify an artifact, but do not say anything about its source or origin. This is where
+Maven Repositories come into the picture. A repository holds the artifacts in a file
+system or URL hierarchy laid out according to the Maven Repository
+Layout. And this is where the circle closes: artifacts, being laid out in defined layout,
+are consumed and published by Maven.
 
 Sections:
 * [Artifacts](artifacts.md)
+* [Dependencies](dependencies.md)
 * [Metadata](metadata.md)
 * [Layout](layout.md)
 * [Local Repositories](local.md)
