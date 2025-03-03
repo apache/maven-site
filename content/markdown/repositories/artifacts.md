@@ -65,54 +65,9 @@ on what the artifact is and how it will be used.
 * A build plugin is referenced by a `plugin` element in the `plugins` section.
 * A build extension is referenced by an `extension` element in the `extensions` section.
 
-For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
-as follows:
+### Coordinates of Dependencies
 
-| Artifact Coordinate |     POM element      | Coordinate Value  |
-|---------------------|----------------------|-------------------|
-| groupId             | `project/groupId`    | -> group ID       |
-| artifactId          | `project/artifactId` | -> artifact ID    |
-| version             | `project/version`    | -> version string |
-| classifier          | -                    | "" (always)       |
-| extension           | -                    | "pom" (always)    |
-
-Coordinate values are computed after the POM is made into an effective POM;
-that is, after parent values have been inherited.
-
-Build plugin and build extension artifacts are JARs. For build plugins,
-this is how the corresponding coordinates are computed from a `plugin` element:
-
-| Artifact Coordinate |                POM element                | Coordinate Value  |
-|---------------------|-------------------------------------------|-------------------|
-| groupId             | `project/build/plugins/plugin/groupId`    | -> group ID       |
-| artifactId          | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
-| version             | `project/build/plugins/plugin/version`    | -> version string |
-| classifier          | -                                         | -> "" (always)    |
-| extension           | -                                         | -> "jar" (always) |
-
-This also applies when the `plugin` element is a child of a `pluginManagement` element.
-
-Build extensions are similarly computed from an `extension` element (which is not the
-same as and should not be confused with the extension artifact coordinate):
-
-| Artifact Coordinate |                   POM element                   | Coordinate Value  |
-|---------------------|-------------------------------------------------|-------------------|
-| groupId             | `project/build/extensions/extension/groupId`    | -> group ID       |
-| artifactId          | `project/build/extensions/extension/artifactId` | -> artifact ID    |
-| version             | `project/build/extensions/extension/version`    | -> version string |
-| classifier          | -                                               | -> "" (always)    |
-| extension           | -                                               | -> "jar" (always) |
-
-Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different
-things that unfortunately share the name "extension". A
-[Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is
-a JAR archive that is added to the project class loader's classpath.
-It is referenced by an `extension` element in pom.xml. An extension coordinate
-is usually the filename extension of an artifact's JAR file such as jar, zip, or txt.
-This extension is most often set to an implicit default value,
-but can be changed by the `type` child of a `dependency` element.
-
-Finally, in the case of "dependencies", this is how artifact coordinates are calculated
+In the case of "dependencies", this is how artifact coordinates are calculated
 from a `dependency` element:
 
 | Artifact Coordinate |                 POM element                  |             Coordinate Value              |
@@ -190,6 +145,57 @@ recommended. When the type handler carries important
 extra information such as custom packaging, using `type` is more
 appropriate. Simply put, in this example the type "test-jar" is like an
 alias for ordinary JARs with the "tests" classifier.
+
+### Coordinates of POM Files
+
+For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
+as follows:
+
+| Artifact Coordinate |     POM element      | Coordinate Value  |
+|---------------------|----------------------|-------------------|
+| groupId             | `project/groupId`    | -> group ID       |
+| artifactId          | `project/artifactId` | -> artifact ID    |
+| version             | `project/version`    | -> version string |
+| classifier          | -                    | "" (always)       |
+| extension           | -                    | "pom" (always)    |
+
+Coordinate values are computed after the POM is made into an effective POM;
+that is, after parent values have been inherited.
+
+### Coordinates of Build Plugins and Build Extensions
+
+Build plugin and build extension artifacts are JARs. For build plugins,
+this is how the corresponding coordinates are computed from a `plugin` element:
+
+| Artifact Coordinate |                POM element                | Coordinate Value  |
+|---------------------|-------------------------------------------|-------------------|
+| groupId             | `project/build/plugins/plugin/groupId`    | -> group ID       |
+| artifactId          | `project/build/plugins/plugin/artifactId` | -> artifact ID    |
+| version             | `project/build/plugins/plugin/version`    | -> version string |
+| classifier          | -                                         | -> "" (always)    |
+| extension           | -                                         | -> "jar" (always) |
+
+This also applies when the `plugin` element is a child of a `pluginManagement` element.
+
+Build extensions are similarly computed from an `extension` element (which is not the
+same as and should not be confused with the extension artifact coordinate):
+
+| Artifact Coordinate |                   POM element                   | Coordinate Value  |
+|---------------------|-------------------------------------------------|-------------------|
+| groupId             | `project/build/extensions/extension/groupId`    | -> group ID       |
+| artifactId          | `project/build/extensions/extension/artifactId` | -> artifact ID    |
+| version             | `project/build/extensions/extension/version`    | -> version string |
+| classifier          | -                                               | -> "" (always)    |
+| extension           | -                                               | -> "jar" (always) |
+
+Note: The *extension artifact coordinate* and a *Maven build extension* are two completely different
+things that unfortunately share the name "extension". A
+[Maven build extension](https://maven.apache.org/guides/mini/guide-using-extensions.html) is
+a JAR archive that is added to the project class loader's classpath.
+It is referenced by an `extension` element in pom.xml. An extension coordinate
+is usually the filename extension of an artifact's JAR file such as jar, zip, or txt.
+This extension is most often set to an implicit default value,
+but can be changed by the `type` child of a `dependency` element.
 
 ## Summary
 
