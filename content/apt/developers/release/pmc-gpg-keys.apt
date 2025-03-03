@@ -39,7 +39,7 @@ Introduction
   Public Keys used for signing Maven core, plugins and shared components are available for users at:\
   {{https://downloads.apache.org/maven/KEYS}}
 
-  You need edit a file and follow provided instructions in SVN at:\
+  As a future release manager, you need add your key: edit the following file and follow provided instructions in SVN at:\
   {{https://svn.apache.org/repos/asf/maven/project/KEYS}}
 
   General ASF instruction
