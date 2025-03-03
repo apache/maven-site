@@ -70,19 +70,20 @@ The default SLF4J configuration for Maven is listed [here][8], where you can see
 
 ## Changing the SLF4J implementation
 
-If you want use a different logging implementation, remove the slf4j-simple JAR
+To use a different logging implementation, remove the `slf4j-simple.jar` (or `maven-slf4j-provider.jar` since Maven 3.5.0)
 from the `lib` directory and replace it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
 
 See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
 
-Note: with the introduction of colors in Maven 3.5.0, equivalent work to [`maven-slf4j-provider`][10] may be required or you'll lose colors.
+Note: with the introduction of colors in Maven 3.5.0, equivalent work to [`maven-slf4j-provider`][10] may be required, or you'll lose colors.
+This also applies to the `--fail-on-severity` option of Maven 4.0.0.
 
-## Maven implemenation details
+## Maven implementation details
 
 [More technical details](/ref/current/maven-embedder/logging.html) can be found in Maven release reference documentation.
 
 [1]: http://slf4j.org
-[2]: https://www.slf4j.org/apidocs/org/slf4j/impl/SimpleLogger.html
+[2]: https://www.slf4j.org/apidocs/org/slf4j/simple/SimpleLogger.html
 [3]: https://logging.apache.org/log4j/2.x/log4j-slf4j-impl/
 [4]: http://logback.qos.ch
 [5]: https://www.slf4j.org/apidocs/
