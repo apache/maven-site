@@ -67,8 +67,7 @@ on what the artifact is and how it will be used.
 
 ### Coordinates of Dependencies
 
-In the case of "dependencies", this is how artifact coordinates are calculated
-from a `dependency` element:
+Artifact coordinates for dependencies are calculated from a `dependency` element:
 
 | Artifact Coordinate |                 POM element                  |             Coordinate Value              |
 |---------------------|----------------------------------------------|-------------------------------------------|
@@ -148,8 +147,9 @@ alias for ordinary JARs with the "tests" classifier.
 
 ### Coordinates of POM Files
 
-For POM artifacts that contain a project's pom.xml file, the artifact coordinates are set
-as follows:
+The coordinates of a POM artifact that contain a project's pom.xml file are
+derived from the top-level `groupId`, `artifactId`, and `version`
+elements in that pom.xml file:
 
 | Artifact Coordinate |     POM element      | Coordinate Value  |
 |---------------------|----------------------|-------------------|
@@ -199,6 +199,6 @@ but can be changed by the `type` child of a `dependency` element.
 
 ## Summary
 
-In short, this is how various Maven bits like "project", "parent
+This is how various Maven bits like "project", "parent
 project", "plugin", "extension", and "dependency" derive artifact
 coordinates from POM elements.
