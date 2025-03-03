@@ -90,6 +90,8 @@ this is how the corresponding coordinates are computed from a `plugin` element:
 | classifier          | -                                         | -> "" (always)    |
 | extension           | -                                         | -> "jar" (always) |
 
+This also applies when the `plugin` element is a child of a `pluginManagement` element.
+
 Build extensions are similarly computed from an `extension` element (which is not the
 same as and should not be confused with the extension artifact coordinate):
 
