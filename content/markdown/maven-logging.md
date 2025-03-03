@@ -70,7 +70,7 @@ The default SLF4J configuration for Maven is listed [here][8], where you can see
 
 ## Changing the SLF4J implementation
 
-If you want to use a different logging implementation, remove the `slf4j-simple.jar` (or `maven-slf4j-provider.jar` since Maven 3.5.0)
+To use a different logging implementation, remove the `slf4j-simple.jar` (or `maven-slf4j-provider.jar` since Maven 3.5.0)
 from the `lib` directory and replace it with one of the alternative implementations, like [Log4j2][3] or [Logback][4].
 
 See SLF4J documentation for more details on [swapping "SLF4J bindings"][7].
