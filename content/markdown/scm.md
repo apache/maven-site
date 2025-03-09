@@ -218,10 +218,10 @@ The components in Git are shown in the following table.
 
 #### Shared Components
 
-| Content                                                 | Repository                                                                                                                 |                         Mirror                          |                            Issues                             |
-|:--------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------:|:-------------------------------------------------------------:|
-| [Apache Maven Default Skin](/skins/maven-default-skin/) | [`https://gitbox.apache.org/repos/asf/maven-default-skin.git`](https://gitbox.apache.org/repos/asf/maven-default-skin.git) | [GitHub](https://github.com/apache/maven-default-skin/) | [JIRA MSKINS](https://issues.apache.org/jira/projects/MSKINS) |
-| [Apache Maven Fluido Skin](/skins/maven-fluido-skin/)   | [`https://gitbox.apache.org/repos/asf/maven-fluido-skin.git`](https://gitbox.apache.org/repos/asf/maven-fluido-skin.git)   | [GitHub](https://github.com/apache/maven-fluido-skin/)  | [JIRA MSKINS](https://issues.apache.org/jira/projects/MSKINS) |
+| Content                                                 | Repository                                                                                                                 |                         Mirror                          |                               Issues                                |
+|:--------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------:|:-------------------------------------------------------------------:|
+| [Apache Maven Default Skin](/skins/maven-default-skin/) | [`https://gitbox.apache.org/repos/asf/maven-default-skin.git`](https://gitbox.apache.org/repos/asf/maven-default-skin.git) | [GitHub](https://github.com/apache/maven-default-skin/) |    [JIRA MSKINS](https://issues.apache.org/jira/projects/MSKINS)    |
+| [Apache Maven Fluido Skin](/skins/maven-fluido-skin/)   | [`https://gitbox.apache.org/repos/asf/maven-fluido-skin.git`](https://gitbox.apache.org/repos/asf/maven-fluido-skin.git)   | [GitHub](https://github.com/apache/maven-fluido-skin/)  | [GitHub Issues](https://github.com/apache/maven-fluido-skin/issues) |
 
 #### Components in Subversion
 
