@@ -55,7 +55,6 @@ Contact the extensions' developers team to know their plans regarding supporting
 
 # Changelog
 
-
 Release Notes - Maven - Version 4.0.0-rc-3
 
 ** Bug
