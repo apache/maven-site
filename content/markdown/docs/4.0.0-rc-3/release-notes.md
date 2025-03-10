@@ -111,11 +111,11 @@ Release Notes - Maven - Version 4.0.0-rc-3
 * [MNG-8525] - Add an integration test with Maven 4 Plugin Sample
 * [MNG-8540] - Add cache to API requests
 * [MNG-8541] - Support throwing Exception from Mojo#execute
-* [MNG-8562] - Maven4 consumer pom : remove "child" attribs from <scm>
+* [MNG-8562] - Maven4 consumer pom : remove "child" attribs from `<scm>`
 * [MNG-8594] - Ability to feed options and goals from ad-hoc created file to Maven
 
 ** Task
-* [MNG-8395] - Add a <Source> element in the model.
+* [MNG-8395] - Add a `<source>` element in the model.
 * [MNG-8433] - Use the switch expressions syntax
 * [MNG-8438] - maven-jline: Migrate to Maven DI (off javax.inject)
 * [MNG-8444] - Exclude maven-xml and maven-xml-impl (the artifact has been renamed)
