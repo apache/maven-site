@@ -58,6 +58,7 @@ Contact the extensions' developers team to know their plans regarding supporting
 Release Notes - Maven - Version 4.0.0-rc-3
 
 ## Bug
+
 * \[[MNG-8431](https://issues.apache.org/jira/browse/MNG-8431)\] - Lifecycle doc broken
 * \[[MNG-8436](https://issues.apache.org/jira/browse/MNG-8436)\] - Transfer speeds are off
 * \[[MNG-8439](https://issues.apache.org/jira/browse/MNG-8439)\] - mvnenc init is busted
@@ -97,11 +98,13 @@ Release Notes - Maven - Version 4.0.0-rc-3
 * \[[MNG-8602](https://issues.apache.org/jira/browse/MNG-8602)\] - Maven 4 BOM applies main version to all dependencies
 
 ## New Feature
+
 * \[[MNG-6113](https://issues.apache.org/jira/browse/MNG-6113)\] - Rename the 'Central Repository' to 'Maven Central Repository' in the 4.0.0 super POM
 * \[[MNG-8437](https://issues.apache.org/jira/browse/MNG-8437)\] - New tool: mvnsh
 * \[[MNG-8555](https://issues.apache.org/jira/browse/MNG-8555)\] - Support externalising secret values in settings.xml
 
 ## Improvement
+
 * \[[MNG-7592](https://issues.apache.org/jira/browse/MNG-7592)\] - String deduplication in model building
 * \[[MNG-8447](https://issues.apache.org/jira/browse/MNG-8447)\] - Lossy problem collector
 * \[[MNG-8465](https://issues.apache.org/jira/browse/MNG-8465)\] - Support ${project.rootDirectory} in repository url
@@ -111,11 +114,12 @@ Release Notes - Maven - Version 4.0.0-rc-3
 * \[[MNG-8525](https://issues.apache.org/jira/browse/MNG-8525)\] - Add an integration test with Maven 4 Plugin Sample
 * \[[MNG-8540](https://issues.apache.org/jira/browse/MNG-8540)\] - Add cache to API requests
 * \[[MNG-8541](https://issues.apache.org/jira/browse/MNG-8541)\] - Support throwing Exception from Mojo#execute
-* \[[MNG-8562](https://issues.apache.org/jira/browse/MNG-8562)\] - Maven4 consumer pom : remove "child" attribs from scm xml element
+* \[[MNG-8562](https://issues.apache.org/jira/browse/MNG-8562)\] - Maven4 consumer pom : remove "child" attribs from `<scm>`
 * \[[MNG-8594](https://issues.apache.org/jira/browse/MNG-8594)\] - Ability to feed options and goals from ad-hoc created file to Maven
 
 ## Task
-* \[[MNG-8395](https://issues.apache.org/jira/browse/MNG-8395)\] - Add a "source" element in the model.
+
+* \[[MNG-8395](https://issues.apache.org/jira/browse/MNG-8395)\] - Add a `<source>` element in the model.
 * \[[MNG-8433](https://issues.apache.org/jira/browse/MNG-8433)\] - Use the switch expressions syntax
 * \[[MNG-8438](https://issues.apache.org/jira/browse/MNG-8438)\] - maven-jline: Migrate to Maven DI (off javax.inject)
 * \[[MNG-8444](https://issues.apache.org/jira/browse/MNG-8444)\] - Exclude maven-xml and maven-xml-impl (the artifact has been renamed)
@@ -149,6 +153,7 @@ Release Notes - Maven - Version 4.0.0-rc-3
 * \[[MNG-8610](https://issues.apache.org/jira/browse/MNG-8610)\] - Add javadoc for all o.a.m.api packages
 
 ## Dependency upgrade
+
 * \[[MNG-8435](https://issues.apache.org/jira/browse/MNG-8435)\] - (test) Bump net.bytebuddy:byte-buddy from 1.15.10 to 1.15.11
 * \[[MNG-8440](https://issues.apache.org/jira/browse/MNG-8440)\] - Bump org.junit.jupiter:junit-jupiter from 5.11.3 to 5.11.4
 * \[[MNG-8441](https://issues.apache.org/jira/browse/MNG-8441)\] - Bump org.junit:junit-bom from 5.11.3 to 5.11.4
