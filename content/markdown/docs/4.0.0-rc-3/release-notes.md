@@ -40,6 +40,19 @@ If you have any questions, please consult:
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/4.0.0-rc-3/](/ref/4.0.0-rc-3/)
 
+# Upgrading from Maven 3
+
+Maven 4 brings a tons of changes.  We've tried hard to maximise compatibility with Maven 3.x, but in order to have your build work with Maven 4, you will need to upgrade some plugins (such as `maven-enforcer-plugin`, `maven-remote-resources-plugin`, `maven-shade-plugin`, etc...) to their most recent versions.
+
+If your build is leveraging Maven extensions, you may very well expect some breakage. Some extensions may need to be updated:
+* the useful, but unmaintained, [`os-maven-plugin`](https://github.com/trustin/os-maven-plugin/) extension has been replaced with at [`nisse`](https://github.com/maveniverse/nisse) extension.
+
+Contact the extensions' developers team to know their plans regarding supporting to Maven 4.
+
+# Upgrading from Maven 4.0.0-rc-2
+
+**Important note about breaking changes:** Maven 4.0.0-rc-3 includes changes in the new API that will require updates in plugin targeting the new API, especially relating to [MNG-8395] which adds a new `<source>` element to the model and redirects the `<sourceDirectory>` element. Plugin developers will need to update their code to work with these changes.
+
 # Changelog
 
 
