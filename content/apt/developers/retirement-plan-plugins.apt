@@ -131,7 +131,7 @@ but has moved to the <Organization> <Project> project.
   making sure that you follow the exceptions mentioned above regarding the site deployment.
 
   [[1]] When updating the plugins page, move Maven Foo Plugin to under the
-  "Retired" heading. Remove the SVN and JIRA links and add
+  "Retired" heading. Remove the SVN/Github and JIRA/Github Issues links and add
   the date of retirement.
 
   [[1]] When updating the version in JIRA, do not add Y.Z+1 and make sure you
@@ -160,7 +160,7 @@ but has moved to the <Organization> <Project> project.
 
     [[A]] {{https://maven.apache.org/scm.html}}
 
-    [[A]] {{https://github.com/apache/maven-sources}}
+    [[A]] {{https://github.com/apache/maven-sources}} (includes the plantUML diagram)
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
   (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
@@ -168,7 +168,18 @@ but has moved to the <Organization> <Project> project.
   [[1]] Update board report
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
-  announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
-  should do if they would like to continue development of the plugin.
+  announcement and users mailing lists. Explain to people what they
+  should do if they would like to continue development of the plugin. Example for retirement email:
 
-~~ Insert template for retirement email here
+------
+To: announce@maven.apache.org, users@maven.apache.org
+Subject: [ANN] Retirement Maven Foo Plugin
+
+Hi,
+the Maven Foo Plugin has been retired and is no longer maintained.
+
+If you would like to continue the development of the plugin, please get in contact with the Maven team.
+Then it will be discussed, if the project gets resurrected or if you should consider to fork it.
+
+-The Apache Maven team
+------
