@@ -168,7 +168,7 @@ but has moved to the <Organization> <Project> project.
   [[1]] Update board report
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
-  announcement and users mailing lists. Explain to people what they
+  announce and users mailing lists. Explain to people what they
   should do if they would like to continue development of the plugin. Example for retirement email:
 
 ------
@@ -178,8 +178,8 @@ Subject: [ANN] Retirement Maven Foo Plugin
 Hi,
 the Maven Foo Plugin has been retired and is no longer maintained.
 
-If you would like to continue the development of the plugin, please get in contact with the Maven team.
-Then it will be discussed, if the project gets resurrected or if you should consider to fork it.
+If you would like to continue the development of the plugin, you can fork the plugin using another groupId and artifactId.
+Of course you can mail the users mailing list to inform others that you continue working on the plugin in a different place.
 
 -The Apache Maven team
 ------
