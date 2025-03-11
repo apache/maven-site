@@ -135,7 +135,7 @@ but has moved to the <Organization> <Project> project.
   the date of retirement.
 
   [[1]] When updating the version in JIRA, do not add Y.Z+1 and make sure you
-  remove any future versions.
+  remove any future versions. This needs to be done by PMC members.
 
 * Clean up after the release
 
@@ -149,7 +149,7 @@ but has moved to the <Organization> <Project> project.
   
   [[1]] When relevant update summary pages for {{{https://maven.apache.org/plugins/index.html}plugins}} or {{{https://maven.apache.org/shared/index.html}shared components}} 
 
-  [[1]] Add " (RETIRED)" at the end of the project name in JIRA.
+  [[1]] Add " (RETIRED)" at the end of the project name in JIRA. This needs to be done by PMC members.
 
   [[1]] Put the JIRA project in read-only mode in case of standalone project (own Jira key): apply Maven Retired Project Permissions Scheme.
   (Requires JIRA admin karma: e.g. ask Brian Fox)
@@ -159,14 +159,14 @@ but has moved to the <Organization> <Project> project.
 
   [[1]] Remove from <<<Source Repository>>>
 
-    [[A]] {{https://maven.apache.org/scm.html}}
+    [[A]] {{https://maven.apache.org/scm.html}} (includes the plantUML diagram)
 
-    [[A]] {{https://github.com/apache/maven-sources}} (includes the plantUML diagram)
+    [[A]] {{https://github.com/apache/maven-sources}}
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
-  (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
+  (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}). This needs to be done by PMC members.
   
-  [[1]] Update board report
+  [[1]] Update board report. This needs to be done by PMC members.
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
   announce and users mailing lists. Explain to people what they
@@ -180,6 +180,7 @@ Hi,
 the Maven Foo Plugin has been retired and is no longer maintained.
 
 If you would like to continue the development of the plugin, you can fork the plugin using another groupId and artifactId.
+You also need to rename the plugin from "maven-foo-plugin" to "foo-maven-plugin" (or something similar).
 Of course you can mail the users mailing list to inform others that you continue working on the plugin in a different place.
 
 -The Apache Maven team
