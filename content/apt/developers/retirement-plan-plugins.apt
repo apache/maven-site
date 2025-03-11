@@ -155,6 +155,7 @@ but has moved to the <Organization> <Project> project.
   (Requires JIRA admin karma: e.g. ask Brian Fox)
 
   [[1]] Comment the {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool.conf.html}dist-tool configuration}} entry.
+  Also comment the plugin's entry in the <<<GetPrerequisites.java>>> and <<<ListBranchesReport>>> files.
 
   [[1]] Remove from <<<Source Repository>>>
 
