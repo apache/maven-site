@@ -178,10 +178,14 @@ Subject: [ANN] Retirement Maven Foo Plugin
 
 Hi,
 the Maven Foo Plugin has been retired and is no longer maintained.
+We retired it, because there was very little interest by and interaction with users over the past years.
+
+The retirement vote results can be seen here: [link to mail in mailing list archive]
 
 If you would like to continue the development of the plugin, you can fork the plugin using another groupId and artifactId.
-You also need to rename the plugin from "maven-foo-plugin" to "foo-maven-plugin" (or something similar).
-Of course you can mail the users mailing list to inform others that you continue working on the plugin in a different place.
+You also need to rename the plugin, for example from "maven-foo-plugin" to "foo-maven-plugin".
+Feel free to inform others that you continue working on the plugin in a different place.
+You can write a mail to the users mailing list for that.
 
 -The Apache Maven team
 ------
