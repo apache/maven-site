@@ -55,6 +55,7 @@ under the License.
       <item name="Release Notes" href="/docs/history.html"/>
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
       <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
+      <item name="Maven Daemon" href="/mvnd.html"/>
     </menu>
 
     <menu name="Documentation">
