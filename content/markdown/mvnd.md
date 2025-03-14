@@ -43,7 +43,7 @@ For more detailed information and documentation, visit the [Maven Daemon GitHub 
 Instead of using the `mvn` command, use `mvnd`:
 
 ```bash
-mvnd clean install
+mvnd clean verify
 ```
 
 The daemon will stay alive in the background, ready to process subsequent builds much faster.
