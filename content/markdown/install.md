@@ -1,0 +1,113 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+# Installation
+
+While there are several ways to install Apache Maven, we can only give guidance for 
+the installation of the binary distribution. 
+
+## Prerequisites
+
+You need an Java Development Kit (JDK) installed and either set the `JAVA_HOME` 
+environment variable pointing to your JDK installation or have the `java` executable
+on your `PATH`. 
+Apache Maven requires at least Java 17 to run, but any recent version will work just fine. 
+
+## Binary distribution
+
+The installation of Apache Maven is a simple process of extracting the archive 
+and adding the `bin` directory with the `mvn` command to the `PATH`. This works on any 
+operating system, but setting the path and environment variables depends on the OS.
+
+Detailed steps are:
+
+* Download the Apache Maven [binary distribution archive](/download.html). 
+
+* Extract the distribution archive in any directory. Use `unzip apache-maven-${currentStableVersion}-bin.zip`
+or `tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz` depending on the archive.
+
+* Add the `bin` directory of the created directory `apache-maven-${currentStableVersion}` to 
+the `PATH` environment variable
+
+* Confirm with `mvn -v` in a new shell. The result should look similar to:
+
+```
+Apache Maven ${currentStableVersion} (${currentStableVersionDetails})
+Maven home: /opt/apache-maven-${currentStableVersion}
+Java version: 1.8.0_45, vendor: Oracle Corporation
+Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre
+Default locale: en_US, platform encoding: UTF-8
+OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
+```
+
+That’s it! Maven is now installed.
+
+## macOS
+
+Installation on macOS is supported by [Homebrew](https://brew.sh),
+[SDKMAN!](https://sdkman.io) and
+[MacPorts](https://www.macports.org).
+
+### Homebrew
+
+```
+brew install maven
+```
+
+### SDKMAN!
+
+```
+sdk install maven
+```
+
+### MacPorts
+
+```
+sudo port install maven3
+```
+
+Run the `mvn -v` command to verify the installation.
+
+## Linux
+
+The commands depend on the package manager of the Linux Distribution of your choice.
+
+### APT
+
+```
+sudo apt install maven
+```
+
+### DNF
+
+```
+sudo dnf install maven
+```
+
+### YUM
+
+```
+sudo yum install maven
+```
+
+Run the `mvn -v` command to verify the installation.
+
+
+## Windows
+
+We do not provide a Windows Installer. The recommended way is the binary distribution.
