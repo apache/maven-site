@@ -21,7 +21,7 @@ under the License.
 While there are several ways to install Apache Maven, we can only give guidance for 
 the installation of the binary distribution. 
 
-## Prerequisites
+#[[##]]# Prerequisites
 
 You need an Java Development Kit (JDK) installed and either set the `JAVA_HOME` 
 environment variable pointing to your JDK installation or have the `java` executable
@@ -29,7 +29,7 @@ on your `PATH`.
 
 The current stable version `3.9.x` requires JDK 8+, but any recent version will work just fine. 
 
-## Binary distribution
+#[[##]]# Binary distribution
 
 The installation of Apache Maven is a simple process of extracting the archive 
 and adding the `bin` directory with the `mvn` command to the `PATH`. This works on any 
@@ -58,64 +58,63 @@ OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
 
 That’s it! Maven is now installed.
 
-## macOS
+#[[##]]# macOS
 
 Installation on macOS is supported by [Homebrew](https://brew.sh),
 [SDKMAN!](https://sdkman.io) and
 [MacPorts](https://www.macports.org).
 
-### Homebrew
+#[[###]]# Homebrew
 
 ```
 brew install maven
 ```
 
-### SDKMAN!
+#[[###]]# SDKMAN!
 
 ```
 sdk install maven
 ```
 
-### MacPorts
+#[[###]]# MacPorts
 
 ```
 sudo port install maven3
 ```
 
-## Linux
+#[[##]]# Linux
 
 The commands depend on the package manager of the Linux Distribution of your choice.
 
-### APT
+#[[###]]# APT
 
 ```
 sudo apt install maven
 ```
 
-### DNF
+#[[###]]# DNF
 
 ```
 sudo dnf install maven
 ```
 
-### YUM
+#[[###]]# YUM
 
 ```
 sudo yum install maven
 ```
 
-
-## Windows
+#[[##]]# Windows
 
 Installation on Windows is supported by [Chocolatey](https://chocolatey.org) and [Scoop](https://scoop.sh).
 
-### Chocolatey
+#[[###]]# Chocolatey
 
 ```
 choco install maven
 ```
 
-### Scoop
+#[[###]]# Scoop
 
 ```
 scoop install main/maven
