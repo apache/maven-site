@@ -149,6 +149,8 @@ svnmucc -m "Publish yyy $version documentation" \
   cp HEAD xxx-archives/yyy-LATEST xxx/yyy
 ------------
 
+  When using windows, replace the <<<\\>>> with <<<^>>> to ensure correct multiline command execution.
+
 * Updating index page in the Maven site
 
  Some component types have an index page refering to each components of the same type. This is the case for
