@@ -128,7 +128,7 @@ mvn clean dependency:copy-dependencies package
 ~~~
   Multiple goals bound to a phase are executed in the same order as they are declared in the POM.
 
-  It's possible declare multiple executions for the same plugin - see {{{./guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins}Configuring plugins}} for more details.
+  It's possible to declare multiple executions for the same plugin - see {{{./guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins}Configuring plugins}} for more details.
   <<Note>>: This does <<not>> mean that it's allowed to declare the same plugin multiple times in {{{/pom.html#Plugins} <<<<plugins\>>>> declaration section}}!
   Declaring a plugin multiple times shows warnings using Maven 3 and fail the build using Maven 4.
 
