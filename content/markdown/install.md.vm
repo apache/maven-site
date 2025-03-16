@@ -18,34 +18,33 @@ under the License.
 -->
 # Installation
 
-While there are several ways to install Apache Maven, we can only give guidance for 
-the installation of the binary distribution. 
+Apache Maven can be installed by most package managers, 
+or manually by downloading the archive and adding it to your path.
 
 #[[##]]# Prerequisites
 
-You need an Java Development Kit (JDK) installed and either set the `JAVA_HOME` 
-environment variable pointing to your JDK installation or have the `java` executable
+You need a Java Development Kit (JDK) installed. Either set the `JAVA_HOME` 
+environment variable to the path of your JDK installation or have the `java` executable
 on your `PATH`.
 
-The current stable version `3.9.x` requires JDK 8+, but any recent version will work just fine. 
+The current stable version `${currentStableVersion}` requires JDK 8+, but any recent version will work just fine. 
 
 #[[##]]# Binary distribution
 
-The installation of Apache Maven is a simple process of extracting the archive 
-and adding the `bin` directory with the `mvn` command to the `PATH`. This works on any 
-operating system, but setting the path and environment variables depends on the OS.
+To install Apache Maven, extract the archive and add its bin directory to the `PATH`.
+This works on any operating system, but setting the path and environment variables depends on the OS.
 
 Detailed steps are:
 
-* Download the Apache Maven [binary distribution archive](/download.html). 
+1. Download the Apache Maven [binary distribution archive](/download.html). 
 
-* Extract the distribution archive in any directory. Use `unzip apache-maven-${currentStableVersion}-bin.zip`
+2. Extract the distribution archive in any directory. Use `unzip apache-maven-${currentStableVersion}-bin.zip`
 or `tar xzvf apache-maven-${currentStableVersion}-bin.tar.gz` depending on the archive.
 
-* Add the `bin` directory of the created directory `apache-maven-${currentStableVersion}` to 
+3. Add the `bin` directory of the created directory `apache-maven-${currentStableVersion}` to 
 the `PATH` environment variable
 
-* Confirm with `mvn -v` in a new shell. The result should look similar to:
+4. Confirm with `mvn -v` in a new shell. The result should look similar to:
 
 ```
 Apache Maven ${currentStableVersion} (${currentStableVersionDetails})
