@@ -49,12 +49,15 @@ select component category, then type artifact id and version to generate svn com
 </td></tr>
 
 <tr><td colspan="3">
-<h3>instructions to publish component release documentation</h3>
+<h3>Instructions to publish component release documentation</h3>
 <pre id="svnmucc">svnmucc -m "Publish ${artifactId} ${version} documentation" \
   -U https://svn.apache.org/repos/asf/maven/website/components \
   cp HEAD ${category}-archives/${artifactId}-LATEST${vSuffix} ${category}-archives/${artifactId}-${version} \
   rm ${category}/${artifactId}${vSuffix} \
   cp HEAD ${category}-archives/${artifactId}-LATEST${vSuffix} ${category}/${artifactId}${vSuffix}</pre>
+
+When using windows, replace the `\` with `^` to ensure correct multiline command execution.
+
 </td></tr>
 
 <tr><td colspan="2"><iframe id="index-page" src="" width="100%" height="300px"></iframe></td>
