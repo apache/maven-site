@@ -54,7 +54,7 @@ Guide to Configuring Plug-ins
 
   <<Important Note>>: Always define the version of each plugin to guarantee
   build reproducibility. A good practice is to specify each build plugin's version in a <<<\<build\>\<pluginManagement/\>\</build\>>>>
-  element. Often the<<<<pluginManagement/\>>>> element is found in the parent POM.
+  element. Often the <<<<pluginManagement/\>>>> element is found in the parent POM.
   For reporting plugins, specify each version in the <<<\<reporting\>\<plugins/\>\</reporting\>>>> element
   (and in the <<<\<build\>\<pluginManagement/\>\</build\>>>> element too).
 
@@ -497,7 +497,7 @@ public class MyAnimalMojo
 
   Note that while execution id's have to be unique among all executions of a single plugin within a POM, they don't
   have to be unique across an inheritance hierarchy of POMs.
-  Executions with difference id's are merged, meaning they are all executed in the hierarchy order (parent first).
+  Executions with different id's are merged, meaning they are all executed in the hierarchy order (parent first).
   Executions with the same id from different POMs are overwritten by child configuration.
 
   The same applies to executions that are defined by profiles.
