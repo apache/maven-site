@@ -57,12 +57,12 @@ Performing a Maven Project Release
 
   []
 
-* Consider updating the parent versions
+** Consider updating the parent versions
 
   If the item you are planning to release is not using the most recent version of its parent
   (see {{{../../pom/}parent POMs}} index), consider taking this opportunity to update to it.
 
-* Consider updating the project dependencies
+** Consider updating the project dependencies
 
   Generally it is a good that project use tha latest available versions of used dependencies.
 
@@ -78,7 +78,7 @@ Performing a Maven Project Release
 
  []
 
-** Check release note at GitHub
+** Check release notes at GitHub
 
   If a component has a history of release notes at <<GitHub>>, we should to continue maintain it in order to avoid user confusing.
 
@@ -181,20 +181,14 @@ https://github.com/apache/<repository-name>/issues
 
 -----
 
- The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
- This gives others time to test your release and check that everything is good. If after that period you have not received
- enough +1 votes to reach the quorum, this doesn't mean the vote failed: it just takes a bit longer.
-
- Checking binary output, ideally to control that the build is reproducible, can be done by running <<<verify>>> (NOT <<<install>>>)
- followed by <<<artifact:compare>>> against the staged content:
-
------
-mvn -Papache-release -Dgpg.skip clean verify \
-    artifact:compare -Dreference.repo=https://repository.apache.org/content/repositories/staging/
------
 
 
 * Check the vote results
+
+ The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
+ This gives others time to test your staged release and check that everything is good, with the help of our {{{/guides/development/guide-testing-releases.html}Guide to testing staged releases}}.
+
+ If after that period you have not received enough +1 votes to reach the quorum, this doesn't mean the vote failed: it just takes a bit longer.
 
  Copied from {{{https://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
 
