@@ -28,7 +28,7 @@
 
 Guide to Testing Staged Releases
 
-  As part of the release process, the artifacts are staged in a temporary repository
+  As part of {{{/developers/release/index.html}the release process}}, the artifacts are staged in a temporary repository
   for testing and evaluation before voting. Such repositories are not available by
   default, so to use them your project must be configured appropriately.
   
@@ -70,6 +70,13 @@ Checking Reproducible Builds
 mvn -Papache-release -Dgpg.skip clean verify \
     artifact:compare -Dreference.repo=https://repository.apache.org/content/groups/staging/
 -----
+
+  Results of this check should be shared when voting, see for example:
+
+  * successful check results: {{{https://lists.apache.org/thread/oodn7t2dmqdb0s9vr8dc0ocr71dqfsbl}one approach}} or {{{https://lists.apache.org/thread/5swm1phkpbmvt9bt6vb3r0qroczf90o1}another}}.
+
+  * un-successful check results: can be either found {{{https://lists.apache.org/thread/ksdgkfr7x3wgld3ys5z75nfmp328p6k2}serious enough to vote -1}},
+    or {{{https://lists.apache.org/thread/d2hh4d8kzrxs04mdl6v3py1v8hdtfyqt}not blocking}} ({{{https://lists.apache.org/thread/8hlwosrxdptttjl363q0j86wp9yr27fo}another}}) based on impact of unexpected content in staged release.
 
 * Setting up Archiva to Test Staged Releases
 
