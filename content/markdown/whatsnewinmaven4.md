@@ -44,9 +44,8 @@ support.
 Thus, the Maven POM syntax became fixed, unable to change.
 
 > "With the Maven build schema preserved in amber, we can’t evolve much: we’ll stay forever with Maven 3 minor releases,
->
->> unable to implement improvements that we imagine will require seriously updating the POM schema…"
->> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
+> unable to implement improvements that we imagine will require seriously updating the POM schema…"
+> &mdash; <cite>[Hervé Boutemy (in Javaadvent 2021)][1]</cite>
 
 In order for Maven to evolve, it's necessary to separate the information needed for the build from the information
 needed by the consumers, but without breaking the ecosystem.
