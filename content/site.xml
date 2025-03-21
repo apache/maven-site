@@ -44,6 +44,7 @@ under the License.
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
+      <item name="Concepts" href="/concepts.html"/>
       <item name="Installation" href="/install.html" />
       <item name="Download" href="/download.html"/>
       <item name="Use" href="/users/index.html" collapse="true">
