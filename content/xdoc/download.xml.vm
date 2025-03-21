@@ -397,15 +397,15 @@ under the License.
             <tr>
               <td rowspan="2">Source</td>
               <td>tar.gz</td>
-              <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.tar.gz">maven-mvnd-${currentMvnd2xVersion}-source-release.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.tar.gz.asc">asc</a>)</td>
+              <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz">maven-mvnd-${currentMvnd2xVersion}-src.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
-              <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.zip">maven-mvnd-${currentMvnd2xVersion}-source-release.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-source-release.zip.asc">asc</a>)</td>
+              <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip">maven-mvnd-${currentMvnd2xVersion}-src.zip</a>
+                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.asc">asc</a>)</td>
             </tr>
           </tbody>
         </table>
