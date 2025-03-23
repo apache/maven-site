@@ -69,7 +69,7 @@ Getting Help
   or one of the plugins, you should report it to the issue management system.
   Please check the project's documentation, if it is still used JIRA (which requires an account - see below) as its issue management system or if it is already migrated to GitHub issues.
 
-  You don't need create issue only to ask us something
+  You don't need create an issue only to ask us something
   - in such case please first ask on {{{https://maven.apache.org/mailing-lists.html}users-list}}
 
 **Request new JIRA account
