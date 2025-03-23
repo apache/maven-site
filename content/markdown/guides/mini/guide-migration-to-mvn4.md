@@ -20,13 +20,13 @@ under the License.
 -->
 <!--MACRO{toc|fromDepth=2|toDepth=4}-->
 
-## Introduction
+## Summary
 
 Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)). 
 Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
 This page shall help to migrate to Maven 4.
 
-The general suggestion for the migration is to do it in three steps, which can be summarized as:
+In short, the general suggestion for the migration is to do it in three steps:
 
 1. Meet the prerequisites
 2. Use Maven 4 for your build and fix build errors
@@ -70,7 +70,7 @@ Places where you might have to configure Maven 4 usage aside installation:
 ### Update plugins to Maven 4 version
 If you use plugins for which a dedicated Maven 4 version exists, upgrade to those plugins.
 
-## Required changes if situation applies and troubleshooting
+## Troubleshooting and required changes if situation applies 
 The following changes are in general not required by all projects, but might apply to yours.
 
 ### Fix plugin misconfigurations
