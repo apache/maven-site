@@ -1,0 +1,135 @@
+# Migrate to Maven 4
+
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+<!--MACRO{toc|fromDepth=2|toDepth=4}-->
+
+## Introduction
+
+Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)). 
+Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
+This page shall help to migrate to Maven 4.
+
+The general suggestion for the migration is to do it in three steps, which can be summarized as:
+
+1. Meet the prerequisites
+2. Use Maven 4 for your build and fix build errors
+3. Introduces optional Maven 4 features
+
+If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
+
+**Note**: This page will constantly be updated at least until Maven 4.0.0 is released to contain changes but also to integrate feedback of the community and their experience when upgrading to Maven 4. 
+
+## Prerequisites
+This guide assumes that your environment and project meets the following prerequisites.
+If they don't fulfill them already, please put effort into meeting them, before continuing with this guide.
+
+### Use latest version of Maven 3.9
+This guide assumes that the project to be migrated is successfully build using the [latest version of Maven 3](/docs/history.html).
+
+### Upgrade plugins to their latest Maven 3 version
+Similar to the previous prerequisite, the guides assumes that you are using the latest Maven 3 plugin version of all your plugins.
+
+## Required changes
+You need to do the following steps to be able to use Maven 4.
+
+### Upgrade build environment to support Java 17
+
+Maven 4 requires Java 17 to be run.
+This means the build environment (locally but also your CI environment) needs to provide a JDK that supports Java 17.
+Either install one to your machine or use a container providing one.
+
+**Note**: Maven 3 can also use executed with Java 17.
+So you should prepare your build environment as soon as possible to have a solid, project independent base for further migration.
+
+### Install and use Maven 4
+After you have upgraded your build environment to support Java 17, you also need to provide Maven 4.
+See the information [where to download](/download.cgi) and [how to install Maven 4](/install.html) for further information.
+
+Places where you might have to configure Maven 4 usage aside installation:
+* [Maven Wrapper](/wrapper/index.html)'s `maven-wrapper.properties` file.
+* [Required Maven version](/enforcer/enforcer-rules/requireMavenVersion.html) rule of the Maven enforcer plugin.
+* Your own CI/CD configuration scripts or pipelines.
+
+### Update plugins to Maven 4 version
+If you use plugins for which a dedicated Maven 4 version exists, upgrade to those plugins.
+
+## Required changes if situation applies and troubleshooting
+The following changes are in general not required by all projects, but might apply to yours.
+
+### Fix plugin misconfigurations
+There are several misconfigurations in the project's POM declaration that result in warnings when using Maven 3.9.
+While your build should not throw any warnings at all, the following ones needs to be fixed as they will fail the build in Maven 4.
+
+**Notes**: The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
+
+
+
+#### Duplicate plugin declaration
+
+A plugin must only be declared once.
+Defining it multiple times, results the following log message.
+
+> 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin [plugin-name] ...
+
+To fix this, remove the duplicated configuration.
+
+### Replace removed directory properties
+
+rotDirectory/topDirectory
+
+### Replace conceptional `pre-` and `post-` life cycle phases
+and bind plugins to new before/after phases
+
+## Optional changes and features
+
+### Changed default values
+
+#### Install / deploy at end of build
+Both, the maven-install-plugin and the maven-deploy-plugin, have changed default values for their behavior, about when to install respectively deploy.
+The default values for `installAtEnd` and `deployAtEnd` are set to `true` in Maven 4.
+They now reflect the desired behavior for the majority of the Maven builds.
+If you manually set these values to `true` before, you can remove the explicit declaration and inherit the same behavior from the new default values now.
+
+If your build relies on the old default value (`false`), you have to add it to your plugin configuration now. But in most cases, a build that requires the values to be `false` means that these settings hide a configuration error.
+We suggest to analyse the build configuration after migration.
+
+
+
+### Use POM model version 4.1.0
+
+Using POM model version 4.1.0 is not required with Maven 4.0.0.
+It is only required, for using new POM features like `root`-attribute, BOM packaging types, optional profiles and others.
+
+Model version 4.1.0 (or higher) will be required in future versions of Maven.
+It's suggested to migrate your project to Maven 4 without any POM changes that require model version 4.1.0 first.
+After you have successfully migrated to Maven 4, include wanted features step by step.  
+
+
+#### Define project root
+
+#### Rename `<modules>` to `<subprojects>`
+
+#### Automatic versioning
+
+#### CI-friendly variables without flatten-plugin
+
+#### Using BOM packaging
+
+#### Use FOS parameter
