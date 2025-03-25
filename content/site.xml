@@ -46,12 +46,8 @@ under the License.
       <item name="Features" href="/maven-features.html"/>
       <item name="Installation" href="/install.html" />
       <item name="Download" href="/download.html"/>
-      <item name="Use" href="/users/index.html" collapse="true">
-        <item name="Run" href="/run.html"/>
-        <item name="Configure" href="/configure.html"/>
-        <item name="IDE Integration" href="/ide.html"/>
-        <item name="Support and Training" href="/support-and-training.html"/>
-      </item>
+      <item name="Run" href="/run.html"/>
+      <item name="Configure" href="/configure.html"/>
       <item name="Release Notes" href="/docs/history.html"/>
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
       <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
