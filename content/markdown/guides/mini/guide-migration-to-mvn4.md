@@ -110,7 +110,9 @@ The following changes are in general not required by all projects, but might app
 There are several misconfigurations in the project's POM declaration that result in warnings when using Maven 3.9.
 While your build should not throw any warnings at all, the following ones needs to be fixed as they will fail the build in Maven 4.
 
-**Notes**: The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
+**Notes**:
+* The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
+* For analysing wrong build behavior, it might help to use the new `--fail-on-severity` parameter, paired with `WARN` as an argument, to fail your build when a warning occur.  
 
 #### Duplicate plugin declaration
 A plugin must only be declared once.
@@ -211,7 +213,7 @@ So you should replace it with the new `<subprojects>` element instead.
 
 #### Using BOM packaging
 
-#### Use FOS parameter
+
 
 
 [versionpluginupdate]: https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html
