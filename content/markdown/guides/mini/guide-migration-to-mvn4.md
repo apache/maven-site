@@ -45,17 +45,18 @@ This guide assumes that your environment and project meets the following prerequ
 If they don't fulfill them already, please put effort into meeting them, before continuing with this guide.
 
 ### Use latest version of Maven 3.9
-This guide assumes that the project to be migrated is successfully build using the [latest version of Maven 3](/docs/history.html).
+This guide assumes that the project to be migrated was successfully built using the [latest version of Maven 3](/docs/history.html).
 
 ### Upgrade plugins to their latest Maven 3 version
 Similar to the previous prerequisite, the guides assumes that you are using the latest Maven 3 plugin version of all your plugins.
-Do not upgrade to a plugin version, which requires Maven 4.
+
+Do not upgrade to a plugin version, which requires Maven 4!
 Be aware of this, if you use tools that can automate updates.
 
-You can make use of the [Versions Maven Plugin's display plugin updates goal](https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html) to see what are the latest available versions.
+You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate], to see which are the latest available versions of the plugins you use.
 
-The following example shows the output of the Versions Maven Plugin in a project using version 3.12.0 of the maven-compiler-plugin.
-As you can see it shows that with version 3.14.0 there is a Maven 3 compatible update, while the versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions.
+The following example shows the output of the Versions Maven Plugin in a project using the outdated version 3.12.0 of the maven-compiler-plugin.
+As you can see, it shows that with version 3.14.0 there is a Maven 3 compatible update, while the versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions.
 
 ```
 [INFO] The following plugin updates are available:
@@ -97,7 +98,10 @@ Places where you might have to configure Maven 4 usage aside installation:
 * Your own CI/CD configuration scripts or pipelines.
 
 ### Update plugins to Maven 4 version
-If you use plugins for which a dedicated Maven 4 version exists, upgrade to those plugins.
+If there is a dedicated Maven 4 version for used plugins, you should update to such a version.
+You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
+
+**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for custom plugins which use outdated plugin API methods.
 
 ## Troubleshooting and required changes if situation applies 
 The following changes are in general not required by all projects, but might apply to yours.
@@ -108,8 +112,6 @@ While your build should not throw any warnings at all, the following ones needs 
 
 **Notes**: The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
 
-
-
 #### Duplicate plugin declaration
 A plugin must only be declared once.
 Defining it multiple times, results the following log message.
@@ -119,12 +121,30 @@ Defining it multiple times, results the following log message.
 To fix this, remove the duplicated configuration.
 
 ### Replace removed directory properties
+Maven 4 introduces new public properties dedicated to point to the root and top directory of (multi-subproject) project.
+You can now use `${project.rootDirectory}`, `${session.topDirectory}`, `${session.rootDirectory}` when declaring paths.
+See the [Maven Model Builder interpolation reference][modelbuilderinterpolation] for more details.
 
-rotDirectory/topDirectory
+At the same time, several (especially internal) properties are deprecated or removed.
+This includes the following properties:
+* `executionRootDirectory`
+* `multiModuleProjectDirector`
 
-### Replace conceptional `pre-` and `post-` life cycle phases
-and bind plugins to new before/after phases
-all each phases
+### Replace conceptional `pre-` and `post-` lifecycle phases
+In Maven 3 some lifecycle phases also had conceptional `pre-` and `post-` phases, but they are not available for all phases.
+In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for all lifecycle phases.
+
+### Check bindings to `all` phase 
+The `all` phase got fixed and slightly changed in Maven 4.
+It now behaves correctly, especially when using it in project with multiple subprojects or in concurrent scenarios.
+
+The `before-all` phase is executed before all other phases of a project.
+In a project with multiple subprojects, the parent's `before-all` is executed before any children's phases.
+According to that, the `after-all` phase is executed at the end of the project's build.
+In a project with multiple subprojects, the children's `after-all` is executed before parent's one.
+
+If you bind plugins to the `all` phase, please check if it still matches your desired execution, or if you need to bind to the new `each` phase.
+The `before-each` phase is executed everytime before any other phase in a build, while the `after-each` phase is executed everytime after any other.
 
 ## Optional changes and features
 
@@ -192,3 +212,7 @@ So you should replace it with the new `<subprojects>` element instead.
 #### Using BOM packaging
 
 #### Use FOS parameter
+
+
+[versionpluginupdate]: https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html
+[modelbuilderinterpolation]: https://maven.apache.org/ref/4-LATEST/maven-compat-modules/maven-model-builder/#model-interpolation
