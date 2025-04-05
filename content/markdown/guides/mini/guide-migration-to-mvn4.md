@@ -24,7 +24,7 @@ under the License.
 
 Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)). 
 Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
-This page shall help to migrate to Maven 4.
+This page offers help for the migration to Maven 4.
 
 In short, the general suggestion for the migration is to do it in three steps:
 
@@ -34,7 +34,11 @@ In short, the general suggestion for the migration is to do it in three steps:
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
 
-**Note**: This page will constantly be updated at least until Maven 4.0.0 is released to contain changes but also to integrate feedback of the community and their experience when upgrading to Maven 4. 
+**Notes**:
+
+* This page will constantly be updated at least until Maven 4.0.0 is released to contain changes but also to integrate feedback of the community and their experience when upgrading to Maven 4.
+* It is planed to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing at least most of the steps needed to migrate a project. 
+* It is planed to create a separate guide about migrating plugins to new Maven 4 plugin API.
 
 ## Prerequisites
 This guide assumes that your environment and project meets the following prerequisites.
@@ -45,6 +49,31 @@ This guide assumes that the project to be migrated is successfully build using t
 
 ### Upgrade plugins to their latest Maven 3 version
 Similar to the previous prerequisite, the guides assumes that you are using the latest Maven 3 plugin version of all your plugins.
+Do not upgrade to a plugin version, which requires Maven 4.
+Be aware of this, if you use tools that can automate updates.
+
+You can make use of the [Versions Maven Plugin's display plugin updates goal](https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html) to see what are the latest available versions.
+
+The following example shows the output of the Versions Maven Plugin in a project using version 3.12.0 of the maven-compiler-plugin.
+As you can see it shows that with version 3.14.0 there is a Maven 3 compatible update, while the versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions.
+
+```
+[INFO] The following plugin updates are available:
+[INFO]   maven-compiler-plugin ............................ 3.12.0 -> 3.14.0
+[INFO]
+[INFO] All plugins have a version specified.
+[INFO]
+[INFO] Project requires minimum Maven version for build of: 3.9
+[INFO] Plugins require minimum Maven version of: 3.6.3
+[INFO]
+[INFO] No plugins require a newer version of Maven than specified by the pom.
+[INFO]
+[INFO] Require Maven 4.0.0-beta-3 to use the following plugin updates:
+[INFO]   maven-compiler-plugin ...................... 3.12.0 -> 4.0.0-beta-1
+[INFO]
+[INFO] Require Maven 4.0.0-rc-2 to use the following plugin updates:
+[INFO]   maven-compiler-plugin ...................... 3.12.0 -> 4.0.0-beta-2
+```
 
 ## Required changes
 You need to do the following steps to be able to use Maven 4.
@@ -82,7 +111,6 @@ While your build should not throw any warnings at all, the following ones needs 
 
 
 #### Duplicate plugin declaration
-
 A plugin must only be declared once.
 Defining it multiple times, results the following log message.
 
@@ -96,6 +124,7 @@ rotDirectory/topDirectory
 
 ### Replace conceptional `pre-` and `post-` life cycle phases
 and bind plugins to new before/after phases
+all each phases
 
 ## Optional changes and features
 
@@ -110,21 +139,51 @@ If you manually set these values to `true` before, you can remove the explicit d
 If your build relies on the old default value (`false`), you have to add it to your plugin configuration now. But in most cases, a build that requires the values to be `false` means that these settings hide a configuration error.
 We suggest to analyse the build configuration after migration.
 
-
-
 ### Use POM model version 4.1.0
-
 Using POM model version 4.1.0 is not required with Maven 4.0.0.
 It is only required, for using new POM features like `root`-attribute, BOM packaging types, optional profiles and others.
 
 Model version 4.1.0 (or higher) will be required in future versions of Maven.
 It's suggested to migrate your project to Maven 4 without any POM changes that require model version 4.1.0 first.
-After you have successfully migrated to Maven 4, include wanted features step by step.  
+After you have successfully done this, include wanted features step by step.  
 
 
-#### Define project root
+#### Define project's root directory
+It is highly recommended to define the project's root directory.
+While the definition is not enforced with Maven 4.0.0, it might be in the future.
+Some new Maven 4 features, for example the `${project.rootDirectory}`property, do require it.
 
-#### Rename `<modules>` to `<subprojects>`
+When the root directory is not defined, the following warning is displayed: 
+
+> [WARNING] Unable to find the root directory. Create a .mvn directory in the root directory or add the root="true" attribute on the root project's model to identify it.
+
+As written in the warning there are two ways to define the root directory:
+
+1. Create a `.mvn` directory in the root directory.
+   The directory can be empty, however you can consider to place [configuration files](https://maven.apache.org/configure.html) in it.
+   Using the `.mvn` directory is already possible with Maven 3.
+2. Set the `root` attribute in your parent POM to `true`.
+   The `root` attribute is a new attribute of model version 4.1.0 and therefore can only be used with Maven 4.
+   Note: That is also the cause, why this topic is listed in the model version 4.1.0 section.
+
+#### Use `<subprojects>` instead of `<modules>`
+In Maven 4 subprojects are no longer called modules.
+While the `<modules>` element is still supported, it was marked as deprecated in model version 4.1.0 and will get removed in a future version. 
+So you should replace it with the new `<subprojects>` element instead.
+
+```xml
+<!-- Requires model version 4.0.0 (Maven 3, deprecated in model version 4.1.0) -->
+ <modules>
+     <module>ModuleA</module>
+     <module>ModuleB</module>
+ </modules>
+
+<!-- Requires model version 4.1.0 (Maven 4) -->
+ <subprojects>
+     <subproject>ModuleA</subproject>
+     <subproject>ModuleB</subproject>
+ </subprojects>
+```
 
 #### Automatic versioning
 
