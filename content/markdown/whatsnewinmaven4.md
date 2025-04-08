@@ -389,21 +389,27 @@ before:integration-test[200]
 **Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
 inconsistent naming, are deprecated.
 Don't use them!
-This becomes even more important if you are binding a plugin to the `post-*` phase of a lifecycle phase because the `pre-*` phase of the phase you really want to bind to does not exist, for example, binding to `process-resources` phase because there was no `pre-compile` phase.
+This is especially important when binding a plugin to a `post-*` phase of a lifecycle phase because the corresponding `pre-*` phase of the desired phase doesn't exist — for example, binding to the `process-resources` phase due to the absence of a `pre-compile` phase.
 
 #### All- and each-phases
 
-The less known `all` phase got fixed and slightly changed in Maven 4.
-It now behaves correctly, especially when using it in project with multiple subprojects or in concurrent scenarios.
-Together with the new `each` phase, users have even more possibilities to precise the execution of plugins.
-Their executions are similar to known testing frameworks to make the usage as intuitive as possible.
+Maven 4 introduces several new lifecycle phases — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each` — that give users finer control over plugin execution, particularly in multi-project and concurrent builds.
 
-The `before-all` phase is executed before all other phases of a project.
-In a project with multiple subprojects, the parent's `before-all` is executed before any children's phases.
-According to that, the `after-all` phase is executed at the end of the project's build.
-In a project with multiple subprojects, the children's `after-all` is executed before parent's one.
+Both the `all` and `each` phases are executed for every project and subproject, but their scope differs:
+* The `each` phase wraps the standard lifecycle phases (`validate`, `compile`, `test`, etc.) of a single project or subproject.
+It's used to define behavior that should occur around the build of an individual subproject.
+* The `all` phase encompasses the entire build of a project, including its `each` phase and the `all` phases of its child subprojects.
+It is ideal for logic that should run once per project, while still covering the entire subproject hierarchy.
 
-The `before-each` phase is executed everytime before any other phase in a build, while the `after-each` phase is executed everytime after any other.
+To make this model more intuitive — especially for users familiar with testing frameworks — Maven 4 also introduces the following hook phases:
+* `before:all` runs before any other phase in the current project.
+In a multi-project build, the parent project's `before:all` is executed before any phases of its subprojects.
+* `after:all` is executed at the very end of a project’s build.
+In a multi-project build, the `after:all` phases of the subprojects run before that of the parent.
+* `before:each` is executed before every standard phase in a project’s lifecycle, while `after:each` runs after `each` phase.
+These are especially useful for applying consistent setup and teardown logic around every phase.
+
+Together, these new phases provide a powerful and intuitive structure for defining and customizing build behavior in complex Maven projects.
 
 ## Maven plugins, security, and tools
 
