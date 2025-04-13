@@ -269,8 +269,8 @@ rebuilt).
 Using `--also-make :<nameOfTheDependentSubproject>` was no help in the past as it was ignored due to the long-standing
 bug [MNG-6863][11] - which is finally fixed with Maven 4!
 
-**Recommendation: Do not use `mvn clean install`.
-Instead, use `mvn verify` for your regular builds!**
+**Recommendation: Do not use `mvn clean install` for your regular builds.
+Instead, use `mvn verify`!**
 
 To improve usability when resuming a failed build, you can now use `--resume` or its short parameter `-r` to resume a
 build from the subproject that last failed.
@@ -370,7 +370,7 @@ With the usual builders and run `mvn verify`, a project will run up to the verif
 start being built, whereas the concurrent builder will allow a dependant project to be built as soon as the dependencies
 are at the `ready` phase.
 
-#### Pre- and post-phases, ordering of executions
+#### Before- and after-phases, ordering of executions
 
 Every lifecycle phase now has a `before:` and an `after:` phase, allowing plugins to bind themselves to those.
 For example, if you want to set up test data before running your integration tests, you could execute tasks during the
@@ -389,9 +389,27 @@ before:integration-test[200]
 **Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
 inconsistent naming, are deprecated.
 Don't use them!
-This becomes even more important if you are binding a plugin to the `post-*` phase of a lifecycle phase because the
-`pre-*` phase of the phase you really want to bind to does not exist, for example, binding to `process-resources` phase
-because there was no `pre-compile` phase.
+This is especially important when binding a plugin to a `post-*` phase of a lifecycle phase because the corresponding `pre-*` phase of the desired phase doesn't exist — for example, binding to the `process-resources` phase due to the absence of a `pre-compile` phase.
+
+#### All- and each-phases
+
+Maven 4 introduces several new lifecycle phases — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each` — that give users finer control over plugin execution, particularly in multi-project and concurrent builds.
+
+Both the `all` and `each` phases are executed for every project and subproject, but their scope differs:
+* The `each` phase wraps the standard lifecycle phases (`validate`, `compile`, `test`, etc.) of a single project or subproject.
+It's used to define behavior that should occur around the build of an individual subproject.
+* The `all` phase encompasses the entire build of a project, including its `each` phase and the `all` phases of its child subprojects.
+It is ideal for logic that should run once per project, while still covering the entire subproject hierarchy.
+
+To make this model more intuitive — especially for users familiar with testing frameworks — Maven 4 also introduces the following hook phases:
+* `before:all` runs before any other phase in the current project.
+In a multi-project build, the parent project's `before:all` is executed before any phases of its subprojects.
+* `after:all` is executed at the very end of a project’s build.
+In a multi-project build, the `after:all` phases of the subprojects run before that of the parent.
+* `before:each` is executed before every standard phase in a project’s lifecycle, while `after:each` runs after `each` phase.
+These are especially useful for applying consistent setup and teardown logic around every phase.
+
+Together, these new phases provide a powerful and intuitive structure for defining and customizing build behavior in complex Maven projects.
 
 ## Maven plugins, security, and tools
 
