@@ -24,7 +24,7 @@ under the License.
 
 Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)). 
 Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
-This page offers help for the migration to Maven 4.
+This page offers help for users who want to build their projects with Maven 4.
 
 In short, the general suggestion for the migration is to do it in three steps:
 
@@ -33,12 +33,15 @@ In short, the general suggestion for the migration is to do it in three steps:
 3. Introduces optional Maven 4 features
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
+The Maven team is interested in all your experiences - good and bad - while your updating! 
 
 **Notes**:
 
-* This page will constantly be updated at least until Maven 4.0.0 is released to contain changes but also to integrate feedback of the community and their experience when upgrading to Maven 4.
-* It is planed to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing at least most of the steps needed to migrate a project. 
-* It is planed to create a separate guide about migrating plugins to new Maven 4 plugin API.
+* This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
+  This means it will still receive updates, when Maven 4 was already released.
+* It is planed to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing most of the steps needed to migrate a project. 
+* This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
+  It is planed to create a separate guide for this.
 
 ## Prerequisites
 This guide assumes that your environment and project meets the following prerequisites.
@@ -133,20 +136,8 @@ This includes the following properties:
 * `multiModuleProjectDirector`
 
 ### Replace conceptional `pre-` and `post-` lifecycle phases
-In Maven 3 some lifecycle phases also had conceptional `pre-` and `post-` phases, but they are not available for all phases.
+In Maven 3 some lifecycle phases also had conceptional `pre-` and `post-` phases, but they were not available for all phases.
 In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for all lifecycle phases.
-
-### Check bindings to `all` phase 
-The `all` phase got fixed and slightly changed in Maven 4.
-It now behaves correctly, especially when using it in project with multiple subprojects or in concurrent scenarios.
-
-The `before-all` phase is executed before all other phases of a project.
-In a project with multiple subprojects, the parent's `before-all` is executed before any children's phases.
-According to that, the `after-all` phase is executed at the end of the project's build.
-In a project with multiple subprojects, the children's `after-all` is executed before parent's one.
-
-If you bind plugins to the `all` phase, please check if it still matches your desired execution, or if you need to bind to the new `each` phase.
-The `before-each` phase is executed everytime before any other phase in a build, while the `after-each` phase is executed everytime after any other.
 
 ## Optional changes and features
 
@@ -207,14 +198,82 @@ So you should replace it with the new `<subprojects>` element instead.
  </subprojects>
 ```
 
-#### Automatic versioning
+#### Automatic versioning in multi subprojects setups
+Maven 4 contains a lot of improvements for projects which contain subprojects.
+Those include automatic version detection of the parent and project own dependencies.
+**Note**: This section does not take CI-friendly versions into account.
+See the next section about those.
+
+Using Maven 3 with model version 4.0.0 you need to declare those.
+While the parent's version always must be hardcoded, you can use the `${project.version` property to declare another subproject as a dependency. 
+Using Maven 4 and model version 4.1.0 those definitions are optional.
+
+The following example of a pom.xml shows the associated part for a subproject called "SubprojectB".
+This subproject declares its parent and the dependency to "SubprojectA", which is also a subproject in the same multi subproject setup.
+
+In Maven 3 with model version 4.0.0 such a declaration looks like the following.
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+   
+   <modelVersion>4.0.0</modelVersion>
+   <artifactId>SubprojectB</artifactId>
+   
+   <parent>
+      <groupId>test.bukama.maven</groupId>
+      <artifactId>Maven4Demo</artifactId>
+      <!-- The parents version must be "hardcoded" -->
+      <version>0.0.1-SNAPSHOT</version>
+   </parent>
+   
+   <dependencies>
+      <dependency>
+         <groupId>test.bukama.maven</groupId>
+         <artifactId>SubprojectA</artifactId>
+         <!-- The subproject dependency version declaration can make use of the project.version property-->
+         <version>${project.version}</version>
+      </dependency>
+   </dependencies>
+   
+   <!-- other declarations -->
+</project>
+```
+
+In Maven 4 and model version 4.1.0 the version declaration are not needed anymore .
+```xml
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+   
+   <modelVersion>4.1.0</modelVersion>
+   <artifactId>SubprojectB</artifactId>
+   
+   <parent>
+      <groupId>test.bukama.maven</groupId>
+      <artifactId>Maven4Demo</artifactId>
+   </parent>
+   
+   <dependencies>
+      <dependency>
+         <groupId>test.bukama.maven</groupId>
+         <artifactId>SubprojectA</artifactId>
+      </dependency>
+   </dependencies>
+   
+   <!-- other declarations -->
+</project>
+```
+
 
 #### CI-friendly variables without flatten-plugin
 
 #### Using BOM packaging
 
-
-
+### Use the new `all` and `each` life cycle phases
+Maven 4 introduces several new lifecycle phases — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
+They give users finer control over plugin execution, particularly in multi-project and concurrent builds.
+If you want to execute a plugin before/after all or each of your (sub-)projects, consider to use them.
 
 [versionpluginupdate]: https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html
 [modelbuilderinterpolation]: https://maven.apache.org/ref/4-LATEST/maven-compat-modules/maven-model-builder/#model-interpolation
