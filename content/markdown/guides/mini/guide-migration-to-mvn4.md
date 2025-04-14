@@ -201,8 +201,6 @@ So you should replace it with the new `<subprojects>` element instead.
 #### Automatic versioning in multi subprojects setups
 Maven 4 contains a lot of improvements for projects which contain subprojects.
 Those include automatic version detection of the parent and project own dependencies.
-**Note**: This section does not take CI-friendly versions into account.
-See the next section about those.
 
 Using Maven 3 with model version 4.0.0 you need to declare those.
 While the parent's version always must be hardcoded, you can use the `${project.version` property to declare another subproject as a dependency. 
@@ -221,15 +219,15 @@ In Maven 3 with model version 4.0.0 such a declaration looks like the following.
    <artifactId>SubprojectB</artifactId>
    
    <parent>
-      <groupId>test.bukama.maven</groupId>
-      <artifactId>Maven4Demo</artifactId>
+      <groupId>demo.maven</groupId>
+      <artifactId>TheParentProjecct</artifactId>
       <!-- The parents version must be "hardcoded" -->
       <version>0.0.1-SNAPSHOT</version>
    </parent>
    
    <dependencies>
       <dependency>
-         <groupId>test.bukama.maven</groupId>
+         <groupId>demo.maven</groupId>
          <artifactId>SubprojectA</artifactId>
          <!-- The subproject dependency version declaration can make use of the project.version property-->
          <version>${project.version}</version>
@@ -240,7 +238,7 @@ In Maven 3 with model version 4.0.0 such a declaration looks like the following.
 </project>
 ```
 
-In Maven 4 and model version 4.1.0 the version declaration are not needed anymore .
+In Maven 4 and model version 4.1.0 the version declaration are not needed anymore.
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.1.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -250,13 +248,13 @@ In Maven 4 and model version 4.1.0 the version declaration are not needed anymor
    <artifactId>SubprojectB</artifactId>
    
    <parent>
-      <groupId>test.bukama.maven</groupId>
-      <artifactId>Maven4Demo</artifactId>
+      <groupId>demo.maven</groupId>
+      <artifactId>TheParentProjecct</artifactId>
    </parent>
    
    <dependencies>
       <dependency>
-         <groupId>test.bukama.maven</groupId>
+         <groupId>demo.maven</groupId>
          <artifactId>SubprojectA</artifactId>
       </dependency>
    </dependencies>
@@ -265,10 +263,47 @@ In Maven 4 and model version 4.1.0 the version declaration are not needed anymor
 </project>
 ```
 
-
-#### CI-friendly variables without flatten-plugin
+#### CI-friendly variables without flatten-maven-plugin
+Maven partially supports [CI-friendly variables][cifriendlyguide] (like `${revision}`) since version 3.5.0.
+Thanks to the improved dependency resolution of project own dependencies in multi subprojects setups they are now fully supported if you rely on the automatic versioning as described in the section above.
+This also means that you don't need the [flatten-maven-plugin][flattenmavenplugin] to `install` and `deploy` anymore.
 
 #### Using BOM packaging
+Maven 4 introduces a dedicated `bom` packaging type to provide a [Bill of Materials BOM][bomguide].
+This now differentiates between parent POMs and dependency-managing BOMs.
+The new type is only available as a build POM in Model Version 4.1.0 and later, but Maven generates a full Maven 3
+compatible consumer POM during the build.
+
+The following code snippet shows an example for a BOM using the new `<packaging>` type.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.1.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
+
+    <modelVersion>4.1.0</modelVersion>
+    <groupId>demo.maven</groupId>
+    <artifactId>Maven4-example-bom</artifactId>
+    <version>1.0.0</version>
+
+    <packaging>bom</packaging>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>dev.some.group</groupId>
+                <artifactId>someArtifact</artifactId>
+                <version>1.2.3</version>
+            </dependency>
+            <dependency>
+                <groupId>dev.some.other</groupId>
+                <artifactId>somethingElse</artifactId>
+                <version>3.1.5</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
+```
 
 ### Use the new `all` and `each` life cycle phases
 Maven 4 introduces several new lifecycle phases — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
@@ -277,3 +312,6 @@ If you want to execute a plugin before/after all or each of your (sub-)projects,
 
 [versionpluginupdate]: https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html
 [modelbuilderinterpolation]: https://maven.apache.org/ref/4-LATEST/maven-compat-modules/maven-model-builder/#model-interpolation
+[cifriendlyguide]: https://maven.apache.org/guides/mini/guide-maven-ci-friendly.html
+[flattenmavenplugin]: https://www.mojohaus.org/flatten-maven-plugin/
+[bomguide]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
