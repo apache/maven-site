@@ -18,9 +18,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-<!--MACRO{toc|fromDepth=2|toDepth=4}-->
-
-## Summary
 
 Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)).
 Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
@@ -33,15 +30,19 @@ In short, the general suggestion for the migration is to do it in three steps:
 3. Introduces optional Maven 4 features
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
-The Maven team is interested in all your experiences - good and bad - while your updating!
+The Maven team is interested in all your migration experiences - either good or bad!
 
 **Notes**:
 
 * This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
-  This means it will still receive updates, when Maven 4 was already released.
+  This means it will still receive updates after Maven 4 was already released.
 * It is planed to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing most of the steps needed to migrate a project.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
   It is planed to create a separate guide for this.
+
+## Table of content
+
+<!--MACRO{toc|fromDepth=2|toDepth=4}-->
 
 ## Prerequisites
 
