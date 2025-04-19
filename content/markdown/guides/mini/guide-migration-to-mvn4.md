@@ -27,7 +27,7 @@ In short, the general suggestion for the migration is to do it in three steps:
 
 1. Meet the prerequisites
 2. Use Maven 4 for your build and fix build errors
-3. Introduces optional Maven 4 features
+3. Introduce optional Maven 4 features
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
 The Maven team is interested in all your migration experiences - either good or bad!
@@ -36,9 +36,9 @@ The Maven team is interested in all your migration experiences - either good or 
 
 * This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
   This means it will still receive updates after Maven 4 was already released.
-* It is planed to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing most of the steps needed to migrate a project.
+* It is planned to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing most of the steps needed to migrate a project.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
-  It is planed to create a separate guide for this.
+  It is planned to create a separate guide for this.
 
 ## Table of content
 
@@ -47,7 +47,7 @@ The Maven team is interested in all your migration experiences - either good or 
 ## Prerequisites
 
 This guide assumes that your environment and project meets the following prerequisites.
-If they don't fulfill them already, please put effort into meeting them, before continuing with this guide.
+If they don't, please make sure they do before continuing with this guide.
 
 ### Use latest version of Maven 3.9
 
@@ -60,9 +60,9 @@ Similar to the previous prerequisite, the guides assumes that you are using the 
 Do not upgrade to a plugin version, which requires Maven 4!
 Be aware of this, if you use tools that can automate updates.
 
-You can use the [versions-maven-plugin's `display-plugin-updates` goal][versionpluginupdate], to see which are the latest available versions of the plugins you use.
+You can use the [versions-maven-plugin's `display-plugin-updates` goal][versionpluginupdate] to see which are the latest available versions of the plugins you use.
 
-The following example shows the output of the Versions Maven Plugin in a project using the outdated version 3.12.0 of the maven-compiler-plugin.
+The following example shows the output of the Versions Maven Plugin in a project using the outdated version 3.12.0 of the Maven Compiler Plugin.
 As you can see, it shows that with version 3.14.0 there is a Maven 3 compatible update, while the versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions.
 
 ```
@@ -93,7 +93,7 @@ Maven 4 requires Java 17 to be run.
 This means the build environment (locally but also your CI environment) needs to provide a JDK that supports Java 17.
 Either install one to your machine or use a container providing one.
 
-**Note**: Maven 3 can also use executed with Java 17.
+**Note**: Maven 3 can also be executed with Java 17.
 So you should prepare your build environment as soon as possible to have a solid, project independent base for further migration.
 
 ### Install and use Maven 4
@@ -111,7 +111,7 @@ Places where you might have to configure Maven 4 usage aside installation:
 If there is a dedicated Maven 4 version for used plugins, you should update to such a version.
 You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
 
-**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for custom plugins which use outdated plugin API methods.
+**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated plugin API methods.
 
 ## Troubleshooting and required changes if situation applies
 
@@ -129,7 +129,7 @@ While your build should not throw any warnings at all, the following ones needs 
 #### Duplicate plugin declaration
 
 A plugin must only be declared once.
-Defining it multiple times, results the following log message.
+Defining it multiple times results the following log message.
 
 > 'build.plugins.plugin.(groupId:artifactId)' must be unique but found duplicate declaration of plugin [plugin-name] ...
 
@@ -151,13 +151,15 @@ This includes the following properties:
 In Maven 3 some lifecycle phases also had conceptional `pre-` and `post-` phases, but they were not available for all phases.
 In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for all lifecycle phases.
 
+Update your plugin executions that bind to a `pre-` or `-post` phase with the corresponding `before:` or `after:` phases.
+
 ## Optional changes and features
 
 ### Changed default values
 
-#### Install / deploy at end of build
+#### Install / deploy at end of build (breaking change)
 
-Both, the maven-install-plugin and the maven-deploy-plugin, have changed default values for their behavior, about when to install respectively deploy.
+Both, the Maven Install Plugin and the Maven Deploy Plugin, have changed default values for their behavior, about when to install respectively deploy.
 The default values for `installAtEnd` and `deployAtEnd` are set to `true` in Maven 4.
 They now reflect the desired behavior for the majority of the Maven builds.
 If you manually set these values to `true` before, you can remove the explicit declaration and inherit the same behavior from the new default values now.
@@ -187,7 +189,8 @@ When the root directory is not defined, the following warning is displayed:
 As written in the warning there are two ways to define the root directory:
 
 1. Create a `.mvn` directory in the root directory.
-   The directory can be empty, however you can consider to place [configuration files](https://maven.apache.org/configure.html) in it.
+   From Maven's perspective, the directory can be empty, but some version control systems do not check in an empty directory.
+   Therefore, placing an empty file inside (or a Maven [configuration files](https://maven.apache.org/configure.html)) works around this.
    Using the `.mvn` directory is already possible with Maven 3.
 2. Set the `root` attribute in your parent POM to `true`.
    The `root` attribute is a new attribute of model version 4.1.0 and therefore can only be used with Maven 4.
