@@ -45,6 +45,14 @@ Maven Users Centre
 
 ~~TODO: link to repository centre and plugin developers centre, and the reasons why they would progress there
 
+* Maven 4
+
+  * {{{/whatsnewinmaven4.html} What's new in Maven 4?}} - Compact overview about all changes of Maven 4
+
+  * {{{../guides/mini/guide-migration-to-mvn4.html} Migrate to Maven 4}} - Learn how to migrate projects to Maven 4
+
+
+
 * Reference
 
   * {{{../pom.html} POM Reference}}
