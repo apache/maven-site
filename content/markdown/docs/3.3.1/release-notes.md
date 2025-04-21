@@ -1,25 +1,25 @@
 # Release Notes &#x2013; Maven 3.3.1
 
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 ## Overview
@@ -89,7 +89,7 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
   you can define an `.mvn/extensions.xml` file in the project's top level directory which looks
   like the following:
 
-``` xml
+```xml
 <extensions xmlns="http://maven.apache.org/EXTENSIONS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/EXTENSIONS/1.0.0 http://maven.apache.org/xsd/core-extensions-1.0.0.xsd">
   <extension>
@@ -100,20 +100,20 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 </extensions>
 ```
 
-*  Now you can simply use an extension by defining the usual maven coordinates
-   `groupId`, `artifactId`, `version` as any other artifact. Furthermore all
-   transitive dependencies of those extensions will automatically being downloaded
-   from your repository. So no need to create a shaded artifact anymore.
+* Now you can simply use an extension by defining the usual maven coordinates
+  `groupId`, `artifactId`, `version` as any other artifact. Furthermore all
+  transitive dependencies of those extensions will automatically being downloaded
+  from your repository. So no need to create a shaded artifact anymore.
 
-   An other advantage is that the `.mvn/`
-   directory is located in the root of your Maven project and in conseuqence
-   is part of your project which means you will check it in along with
-   your project. So everyone who checks out your project automatically
-   can use the extensions.
+  An other advantage is that the `.mvn/`
+  directory is located in the root of your Maven project and in conseuqence
+  is part of your project which means you will check it in along with
+  your project. So everyone who checks out your project automatically
+  can use the extensions.
 
-   One thing is important that the extensions will be resolved from the
-   pluginRepository. This is important if you have configured the pluginRepository
-   different from the repository.
+  One thing is important that the extensions will be resolved from the
+  pluginRepository. This is important if you have configured the pluginRepository
+  different from the repository.
 
 ### JVM and Command Line Options
 
@@ -152,17 +152,16 @@ The new [Maven 3.3.1 Release is just out](http://mail-archives.apache.org/mod_mb
 * you don't need to remember of using this options in `MAVEN_OPTS` or switching
   between different configurations.
 
-
 ### Plugin Goal Invocation from Command Line
 
-
- * Improvement for [Plugin Goal Invocation from command line][MNG-5768]
+* Improvement for [Plugin Goal Invocation from command line][MNG-5768]
 
 If you call a plugin directly from command line like the following:
 
 ```
 mvn exec:java
 ```
+
 The configuration which is used here can be defined in your pom by using an execution id `default-cli`.
 
 ```
@@ -229,20 +228,17 @@ mvn exec:java@second-cli
 
 So now you can define more than one configuration for command line executions.
 
- * The Maven team has decided to [drop support for Win9x in launch scripts](https://issues.apache.org/jira/browse/MNG-5776)
-   at long last. Yeah.
-
+* The Maven team has decided to [drop support for Win9x in launch scripts](https://issues.apache.org/jira/browse/MNG-5776)
+  at long last. Yeah.
 
 The above release notes have [originally been written by Karl Heinz Marbaise
 and migrated afterwards to the Apache Maven project](http://blog.soebes.de/blog/2015/03/17/apache-maven-3-dot-3-1-features/).
-
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
 [2]: http://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12330193
 [5]: ../../docs/history.html
-
 [maven-toolchains-plugin]: http://maven.apache.org/plugins/maven-toolchains-plugin/
 [MNG-3891]: https://issues.apache.org/jira/browse/MNG-3891
 [MNG-5745]: https://issues.apache.org/jira/browse/MNG-5745
@@ -251,3 +247,4 @@ and migrated afterwards to the Apache Maven project](http://blog.soebes.de/blog/
 [MNG-5767]: https://issues.apache.org/jira/browse/MNG-5767
 [MNG-5768]: https://issues.apache.org/jira/browse/MNG-5768
 [MNG-5780]: https://issues.apache.org/jira/browse/MNG-5780
+

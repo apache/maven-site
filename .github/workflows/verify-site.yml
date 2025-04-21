@@ -46,10 +46,10 @@ jobs:
 
       - name: Set up Maven
         run:
-          mvn --errors --batch-mode --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.3.2:wrapper "-Dmaven=3.9.9"
+          mvn --errors --batch-mode --no-transfer-progress --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.3.2:wrapper "-Dmaven=3.9.9"
 
       - name: Verify and build Maven Site
-        run: ./mvnw --errors --batch-mode --show-version verify site
+        run: ./mvnw --errors --batch-mode --no-transfer-progress --show-version verify site
 
       - name: Upload Maven Site
         uses: actions/upload-artifact@6f51ac03b9356f520e9adb1b1b7802705f340c2b # v4

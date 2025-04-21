@@ -7,7 +7,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -44,14 +44,14 @@ Maven `central` repository, even if they don't use Maven as their build tool.
 <img src="maven-central-repository.png" border="0" usemap="#map" />
 
 <map name="map">
- <area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
- <area shape="rect" coords="264,76,354,111"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
- <area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
- <area shape="rect" coords="490,75,520,111"  alt="Producers" href="https://central.sonatype.org/pages/producers.html" />
- <area shape="rect" coords="329,274,426,312" alt="central index" href="./central-index.html" />
- <area shape="rect" coords="39,274,205,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
- <area shape="rect" coords="65,348,205,383"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
- <area shape="rect" coords="292,356,365,391" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
- <area shape="rect" coords="373,356,447,391" alt="Google"   href="https://storage-download.googleapis.com/maven-central/index.html" />
- <area shape="rect" coords="100,126,424,239" alt="Central Upload"                href="./guide-central-repository-upload.html" />
+<area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
+<area shape="rect" coords="264,76,354,111"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
+<area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
+<area shape="rect" coords="490,75,520,111"  alt="Producers" href="https://central.sonatype.org/pages/producers.html" />
+<area shape="rect" coords="329,274,426,312" alt="central index" href="./central-index.html" />
+<area shape="rect" coords="39,274,205,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
+<area shape="rect" coords="65,348,205,383"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
+<area shape="rect" coords="292,356,365,391" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
+<area shape="rect" coords="373,356,447,391" alt="Google"   href="https://storage-download.googleapis.com/maven-central/index.html" />
+<area shape="rect" coords="100,126,424,239" alt="Central Upload"                href="./guide-central-repository-upload.html" />
 </map>

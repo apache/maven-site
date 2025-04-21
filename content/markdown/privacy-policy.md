@@ -1,4 +1,5 @@
 # Privacy Policy
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -17,15 +18,16 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
+
 Information about your use of this website is collected using server
 access logs and a tracking cookie. The collected information consists of
 the following:
 
-1.  The IP address from which you access the website;
-2.  The type of browser and operating system you use to access our site;
-3.  The date and time you access our site;
-4.  The pages you visit; and
-5.  The addresses of pages from where you followed a link to our site.
+1. The IP address from which you access the website;
+2. The type of browser and operating system you use to access our site;
+3. The date and time you access our site;
+4. The pages you visit; and
+5. The addresses of pages from where you followed a link to our site.
 
 Part of this information is gathered using a tracking cookie set by the
 [Google Analytics](https://www.google.com/analytics/) service and handled

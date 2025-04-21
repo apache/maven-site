@@ -38,7 +38,7 @@ Retirement Plan for Plugins
   The vote must contain one or more options on how to retire the plugin. There
   are multiple scenarios available. Here are a couple that have been suggested:
 
-    [[A]] Move to our retired area in svn
+    [[A]] Repository will be archived (read only)
 
     [[A]] Move to another Apache project
 
@@ -62,7 +62,7 @@ I therefore propose that we retire maven-foo-plugin.
 
 If this vote is successful I will make one final release of the plugin, making
 it clear on the plugin site that it has been retired. After that the source code
-will be moved into the "retired" area in Subversion.
+repository will get archived, meaning it's read only in the future.
 
 The process for retiring a plugin is described here:
 https://maven.apache.org/developers/retirement-plan-plugins.html
@@ -131,11 +131,11 @@ but has moved to the <Organization> <Project> project.
   making sure that you follow the exceptions mentioned above regarding the site deployment.
 
   [[1]] When updating the plugins page, move Maven Foo Plugin to under the
-  "Retired" heading. Remove the SVN and JIRA links and add
+  "Retired" heading. Remove the SVN/Github and JIRA/Github Issues links and add
   the date of retirement.
 
   [[1]] When updating the version in JIRA, do not add Y.Z+1 and make sure you
-  remove any future versions.
+  remove any future versions. This needs to be done by PMC members.
 
 * Clean up after the release
 
@@ -149,26 +149,43 @@ but has moved to the <Organization> <Project> project.
   
   [[1]] When relevant update summary pages for {{{https://maven.apache.org/plugins/index.html}plugins}} or {{{https://maven.apache.org/shared/index.html}shared components}} 
 
-  [[1]] Add " (RETIRED)" at the end of the project name in JIRA.
+  [[1]] Add " (RETIRED)" at the end of the project name in JIRA. This needs to be done by PMC members.
 
   [[1]] Put the JIRA project in read-only mode in case of standalone project (own Jira key): apply Maven Retired Project Permissions Scheme.
   (Requires JIRA admin karma: e.g. ask Brian Fox)
 
   [[1]] Comment the {{{https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool.conf.html}dist-tool configuration}} entry.
+  Also comment the plugin's entry in the <<<GetPrerequisites.java>>> and <<<ListBranchesReport>>> files.
 
   [[1]] Remove from <<<Source Repository>>>
 
-    [[A]] {{https://maven.apache.org/scm.html}}
+    [[A]] {{https://maven.apache.org/scm.html}} (includes the plantUML diagram)
 
     [[A]] {{https://github.com/apache/maven-sources}}
 
   [[1]] Remove distribution from current {{{https://dist.apache.org/repos/dist/release/maven/}dist area}}
-  (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}).
+  (history remains available in {{{https://archive.apache.org/dist/maven/}archive}}). This needs to be done by PMC members.
   
-  [[1]] Update board report
+  [[1]] Update board report. This needs to be done by PMC members.
   
   [[1]] Announce the fact that the plugin has been retired/moved on the
-  announce@m.a.o and users@m.a.o mailing lists. Explain to people what they
-  should do if they would like to continue development of the plugin.
+  announce and users mailing lists. Explain to people what they
+  should do if they would like to continue development of the plugin. Example for retirement email:
 
-~~ Insert template for retirement email here
+------
+To: announce@maven.apache.org, users@maven.apache.org
+Subject: [ANN] Retirement Maven Foo Plugin
+
+Hi,
+the Maven Foo Plugin has been retired and is no longer maintained.
+We retired it, because there was very little interest by and interaction with users over the past years.
+
+The retirement vote results can be seen here: [link to mail in mailing list archive]
+
+If you would like to continue the development of the plugin, you can fork the plugin using another groupId and artifactId.
+You also need to rename the plugin, for example from "maven-foo-plugin" to "foo-maven-plugin".
+Feel free to inform others that you continue working on the plugin in a different place.
+You can write a mail to the users mailing list for that.
+
+-The Apache Maven team
+------

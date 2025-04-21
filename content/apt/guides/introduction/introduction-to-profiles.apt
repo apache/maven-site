@@ -260,6 +260,30 @@ mvn groupId:artifactId:goal -P profile-1,profile-2,?profile-3
 </profiles>
 +---+
   
+  The following profile will be activated when the system property "debug" is defined with no value, 
+  or is defined with the value "true".
+
++---+
+<profiles>
+  <profile>
+    <activation>
+      <property>
+        <name>debug</name>
+        <value>true</value>
+      </property>
+    </activation>
+    ...
+  </profile>
+</profiles>
++---+
+
+  To activate this you would type one of those on the command line:
+
+-----
+mvn groupId:artifactId:goal -Ddebug
+mvn groupId:artifactId:goal -Ddebug=true
+-----
+  
   The following profile will be activated when the system property "debug" is not defined, 
   or is defined with a value which is not "true".
 

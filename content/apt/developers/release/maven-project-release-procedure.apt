@@ -57,12 +57,12 @@ Performing a Maven Project Release
 
   []
 
-* Consider updating the parent versions
+** Consider updating the parent versions
 
   If the item you are planning to release is not using the most recent version of its parent
   (see {{{../../pom/}parent POMs}} index), consider taking this opportunity to update to it.
 
-* Consider updating the project dependencies
+** Consider updating the project dependencies
 
   Generally it is a good that project use tha latest available versions of used dependencies.
 
@@ -78,7 +78,7 @@ Performing a Maven Project Release
 
  []
 
-** Check release note at GitHub
+** Check release notes at GitHub
 
   If a component has a history of release notes at <<GitHub>>, we should to continue maintain it in order to avoid user confusing.
 
@@ -93,6 +93,9 @@ Performing a Maven Project Release
   []
 
   Draft of release notes at <<GitHub>> can be prepared before publishing.
+
+  You can disable <<Release Drafter>> workflow on <<GitHub>> to avoid adding new items to release notes
+  after vote starts but before publishing release notes.
 
 * Make sure that site compilation works
 
@@ -132,6 +135,9 @@ https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=XXXXXX&version=
 There are still a couple of issues left in JIRA:
 https://issues.apache.org/jira/issues/?jql=project%20%3D%20XXXXXXXXXX%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC
 
+Changes since the last release:
+https://github.com/apache/<repository-name>/compare/<last-tag>...<current-tag>
+
 Staging repo:
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/
 https://repository.apache.org/content/repositories/maven-[YOUR REPOSITORY ID]/[PATH-TO]-source-release.zip
@@ -153,26 +159,36 @@ Vote open for at least 72 hours.
 
 -----
 
+** JIRA issues
+
  To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Releases> link, pick a version,
  and use the link to <Release Notes> that is next to the version being released.
 
  To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the <Preset Filters>
  on the right, use the link for <Outstanding> issues.
 
- The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
- This gives others time to test your release and check that everything is good. If after that period you have not received
- enough +1 votes to reach the quorum, this doesn't mean the vote failed: it just takes a bit longer.
+** GitHub issues
 
- Checking binary output, ideally to control that the build is reproducible, can be done by running <<<verify>>> (NOT <<<install>>>)
- followed by <<<artifact:compare>>> against the staged content:
+ We link to the <GitHub milestone> for issues resolved in the release, and link to <GitHub issues> for issues that are still open:
 
 -----
-mvn -Papache-release -Dgpg.skip clean verify \
-    artifact:compare -Dreference.repo=https://repository.apache.org/content/repositories/staging/
+
+We solved N issues:
+https://github.com/apache/<repository-name>/milestone/<milestone-id>?closed=1
+
+There are still a couple of issues left:
+https://github.com/apache/<repository-name>/issues
+
 -----
+
 
 
 * Check the vote results
+
+ The "vote is open for at least 72 hours" means that you need to wait <at least> 72 hours before proceeding.
+ This gives others time to test your staged release and check that everything is good, with the help of our {{{/guides/development/guide-testing-releases.html}Guide to testing staged releases}}.
+
+ If after that period you have not received enough +1 votes to reach the quorum, this doesn't mean the vote failed: it just takes a bit longer.
 
  Copied from {{{https://www.apache.org/foundation/voting.html#ReleaseVotes}Votes on Package Releases}}.
 
@@ -302,14 +318,33 @@ wagon/wagon-2.2-source-release.zip.sha512
 
   For plugins and shared, you can also run <<<mvn -Pupdate package>>> of the site, then review and commit proposed <<<index.apt>>> updates.
 
- [[3]] Update the version tracking in JIRA
+ [[3]] Update the version tracking
 
- In the relevant project, go to Administration, then Versions. Mark
- the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
- been done. You may also archive any deprecated releases (milestones or alphas) at this time.
+   [[a]] Update the version tracking in JIRA
 
- Note: Currently this requires to be in the maven-pmc group. So, if you don't see the Administration option in JIRA, kindly ask <private@maven.apache.org> to do this step for you.
+     In the relevant project, go to Administration, then Versions. Mark
+     the <<<Y.Z>>> version as 'released'. Create version <<<Y.Z+1>>>, if that hasn't already
+     been done. You may also archive any deprecated releases (milestones or alphas) at this time.
 
+     Note: Currently this requires to be in the maven-pmc group. So, if you don't see the Administration option in JIRA, kindly ask <private@maven.apache.org> to do this step for you.
+
+   [[b]] Update milestone in GitHub
+
+     Close released milestone and open new one for next version.
+
+     Note: For projects, which maintain multiple versions, add the branch name (<<<branch: branch-name>>>) to the milestone description.
+
+   [[c]] Publish release notes draft in GitHub
+
+      Check or adapt content to match what you are releasing.
+
+      Check version and tag fulfilled in release notes - if not match with published release adjust it.
+
+      Note: PR merged after release but before publishing can add next items to release notes draft.
+
+      Enable <<Release Drafter>> workflow on <<GitHub>> if was disabled during vote.
+
+   []
 
  [[4]] Wait for everything to sync
 
@@ -357,7 +392,7 @@ https://maven.apache.org/plugins/maven-XXX-plugin/download.cgi
 
 Release Notes - Maven XXX Plugin - Version Y.Z
 
-(Copy Here Release Notes in Text Format from JIRA)
+(Copy Here Release Notes in Text Format from JIRA or put a link to GitHub release notes)
 
 Enjoy,
 

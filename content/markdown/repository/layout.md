@@ -1,4 +1,5 @@
 # Maven2 Repository Layout
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -8,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -18,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven2 repository layout format is the default layout used since Maven 2 (see [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final) in [Maven 2.0 Design Documents](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+2.0+Design+Documents)), superceding old Maven 1 layout:
+Maven2 repository layout format is the default layout used since Maven 2 (see [Repository Layout- Final](https://cwiki.apache.org/confluence/display/MAVENOLD/Repository+Layout+-+Final) in [Maven 2.0 Design Documents](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+2.0+Design+Documents)), superceding [old Maven (implicitely 1) layout](https://maven.apache.org/archives/maven-1.x/using/repositories.html):
 
 ```
 Repository root
@@ -59,11 +60,12 @@ Obviously, `${groupId}`, `${artifactId}` and `${version}` are defined in `pom.xm
 Classifier and extension definition is completely different at artifact *publication* and *usage* times:
 
 - **At artifact publication time**: Extension and classifier are defined by plugins that create the artifacts and attach them for publication.<br />
-Some plugins provide configuration parameters to be able to override default values.
-For example, [Maven JAR Plugin's `jar:jar` goal](/plugins/maven-jar-plugin/jar-mojo.html) produces by default an artifact with `jar` extension and empty classifier.
-The `classifier` goal parameter can be used to define a classifier (there is no parameter to override extension).
+  Some plugins provide configuration parameters to be able to override default values.
+  For example, [Maven JAR Plugin's `jar:jar` goal](/plugins/maven-jar-plugin/jar-mojo.html) produces by default an artifact with `jar` extension and empty classifier.
+  The `classifier` goal parameter can be used to define a classifier (there is no parameter to override extension).
 
 - **At artifact usage time**: Extension and classifier are defined by [`<dependency>`'s `<type>` and `<classifier>`](/ref/current/maven-model/maven.html#class_dependency) definition in `pom.xml`:
+
   - `<type>` (`jar` by default) defines the extension and default classifier: <br />
     see [default artifact handlers](/ref/current/maven-core/artifact-handlers.html) to see default types and corresponding extension and default classifier. <br />
   - `<classifier>` is optional, to override default classifier defined by the dependency type.
@@ -87,7 +89,7 @@ HTTP/HTTPS protocol have 2 specific characteristics:
 1. there is no directory listing feature: Maven does not need to list files in a directory, a remote directory does have not provide any directory listing feature,
 
 2. [HTTP/1.1 Reason-Phrase](https://www.w3.org/Protocols/rfc2616/rfc2616-sec6.html) is used to provide extended message when artifact access is rejected by remote repository.
-This usage of Reason-Phrase is nowadays legacy and is removed in HTTP/2, [MNG-6795](https://issues.apache.org/jira/browse/MNG-6795) is open to create a replacement.
+   This usage of Reason-Phrase is nowadays legacy and is removed in HTTP/2, [MNG-6795](https://issues.apache.org/jira/browse/MNG-6795) is open to create a replacement.
 
 ## Archetype Catalog
 
@@ -110,3 +112,4 @@ If contains index files in 2 flavours:
 
 - `prefixes.txt`
 - `repository-metadata.xml`
+

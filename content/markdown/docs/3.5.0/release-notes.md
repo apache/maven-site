@@ -1,23 +1,23 @@
 <!-- 
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/references/apt-format.html
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 # Release Notes &#x2013; Maven 3.5.0
@@ -133,8 +133,8 @@ Thank you for your time and feedback.
 - If you have are using `<prerequisites>..</prerequisites>` for a non maven-plugin project, you will get a WARNING which
   looks like this:
 
-        [INFO] Scanning for projects...
-        [WARNING] The project org.apache.maven:maven:pom:3.5.0 uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
+          [INFO] Scanning for projects...
+          [WARNING] The project org.apache.maven:maven:pom:3.5.0 uses prerequisites which is only intended for maven-plugin projects but not for non maven-plugin projects. For such purposes you should use the maven-enforcer-plugin. See https://maven.apache.org/enforcer/enforcer-rules/requireMavenVersion.html
 
   This will tell you to use [maven-enforcer-plugin][] to check the version of Maven you are expecting to build your
   project with, instead of using `prerequisites` [MNG-5297][], [MNG-6092][].
@@ -263,199 +263,102 @@ The full list of changes as well as detailed descriptions of same can be found i
 See [complete release notes for all versions][7]
 
 [0]: ../../download.html
-
 [1]: ../../plugins/index.html
-
 [2]: https://maven.apache.org/
-
 [3]: /mailing-lists.html
-
 [4]: /ref/3.5.0/
-
 [5]: http://www.mail-archive.com/dev@maven.apache.org/msg112103.html
-
 [6]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&amp;version=12336084&amp;styleName=Text
-
 [7]: ../../docs/history.html
-
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
-
 [maven-aether-provider]: /ref/3.5.0/maven-aether-provider/
-
 [maven-compat]: /ref/3.5.0/maven-compat/
-
 [maven-enforcer-plugin]: /enforcer/maven-enforcer-plugin/
-
 [maven-resolver]: /resolver/
-
 [MNG-2199]: https://issues.apache.org/jira/browse/MNG-2199
-
 [MNG-3507]: https://issues.apache.org/jira/browse/MNG-3507
-
 [MNG-5297]: https://issues.apache.org/jira/browse/MNG-5297
-
 [MNG-5368]: https://issues.apache.org/jira/browse/MNG-5368
-
 [MNG-5579]: https://issues.apache.org/jira/browse/MNG-5579
-
 [MNG-5607]: https://issues.apache.org/jira/browse/MNG-5607
-
 [MNG-5629]: https://issues.apache.org/jira/browse/MNG-5629
-
 [MNG-5815]: https://issues.apache.org/jira/browse/MNG-5815
-
 [MNG-5823]: https://issues.apache.org/jira/browse/MNG-5823
-
 [MNG-5829]: https://issues.apache.org/jira/browse/MNG-5829
-
 [MNG-5836]: https://issues.apache.org/jira/browse/MNG-5836
-
 [MNG-5852]: https://issues.apache.org/jira/browse/MNG-5852
-
 [MNG-5878]: https://issues.apache.org/jira/browse/MNG-5878
-
 [MNG-5883]: https://issues.apache.org/jira/browse/MNG-5883
-
 [MNG-5889]: https://issues.apache.org/jira/browse/MNG-5889
-
 [MNG-5895]: https://issues.apache.org/jira/browse/MNG-5895
-
 [MNG-5904]: https://issues.apache.org/jira/browse/MNG-5904
-
 [MNG-5931]: https://issues.apache.org/jira/browse/MNG-5931
-
 [MNG-5934]: https://issues.apache.org/jira/browse/MNG-5934
-
 [MNG-5946]: https://issues.apache.org/jira/browse/MNG-5946
-
 [MNG-5954]: https://issues.apache.org/jira/browse/MNG-5954
-
 [MNG-5958]: https://issues.apache.org/jira/browse/MNG-5958
-
 [MNG-5961]: https://issues.apache.org/jira/browse/MNG-5961
-
 [MNG-5962]: https://issues.apache.org/jira/browse/MNG-5962
-
 [MNG-5963]: https://issues.apache.org/jira/browse/MNG-5963
-
 [MNG-5967]: https://issues.apache.org/jira/browse/MNG-5967
-
 [MNG-5968]: https://issues.apache.org/jira/browse/MNG-5968
-
 [MNG-5975]: https://issues.apache.org/jira/browse/MNG-5975
-
 [MNG-5977]: https://issues.apache.org/jira/browse/MNG-5977
-
 [MNG-5993]: https://issues.apache.org/jira/browse/MNG-5993
-
 [MNG-6001]: https://issues.apache.org/jira/browse/MNG-6001
-
 [MNG-6003]: https://issues.apache.org/jira/browse/MNG-6003
-
 [MNG-6014]: https://issues.apache.org/jira/browse/MNG-6014
-
 [MNG-6017]: https://issues.apache.org/jira/browse/MNG-6017
-
 [MNG-6022]: https://issues.apache.org/jira/browse/MNG-6022
-
 [MNG-6030]: https://issues.apache.org/jira/browse/MNG-6030
-
 [MNG-6032]: https://issues.apache.org/jira/browse/MNG-6032
-
 [MNG-6053]: https://issues.apache.org/jira/browse/MNG-6053
-
 [MNG-6057]: https://issues.apache.org/jira/browse/MNG-6057
-
 [MNG-6068]: https://issues.apache.org/jira/browse/MNG-6068
-
 [MNG-6078]: https://issues.apache.org/jira/browse/MNG-6078
-
 [MNG-6081]: https://issues.apache.org/jira/browse/MNG-6081
-
 [MNG-6088]: https://issues.apache.org/jira/browse/MNG-6088
-
 [MNG-6090]: https://issues.apache.org/jira/browse/MNG-6090
-
 [MNG-6092]: https://issues.apache.org/jira/browse/MNG-6092
-
 [MNG-6093]: https://issues.apache.org/jira/browse/MNG-6093
-
 [MNG-6102]: https://issues.apache.org/jira/browse/MNG-6102
-
 [MNG-6105]: https://issues.apache.org/jira/browse/MNG-6105
-
 [MNG-6106]: https://issues.apache.org/jira/browse/MNG-6106
-
 [MNG-6109]: https://issues.apache.org/jira/browse/MNG-6109
-
 [MNG-6110]: https://issues.apache.org/jira/browse/MNG-6110
-
 [MNG-6115]: https://issues.apache.org/jira/browse/MNG-6115
-
 [MNG-6117]: https://issues.apache.org/jira/browse/MNG-6117
-
 [MNG-6136]: https://issues.apache.org/jira/browse/MNG-6136
-
 [MNG-6137]: https://issues.apache.org/jira/browse/MNG-6137
-
 [MNG-6138]: https://issues.apache.org/jira/browse/MNG-6138
-
 [MNG-6140]: https://issues.apache.org/jira/browse/MNG-6140
-
 [MNG-6144]: https://issues.apache.org/jira/browse/MNG-6144
-
 [MNG-6145]: https://issues.apache.org/jira/browse/MNG-6145
-
 [MNG-6146]: https://issues.apache.org/jira/browse/MNG-6146
-
 [MNG-6147]: https://issues.apache.org/jira/browse/MNG-6147
-
 [MNG-6150]: https://issues.apache.org/jira/browse/MNG-6150
-
 [MNG-6151]: https://issues.apache.org/jira/browse/MNG-6151
-
 [MNG-6152]: https://issues.apache.org/jira/browse/MNG-6152
-
 [MNG-6163]: https://issues.apache.org/jira/browse/MNG-6163
-
 [MNG-6165]: https://issues.apache.org/jira/browse/MNG-6165
-
 [MNG-6166]: https://issues.apache.org/jira/browse/MNG-6166
-
 [MNG-6168]: https://issues.apache.org/jira/browse/MNG-6168
-
 [MNG-6170]: https://issues.apache.org/jira/browse/MNG-6170
-
 [MNG-6171]: https://issues.apache.org/jira/browse/MNG-6171
-
 [MNG-6172]: https://issues.apache.org/jira/browse/MNG-6172
-
 [MNG-6173]: https://issues.apache.org/jira/browse/MNG-6173
-
 [MNG-6176]: https://issues.apache.org/jira/browse/MNG-6176
-
 [MNG-6177]: https://issues.apache.org/jira/browse/MNG-6177
-
 [MNG-6179]: https://issues.apache.org/jira/browse/MNG-6179
-
 [MNG-6180]: https://issues.apache.org/jira/browse/MNG-6180
-
 [MNG-6181]: https://issues.apache.org/jira/browse/MNG-6181
-
 [MNG-6182]: https://issues.apache.org/jira/browse/MNG-6182
-
 [MNG-6183]: https://issues.apache.org/jira/browse/MNG-6183
-
 [MNG-6185]: https://issues.apache.org/jira/browse/MNG-6185
-
 [MNG-6189]: https://issues.apache.org/jira/browse/MNG-6189
-
 [MNG-6190]: https://issues.apache.org/jira/browse/MNG-6190
-
 [MNG-6191]: https://issues.apache.org/jira/browse/MNG-6191
-
 [MNG-6192]: https://issues.apache.org/jira/browse/MNG-6192
-
 [MNG-6195]: https://issues.apache.org/jira/browse/MNG-6195
-
 [MNG-6198]: https://issues.apache.org/jira/browse/MNG-6198
+

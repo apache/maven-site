@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 3.9.3
@@ -45,19 +45,19 @@ The full list of changes can be found in our [issue management system][4].
 
 ### Notable New Features
 
-* Huge effort of updating ASF Maven plugins is ongoing, and Maven received a ton of lifecycle bound plugin version updates since Maven 3.9.2 (that was 
-released with same plugin versions as Maven 3.9.1 and 3.9.0).
-* Plugin validation did shake up Maven users community, hence, on users request, they are "toned down". Validation messages are always collected (as 
-before), but default display mode is again "inline" as it was in Maven 3.9.1. Moreover, by default only "project local" messages are displayed to 
-user: issues that user can fix by editing the project POM. Plugin non-configuration issues, that can be fixed by corresponding plugin developer only 
-(and requires a release and updating in current project POM) are NOT displayed anymore by default. To enjoy them, one needs explicitly to enable 
-"verbose" mode for plugin validation. Furthermore, the precision of warnings and some badly worded messages are fixed.
-* Updated Resolver brings transport and locking related fixes and improvements. 
-Most notably [MNG-7819](https://issues.apache.org/jira/browse/MNG-7819) got fixed that was affecting Maven 3.9.2, but the fix have important implication: 
-due file locking naming scheme changes, Maven 3.9.3 with file locking will not be able to share local repository with another Maven version that
-predates 3.9.3 (Hence, versions 3.9.0, 3.9.1 or 3.9.2), only with another 3.9.3 or newer version.
-See [Resolver configuration](https://maven.apache.org/resolver/configuration.html) and [named locks](https://maven.apache.org/resolver/maven-resolver-named-locks/) 
-pages for more.
+* Huge effort of updating ASF Maven plugins is ongoing, and Maven received a ton of lifecycle bound plugin version updates since Maven 3.9.2 (that was
+  released with same plugin versions as Maven 3.9.1 and 3.9.0).
+* Plugin validation did shake up Maven users community, hence, on users request, they are "toned down". Validation messages are always collected (as
+  before), but default display mode is again "inline" as it was in Maven 3.9.1. Moreover, by default only "project local" messages are displayed to
+  user: issues that user can fix by editing the project POM. Plugin non-configuration issues, that can be fixed by corresponding plugin developer only
+  (and requires a release and updating in current project POM) are NOT displayed anymore by default. To enjoy them, one needs explicitly to enable
+  "verbose" mode for plugin validation. Furthermore, the precision of warnings and some badly worded messages are fixed.
+* Updated Resolver brings transport and locking related fixes and improvements.
+  Most notably [MNG-7819](https://issues.apache.org/jira/browse/MNG-7819) got fixed that was affecting Maven 3.9.2, but the fix have important implication:
+  due file locking naming scheme changes, Maven 3.9.3 with file locking will not be able to share local repository with another Maven version that
+  predates 3.9.3 (Hence, versions 3.9.0, 3.9.1 or 3.9.2), only with another 3.9.3 or newer version.
+  See [Resolver configuration](https://maven.apache.org/resolver/configuration.html) and [named locks](https://maven.apache.org/resolver/maven-resolver-named-locks/)
+  pages for more.
 
 ### Potentially Breaking Core Changes (if migrating from 3.8.x)
 
@@ -81,3 +81,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12353255
 [5]: ../../docs/history.html
+

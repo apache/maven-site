@@ -9,7 +9,7 @@ to you under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in compliance
 with the License.  You may obtain a copy of the License at
 
-    http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
 Unless required by applicable law or agreed to in writing,
 software distributed under the License is distributed on an
@@ -34,10 +34,10 @@ and split in two categories based on what actions should be taken:
 ## Internal issues
 
 Internal Plugins Validation issues (project local) are issues discovered in Maven project configuration, like:
- 
- - project using deprecated plugin goals ([MNG-7457](https://issues.apache.org/jira/browse/MNG-7457)),
- - project using deprecated plugin parameters,
- - project using read only plugin parameters ([MNG-7464](https://issues.apache.org/jira/browse/MNG-7464)).
+
+- project using deprecated plugin goals ([MNG-7457](https://issues.apache.org/jira/browse/MNG-7457)),
+- project using deprecated plugin parameters,
+- project using read only plugin parameters ([MNG-7464](https://issues.apache.org/jira/browse/MNG-7464)).
 
 In such cases, users can fix their project by fixing configuration by editing their POMs.
 Users should consult actual plugin documentation (and eventually try to update plugin to newer version).
@@ -46,8 +46,8 @@ Users should consult actual plugin documentation (and eventually try to update p
 
 External Plugins Validation issues (non-configuration) are issues detected in plugin itself, like:
 
- - plugin using old, deprecated Maven API,
- - plugin declaring dependencies for Maven Core artifacts in wrong scope (should be `provided`).
+- plugin using old, deprecated Maven API,
+- plugin declaring dependencies for Maven Core artifacts in wrong scope (should be `provided`).
 
 External Plugins issues require to be fixed by plugin authors first.
 
@@ -65,18 +65,17 @@ mvn -Dmaven.plugin.validation.excludes=plugin1-goupId:plugin1-artifactId:plugin1
 
 Property `maven.plugin.validation` has tha same rule as `maven.plugin.validation` - can only be used on command line (not as property in POM)
 
-
 ## Manage Plugin Validation verbosity
 
 In order to manage Plugin Validation verbosity, a Maven user property `-Dmaven.plugin.validation=...` can be used on command line (or injected: see below).
 
 Allowed values are:
 
- - `NONE` - mute Plugin Validation completely, nothing will be reported,
- - `INLINE` (default) - report only `Internal` issues in place where they occur, 
- - `BRIEF` - report `Internal` issues in place where they occur and list of plugins with `External` issues at the end of the build,
- - `SUMMARY` - report list of plugins with `Internal` and `External` issues at the end of the build,
- - `VERBOSE` - report `Internal` and `External` issues at the end of build in verbose mode.
+- `NONE` - mute Plugin Validation completely, nothing will be reported,
+- `INLINE` (default) - report only `Internal` issues in place where they occur,
+- `BRIEF` - report `Internal` issues in place where they occur and list of plugins with `External` issues at the end of the build,
+- `SUMMARY` - report list of plugins with `Internal` and `External` issues at the end of the build,
+- `VERBOSE` - report `Internal` and `External` issues at the end of build in verbose mode.
 
 Configuration values for `maven.plugin.validation`  are case insensitive, can only be used on command line (not as property in POM), like:
 
@@ -85,14 +84,13 @@ mvn -Dmaven.plugin.validation=verbose ...
 ```
 
 As a consequence:
-- it can be added to `MAVEN_OPTS` or `MAVEN_ARGS` environment variables, 
+- it can be added to `MAVEN_OPTS` or `MAVEN_ARGS` environment variables,
 - it can also be added to `.mvn/maven.config` file in order to configure per project,
 - it can also be added as property in `settings.xml` file to change configuration globally.
 
 But it can not be used as a POM property in project `pom.xml`.
 
-Please consult: 
- - [Configuring Apache Maven](/configure.html)
- - [Settings reference](/settings.html)
-
+Please consult:
+- [Configuring Apache Maven](/configure.html)
+- [Settings reference](/settings.html)
 

@@ -20,9 +20,9 @@ under the License.
 -->
 
 
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/DECORATION/1.8.0"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 http://maven.apache.org/xsd/decoration-1.8.0.xsd"
-  name="Maven">
+<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd"
+      name="Maven">
   <version position="none"/>
 
   <edit>${project.scm.url}</edit>
@@ -44,9 +44,9 @@ under the License.
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Features" href="/maven-features.html"/>
-      <item name="Download" href="/download.html"/>
+      <item name="Installation" href="/install.html" />
+      <item name="Downloads" href="/download.html"/>
       <item name="Use" href="/users/index.html" collapse="true">
-        <item name="Install" href="/install.html"/>
         <item name="Run" href="/run.html"/>
         <item name="Configure" href="/configure.html"/>
         <item name="IDE Integration" href="/ide.html"/>
@@ -54,11 +54,14 @@ under the License.
       </item>
       <item name="Release Notes" href="/docs/history.html"/>
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
+      <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
+      <item name="Maven Daemon" href="/mvnd.html"/>
     </menu>
 
     <menu name="Documentation">
       <item name="Maven Plugins" href="/plugins/index.html"/>
       <item name="Maven Extensions" href="/extensions/index.html"/>
+      <item name="Maven Tools" href="/tools/index.html"/>
       <item name="Index (category)" href="/guides/index.html"/>
 
       <item name="User Centre" href="/users/index.html" collapse="true">
@@ -102,7 +105,8 @@ under the License.
             href="/guides/mini/guide-large-scale-centralized-deployments.html"/>
           <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html"/>
           <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html"/>
-          <item name="Encrypting Passwords" href="/guides/mini/guide-encryption.html"/>
+          <item name="Encrypting Passwords (Maven 3)" href="/guides/mini/guide-encryption.html"/>
+          <item name="Encrypting Passwords (Maven 4)" href="/guides/mini/guide-encryption-4.html"/>
           <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
           <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
           <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
@@ -166,7 +170,7 @@ under the License.
         <item name="Code Style and Conventions" href="/developers/conventions/code.html"/>
         <item name="JIRA Convention" href="/developers/conventions/jira.html"/>
         <item name="Git Convention" href="/developers/conventions/git.html"/>
-        <item name="GitHub Convention" href="/developers/conventions/github.html" />
+        <item name="GitHub Convention" href="/developers/conventions/github.html"/>
         <item name="Developing Maven" href="/guides/development/guide-maven-development.html" collapse="true">
           <item name="Building Maven" href="/guides/development/guide-building-maven.html"/>
           <item name="Testing Development Plugins" href="/guides/development/guide-testing-development-plugins.html"/>
@@ -206,4 +210,4 @@ under the License.
       <item name="The Maven Team" href="/team.html"/>
     </menu>
   </body>
-</project>
+</site>

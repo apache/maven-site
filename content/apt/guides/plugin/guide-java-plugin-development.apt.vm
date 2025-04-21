@@ -50,21 +50,17 @@ Guide to Developing Java Plugins
 
 * Your First Plugin
 
-  In this section we will build a simple plugin with one goal which takes no parameters
-  and simply displays a message on the screen when run.  Along the way, we
-  will cover the basics of setting up a project to create a plugin, the
+  In this section we will build a simple plugin with one goal that takes no parameters
+  and displays a message on the screen when run. Along the way, we
+  will cover setting up a project to create a plugin, the
   minimal contents of a Java mojo which will define goal code, and a couple ways to execute the mojo.
 
 ** Your First Mojo
 
-  At its simplest, a Java mojo consists simply of a single class representing one plugin's goal.  There is
-  no requirement for multiple classes like EJBs, although a plugin which
-  contains a number of similar mojos is likely to use an abstract
-  superclass for the mojos to consolidate code common to all mojos.
-
+  At its simplest, a Java mojo consists simply of a single class representing one plugin's goal. 
   When processing the source tree to find mojos, {{{/plugin-tools/} <<<plugin-tools>>>}}
-  looks for classes with <<<@Mojo>>> annotation.
-  Any class with this annotation are included in the plugin configuration file.
+  looks for classes with the <<<@Mojo>>> annotation.
+  Any class with this annotation is included in the plugin configuration file.
 
 *** A Simple Mojo
 
@@ -86,6 +82,7 @@ import org.apache.maven.plugins.annotations.Mojo;
 @Mojo(name = "sayhi")
 public class GreetingMojo extends AbstractMojo
 {
+    @Override
     public void execute() throws MojoExecutionException
     {
         getLog().info("Hello, world.");
@@ -97,7 +94,7 @@ public class GreetingMojo extends AbstractMojo
     infrastructure required to implement a mojo except for the
     <<<execute>>> method.
 
-  * The annotation "<<<@Mojo>>>" is required and control how and
+  * The annotation "<<<@Mojo>>>" is required and controls how and
     when the mojo is executed.
 
   * The <<<execute>>> method can throw <<<org.apache.maven.plugin.MojoExecutionException>>> if a problem occurs.
@@ -106,7 +103,7 @@ public class GreetingMojo extends AbstractMojo
   * The <<<getLog>>> method (defined in <<<AbstractMojo>>>) returns a
     log4j-like logger object which allows plugins to create messages at levels
     of "debug", "info", "warn", and "error".  This logger is the accepted means
-    to display information to the user. Please have a look at the section
+    to display information to the user. See
     {{{../../plugin-developers/common-bugs.html#Retrieving_the_Mojo_Logger}Retrieving the Mojo Logger}} for a hint on
     its proper usage.
 
@@ -117,20 +114,20 @@ public class GreetingMojo extends AbstractMojo
 ** Project Definition
 
   Once the mojos have been written for the plugin, it is time to
-  build the plugin.  To do this properly, the project's descriptor
-  needs to have a number of settings set properly:
+  build the plugin. To do this properly, the project's pom.xml
+  must set these things:
 
 *------------------+----------------------------------------------------------+
 |<<<groupId>>>     |This is the group ID for the plugin, and should match the |
-|                  |common prefix to the packages used by the mojos           |
+|                  |common prefix to the packages used by the mojos.          |
 *------------------+----------------------------------------------------------+
-|<<<artifactId>>>  |This is the name of the plugin                            |
+|<<<artifactId>>>  |This is the name of the plugin.                           |
 *------------------+----------------------------------------------------------+
-|<<<version>>>     |This is the version of the plugin                         |
+|<<<version>>>     |This is the version of the plugin.                        |
 *------------------+----------------------------------------------------------+
-|<<<packaging>>>   |This must be set to "<<<maven-plugin>>>"                |
+|<<<packaging>>>   |This must be set to "<<<maven-plugin>>>"                  |
 *------------------+----------------------------------------------------------+
-|<<<dependencies>>>|A dependency must be declared to the Maven Plugin Tools   |
+|<<<dependencies>>>|A dependency must be declared on the Maven Plugin Tools   |
 |                  |API to resolve "<<<AbstractMojo>>>" and related classes   |
 *------------------+----------------------------------------------------------+
 
@@ -155,11 +152,11 @@ public class GreetingMojo extends AbstractMojo
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
-      <version>3.0</version>
+      <version>3.9.9</version>
       <scope>provided</scope>
     </dependency>
 
-    <!-- dependencies to annotations -->
+    <!-- dependency on annotations -->
     <dependency>
       <groupId>org.apache.maven.plugin-tools</groupId>
       <artifactId>maven-plugin-annotations</artifactId>
@@ -216,8 +213,8 @@ public class GreetingMojo extends AbstractMojo
 ** Executing Your First Mojo
 
   The most direct means of executing your new plugin is to specify the
-  plugin goal directly on the command line.  To do this, you need to
-  configure the <<<hello-maven-plugin>>> plugin in you project:
+  plugin goal directly on the command line.  To do this,
+  configure the <<<hello-maven-plugin>>> plugin in the project:
 
 +----+
 <project>
@@ -237,13 +234,13 @@ public class GreetingMojo extends AbstractMojo
 </project>
 +----+
 
-  And, you need to specify a fully-qualified goal in the form of:
+  Then on the command line specify a fully-qualified goal in the form of:
 
 ------
 mvn groupId:artifactId:version:goal
 ------
 
-  For example, to run the simple mojo in the sample plugin, you would enter
+  For example, to run the simple mojo in the sample plugin, enter
   "<<<mvn sample.plugin:hello-maven-plugin:1.0-SNAPSHOT:sayhi>>>" on the
   command line.
 
@@ -253,7 +250,7 @@ mvn groupId:artifactId:version:goal
 
   There are several ways to reduce the amount of required typing:
 
-  * If you need to run the latest version of a plugin installed in your local
+  * To run the latest version of a plugin installed in the local
   repository, you can omit its version number. So just use
   "<<<mvn sample.plugin:hello-maven-plugin:sayhi>>>" to run your plugin.
 
@@ -261,11 +258,11 @@ mvn groupId:artifactId:version:goal
     This is done automatically if you follow the convention of using
     <<<$\{prefix\}-maven-plugin>>> (or <<<maven-$\{prefix\}-plugin>>> if the plugin is
     part of the Apache Maven project). You may also assign one through additional
-    configuration - for more information see
+    configuration. For more information, see
     {{{../introduction/introduction-to-plugin-prefix-mapping.html} Introduction to Plugin Prefix Mapping}}.
 
-  * Finally, you can also add your plugin's groupId to the list of groupIds
-  searched by default.  To do this, you need to add the following to
+  * Finally, you can also add your plugin's group ID to the list of group IDs
+  searched by default.  To do this, add the following to
   your <<<$\{user.home\}/.m2/settings.xml>>> file:
 
 +----+
@@ -281,7 +278,7 @@ mvn groupId:artifactId:version:goal
 
 *** Attaching the Mojo to the Build Lifecycle
 
-  You can also configure your plugin to attach specific goals to a particular
+  You can also configure the plugin to attach specific goals to a particular
   phase of the build lifecycle.  Here is an example:
 
 +-----+
@@ -313,12 +310,12 @@ mvn groupId:artifactId:version:goal
 +-----+
 
   This causes the simple mojo to be executed whenever Java code is compiled.
-  For more information on binding a mojo to phases in the lifecycle, please
-  refer to the {{{../introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
+  For more information on binding a mojo to phases in the lifecycle,
+  see the {{{../introduction/introduction-to-the-lifecycle.html}Build Lifecycle}} document.
 
 * Mojo archetype
 
-  To create a new plugin project, you could using the Mojo
+  To create a new plugin project, you can use the Mojo
   {{{../introduction/introduction-to-archetypes.html}archetype}} with the following command line:
 
 -----
@@ -334,10 +331,10 @@ mvn archetype:generate \
   It is unlikely that a mojo will be very useful without parameters.
   Parameters provide a few very important functions:
 
-  * It provides hooks to allow the user to adjust the operation of the
+  * They provide hooks to allow the user to adjust the operation of the
     plugin to suit their needs.
 
-  * It provides a means to easily extract the value of elements from
+  * They provide a means to easily extract the value of elements from
     the POM without the need to navigate the objects.
 
   []
@@ -356,22 +353,21 @@ mvn archetype:generate \
     private String greeting;
 +-----+
 
-  The portion before the annotations is the description of the
+  The Javadoc comment is the description of the
   parameter.  The <<<@Parameter>>> annotation identifies
   the variable as a mojo parameter.  The <<<defaultValue>>>
-  parameter of the annotation defines the default value for the variable.  This value can
+  element defines the default value for the parameter.  This value can
   include expressions which reference the project, such as
-  "<<<$\{project.version\}>>>" (more can be found in the
-  {{{/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html}"Parameter Expressions" document}}).
-  The <<<property>>> parameter can be used to allow configuration
+  "<<<$\{project.version\}>>>". (More can be found in the
+  {{{/ref/current/maven-core/apidocs/org/apache/maven/plugin/PluginParameterExpressionEvaluator.html}"Parameter Expressions" document.}})
+  The <<<property>>> element enables configuration
   of the mojo parameter from the command line by referencing a system property that the user sets
   via the <<<-D>>> option.
 
 ** Configuring Parameters in a Project
 
-  Configuring the parameter values for a plugin is done in a Maven
-  project within the <<<pom.xml>>> file as part of defining the
-  plugin in the project.  An example of configuring a plugin:
+  Each Maven project can configrue the plugins it uses 
+  in the <<<pluginManagement>>> section of the pom.xml. For example:
 
 +-----+
 <plugin>
@@ -385,7 +381,7 @@ mvn archetype:generate \
 +-----+
 
   In the configuration section, the element name
-  ("<<<greeting>>>") is the parameter name and the contents of
+  ("<<<greeting>>>") is the parameter name and the content of
   the element ("<<<Welcome>>>") is the value to be assigned to
   the parameter.
 
@@ -394,9 +390,9 @@ mvn archetype:generate \
 
 * Using Setters
 
- You are not restricted to using private field mapping which is good if you are trying to make your Mojos resuable
- outside the context of Maven.
- Using the example above, we could define public setter methods that the configuration mapping mechanism can use.
+ You are not restricted to using private field mapping which is helpful
+ if you are trying to make your Mojos reusable outside the context of Maven.
+ In the example above, we could define public setter methods that the configuration mapping mechanism can use.
  You can also add an <<<@Parameter>>> annotation on the setter method (from version 3.7.0 of `plugin-tools`)
 
 
@@ -408,7 +404,7 @@ public class MyQueryMojo extends AbstractMojo {
 
     // provide name for non matching field and setter name
     @Parameter(name = "url", property = "url")
-    private String _url;
+    private String url;
 
     @Parameter(property = "timeout")
     private int timeout;
@@ -417,7 +413,7 @@ public class MyQueryMojo extends AbstractMojo {
     private String option1;
 
     public void setUrl(String url) {
-        _url = url;
+        this.url = url;
     }
 
     public void setTimeout(int timeout) {
@@ -431,6 +427,7 @@ public class MyQueryMojo extends AbstractMojo {
         this.option1 = options[1];
     }
 
+    @Override
     public void execute() throws MojoExecutionException {
         ...
     }
@@ -438,7 +435,7 @@ public class MyQueryMojo extends AbstractMojo {
 
 +----+
 
- Note the specification of the property name for each parameter which tells Maven which setter and getter to use when
+ The property annotation for each parameter tells Maven which setter and getter to use when
  the field's name does not match the name of the parameter in the plugin configuration.
 
 * Resources
@@ -447,12 +444,10 @@ public class MyQueryMojo extends AbstractMojo {
 
     [[2]] {{{/shared/maven-plugin-testing-harness/}Maven Plugin Testing Harness}}: Testing framework for your Mojos.
 
-    [[3]] {{{https://codehaus-plexus.github.io/}Plexus}}: The IoC container used by Maven.
+    [[3]] {{{https://eclipse.dev/sisu/index.html}Eclipse Sisu}}: The IoC container used by Maven 3.
 
-    [[4]] {{{https://codehaus-plexus.github.io/plexus-utils/}Plexus Common Utilities}}: Set of utilities classes useful for Mojo development.
+    [[4]] {{{../../maven-jsr330.html}Maven & JSR 330}}: How to use JSR 330 in Plugins
 
-    [[5]] {{{http://commons.apache.org/io/}Commons IO}}: Set of utilities classes useful for file/path handling.
-
-    [[6]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
+    [[5]] {{{../../plugin-developers/common-bugs.html}Common Bugs and Pitfalls}}: Overview of problematic coding patterns.
 
     []

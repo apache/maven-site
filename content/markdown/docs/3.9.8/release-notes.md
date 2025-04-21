@@ -1,23 +1,23 @@
 <!--
- Licensed to the Apache Software Foundation (ASF) under one
- or more contributor license agreements.  See the NOTICE file
- distributed with this work for additional information
- regarding copyright ownership.  The ASF licenses this file
- to you under the Apache License, Version 2.0 (the
- "License"); you may not use this file except in compliance
- with the License.  You may obtain a copy of the License at
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
 
-   http://www.apache.org/licenses/LICENSE-2.0
+http://www.apache.org/licenses/LICENSE-2.0
 
- Unless required by applicable law or agreed to in writing,
- software distributed under the License is distributed on an
- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- KIND, either express or implied.  See the License for the
- specific language governing permissions and limitations
- under the License.
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
 
- NOTE: For help with the syntax of this file, see:
- http://maven.apache.org/doxia/modules/index.html#Markdown
+NOTE: For help with the syntax of this file, see:
+http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 3.9.8
@@ -41,8 +41,8 @@ If you have any questions, please consult:
 Regression fixes and other improvements from Maven 3.9.7. All users already on Maven 3.9.x are advised to upgrade.
 
 Bug fixes ranges from restored ability (lost in 3.9.7) to build some project that depends on artifact with invalid POMs,
-OS profile activation issues and many other minor but annoying bugs. The "known issue" (bug) from 3.9.7, 
-[MNG-8116](https://issues.apache.org/jira/browse/MNG-8116) was fixed as well. As part of fix Eclipse Sisu is updated to 
+OS profile activation issues and many other minor but annoying bugs. The "known issue" (bug) from 3.9.7,
+[MNG-8116](https://issues.apache.org/jira/browse/MNG-8116) was fixed as well. As part of fix Eclipse Sisu is updated to
 version 0.9.0.M3, that carries ASM 9.7 (Java 23).
 
 Improvements on other hand include added logging of those aforementioned invalid POMs (in DEBUG even telling what is the problem with them),
@@ -78,3 +78,4 @@ See [complete release notes for all versions][5]
 [2]: https://maven.apache.org/
 [4]: https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12316922&version=12354748
 [5]: ../../docs/history.html
+

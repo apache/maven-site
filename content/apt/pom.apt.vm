@@ -196,8 +196,8 @@ POM Reference
 
   The cornerstone of the POM is its {{{/ref/current/maven-model/maven.html#class_dependency}dependency}} list.
   Most projects depend on others to build
-  and run correctly. If all Maven does for you is manage this list, you have gained a lot.
-  Maven downloads and links the dependencies on compilation, as well as on other goals that require them.
+  and run correctly.
+  Maven downloads the dependencies on compilation, as well as on other goals that require them.
   As an added bonus, Maven brings in the dependencies of those dependencies (transitive dependencies),
   allowing your list to focus solely on the dependencies your project requires.
 
@@ -309,8 +309,8 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   * <<optional>>:\
   Marks a dependency optional when this project itself is a dependency.
   For example, imagine a project <<<A>>> that depends upon project <<<B>>> to
-  compile a portion of code that may not be used at runtime, then we may have no need for project <<<B>>>
-  for all project. So if project <<<X>>> adds project <<<A>>> as its own dependency, then Maven does
+  compile a portion of code that may not be used at runtime. In that case, if project <<<X>>> adds
+  project <<<A>>> as its own dependency, project <<<X>>> does not need project <<<B>>> on the classpath and Maven does
   not need to install project <<<B>>> at all. Symbolically, if <<<=\>>>> represents a required dependency,
   and <<<--\>>>> represents optional, although <<<A=\>B>>> may be the case when building A
   <<<X=\>A--\>B>>> would be the case when building <<<X>>>.
@@ -357,23 +357,28 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
 **** Version Order Specification
 
-  If version strings are syntactically correct  {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
-  version numbers, then in almost all cases version comparison follows the precedence rules outlined in that specification.
+  If version strings are syntactically correct {{{https://semver.org/spec/v1.0.0.html}Semantic Versioning 1.0.0}}
+  version numbers, then in most cases version comparison follows the precedence rules outlined in that specification.
   These versions are the commonly encountered alphanumeric ASCII strings such as 2.15.2-alpha.
-  More precisely, this is true if both version numbers to be compared match the "valid semver"
-  production in the BNF grammar in the semantic versioning specification.
-  Maven does not consider any semantics implied by that specification.
+  More precisely, this is true if both version strings to be compared match the "valid semver"
+  production in the BNF grammar for semantic versioning and both version strings only
+  use lower case letters. Maven does not consider any semantics implied by Semantic Versioning.
   
   <<Important>>: This is only true for Semantic Versioning <1.0.0>. The Maven version order algorithm
   is not compatible with Semantic Versioning <2.0.0>. In particular, Maven does not special case the
   plus sign or consider build identifiers.
 
+  <<Important>>: Maven compares version strings using case insensitive rules. Semver is
+  case sensitive. Thus in Semver, 3.2-ALPHA1 compares greater than 3.2-alpha1. In Maven,
+  3.2-ALPHA1 compares equal to 3.2-alpha1.
+
   When version strings do not follow semantic versioning, a more complex set of rules is required. 
-  The Maven coordinate is split in tokens between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscore ('<<<_>>>') and transitions between digits and characters.
+  Each Maven version string is split into tokens
+  between dots ('<<<.>>>'), hyphens ('<<<->>>'), underscores ('<<<_>>>'), and transitions between ASCII digits and characters.
   The separator is recorded and will have effect on the order. A transition 
-  between digits and characters is equivalent to a hyphen.
+  between ASCII digits and characters is equivalent to a hyphen.
   Empty tokens are replaced with "<<<0>>>". This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-  with "<<<.>>>" or "<<<->>>" prefixes. Versions are expected to start with numbers.
+  with "<<<.>>>" or "<<<->>>" prefixes.
 
   Splitting and Replacing Examples:
 
@@ -405,23 +410,46 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   []
 
-  The version order is the <<<lexicographical order>>> on this sequence of prefixed tokens, the shorter one
-  padded with enough "null" values with matching prefix to have the same length as the longer one. Padded "null" values depend on the prefix of the other version: 0 for '.', "" for '-'.
-  The prefixed token order is:
 
-  * if the prefix is the same, then compare the token:
+  Following tokenization and trimming, the shorter token sequence is 
+  padded with enough "null" values with matching prefix to have the same length as the longer one.
+  Padded "null" values depend on the separator of the other version: 0 for '.', "" for '-' and a 
+  transition between ASCII digits and characters.
 
-    * Numeric tokens have the natural order.
+  Then the two sequences are compared token by token from beginning to end
+  (left-to-right in the original strings). If each token 
+  in one sequence compares equal to the corresponding token in the other sequence, then the
+  then the two version strings are equals. Otherwise, the result is the comparison
+  of the tokens from the first position in the sequences where they are not equal:
+  less than if the first non-matching token in the first string is less than the
+  corresponding token in the second string, greater than if the 
+  first non-matching token in the first string is greater than the
+  corresponding token in the second string, 
 
-    * Non-numeric tokens ("qualifiers") have the alphabetical order, except for the following tokens which come first in this order:
+  Individual tokens are compared according to the following rules:
 
-    "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" \< "<<<sp>>>"
+  * Tokens comprised of the ASCII digits 0-9 are called "numeric tokens".
+    Tokens comprised of any other characters, including non-ASCII digits, are called "qualifiers". 
+
+  * If the separator is the same, then compare the token:
+
+    * Numeric tokens have the usual ordering of integers.
+
+    * Qualifiers are first converted to lower case in the English locale. 
+      Then they are ordered as by the <<<compareTo()>>> method of <<<java.lang.String>>>,
+      except for the following tokens which come first in this order:
+
+    "<<<alpha>>>" \< "<<<beta>>>" \< "<<<milestone>>>" \< "<<<rc>>>" = "<<<cr>>>" \< "<<<snapshot>>>" \< "" = "<<<final>>>" = "<<<ga>>>" = "<<<release>>>" \< "<<<sp>>>"
 
         * the "<<<alpha>>>", "<<<beta>>>" and "<<<milestone>>>" qualifiers can respectively be shortened to "a", "b" and "m" when directly followed by a number.
 
+    * Alphabetic tokens other than the special cases described above come before numeric tokens.
+
+    * Alphabetic tokens are compared in a case insensitive fashion in the {{{https://docs.oracle.com/javase/8/docs/api/java/util/Locale.html#ENGLISH}English locale}}. For example, "<<<A>>>" and "<<<a>>>" are treated the same as are "<<<i>>>" and "<<<I>>>" and "<<<é>>>" and "<<<É>>>". 
+
   * else "<<<.qualifier>>>" = "<<<-qualifier>>>" \< "<<<-number>>>" \< "<<<.number>>>"
 
-  * <<<alpha>>> = <<<a>>> < <<<beta>>> = <<<b>>> < <<<milestone>>> = <<<m>>> < <<<rc>>> = <<<cr>>> < <<<snapshot>>> < '<<<>>>' = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
+  * <<<alpha>>> \< <<<a1>>> \< <<<beta>>> \< <<<b1>>> \< <<<milestone>>> \< <<<m1>>> \< <<<rc>>> = <<<cr>>> \< <<<snapshot>>> \< <<<>>> = <<<final>>> = <<<ga>>> = <<<release>>> \< <<<sp>>>
 
   []
 
@@ -437,6 +465,10 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
    
    * The usage of '<<<SP>>>' qualifier is discouraged. Increment the patch version instead.
 
+   * Avoid non-ASCII characters, including non-ASCII digits, which may sort in surprising ways.
+
+   * Avoid upper case characters.
+
   []
 
   End Result Examples:
@@ -447,7 +479,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-foo2>>>" \< "<<<1-foo10>>>" (correctly automatically "switching" to numeric order)
 
-  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" = "<<<1.1>>>"
+  * "<<<1.foo>>>" = "<<<1-foo>>>" \< "<<<1-1>>>" \< "<<<1.1>>>"
 
   * "<<<1.ga>>>" = "<<<1-ga>>>" = "<<<1-0>>>" = "<<<1.0>>>" = "<<<1>>>" (removing of trailing "null" values)
 
@@ -455,15 +487,23 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
 
   * "<<<1-sp.1>>>" \> "<<<1-ga.1>>>"
 
-  * "<<<1-sp-1>>>" \> "<<<1-ga-1>>>"
+  * "<<<1-sp-1>>>" \< "<<<1-ga-1>>>"
 
   * "<<<1-a1>>>" = "<<<1-alpha-1>>>"
+
+  * "<<<1.0-alpha1>>>" = "<<<1.0-ALPHA1>>>" (case insensitivity)
+
+  * "<<<1.7>>>" \> "<<<1.K>>>"
+
+  * "<<<5.zebra>>>" \> "<<<5.aardvark>>>"
+
+  * "<<<1.α>>>" \> "<<<1.b>>>" (Note the Greek letter alpha.)
 
   Note: Contrary to what was stated in some design documents, for version order, snapshots are not treated differently than releases or any other qualifier.
 
   Note: As <<<2.0-rc1>>> \< <<<2.0>>>, the version requirement <<<[1.0,2.0)>>> excludes <<<2.0>>> but includes version <<<2.0-rc1>>>, which is contrary to
   what most people expect. In addition, Gradle interprets it differently, resulting in different dependency trees for the same POM.
-  If the intention is to restrict it to <1.*> versions, the better version requirement is <<<[1,1.999999)>>>.
+  If the intention is to restrict it to <<<1.*>>> versions, the better version requirement is <<<[1,1.999999]>>> or <<<[1,2-alpha)>>>.
 
 **** Version Order Testing
 
@@ -961,6 +1001,13 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   </build>
 </project>
 +------------------------------------------+
+
+  Plugins are also identified by coordinates.
+  Unlike dependencies, there is a default <<<groupId>>> for plugins.
+  See {{{/guides/mini/guide-configuring-plugins.html}Configuring Plugins}}.
+
+  <<Note>>: It is not allowed to declare the same plugin multiple times in the same build.
+  Multiple declarations of the same plugin result in warnings using Maven 3 and fail the build using Maven 4.
 
   Beyond the standard coordinate of <<<groupId:artifactId:version>>>, there are elements which
   configure the plugin or this builds interaction with it.

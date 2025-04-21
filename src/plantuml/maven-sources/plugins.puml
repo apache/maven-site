@@ -1,4 +1,4 @@
-/*
+/'
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
 distributed with this work for additional information
@@ -15,9 +15,8 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
-*/
+'/
 @startuml
-!pragma layout smetana
 
 <style>
     rectangle {
@@ -76,7 +75,6 @@ package Plugins {
     rectangle invoker
     rectangle jarsigner
     rectangle jdeprscan
-    rectangle pdf
     rectangle plugin
     rectangle release
     rectangle "remote-resources"
@@ -132,8 +130,7 @@ gpg -[hidden]> help
 antrun -[hidden]down->invoker
 invoker -[hidden]> jarsigner
 jarsigner -[hidden]> jdeprscan
-jdeprscan -[hidden]> pdf
-pdf -[hidden]> plugin
+jdeprscan -[hidden]> plugin
 plugin -[hidden]> release
 invoker -[hidden]down->"remote-resources"
 "remote-resources" -[hidden]> scm
@@ -185,7 +182,6 @@ url of help is [[https://github.com/apache/maven-help-plugin]]
 url of invoker is [[https://github.com/apache/maven-invoker-plugin]]
 url of jarsigner is [[https://github.com/apache/maven-jarsigner-plugin]]
 url of jdeprscan is [[https://github.com/apache/maven-jdeprscan-plugin]]
-url of pdf is [[https://github.com/apache/maven-pdf-plugin]]
 url of plugin is [[https://github.com/apache/maven-plugin-tools]]
 url of release is [[https://github.com/apache/maven-release]]
 url of "remote-resources" is [[https://github.com/apache/maven-remote-resources-plugin]]

@@ -28,7 +28,7 @@
 
 Introduction
 
-  <<Before>> a release You need to publish your Public GPG Keys in several place used by different tools for verifying release signatures.
+  <<Before>> a release, you need to publish Your Public GPG Keys in several place used by different tools for verifying release signatures.
 
   All Your historical Public Keys should be available for verifying historical releases, so please <<don't remove>> any key used sometime.
 
@@ -39,10 +39,10 @@ Introduction
   Public Keys used for signing Maven core, plugins and shared components are available for users at:\
   {{https://downloads.apache.org/maven/KEYS}}
 
-  You need edit a file and follow provided instructions in SVN at:\
-  {{https://svn.apache.org/repos/asf/maven/project/KEYS}}
+  As a future release manager, you need add your key: edit <<<KEYS>>> file and follow provided instructions in <<<maven-parent>>> at:\
+  {{https://github.com/apache/maven-parent/}}
 
-  General ASF instruction
+  General ASF instructions:
 
    * {{{https://infra.apache.org/openpgp.html#update-KEYS}Update keys on the next release}}
 
@@ -53,7 +53,7 @@ Introduction
 * Distributing Your Public Keys
 
  Your Public Keys <<MUST>> be available at public key server,
- you can use one or even all of currently common used key server
+ you can use one or even all of currently common used key server:
 
   * {{https://keys.openpgp.org}}
 
@@ -63,9 +63,9 @@ Introduction
 
   []
 
-* Committer public key files
+* Committer public key <<<KEYS>>> file
 
-  You should also add Your Public Keys to  {{{https://people.apache.org/keys/committer}ASF Committer public key files}}
+  You should also add Your Public Keys to {{{https://people.apache.org/keys/committer}ASF Committer public key files}}
 
   Please follow instructions at: {{https://people.apache.org/keys}}
 
