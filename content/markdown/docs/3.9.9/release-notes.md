@@ -40,7 +40,7 @@ If you have any questions, please consult:
 
 Regression fixes and other improvements from Maven 3.9.8. All users already on Maven 3.9.x are advised to upgrade.
 
-Notable improvements in area of memory usage arrives with [Resolver 1.9.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
+Notable improvements in area of memory usage arrives with [Resolver 1.2.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
 
 The majority of fixed issue are bug and regression fixes for user reported problems.
 

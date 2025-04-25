@@ -48,7 +48,7 @@ under the License.
       <!-- TODO: use CSS -->
       <table>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Use</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="3">Use</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
           <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="configure.html">Configure</a>, <a href="run.html">Run</a> Maven
         </th>
@@ -60,6 +60,12 @@ under the License.
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
             Lists of plugins and extensions to help with your builds.
+        </td>
+      </tr>
+      <tr>
+        <td><b>Maven 4</b>: Learn <a href="whatsnewinmaven4.html">what's new</a> and <a href="/guides/mini/guide-migration-to-mvn4.html">how to migrate a project</a> to Maven 4.</td>
+        <td>
+          Upcoming: How to migrate plugins to the new Maven 4 API?
         </td>
       </tr>
       <tr>
