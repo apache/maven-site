@@ -54,6 +54,7 @@ under the License.
       </item>
       <item name="Release Notes" href="/docs/history.html"/>
       <!--  <item name="Powered By" href="/powered-by-m2.html"/> -->
+      <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
       <item name="Maven Daemon" href="/mvnd.html"/>
     </menu>
 
@@ -136,11 +137,6 @@ under the License.
           href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         <item name="POM Reference" href="/pom.html"/>
         <item name="FAQ" href="/general.html"/>
-
-        <item name="Maven 4" collapse="false">
-          <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
-          <item name="Migrate to Maven 4" href="/guides/mini/guide-migration-to-mvn4.html"/>
-       </item>
       </item>
       <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>
