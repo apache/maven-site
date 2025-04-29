@@ -1,0 +1,53 @@
+
+
+
+
+
+
+Why does my website show this icon? by idocasee2006
+💡 [Important](https://www.iubenda.com/en/login)
+This guide provides troubleshooting advice to web admins using iubenda solutions on their sites. If you’re an end user simply browsing the site, this icon means that — at the moment — cookies may not be managed properly. But don’t worry: We’re not releasing any cookies that were blocked prior to your consent. No tools have been installed on your device and no action is required from your side. If you wish, you can reach out to the site owner to warn them and ask for information about their use of cookies and trackers.
+
+The warning icon that appears on your website is an indicator that something is not quite right in your iubenda account. 
+
+This icon appears in the following situations:
+you have reached the monthly page views included in your plan for the Privacy Controls and Cookie Solution →
+your Cookie Policy is not active →
+your Consent Banner is not correctly installed →
+the language parameter in the Privacy Controls and Cookie Solution embedding code isn’t set properly →
+👉 [You have reached the monthly page views included in your plan for the Privacy Controls and Cookie Solution
+Each iubenda plan has a maximum limit of page views per month included for the Privacy Controls and Cookie Solution](https://www.iubenda.com/en/dashboard)
+
+When this limit is exceeded, the cookie banner will not be displayed, and only essential scripts will be loaded, resulting in a lower consent rate.
+
+You can fully restore your banner’s functionality by upgrading your iubenda plan to include more page views.
+
+🚀 [Upgrade your iubenda plan now →](https://www.iubenda.com/en/login
+
+👉 Your Cookie Policy is not active
+The Consent Banner will provide a link for visitors to access your Cookie Policy. 
+
+If your Cookie Policy is not active or deleted, the Consent Banner will not be displayed and only strictly necessary scripts will be loaded, reducing your consent rate. Plus, you will not be able to record opt-ins to the processing of your users’ sensitive data (legally required in the US).
+
+🚀 [Renew your cookie policy now] → (https://www.iubenda.com/en/help/20)
+
+👉 Your Consent Banner is not correctly installed
+If you think the previous answers don’t apply to you, a generic installation error might have happened (e.g., an outdated iubenda script is added along with the most updated one). In case you’re not able to sort that out yourself, our support team will help you in the process of debugging the error.
+
+🧑🏼‍💻 Get in touch with the iubenda Customer Support → 
+
+👉 The language parameter in the Privacy Controls and Cookie Solution embedding code isn’t set properly
+If, for any reason, the language parameter set in the embedding code of the cookie banner doesn’t match the language available in your plan, the banner won’t display.
+
+If you have a Free, Starter or Essentials plan, double check that the language parameter set in the embedding code is the same as your plan’s language.
+
+To display the banner in multiple languages, you’ll need at least an Advanced plan.
+
+🚀 Upgrade your iubenda plan now → 
+
+Looking for the best compliance solution?
+
+
+More than 2 million self-updating documents already generated
+
+[Trusted by over 90,000 clients in 100+ countries](https://www.iubenda.com/en/help/120399-why-does-my-website-show-this-icon?utm_source=cs&utm_medium=web&utm_campaign=csalrt1#/wizard/site-url?type=site)
