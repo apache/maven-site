@@ -124,7 +124,7 @@ While your build should not throw any warnings at all, the following ones needs 
 
 **Notes**:
 * The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
-* For analysing wrong build behavior, it might help to use the new `--fail-on-severity` parameter, paired with `WARN` as an argument, to fail your build when a warning occur.
+* For analysing wrong build behavior, it might help to use the new `--fail-on-severity` parameter, paired with `WARN` as an argument, to fail your build when a warning occurs.
 
 #### Duplicate plugin declaration
 
@@ -144,7 +144,7 @@ See the [Maven Model Builder interpolation reference][modelbuilderinterpolation]
 At the same time, several (especially internal) properties are deprecated or removed.
 This includes the following properties:
 * `executionRootDirectory`
-* `multiModuleProjectDirector`
+* `multiModuleProjectDirectory`
 
 ### Replace conceptional `pre-` and `post-` lifecycle phases
 
@@ -157,14 +157,15 @@ Update your plugin executions that bind to a `pre-` or `-post` phase with the co
 
 ### Changed default values
 
-#### Install / deploy at end of build (breaking change)
+#### Install/deploy at end of build (breaking change)
 
 Both, the Maven Install Plugin and the Maven Deploy Plugin, have changed default values for their behavior, about when to install respectively deploy.
 The default values for `installAtEnd` and `deployAtEnd` are set to `true` in Maven 4.
 They now reflect the desired behavior for the majority of the Maven builds.
 If you manually set these values to `true` before, you can remove the explicit declaration and inherit the same behavior from the new default values now.
 
-If your build relies on the old default value (`false`), you have to add it to your plugin configuration now. But in most cases, a build that requires the values to be `false` means that these settings hide a configuration error.
+If your build relies on the old default value (`false`), you have to add it to your plugin configuration now.
+But in most cases, a build that requires the values to be `false` means that these settings hide a configuration error.
 We suggest to analyse the build configuration after migration.
 
 ### Use POM model version 4.1.0
@@ -258,7 +259,7 @@ In Maven 3 with model version 4.0.0 such a declaration looks like the following.
 </project>
 ```
 
-In Maven 4 and model version 4.1.0 the version declaration are not needed anymore.
+In Maven 4 and model version 4.1.0 the version declaration is not needed anymore.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.1.0"
