@@ -24,16 +24,13 @@ under the License.
 Maven DI is the dependency injection framework of Maven, that is introduced in Maven 4.
 
 It is the successor for Plexus DI (used in Maven 2) and JSR 330/Eclipse Sisu (used in Maven 3) in Maven. 
-It based on [Google Guice][guice]. (?)
-
-
-
+It is based on [Google Guice][guice].
 
 
 ## How to use Maven DI
 
 When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@Inject`, `@Named`, and `@Singleton` annotations in your plugins and extensions.
-The annotations of Maven DI are similiar to JSR 330.
+The annotations of Maven DI are similar to JSR 330.
 
 ### Implementation Details
 
@@ -45,12 +42,12 @@ TBD (need help)
 **NOTE**
 
 If your plugin should also run with Maven 3.x, please look at [Maven & JSR-330](maven-jsr330).
-Pluings that are using Maven DI are only compatible with Maven 4.
+Plugins that are using Maven DI are only compatible with Maven 4.
 ---
 
 Let's take a look at an example plugin: If you want to look at this example project, you can find the code [in Maven Core ITs][maven-di-plugin].
 
-The POM is setup for Maven DI as previously mentioned, with the `maven-api-di` dependency
+The POM is set up for Maven DI as previously mentioned, with the `maven-api-di` dependency
 
 In addition, we add a Maven plugin dependency `maven-api-core` to implement the interface `Mojo` and use the Java  Plugin Tools Annotations with associated `maven-plugin-plugin` (see [Maven Plugin Tools](/plugin-tools/)).
 
@@ -191,7 +188,7 @@ So the next step is to add all dependencies that are needed for testing.
 For the helper classes, we are adding `maven-plugin-testing-harness`.
 The dependencies to `maven-core`, `maven-resolver-api`, `maven-api-impl` and `guice` are only needed for the test runtime.
 `junit-jupiter` is the used test framework, `mockito-*` is the used mock framework and `assertj` is the used annotation lib. 
-The last two mention dependencies are optional, but helpful.
+The last two mention dependencies are optional but helpful.
 
 ```xml
 
@@ -313,7 +310,7 @@ public class HelloMojoTest {
 
 ```
 
-If you want to mock your injected commponent, you have to write a method that create the mock for this component.
+If you want to mock your injected component, you have to write a method that creates the mock for this component.
 This method has to be annotated with `@Singleton`, `@Provides` and `@Priority(10)`, so that the DI framework selected it before the real component.
 
 
