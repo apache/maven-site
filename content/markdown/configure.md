@@ -110,7 +110,7 @@ You don't need to use these options in `MAVEN_OPTS` or switch between different 
 
 ### `.mavenrc` file:
 
-Located in `$%USERPROFILE%/.mavenrc` (or `%USERPROFILE%\mavenrc_pre.cmd` on Windows) this file defines environment variables used when Maven builds the project. With this users can define variables in either the settings.xml or pom.xml and have them read the property that was set by the .mavenrc file.
+Located in `$%USERPROFILE%/.mavenrc` (or `%USERPROFILE%\mavenrc_pre.cmd` on Windows) this file defines environment variables used when Maven builds the project. With this users can define environment variables in either the `settings.xml` or `pom.xml` and have them read the property that was set by the `.mavenrc` file.
 
 
 ## Other guides
