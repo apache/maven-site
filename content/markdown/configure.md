@@ -85,7 +85,7 @@ For example things like `-T3 -U --fail-at-end`. So you only have to call Maven b
 clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call.
 The `.mvn/maven.config` is located in the project's top level `.mvn` directory and also works in the root of a multi module build.
 
-**NOTICE** starting with Maven **3.9.0** each single argument must be put on a new line, so for the mentioned example your file will have content like:
+**NOTICE** Starting with Maven **3.9.0** each single argument must be put on a new line, so for the mentioned example your file will have content like:
 
 ```
 -T3
@@ -110,8 +110,7 @@ You don't need to use these options in `MAVEN_OPTS` or switch between different 
 
 ### `.mavenrc` file:
 
-Located in `$HOME/.mavenrc` (or `%USERPROFILE%\mavenrc.cmd` on Windows) this file defines environment variables used when Maven builds the project. With this users can define environment variables in either the `settings.xml` or `pom.xml` and have them read the property that was set by the `.mavenrc` file.
-
+Located in `$HOME/.mavenrc` (or `%USERPROFILE%\mavenrc.cmd` on Windows using Maven 4. Using Maven 3 the file needs to be `%USERPROFILE%\mavenrc_pre.cmd`) this file defines environment variables used when Maven builds the project. With this users can define environment variables in either the `settings.xml` or `pom.xml` and have them read the property that was set by the `.mavenrc` file.
 
 ## Other guides
 
