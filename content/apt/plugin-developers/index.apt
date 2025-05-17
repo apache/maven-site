@@ -44,6 +44,8 @@ Plugin Developers Centre
 
   * {{{../guides/plugin/guide-java-report-plugin-development.html} Your First Report Mojo}} - Learn how to write your first reporting plugin
 
+  * {{{../guides/development/guide-plugin-documentation.html} Writing Plugin Documentation}} - Learn how to write documentation for your plugin
+
   * {{{./plugin-testing.html} Testing your Plugin}} - How to write tests for your plugins
 
   * TODO: creating and using custom packaging (like {{{/archetype/archetype-packaging/}<<<maven-archetype>>> packaging}})
