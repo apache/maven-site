@@ -24,13 +24,11 @@ under the License.
 Maven DI is the dependency injection framework of Maven, that is introduced in Maven 4.
 
 It is the successor for Plexus DI (used in Maven 2) and JSR 330/Eclipse Sisu (used in Maven 3) in Maven. 
-It is based on [Google Guice][guice].
-
 
 ## How to use Maven DI
 
 When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@org.apache.maven.api.di.Inject`, `@org.apache.maven.api.di.Named`, and `@org.apache.maven.api.di.Singleton` annotations in your plugins and extensions.
-The annotations of Maven DI are similar to JSR 330, but they have different package name.
+The annotations of Maven DI are similar to JSR 330, but they have different package name `org.apache.maven.api.di`.
 
 ### Implementation Details
 
@@ -49,7 +47,7 @@ Let's take a look at an example plugin: If you want to look at this example proj
 
 The POM is set up for Maven DI as previously mentioned, with the `maven-api-di` dependency
 
-In addition, we add a Maven plugin dependency `maven-api-core` to implement the interface `Mojo` and use the Java  Plugin Tools Annotations with associated `maven-plugin-plugin` (see [Maven Plugin Tools](/plugin-tools/)).
+In addition, we add a Maven plugin dependency `maven-api-core` to implement the interface `Mojo`.
 
 
 ```xml
@@ -185,8 +183,8 @@ They have a good integration to de facto standard testing framework [JUnit Jupit
 
 So the next step is to add all dependencies that are needed for testing.
 
-For the helper classes, we are adding `maven-plugin-testing-harness`.
-The dependencies to `maven-core`, `maven-resolver-api`, `maven-api-impl` and `guice` are only needed for the test runtime.
+For the helper classes, we are adding `maven-testing`.
+The dependencies to `maven-core`, `maven-resolver-api` and `maven-api-impl`  are only needed for the test runtime.
 `junit-jupiter` is the used test framework, `mockito-*` is the used mock framework and `assertj` is the used annotation lib. 
 The last two mention dependencies are optional but helpful.
 
@@ -196,7 +194,6 @@ The last two mention dependencies are optional but helpful.
   <properties>
     <!-- ... -->
     <mavenPluginTestingVersion>4.0.0-beta-2</mavenPluginTestingVersion>
-    <guiceVersion>6.0.0</guiceVersion>
     <mavenResolverVersion>2.0.2</mavenResolverVersion>
   </properties>
 
@@ -204,9 +201,9 @@ The last two mention dependencies are optional but helpful.
   <!-- ... -->
 
       <dependency>
-          <groupId>org.apache.maven.plugin-testing</groupId>
-          <artifactId>maven-plugin-testing-harness</artifactId>
-          <version>${mavenPluginTestingVersion}</version>
+          <groupId>org.apache.maven</groupId>
+          <artifactId>maven-testing</artifactId>
+          <version>${mavenVersion}</version>
           <scope>test</scope>
       </dependency>
 
@@ -227,12 +224,6 @@ The last two mention dependencies are optional but helpful.
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-api-impl</artifactId>
             <version>${mavenVersion}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.google.inject</groupId>
-            <artifactId>guice</artifactId>
-            <version>${guiceVersion}</version>
             <scope>test</scope>
         </dependency>
 
