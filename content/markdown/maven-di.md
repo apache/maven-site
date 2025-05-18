@@ -29,8 +29,8 @@ It is based on [Google Guice][guice].
 
 ## How to use Maven DI
 
-When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@Inject`, `@Named`, and `@Singleton` annotations in your plugins and extensions.
-The annotations of Maven DI are similar to JSR 330.
+When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@org.apache.maven.api.di.Inject`, `@org.apache.maven.api.di.Named`, and `@org.apache.maven.api.di.Singleton` annotations in your plugins and extensions.
+The annotations of Maven DI are similar to JSR 330, but they have different package name.
 
 ### Implementation Details
 
