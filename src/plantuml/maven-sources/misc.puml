@@ -27,39 +27,64 @@ under the License.
 
 package Misc {
   rectangle Archetypes
-  rectangle Poms
-  rectangle Skins
-  rectangle Studies
-  rectangle Indexer
-  rectangle Wagon
-  rectangle "Plugin testing"
   rectangle "Distribution Tool Plugin"
+  rectangle Indexer
   package Jenkins {
     rectangle Environment
     rectangle "Shared Libraries"
   }
+  rectangle "Plugin Testing"
+  package POM {
+    rectangle "Apache"
+    rectangle "Apache Resoures"
+    rectangle "Maven"
+  }
+  package Skins {
+    rectangle Default
+    rectangle Fluido
+  }
+  rectangle Studies
+  rectangle Wagon
 }
 
 'hidden dependencies to change layout
-Archetypes -[hidden]right-> Poms
-Poms -[hidden]right-> Skins
-Skins -[hidden]right-> Studies
-Studies -[hidden]right-> Indexer
-Indexer -[hidden]right-> Wagon
-Wagon -[hidden]right-> "Plugin testing"
+Archetypes -[hidden]> "Distribution Tool Plugin"
+"Distribution Tool Plugin" -[hidden]> Indexer
+Indexer -[hidden]> "Plugin Testing"
+"Plugin Testing" -[hidden]> Studies
+Studies -[hidden]> Wagon
 
-Archetypes -[hidden]down-> "Distribution Tool Plugin"
-"Distribution Tool Plugin" -[hidden]right-> Jenkins
+Environment -[hidden]down-> "Shared Libraries"
+'"Shared Libraries" -[hidden]> "Plugin Testing"
+
+"Apache" -[hidden]down-> "Apache Resoures"
+"Apache Resoures" -[hidden]down-> "Maven"
+'"Apache" -[hidden]> Default
+
+Default -[hidden]down-> Fluido
+'Default -[hidden]> Studies
+
+Archetypes -[hidden]down-> Environment
+Indexer -[hidden]down-> "Apache"
+"Plugin Testing" -[hidden]down-> Default
 
 url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
-url of Poms is [[https://github.com/apache/maven-parent]]
-url of Skins is [[https://github.com/apache/maven-skins]]
-url of Studies is [[https://github.com/apache/maven-studies]]
-url of Indexer is [[https://github.com/apache/maven-indexer]]
-url of Wagon is [[hhttps://github.com/apache/maven-wagon]]
-url of "Plugin testing" is [[https://github.com/apache/maven-plugin-testing]]
 url of "Distribution Tool Plugin" is [[https://github.com/apache/maven-dist-tool]]
+url of Indexer is [[https://github.com/apache/maven-indexer]]
+
 url of Environment is [[https://github.com/apache/maven-jenkins-env]]
 url of "Shared Libraries" is [[https://github.com/apache/maven-jenkins-lib]]
+
+url of "Plugin Testing" is [[https://github.com/apache/maven-plugin-testing]]
+
+url of "Apache" is [[https://github.com/apache/maven-apache-parent]]
+url of "Apache Resoures" is [[https://github.com/apache/maven-apache-resources]]
+url of "Maven" is [[https://github.com/apache/maven-parent]]
+
+url of Default is [[https://github.com/apache/maven-default-skin]]
+url of Fluido is [[https://github.com/apache/maven-fluido-skin]]
+
+url of Studies is [[https://github.com/apache/maven-studies]]
+url of Wagon is [[https://github.com/apache/maven-wagon]]
 
 @enduml
