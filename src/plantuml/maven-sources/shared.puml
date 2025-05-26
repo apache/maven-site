@@ -46,11 +46,11 @@ left to right direction
   rectangle "reporting-exec"
   rectangle "reporting-impl"
   rectangle "script-interpreter"
-  rectangle "incremental"
-  rectangle "io"
-  rectangle "jar"
-  rectangle "resources"
-  rectangle "utils"
+  rectangle "shared-incremental"
+  rectangle "shared-io"
+  rectangle "shared-jar"
+  rectangle "shared-resources"
+  rectangle "shared-utils"
   rectangle "verifier"
 }
 
@@ -69,17 +69,13 @@ left to right direction
 "jarsigner" -[hidden]down- "mapping"
 "mapping" -[hidden]down- "project-utils"
 
-"invoker" -[hidden]left- "reporting-api"
-"reporting-api" -[hidden]down- "reporting-exec"
-"reporting-exec" -[hidden]down- "reporting-impl"
-
-"reporting-api" -[hidden]left- "script-interpreter"
-"script-interpreter" -[hidden]down- "incremental"
-"incremental" -[hidden]down- "io"
-"io" -[hidden]down- "jar"
-"jar" -[hidden]down- "resources"
-"resources" -[hidden]down- "utils"
-"utils" -[hidden]down- "verifier"
+"reporting-api" -[hidden]down-> "script-interpreter"
+"script-interpreter" -[hidden]> "shared-incremental"
+"shared-incremental" -[hidden]> "shared-io"
+"shared-io" -[hidden]> "shared-jar"
+"shared-jar" -[hidden]> "shared-resources"
+"shared-resources" -[hidden]> "shared-utils"
+"shared-utils" -[hidden]> "verifier"
 
 
 url of "archiver" is [[https://github.com/apache/maven-archiver]]
@@ -98,11 +94,11 @@ url of "reporting-api" is [[https://github.com/apache/maven-reporting-api]]
 url of "reporting-exec" is [[https://github.com/apache/maven-reporting-exec]]
 url of "reporting-impl" is [[https://github.com/apache/maven-reporting-impl]]
 url of "script-interpreter" is [[https://github.com/apache/maven-script-interpreter]]
-url of "incremental" is [[https://github.com/apache/maven-shared-incremental]]
-url of "io" is [[https://github.com/apache/maven-shared-io]]
-url of "jar" is [[https://github.com/apache/maven-shared-jar]]
-url of "resources" is [[https://github.com/apache/maven-shared-resources]]
-url of "utils" is [[https://github.com/apache/maven-shared-utils]]
+url of "shared-incremental" is [[https://github.com/apache/maven-shared-incremental]]
+url of "shared-io" is [[https://github.com/apache/maven-shared-io]]
+url of "shared-jar" is [[https://github.com/apache/maven-shared-jar]]
+url of "shared-resources" is [[https://github.com/apache/maven-shared-resources]]
+url of "shared-utils" is [[https://github.com/apache/maven-shared-utils]]
 url of "verifier" is [[https://github.com/apache/maven-verifier]]
 @enduml
 
