@@ -36,7 +36,7 @@ left to right direction
   rectangle "artifact-filters"
   rectangle "dependency-analyzer"
   rectangle "dependency-tree"
-  rectangle "file-manager"
+  rectangle "file-management"
   rectangle "filtering"
   rectangle "invoker"
   rectangle "jarsigner"
@@ -61,8 +61,8 @@ left to right direction
 
 "archiver"  -[hidden]left- "dependency-analyzer"
 "dependency-analyzer" -[hidden]down- "dependency-tree"
-"dependency-tree" -[hidden]down- "file-manager"
-"file-manager" -[hidden]down- "filtering"
+"dependency-tree" -[hidden]down- "file-management"
+"file-management" -[hidden]down- "filtering"
 
 "dependency-analyzer" -[hidden]left- "invoker"
 "invoker" -[hidden]down- "jarsigner"
@@ -84,7 +84,7 @@ url of "artifact-transfer" is [[https://github.com/apache/maven-artifact-transfe
 url of "artifact-filters" is [[https://github.com/apache/maven-common-artifact-filters]]
 url of "dependency-analyzer" is [[https://github.com/apache/maven-dependency-analyzer]]
 url of "dependency-tree" is [[https://github.com/apache/maven-dependency-tree]]
-url of "file-manager" is [[https://github.com/apache/maven-file-management]]
+url of "file-management" is [[https://github.com/apache/maven-file-management]]
 url of "filtering" is [[https://github.com/apache/maven-filtering]]
 url of "invoker" is [[https://github.com/apache/maven-invoker]]
 url of "jarsigner" is [[https://github.com/apache/maven-jarsigner]]
