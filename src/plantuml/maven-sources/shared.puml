@@ -32,7 +32,6 @@ left to right direction
 
   rectangle "archiver"
   rectangle "artifact-resolver"
-  rectangle "artifact-transfer"
   rectangle "artifact-filters"
   rectangle "dependency-analyzer"
   rectangle "dependency-tree"
@@ -41,7 +40,6 @@ left to right direction
   rectangle "invoker"
   rectangle "jarsigner"
   rectangle "mapping"
-  rectangle "project-utils"
   rectangle "reporting-api"
   rectangle "reporting-exec"
   rectangle "reporting-impl"
@@ -56,10 +54,7 @@ left to right direction
 
 'hidden dependencies to change layout
 "archiver" -[hidden]down- "artifact-resolver"
-"artifact-resolver" -[hidden]down- "artifact-transfer"
-"artifact-transfer" -[hidden]down- "artifact-filters"
-
-"archiver"  -[hidden]left- "dependency-analyzer"
+"artifact-resolver" -[hidden]down- "artifact-filters"
 "dependency-analyzer" -[hidden]down- "dependency-tree"
 "dependency-tree" -[hidden]down- "file-management"
 "file-management" -[hidden]down- "filtering"
@@ -67,7 +62,6 @@ left to right direction
 "dependency-analyzer" -[hidden]left- "invoker"
 "invoker" -[hidden]down- "jarsigner"
 "jarsigner" -[hidden]down- "mapping"
-"mapping" -[hidden]down- "project-utils"
 
 "reporting-api" -[hidden]down-> "script-interpreter"
 "script-interpreter" -[hidden]> "shared-incremental"
@@ -80,7 +74,6 @@ left to right direction
 
 url of "archiver" is [[https://github.com/apache/maven-archiver]]
 url of "artifact-resolver" is [[https://github.com/apache/maven-resolver]]
-url of "artifact-transfer" is [[https://github.com/apache/maven-artifact-transfer]]
 url of "artifact-filters" is [[https://github.com/apache/maven-common-artifact-filters]]
 url of "dependency-analyzer" is [[https://github.com/apache/maven-dependency-analyzer]]
 url of "dependency-tree" is [[https://github.com/apache/maven-dependency-tree]]
@@ -89,7 +82,6 @@ url of "filtering" is [[https://github.com/apache/maven-filtering]]
 url of "invoker" is [[https://github.com/apache/maven-invoker]]
 url of "jarsigner" is [[https://github.com/apache/maven-jarsigner]]
 url of "mapping" is [[https://github.com/apache/maven-mapping]]
-url of "project-utils" is [[https://github.com/apache/maven-project-utils]]
 url of "reporting-api" is [[https://github.com/apache/maven-reporting-api]]
 url of "reporting-exec" is [[https://github.com/apache/maven-reporting-exec]]
 url of "reporting-impl" is [[https://github.com/apache/maven-reporting-impl]]
