@@ -21,6 +21,7 @@ limitations under the License.
 [![Jenkins Status](https://img.shields.io/jenkins/s/https/ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/job/master.svg)][build]
 
 This is the Git repository for the content of <https://maven.apache.org/>.
+See [website documentation](https://maven.apache.org/developers/website/) for details on the publication structure.
 
 ## Run Locally
 
