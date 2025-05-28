@@ -37,7 +37,7 @@ issue management systems depending on which component is involved:
 
 * Maven Shared Components: Please refer to the [Shared Components](./shared/index.html) page
 
-* Doxia: <https://github.com/apache/maven-toolchains-plugin/issues>
+* Doxia: <https://github.com/apache/maven-doxia/issues>
 
 * JXR: <https://github.com/apache/maven-jxr/issues>
 
