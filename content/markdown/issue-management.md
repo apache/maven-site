@@ -43,6 +43,6 @@ issue management systems depending on which component is involved:
 
 * SCM: <https://issues.apache.org/jira/browse/SCM>
 
-* Wagon: <https://issues.apache.org/jira/browse/WAGON>
+* Wagon: <https://github.com/apache/maven-wagon/issues>
 
 or for Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>
