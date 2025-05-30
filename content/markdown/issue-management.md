@@ -37,11 +37,11 @@ issue management systems depending on which component is involved:
 
 * Maven Shared Components: Please refer to the [Shared Components](./shared/index.html) page
 
-* Doxia: <https://issues.apache.org/jira/browse/DOXIA>
+* Doxia: <https://github.com/apache/maven-doxia/issues>
 
-* JXR: <https://issues.apache.org/jira/browse/JXR>
+* JXR: <https://github.com/apache/maven-jxr/issues>
 
-* SCM: <https://issues.apache.org/jira/browse/SCM>
+* SCM: <https://github.com/apache/maven-scm/issues>
 
 * Wagon: <https://github.com/apache/maven-wagon/issues>
 
