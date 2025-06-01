@@ -44,7 +44,12 @@ The majority of fixed issues are bug and regression fixes for user reported prob
 
 This release updates Resolver to version [1.9.23](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354989).
 
-Maven itself received notable improvements in area of support for `JDK 24` as runtime.
+When running a build using Java 24 with an earlier version of Maven, there were a lot of errors and warnings,
+because many dependencies were not compatible with a Java 24 runtime.
+
+In Maven 3.9.10 those got updated, resulting in Maven 3.9.10 now has a far better support if you want to run your builds on Java 24.
+
+**Note:** Maven 3.9.10 still only requires Java 8 to execute.
 
 The full list of changes can be found in our [issue management system][4].
 
