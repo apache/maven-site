@@ -217,7 +217,7 @@ The components in Git are shown in the following table.
 | [Apache Maven Shared Utils](/shared/maven-shared-utils/)                      | [`https://gitbox.apache.org/repos/asf/maven-shared-utils.git`](https://gitbox.apache.org/repos/asf/maven-shared-utils.git)                       |      [GitHub](https://github.com/apache/maven-shared-utils/)       |      [GitHub Issues](https://github.com/apache/maven-shared-utils/issues)       |
 | [Apache Maven Verifier](/shared/maven-verifier/)                              | [`https://gitbox.apache.org/repos/asf/maven-verifier.git`](https://gitbox.apache.org/repos/asf/maven-verifier.git)                               |        [GitHub](https://github.com/apache/maven-verifier/)         |        [GitHub Issues](https://github.com/apache/maven-verifier/issues)         |
 
-#### Shared Components
+#### Skins
 
 | Content                                                 | Repository                                                                                                                 |                         Mirror                          |                                Issues                                 |
 |:--------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------:|:---------------------------------------------------------------------:|
