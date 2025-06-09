@@ -79,8 +79,8 @@ mvn site
 <project>
   [...]
   <issueManagement>
-    <system>jira</system>
-    <url>http://jira.someproject.org</url>
+    <system>github</system>
+    <url>http://gitub.com/apache/foo/issues</url>
   </issueManagement>    
   [...] 
 </project>

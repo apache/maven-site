@@ -125,20 +125,9 @@ Localization of Plugins
 
   * Run "mvn site" on that project to test it.
 
-  * When you are happy with your translation, create an issue in JIRA for the
+  * When you are happy with your translation, create a Pull Request for the
     plugin in question, with a description like this:
     "Add Spanish translation". Take note of the issue number.
-
-  * Create a patch file that contains your new translation. Use the issue number
-    when you name the file:
-
-------
-svn diff > MYISSUE-123.patch
-------
-
-  * Attach your patch file to the issue in JIRA.
-
-  []
 
 
 * Tools

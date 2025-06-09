@@ -40,7 +40,7 @@ explained in a better way or you simply miss things
 do not hesitate to contact the maven community via
 the users mailing list and tell us about it.
 
-### Help Log Defects in JIRA
+### Help Log Defects in GitHub
 
 Just as any other healthy project requires a quick turn-around on
 defects, and a transparent method of users to have their wishes heard,

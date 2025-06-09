@@ -19,17 +19,17 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven projects use [Jira](https://www.atlassian.com/software/jira) as issue tracking and project management application.
+Maven projects use GitHub issues as issue tracking and project management application.
 
 ## Issue Management
 
 Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own Jira project or component:
-**see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview) to get a summary of open issues**.
+**see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/JIRA+to+GitHub+Issues+switching) to get a summary of open issues**.
 
 Issues, bugs, and feature requests should be submitted to the following
 issue management systems depending on which component is involved:
 
-* Maven "core": <https://issues.apache.org/jira/browse/MNG>
+* Maven "core": <https://github.com/apache/maven/issues>
 
 * Maven Website: <https://github.com/apache/maven-site/issues>
 
