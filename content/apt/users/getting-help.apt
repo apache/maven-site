@@ -67,39 +67,20 @@ Getting Help
 
   If it turns out that there is indeed something wrong with Maven
   or one of the plugins, you should report it to the issue management system.
-  Please check the project's documentation, if it is still used JIRA (which requires an account - see below) as its issue management system or if it is already migrated to GitHub issues.
+  All projects (Apache Maven core, Apache Maven plugins, sub components) have been migrated to use GitHub issues.
 
   You don't need create an issue only to ask us something
   - in such case please first ask on {{{https://maven.apache.org/mailing-lists.html}users-list}}
 
-**Request new JIRA account
-
-  Requesting for JIRA account is preferred if you plan to contribute to project by coding or testing by longer time.
-
-  This is so that we can communicate with you while we work together on the issue.
-
-  * please use your real name and surname if possible in public name field
-
-  * links to your public projects, social or professional profile can be appreciated
-
-  * you can also tell us a little about yourself and what you intend to use this account for
-
-  []
-
-  Such information is useful to verify that account is requested for real user not a bot.
-
-  Go to the {{{https://selfserve.apache.org/jira-account.html?project=maven}Request a JIRA account}}
-  to request for a new account if you don't already have one.
-
 **Where?
 
   If the problem is in one of the plugins, check the site of that plugin to
-  get the correct link. Each plugin has its own section in JIRA, so using the
+  get the correct link. Each plugin has its own GitHub repository, so using the
   correct link is important. Click on <Project Information> and then
-  <Issue Management>. On that page you will find the correct link.
+  <Source Code Management>. On that page you will find the correct link.
 
-  If the problem is in Maven itself you can find the appropriate link on the
-  {{{https://maven.apache.org/issue-management.html}issue management}} page.
+  If the problem is in Maven itself you can find the appropriate link to GitHub repository on the
+  {{{https://maven.apache.org/scm.html}scm}} page.
 
 **How?
 
@@ -121,6 +102,9 @@ Getting Help
   What we like best are patches that fixes the problem. If you want to create a
   patch for an issue please read the
   {{{../guides/development/guide-maven-development.html}Maven Developer Guide}} first.
+
+  If you have been able to figure out the changes needed for your problem or enhancement request, you can directly
+  create a Pull Request against the GitHub repository.
 
 * References
 
