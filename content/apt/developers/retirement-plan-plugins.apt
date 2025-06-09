@@ -100,14 +100,14 @@ I will continue with the steps required to retire this plugin.
 
 * Make the final release
 
-  [[1]] Create an issue in JIRA with the issue type "Task" and the summary
+  [[1]] Create an issue in GitHub with the issue type "Task" and the summary
   "Retire this plugin", and schedule it for the final release. If the plugin
-  includes a JIRA report in the generated site, you will need to close this
+  includes a GitHub report in the generated site, you will need to close this
   issue before you make the release.
 
   [[1]] Add the description
   "This is the final version of this plugin. It has been retired."
-  to the final version in JIRA.
+  to the final version in GitHub.
 
   [[1]] Add a prominent notice on the front page of the plugin's site,
   informing that the plugin is retired. Suggested text:
@@ -131,10 +131,10 @@ but has moved to the <Organization> <Project> project.
   making sure that you follow the exceptions mentioned above regarding the site deployment.
 
   [[1]] When updating the plugins page, move Maven Foo Plugin to under the
-  "Retired" heading. Remove the SVN/Github and JIRA/Github Issues links and add
+  "Retired" heading. Remove the SVN/Github and Github Issues links and add
   the date of retirement.
 
-  [[1]] When updating the version in JIRA, do not add Y.Z+1 and make sure you
+  [[1]] When updating the version in GitHub, do not add Y.Z+1 and make sure you
   remove any future versions. This needs to be done by PMC members.
 
 * Clean up after the release
@@ -149,7 +149,7 @@ but has moved to the <Organization> <Project> project.
   
   [[1]] When relevant update summary pages for {{{https://maven.apache.org/plugins/index.html}plugins}} or {{{https://maven.apache.org/shared/index.html}shared components}} 
 
-  [[1]] Add " (RETIRED)" at the end of the project name in JIRA. This needs to be done by PMC members.
+  [[1]] Add " (RETIRED)" at the end of the project name in GitHub. This needs to be done by PMC members.
 
   [[1]] Put the JIRA project in read-only mode in case of standalone project (own Jira key): apply Maven Retired Project Permissions Scheme.
   (Requires JIRA admin karma: e.g. ask Brian Fox)

@@ -81,7 +81,7 @@ Maven Developer Centre
 
   * {{{./conventions/code.html}Maven Code Style And Conventions}}
 
-  * Maven issue tracking conventions: {{{./conventions/jira.html}JIRA}} / {{{./conventions/github.html}GitHub Issues}}
+  * Maven issue tracking conventions: {{{./conventions/github.html}GitHub Issues}}
 
   * {{{./conventions/git.html}Maven Git Commit Conventions}}
 

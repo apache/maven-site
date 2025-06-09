@@ -86,9 +86,7 @@ Performing a Maven Project Release
 
   * use release-drafter to help prepare release notes - in such case all PRs should a proper label
 
-  * copy paste release notes from JIRA
-
-  * put link to release notes in JIRA
+  * copy paste release notes from GitHub
 
   []
 
@@ -130,10 +128,7 @@ Subject: [VOTE] Release Apache Maven XXX Plugin version Y.Z
 Hi,
 
 We solved N issues:
-https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=XXXXXX&version=YYYYYYY&styleName=Text
-
-There are still a couple of issues left in JIRA:
-https://issues.apache.org/jira/issues/?jql=project%20%3D%20XXXXXXXXXX%20AND%20resolution%20%3D%20Unresolved%20ORDER%20BY%20key%20DESC%2C%20priority%20DESC
+https://github.com/apache/maven-compiler-plugin/issues?q=is%3Aissue%20state%3Aopen%20milestone%3A3.14.1
 
 Changes since the last release:
 https://github.com/apache/<repository-name>/compare/<last-tag>...<current-tag>
@@ -159,13 +154,10 @@ Vote open for at least 72 hours.
 
 -----
 
-** JIRA issues
+** GitHub issues
 
- To get the JIRA release notes link, browse to the plugin's or component's JIRA page, select the <Releases> link, pick a version,
+ To get the Github release notes link, browse to the GitHub repository, select the <Releases> link, pick a version,
  and use the link to <Release Notes> that is next to the version being released.
-
- To get the list of issues left in JIRA, browse to the plugin's or component's JIRA page, and from the <Preset Filters>
- on the right, use the link for <Outstanding> issues.
 
 ** GitHub issues
 
