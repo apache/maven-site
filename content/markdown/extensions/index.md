@@ -49,7 +49,7 @@ A number of other projects provide their own Maven extensions. This includes:
 
 ### Commercial
 
-|                             Extension                             | Maintainer  |                                                                                                                                     Description                                                                                                                                     |
-|-------------------------------------------------------------------|-------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|                             Extension                             | Maintainer  |                                                                                                                                 Description                                                                                                                                  |
+|-------------------------------------------------------------------|-------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [Develocity](https://docs.gradle.com/develocity/maven-extension/) | Gradle Inc. | Captures Maven build insights that can be viewed for free on [scans.gradle.com](https://gradle.com/scans/maven/). Provides local and remote build caching, distributed test execution and predictive test selection for Maven builds connected to a Develocity installation. |
 
