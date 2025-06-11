@@ -68,7 +68,6 @@ under the License.
           <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html"/>
           <item name="Getting Help" href="/users/getting-help.html"/>
           <item name="Running Maven" href="/run-maven/index.html"/>
-
         </item>
         <item name="Maven Build Config Fundamentals" collapse="false">
           <item name="Plugins Validation" href="/guides/plugins/validation/index.html"/>
@@ -107,21 +106,20 @@ under the License.
                   href="/guides/introduction/introduction-to-optional-and-excludes-dependencies.html"/>
           </item>
         </item>
-        <item name="Maven 3" collapse="false">
-          <item name="Getting Started Guide" href="/guides/getting-started/index.html" collapse="true">
-            <item name="Naming Conventions" href="/guides/mini/guide-naming-conventions.html"/>
-            <item name="The Build Lifecycle" href="/guides/introduction/introduction-to-the-lifecycle.html"/>
-            <item name="The POM" href="/guides/introduction/introduction-to-the-pom.html"/>
-            <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
-              <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
-              <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
-            </item>
-            <item name="POM 4.0.0 Reference" href="/pom.html"/>
-            <item name="Settings Reference"
-                  href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
+        <item name="Getting Started Guide" href="/guides/getting-started/index.html" collapse="true">
+          <item name="Naming Conventions" href="/guides/mini/guide-naming-conventions.html"/>
+          <item name="The Build Lifecycle" href="/guides/introduction/introduction-to-the-lifecycle.html"/>
+          <item name="The POM" href="/guides/introduction/introduction-to-the-pom.html"/>
+          <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
+            <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
+            <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
           </item>
+          <item name="POM 4.0.0 Reference" href="/pom.html"/>
+          <item name="Settings Reference"
+                href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
+        </item>
 
-      </item>
+
       <item name="Maven 4" collapse="false">
         <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
         <item name="Migrate to Maven 4" href="/guides/mini/guide-migration-to-mvn4.html"/>
