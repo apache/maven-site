@@ -156,19 +156,16 @@ under the License.
       </item>
       <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>
-        <item name="Maven 3" collapse="false">
-          <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html"/>
-          <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html"/>
-          <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html"/>
-          <item name="Mojo API" href="/developers/mojo-api-specification.html"/>
-          <item name="Maven 3.1.x logging" href="/maven-logging.html"/>
-          <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html"/>
-          <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html"/>
-          <item name="Plexus Javadoc to Plexus Annotations"
-                href="/plugin-developers/cookbook/plexus-plugin-upgrade.html"/>
-          <item name="Using JSR-330" href="/maven-jsr330.html"/>
-        </item>
-
+        <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html"/>
+        <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html"/>
+        <item name="Testing Plugins" href="/plugin-developers/plugin-testing.html"/>
+        <item name="Mojo API" href="/developers/mojo-api-specification.html"/>
+        <item name="Maven 3.1.x logging" href="/maven-logging.html"/>
+        <item name="Common Bugs and Pitfalls" href="/plugin-developers/common-bugs.html"/>
+        <item name="Maven Lifecycle Extensions" href="/examples/maven-3-lifecycle-extensions.html"/>
+        <item name="Plexus Javadoc to Plexus Annotations"
+          href="/plugin-developers/cookbook/plexus-plugin-upgrade.html"/>
+        <item name="Using JSR-330" href="/maven-jsr330.html"/>
       </item>
       <item name="Maven Repository Centre" href="/repositories/index.html" collapse="true">
         <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
