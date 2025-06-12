@@ -42,24 +42,17 @@ Maven Git Convention
   To contribute to a Maven component that is maintained in git, please
   follow these steps:
 
-  [[1]] create a JIRA for bug or improvement that you wish to work
-  on. The Maven project uses JIRA to organize and track our work,
-  and in particular to keep track of which changes are included in
-  which releases.
-
-  [[2]] Make a fork of the official ASF clone from github.com. For
+  [[1]] Make a fork of the official ASF clone from github.com. For
   example, <<<https://github.com/apache/maven-scm>>>.
 
-  [[3]] Make a branch named after your JIRA ticket. This is not <required>,
+  [[2]] Make a branch named after your GitHub issue. This is not <required>,
   but it makes it easier for Maven committers to keep track of your 
   contribution.
 
-  [[4]] Make your changes. As always, unit or integration tests make
+  [[3]] Make your changes. As always, unit or integration tests make
   it much easier for us to accept your changes.
 
-  [[5]] Make a pull request to pull your changes to the official clone.
-  Add a link to your pull request to the JIRA. Committers will take it
-  from here.
+  [[4]] Make a pull request to pull your changes to the official clone.
 
 ** For committers
 
@@ -72,19 +65,17 @@ Maven Git Convention
   Commits should be focused on one issue at a time, because that makes it easier
   for others to review the commit.
 
-  A commit message should use this template:
+  While not mandatory, we will appreciate signed commits.
+
+  If the changes is linked to an issue, the commit message should use this template:
 
 -------
-[ISSUE-1] <<Summary field from JIRA>>
-Submitted by: <<Name of non-committer>>
+Issue #1 <<Title from GitHub issue>>
 
 o Comments
 -------
 
   Where:
-
-  * <<ISSUE-1>> can be omitted if there was no relevant JIRA issue, though you are strongly encouraged to create one for
-  significant changes.
 
   * <<Submitted by>> only needs to be specified when a patch is being applied for a non-committer.
 
@@ -95,7 +86,7 @@ o Comments
   eg:
 
 -------
-[MNG-1456] Added the foo to the bar
+Issue #123456 Add the foo to the bar
 Submitted by: Baz Bazman
 
 o Applied without change
@@ -181,7 +172,6 @@ $ git checkout .
 
 ---
 git clone https://github.com/<youraccount>/maven-surefire.git
-git remote add apache https://git-wip-us.apache.org/repos/asf/maven-surefire.git
 git remote add asfgithub https://github.com/apache/maven-surefire.git
 git config --add remote.asfgithub.fetch "+refs/pull/*/head:refs/remotes/asfgithub/pr/*"
 git fetch --all

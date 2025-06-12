@@ -38,8 +38,7 @@ Developing Maven
 
 * Finding some work to do
 
- First of all you need something to work on! Issues can be found in
- {{{/issue-management.html}several JIRA projects}}.
+ First of all you need something to work on! Issues can be found on each GitHub repo issues.
 
  Another good place to look for work is the {{{https://s.apache.org/up-for-grabs_maven} Up for grabs}} list.
  This list contains relatively simple issues that can be worked on without a lot of prerequisite knowledge.	
@@ -85,9 +84,7 @@ Developing Maven
  * Create your branch from <<<master>>>, not from a tag. Otherwise, your patch is outdated the moment you create it and might not be applicable
    to the development head.
 
- * If this was a new piece of work without a JIRA issue, create a JIRA issue for it now.
-
- * Name the branch after the issue number; the branch name would start with <<<\<jira-project-id>-<ticket-id\>>>>.
+ * Name the branch after the issue number; the branch name would start with <<<\-<ticket-id\>>>>.
 
  * Push your branch with the commit(s) to your fork.
  
@@ -198,7 +195,5 @@ Developing Maven
 * Further Links
 
   * {{{../../developers/conventions/code.html}Maven Code Style And Code Convention}}
-
-  * {{{../../developers/conventions/jira.html}Maven JIRA Convention}}
 
   []

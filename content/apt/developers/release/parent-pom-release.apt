@@ -60,7 +60,7 @@ mvn -f docs scm-publish:publish-scm
 
 * Call the vote
 
-  In the vote, additional to  providing links to JIRA, the parent POMs should include a link to the Git changes since the
+  In the vote, additional to  providing links to GitHub release, the parent POMs should include a link to the Git changes since the
   last release:
 
 -------
