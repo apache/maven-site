@@ -23,7 +23,7 @@ under the License.
 
 Maven DI is the dependency injection framework of Maven, that is introduced in Maven 4.
 
-It is the successor for Plexus DI (used in Maven 2) and JSR 330/Eclipse Sisu (used in Maven 3) in Maven. 
+It is the successor for Plexus DI (used in Maven 2) and JSR 330/Eclipse Sisu (used in Maven 3) in Maven.
 
 ## How to use Maven DI
 
@@ -37,18 +37,18 @@ TBD (need help)
 ## How to use Maven DI in plugins
 
 ---
+
 **NOTE**
 
 If your plugin should also run with Maven 3.x, please look at [Maven & JSR-330](maven-jsr330).
 Plugins that are using Maven DI are only compatible with Maven 4.
----
+-----------------------------------------------------------------
 
 Let's take a look at an example plugin: If you want to look at this example project, you can find the code [in Maven Core ITs][maven-di-plugin].
 
 The POM is set up for Maven DI as previously mentioned, with the `maven-api-di` dependency
 
 In addition, we add a Maven plugin dependency `maven-api-core` to implement the interface `Mojo`.
-
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,7 +127,6 @@ In addition, we add a Maven plugin dependency `maven-api-core` to implement the 
 
 ```
 
-
 Now let's take a look at the plugin code.
 We are using field injection to add the `MavenDIComponent` to our Mojo.
 
@@ -185,7 +184,7 @@ So the next step is to add all dependencies that are needed for testing.
 
 For the helper classes, we are adding `maven-testing`.
 The dependencies to `maven-core`, `maven-resolver-api` and `maven-api-impl`  are only needed for the test runtime.
-`junit-jupiter` is the used test framework, `mockito-*` is the used mock framework and `assertj` is the used annotation lib. 
+`junit-jupiter` is the used test framework, `mockito-*` is the used mock framework and `assertj` is the used annotation lib.
 The last two mention dependencies are optional but helpful.
 
 ```xml
@@ -304,10 +303,9 @@ public class HelloMojoTest {
 If you want to mock your injected component, you have to write a method that creates the mock for this component.
 This method has to be annotated with `@Singleton`, `@Provides` and `@Priority(10)`, so that the DI framework selected it before the real component.
 
-
-
 [guice]: https://github.com/google/guice
 [maven-jsr330]: maven-jsr330.html
 [maven-di-plugin]: https://github.com/apache/maven/tree/master/its/core-it-suite/src/test/resources/mng-8525-maven-di-plugin
 [maven-plugin-testing-harness]: https://maven.apache.org/plugin-testing/maven-plugin-testing-harness/index.html
 [junit-jupiter]: https://junit.org/junit5/
+
