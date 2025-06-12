@@ -23,8 +23,7 @@ Maven projects use GitHub issues as issue tracking and project management applic
 
 ## Issue Management
 
-Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own Jira project or component:
-**see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/JIRA+to+GitHub+Issues+switching) to get a summary of open issues**.
+Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own GitHub repository.
 
 Issues, bugs, and feature requests should be submitted to the following
 issue management systems depending on which component is involved:

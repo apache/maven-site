@@ -122,7 +122,7 @@ To resolve this error:
   plug-ins.
 
 If the error persists, browse [archived discussions](http://www.mail-archive.com/users@maven.apache.org/), post to the
-Maven user list, or log a [ticket](https://github.com/apache/maven) describing your problem, if you think it is a
+Maven user list, or log a [ticket](https://github.com/apache/maven/issues) describing your problem, if you think it is a
 bug. Tickets may also be issued for feature enhancement requests, and other tasks.
 
 ### How do I include/exclude the other modules in the navigation menu in the parent site?

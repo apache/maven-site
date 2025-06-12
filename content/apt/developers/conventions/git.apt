@@ -86,7 +86,7 @@ o Comments
   eg:
 
 -------
-Issue #123456 Added the foo to the bar
+Issue #123456 Add the foo to the bar
 Submitted by: Baz Bazman
 
 o Applied without change
@@ -172,7 +172,6 @@ $ git checkout .
 
 ---
 git clone https://github.com/<youraccount>/maven-surefire.git
-git remote add apache https://gitbox.apache.org/repos/asf/maven-surefire.git
 git remote add asfgithub https://github.com/apache/maven-surefire.git
 git config --add remote.asfgithub.fetch "+refs/pull/*/head:refs/remotes/asfgithub/pr/*"
 git fetch --all
