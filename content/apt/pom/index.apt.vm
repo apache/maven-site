@@ -35,7 +35,7 @@ Parent POMs
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 || <<POM>>                                   || <<Version>> || <<Release Date>> || <<Parent POM Description>> || <<Source Repository>> || <<Issue Tracking>>
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
-| {{{./asf/} <<<ASF>>>}}                     | 34           | 2025-03-15 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://github.com/apache/maven-apache-parent/issues}GitHub}}
+| {{{./asf/} <<<ASF>>>}}                     | 35           | 2025-06-09 | ASF wide configuration.            | {{{http://gitbox.apache.org/repos/asf/maven-apache-parent/}Git}} / {{{https://github.com/apache/maven-apache-parent/}GitHub}} | {{{https://github.com/apache/maven-apache-parent/issues}GitHub}}
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
 || <<Maven Parent POMs>>                     | 44           | 2025-03-15 |                                    | {{{http://gitbox.apache.org/repos/asf/maven-parent/}Git}} / {{{https://github.com/apache/maven-parent/}GitHub}} |
 *--------------------------------------------+--------------+------------+------------------------------------+------------------------+--------------------+
