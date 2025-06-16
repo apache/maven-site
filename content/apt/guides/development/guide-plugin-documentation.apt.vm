@@ -34,8 +34,8 @@ mvn site
 
  It will generate a plugin site based on the information in the POM, <<<src/site>>> and other reporting
  plugins configured in the POM. The most important reporting plugin is the
- {{{/plugins/maven-plugin-plugin/}Maven Plugin Plugin}} which will generate
- the documentation for each plugin goal based on the mojo annotations. But in order for the generated site to be
+ {{{/plugins/maven-plugin-report-plugin/}Maven Plugin Report Plugin}} which will generate
+ the documentation for each plugin goal based on the Mojo annotations. But in order for the generated site to be
  usable, the required information should be available to the Maven Site Plugin.
    
 *POM Elements
@@ -168,7 +168,7 @@ mvn site
         <version>$context.get("version.maven-plugin-tools")</version>
       </plugin>
     </plugins>
-  </reporting>    
+  </reporting>
   [...]  
 </project>
 +--------------+   
