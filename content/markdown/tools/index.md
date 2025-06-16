@@ -27,8 +27,8 @@ The pages in this section will give information about additional Maven tools, wh
 
 ## Supported By The Maven Project
 
-| Name                              | Description                                                                                                           | Link        |
-|:----------------------------------|:----------------------------------------------------------------------------------------------------------------------|:------------|
+| Name                        | Description                                                                                                           | Link        |
+|:----------------------------|:----------------------------------------------------------------------------------------------------------------------|:------------|
 | [Maven Daemon](./mvnd.html) | This project aims at providing faster Maven builds using techniques known like daemon process management and caching. | [Github][1] |
 
 [1]: https://github.com/apache/maven-mvnd
