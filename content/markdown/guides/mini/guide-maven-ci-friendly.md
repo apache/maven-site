@@ -336,7 +336,7 @@ will look like this:
 </project>
 ```
 
-## Multi Subproject Setup (Maven 4)
+## Multi-Subproject Setup (Maven 4)
 
 When you are using Maven 4 with model version 4.1.0, you don't need to specify the versions of your subproject's parent and your project own dependencies thanks to [automatic version resolution](./guide-migration-to-mvn4.html#Automatic_versioning_in_multi_subprojects_setups) in Maven 4.  
 In addition to this, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
