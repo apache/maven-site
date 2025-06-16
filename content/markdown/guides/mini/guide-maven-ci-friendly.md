@@ -49,7 +49,7 @@ to show the general course.
 Based on the above pom you can build your project using:
 
 ```
-mvn clean package
+mvn verify
 ```
 
 But wait there is a problem? Which version will the artifacts have? So you need
@@ -57,7 +57,7 @@ to define the version for your artifacts. The first possibility is to use the co
 line like this:
 
 ```
-mvn -Drevision=1.0.0-SNAPSHOT clean package
+mvn -Drevision=1.0.0-SNAPSHOT verify
 ```
 
 This will become cumbersome over the time. So the other solution for this is
@@ -83,12 +83,12 @@ to simply use a property inside the pom file which looks like this:
 </project>
 ```
 
-So now you can simply call Maven as usual like `mvn clean package`.
+So now you can simply call Maven as usual like `mvn verify`.
 
 You can of course change the version via the command line like this:
 
 ```
-mvn -Drevision=2.0.0-SNAPSHOT clean package
+mvn -Drevision=2.0.0-SNAPSHOT verify
 ```
 
 Of course, you can use the `.mvn/maven.config` file for this.
@@ -147,28 +147,28 @@ If you like to make a version `2.0.0-SNAPSHOT` this can
 simply being achieved by using this:
 
 ```
-mvn -Drevision=2.0.0 clean package
+mvn -Drevision=2.0.0 verify
 ```
 
 Another usage example can be to make a release which can be
 done via (version 1.3.1):
 
 ```
-mvn -Dchangelist= clean package
+mvn -Dchangelist= verify
 ```
 
 Or if you like to make a release with another version:
 
 ```
-mvn -Drevision=2.7.8 -Dchangelist= clean package
+mvn -Drevision=2.7.8 -Dchangelist= verify
 ```
 
 Please read until the end of this documentation!
 
-## Multi Module Setup
+## Multi Subproject Setup (Maven 3)
 
-So now let us take a look into a situation where we have a multi module
-build. We have a parent pom and one or more children.
+So now let us take a look into a situation where we have a project with multiple subprojects.
+We have a parent pom and one or more children.
 The parent pom will look like this:
 
 ```xml
@@ -212,12 +212,12 @@ The child will look like this:
 </project>
 ```
 
-A multi module build can of course build the same way as the single project setup. You should
+A multi-subproject build can of course build the same way as the single project setup. You should
 define the version either via property in the parent or use the `.mvn/maven.config` file.
 
 ## Dependencies
 
-In a multi module build you have often the case that you define dependencies
+In a multi-subproject build you have often the case that you define dependencies
 between module(s). The usual way of defining dependencies and their appropriate
 versions has been to use `${project.version}` and this has not been changed.
 
@@ -277,7 +277,7 @@ will fail.
 ## Install / Deploy
 
 If you like to install or deploy artifacts by using the above setup you **have to use**
-the [flatten-maven-plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts
+the [Flatten Maven Plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts
 in your repository which will not be consumable by Maven anymore. Such kind of setup
 will look like this:
 
@@ -304,7 +304,7 @@ will look like this:
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
-        <version>1.1.0</version>
+        <version>1.7.0</version>
         <configuration>
           <updatePomFile>true</updatePomFile>
           <flattenMode>resolveCiFriendliesOnly</flattenMode>
@@ -334,6 +334,11 @@ will look like this:
   </modules>
 </project>
 ```
+
+## Multi Subproject Setup (Maven 4)
+
+When you are using Maven 4 with model version 4.1.0, you don't need to specify the versions of your parent and your project own dependencies thanks to [automatic version resolution](./guide-migration-to-mvn4.html#Automatic_versioning_in_multi_subprojects_setups) in Maven 4.  
+In addition to this, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
 
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
 
