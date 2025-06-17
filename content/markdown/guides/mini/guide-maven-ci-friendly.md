@@ -212,13 +212,13 @@ The child will look like this:
 </project>
 ```
 
-A multi-module build can of course build the same way as the single project setup. You should
+A multi-module build builds the same way as the single project setup. You should
 define the version either via property in the parent or use the `.mvn/maven.config` file.
 
 ## Dependencies
 
-In a multi-module build you have often the case that you define dependencies
-between modules. The usual way of defining dependencies and their appropriate
+A multi-module build often defines dependencies between modules.
+The usual way of defining dependencies and their appropriate
 versions has been to use `${project.version}` and this has not been changed.
 
 So the correct way to do such things can be seen in the following example:
@@ -276,10 +276,9 @@ will fail.
 
 ## Install / Deploy
 
-If you like to install or deploy artifacts by using the above setup you **have to use**
-the [Flatten Maven Plugin][flatten-maven-plugin] otherwise you will install/deploy artifacts
-in your repository which will not be consumable by Maven anymore. Such kind of setup
-will look like this:
+To install or deploy artifacts by using the above setup you **have to use** the [Flatten Maven Plugin][flatten-maven-plugin].
+Otherwise, you will install/deploy artifacts in your repository which will not be consumable by Maven anymore.
+Such a setup will look like this:
 
 ```xml
 
@@ -338,8 +337,8 @@ will look like this:
 
 ## Multi-Subproject Setup (Maven 4)
 
-When you are using Maven 4 with model version 4.1.0, you don't need to specify the versions of your subproject's parent and your project own dependencies thanks to [automatic version resolution](./guide-migration-to-mvn4.html#Automatic_versioning_in_multi_subprojects_setups) in Maven 4.  
-In addition to this, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
+When you are using Maven 4 with model version 4.1.0, you don't need to specify the versions of your subproject's parent and your project's own dependencies thanks to [automatic version resolution](./guide-migration-to-mvn4.html#Automatic_versioning_in_multi_subprojects_setups) in Maven 4.  
+In addition, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
 
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
 
