@@ -32,7 +32,7 @@ Introduction
  Currently, Maven only supports unit testing out of the box. This document is intended to help Maven Developers
  test plugins with unit tests, integration tests, and functional tests.
 
-~~  <<Note: There are a lot of different ways to test a Maven plugin.>>  For a review of different strategies and tools, please refer to {{{http://docs.codehaus.org/display/MAVENUSER/Review+of+Plugin+Testing+Strategies}Review of Plugin Testing Strategies}}
+~~  <<Note: There are a lot of different ways to test a Maven plugin.>>  For a review of different strategies and tools, please refer to "Review of Plugin Testing Strategies."
 
 Testing Styles: Unit Testing vs. Functional/Integration Testing
 

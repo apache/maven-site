@@ -395,8 +395,8 @@ artifact.
       ...
       <repositories>
         <repository>
-          <id>codehausSnapshots</id>
-          <name>Codehaus Snapshots</name>
+          <id>Snapshots</id>
+          <name>Snapshots</name>
           <releases>
             <enabled>false</enabled>
             <updatePolicy>always</updatePolicy>
@@ -407,7 +407,7 @@ artifact.
             <updatePolicy>never</updatePolicy>
             <checksumPolicy>fail</checksumPolicy>
           </snapshots>
-          <url>http://snapshots.maven.codehaus.org/maven2</url>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
           <layout>default</layout>
         </repository>
       </repositories>
