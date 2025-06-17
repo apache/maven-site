@@ -1262,7 +1262,7 @@ This tells which phase the plugin is associated.
 
 ### Where to get sun.jdk-tools-jar-1.4.0 on MacOSX?
 
-There are no tools.jar on a mac. The classes are included in the normal java runtime
+There is no tools.jar on a mac. The classes are included in the normal java runtime
 ( `/System/Library/Frameworks/ JavaVM.framework/Classes/classes.jar`).
 Refer to this link [http://lists.apple.com/archives/java-dev/2002/Jun/msg00901.html] )
 
@@ -1943,9 +1943,9 @@ You can do this by using the maven-buildhelper-plugin. It allows you to add addi
 
 Then `$myproperty=propertyvalue`
 
-### How do replace `<attainGoal>` from m1 in m2?
+### How do I replace `<attainGoal>` from Maven 1 in Maven 2?
 
-I want to build a plugin with multiple goal, some goal might be aliases and call other goals. How do I do that in m2?
+I want to build a plugin with multiple goals. Some goals might be aliases and call other goals. How do I do that in Maven?
 
 ### Why do I get `java.lang.NoClassDefFoundError: org/codehaus/classworlds/Launcher` when I try to execute Maven?
 
