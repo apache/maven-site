@@ -127,7 +127,7 @@ bug. Tickets may also be issued for feature enhancement requests, and other task
 
 ### How do I include/exclude the other modules in the navigation menu in the parent site?
 
-[MNG-661](http://jira.codehaus.org/browse/MNG-661), provides a simple patch which provides parent and module links using
+MNG-661 provides a simple patch which provides parent and module links using
 the project URLs which as you correctly point out only work when the site is deployed.
 
 -- ## Errors, Dependencies, Plugins
@@ -171,11 +171,6 @@ This command will install the file in your local repository along with your cust
 _Plugins & Lifecycle_
 
 ## General
-
-### What is the difference between Maven and Ivy?
-
-For a comparison of Maven's features vs Ivy's you can refer to
-our [feature comparison](http://docs.codehaus.org/display/MAVEN/Feature+Comparisons)
 
 ### How do I get a plugin's dependencies from a Mojo?
 
@@ -497,7 +492,7 @@ You can integrate your static pages in this several steps,
 maven-war-plugin 2.0-beta-3 and later supports merging of wars. Just reference the common WAR project from another WAR
 project as a dependency of `<type>war</type>` and it will automatically be merged.
 
-See [http://jira.codehaus.org/browse/MWAR-8)
+See [https://issues.apache.org/jira/browse/MWAR-8)
 
 _Inheritance and Interpolation_
 
@@ -807,13 +802,12 @@ _Plugins and Lifecycle, Sites & Reporting, Integration tests_
 
 ### The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?
 
-If the plugin in the snapshot repo ([http://snapshots.maven.codehaus.org/maven2]) is not yet updated. The only way to
-update it is to check out the source from SVN and build it.
+If the plugin in the snapshot repo is not yet updated, the only way to
+update it is to check out the source and build it.
 
 ### Is there a way to get Maven to report the number of compile errors found?
 
-Currently, this type of summary information is not built into the compiler plugin, but it would be possible to add. If
-this feature is important to you, add your vote to [MNG-1854](http://jira.codehaus.org/browse/MNG-1854).
+Currently, this type of summary information is not built into the compiler plugin, but it would be possible to add.
 
 _Sites & Reporting_
 
@@ -1311,11 +1305,8 @@ JDKs).
 
 ### How to remove the artifact in the local repository?
 
-As of now, There is no tool for it. You have to manually delete them in your local repository. However,
-there is already some discussion about this. Please refer to these links for more info.
-
-[http://jira.codehaus.org/browse/MNG-233]
-[http://jira.codehaus.org/browse/MRELEASE-68]
+As of now, there is no tool for it. You have to manually delete them in your local repository. However,
+there is already some discussion about this.
 
 ### How to make a war artifact as a dependency?
 
@@ -1360,7 +1351,7 @@ meaning it is still in the state of development. There are some ways the append 
 
 ### How to run a java program from Maven?
 
-You may use the [exec-maven-plugin](https://mojo.codehaus.org/exec-maven-plugin/usage.html) for this.
+You may use the [exec-maven-plugin](https://www.mojohaus.org/exec-maven-plugin/) for this.
 
 ### How can I make the war plugin produces an exploded war instead of .war file?
 
@@ -1625,7 +1616,7 @@ Since the two don't match, XDoclet assumes that there is a serious problem with 
 How will the plugin be licensed? Is it intended to just be a binary distribution or will the source be available? Where
 will be the documentation be? How will people find out about it?
 I think your choice is probably influenced by these questions. One option, of course, is to propose it to
-mojo.codehaus.org if you want to and can share the code.
+www.mojohaus.org if you want to and can share the code.
 
 ### How do I access downloaded sources in eclipse?
 
@@ -1745,7 +1736,7 @@ For example, for Maven snapshots as stated below, you could use :
 <repositories>
   <repository>
     <id>maven-snapshots</id>
-    <url>http://snapshots.maven.codehaus.org/</url>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
   </repository>
 </repositories>
 ```
@@ -1757,7 +1748,7 @@ or, for plugins :
 <pluginRepositories>
   <pluginRepository>
     <id>maven-snapshots</id>
-    <url>http://snapshots.maven.codehaus.org/</url>
+    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
   </pluginRepository>
 </pluginRepositories>
 ```

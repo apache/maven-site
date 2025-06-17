@@ -70,7 +70,7 @@ Note this requires Maven 3.2.2 so if you use this new feature it is encouraged y
 
 ### Requiring multiple profile activation conditions to be true does not work ([MNG-4565][MNG-4565])
 
-Multiple profile activation conditions are now ANDed instead of ORed. We believe this is the correct behaviour as prior to this change activating a profile where multiple conditions are required was impossible. If you do need OR behaviour then you can create multiple profiles with a single condition. Profiles certainly have limitations and can likely be addressed without requiring conditional syntax in the POM by using a single custom activator that employs an expression language like [MVEL][mvel].
+Multiple profile activation conditions are now ANDed instead of ORed. We believe this is the correct behaviour as prior to this change activating a profile where multiple conditions are required was impossible. If you do need OR behaviour then you can create multiple profiles with a single condition. Profiles certainly have limitations and can likely be addressed without requiring conditional syntax in the POM by using a single custom activator that employs an expression language like MVEL.
 
 ### Support resolution of Import Scope POMs from Repo that contains a ${parameter} ([MNG-5639][MNG-5639])
 
@@ -129,5 +129,4 @@ See [complete release notes for all versions][5]
 [MNG-5452]: https://issues.apache.org/jira/browse/MNG-5452
 [MNG-5639]: https://issues.apache.org/jira/browse/MNG-5639
 [MNG-5647]: https://issues.apache.org/jira/browse/MNG-5647
-[mvel]: http://mvel.codehaus.org
 

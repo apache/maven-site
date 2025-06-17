@@ -1483,8 +1483,8 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
   <organization>
-    <name>Codehaus Mojo</name>
-    <url>http://mojo.codehaus.org</url>
+    <name>Mojohaus</name>
+    <url>http://www.mojohaus.org</url>
   </organization>
 </project>
 +-------------------------+
@@ -1958,7 +1958,7 @@ scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
   ...
   <distributionManagement>
     ...
-    <downloadUrl>http://mojo.codehaus.org/my-project/download.html</downloadUrl>
+    <downloadUrl>http://www.mojohaus.org/my-project/download.html</downloadUrl>
   </distributionManagement>
   ...
 </project>
