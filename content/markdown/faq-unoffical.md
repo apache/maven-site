@@ -367,7 +367,6 @@ Or, refer to the following page [https://maven.apache.org/guides/mini/guide-mult
 </build>
 ```
 
-
 _General, Plugins and Lifecycle_
 
 ### Can a profile inherit the configuration of a "sibling" profile?
@@ -743,7 +742,6 @@ Following is a sample on how to exclude transitive dependencies.
 </project>
 ```
 
-
 _General, Sites & Reporting_
 
 ### How do I skip unit tests when building a project?
@@ -796,7 +794,7 @@ the POM) instead, which will allow this plugin to be a good citizen in the build
 
 Each integration test is a separate project. For a plugin, you may want to create a project that will use your plugin
 and probably put it inside src/test/projects like maven-antrun-plugin, maven-eclipse-plugin, maven-javadoc-plugin and
-several others. 
+several others.
 
 _Plugins and Lifecycle, Sites & Reporting, Integration tests_
 
@@ -817,13 +815,11 @@ Currently, this is not possible. The main reason is that it's non-trivial to det
 is stale (the project here being one of the modules). It will be dependent on the phase being called, and the packaging
 of the particular module.
 
-
 _IDEs_
 
 ### Where can I get the Maven plugin for Eclipse?
 
 [https://eclipse.dev/m2e/]
-
 
 ### How do I generate sources with the antrun plug-in?
 
