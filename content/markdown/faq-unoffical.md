@@ -117,7 +117,7 @@ access the official or `central` Maven plug-in repository.
 To resolve this error:
 
 - If you are behind a http proxy, please check the
-  Maven2 [proxy settings guide](http://maven.apache.org/guides/mini/guide-proxies.html).
+  [proxy settings guide](https://maven.apache.org/guides/mini/guide-proxies.html).
 - If you are upgrading Maven from an older version, try running with \-U. This will force an update check on all
   plug-ins.
 
@@ -334,14 +334,6 @@ It is currently recommended that plug-ins be built using composition, instead of
 
 _Plugin Requests, Design, Patterns & Best Practices_
 
-### How do I access artifacts if Ibiblio is down?
-
-To access artifacts if Ibiblio is down, use any of its mirror sites.
-
-[Guide mirror settings](http://maven.apache.org/guides/mini/guide-mirror-settings.html)
-
-_Repositories, General_
-
 ### How do I specify my remote repo in Maven?
 
 To specify a remote repo in Maven, add the `<repositories>` element to the POM:
@@ -357,7 +349,7 @@ To specify a remote repo in Maven, add the `<repositories>` element to the POM:
 </repositories>
 ```
 
-Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multiple-repositories.html)
+Or, refer to the following page [https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
 ### How do I specify which output directories the Eclipse plugin puts into the .classpath file?
 
@@ -380,7 +372,6 @@ Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multi
 </build>
 ```
 
-_Plugins and Lifecycle, IDEs_
 
 _General, Plugins and Lifecycle_
 
@@ -467,15 +458,15 @@ You can integrate your static pages in this several steps,
 <project name="Maven War Plugin">
   <bannerLeft>
     <name>Maven War Plugin</name>
-    <src>http://maven.apache.org/images/apache-maven-project.png</src>
-    <href>http://maven.apache.org/</href>
+    <src>https://maven.apache.org/images/apache-maven-project.png</src>
+    <href>https://maven.apache.org/</href>
   </bannerLeft>
   <bannerRight>
-    <src>http://maven.apache.org/images/maven-small.gif</src>
+    <src>https://maven.apache.org/images/maven-small.gif</src>
   </bannerRight>
   <body>
     <links>
-      <item name="Maven 2" xhref="http://maven.apache.org/maven2/"/>
+      <item name="Maven" xhref="https://maven.apache.org/"/>
     </links>
 
     <menu name="Overview">
@@ -720,8 +711,8 @@ You can't, but you can use the assembly plugin to create a source distribution a
 project
 
 Please refer to these sites for more info
-[http://maven.apache.org/guides/mini/guide-assemblies.html]
-[http://maven.apache.org/plugins/maven-assembly-plugin/howto.html]
+[https://maven.apache.org/guides/mini/guide-assemblies.html]
+[https://maven.apache.org/plugins/maven-assembly-plugin/howto.html]
 
 _Deployments, Plugins and Lifecycle_
 
@@ -1095,7 +1086,7 @@ or included in the runtime classpath.
 ### How do I list available plugins?
 
 The "Available Plugins" page lists them, and provides additional information to browse the Maven repository.
-See [http://maven.apache.org/plugins]
+See [https://maven.apache.org/plugins]
 
 ### How do I determine what version of a plugin I am using?
 
@@ -1107,10 +1098,10 @@ Note that you must give the plugin prefix as the argument to plugin, not it's ar
 
 There are currently 2 alternatives:
 
-* For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct the Ant
+* For use in a plugin written in Java, Beanshell, or other Java-like scripting language, you can construct the Ant
   tasks [using the instructions given in the Ant documentation](http://ant.apache.org/manual/antexternal.html)
 * If you have very small amounts of Ant script specific to your project, you can use
-  the [AntRun plugin](http://maven.apache.org/plugins/maven-antrun-plugin/index.html).
+  the [AntRun plugin](https://maven.apache.org/plugins/maven-antrun-plugin/index.html).
 
 ### Is it possible to create my own directory structure?
 
@@ -1174,7 +1165,7 @@ following:
 ### Maven doesn't work, how do I get help?
 
 We have compiled a list of available resources on
-the [getting help page](http://maven.apache.org/users/getting-help.html)
+the [getting help page](https://maven.apache.org/users/getting-help.html)
 
 (#Dependencies, Design, Patterns & Best Practices)
 
@@ -1427,7 +1418,7 @@ The assembly plugin, by default, saves the packages to your `project.build.direc
 Also, you can have assembly plugin use a different directory by setting the plugin parameter `outputDirectory` to your
 desired directory.
 More info can be found on
-the [assembly plugin's website](http://maven.apache.org/plugins/maven-assembly-plugin/introduction.html).
+the [assembly plugin's website](https://maven.apache.org/plugins/maven-assembly-plugin/introduction.html).
 
 ### How do I filter which classes should be put inside the packaged jar?
 
@@ -1459,7 +1450,7 @@ compiling some of the java sources using the compiler parameter `excludes` as fo
 ### How do I install the package generated by the assembly plugin to be installed in the local repository?
 
 Use the assembly plugin goal {{assembly:attach}} to install the generated package into the local repository. Please
-see [Guide to Testing Development Plugins](http://maven.apache.org/guides/development/guide-testing-development-plugins.html)
+see [Guide to Testing Development Plugins](https://maven.apache.org/guides/development/guide-testing-development-plugins.html)
 for more info on how to use it.
 
 ### Is it possible to use HashMap as configurable parameter in a plugin? How do I configure that in pom.xml?
@@ -1478,7 +1469,7 @@ like this:
 ### How do I setup the classpath of my antrun plugin to use the classpath from maven?
 
 The maven classpaths are available as ant references when running your ant script. The ant reference names and some
-examples can be found here: [maven-antrun-plugin](http://maven.apache.org/plugins/maven-antrun-plugin/classpaths.html)
+examples can be found here: [maven-antrun-plugin](https://maven.apache.org/plugins/maven-antrun-plugin/classpaths.html)
 
 ### Is there a way to read and examine the contents of a pom.xml file from inside an application?
 
@@ -1576,11 +1567,11 @@ This should be easy to understand by Maven users.
 ### Are there any recommendations on how to handle dependencies, which aren't always required?
 
 Create a profile and include the dependency within it.
-Related document: [Class profile](http://maven.apache.org/maven-model/maven.html#class_profile).
+Related document: [Class profile](https://maven.apache.org/maven-model/maven.html#class_profile).
 
 ### How to resolve problems with jtaxxx.jar?
 
-Refer to the guide ["Coping with sun-jars"](http://maven.apache.org/guides/mini/guide-coping-with-sun-jars.html)
+Refer to the guide ["Coping with sun-jars"](https://maven.apache.org/guides/mini/guide-coping-with-sun-jars.html)
 
 One trick is to use apache gerinomo jars instead of installing everything manually.
 
