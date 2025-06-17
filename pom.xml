@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache.maven</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>45-SNAPSHOT</version>
+    <version>46-SNAPSHOT</version>
     <relativePath />
   </parent>
 
