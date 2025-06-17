@@ -66,7 +66,7 @@ Maven 2.1
 
 * Plugin API
 
-** Shading of plexus-utils causing a ClassCastException on plugin.getConfiguration() ([MNG-3012|http://jira.codehaus.org/browse/MNG-3012])
+** Shading of plexus-utils causing a ClassCastException on plugin.getConfiguration() ([MNG-3012|https://issues.apache.org/jira/browse/MNG-3012])
 
  The fact that plexus-utils is hidden from plugins in the newer releases of Maven means that plugin.getConfiguration() from maven-model can cause a ClassCastException, if used from within a mojo. The plan to fix this is basically just to import Xpp3Dom from the shaded plexus-utils version in maven-core within the plugin's classrealm. This should allow us to share the same instance of that class (only, shouldn't really affect other p-u classes) and preserve backward compatibility for existing plugin releases.
 
@@ -178,7 +178,7 @@ jason: so when you and benjamin went through the tests you have "integration-tes
 
 ** Custom Components
 
-    As discussed in [Substituting of Custom Components|http://docs.codehaus.org/display/MAVEN/Substitution+of+Custom+Maven+Components] we now have two ways
+    As discussed in "Substituting of Custom Components", we now have two ways
     to insert new components into the system.
 
     Using a directory and specifying it in the Classworlds configuration. Tycho simply has a special set of components that load first before the standard maven components and they override
@@ -252,14 +252,14 @@ load ${maven.home}/lib/*.jar
 
 ** Core Refactorings
 
-    * Project Builder ([architecture|http://docs.codehaus.org/display/MAVENUSER/Project+Builder])
+    * Project Builder architecture
     ** Maven shared model work: a new way of reading in the models for Maven that is not format dependent in any way i.e. XML, text, YAML, scripts, whatever.
     ** Pluggable model readers: this could leverage different implementations provided by the shared model work, but we still need a way to detect the type and version
        of the model that we want to consume
     ** A new terse format that uses attributes
     ** Automatic parent versioning
     ** New interpolation component (plexus-interpolation)
-    ** Dynamic build sections ([MNG-3530|http://jira.codehaus.org/browse/MNG-3530])
+    ** Dynamic build sections ([MNG-3530|http://issues.apache.org/browse/MNG-3530])
     ** Mixin support -- allowing a paramterizable template which can be imported with one line.
 
     * Remove the use of separate plugin repositories. We only need to pull resources from one repository. We started doing this but I've had a couple
