@@ -1484,7 +1484,7 @@ Display parameters as parsed by Maven (in canonical form and as a list of tokens
   ...
   <organization>
     <name>Mojohaus</name>
-    <url>http://www.mojohaushaus.org</url>
+    <url>http://www.mojohaus.org</url>
   </organization>
 </project>
 +-------------------------+
