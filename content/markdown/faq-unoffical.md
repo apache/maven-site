@@ -832,45 +832,17 @@ Currently, this is not possible. The main reason is that it's non-trivial to det
 is stale (the project here being one of the modules). It will be dependent on the phase being called, and the packaging
 of the particular module.
 
-_Design, Patterns & Best Practices_
+
+_IDEs_
 
 ### Where can I get the Maven plugin for Eclipse?
 
 [https://eclipse.dev/m2e/]
 
-_IDEs_
-
-### Handle special characters in site
-
-A solution with eclipse and solaris
-
-In eclipse.ini :
-Adding `\-Dfile.encoding=ISO-8859-1`
-
-If using xmlbuddy with eclipse to edit xdoc files, set the encoding Honor encoding Default to ISO-8859-1
-
-Configuration in pom
-
-```xml
-
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-site-plugin</artifactId>
-  <configuration>
-    <outputEncoding>UTF-8</outputEncoding>
-  </configuration>
-</plugin>
-```
-
-On the solaris machine
-In `$HOME/.profile`
-`MAVEN_OPTS="-Xmx512m -Xms512m -Dfile.encoding=ISO-8859-1` (mx/ms not mandatory for m2 but for m1).
-`LANG=en_US.ISO8859-15`
-_Sites & Reporting, IDEs_
 
 ### How do I generate sources with the antrun plug-in?
 
-For instance to generate sources add the following to your plugins section.
+To generate sources, add the following to your plugins section.
 
 ```xml
 
