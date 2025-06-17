@@ -876,8 +876,8 @@ _Plugins and Lifecycle, Sites & Reporting, Integration tests_
 
 ### The snapshot version of the plugin is not updated in the snapshot repo, What should I do to update my copy of the plugin?
 
-If the plugin in the snapshot repo is not yet updated. The only way to
-update it is to check out the source from SVN and build it.
+If the plugin in the snapshot repo is not yet updated, the only way to
+update it is to check out the source and build it.
 
 ### Is there a way to get Maven to report the number of compile errors found?
 
