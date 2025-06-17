@@ -342,11 +342,6 @@ To access artifacts if Ibiblio is down, use any of its mirror sites.
 
 _Repositories, General_
 
-### How do I get a list of archetypes?
-
-To get a list of archetypes, refer to the following
-page [http://svn.apache.org/viewcvs.cgi/maven/archetype/trunk/maven-archetypes)
-
 ### How do I specify my remote repo in Maven?
 
 To specify a remote repo in Maven, add the `<repositories>` element to the POM:
@@ -558,61 +553,6 @@ In order to use this API you must include the following dependency in your pom:
 </dependencies>
 ```
 
-_POM, Plugin API_
-
-### What does the FATAL ERROR with the message
-
-`"Class org.apache.commons.logging.impl.Jdk14Logger does not implement Log"` when using the maven-checkstyle-plugin
-mean?
-
-Checkstyle uses commons-logging, which has classloader problems when initialized within a Maven plugin's container. This
-results in the above message - if you run with `-e`, you'll see something like the following:
-
-> Caused by: org.apache.commons.logging.LogConfigurationException: org.apache.commons.logging.LogConfigurationException:
-> Class org.apache.commons.logging.impl.Jdk14Logger does not implement Log
-
-buried deep in the stacktrace.
-
-The only workaround we currently have for this problem is to include another commons-logging Log implementation in the
-plugin itself. So, you can solve the problem by adding the following to your plugin declaration in your POM:
-
-```xml
-
-<project>
-  ...
-  <build>
-    ...
-    <plugins>
-      ...
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.12</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-  ...
-  <reporting>
-    ...
-    <plugins>
-      <!-- your checkstyle report is registered here, according to Maven documentation -->
-    </plugins>
-  </reporting>
-</project>
-```
-
-While this may seem a counter-intuitive way of configuring a report, it's important to remember that Maven plugins can
-have a mix of reports and normal mojos. When a POM has to configure extra dependencies for a plugin, it should do so in
-the normal plugins section.
-We will probably try to fix this problem before the next release of the checkstyle plugin.
-
-*UPDATE:* This problem has been fixed in the SVN trunk version of the checkstyle plugin, which should be released very
-soon.
 _Plugins and Lifecycle, Sites & Reporting, Errors_
 
 ### Where do I configure report plug-ins, like javadoc?
@@ -817,11 +757,6 @@ Following is a sample on how to exclude transitive dependencies.
 </project>
 ```
 
-_Dependencies, Design, Patterns & Best Practices_
-
-### Where can I get offline documentation for Maven?
-
-Check it out from [the Maven site SVN](https://svn.apache.org/repos/asf/maven/site/trunk) and run `mvn site:site`.
 
 _General, Sites & Reporting_
 
@@ -875,7 +810,7 @@ the POM) instead, which will allow this plugin to be a good citizen in the build
 
 Each integration test is a separate project. For a plugin, you may want to create a project that will use your plugin
 and probably put it inside src/test/projects like maven-antrun-plugin, maven-eclipse-plugin, maven-javadoc-plugin and
-several others. These plugins can be found here: [https://svn.apache.org/repos/asf/maven/plugins/trunk]
+several others. 
 
 _Plugins and Lifecycle, Sites & Reporting, Integration tests_
 
@@ -901,9 +836,7 @@ _Design, Patterns & Best Practices_
 
 ### Where can I get the Maven plugin for Eclipse?
 
-[http://maven.apache.org/eclipse-plugin.html]
-
-There are some flash demos to show the user how to use the plugin.
+[https://eclipse.dev/m2e/]
 
 _IDEs_
 
@@ -914,7 +847,7 @@ A solution with eclipse and solaris
 In eclipse.ini :
 Adding `\-Dfile.encoding=ISO-8859-1`
 
-If using xmlbuddy with eclipse to edit xdoc files set the encoding Honor encoding Default to ISO-8859-1
+If using xmlbuddy with eclipse to edit xdoc files, set the encoding Honor encoding Default to ISO-8859-1
 
 Configuration in pom
 
@@ -937,8 +870,7 @@ _Sites & Reporting, IDEs_
 
 ### How do I generate sources with the antrun plug-in?
 
-For instance to generate sources add the following to your plugins section
-NOTE: this may only work in the latest plugin version in SVN
+For instance to generate sources add the following to your plugins section.
 
 ```xml
 
@@ -1216,12 +1148,6 @@ By configuring `<sourceDirectory>`, `<resources>` and other elements of the `<bu
 
 In addition, you may need to change the plugin configuration if you are not using plugin defaults for their
 files/directories.
-
-### Where is the source code? I couldn't seem to find a link anywhere on the Maven site.
-
-The source code can be found in subversion: [http://svn.apache.org/repos/asf/maven/components/trunk].
-
-For more information, see [Building Maven](http://maven.apache.org/guides/development/guide-building-m2.html)
 
 ### Why does Maven compile my test classes but doesn't run them?
 
@@ -1560,8 +1486,7 @@ compiling some of the java sources using the compiler parameter `excludes` as fo
 
 ### How do I install the package generated by the assembly plugin to be installed in the local repository?
 
-Use the assembly plugin goal {{assembly:attach}} to install the generated package into the local repository. However,
-this feature is still in SVN. Please
+Use the assembly plugin goal {{assembly:attach}} to install the generated package into the local repository. Please
 see [Guide to Testing Development Plugins](http://maven.apache.org/guides/development/guide-testing-development-plugins.html)
 for more info on how to use it.
 
@@ -2058,15 +1983,6 @@ Then `$myproperty=propertyvalue`
 ### How do replace `<attainGoal>` from m1 in m2?
 
 I want to build a plugin with multiple goal, some goal might be aliases and call other goals. How do I do that in m2?
-
-### Maven Open Source! How do I download the source code?
-
-I've seen the [link to the source code](https://svn.apache.org/repos/asf/maven/components/trunk/), but what is the easy
-way to download the source code.
-I can't find all the answers I need to understand in the documentation (need more! so it will be useful to get the
-source code locally to be able to do search etc...
-
-I've just found the answer [svn anonymous access](https://maven.apache.org/source-repository.html);
 
 ### Why do I get `java.lang.NoClassDefFoundError: org/codehaus/classworlds/Launcher` when I try to execute Maven?
 
