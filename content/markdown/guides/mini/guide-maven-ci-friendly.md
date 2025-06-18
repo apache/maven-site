@@ -218,8 +218,7 @@ define the version either via property in the parent or use the `.mvn/maven.conf
 ## Dependencies
 
 A multi-module build often defines dependencies between modules.
-The usual way of defining dependencies and their appropriate
-versions has been to use `${project.version}` and this has not been changed.
+The usual way of defining dependencies and their versions has been to use `${project.version}` and this has not been changed.
 
 So the correct way to do such things can be seen in the following example:
 
@@ -276,8 +275,8 @@ will fail.
 
 ## Install / Deploy
 
-To install or deploy artifacts by using the above setup you **have to use** the [Flatten Maven Plugin][flatten-maven-plugin].
-Otherwise, you will install/deploy artifacts in your repository which will not be consumable by Maven anymore.
+To install or deploy artifacts by using the above setup, you **have to use** the [Flatten Maven Plugin][flatten-maven-plugin].
+Otherwise, you will install/deploy artifacts in repository which will not be consumable by Maven.
 Such a setup will look like this:
 
 ```xml
