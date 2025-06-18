@@ -116,8 +116,8 @@ access the official or `central` Maven plug-in repository.
 
 To resolve this error:
 
-- If you are behind a http proxy, please check the
-  Maven2 [proxy settings guide](http://maven.apache.org/guides/mini/guide-proxies.html).
+- If you are behind a http proxy, check the
+  [proxy settings guide](https://maven.apache.org/guides/mini/guide-proxies.html).
 - If you are upgrading Maven from an older version, try running with \-U. This will force an update check on all
   plug-ins.
 
@@ -329,19 +329,6 @@ It is currently recommended that plug-ins be built using composition, instead of
 
 _Plugin Requests, Design, Patterns & Best Practices_
 
-### How do I access artifacts if Ibiblio is down?
-
-To access artifacts if Ibiblio is down, use any of its mirror sites.
-
-[Guide mirror settings](http://maven.apache.org/guides/mini/guide-mirror-settings.html)
-
-_Repositories, General_
-
-### How do I get a list of archetypes?
-
-To get a list of archetypes, refer to the following
-page [http://svn.apache.org/viewcvs.cgi/maven/archetype/trunk/maven-archetypes)
-
 ### How do I specify my remote repo in Maven?
 
 To specify a remote repo in Maven, add the `<repositories>` element to the POM:
@@ -357,7 +344,7 @@ To specify a remote repo in Maven, add the `<repositories>` element to the POM:
 </repositories>
 ```
 
-Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multiple-repositories.html)
+Or, refer to the following page [https://maven.apache.org/guides/mini/guide-multiple-repositories.html)
 
 ### How do I specify which output directories the Eclipse plugin puts into the .classpath file?
 
@@ -379,8 +366,6 @@ Or, refer to the following page [http://maven.apache.org/guides/mini/guide-multi
   <!-- ... -->
 </build>
 ```
-
-_Plugins and Lifecycle, IDEs_
 
 _General, Plugins and Lifecycle_
 
@@ -467,15 +452,15 @@ You can integrate your static pages in this several steps,
 <project name="Maven War Plugin">
   <bannerLeft>
     <name>Maven War Plugin</name>
-    <src>http://maven.apache.org/images/apache-maven-project.png</src>
-    <href>http://maven.apache.org/</href>
+    <src>https://maven.apache.org/images/apache-maven-project.png</src>
+    <href>https://maven.apache.org/</href>
   </bannerLeft>
   <bannerRight>
-    <src>http://maven.apache.org/images/maven-small.gif</src>
+    <src>https://maven.apache.org/images/maven-small.gif</src>
   </bannerRight>
   <body>
     <links>
-      <item name="Maven 2" xhref="http://maven.apache.org/maven2/"/>
+      <item name="Maven" xhref="https://maven.apache.org/"/>
     </links>
 
     <menu name="Overview">
@@ -553,61 +538,6 @@ In order to use this API you must include the following dependency in your pom:
 </dependencies>
 ```
 
-_POM, Plugin API_
-
-### What does the FATAL ERROR with the message
-
-`"Class org.apache.commons.logging.impl.Jdk14Logger does not implement Log"` when using the maven-checkstyle-plugin
-mean?
-
-Checkstyle uses commons-logging, which has classloader problems when initialized within a Maven plugin's container. This
-results in the above message - if you run with `-e`, you'll see something like the following:
-
-> Caused by: org.apache.commons.logging.LogConfigurationException: org.apache.commons.logging.LogConfigurationException:
-> Class org.apache.commons.logging.impl.Jdk14Logger does not implement Log
-
-buried deep in the stacktrace.
-
-The only workaround we currently have for this problem is to include another commons-logging Log implementation in the
-plugin itself. So, you can solve the problem by adding the following to your plugin declaration in your POM:
-
-```xml
-
-<project>
-  ...
-  <build>
-    ...
-    <plugins>
-      ...
-      <plugin>
-        <artifactId>maven-checkstyle-plugin</artifactId>
-        <dependencies>
-          <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.12</version>
-          </dependency>
-        </dependencies>
-      </plugin>
-    </plugins>
-  </build>
-  ...
-  <reporting>
-    ...
-    <plugins>
-      <!-- your checkstyle report is registered here, according to Maven documentation -->
-    </plugins>
-  </reporting>
-</project>
-```
-
-While this may seem a counter-intuitive way of configuring a report, it's important to remember that Maven plugins can
-have a mix of reports and normal mojos. When a POM has to configure extra dependencies for a plugin, it should do so in
-the normal plugins section.
-We will probably try to fix this problem before the next release of the checkstyle plugin.
-
-*UPDATE:* This problem has been fixed in the SVN trunk version of the checkstyle plugin, which should be released very
-soon.
 _Plugins and Lifecycle, Sites & Reporting, Errors_
 
 ### Where do I configure report plug-ins, like javadoc?
@@ -775,8 +705,8 @@ You can't, but you can use the assembly plugin to create a source distribution a
 project
 
 Please refer to these sites for more info
-[http://maven.apache.org/guides/mini/guide-assemblies.html]
-[http://maven.apache.org/plugins/maven-assembly-plugin/howto.html]
+[https://maven.apache.org/guides/mini/guide-assemblies.html]
+[https://maven.apache.org/plugins/maven-assembly-plugin/howto.html]
 
 _Deployments, Plugins and Lifecycle_
 
@@ -811,12 +741,6 @@ Following is a sample on how to exclude transitive dependencies.
   </dependency>
 </project>
 ```
-
-_Dependencies, Design, Patterns & Best Practices_
-
-### Where can I get offline documentation for Maven?
-
-Check it out from [the Maven site SVN](https://svn.apache.org/repos/asf/maven/site/trunk) and run `mvn site:site`.
 
 _General, Sites & Reporting_
 
@@ -870,7 +794,7 @@ the POM) instead, which will allow this plugin to be a good citizen in the build
 
 Each integration test is a separate project. For a plugin, you may want to create a project that will use your plugin
 and probably put it inside src/test/projects like maven-antrun-plugin, maven-eclipse-plugin, maven-javadoc-plugin and
-several others. These plugins can be found here: [https://svn.apache.org/repos/asf/maven/plugins/trunk]
+several others.
 
 _Plugins and Lifecycle, Sites & Reporting, Integration tests_
 
@@ -891,48 +815,15 @@ Currently, this is not possible. The main reason is that it's non-trivial to det
 is stale (the project here being one of the modules). It will be dependent on the phase being called, and the packaging
 of the particular module.
 
-_Design, Patterns & Best Practices_
+_IDEs_
 
 ### Where can I get the Maven plugin for Eclipse?
 
-[http://maven.apache.org/eclipse-plugin.html]
-
-There are some flash demos to show the user how to use the plugin.
-
-_IDEs_
-
-### Handle special characters in site
-
-A solution with eclipse and solaris
-
-In eclipse.ini :
-Adding `\-Dfile.encoding=ISO-8859-1`
-
-If using xmlbuddy with eclipse to edit xdoc files set the encoding Honor encoding Default to ISO-8859-1
-
-Configuration in pom
-
-```xml
-
-<plugin>
-  <groupId>org.apache.maven.plugins</groupId>
-  <artifactId>maven-site-plugin</artifactId>
-  <configuration>
-    <outputEncoding>UTF-8</outputEncoding>
-  </configuration>
-</plugin>
-```
-
-On the solaris machine
-In `$HOME/.profile`
-`MAVEN_OPTS="-Xmx512m -Xms512m -Dfile.encoding=ISO-8859-1` (mx/ms not mandatory for m2 but for m1).
-`LANG=en_US.ISO8859-15`
-_Sites & Reporting, IDEs_
+[https://eclipse.dev/m2e/]
 
 ### How do I generate sources with the antrun plug-in?
 
-For instance to generate sources add the following to your plugins section
-NOTE: this may only work in the latest plugin version in SVN
+To generate sources, add the following to your plugins section.
 
 ```xml
 
@@ -1185,7 +1076,7 @@ or included in the runtime classpath.
 ### How do I list available plugins?
 
 The "Available Plugins" page lists them, and provides additional information to browse the Maven repository.
-See [http://maven.apache.org/plugins]
+See [https://maven.apache.org/plugins]
 
 ### How do I determine what version of a plugin I am using?
 
@@ -1197,10 +1088,10 @@ Note that you must give the plugin prefix as the argument to plugin, not it's ar
 
 There are currently 2 alternatives:
 
-* For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct the Ant
+* For use in a plugin written in Java, Beanshell, or other Java-like scripting language, you can construct the Ant
   tasks [using the instructions given in the Ant documentation](http://ant.apache.org/manual/antexternal.html)
 * If you have very small amounts of Ant script specific to your project, you can use
-  the [AntRun plugin](http://maven.apache.org/plugins/maven-antrun-plugin/index.html).
+  the [AntRun plugin](https://maven.apache.org/plugins/maven-antrun-plugin/index.html).
 
 ### Is it possible to create my own directory structure?
 
@@ -1210,12 +1101,6 @@ By configuring `<sourceDirectory>`, `<resources>` and other elements of the `<bu
 
 In addition, you may need to change the plugin configuration if you are not using plugin defaults for their
 files/directories.
-
-### Where is the source code? I couldn't seem to find a link anywhere on the Maven site.
-
-The source code can be found in subversion: [http://svn.apache.org/repos/asf/maven/components/trunk].
-
-For more information, see [Building Maven](http://maven.apache.org/guides/development/guide-building-m2.html)
 
 ### Why does Maven compile my test classes but doesn't run them?
 
@@ -1270,7 +1155,7 @@ following:
 ### Maven doesn't work, how do I get help?
 
 We have compiled a list of available resources on
-the [getting help page](http://maven.apache.org/users/getting-help.html)
+the [getting help page](https://maven.apache.org/users/getting-help.html)
 
 (#Dependencies, Design, Patterns & Best Practices)
 
@@ -1367,7 +1252,7 @@ This tells which phase the plugin is associated.
 
 ### Where to get sun.jdk-tools-jar-1.4.0 on MacOSX?
 
-There are no tools.jar on a mac. The classes are included in the normal java runtime
+There is no tools.jar on a mac. The classes are included in the normal java runtime
 ( `/System/Library/Frameworks/ JavaVM.framework/Classes/classes.jar`).
 Refer to this link [http://lists.apple.com/archives/java-dev/2002/Jun/msg00901.html] )
 
@@ -1520,7 +1405,7 @@ The assembly plugin, by default, saves the packages to your `project.build.direc
 Also, you can have assembly plugin use a different directory by setting the plugin parameter `outputDirectory` to your
 desired directory.
 More info can be found on
-the [assembly plugin's website](http://maven.apache.org/plugins/maven-assembly-plugin/introduction.html).
+the [assembly plugin's website](https://maven.apache.org/plugins/maven-assembly-plugin/introduction.html).
 
 ### How do I filter which classes should be put inside the packaged jar?
 
@@ -1551,9 +1436,8 @@ compiling some of the java sources using the compiler parameter `excludes` as fo
 
 ### How do I install the package generated by the assembly plugin to be installed in the local repository?
 
-Use the assembly plugin goal {{assembly:attach}} to install the generated package into the local repository. However,
-this feature is still in SVN. Please
-see [Guide to Testing Development Plugins](http://maven.apache.org/guides/development/guide-testing-development-plugins.html)
+Use the assembly plugin goal {{assembly:attach}} to install the generated package into the local repository.
+See [Guide to Testing Development Plugins](https://maven.apache.org/guides/development/guide-testing-development-plugins.html)
 for more info on how to use it.
 
 ### Is it possible to use HashMap as configurable parameter in a plugin? How do I configure that in pom.xml?
@@ -1572,7 +1456,7 @@ like this:
 ### How do I setup the classpath of my antrun plugin to use the classpath from maven?
 
 The maven classpaths are available as ant references when running your ant script. The ant reference names and some
-examples can be found here: [maven-antrun-plugin](http://maven.apache.org/plugins/maven-antrun-plugin/classpaths.html)
+examples can be found here: [maven-antrun-plugin](https://maven.apache.org/plugins/maven-antrun-plugin/classpaths.html)
 
 ### Is there a way to read and examine the contents of a pom.xml file from inside an application?
 
@@ -1670,11 +1554,11 @@ This should be easy to understand by Maven users.
 ### Are there any recommendations on how to handle dependencies, which aren't always required?
 
 Create a profile and include the dependency within it.
-Related document: [Class profile](http://maven.apache.org/maven-model/maven.html#class_profile).
+Related document: [Class profile](https://maven.apache.org/maven-model/maven.html#class_profile).
 
 ### How to resolve problems with jtaxxx.jar?
 
-Refer to the guide ["Coping with sun-jars"](http://maven.apache.org/guides/mini/guide-coping-with-sun-jars.html)
+Refer to the guide ["Coping with sun-jars"](https://maven.apache.org/guides/mini/guide-coping-with-sun-jars.html)
 
 One trick is to use apache gerinomo jars instead of installing everything manually.
 
@@ -2012,7 +1896,7 @@ Maven does support non-Java applications such as C but with a limited capacity.
 
 ### What would be the appropriate way to enable inheritance of classes in the test hierarchy across modules during the test-compile phase of a multi-pom project?
 
-For information on this topic please
+For information on this topic
 visit: [Guide: Attached tests](https://maven.apache.org/guides/mini/guide-attached-tests.html)
 
 ### How do I read the version from the pom.xml and then using Java display the version on my application?
@@ -2046,30 +1930,21 @@ You can do this by using the maven-buildhelper-plugin. It allows you to add addi
 
 Then `$myproperty=propertyvalue`
 
-### How do replace `<attainGoal>` from m1 in m2?
+### How do I replace `<attainGoal>` from Maven 1 in Maven 2?
 
-I want to build a plugin with multiple goal, some goal might be aliases and call other goals. How do I do that in m2?
-
-### Maven Open Source! How do I download the source code?
-
-I've seen the [link to the source code](https://svn.apache.org/repos/asf/maven/components/trunk/), but what is the easy
-way to download the source code.
-I can't find all the answers I need to understand in the documentation (need more! so it will be useful to get the
-source code locally to be able to do search etc...
-
-I've just found the answer [svn anonymous access](https://maven.apache.org/source-repository.html);
+I want to build a plugin with multiple goals. Some goals might be aliases and call other goals. How do I do that in Maven?
 
 ### Why do I get `java.lang.NoClassDefFoundError: org/codehaus/classworlds/Launcher` when I try to execute Maven?
 
 This sometimes happens when `$M2_HOME` is not the same as your `$PATH`. That is, when `which mvn` does not match `$
 M2_HOME/bin/mvn`.
 
-### How to encrypt a secure password that includes an Ampersand
+### How to encrypt a secure password that includes an ampersand
 
 If you want to `mvn --encrypt-password` a password with an ampersand you will get an error, e.g.
 `mvn --encrypt-password test&Password`
-On the one hand the ampersand has to be encoded as entity with "&amp;". On the other hand the ampersand has to be
+On the one hand, the ampersand has to be encoded as "&amp;". On the other hand, the ampersand has to be
 escaped
 for the command line.
-Result would be `mvn --encrypt-password test &Password`
+The result would be `mvn --encrypt-password test &Password`
 Also a dollar sign ("$") has to be escaped for the command line.
