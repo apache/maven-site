@@ -36,7 +36,7 @@ Maven Code Style And Code Conventions
 
  Optionally, you can still import the code style formatter for your IDE from
  {{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD}shared-resources}}.
- To format Java code, there are plugins for many IDE on the {{{https://github.com/palantir/palantir-java-format}palantir Java format GitHub page}} too.
+ To format Java code, there are plugins for many IDEs on the {{{https://github.com/palantir/palantir-java-format}palantir Java format GitHub page}} too.
 
 %{toc|section=1|fromDepth=2|toDepth=3}
 
