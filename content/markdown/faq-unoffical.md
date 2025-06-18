@@ -1943,8 +1943,8 @@ M2_HOME/bin/mvn`.
 
 If you want to `mvn --encrypt-password` a password with an ampersand you will get an error, e.g.
 `mvn --encrypt-password test&Password`
-On the one hand, the ampersand has to be encoded as entity with "&amp;". On the other hand the ampersand has to be
+On the one hand, the ampersand has to be encoded as "&amp;". On the other hand, the ampersand has to be
 escaped
 for the command line.
-Result would be `mvn --encrypt-password test &Password`
+The result would be `mvn --encrypt-password test &Password`
 Also a dollar sign ("$") has to be escaped for the command line.
