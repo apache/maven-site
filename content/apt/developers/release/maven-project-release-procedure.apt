@@ -34,7 +34,7 @@ Performing a Maven Project Release
 
   * you have a recent Git client installed and on your shell's path.
 
-  * you have JDK installed and on your shell's path to build Maven 3.9.0+. Details about minimum JDK version to build an appropriate version
+  * you have JDK installed and on your shell's path to build Maven 3.9.0+. Details about minimum JDK version to build
     can be found here: {{{/docs/history.html}https://maven.apache.org/docs/history.html}}
 
   * if you receive an OutOfMemoryError during the build, make sure to have set the environment variable <<<MAVEN_OPTS=-Xmx512m>>>
@@ -68,37 +68,37 @@ Performing a Maven Project Release
 
   We maintain release notes at <<GitHub>> by <<release-drafter>> to help prepare release notes.
 
-  * check all commits since latest release, all mentioned issue should be connected with release notes
+  * check all commits since latest release. All mentioned issue should be connected with release notes
 
-  * all issues and pull request should be <<assigned>> to responsible person, which fixed or merged fix
+  * all issues and pull requests should be <<assigned>> to the responsible person, who merged the PR
 
-  * all issues should be fixed and <<CLOSED>>
+  * all issues assigned to prepared release should be fixed and <<CLOSED>>
 
   * all issues and pull requests should be assigned to milestone
 
-  * check existing issues with <<Blocker>> priority, consider to fix it or change priority if reasonable
+  * check existing issues with <Blocker> priority. Consider fixing or changing the priority
 
-  * you should chek groups of reported pull request, if contains correct items
+  * you should check groups of reported pull requests, if contains correct items
 
   * you can adjust labels in pull requests to assign to correct groups
 
-  * you can add <<skip-changelog>> label to pull request in order to exclude from release notes
+  * you can add the <<skip-changelog>> label to pull request to exclude it from the release notes
 
  []
 
-  Execute <<Release Drafter>> workflow on <<GitHub>> to regenerate draft of release notes if changes in labels was done.
+  Execute the <<Release Drafter>> workflow on <<GitHub>> to regenerate draft of release notes if changes in labels was done.
 
-  You should <<<disable>>> <<Release Drafter>> workflow on <<GitHub>> to avoid adding new items to release notes
-  after vote starts but before publishing release notes.
+  You should <<<disable>>> <<Release Drafter>> workflow on <<GitHub>> to avoid adding new items to the release notes
+  after the vote starts and before the release notes are published.
   Follow {{{https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow}Disabling and enabling a workflow}}
 
 * Update milestone in GitHub
 
-  * close released milestone and open new one for next version
+  * close released milestone and open a new one for the next version
 
-  * pull request merged during votes should be assigned to next milestone
+  * pull requests merged during votes should be assigned to next milestone
 
-  * Note: For projects, which maintain multiple versions, add the branch name (<<<branch: branch-name>>>) to the milestone description.
+  * Note: For projects which maintain multiple versions, add the branch name (<<<branch: branch-name>>>) to the milestone description.
 
   []
 
