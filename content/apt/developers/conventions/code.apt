@@ -60,8 +60,8 @@ Maven Code Style And Code Conventions
 ** Java Code Style
 
  Maven adopts the {{{https://github.com/palantir/palantir-java-format}palantir Java format}}.
- As the code formatting of Java files is automatically enforced or even applied with {{{https://github.com/diffplug/spotless/tree/main/plugin-maven}spotless-maven-plugin}} for all projects
- using {{{/pom/maven/index.html}Maven Project Parent POM 38 or newer}}, developers usually don't need to care and the following sections are just for informational purposes.
+ The code formatting of Java files is automatically enforced by {{{https://github.com/diffplug/spotless/tree/main/plugin-maven}spotless-maven-plugin}} for all projects
+ using {{{/pom/maven/index.html}Maven Project Parent POM 38 or newer}}. You can automatically format code using the plugin too. To do so run the command <mvn spotless:apply>.
 
  Optionally, you can still import the code style formatter for your IDE from
  {{{https://gitbox.apache.org/repos/asf?p=maven-shared-resources.git;a=tree;f=src/main/resources/config;hb=HEAD}shared-resources}}.
