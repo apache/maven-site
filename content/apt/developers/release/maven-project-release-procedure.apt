@@ -68,7 +68,7 @@ Performing a Maven Project Release
 
   We maintain release notes at <<Github>>. We use <<release-drafter>> to help prepare release notes.
 
-  * check all commits since latest release. All mentioned issue should be  included in release notes
+  * check all commits since the latest release. All mentioned issues should be included in release notes
 
   * all issues and pull requests should be <<assigned>> to person who merged the PR
 
