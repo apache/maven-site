@@ -66,27 +66,27 @@ Performing a Maven Project Release
 
 * Prepare release notes
 
-  We maintain release notes at <<GitHub>> by <<release-drafter>> to help prepare release notes.
+  We maintain release notes at <<Github>>. We use <<release-drafter>> to help prepare release notes.
 
-  * check all commits since latest release. All mentioned issue should be connected with release notes
+  * check all commits since latest release. All mentioned issue should be  included in release notes
 
-  * all issues and pull requests should be <<assigned>> to the responsible person, who merged the PR
+  * all issues and pull requests should be <<assigned>> to person who merged the PR
 
-  * all issues assigned to prepared release should be fixed and <<CLOSED>>
+  * all issues assigned to the release should be fixed and <<CLOSED>>
 
   * all issues and pull requests should be assigned to milestone
 
   * check existing issues with <Blocker> priority. Consider fixing or changing the priority
 
-  * you should check groups of reported pull requests, if contains correct items
+  * you should check whether groups of reported pull requests contain the correct items
 
-  * you can adjust labels in pull requests to assign to correct groups
+  * you can adjust labels in pull requests to assign them
 
-  * you can add the <<skip-changelog>> label to pull request to exclude it from the release notes
+  * you can add the <<skip-changelog>> label to a pull request to exclude it from the release notes
 
  []
 
-  Execute the <<Release Drafter>> workflow on <<GitHub>> to regenerate draft of release notes if changes in labels was done.
+  Execute the <<Release Drafter>> workflow on <<GitHub>> to regenerate draft of release notes if labels were changed.
 
   You should <<<disable>>> <<Release Drafter>> workflow on <<GitHub>> to avoid adding new items to the release notes
   after the vote starts and before the release notes are published.
