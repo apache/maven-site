@@ -276,7 +276,7 @@ will fail.
 ## Install / Deploy
 
 To install or deploy artifacts by using the above setup, you **have to use** the [Flatten Maven Plugin][flatten-maven-plugin].
-Otherwise, you will install/deploy artifacts in repository which will not be consumable by Maven.
+Otherwise, you will install/deploy artifacts in the repository which will not be consumable by Maven.
 Such a setup will look like this:
 
 ```xml
