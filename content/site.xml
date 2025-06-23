@@ -157,7 +157,7 @@ under the License.
           href="/plugin-developers/cookbook/plexus-plugin-upgrade.html"/>
         <item name="Using JSR-330" href="/maven-jsr330.html"/>
         <item name="Maven 4" collapse="false">
-          <item name="Using Maven DI" href="/maven-di.html"/>
+          <item name="Using Maven Dependency Injection" href="/maven-di.html"/>
         </item>
       </item>
       <item name="Maven Repository Centre" href="/repositories/index.html" collapse="true">
