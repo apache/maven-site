@@ -31,13 +31,12 @@ share JARs across several projects.
 The result is a tool that can now be used for building and managing any
 Java-based project. We hope that we have created something that will
 make the day-to-day work of Java developers easier and generally help
-with the comprehension of any Java-based project.
+them understand any Java-based project.
 
 ## Maven's Objectives
 
-Maven's primary goal is to allow a developer to comprehend the complete
-state of a development effort in the shortest period of time. In order
-to attain this goal, Maven deals with several areas of concern:
+Maven's primary goal is to allow a developer to organize and a build a Java project
+in the shortest period of time. It does this by:
 
 - Making the build process easy
 - Providing a uniform build system
@@ -66,11 +65,10 @@ For example, Maven can provide:
 - Cross referenced sources
 - Mailing lists managed by the project
 - Dependencies used by the project
-- Unit test reports including coverage
+- Unit test reports
 
 Third party code analysis products also provide Maven plugins that add their
-reports to the standard information given by
-Maven.
+reports to the standard information given by Maven.
 
 ### Providing guidelines for best practices development
 
