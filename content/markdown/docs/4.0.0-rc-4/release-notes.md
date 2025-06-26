@@ -19,6 +19,7 @@ under the License.
 NOTE: For help with the syntax of this file, see:
 http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
+
 # Apache Maven 4.0.0-rc-4 Release Notes
 
 Apache Maven 4.0.0-rc-4 is available for download.
