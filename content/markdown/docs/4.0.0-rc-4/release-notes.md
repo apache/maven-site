@@ -45,18 +45,21 @@ Please refer to the [Maven 4.x documentation](https://maven.apache.org/ref/4.0.0
 - Please report any issues to GitHub: https://github.com/apache/maven/issues
 - For production use, consider the stability and compatibility requirements of your project
 
-# Upgrading from Maven 3
+### Upgrading from Maven 3
 
-Maven 4 brings a tons of changes.  We've tried hard to maximise compatibility with Maven 3.x, but in order to have your build work with Maven 4, you will need to upgrade some plugins (such as `maven-enforcer-plugin`, `maven-remote-resources-plugin`, `maven-shade-plugin`, etc...) to their most recent versions.
+Maven 4 introduces significant changes to enhance functionality and performance. While we’ve prioritized compatibility with Maven 3.x, some POM files may require updates to build successfully with Maven 4.
 
-A lot of deprecated constructs in POM files are now rejected.  If you encounter an issue when building your project with Maven 4, first try to use the upgrade tool using `mvnup check` to see if there's anything that can be easily and automatically fixed, and then (or directly) `mvnup apply` to apply those changes.
+To identify and resolve common issues, use the Maven upgrade tool:
+- Run `mvnup check` to detect potential problems in your project.
+- Run `mvnup apply` to automatically apply recommended fixes.
 
-If your build is leveraging Maven extensions, you may very well expect some breakage. Some extensions may need to be updated:
-* the useful, but unmaintained, [`os-maven-plugin`](https://github.com/trustin/os-maven-plugin/) extension has been replaced with at [`nisse`](https://github.com/maveniverse/nisse) extension.
+If your build relies on Maven extensions not supported by the upgrade tool, contact the extension developers to confirm their plans for Maven 4 compatibility.
 
-Contact the extensions' developers team to know their plans regarding supporting to Maven 4.
+If your build still fails, run it with the `-e` option to generate a detailed stack trace. Then, file an issue including:
+- The full stack trace.
+- A link to the exact branch of your open-source project, or a minimal reproducer for proprietary projects.
 
-# Upgrading from Maven 4.0.0-rc-3
+### Upgrading from Maven 4.0.0-rc-3
 
 No known incompatibilities since last RC.
 
