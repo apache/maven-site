@@ -27,9 +27,11 @@ The pages in this section will give information about additional Maven tools, wh
 
 ## Supported By The Maven Project
 
-| Name                        | Description                                                                                      | Link        |
-|:----------------------------|:-------------------------------------------------------------------------------------------------|:------------|
-| [Maven Daemon](./mvnd.html) | This project speeds up Maven builds using techniques like daemon process management and caching. | [Github][1] |
+| Name                                 | Description                                                                                                                         | Link                |
+|:-------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
+| [Maven Daemon](./mvnd.html)          | This project speeds up Maven builds using techniques like daemon process management and caching.                                    | [Github][1]         |
+| [Maven Wrapper](./mavenwrapper.html) | The Maven Wrapper to ensures that a project is always build with a desired Maven version and/or JDK by automatically download them. | [Project's site][2] |
 
 [1]: https://github.com/apache/maven-mvnd
+[2]: https://maven.apache.org/wrapper/
 
