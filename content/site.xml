@@ -49,7 +49,6 @@ under the License.
       <item name="Use" href="/users/index.html" collapse="true">
         <item name="Run" href="/run.html"/>
         <item name="Configure" href="/configure.html"/>
-        <item name="IDE Integration" href="/ide.html"/>
         <item name="Support and Training" href="/support-and-training.html"/>
       </item>
       <item name="Release Notes" href="/docs/history.html"/>
