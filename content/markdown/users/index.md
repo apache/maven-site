@@ -26,12 +26,10 @@ This documentation centre is for those that have decided to use Maven to build t
 * [Getting Started Tutorial](../guides/getting-started/index.html) - An in depth tutorial once you've learned the basics
 * [Getting Help](./getting-help.html) - How to get help with Maven
 
-
 ## Maven 4
 
 * [What's new in Maven 4?](/whatsnewinmaven4.html) - Compact overview about all changes of Maven 4
 * [Migrate to Maven 4](../guides/mini/guide-migration-to-mvn4.html) - Learn how to migrate projects to Maven 4
-
 
 ## Reference
 
