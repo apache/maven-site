@@ -46,7 +46,6 @@ under the License.
       <item name="Installation" href="/install.html" />
       <item name="Downloads" href="/download.html"/>
       <item name="Use" href="/users/index.html" collapse="true">
-        <item name="Support and Training" href="/support-and-training.html"/>
       </item>
       <item name="Run" href="/run.html"/>
       <item name="Configure" href="/configure.html"/>
