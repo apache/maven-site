@@ -1,9 +1,10 @@
 ---
+
 title: Running Maven
 author: 
-  - Brett Porter
+- Brett Porter
 date: 2006-11-03
----
+----------------
 
 <!-- Licensed to the Apache Software Foundation (ASF) under one-->
 <!-- or more contributor license agreements.  See the NOTICE file-->
@@ -23,6 +24,7 @@ date: 2006-11-03
 <!-- under the License.-->
 <!-- NOTE: For help with the syntax of this file, see:-->
 <!-- http://maven.apache.org/doxia/references/apt-format.html-->
+
 # Building a Project with Maven
 
 The vast majority of Maven-built projects can be built with the following command:
@@ -81,7 +83,7 @@ from the specified remote repositories:
 
 To resolve this issue, it depends on what the dependency is and why it is missing.
 The most common cause is because it can not be redistributed from the repository and must be manually installed using the instructions given in the message.
-This is most common with some older JARs from Sun (usually `javax.*` group IDs), and is further documented in the [ Guide to Coping with Sun JARs](../guides/mini/guide-coping-with-sun-jars.html).
+This is most common with some older JARs from Sun (usually `javax.*` group IDs), and is further documented in the [Guide to Coping with Sun JARs](../guides/mini/guide-coping-with-sun-jars.html).
 
 You can check the list of repositories at the end of the error to ensure that the expected ones are listed - it may be that the project requires an alternative repository that has not been declared properly or is not accessible with your Maven configuration.
 
