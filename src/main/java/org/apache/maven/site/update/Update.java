@@ -30,7 +30,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /**
- * Updater for /plugins/index.apt and /shared/index.apt release numbers against
+ * Updater for /plugins/index.apt release numbers against
  * effective site content.
  */
 public class Update {
