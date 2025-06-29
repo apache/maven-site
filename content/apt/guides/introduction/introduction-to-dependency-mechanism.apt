@@ -815,7 +815,7 @@ Introduction to the Dependency Mechanism
  []
 
  Starting from Maven 4.0, a new specific BOM packaging has been introduced. 
- It allows defining a BOMs which are not used as parent in a project leveraging
+ It allows defining a BOM which is not used as a parent in a project leveraging
  the newer 4.1.0 model, while still providing full compatibility with Maven 3.X
  clients and projects.  This BOM packaging is translated into a more usual POM 
  packaging at installation / deployment time, leveraging the build/consumer POM 
