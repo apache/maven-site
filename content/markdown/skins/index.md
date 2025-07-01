@@ -1,13 +1,3 @@
----
-
-title: Available Skins
-author: 
-- Dennis Lundberg
-- Karl Heinz Marbaise
-- Michael Osipov
-date: 2012-04-05
-----------------
-
 <!-- Licensed to the Apache Software Foundation (ASF) under one-->
 <!-- or more contributor license agreements.  See the NOTICE file-->
 <!-- distributed with this work for additional information-->

@@ -1,11 +1,3 @@
----
-
-title: Running Maven
-author: 
-- Brett Porter
-date: 2006-11-03
-----------------
-
 <!-- Licensed to the Apache Software Foundation (ASF) under one-->
 <!-- or more contributor license agreements.  See the NOTICE file-->
 <!-- distributed with this work for additional information-->
