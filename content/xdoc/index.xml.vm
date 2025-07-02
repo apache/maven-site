@@ -35,8 +35,7 @@ under the License.
       </p>
       <p>
         You can find more information in the "About Maven"
-        section of the side bar. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
-        a <a href="maven-features.html">list of some of its main features</a>.
+        section of the sidebar. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and a list of some of its main features.
       </p>
       <p>
         <!-- TODO: this could be the big button type thing instead of a list of links -->
