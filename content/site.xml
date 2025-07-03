@@ -63,55 +63,69 @@ under the License.
       <item name="Index (category)" href="/guides/index.html"/>
 
       <item name="User Centre" href="/users/index.html" collapse="true">
-        <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html"/>
+        <item name="Maven Build Fundamentals" collapse="false">
+          <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html"/>
+          <item name="Getting Help" href="/users/getting-help.html"/>
+          <item name="Running Maven" href="/run-maven/index.html"/>
+        </item>
+        <item name="Maven Build Config Fundamentals" collapse="false">
+          <item name="Plugins Validation" href="/guides/plugins/validation/index.html"/>
+
+          <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
+            <item name="Markup Formats" href="/doxia/references/index.html"/>
+            <item name="Snippet Macro" href="/guides/mini/guide-snippet-macro.html"/>
+          </item>
+          <item name="Archetypes" href="/guides/introduction/introduction-to-archetypes.html" collapse="true">
+            <item name="Creating Archetypes" href="/guides/mini/guide-creating-archetypes.html"/>
+          </item>
+          <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
+            <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html"/>
+            <item name="Deploy to Remote" href="/guides/mini/guide-3rd-party-jars-remote.html"/>
+            <item name="Repository Management" href="/repository-management.html"/>
+            <item name="Using Multiple Repositories" href="/guides/mini/guide-multiple-repositories.html"/>
+            <item name="Large Scale Centralized Deployments"
+                  href="/guides/mini/guide-large-scale-centralized-deployments.html"/>
+            <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html"/>
+            <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html"/>
+            <item name="Encrypting Passwords (Maven 3)" href="/guides/mini/guide-encryption.html"/>
+            <item name="Encrypting Passwords (Maven 4)" href="/guides/mini/guide-encryption-4.html"/>
+            <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
+            <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
+            <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
+            <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html"/>
+            <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html"/>
+            <item name="Relocation" href="/guides/mini/guide-relocation.html"/>
+          </item>
+          <item name="Profiles" href="/guides/introduction/introduction-to-profiles.html"/>
+          <item name="Standard Directory Layout"
+                href="/guides/introduction/introduction-to-the-standard-directory-layout.html"/>
+          <item name="Dependency Mechanism" href="/guides/introduction/introduction-to-dependency-mechanism.html"
+                collapse="true">
+            <item name="Optional &amp; Exclusion"
+                  href="/guides/introduction/introduction-to-optional-and-excludes-dependencies.html"/>
+          </item>
+        </item>
         <item name="Getting Started Guide" href="/guides/getting-started/index.html" collapse="true">
           <item name="Naming Conventions" href="/guides/mini/guide-naming-conventions.html"/>
           <item name="The Build Lifecycle" href="/guides/introduction/introduction-to-the-lifecycle.html"/>
           <item name="The POM" href="/guides/introduction/introduction-to-the-pom.html"/>
-          <item name="Profiles" href="/guides/introduction/introduction-to-profiles.html"/>
-          <item name="Standard Directory Layout"
-            href="/guides/introduction/introduction-to-the-standard-directory-layout.html"/>
-          <item name="Dependency Mechanism" href="/guides/introduction/introduction-to-dependency-mechanism.html"
-            collapse="true">
-            <item name="Optional &amp; Exclusion"
-              href="/guides/introduction/introduction-to-optional-and-excludes-dependencies.html"/>
+          <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
+            <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
+            <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
           </item>
+          <item name="POM 4.0.0 Reference" href="/pom.html"/>
+          <item name="Settings Reference"
+                href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         </item>
+
+
+      <item name="Maven 4" collapse="false">
+        <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
+        <item name="Migrate to Maven 4" href="/guides/mini/guide-migration-to-mvn4.html"/>
+      </item>
         <!--
         <item name="Build Cookbook" href="/users/cookbook/index.html"/>
         -->
-        <item name="Getting Help" href="/users/getting-help.html"/>
-        <item name="Running Maven" href="/run-maven/index.html"/>
-        <item name="Plugins Validation" href="/guides/plugins/validation/index.html"/>
-        <item name="Configuring Plugins" href="/guides/mini/guide-configuring-plugins.html" collapse="true">
-          <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
-          <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
-        </item>
-        <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
-          <item name="Markup Formats" href="/doxia/references/index.html"/>
-          <item name="Snippet Macro" href="/guides/mini/guide-snippet-macro.html"/>
-        </item>
-        <item name="Archetypes" href="/guides/introduction/introduction-to-archetypes.html" collapse="true">
-          <item name="Creating Archetypes" href="/guides/mini/guide-creating-archetypes.html"/>
-        </item>
-        <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
-          <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html"/>
-          <item name="Deploy to Remote" href="/guides/mini/guide-3rd-party-jars-remote.html"/>
-          <item name="Repository Management" href="/repository-management.html"/>
-          <item name="Using Multiple Repositories" href="/guides/mini/guide-multiple-repositories.html"/>
-          <item name="Large Scale Centralized Deployments"
-            href="/guides/mini/guide-large-scale-centralized-deployments.html"/>
-          <item name="Mirror Settings" href="/guides/mini/guide-mirror-settings.html"/>
-          <item name="Deployment and Security Settings" href="/guides/mini/guide-deployment-security-settings.html"/>
-          <item name="Encrypting Passwords (Maven 3)" href="/guides/mini/guide-encryption.html"/>
-          <item name="Encrypting Passwords (Maven 4)" href="/guides/mini/guide-encryption-4.html"/>
-          <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
-          <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
-          <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
-          <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html"/>
-          <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html"/>
-          <item name="Relocation" href="/guides/mini/guide-relocation.html"/>
-        </item>
         <item name="Guides" href="/guides/mini/index.html" collapse="true">
           <item name="Configuring for Reproducible Builds" href="/guides/mini/guide-reproducible-builds.html"/>
           <item name="Creating Assemblies" href="/guides/mini/guide-assemblies.html"/>
@@ -131,15 +145,11 @@ under the License.
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html"/>
           <item name="Maven CI Friendly Version" href="/guides/mini/guide-maven-ci-friendly.html"/>
         </item>
-        <item name="Settings Reference"
-          href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
-        <item name="POM Reference" href="/pom.html"/>
+
+
         <item name="FAQ" href="/general.html"/>
 
-        <item name="Maven 4" collapse="false">
-          <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
-          <item name="Migrate to Maven 4" href="/guides/mini/guide-migration-to-mvn4.html"/>
-       </item>
+
       </item>
       <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>
