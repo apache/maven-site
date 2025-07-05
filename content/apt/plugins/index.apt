@@ -173,7 +173,7 @@ Available Plugins
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 | {{{/plugins/maven-toolchains-plugin/} <<<toolchains>>>}}     | B          | 3.2.0        | 2024-04-21 | Allows to share configuration across plugins. | {{{https://gitbox.apache.org/repos/asf/maven-toolchains-plugin.git}Git}} / {{{https://github.com/apache/maven-toolchains-plugin/}GitHub}} | {{{https://github.com/apache/maven-toolchains-plugin/issues}GitHub Issues}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
-| {{{/plugins/maven-wrapper-plugin/} <<<wrapper>>>}}           | B          | 3.3.2        | 2024-05-24 | Download and unpack the maven wrapper distribution | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper/}GitHub}} | {{{https://github.com/apache/maven-wrapper/issues}GitHub Issues}}
+| {{{/tools/wrapper/maven-wrapper-plugin/} <<<wrapper>>>}}     | B          | 3.3.2        | 2024-05-24 | Download and unpack the maven wrapper distribution | {{{https://gitbox.apache.org/repos/asf/maven-wrapper-plugin.git}Git}} / {{{https://github.com/apache/maven-wrapper/}GitHub}} | {{{https://github.com/apache/maven-wrapper/issues}GitHub Issues}}
 *--------------------------------------------------------------+------------+--------------+------------+------------------+------------------------+--------------------+
 
   \* <<B>>uild or <<R>>eporting plugin

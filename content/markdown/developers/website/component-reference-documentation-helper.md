@@ -31,6 +31,8 @@ select component category, then type artifact id and version to generate svn com
 <li><a href="?pom">poms</a></li>
 <li><a href="?resolver">resolver</a></li>
 <li><a href="?skins">skins</a></li>
+<li><a href="?extensions">extensions</a></li>
+<li><a href="?tools">tools</a></li>
 <li><a href="?doxia">Doxia</a></li>
 <li><a href="?doxia-sitetools">Doxia Sitetools</a></li>
 <li><a href="?doxia-tools">Doxia Tools</a></li>
