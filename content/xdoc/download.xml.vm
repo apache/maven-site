@@ -112,9 +112,16 @@ under the License.
         <li><a href="./scm.html">latest source code from source repository</a></li>
         <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
         <li>other:<ul>
-        <li><a href="[preferred]maven/">All current release sources (plugins, shared libraries,...) available at https://downloads.apache.org/maven/</a></li>
+        <li>All current release sources (plugins, shared libraries,...) available at <a href="[preferred]maven/">[preferred]maven/</a></li>
         </ul></li>
       </ul>
+
+      <p>It is strongly recommended to use the latest release version of Apache Maven to take advantage of newest features and bug fixes.</p>
+
+      <p>If you still want to use an old version, you can find more information in the
+        <a href="./docs/history.html">Maven Releases History</a> and can download files from
+        the  <a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for versions 3.0.4+
+        and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
       </subsection>
 
       <subsection name="Maven Daemon">
@@ -208,68 +215,6 @@ under the License.
     </section>
 
     <section name="Other Releases">
-      <p>It is strongly recommended to use the latest release version of Apache Maven to take advantage of newest features and bug fixes.</p>
-      
-      <p>If you still want to use an old version, you can find more information in the
-      <a href="./docs/history.html">Maven Releases History</a> and can download files from 
-      the  <a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for versions 3.0.4+
-      and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
-
-      <subsection name="Previous Stable 3.8.x Release">
-        <p>Apache Maven ${current38xVersion} is the previous stable minor release for all users.</p>
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.8+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
-                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-          </table>
-        </p>
-        <p>Maven is distributed in several formats for your convenience. Simply pick a
-              ready-made binary distribution archive and follow the <a href="./install.html">
-              installation instructions.</a>
-              Use a source archive if you intend to build Maven yourself.</p>
-        <p>
-            In order to guard against corrupted downloads/installations, it is highly recommended to
-              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-              developers.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Binary (Checksum, Signature)</th>
-              <th>Source (Checksum, Signature)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tar.gz archives</td>
-              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz">apache-maven-${current38xVersion}-bin.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.asc">asc</a>)</td>
-            </tr>
-            <tr>
-              <td>zip archives</td>
-              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip">apache-maven-${current38xVersion}-bin.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.asc">asc</a>)</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>${current38xVersion} <a href="./docs/${current38xVersion}/release-notes.html">Release Notes</a> and
-              <a href="./ref/${current38xVersion}/">Release Reference Documentation</a></li>
-          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
-        </ul>
-      </subsection>
 
       <subsection name="Preview 4.x Release">
         <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
