@@ -42,9 +42,17 @@ Regression fixes and other improvements from Maven 3.9.10. All users already on 
 
 The majority of fixed issues are bug and regression fixes for user reported problems.
 
-This release updates Resolver to version [1.9.22](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.24).
+Maven itself received new features - ability to control which repositories to be queried to resolve ranges.
 
-The full list of changes can be found in our [issue management system][4].
+This release updates Resolver to version [1.9.22](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.24).
+Resolver upgrade includes:
+
+ - RFC9457 implementation - human-readable description details for HTTP problems 
+ - small memory usage improvement
+
+## Full changelog
+
+For a full list of changes, please refer to the [GitHub release page](https://github.com/apache/maven/releases/tag/maven-3.9.11).
 
 ### Known issues ###
 
@@ -61,11 +69,10 @@ The full list of changes can be found in our [issue management system][4].
 
 ## Complete Release Notes
 
-See [complete release notes for all versions][5]
+See [complete release notes for all versions][3]
 
 [0]: ../../download.html
 [1]: ../../plugins/index.html
 [2]: https://maven.apache.org/
-[4]: https://github.com/apache/maven/issues?q=milestone%3A3.9.11
-[5]: ../../docs/history.html
+[3]: ../../docs/history.html
 
