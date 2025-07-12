@@ -57,7 +57,7 @@
     <project.build.outputTimestamp>x</project.build.outputTimestamp>
     <!-- disable Reproducible Builds that makes the site build time fixed at last release time -->
     <currentStableVersion>3.9.11</currentStableVersion>
-    <currentStableVersionDetails>TODO-3.9.11</currentStableVersionDetails>
+    <currentStableVersionDetails>3e54c93a704957b63ee3494413a2b544fd3d825b</currentStableVersionDetails>
     <current4xVersion>4.0.0-rc-4</current4xVersion>
     <current39xVersion>3.9.11</current39xVersion>
     <current38xVersion>3.8.9</current38xVersion>
