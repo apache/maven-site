@@ -105,7 +105,7 @@ $esc.h$esc.h Maven 3.8.x+
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "TODO-3.9.11" "3.9.11" "https://lists.apache.org/thread/TODO-3.9.11" "true" "Java 8" "11" )
+#release( "2025-07-12" "3.9.11" "https://lists.apache.org/thread/TODO-3.9.11" "true" "Java 8" "12" )
 #release( "2025-06-01" "3.9.10" "https://lists.apache.org/thread/bh8hr89omrbw19ychrklyh3rompn1hj7" "" "" "" )
 #release( "2024-08-17" "3.9.9" "https://lists.apache.org/thread/ov40dkfd1snyz2pdltsr5rzhdh2xd9yh" "" "" "" )
 #release( "2024-06-17" "3.9.8" "https://lists.apache.org/thread/lhpl9zqqf03rshckqrd7fb8ph0osm9qz" "" "" "" )
