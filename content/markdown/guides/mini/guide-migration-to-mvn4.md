@@ -25,8 +25,8 @@ This page offers help for users who want to build their projects with Maven 4.
 
 In short, the general suggestion for the migration is to do it in three steps:
 
-1. Meet the prerequisites
-2. Use Maven 4 for your build and fix build errors
+1. Meet the prerequisites with latest Maven 3
+2. Build also with Maven 4 and fix errors
 3. Introduce optional Maven 4 features
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
@@ -35,10 +35,10 @@ The Maven team is interested in all your migration experiences - either good or 
 **Notes**:
 
 * This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
-  This means it will still receive updates after Maven 4 was already released.
-* It is planned to provide a migration tool (see [MNG-8649](https://issues.apache.org/jira/projects/MNG/issues/MNG-8649)), doing most of the steps needed to migrate a project.
+  This means it will still receive updates after Maven 4 has been released.
+* Maven 4.0.0-rc-4 provides a migration tool (see [MNG-8765](https://issues.apache.org/jira/projects/MNG/issues/MNG-8765)), doing most of the steps needed to migrate a project.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
-  It is planned to create a separate guide for this.
+  We plan to create a separate guide for this.
 
 ## Table of content
 
@@ -57,7 +57,7 @@ This guide assumes that the project to be migrated was successfully built using 
 
 Similar to the previous prerequisite, the guides assumes that you are using the latest Maven 3 plugin version of all your plugins.
 
-Do not upgrade to a plugin version, which requires Maven 4!
+Do not upgrade yet to a plugin version which requires Maven 4!
 Be aware of this, if you use tools that can automate updates.
 
 You can use the [versions-maven-plugin's `display-plugin-updates` goal][versionpluginupdate] to see which are the latest available versions of the plugins you use.
@@ -102,7 +102,7 @@ After you have upgraded your build environment to support Java 17, you also need
 See the information [where to download](/download.cgi) and [how to install](/install.html) Maven 4 for further information.
 
 Places where you might have to configure Maven 4 usage aside installation:
-* [Maven Wrapper](/wrapper/index.html)'s `maven-wrapper.properties` file.
+* [Maven Wrapper](/tools/wrapper/index.html)'s `maven-wrapper.properties` file.
 * [Required Maven version](/enforcer/enforcer-rules/requireMavenVersion.html) rule of the Maven enforcer plugin.
 * Your own CI/CD configuration scripts or pipelines.
 
@@ -111,7 +111,7 @@ Places where you might have to configure Maven 4 usage aside installation:
 If there is a dedicated Maven 4 version for used plugins, you should update to such a version.
 You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
 
-**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated plugin API methods.
+**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated Maven 2 or 3 plugin API methods.
 
 ## Troubleshooting and required changes if situation applies
 
@@ -148,10 +148,10 @@ This includes the following properties:
 
 ### Replace conceptional `pre-` and `post-` lifecycle phases
 
-In Maven 3 some lifecycle phases also had conceptional `pre-` and `post-` phases, but they were not available for all phases.
-In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for all lifecycle phases.
+In Maven 3, `integration-test` [lifecycle phase](/ref/3-LATEST/maven-core/lifecycles.html) had conceptional `pre-` and `post-` phases, but this was the only phase with these
+In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for [all lifecycle phases](/ref/4-LATEST/maven-impl-modules/maven-core/lifecycles.html).
 
-Update your plugin executions that bind to a `pre-` or `-post` phase with the corresponding `before:` or `after:` phases.
+Update your plugin executions that bind to a `pre-integration-test` or `post-integration-test` phase with the corresponding `before:integration-test` or `after:integration-test` phases.
 
 ## Optional changes and features
 
@@ -293,12 +293,12 @@ This also means that you don't need the [flatten-maven-plugin][flattenmavenplugi
 
 #### Using BOM packaging
 
-Maven 4 introduces a dedicated `bom` packaging type to provide a [Bill of Materials BOM][bomguide].
-This now differentiates between parent POMs and dependency-managing BOMs.
+Maven 4 introduces a dedicated `bom` packaging type to provide a [Bill of Materials BOM POM][bompomguide].
+This now differentiates between parent POMs and dependency-managing BOM POMs.
 The new type is only available as a build POM in Model Version 4.1.0 and later, but Maven generates a full Maven 3
 compatible consumer POM during the build.
 
-The following code snippet shows an example for a BOM using the new `<packaging>` type.
+The following code snippet shows an example for a BOM POM using the new `<packaging>` type.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.1.0"
@@ -331,7 +331,7 @@ The following code snippet shows an example for a BOM using the new `<packaging>
 
 ### Use the new `all` and `each` life cycle phases
 
-Maven 4 introduces several new lifecycle phases — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
+Maven 4 introduces several new [lifecycle phases](/ref/4-LATEST/maven-impl-modules/maven-core/lifecycles.html) — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
 They give users finer control over plugin execution, particularly in multi-project and concurrent builds.
 If you want to execute a plugin before/after all or each of your (sub-)projects, consider to use them.
 
@@ -339,5 +339,5 @@ If you want to execute a plugin before/after all or each of your (sub-)projects,
 [modelbuilderinterpolation]: https://maven.apache.org/ref/4-LATEST/maven-compat-modules/maven-model-builder/#model-interpolation
 [cifriendlyguide]: https://maven.apache.org/guides/mini/guide-maven-ci-friendly.html
 [flattenmavenplugin]: https://www.mojohaus.org/flatten-maven-plugin/
-[bomguide]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
+[bompomguide]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
 
