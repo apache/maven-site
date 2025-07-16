@@ -5,7 +5,4 @@ Redirect /xsd/maven-4.1.0.xsd /xsd/maven-4.1.0-rc-4.xsd
 Redirect /xsd/plugin-2.0.0.xsd /xsd/plugin-2.0.0-rc-4.xsd
 Redirect /xsd/repository-metadata-1.2.0.xsd /xsd/repository-metadata-1.2.0-rc-4.xsd
 Redirect /xsd/settings-2.0.0.xsd /xsd/settings-2.0.0-rc-4.xsd
-Redirect /xsd/toolchains-1.1.0.xsd /xsd/toolchains-1.1.0-rc-3.xsd
-
-
 Redirect /xsd/toolchains-1.2.0.xsd /xsd/toolchains-1.2.0-rc-4.xsd
