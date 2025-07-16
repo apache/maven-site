@@ -44,7 +44,7 @@ The majority of fixed issues are bug and regression fixes for user reported prob
 
 Maven itself received new features - ability to control which repositories to be queried to resolve ranges.
 
-This release updates Resolver to version [1.9.22](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.24).
+This release updates Resolver to version [1.9.24](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.24).
 Resolver upgrade includes:
 
 - RFC9457 implementation - human-readable description details for HTTP problems
