@@ -72,11 +72,11 @@ reports to the standard information given by Maven.
 
 ### Providing guidelines for best practices development
 
-Maven aims to gather current principles for best practices development
+Maven aims to gather current best practices for development
 and make it easy to guide a project in that direction.
 
 For example, specification, execution, and reporting of unit tests are
-part of the normal build cycle using Maven. Current unit testing best
+part of the normal build cycle using Maven. Unit testing best
 practices were used as guidelines:
 
 - Keeping test source code in a separate, but parallel source tree
