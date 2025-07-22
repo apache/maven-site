@@ -1065,43 +1065,6 @@ bundle will be the same for a particular dependency - but that relies on the dep
 In the end, we give control to the actual POM doing the building, trying to use sensible defaults that minimise what
 needs to be specified, and allowing the use of artifact filters in the configuration of plugins.
 
-### How do I prevent including JARs in `WEB-INF/lib`? I need a "compile only" scope
-
-The scope you should use for this is provided. This indicates to Maven that the dependency will be provided at run time
-by its container or the JDK, for example.
-
-Dependencies with this scope will not be passed on transitively, nor will they be bundled in a package such as a WAR,
-or included in the runtime classpath.
-
-### How do I list available plugins?
-
-The "Available Plugins" page lists them, and provides additional information to browse the Maven repository.
-See [https://maven.apache.org/plugins]
-
-### How do I determine what version of a plugin I am using?
-
-You can use the Maven Help Plugin's describe goal. For example, to find out the version of the install plugin:
-`mvn -Dplugin=install help:describe`.
-Note that you must give the plugin prefix as the argument to plugin, not it's artifact ID.
-
-### How can I use Ant tasks in Maven?
-
-There are currently 2 alternatives:
-
-* For use in a plugin written in Java, Beanshell, or other Java-like scripting language, you can construct the Ant
-  tasks [using the instructions given in the Ant documentation](http://ant.apache.org/manual/antexternal.html)
-* If you have very small amounts of Ant script specific to your project, you can use
-  the [AntRun plugin](https://maven.apache.org/plugins/maven-antrun-plugin/index.html).
-
-### Is it possible to create my own directory structure?
-
-Absolutely yes!
-
-By configuring `<sourceDirectory>`, `<resources>` and other elements of the `<build>` section.
-
-In addition, you may need to change the plugin configuration if you are not using plugin defaults for their
-files/directories.
-
 ### Why does Maven compile my test classes but doesn't run them?
 
 Tests are run by the surefire plugin.
@@ -1128,28 +1091,6 @@ or
   <test>some-value</test>
 </properties>
   <!-- ... -->
-```
-
-### Where are the Maven XSD schemas?
-
-The Maven XSD is located here and the Maven Settings XSD is located here.
-Your favorite IDE probably supports XSD schema's for pom.xml and settings.xml editing. You need to specify the
-following:
-
-```xml
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <!-- ... -->
-</project>
-```
-
-```xml
-
-<settings xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
-  <!-- ... -->
-</settings>
 ```
 
 ### Maven doesn't work, how do I get help?
