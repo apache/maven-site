@@ -40,7 +40,6 @@ package Misc {
     rectangle "Maven"
   }
   package Skins {
-    rectangle Default
     rectangle Fluido
   }
   rectangle Studies
@@ -55,18 +54,14 @@ Indexer -[hidden]> "Plugin Testing"
 Studies -[hidden]> Wagon
 
 Environment -[hidden]down-> "Shared Libraries"
-'"Shared Libraries" -[hidden]> "Plugin Testing"
 
 "Apache" -[hidden]down-> "Apache Resoures"
 "Apache Resoures" -[hidden]down-> "Maven"
-'"Apache" -[hidden]> Default
-
-Default -[hidden]down-> Fluido
-'Default -[hidden]> Studies
+"Apache" -[hidden]> Fluido
 
 Archetypes -[hidden]down-> Environment
 Indexer -[hidden]down-> "Apache"
-"Plugin Testing" -[hidden]down-> Default
+"Plugin Testing" -[hidden]down-> Fluido
 
 url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
 url of "Distribution Tool Plugin" is [[https://github.com/apache/maven-dist-tool]]
@@ -81,7 +76,6 @@ url of "Apache" is [[https://github.com/apache/maven-apache-parent]]
 url of "Apache Resoures" is [[https://github.com/apache/maven-apache-resources]]
 url of "Maven" is [[https://github.com/apache/maven-parent]]
 
-url of Default is [[https://github.com/apache/maven-default-skin]]
 url of Fluido is [[https://github.com/apache/maven-fluido-skin]]
 
 url of Studies is [[https://github.com/apache/maven-studies]]
