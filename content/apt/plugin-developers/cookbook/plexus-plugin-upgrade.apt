@@ -98,7 +98,7 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
  In your <<<pom.xml>>>, replace <<<plexus-maven-plugin>>> configuration:
 
 +---------+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
       <plugin>
@@ -120,7 +120,7 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
  with corresponding <<<plexus-component-metadata>>> configuration:
 
 +---------+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
       <plugin>
@@ -146,7 +146,7 @@ Cookbook: How To Upgrade from Plexus Javadoc Tags to Plexus Java Annotations?
  In your <<<pom.xml>>>, add <<<plexus-component-annotations>>> dependency:
 
 +---------+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <dependencies>
     <dependency>
       <groupId>org.codehaus.plexus</groupId>

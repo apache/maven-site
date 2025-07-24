@@ -512,7 +512,7 @@ mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
   Example:
 
 +---+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <repositories>
     <repository>
@@ -580,7 +580,7 @@ mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
   Consider the following <<<pom.xml>>> snippet for a web application project:
 
 +---+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -649,7 +649,7 @@ mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
   snippet from above one more time:
 
 +---+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -672,7 +672,7 @@ mvn groupId:artifactId:goal -P=-profile-1,-profile-2,-?profile-3
   <<<pom.xml>>>:
 
 +---+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <profiles>
     <profile>

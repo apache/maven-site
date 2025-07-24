@@ -75,7 +75,7 @@ Introduction to the POM
  Here's an example:
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -130,7 +130,7 @@ Introduction to the POM
  com.mycompany.app:my-module:1.
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -159,7 +159,7 @@ Introduction to the POM
  <<com.mycompany.app:my-module:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -182,7 +182,7 @@ Introduction to the POM
  remove the groupId or the version identity of your module in its POM.
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -222,7 +222,7 @@ Introduction to the POM
  our parent section.
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -262,7 +262,7 @@ Introduction to the POM
  <<com.mycompany.app:my-app:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -274,7 +274,7 @@ Introduction to the POM
  <<com.mycompany.app:my-module:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -297,7 +297,7 @@ Introduction to the POM
  If we are to aggregate my-module into my-app, we would only have to modify my-app.
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -343,7 +343,7 @@ Introduction to the POM
  The answer? - the same way as Example 3, by specifying the path to the module.
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -390,7 +390,7 @@ Introduction to the POM
  <<com.mycompany.app:my-app:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -402,7 +402,7 @@ Introduction to the POM
  <<com.mycompany.app:my-module:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -428,7 +428,7 @@ Introduction to the POM
  <<com.mycompany.app:my-app:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.mycompany.app</groupId>
@@ -445,7 +445,7 @@ Introduction to the POM
  <<com.mycompany.app:my-module:1's POM>>
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
@@ -499,7 +499,7 @@ Introduction to the POM
   shown in the example below:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>
     <maven.build.timestamp.format>yyyy-MM-dd'T'HH:mm:ss'Z'</maven.build.timestamp.format>
@@ -517,7 +517,7 @@ Introduction to the POM
   You are also able to reference any properties defined in the project as a variable. Consider the following example:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <properties>
     <mavenVersion>3.0</mavenVersion>

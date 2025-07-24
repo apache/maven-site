@@ -108,7 +108,7 @@ mvn site
   similar to the repository for deployment:
 
 +--------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <distributionManagement>
     <site>
@@ -268,7 +268,7 @@ mvn site-deploy
   POM in a friendly format:
 
 +------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <reporting>
     <plugins>
@@ -307,7 +307,7 @@ mvn site-deploy
   To enable multiple locales, add a configuration similar to the following to your POM:
 
 +------------------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>

@@ -33,7 +33,7 @@ Guide to creating assemblies
  assembly plug-in in your POM and it might look like the following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <parent>
     <artifactId>maven</artifactId>
     <groupId>org.apache.maven</groupId>

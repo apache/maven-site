@@ -91,7 +91,7 @@ public class MyQueryMojo
  the following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -159,7 +159,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   the following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
 <configuration>
   <myString>a string</myString>
@@ -221,7 +221,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
   following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
 <configuration>
   <person>
@@ -250,7 +250,7 @@ mvn javadoc:help -Ddetail -Dgoal=javadoc
  []
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
 <configuration>
   <person implementation="com.mycompany.mojo.query.SuperPerson">
@@ -290,7 +290,7 @@ public class MyAnimalMojo
  where you have a field named <<<animals>>> then your configuration for the plug-in would look like the following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -346,7 +346,7 @@ public class MyAnimalMojo
  The following example is equivalent to the example above:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -378,7 +378,7 @@ public class MyAnimalMojo
 +-----+
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
   <configuration>
     <myMap>
@@ -412,7 +412,7 @@ public class MyAnimalMojo
 +-----+
 
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
   <configuration>
     <myProperties>
@@ -443,7 +443,7 @@ public class MyAnimalMojo
   Using <<<MyQueryMojo>>> as an example, you may have something that will look like:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -507,7 +507,7 @@ public class MyAnimalMojo
   this time we shall bind <<<execution2>>> to a phase.
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -556,7 +556,7 @@ public class MyAnimalMojo
   Using the following definition would execute <<<execution2>>> before <<<execution1>>>, but both in the test phase.
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -611,7 +611,7 @@ public class MyBoundQueryMojo
   using the <<<\<phase\>>>> tag under <<<\<execution\>>>>.
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -669,7 +669,7 @@ mvn myquery:query@execution1
   when running this plugin, you need to add <<<\<dependencies\>>>> element like the following:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -703,7 +703,7 @@ mvn myquery:query@execution1
   the <<<\<inherited\>>>> tag:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -745,7 +745,7 @@ mvn myquery:query@execution1
   reports selectively when running <<<mvn site>>>. The following will generate only the project team report.
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <reporting>
     <plugins>
@@ -788,7 +788,7 @@ mvn myquery:query@execution1
   Similar to the build plugins, to break the inheritance, you can use the <<<\<inherited\>>>> tag:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <reporting>
     <plugins>

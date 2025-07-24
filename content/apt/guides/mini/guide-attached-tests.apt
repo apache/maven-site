@@ -35,7 +35,7 @@ Guide to using attached tests
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
      <plugin>
@@ -63,7 +63,7 @@ Guide to using attached tests
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>

@@ -64,7 +64,7 @@ Introduction
 
 +---+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <!-- declare the dependency to be set as optional -->
@@ -138,7 +138,7 @@ Project-X -> Project-A
 
 +---+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -200,7 +200,7 @@ B, C, D, E, F
 
 +---+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>sample.ProjectA</groupId>
   <artifactId>Project-A</artifactId>
@@ -280,7 +280,7 @@ Project-A
 
 +---+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>sample.ProjectA</groupId>
   <artifactId>Project-A</artifactId>
