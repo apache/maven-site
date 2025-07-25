@@ -77,26 +77,33 @@ The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`po
 
 ## Usage
 
-In general the Maven Update Tool needs three information to run:
+The tool itself is called using the `mvnup` command.
+In general the Maven Update Tool needs three information to execute successfully:
 
 1. The desired execution mode,
 2. the target model version, and
 3. the part(s) of the `pom.xml` that should be upgraded.
 
-The tool provides two execution modes:
+The tool provides two execution modes (goals):
 The first one is a dry check to see if an upgrade of the `pom.xml` files is possible and which parts would be changed.
 The second mode actual updates the files and applies all applicable upgrades provided by the tool.
+To execute a dry run pass `--check` to the tool, for an upgrade use `--apply`. 
 
-With the model version argument you control if your project should be upgraded to model version 4.0.0 or the new 4.1.0 version.
+With the `--model-version` argument you control if your project should be upgraded to model version 4.0.0 or the new 4.1.0 version.
 Model version 4.0.0 is fully compatible to be executed on Maven 3, while projects with a model version 4.1.0 can only be build, using Maven 4.
+If not specified the tool will target model version 4.0.0. 
 
-The tool allows you to update all or only certain parts of your Build POM.
-In most cases you want it to check / update all parts, but you can also restrict it to the following:
+The tool allows you to update all or only certain parts of your Build POM, by passing upgrade options to the execution.
+In most cases you want it to check / update all parts.
+This is achieved by either passing `-all` or no upgrade option, making it the default behavior. 
+To specify one or multiple upgrades the following upgrade options can be used:
 
-- model: Only fixes parts effecting the model version, for example XML elements of the `pom.xml`.
-- plugins: Only plugin and plugin management section are updated.
-- inference: Remove duplicate dependency and plugin information. 
+- `--model`: Only upgrades those parts of the `pom.xml` that are in compatible with Maven 4, for example XML elements or expressions.
+- `--plugins`: Only plugin and plugin management section are updated.
+- `--infer`: Remove duplicate dependency and plugin information that can be inferred by Maven.
 
+The tool will provide a detailed output, which includes much information about the passed execution mode, upgrade options and how the different parts of your Build POM were affected by the tool's execution.
+Please see belows example section of this article for an output example.
 
 ## More arguments
 
@@ -108,6 +115,10 @@ Example:
 ```
 mvnup check --model-version 4.1.0 --directory /path/to/project
 ```
+
+### Help
+A short help about the command line arguments is available using the `--help` argument.
+
 
 ## Examples
 
@@ -133,8 +144,87 @@ Upgrade all plugins and models to version 4.0.0
 mvnup apply --plugins --model
 ```
 
-
 Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project
 ```
 mvnup check --infer --directory /path/to/project
+```
+
+### Output
+
+The following example shows the output of an execution to fully update a project to model version 4.1.0.
+
+
+**UPDATE WITH CURRENT Code, when build is fixed to include fixes of** https://github.com/apache/maven/pull/10915
+
+```
+D:\Github\mpmd386\PMD_314\SingleModuleRoot>mvnup apply --model-version 4.1.0 --all
+[INFO]
+[INFO] 1 problem was encountered while building the effective settings (use -e to see details)
+[INFO]
+[INFO] Maven Upgrade Tool - Apply
+[INFO]
+[INFO] Discovering POM files...
+[INFO] Found 1 POM file(s)
+[INFO]
+[INFO] Maven Upgrade Tool
+[INFO] → Upgrade options:
+[INFO]   • --all (enables all upgrade options)
+[INFO]
+[INFO]   → Executing strategy: Upgrading POM model version
+[INFO]     Upgrading POM model version
+[INFO]       D:\Github\mpmd386\PMD_314\SingleModuleRoot\pom.xml (current: 4.1.0)
+[INFO]         ✓ Already at target version 4.1.0
+[INFO]
+[INFO]       Upgrading POM model version Summary:
+[INFO]         0 POM(s) modified
+[INFO]         1 POM(s) needed no changes
+[INFO]     ✓ Strategy completed successfully
+[INFO]
+[INFO]   → Executing strategy: Applying Maven inference optimizations
+[INFO]     Applying Maven inference optimizations
+[INFO]       Computing GAVs for inference from 1 POM(s)...
+[INFO]       Computed 0 unique GAV(s) for inference
+[INFO]       D:\Github\mpmd386\PMD_314\SingleModuleRoot\pom.xml (current: 4.1.0)
+[INFO]         ✓ No inference optimizations needed
+[INFO]
+[INFO]       Applying Maven inference optimizations Summary:
+[INFO]         0 POM(s) modified
+[INFO]         1 POM(s) needed no changes
+[INFO]     ✓ Strategy completed successfully
+[INFO]
+[INFO]   → Executing strategy: Applying Maven 4 compatibility fixes
+[INFO]     Applying Maven 4 compatibility fixes
+[INFO]       D:\Github\mpmd386\PMD_314\SingleModuleRoot\pom.xml (checking for Maven 4 compatibility issues)
+[INFO]         ✓ No Maven 4 compatibility issues found
+[INFO]
+[INFO]       Applying Maven 4 compatibility fixes Summary:
+[INFO]         0 POM(s) modified
+[INFO]         1 POM(s) needed no changes
+[INFO]     ✓ Strategy completed successfully
+[INFO]
+[INFO]   → Executing strategy: Upgrading Maven plugins to recommended versions
+[INFO]     Upgrading Maven plugins to recommended versions
+[INFO]       D:\Github\mpmd386\PMD_314\SingleModuleRoot\pom.xml (checking for plugin upgrades)
+[INFO]         ✓ No plugin upgrades needed
+[INFO]
+[INFO]       Upgrading Maven plugins to recommended versions Summary:
+[INFO]         0 POM(s) modified
+[INFO]         1 POM(s) needed no changes
+[INFO]     ✓ Strategy completed successfully
+[INFO]
+[INFO] Overall Upgrade Summary:
+[INFO]   1 POM(s) processed
+[INFO]   0 POM(s) modified
+[INFO]   1 POM(s) needed no changes
+[INFO]   0 error(s) encountered
+[INFO]
+[INFO] Executed Strategies:
+[INFO]   • Upgrading POM model version
+[INFO]   • Applying Maven inference optimizations
+[INFO]   • Applying Maven 4 compatibility fixes
+[INFO]   • Upgrading Maven plugins to recommended versions
+[INFO] ✓ No upgrades needed - all POMs are up to date
+[INFO]
+[INFO] Saving modified POMs...
+
 ```
