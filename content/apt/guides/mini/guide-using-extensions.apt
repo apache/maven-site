@@ -65,7 +65,7 @@ Using Extensions
   
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>
@@ -90,7 +90,7 @@ Using Extensions
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <extensions>

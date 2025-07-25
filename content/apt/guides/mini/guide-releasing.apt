@@ -92,7 +92,7 @@ mvn release:prepare \
   within the <pom.xml> file in the following form:
  
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>app</artifactId>
@@ -130,7 +130,7 @@ mvn release:prepare \
   The following example shows how this would look within the <pom.xml> file.
  
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>app</artifactId>
@@ -246,7 +246,7 @@ checkpoint.check-in-development-version=OK
   The following is an example of how a distributionManagement element can be configured within a project <pom.xml> file.
   
 +-----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
   <artifactId>app</artifactId>

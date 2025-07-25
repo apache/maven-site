@@ -64,7 +64,7 @@ Guide to relocation
  The minimal POM file might look like this for version 1.0 of <<<foo>>>:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>bar</groupId>
   <artifactId>foo</artifactId>

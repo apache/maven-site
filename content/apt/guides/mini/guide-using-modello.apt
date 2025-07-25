@@ -54,7 +54,7 @@ Guide to using Modello
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
     <plugins>

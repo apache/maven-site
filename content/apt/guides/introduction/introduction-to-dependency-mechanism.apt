@@ -207,7 +207,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -237,7 +237,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -264,7 +264,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencyManagement>
     <dependencies>
@@ -307,7 +307,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -328,7 +328,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -364,7 +364,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
  <modelVersion>4.0.0</modelVersion>
  <groupId>maven</groupId>
  <artifactId>A</artifactId>
@@ -405,7 +405,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <parent>
     <artifactId>A</artifactId>
     <groupId>maven</groupId>
@@ -479,7 +479,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>maven</groupId>
   <artifactId>B</artifactId>
@@ -528,7 +528,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
  <modelVersion>4.0.0</modelVersion>
  <groupId>maven</groupId>
  <artifactId>X</artifactId>
@@ -559,7 +559,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
  <modelVersion>4.0.0</modelVersion>
  <groupId>maven</groupId>
  <artifactId>Y</artifactId>
@@ -590,7 +590,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <groupId>maven</groupId>
   <artifactId>Z</artifactId>
@@ -871,7 +871,7 @@ Introduction to the Dependency Mechanism
 
 +----+
 
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>
@@ -891,7 +891,7 @@ Introduction to the Dependency Mechanism
  would be defined as follows:
 
 +----+
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
     <dependency>

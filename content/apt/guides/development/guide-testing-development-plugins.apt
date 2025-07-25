@@ -50,7 +50,7 @@ Guide to Testing Development Versions of Plugins
   The first step is to include this in your project:
 
 +-------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <pluginRepositories>
     <pluginRepository>
@@ -71,7 +71,7 @@ Guide to Testing Development Versions of Plugins
     * You can have Maven automatically check for updates on a given interval, for example:
 
 +-------
-<project>
+<project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <pluginRepositories>
     <pluginRepository>
