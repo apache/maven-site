@@ -1,4 +1,4 @@
-# Maven Update Tool
+# Maven Upgrade Tool
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -19,14 +19,14 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The Maven Update Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`) files to Maven 4.
+The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`) files to Maven 4.
 
 *Notes*:
 
 - The article does not cover Maven 4 features.
   For a full list of those, please have a look at the [What's new in Maven 4?](./whatsnewinmaven4.html) article.
 - This article assumes that the reader is aware of the difference between a Build POM and a Consumer POM.
-  The Maven Update Tool only affects the Build POM of your project.
+  The Maven Upgrade Tool only affects the Build POM of your project.
   A brief description is included in the Maven 4 article mentioned in the previous bullet point.
 
 <!--MACRO{toc|fromDepth=2}-->
@@ -76,7 +76,7 @@ The Maven Update Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`) 
 ## Usage
 
 The tool itself is called using the `mvnup` command.
-In general the Maven Update Tool needs three information to execute successfully:
+In general the Maven Upgrade Tool needs three information to execute successfully:
 
 1. The desired execution mode,
 2. the target model version, and
@@ -107,7 +107,7 @@ Please see belows example section of this article for an output example.
 
 ### Specify project directory
 
-Similar to a standard Maven build, the Maven Update Tool searches for a project in the same folder in which the tool got executed.
+Similar to a standard Maven build, the Maven Upgrade Tool searches for a project in the same folder in which the tool got executed.
 To specify another directory, the `--directory` argument comes to your help.
 
 Example:
@@ -122,7 +122,7 @@ A short help about the command line arguments is available using the `--help` ar
 
 ## Examples
 
-This section contains several examples how to use the Maven Update Tool.
+This section contains several examples how to use the Maven Upgrade Tool.
 
 ### Basic upgrade workflow
 
