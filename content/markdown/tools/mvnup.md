@@ -21,7 +21,7 @@ under the License.
 
 The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`pom.xml`) to Maven 4.
 
-*Notes*: 
+*Notes*:
 
 - The article does not cover Maven 4 features.
   For a full list of those, please have a look at the [What's new in Maven 4?](./whatsnewinmaven4.html) article.
@@ -29,11 +29,10 @@ The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`po
   The Maven Update Tool only affects the Build POM of your project.
   A brief description is included in the Maven 4 article mentioned in the previous bullet point.
 
-
 <!--MACRO{toc|fromDepth=2}-->
 
 ## Features
- 
+
 - Shipped with Maven 4 (from 4.0.0-rc4 on), no extra installation needed
 - Usable with Linux, Windows, and MacOS
 - Command-line tool with check/apply workflow
@@ -42,7 +41,7 @@ The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`po
 - Intelligent inference to remove redundant information in Maven 4.1.0+ models
 
 ### Plugin Compatibility & Upgrades
- 
+
 - Comprehensive plugin compatibility upgrades for Maven 4
 - Parent POM plugin detection with proper XML formatting
 - Plugin management section creation with correct element ordering
@@ -74,7 +73,6 @@ The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`po
 - pluginManagement placement before plugins sections
 - Comprehensive JDOM-based XML manipulation with formatting preservation
 
-
 ## Usage
 
 The tool itself is called using the `mvnup` command.
@@ -87,15 +85,15 @@ In general the Maven Update Tool needs three information to execute successfully
 The tool provides two execution modes (goals):
 The first one is a dry check to see if an upgrade of the `pom.xml` files is possible and which parts would be changed.
 The second mode actual updates the files and applies all applicable upgrades provided by the tool.
-To execute a dry run pass `--check` to the tool, for an upgrade use `--apply`. 
+To execute a dry run pass `--check` to the tool, for an upgrade use `--apply`.
 
 With the `--model-version` argument you control if your project should be upgraded to model version 4.0.0 or the new 4.1.0 version.
 Model version 4.0.0 is fully compatible to be executed on Maven 3, while projects with a model version 4.1.0 can only be build, using Maven 4.
-If not specified the tool will target model version 4.0.0. 
+If not specified the tool will target model version 4.0.0.
 
 The tool allows you to update all or only certain parts of your Build POM, by passing upgrade options to the execution.
 In most cases you want it to check / update all parts.
-This is achieved by either passing `-all` or no upgrade option, making it the default behavior. 
+This is achieved by either passing `-all` or no upgrade option, making it the default behavior.
 To specify one or multiple upgrades the following upgrade options can be used:
 
 - `--model`: Only upgrades those parts of the `pom.xml` that are in compatible with Maven 4, for example XML elements or expressions.
@@ -108,17 +106,19 @@ Please see belows example section of this article for an output example.
 ## More arguments
 
 ### Specify project directory
+
 Similar to a standard Maven build, the Maven Update Tool searches for a project in the same folder in which the tool got executed.
 To specify another directory, the `--directory` argument comes to your help.
 
 Example:
+
 ```
 mvnup check --model-version 4.1.0 --directory /path/to/project
 ```
 
 ### Help
-A short help about the command line arguments is available using the `--help` argument.
 
+A short help about the command line arguments is available using the `--help` argument.
 
 ## Examples
 
@@ -126,12 +126,14 @@ This section contains several examples how to use the Maven Update Tool.
 
 ### Basic upgrade workflow
 
-Validates a full upgrade to model version 4.1.0: 
+Validates a full upgrade to model version 4.1.0:
+
 ```
 mvnup check --model-version 4.1.0 --all
 ```
 
 Upgrade all project parts to model version 4.1.0:
+
 ```
 mvnup apply --model-version 4.1.0 --all
 ```
@@ -145,6 +147,7 @@ mvnup apply --plugins --model
 ```
 
 Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project
+
 ```
 mvnup check --infer --directory /path/to/project
 ```
@@ -152,7 +155,6 @@ mvnup check --infer --directory /path/to/project
 ### Output
 
 The following example shows the output of an execution to fully update a project to model version 4.1.0.
-
 
 **UPDATE WITH CURRENT Code, when build is fixed to include fixes of** https://github.com/apache/maven/pull/10915
 
@@ -228,3 +230,4 @@ D:\Github\mpmd386\PMD_314\SingleModuleRoot>mvnup apply --model-version 4.1.0 --a
 [INFO] Saving modified POMs...
 
 ```
+
