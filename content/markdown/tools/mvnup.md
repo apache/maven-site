@@ -19,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The Maven Update Tool (mvnup) helps you to upgrade your Maven project files (`pom.xml`) to Maven 4.
+The Maven Update Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`) files to Maven 4.
 
 *Notes*:
 
