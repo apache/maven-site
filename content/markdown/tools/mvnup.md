@@ -21,21 +21,57 @@ under the License.
 
 The Maven Update (mvnup) tool helps you to upgrade your Maven project to Maven 4.
 
+<!--MACRO{toc|fromDepth=2}-->
+
+*Note*: This article does not cover Maven 4 features.
+For a full list of those, please have a look at the [What's new in Maven 4?](./whatsnewinmaven4.html) article.
+
 ## Features
+ 
+- Shipped with Maven 4 (from 4.0.0-rc4 on), no extra installation needed
+- Command-line tool with check/apply workflow
+- Automatic POM discovery and multi-module project support
+- Supports model version 4.0.0 (compatible with Maven 3) and 4.1.0 (Maven 4 only)
+- Intelligent inference to remove redundant information in Maven 4.1.0+ models
 
-- Significantly faster builds compared to regular Maven
-- Compatible with existing Maven plugins and extensions
-- Daemon process management
-- Intelligent memory management
-- Native executable available
+### Plugin Compatibility & Upgrades
+ 
+- Comprehensive plugin compatibility upgrades for Maven 4
+- Parent POM plugin detection with proper XML formatting
+- Plugin management section creation with correct element ordering
+- Property-based version management support
 
-## Installation
+### Maven 4 Compatibility Fixes
 
-You can download Maven Daemon from our [download page](/download.html#Maven_Daemon).
+- Fix unsupported `combine.children` attributes (`override` → `merge`)
+- Fix unsupported `combine.self` attributes (`append` → `merge`)
+- Remove duplicate dependencies in `<dependencyManagement>` sections
+- Remove duplicate plugins in `<pluginManagement>` sections
+- Comment out repositories with unsupported expressions
+- Fix incorrect `parent.relativePath` pointing to non-existent POMs
+- Create `.mvn` directory for root directory detection to avoid warnings when build is executed with Maven 4
 
-For more detailed information and documentation, visit the [Maven Daemon GitHub repository](https://github.com/apache/maven-mvnd).
+### Intelligent Model Inference
+
+- Parent element trimming when parent is in same project
+- Managed dependency removal for project artifacts
+- Redundant subprojects list removal when matching direct children
+- GroupId/version inference from parent when using relativePath
+- Dependency inference that reverses Maven's resolution logic
+
+### Advanced XML Processing
+
+- Intelligent indentation detection supporting 2/4 spaces and tabs
+- Document-wide formatting consistency preservation
+- Proper element ordering following Maven POM schema standards
+- pluginManagement placement before plugins sections
+- Comprehensive JDOM-based XML manipulation with formatting preservation
+
 
 ## Usage
+
+The tool 
+
 
 Instead of using the `mvn` command, use `mvnd`:
 
@@ -44,3 +80,8 @@ mvnd clean verify
 ```
 
 The daemon will stay alive in the background, ready to process subsequent builds much faster.
+
+
+
+
+
