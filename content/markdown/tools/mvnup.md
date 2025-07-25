@@ -85,7 +85,7 @@ In general the Maven Update Tool needs three information to run:
 
 The tool provides two execution modes:
 The first one is a dry check to see if an upgrade of the `pom.xml` files is possible and which parts would be changed.
-The second mode actual updates the files and applies all applicable upgrades provided by the tool.   
+The second mode actual updates the files and applies all applicable upgrades provided by the tool.
 
 With the model version argument you control if your project should be upgraded to model version 4.0.0 or the new 4.1.0 version.
 Model version 4.0.0 is fully compatible to be executed on Maven 3, while projects with a model version 4.1.0 can only be build, using Maven 4.
@@ -93,9 +93,9 @@ Model version 4.0.0 is fully compatible to be executed on Maven 3, while project
 The tool allows you to update all or only certain parts of your Build POM.
 In most cases you want it to check / update all parts, but you can also restrict it to the following:
 
-- model: Only parts effecting the model version, for example XML elements of the `pom.xml`.
-- plugins: Only plugins and plugin management is updated.
-
+- model: Only fixes parts effecting the model version, for example XML elements of the `pom.xml`.
+- plugins: Only plugin and plugin management section are updated.
+- inference: Remove duplicate dependency and plugin information. 
 
 
 ## More arguments
@@ -107,4 +107,34 @@ To specify another directory, the `--directory` argument comes to your help.
 Example:
 ```
 mvnup check --model-version 4.1.0 --directory /path/to/project
+```
+
+## Examples
+
+This section contains several examples how to use the Maven Update Tool.
+
+### Basic upgrade workflow
+
+Validates a full upgrade to model version 4.1.0: 
+```
+mvnup check --model-version 4.1.0 --all
+```
+
+Upgrade all project parts to model version 4.1.0:
+```
+mvnup apply --model-version 4.1.0 --all
+```
+
+### Specific upgrades
+
+Upgrade all plugins and models to version 4.0.0
+
+```
+mvnup apply --plugins --model
+```
+
+
+Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project
+```
+mvnup check --infer --directory /path/to/project
 ```
