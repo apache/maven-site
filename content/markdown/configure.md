@@ -85,10 +85,13 @@ For example things like `-T3 -U --fail-at-end`. So you only have to call Maven b
 clean package` instead of `mvn -T3 -U --fail-at-end clean package` and not to miss the `-T3 -U --fail-at-end` options on every call.
 The `.mvn/maven.config` is located in the project's top level `.mvn` directory and also works in the root of a multi module build.
 
-**NOTICE** Starting with Maven **3.9.0** each single argument must be put on a new line, so for the mentioned example your file will have content like:
+**NOTICE** Starting with Maven **3.9.0**, each single argument must be put on a new line, and lines beginning with `#`
+are treated as comments. Maven 3.8.x and older do not support comments in this file. So, for the example mentioned
+above, your file could look like:
 
 ```
 -T3
+# this is a comment
 -U 
 --fail-at-end
 ```
