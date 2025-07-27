@@ -25,18 +25,68 @@ under the License.
 }
 </style>
 
+'Keep ordering of SCM 'default.xml' repo manifest
 package "Plexus" {
-  rectangle "Utils"
-  rectangle "Classworlds"
   rectangle "Modello"
+  rectangle "Classworlds"
+
+  package "Components" {
+    rectangle "Archiver"
+    rectangle "Cipher"
+    rectangle "Compiler"
+    rectangle "I18N"
+    rectangle "Interactivity"
+    rectangle "Interpolation"
+    rectangle "IO"
+    rectangle "Languages"
+    rectangle "Resources"
+    rectangle "Sec-Dispatcher"
+    rectangle "Velocity"
+  }
+
+  rectangle "POM"
+  rectangle "Testing"
+  rectangle "Utils"
+  rectangle "XML"
 }
 
 'hidden dependencies to change layout
-"Utils" -[hidden]right-> "Classworlds"
-"Classworlds" -[hidden]right-> "Modello"
+"Modello" -[hidden]right-> "Classworlds"
+"Classworlds" -[hidden]down-> "Archiver"
 
-url of "Utils" is [[https://github.com/codehaus-plexus/plexus-utils]]
-url of "Classworlds" is [[https://github.com/codehaus-plexus/plexus-classworlds]]
+"Archiver" -[hidden]right-> "Cipher"
+"Cipher" -[hidden]right-> "Compiler"
+"Compiler" -[hidden]right-> "I18N"
+"I18N" -[hidden]down-> "Interactivity"
+
+"Interactivity" -[hidden]right-> "Interpolation"
+"Interpolation" -[hidden]right-> "IO"
+"IO" -[hidden]right-> "Languages"
+"Languages" -[hidden]right-> "Resources"
+"Resources" -[hidden]down-> "Sec-Dispatcher"
+"Sec-Dispatcher" -[hidden]right-> "Velocity"
+
+"Classworlds" -[hidden]right-> "POM"
+"POM" -[hidden]right-> "Testing"
+"Testing" -[hidden]right-> "Utils"
+"Utils" -[hidden]right-> "XML"
+
 url of "Modello" is [[https://github.com/codehaus-plexus/modello]]
+url of "Classworlds" is [[https://github.com/codehaus-plexus/plexus-classworlds]]
+url of "Archiver" is [[https://github.com/codehaus-plexus/plexus-archiver]]
+url of "Cipher" is [[https://github.com/codehaus-plexus/plexus-cipher]]
+url of "Compiler" is [[https://github.com/codehaus-plexus/plexus-compiler]]
+url of "I18N" is [[https://github.com/codehaus-plexus/plexus-i18n]]
+url of "Interactivity" is [[https://github.com/codehaus-plexus/plexus-interactivity]]
+url of "Interpolation" is [[https://github.com/codehaus-plexus/plexus-interpolation]]
+url of "IO" is [[https://github.com/codehaus-plexus/plexus-io]]
+url of "Languages" is [[https://github.com/codehaus-plexus/plexus-languages]]
+url of "Resources" is [[https://github.com/codehaus-plexus/plexus-resources]]
+url of "Sec-Dispatcher" is [[https://github.com/codehaus-plexus/plexus-sec-dispatcher]]
+url of "Velocity" is [[https://github.com/codehaus-plexus/plexus-velocity]]
+url of "POM" is [[https://github.com/codehaus-plexus/plexus-pom]]
+url of "Testing" is [[https://github.com/codehaus-plexus/plexus-testing]]
+url of "Utils" is [[https://github.com/codehaus-plexus/plexus-utils]]
+url of "XML" is [[https://github.com/codehaus-plexus/plexus-xml]]
 
 @enduml
