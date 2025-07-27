@@ -59,7 +59,7 @@ under the License.
         </td>
       </tr>
       <tr>
-        <td><b>Maven 4</b>: Learn <a href="whatsnewinmaven4.html">what's new</a> and <a href="/guides/mini/guide-migration-to-mvn4.html">how to migrate a project</a> to Maven 4.</td>
+        <td><b>Maven 4</b>: Learn <a href="whatsnewinmaven4.html">what's new</a> and <a href="/guides/mini/guide-migration-to-mvn4.html">how to migrate a project</a> to Maven 4. The <a href="/tools/mvnup.html">Maven Upgrade Tool</a> provides upgrade support.</td>
         <td>
           Upcoming: How to migrate plugins to the new Maven 4 API?
         </td>
