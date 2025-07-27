@@ -36,7 +36,7 @@ The Maven team is interested in all your migration experiences - either good or 
 
 * This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
   This means it will still receive updates after Maven 4 has been released.
-* Since Maven 4.0.0-rc-4 Maven ships with a build-in migration tool (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to migrate a project.
+* Since Maven 4.0.0-rc-4 Maven ships with a built-in migration tool (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to migrate a project.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
   We plan to create a separate guide for this.
 
