@@ -76,7 +76,7 @@ The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`)
 ## Usage
 
 The tool itself is called using the `mvnup` command.
-In general the Maven Upgrade Tool needs three information to execute successfully:
+The Maven Upgrade Tool needs three things to execute successfully:
 
 1. The desired execution mode,
 2. the target model version, and
