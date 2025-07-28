@@ -71,7 +71,7 @@ The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`)
 - Document-wide formatting consistency preservation
 - Proper element ordering following Maven POM schema standards
 - pluginManagement placement before plugins sections
-- Comprehensive JDOM-based XML manipulation with formatting preservation
+- Comprehensive XML manipulation with formatting preservation
 
 ## Usage
 
