@@ -27,10 +27,11 @@ The pages in this section will give information about additional Maven tools, wh
 
 ## Supported By The Maven Project
 
-| Name                                 | Description                                                                                                                         | Link                |
-|:-------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
-| [Maven Daemon](./mvnd.html)          | This project speeds up Maven builds using techniques like daemon process management and caching.                                    | [Github][1]         |
-| [Maven Wrapper](./mavenwrapper.html) | The Maven Wrapper to ensures that a project is always build with a desired Maven version and/or JDK by automatically download them. | [Project's site][2] |
+| Name                                 | Description                                                                                                                                                             | Link                |
+|:-------------------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
+| [Maven Daemon](./mvnd.html)          | This project speeds up Maven builds using daemon process management and caching.                                                                                        | [Github][1]         |
+| [Maven Upgrade Tool](./mvnup.html)   | The Maven Upgrade Tool allows you to automatically upgrade your Maven project to newer Maven versions, starting with Maven 4. It's a built-in tool, shipped with Maven. | -                   |
+| [Maven Wrapper](./mavenwrapper.html) | The Maven Wrapper ensures that a project is built with a desired Maven version and/or JDK by automatically downloading them.                                            | [Project's site][2] |
 
 [1]: https://github.com/apache/maven-mvnd
 [2]: https://maven.apache.org/wrapper/
