@@ -126,7 +126,7 @@ This section contains several examples how to use the Maven Upgrade Tool.
 
 ### Basic upgrade workflow
 
-Validates a full upgrade to model version 4.1.0:
+Validates if a full upgrade to model version 4.1.0 is possible:
 
 ```
 mvnup check --model-version 4.1.0 --all
@@ -140,13 +140,13 @@ mvnup apply --model-version 4.1.0 --all
 
 ### Specific upgrades
 
-Upgrade all plugins and models to version 4.0.0
+Upgrade all plugins and models to version 4.0.0:
 
 ```
 mvnup apply --plugins --model
 ```
 
-Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project
+Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project:
 
 ```
 mvnup check --infer --directory /path/to/project
