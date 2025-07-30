@@ -264,7 +264,7 @@ Available Plugins
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://tomcat.apache.org/maven-plugin.html} <<<Apache Tomcat>>>}}| {{{https://tomcat.apache.org/maven-plugin.html}Apache Tomcat Project}} | Run an Apache Tomcat container for rapid webapp development.
 *----------------------------------------------------------------------------+----------------+-----------------------+
-| {{{https://jeremylong.github.io/DependencyCheck/} <<<OWASP dependency-check>>>}} | {{{https://www.owasp.org/index.php/OWASP_Dependency_Check}OWASP Dependency-check Project}} | Run OWASP Dependency-Check, a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.
+| {{{https://dependency-check.github.io/DependencyCheck/} <<<OWASP dependency-check>>>}} | {{{https://www.owasp.org/index.php/OWASP_Dependency_Check}OWASP Dependency-check Project}} | Run OWASP Dependency-Check, a utility that identifies project dependencies and checks if there are any known, publicly disclosed, vulnerabilities.
 *----------------------------------------------------------------------------+----------------+-----------------------+
 | {{{https://github.com/CycloneDX/cyclonedx-maven-plugin} <<<CycloneDX>>>}}  | {{{https://cyclonedx.org/}CycloneDX Project}} | Generate Software Bill of Materials (SBOM) in CycloneDX format.
 *----------------------------------------------------------------------------+----------------+-----------------------+
