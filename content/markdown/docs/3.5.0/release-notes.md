@@ -34,7 +34,7 @@ the [PluginList][1] for more information.
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [http://maven.apache.org/][2]
+- the website: [http://maven.apache.org/][2]
 - the maven-user mailing list: [http://maven.apache.org/mailing-lists.html][3]
 - the reference documentation: [http://maven.apache.org/ref/3.5.0/][4]
 
