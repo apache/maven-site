@@ -32,7 +32,7 @@ The core release is independent of the plugins available. Further releases of pl
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [https://maven.apache.org/][2]
+- the website: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.5.3/](/ref/3.5.3/)
 
