@@ -1807,13 +1807,13 @@ However, the tag does not exist. What is wrong?
 The full failure will look something like this: `/stuff/tags/example/pom.xml`
 
 ```
-[INFO\] Tagging release with the label stuff-1.0.0...
-[INFO\] Executing: svn \--non-interactive copy \--file C:\DOCUME~1\G980143\LOCALS~1\Temp\maven-scm-1259783654.commit . http://www.example.com/subversion/repo/example/tags/stuff-1.0.0
-[INFO\] Working directory: C:\projects\stuff\branches\1.0.x
-[INFO\] \-----------------------------------------------------------------------\-
-[ERROR\] BUILD FAILURE
-[INFO\] \-----------------------------------------------------------------------\-
-[INFO\] Unable to tag SCM
+[INFO] Tagging release with the label stuff-1.0.0...
+[INFO] Executing: svn \--non-interactive copy \--file C:\DOCUME~1\G980143\LOCALS~1\Temp\maven-scm-1259783654.commit . http://www.example.com/subversion/repo/example/tags/stuff-1.0.0
+[INFO] Working directory: C:\projects\stuff\branches\1.0.x
+[INFO] \-----------------------------------------------------------------------\-
+[ERROR] BUILD FAILURE
+[INFO] \-----------------------------------------------------------------------\-
+[INFO] Unable to tag SCM
 Provider message:
 The svn tag command failed.
 Command output:
