@@ -1,0 +1,110 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+# Example: Using Maven 3 lifecycle extension
+
+#[[##]]#  Lifecycle Extension Points
+
+  You can extend multiple classes depending on your needs:
+
+  * [org.apache.maven.execution.AbstractExecutionListener](/ref/current/maven-core/apidocs/org/apache/maven/execution/AbstractExecutionListener.html),
+  * [org.apache.maven.AbstractMavenLifecycleParticipant](/ref/current/maven-core/apidocs/org/apache/maven/AbstractMavenLifecycleParticipant.html),
+  * [org.apache.maven.eventspy.AbstractEventSpy](/ref/current/maven-core/apidocs/org/apache/maven/eventspy/AbstractEventSpy.html)
+
+#[[##]]#  Build Your Extension
+
+  Create a Maven project with a dependency on `org.apache.maven:maven-core:${currentStableVersion}` and other dependencies:
+
+```xml
+    <groupId>org.apache.maven.extensions</groupId>
+    <artifactId>beer-maven-lifecycle</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <dependency>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-core</artifactId>
+      <version>${currentStableVersion}</version>
+      <scope>provided</scope> <!-- always provided by the Maven Core Classloader -->
+    </dependency>
+
+    <!-- dependency for JSR 330 annotation -->
+    <dependency>
+      <groupId>javax.inject</groupId>
+      <artifactId>javax.inject</artifactId>
+      <version>1</version> 
+      <scope>provided</scope> <!-- always provided by the Maven Core Classloader -->
+    </dependency>
+```
+
+Create your extension class; your extension must be a [Sisu component](https://www.eclipse.org/sisu), therefore mark it with the JSR 330 (or legacy Plexus container) annotation:
+
+```java
+@Named( "beer")
+@Singleton
+public class BeerMavenLifecycleParticipant extends AbstractMavenLifecycleParticipant
+{
+
+    @Override
+    public void afterSessionStart( MavenSession session )
+        throws MavenExecutionException
+    {
+      // start the beer machine
+    }
+
+
+    @Override
+    public void afterProjectsRead( MavenSession session )
+        throws MavenExecutionException
+    {
+      // ask a beer to the machine
+    }
+
+}
+```
+
+Generate [Sisu index files](https://eclipse.github.io/sisu.mojos/) during the build of your extension jar:
+
+```xml
+  <build>
+    ...
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.eclipse.sisu</groupId>
+        <artifactId>sisu-maven-plugin</artifactId>
+        <version>0.3.5</version>
+        <executions>
+          <execution>
+            <id>generate-index</id>
+            <goals>
+              <goal>main-index</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      ...
+    </plugins>
+    ...
+  </build>
+```
+
+#[[##]]#  Load Your Extension
+
+Use your extension in your build(s) via one of the means outlined at [Guide to using Extensions](../guides/mini/guide-using-extensions.html)
+Whether late registration is sufficient or early registration is required depends on the implemented interface/extended class, e.g. `AbstractMavenLifecycleParticipant.afterSessionStart()` is not called for components registered late.
