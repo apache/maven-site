@@ -109,7 +109,7 @@ If you are using the repository mirroring technique to lock down to the reposito
 
 If you regularly test staged releases and want to have a more convenient way to add the repository to a build without modifying your POM, you may add a profile to your `~/.m2/settings.xml`:
 
-```unknown
+```xml
 ...
 <profiles>
   <profile>
