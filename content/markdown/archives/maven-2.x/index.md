@@ -28,7 +28,7 @@ The following list of plugins contains plugins which are Maven 2 specific. Apart
 | **Plugin**                                   | **Type*** | **Version** | **Last Release Date** | **Description**                                        | **Date of Funeral** |
 |:---------------------------------------------|:----------|:------------|:----------------------|:-------------------------------------------------------|:--------------------|
 | **Core plugins**                                                                            |||| **Plugins corresponding to default core phases (ie. clean, compile). They may have multiple goals as well.** ||
-| [ `reactor`](/plugins/maven-reactor-plugin/) | B         | 1\.0        | 2008-09-27            | Build a subset of interdependent projects in a reactor | 2014-03-24          |
+| [ `reactor`](/plugins/maven-reactor-plugin/) | B         | 1.0         | 2008-09-27            | Build a subset of interdependent projects in a reactor | 2014-03-24          |
 
 \* **B**uild or **R**eporting plugin
 
