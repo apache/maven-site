@@ -33,7 +33,6 @@ There is no Maven version prerequisite. Everything happens at plugin level:
 
    ```
    mvn artifact:check-buildplan
-
    ```
 2. Enable Reproducible Builds mode for plugins, by adding [`project.build.outputTimestamp` property](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-OutputArchiveEntriesTimestamp) to the project's `pom.xml`:
 
@@ -41,7 +40,6 @@ There is no Maven version prerequisite. Everything happens at plugin level:
       <properties>
         <project.build.outputTimestamp>2023-01-01T00:00:00Z</project.build.outputTimestamp>
       </properties>
-
    ```
 
 Notice: starting with Maven 4.0.0-beta-5, Reproducible Builds mode will be active by default (see [MNG-8258](https://issues.apache.org/jira/browse/MNG-8258)), without modifying project's `pom.xml`. Setting a value in your `pom.xml` will only be useful if you want to override the inherited value.
@@ -56,13 +54,11 @@ Using [`maven-artifact-plugin`'s `compare` goal](/plugins/maven-artifact-plugin/
 
    ```
    mvn clean install 
-
    ```
 2. rebuild (`verify` only, without installing) and check against the previous install:
 
    ```
    mvn clean verify artifact:compare
-
    ```
 
 Notice that this local test does NOT really prove that your build is yet reproducible by a third party, because it may still suffer from environment leaks (username, current directory, ...). But it is easy to do, and prevents basic non-reproducible issues like timestamps. Really checking reproducibility requires to rebuild from a completely different setup: this is harder to do, even if containers may ease the task.
