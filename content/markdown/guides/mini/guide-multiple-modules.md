@@ -63,4 +63,3 @@ Refer to the Maven command line interface reference for more information on thes
 ## More information
 
 - [Chapter 6. A Multi-module Project (Maven by Example)](http://books.sonatype.com/mvnex-book/reference/multimodule.html)
-

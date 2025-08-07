@@ -203,4 +203,3 @@ In Maven before version 3.2.1 you have to give the password on the command line 
 Starting with Maven 3.2.1, the password is an optional argument. If you omit the password, you will be prompted for it which prevents all the issues mentioned above.
 
 We strongly recommend using Maven 3.2.1 and above to prevent problems with escaping special characters and of course security issues related to bash history or environment issues in relationship with the password.
-

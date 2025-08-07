@@ -102,4 +102,3 @@ When a build plugin is executed, the thread's context classloader is set to the 
 Plugins are free to create further classloaders. For example, a plugin might want to create a classloader that combines the plugin class path and the project class path.
 
 It is important to understand that the plugin classloader cannot load classes from any of those custom classloaders. Some factory patterns require that. Here you must add the classes to the plugin classloader as shown before.
-

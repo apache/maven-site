@@ -22,7 +22,6 @@ under the License.
 Let's run though a short example. To generate sources you must first have a plugin that participates in the `generate-sources` phase like the [ANTLR4 Maven Plugin](https://www.antlr.org/api/maven-plugin/latest/). You configure its execution in the POM:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
@@ -44,8 +43,6 @@ Let's run though a short example. To generate sources you must first have a plug
   </build>
   ...
 </project>
-
 ```
 
 When you type `mvn compile`, Maven walks through the [lifecycle](../introduction/introduction-to-the-lifecycle.html) and eventually hits the `generate-sources` phase. It sees that a plugin is configured that wants to participate in that phase, and executes the ANTLR4 Maven Plugin with the given configuration. Later, during the compile phase, all the code generated from the grammar files is compiled without further configuration.
-

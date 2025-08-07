@@ -138,7 +138,6 @@ How to use such pre-defined assembly descriptors is described in the [documentat
     </dependencySet>
   </dependencySets>
 </assembly>
-
 ```
 
 If you like to create a source distribution package the best solution is to use the [pre-defined assembly descriptor src](/plugins/maven-assembly-plugin/descriptor-refs.html#src) for such purposes.
@@ -176,4 +175,3 @@ You can now create the defined distribution packages via command line like this:
 ```
 mvn package
 ```
-

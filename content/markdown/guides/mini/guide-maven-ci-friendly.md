@@ -27,7 +27,6 @@ and/or `${changelist}` as placeholders for the version in your pom file.
 This can look like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -64,7 +63,6 @@ This will become cumbersome over the time. So the other solution for this is
 to simply use a property inside the pom file which looks like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -98,7 +96,6 @@ A note about the used properties. You can only use those named
 named properties like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -122,7 +119,6 @@ to have more flexibility you can use a combination of the
 different properties like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -172,7 +168,6 @@ build. We have a parent pom and one or more children.
 The parent pom will look like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -198,7 +193,6 @@ The parent pom will look like this:
 The child will look like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -223,7 +217,6 @@ The usual way of defining dependencies and their versions has been to use `${pro
 So the correct way to do such things can be seen in the following example:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -249,7 +242,6 @@ So the correct way to do such things can be seen in the following example:
 The child will look like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -280,7 +272,6 @@ Otherwise, you will install/deploy artifacts in the repository which will not be
 Such a setup will look like this:
 
 ```xml
-
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -340,4 +331,3 @@ When you are using Maven 4 with model version 4.1.0, you don't need to specify t
 In addition, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
 
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
-

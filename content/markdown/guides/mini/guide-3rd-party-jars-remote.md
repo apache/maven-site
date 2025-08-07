@@ -64,4 +64,3 @@ Note that `groupId`, `artifactId`, `version` and `packaging` arguments are not i
 <!--  and the classifier should be set to source.-->
 
 To deploy a 3rd party source jar, packaging should be set to `java-source`, and generatePom should be set to `false`.
-

@@ -34,7 +34,6 @@ A typical modello model looks like the following:
 To utilize Modello, you would configure the `modello-maven-plugin` something like the following where you want to generate the Java sources for the model, the xpp3 serialization code and the xpp3 deserialization code (see [modello-plugin-xpp3](https://codehaus-plexus.github.io/modello/modello-plugins/modello-plugin-xpp3/) for more details):
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
@@ -67,6 +66,4 @@ To utilize Modello, you would configure the `modello-maven-plugin` something lik
   </build>
   ...
 </project>
-
 ```
-

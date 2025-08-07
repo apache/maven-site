@@ -240,4 +240,3 @@ This is because your `~user/.ssh/known_hosts` file doesn't have the host listed.
 ### The site deploy goal hangs
 
 First, this means that you have successfully deployed the artifacts to the remote repo and that it's only the site deployment that is now an issue. Stop your build, cd to **target/checkout**&gt; and run the build again by executing `mvn site:deploy`. You should see a prompt asking you to enter a password. This happens if your key is not in the authorized keys on the server.
-

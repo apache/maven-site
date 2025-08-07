@@ -52,7 +52,6 @@ The goal of the example below is for the `foo` project to relocate its groupId f
        </relocation>
      </distributionManagement>
    </project>
-
    ```
 
    In this case we are relocating because the groupId has changed. We only need to add the element that has changed to the `relocation` element. For information on which elements are allowed in the `relocation` element, see [the POM reference](/ref/current/maven-model/maven.html#class_relocation).
@@ -152,4 +151,3 @@ $ mvn dependency:list dependency:tree
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
 ```
-

@@ -46,7 +46,6 @@ To disable the generation of these files, include the following configuration fo
   </build>
   ...
 </project>
-
 ```
 
 <!-- other things: index, compress-->

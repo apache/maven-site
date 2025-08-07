@@ -33,7 +33,6 @@ To create an archetype follow these steps:
 An example `pom.xml` for an archetype artifact looks as follows:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -53,7 +52,6 @@ An example `pom.xml` for an archetype artifact looks as follows:
     </extensions>
   </build>
 </project>
-
 ```
 
 All you need to specify is a `groupId`, `artifactId` and `version`. These three parameters will be needed later for invoking the archetype via `archetype:generate` from the commandline.
@@ -63,7 +61,6 @@ All you need to specify is a `groupId`, `artifactId` and `version`. These three 
 The [archetype descriptor](/archetype/archetype-models/archetype-descriptor/archetype-descriptor.html) is a file called `archetype-metadata.xml` which must be located in the `src/main/resources/META-INF/maven/` directory. An example of an archetype descriptor can be found in the quickstart archetype:
 
 ```xml
-
 <archetype-descriptor
         xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.2.0 https://maven.apache.org/xsd/archetype-descriptor-1.2.0.xsd"
@@ -77,7 +74,6 @@ The [archetype descriptor](/archetype/archetype-models/archetype-descriptor/arch
         </fileSet>
     </fileSets>
 </archetype-descriptor>
-
 ```
 
 The attribute `name` tag should be the same as the `artifactId` in the archetype `pom.xml`.
@@ -95,7 +91,6 @@ At this point one can only specify individual files to be created but not empty 
 Thus the quickstart archetype shown above defines the following directory structure:
 
 ```
-
 archetype
 |-- pom.xml
 `-- src
@@ -113,7 +108,6 @@ archetype
                     `-- test
                         `-- java
                             `-- AppTest.java
-
 ```
 
 ## 3. Create the prototype files and the prototype pom.xml
@@ -123,7 +117,6 @@ The next component of the archetype to be created is the prototype `pom.xml`. An
 An example for a prototype `pom.xml` is:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -145,7 +138,6 @@ An example for a prototype `pom.xml` is:
         </dependency>
     </dependencies>
 </project>
-
 ```
 
 ## 4. Install the archetype and run the archetype plugin
@@ -153,22 +145,18 @@ An example for a prototype `pom.xml` is:
 Now you are ready to install the archetype:
 
 ```
-
 mvn install
-
 ```
 
 Now that you have created an archetype, you can try it on your local system by using the following command. In this command, you need to specify the full information about the archetype you want to use (its `groupId`, its `artifactId`, its `version`) and the information about the new project you want to create (`artifactId` and `groupId`). Don't forget to include the version of your archetype (if you don't include the version, you archetype creation may fail with a message that version:RELEASE was not found)
 
 ```
-
 mvn archetype:generate                                  \
   -DarchetypeGroupId=<archetype-groupId>                \
   -DarchetypeArtifactId=<archetype-artifactId>          \
   -DarchetypeVersion=<archetype-version>                \
   -DgroupId=<my.groupid>                                \
   -DartifactId=<my-artifactId>
-
 ```
 
 Once you are happy with the state of your archetype, you can deploy (or submit it to [Maven Central](/guides/mini/guide-central-repository-upload.html)) it as any other artifact and the archetype will then be available to any user of Maven.
@@ -186,4 +174,3 @@ mvn archetype:generate
 ```
 
 Afterwhich, you can now customize the contents of the `archetype-resources` directory, and `archetype-metadata.xml`, then, proceed to Step#4 (Install the archetype and run the archetype plugin).
-

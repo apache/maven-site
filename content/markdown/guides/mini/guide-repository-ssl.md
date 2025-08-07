@@ -116,4 +116,3 @@ MAVEN_OPTS="-Xmx512m -Djavax.net.ssl.trustStore=trust.jks \
 The following links may be useful in understanding SSL infrastructure management in Java:
 
 - [HttpClient](http://hc.apache.org/httpclient-3.x/sslguide.html)'s SSL guide
-
