@@ -416,7 +416,7 @@ mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -Dartifa
   Then the two sequences are compared token by token from beginning to end
   (left-to-right in the original strings). If each token 
   in one sequence compares equal to the corresponding token in the other sequence, then the
-  then the two version strings are equals. Otherwise, the result is the comparison
+  then the two version strings are equal. Otherwise, the result is the comparison
   of the tokens from the first position in the sequences where they are not equal:
   less than if the first non-matching token in the first string is less than the
   corresponding token in the second string, greater than if the 
