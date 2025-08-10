@@ -331,3 +331,4 @@ When you are using Maven 4 with model version 4.1.0, you don't need to specify t
 In addition, you don't need the [Flatten Maven Plugin][flatten-maven-plugin] like you did with Maven 3.
 
 [flatten-maven-plugin]: https://www.mojohaus.org/flatten-maven-plugin/
+

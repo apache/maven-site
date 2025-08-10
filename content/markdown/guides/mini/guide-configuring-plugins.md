@@ -638,11 +638,11 @@ You can configure a reporting plugin using the `<reportSets>` tag. This is most 
 1. To exclude all reports, you need to use:
 
    ```xml
-     <reportSets>
-       <reportSet>
-         <reports/>
-       </reportSet>
-     </reportSets>
+   <reportSets>
+     <reportSet>
+       <reports/>
+     </reportSet>
+   </reportSets>
    ```
 2. Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
 
@@ -666,3 +666,4 @@ Similar to the build plugins, to break the inheritance, you can use the `<inheri
   ...
 </project>
 ```
+
