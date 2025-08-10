@@ -37,9 +37,9 @@ There is no Maven version prerequisite. Everything happens at plugin level:
 2. Enable Reproducible Builds mode for plugins, by adding [`project.build.outputTimestamp` property](https://cwiki.apache.org/confluence/pages/viewpage.action?pageId=74682318#Reproducible/VerifiableBuilds-OutputArchiveEntriesTimestamp) to the project's `pom.xml`:
 
    ```xml
-      <properties>
-        <project.build.outputTimestamp>2023-01-01T00:00:00Z</project.build.outputTimestamp>
-      </properties>
+   <properties>
+     <project.build.outputTimestamp>2023-01-01T00:00:00Z</project.build.outputTimestamp>
+   </properties>
    ```
 
 Notice: starting with Maven 4.0.0-beta-5, Reproducible Builds mode will be active by default (see [MNG-8258](https://issues.apache.org/jira/browse/MNG-8258)), without modifying project's `pom.xml`. Setting a value in your `pom.xml` will only be useful if you want to override the inherited value.
@@ -106,3 +106,4 @@ Don't hesitate to share your questions or solutions on [user mailing-list](/mail
 - Q. Which additional plugins need to be updated for Reproducible Builds?
 
   A. See the list of [required upgrades](/plugins/maven-artifact-plugin/plugin-issues.html)
+
