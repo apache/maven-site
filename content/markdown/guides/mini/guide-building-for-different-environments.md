@@ -36,7 +36,6 @@ Note:
       resources/
     test/
       java/
-
   ```
 
 Under `src/main/resources` there are three files:
@@ -98,7 +97,6 @@ Under `src/main/resources` there are three files:
      .. Other profiles go here ..
 
    </profiles>
-
   ```
 
   Three things are configured in this snippet:
@@ -120,4 +118,3 @@ Under `src/main/resources` there are three files:
 
 1. [Introduction to Build Profiles](../introduction/introduction-to-profiles.html)
 2. [Standard Directory Layout](../introduction/introduction-to-the-standard-directory-layout.html)
-

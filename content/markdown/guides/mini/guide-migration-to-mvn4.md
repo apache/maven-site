@@ -340,4 +340,3 @@ If you want to execute a plugin before/after all or each of your (sub-)projects,
 [cifriendlyguide]: https://maven.apache.org/guides/mini/guide-maven-ci-friendly.html
 [flattenmavenplugin]: https://www.mojohaus.org/flatten-maven-plugin/
 [bompomguide]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
-

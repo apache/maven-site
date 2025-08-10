@@ -26,4 +26,3 @@ While this process is sorting itself out it is recommended that you peruse the v
 Of particular interest is the [Committer's FAQ](http://www.apache.org/dev/committers.html) and the [New Committer's Guide](http://www.apache.org/dev/new-committers-guide.html).
 
 If you have any questions please feel free to ask any of the Maven developers.
-

@@ -26,7 +26,6 @@ In addition, some repositories may require authorisation to download from, so th
 Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
 
 ```xml
-
 <settings>
   .
   .
@@ -44,10 +43,8 @@ Which settings are required will depend on the type of repository you are deploy
   .
   .
 </settings>
-
 ```
 
 To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
 
 **Note**: The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../maven-settings/settings.html).
-

@@ -42,7 +42,6 @@ There are different means of loading extensions depending on the type. There are
   Example:
 
   ```xml
-
   <project xmlns="http://maven.apache.org/POM/4.0.0">
     ...
     <build>
@@ -59,15 +58,12 @@ There are different means of loading extensions depending on the type. There are
     </build>
     ...
   </project>
-
-
   ```
 - Registered as build extension in [`project->build->extensions->extension`](../../pom.html#Extensions)
 
   Example:
 
   ```xml
-
   <project xmlns="http://maven.apache.org/POM/4.0.0">
     ...
     <build>
@@ -81,7 +77,5 @@ There are different means of loading extensions depending on the type. There are
     </build>
     ...
   </project>
-
-
   ```
 

@@ -20,4 +20,3 @@ under the License.
 # Guide to Maven auto completion using BASH
 
 If you like having bash completion which i can recommend if you are working with Maven on command line i would suggest to install the following [Maven Bash Auto Completion](https://github.com/juven/maven-bash-completion) to fullfil you needs.
-

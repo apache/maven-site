@@ -22,7 +22,6 @@ under the License.
 There are two different ways that you can specify the use of multiple repositories. The first way is to specify in a POM which repositories you want to use. That is supported both inside and outside of build profiles:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
 ...
   <repositories>
@@ -39,7 +38,6 @@ There are two different ways that you can specify the use of multiple repositori
   </repositories>
 ...
 </project>
-
 ```
 
 **NOTE:** You will also get the standard set of repositories as defined in the [Super POM](../introduction/introduction-to-the-pom.html#Super_POM).
@@ -47,7 +45,6 @@ There are two different ways that you can specify the use of multiple repositori
 The other way you can specify multiple repositories is by creating a profile in the `${user.home}/.m2/settings.xml` or `${maven.home}/conf/settings.xml` file like the following:
 
 ```xml
-
 <settings>
  ...
  <profiles>
@@ -70,7 +67,6 @@ The other way you can specify multiple repositories is by creating a profile in 
  </activeProfiles>
  ...
 </settings>
-
 ```
 
 If you specify repositories in profiles you must remember to activate that particular profile! As you can see above we do this by registering a profile to be active in the `activeProfiles` element.
@@ -78,9 +74,7 @@ If you specify repositories in profiles you must remember to activate that parti
 You could also activate this profile on the command like by executing the following command:
 
 ```
-
 mvn -Pmyprofile ...
-
 ```
 
 In fact the `-P` option will take a CSV list of profiles to activate if you wish to activate multiple profiles simultaneously.
@@ -109,4 +103,3 @@ Effective settings and local build POM, with profile taken into account, can eas
 ## Repository IDs
 
 Each repository must have a **unique ID**. Clashing repository IDs within either effective settings or effective POMs lead to build failures. However, repositories from POM get overwritten by repositories with the same ID from effective settings. Repository IDs are also used in the [local repository metadata](https://maven.apache.org/ref/3-LATEST/maven-repository-metadata/).
-

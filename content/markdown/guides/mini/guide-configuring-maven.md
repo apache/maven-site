@@ -126,4 +126,3 @@ You can encrypt passwords in your settings file. However, you must first configu
 ### Toolchains
 
 You can build a project using a specific version of JDK independent from the one Maven is running with. For more information, see the [Guide to Using Toolchains](./guide-using-toolchains.html).
-

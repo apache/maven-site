@@ -469,7 +469,7 @@ It's possible to bind multiple executions to the same phase, for example if you 
 
 Now, let us have another mojo example which shows a default lifecycle phase binding.
 
-```xml
+```java
 @Mojo( name = "query", defaultPhase = LifecyclePhase.PACKAGE )
 public class MyBoundQueryMojo
     extends AbstractMojo
@@ -643,7 +643,6 @@ You can configure a reporting plugin using the `<reportSets>` tag. This is most 
          <reports/>
        </reportSet>
      </reportSets>
-
    ```
 2. Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
 
@@ -667,4 +666,3 @@ Similar to the build plugins, to break the inheritance, you can use the `<inheri
   ...
 </project>
 ```
-

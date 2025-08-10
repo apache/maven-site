@@ -188,7 +188,6 @@ Many of the configuration parameters for HttpClient have simple string values; h
    <value2>,
    <value3>,
    ...
-
    ```
 
 As you may have noticed, this syntax is similar to the format-and-data strategy used by functions like `sprintf()` in many languages. The syntax has been chosen with this similarity in mind, to make it a little more intuitive to use.
@@ -363,4 +362,3 @@ The default timeout is 30 minutes. If you want to change this value, you can add
 2. [HttpClient preference architecture and configuration guide](https://hc.apache.org/httpclient-3.x/preference-api.html)
 3. [Guide to Wagon Providers](./guide-wagon-providers.html)
 4. [Wagon Http](/wagon/wagon-providers/wagon-http/)
-

@@ -134,4 +134,3 @@ Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `too
 ```
 
 You can configure as many toolchains as you want in your `toolchains.xml` file.
-

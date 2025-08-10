@@ -282,4 +282,3 @@ To add your own content for that translation instead of using the default, place
 ```
 
 With one site descriptor per language, the translated site(s) can evolve independently.
-

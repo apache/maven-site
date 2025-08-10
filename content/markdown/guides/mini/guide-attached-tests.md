@@ -22,7 +22,6 @@ under the License.
 You can reuse the tests that you have created for one project in another. For example, suppose `foo-core` contains test code in the `${project.basedir}/src/test/java`. To package up those compiled tests in a JAR and deploy them for general reuse, configure the `maven-jar-plugin` as follows:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
@@ -41,7 +40,6 @@ You can reuse the tests that you have created for one project in another. For ex
     </plugins>
   </build>
 </project>
-
 ```
 
 The attached test JAR can be installed and deployed like any other Maven artifact.
@@ -49,7 +47,6 @@ The attached test JAR can be installed and deployed like any other Maven artifac
 To use the attached test JAR, specify a dependency on the main artifact with a specified type of `test-jar` and the `classifier`.
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
@@ -92,6 +89,4 @@ To use the attached test JAR, specify a dependency on the main artifact with a s
    </build>
    ...
 </project>
-
 ```
-

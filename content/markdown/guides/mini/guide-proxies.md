@@ -24,7 +24,6 @@ You can configure a proxy to use for some or all of your HTTP requests with Mave
 The `nonProxyHosts` setting accepts wild cards, and each host not to proxy is separated by the | character. This matches the JDK configuration equivalent.
 
 ```xml
-
 <settings>
   .
   .
@@ -43,7 +42,6 @@ The `nonProxyHosts` setting accepts wild cards, and each host not to proxy is se
   .
   .
 </settings>
-
 ```
 
 Please note that currently NTLM proxies are not supported as they have not been tested. Some transports allow to use the relevant Java system properties to make this work, but that approach is specific for given implementation, and should not be considered the "official" way of configuring proxies.
@@ -52,4 +50,3 @@ Please note that currently NTLM proxies are not supported as they have not been 
 
 1. [Settings descriptor documentation](../../maven-settings/settings.html)
 2. [Configuring Maven](./guide-configuring-maven.html)
-

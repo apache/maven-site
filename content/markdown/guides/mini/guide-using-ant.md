@@ -22,7 +22,6 @@ under the License.
 The example above illustrates how to bind an ant script to a lifecycle phase. You can add a script to each lifecycle phase, by duplicating the _execution/_ section and specifying a new phase.
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>my-test-app</artifactId>
@@ -56,13 +55,11 @@ The example above illustrates how to bind an ant script to a lifecycle phase. Yo
     </plugins>
   </build>
 </project>
-
 ```
 
 So a concrete example would be something like the following:
 
 ```xml
-
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>my-test-app</artifactId>
@@ -95,6 +92,4 @@ So a concrete example would be something like the following:
     </plugins>
   </build>
 </project>
-
 ```
-

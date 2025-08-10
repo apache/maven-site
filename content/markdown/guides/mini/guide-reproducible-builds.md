@@ -106,4 +106,3 @@ Don't hesitate to share your questions or solutions on [user mailing-list](/mail
 - Q. Which additional plugins need to be updated for Reproducible Builds?
 
   A. See the list of [required upgrades](/plugins/maven-artifact-plugin/plugin-issues.html)
-

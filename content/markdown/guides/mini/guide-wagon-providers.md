@@ -68,4 +68,3 @@ Maven 2.2.1 provides two providers for HTTP/HTTPS Wagons: `lightweight` and `htt
 ```
 
 **NOTE:** The default provider for HTTP/HTTPS Wagons is `lightweight`.
-

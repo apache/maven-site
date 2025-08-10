@@ -159,4 +159,3 @@ Source directories aside, sometimes people desire to produce multiple JARs from 
 
 - If you are looking to produce JARs that are different (i.e., they have their own dependencies and metadata), Maven doesn't support this. This usually is only needed when sharing a source directory for intrinsically different things, so the use case above applies instead.
 - If you are producing a JAR that is a derivative of the original (e.g., just a subset of classes, or the same JAR with debugging enabled), Maven supports this using profiles. See [Introduction to Profiles](../introduction/introduction-to-profiles.html) for more information.
-

@@ -185,4 +185,3 @@ Both locations should have the mirror settings mentioned in [Managing Downloads 
 Typically, only continuous integration servers should have the deployment repository settings mentioned in [Managing Uploads to the Repository Manager](#Managing_Uploads_to_the_Repository_Manager), because only continuous integration servers should be allowed to upload to the repository manager. Alternatively, if you want developers to be able to upload artifacts to the repository manager, then include the deployment repository properties in the `settings.xml` files used by developers.
 
 How the `settings.xml` files are stored and updated is beyond the scope of this document. The general recommendation is to manage a few `settings.xml` files centrally, and then use automation to distribute them to continuous integration servers and developer machines.
-
