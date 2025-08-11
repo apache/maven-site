@@ -93,4 +93,4 @@ directory with corresponding timestamps. The XML bit considered for this kind of
 * `metadata/versioning/snapshot/*`
 * `metadata/versioning/snapshotVersions/*`
 
-Example: https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.3.0-SNAPSHOT/maven-metadata.xml
+Example: https://repository.apache.org/content/repositories/snapshots/org/apache/maven/plugins/maven-jar-plugin/3.0.3-SNAPSHOT/maven-metadata.xml

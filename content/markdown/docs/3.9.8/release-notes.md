@@ -32,7 +32,7 @@ The core release is independent of plugin releases. Further releases of plugins 
 
 If you have any questions, please consult:
 
-- the web site: [https://maven.apache.org/][2]
+- the website: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.9.8/](/ref/3.9.8/)
 

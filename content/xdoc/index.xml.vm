@@ -29,25 +29,22 @@ under the License.
   <body>
 
     <section name="Welcome to Apache Maven">
-
-      <!-- TODO: I reckon it's time for a new description -->
       <p>
-        Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model
-        (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+        Apache Maven is a build tool for Java projects. Using a project object model
+        (POM), Maven manages a project's compilation, testing, and documentation.
       </p>
       <p>
-        If you think that Maven could help your project, you can find out more information in the "About Maven"
-        section of the navigation. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and
-        a <a href="maven-features.html">list of some of its main features</a>.
+        You can find more information in the "About Maven"
+        section of the sidebar. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and a list of some of its main features.
       </p>
       <p>
         <!-- TODO: this could be the big button type thing instead of a list of links -->
-        This site is separated into the following sections, depending on how you'd like to use Maven:
+        This site is separated into the following sections:
       </p>
       <!-- TODO: use CSS -->
       <table>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Use</th>
+        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="3">Use</th>
         <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
           <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="configure.html">Configure</a>, <a href="run.html">Run</a> Maven
         </th>
@@ -59,6 +56,12 @@ under the License.
         <td>Information for those needing to build a project that uses Maven</td>
         <td>
             Lists of plugins and extensions to help with your builds.
+        </td>
+      </tr>
+      <tr>
+        <td><b>Maven 4</b>: Learn <a href="whatsnewinmaven4.html">what's new</a> and <a href="/guides/mini/guide-migration-to-mvn4.html">how to migrate a project</a> to Maven 4. The <a href="/tools/mvnup.html">Maven Upgrade Tool</a> provides upgrade support.</td>
+        <td>
+          Upcoming: How to migrate plugins to the new Maven 4 API?
         </td>
       </tr>
       <tr>
@@ -105,7 +108,7 @@ under the License.
       </p>
       <p>
         To get started, search the documentation,
-        <a href="issue-management.html">issue management system</a>, the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>
+        <a href="issue-management.html">issue management system</a>, the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a>,
         or the <a href="mailing-lists.html">mailing list archives</a> to
         see if the problem has been solved or reported before.
       </p>
@@ -128,7 +131,7 @@ under the License.
         <a href="https://www.apache.org/events/current-event.html">
           <img src="https://www.apache.org/events/current-event-234x60.png" alt="Apache Events" style="float: left"/>
         </a>
-        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>. Don't hesitate to ask on the <a href="mailing-lists.html">Maven User mailing list</a>
+        You can also attend <a href="https://www.apache.org/events/current-event.html">Apache Events</a>. Ask on the <a href="mailing-lists.html">Maven User mailing list</a>
         if Maven team members will be there. It can be a great opportunity to meet them.
       </p>
     </section>

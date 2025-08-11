@@ -1,4 +1,4 @@
-/*
+/'
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
 distributed with this work for additional information
@@ -15,9 +15,8 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
-*/
+'/
 @startuml
-!pragma layout smetana
 
 <style>
     rectangle {
@@ -31,6 +30,8 @@ package "Maven Doxia" {
   rectangle "Site Tools"
   rectangle Site #LightGrey
   package Tools {
+    rectangle "Book Maven Plugin"
+    rectangle "Book Renderer"
     rectangle Converter
     rectangle LinkCheck
   }
@@ -44,6 +45,8 @@ Doxia -[hidden]right-> "Site Tools"
 url of Doxia is [[https://github.com/apache/maven-doxia]]
 url of "Site Tools" is [[https://github.com/apache/maven-doxia-sitetools]]
 url of Site is [[https://github.com/apache/maven-doxia-site]]
+url of "Book Renderer" is [[https://github.com/apache/maven-doxia-book-renderer]]
+url of "Book Maven Plugin" is [[https://github.com/apache/maven-doxia-book-maven-plugin]]
 url of Converter is [[https://github.com/apache/maven-doxia-converter]]
 url of LinkCheck is [[https://github.com/apache/maven-doxia-linkcheck]]
 

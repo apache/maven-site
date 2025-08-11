@@ -32,7 +32,7 @@ The core release is independent of plugin releases. Further releases of plugins 
 
 If you have any questions, please consult:
 
-- the web site: [https://maven.apache.org/][2]
+- the website: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.9.9/](/ref/3.9.9/)
 
@@ -40,7 +40,7 @@ If you have any questions, please consult:
 
 Regression fixes and other improvements from Maven 3.9.8. All users already on Maven 3.9.x are advised to upgrade.
 
-Notable improvements in area of memory usage arrives with [Resolver 1.2.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
+Notable improvements in area of memory usage arrives with [Resolver 1.9.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
 
 The majority of fixed issue are bug and regression fixes for user reported problems.
 

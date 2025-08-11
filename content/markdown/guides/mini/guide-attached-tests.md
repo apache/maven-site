@@ -1,0 +1,92 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+# Guide to using attached tests
+
+You can reuse the tests that you have created for one project in another. For example, suppose `foo-core` contains test code in the `${project.basedir}/src/test/java`. To package up those compiled tests in a JAR and deploy them for general reuse, configure the `maven-jar-plugin` as follows:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <build>
+    <plugins>
+     <plugin>
+       <groupId>org.apache.maven.plugins</groupId>
+       <artifactId>maven-jar-plugin</artifactId>
+       <version>3.0.2</version>
+       <executions>
+         <execution>
+           <goals>
+             <goal>test-jar</goal>
+           </goals>
+         </execution>
+       </executions>
+     </plugin>
+    </plugins>
+  </build>
+</project>
+```
+
+The attached test JAR can be installed and deployed like any other Maven artifact.
+
+To use the attached test JAR, specify a dependency on the main artifact with a specified type of `test-jar` and the `classifier`.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>com.myco.app</groupId>
+      <artifactId>foo-core</artifactId>
+      <version>1.0-SNAPSHOT</version>
+      <classifier>tests</classifier>
+      <type>test-jar</type>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <!--
+        only needed if the test provider is not correctly autodetected by surefire
+        ... and you are using junit-jupiter (othewise, replace with your test framework)
+      -->
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit.jupiter.version}</version> <!-- remember to set version as needed -->
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  ...
+  <build>
+    <plugins>
+      ...
+      <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>${surefire.version}</version> <!-- remember to set version as needed -->
+          <configuration>
+              <dependenciesToScan>
+                  <dependency>com.myco.app:foo-core:test-jar:tests</dependency>
+              </dependenciesToScan>
+          </configuration>
+      </plugin>
+      ...
+    </plugins>
+   </build>
+   ...
+</project>
+```

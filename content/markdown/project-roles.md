@@ -138,7 +138,7 @@ These are those people who have been given write access to the
 Apache Maven code repository and have a signed
 [Contributor License Agreement (CLA)][4] on file with the ASF.
 
-The Apache Maven project has
+The Apache Maven project uses a Commit then Review policy and has
 [a number of conventions][5] which should be followed.
 
 Committers are responsible for ensuring that every file they
@@ -210,8 +210,7 @@ The Project Management Committee has the following responsibilities:
 * Vote on release artifacts;
 * Ensure [Developers Conventions][5] are followed, or updated/improved if necessary.
 * Know and respect the goals and processes of the community and help educate
-  newer members about them and their
-  [internal details][https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt].
+  newer members about them and their [internal details (PMC members access only)][13].
 
 #### Standards for Community Commitment
 
@@ -281,7 +280,7 @@ Finally, where a fork is hosted outside of Apache hardware, there is less
 traceability of the code provenance. For example, Git commits can be squashed
 and history re-written to mask or otherwise hide the source of contributions.
 This does not mean that code coming from an external fork inherently has
-such issues. Instead it means that the requirements for review and verification
+such issues. Instead, it means that the requirements for review and verification
 of provenance grow exponentially when dealing with large sets of changes
 originating from a long running fork hosted outside of Apache foundation
 source control. Anybody maintaining a long running fork should be aware
@@ -324,5 +323,5 @@ should be actively monitoring the chair.
 [10]: https://whimsy.apache.org/board/minutes/Maven.html
 [11]: https://apache.org/foundation/leadership
 [12]: https://projects.apache.org/committee.html?maven
-[13]: https://svn.apache.org/repos/private/pmc/maven/project-conventions.txt
+[13]: https://github.com/apache/maven-private
 

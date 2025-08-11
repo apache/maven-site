@@ -19,17 +19,16 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven projects use [Jira](https://www.atlassian.com/software/jira) as issue tracking and project management application.
+Maven projects use GitHub issues as issue tracking and project management application.
 
 ## Issue Management
 
-Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own Jira project or component:
-**see the [Maven Jira issues overview](https://cwiki.apache.org/confluence/display/MAVEN/Maven+JIRA+issues+overview) to get a summary of open issues**.
+Maven is composed of nearly [100 parts](/scm.html#Maven_Sources_Overview), each one having its own GitHub repository.
 
 Issues, bugs, and feature requests should be submitted to the following
 issue management systems depending on which component is involved:
 
-* Maven "core": <https://issues.apache.org/jira/browse/MNG>
+* Maven "core": <https://github.com/apache/maven/issues>
 
 * Maven Website: <https://github.com/apache/maven-site/issues>
 
@@ -37,12 +36,12 @@ issue management systems depending on which component is involved:
 
 * Maven Shared Components: Please refer to the [Shared Components](./shared/index.html) page
 
-* Doxia: <https://issues.apache.org/jira/browse/DOXIA>
+* Doxia: <https://github.com/apache/maven-doxia/issues>
 
-* JXR: <https://issues.apache.org/jira/browse/JXR>
+* JXR: <https://github.com/apache/maven-jxr/issues>
 
-* SCM: <https://issues.apache.org/jira/browse/SCM>
+* SCM: <https://github.com/apache/maven-scm/issues>
 
-* Wagon: <https://issues.apache.org/jira/browse/WAGON>
+* Wagon: <https://github.com/apache/maven-wagon/issues>
 
 or for Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>

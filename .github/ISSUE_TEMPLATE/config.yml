@@ -24,7 +24,3 @@ contact_links:
   - name: Project Mailing Lists
     url: https://maven.apache.org/mailing-lists.html
     about: Please ask a questions or discuss here
-
-  - name: Old JIRA Issues
-    url: https://issues.apache.org/jira/projects/MNGSITE
-    about: Please search old JIRA issues
