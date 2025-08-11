@@ -89,3 +89,4 @@ As of doxia-core version 1.0-alpha-9, a 'file' parameter is also available. If a
 
 - Macros in apt **must not** be indented.
 - Exactly one of `url` or `file` **must** be specified.
+

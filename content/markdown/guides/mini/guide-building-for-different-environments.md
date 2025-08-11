@@ -118,3 +118,4 @@ Under `src/main/resources` there are three files:
 
 1. [Introduction to Build Profiles](../introduction/introduction-to-profiles.html)
 2. [Standard Directory Layout](../introduction/introduction-to-the-standard-directory-layout.html)
+

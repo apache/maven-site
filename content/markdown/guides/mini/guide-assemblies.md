@@ -175,3 +175,4 @@ You can now create the defined distribution packages via command line like this:
 ```
 mvn package
 ```
+
