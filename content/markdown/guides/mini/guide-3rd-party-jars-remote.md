@@ -60,6 +60,8 @@ Note that `groupId`, `artifactId`, `version` and `packaging` arguments are not i
 
 ## Deploying Source Jars
 
-<!-- TODO: Check the following, cause i don't this is true anymore. I assume packaging should be jar-->
-<!--  and the classifier should be set to source.-->
-To deploy a 3rd party source jar, packaging should be set to `java-source`, and generatePom should be set to `fals-->
+<!-- TODO: Check the following, because I don't this is true anymore. I assume packaging should be jar
+  and the classifier should be set to source.-->
+
+To deploy a 3rd party source jar, packaging should be set to `java-source`,
+and generatePom should be set to `false`.
