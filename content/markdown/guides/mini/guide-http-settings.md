@@ -362,3 +362,4 @@ The default timeout is 30 minutes. If you want to change this value, you can add
 2. [HttpClient preference architecture and configuration guide](https://hc.apache.org/httpclient-3.x/preference-api.html)
 3. [Guide to Wagon Providers](./guide-wagon-providers.html)
 4. [Wagon Http](/wagon/wagon-providers/wagon-http/)
+

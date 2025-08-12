@@ -50,3 +50,4 @@ Please note that currently NTLM proxies are not supported as they have not been 
 
 1. [Settings descriptor documentation](../../maven-settings/settings.html)
 2. [Configuring Maven](./guide-configuring-maven.html)
+
