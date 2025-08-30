@@ -29,39 +29,31 @@
 
 Documentation
 
-* Getting Started with Maven
+* User Centre
 
-  * {{{./getting-started/maven-in-five-minutes.html}Getting Started in 5 Minutes}}
+** Maven Build Fundamentals
 
-  * {{{./getting-started/index.html}Getting Started in 30 Minutes}}
+ * {{{./getting-started/maven-in-five-minutes.html}Getting Started in 5 Minutes}}
 
-* Introductions
+ * {{{./getting-started/index.html}Getting Started in 30 Minutes}}
 
- * {{{./introduction/introduction-to-the-lifecycle.html}The Build Lifecycle}}
-
- * {{{./introduction/introduction-to-the-pom.html}The POM}}
-
- * {{{./introduction/introduction-to-profiles.html}Profiles}}
-
- * {{{./introduction/introduction-to-repositories.html}Repositories}}
+** Maven Build Config Fundamentals
 
  * {{{./introduction/introduction-to-the-standard-directory-layout.html}Standard Directory Layout}}
 
+ * {{{./introduction/introduction-to-repositories.html}Repositories}}
+
+ * {{{./introduction/introduction-to-archetypes.html}What is an Archetype}}
+
+ * {{{./mini/guide-creating-archetypes.html}Creating Archetypes}}
+
  * {{{./introduction/introduction-to-dependency-mechanism.html}The Dependency Mechanism}}
 
-   * {{{./introduction/introduction-to-optional-and-excludes-dependencies.html} Optional Dependencies and Dependency Exclusions}}
+ * {{{./introduction/introduction-to-optional-and-excludes-dependencies.html} Optional Dependencies and Dependency Exclusions}}
 
-** Plugins
+ * {{{../glossary.html}Glossary}}
 
- * {{{./introduction/introduction-to-plugins.html}Plugin Development}}
-
- * {{{./mini/guide-configuring-plugins.html}Configuring Plug-ins}}
-
- * {{{./introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix Resolution}}
-
- * {{{./plugin/guide-java-plugin-development.html}Developing Java Plugins}}
-
-** Site
+*** Site
 
  * {{{./mini/guide-site.html}Creating a Site}}
 
@@ -69,17 +61,35 @@ Documentation
 
  * {{{./mini/guide-snippet-macro.html}Snippet Macro}}
 
-** Archetypes
+** Getting Started with Maven
 
- * {{{./introduction/introduction-to-archetypes.html}What is an Archetype}}
+ * {{{./introduction/introduction-to-the-lifecycle.html}The Build Lifecycle}}
 
- * {{{./mini/guide-creating-archetypes.html}Creating Archetypes}}
+ * {{{./introduction/introduction-to-the-pom.html}The POM}}
 
-** Upgrading
+ * {{{./introduction/introduction-to-profiles.html}Profiles}}
 
- * {{{./mini/guide-relocation.html}Relocation of Artifacts}}
+ * {{{./mini/guide-configuring-plugins.html}Configuring Plug-ins}}
 
-** {{{./introduction/introduction-to-repositories.html}Repositories}}
+ * {{{../pom.html}POM Overview}} ({{{../ref/current/maven-model/maven.html}Technical Project Descriptor}})
+
+ * {{{../settings.html}Settings Overview}} ({{{../ref/current/maven-settings/settings.html}Technical Settings Descriptor}})
+
+* Plugin Developer Centre
+
+ * {{{./introduction/introduction-to-plugins.html}Plugin Development}}
+
+ * {{{./introduction/introduction-to-plugin-prefix-mapping.html}Plugin Prefix Resolution}}
+
+ * {{{./plugin/guide-java-plugin-development.html}Developing Java Plugins}}
+
+ * {{{./development/guide-plugin-documentation.html}The Plugin Documentation Standard}}
+
+ * {{{./development/guide-testing-development-plugins.html}Testing Development Versions of Plugins}}
+
+ * {{{../developers/mojo-api-specification.html}Mojo API}}
+
+* Maven Repository Centre
 
  * {{{./mini/guide-3rd-party-jars-local.html}Installing 3rd party JARs to Local Repository}}
 
@@ -101,50 +111,7 @@ Documentation
 
  * {{{./mini/guide-repository-ssl.html}Remote repository access through authenticated HTTPS}}
 
- * {{{./mini/guide-relocation.html}Relocation}}
-
-~~ * {{{./introduction/introduction-to-artifact-resolution.html}Repository Definitions and Artifact Resolution}}
-
-
-* Guides
-
-#set( $prefix = './mini' )
-#parse( "mini/index.txt" )
-
-** Maven Tools and IDE Integration
-
- * {{{./mini/guide-bash-m2-completion.html}Maven Auto-Completion Using BASH}}
-
-* Development Guides
-
- * {{{./development/guide-building-maven.html}Building Maven from Scratch}}
-
- * {{{./development/guide-maven-development.html}Developing Maven}}
-
- * {{{./development/guide-plugin-documentation.html}The Plugin Documentation Standard}}
-
- * {{{./development/guide-documentation-style.html}Maven Documentation Style}}
-
-
-* The Maven Community
-
- * {{{../community.html}The Maven Community}}
-
- * {{{./development/guide-helping.html}Helping with Maven}}
-
- * {{{./mini/guide-new-committers.html}Guide for New Committers}}
-
- * {{{./development/guide-testing-development-plugins.html}Testing Development Versions of Plugins}}
-
- * {{{../articles.html}3rd Party Resources}}
-
-** Conventions
-
- * {{{../maven-conventions.html}Maven Conventions}}
-
- * {{{./mini/guide-naming-conventions.html}Naming Conventions}}
-
- * {{{./mini/guide-using-one-source-directory.html}When You Can't Use the Conventions}}
+ * {{{./mini/guide-relocation.html}Relocation of Artifacts}}
 
 ** The Central Repository
 
@@ -154,20 +121,35 @@ Documentation
 
  * {{{/repository/central-metadata.html}Improving the Repository}}
 
+* Guides
 
-* References
+#set( $prefix = './mini' )
+#parse( "mini/index.txt" )
+ * {{{./mini/guide-bash-m2-completion.html}Maven Auto-Completion Using BASH}}
 
- * {{{../pom.html}POM Overview}} ({{{../ref/current/maven-model/maven.html}Technical Project Descriptor}})
+* Maven Developer Centre
 
- * {{{../settings.html}Settings Overview}} ({{{../ref/current/maven-settings/settings.html}Technical Settings Descriptor}})
+ * {{{./development/guide-building-maven.html}Building Maven from Scratch}}
 
- * {{{../plugins/index.html}Core Plug-ins List}}
+ * {{{./development/guide-maven-development.html}Developing Maven}}
 
- * {{{../developers/mojo-api-specification.html}Mojo API}}
+ * {{{./development/guide-documentation-style.html}Maven Documentation Style}}
 
- * {{{../glossary.html}Glossary}}
+ * {{{../maven-conventions.html}Maven Conventions}}
 
- []
+ * {{{./mini/guide-naming-conventions.html}Naming Conventions}}
+
+ * {{{./mini/guide-using-one-source-directory.html}When You Can't Use the Conventions}}
+
+* The Maven Community
+
+ * {{{../community.html}The Maven Community}}
+
+ * {{{./development/guide-helping.html}Helping with Maven}}
+
+ * {{{./mini/guide-new-committers.html}Guide for New Committers}}
+
+ * {{{../articles.html}3rd Party Resources}}
 
 * Javadoc API
 
