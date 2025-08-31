@@ -46,7 +46,7 @@ jobs:
 
       - name: Set up Maven
         run:
-          mvn --errors --batch-mode --no-transfer-progress --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.3.2:wrapper "-Dmaven=3.9.9"
+          mvn --errors --batch-mode --no-transfer-progress --show-version org.apache.maven.plugins:maven-wrapper-plugin:3.3.3:wrapper "-Dmaven=3.9.11"
 
       - name: Verify and build Maven Site
         run: ./mvnw --errors --batch-mode --no-transfer-progress --show-version verify site
