@@ -333,8 +333,7 @@ Thus in Semver, 3.2-ALPHA1 compares greater than 3.2-alpha1. In Maven, 3.2-ALPHA
 When version strings do not follow semantic versioning, a more complex set of rules is required.
 Each Maven version string is split into tokens between dots ('`.`'), hyphens ('`-`'), underscores ('`_`'), and transitions between ASCII digits and characters.
 The separator is recorded and will have effect on the order. A transition between ASCII digits and characters is equivalent to a hyphen.
-Empty tokens are replaced with '`0`'. This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens)
-with '`.`' or '`-`' prefixes.
+Empty tokens are replaced with '`0`'. This gives a sequence of version numbers (numeric tokens) and version qualifiers (non-numeric tokens) with '`.`', '`_`' or '`-`' prefixes.
 
 Splitting and Replacing Examples:
 
@@ -351,12 +350,13 @@ Trimming Examples:
 * `1.0` -> `1`
 * `1.` -> `1`
 * `1-` -> `1`
+* `1_` -> `1`
 * `1.0.0-foo.0.0` -> `1-foo`
 * `1.0.0-0.0.0` -> `1`
 
 Following tokenization and trimming, the shorter token sequence is
 padded with enough "`null`" values with matching prefix to have the same length as the longer one.
-Padded "`null`" values depend on the separator of the other version: `0` for '`.`', '` `' for '`-`' and a
+Padded "`null`" values depend on the separator of the other version: `0` for '`.`', '` `' for '`-`', '`_`' and a
 transition between ASCII digits and characters.
 
 Then the two sequences are compared token by token from beginning to end (left-to-right in the original strings).
@@ -405,7 +405,7 @@ End Result Examples:
 * `1-snapshot` \< `1` \< `1-sp` (qualifier padding)
 * `1-foo2` \< `1-foo10` (correctly automatically "switching" to numeric order)
 * `1.foo` = `1-foo` \< `1-1` \< `1.1`
-* `1.ga` = `1-ga` = `1-0` = `1.0` = `1` (removing of trailing "null" values)
+* `1.ga` = `1-ga` = `1-0` = `1_0` = `1.0` = `1` (removing of trailing "null" values)
 * `1-sp` \> `1-ga`
 * `1-sp.1` \> `1-ga.1`
 * `1-sp-1` \< `1-ga-1`
