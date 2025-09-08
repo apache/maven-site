@@ -22,6 +22,9 @@ under the License.
 The Maven Shell (`mvnsh`) is a built-in CLI tool for faster builds during active development.
 It's available since Maven 4.0.0.
 
+**Note:** Maven Shell acts as a technical preview showcasing new maven CLI abilities.
+Therefore, it may change in future versions.
+
 ## Description
 
 Each time you run an `mvn` command, the entire process chain is executed: booting Java, starting Maven, loading the
