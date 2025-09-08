@@ -451,7 +451,7 @@ Each time you run an `mvn` command, the entire process chain is executed: bootin
 configuration, performing the task, tearing down, and exiting — **every single time**.
 To improve performance and reduce build times, you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of
 resident Maven processes.
-With Maven 4, you can also take advantage of the newly defined "Maven Shell" (`mvnsh`), which keeps a single Maven
+With Maven 4, you can also take advantage of the newly defined "[Maven Shell](./tools/mvnsh.html)" (`mvnsh`), which keeps a single Maven
 process running for as long as the shell remains open.
 
 ## Issue overview
