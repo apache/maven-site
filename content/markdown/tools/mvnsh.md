@@ -27,13 +27,13 @@ It's available since Maven 4.0.0.
 Each time you run an `mvn` command, the entire process chain is executed: booting Java, starting Maven, loading the
 configuration, performing the task, tearing down, and exiting — **every single time**.
 
-Maven Shell eliminates some tasks of this chain as it keeps a single Maven process running for as long as the shell remains open.
+Maven Shell keeps a single Maven process running for as long as the shell remains open.
 This means you avoid booting Java and Maven every time you start a build.
 
 # Usage
 
-To use Maven Shell you only need to open a command line and call `mvnsh`.
-You will see that a Maven process is loaded, and you are now using Maven Shell, visible by the line prefix `maven mvnsh>` as shown in the example below.
+To use Maven Shell open a command line and call `mvnsh`.
+A Maven process is loaded, and you are now using Maven Shell, visible by the line prefix `maven mvnsh>` as shown in the example below.
 
 ```
 D:\Github\Maven\maven>mvnsh
@@ -50,7 +50,7 @@ D:\Github\Maven\maven>mvnsh
 maven mvnsh>
 ```
 
-When you now run your regular Maven (`mvn`) commands, you will notice that they are executed immediately - without a delay to boot Java and Maven.
+When you run your regular Maven (`mvn`) commands, they are executed immediately without a delay to boot Java and Maven.
 
 ```
 maven mvnsh> mvn verify
@@ -62,7 +62,7 @@ maven mvnsh> mvn verify
 [...]
 ```
 
-To exit the shell and getting back to your regular command line, just type `exit`.
+To exit the shell and retrun to your regular command line, type `exit`.
 
 ```
 maven mvnsh>
