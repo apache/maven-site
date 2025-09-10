@@ -84,6 +84,7 @@
     <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
   </properties>
 
+
   <dependencies>
     <dependency>
       <groupId>org.jsoup</groupId>
