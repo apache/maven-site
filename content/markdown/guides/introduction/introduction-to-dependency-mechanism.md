@@ -95,13 +95,51 @@ There are 6 scopes:
 
 Each of the scopes (except for `import`) affects transitive dependencies in different ways, as is demonstrated in the table below. If a dependency is set to the scope in the left column, a transitive dependency of that dependency with the scope across the top row results in a dependency in the main project with the scope listed at the intersection. If no scope is listed, it means the dependency is omitted.
 
-|          |            |          |          |      |
-|:---------|:-----------|:---------|:---------|:-----|
-|          | compile    | provided | runtime  | test |
-| compile  | compile(*) | \-       | runtime  | \-   |
-| provided | provided   | \-       | provided | \-   |
-| runtime  | runtime    | \-       | runtime  | \-   |
-| test     | test       | \-       | test     | \-   |
+<table>
+  <thead>
+    <tr>
+      <th>Main project dependency</th>
+      <th colspan="4">Dependency project dependency</th>
+    </tr>
+    <tr>
+      <th></th>
+      <th>compile</th>
+      <th>provided</th>
+      <th>runtime</th>
+      <th>test</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>compile</th>
+      <td>compile(*)</td>
+      <td>-</td>
+      <td>runtime</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>provided</th>
+      <td>provided</td>
+      <td>-</td>
+      <td>provided</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>runtime</th>
+      <td>runtime</td>
+      <td>-</td>
+      <td>runtime</td>
+      <td>-</td>
+    </tr>
+    <tr>
+      <th>test</th>
+      <td>test</td>
+      <td>-</td>
+      <td>test</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
 
 **(*) Note:** it is intended that this should be runtime scope instead, so that all compile dependencies must be explicitly listed. However, if a library you depend on extends a class from another library, both must be available at compile time. For this reason, compile time dependencies remain as compile scope even when they are transitive.
 
