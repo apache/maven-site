@@ -346,44 +346,6 @@
 
   <profiles>
     <profile>
-      <id>linkcheck</id>
-      <activation>
-        <property>
-          <!--name>linkcheck.skip</name-->
-          <name>linkcheck.exec</name>
-        </property>
-      </activation>
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-linkcheck-plugin</artifactId>
-            <version>1.2</version>
-            <configuration>
-              <excludedLinks>
-                <excludedLink>**/archetype/*</excludedLink>
-                <excludedLink>**/ant-tasks/*</excludedLink>
-                <excludedLink>**/doxia/*</excludedLink>
-                <excludedLink>**/jxr/*</excludedLink>
-                <excludedLink>**/maven-1.x/*</excludedLink>
-                <excludedLink>**/mercury/*</excludedLink>
-                <excludedLink>**/scm/*</excludedLink>
-                <excludedLink>**/shared/*</excludedLink>
-                <excludedLink>**/skins/*</excludedLink>
-                <excludedLink>**/surefire/*</excludedLink>
-                <excludedLink>**/wagon/*</excludedLink>
-                <excludedLink>**/plugins/maven-*</excludedLink>
-                <excludedLink>**/ref/*</excludedLink>
-                <excludedLink>**/maven-model/*</excludedLink>
-                <excludedLink>**/maven-settings/*</excludedLink>
-                <excludedLink>irc://*</excludedLink>
-              </excludedLinks>
-            </configuration>
-          </plugin>
-        </plugins>
-      </reporting>
-    </profile>
-    <profile>
       <id>update</id>
       <activation>
         <property>
