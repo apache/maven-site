@@ -39,7 +39,7 @@ github:
         strict: false
         # contexts are the names of checks that must pass.
         contexts:
-          - Verify Site / Verify and build Maven Site
+          - Verify and build Maven Site
   pull_requests:
     del_branch_on_merge: true
   features:
