@@ -32,7 +32,11 @@ github:
     - FELIX
     - MRELEASE
   protected_branches:
-    master: {}
+    master:
+      required_status_checks:
+        # contexts are the names of checks that must pass.
+        contexts:
+          - Verify and build Maven Site
     master-test:
       required_status_checks:
         # contexts are the names of checks that must pass.
