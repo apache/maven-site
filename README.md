@@ -27,6 +27,7 @@ See [website documentation](https://maven.apache.org/developers/website/) for de
 
 You can run
 
+
 ```
 $ mvn site:run
 ```
@@ -34,8 +35,10 @@ $ mvn site:run
 to run locally and see the website on <http://localhost:8080/>.
 
 Additional Resources
+
 --------------------
 
++ 
 + [Contributing patches](https://maven.apache.org/guides/development/guide-maven-development.html#Creating_and_submitting_a_patch)
 + [Contributor License Agreement][cla]
 + [General GitHub documentation](https://docs.github.com)
