@@ -1,3 +1,6 @@
+title: What's new in Maven 4?
+author: Matthias Bünger
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -16,11 +19,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
-<head>
-   <title>What's new in Maven 4?</title>
-   <meta name="author" content="Matthias Bünger" />
-</head>
 
 # What's new in Maven 4?
 
@@ -52,6 +50,8 @@ needed by the consumers, but without breaking the ecosystem.
 Maven 4 prepares for this and more.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
+
+<!-- MACRO{toc|section=1|fromDepth=2} -->
 
 ## Required Java version
 
