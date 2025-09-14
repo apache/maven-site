@@ -130,6 +130,8 @@
         <plugin>
           <groupId>com.diffplug.spotless</groupId>
           <artifactId>spotless-maven-plugin</artifactId>
+          <!-- due to https://github.com/apache/maven-site/issues/1395
+          Spotless destroys Yaml Front Matter metadata in markdown files
           <configuration>
             <markdown>
               <includes>
@@ -145,6 +147,7 @@
               <version>${version.maven-shared-resources}</version>
             </dependency>
           </dependencies>
+-->
           <executions>
             <execution>
               <id>default</id>
