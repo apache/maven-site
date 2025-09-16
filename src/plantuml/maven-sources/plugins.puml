@@ -59,7 +59,6 @@ package Plugins {
     rectangle javadoc
     rectangle jdeps
     rectangle jxr
-    rectangle linkcheck
     rectangle pmd
     rectangle "project-info-reports"
   }
@@ -116,8 +115,7 @@ checkstyle -[hidden]> doap
 doap -[hidden]> javadoc
 javadoc -[hidden]> jdeps
 jdeps -[hidden]> jxr
-jxr  -[hidden]> linkcheck
-linkcheck -[hidden]> pmd
+jxr  -[hidden]> pmd
 pmd -[hidden]> "project-info-reports"
 
 antrun -[hidden]> archetype
@@ -168,7 +166,6 @@ url of doap is [[https://github.com/apache/maven-doap-plugin]]
 url of javadoc is [[https://github.com/apache/maven-javadoc-plugin]]
 url of jdeps is [[https://github.com/apache/maven-jdeps-plugin]]
 url of jxr is [[https://github.com/apache/maven-jxr]]
-url of linkcheck is [[https://github.com/apache/maven-linkcheck-plugin]]
 url of pmd is [[https://github.com/apache/maven-pmd-plugin]]
 url of "project-info-reports" is [[https://github.com/apache/maven-project-info-reports-plugin]]
 
