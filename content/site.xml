@@ -122,6 +122,7 @@ under the License.
       <item name="Maven 4" collapse="false">
         <item name="What's new in Maven 4?" href="/whatsnewinmaven4.html"/>
         <item name="Migrate to Maven 4" href="/guides/mini/guide-migration-to-mvn4.html"/>
+        <item name="Maven Mixins" href="/guides/mini/guide-mixins.html"/>
       </item>
         <!--
         <item name="Build Cookbook" href="/users/cookbook/index.html"/>
