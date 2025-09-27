@@ -30,13 +30,17 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 /**
- * Updater for /plugins/index.apt release numbers against
+ * Updater for /plugins/index.md and /shared/index.md release data (version and day) against
  * effective site content.
+ * Fixes eventual check-index-page issues from
+ * https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-check-errors.html
  */
 public class Update {
+    private boolean retired = false;
+
     public static void main(String[] args) throws IOException {
         for (String dir : args) {
-            new Update().doUpdate(Paths.get("content/apt/" + dir + "/index.apt"));
+            new Update().doUpdate(Paths.get("content/markdown/" + dir + "/index.md"));
             System.out.println("\r\33[2K");
         }
     }
@@ -46,18 +50,27 @@ public class Update {
         List<String> lines = Files.readAllLines(index);
 
         lines = lines.stream()
-                .map(line -> line.startsWith("| {{{/") ? update(line) : line)
+                .map(line -> line.startsWith("| [ `") ? update(line) : line)
                 .collect(Collectors.toList());
 
         Files.write(index, lines);
     }
 
     private String update(String line) {
+        retired = retired || line.contains("`ant`"); // detect retired content, not to be updated
+        if (retired) {
+            return line;
+        }
+
         String[] cols = line.split("\\|");
 
         String description = cols[1];
-        String url = "https://maven.apache.org/" + description.substring(5, description.indexOf('}'));
-        String component = description.substring(description.indexOf("<<<") + 3, description.indexOf(">>>"));
+        String url = "https://maven.apache.org/"
+                + description
+                        .substring(description.indexOf('(') + 2)
+                        .replace(')', ' ')
+                        .trim();
+        String component = description.substring(description.indexOf("`") + 1, description.lastIndexOf("`"));
 
         int column = 2;
         String versionCol = cols[2];
