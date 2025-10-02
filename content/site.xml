@@ -45,9 +45,7 @@ under the License.
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Installation" href="/install.html" />
       <item name="Downloads" href="/download.html"/>
-      <item name="Use" href="/users/index.html" collapse="true">
-      </item>
-      <item name="Run" href="/run.html"/>
+      <item name="Use" href="/run.html"/>
       <item name="Configure" href="/configure.html"/>
       <item name="Release Notes" href="/docs/history.html"/>
     </menu>
