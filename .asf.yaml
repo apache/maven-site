@@ -5,6 +5,7 @@ github:
   labels:
     - apache
     - maven
+    - hacktoberfest
   enabled_merge_buttons:
     squash: true
     merge: false
