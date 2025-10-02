@@ -87,23 +87,69 @@ There are 6 scopes:
 - **runtime**  
   This scope indicates that the dependency is not required for compilation, but is for execution. Maven includes a dependency with this scope in the runtime and test classpaths, but not the compile classpath.
 - **test**  
-  This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).
+  This scope indicates that the dependency is not required for normal use of the application, and is only available for the test compilation and execution phases. This scope is not transitive. Typically, this scope is used for test libraries such as JUnit and Mockito. It is also used for non-test libraries such as Apache Commons IO if those libraries are used in unit tests (src/test/java) but not in the model code (src/main/java).
 - **system**  
-  This scope indicates that the dependency is required for compilation and execution. However, Maven will not download the dependency from the repository system. Instead it looks for a jar in the local file system at a specified path.
+  This scope indicates that the dependency is required for compilation and execution. However, Maven will not download the dependency from the repository system. Instead, it looks for a jar in the local file system at a specified path.
 - **import**  
   This scope is only supported on a dependency of type `pom` in the `<dependencyManagement>` section. It indicates the dependency is to be replaced with the effective list of dependencies in the specified POM's `<dependencyManagement>` section. Since they are replaced, dependencies with a scope of `import` do not actually participate in limiting the transitivity of a dependency.
 
-Each of the scopes (except for `import`) affects transitive dependencies in different ways, as is demonstrated in the table below. If a dependency is set to the scope in the left column, a transitive dependency of that dependency with the scope across the top row results in a dependency in the main project with the scope listed at the intersection. If no scope is listed, it means the dependency is omitted.
+Each of the scopes (except for `import`) affects transitive dependencies in a different way.
+For a dependency A, declared in the project (left column), and its transitive dependency B (top row), the table below shows the resulting scope of B based on both initial scope declarations.
+If the cell is empty, it means the dependency is omitted during the build of the project.
 
-|          |            |          |          |      |
-|:---------|:-----------|:---------|:---------|:-----|
-|          | compile    | provided | runtime  | test |
-| compile  | compile(*) | \-       | runtime  | \-   |
-| provided | provided   | \-       | provided | \-   |
-| runtime  | runtime    | \-       | runtime  | \-   |
-| test     | test       | \-       | test     | \-   |
+Examples:
+* If dependency A is declared as "compile" and its transitive dependency B is declared as "runtime", then the resulting scope of B will be "runtime".
+* If dependency A is declared as "compile" and its transitive dependency B is declared as "provided", then B will be omitted.
 
-**(*) Note:** it is intended that this should be runtime scope instead, so that all compile dependencies must be explicitly listed. However, if a library you depend on extends a class from another library, both must be available at compile time. For this reason, compile time dependencies remain as compile scope even when they are transitive.
+<div style="width: 90%; text-align: center; vertical-align: center; margin: 20px;">
+    <table class="bordered" style="table-layout: fixed; width: 100%;">
+      <thead>
+        <tr>
+          <th rowspan="2" colspan="2" class="bordered grey" style="width: 30%">&nbsp;</th>
+          <th colspan="4" class="bordered grey" style="width: 70%">Scope of B (transitive dependency of A)</th>
+        </tr>
+        <tr>
+          <th class="bordered grey">compile</th>
+          <th class="bordered grey">provided</th>
+          <th class="bordered grey">runtime</th>
+          <th class="bordered grey">test</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="4" class="bordered grey">Scope of A (Project dependency)</th>
+          <th class="bordered grey">compile</th>
+          <td class="bordered">compile <b>(*)</b></td>
+          <td class="bordered">-</td>
+          <td class="bordered">runtime</td>
+          <td class="bordered">-</td>
+        </tr>
+        <tr>
+          <th class="bordered grey">provided</th>
+          <td class="bordered">provided</td>
+          <td class="bordered">-</td>
+          <td class="bordered">provided</td>
+          <td class="bordered">-</td>
+        </tr>
+        <tr>
+          <th class="bordered grey">runtime</th>
+          <td class="bordered">runtime</td>
+          <td class="bordered">-</td>
+          <td class="bordered">runtime</td>
+          <td class="bordered">-</td>
+        </tr>
+        <tr>
+          <th class="bordered grey">test</th>
+          <td class="bordered">test</td>
+          <td class="bordered">-</td>
+          <td class="bordered">test</td>
+          <td class="bordered">-</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
+
+**(*) Note:** It is intended that this should be runtime scope instead, so that all compile dependencies must be explicitly listed. However, if a library you depend on extends a class from another library, both must be available at compile time. For this reason, compile time dependencies remain as compile scope even when they are transitive.
 
 ## Dependency Management
 
