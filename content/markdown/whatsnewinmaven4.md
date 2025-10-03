@@ -411,6 +411,42 @@ These are especially useful for applying consistent setup and teardown logic aro
 
 Together, these new phases provide a powerful and intuitive structure for defining and customizing build behavior in complex Maven projects.
 
+#### Important behavioral change: Phase execution scope
+
+Maven 4 introduces a significant behavioral change in how phases are executed that can affect existing builds:
+
+**Maven 3 behavior:**
+- The `pre-*` and `post-*` phases are independent phases in the lifecycle
+- Only the explicitly specified phase and its preceding phases in the lifecycle are executed
+- Plugins bound to phases that come after the specified phase are not executed
+- Example: Running `mvn clean` with a plugin bound to `post-clean` would **NOT** execute the plugin
+
+**Maven 4 behavior:**
+- When a phase is specified, Maven 4 executes the entire phase including its `before:` and `after:` hooks
+- The `post-*` and `pre-*` phases are now aliases for `after:` and `before:` phases respectively
+- This means that plugins bound to what were previously `post-*` phases (now `after:` phases) will be executed
+- Example: Running `mvn clean` with a plugin bound to `after:clean` (or the deprecated `post-clean`) **WILL** execute the plugin
+
+**Practical impact:**
+
+```xml
+<!-- This plugin configuration will behave differently between Maven 3 and 4 -->
+<plugin>
+  <groupId>org.example</groupId>
+  <artifactId>some-plugin</artifactId>
+  <executions>
+    <execution>
+      <!-- In Maven 3: Does NOT run when executing 'mvn clean' -->
+      <!-- In Maven 4: DOES run when executing 'mvn clean' -->
+      <phase>post-clean</phase>
+      <goals>
+        <goal>cleanup</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
 ## Maven plugins, security, and tools
 
 ### Maven plugins
