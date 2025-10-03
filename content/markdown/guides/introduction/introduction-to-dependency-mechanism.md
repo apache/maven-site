@@ -119,7 +119,7 @@ Examples:
         <tr>
           <th rowspan="4" class="bordered grey">Scope of A (Project dependency)</th>
           <th class="bordered grey">compile</th>
-          <td class="bordered">compile <b>(*)</b></td>
+          <td class="bordered">compile</td>
           <td class="bordered">-</td>
           <td class="bordered">runtime</td>
           <td class="bordered">-</td>
@@ -148,8 +148,6 @@ Examples:
       </tbody>
     </table>
 </div>
-
-**(*) Note:** It is intended that this should be runtime scope instead, so that all compile dependencies must be explicitly listed. However, if a library you depend on extends a class from another library, both must be available at compile time. For this reason, compile time dependencies remain as compile scope even when they are transitive.
 
 ## Dependency Management
 
