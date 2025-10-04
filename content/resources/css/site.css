@@ -54,3 +54,14 @@ body ul {
   text-indent: inherit;
 }
 
+.bordered {
+  border: 1px solid black;
+  background-color: #ffffff;
+}
+
+.grey {
+  background-color: #f9f9f9;
+}
+
+
+
