@@ -386,10 +386,42 @@ before:integration-test[100]
 before:integration-test[200]
 ```
 
-**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
-inconsistent naming, are deprecated.
+**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had inconsistent naming, are deprecated.
+They only act as aliases now and might be removed in the future.
 Don't use them!
 This is especially important when binding a plugin to a `post-*` phase of a lifecycle phase because the corresponding `pre-*` phase of the desired phase doesn't exist — for example, binding to the `process-resources` phase due to the absence of a `pre-compile` phase.
+
+#### Behavioral change: phase execution scope
+
+Maven 4 introduces a behavioral change in how phases are executed.
+For a given major phase, Maven 4 will always execute both (`before:` and `after:`) minor phases of it.
+This differs from Maven 3 where the `post-*` (now `after:`) phase is only executed if either the next major phase of the lifecycle is executed or the `post-*` phase is explicitly called.
+
+The following example shows that this change might affect existing builds.
+
+Given the following plugin configuration, where a plugin is bound to the `post-clean` phase.
+
+```xml
+<plugin>
+  <groupId>org.example</groupId>
+  <artifactId>some-plugin</artifactId>
+  <executions>
+    <execution>
+      <!-- In Maven 3: Does NOT run when executing 'mvn clean', only with `mvn post-clean` -->
+      <!-- In Maven 4: DOES run when executing 'mvn clean' -->
+      <phase>post-clean</phase>
+      <goals>
+        <goal>cleanup</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+Running `mvn clean` using Maven 3 would NOT execute the plugin, because the build execution stops at the main phase, not executing it `post-` phase.
+To execute the plugin in Maven 3, the user has explicitly run `mvn post-clean` as a build goal.
+In Maven 4 running `mvn clean` will also execute the plugin, as both `before:` and `after:` phases are always executed.
+
 
 #### All- and each-phases
 
@@ -410,42 +442,6 @@ In a multi-project build, the `after:all` phases of the subprojects run before t
 These are especially useful for applying consistent setup and teardown logic around every phase.
 
 Together, these new phases provide a powerful and intuitive structure for defining and customizing build behavior in complex Maven projects.
-
-#### Important behavioral change: Phase execution scope
-
-Maven 4 introduces a significant behavioral change in how phases are executed that can affect existing builds:
-
-**Maven 3 behavior:**
-- The `pre-*` and `post-*` phases are independent phases in the lifecycle
-- Only the explicitly specified phase and its preceding phases in the lifecycle are executed
-- Plugins bound to phases that come after the specified phase are not executed
-- Example: Running `mvn clean` with a plugin bound to `post-clean` would **NOT** execute the plugin
-
-**Maven 4 behavior:**
-- When a phase is specified, Maven 4 executes the entire phase including its `before:` and `after:` hooks
-- The `post-*` and `pre-*` phases are now aliases for `after:` and `before:` phases respectively
-- This means that plugins bound to what were previously `post-*` phases (now `after:` phases) will be executed
-- Example: Running `mvn clean` with a plugin bound to `after:clean` (or the deprecated `post-clean`) **WILL** execute the plugin
-
-**Practical impact:**
-
-```xml
-<!-- This plugin configuration will behave differently between Maven 3 and 4 -->
-<plugin>
-  <groupId>org.example</groupId>
-  <artifactId>some-plugin</artifactId>
-  <executions>
-    <execution>
-      <!-- In Maven 3: Does NOT run when executing 'mvn clean' -->
-      <!-- In Maven 4: DOES run when executing 'mvn clean' -->
-      <phase>post-clean</phase>
-      <goals>
-        <goal>cleanup</goal>
-      </goals>
-    </execution>
-  </executions>
-</plugin>
-```
 
 ## Maven plugins, security, and tools
 
