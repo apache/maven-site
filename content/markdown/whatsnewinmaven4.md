@@ -419,8 +419,8 @@ Given the following plugin configuration, where a plugin is bound to the `post-c
 ```
 
 Running `mvn clean` using Maven 3 would NOT execute the plugin, because the build execution stops at the main phase, not executing it `post-` phase.
-To execute the plugin in Maven 3, the user has explicitly run `mvn post-clean` as a build goal.
-In Maven 4 running `mvn clean` will also execute the plugin, as both `before:` and `after:` phases are always executed.
+To execute the plugin in Maven 3, the user has to explicitly run `mvn post-clean` as a build goal.
+In Maven 4 running `mvn clean` will also execute the plugin, as both `before:` and `after:` phases are always executed and the `post-` phase is now an alias for `after:`.
 
 
 #### All- and each-phases
