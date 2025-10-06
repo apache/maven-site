@@ -34,12 +34,19 @@ import org.jsoup.nodes.Element;
  * effective site content.
  */
 public class Update {
-    public static void main(String[] args) throws IOException {
-        for (String dir : args) {
-            new Update().doUpdate(Paths.get("content/apt/" + dir + "/index.apt"));
-            System.out.println("\r\33[2K");
+    public static void main(String[] args) {
+    Update updater = new Update(); // reuse instance
+    for (String dir : args) {
+        Path indexPath = Paths.get("content/apt/" + dir + "/index.apt");
+        try {
+            updater.doUpdate(indexPath);
+            System.out.print("\r\33[2K"); // clear line
+        } catch (IOException e) {
+            System.err.println("Failed to update: " + indexPath);
+            e.printStackTrace();
         }
     }
+}
 
     private void doUpdate(Path index) throws IOException {
         System.out.println("updating " + index);
