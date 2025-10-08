@@ -185,6 +185,17 @@ public class GreetingMojo extends AbstractMojo
       </plugins>
     </pluginManagement>
   </build>
+
+  <reporting>
+    <plugins>
+      <!-- automatically generate plugin documentation when running `mvn site` -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-plugin-report-plugin</artifactId>
+        <version>${esc.dollar}{maven-plugin-tools.version}</version>
+      </plugin>
+    </plugins>
+  </reporting>
 </project>
 +----+
 
@@ -366,7 +377,7 @@ mvn archetype:generate \
 
 ** Configuring Parameters in a Project
 
-  Each Maven project can configrue the plugins it uses 
+  Each Maven project can configure the plugins it uses 
   in the <<<pluginManagement>>> section of the pom.xml. For example:
 
 +-----+
@@ -437,6 +448,11 @@ public class MyQueryMojo extends AbstractMojo {
 
  The property annotation for each parameter tells Maven which setter and getter to use when
  the field's name does not match the name of the parameter in the plugin configuration.
+
+* Plugin Documentation
+
+ To make it easy for others to use your plugin, you should document it. See the {{{../development/guide-plugin-documentation.html}Plugin Documentation Guide}}
+ for more information.
 
 * Resources
 

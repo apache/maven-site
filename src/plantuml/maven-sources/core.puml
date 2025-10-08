@@ -17,7 +17,6 @@ specific language governing permissions and limitations
 under the License.
 '/
 @startuml
-!pragma layout smetana
 
 <style>
     rectangle {
@@ -31,16 +30,25 @@ package "Maven Core" {
   rectangle "Core ITs"
   rectangle Resolver
   rectangle "Ant Tasks"
+  rectangle "Build Cache"
+  rectangle "Daemon"
+  rectangle "Wrapper"
 }
 
 'hidden dependencies to change layout
 Maven -[hidden]right-> "Core ITs"
 "Core ITs" -[hidden]right-> Resolver
 Resolver -[hidden]right-> "Ant Tasks"
+"Ant Tasks" -[hidden]right-> "Build Cache"
+"Build Cache" -[hidden]right-> Daemon
+Daemon -[hidden]right-> Wrapper
 
 url of Maven is [[https://github.com/apache/maven]]
 url of "Core ITs" is [[https://github.com/apache/maven-integration-testing]]
 url of Resolver is [[https://github.com/apache/maven-resolver]]
 url of "Ant Tasks" is [[https://github.com/apache/maven-resolver-ant-tasks]]
+url of "Build Cache" is [[https://github.com/apache/maven-build-cache-extension]]
+url of Daemon is [[https://github.com/apache/maven-mvnd]]
+url of Wrapper is [[https://github.com/apache/maven-wrapper]]
 
 @enduml

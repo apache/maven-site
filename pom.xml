@@ -23,7 +23,7 @@
   <parent>
     <groupId>org.apache.maven</groupId>
     <artifactId>maven-parent</artifactId>
-    <version>44-SNAPSHOT</version>
+    <version>46-SNAPSHOT</version>
     <relativePath />
   </parent>
 
@@ -56,28 +56,30 @@
     <maven.site.path>maven-site</maven.site.path>
     <project.build.outputTimestamp>x</project.build.outputTimestamp>
     <!-- disable Reproducible Builds that makes the site build time fixed at last release time -->
-    <currentStableVersion>3.9.9</currentStableVersion>
-    <currentStableVersionDetails>8e8579a9e76f7d015ee5ec7bfcdc97d260186937</currentStableVersionDetails>
-    <current4xVersion>4.0.0-rc-2</current4xVersion>
-    <current39xVersion>3.9.9</current39xVersion>
-    <current38xVersion>3.8.8</current38xVersion>
+    <currentStableVersion>3.9.11</currentStableVersion>
+    <currentStableVersionDetails>3e54c93a704957b63ee3494413a2b544fd3d825b</currentStableVersionDetails>
+    <current4xVersion>4.0.0-rc-4</current4xVersion>
+    <current39xVersion>3.9.11</current39xVersion>
+    <current38xVersion>3.8.9</current38xVersion>
     <current36xVersion>3.6.3</current36xVersion>
     <current35xVersion>3.5.4</current35xVersion>
     <current33xVersion>3.3.9</current33xVersion>
     <current32xVersion>3.2.5</current32xVersion>
     <current31xVersion>3.1.1</current31xVersion>
     <current30xVersion>3.0.5</current30xVersion>
+    <currentMvnd1xVersion>1.0.3</currentMvnd1xVersion>
+    <currentMvnd2xVersion>2.0.0-rc-3</currentMvnd2xVersion>
     <currentAntTasksVersion>2.1.3</currentAntTasksVersion>
     <currentAntTasksReleaseDate>2011-04-17</currentAntTasksReleaseDate>
     <versions2x>2.2.1,2.2.0,2.1.0,2.0.11,2.0.10,2.0.9,2.0.8,2.0.7,2.0.6,2.0.5,2.0.4,2.0.3,2.0.2,2.0.1,2.0</versions2x>
-    <versions3x>3.9.9,3.9.8,3.9.7,3.9.6,3.9.5,3.9.4,3.9.3,3.9.2,3.9.1,3.9.0,3.8.8,3.8.7,3.8.6,3.8.5,3.8.4,3.8.3,3.8.2,3.8.1,3.6.3,3.6.2,3.6.1,3.6.0,3.5.4,3.5.3,3.5.2,3.5.0,3.5.0-beta-1,3.5.0-alpha-1,3.3.9,3.3.3,3.3.1,3.2.5,3.2.3,3.2.2,3.2.1,3.1.1,3.1.0,3.1.0-alpha-1,3.0.5,3.0.4,3.0.3,3.0.2,3.0.1,3.0,3.0-beta-3,3.0-beta-2,3.0-beta-1,3.0-alpha-7,3.0-alpha-6,3.0-alpha-5,3.0-alpha-4,3.0-alpha-3</versions3x>
-    <version4x>4.0.0-rc-2,4.0.0-rc-1,4.0.0-beta-5,4.0.0-beta-4,4.0.0-beta-3,4.0.0-alpha-13,4.0.0-alpha-12,4.0.0-alpha-10,4.0.0-alpha-9,4.0.0-alpha-8,4.0.0-alpha-7,4.0.0-alpha-5,4.0.0-alpha-4,4.0.0-alpha-3,4.0.0-alpha-2</version4x>
+    <versions3x>3.9.11,3.9.10,3.9.9,3.9.8,3.9.7,3.9.6,3.9.5,3.9.4,3.9.3,3.9.2,3.9.1,3.9.0,3.8.9,3.8.8,3.8.7,3.8.6,3.8.5,3.8.4,3.8.3,3.8.2,3.8.1,3.6.3,3.6.2,3.6.1,3.6.0,3.5.4,3.5.3,3.5.2,3.5.0,3.5.0-beta-1,3.5.0-alpha-1,3.3.9,3.3.3,3.3.1,3.2.5,3.2.3,3.2.2,3.2.1,3.1.1,3.1.0,3.1.0-alpha-1,3.0.5,3.0.4,3.0.3,3.0.2,3.0.1,3.0,3.0-beta-3,3.0-beta-2,3.0-beta-1,3.0-alpha-7,3.0-alpha-6,3.0-alpha-5,3.0-alpha-4,3.0-alpha-3</versions3x>
+    <version4x>4.0.0-rc-3,4.0.0-rc-2,4.0.0-rc-1,4.0.0-beta-5,4.0.0-beta-4,4.0.0-beta-3,4.0.0-alpha-13,4.0.0-alpha-12,4.0.0-alpha-10,4.0.0-alpha-9,4.0.0-alpha-8,4.0.0-alpha-7,4.0.0-alpha-5,4.0.0-alpha-4,4.0.0-alpha-3,4.0.0-alpha-2</version4x>
     <site.output>${project.build.directory}/site</site.output>
     <javaVersion>17</javaVersion>
     <siteDirectory>${project.basedir}/content</siteDirectory>
     <!-- used by src/xdoc/errors/404.xml.vm as well -->
-    <version.maven-fluido-skin>2.0.1</version.maven-fluido-skin>
-    <version.plantuml-maven-plugin>0.3</version.plantuml-maven-plugin>
+    <version.maven-fluido-skin>2.1.0</version.maven-fluido-skin>
+    <version.plantuml-maven-plugin>0.4.9</version.plantuml-maven-plugin>
     <!-- required by plantuml-m-p 0.3 -->
     <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
   </properties>
@@ -86,7 +88,7 @@
     <dependency>
       <groupId>org.jsoup</groupId>
       <artifactId>jsoup</artifactId>
-      <version>1.18.3</version>
+      <version>1.21.2</version>
     </dependency>
   </dependencies>
 
@@ -99,15 +101,6 @@
       <id>apache.snapshots</id>
       <name>Apache Snapshot Repository</name>
       <url>https://repository.apache.org/snapshots</url>
-    </repository>
-    <repository>
-      <!-- to test with ASF staging repo -->
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <id>apache.staging</id>
-      <name>Apache Staging Repository</name>
-      <url>https://repository.apache.org/content/repositories/maven-1906/</url>
     </repository>
   </repositories>
 
@@ -128,7 +121,6 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-site-plugin</artifactId>
-          <version>3.21.0</version>
           <configuration>
             <siteDirectory>${siteDirectory}</siteDirectory>
             <!-- don't deploy site with maven-site-plugin -->
@@ -138,7 +130,8 @@
         <plugin>
           <groupId>com.diffplug.spotless</groupId>
           <artifactId>spotless-maven-plugin</artifactId>
-          <version>2.44.2</version>
+          <!-- due to https://github.com/apache/maven-site/issues/1395
+          Spotless destroys Yaml Front Matter metadata in markdown files
           <configuration>
             <markdown>
               <includes>
@@ -154,6 +147,14 @@
               <version>${version.maven-shared-resources}</version>
             </dependency>
           </dependencies>
+-->
+          <executions>
+            <execution>
+              <id>default</id>
+              <!-- overwrite phase from parent POM -->
+              <phase>pre-site</phase>
+            </execution>
+          </executions>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -184,7 +185,7 @@
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>build-helper-maven-plugin</artifactId>
-        <version>3.6.0</version>
+        <version>3.6.1</version>
         <executions>
           <execution>
             <id>create-security.txt-timestamp</id>
@@ -266,7 +267,7 @@
           <dependency>
             <groupId>net.sourceforge.plantuml</groupId>
             <artifactId>plantuml</artifactId>
-            <version>1.2025.0</version>
+            <version>1.2025.8</version>
           </dependency>
         </dependencies>
         <executions>
@@ -287,6 +288,9 @@
               <outputDirectory>${project.reporting.outputDirectory}</outputDirectory>
               <format>SVG</format>
               <stripPath>src/plantuml</stripPath>
+              <pragmas>
+                <pragma>layout=smetana</pragma>
+              </pragmas>
             </configuration>
           </execution>
         </executions>
@@ -345,44 +349,6 @@
 
   <profiles>
     <profile>
-      <id>linkcheck</id>
-      <activation>
-        <property>
-          <!--name>linkcheck.skip</name-->
-          <name>linkcheck.exec</name>
-        </property>
-      </activation>
-      <reporting>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-linkcheck-plugin</artifactId>
-            <version>1.2</version>
-            <configuration>
-              <excludedLinks>
-                <excludedLink>**/archetype/*</excludedLink>
-                <excludedLink>**/ant-tasks/*</excludedLink>
-                <excludedLink>**/doxia/*</excludedLink>
-                <excludedLink>**/jxr/*</excludedLink>
-                <excludedLink>**/maven-1.x/*</excludedLink>
-                <excludedLink>**/mercury/*</excludedLink>
-                <excludedLink>**/scm/*</excludedLink>
-                <excludedLink>**/shared/*</excludedLink>
-                <excludedLink>**/skins/*</excludedLink>
-                <excludedLink>**/surefire/*</excludedLink>
-                <excludedLink>**/wagon/*</excludedLink>
-                <excludedLink>**/plugins/maven-*</excludedLink>
-                <excludedLink>**/ref/*</excludedLink>
-                <excludedLink>**/maven-model/*</excludedLink>
-                <excludedLink>**/maven-settings/*</excludedLink>
-                <excludedLink>irc://*</excludedLink>
-              </excludedLinks>
-            </configuration>
-          </plugin>
-        </plugins>
-      </reporting>
-    </profile>
-    <profile>
       <id>update</id>
       <activation>
         <property>
@@ -394,7 +360,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>exec-maven-plugin</artifactId>
-            <version>3.5.0</version>
+            <version>3.6.1</version>
             <configuration>
               <mainClass>org.apache.maven.site.update.Update</mainClass>
               <arguments>

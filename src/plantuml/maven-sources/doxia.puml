@@ -17,7 +17,6 @@ specific language governing permissions and limitations
 under the License.
 '/
 @startuml
-!pragma layout smetana
 
 <style>
     rectangle {
@@ -31,8 +30,8 @@ package "Maven Doxia" {
   rectangle "Site Tools"
   rectangle Site #LightGrey
   package Tools {
+    rectangle "Book Maven Plugin"
     rectangle Converter
-    rectangle LinkCheck
   }
 }
 
@@ -44,7 +43,7 @@ Doxia -[hidden]right-> "Site Tools"
 url of Doxia is [[https://github.com/apache/maven-doxia]]
 url of "Site Tools" is [[https://github.com/apache/maven-doxia-sitetools]]
 url of Site is [[https://github.com/apache/maven-doxia-site]]
+url of "Book Maven Plugin" is [[https://github.com/apache/maven-doxia-book-maven-plugin]]
 url of Converter is [[https://github.com/apache/maven-doxia-converter]]
-url of LinkCheck is [[https://github.com/apache/maven-doxia-linkcheck]]
 
 @enduml

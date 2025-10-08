@@ -15,9 +15,6 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
-
-NOTE: For help with the syntax of this file, see:
-http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 # Release Notes &#x2013; Maven 3.6.1
@@ -32,7 +29,7 @@ The core release is independent of the plugins available. Further releases of pl
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [https://maven.apache.org/][2]
+- the website: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.6.1/](/ref/3.6.1/)
 

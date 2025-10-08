@@ -15,9 +15,6 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
-
-NOTE: For help with the syntax of this file, see:
-http://maven.apache.org/doxia/modules/index.html#Markdown
 -->
 
 # Release Notes &#x2013; Maven 3.9.9
@@ -32,7 +29,7 @@ The core release is independent of plugin releases. Further releases of plugins 
 
 If you have any questions, please consult:
 
-- the web site: [https://maven.apache.org/][2]
+- the website: [https://maven.apache.org/][2]
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.9.9/](/ref/3.9.9/)
 
@@ -40,7 +37,7 @@ If you have any questions, please consult:
 
 Regression fixes and other improvements from Maven 3.9.8. All users already on Maven 3.9.x are advised to upgrade.
 
-Notable improvements in area of memory usage arrives with [Resolver 1.2.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
+Notable improvements in area of memory usage arrives with [Resolver 1.9.22](https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12320628&version=12354902).
 
 The majority of fixed issue are bug and regression fixes for user reported problems.
 

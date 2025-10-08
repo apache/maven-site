@@ -1,0 +1,98 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+# Guide To Maven Documentation Style
+
+## Where did the style came from?
+
+The documentation style guide was created to make our documentation more consistent and also to apply best practices to the documentation as well.
+The standard has just been started and will expand over time based on the suggestions made on the Maven dev mailing list.
+It is a community consensus of how we should write our documentation.
+
+Each rule in this guide should come with a motivation as to why it exists.
+References to external sources are encouraged.
+
+The styleguide might evolve over time.
+
+## Date format
+
+How people format a date varies around the world, sometimes making it hard for people to understand each other.
+The solution to this problem comes in the form of the ISO-8601 standard.
+
+A date in our documentation must follow this standard:
+
+**YYYY-MM-DD**
+
+where **YYYY** is the year in the Gregorian calendar, **MM** is the month of the year between 01 (January) and 12 (December), and **DD** is the day of the month between 01 and 31.
+
+**Note**: All documentation meta-data should respect this convention, for instance for this given APT document:
+
+### References
+
+- [W3C Quality Web Tips](http://www.w3.org/QA/Tips/iso-date)
+- [ISO-8601](https://www.iso.org/standard/70908.html)
+- [Wikipedia](http://en.wikipedia.org/wiki/ISO_8601)
+
+## POM Snippet
+
+A POM file must use 2 spaces for each indentation. Because POM snippets are often used in documentation to show the user how to configure something, it is important that these snippets aren't too wide.
+If they are too wide, the page is difficult to read on a smaller screen.
+
+When you use a snippet of XML from the POM as an example in documentation, make sure that the example is properly indented.
+A user should be able to copy and paste the example into their own POM without changing the indentation.
+
+Also, you should declare all parent POM elements to improve the comprehension. You could use ellipsis (i.e. `...`) if you don't want to specify elements.
+
+### Example
+
+The following is an example of how the distribution management of the Maven site is configured.
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  ...
+  <distributionManagement>
+    <site>
+      <id>apache.website</id>
+      <url>scp://people.apache.org/www/maven.apache.org/</url>
+    </site>
+  </distributionManagement>
+  ...
+</project>
+```
+
+As you can see above the `<distributionManagement>` element is indented once (=2 spaces), the `<site>` element is indented twice (=4 spaces), and the `<id>` is indented three times (=6 spaces).
+
+## Naming Documentation Files
+
+All file names should replace space by a hyphen (`-`), for instance for this given APT document:
+
+```
+guide-documentation-style.md
+```
+
+## Updating Documentation Files
+
+A good practice is to update the date (with the correct date format) when you are updating documentation files.
+
+## Write Thinking
+
+Here are some pointers about English rules when typing material:
+
+- [Wikipedia:Manual of Style](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style), specifically [Punctuation Part](https://en.wikipedia.org/wiki/Wikipedia:Manual_of_Style#Punctuation)
+

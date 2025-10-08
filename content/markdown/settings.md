@@ -109,8 +109,7 @@ not provided in the command line. This list automatically contains
 `org.apache.maven.plugins` and `org.codehaus.mojo`.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <pluginGroups>
     <pluginGroup>org.eclipse.jetty</pluginGroup>
@@ -134,8 +133,7 @@ should not be distributed along with the `pom.xml`. This type of
 information should exist on the build server in the `settings.xml`.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <servers>
     <server>
@@ -181,8 +179,7 @@ page](./guides/mini/guide-encryption.html)
 ### Mirrors
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <mirrors>
     <mirror>
@@ -215,8 +212,7 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 ### Proxies
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <proxies>
     <proxy>
@@ -269,8 +265,7 @@ certain circumstances; those circumstances are specified via an
 `activation` element.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   <!-- ... -->
   <profiles>
     <profile>
@@ -358,8 +353,7 @@ all accessible from the `settings.xml` file:
 <!-- -->
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <profiles>
     <profile>
@@ -387,16 +381,15 @@ profile they may be searched for a matching release or snapshot
 artifact.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <profiles>
     <profile>
       ...
       <repositories>
         <repository>
-          <id>codehausSnapshots</id>
-          <name>Codehaus Snapshots</name>
+          <id>Snapshots</id>
+          <name>Snapshots</name>
           <releases>
             <enabled>false</enabled>
             <updatePolicy>always</updatePolicy>
@@ -407,7 +400,7 @@ artifact.
             <updatePolicy>never</updatePolicy>
             <checksumPolicy>fail</checksumPolicy>
           </snapshots>
-          <url>http://snapshots.maven.codehaus.org/maven2</url>
+          <url>https://oss.sonatype.org/content/repositories/snapshots</url>
           <layout>default</layout>
         </repository>
       </repositories>
@@ -468,8 +461,7 @@ Maven can find new plugins.
 ### Active Profiles
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
   ...
   <activeProfiles>
     <activeProfile>env-test</activeProfile>

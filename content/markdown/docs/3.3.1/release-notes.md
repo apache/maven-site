@@ -17,9 +17,6 @@ software distributed under the License is distributed on an
 KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
-
-NOTE: For help with the syntax of this file, see:
-http://maven.apache.org/doxia/references/apt-format.html
 -->
 
 ## Overview
@@ -37,7 +34,7 @@ See the [PluginList][1] for more information.
 
 We hope you enjoy using Maven! If you have any questions, please consult:
 
-- the web site: [http://maven.apache.org/](http://maven.apache.org/)
+- the website: [http://maven.apache.org/](http://maven.apache.org/)
 - the maven-user mailing list: [http://maven.apache.org/mailing-lists.html](http://maven.apache.org/mailing-lists.html)
 - the reference documentation: [http://maven.apache.org/ref/3.3.1/](http://maven.apache.org/ref/3.3.1/)
 

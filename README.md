@@ -18,9 +18,13 @@ limitations under the License.
 # Maven Site
 
 [![Apache License, Version 2.0, January 2004](https://img.shields.io/github/license/apache/maven.svg?label=License)][license]
-[![Jenkins Status](https://img.shields.io/jenkins/s/https/ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/job/master.svg)][build]
+[![Jenkins Build](https://img.shields.io/jenkins/build?jobUrl=https%3A%2F%2Fci-maven.apache.org%2Fjob%2FMaven%2Fjob%2Fmaven-box%2Fjob%2Fmaven-site%2Fjob%2Fmaster)
+][build]
+[![Jenkins Tests](https://img.shields.io/jenkins/tests?jobUrl=https%3A%2F%2Fci-maven.apache.org%2Fjob%2FMaven%2Fjob%2Fmaven-box%2Fjob%2Fmaven-dist-tool%2Fjob%2Fmaster%2F&label=Check%20Errors)
+][check-errors]
 
 This is the Git repository for the content of <https://maven.apache.org/>.
+See [website documentation](https://maven.apache.org/developers/website/) for details on the publication structure.
 
 ## Run Locally
 
@@ -46,4 +50,4 @@ Additional Resources
 [ml-list]: https://maven.apache.org/mailing-lists.html
 [cla]: https://www.apache.org/licenses/#clas
 [build]: https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/job/master/
-
+[check-errors]: https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/lastCompletedBuild/site/dist-tool-check-errors.html

@@ -17,7 +17,6 @@ specific language governing permissions and limitations
 under the License.
 '/
 @startuml
-!pragma layout smetana
 <style>
     rectangle {
          backgroundColor LightBlue
@@ -66,6 +65,7 @@ subprojectB -[hidden]right-> subprojectC
 
 legend
 {{
+    !pragma layout smetana
     card Relations {
         together {
              rectangle c

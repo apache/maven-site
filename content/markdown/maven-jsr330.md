@@ -209,5 +209,5 @@ public class Jsr330Mojo
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
-[SisuPlexusMigration]: https://eclipse-sisu.github.io/sisu-project/plexus/index.html
+[SisuPlexusMigration]: https://eclipse.dev/sisu/org.eclipse.sisu.plexus/conversion-to-jsr330.html
 

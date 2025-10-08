@@ -5,6 +5,7 @@ github:
   labels:
     - apache
     - maven
+    - hacktoberfest
   enabled_merge_buttons:
     squash: true
     merge: false
@@ -31,7 +32,14 @@ github:
     - MASSEMBLY
     - FELIX
     - MRELEASE
-  del_branch_on_merge: true
+  protected_branches:
+    master:
+      required_status_checks:
+        # contexts are the names of checks that must pass.
+        contexts:
+          - Verify and build Maven Site
+  pull_requests:
+    del_branch_on_merge: true
   features:
     issues: true
 
@@ -39,4 +47,3 @@ notifications:
   commits: commits@maven.apache.org
   issues: issues@maven.apache.org
   pullrequests: issues@maven.apache.org
-  jira_options: link label

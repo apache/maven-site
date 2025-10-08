@@ -93,6 +93,16 @@ We use [GitHub Issues `Milestones`](https://docs.github.com/en/issues/using-labe
 
 [Issues and PR associated to a Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/viewing-your-milestones-progress) are publicly available, so we can use Milestone view during voting.
 
+## Automated actions
+
+### Labels
+
+Issues and Pull Request with `waiting-for-feedback` label without response will be closed automatically after 90 days.
+
+### Pull Request
+
+On Pull Request close default label `maintenance` and milestone according to branch will be added.
+
 ## Further Links
 
 - [GitHub Pull requests documentation](https://docs.github.com/en/pull-requests)

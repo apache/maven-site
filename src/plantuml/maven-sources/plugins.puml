@@ -17,7 +17,6 @@ specific language governing permissions and limitations
 under the License.
 '/
 @startuml
-!pragma layout smetana
 
 <style>
     rectangle {
@@ -60,7 +59,6 @@ package Plugins {
     rectangle javadoc
     rectangle jdeps
     rectangle jxr
-    rectangle linkcheck
     rectangle pmd
     rectangle "project-info-reports"
   }
@@ -76,7 +74,6 @@ package Plugins {
     rectangle invoker
     rectangle jarsigner
     rectangle jdeprscan
-    rectangle pdf
     rectangle plugin
     rectangle release
     rectangle "remote-resources"
@@ -118,8 +115,7 @@ checkstyle -[hidden]> doap
 doap -[hidden]> javadoc
 javadoc -[hidden]> jdeps
 jdeps -[hidden]> jxr
-jxr  -[hidden]> linkcheck
-linkcheck -[hidden]> pmd
+jxr  -[hidden]> pmd
 pmd -[hidden]> "project-info-reports"
 
 antrun -[hidden]> archetype
@@ -132,8 +128,7 @@ gpg -[hidden]> help
 antrun -[hidden]down->invoker
 invoker -[hidden]> jarsigner
 jarsigner -[hidden]> jdeprscan
-jdeprscan -[hidden]> pdf
-pdf -[hidden]> plugin
+jdeprscan -[hidden]> plugin
 plugin -[hidden]> release
 invoker -[hidden]down->"remote-resources"
 "remote-resources" -[hidden]> scm
@@ -171,7 +166,6 @@ url of doap is [[https://github.com/apache/maven-doap-plugin]]
 url of javadoc is [[https://github.com/apache/maven-javadoc-plugin]]
 url of jdeps is [[https://github.com/apache/maven-jdeps-plugin]]
 url of jxr is [[https://github.com/apache/maven-jxr]]
-url of linkcheck is [[https://github.com/apache/maven-linkcheck-plugin]]
 url of pmd is [[https://github.com/apache/maven-pmd-plugin]]
 url of "project-info-reports" is [[https://github.com/apache/maven-project-info-reports-plugin]]
 
@@ -185,7 +179,6 @@ url of help is [[https://github.com/apache/maven-help-plugin]]
 url of invoker is [[https://github.com/apache/maven-invoker-plugin]]
 url of jarsigner is [[https://github.com/apache/maven-jarsigner-plugin]]
 url of jdeprscan is [[https://github.com/apache/maven-jdeprscan-plugin]]
-url of pdf is [[https://github.com/apache/maven-pdf-plugin]]
 url of plugin is [[https://github.com/apache/maven-plugin-tools]]
 url of release is [[https://github.com/apache/maven-release]]
 url of "remote-resources" is [[https://github.com/apache/maven-remote-resources-plugin]]

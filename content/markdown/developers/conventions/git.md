@@ -1,0 +1,178 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+# Maven Git Convention
+
+This document describes how developers should use Git.
+
+## Git Configuration
+
+### For contributors who are not committers
+
+Apache git repositories are at `git://git.apache.org`. However, the ASF uses clones on [GitHub](https://www.github.com) to make it easier for people to contribute changes via pull requests.
+
+To contribute to a Maven component that is maintained in git, please follow these steps:
+
+1. Make a fork of the official ASF clone from GitHub. For example, `https://github.com/apache/maven-scm`.
+2. Make a branch named after your GitHub issue. This is not _required_, but it makes it easier for Maven committers to keep track of your contribution.
+3. Make your changes. As always, unit or integration tests make it much easier for us to accept your changes.
+4. Make a pull request to pull your changes to the official clone.
+
+### For committers
+
+Committers may, of course, commit directly to the ASF repositories. For complex changes, you may find it valuable to make a pull request at GitHub to make it easier to collaborate with others.
+
+#### Commit Message Template
+
+Commits should be focused on one issue at a time, because that makes it easier for others to review the commit.
+
+While not mandatory, we will appreciate signed commits.
+
+If the changes is linked to an issue, the commit message should use this template:
+
+```
+Issue #1 <<Title from GitHub issue>>
+
+o Comments
+```
+
+Where:
+
+- **Submitted by** only needs to be specified when a patch is being applied for a non-committer.
+- **Comments** some optional words about the solution.
+
+eg:
+
+```
+Issue #123456 Add the foo to the bar
+Submitted by: Baz Bazman
+
+o Applied without change
+```
+
+## Apply User Patch
+
+To keep the history of contributions clear, The committer should usually apply the patch without any **major** modifications, and then create his or her own commits for further modifications. However, committers should never commit code to a live branch which is not suitable to release. If a contribution requires significant work to make it useful, commit it to a branch, fix it up, and merge the branch.
+
+If the user created a pull request, the committer is responsible for closing that pull request. You do this by adding a note to a commit message:
+
+```
+Closes #NNN.
+```
+
+where NNN is the number of the pull request.
+
+## Edit Commit Message
+
+to edit last commit comment:
+
+```
+$ git commit --amend -m "new comment"
+```
+
+## Workflow
+
+Workflow for svn folks is something like :
+
+```
+$ git pull
+$ hack hack hack
+$ git push
+// fails, because someone else has already pushed to master
+$ git pull
+// this creates some merges
+$ git push
+```
+
+A more quiet workflow :
+
+```
+$ git pull
+$ hack hack hack
+$ git push
+// fails, because someone else has already pushed to master
+$ git fetch
+// this moves 'origin/master'
+$ git rebase origin/master
+// this reapplies your local changes on top of origin/master
+$ git push
+```
+
+## Other useful Git commands while developing
+
+If you've done a chunk of work, and you would like to ditch your changes and start from scratch use this command to revert to the original checkout:
+
+```
+$ git checkout .
+```
+
+TODO .gitignore
+
+### power-git checkout
+
+This checkout is typical for highly experienced git users, and may serve as inspiration for others; as usual the best way to learn is by doing. Sample shown for maven-surefire
+
+Go to https://github.com/apache/maven-surefire and fork surefire to your own GitHub account.
+
+Starting with nothing (no existing clone)
+
+```
+git clone https://github.com/<youraccount>/maven-surefire.git
+git remote add asfgithub https://github.com/apache/maven-surefire.git
+git config --add remote.asfgithub.fetch "+refs/pull/*/head:refs/remotes/asfgithub/pr/*"
+git fetch --all
+```
+
+(You may consider adding --global to the git config statement above to always fetch pull requests for any remote named "asfgithub")
+
+In this setup, running "git push" will normally push to your personal GitHub account. Furthermore, all pull requests from GitHub are also fetched to your local clone, use
+
+```
+gitk --all
+```
+
+to try to make some sense of it all. This is an important command to understand! (gitk may need to be installed additionally)
+
+gitk also has a quite excellent context menu that is far more context sensitive than most people realize at first impression. Right-clicking on a commit in a GitHub pull-request will allow you to cherry-pick straight in the gui.
+
+If you're working on the master branch, you can do stuff like this:
+
+```
+git push # your github account
+git push apache # the authoritative apache repo
+```
+
+Using your GitHub account as a storage for half-finished work is excellent if you switch between multiple computers, always push to GitHub before leaving your current computer and start by pulling at the next computer.
+
+To merge a pull request
+
+```
+git merge pr/10 # merge pull request number 10 from asf@github into master
+git push apache # upload to apache
+```
+
+Or if you're comfortable rebasing;
+
+```
+
+git checkout pr/10
+git rebase apache/master
+git push apache
+```
+

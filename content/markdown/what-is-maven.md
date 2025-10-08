@@ -31,13 +31,12 @@ share JARs across several projects.
 The result is a tool that can now be used for building and managing any
 Java-based project. We hope that we have created something that will
 make the day-to-day work of Java developers easier and generally help
-with the comprehension of any Java-based project.
+them understand any Java-based project.
 
 ## Maven's Objectives
 
-Maven's primary goal is to allow a developer to comprehend the complete
-state of a development effort in the shortest period of time. In order
-to attain this goal, Maven deals with several areas of concern:
+Maven's primary goal is to allow a developer to organize and a build a Java project
+in the shortest period of time. It does this by:
 
 - Making the build process easy
 - Providing a uniform build system
@@ -66,11 +65,10 @@ For example, Maven can provide:
 - Cross referenced sources
 - Mailing lists managed by the project
 - Dependencies used by the project
-- Unit test reports including coverage
+- Unit test reports
 
 Third party code analysis products also provide Maven plugins that add their
-reports to the standard information given by
-Maven.
+reports to the standard information given by Maven.
 
 ### Providing guidelines for best practices development
 
@@ -100,6 +98,32 @@ it cannot cater to every situation without compromising its objectives.
 If your project has an unusual build structure that
 cannot be reorganized, you may have to forgo some features or the use of
 Maven altogether.
+
+## Feature summary
+
+The following are the key features of Maven in a nutshell:
+
+* Simple project setup that follows best practices - get a new project or module started in seconds-
+* Consistent usage across all projects - means no ramp up time for new developers coming onto a project-
+* Superior dependency management including automatic updating, dependency closures (also known as transitive dependencies)-
+* Able to easily work with multiple projects at the same time-
+* A [large and growing repository of libraries and metadata](/repository/) to use out of the box, and arrangements in place with the largest Open Source projects for real-time availability of their latest releases-
+* Extensible, with the ability to easily [write plugins](/plugin-developers/) in Java or scripting languages-
+* Instant access to new features with little or no extra configuration.
+* Ant tasks for dependency management and deployment outside of Maven-
+* Model based builds:
+  Maven is able to build any number of projects into predefined output types such as a JAR, WAR, or distribution based on metadata about the project, without the need to do any scripting in most cases.
+* Coherent site of project information:
+  Using the same metadata as for the build process, Maven is able to generate a website or PDF including any documentation you care to add, and adds to that standard reports about the state of development of the project.
+  Examples of this information can be seen at the bottom of the left-hand navigation of this site under the "*Project Information*" and "*Project Reports*" submenus.
+* Release management and distribution publication:
+  Without much additional configuration, Maven will integrate with your source control system (such as Subversion or Git) and manage the release of a project based on a certain tag.
+  It can also publish this to a distribution location for use by other projects.
+  Maven is able to publish individual outputs such as a JAR, an archive including other dependencies and documentation, or as a source distribution.
+* Dependency management:
+  Maven encourages the use of a central repository of JARs and other dependencies.
+  Maven comes with a mechanism that your project's clients can use to download any JARs required for building your project from a central JAR repository much like Perl's CPAN.
+  This allows users of Maven to reuse JARs across projects and encourages communication between projects to ensure that backward compatibility issues are dealt with.
 
 ## What is Maven Not?
 
