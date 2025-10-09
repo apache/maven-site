@@ -386,10 +386,42 @@ before:integration-test[100]
 before:integration-test[200]
 ```
 
-**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
-inconsistent naming, are deprecated.
+**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had inconsistent naming, are deprecated.
+They only act as aliases now and might be removed in the future.
 Don't use them!
 This is especially important when binding a plugin to a `post-*` phase of a lifecycle phase because the corresponding `pre-*` phase of the desired phase doesn't exist — for example, binding to the `process-resources` phase due to the absence of a `pre-compile` phase.
+
+#### Behavioral change: phase execution scope
+
+Maven 4 introduces a behavioral change in how phases are executed.
+For a given major phase, Maven 4 will always execute both (`before:` and `after:`) minor phases of it.
+This differs from Maven 3 where the `post-*` (now `after:`) phase is only executed if either the next major phase of the lifecycle is executed or the `post-*` phase is explicitly called.
+
+The following example shows that this change might affect existing builds.
+
+Given the following plugin configuration, where a plugin is bound to the `post-clean` phase.
+
+```xml
+<plugin>
+  <groupId>org.example</groupId>
+  <artifactId>some-plugin</artifactId>
+  <executions>
+    <execution>
+      <!-- In Maven 3: Does NOT run when executing 'mvn clean', only with `mvn post-clean` -->
+      <!-- In Maven 4: DOES run when executing 'mvn clean' -->
+      <phase>post-clean</phase>
+      <goals>
+        <goal>cleanup</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+Running `mvn clean` using Maven 3 would NOT execute the plugin, because the build execution stops at the main phase, not executing it `post-` phase.
+To execute the plugin in Maven 3, the user has to explicitly run `mvn post-clean` as a build goal.
+In Maven 4 running `mvn clean` will also execute the plugin, as both `before:` and `after:` phases are always executed and the `post-` phase is now an alias for `after:`.
+
 
 #### All- and each-phases
 
