@@ -60,7 +60,7 @@ under the License.
       </item>
       <item name="Index (category)" href="/guides/index.html"/>
 
-      <item name="User Centre" href="/users/index.html" collapse="true">
+      <item name="User Manual" href="/users/index.html" collapse="true">
         <item name="Maven Build Fundamentals" collapse="false">
           <item name="Maven in 5 Minutes" href="/guides/getting-started/maven-in-five-minutes.html"/>
           <item name="Getting Help" href="/users/getting-help.html"/>
@@ -150,7 +150,21 @@ under the License.
 
 
       </item>
-      <item name="Plugin Developer Centre" href="/plugin-developers/index.html" collapse="true">
+      <item name="Maven Repositories" href="/repositories/index.html" collapse="true">
+        <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
+          <item name="Maintaining your Metadata" href="/project-faq.html"/>
+          <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html"/>
+          <item name="Fixing Metadata" href="/repository/central-metadata.html"/>
+          <item name="Central Index" href="/repository/central-index.html"/>
+          <item name="Repository Layout" href="/repository/layout.html"/>
+        </item>
+        <item name="Maven Artifacts" href="/repositories/artifacts.html"/>
+        <item name="Maven Metadata" href="/repositories/metadata.html"/>
+        <item name="Maven Layout" href="/repositories/layout.html"/>
+        <item name="Maven Local Repository" href="/repositories/local.html"/>
+        <item name="Maven Remote Repositories" href="/repositories/remote.html"/>
+      </item>
+      <item name="Plugin Development" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>
         <item name="Your First Mojo" href="/guides/plugin/guide-java-plugin-development.html"/>
         <item name="Your First Report Mojo" href="/guides/plugin/guide-java-report-plugin-development.html"/>
@@ -167,21 +181,7 @@ under the License.
           <item name="Using Maven Dependency Injection" href="/maven-di.html"/>
         </item>
       </item>
-      <item name="Maven Repository Centre" href="/repositories/index.html" collapse="true">
-        <item name="Maven Central Repository" href="/repository/index.html" collapse="true">
-          <item name="Maintaining your Metadata" href="/project-faq.html"/>
-          <item name="Guide to Uploading Artifacts" href="/repository/guide-central-repository-upload.html"/>
-          <item name="Fixing Metadata" href="/repository/central-metadata.html"/>
-          <item name="Central Index" href="/repository/central-index.html"/>
-          <item name="Repository Layout" href="/repository/layout.html"/>
-        </item>
-        <item name="Maven Artifacts" href="/repositories/artifacts.html"/>
-        <item name="Maven Metadata" href="/repositories/metadata.html"/>
-        <item name="Maven Layout" href="/repositories/layout.html"/>
-        <item name="Maven Local Repository" href="/repositories/local.html"/>
-        <item name="Maven Remote Repositories" href="/repositories/remote.html"/>
-      </item>
-      <item name="Maven Developer Centre" href="/developers/index.html" collapse="true">
+      <item name="Contribute to Maven" href="/developers/index.html" collapse="true">
         <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html"/>
         <item name="Code Style and Conventions" href="/developers/conventions/code.html"/>
         <item name="Git Convention" href="/developers/conventions/git.html"/>
