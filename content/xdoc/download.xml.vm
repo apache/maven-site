@@ -28,47 +28,17 @@ under the License.
     <author>Manfred Moser</author>
   </properties>
   <body>
-    <section name="Downloading Apache Maven ${currentStableVersion}">
+    <section name="Apache Maven ${currentStableVersion}">
 
       <p>Apache Maven ${currentStableVersion} is the latest release: it is the recommended version for all users.</p>
+      <p>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
+      <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</p>
 
-      <a name="Requirements"/>
-      <subsection name="System Requirements" id="SystemRequirements">
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
-              <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-            <tr>
-              <td><b>Memory</b></td>
-              <td>No minimum requirement</td>
-            </tr>
-            <tr>
-              <td><b>Disk</b></td>
-              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, disk space will
-              be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
-              least 500MB.</td>
-            </tr>
-            <tr>
-              <td><b>Operating System</b></td>
-              <td>No minimum requirement. Start up scripts are included as shell scripts (tested on many Unix flavors) and Windows batch files.</td>
-            </tr>
-          </table>
-        </p>
-      </subsection>
-
-      <subsection name="Files">
       <p>Maven is distributed in several formats for your convenience. Simply pick a 
       ready-made binary distribution archive and follow the <a href="./install.html">
       installation instructions.</a>
       Use a source archive if you intend to build Maven yourself.</p>
-      <p>
-      In order to guard against corrupted downloads/installations, it is highly recommended to
-      <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-      of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-      developers.</p>
+      
       <table>
         <thead>
           <tr>
@@ -106,6 +76,13 @@ under the License.
           </tr>
         </tbody>
       </table>
+
+      <p>
+      In order to guard against corrupted downloads/installations, it is highly recommended to
+      <a href="https://www.apache.org/info/verification.html">verify the signature</a>
+      of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
+      developers.</p>
+
       <ul>
         <li>${currentStableVersion} <a href="./docs/${currentStableVersion}/release-notes.html">Release Notes</a> and
             <a href="./ref/${currentStableVersion}/">Release Reference Documentation</a></li>
@@ -115,9 +92,138 @@ under the License.
         <li><a href="[preferred]maven/">All current release sources (plugins, shared libraries,...) available at https://downloads.apache.org/maven/</a></li>
         </ul></li>
       </ul>
+
+      <subsection name="Preview 4.x Release">
+        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
+
+        <p>
+          <table>
+            <tr>
+              <td><b>Java Development Kit (JDK)</b></td>
+              <td>Maven 4.0+ requires JDK 17 or above to execute. It still allows you to build against 8 and other JDK versions
+                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
+            </tr>
+          </table>
+        </p>
+
+        <p>Maven is distributed in several formats for your convenience. Simply pick a
+              ready-made binary distribution archive and follow the <a href="./install.html">
+              installation instructions.</a>
+              Use a source archive if you intend to build Maven yourself.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Binary (Checksum, Signature)</th>
+              <th>Source (Checksum, Signature)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>tar.gz archives</td>
+              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz">apache-maven-${current4xVersion}-bin.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
+            </tr>
+            <tr>
+              <td>zip archives</td>
+              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip">apache-maven-${current4xVersion}-bin.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+            In order to guard against corrupted downloads/installations, it is highly recommended to
+              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
+              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
+              developers.</p>
+
+        <ul>
+          <li>${current4xVersion} <a href="./docs/${current4xVersion}/release-notes.html">Release Notes</a> and
+              <a href="./ref/${current4xVersion}/">Release Reference Documentation</a></li>
+          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+          <li><a href="https://archive.apache.org/dist/maven/maven-4/">Maven 4 archives</a> for older 4.x releases.</li>
+        </ul>
       </subsection>
 
-      <subsection name="Maven Daemon">
+      <subsection name="Previous Stable 3.8.x Release">
+        <p>If you still want to use an old version, you can find more information in the
+      <a href="./docs/history.html">Maven Releases History</a> and can download files from 
+      the  <a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for versions 3.0.4+
+      and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
+
+        <p>Apache Maven ${current38xVersion} is the previous stable minor release for all users.</p>
+        <p>
+          <table>
+            <tr>
+              <td><b>Java Development Kit (JDK)</b></td>
+              <td>Maven 3.8+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
+                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
+            </tr>
+          </table>
+        </p>
+        <p>Maven is distributed in several formats for your convenience. Simply pick a
+              ready-made binary distribution archive and follow the <a href="./install.html">
+              installation instructions.</a>
+              Use a source archive if you intend to build Maven yourself.</p>
+        
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Binary (Checksum, Signature)</th>
+              <th>Source (Checksum, Signature)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>tar.gz archives</td>
+              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz">apache-maven-${current38xVersion}-bin.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.sha512">sha512</a>, 
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.asc">asc</a>)</td>
+            </tr>
+            <tr>
+              <td>zip archives</td>
+              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip">apache-maven-${current38xVersion}-bin.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a>
+                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.sha512">sha512</a>,
+                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.asc">asc</a>)</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <p>
+            In order to guard against corrupted downloads/installations, it is highly recommended to
+              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
+              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
+              developers.</p>
+              
+        <ul>
+          <li>${current38xVersion} <a href="./docs/${current38xVersion}/release-notes.html">Release Notes</a> and
+              <a href="./ref/${current38xVersion}/">Release Reference Documentation</a></li>
+          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+        </ul>
+      </subsection>
+
+      
+
+    </section>
+
+    <section name="Maven Daemon">
         <p>Apache Maven Daemon (mvnd) is available as a separate download. In order to guard against corrupted downloads/installations, it is highly recommended to
           <a href="https://www.apache.org/info/verification.html">verify the signature</a>
           of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven developers.</p>
@@ -203,134 +309,8 @@ under the License.
           <li>${currentMvnd1xVersion} <a href="https://github.com/apache/maven-mvnd/releases/tag/${currentMvnd1xVersion}">Release Notes</a></li>
           <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
         </ul>
-      </subsection>
 
-    </section>
-
-    <section name="Other Releases">
-      <p>It is strongly recommended to use the latest release version of Apache Maven to take advantage of newest features and bug fixes.</p>
-      
-      <p>If you still want to use an old version, you can find more information in the
-      <a href="./docs/history.html">Maven Releases History</a> and can download files from 
-      the  <a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for versions 3.0.4+
-      and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
-
-      <subsection name="Previous Stable 3.8.x Release">
-        <p>Apache Maven ${current38xVersion} is the previous stable minor release for all users.</p>
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.8+ requires JDK 1.7 or above to execute. It still allows you to build against 1.3 and other JDK versions
-                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-          </table>
-        </p>
-        <p>Maven is distributed in several formats for your convenience. Simply pick a
-              ready-made binary distribution archive and follow the <a href="./install.html">
-              installation instructions.</a>
-              Use a source archive if you intend to build Maven yourself.</p>
-        <p>
-            In order to guard against corrupted downloads/installations, it is highly recommended to
-              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-              developers.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Binary (Checksum, Signature)</th>
-              <th>Source (Checksum, Signature)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tar.gz archives</td>
-              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz">apache-maven-${current38xVersion}-bin.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz">apache-maven-${current38xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.tar.gz.asc">asc</a>)</td>
-            </tr>
-            <tr>
-              <td>zip archives</td>
-              <td>Binary <a href="[preferred]maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip">apache-maven-${current38xVersion}-bin.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/binaries/apache-maven-${current38xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip">apache-maven-${current38xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-3/${current38xVersion}/source/apache-maven-${current38xVersion}-src.zip.asc">asc</a>)</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>${current38xVersion} <a href="./docs/${current38xVersion}/release-notes.html">Release Notes</a> and
-              <a href="./ref/${current38xVersion}/">Release Reference Documentation</a></li>
-          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
-        </ul>
-      </subsection>
-
-      <subsection name="Preview 4.x Release">
-        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
-
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 4.0+ requires JDK 17 or above to execute. It still allows you to build against 8 and other JDK versions
-                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-          </table>
-        </p>
-
-        <p>Maven is distributed in several formats for your convenience. Simply pick a
-              ready-made binary distribution archive and follow the <a href="./install.html">
-              installation instructions.</a>
-              Use a source archive if you intend to build Maven yourself.</p>
-        <p>
-            In order to guard against corrupted downloads/installations, it is highly recommended to
-              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-              developers.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Binary (Checksum, Signature)</th>
-              <th>Source (Checksum, Signature)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tar.gz archives</td>
-              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz">apache-maven-${current4xVersion}-bin.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
-            </tr>
-            <tr>
-              <td>zip archives</td>
-              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip">apache-maven-${current4xVersion}-bin.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>${current4xVersion} <a href="./docs/${current4xVersion}/release-notes.html">Release Notes</a> and
-              <a href="./ref/${current4xVersion}/">Release Reference Documentation</a></li>
-          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
-          <li><a href="https://archive.apache.org/dist/maven/maven-4/">Maven 4 archives</a> for older 4.x releases.</li>
-        </ul>
-      </subsection>
-
-      <subsection name="Preview Daemon 2.x Release">
+        <subsection name="Preview Daemon 2.x Release">
         <p>Maven Daemon 2.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
 
         <table>
