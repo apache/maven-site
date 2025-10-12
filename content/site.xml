@@ -48,6 +48,7 @@ under the License.
       <item name="Use" href="/run.html"/>
       <item name="Configure" href="/configure.html"/>
       <item name="Release Notes" href="/docs/history.html"/>
+      <item name="Security Reports" href="/security.html"/>
     </menu>
 
     <menu name="Documentation">
@@ -213,7 +214,6 @@ under the License.
         </item>
       </item>
       <item name="Books and Resources" href="/articles.html"/>
-      <item name="Security" href="/security.html"/>
     </menu>
 
     <menu name="Community">
