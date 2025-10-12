@@ -29,7 +29,7 @@ under the License.
 
   <body>
     <links>
-      <item name="Downloads" href="/download.cgi"/>
+      <item name="Download" href="/download.cgi"/>
       <item name="Get Sources" href="/scm.html"/>
     </links>
     <breadcrumbs>
