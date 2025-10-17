@@ -208,8 +208,9 @@ Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSou
 ```
 
 Maven 4 introduces the new `<sources>` element for this.
-This makes source directory declarations more flexible for future improvements.
-When migrate to Maven 4, you should use the new element.
+The `<source>` element can be repeated, thus allowing multiple source directories without the need to resort to external plugins.
+It also provides a unified way to declare include/exclude filters, makes easier to set up projects targeting multi Java releases, and enables module source hierarchy.
+The documentation of the Maven Compiler Plugin gives some examples.
 
 ```xml
 <project>
