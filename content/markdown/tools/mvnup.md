@@ -39,6 +39,7 @@ The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`)
 - Automatic POM discovery and multi-module project support
 - Supports model version 4.0.0 (compatible to be built with Maven 3) and 4.1.0 (Maven 4 only)
 - Intelligent inference to remove redundant information in Maven 4.1.0+ models
+- Upgrade deprecated phase names to new Maven 4 phase names
 
 ### Plugin Compatibility & Upgrades
 
