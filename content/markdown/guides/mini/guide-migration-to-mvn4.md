@@ -335,6 +335,40 @@ Maven 4 introduces several new [lifecycle phases](/ref/4-LATEST/maven-impl-modul
 They give users finer control over plugin execution, particularly in multi-project and concurrent builds.
 If you want to execute a plugin before/after all or each of your (sub-)projects, consider to use them.
 
+### New way to declare source directories
+
+Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source ode, as shown below:
+
+```xml
+<project>
+  <build>
+    <sourceDirectory>my-custom-dir/foo</sourceDirectory>
+    <testSourceDirectory>my-custom-dir/bar</testSourceDirectory>
+  </build>
+</project>
+```
+
+Maven 4 introduces the new `<sources>` element for this.
+This makes source directory declarations more flexible for future improvements.
+When migrate to Maven 4, you should use the new element.
+
+```xml
+<project>
+  <build>
+    <sources>
+      <source>
+        <scope>main</scope>
+        <directory>my-custom-dir/foo</directory>
+      </source>
+      <source>
+        <scope>test</scope>
+        <directory>my-custom-dir/bar</directory>
+      </source>
+    </sources>
+  </build>
+</project>
+```
+
 [versionpluginupdate]: https://www.mojohaus.org/versions/versions-maven-plugin/examples/display-plugin-updates.html
 [modelbuilderinterpolation]: https://maven.apache.org/ref/4-LATEST/maven-compat-modules/maven-model-builder/#model-interpolation
 [cifriendlyguide]: https://maven.apache.org/guides/mini/guide-maven-ci-friendly.html
