@@ -544,18 +544,18 @@ process running for as long as the shell remains open.
 
 ### Maven Upgrade Tool
 
-If you're currently using Maven 3 and want to upgrade to Maven 4, you can use the `mvnup` upgrade tool.
+If you're currently using Maven 3 and want to upgrade to Maven 4, you can use the [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html).
 This tool helps automate the migration process by analyzing your project and making necessary adjustments to ensure
 compatibility with Maven 4.
 
-The `mvnup` tool can be used to:
+The Maven Upgrade Tool tool can be used to:
 
 * Automatically update your POM files to use the new model version 4.1.0 (if desired)
 * Identify deprecated features and suggest replacements
 * Help migrate from deprecated plugin configurations to their modern equivalents
 * Validate that your project is ready for Maven 4
 
-For more information on using `mvnup` and the upgrade process, refer to the Maven upgrade guide.
+Refer to [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html) for more information on usage and the upgrade process in general.
 
 ## Issue overview
 
