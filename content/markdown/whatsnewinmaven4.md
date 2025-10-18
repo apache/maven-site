@@ -204,6 +204,41 @@ properties.
 Starting with Maven 4 those properties were removed or marked as deprecated.
 See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] for more information.
 
+### New way to declare source directories
+
+Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source code, as shown below:
+
+```xml
+<project>
+  <build>
+    <sourceDirectory>my-custom-dir/foo</sourceDirectory>
+    <testSourceDirectory>my-custom-dir/bar</testSourceDirectory>
+  </build>
+</project>
+```
+
+Maven 4 introduces the new `<sources>` element for this.
+The `<source>` element can be repeated, thus allowing multiple source directories without the need to resort to external plugins.
+It also provides a unified way to declare include/exclude filters, makes easier to set up projects targeting multi Java releases, and enables module source hierarchy.
+The documentation of the Maven Compiler Plugin gives some examples.
+
+```xml
+<project>
+  <build>
+    <sources>
+      <source>
+        <scope>main</scope>
+        <directory>my-custom-dir/foo</directory>
+      </source>
+      <source>
+        <scope>test</scope>
+        <directory>my-custom-dir/bar</directory>
+      </source>
+    </sources>
+  </build>
+</project>
+```
+
 ### Alternate POM syntaxes
 
 While the syntax for the 4.0.0 consumer POM is set in stone, the build POM should be able to evolve.
