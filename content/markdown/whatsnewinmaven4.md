@@ -117,7 +117,7 @@ Model version 4.1.0 contains a new `<subprojects>` element analogous to the now 
 **Note**: Use the terms `multi-project setup` and `single-project setup` to differentiate between a Maven project with
 or without subprojects.
 
-### New artefact types
+### New artifact types
 
 Maven 4 introduces new types of artifacts.
 The types listed below can be used in `<dependency>` declarations of JAR files.
