@@ -337,7 +337,7 @@ If you want to execute a plugin before/after all or each of your (sub-)projects,
 
 ### New way to declare source directories
 
-Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source ode, as shown below:
+Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source code, as shown below:
 
 ```xml
 <project>

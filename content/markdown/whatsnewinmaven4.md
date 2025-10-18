@@ -196,7 +196,7 @@ See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] fo
 
 ### New way to declare source directories
 
-Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source ode, as shown below:
+Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source code, as shown below:
 
 ```xml
 <project>
