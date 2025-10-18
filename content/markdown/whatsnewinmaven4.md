@@ -125,8 +125,8 @@ The `jar` type existed in Maven 3 and is still the default in Maven 4.
 The other types are new:
 
 * `jar`: for a JAR file that can be placed either on the class path or on the module path.
-* `classpath-jar`: for a JAR file to unconditionally place on the class path.
-* `modular-jar`: for a JAR file to unconditionally place on the module path.
+* `classpath-jar`: for a JAR file that is unconditionally placed on the class path.
+* `modular-jar`: for a JAR file that is unconditionally placed on the module path.
 * `processor`: for a JAR file that can be placed either on the annotation processor class path or module path.
 * `classpath-processor`: for a JAR file to unconditionally place on the annotation processor class path.
 * `modular-processor`: for a JAR file to unconditionally place on the annotation processor module path.
