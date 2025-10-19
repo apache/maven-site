@@ -132,7 +132,7 @@ The other types are new:
 * `modular-processor`: for a JAR file to unconditionally place on the annotation processor module path.
 
 The `jar` and `processor` types use heuristic rules for deciding where to place the JAR file, but the result is not always what the developer wants.
-The types with `classpath-`  or `modular-` prefix give control to the developer.
+The types with `classpath-` or `modular-` prefix give control to the developer.
 
 **Limitation:** As of October 2025, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
 Other plugins will be updated progressively.
