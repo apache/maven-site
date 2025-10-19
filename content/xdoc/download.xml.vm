@@ -28,7 +28,7 @@ under the License.
     <author>Manfred Moser</author>
   </properties>
   <body>
-    <section name="Apache Maven ${currentStableVersion}">
+    <section name="Downloading Apache Maven ${currentStableVersion}">
 
       <p>Apache Maven ${currentStableVersion} is the latest release: it is the recommended version for all users.</p>
       <p>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
