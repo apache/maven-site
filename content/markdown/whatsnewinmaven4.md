@@ -117,6 +117,26 @@ Model version 4.1.0 contains a new `<subprojects>` element analogous to the now 
 **Note**: Use the terms `multi-project setup` and `single-project setup` to differentiate between a Maven project with
 or without subprojects.
 
+### New artifact types
+
+Maven 4 introduces new types of artifacts.
+The types listed below can be used in `<dependency>` declarations of JAR files.
+The `jar` type existed in Maven 3 and is still the default in Maven 4.
+The other types are new:
+
+* `jar`: for a JAR file that can be placed either on the class path or on the module path.
+* `classpath-jar`: for a JAR file that is unconditionally placed on the class path.
+* `modular-jar`: for a JAR file that is unconditionally placed on the module path.
+* `processor`: for a JAR file that can be placed either on the annotation processor class path or module path.
+* `classpath-processor`: for a JAR file to unconditionally place on the annotation processor class path.
+* `modular-processor`: for a JAR file to unconditionally place on the annotation processor module path.
+
+The `jar` and `processor` types use heuristic rules for deciding where to place the JAR file, but the result is not always what the developer wants.
+The types with `classpath-` or `modular-` prefix give control to the developer.
+
+**Limitation:** As of October 2025, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
+Other plugins will be updated progressively.
+
 ### New packaging type: bom
 
 Maven 4 introduces a dedicated `bom` packaging type to provide a [Bill of Materials BOM][4].
