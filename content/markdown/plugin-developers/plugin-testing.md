@@ -92,18 +92,18 @@ With that said, if you need to inject Maven objects into your mojo, you'll proba
 
 ## maven-plugin-testing-harness
 
-The [maven-plugin-testing-harness](/plugin-testing/maven-plugin-testing-harness/) is explicitly intended to test the `org.apache.maven.reporting.AbstractMavenReport#execute()` implementation.
+The [maven-plugin-testing-harness](/plugin-testing/maven-plugin-testing-harness/) is explicitly intended to test the Maven plugin `Mojo` implementation.
 
-In general, you need to include `maven-plugin-testing-harness` as a test-scoped dependency, and create a MojoTest (by convention) class which `extends AbstractMojoTestCase`.
+In general, you need to include `maven-plugin-testing-harness` as a test-scoped dependency, and create a `MojoTest`.
 
-```unknown
+```xml
 ...
   <dependencies>
     ...
     <dependency>
       <groupId>org.apache.maven.plugin-testing</groupId>
       <artifactId>maven-plugin-testing-harness</artifactId>
-      <version>3.3.0</version>
+      <version>3.4.0</version>
       <scope>test</scope>
     </dependency>
     ...
@@ -111,35 +111,38 @@ In general, you need to include `maven-plugin-testing-harness` as a test-scoped 
 ...
 ```
 
-```unknown
-public class YourMojoTest
-    extends AbstractMojoTestCase
-{
-    /**
-     * @see junit.framework.TestCase#setUp()
-     */
-    protected void setUp() throws Exception
-    {
-        // required for mojo lookups to work
-        super.setUp();
+```java
+
+@MojoTest
+class YourMojoTest {
+    
+    @Inject
+    private MavenProject mavenProject; 
+    
+    @Provides
+    private MavenProject project() {
+        // Return a MavenProject instance for testing
+        return mock(MavenProject.class);
     }
+    
+    @Test
+    @InjectMojo(goal = "yourGoal", pom="src/test/resources/unit/basic-test/basic-test-plugin-config.xml")
+    @MojoParameter(name = "parameter1", value = "value1")
+    void testMojoGoal(YourMojo mojo) throws Exception {
+        
+        // adjust mock behavior as needed
+        when(mavenProject.getVersion()).thenReturn("1.0.0");
+        
+        // execute the Mojo
+        mojo.execute();
 
-    /**
-     * @throws Exception
-     */
-    public void testMojoGoal() throws Exception
-    {
-        File testPom = new File( getBasedir(),
-          "src/test/resources/unit/basic-test/basic-test-plugin-config.xml" );
-
-        YourMojo mojo = (YourMojo) lookupMojo( "yourGoal", testPom );
-
-        assertNotNull( mojo );
+        // Verify behavior or state as needed
+        verify(mavenProject).getVersion();
+        verifyNoMoreInteractions(mavenProject);
     }
 }
 ```
 
-For more information, refer to [Maven Plugin Harness Wiki](https://cwiki.apache.org/confluence/display/MAVENOLD/Maven+Plugin+Harness)
 
 # Integration/Functional testing
 
@@ -157,7 +160,7 @@ You can use [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoke
 
 You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/) to see how integration tests are written.
 
-```unknown
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   ...
@@ -166,7 +169,7 @@ You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/a
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-invoker-plugin</artifactId>
-        <version>1.10</version>
+        <version>3.9.1</version>
         <configuration>
           <projectsDirectory>src/it</projectsDirectory>
           <pomIncludes>
