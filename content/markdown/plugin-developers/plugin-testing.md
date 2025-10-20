@@ -35,9 +35,52 @@ The general wisdom is that your code should be mostly tested with unit tests, bu
 
 ## Using JUnit alone
 
-In principle, you can write a unit test of a plugin Mojo the same way you'd write any other JUnit test case, by writing a class that `extends TestCase`.
+In principle, you can write a unit test of a plugin Mojo the same way you'd write any other JUnit test case.
 
-However, many mojo methods need more information to work properly. For example, you'll probably need to inject a reference to a `MavenProject`, so your mojo can query project variables.
+When using injections in your Mojo, you can simply use a mocking framework such as Mockito to create mock instances of the injected dependencies, 
+and pass them to the Mojo constructor (if using constructor injection) or set them on the Mojo instance (if using field injection).
+
+Simple example using Mockito with constructor injection:
+
+```java
+@Mojo(name = "sayhi")
+public class GreetingMojo extends AbstractMojo {
+    
+    private final MavenProject project;
+    
+    @Inject
+    public GreetingMojo(MavenProject project) {
+        this.project = project;
+    }
+    
+    @Override
+    public void execute() throws MojoExecutionException {
+        getLog().info("Hello, world.");
+    }
+}
+```
+
+and the corresponding unit test:
+
+```java
+@ExtendWith(MockitoExtension.class)
+class GreetingMojoTest {
+    @Mock
+    private MavenProject mavenProject;
+    
+    @InjectMocks
+    private GreetingMojo mojo;
+    
+    @Test
+    void testExecute() throws MojoExecutionException {
+        // Execute the Mojo
+        mojo.execute();
+        
+        // Verify behavior or state as needed
+        // (e.g., check interactions with mock, etc.)
+    }
+}
+```
 
 ## Using PlexusTestCase
 
