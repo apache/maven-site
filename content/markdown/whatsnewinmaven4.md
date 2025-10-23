@@ -576,7 +576,7 @@ Security is important, and storing unencrypted passwords is bad practice.
 Maven 3's password encryption had several serious issues and could more accurately be called "password obfuscation".
 Maven 4 instead has a completely redone encryption system, based on Maven Encryption (`mvnenc`) - a standalone CLI tool.
 As of now, it provides functionally equivalent operations as Maven 3 (see ["Maven: Password Encryption"][30]) but adds
-improvements like a `decrypt` functionality.
+improvements like a `decrypt` functionality and supports external vaults. The documentation of the new encryption can be found in ["Password Encryption (Maven 4)"][33].
 A broad overview of the problems in Maven 3 and the solution in Maven 4 can be found in the
 article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cservenák.
 
@@ -648,4 +648,5 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
 [32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+[33]: https://maven.apache.org/guides/mini/guide-encryption-4.html
 
