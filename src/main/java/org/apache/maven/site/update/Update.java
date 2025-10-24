@@ -36,6 +36,17 @@ import org.jsoup.nodes.Element;
  * https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool-check-errors.html
  */
 public class Update {
+    public static void main(String[] args) {
+    Update updater = new Update(); // reuse instance
+    for (String dir : args) {
+        Path indexPath = Paths.get("content/apt/" + dir + "/index.apt");
+        try {
+            updater.doUpdate(indexPath);
+            System.out.print("\r\33[2K"); // clear line
+        } catch (IOException e) {
+            System.err.println("Failed to update: " + indexPath);
+            e.printStackTrace();
+
     private boolean retired = false;
 
     public static void main(String[] args) throws IOException {
@@ -44,6 +55,7 @@ public class Update {
             System.out.println("\r\33[2K");
         }
     }
+}
 
     private void doUpdate(Path index) throws IOException {
         System.out.println("updating " + index);
