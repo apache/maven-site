@@ -1,4 +1,4 @@
-# Maven Security
+# Security Reports
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
