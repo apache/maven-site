@@ -291,11 +291,12 @@
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <configuration>
-          <excludes>
+          <inputExcludes combine.children="append">
             <exclude>**/*.svg</exclude>
             <exclude>**/*.ai</exclude>
             <exclude>**/*.links</exclude>
             <exclude>**/.htaccess</exclude>
+            <eexclude>**/*.pdf</eexclude>
             <exclude>content/apt/guides/plugin/notes.txt</exclude>
             <exclude>content/apt/guides/suggestions/non-standard-directories.txt</exclude>
             <exclude>content/filtered-resources/.htaccess</exclude>
@@ -304,8 +305,17 @@
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
             <exclude>content/resources/badges/*.json</exclude>
-          </excludes>
+          </inputExcludes>
         </configuration>
+        <executions>
+          <execution>
+            <id>rat-check</id>
+            <!-- overwrite phase from parent POM -->
+            <!-- should be executed after spotless ... but I can't a way to configure such -->
+            <!-- post-site is not executed by Maven 3 -->
+            <phase>pre-site</phase>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
