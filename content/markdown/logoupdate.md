@@ -24,14 +24,14 @@ In September 2025 the ASF [announced a new logo for the foundation](https://news
 As a result, the Maven project needs to update its logo. 
 This page lists all affected logos, which need recreated by a professional.
 
- Number | Format |                              Icon                               |                       File                       |
-|:-------|:------:|:---------------------------------------------------------------:|:------------------------------------------------:|
-| 1      |  PNG   | ![apache-maven-project.png](./images/apache-maven-project.png) |`https://github.com/apache/maven-site/blob/master/content/resources/images/apache-maven-project.png`|
-| 2.1    |  PNG   | ![maven-logo-black-on-white.png](./images/maven-logo-black-on-white.png) |`https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-black-on-white.png`|
-| 2.2    |  SVG   | ![maven-logo-black-on-white.purevec.svg](./images/maven-logo-black-on-white.purevec.svg) |`https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-black-on-white.purevec.svg`|
-| 3.1    |  PNG   | ![maven-logo-white-on-black.png](./images/maven-logo-white-on-black.png) |`https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-white-on-black.png`|
-| 3.2    |  SVG   | ![maven-logo-white-on-black.purevec.svg](./images/maven-logo-white-on-black.purevec.svg) |`https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-white-on-black.purevec.svg`|
-| 4      |  PNG   | ![apache-maven-project.png](https://github.com/apache/maven-fluido-skin/blob/master/src/main/resources/images/logos/maven-feather.png) |`https://github.com/apache/maven-fluido-skin/blob/master/src/main/resources/images/logos/maven-feather.png`|
+ Number | Format |                              Icon                               |                                                    Source File                                                    |
+|:-------|:------:|:---------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------:|
+| 1      |  PNG   | ![apache-maven-project.png](./images/apache-maven-project.png) |       `https://github.com/apache/maven-site/blob/master/content/resources/images/apache-maven-project.png`        |
+| 2.1    |  PNG   | ![maven-logo-black-on-white.png](./images/maven-logo-black-on-white.png) |     `https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-black-on-white.png`     |
+| 2.2    |  SVG   | ![maven-logo-black-on-white.purevec.svg](./images/maven-logo-black-on-white.purevec.svg) | `https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-black-on-white.purevec.svg` |
+| 3.1    |  PNG   | ![maven-logo-white-on-black.png](./images/maven-logo-white-on-black.png) |     `https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-white-on-black.png`     |
+| 3.2    |  SVG   | ![maven-logo-white-on-black.purevec.svg](./images/maven-logo-white-on-black.purevec.svg) | `https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-white-on-black.purevec.svg` |
+| 4      |  PNG   | ![maven-feather.png](https://maven.apache.org/images/logos/maven-feather.png) |    `https://github.com/apache/maven-fluido-skin/blob/master/src/main/resources/images/logos/maven-feather.png`    |
 
 *Note*: For 1.1 and 4.1 no SVG is available.
 
