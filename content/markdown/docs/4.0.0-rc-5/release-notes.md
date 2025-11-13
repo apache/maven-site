@@ -66,7 +66,7 @@ We reverted the flatenning of the consumer POM in rc-5 which could cause some pr
 
 A bug has been found in the bean configuration system where field accessibility state is cached globally. This can cause plugin configuration injection to fail when the same configuration field is accessed multiple times or in different contexts during a build. This particularly affects the plugin unit tests.
 
-This will be fixed by [#11433]](https://github.com/apache/maven/pull/11433) in the next release.
+This will be fixed by [#11433](https://github.com/apache/maven/pull/11433) in the next release.
 
 #### Concurrency issue in the v4 API
 
