@@ -130,7 +130,7 @@ Worth mentioning is the new upgrade tool which can be used to fix your `pom.xml`
 - Fix [unknown project] messages in error output (#11324) ([#11349](https://github.com/apache/maven/pull/11349)) @gnodet
 - Restore compatibility in maven-embedder (#11320) ([#11340](https://github.com/apache/maven/pull/11340)) @gnodet
 - Add backward compatibility dependencies to maven-compat (#11301) ([#11339](https://github.com/apache/maven/pull/11339)) @gnodet
-- Relative <targetPath> are resolved against the wrong directory ([#11325](https://github.com/apache/maven/pull/11325)) @desruisseaux
+- Relative `targetPath`>` are resolved against the wrong directory ([#11325](https://github.com/apache/maven/pull/11325)) @desruisseaux
 - Bug: when raw-streams are used, ensure system streams are set up (#11303) ([#11310](https://github.com/apache/maven/pull/11310)) @cstamas
 - Fix plugin prefix resolution when metadata is not available from repository (#11287) ([#11288](https://github.com/apache/maven/pull/11288)) @gnodet
 - Maven model 4.1.0 should not allow non-pom packaging for aggregators (#11279) ([#11285](https://github.com/apache/maven/pull/11285)) @gnodet
