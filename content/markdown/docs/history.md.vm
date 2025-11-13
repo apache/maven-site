@@ -75,7 +75,8 @@ $esc.h$esc.h Maven 4.0+ (not yet GA)
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2025-06-18" "4.0.0-rc-4" "https://lists.apache.org/thread/dfhpy74vhd92r6lrsv4y59g18hhzs946" "true" "Java 17" "8" )
+#release( "2025-11-13" "4.0.0-rc-5" "https://lists.apache.org/list.html?announce@maven.apache.org" "true" "Java 17" "9" )
+#release( "2025-06-18" "4.0.0-rc-4" "https://lists.apache.org/thread/dfhpy74vhd92r6lrsv4y59g18hhzs946" "" "" "" )
 #release( "2025-03-10" "4.0.0-rc-3" "https://lists.apache.org/thread/x4mvlyx6py6r0wjz5hl871vlvbv6vn94" "" "" "" )
 #release( "2024-12-14" "4.0.0-rc-2" "https://lists.apache.org/thread/82dzfcbr4nc941848k5nn988sfkz3z6t" "" "" "" )
 #release( "2024-11-28" "4.0.0-rc-1" "https://lists.apache.org/thread/ddr4q2r642mxpg0w5h6zt2o1xkdyk0w5" "" "" "" )
