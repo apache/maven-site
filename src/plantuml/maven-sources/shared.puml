@@ -19,7 +19,6 @@ under the License.
 @startuml
 
 <style>
-
     rectangle {
         BackgroundColor LightBlue
     }
@@ -27,9 +26,6 @@ under the License.
 </style>
 
 package "Shared" {
-
-left to right direction
-
   rectangle "archiver"
   rectangle "artifact-resolver"
   rectangle "artifact-filters"
@@ -53,19 +49,23 @@ left to right direction
 }
 
 'hidden dependencies to change layout
-"archiver" -[hidden]down- "artifact-resolver"
-"artifact-resolver" -[hidden]down- "artifact-filters"
+"archiver" -[hidden]down-> "filtering"
+"filtering" -[hidden]down-> "script-interpreter"
 
-"archiver"  -[hidden]left- "dependency-analyzer"
-"dependency-analyzer" -[hidden]down- "dependency-tree"
-"dependency-tree" -[hidden]down- "file-management"
-"file-management" -[hidden]down- "filtering"
+"archiver" -[hidden]> "artifact-resolver"
+"artifact-resolver" -[hidden]> "artifact-filters"
+"artifact-filters" -[hidden]> "dependency-analyzer"
+"dependency-analyzer" -[hidden]> "dependency-tree"
+"dependency-tree" -[hidden]> "file-management"
 
-"dependency-analyzer" -[hidden]left- "invoker"
-"invoker" -[hidden]down- "jarsigner"
-"jarsigner" -[hidden]down- "mapping"
+"filtering" -[hidden]> "invoker"
+"invoker" -[hidden]> "jarsigner"
+"jarsigner" -[hidden]> "mapping"
+"mapping" -[hidden]> "reporting-api"
+"reporting-api" -[hidden]> "reporting-exec"
+"reporting-exec" -[hidden]> "reporting-impl"
+"reporting-impl" -[hidden]> "script-interpreter"
 
-"reporting-api" -[hidden]down-> "script-interpreter"
 "script-interpreter" -[hidden]> "shared-incremental"
 "shared-incremental" -[hidden]> "shared-io"
 "shared-io" -[hidden]> "shared-jar"
