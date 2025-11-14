@@ -33,7 +33,7 @@ This page lists all affected logos, which need recreated by a professional.
 | 3.2    |  SVG   | ![maven-logo-white-on-black.purevec.svg](./images/maven-logo-white-on-black.purevec.svg) | `https://github.com/apache/maven-site/blob/master/content/resources/images/maven-logo-white-on-black.purevec.svg` |
 | 4      |  PNG   | ![maven-feather.png](https://maven.apache.org/images/logos/maven-feather.png) |    `https://github.com/apache/maven-fluido-skin/blob/master/src/main/resources/images/logos/maven-feather.png`    |
 
-*Note*: For 1.1 and 4.1 no SVG is available.
+*Note*: For 1 and 4 no SVG is available.
 
 As you can see, two images need small additional changes aside replacing the feather with the oak leaf:
 
