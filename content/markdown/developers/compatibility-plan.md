@@ -38,6 +38,7 @@ Consolidated view for all LATEST plugins release is visible in a [daily generate
 - In March 2023, Maven before 3.2.5 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), meaning that plugins should use 3.2.5 as minimum
 - In April 2023, Maven before 3.6.3 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), meaning that plugins should use 3.6.3 as minimum
 - In February 2024, Maven 4 after 4.0.0-alpha-12 will require Java 17 (as per [vote on the Mailing List](https://lists.apache.org/thread/bfkvvjftrxypp06yj8zj919fcz0dt2zt)).
+- In October 2025, Maven before 3.8.3 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), [PR#842](https://github.com/apache/maven-site/pull/842) meaning that plugins should use 3.9.0 as minimum (as per [Mailing List](https://lists.apache.org/thread/s2dvm1jg37vhrkkkplfknk494c68zfyv))
 
 ## Context
 
