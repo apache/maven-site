@@ -51,25 +51,25 @@ package "Plexus" {
 }
 
 'hidden dependencies to change layout
-"Modello" -[hidden]right-> "Classworlds"
+"Modello" -[hidden]> "Classworlds"
 "Classworlds" -[hidden]down-> "Archiver"
 
-"Archiver" -[hidden]right-> "Cipher"
-"Cipher" -[hidden]right-> "Compiler"
-"Compiler" -[hidden]right-> "I18N"
-"I18N" -[hidden]down-> "Interactivity"
+"Archiver" -[hidden]> "Cipher"
+"Cipher" -[hidden]> "Compiler"
+"Compiler" -[hidden]> "I18N"
+"I18N" -[hidden]> "Interactivity"
+"Interactivity" -[hidden]> "Interpolation"
+"Archiver" -[hidden]down-> "IO"
 
-"Interactivity" -[hidden]right-> "Interpolation"
-"Interpolation" -[hidden]right-> "IO"
-"IO" -[hidden]right-> "Languages"
-"Languages" -[hidden]right-> "Resources"
-"Resources" -[hidden]down-> "Sec-Dispatcher"
-"Sec-Dispatcher" -[hidden]right-> "Velocity"
+"IO" -[hidden]> "Languages"
+"Languages" -[hidden]> "Resources"
+"Resources" -[hidden]> "Sec-Dispatcher"
+"Sec-Dispatcher" -[hidden]> "Velocity"
 
-"Classworlds" -[hidden]right-> "POM"
-"POM" -[hidden]right-> "Testing"
-"Testing" -[hidden]right-> "Utils"
-"Utils" -[hidden]right-> "XML"
+"Classworlds" -[hidden]> "POM"
+"POM" -[hidden]> "Testing"
+"Testing" -[hidden]> "Utils"
+"Utils" -[hidden]> "XML"
 
 url of "Modello" is [[https://github.com/codehaus-plexus/modello]]
 url of "Classworlds" is [[https://github.com/codehaus-plexus/plexus-classworlds]]
