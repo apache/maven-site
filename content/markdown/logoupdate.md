@@ -19,7 +19,7 @@ under the License.
 
 # Updating Maven logo
 
-In September 2025 the ASF [announced a new logo for the foundation](https://news.apache.org/foundation/entry/introducing-the-asfs-new-logo) the "oak leaf" as a replacement for the long year known feather.
+In September 2025 the ASF [announced a new logo for the foundation](https://news.apache.org/foundation/entry/introducing-the-asfs-new-logo) the "[oak leaf](https://apache.org/images/oakleaf.svg)" as a replacement for the long year known feather.
 
 As a result, the Maven project needs to update its logo. 
 This page lists all affected logos, which need recreated by a professional.
