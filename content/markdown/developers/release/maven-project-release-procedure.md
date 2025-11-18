@@ -237,7 +237,9 @@ Once the release is deemed fit for public consumption it can be transferred to a
 
    Note: PR merged after release but before publishing can add next items to release notes draft.
 
-   Enable **Release Drafter** workflow on **GitHub** if was disabled during vote.
+   Enable **Release Drafter** workflow on **GitHub** if it was disabled during vote.
+   
+   Close milestone and create a new one for the branch, so PR merged can be associated with the new release.
 
 4. Wait for everything to sync
 
