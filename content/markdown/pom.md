@@ -1781,7 +1781,7 @@ remote location of where Maven can find new plugins.
 
 ### Distribution Management
 
-Distribution management acts precisely as it sounds: it manages the distribution of the artifact
+Distribution management acts precisely as it sounds: it manages the distribution (aka. remote publication) of the artifact
 and supporting files generated throughout the build process.
 
 ```xml
@@ -1802,10 +1802,11 @@ and supporting files generated throughout the build process.
 
 #### Repository
 
-Whereas the repositories element specifies in the POM the location and manner in which Maven may
-download remote artifacts for use by the current project, distributionManagement specifies where
-(and how) this project will get to a remote repository when it is deployed.
-The repository elements will be used for snapshot distribution if the snapshotRepository is not defined.
+Whereas the `<project><repositories><repository>` elements specify in the POM the location and manner in which Maven may
+download remote artifacts for use by the current project, `<project><distributionManagement><repository>` specifies where
+(and how) this project will get to a remote repository when it is deployed (aka. published to remote).
+
+The repository elements will be used for snapshot distribution if the snapshotRepository is not defined. <!-- I don't know what this sentence means -->
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
@@ -1840,8 +1841,11 @@ The repository elements will be used for snapshot distribution if the snapshotRe
   the address.
 
 * `<url>`:
-  This is the core of the repository element. It specifies both the location and the transport protocol
+  This is the core of the distributionManagement repository element. It specifies both the location and the transport protocol
   used to transfer a built artifact (and POM file, and checksum data) to the repository.
+  Notice that the url to download from the repository is often different: publishing (using distributionManagement repository url) can be done with scp protocol or a REST API,
+  while download is often basic https (GET). Distribution management repository url and (download) repository url are the same only
+  when you can do for example HTTPS PUT for upload and HTTPS GET for download from the same web server.
 
 * `<layout>`:
   These are the same types and purpose as the layout element defined in the repository element.
