@@ -1802,9 +1802,9 @@ and supporting files generated throughout the build process.
 
 #### Repository
 
-Whereas the `<project><repositories><repository>` elements specify in the POM the location and manner in which Maven may
+Whereas the `<project><repositories><repository>` elements specify the location and manner in which Maven may
 download remote artifacts for use by the current project, `<project><distributionManagement><repository>` specifies where
-(and how) this project will get to a remote repository when it is deployed (aka. published to remote).
+(and how) the artifacts generated through this project will get uploaded to a remote repository when it is deployed (aka. published to remote).
 
 The repository elements will be used for snapshot distribution if the snapshotRepository is not defined. <!-- I don't know what this sentence means -->
 
@@ -1843,9 +1843,9 @@ The repository elements will be used for snapshot distribution if the snapshotRe
 * `<url>`:
   This is the core of the distributionManagement repository element. It specifies both the location and the transport protocol
   used to transfer a built artifact (and POM file, and checksum data) to the repository.
-  Notice that the url to download from the repository is often different: publishing (using distributionManagement repository url) can be done with scp protocol or a REST API,
-  while download is often basic https (GET). Distribution management repository url and (download) repository url are the same only
-  when you can do for example HTTPS PUT for upload and HTTPS GET for download from the same web server.
+  Notice that the url to download from the repository is often different: publishing (using distributionManagement repository url) can be done by a variety of protocols (with SCP, HTTP POST, HTTP PUT, FTP, ...)
+  while download is in most cases HTTP GET. Distribution management repository url and (download) repository url are the same only
+  when you can do upload and download based on the same URL and with the same protocol (for example HTTP PUT for upload and HTTP GET for download).
 
 * `<layout>`:
   These are the same types and purpose as the layout element defined in the repository element.
