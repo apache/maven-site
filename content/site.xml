@@ -27,6 +27,12 @@ under the License.
 
   <edit>${project.scm.url}</edit>
 
+  <custom>
+    <fluidoSkin>
+      <anchorJs />
+    </fluidoSkin>
+  </custom>
+
   <body>
     <links>
       <item name="Downloads" href="/download.cgi"/>
