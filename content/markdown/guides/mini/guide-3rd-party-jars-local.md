@@ -40,3 +40,4 @@ With version 2.5 of the maven-install-plugin, it can get even simpler: if the JA
 ```
 mvn org.apache.maven.plugins:maven-install-plugin:2.5.2:install-file -Dfile=<path-to-file>
 ```
+

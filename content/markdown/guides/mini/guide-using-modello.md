@@ -67,3 +67,4 @@ To utilize Modello, you would configure the `modello-maven-plugin` something lik
   ...
 </project>
 ```
+
