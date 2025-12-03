@@ -89,7 +89,7 @@ Furthermore, a build phase can also have zero or more goals bound to it. If a bu
 
 Multiple goals bound to a phase are executed in the same order as they are declared in the POM.
 
-It's possible to declare multiple executions for the same plugin - see [Configuring plugins](./guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins) for more details. **Note**: This does **not** mean that it's allowed to declare the same plugin multiple times in [`<plugins>` declaration section](/pom.html#Plugins)! Declaring a plugin multiple times shows warnings using Maven 3 and fail the build using Maven 4.
+It's possible to declare multiple executions for the same plugin - see [Configuring plugins](/guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins) for more details. **Note**: This does **not** mean that it's allowed to declare the same plugin multiple times in [`<plugins>` declaration section](/pom.html#Plugins)! Declaring a plugin multiple times shows warnings using Maven 3 and fail the build using Maven 4.
 
 <!--~-->
 
@@ -165,7 +165,7 @@ For example, the Modello plugin binds by default its goal `modello:java` to the 
 
 You might be wondering why that `<executions>` element is there. That is so that you can run the same goal multiple times with different configuration if needed. Separate executions can also be given an ID so that during inheritance or the application of profiles you can control whether goal configuration is merged or turned into an additional execution.
 
-See [Configuring plugins](./guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins) for more details about the configuration of multiple executions and their execution order.
+See [Configuring plugins](/guides/mini/guide-configuring-plugins.html#Configuring_Build_Plugins) for more details about the configuration of multiple executions and their execution order.
 
 Now, in the case of `modello:java`, it only makes sense in the `generate-sources` phase. But some goals can be used in more than one phase, and there may not be a sensible default. For those, you can specify the phase yourself. For example, let's say you have a goal `display:time` that echos the current time to the commandline, and you want it to run in the `process-test-resources` phase to indicate when the tests were started. This would be configured like so:
 

@@ -63,11 +63,11 @@ Execute the **Release Drafter** workflow on **GitHub** to regenerate draft of re
 
 You should **disable** **Release Drafter** workflow on **GitHub** to avoid adding new items to the release notes after the vote starts and before the release notes are published. Follow [Disabling and enabling a workflow](https://docs.github.com/en/actions/managing-workflow-runs-and-deployments/managing-workflow-runs/disabling-and-enabling-a-workflow)
 
-## Update milestone in GitHub
+## Check the GitHub milestone
 
-- close released milestone and open a new one for the next version
-- pull requests merged during votes should be assigned to next milestone
-- Note: For projects which maintain multiple versions, add the branch name (`branch: branch-name`) to the milestone description.
+- ensure that the milestone version matches the version you are releasing
+- the current milestone will be closed, and a new one for the next version will be created automatically when you perform the release
+- Note: For projects which maintain multiple versions, add the branch name (`branch: branch-name`) to the milestone description - all automatically created milestones will have this branch name in the description
 
 ## Make sure that site compilation works
 

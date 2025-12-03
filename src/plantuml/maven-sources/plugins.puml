@@ -59,7 +59,6 @@ package Plugins {
     rectangle javadoc
     rectangle jdeps
     rectangle jxr
-    rectangle linkcheck
     rectangle pmd
     rectangle "project-info-reports"
   }
@@ -89,7 +88,6 @@ package Plugins {
 'hidden dependencies to change layout
 Core      -[hidden]down-> Packaging
 Packaging -[hidden]down-> Reporting
-Packaging -[hidden]down-> Tools
 Reporting -[hidden]down-> Tools
 
 clean     -[hidden]> compiler
@@ -116,8 +114,7 @@ checkstyle -[hidden]> doap
 doap -[hidden]> javadoc
 javadoc -[hidden]> jdeps
 jdeps -[hidden]> jxr
-jxr  -[hidden]> linkcheck
-linkcheck -[hidden]> pmd
+jxr  -[hidden]> pmd
 pmd -[hidden]> "project-info-reports"
 
 antrun -[hidden]> archetype
@@ -127,12 +124,10 @@ dependency -[hidden]> enforcer
 enforcer -[hidden]> gpg
 gpg -[hidden]> help
 
-antrun -[hidden]down->invoker
-invoker -[hidden]> jarsigner
-jarsigner -[hidden]> jdeprscan
+antrun -[hidden]down->jdeprscan
 jdeprscan -[hidden]> plugin
 plugin -[hidden]> release
-invoker -[hidden]down->"remote-resources"
+release -[hidden]>"remote-resources"
 "remote-resources" -[hidden]> scm
 scm -[hidden]> "scm-publish"
 "scm-publish" -[hidden]> scripting
@@ -168,7 +163,6 @@ url of doap is [[https://github.com/apache/maven-doap-plugin]]
 url of javadoc is [[https://github.com/apache/maven-javadoc-plugin]]
 url of jdeps is [[https://github.com/apache/maven-jdeps-plugin]]
 url of jxr is [[https://github.com/apache/maven-jxr]]
-url of linkcheck is [[https://github.com/apache/maven-linkcheck-plugin]]
 url of pmd is [[https://github.com/apache/maven-pmd-plugin]]
 url of "project-info-reports" is [[https://github.com/apache/maven-project-info-reports-plugin]]
 

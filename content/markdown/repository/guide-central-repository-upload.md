@@ -29,7 +29,7 @@ In order for Maven users to depend on your project, you must deploy the artifact
 4. **minimum POM information**: Maven Central requires that a POM contain certain minimal information before it will publish a release. See ["Why do we have Requirements"](https://central.sonatype.org/pages/requirements.html)
 5. **coordinates**: Picking the appropriate coordinates for your project is important. See [the guidelines](https://central.sonatype.org/pages/choosing-your-coordinates.html), particularly the details about group ID and domain ownership.
 
-# **[ The updated list of requirements](https://central.sonatype.org/publish/requirements/)** can be found at Sonatype.
+**[ The updated list of requirements](https://central.sonatype.org/publish/requirements/)** can be found at Sonatype.
 
 ## A basic sample:
 
@@ -112,5 +112,5 @@ Currently approved repository hosting locations:
 
 ## Other Projects
 
-The easiest way to upload another project is to use the [Open Source Software Repository Hosting (OSSRH)](https://central.sonatype.org/publish/publish-guide/), which is an approved repository provided by Sonatype for _any_ OSS Project that wants to get its artifacts into the Central Repository.
+The easiest way to upload another project is to use the [Sonatype Central Portal](https://central.sonatype.org/register/central-portal/), which is an approved repository provided by Sonatype for _any_ OSS Project that wants to get its artifacts into the Central Repository.
 

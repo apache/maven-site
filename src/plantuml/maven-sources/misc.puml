@@ -27,7 +27,8 @@ under the License.
 
 package Misc {
   rectangle Archetypes
-  rectangle "Distribution Tool Plugin"
+  rectangle "Distribution Tool"
+  rectangle "GitHub Actions"
   rectangle Indexer
   package Jenkins {
     rectangle Environment
@@ -36,7 +37,7 @@ package Misc {
   rectangle "Plugin Testing"
   package POM {
     rectangle "Apache"
-    rectangle "Apache Resoures"
+    rectangle "Apache Resources"
     rectangle "Maven"
   }
   package Skins {
@@ -47,25 +48,27 @@ package Misc {
 }
 
 'hidden dependencies to change layout
-Archetypes -[hidden]> "Distribution Tool Plugin"
-"Distribution Tool Plugin" -[hidden]> Indexer
+Archetypes -[hidden]> "Distribution Tool"
+"Distribution Tool" -[hidden]> "GitHub Actions"
+"GitHub Actions" -[hidden]> Indexer
 Indexer -[hidden]> "Plugin Testing"
 "Plugin Testing" -[hidden]> Studies
 Studies -[hidden]> Wagon
 
-Environment -[hidden]down-> "Shared Libraries"
+Environment -[hidden]> "Shared Libraries"
 
-"Apache" -[hidden]down-> "Apache Resoures"
-"Apache Resoures" -[hidden]down-> "Maven"
+"Apache" -[hidden]> "Apache Resources"
+"Apache Resources" -[hidden]> "Maven"
 "Apache" -[hidden]> Fluido
 
-Archetypes -[hidden]down-> Environment
-Indexer -[hidden]down-> "Apache"
-"Plugin Testing" -[hidden]down-> Fluido
+Archetypes -[hidden]down-> Jenkins
+Jenkins -[hidden]> POM
+POM -[hidden]> Skins
 
 url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
-url of "Distribution Tool Plugin" is [[https://github.com/apache/maven-dist-tool]]
+url of "Distribution Tool" is [[https://github.com/apache/maven-dist-tool]]
 url of Indexer is [[https://github.com/apache/maven-indexer]]
+url of "GitHub Actions" is [[https://github.com/apache/maven-gh-actions-shared]]
 
 url of Environment is [[https://github.com/apache/maven-jenkins-env]]
 url of "Shared Libraries" is [[https://github.com/apache/maven-jenkins-lib]]
@@ -73,7 +76,7 @@ url of "Shared Libraries" is [[https://github.com/apache/maven-jenkins-lib]]
 url of "Plugin Testing" is [[https://github.com/apache/maven-plugin-testing]]
 
 url of "Apache" is [[https://github.com/apache/maven-apache-parent]]
-url of "Apache Resoures" is [[https://github.com/apache/maven-apache-resources]]
+url of "Apache Resources" is [[https://github.com/apache/maven-apache-resources]]
 url of "Maven" is [[https://github.com/apache/maven-parent]]
 
 url of Fluido is [[https://github.com/apache/maven-fluido-skin]]

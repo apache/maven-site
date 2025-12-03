@@ -23,12 +23,17 @@ under the License.
 
 [Maven DI](/ref/4-LATEST/api/maven-api-di/index.html) is the dependency injection framework of Maven, that is introduced in Maven 4.
 
-It is the successor for [Plexus IoC](https://codehaus-plexus.github.io/plexus-containers/) (used in Maven 2) and [JSR 330](/maven-jsr330.html)/[Eclipse Sisu](https://eclipse.dev/sisu/) (used in Maven 3) in Maven.
+It is the successor for [Plexus IoC](https://codehaus-plexus.github.io/plexus-containers/) (used in Maven 2) and [Eclipse Sisu](https://eclipse.dev/sisu/) based on [JSR 330 annotations](/maven-jsr330.html) (used in Maven 3). Sisu still ships with Maven 4 for compatibility reasons and kicks in whenever you use the injection annotations `org.eclipse.sisu.*` or `javax.inject.*`.
 
 ## How to use Maven DI
 
 When you use Maven DI in Maven plugins or extensions, you want to have the dependency to `maven-api-di`, so you can use the `@org.apache.maven.api.di.Inject`, `@org.apache.maven.api.di.Named`, and `@org.apache.maven.api.di.Singleton` annotations in your plugins and extensions.
-The annotations of Maven DI are similar to JSR 330, but they have different package name `org.apache.maven.api.di`.
+The annotations of Maven DI are similar to JSR 330, but they have different package name [`org.apache.maven.api.di`](https://maven.apache.org/ref/4-LATEST/api/maven-api-di/apidocs/org/apache/maven/api/di/package-summary.html).
+
+## Interoperability of Maven DI <-> Eclipse Sisu
+
+All Maven 4 components rely on Maven DI only. However they are also available to Eclipse Sisu (Google Guice) in order to be consumed from Maven 3 extensions/plugins. At the same time the (Maven 3) Sisu and also Plexus components (both exposed via the `org.codehaus.plexus.PlexusContainer`) are also exposed to Maven DI.
+To achieve that Maven 4 ships with a bridge in [`SisuDiBridgeModule`](https://github.com/apache/maven/blob/master/impl/maven-core/src/main/java/org/apache/maven/internal/impl/SisuDiBridgeModule.java).
 
 ### Implementation Details
 

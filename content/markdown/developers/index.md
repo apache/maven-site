@@ -17,9 +17,9 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Maven Developer Centre
+# Developing Maven
 
-This documentation centre is for people who work on the source code of Maven itself and its core plugins, or who would like to contribute. If you simply use Maven to build your own projects, it won't be very helpful.
+This documentation is for people who work on the source code of Maven itself and its core plugins, or who would like to contribute. If you simply use Maven to build your own projects, it won't be very helpful.
 
 If you cannot find your answers here, feel free to ask the [Maven Developer List](mailto:dev@maven.apache.org).
 

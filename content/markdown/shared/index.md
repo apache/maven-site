@@ -1,21 +1,21 @@
-<!-- Licensed to the Apache Software Foundation (ASF) under one-->
-<!-- or more contributor license agreements.  See the NOTICE file-->
-<!-- distributed with this work for additional information-->
-<!-- regarding copyright ownership.  The ASF licenses this file-->
-<!-- to you under the Apache License, Version 2.0 (the-->
-<!-- "License"); you may not use this file except in compliance-->
-<!-- with the License.  You may obtain a copy of the License at-->
-<!---->
-<!--   http://www.apache.org/licenses/LICENSE-2.0-->
-<!---->
-<!-- Unless required by applicable law or agreed to in writing,-->
-<!-- software distributed under the License is distributed on an-->
-<!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY-->
-<!-- KIND, either express or implied.  See the License for the-->
-<!-- specific language governing permissions and limitations-->
-<!-- under the License.-->
-<!-- NOTE: For help with the syntax of this file, see:-->
-<!-- https://maven.apache.org/doxia/references/apt-format.html-->
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
 
 # Shared Components
 
@@ -24,7 +24,7 @@ The shared components are currently under transition to Maven 3.x only component
 | **Shared Component**                                                       | **Version** | **Release Date** | **Description**                                                                                                 | **Source Repository**                                                                                                                             | **Issue Tracking**                                                              |
 |:---------------------------------------------------------------------------|:------------|:-----------------|:----------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------|
 | [ `file-management`](/shared/file-management/)                             | 3.2.0       | 2025-04-13       | API to collect files from a given directory using several include/exclude rules.                                | [Git](https://gitbox.apache.org/repos/asf/maven-file-management.git) / [GitHub](https://github.com/apache/maven-file-management/)                 | [GitHub Issues](https://github.com/apache/maven-file-management/issues)         |
-| [ `maven-archiver`](/shared/maven-archiver/)                               | 3.6.3       | 2024-10-22       | Is mainly used by plugins to handle packaging.                                                                  | [Git](https://gitbox.apache.org/repos/asf/maven-archiver.git) / [GitHub](https://github.com/apache/maven-archiver/)                               | [GitHub Issues](https://github.com/apache/maven-archiver/issues)                |
+| [ `maven-archiver`](/shared/maven-archiver/)                               | 3.6.5        | 2025-10-05       | Is mainly used by plugins to handle packaging.                                                                  | [Git](https://gitbox.apache.org/repos/asf/maven-archiver.git) / [GitHub](https://github.com/apache/maven-archiver/)                               | [GitHub Issues](https://github.com/apache/maven-archiver/issues)                
 | [ `maven-common-artifact-filters`](/shared/maven-common-artifact-filters/) | 3.4.0       | 2024-06-05       | Filters lists of Artifact instances.                                                                            | [Git](https://gitbox.apache.org/repos/asf/maven-common-artifact-filters.git) / [GitHub](https://github.com/apache/maven-common-artifact-filters/) | [GitHub Issues](https://github.com/apache/maven-common-artifact-filters/issues) |
 | [ `maven-dependency-analyzer`](/shared/maven-dependency-analyzer/)         | 1.16.0      | 2025-04-14       | Maven Dependency Analyzer component.                                                                            | [Git](https://gitbox.apache.org/repos/asf/maven-dependency-analyzer.git) / [GitHub](https://github.com/apache/maven-dependency-analyzer/)         | [GitHub Issues](https://github.com/apache/maven-dependency-analyzer/issues)     |
 | [ `maven-dependency-tree`](/shared/maven-dependency-tree/)                 | 3.3.0       | 2024-05-29       | Maven Dependency Tree constructs a tree model of a Maven project's dependencies.                                | [Git](https://gitbox.apache.org/repos/asf/maven-dependency-tree.git) / [GitHub](https://github.com/apache/maven-dependency-tree/)                 | [GitHub Issues](https://github.com/apache/maven-dependency-tree/issues)         |
@@ -43,6 +43,6 @@ The shared components are currently under transition to Maven 3.x only component
 | [ `maven-shared-utils`](/shared/maven-shared-utils/)                       | 3.4.2       | 2023-05-11       | Utilities functions for use within Maven.                                                                       | [Git](https://gitbox.apache.org/repos/asf/maven-shared-utils.git) / [GitHub](https://github.com/apache/maven-shared-utils/)                       | [GitHub Issues](https://github.com/apache/maven-shared-utils/issues)            |
 | [ `maven-shared-io`](/shared/maven-shared-io/)                             | 3.0.0       | 2015-12-23       | API for I/O support like logging, download or file scanning.                                                    | [Git](https://gitbox.apache.org/repos/asf/maven-shared-io.git) / [GitHub](https://github.com/apache/maven-shared-io/)                             | [GitHub Issues](https://github.com/apache/maven-shared-io/issues)               |
 | [ `maven-verifier`](/shared/maven-verifier/)                               | 2.0.0-M1    | 2022-09-22       | Used to run Maven builds as part of tests.                                                                      | [Git](https://gitbox.apache.org/repos/asf/maven-verifier.git) / [GitHub](https://github.com/apache/maven-verifier/)                               | [GitHub Issues](https://github.com/apache/maven-verifier/issues)                |
-| [ `maven-scm`](/scm/)                                                      | 2.1.0       | 2024-04-11       | Generic API to SCM systems.                                                                                     | [Git](https://gitbox.apache.org/repos/asf/maven-scm.git) / [GitHub](https://github.com/apache/maven-scm/)                                         | [GitHub Issues](https://github.com/apache/maven-scm/issues)                     |
+| [ `maven-scm`](/scm/)                                                      | 2.2.1       | 2025-09-25       | Generic API to SCM systems.                                                                                     | [Git](https://gitbox.apache.org/repos/asf/maven-scm.git) / [GitHub](https://github.com/apache/maven-scm/)                                         | [GitHub Issues](https://github.com/apache/maven-scm/issues)                     |
 
 Archived version of shared libraries reference documentations are [located here](../shared-archives/).

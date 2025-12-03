@@ -1,3 +1,6 @@
+title: What's new in Maven 4?
+author: Matthias Bünger
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -16,11 +19,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
-<head>
-   <title>What's new in Maven 4?</title>
-   <meta name="author" content="Matthias Bünger" />
-</head>
 
 # What's new in Maven 4?
 
@@ -53,6 +51,8 @@ Maven 4 prepares for this and more.
 
 This article presents and explains major changes brought by Maven 4, grouped into several topics.
 
+<!-- MACRO{toc|section=1|fromDepth=2} -->
+
 ## Required Java version
 
 Maven 4 requires Java 17.
@@ -70,6 +70,16 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 Maven 4 generates a stripped down consumer POM that removes build information not needed by consumers, and deploys this
 to the remote repository.
 It does not deploy the `pom.xml` used to build the project.
+
+The consumer POM is a **flattened** version of the build POM, meaning:
+
+* It contains no parent POM references (all inherited elements are resolved and included directly)
+* BOM imports are flattened into the dependency list
+* Only transitive dependencies are kept (compile and runtime scopes)
+* Managed dependencies are kept only if they are actually used by the project
+
+This flattening ensures that consumers of your artifact have all the information they need without requiring access to
+parent POMs or understanding the internal structure of your multi-project build.
 
 ### Model version 4.1.0
 
@@ -106,6 +116,26 @@ Model version 4.1.0 contains a new `<subprojects>` element analogous to the now 
 
 **Note**: Use the terms `multi-project setup` and `single-project setup` to differentiate between a Maven project with
 or without subprojects.
+
+### New artifact types
+
+Maven 4 introduces new types of artifacts.
+The types listed below can be used in `<dependency>` declarations of JAR files.
+The `jar` type existed in Maven 3 and is still the default in Maven 4.
+The other types are new:
+
+* `jar`: for a JAR file that can be placed either on the class path or on the module path.
+* `classpath-jar`: for a JAR file that is unconditionally placed on the class path.
+* `modular-jar`: for a JAR file that is unconditionally placed on the module path.
+* `processor`: for a JAR file that can be placed either on the annotation processor class path or module path.
+* `classpath-processor`: for a JAR file to unconditionally place on the annotation processor class path.
+* `modular-processor`: for a JAR file to unconditionally place on the annotation processor module path.
+
+The `jar` and `processor` types use heuristic rules for deciding where to place the JAR file, but the result is not always what the developer wants.
+The types with `classpath-` or `modular-` prefix give control to the developer.
+
+**Limitation:** As of October 2025, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
+Other plugins will be updated progressively.
 
 ### New packaging type: bom
 
@@ -194,6 +224,41 @@ properties.
 Starting with Maven 4 those properties were removed or marked as deprecated.
 See JIRA issue [MNG-7038][15] and the related [Pull Request for MNG-7038][16] for more information.
 
+### New way to declare source directories
+
+Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSourceDirectory>`) to declare the root directories of source code, as shown below:
+
+```xml
+<project>
+  <build>
+    <sourceDirectory>my-custom-dir/foo</sourceDirectory>
+    <testSourceDirectory>my-custom-dir/bar</testSourceDirectory>
+  </build>
+</project>
+```
+
+Maven 4 introduces the new `<sources>` element for this.
+The `<source>` element can be repeated, thus allowing multiple source directories without the need to resort to external plugins.
+It also provides a unified way to declare include/exclude filters, makes easier to set up projects targeting multi Java releases, and enables module source hierarchy.
+The documentation of the Maven Compiler Plugin gives some examples.
+
+```xml
+<project>
+  <build>
+    <sources>
+      <source>
+        <scope>main</scope>
+        <directory>my-custom-dir/foo</directory>
+      </source>
+      <source>
+        <scope>test</scope>
+        <directory>my-custom-dir/bar</directory>
+      </source>
+    </sources>
+  </build>
+</project>
+```
+
 ### Alternate POM syntaxes
 
 While the syntax for the 4.0.0 consumer POM is set in stone, the build POM should be able to evolve.
@@ -204,7 +269,7 @@ One of the first projects that uses this feature is the [Apache Maven Hocon Exte
 
 ## Improvements for subprojects
 
-### Automatic versioning
+### Automatic versioning (POM inference)
 
 Maven 4 finally ships one of the oldest improvement requests - automatic parent versioning ([MNG-624][17], created in
 July 2005 and originally planned for Maven 2)!
@@ -212,6 +277,35 @@ As expected, it's no longer required to define the parent versions in each subpr
 4.1.0.
 This also extends to dependencies of project's own subprojects and reduces the need to update POM files for new
 versions even more.
+
+#### Parent inference
+
+When using model version 4.1.0, you can omit the version, groupId, and artifactId from the `<parent>` element by using
+a relative path. Maven will automatically infer these values by looking for a `pom.xml` file in the specified directory.
+
+You can use either of these forms:
+
+* `<parent><relativePath>..</relativePath></parent>` - explicitly specify the relative path to the parent directory
+* `<parent/>` - shorthand form that defaults to looking in the parent directory (`..`)
+
+This makes it easier to maintain multi-project builds without duplicating version and coordinate information.
+
+#### Subprojects discovery
+
+Maven 4 can automatically discover subprojects in subdirectories without requiring them to be explicitly listed in the
+`<subprojects>` (or deprecated `<modules>`) section. This reduces boilerplate in your POM files and makes it easier to
+add new subprojects to your build.
+
+Subprojects are automatically discovered when:
+
+* The parent POM has `pom` packaging
+* No `<subprojects>` or `<modules>` section is explicitly defined
+* Direct subdirectories contain a `pom.xml` file
+
+When these conditions are met, Maven will automatically add all subdirectories with a `pom.xml` file to the list of
+subprojects to build.
+
+#### Example
 
 The following code snippet shows the parent and dependency definition without the version tag.
 
@@ -242,7 +336,7 @@ The following code snippet shows the parent and dependency definition without th
 Maven 3.5.0 introduced partial support for CI-friendly variables, like `${revision}`, in your POM files.
 However, this still required the usage of the [Flatten Maven Plugin][20] for full functionality.
 Since Maven 4, no additional plugin is needed; full built-in support is provided.
-You can now use variables as versions in your configuration.
+You can now use **any variable** as versions in your configuration, not just predefined ones.
 
 Example
 
@@ -253,8 +347,14 @@ Example
 <version>${revision}</version>
 ```
 
-You have to provide a value for this variable when starting the build, for example by using a `maven.config` file.
-In CI pipelines it's commonly done using a parameter, for example `mvn verify -Drevision=4.0.1`.
+Variables must be defined at build time using one of the following methods:
+
+* Maven properties defined on the command line, for example `mvn verify -Drevision=4.0.1`
+* Maven properties defined in a `maven.config` file in the `.mvn` directory
+* Maven properties defined in the root POM or parent POM
+
+This flexibility allows you to use any variable name you prefer, making it easier to integrate Maven with your CI/CD
+pipelines and build automation systems.
 
 Maven maintainer Karl Heinz Marbaise shows a larger example in
 his [article "Maven 4 - Part I - Easier Versions" (2024)][21].
@@ -347,8 +447,19 @@ See the following snippet for an example:
 [INFO] The requested optional profiles [nonexistent] could not be activated or deactivated because they do not exist.
 ```
 
-Maven 4 also introduces more flexible ways to activate profiles by providing condition-based activation.
-See [MNG-8286][27] for more information about supported functions.
+#### Condition-based profile activation
+
+Maven 4 introduces more flexible ways to activate profiles by providing condition-based activation through the new
+`<condition>` element in the `<activation>` section. This allows you to use expressions to determine when a profile
+should be activated, providing much more control than the traditional property-based or OS-based activation.
+
+For example, you can now activate profiles based on complex conditions like:
+
+* Checking if a file exists or doesn't exist
+* Comparing property values
+* Combining multiple conditions with logical operators
+
+See [MNG-8286][27] for more information about supported functions and the complete syntax for condition-based activation.
 
 ### Lifecycle changes
 
@@ -386,10 +497,42 @@ before:integration-test[100]
 before:integration-test[200]
 ```
 
-**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had
-inconsistent naming, are deprecated.
+**Warning**: The conceptual `pre-*` and `post-*` phases, which were only available for selected phases and had inconsistent naming, are deprecated.
+They only act as aliases now and might be removed in the future.
 Don't use them!
 This is especially important when binding a plugin to a `post-*` phase of a lifecycle phase because the corresponding `pre-*` phase of the desired phase doesn't exist — for example, binding to the `process-resources` phase due to the absence of a `pre-compile` phase.
+
+#### Behavioral change: phase execution scope
+
+Maven 4 introduces a behavioral change in how phases are executed.
+For a given major phase, Maven 4 will always execute both (`before:` and `after:`) minor phases of it.
+This differs from Maven 3 where the `post-*` (now `after:`) phase is only executed if either the next major phase of the lifecycle is executed or the `post-*` phase is explicitly called.
+
+The following example shows that this change might affect existing builds.
+
+Given the following plugin configuration, where a plugin is bound to the `post-clean` phase.
+
+```xml
+<plugin>
+  <groupId>org.example</groupId>
+  <artifactId>some-plugin</artifactId>
+  <executions>
+    <execution>
+      <!-- In Maven 3: Does NOT run when executing 'mvn clean', only with `mvn post-clean` -->
+      <!-- In Maven 4: DOES run when executing 'mvn clean' -->
+      <phase>post-clean</phase>
+      <goals>
+        <goal>cleanup</goal>
+      </goals>
+    </execution>
+  </executions>
+</plugin>
+```
+
+Running `mvn clean` using Maven 3 would NOT execute the plugin, because the build execution stops at the main phase, not executing it `post-` phase.
+To execute the plugin in Maven 3, the user has to explicitly run `mvn post-clean` as a build goal.
+In Maven 4 running `mvn clean` will also execute the plugin, as both `before:` and `after:` phases are always executed and the `post-` phase is now an alias for `after:`.
+
 
 #### All- and each-phases
 
@@ -433,7 +576,7 @@ Security is important, and storing unencrypted passwords is bad practice.
 Maven 3's password encryption had several serious issues and could more accurately be called "password obfuscation".
 Maven 4 instead has a completely redone encryption system, based on Maven Encryption (`mvnenc`) - a standalone CLI tool.
 As of now, it provides functionally equivalent operations as Maven 3 (see ["Maven: Password Encryption"][30]) but adds
-improvements like a `decrypt` functionality.
+improvements like a `decrypt` functionality and supports external vaults. The documentation of the new encryption can be found in ["Password Encryption (Maven 4)"][33].
 A broad overview of the problems in Maven 3 and the solution in Maven 4 can be found in the
 article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cservenák.
 
@@ -451,8 +594,23 @@ Each time you run an `mvn` command, the entire process chain is executed: bootin
 configuration, performing the task, tearing down, and exiting — **every single time**.
 To improve performance and reduce build times, you can use the [Maven Daemon][29] (`mvnd`), which manages a pool of
 resident Maven processes.
-With Maven 4, you can also take advantage of the newly defined "Maven Shell" (`mvnsh`), which keeps a single Maven
+With Maven 4, you can also take advantage of the newly defined "[Maven Shell](./tools/mvnsh.html)" (`mvnsh`), which keeps a single Maven
 process running for as long as the shell remains open.
+
+### Maven Upgrade Tool
+
+If you're currently using Maven 3 and want to upgrade to Maven 4, you can use the [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html).
+This tool helps automate the migration process by analyzing your project and making necessary adjustments to ensure
+compatibility with Maven 4.
+
+The Maven Upgrade Tool tool can be used to:
+
+* Automatically update your POM files to use the new model version 4.1.0 (if desired)
+* Identify deprecated features and suggest replacements
+* Help migrate from deprecated plugin configurations to their modern equivalents
+* Validate that your project is ready for Maven 4
+
+Refer to [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html) for more information on usage and the upgrade process in general.
 
 ## Issue overview
 
@@ -490,4 +648,5 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [30]: https://maven.apache.org/guides/mini/guide-encryption.html
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
 [32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
+[33]: https://maven.apache.org/guides/mini/guide-encryption-4.html
 

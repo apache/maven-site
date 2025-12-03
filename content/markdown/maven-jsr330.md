@@ -62,7 +62,7 @@ is important.
 
 Let\'s take a look at an example plugin: If you want to look at this example project, you can find the code [in Maven Core ITs][jsr330-plugin].
 
-The POM is setup for JSR-300 as previously mentioned, with the `javax.inject` dependency and the `sisu-maven-plugin` configured to create
+The POM is set up for JSR-300 as previously mentioned, with the `javax.inject` dependency and the `sisu-maven-plugin` configured to create
 the JSR-330 component index.
 
 In addition, we add classical Maven plugin dependencies
@@ -195,6 +195,11 @@ public class Jsr330Mojo
     }
 }
 ```
+
+## Lifecycle annotations (JSR-250)
+
+Sisu managed beans also support lifecycle annotations defined by [JSR-250](https://jcp.org/en/jsr/detail?id=250) (for example `@PostConstruct`).
+See [Sisu's lifecycle support documentation](https://eclipse.dev/sisu/org.eclipse.sisu.inject/lifecycle.html) for more information.
 
 [tesla-profiler]: https://github.com/tesla/tesla-profiler
 [p2g1]: https://www.sonatype.com/people/2010/01/from-plexus-to-guice-1-why-guice/
