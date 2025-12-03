@@ -19,9 +19,9 @@ under the License.
 
 # Guide to deploying 3rd party JARs to remote repository
 
-Same concept of the [install:install-file](./guide-3rd-party-jars-local.html) goal of the maven-install-plugin where the 3rd party JAR is installed in the local repository. But this time instead to local repository the JAR will be install both in the local and remote repository.
+Same concept of the [install:install-file](./guide-3rd-party-jars-local.html) goal of the maven-install-plugin where the 3rd party JAR is installed in the local repository. But this time the JAR will be installed both in the local and remote repository.
 
-To deploy a 3rd party JAR use the deploy:deploy-file goal under maven-deploy-plugin.
+To deploy a 3rd party JAR, use the deploy:deploy-file goal under maven-deploy-plugin.
 
 First, the wagon-provider(wagon-ftp, wagon-file, etc..) must be placed to your `${maven.home}/lib`.
 
@@ -39,7 +39,7 @@ mvn deploy:deploy-file -DgroupId=<group-id> \
 
 ## Deploying a 3rd party JAR with a generic POM
 
-By default, deploy:deploy-file generates a generic POM(.pom) to be deploy together with the 3rd party JAR. To disable this feature we should set the `generatePOM` argument to false.
+By default, deploy:deploy-file generates a generic POM(.pom) to be deployed together with the 3rd party JAR. To disable this feature we should set the `generatePOM` argument to false.
 
 ```
 -DgeneratePom=false
@@ -47,7 +47,8 @@ By default, deploy:deploy-file generates a generic POM(.pom) to be deploy togeth
 
 ## Deploying a 3rd party JAR with a customized POM
 
-If a POM is already existing for the 3rd Party JAR and you want to deploy it together with the JAR we should use the `pomFile` argument of the deploy-file goal. See sample below.
+If a POM already exists for the third party JAR and you want to deploy it together with the JAR,
+you should use the `pomFile` argument of the deploy-file goal. See sample below.
 
 ```
 mvn deploy:deploy-file -DpomFile=<path-to-pom> \
