@@ -153,7 +153,7 @@ Reporting plugins that suffer from this bug can easily be detected by executing 
 Maven's command line supports the definition of system properties via arguments of the form `-D key=value`. While these properties are called system properties, plugins should never use [`System.getProperty()`](http://java.sun.com/javase/6/docs/api/java/lang/System.html#getProperty(java.lang.String)) and related methods to query these properties. For example, the following code snippet will not work reliably when Maven is embedded, say into an IDE or a CI server:
 
 ```unknown
-public MyMojo extends AbstractMojo
+public class MyMojo extends AbstractMojo
 {
     public void execute()
     {
@@ -172,7 +172,7 @@ The problem is that the properties managed by the `System` class are global, i.e
 People occasionally employ shutdown hooks to perform cleanup tasks, e.g. to delete temporary files as shown in the example below:
 
 ```unknown
-public MyMojo extends AbstractMojo
+public class MyMojo extends AbstractMojo
 {
     public void execute()
     {
@@ -213,7 +213,7 @@ At first glance, one might be tempted to argue that the project base directory i
 Hence this example code is prone to misbehave:
 
 ```unknown
-public MyMojo extends AbstractMojo
+public class MyMojo extends AbstractMojo
 {
     /**
      * @parameter
@@ -250,7 +250,7 @@ Most reporting plugins inherit from `AbstractMavenReport`. In doing so, they nee
 Now, some plugins need to create additional files in the report output directory that accompany the report generated via the sink interface. While it is tempting to use either the method `getOutputDirectory()` or the field `outputDirectory` directly in order to setup a path for the output files, this leads most likely to a bug. More precisely, those plugins will not properly output files when run by the Maven Site Plugin as part of the site lifecycle. This is best noticed when the output directory for the site is configured directly in the Maven Site Plugin such that it deviates from the expression `${project.reporting.outputDirectory}` that the plugins use by default. Multi-language site generation is another scenario to exploit this bug which is illustrated below:
 
 ```unknown
-public MyReportMojo extends AbstractMavenReport
+public class MyReportMojo extends AbstractMavenReport
 {
     /**
      * @parameter default-value="${project.reporting.outputDirectory}"
