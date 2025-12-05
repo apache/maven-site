@@ -40,10 +40,15 @@ Regression fixes and other improvements from Maven 3.9.11. All users already on 
 The majority of fixed issues are bug and regression fixes for user reported problems.
 
 ### Notable Changes in Maven 3.9.12
-TDOD
+
+- Remove usage of terminally deprecated methods in Guice to eliminate warnings in JDK 25+
+- Simplify plugin prefix resolution — avoid unnecessary lookups when the prefix is already mapped to a groupId:artifactId in the metadata
+- Verify the Java version requirements for plugins before execution and provide a clear error message if the requirement is not met
 
 This release updates Resolver to version [1.9.25](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.25).
 Resolver upgrade includes:
+
+### Notable Changes in Resolver 1.9.25
 
 TDOD
 
