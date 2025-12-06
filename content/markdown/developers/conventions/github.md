@@ -62,6 +62,7 @@ to be well-placed to address it.
 ### Reviewers
 
 We should invite persons to review for every change, even it is simply one, review can increase code quality.
+Also see [Maven's review policy](./git.html#review-policy).
 
 ### Priority
 

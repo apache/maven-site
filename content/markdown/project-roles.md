@@ -138,8 +138,7 @@ These are those people who have been given write access to the
 Apache Maven code repository and have a signed
 [Contributor License Agreement (CLA)][4] on file with the ASF.
 
-The Apache Maven project uses a Commit then Review policy and has
-[a number of conventions][5] which should be followed.
+The Apache Maven project has a number of [conventions][5] which should be followed.
 
 Committers are responsible for ensuring that every file they
 commit is covered by a valid CLA.
@@ -167,7 +166,7 @@ controls the project. Membership of the Project Management Committee
 is decided by the board of the Apache Software Foundation, based on
 nominations from the Project Management Committee.
 
-It is a long standing tradition of the Apache Maven Project that
+It is a long-standing tradition of the Apache Maven Project that
 the Project Management Committee reviews the active committers
 approximately every 6 months with a view to determining whether
 any of those committers would be suitable candidates to
@@ -191,7 +190,7 @@ The Project Management Committee has the following responsibilities:
   from the PMC stating their reason. If the PMC shrinks beyond the minimal viable
   size, then as a result of a desire by the bulk of the PMC to move the project
   elsewhere, the Board of the Apache Foundation will take that into account
-  when moving the project into the Foundation's [Attic][9]);
+  when moving the project into the Foundation's [Attic][9];
 * Prepare [reports][10] as required by the Board of the Apache Foundation and
   ensure those reports are ready for presentation by the PMC Chair in a timely
   manner.
@@ -260,7 +259,7 @@ is committed to the project's source control as early as possible. Similarly
 small commits are easier to review than large commits.
 
 There is nothing inherently wrong with maintaining a fork of the Maven
-codebase outside of the Apache Foundation. Individual developers can have
+codebase outside the Apache Foundation. Individual developers can have
 their own style of working and may prefer to work in a fork so that they
 can throw away failed experiments with less visibility (though it could be
 argued that the visibility of such failed experiments can be valuable
@@ -282,8 +281,8 @@ and history re-written to mask or otherwise hide the source of contributions.
 This does not mean that code coming from an external fork inherently has
 such issues. Instead, it means that the requirements for review and verification
 of provenance grow exponentially when dealing with large sets of changes
-originating from a long running fork hosted outside of Apache foundation
-source control. Anybody maintaining a long running fork should be aware
+originating from a long-running fork hosted outside of Apache foundation
+source control. Anybody maintaining a long-running fork should be aware
 that review obligations may grow above the time capabilities
 of the PMC and committers. When they eventually try to
 bring the changes in their fork back to the Apache Maven project, their
@@ -304,7 +303,7 @@ additional gravitas in the project. It is the Project Management
 Committee as a whole that is responsible for the direction of the project.
 
 If things break down and there is no consensus and there is no clear
-ability to reach any conclusion *and* it is in the interest of the
+ability to reach any conclusion, *and* it is in the interest of the
 foundation because damage is done and the board expects the chair
 to act as an officer of the foundation and clean things up, then the chair
 can act as an ultimate decision maker. However, by this point the
