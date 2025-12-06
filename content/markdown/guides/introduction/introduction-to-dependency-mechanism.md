@@ -760,14 +760,40 @@ Starting from Maven 4.0, a new specific BOM packaging has been introduced. It al
 
 ## System Dependencies
 
-`Important note: This is deprecated.`
+`Important note: The usage of this scope is not recommended!`
 
-Dependencies with the scope _system_ are not looked up in the Maven repository system. Instead the `dependency` element contains a `systemPath` pointing to a jar on the local file system.
-
-The system scope is commonly used to tell Maven about dependencies provided by the JDK or the VM. System dependencies are especially useful for resolving dependencies on artifacts which are now provided by the JDK, but were available as separate downloads earlier. A typical examples is the Java Authentication and Authorization Service (JAAS):
+In rare occurrences it's needed to use a dependency which is not available in any repository, but only on local machine, for example a jar of some commercial application.
+To include such a dependency in the build, the _system_ scope can be used. 
+Dependencies with the scope _system_ are not looked up in the Maven repository system.
+Instead, the `dependency` element contains a `systemPath` pointing to a jar on the local file system.
 
 ```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  ...
+  <dependencies>
+    <dependency>
+      <groupId>some.company</groupId>
+      <artifactId>the-artifact</artifactId>
+      <version>1.0.0</version>
+      <scope>system</scope>
+      <systemPath>path/to/lib/the.jar</systemPath>
+    </dependency>
+  </dependencies>
+  ...
+</project>
+```
 
+While the _system_ scope is technical possible, its usage is **not recommended**!
+The dependency is only looked up on this specific file path, which extremely binds the build to individual machines.
+The recommended approach is to upload the dependency to a [private hosted repository](/repository-management.html) and share the access within the organization.
+This also allows the differentiation between dependencies needed for compile/execution and those only needed for testing, by using _compile_ or _test_ scope.
+
+### Historical commonly usage: Libraries of the JDK
+
+In the past, the system scope was commonly used to tell Maven about dependencies provided by the JDK, but were available as separate downloads earlier.
+A typical examples is the Java Authentication and Authorization Service (JAAS):
+
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <dependencies>
@@ -781,24 +807,6 @@ The system scope is commonly used to tell Maven about dependencies provided by t
   </dependencies>
   ...
 </project>
-
 ```
 
-If your artifact is provided by the JDK's `tools.jar`, the system path would be defined as follows:
-
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-  ...
-  <dependencies>
-    <dependency>
-      <groupId>sun.jdk</groupId>
-      <artifactId>tools</artifactId>
-      <version>1.5.0</version>
-      <scope>system</scope>
-      <systemPath>${java.home}/../lib/tools.jar</systemPath>
-    </dependency>
-  </dependencies>
-  ...
-</project>
-```
-
+In general, those dependencies are available on Maven central nowadays.
