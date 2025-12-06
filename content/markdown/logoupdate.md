@@ -38,4 +38,4 @@ This page lists all affected logos, which need recreated by a professional.
 As you can see, two images need small additional changes aside replacing the feather with the oak leaf:
 
 * Logo #1: This also needs an update from "http" to "https"
-* Logo #4: This should be updated so the text “Maven” matches the other logos: Crossed feathers/leafs as the "v" and no highlighted "a" or feather/leaf on top of it.
+* Logo #4: This should be updated so the text “Maven” matches the other logos: Crossed feathers/leafs as the "v" and no highlighted "a" or feather/leaf on top of it. Also the colon after "Built by" should be removed.
