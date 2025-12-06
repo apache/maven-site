@@ -38,7 +38,7 @@ To contribute to a Maven component that is maintained in git, please follow thes
 
 Committers may, of course, commit directly to the ASF repositories. For complex changes, you may find it valuable to make a pull request at GitHub to make it easier to collaborate with others.
 
-#### Commit Message Template
+### Commit Message Template
 
 Commits should be focused on one issue at a time, because that makes it easier for others to review the commit.
 
@@ -66,9 +66,18 @@ Submitted by: Baz Bazman
 o Applied without change
 ```
 
+## Review policy
+
+The Maven project has no strict review policy, but the following practices established:
+
+* _Commit Then Review (CTR)_ for trivial/simple changes
+* _Review Then Commit (RTC)_ for complex changes and changes against release branches of past releases (e.g. `maven-3.8.x` branch)
+
+Committers are invited to also request reviews for trivial changes, because every review can increase code quality.
+
 ## Apply User Patch
 
-To keep the history of contributions clear, The committer should usually apply the patch without any **major** modifications, and then create his or her own commits for further modifications. However, committers should never commit code to a live branch which is not suitable to release. If a contribution requires significant work to make it useful, commit it to a branch, fix it up, and merge the branch.
+To keep the history of contributions clear, the committer should usually apply the patch without any **major** modifications, and then create his or her own commits for further modifications. However, committers should never commit code to a live branch which is not suitable to release. If a contribution requires significant work to make it useful, commit it to a branch, fix it up, and merge the branch.
 
 If the user created a pull request, the committer is responsible for closing that pull request. You do this by adding a note to a commit message:
 
