@@ -46,11 +46,12 @@ The majority of fixed issues are bug and regression fixes for user reported prob
 - Verify the Java version requirements for plugins before execution and provide a clear error message if the requirement is not met
 
 This release updates Resolver to version [1.9.25](https://github.com/apache/maven-resolver/releases/tag/maven-resolver-1.9.25).
-Resolver upgrade includes:
 
 ### Notable Changes in Resolver 1.9.25
 
-TDOD
+- Locking behavior has been refined by increasing lock-name selectivity. This enhances concurrency in parallel builds, 
+  although it may result in a higher number of distinct locks being created
+- Lock timeouts have been significantly increased—from 30 seconds to 15 minutes, to improve stability in complex or highly parallel build scenarios
 
 ## Full changelog
 
