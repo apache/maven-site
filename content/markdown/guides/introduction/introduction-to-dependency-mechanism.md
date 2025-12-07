@@ -760,7 +760,7 @@ Starting from Maven 4.0, a new specific BOM packaging has been introduced. It al
 
 ## System Dependencies
 
-`Important note: The usage of this scope is not recommended!`
+`Important note: Using this scope is not recommended!`
 
 In rare occurrences it's necessary to use a dependency which is not available in any repository, but only on local machine; For example, a jar of some commercial application.
 To include such a dependency in the build, the _system_ scope can be used. 
@@ -788,7 +788,7 @@ The dependency is only looked up on this specific file path, which binds the bui
 The recommended approach is to upload the dependency to a [private hosted repository](/repository-management.html) accessible within the organization.
 This also allows differentiation between dependencies needed for compile/execution and those only needed for testing, by using _compile_ or _test_ scope.
 
-### Historical commonly usage: Libraries of the JDK
+### Historical usage: Libraries of the JDK
 
 In the past, the system scope was commonly used to tell Maven about dependencies provided by the JDK that were available as separate downloads earlier.
 A typical examples is the Java Authentication and Authorization Service (JAAS):
