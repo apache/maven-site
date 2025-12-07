@@ -43,7 +43,7 @@ To address these circumstances, Maven supports build profiles. Profiles are spec
 
 ## Profile Inheritance
 
-The profiles are not inherited as other POM elements by child POMs. Instead, they are resolved very early by the [Maven Model Builder](/ref/current/maven-model-builder/) and only the effects of active profiles are inherited (e.g. the plugins defined in the profile). Implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
+The profiles are not inherited by child POMs. Instead, they are resolved very early by the [Maven Model Builder](/ref/current/maven-model-builder/) and only the effects of active profiles are inherited (e.g. the plugins defined in the profile). Implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
 
 ## How can a profile be triggered? How does this vary according to the type of profile being used?
 
@@ -103,9 +103,9 @@ This profile will automatically be active for all builds unless another profile 
 
 #### Implicit profile activation
 
-Profiles can be automatically triggered based on the detected state of the build environment.
-These triggers are specified via an `<activation>` section in the profile itself.
-The implicit profile activation always only refers to the container profile (and not to profiles in other modules with the same id).
+Profiles can be automatically triggered based on the state of the build environment.
+These triggers are specified via an `<activation>` section in the profile.
+The implicit profile activation only refers to the container profile (and not to profiles in other modules with the same id).
 Here are some examples.
 
 ##### JDK
