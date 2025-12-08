@@ -291,7 +291,7 @@
         <groupId>org.apache.rat</groupId>
         <artifactId>apache-rat-plugin</artifactId>
         <configuration>
-          <inputExcludes combine.children="append">
+          <excludes combine.children="append">
             <exclude>**/*.svg</exclude>
             <exclude>**/*.ai</exclude>
             <exclude>**/*.links</exclude>
@@ -305,7 +305,7 @@
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
             <exclude>content/resources/badges/*.json</exclude>
-          </inputExcludes>
+          </excludes>
         </configuration>
         <executions>
           <execution>
