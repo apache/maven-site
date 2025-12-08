@@ -43,17 +43,19 @@ To address these circumstances, Maven supports build profiles. Profiles are spec
 
 ## Profile Inheritance
 
-The profiles are not inherited as other POM elements by child POMs. Instead they are resolved very early by the [Maven Model Builder](/ref/current/maven-model-builder/) and only the effects of active profiles are inherited (e.g. the plugins defined in the profile). That also leads to the fact that implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
+The profiles are not inherited by child POMs. Instead, they are resolved very early by the [Maven Model Builder](/ref/current/maven-model-builder/) and only the effects of active profiles are inherited (e.g. the plugins defined in the profile). Implicit profile activation only has an effect on the surrounding profile container but never on any other profile (even if it has the same id).
 
 ## How can a profile be triggered? How does this vary according to the type of profile being used?
 
 A profile can be activated in several ways:
 
 - Explicitly
-- Implicitly
-  - Based on OS
-  - Based on system properties
-  - Based on presence of files
+- Implicitly, based on
+    - JDK version
+    - Operating system
+    - system properties
+    - packaging properties
+    - presence of files
 
 Refer to the sections below for details.
 
@@ -101,11 +103,14 @@ This profile will automatically be active for all builds unless another profile 
 
 #### Implicit profile activation
 
-Profiles can be automatically triggered based on the detected state of the build environment. These triggers are specified via an `<activation>` section in the profile itself. Currently, this detection is limited to JDK version matching, operating system matching or the presence/the value of a system property. The implicit profile activation always only refers to the container profile (and not to profiles in other modules with the same id). Here are some examples.
+Profiles can be automatically triggered based on the state of the build environment.
+These triggers are specified via an `<activation>` section in the profile.
+The implicit profile activation only refers to the container profile (and not to profiles in other modules with the same id).
+Here are some examples.
 
 ##### JDK
 
-The following configuration will trigger the profile when the JDK's version _starts with_ "1.4" (eg. "1.4.0\_08", "1.4.2\_07", "1.4"), in particular it _won't be active_ for **newer** versions like "1.8" or "11":
+The following configuration will trigger the profile when the JDK's version _starts with_ `1.4` (for example `1.4.0_08`, `1.4.2_07`, `1.4`), in particular it _won't be active_ for **newer** versions like `1.8` or `11`:
 
 ```xml
 <profiles>
@@ -118,7 +123,7 @@ The following configuration will trigger the profile when the JDK's version _sta
 </profiles>
 ```
 
-[Ranges](/enforcer/enforcer-rules/versionRanges.html) can also be used. Range values must start with either `[` or `(`. Otherwise, the value is interpreted as a prefix. The following honours versions 1.3, 1.4 and 1.5.
+[Ranges](/enforcer/enforcer-rules/versionRanges.html) can also be used. Range values must start with either `[` or `(`. Otherwise, the value is interpreted as a prefix. The following honours versions `1.3`, `1.4` and `1.5`.
 
 ```xml
 <profiles>
@@ -161,9 +166,9 @@ Since [Maven 3.9.7](https://issues.apache.org/jira/browse/MNG-5726) the value fo
 
 The actual OS values which need to match the given values are emitted when executing `mvn --version`.
 
-##### Property
+##### System Property
 
-The profile below will be activated when the system property "debug" is specified with any value:
+The profile below will be activated when the system property `debug` is specified with any value:
 
 ```xml
 <profiles>
@@ -178,7 +183,7 @@ The profile below will be activated when the system property "debug" is specifie
 </profiles>
 ```
 
-The following profile will be activated when the system property "debug" is not defined at all:
+The following profile will be activated when the system property `debug` is not defined at all:
 
 ```xml
 <profiles>
@@ -193,7 +198,7 @@ The following profile will be activated when the system property "debug" is not 
 </profiles>
 ```
 
-The following profile will be activated when the system property "debug" is defined with no value, or is defined with the value "true".
+The following profile will be activated when the system property `debug` is defined with no value, or is defined with the value `true`.
 
 ```xml
 <profiles>
@@ -216,7 +221,7 @@ mvn groupId:artifactId:goal -Ddebug
 mvn groupId:artifactId:goal -Ddebug=true
 ```
 
-The following profile will be activated when the system property "debug" is not defined, or is defined with a value which is not "true".
+The following profile will be activated when the system property `debug` is not defined, or is defined with a value which is not `true`.
 
 ```xml
 <profiles>
@@ -239,7 +244,7 @@ mvn groupId:artifactId:goal
 mvn groupId:artifactId:goal -Ddebug=false
 ```
 
-The next example will trigger the profile when the system property "environment" is specified with the value "test":
+The next example will trigger the profile when the system property `environment` is specified with the value `test`:
 
 ```xml
 <profiles>
@@ -264,6 +269,8 @@ mvn groupId:artifactId:goal -Denvironment=test
 Profiles in the POM can also be activated based on properties from active profiles from the `settings.xml`.
 
 **Note**: Environment variables like `FOO` are available as properties of the form `env.FOO`. Further note that environment variable names are normalized to all upper-case on Windows.
+
+#### Packaging property
 
 Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing property `packaging`. This is only useful where the profile activation is defined in a common parent POM which is reused among multiple Maven projects. The next example will trigger the profile when a project with packaging `war` is built:
 
