@@ -82,7 +82,8 @@ This flattening ensures that consumers of your artifact have all the information
 parent POMs or understanding the internal structure of your multi-project build.
 
 The flatten feature is disabled by default to avoid unexpected behavior and better control about listing (transitive) dependencies in consumer POM.
-To enable a flattened consumer POM the `maven.consumer.pom.flatten` property must be set to `true`.
+To enable a flattened consumer POM the user property `maven.consumer.pom.flatten` property must be set to `true`.
+User properties can be controlled using `${session.rootDirectory}/.mvn/maven-user.properties` for a per-reactor configuration though.
 
 ### Model version 4.1.0
 
