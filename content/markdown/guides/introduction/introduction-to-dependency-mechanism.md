@@ -788,9 +788,9 @@ The dependency is only looked up on this specific file path, which binds the bui
 The recommended approach is to upload the dependency to a [private hosted repository](/repository-management.html) accessible within the organization.
 This also allows differentiation between dependencies needed for compile/execution and those only needed for testing, by using _compile_ or _test_ scope.
 
-### Historical usage: Libraries of the JDK
+### Historical usage: Java EE (`javax`) libraries of the JDK
 
-In the past, the system scope was commonly used to tell Maven about dependencies provided by the JDK that were available as separate downloads earlier.
+In the past, the system scope was commonly used to tell Maven about Java EE (`javax` package) dependencies provided by the JDK that were available as separate downloads earlier.
 A typical examples is the Java Authentication and Authorization Service (JAAS):
 
 ```xml
@@ -808,5 +808,5 @@ A typical examples is the Java Authentication and Authorization Service (JAAS):
   ...
 </project>
 ```
-
-In general, those dependencies are available on Maven central nowadays.
+Most of those dependencies are available on Maven central nowadays.
+In general, you should never add any explicit dependencies for classes which are part of the JDK. 
