@@ -33,6 +33,7 @@ resolver-ant-tasks=components/resolver-ant-tasks
 resolver-archives=components/resolver-archives
 resolver-demos=components/resolver-demos
 resolver=components/resolver
+resolver-1.x=components/resolver-1.x
 sandbox=components/sandbox
 scm-archives=components/scm-archives
 scm=components/scm
