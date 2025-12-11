@@ -81,9 +81,9 @@ The consumer POM is a **flattened** version of the build POM, meaning:
 This flattening ensures that consumers of your artifact have all the information they need without requiring access to
 parent POMs or understanding the internal structure of your multi-project build.
 
-The flatten feature is disabled by default to avoid unexpected behavior and better control about listing (transitive) dependencies in consumer POM.
-To enable a flattened consumer POM the user property `maven.consumer.pom.flatten` property must be set to `true`.
-User properties can be controlled using `${session.rootDirectory}/.mvn/maven-user.properties` for a per-reactor configuration though.
+The flatten feature is disabled by default to avoid unexpected behavior and better control of listing (transitive) dependencies in the consumer POM.
+To publish a flattened consumer POM instead of the full build POM, the user property `maven.consumer.pom.flatten` must be set to `true`.
+User properties can be controlled using `${session.rootDirectory}/.mvn/maven-user.properties` for a per-reactor configuration.
 
 ### Model version 4.1.0
 
