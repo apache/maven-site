@@ -1355,7 +1355,7 @@ Report sets configure execution of a report plugin's goals.
 Does this sound familiar - deja-vu?
 The same thing was said about build's `execution` element with one difference: you cannot bind a report to another phase. Sorry.
 
-For example, suppose you wanted to configure the `javadoc:javadoc` goal to link to "[http://java.sun.com/j2se/1.5.0/docs/api/]", but only the `javadoc` goal (not the goal `maven-javadoc-plugin:jar`).
+For example, suppose you wanted to configure the `javadoc:javadoc` goal to link to "[https://docs.oracle.com/javase/1.5.0/docs/api/](https://docs.oracle.com/javase/1.5.0/docs/api/)", but only the `javadoc` goal (not the goal `maven-javadoc-plugin:jar`).
 We would also like this configuration passed to its children, and set `inherited` to true.
 The `reportSet` would resemble the following:
 
@@ -1375,7 +1375,7 @@ The `reportSet` would resemble the following:
             <inherited>true</inherited>
             <configuration>
               <links>
-                <link>http://java.sun.com/j2se/1.5.0/docs/api/</link>
+                <link>https://docs.oracle.com/javase/1.5.0/docs/api/</link>
               </links>
             </configuration>
           </reportSet>
