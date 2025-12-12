@@ -23,9 +23,7 @@ The Apache Maven team would like to announce the release of Maven 3.9.12.
 
 Maven 3.9.12 is [available for download][0].
 
-Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting, and documentation from a central place.
-
-The core release is independent of plugin releases. Further releases of plugins will be made separately. See the [PluginList][1] for more information.
+The core release is independent of plugin releases. Further releases of plugins will be made separately. See the [Plugin list][1] for more information.
 
 If you have any questions, please consult:
 
