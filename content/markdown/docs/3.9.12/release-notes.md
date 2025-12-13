@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Release Notes &#x2013; Maven 3.9.12
+# Maven 3.9.12 Release Notes
 
 The Apache Maven team would like to announce the release of Maven 3.9.12.
 
