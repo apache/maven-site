@@ -338,9 +338,9 @@ The following code snippet shows the parent and dependency definition without th
 ### Full support of CI-friendly variables
 
 Maven 3.5.0 introduced partial support for CI-friendly variables, like `${revision}`, in your POM files.
-However, this still required the usage of the [Flatten Maven Plugin][20] for full functionality.
+However, this still required using the [Flatten Maven Plugin][20] for full functionality.
 Since Maven 4, no additional plugin is needed; full built-in support is provided.
-You can now use **any variable** as versions in your configuration, not just predefined ones.
+You can now use **any variable** as a version in your configuration, not just predefined ones.
 
 Example
 
@@ -603,15 +603,15 @@ process running for as long as the shell remains open.
 
 ### Maven Upgrade Tool
 
-If you're currently using Maven 3 and want to upgrade to Maven 4, you can use the [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html).
+To upgrade from Maven 3 to Maven 4, you can use the [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html).
 This tool helps automate the migration process by analyzing your project and making necessary adjustments to ensure
 compatibility with Maven 4.
 
-The Maven Upgrade Tool tool can be used to:
+The Maven Upgrade Tool can be used to:
 
-* Automatically update your POM files to use the new model version 4.1.0 (if desired)
+* Update your POM files to use the new model version 4.1.0 (if desired)
 * Identify deprecated features and suggest replacements
-* Help migrate from deprecated plugin configurations to their modern equivalents
+* Migrate from deprecated plugin configurations to their modern equivalents
 * Validate that your project is ready for Maven 4
 
 Refer to [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html) for more information on usage and the upgrade process in general.
