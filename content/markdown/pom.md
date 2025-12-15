@@ -1957,9 +1957,8 @@ to the repository. It is described here just for understanding, but should never
 
 ## Profiles
 
-A new feature of the POM 4.0 is the ability of a project to change settings depending
-on the environment where it is being built. A `profile` element contains both an optional
-activation (a profile trigger) and the set of changes to be made to the POM if that profile has been
+Profiles offer the possibility to change project settings depending on the environment where it is being built.
+A `profile` element contains both an optional activation (a profile trigger) and the set of changes to be made to the POM if that profile has been
 activated. For example, a project built for a test environment may point to a different database than
 that of the final deployment. Or dependencies may be pulled from different repositories based upon
 the JDK version used.
@@ -1980,6 +1979,7 @@ The elements of profiles are as follows:
       <reporting>...</reporting>
       <dependencyManagement>...</dependencyManagement>
       <distributionManagement>...</distributionManagement>
+      <properties>...</properties>
     </profile>
   </profiles>
 </project>
@@ -1987,8 +1987,7 @@ The elements of profiles are as follows:
 
 ### Activation
 
-Activations are the key of a profile. The power of a profile comes from its ability to modify the
-basic POM only under certain circumstances. Those circumstances are specified via an `activation` element.
+The `activation` element defines the conditions, when a profile becomes active. 
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">

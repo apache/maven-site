@@ -351,7 +351,7 @@ Profiles specified in the POM can modify [the following POM elements](/ref/curre
 - `<pluginRepositories>`
 - `<dependencies>`
 - `<plugins>`
-- `<properties>` (not actually available in the main POM, but used behind the scenes)
+- `<properties>`
 - `<modules>`
 - `<reports>`
 - `<reporting>`
