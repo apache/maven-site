@@ -338,7 +338,7 @@ The following code snippet shows the parent and dependency definition without th
 ### Full support of CI-friendly variables
 
 Maven 3.5.0 introduced partial support for CI-friendly variables, like `${revision}`, in your POM files.
-However, this still required the usage of the [Flatten Maven Plugin][20] for full functionality.
+However, this still required using the [Flatten Maven Plugin][20] for full functionality.
 Since Maven 4, no additional plugin is needed; full built-in support is provided.
 You can now use **any variable** as a version in your configuration, not just predefined ones.
 
