@@ -55,10 +55,6 @@ This release updates Resolver to version [1.9.25](https://github.com/apache/mave
 
 For a full list of changes, please refer to the [GitHub release page](https://github.com/apache/maven/releases/tag/maven-3.9.12).
 
-## Known issues ###
-
-TDOD
-
 ## Potentially Breaking Core Changes (if migrating from 3.8.x)
 
 * The Maven Resolver transport has changed from Wagon to "native HTTP", see [Resolver Transport guide](/guides/mini/guide-resolver-transport.html).
