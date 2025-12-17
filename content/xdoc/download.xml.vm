@@ -54,7 +54,7 @@ under the License.
     <section name="Apache Maven" id="Maven">
       <subsection name="Apache Maven ${currentStableVersion}" id="CurrentMaven">
 
-      <p>Apache Maven ${currentStableVersion} is the latest release: it is the recommended version for all users.</p>
+      <p>Apache Maven ${currentStableVersion} is the latest release. It is the recommended version for all users.</p>
       <p>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
         <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</p>
 
@@ -126,7 +126,7 @@ under the License.
       </subsection>
 
       <subsection name="Preview 4.x Release" id="Maven4x">
-        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue. It is <b>NOT</b> safe for production use.</p>
+        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issues, it is <b>NOT</b> safe for production use.</p>
 
         <p>
           <table>
@@ -266,7 +266,7 @@ under the License.
       </subsection>
 
       <subsection name="Preview Daemon 2.x Release" id="Daemon2x">
-        <p>Maven Daemon 2.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
+        <p>Maven Daemon 2.x is currently under development, so while we are encouraging users to try it and report any issues, it is NOT safe for production use.</p>
 
         <table>
           <thead>
