@@ -28,47 +28,41 @@ under the License.
     <author>Manfred Moser</author>
   </properties>
   <body>
-    <section name="Downloading Apache Maven ${currentStableVersion}">
 
-      <p>Apache Maven ${currentStableVersion} is the latest release: it is the recommended version for all users.</p>
+    <section name="Downloading Apache Maven and Maven Daemon" id="TOC">
 
-      <a name="Requirements"/>
-      <subsection name="System Requirements" id="SystemRequirements">
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
-              <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-            <tr>
-              <td><b>Memory</b></td>
-              <td>No minimum requirement</td>
-            </tr>
-            <tr>
-              <td><b>Disk</b></td>
-              <td>Approximately 10MB is required for the Maven installation itself. In addition to that, disk space will
-              be used for your local Maven repository. The size of your local repository will vary depending on usage but expect at
-              least 500MB.</td>
-            </tr>
-            <tr>
-              <td><b>Operating System</b></td>
-              <td>No minimum requirement. Start up scripts are included as shell scripts (tested on many Unix flavors) and Windows batch files.</td>
-            </tr>
-          </table>
-        </p>
-      </subsection>
+      The following artifacts are available for download.
 
-      <subsection name="Files">
-      <p>Maven is distributed in several formats for your convenience. Simply pick a 
-      ready-made binary distribution archive and follow the <a href="./install.html">
-      installation instructions.</a>
-      Use a source archive if you intend to build Maven yourself.</p>
-      <p>
-      In order to guard against corrupted downloads/installations, it is highly recommended to
-      <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-      of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-      developers.</p>
+
+      <ul>
+        <li><a href="#Maven">Apache Maven</a>
+          <ul>
+            <li><a href="#CurrentMaven">Current Maven ${currentStableVersion}</a></li>
+            <li><a href="#Maven4x">Preview Maven ${current4xVersion}</a></li>
+          </ul>
+        </li>
+        <li><a href="#Daemon">Maven Daemon</a>
+          <ul>
+            <li><a href="#CurrentDaemon">Current Maven Daemon ${currentMvnd1xVersion}</a></li>
+            <li><a href="#Daemon2x">Preview Maven Daemon ${currentMvnd2xVersion}</a></li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+
+    <section name="Apache Maven" id="Maven">
+      <subsection name="Apache Maven ${currentStableVersion}" id="CurrentMaven">
+
+      <p>Apache Maven ${currentStableVersion} is the latest release. It is the recommended version for all users.</p>
+      <p>Maven 3.9+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
+        <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</p>
+
+      <p>Maven is distributed in several formats for your convenience. Simply pick a
+        ready-made binary distribution archive and follow the <a href="./install.html">
+          installation instructions.</a>
+        Use a source archive if you intend to build Maven yourself.</p>
+
       <table>
         <thead>
           <tr>
@@ -106,6 +100,13 @@ under the License.
           </tr>
         </tbody>
       </table>
+
+      <p>
+      In order to guard against corrupted downloads/installations, it is highly recommended to
+      <a href="https://www.apache.org/info/verification.html">verify the signature</a>
+      of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
+      developers.</p>
+
       <ul>
         <li>${currentStableVersion} <a href="./docs/${currentStableVersion}/release-notes.html">Release Notes</a> and
             <a href="./ref/${currentStableVersion}/">Release Reference Documentation</a></li>
@@ -124,7 +125,59 @@ under the License.
         and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
       </subsection>
 
-      <subsection name="Maven Daemon">
+      <subsection name="Preview 4.x Release" id="Maven4x">
+        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issues, it is <b>NOT</b> safe for production use.</p>
+
+        <p>
+          <table>
+            <tr>
+              <td><b>Java Development Kit (JDK)</b></td>
+              <td>Maven 4.0+ requires JDK 17 or above to execute. It still allows you to build against 8 and other JDK versions
+                <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
+            </tr>
+          </table>
+        </p>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Format</th>
+              <th>Binary (Checksum, Signature)</th>
+              <th>Source (Checksum, Signature)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>tar.gz archives</td>
+              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz">apache-maven-${current4xVersion}-bin.tar.gz</a>
+                (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
+                (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
+            </tr>
+            <tr>
+              <td>zip archives</td>
+              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip">apache-maven-${current4xVersion}-bin.zip</a>
+                (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.asc">asc</a>)</td>
+              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
+                (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>${current4xVersion} <a href="./docs/${current4xVersion}/release-notes.html">Release Notes</a> and
+            <a href="./ref/${current4xVersion}/">Release Reference Documentation</a></li>
+          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+          <li><a href="https://archive.apache.org/dist/maven/maven-4/">Maven 4 archives</a> for older 4.x releases.</li>
+        </ul>
+      </subsection>
+    </section>
+
+    <section name="Maven Daemon" id="Daemon">
+      <subsection name="Maven Daemon ${currentMvnd1xVersion}" id="CurrentDaemon">
         <p>Apache Maven Daemon (mvnd) is available as a separate download. In order to guard against corrupted downloads/installations, it is highly recommended to
           <a href="https://www.apache.org/info/verification.html">verify the signature</a>
           of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven developers.</p>
@@ -142,66 +195,66 @@ under the License.
               <td rowspan="2">macOS (Apple Silicon)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip">maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-aarch64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">macOS (Intel)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip">maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Linux (x86_64)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip">maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Windows (x86_64)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip">maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-windows-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Source</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.tar.gz">maven-mvnd-${currentMvnd1xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.zip">maven-mvnd-${currentMvnd1xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-src.zip.asc">asc</a>)</td>
             </tr>
           </tbody>
         </table>
@@ -212,71 +265,8 @@ under the License.
         </ul>
       </subsection>
 
-    </section>
-
-    <section name="Other Releases">
-
-      <subsection name="Preview 4.x Release">
-        <p>Maven 4.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
-
-        <p>
-          <table>
-            <tr>
-              <td><b>Java Development Kit (JDK)</b></td>
-              <td>Maven 4.0+ requires JDK 17 or above to execute. It still allows you to build against 8 and other JDK versions
-                  <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</td>
-            </tr>
-          </table>
-        </p>
-
-        <p>Maven is distributed in several formats for your convenience. Simply pick a
-              ready-made binary distribution archive and follow the <a href="./install.html">
-              installation instructions.</a>
-              Use a source archive if you intend to build Maven yourself.</p>
-        <p>
-            In order to guard against corrupted downloads/installations, it is highly recommended to
-              <a href="https://www.apache.org/info/verification.html">verify the signature</a>
-              of the release bundles against the public <a href="https://downloads.apache.org/maven/KEYS">KEYS</a> used by the Apache Maven
-              developers.</p>
-        <table>
-          <thead>
-            <tr>
-              <th>Format</th>
-              <th>Binary (Checksum, Signature)</th>
-              <th>Source (Checksum, Signature)</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>tar.gz archives</td>
-              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz">apache-maven-${current4xVersion}-bin.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.tar.gz.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz">apache-maven-${current4xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.sha512">sha512</a>, 
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.tar.gz.asc">asc</a>)</td>
-            </tr>
-            <tr>
-              <td>zip archives</td>
-              <td>Binary <a href="[preferred]maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip">apache-maven-${current4xVersion}-bin.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/binaries/apache-maven-${current4xVersion}-bin.zip.asc">asc</a>)</td>
-              <td>Source <a href="[preferred]maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip">apache-maven-${current4xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/maven-4/${current4xVersion}/source/apache-maven-${current4xVersion}-src.zip.asc">asc</a>)</td>
-            </tr>
-          </tbody>
-        </table>
-        <ul>
-          <li>${current4xVersion} <a href="./docs/${current4xVersion}/release-notes.html">Release Notes</a> and
-              <a href="./ref/${current4xVersion}/">Release Reference Documentation</a></li>
-          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
-          <li><a href="https://archive.apache.org/dist/maven/maven-4/">Maven 4 archives</a> for older 4.x releases.</li>
-        </ul>
-      </subsection>
-
-      <subsection name="Preview Daemon 2.x Release">
-        <p>Maven Daemon 2.x is currently under development, so while we are encouraging users to try it and report any issue, it is NOT safe for production use.</p>
+      <subsection name="Preview Daemon 2.x Release" id="Daemon2x">
+        <p>Maven Daemon 2.x is currently under development, so while we are encouraging users to try it and report any issues, it is NOT safe for production use.</p>
 
         <table>
           <thead>
@@ -291,66 +281,66 @@ under the License.
               <td rowspan="2">macOS (Apple Silicon)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz">maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip">maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-aarch64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">macOS (Intel)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz">maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip">maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-darwin-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Linux (x86_64)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz">maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip">maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-linux-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Windows (x86_64)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz">maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip">maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-windows-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
               <td rowspan="2">Source</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz">maven-mvnd-${currentMvnd2xVersion}-src.tar.gz</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.tar.gz.asc">asc</a>)</td>
             </tr>
             <tr>
               <td>zip</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip">maven-mvnd-${currentMvnd2xVersion}-src.zip</a>
-                  (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.sha512">sha512</a>,
-                   <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.asc">asc</a>)</td>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd2xVersion}/maven-mvnd-${currentMvnd2xVersion}-src.zip.asc">asc</a>)</td>
             </tr>
           </tbody>
         </table>
