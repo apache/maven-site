@@ -33,7 +33,7 @@ In order for Maven users to depend on your project, you must deploy the artifact
 
 ## A basic sample:
 
-```unknown
+```xml
 
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <modelVersion>4.0.0</modelVersion>

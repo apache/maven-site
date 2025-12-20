@@ -63,7 +63,7 @@ Here is the list of the plugins used:
 
 In your `pom.xml`, replace `plexus-maven-plugin` configuration:
 
-```unknown
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
@@ -85,7 +85,7 @@ In your `pom.xml`, replace `plexus-maven-plugin` configuration:
 
 with corresponding `plexus-component-metadata` configuration:
 
-```unknown
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <build>
     <plugins>
@@ -111,7 +111,7 @@ If `merge-descriptors` is used, move the handwritten xml file to `${project.base
 
 In your `pom.xml`, add `plexus-component-annotations` dependency:
 
-```unknown
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   <dependencies>
     <dependency>
@@ -125,7 +125,7 @@ In your `pom.xml`, add `plexus-component-annotations` dependency:
 
 In your java sources, replace javadoc tags:
 
-```unknown
+```java
 /**
  * @plexus.component role="foo.MyComponent" role-hint="hint-value"
  */
@@ -141,7 +141,7 @@ public class MyComponentImplementation
 
 with corresponding Java 5 annotations
 
-```unknown
+```java
 import org.codehaus.plexus.component.annotations.Component;
 import org.codehaus.plexus.component.annotations.Requirement;
 
