@@ -55,7 +55,7 @@ Is your favourite plugin missing a localization for your language? Please help u
 - Run "mvn install" for the plugin.
 - Configure a project to use the latest SNAPSHOT version of the plugin you are working on. Also configure the project to produce a site in the language you are adding a translation for. For Spanish, as we used in the example above, it would look like this:
 
-  ```unknown
+  ```xml
     <build>
       <plugins>
         <plugin>

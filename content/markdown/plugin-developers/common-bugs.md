@@ -33,7 +33,7 @@ For example, if developer A has UTF-8 as default encoding while developer B uses
 
 Therefore, developers should avoid any direct or indirect usage of the classes/methods that simply employ the platform's default encoding. For instance, `FileWriter` and `FileReader` should usually be avoided:
 
-```unknown
+```java
 /*
  * FIXME: This assumes the source file is using the platform's default encoding.
  */
@@ -49,7 +49,7 @@ To save the user from configuring each plugin individually, conventions have bee
 
 Finally note that XML files require special handling because they are equipped with an encoding declaration in the XML prolog. Reading or writing XML files with an encoding that does not match their XML prolog's `encoding` attribute is a bad idea:
 
-```unknown
+```java
 /*
  * FIXME: This assumes the XML encoding declaration matches the platform's default encoding.
  */
@@ -63,7 +63,7 @@ To ease the correct processing of XML files, developers are encouraged to use [`
 
 URLs and filesystem paths are really two different things and converting between them is not trivial. The main source of problems is that different encoding rules apply for the strings that make up a URL or filesystem path. For example, consider the following code snippet and its associated console output:
 
-```unknown
+```java
 File file = new File( "foo bar+foo" );
 URL url = file.toURI().toURL();
 
@@ -84,7 +84,7 @@ First of all, please note that [`File.toURL()`](http://java.sun.com/javase/6/doc
 
 Next, [`URL.getPath()`](http://java.sun.com/javase/6/docs/api/java/net/URL.html#getPath()) does in general not return a string that can be used as a filesystem path. It returns a substring of the URL and as such can contain escape sequences. The prominent example is the space character which will show up as "%20". People sometimes hack around this by means of `replace("%20", " ")` but that does simply not cover all cases. It's worth to mention that on the other hand the related method [`URI.getPath()`](http://java.sun.com/javase/6/docs/api/java/net/URI.html#getPath()) does decode escapes but still the result is not a filesystem path (compare the source for the constructor `File(URI)`). To summarize, the following idiom is to be avoided:
 
-```unknown
+```java
 URL url = new URL( "file:/C:/Program%20Files/Java/bin/java.exe" );
 
 /*
@@ -97,7 +97,7 @@ To decode a URL, people sometimes also choose [`java.net.URLDecoder`](http://jav
 
 In an ideal world, code targetting JRE 1.4+ could easily avoid these problems by using the constructor [`File(URI)`](http://java.sun.com/javase/6/docs/api/java/io/File.html#File(java.net.URI)) as suggested by the following snippet:
 
-```unknown
+```java
 URL url = new URL( "file:/C:/Documents and Settings/user/.m2/settings.xml" );
 
 /*
@@ -116,7 +116,7 @@ When developers need to compare strings without regard to case or want to realiz
 
 The gotcha with the arg-less methods is that their output depends on the default locale of the JVM but the default locale is out of control of the developer. That means the string expected by the developer (who runs/tests his code in a JVM using locale `xy`) does not necessarily match the string seen by another user (that runs a JVM with locale `ab`). For example, the comparison shown in the next code snippet is likely to fail for systems with default locale Turkish because Turkish has unusual casing rules for the characters "i" and "I":
 
-```unknown
+```java
 /*
  * FIXME: This assumes the casing rules of the current platform
  * match the rules for the English locale.
@@ -152,7 +152,7 @@ Reporting plugins that suffer from this bug can easily be detected by executing 
 
 Maven's command line supports the definition of system properties via arguments of the form `-D key=value`. While these properties are called system properties, plugins should never use [`System.getProperty()`](http://java.sun.com/javase/6/docs/api/java/lang/System.html#getProperty(java.lang.String)) and related methods to query these properties. For example, the following code snippet will not work reliably when Maven is embedded, say into an IDE or a CI server:
 
-```unknown
+```java
 public class MyMojo extends AbstractMojo
 {
     public void execute()
@@ -171,7 +171,7 @@ The problem is that the properties managed by the `System` class are global, i.e
 
 People occasionally employ shutdown hooks to perform cleanup tasks, e.g. to delete temporary files as shown in the example below:
 
-```unknown
+```java
 public class MyMojo extends AbstractMojo
 {
     public void execute()
@@ -212,7 +212,7 @@ At first glance, one might be tempted to argue that the project base directory i
 
 Hence this example code is prone to misbehave:
 
-```unknown
+```java
 public class MyMojo extends AbstractMojo
 {
     /**
@@ -233,7 +233,7 @@ public class MyMojo extends AbstractMojo
 
 In order to guarantee reliable builds, Maven and its plugins must manually resolve relative paths against the project's base directory. A simple idiom like the following will do just fine:
 
-```unknown
+```java
 File file = new File( path );
 if ( !file.isAbsolute() )
 {
@@ -249,7 +249,7 @@ Most reporting plugins inherit from `AbstractMavenReport`. In doing so, they nee
 
 Now, some plugins need to create additional files in the report output directory that accompany the report generated via the sink interface. While it is tempting to use either the method `getOutputDirectory()` or the field `outputDirectory` directly in order to setup a path for the output files, this leads most likely to a bug. More precisely, those plugins will not properly output files when run by the Maven Site Plugin as part of the site lifecycle. This is best noticed when the output directory for the site is configured directly in the Maven Site Plugin such that it deviates from the expression `${project.reporting.outputDirectory}` that the plugins use by default. Multi-language site generation is another scenario to exploit this bug which is illustrated below:
 
-```unknown
+```java
 public class MyReportMojo extends AbstractMavenReport
 {
     /**
