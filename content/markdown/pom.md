@@ -314,6 +314,8 @@ Version requirements have the following syntax:
 Maven picks the highest version of each project that satisfies all the hard requirements of the dependencies on that project.
 If no version satisfies all the hard requirements, the build fails.
 
+**Security Warning**: The use of version ranges (hard requirements with brackets and parentheses) is **strongly discouraged** due to security concerns. Version ranges introduce unpredictability in builds, can lead to non-reproducible builds, and may unexpectedly pull in vulnerable versions of dependencies. Always prefer using explicit, fixed version numbers for dependencies to ensure build reproducibility and security. For similar reasons, the use of `min` and `max` suffixes in version strings should also be avoided (see [Version Order Specification](#version-order-specification) below).
+
 #### Version Order Specification
 
 If version strings are syntactically correct [Semantic Versioning 1.0.0](https://semver.org/spec/v1.0.0.html)
@@ -398,6 +400,8 @@ Following semver rules is encouraged, and some qualifiers are discouraged:
 * The usage of `SP` qualifier is discouraged. Increment the patch version instead.
 * Avoid non-ASCII characters, including non-ASCII digits, which may sort in surprising ways.
 * Avoid upper case characters.
+
+**Security Warning**: The usage of `min` and `max` suffixes in version strings is **strongly discouraged** as they represent a security vulnerability similar to version ranges. These special qualifiers can lead to unpredictable dependency resolution behavior and potential security risks. Always use explicit, fixed version numbers for dependencies instead of relying on `min` or `max` qualifiers.
 
 End Result Examples:
 

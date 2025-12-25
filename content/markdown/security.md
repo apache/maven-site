@@ -31,6 +31,27 @@ the code, dependencies and repositories that are used in your build.
 If you want to use Maven to build untrusted code, it is up to you to
 provide the required isolation.
 
+## Security Best Practices
+
+### Avoid Version Ranges and Special Version Qualifiers
+
+**Strongly discouraged**: The use of version ranges and special version qualifiers like `min` and `max` suffixes.
+
+Version ranges (e.g., `[1.0,2.0)`, `[1.5,)`) and special version qualifiers (e.g., `-min`, `-max`) introduce several security concerns:
+
+- **Non-reproducible builds**: Different versions may be resolved at different times, making builds unpredictable
+- **Unexpected vulnerabilities**: Newer versions within a range may contain security vulnerabilities that weren't present when the dependency was initially added
+- **Supply chain attacks**: Attackers could publish malicious versions within an acceptable range
+- **Lack of determinism**: The same `pom.xml` may produce different artifacts depending on when and where it's built
+
+**Best Practice**: Always use explicit, fixed version numbers for dependencies (e.g., `1.2.3` instead of `[1.0,2.0)` or `1.2.3-min`). This ensures:
+- Build reproducibility
+- Predictable dependency resolution
+- Better security auditing
+- Explicit control over dependency updates
+
+See the [POM Reference documentation](./pom.html#dependency-version-requirement-specification) for more details on version specifications and the [Version Order Specification](./pom.html#version-order-specification) for information about version qualifiers.
+
 ## Security Vulnerabilities
 
 Please note that binary patches are not produced for individual
