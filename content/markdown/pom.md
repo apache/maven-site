@@ -1958,18 +1958,18 @@ to the repository. It is described here just for understanding, but should never
 ## Profiles
 
 Profiles offer the possibility to change project settings depending on the environment where it is being built.
-A `profile` element contains both an optional activation (a profile trigger) and the set of changes to be made to the POM if that profile has been
-activated. For example, a project built for a test environment may point to a different database than
-that of the final deployment. Or dependencies may be pulled from different repositories based upon
-the JDK version used.
-The elements of profiles are as follows:
+For example, a project built for a test environment may point to a different database than that of the final deployment.
+Or dependencies may be pulled from different repositories based upon the JDK version used.
+ 
+The elements of profiles are as follows.
+All elements are optional.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <profiles>
     <profile>
-      <id>test</id>
+      <id>...</id>
       <activation>...</activation>
       <build>...</build>
       <modules>...</modules>
@@ -1985,95 +1985,7 @@ The elements of profiles are as follows:
 </project>
 ```
 
-### Activation
-
-The `activation` element defines the conditions, when a profile becomes active. 
-
-```xml
-<project xmlns="http://maven.apache.org/POM/4.0.0">
-  <!-- ... -->
-  <profiles>
-    <profile>
-      <id>test</id>
-      <activation>
-        <activeByDefault>false</activeByDefault>
-        <jdk>21</jdk>
-        <os>
-          <name>Windows 10</name>
-          <family>Windows</family>
-          <arch>amd64</arch>
-          <version>10.0.19045.5247</version>
-        </os>
-        <property>
-          <name>sparrow-type</name>
-          <value>African</value>
-        </property>
-        <file>
-          <exists>${project.basedir}/file2.properties</exists>
-          <missing>${project.basedir}/file1.properties</missing>
-        </file>
-      </activation>
-      <!-- ... -->
-    </profile>
-  </profiles>
-</project>
-```
-
-Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
-Since Maven 3.2.2 activation occurs when all the specified criteria have been met.
-
-* `<activeByDefault>`:
-  Is `false` by default. Boolean flag which determines if the profile is active by default. This flag is only evaluated if no other profile is explicitly activated via command line, `settings.xml` or implicitly activated through some other activator, otherwise it has no effect.
-
-* `<jdk>`:
-  `activation` has a built-in, Java-centric check in the `jdk` element. The value is one of the following three types:
-
-  * A version range according to the definition of [Maven Enforcer Plugin](/enforcer/enforcer-rules/versionRanges.html) in case the value starts with either `[` or `(`,
-
-  * A negated prefix if the value starts with `!` or
-
-  * A (non-negated) prefix for all other cases
-
-  (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading `!`).
-  The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
-
-* `<os>`:
-  The `os` element can require some operating system specific properties having specific values.
-  Each value may start with `!` which means the condition is fulfilled if the value following does **not** equal the actual value,
-  otherwise the condition is fulfilled if the value equals the according system property (or derived value). In both cases the check is `<case insensitive>`.
-
-  * `<name>`, is matched against system property `os.name`
-
-  * `<family>`, is matched against the family derived from the other `<os.*>` system properties
-
-  * `<arch>`, is matched against system property `os.arch`
-
-  * `<version>`, is matched against system property `os.version`. Since [Maven 3.9.7](https://issues.apache.org/jira/browse/MNG-5726)
-    the value for `version` may be prefixed with `regex:`. In that case [regular pattern matching](https://docs.oracle.com/javase/tutorial/essential/regex/) is applied for the version matching. Note that system property `os.version` is converted to `<lower case>` prior to the matching.
-
-See the maven-enforcer-plugin's [Require OS Rule](/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
-
-* `<property>`:
-  The `profile` will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by `${name}`)
-  of the corresponding `name=value` pair, and it matches the given value (if given). Since Maven 3.9.0 one can also evaluate the `<packaging value>` of the pom via property name `packaging`.
-
-* `<file>`:
-  Finally, a given filename may activate the `profile` by the `existence` of a file, or if it
-  is `missing`. **NOTE**: interpolation for this element is limited to `${project.basedir}`, System properties and request properties.
-
-The POM based profile activation only refers to the container profile (not all profiles with the same `id`).
-
-The `activation` element is not the only way that a `profile` may be activated.
-The `settings.xml` file's `activeProfile` element may contain the profile's `id`. They may also be
-activated explicitly through the command line via a comma separated list after the `-P` flag (e.g. `-P codecoverage`).
-
-*To see which profile will activate in a certain build, use the* `maven-help-plugin`.
-
-```
-mvn help:active-profiles
-```
-
-Further information about profiles is available in [Introduction to Build Profiles](./guides/introduction/introduction-to-profiles.html).
+Extensive information about profiles, including examples, are available in [Introduction to Build Profiles](./guides/introduction/introduction-to-profiles.html).
 
 ## The BaseBuild Element Set (revisited)
 
