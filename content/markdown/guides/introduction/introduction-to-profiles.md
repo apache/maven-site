@@ -19,7 +19,7 @@ under the License.
 
 # Introduction to Build Profiles
 
-<!-- MACRO{toc|section=0|fromDepth=2|toDepth=5} -->
+<!-- MACRO{toc|section=0|fromDepth=2|toDepth=6} -->
 
 Apache Maven goes to great lengths to ensure that builds are portable. Among other things, this means allowing build configuration inside the POM, avoiding **all** filesystem references (in inheritance, dependencies, and other places), and leaning much more heavily on the local repository to store the metadata needed to make this possible.
 
@@ -53,7 +53,7 @@ A profile can be activated in several ways:
 - Implicitly, based on
     - JDK version
     - Operating system
-    - system properties
+    - system or CLI user properties
     - packaging properties
     - presence of files
 
@@ -163,13 +163,13 @@ An upper bound such as `,1.5]` is likely not to include most releases of 1.5, si
 If the range does not start with `[` or `(`, the value is interpreted as a (vendor) prefix.
 A prefix is negated if the value starts with `!`.
 (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading `!`).
-The following profile would be active, when any `zulu` JDK is used.
+The following profile would be active, when any `zulu64` JDK is used.
 
 ```xml
 <profiles>
   <profile>
     <activation>
-      <jdk>zulu</jdk>
+      <jdk>zulu64</jdk>
     </activation>
     ...
   </profile>
@@ -205,7 +205,7 @@ Since [Maven 3.9.7](https://issues.apache.org/jira/browse/MNG-5726) the value fo
 The actual OS values which need to match the given values are emitted when executing `mvn --version`.
 See the maven-enforcer-plugin's [Require OS Rule](/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
 
-#### Properties
+##### Properties
 
 The `profile` will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by `${name}`) of the corresponding `name=value` pair, and it matches the given value (if given).
 Since Maven 3.9.0 one can also evaluate the `<packaging value>` of the pom via property name `packaging`.
@@ -406,7 +406,7 @@ Profiles specified in the POM can modify [the following POM elements](/ref/curre
 - `<reporting>`
 - `<dependencyManagement>`
 - `<distributionManagement>`
-- a subset of the `<build>` element, which consists of:
+- the following subset of the `<build>` element:
   - `<defaultGoal>`
   - `<resources>`
   - `<testResources>`
@@ -415,6 +415,41 @@ Profiles specified in the POM can modify [the following POM elements](/ref/curre
   - `<filters>`
   - `<pluginManagement>`
   - `<plugins>`
+
+_Note_: A profile which tries to modify other elements of the `<build>` element is invalid and will fail the build with a "malformed POM" error.
+
+#### Examples
+
+The following example defines a profile to execute the [Maven Invoker Plugin](https://maven.apache.org/plugins/maven-invoker-plugin/):
+
+```xml
+<profile>
+  <id>run-its</id>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <configuration>
+          <goals>
+            <goal>clean</goal>
+            <goal>package</goal>
+          </goals>
+        </configuration>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>install</goal>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+```
 
 ### POM elements outside &lt;profiles&gt;
 
