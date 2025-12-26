@@ -106,7 +106,27 @@ This profile will automatically be active for all builds unless another profile 
 Profiles can be automatically triggered based on the state of the build environment.
 These triggers are specified via an `<activation>` section in the profile.
 The implicit profile activation only refers to the container profile (and not to profiles in other modules with the same id).
-Here are some examples.
+
+_Note_: Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
+Since Maven 3.2.2 activation occurs when all the specified criteria have been met.
+
+##### Active by default
+
+Boolean flag which determines if the profile is active by default. Is `false` by default.
+This flag is only evaluated if no other profile is explicitly activated via command line, `settings.xml` or implicitly activated through some other activator, otherwise it has no effect.
+
+Example to set a profile active by default.
+
+```xml
+<profiles>
+  <profile>
+    <activation>
+      <activeByDefault>true</activeByDefault>
+    </activation>
+    ...
+  </profile>
+</profiles>
+```
 
 ##### JDK
 
@@ -123,7 +143,8 @@ The following configuration will trigger the profile when the JDK's version _sta
 </profiles>
 ```
 
-[Ranges](/enforcer/enforcer-rules/versionRanges.html) can also be used. Range values must start with either `[` or `(`. Otherwise, the value is interpreted as a prefix. The following honours versions `1.3`, `1.4` and `1.5`.
+[Ranges](/enforcer/enforcer-rules/versionRanges.html) can also be used. Range values must start with either `[` or `(`.
+The following honours versions `1.3`, `1.4` and `1.5`.
 
 ```xml
 <profiles>
@@ -136,7 +157,24 @@ The following configuration will trigger the profile when the JDK's version _sta
 </profiles>
 ```
 
-_Note:_ an upper bound such as `,1.5]` is likely not to include most releases of 1.5, since they will have an additional "patch" release such as `_05` that is not taken into consideration in the above range.
+_Note:_ The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
+An upper bound such as `,1.5]` is likely not to include most releases of 1.5, since they will have an additional "patch" release such as `_05` that is not taken into consideration in the above range. 
+
+If the range does not start with `[` or `(`, the value is interpreted as a (vendor) prefix.
+A prefix is negated if the value starts with `!`.
+(Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading `!`).
+The following profile would be active, when any `zulu` JDK is used.
+
+```xml
+<profiles>
+  <profile>
+    <activation>
+      <jdk>zulu</jdk>
+    </activation>
+    ...
+  </profile>
+</profiles>
+```
 
 ##### OS
 
@@ -165,8 +203,16 @@ Each value can be prefixed with `!` to negate the matching. The values match if 
 Since [Maven 3.9.7](https://issues.apache.org/jira/browse/MNG-5726) the value for `version` may be prefixed with `regex:`. In that case [regular pattern matching](https://docs.oracle.com/javase/tutorial/essential/regex/) is applied for the version matching and applied against the **lower case** `os.version` value.
 
 The actual OS values which need to match the given values are emitted when executing `mvn --version`.
+See the maven-enforcer-plugin's [Require OS Rule](/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
 
-##### System Property
+#### Properties
+
+The `profile` will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by `${name}`) of the corresponding `name=value` pair, and it matches the given value (if given).
+Since Maven 3.9.0 one can also evaluate the `<packaging value>` of the pom via property name `packaging`.
+
+###### System or CLI user property
+The `profile` will activate if Maven detects a system property or CLI user property (a value which can be dereferenced within the POM by `${name}`)
+of the corresponding `name=value` pair, and it matches the given value (if given).
 
 The profile below will be activated when the system property `debug` is specified with any value:
 
@@ -270,7 +316,7 @@ Profiles in the POM can also be activated based on properties from active profil
 
 **Note**: Environment variables like `FOO` are available as properties of the form `env.FOO`. Further note that environment variable names are normalized to all upper-case on Windows.
 
-#### Packaging property
+###### Packaging property
 
 Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing property `packaging`. This is only useful where the profile activation is defined in a common parent POM which is reused among multiple Maven projects. The next example will trigger the profile when a project with packaging `war` is built:
 
@@ -289,6 +335,9 @@ Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing
 ```
 
 ##### Files
+
+A given filename may activate the `profile` by the `existence` of a file, or if it is `missing`.
+**NOTE**: Interpolation for this element is limited to `${project.basedir}`, System properties and request properties.
 
 This example will trigger the profile when the generated file `target/generated-sources/axistools/wsdl2java/org/apache/maven` is missing.
 
