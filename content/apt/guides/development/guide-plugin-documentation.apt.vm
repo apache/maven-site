@@ -270,14 +270,14 @@ Plugin Name
 
   If you have questions regarding the plugin, consult the {{{faq.html}FAQ}} and feel
   free to contact the {{{mailing-lists.html}user mailing list}}. Posts to the mailing list are archived and might
-  already contain the answer to your question. Hence, it is worth browsing/searching
+  already contain the answer to your question. Hence, it is also worth browsing/searching
   the {{{mailing-lists.html}mail archive}}.
 
   If you think the plugin is missing a feature or has a defect, you can file a feature request or bug report in the
   {{{issue-management.html}issue management system}}. When creating a new issue, please provide a comprehensive description of your
   concern. Especially for fixing bugs, it is crucial that the developers can reproduce your problem. For this reason,
   entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
-  Of course, patches are welcome too. Contributors can check out the project from our
+  Of course, patches are welcome, too. Contributors can check out the project from our
   {{{scm.html}source repository}} and will find supplementary information in the
   {{{/guides/development/guide-helping.html}guide to helping with Maven}}. 
 
