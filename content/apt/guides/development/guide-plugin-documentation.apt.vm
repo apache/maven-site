@@ -30,9 +30,9 @@ Introduction
 
 *Where did the standard come from?
 
- The plugin documentation standard was created to address the frequent complain of lack of 
+ The plugin documentation standard was created to address frequent complaints about the lack of 
  documentation, specifically on the Maven plugins. The standard was based on the suggestions made 
- on the Maven dev mailing list with some refinements. It is a community consensus of what basic 
+ on the Maven dev mailing list with some refinements. It is a community consensus of the basic 
  documentation a Maven plugin should have.
 
  {{{/plugins/maven-docck-plugin/}Maven Documentation Checker Plugin}} (aka. DocCK) was created at that time to help check plugin documentation,
@@ -41,8 +41,8 @@ Introduction
 *Why do we need a documentation standard?
 
  The standard is not a set of rules but a guide to help plugin developers document their plugins
- better, for the benefit of the users of the plugin. The standard also reminds the plugin developers
- of the important details that needs to be documented, to help speed up the adoption of the plugin.
+ better, for the benefit of the users of the plugin. The standard also reminds plugin developers
+ of important details that need to be documented to help speed up the adoption of the plugin.
 
 *Generated Documentation
 
@@ -66,9 +66,9 @@ mvn site
 *POM Elements
 
  Like any Maven project, Maven extracts the information from the POM to let {{{/plugins/maven-project-info-reports-plugin/}Maven Project Info Reports Plugin}} generate the pages under {{{/project-info.html}"Project Information"}}. 
- The first step in having a good documentation is to have an accurate and visible basic project 
- information, Maven can provide this for the plugin as long as the information in the POM is 
- complete, descriptive and accurate.
+ The first step in good documentation is to have accurate and visible basic project 
+ information. Maven can provide this for the plugin as long as the information in the POM is 
+ complete, descriptive, and accurate.
 
 **Required Elements
 
@@ -135,9 +135,9 @@ mvn site
 
  The comments, annotations and plugin goals parameter 
  names are extracted from the plugin source and rendered in the "Plugin Documentation" page. In order for the generated site to 
- be useful here are some guidelines you can follow when documenting your plugin.
+ be useful, here are some guidelines for documenting your plugin.
 
- * all <<<@Parameter>>> fields should have a descriptive comment, informative enough that even a regular user can understand
+ * All <<<@Parameter>>> fields should have a descriptive comment, informative enough that a regular user can understand.
 
 +--------------+
     [...]
@@ -149,8 +149,8 @@ mvn site
     [...]
 +--------------+
 
- * if a parameter is not just a simple Java type or list of simple type, but a specific additional class, it is a good practice to give a sample
-   XML snippet showing the structure of objects that can be configured
+ * If a parameter is not just a simple Java type or a list of simple types, but a specific additional class, give a sample
+   XML snippet showing the structure of objects that can be configured.
 
 +--------------+
     [...]
@@ -168,14 +168,14 @@ mvn site
     [...]
 +--------------+
 
-  Notice: the class does not need any specific annotation, <<<@Parameter>>> on the <<<Mojo>>> field is sufficient inject a bean instance created from XML configuration.
+  The class does not need any specific annotation. <<<@Parameter>>> on the <<<Mojo>>> field is sufficient to inject a bean instance created from XML configuration.
 
-  See for example {{{/plugin-tools/maven-plugin-report-plugin/report-mojo.html#requirementsHistories}<<<requirementsHistories>>> parameter documentation}}
+  See, for example, {{{/plugin-tools/maven-plugin-report-plugin/report-mojo.html#requirementsHistories}<<<requirementsHistories>>> parameter documentation}}
 rendered from {{{https://github.com/apache/maven-plugin-tools/blob/maven-plugin-tools-3.15.1/maven-plugin-report-plugin/src/main/java/org/apache/maven/plugin/plugin/report/PluginReport.java#L93}plugin source code}}
 and {{{https://github.com/apache/maven-plugin-tools/blob/maven-plugin-tools-3.15.1/maven-plugin-report-plugin/src/main/java/org/apache/maven/plugin/plugin/report/RequirementsHistory.java}<<<RequirementsHistory>>>}}
 class,
 
- * class level comment should explain what the goal does
+ * The class level comment should explain what the goal does.
 
 +--------------+
 [...]
@@ -192,20 +192,20 @@ public class ExampleMojo
 [...]
 +--------------+
 
- * the <<<@Component>>> and <<<readonly>>> parameters are not required to have any comments but it's still a good practice to provide one
+ * The <<<@Component>>> and <<<readonly>>> parameters are not required to have any comments, but it's still a good practice to provide them.
 
 *Site Organization 
 
- Visibility of the information is also crucial, having uniform navigation links will greatly improve the visibility of the
- documentations. The index page can also help emphasize important sections and pages of the plugin documentation. 
+ Visibility of the information is also crucial. Uniform navigation links greatly improve the visibility of the
+ documentation. The index page can help emphasize important sections and pages of the plugin documentation. 
 
 **Site Descriptor 
 
  The {{{/plugins/maven-site-plugin/examples/sitedescriptor.html}site descriptor}} describes the navigation links and the layout of the page.
  It can be found in <<<src/site/site.xml>>>.
 
- You must define a {{{../../skins/}skin}}, if you are using a site descriptor.
- There is no default skin applied automatically.
+ You must define a {{{../../skins/}skin}} if you are using a site descriptor.
+ No default skin is applied automatically.
 
  Below is the suggested site descriptor template (with maven-fluido-skin).
 
@@ -238,9 +238,9 @@ public class ExampleMojo
 
  * Introduction
 
- The introduction is the front page of the plugin documentation. This is a good place to place any section and pages that needs
- to be emphasized. It is also suggested that the generated plugin parameter configuration be linked here. Below is the suggested
- <<<src/site/apt/index.apt>>> template
+ The introduction is the front page of the plugin documentation. This is a good place to put any section and pages that need
+ to be emphasized. The generated plugin parameter configuration should be linked here. Below is the suggested
+ <<<src/site/apt/index.apt>>> template:
 
 ----------------
  ------
@@ -264,18 +264,18 @@ Plugin Name
 
 * Usage
 
-  General instructions on how to use the Plugin Name can be found on the {{{usage.html}usage page}}. Some more
+  General instructions for using the Plugin Name can be found on the {{{usage.html}usage page}}. Some more
   specific use cases are described in the examples given below. Last but not least, users occasionally contribute
   additional examples, tips or errata to the plugin's wiki page.
 
-  In case you still have questions regarding the plugin's usage, please have a look at the {{{faq.html}FAQ}} and feel
-  free to contact the {{{mailing-lists.html}user mailing list}}. The posts to the mailing list are archived and could
-  already contain the answer to your question as part of an older thread. Hence, it is also worth browsing/searching
+  If you have questions regarding the plugin, consult the {{{faq.html}FAQ}} and feel
+  free to contact the {{{mailing-lists.html}user mailing list}}. Posts to the mailing list are archived and might
+  already contain the answer to your question. Hence, it is also worth browsing/searching
   the {{{mailing-lists.html}mail archive}}.
 
-  If you feel like the plugin is missing a feature or has a defect, you can fill a feature request or bug report in our
+  If you think the plugin is missing a feature or has a defect, you can file a feature request or bug report in the
   {{{issue-management.html}issue management system}}. When creating a new issue, please provide a comprehensive description of your
-  concern. Especially for fixing bugs it is crucial that the developers can reproduce your problem. For this reason,
+  concern. Especially for fixing bugs, it is crucial that the developers can reproduce your problem. For this reason,
   entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
   Of course, patches are welcome, too. Contributors can check out the project from our
   {{{scm.html}source repository}} and will find supplementary information in the
@@ -283,8 +283,8 @@ Plugin Name
 
 * Examples
 
-  To provide you with better understanding of some usages of the Plugin Name,
-  you can take a look into the following examples:
+  To help you understand some usages of the Plugin Name,
+  you can take a look at the following examples:
 
   * {{{./examples/example-one.html}Example Description One}}
 
@@ -326,8 +326,8 @@ Plugin Name
 
  * Examples
 
-   The advanced configurations and examples not covered in the usage page is located here. Advanced users who wants to maximize the use
-   of a plugin can check the items here. Tips on how to use the plugin effectively is also a good thing to put here.
+   Advanced configurations and examples not covered in the usage page are located here. Advanced users who want to maximize the use
+   of a plugin can check the items here. Tips on how to use the plugin effectively are also a good thing to put here.
 
    For examples of items under "Examples" check these plugin sites:
 
@@ -335,7 +335,7 @@ Plugin Name
 
    * {{{/plugins/maven-war-plugin/}Maven War Plugin Examples}}
 
-*Recommended Configured Reports
+* Recommended Configured Reports
 
   There are 2 recommended report plugins to enhance the plugin documentation, Javadoc and JXR.
 
@@ -376,10 +376,10 @@ Plugin Name
   * Maven JXR Plugin
 
   The Maven JXR Plugin generates a cross-reference of the project sources. The generated cross-references are also linked to the corresponding
-  javadoc if javadoc is generated. The cross-references is great for those who wants to better understand the inner workings of the
+  javadoc if javadoc is generated. The cross-reference is great for those who want to better understand the inner workings of the
   plugin.
 
-  To enable source code cross-references add the following to your <<<pom.xml>>>
+  To enable source code cross-references, add the following to your <<<pom.xml>>>
 
 +--------------+
 <project>
