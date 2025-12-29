@@ -106,14 +106,12 @@ This profile will automatically be active for all builds unless another profile 
 Profiles can be automatically triggered based on the state of the build environment.
 These triggers are specified via an `<activation>` section in the profile.
 The implicit profile activation only refers to the container profile (and not to profiles in other modules with the same id).
-
-_Note_: Before Maven 3.2.2 activation occurs when one or more of the specified criteria have been met. When the first positive result is encountered, processing stops and the profile is marked as active.
-Since Maven 3.2.2 activation occurs when all the specified criteria have been met.
+The activation occurs when all the specified criteria have been met.
 
 ##### Active by default
 
 Boolean flag which determines if the profile is active by default. Is `false` by default.
-This flag is only evaluated if no other profile is explicitly activated via command line, `settings.xml` or implicitly activated through some other activator, otherwise it has no effect.
+This flag is only evaluated if no other profile is explicitly activated via command line, `settings.xml` or activated through some other activator. Otherwise, it has no effect.
 
 Example to set a profile active by default.
 
@@ -157,10 +155,10 @@ The following honours versions `1.3`, `1.4` and `1.5`.
 </profiles>
 ```
 
-_Note:_ The value ranges match if the JDK version used for running Maven is between lower and upper bounds (either inclusive or exclusive).
-An upper bound such as `,1.5]` is likely not to include most releases of 1.5, since they will have an additional "patch" release such as `_05` that is not taken into consideration in the above range. 
+_Note:_ The value ranges match if the JDK version used for running Maven is between the lower and upper bounds (either inclusive or exclusive).
+An upper bound such as `,1.5]` likely does not include most releases of 1.5, since they will have an additional "patch" release such as `_05` that is not taken into consideration in the above range. 
 
-If the range does not start with `[` or `(`, the value is interpreted as a (vendor) prefix.
+If the range does not start with `[` or `(`, the value is interpreted as a vendor prefix.
 A prefix is negated if the value starts with `!`.
 (Negated) prefix values match if the JDK version used for running Maven starts/doesn't start with the given prefix (excluding the potentially leading `!`).
 The following profile would be active, when any `zulu64` JDK is used.
@@ -178,7 +176,7 @@ The following profile would be active, when any `zulu64` JDK is used.
 
 ##### OS
 
-This next one will activate based on the detected operating system. See the [Maven Enforcer Plugin](/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
+This next one will activate based on the detected operating system. See the [Maven Enforcer Plugin](https://maven.apache.org/enforcer/enforcer-rules/requireOS.html) for more details about OS values.
 
 ```xml
 <profiles>
@@ -337,7 +335,7 @@ Since Maven 3.9.0 one can also evaluate the POM's packaging value by referencing
 ##### Files
 
 A given filename may activate the `profile` by the `existence` of a file, or if it is `missing`.
-**NOTE**: Interpolation for this element is limited to `${project.basedir}`, System properties and request properties.
+**NOTE**: Interpolation for this element is limited to `${project.basedir}`, System properties, and request properties.
 
 This example will trigger the profile when the generated file `target/generated-sources/axistools/wsdl2java/org/apache/maven` is missing.
 
@@ -358,7 +356,7 @@ The tags `<exists>` and `<missing>` can be interpolated. Supported variables are
 
 #### Multiple conditions
 
-Different implicit activation types can be combined in one profile. The profile is then only active if all conditions are met (since Maven 3.2.2, [MNG-4565](https://issues.apache.org/jira/browse/MNG-4565)). Using the same type more than once in the same profile is not supported ([MNG-5909](https://issues.apache.org/jira/browse/MNG-5909), [MNG-3328](https://issues.apache.org/jira/browse/MNG-3328)).
+Different implicit activation types can be combined in one profile. The profile is then only active if all conditions are met. Using the same type more than once in the same profile is not supported ([MNG-5909](https://issues.apache.org/jira/browse/MNG-5909), [MNG-3328](https://issues.apache.org/jira/browse/MNG-3328)).
 
 ### Deactivating a profile
 
