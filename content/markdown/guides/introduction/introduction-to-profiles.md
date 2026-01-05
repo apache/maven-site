@@ -142,7 +142,7 @@ The following configuration will trigger the profile when the JDK's version _sta
 ```
 
 [Ranges](/enforcer/enforcer-rules/versionRanges.html) can also be used. Range values must start with either `[` or `(`.
-The following honours versions `1.3`, `1.4` and `1.5`.
+The following honours versions `1.3`, `1.4`, and `1.5`.
 
 ```xml
 <profiles>
