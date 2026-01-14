@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Developing Maven
+# Contribute to Maven
 
 This documentation is for people who work on the source code of Maven itself and its core plugins, or who would like to contribute. If you simply use Maven to build your own projects, it won't be very helpful.
 
