@@ -70,7 +70,7 @@
     <siteDirectory>${project.basedir}/content</siteDirectory>
     <!-- used by src/xdoc/errors/404.xml.vm as well -->
     <version.maven-fluido-skin>2.1.0</version.maven-fluido-skin>
-    <version.plantuml-maven-plugin>0.4.12</version.plantuml-maven-plugin>
+    <version.plantuml-maven-plugin>0.4.13</version.plantuml-maven-plugin>
     <!-- required by plantuml-m-p 0.3 -->
     <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
   </properties>
