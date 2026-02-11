@@ -89,7 +89,7 @@ This also applies to the `--fail-on-severity` option of Maven 4.0.0.
 [5]: https://www.slf4j.org/apidocs/
 [6]: https://codehaus-plexus.github.io/plexus-containers/plexus-container-default/apidocs/org/codehaus/plexus/logging/package-summary.html
 [7]: https://www.slf4j.org/manual.html#swapping
-[8]: https://github.com/apache/maven/blob/master/apache-maven/src/assembly/maven/conf/logging/simplelogger.properties
+[8]: https://github.com/apache/maven/blob/master/apache-maven/src/assembly/maven/conf/logging/maven.logger.properties
 [9]: https://maven.apache.org/configure.html
 [10]: https://maven.apache.org/ref/current/maven-slf4j-provider/
 
