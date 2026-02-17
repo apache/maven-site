@@ -585,12 +585,15 @@ For plugin configuration you can overwrite the inheritance behaviour with the at
 Similar to the inheritance of objects in object-oriented programming, POMs that extend
 a parent POM inherit certain values from that parent. Moreover, just as Java objects
 ultimately inherit from `java.lang.Object`, all Project Object Models inherit from
-a base Super POM. The snippet below is the Super POM for Maven 3.5.4.
+a base Super POM. The snippet below is the Super POM for Maven 3.9.12.
+
+Note: The latest Super POM for Maven 3 is available [here](https://maven.apache.org/ref/3-LATEST/maven-model-builder/super-pom.html).
 
 ```xml
 <project>
+  
   <modelVersion>4.0.0</modelVersion>
-
+  
   <repositories>
     <repository>
       <id>central</id>
@@ -602,7 +605,7 @@ a base Super POM. The snippet below is the Super POM for Maven 3.5.4.
       </snapshots>
     </repository>
   </repositories>
-
+  
   <pluginRepositories>
     <pluginRepository>
       <id>central</id>
@@ -612,12 +615,9 @@ a base Super POM. The snippet below is the Super POM for Maven 3.5.4.
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
     </pluginRepository>
   </pluginRepositories>
-
+  
   <build>
     <directory>${project.basedir}/target</directory>
     <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -642,40 +642,38 @@ a base Super POM. The snippet below is the Super POM for Maven 3.5.4.
       <plugins>
         <plugin>
           <artifactId>maven-antrun-plugin</artifactId>
-          <version>1.3</version>
+          <version>3.1.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-assembly-plugin</artifactId>
-          <version>2.2-beta-5</version>
+          <version>3.7.1</version>
         </plugin>
         <plugin>
           <artifactId>maven-dependency-plugin</artifactId>
-          <version>2.8</version>
+          <version>3.7.0</version>
         </plugin>
         <plugin>
           <artifactId>maven-release-plugin</artifactId>
-          <version>2.5.3</version>
+          <version>3.0.1</version>
         </plugin>
       </plugins>
     </pluginManagement>
   </build>
-
+  
   <reporting>
     <outputDirectory>${project.build.directory}/site</outputDirectory>
   </reporting>
-
+  
   <profiles>
     <!-- NOTE: The release profile will be removed from future versions of the super POM -->
     <profile>
       <id>release-profile</id>
-
       <activation>
         <property>
           <name>performRelease</name>
           <value>true</value>
         </property>
       </activation>
-
       <build>
         <plugins>
           <plugin>
@@ -705,15 +703,12 @@ a base Super POM. The snippet below is the Super POM for Maven 3.5.4.
           <plugin>
             <inherited>true</inherited>
             <artifactId>maven-deploy-plugin</artifactId>
-            <configuration>
-              <updateReleaseInfo>true</updateReleaseInfo>
-            </configuration>
           </plugin>
         </plugins>
       </build>
     </profile>
   </profiles>
-
+  
 </project>
 ```
 
