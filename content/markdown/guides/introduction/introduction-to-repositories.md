@@ -26,7 +26,7 @@ A repository in Maven holds build artifacts of varying types.
 There are exactly two types of repositories: **local** and **remote**:
 
 1. the **local** repository is a directory on the computer where Maven runs. It caches remote downloads and contains temporary build artifacts that you have not yet released.
-2. **remote** repositories refer to any other type of repository, accessed by a variety of protocols such as `file://` and `https://`. These repositories might be a truly remote repository set up by a third party to provide their artifacts for downloading (for example, [repo.maven.apache.org](https://repo.maven.apache.org/maven2/)). Other "remote" repositories may be internal repositories set up on a file or HTTP server within your company, used to share private artifacts between development teams and for releases.
+2. **remote** repositories refer to any other type of repository, accessed by a variety of protocols such as `file://` and `https://`. These repositories might be a truly remote repository set up by a third party to provide their artifacts for downloading (for example, [repo.maven.apache.org](https://repo.maven.apache.org/maven2/)). Other "remote" repositories may be internal repositories set up on a file or HTTPS server within your company, used to share private artifacts between development teams and for releases.
 
 Local and remote repositories are structured the same way so that scripts can run on either side, or they can be synced for offline use. The layout of the repositories is completely transparent to the Maven user, however.
 
@@ -68,9 +68,9 @@ While this is possible for any type of remote repository, you must have the perm
 
 When using Maven, particularly in a corporate environment, connecting to the internet to download dependencies is not acceptable for security, speed or bandwidth reasons. For that reason, it is desirable to set up an internal repository to house a copy of artifacts, and to publish private artifacts to.
 
-Such an internal repository can be downloaded using HTTP or the file system (with a `file://` URL), and uploaded to using SCP, FTP, or a file copy.
+Such an internal repository can be downloaded using HTTPS or the file system (with a `file://` URL), and uploaded to using SCP, SFTP, or a file copy.
 
-As far as Maven is concerned, there is nothing special about this repository: it is another **remote repository** that contains artifacts to download to a user's local cache, and is a publish destination for artifact releases.
+As far as Maven is concerned, there is nothing special about this repository: it is another **remote repository** that contains artifacts to download to a user's local cache, and is a destination for publishing artifact releases.
 
 Additionally, you may want to share the repository server with your generated project sites. For more information on creating and deploying sites, see [Creating a Site](../mini/guide-site.html).
 
