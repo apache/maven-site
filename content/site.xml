@@ -187,6 +187,7 @@ under the License.
         <item name="Using JSR-330" href="/maven-jsr330.html"/>
         <item name="Maven 4" collapse="false">
           <item name="Using Maven Dependency Injection" href="/maven-di.html"/>
+          <item name="Maven Null Annotations" href="/null-annotations.html" />
         </item>
       </item>
       <item name="Contribute to Maven" href="/developers/index.html" collapse="true">
