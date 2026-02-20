@@ -68,9 +68,9 @@ While this is possible for any type of remote repository, you must have the perm
 
 When using Maven, particularly in a corporate environment, connecting to the internet to download dependencies is not acceptable for security, speed or bandwidth reasons. For that reason, it is desirable to set up an internal repository to house a copy of artifacts, and to publish private artifacts to.
 
-Such an internal repository can be downloaded using HTTP or the file system (with a `file://` URL), and uploaded to using SCP, FTP, or a file copy.
+Such an internal artifact can be downloaded using HTTPS or the file system (with a `file://` URL), and uploaded to using SCP, SFTP, or a file copy.
 
-As far as Maven is concerned, there is nothing special about this repository: it is another **remote repository** that contains artifacts to download to a user's local cache, and is a publish destination for artifact releases.
+As far as Maven is concerned, there is nothing special about this repository: it is another **remote repository** that contains artifacts to download to a user's local cache, and to which artifacts can be published.
 
 Additionally, you may want to share the repository server with your generated project sites. For more information on creating and deploying sites, see [Creating a Site](../mini/guide-site.html).
 
