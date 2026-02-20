@@ -23,7 +23,7 @@ under the License.
 
 Maven 4 provides its own annotations in [`org.apache.maven.api.annotations`](ref/4-LATEST/api/maven-api-annotations/index.html).
 
-The following classes are relevant for dealing with `null` values:
+The following annotation types are relevant for dealing with `null` values:
 
 1. [`@Nonnull`](ref/4-LATEST/api/maven-api-annotations/apidocs/org/apache/maven/api/annotations/Nonnull.html) and
 2. [`@Nullable`](ref/4-LATEST/api/maven-api-annotations/apidocs/org/apache/maven/api/annotations/Nullable.html)
@@ -45,10 +45,10 @@ Not all static source code analysis tools support custom annotations (like Maven
 2. [IntelliJ IDEA](https://www.jetbrains.com/help/idea/annotating-source-code.html#nullability-annotations) requires [explicit configuration of the annotation class names](https://www.jetbrains.com/help/idea/annotating-source-code.html#configure-nullability-annotations).
 3. [Eclipse](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Ftasks%2Ftask-using_null_annotations.htm) requires [explicit configuration of the annotation class names](https://help.eclipse.org/latest/index.jsp?topic=%2Forg.eclipse.jdt.doc.user%2Freference%2Fpreferences%2Fjava%2Fcompiler%2Fref-preferences-errors-warnings.htm&anchor=null_annotation_names).
 
-On the other hand some other tools don't or only partially support custom Null annotations as they rely on some built-in lists of fully qualified class names (FQCN) for those annotations:
+On the other hand some other tools don't or only partially support custom Null annotations as they rely on some built-in lists of fully qualified names (FQN) for those annotations:
 
-- [SonarQube](https://www.sonarsource.com/products/sonarqube/#modal=sonar-summit) is having a [hardcoded list of FQCNs of supported Null annotations](https://github.com/SonarSource/sonar-java/blob/675fcaf6b9f8de46dbee10fcf698b1c9ab69b3e8/java-frontend/src/main/java/org/sonar/java/model/JSymbolMetadataNullabilityHelper.java#L65-L135), however there seem to be partial support for [meta-annotations](https://community.sonarsource.com/t/use-custom-nonnull-nullable-annotations/38800)
-- [SpotBugs](https://spotbugs.github.io/) is having a [hardcoded list of FQCNs of supported Null annotations](https://github.com/spotbugs/spotbugs/blob/be68f15193e25461c1b815e65afea841e0f9f3ca/spotbugs/src/main/java/edu/umd/cs/findbugs/ba/jsr305/TypeQualifierResolver.java#L57-L84)
+- [SonarQube](https://www.sonarsource.com/products/sonarqube/#modal=sonar-summit) is having a [hardcoded list of FQNs of supported Null annotations](https://github.com/SonarSource/sonar-java/blob/675fcaf6b9f8de46dbee10fcf698b1c9ab69b3e8/java-frontend/src/main/java/org/sonar/java/model/JSymbolMetadataNullabilityHelper.java#L65-L135), however there seem to be partial support for [meta-annotations](https://community.sonarsource.com/t/use-custom-nonnull-nullable-annotations/38800)
+- [SpotBugs](https://spotbugs.github.io/) is having a [hardcoded list of FQNs of supported Null annotations](https://github.com/spotbugs/spotbugs/blob/be68f15193e25461c1b815e65afea841e0f9f3ca/spotbugs/src/main/java/edu/umd/cs/findbugs/ba/jsr305/TypeQualifierResolver.java#L57-L84)
 
 ## How is Maven evaluating those annotations at run time?
 
