@@ -48,9 +48,9 @@ This release updates Resolver to version [1.9.27](https://github.com/apache/mave
 ### Notable Changes in Resolver 1.9.27
 
 - Parallel PUT change happened in Resolver 1.9.25 was undone, as many MRM struggle with concurrent HTTP requests.
-- Treat HTTP 410 status code as 404 in artifact resolution. Resolver will by default now cache 410 response in say way as 404 is.
-- Apache HTTP transport got fixes regarding proxies.
-- Locally cached artifacts were "escaping" RRF
+- Treat HTTP 410 status code as 404 in artifact resolution. Resolver will by default now cache 410 response in same way as 404 is cached.
+- Apache HTTP transport got fixes regarding proxy support.
+- Locally cached artifacts were "escaping" RRF.
 
 ## Full changelog
 
