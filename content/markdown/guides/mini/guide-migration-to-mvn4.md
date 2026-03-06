@@ -1,4 +1,4 @@
-# Migrate to Maven 4
+# Starting with Maven 4
 
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
@@ -19,32 +19,34 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-Maven 4 introduces several upgrades and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)).
-Some of them are backwards compatible or optional, but some require changes of your build environment or Maven project.
-This page offers help for users who want to build their projects with Maven 4.
+Maven 4 introduces several updates and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)).
+Some of them are backwards compatible with Maven 3 or optional, but some require changes of your build environment or Maven project.
+This page offers help for users who want to build their projects with Maven 4 (and check with RCs that everything is fine).
 
 In short, the general suggestion for the migration is to do it in three steps:
 
-1. Meet the prerequisites with latest Maven 3
-2. Build also with Maven 4 and fix errors
-3. Introduce optional Maven 4 features
+1. **prepare**: Meet the prerequisites with latest Maven 3
+2. **test**: Build in parallel with Maven 4 ([latest RC of Maven 4](/docs/history.html)) and do minimal fixes (report us if anything is unexpected)
+3. **migrate**: Introduce optional Maven 4 features (see also [Maven Upgrade Tool](/tools/mvnup.html))
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
 The Maven team is interested in all your migration experiences - either good or bad!
 
+Many OSS projects have already published releases to [Maven Central with Maven 4 RC](https://central.sonatype.com/search?q=l%3Abuild): it's time to check that latest Maven 4 RC works for you before we release the long awaited Maven 4.0.0.
+
 **Notes**:
 
-* This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4.
-  This means it will still receive updates after Maven 4 has been released.
-* Since Maven 4.0.0-rc-4 Maven ships with a built-in migration tool (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to migrate a project.
+* This page will constantly be updated  to contain changes, but also to integrate feedback of the community and their experience when upgrading to Maven 4 (RC).
+  This means it will still receive updates after Maven 4 (RC or final) has been released.
+* Since Maven 4.0.0-rc-4, Maven ships with a built-in migration tool for "step 3 -- migrate" (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to benefit from optional Maven 4 specific features.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
-  We plan to create a separate guide for this.
+  We plan to create a separate guide for this: for now, we focus on using Maven 4 (RC) with classical Maven 3 plugins.
 
 ## Table of content
 
 <!--MACRO{toc|fromDepth=2|toDepth=4}-->
 
-## Prerequisites
+## Step 1 -- prepare: Maven 3 Prerequisites
 
 This guide assumes that your environment and project meets the following prerequisites.
 If they don't, please make sure they do before continuing with this guide.
@@ -63,7 +65,7 @@ Be aware of this, if you use tools that can automate updates.
 You can use the [versions-maven-plugin's `display-plugin-updates` goal][versionpluginupdate] to see which are the latest available versions of the plugins you use.
 
 The following example shows the output of the Versions Maven Plugin in a project using the outdated version 3.12.0 of the Maven Compiler Plugin.
-As you can see, it shows that with version 3.14.0 there is a Maven 3 compatible update, while the versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions.
+As you can see, it shows that 3.14.0 is the best Maven 3 compatible update, while versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions, not yet for the current step.
 
 ```
 [INFO] The following plugin updates are available:
@@ -83,7 +85,7 @@ As you can see, it shows that with version 3.14.0 there is a Maven 3 compatible 
 [INFO]   maven-compiler-plugin ...................... 3.12.0 -> 4.0.0-beta-2
 ```
 
-## Required changes
+## Step 2 -- test: Minimal Updates for Maven 4
 
 You need to do the following steps to be able to use Maven 4.
 
@@ -106,12 +108,12 @@ Places where you might have to configure Maven 4 usage aside installation:
 * [Required Maven version](/enforcer/enforcer-rules/requireMavenVersion.html) rule of the Maven enforcer plugin.
 * Your own CI/CD configuration scripts or pipelines.
 
-### Update plugins to Maven 4 version
+### Update few necessary plugins to Maven 4 version
 
 If there is a dedicated Maven 4 version for used plugins, you should update to such a version.
 You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
 
-**Note**: While Maven 4.0.0 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated Maven 2 or 3 plugin API methods.
+**Note**: While Maven 4 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated Maven 2 or 3 plugin API methods. This is why we promote upgrading to latest release, and to maven 4 specific release when a plugin requires definitively a Maven 4-specific update (TODO: list the few known plugins requiring 4.x)
 
 ## Troubleshooting and required changes if situation applies
 
@@ -146,14 +148,14 @@ This includes the following properties:
 * `executionRootDirectory`
 * `multiModuleProjectDirectory`
 
-### Replace conceptional `pre-` and `post-` lifecycle phases
+### Replace plugin bindings to `pre-` and `post-` lifecycle phase
 
-In Maven 3, `integration-test` [lifecycle phase](/ref/3-LATEST/maven-core/lifecycles.html) had conceptional `pre-` and `post-` phases, but this was the only phase with these
+In Maven 3, `integration-test`, `clean` and `test` [lifecycle phases](/ref/3-LATEST/maven-core/lifecycles.html) have `pre-` and `post-` phases.
 In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for [all lifecycle phases](/ref/4-LATEST/maven-impl-modules/maven-core/lifecycles.html).
 
 Update your plugin executions that bind to a `pre-integration-test` or `post-integration-test` phase with the corresponding `before:integration-test` or `after:integration-test` phases.
 
-## Optional changes and features
+## Step 3 -- migrate: Use Optional Maven 4 features
 
 ### Changed default values
 
