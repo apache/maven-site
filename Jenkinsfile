@@ -66,7 +66,7 @@
         skipStagesAfterUnstable()
         //timestamps()
         disableConcurrentBuilds()
-        ansiColor('xterm')
+        // ansiColor('xterm')
         // This is required if you want to clean before build
         skipDefaultCheckout(true)
     }
