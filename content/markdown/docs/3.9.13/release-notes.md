@@ -58,7 +58,12 @@ For a full list of changes, please refer to the [GitHub release page](https://gi
 
 ## Known issues
 
-No known issues.
+After the release, we discovered that the distribution contains several testing libraries, see [GH-11762](https://github.com/apache/maven/issues/11762).
+While this is not an issue per se (maven-core does not export these dependencies, they are "confined" in core classloader), in case you perform
+dependency analysis (ie using Enforcer) **and** you depend on `maven-core` or any artifact that has `maven-core` in its tree, you may hit issues.
+In this case, remaining on 3.9.12 release is the recommended workaround. 
+
+We are working on 3.9.14 release with this issue fixed, and it will happen as soon as possible. 
 
 ## Potentially Breaking Core Changes (if migrating from 3.8.x)
 
