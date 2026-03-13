@@ -47,7 +47,7 @@ The important thing is that the staged release does not pollute your eventual en
 This is why clearing the local repository is necessary, but if you are using a repository manager this is also important to clear.
 The following provides instructions for setting Archiva up in such a way that the artifacts are isolated already.
 
-# Checking Reproducible Builds
+## Checking Reproducible Builds
 
 Checking binary output, ideally to control that the build is reproducible, can be done by running `verify` (NOT `install`) followed by `artifact:compare` against the staged content:
 
