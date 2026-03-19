@@ -47,6 +47,7 @@ A number of other projects provide their own Maven extensions. This includes:
 | [smart-builder](https://github.com/takari/takari-smart-builder)                                                         | Takari                    | The Takari Smart Builder is a replacement scheduling projects builds in a Maven multi-module build.                                                                                                                                                                                                                                  |
 | [opentelemetry-maven-extension](https://github.com/open-telemetry/opentelemetry-java-contrib/tree/main/maven-extension) | The OpenTelemetry project | The OpenTelemetry Maven Extension instruments builds to gather execution details as traces for build performance optimization and for troubleshooting. <br/>OpenTelemetry traces can be visualized in open source observability solutions such as [Jaeger Tracing](https://www.jaegertracing.io) as well as in commercial solutions. |
 | [jfr-maven-extension](https://github.com/marschall/jfr-maven-extension) | Philippe Marschall | An extension generating JFR events for a Maven build.|
+| [maven-timeline](https://github.com/takari/maven-timeline)                                                              | Takari                    | A time line generator of the Maven executions (phases and goals).|
  
 ### Commercial
 
