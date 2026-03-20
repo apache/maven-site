@@ -218,6 +218,19 @@ under the License.
                 <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-darwin-amd64.zip.asc">asc</a>)</td>
             </tr>
             <tr>
+              <td rowspan="2">Linux (Arm64)</td>
+              <td>tar.gz</td>
+              <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.tar.gz</a>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.tar.gz.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.tar.gz.asc">asc</a>)</td>
+            </tr>
+            <tr>
+              <td>zip</td>
+              <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.zip">maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.zip</a>
+                (<a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.zip.sha512">sha512</a>,
+                <a href="https://downloads.apache.org/maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-aarch64.zip.asc">asc</a>)</td>
+            </tr>
+            <tr>
               <td rowspan="2">Linux (x86_64)</td>
               <td>tar.gz</td>
               <td><a href="[preferred]maven/mvnd/${currentMvnd1xVersion}/maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz">maven-mvnd-${currentMvnd1xVersion}-linux-amd64.tar.gz</a>
