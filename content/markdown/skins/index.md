@@ -56,7 +56,7 @@ This is a regular artifact or dependency-like element.
 For example, to use the Maven Fluido Skin, you would include this in your `site.xml` file:
 
 ```xml
-<project>
+<site>
   ...
   <skin>
     <groupId>org.apache.maven.skins</groupId>
@@ -64,6 +64,6 @@ For example, to use the Maven Fluido Skin, you would include this in your `site.
     <version>2.1.0</version>
   </skin>
   ...
-</project>
+</site>
 ```
 
