@@ -64,7 +64,7 @@ Be aware of this, if you use tools that can automate updates.
 
 You can use the [versions-maven-plugin's `display-plugin-updates` goal][versionpluginupdate] to see which are the latest available versions of the plugins you use.
 
-The following example shows the output of the Versions Maven Plugin in a project using the outdated version 3.12.0 of the Maven Compiler Plugin.
+The following example shows the output of the [Versions Maven Plugin](https://www.mojohaus.org/versions/versions-maven-plugin/) in a project using the outdated version 3.12.0 of the Maven Compiler Plugin.
 As you can see, it shows that 3.14.0 is the best Maven 3 compatible update, while versions 4.0.0-beta-1 and 4.0.0-beta-2 require Maven 4 versions, not yet for the current step.
 
 ```
@@ -104,16 +104,17 @@ After you have upgraded your build environment to support Java 17, you also need
 See the information [where to download](/download.cgi) and [how to install](/install.html) Maven 4 for further information.
 
 Places where you might have to configure Maven 4 usage aside installation:
+
 * [Maven Wrapper](/tools/wrapper/index.html)'s `maven-wrapper.properties` file.
 * [Required Maven version](/enforcer/enforcer-rules/requireMavenVersion.html) rule of the Maven enforcer plugin.
 * Your own CI/CD configuration scripts or pipelines.
 
 ### Update few necessary plugins to Maven 4 version
 
-If there is a dedicated Maven 4 version for used plugins, you should update to such a version.
+If there is a dedicated Maven 4 version for used plugins, you should evaluate updating to such a version.
 You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
 
-**Note**: While Maven 4 aims to support all Maven 3.9 compatible plugins, this can not be guaranteed for plugins which use outdated Maven 2 or 3 plugin API methods. This is why we promote upgrading to latest release, and to maven 4 specific release when a plugin requires definitively a Maven 4-specific update (TODO: list the few known plugins requiring 4.x)
+**Note**: Maven 4 aims to support all Maven 3.9 compatible plugins that do not use old Maven 2 APIs. This is why we promote upgrading to latest release, and to Maven 4 specific release only when a plugin requires definitively a Maven 4-specific update (bugfix or feature. TODO: list the few known plugins requiring 4.x, either to benefit from new features like Compiler, or fix bugs that cannot be fixed with Maven 3)
 
 ## Troubleshooting and required changes if situation applies
 
@@ -125,6 +126,7 @@ There are several misconfigurations in the project's POM declaration that result
 While your build should not throw any warnings at all, the following ones needs to be fixed as they will fail the build in Maven 4.
 
 **Notes**:
+
 * The [plugin configuration guide](/guides/mini/guide-configuring-plugins.html) contains general information, how plugins are correctly declared and configured.
 * For analysing wrong build behavior, it might help to use the new `--fail-on-severity` parameter, paired with `WARN` as an argument, to fail your build when a warning occurs.
 
@@ -145,6 +147,7 @@ See the [Maven Model Builder interpolation reference][modelbuilderinterpolation]
 
 At the same time, several (especially internal) properties are deprecated or removed.
 This includes the following properties:
+
 * `executionRootDirectory`
 * `multiModuleProjectDirectory`
 
