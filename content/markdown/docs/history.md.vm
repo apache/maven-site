@@ -96,6 +96,21 @@ $esc.h$esc.h Maven 4.0+ (not yet GA)
 
 </table>
 
+$esc.h$esc.h Maven 3.10.x+
+<table>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
+</tr>
+<!--  release( date version announce latest-minor jdk rowspan ) -->
+<!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
+
+#release( "2026-xx-x" "3.10.0" "" "true" "Java 8" "")
+
+</table>
+
+
 $esc.h$esc.h Maven 3.9.x+
 <table>
 <tr><th>Release Date</th>
