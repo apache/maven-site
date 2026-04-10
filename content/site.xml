@@ -33,6 +33,10 @@ under the License.
     </fluidoSkin>
   </custom>
 
+  <bannerRight>
+    <image src="/images/logos/MavenLogoLeafSmall.png"/>
+  </bannerRight>
+
   <body>
     <links>
       <item name="Downloads" href="/download.cgi"/>
