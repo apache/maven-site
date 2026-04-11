@@ -33,6 +33,10 @@ under the License.
     </fluidoSkin>
   </custom>
 
+  <bannerLeft href="https://www.apache.org/">
+    <image src="/images/apache-maven-project-light-theme.svg" width="489px" height="51px"/>
+  </bannerLeft>
+
   <bannerRight>
     <image src="/images/logos/MavenLogoLeafSmall.png"/>
   </bannerRight>
