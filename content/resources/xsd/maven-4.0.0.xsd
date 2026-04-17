@@ -45,7 +45,12 @@
       <xs:element minOccurs="0" name="modelVersion" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
-          <xs:documentation source="description">Declares to which version of project descriptor this POM conforms.</xs:documentation>
+          <xs:documentation source="description">
+            
+            Declares to which version of project descriptor this POM conforms to: &lt;code&gt;4.0.0&lt;/code&gt; is the only
+            value supported by Maven 3.
+            
+          </xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="parent" type="Parent">
