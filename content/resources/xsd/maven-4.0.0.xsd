@@ -24,10 +24,10 @@
     <xs:annotation>
       <xs:documentation source="version">3.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;project&amp;gt;&lt;/code&gt; element is the root of the descriptor.
         The following table lists all of the possible child elements.
-
+        
       </xs:documentation>
     </xs:annotation>
   </xs:element>
@@ -35,10 +35,10 @@
     <xs:annotation>
       <xs:documentation source="version">3.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;project&amp;gt;&lt;/code&gt; element is the root of the descriptor.
         The following table lists all of the possible child elements.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -46,10 +46,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Declares to which version of project descriptor this POM conforms to: &lt;code&gt;4.0.0&lt;/code&gt; is the only
             value supported by Maven 3.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -61,15 +61,15 @@
             is given as a group ID, artifact ID and version.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="groupId" type="xs:string">
+      <xs:element minOccurs="0" name="groupId" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A universally unique identifier for a project. It is normal to
             use a fully-qualified package name to distinguish it from other
             projects with a similar name (eg. &lt;code&gt;org.apache.maven&lt;/code&gt;).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -82,7 +82,7 @@
             distributions, and WARs.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="version" type="xs:string">
+      <xs:element minOccurs="0" name="version" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">The current version of the artifact produced by this project.</xs:documentation>
@@ -92,7 +92,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The type of artifact this project produces, for example &lt;code&gt;jar&lt;/code&gt;
               &lt;code&gt;war&lt;/code&gt;
               &lt;code&gt;ear&lt;/code&gt;
@@ -100,14 +100,14 @@
             Plugins can create their own packaging, and
             therefore their own packaging types,
             so this list does not contain all possible types.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="name" type="xs:string">
+      <xs:element minOccurs="0" name="name" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
-          <xs:documentation source="description">The full name of the project.</xs:documentation>
+          <xs:documentation source="description">The full name of the project. If not specified aretifactId will be used.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="description" type="xs:string">
@@ -124,15 +124,15 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The URL to the project&apos;s homepage.
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
             project&apos;s &lt;code&gt;child.project.url.inherit.append.path=&quot;false&quot;&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="inceptionYear" type="xs:string">
+      <xs:element minOccurs="0" name="inceptionYear" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">The year of the project&apos;s inception, specified with 4 digits. This value is
@@ -151,7 +151,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             This element describes all of the licenses for this project.
             Each license is described by a &lt;code&gt;license&lt;/code&gt; element, which
             is then described by additional elements.
@@ -159,7 +159,7 @@
             and not the licenses that apply to dependencies.
             If multiple licenses are listed, it is assumed that the user can select
             any of them, not that they must accept all.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -250,11 +250,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Properties that can be used throughout the POM as a substitution, and
             are used as filters in resources if enabled.
             The format is &lt;code&gt;&amp;lt;name&amp;gt;value&amp;lt;/name&amp;gt;&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -277,7 +277,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             This element describes all of the dependencies associated with a
             project.
             These dependencies are used to construct a classpath for your
@@ -285,7 +285,7 @@
             repositories defined in this project.
             See &lt;a href=&quot;https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html&quot;&gt;the
             dependency mechanism&lt;/a&gt; for more information.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -318,7 +318,7 @@
           </xs:sequence>
         </xs:complexType>
       </xs:element>
-      <xs:element name="build" type="Build">
+      <xs:element minOccurs="0" name="build" type="Build">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">Information required to build the project.</xs:documentation>
@@ -328,9 +328,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;b&gt;Deprecated&lt;/b&gt;. Now ignored by Maven.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -343,12 +343,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             This element includes the specification of report plugins to use
             to generate the reports on the Maven-generated site.
             These reports will be run when a user executes &lt;code&gt;mvn site&lt;/code&gt;.
             All of the reports will be included in the navigation bar for browsing.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -369,13 +369,13 @@
       <xs:annotation>
         <xs:documentation source="version">4.0.0+</xs:documentation>
         <xs:documentation source="description">
-
+            
             When children inherit from project&apos;s url, append path or not? Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Since&lt;/b&gt;: Maven 3.6.1
-
+            
           </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -405,7 +405,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The primary method by which this project may be distributed.
             &lt;dl&gt;
               &lt;dt&gt;repo&lt;/dt&gt;
@@ -413,7 +413,7 @@
               &lt;dt&gt;manual&lt;/dt&gt;
               &lt;dd&gt;user must manually download and install the dependency.&lt;/dd&gt;
             &lt;/dl&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -429,10 +429,10 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;CiManagement&amp;gt;&lt;/code&gt; element contains informations required to the
         continuous integration system of the project.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -440,9 +440,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The name of the continuous integration system, e.g. &lt;code&gt;continuum&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -507,9 +507,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;b&gt;Deprecated&lt;/b&gt;. Where to send the notification to - eg email address.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -530,10 +530,10 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;scm&amp;gt;&lt;/code&gt; element contains informations required to the SCM
         (Source Control Management) of the project.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -541,7 +541,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The source control management system URL
             that describes the repository and how to connect to the
             repository. For more information, see the
@@ -550,7 +550,7 @@
             This connection is read-only.
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
             scm&apos;s &lt;code&gt;child.scm.connection.inherit.append.path=&quot;false&quot;&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -558,12 +558,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Just like &lt;code&gt;connection&lt;/code&gt;, but for developers, i.e. this scm connection
             will not be read only.
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
             scm&apos;s &lt;code&gt;child.scm.developerConnection.inherit.append.path=&quot;false&quot;&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -577,11 +577,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The URL to the project&apos;s browsable SCM repository, such as ViewVC or Fisheye.
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
             scm&apos;s &lt;code&gt;child.scm.url.inherit.append.path=&quot;false&quot;&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -590,13 +590,13 @@
       <xs:annotation>
         <xs:documentation source="version">4.0.0+</xs:documentation>
         <xs:documentation source="description">
-
+            
             When children inherit from scm connection, append path or not? Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Since&lt;/b&gt;: Maven 3.6.1
-
+            
           </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -604,13 +604,13 @@
       <xs:annotation>
         <xs:documentation source="version">4.0.0+</xs:documentation>
         <xs:documentation source="description">
-
+            
             When children inherit from scm developer connection, append path or not? Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Since&lt;/b&gt;: Maven 3.6.1
-
+            
           </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -618,13 +618,13 @@
       <xs:annotation>
         <xs:documentation source="version">4.0.0+</xs:documentation>
         <xs:documentation source="description">
-
+            
             When children inherit from scm url, append path or not? Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Since&lt;/b&gt;: Maven 3.6.1
-
+            
           </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -676,10 +676,10 @@
     <xs:annotation>
       <xs:documentation source="version">3.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;dependency&amp;gt;&lt;/code&gt; element contains information about a dependency
         of the project.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -687,10 +687,10 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The project group that produced the dependency, e.g.
             &lt;code&gt;org.apache.maven&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -698,10 +698,10 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The unique id for an artifact produced by the project group, e.g.
             &lt;code&gt;maven-artifact&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -709,7 +709,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The version requirement of the dependency such as &lt;code&gt;3.2.1&lt;/code&gt;.
             The actual version will be resolved by dependency mediation.
             The version requirement can also be
@@ -717,7 +717,7 @@
             However, this is discouraged since it may break &lt;i&gt;predictability&lt;/i&gt; of
             the resolved version. See the &lt;a href=&quot;https://maven.apache.org/pom.html#Dependency_Version_Requirement_Specification&quot;&gt;Dependency Version Requirement Specification&lt;/a&gt;
             and &lt;a href=&quot;https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Transitive_Dependencies&quot;&gt;Transitive Dependencies&lt;/a&gt; for more details.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -725,12 +725,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The type of dependency, that will be mapped to a file extension, an optional classifier, and a few other attributes.
             Some examples are &lt;code&gt;jar&lt;/code&gt;, &lt;code&gt;war&lt;/code&gt;, &lt;code&gt;ejb-client&lt;/code&gt;
             and &lt;code&gt;test-jar&lt;/code&gt;: see &lt;a href=&quot;../maven-core/artifact-handlers.html&quot;&gt;default
             artifact handlers&lt;/a&gt; for a list. New types can be defined by extensions, so this is not a complete list.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -738,7 +738,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The classifier of the dependency. It is appended to
             the filename after the version. This allows:
             &lt;ul&gt;
@@ -748,7 +748,7 @@
             that belong to the same POM but were built differently.
             For example, &lt;code&gt;jdk14&lt;/code&gt; and &lt;code&gt;jdk15&lt;/code&gt;.&lt;/li&gt;
             &lt;/ul&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -756,7 +756,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The scope of the dependency - &lt;code&gt;compile&lt;/code&gt;, &lt;code&gt;runtime&lt;/code&gt;,
             &lt;code&gt;test&lt;/code&gt;, &lt;code&gt;system&lt;/code&gt;, and &lt;code&gt;provided&lt;/code&gt;. Used to
             calculate the various classpaths used for compilation, testing, and so on.
@@ -764,7 +764,7 @@
             this project. For more information, see
             &lt;a href=&quot;https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html&quot;&gt;the
             dependency mechanism&lt;/a&gt;. The default scope is &lt;code&gt;compile&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -772,14 +772,14 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             FOR SYSTEM SCOPE ONLY. Note that use of this property is &lt;b&gt;discouraged&lt;/b&gt;
             and may be replaced in later versions. This specifies the path on the filesystem
             for this dependency.
             Requires an absolute path for the value, not relative.
             Use a property that gives the machine specific absolute path,
             e.g. &lt;code&gt;${java.home}&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -799,13 +799,13 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Indicates the dependency is optional for use of this library. While the
             version of the dependency will be taken into account for dependency calculation if the
             library is used elsewhere, it will not be passed on transitively. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;false&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -815,10 +815,10 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;exclusion&amp;gt;&lt;/code&gt; element contains informations required to exclude
         an artifact to the project.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -840,11 +840,11 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;parent&amp;gt;&lt;/code&gt; element contains information required to locate the parent project from which
         this project will inherit from.
         &lt;strong&gt;Note:&lt;/strong&gt; The children of this element are not interpolated and must be given as literal values.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -870,7 +870,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The relative path of the parent &lt;code&gt;pom.xml&lt;/code&gt; file within the check out.
             If not specified, it defaults to &lt;code&gt;../pom.xml&lt;/code&gt;.
             Maven looks for the parent POM first in this location on
@@ -882,7 +882,7 @@
             This feature is only for enhancing the development in a local checkout of that project.
             Set the value to an empty string in case you want to disable the feature and always resolve
             the parent POM from the repositories.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -934,11 +934,11 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The roles the contributor plays in the project. Each role is described by a
             &lt;code&gt;role&lt;/code&gt; element, the body of which is a role name. This can also be used to
             describe the contribution.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -951,11 +951,11 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
               The timezone the contributor is in. Typically, this is a number in the range
               &lt;a href=&quot;http://en.wikipedia.org/wiki/UTC%E2%88%9212:00&quot;&gt;-12&lt;/a&gt; to &lt;a href=&quot;http://en.wikipedia.org/wiki/UTC%2B14:00&quot;&gt;+14&lt;/a&gt;
               or a valid time zone id like &quot;America/Montreal&quot; (UTC-05:00) or &quot;Europe/Paris&quot; (UTC+01:00).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -983,9 +983,9 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The name of the mailing list.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -993,12 +993,12 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The email address or link that can be used to subscribe to
             the mailing list.  If this is an email address, a
             &lt;code&gt;mailto:&lt;/code&gt; link will automatically be created
             when the documentation is created.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1006,12 +1006,12 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The email address or link that can be used to unsubscribe to
             the mailing list.  If this is an email address, a
             &lt;code&gt;mailto:&lt;/code&gt; link will automatically be created
             when the documentation is created.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1019,12 +1019,12 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The email address or link that can be used to post to
             the mailing list.  If this is an email address, a
             &lt;code&gt;mailto:&lt;/code&gt; link will automatically be created
             when the documentation is created.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1088,11 +1088,11 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The roles the contributor plays in the project. Each role is described by a
             &lt;code&gt;role&lt;/code&gt; element, the body of which is a role name. This can also be used to
             describe the contribution.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1105,11 +1105,11 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
               The timezone the contributor is in. Typically, this is a number in the range
               &lt;a href=&quot;http://en.wikipedia.org/wiki/UTC%E2%88%9212:00&quot;&gt;-12&lt;/a&gt; to &lt;a href=&quot;http://en.wikipedia.org/wiki/UTC%2B14:00&quot;&gt;+14&lt;/a&gt;
               or a valid time zone id like &quot;America/Montreal&quot; (UTC-05:00) or &quot;Europe/Paris&quot; (UTC+01:00).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1164,10 +1164,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Where to deploy snapshots of artifacts to. If not given, it defaults to the
             &lt;code&gt;repository&lt;/code&gt; element.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1181,12 +1181,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The URL of the project&apos;s download page. If not given users will be
             referred to the homepage given by &lt;code&gt;url&lt;/code&gt;.
             This is given to assist in locating artifacts that are not in the repository due to
             licensing restrictions.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1201,7 +1201,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Gives the status of this artifact in the remote repository.
             This must not be set in your local project, as it is updated by
             tools placing it in the repository. Valid values are: &lt;code&gt;none&lt;/code&gt; (default),
@@ -1209,7 +1209,7 @@
             &lt;code&gt;partner&lt;/code&gt;
             (directly synced from a partner Maven repository), &lt;code&gt;deployed&lt;/code&gt; (was deployed from a Maven
             instance), &lt;code&gt;verified&lt;/code&gt; (has been hand verified as correct and final).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1245,11 +1245,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A unique identifier for a repository. This is used to match the repository
             to configuration in the &lt;code&gt;settings.xml&lt;/code&gt; file, for example. Furthermore, the identifier is
             used during POM inheritance and profile injection to detect repositories that should be merged.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1263,9 +1263,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The url of the repository, in the form &lt;code&gt;protocol://hostname/path&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1273,10 +1273,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The type of layout this repository uses for locating and storing artifacts -
             can be &lt;code&gt;legacy&lt;/code&gt; or &lt;code&gt;default&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1292,11 +1292,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether to use this repository for downloading this type of artifact. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;true&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1304,7 +1304,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The frequency for downloading updates - can be
             &lt;code&gt;always,&lt;/code&gt;
             &lt;code&gt;daily&lt;/code&gt;
@@ -1313,7 +1313,7 @@
             (in minutes) or
             &lt;code&gt;never&lt;/code&gt;
             (only if it doesn&apos;t exist locally).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1321,7 +1321,7 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             What to do when verification of an artifact checksum fails. Valid values are
             &lt;code&gt;ignore&lt;/code&gt;
             ,
@@ -1329,7 +1329,7 @@
             or
             &lt;code&gt;warn&lt;/code&gt;
             (the default).
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1378,10 +1378,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A unique identifier for a deployment location. This is used to match the
             site to configuration in the &lt;code&gt;settings.xml&lt;/code&gt; file, for example.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1395,11 +1395,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The url of the location where website is deployed, in the form &lt;code&gt;protocol://hostname/path&lt;/code&gt;.
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
             site&apos;s &lt;code&gt;child.site.url.inherit.append.path=&quot;false&quot;&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1408,13 +1408,13 @@
       <xs:annotation>
         <xs:documentation source="version">4.0.0+</xs:documentation>
         <xs:documentation source="description">
-
+            
             When children inherit from distribution management site url, append path or not? Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Default value is&lt;/b&gt;: &lt;code&gt;true&lt;/code&gt;
             &lt;br&gt;&lt;b&gt;Since&lt;/b&gt;: Maven 3.6.1
-
+            
           </xs:documentation>
       </xs:annotation>
     </xs:attribute>
@@ -1429,12 +1429,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             If true, then the default reports are not included in the site generation.
             This includes the reports in the &quot;Project Info&quot; menu. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;false&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1442,10 +1442,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Where to store all of the generated reports. The default is
             &lt;code&gt;${project.build.directory}/site&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1466,13 +1466,13 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;plugin&amp;gt;&lt;/code&gt; element in &lt;code&gt;&amp;lt;reporting&amp;gt;&amp;lt;plugins&amp;gt;&lt;/code&gt; contains informations required for a report plugin.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="groupId" type="xs:string" default="org.apache.maven.plugins">
+      <xs:element minOccurs="0" name="groupId" type="xs:string" default="org.apache.maven.plugins">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">The group ID of the reporting plugin in the repository.</xs:documentation>
@@ -1488,10 +1488,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The version of the reporting plugin to be used. Starting with Maven 3, if no version is defined explicitely,
             version is searched in &lt;code&gt;build/plugins&lt;/code&gt; then in &lt;code&gt;build/pluginManagement&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1499,10 +1499,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Multiple specifications of a set of reports, each having (possibly) different
             configuration. This is the reporting parallel to an &lt;code&gt;execution&lt;/code&gt; in the build.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1515,11 +1515,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether any configuration should be propagated to child POMs. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;true&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1527,7 +1527,7 @@
         <xs:annotation>
           <xs:documentation source="version">0.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;p&gt;The configuration as DOM object.&lt;/p&gt;
             &lt;p&gt;By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
             &lt;code&gt;xml:space=&quot;preserve&quot;&lt;/code&gt; to elements you want to preserve whitespace.&lt;/p&gt;
@@ -1540,7 +1540,7 @@
             &lt;p&gt;See &lt;a href=&quot;https://maven.apache.org/pom.html#Plugins&quot;&gt;POM Reference documentation&lt;/a&gt; and
             &lt;a href=&quot;https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html&quot;&gt;Xpp3DomUtils&lt;/a&gt;
             for more information.&lt;/p&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1557,7 +1557,7 @@
       <xs:documentation source="description">Represents a set of reports and configuration to be used to generate them.</xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="id" type="xs:string" default="default">
+      <xs:element minOccurs="0" name="id" type="xs:string" default="default">
         <xs:annotation>
           <xs:documentation source="version">0.0.0+</xs:documentation>
           <xs:documentation source="description">The unique id for this report set, to be used during POM inheritance and profile injection
@@ -1565,7 +1565,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="reports">
+      <xs:element minOccurs="0" name="reports">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">The list of reports from this plugin which should be generated from this set.</xs:documentation>
@@ -1580,11 +1580,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether any configuration should be propagated to child POMs. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;true&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1592,7 +1592,7 @@
         <xs:annotation>
           <xs:documentation source="version">0.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;p&gt;The configuration as DOM object.&lt;/p&gt;
             &lt;p&gt;By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
             &lt;code&gt;xml:space=&quot;preserve&quot;&lt;/code&gt; to elements you want to preserve whitespace.&lt;/p&gt;
@@ -1605,7 +1605,7 @@
             &lt;p&gt;See &lt;a href=&quot;https://maven.apache.org/pom.html#Plugins&quot;&gt;POM Reference documentation&lt;/a&gt; and
             &lt;a href=&quot;https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html&quot;&gt;Xpp3DomUtils&lt;/a&gt;
             for more information.&lt;/p&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1638,7 +1638,7 @@
             profile.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="build" type="BuildBase">
+      <xs:element minOccurs="0" name="build" type="BuildBase">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">Information required to build the project.</xs:documentation>
@@ -1669,11 +1669,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Properties that can be used throughout the POM as a substitution, and
             are used as filters in resources if enabled.
             The format is &lt;code&gt;&amp;lt;name&amp;gt;value&amp;lt;/name&amp;gt;&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1696,7 +1696,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             This element describes all of the dependencies associated with a
             project.
             These dependencies are used to construct a classpath for your
@@ -1704,7 +1704,7 @@
             repositories defined in this project.
             See &lt;a href=&quot;https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html&quot;&gt;the
             dependency mechanism&lt;/a&gt; for more information.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1741,9 +1741,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;b&gt;Deprecated&lt;/b&gt;. Now ignored by Maven.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -1756,12 +1756,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             This element includes the specification of report plugins to use
             to generate the reports on the Maven-generated site.
             These reports will be run when a user executes &lt;code&gt;mvn site&lt;/code&gt;.
             All of the reports will be included in the navigation bar for browsing.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1788,12 +1788,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Specifies that this profile will be activated when a matching JDK is detected.
             For example, &lt;code&gt;1.4&lt;/code&gt; only activates on JDKs versioned 1.4,
             while &lt;code&gt;!1.4&lt;/code&gt; matches any JDK that is not version 1.4. Ranges are supported too:
             &lt;code&gt;[1.5,)&lt;/code&gt; activates when the JDK is 1.5 minimum.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1878,10 +1878,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The name of the operating system to be used to activate the profile. This must be an exact match
             of the &lt;code&gt;${os.name}&lt;/code&gt; Java property, such as &lt;code&gt;Windows XP&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1889,10 +1889,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The general family of the OS to be used to activate the profile, such as
             &lt;code&gt;windows&lt;/code&gt; or &lt;code&gt;unix&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1935,11 +1935,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A unique identifier for a repository. This is used to match the repository
             to configuration in the &lt;code&gt;settings.xml&lt;/code&gt; file, for example. Furthermore, the identifier is
             used during POM inheritance and profile injection to detect repositories that should be merged.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1953,9 +1953,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The url of the repository, in the form &lt;code&gt;protocol://hostname/path&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -1963,10 +1963,10 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The type of layout this repository uses for locating and storing artifacts -
             can be &lt;code&gt;legacy&lt;/code&gt; or &lt;code&gt;default&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2031,11 +2031,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The filename (excluding the extension, and with no path information) that
             the produced artifact will be called.
             The default value is &lt;code&gt;${artifactId}-${version}&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2076,9 +2076,9 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;plugin&amp;gt;&lt;/code&gt; element contains informations required for a plugin.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -2104,12 +2104,12 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether to load Maven extensions (such as packaging and type handlers) from
             this plugin. For performance reasons, this should only be enabled when necessary. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;false&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2141,9 +2141,9 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;b&gt;Deprecated&lt;/b&gt;. Unused by Maven.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -2156,11 +2156,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether any configuration should be propagated to child POMs. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;true&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2168,7 +2168,7 @@
         <xs:annotation>
           <xs:documentation source="version">0.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;p&gt;The configuration as DOM object.&lt;/p&gt;
             &lt;p&gt;By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
             &lt;code&gt;xml:space=&quot;preserve&quot;&lt;/code&gt; to elements you want to preserve whitespace.&lt;/p&gt;
@@ -2181,7 +2181,7 @@
             &lt;p&gt;See &lt;a href=&quot;https://maven.apache.org/pom.html#Plugins&quot;&gt;POM Reference documentation&lt;/a&gt; and
             &lt;a href=&quot;https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html&quot;&gt;Xpp3DomUtils&lt;/a&gt;
             for more information.&lt;/p&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -2196,10 +2196,10 @@
     <xs:annotation>
       <xs:documentation source="version">4.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;execution&amp;gt;&lt;/code&gt; element contains informations required for the
         execution of a plugin.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -2232,11 +2232,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether any configuration should be propagated to child POMs. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;true&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2244,7 +2244,7 @@
         <xs:annotation>
           <xs:documentation source="version">0.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             &lt;p&gt;The configuration as DOM object.&lt;/p&gt;
             &lt;p&gt;By default, every element content is trimmed, but starting with Maven 3.1.0, you can add
             &lt;code&gt;xml:space=&quot;preserve&quot;&lt;/code&gt; to elements you want to preserve whitespace.&lt;/p&gt;
@@ -2257,7 +2257,7 @@
             &lt;p&gt;See &lt;a href=&quot;https://maven.apache.org/pom.html#Plugins&quot;&gt;POM Reference documentation&lt;/a&gt; and
             &lt;a href=&quot;https://codehaus-plexus.github.io/plexus-utils/apidocs/org/codehaus/plexus/util/xml/Xpp3DomUtils.html&quot;&gt;Xpp3DomUtils&lt;/a&gt;
             for more information.&lt;/p&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -2279,7 +2279,7 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Describe the resource target path. The path is relative to the target/classes
             directory (i.e. &lt;code&gt;${project.build.outputDirectory}&lt;/code&gt;).
             For example, if you want that resource to appear in a specific package
@@ -2287,7 +2287,7 @@
             element with this value: &lt;code&gt;org/apache/maven/messages&lt;/code&gt;.
             This is not required if you simply put the resources in that directory
             structure at the source, however.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2295,13 +2295,13 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             Whether resources are filtered to replace tokens with parameterised values or not.
             The values are taken from the &lt;code&gt;properties&lt;/code&gt; element and from the
             properties in the files listed in the &lt;code&gt;filters&lt;/code&gt; element. Note: While the type
             of this field is &lt;code&gt;String&lt;/code&gt; for technical reasons, the semantic type is actually
             &lt;code&gt;Boolean&lt;/code&gt;. Default value is &lt;code&gt;false&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2316,9 +2316,9 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A list of patterns to include, e.g. &lt;code&gt;**&amp;#47;*.xml&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -2331,9 +2331,9 @@
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             A list of patterns to exclude, e.g. &lt;code&gt;**&amp;#47;*.xml&lt;/code&gt;
-
+            
           </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -2376,7 +2376,7 @@
           <xs:documentation source="description">
             For a plugin project (packaging is &lt;code&gt;maven-plugin&lt;/code&gt;), the minimum version of
             Maven required to use the resulting plugin.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
@@ -2386,10 +2386,10 @@
     <xs:annotation>
       <xs:documentation source="version">3.0.0+</xs:documentation>
       <xs:documentation source="description">
-
+        
         The &lt;code&gt;&amp;lt;build&amp;gt;&lt;/code&gt; element contains informations required to build the project.
         Default values are defined in Super POM.
-
+        
       </xs:documentation>
     </xs:annotation>
     <xs:all>
@@ -2509,11 +2509,11 @@
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
-
+            
             The filename (excluding the extension, and with no path information) that
             the produced artifact will be called.
             The default value is &lt;code&gt;${artifactId}-${version}&lt;/code&gt;.
-
+            
           </xs:documentation>
         </xs:annotation>
       </xs:element>
