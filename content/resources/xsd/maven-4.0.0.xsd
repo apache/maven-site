@@ -107,7 +107,7 @@
       <xs:element minOccurs="0" name="name" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
-          <xs:documentation source="description">The full name of the project. If not specified aretifactId will be used.</xs:documentation>
+          <xs:documentation source="description">The full name of the project. If not specified, the artifactId will be used.</xs:documentation>
         </xs:annotation>
       </xs:element>
       <xs:element minOccurs="0" name="description" type="xs:string">
@@ -1623,7 +1623,7 @@
         parameters or command line arguments.</xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="id" type="xs:string" default="default">
+      <xs:element minOccurs="0" name="id" type="xs:string" default="default">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">The identifier of this build profile. This is used for command line
@@ -2393,7 +2393,7 @@
       </xs:documentation>
     </xs:annotation>
     <xs:all>
-      <xs:element name="sourceDirectory" type="xs:string">
+      <xs:element minOccurs="0" name="sourceDirectory" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">3.0.0+</xs:documentation>
           <xs:documentation source="description">
@@ -2404,7 +2404,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="scriptSourceDirectory" type="xs:string">
+      <xs:element minOccurs="0" name="scriptSourceDirectory" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
@@ -2416,7 +2416,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element name="testSourceDirectory" type="xs:string">
+      <xs:element minOccurs="0" name="testSourceDirectory" type="xs:string">
         <xs:annotation>
           <xs:documentation source="version">4.0.0+</xs:documentation>
           <xs:documentation source="description">
