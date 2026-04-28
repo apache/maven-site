@@ -90,9 +90,12 @@ To assign an issue/PR to component we can use [labels](https://docs.github.com/e
 
 ### Fix Version/s
 
-We use [GitHub Issues `Milestones`](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) to assign to fix versions.
+We use [GitHub Issues `Milestones`](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/about-milestones) to assign PRs to fix versions. *You shouldn't set a fix version to an issue!*
+GitHub allows to set *only a single value* per milestone (which should always represent the final (non RC/beta/pre) release of the according branch).
 
-[Issues and PR associated to a Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/viewing-your-milestones-progress) are publicly available, so we can use Milestone view during voting.
+[Issues and PRs associated to a Milestone](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/viewing-your-milestones-progress) are publicly available, so we can use Milestone view during voting.
+
+In most cases the automated actions should take care of setting the fix version automatically.
 
 ## Automated actions
 
@@ -102,7 +105,8 @@ Issues and Pull Request with `waiting-for-feedback` label without response will 
 
 ### Pull Request
 
-On Pull Request close default label `maintenance` and milestone according to branch will be added.
+On Pull Request close milestone according to branch will be added.
+The branch to milestone association is maintained via the milestone's description in format `branch: <branch-name>`
 
 ## Further Links
 
