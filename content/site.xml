@@ -25,22 +25,6 @@ under the License.
       name="Maven">
   <version position="none"/>
 
-  <edit>${project.scm.url}</edit>
-
-  <custom>
-    <fluidoSkin>
-      <anchorJs />
-    </fluidoSkin>
-  </custom>
-
-  <bannerLeft href="https://www.apache.org/">
-    <image src="/images/apache-maven-project-light-theme.svg" width="489px" height="51px"/>
-  </bannerLeft>
-
-  <bannerRight>
-    <image src="/images/logos/MavenLogoLeafSmall.png"/>
-  </bannerRight>
-
   <body>
     <links>
       <item name="Downloads" href="/download.cgi"/>
