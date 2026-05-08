@@ -11,6 +11,9 @@ archetypes=components/archetypes
 core-its=components/core-its
 enforcer-archives=components/enforcer-archives
 enforcer=components/enforcer
+executor-archives=components/executor-archives
+#executor=components/executor
+executor=components/executor-archives/executor-LATEST
 extensions-archives=components/extensions-archives
 #extensions
 jxr-archives=components/jxr-archives

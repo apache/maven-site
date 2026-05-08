@@ -28,12 +28,21 @@ And [Doxia](https://maven.apache.org/doxia/) website has the same dual structure
 
 These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in `/www/maven.apache.org/content` (see [`svnwcsub` configured in infra Puppet](https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L123)):
 
-- `/` comes from [https://svn.apache.org/repos/asf/maven/website/content/](https://svn.apache.org/viewvc/maven/website/content/)
-- [`/components`](https://maven.apache.org/components) comes from [https://svn.apache.org/repos/asf/maven/website/components/](https://svn.apache.org/repos/asf/maven/website/components/)
-- `/doxia` comes from [https://svn.apache.org/repos/asf/maven/doxia/website/content/](https://svn.apache.org/viewvc/maven/doxia/website/content/)
-- [`/doxia/components`](https://maven.apache.org/doxia/components) comes from [https://svn.apache.org/repos/asf/maven/doxia/website/components/](https://svn.apache.org/repos/asf/maven/doxia/website/components/)
+- `/` comes from [https://svn.apache.org/repos/asf/maven/website/content/](https://svn.apache.org/viewvc/maven/website/content/),
+- [`/components`](https://maven.apache.org/components) comes from [https://svn.apache.org/repos/asf/maven/website/components/](https://svn.apache.org/repos/asf/maven/website/components/),
+- `/doxia` comes from [https://svn.apache.org/repos/asf/maven/doxia/website/content/](https://svn.apache.org/viewvc/maven/doxia/website/content/),
+- [`/doxia/components`](https://maven.apache.org/doxia/components) comes from [https://svn.apache.org/repos/asf/maven/doxia/website/components/](https://svn.apache.org/repos/asf/maven/doxia/website/components/),
 
-and the link between main content and components reference documentation (for example from `/plugins/maven-xxx-plugin` to internal `/components/plugins/maven-xxx-plugin`) is done with symbolic links. These links are configured in `components.links` files in `content/resources/` and subdirectories, for example [plugins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links).
+and the link between main content and components reference documentation (for example from `/plugins/maven-xxx-plugin` to internal `/components/plugins/maven-xxx-plugin`) is done with symbolic links. These links are configured in `components.links` files in `content/resources/` and subdirectories:
+
+- [/components.links](https://github.com/apache/maven-site/blob/master/content/resources/components.links) for `/`,
+- [/archives/components.links](https://github.com/apache/maven-site/blob/master/content/resources/archives/components.links) for [`/archives/`](https://svn.apache.org/viewvc/maven/website/content/archives/),
+- [/extensions/components.links](https://github.com/apache/maven-site/blob/master/content/resources/extensions/components.links) for [`/extensions/`](https://svn.apache.org/viewvc/maven/website/content/extensions/),
+- [/plugins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links) for [`/plugins/`](https://svn.apache.org/viewvc/maven/website/content/plugins/),
+- [/pom/components.links](https://github.com/apache/maven-site/blob/master/content/resources/pom/components.links) for [`/pom/`](https://svn.apache.org/viewvc/maven/website/content/pom/),
+- [/shared/components.links](https://github.com/apache/maven-site/blob/master/content/resources/shared/components.links) for [`/shared/`](https://svn.apache.org/viewvc/maven/website/content/shared/),
+- [/skins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/skins/components.links) for [`/skins/`](https://svn.apache.org/viewvc/maven/website/content/skins/),
+- [/tools/components.links](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/).
 
 # How website publication works
 
