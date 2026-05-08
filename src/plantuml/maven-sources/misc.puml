@@ -28,6 +28,7 @@ under the License.
 package Misc {
   rectangle Archetypes
   rectangle "Distribution Tool"
+  rectangle Executor
   rectangle "GitHub Actions"
   rectangle Indexer
   package Jenkins {
@@ -49,7 +50,8 @@ package Misc {
 
 'hidden dependencies to change layout
 Archetypes -[hidden]> "Distribution Tool"
-"Distribution Tool" -[hidden]> "GitHub Actions"
+"Distribution Tool" -[hidden]> Executor
+Executor -[hidden]> "GitHub Actions"
 "GitHub Actions" -[hidden]> Indexer
 Indexer -[hidden]> "Plugin Testing"
 "Plugin Testing" -[hidden]> Studies
@@ -67,6 +69,7 @@ POM -[hidden]> Skins
 
 url of "Archetypes" is [[https://github.com/apache/maven-archetype]]
 url of "Distribution Tool" is [[https://github.com/apache/maven-dist-tool]]
+url of Executor is [[https://github.com/apache/maven-executor]]
 url of Indexer is [[https://github.com/apache/maven-indexer]]
 url of "GitHub Actions" is [[https://github.com/apache/maven-gh-actions-shared]]
 
