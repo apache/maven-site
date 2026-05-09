@@ -42,7 +42,9 @@ and the link between main content and components reference documentation (for ex
 - [/pom/components.links](https://github.com/apache/maven-site/blob/master/content/resources/pom/components.links) for [`/pom/`](https://svn.apache.org/viewvc/maven/website/content/pom/),
 - [/shared/components.links](https://github.com/apache/maven-site/blob/master/content/resources/shared/components.links) for [`/shared/`](https://svn.apache.org/viewvc/maven/website/content/shared/),
 - [/skins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/skins/components.links) for [`/skins/`](https://svn.apache.org/viewvc/maven/website/content/skins/),
-- [/tools/components.links](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/).
+- [/tools/components.links](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/),
+- [/doxia/components.links](https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links) for [`/doxia/`](https://svn.apache.org/viewvc/maven/doxia/website/content/),
+- [/doxia/doxia-tools/components.links](https://github.com/apache/maven-doxia-site/blob/master/content/resources/doxia-tools/components.links) for [`/doxia/doxia-tools/`](https://svn.apache.org/viewvc/maven/doxia/website/content/doxia-tools/).
 
 # How website publication works
 
