@@ -57,7 +57,7 @@
     <project.build.outputTimestamp>x</project.build.outputTimestamp>
     <!-- disable Reproducible Builds that makes the site build time fixed at last release time -->
     <currentStableVersion>3.9.16</currentStableVersion>
-    <currentStableVersionDetails>TBD</currentStableVersionDetails>
+    <currentStableVersionDetails>2bdd9fddda4b155ebf8000e807eb73fd829a51d5</currentStableVersionDetails>
     <current4xVersion>4.0.0-rc-5</current4xVersion>
     <current39xVersion>3.9.15</current39xVersion>
     <currentMvnd1xVersion>1.0.5</currentMvnd1xVersion>
