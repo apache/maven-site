@@ -35,22 +35,22 @@ These contents are stored in svn, and svnpubsub/svnwcsub maintains a working cop
 
 and the link between main content and components reference documentation (for example from `/plugins/maven-xxx-plugin` to internal `/components/plugins/maven-xxx-plugin`) is done with symbolic links. These links are configured in `components.links` files in `content/resources/` and subdirectories:
 
-- [/components.links](https://github.com/apache/maven-site/blob/master/content/resources/components.links) for `/`,
-- [/archives/components.links](https://github.com/apache/maven-site/blob/master/content/resources/archives/components.links) for [`/archives/`](https://svn.apache.org/viewvc/maven/website/content/archives/),
-- [/extensions/components.links](https://github.com/apache/maven-site/blob/master/content/resources/extensions/components.links) for [`/extensions/`](https://svn.apache.org/viewvc/maven/website/content/extensions/),
-- [/plugins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links) for [`/plugins/`](https://svn.apache.org/viewvc/maven/website/content/plugins/),
-- [/pom/components.links](https://github.com/apache/maven-site/blob/master/content/resources/pom/components.links) for [`/pom/`](https://svn.apache.org/viewvc/maven/website/content/pom/),
-- [/shared/components.links](https://github.com/apache/maven-site/blob/master/content/resources/shared/components.links) for [`/shared/`](https://svn.apache.org/viewvc/maven/website/content/shared/),
-- [/skins/components.links](https://github.com/apache/maven-site/blob/master/content/resources/skins/components.links) for [`/skins/`](https://svn.apache.org/viewvc/maven/website/content/skins/),
-- [/tools/components.links](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/),
-- [/doxia/components.links](https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links) for [`/doxia/`](https://svn.apache.org/viewvc/maven/doxia/website/content/),
-- [/doxia/doxia-tools/components.links](https://github.com/apache/maven-doxia-site/blob/master/content/resources/doxia-tools/components.links) for [`/doxia/doxia-tools/`](https://svn.apache.org/viewvc/maven/doxia/website/content/doxia-tools/).
+- [`/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/components.links) for `/`,
+- [`/archives/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/archives/components.links) for [`/archives/`](https://svn.apache.org/viewvc/maven/website/content/archives/),
+- [`/extensions/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/extensions/components.links) for [`/extensions/`](https://svn.apache.org/viewvc/maven/website/content/extensions/),
+- [`/plugins/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/plugins/components.links) for [`/plugins/`](https://svn.apache.org/viewvc/maven/website/content/plugins/),
+- [`/pom/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/pom/components.links) for [`/pom/`](https://svn.apache.org/viewvc/maven/website/content/pom/),
+- [`/shared/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/shared/components.links) for [`/shared/`](https://svn.apache.org/viewvc/maven/website/content/shared/),
+- [`/skins/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/skins/components.links) for [`/skins/`](https://svn.apache.org/viewvc/maven/website/content/skins/),
+- [`/tools/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/),
+- [`/doxia/components.links`](https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links) for [`/doxia/`](https://svn.apache.org/viewvc/maven/doxia/website/content/),
+- [`/doxia/doxia-tools/components.links`](https://github.com/apache/maven-doxia-site/blob/master/content/resources/doxia-tools/components.links) for [`/doxia/doxia-tools/`](https://svn.apache.org/viewvc/maven/doxia/website/content/doxia-tools/).
 
 # How website publication works
 
 Instructions on how to publish website content are split in separate documents:
 
-- on every main content source commit ([maven-site.git](https://github.com/apache/maven-site) and [maven-doxia-site.git](https://github.com/apache/maven-doxia-site)), main content rebuild and publish is triggered through Jenkins jobs ( [maven-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/) and [doxia-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/)), which basically run `mvn site-deploy` (it can be run locally if CI is off...),
+- on every main content source commit ([maven-site.git](https://github.com/apache/maven-site) and [maven-doxia-site.git](https://github.com/apache/maven-doxia-site)), main content rebuild and publish is triggered through Jenkins jobs ([maven-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/) and [doxia-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/)), which basically run `mvn site-deploy` (it can be run locally if CI is off...),
 - on every Maven component release, release manager follows "[deploying Maven components reference documentation](./deploy-component-reference-documentation.html)", eventually using [Component Reference Documentation Helper](./component-reference-documentation-helper.html) to easily prepare `svnmucc` command line.
 
 # Analytics
