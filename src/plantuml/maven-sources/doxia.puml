@@ -30,7 +30,6 @@ package "Maven Doxia" {
   rectangle "Site Tools"
   rectangle Site #LightGrey
   package Tools {
-    rectangle "Book Maven Plugin"
     rectangle Converter
   }
 }
@@ -43,7 +42,6 @@ Doxia -[hidden]right-> "Site Tools"
 url of Doxia is [[https://github.com/apache/maven-doxia]]
 url of "Site Tools" is [[https://github.com/apache/maven-doxia-sitetools]]
 url of Site is [[https://github.com/apache/maven-doxia-site]]
-url of "Book Maven Plugin" is [[https://github.com/apache/maven-doxia-book-maven-plugin]]
 url of Converter is [[https://github.com/apache/maven-doxia-converter]]
 
 @enduml
