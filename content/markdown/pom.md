@@ -1273,7 +1273,7 @@ for the POM as a whole. Since they do not exist in profile builds, these cannot 
 If the values of a `*Directory` element above is set as an absolute path (when their
 properties are expanded) then that directory is used. Otherwise, it is relative to the
 base build directory: `${project.basedir}`. **Please note that the** `scriptSourceDirectory` **is nowhere
-used in Maven and is obsolet**.
+used in Maven and is obsolete**.
 
 ##### Extensions
 
