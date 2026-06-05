@@ -21,6 +21,7 @@ under the License.
 
 This is a description of the classloader hierarchy in Maven.
 
+![Maven Classloading overview](../../../resources/images/maven-classloading.png)
 <!-- MACRO{toc|section=1|fromDepth=2} -->
 
 ## Overview
