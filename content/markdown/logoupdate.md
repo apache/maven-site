@@ -17,7 +17,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Updating Maven logo
+# Legacy Maven Logos
 
 In September 2025 the ASF [announced a new logo for the foundation](https://news.apache.org/foundation/entry/introducing-the-asfs-new-logo) the "[oak leaf](https://apache.org/images/oakleaf.svg)" as a replacement for the long year known feather.
 
@@ -39,3 +39,7 @@ As you can see, two images need small additional changes aside replacing the fea
 
 * Logo #1: This also needs an update from "http" to "https"
 * Logo #4: This should be updated so the text “Maven” matches the other logos: Crossed feathers/leafs as the "v" and no highlighted "a" or feather/leaf on top of it. Also the colon after "Built by" should be removed.
+
+# New Maven Logo
+
+We received the following logo from ASF: <https://www.apache.org/logos/?#maven>. It is provided as SVG and PNG. Use SVG preferably. Currently there is no logo provided for a dark background.
