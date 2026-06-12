@@ -93,7 +93,7 @@ public class Update {
                     + " from " + url);
             cols[column] = String.format(" %-" + (cols[column].length() - 2) + "s ", result[0]);
             cols[column + 1] = String.format(" %-" + (cols[column + 1].length() - 2) + "s ", result[1]);
-            line = String.join("|", cols);
+            line = String.join("|", cols) + "|";
         }
         return line;
     }
