@@ -148,8 +148,7 @@ Configuration can be provided on global level as properties in `settings.xml`
 </settings>
 ```
 
-**NOTICE**
-- only profiles activated by `settings/activeProfiles` will be taken for consideration - you can not use `profile/activation` in such case
+**NOTICE:** Only profiles activated by `settings/activeProfiles` (the explicit list at the bottom of `settings.xml`) are honored here, or by CLI `-P <id>`. Profiles activated through `<activation>` conditions in the profile itself (`<activeByDefault>`, `<jdk>`, `<os>`, `<property>`, `<file>`) are **not** taken into account for the resolver session config -- the resolver session is built before Maven evaluates those conditions.
 
 You can also use environment variable `MAVEN_OPTS` ot `MAVEN_ARGS`
 
