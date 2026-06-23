@@ -1701,7 +1701,7 @@ does not exist in the local repository, it will then attempt to download from a 
 The repository elements within a POM specify those alternate repositories to search.
 
 The repository is one of the most powerful features of the Maven community. By default, Maven searches
-the central repository at [https://repo.maven.apache.org/maven2/]. Additional repositories can be
+the central repository at <https://repo.maven.apache.org/maven2/>. Additional repositories can be
 configured in the pom.xml `repositories` element.
 
 ```xml
