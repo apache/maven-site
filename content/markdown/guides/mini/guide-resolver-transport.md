@@ -148,9 +148,14 @@ Configuration can be provided on global level as properties in `settings.xml`
 </settings>
 ```
 
-**NOTICE:** Only profiles activated by `settings/activeProfiles` (the explicit list at the bottom of `settings.xml`) are honored here, or by CLI `-P <id>`. Profiles activated through `<activation>` conditions in the profile itself (`<activeByDefault>`, `<jdk>`, `<os>`, `<property>`, `<file>`) are **not** taken into account for the resolver session config -- the resolver session is built before Maven evaluates those conditions.
+**NOTICE:** Only profiles activated explicitly are honored here:
 
-You can also use environment variable `MAVEN_OPTS` ot `MAVEN_ARGS`
+* via `<activeProfiles>` (the explicit list at the bottom of `settings.xml`), or
+* via CLI `-P <id>`.
+
+Profiles activated through `<activation>` conditions in the profile itself — `<activeByDefault>`, `<jdk>`, `<os>`, `<property>`, `<file>` — are **not** taken into account for the resolver session config: the resolver session is built before Maven evaluates those conditions.
+
+You can also use environment variable `MAVEN_OPTS` or `MAVEN_ARGS`
 
 ```
 export MAVEN_ARGS="-Daether.connector.http.preemptiveAuth=true"
