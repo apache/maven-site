@@ -126,6 +126,8 @@ Example to set a profile active by default.
 </profiles>
 ```
 
+**Note for resolver configuration:** When configuring [Maven Resolver](../mini/guide-resolver-transport.html#system-level) low-level options (`aether.*` system properties) in a `settings.xml` profile, `<activeByDefault>true</activeByDefault>` does **not** suffice -- the resolver session is built before profile activation conditions are evaluated. List the profile id under `<activeProfiles>` (or pass `-P <id>`) instead.
+
 ##### JDK
 
 The following configuration will trigger the profile when the JDK's version _starts with_ `1.4` (for example `1.4.0_08`, `1.4.2_07`, `1.4`), in particular it _won't be active_ for **newer** versions like `1.8` or `11`:
