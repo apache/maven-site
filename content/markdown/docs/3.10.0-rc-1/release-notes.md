@@ -31,9 +31,25 @@ If you have any questions, please consult:
 - the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
 - the reference documentation: [https://maven.apache.org/ref/3.10.0-rc-1/](/ref/3.10.0-rc-1/)
 
-## Overview About the Changes
+## Overview of the Changes
 
-### Notable Changes in Maven 3.10.0-rc-1
+## Notable Changes in Maven 3.10.0-rc-1
+
+### New Features and Improvements
+
+- use resolver 2.x in Maven core 
+- allow defining user-wide and installation-wide Maven extensions
+- promote `session.topDirectory`, `session.rootDirectory` and `project.rootDirectory` properties
+- version range filtering
+- allow defining user relocations
+- allow using transitive dependency manager
+- in a failed build limit reactor summary to only failed modules
+
+### New API and Updates for Maven Plugins
+
+- upgrade `SLF4J` to 2.x
+- promote `MessageBuilderFactory` service for colored message support
+- promote java version in `JavaToolchain`
 
 ## Full changelog
 
@@ -45,6 +61,11 @@ No known issues.
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
+### Changes in the Super POM:
+ 
+- removed deprecated `release-profile`; each project should have its own release profile
+- removed plugin management; each project should have its own plugin management
+- set default values for `project.build.sourceEncoding` and `project.reporting.outputEncoding` to `UTF-8`
 
 ## Complete Release Notes
 
@@ -54,4 +75,3 @@ See [complete release notes for all versions][3]
 [1]: ../../plugins/index.html
 [2]: https://maven.apache.org/
 [3]: ../../docs/history.html
-
