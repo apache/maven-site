@@ -48,7 +48,7 @@ $b<a href="$announceLink">announce</a>##
 $b<a href="./$version/release-notes.html">release notes</a>##
 #end
 #end
-#if( $version.startsWith( "4.0.0" ) || $version.startsWith( "3.5.0" ) || $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
+#if( $version.startsWith( "4.0.0" ) || $version.startsWith( "3.10." ) || $version.startsWith( "3.5.0" ) || $version.equals( "2.0.11" ) || $version.equals( "2.2.1" ) || !( $version.contains( "-" ) || $version.startsWith( "2" ) ) )
 , <a href="/ref/$version/">reference documentation</a>##
 #end##
 $b_</td>
@@ -93,6 +93,20 @@ $esc.h$esc.h Maven 4.0+ (not yet GA)
 #release( "2023-01-31" "4.0.0-alpha-4" "https://lists.apache.org/thread/1pj6nqo10xddq26vyxj9p1q1s8m70bx2" "" "" "" )
 #release( "2022-12-15" "4.0.0-alpha-3" "https://lists.apache.org/thread/0j63n7o3lnlz9mmk39wqh1jx5h3r7vqv" "" "" "" )
 #release( "2022-10-24" "4.0.0-alpha-2" "https://lists.apache.org/thread/snnlfsk24wmdp8tp79b2k11ln34hk6ks" "" "" "" )
+
+</table>
+
+$esc.h$esc.h Maven 3.10.x+
+<table>
+<tr><th>Release Date</th>
+<th>Version</th>
+<th>Required Java Version</th>
+<th>Links</th>
+</tr>
+<!--  release( date version announce latest-minor jdk rowspan ) -->
+<!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
+
+#release( "2026-07-09" "3.10.0-rc-1" "https://lists.apache.org/thread/TBD" "true" "Java 8" "1" )
 
 </table>
 
