@@ -44,6 +44,7 @@ If you have any questions, please consult:
 - allow defining user relocations
 - allow using transitive dependency manager
 - in a failed build limit reactor summary to only failed modules
+- new CLI options for fine-grained update policy control: `-UA` (force artifact updates only), `-UM` (force metadata updates only), `--artifacts-update-policy=<policy>`, `--metadata-update-policy=<policy>`
 
 ### New API and Updates for Maven Plugins
 
