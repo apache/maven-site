@@ -62,6 +62,13 @@ No known issues.
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
+### Classpath ordering change
+
+Dependency classpath ordering changed from "pre-order" (depth-first) to "level-order" (breadth-first),
+aligning with Maven 4 behavior and Resolver 2.x defaults. 
+
+To restore the previous behavior, add `-Daether.system.dependencyVisitor=preOrder` to your Maven invocation.
+
 ### Changes in the Super POM:
  
 - removed deprecated `release-profile`; each project should have its own release profile
