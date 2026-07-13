@@ -106,7 +106,7 @@ $esc.h$esc.h Maven 3.10.x+
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2026-07-09" "3.10.0-rc-1" "https://lists.apache.org/thread/TBD" "true" "Java 8" "1" )
+#release( "2026-07-09" "3.10.0-rc-1" "https://lists.apache.org/thread/8mqy3w0yz0d1rr0t0ctsct874qb2orq9" "true" "Java 8" "1" )
 
 </table>
 
