@@ -37,8 +37,9 @@ If you have any questions, please consult:
 
 ### New Features and Improvements
 
-- use resolver 2.x in Maven core 
+- use Resolver 2.x
 - allow defining user-wide and installation-wide Maven extensions
+- [Reproducible Builds](/guides/mini/guide-reproducible-builds.html) is active by default
 - promote `session.topDirectory`, `session.rootDirectory` and `project.rootDirectory` properties
 - version range filtering
 - allow defining user relocations
