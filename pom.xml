@@ -58,6 +58,7 @@
     <!-- disable Reproducible Builds that makes the site build time fixed at last release time -->
     <currentStableVersion>3.9.16</currentStableVersion>
     <currentStableVersionDetails>2bdd9fddda4b155ebf8000e807eb73fd829a51d5</currentStableVersionDetails>
+    <current310xVersion>3.10.0-rc-1</current310xVersion>
     <current4xVersion>4.0.0-rc-5</current4xVersion>
     <current39xVersion>3.9.16</current39xVersion>
     <currentMvnd1xVersion>1.0.6</currentMvnd1xVersion>
