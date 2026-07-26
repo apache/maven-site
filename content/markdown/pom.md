@@ -225,15 +225,15 @@ There are three methods for dealing with this scenario.
 
 1. Install the dependency locally using the *Maven Install Plugin*. The method is the simplest recommended method. For example:
 
-```
-mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
-```
+    ```
+    mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
+    ```
 
-Notice that an address is still required, only this time you use the command line and the Maven Install Plugin will create a POM for you with the given address.
+    Notice that an address is still required, only this time you use the command line and the Maven Install Plugin will create a POM for you with the given address.
 
-2. Create your own repository and deploy it there. This is a favorite method for companies with an intranet and need to be able to keep everyone in synch. There is a Maven goal called `deploy:deploy-file` which is similar to the `install:install-file` goal (read the plugin's goal page for more information).
+1. Create your own repository and deploy it there. This is a favorite method for companies with an intranet and need to be able to keep everyone in synch. There is a Maven goal called `deploy:deploy-file` which is similar to the `install:install-file` goal (read the plugin's goal page for more information).
 
-3. Set the dependency scope to `system` and define a `systemPath`. This is not recommended, however, but leads us to explaining the following elements:
+1. Set the dependency scope to `system` and define a `systemPath`. This is not recommended, however, but leads us to explaining the following elements:
 
 * `<classifier>`:
   The classifier distinguishes artifacts that were built from the same POM but differ in content.
