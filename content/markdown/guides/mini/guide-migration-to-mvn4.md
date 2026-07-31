@@ -26,8 +26,8 @@ This page offers help for users who want to build their projects with Maven 4 (a
 In short, the general suggestion for the migration is to do it in three steps:
 
 1. **prepare**: Meet the prerequisites with latest Maven 3
-2. **test**: Build in parallel with Maven 4 ([latest RC of Maven 4](/docs/history.html)) and do minimal fixes (report us if anything is unexpected)
-3. **migrate**: Introduce optional Maven 4 features (see also [Maven Upgrade Tool](/tools/mvnup.html))
+2. **test**: Build in parallel with Maven 4 ([latest RC of Maven 4](/docs/history.html)) and do minimal Maven 3-compatible fixes (report us if anything is unexpected)
+3. **migrate**: Drop Maven 3 and introduce optional Maven 4 features (see also [Maven Upgrade Tool](/tools/mvnup.html))
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
 The Maven team is interested in all your migration experiences - either good or bad!
@@ -40,7 +40,7 @@ Many OSS projects have already published releases to [Maven Central with Maven 4
   This means it will still receive updates after Maven 4 (RC or final) has been released.
 * Since Maven 4.0.0-rc-4, Maven ships with a built-in migration tool for "step 3 -- migrate" (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to benefit from optional Maven 4 specific features.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
-  We plan to create a separate guide for this: for now, we focus on using Maven 4 (RC) with classical Maven 3 plugins.
+  We plan to create a separate guide for this when we'll work on Maven 4.1: for now, we focus on using Maven 4.0.x (RC) with classical Maven 3 plugins.
 
 ## Table of content
 
@@ -158,7 +158,7 @@ In Maven 4 those phases are removed in favor of new `before:` and `after:` phase
 
 Update your plugin executions that bind to a `pre-integration-test` or `post-integration-test` phase with the corresponding `before:integration-test` or `after:integration-test` phases.
 
-## Step 3 -- migrate: Use Optional Maven 4 features
+## Step 3 -- migrate: Drop Maven 3, use Optional Maven 4 features
 
 ### Changed default values
 
