@@ -569,8 +569,10 @@ Together, these new phases provide a powerful and intuitive structure for defini
 As mentioned above, Maven 4 contains significant code and API updates, resulting in breaking changes for (very) old
 Maven 2 plugins that have not been [updated to use the recommended Maven 3 APIs](https://cwiki.apache.org/confluence/display/MAVEN/Plugin+migration+to+Maven3+dependencies) and [other cleanup](https://cwiki.apache.org/confluence/display/MAVEN/Maven+Ecosystem+Cleanup).
 
-You can enable them by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`.
-You should also only rely on the official Maven BOMs when developing plugins.
+You can enable verbose plugin validation by passing the following argument to your build: `-Dmaven.plugin.validation=verbose`
+(see detailed [plugin validation guide](/guides/plugins/validation/index.html)).
+
+You should also only rely on the [official Maven BOMs](https://central.sonatype.com/artifact/org.apache.maven/maven-bom) when developing plugins.
 
 If a plugin still relies on long-deprecated and now removed Plexus dependency injection, it will no longer work.
 It needs to be updated to use JSR-330 - see [Maven & JSR-330][26] for further information.
@@ -581,7 +583,7 @@ Pay close attention to upcoming warnings and update the plugin accordingly.
 Maven 4 is expected to be able to run any Maven 3 plugin that has been updated to Maven 3 best practices (instead of using Maven 3's ability to [run Maven 2 plugins](https://cwiki.apache.org/confluence/display/MAVEN/Compatibility+with+Maven+2.x) and other old APIs...).
 
 Major changes regarding plugins include a proper immutable plugin model together with a revised plugin API for Maven 4.
-But this new Maven 4 API is still in experimental phase in Maven 4.0.0: do not yet try to use it unless you precisely know what you are doing (like [Maven Compiler Plugin 4.x](/plugins/maven-compiler-plugin-4.x/)).
+But this new Maven 4 API is still in experimental phase in Maven 4.0.0: do not yet try to use it unless you precisely know what you are doing (like [Maven Compiler Plugin 4.x](/plugins/maven-compiler-plugin-4.x/) for Java Modules).
 
 
 ### Improved encryption

@@ -66,6 +66,11 @@ Currently, plugins provide Maven API compatibility down to **3.9.0**. See [Maven
 
 
 $esc.h$esc.h Maven 4.0+ (not yet GA)
+
+Maven 4.x is a major release that includes significant improvements and changes: see [What's new in Maven 4?](/whatsnewinmaven4.html) article for more details.
+
+See also [Starting with Maven 4](/guides/mini/guide-migration-to-mvn4.html) guide to get safe upgrade instructions.
+
 <table>
 <tr><th>Release Date</th>
 <th>Version</th>
