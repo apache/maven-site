@@ -19,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`) files to Maven 4 specific features.
+The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's `pom.xml` files to Maven 4 specific features.
 
 *Notes*:
 
@@ -56,7 +56,7 @@ The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`)
 - Fix incorrect `parent.relativePath` pointing to non-existent POMs
 - Create `.mvn` directory for root directory detection to avoid warnings when build is executed with Maven 4
 
-### Intelligent Model Inference
+### Intelligent Model Inference (Maven 4 only)
 
 - Parent element trimming when parent is in same project
 - Managed dependency removal for project artifacts
@@ -75,24 +75,21 @@ The Maven Upgrade Tool (`mvnup`) helps you to upgrade your project's (`pom.xml`)
 ## Usage
 
 The tool itself is called using the `mvnup` command.
-The Maven Upgrade Tool needs three things to execute successfully:
+The Maven Upgrade Tool runs based on 3 aspects:
 
-1. The desired execution mode,
-2. the target model version, and
-3. the part(s) of the `pom.xml` that should be upgraded.
+1. the desired execution mode as a goal:
+   - `check` is a dry check to see if an upgrade of the `pom.xml` files is possible and which parts would be changed,
+   - `apply` updates the files and applies applicable upgrades provided by the tool.
+2. the target model version (`--model-version`/`-m`, defaults to `4.0.0`), and
+3. the part(s) of the `pom.xml` that should be upgraded (defaults to all available updates).
 
-The tool provides two execution modes (goals):
-The first one is a dry check to see if an upgrade of the `pom.xml` files is possible and which parts would be changed.
-The second mode updates the files and applies applicable upgrades provided by the tool.
-To execute a dry run pass `--check` to the tool, for an upgrade use `--apply`.
+With the `--model-version` (or `-m`) argument you control if your project should be kept to model version `4.0.0` or upgraded to the new `4.1.0` version.
+Model version 4.0.0 is fully compatible with Maven 3, while projects with a model version `4.1.0` can only be built using Maven 4.
+If not specified the tool will target model version `4.0.0`.
 
-With the `--model-version` argument you control if your project should be upgraded to model version 4.0.0 or the new 4.1.0 version.
-Model version 4.0.0 is fully compatible with Maven 3, while projects with a model version 4.1.0 can only be built, using Maven 4.
-If not specified the tool will target model version 4.0.0.
-
-The tool allows you to update all or only certain parts of your Build POM, by passing upgrade options to the execution.
-In most cases you want it to check / update all parts.
-This is achieved by either passing `-all` or no upgrade option, making it the default behavior.
+The tool allows you to update all or only certain parts of your `pom.xml` Build POM, by passing upgrade options to the execution.
+In most cases you want it to check / update all parts: 
+This is achieved by either passing `-all` (or `-a`) or no upgrade option, making it the default behavior.
 To specify one or multiple upgrades the following upgrade options can be used:
 
 - `--model`: Only upgrades those parts of the `pom.xml` that are incompatible with Maven 4, for example XML elements or expressions.
@@ -107,7 +104,7 @@ Please see the following example section of this article for an output example.
 ### Specify project directory
 
 Similar to a standard Maven build, the Maven Upgrade Tool searches for a project in the same folder in which the tool got executed.
-To specify another directory, the `--directory` argument comes to your help.
+To specify another directory, the `--directory` (or `-d`) argument comes to your help.
 
 Example:
 
@@ -117,7 +114,7 @@ mvnup check --model-version 4.1.0 --directory /path/to/project
 
 ### Help
 
-A short help about the command line arguments is available using the `--help` argument.
+A short help about the command line arguments is available using the `--help` argument or the `help` goal.
 
 ## Examples
 
@@ -142,7 +139,7 @@ mvnup apply --model-version 4.1.0 --all
 Upgrade all plugins and models to version 4.0.0:
 
 ```
-mvnup apply --plugins --model
+mvnup apply --plugins
 ```
 
 Check for duplicate plugin and dependency declaration in combination with specifying the directory of the project:
@@ -227,6 +224,4 @@ D:\Github\mpmd386\PMD_314\SingleModuleRoot>mvnup apply --model-version 4.1.0 --a
 [INFO] ✓ No upgrades needed - all POMs are up to date
 [INFO]
 [INFO] Saving modified POMs...
-
 ```
-
