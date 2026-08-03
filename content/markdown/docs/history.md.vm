@@ -80,7 +80,7 @@ See also [Starting with Maven 4](/guides/mini/guide-migration-to-mvn4.html) guid
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2026-08-04" "4.0.0-rc-6" "https://lists.apache.org/thread/l54l8pyzv6pbjdtl1w8y28yq7qngjjd2" "true" "Java 17" "10" )
+#release( "2026-08-04" "4.0.0-rc-6" "https://lists.apache.org/thread/0wdtsb84z5llmmrwo5jfgcmy20r1gnkv" "true" "Java 17" "10" )
 #release( "2025-11-13" "4.0.0-rc-5" "https://lists.apache.org/thread/wm55nv4ylodrwfk6ck2pkxy9p94fd8xx" "" "" "" )
 #release( "2025-06-18" "4.0.0-rc-4" "https://lists.apache.org/thread/dfhpy74vhd92r6lrsv4y59g18hhzs946" "" "" "" )
 #release( "2025-03-10" "4.0.0-rc-3" "https://lists.apache.org/thread/x4mvlyx6py6r0wjz5hl871vlvbv6vn94" "" "" "" )
