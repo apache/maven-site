@@ -93,7 +93,7 @@ Examples
 3.5.42
 ```
 
-You can add labels for pre-releases or build metadata after the patch version.
+You can add labels for pre-releases after the patch version.
 Avoid using dates in those labels, because they are usually associated with unstable versions.
 
 Examples
@@ -103,11 +103,11 @@ Examples
 1.0.0-beta
 1.0.0-M1
 1.0.0-rc2
-
-// Build metadata
-1.2.3+dfc0c87
-2.3.4+15433
 ```
+
+Note that Semantic Versioning 2.0.0 build metadata (e.g. `1.2.3+dfc0c87`) is not recognized as such by Maven.
+The `+` character has no special meaning in Maven versions, so any text after it is treated as part of an ordinary
+qualifier rather than build metadata. See the [version order specification][5] for details.
 
 ### Unstable versions (SNAPSHOT)
 
@@ -125,4 +125,5 @@ if one is defined in the [POM file][3].
 [2]:https://semver.org/spec/v1.0.0.html
 [3]:/pom.html#Repository
 [4]:/pom.html#Maven_Coordinates
+[5]:/pom.html#Version_Order_Specification
 
