@@ -67,22 +67,24 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 
 ### Consumer POM
 
-Maven 4 can generate a stripped down consumer POM that removes build information not needed by consumers, and deploys this
-to the remote repository.
-It does not deploy the `pom.xml` used to build the project.
+Maven 4 generates a consumer POM that removes build information not needed by consumers (such as plugin configuration
+and properties), and deploys this to the remote repository instead of the full `pom.xml` used to build the project.
 
-The consumer POM is a **flattened** version of the build POM, meaning:
+By default, the consumer POM preserves all dependencies from the build POM, including `provided` scope dependencies.
+Only build-time-only elements are stripped.
 
-* It contains no parent POM references (all inherited elements are resolved and included directly)
+Optionally, flattening can be enabled to produce a fully self-contained consumer POM. When flattening is enabled:
+
+* Parent POM references are resolved (all inherited elements are included directly)
 * BOM imports are flattened into the dependency list
-* Only transitive dependencies are kept (compile and runtime scopes)
+* Only transitive dependencies are kept (`compile` and `runtime` scopes); non-transitive scopes (`provided`, `test`, `system`) are stripped
 * Managed dependencies are kept only if they are actually used by the project
 
-This flattening ensures that consumers of your artifact have all the information they need without requiring access to
-parent POMs or understanding the internal structure of your multi-project build.
+When flattening is enabled, the full build POM (with all dependency scopes) is still published alongside the consumer
+POM with a `build` classifier.
 
 The flatten feature is disabled by default to avoid unexpected behavior and better control of listing (transitive) dependencies in the consumer POM.
-To publish a flattened consumer POM instead of the full build POM, the user property `maven.consumer.pom.flatten` must be set to `true`.
+To publish a flattened consumer POM, set the user property `maven.consumer.pom.flatten` to `true`.
 User properties can be controlled using `${session.rootDirectory}/.mvn/maven-user.properties` for a per-reactor configuration.
 
 ### Model version 4.1.0
@@ -171,6 +173,9 @@ The following table shows a rough comparison of which content is available in wh
   contain build information, for example plugin configuration!
 * Some of the build-related content which is (as of now) still available in the consumer POM might be available only in
   the build POM in the future.
+* The "3rd party dependency information" row refers to the default (non-flattened) consumer POM, which preserves all
+  dependency scopes. When flattening is enabled (`maven.consumer.pom.flatten=true`), only `compile` and `runtime` scope
+  dependencies are included in the consumer POM.
 
 | Content                                    | Build POM | Consumer POM |
 |:-------------------------------------------|:---------:|:------------:|
