@@ -202,57 +202,61 @@ Below is the suggested site descriptor template (with maven-fluido-skin).
 
 - Introduction
 
-    The introduction is the front page of the plugin documentation. This is a good place to put any section and pages that need to be emphasized. The generated plugin parameter configuration should be linked here. Below is the suggested `src/site/apt/index.apt` template:
+    The introduction is the front page of the plugin documentation. This is a good place to put any section and pages that need to be emphasized. The generated plugin parameter configuration should be linked here. Below is the suggested `src/site/markdown/index.md` template:
 
+    ```markdown
+    #[[
+    ---
+    title: Introduction
+    author:
+      - Author
+    date: YYYY-MM-DD
+    ---
+
+    # Plugin Name
+
+    Plugin introduction, description, and other relevant information.
+
+    ## Goals Overview
+
+    General information about the goals.
+
+    - [prefix:goal](<goal>.html) short description for this plugin goal.
+
+    ## Usage
+
+    General instructions for using the Plugin Name can be found on the [usage page](usage.html). Some more
+    specific use cases are described in the examples given below. Last but not least, users occasionally contribute
+    additional examples, tips or errata to the plugin's wiki page.
+
+    If you have questions regarding the plugin, consult the [FAQ](faq.html) and feel
+    free to contact the [user mailing list](mailing-lists.html). Posts to the mailing list are archived and might
+    already contain the answer to your question. Hence, it is also worth browsing/searching
+    the [mail archive](mailing-lists.html).
+
+    If you think the plugin is missing a feature or has a defect, you can file a feature request or bug report in the
+    [issue management system](issue-management.html). When creating a new issue, please provide a comprehensive description of your
+    concern. Especially for fixing bugs, it is crucial that the developers can reproduce your problem. For this reason,
+    entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
+    Of course, patches are welcome, too. Contributors can check out the project from our
+    [source repository](scm.html) and will find supplementary information in the
+    [guide to helping with Maven](/guides/development/guide-helping.html).
+
+    ## Examples
+
+    To help you understand some usages of the Plugin Name,
+    you can take a look at the following examples:
+
+    - [Example Description One](./examples/example-one.html)
+    - [Example Description Two](./examples/example-two.html)
+    ]]#
     ```
-     ------
-     Introduction
-     ------
-     Author
-     ------
-     YYYY-MM-DD
-     ------
-    
-    
-    Plugin Name
-    
-      Plugin introduction, description, and other relevant information.
-    
-    * Goals Overview
-    
-      General information about the goals.
-    
-      * {{{<goal>.html}prefix:goal}} short description for this plugin goal.
-    
-    * Usage
-    
-      General instructions for using the Plugin Name can be found on the {{{usage.html}usage page}}. Some more
-      specific use cases are described in the examples given below. Last but not least, users occasionally contribute
-      additional examples, tips or errata to the plugin's wiki page.
-    
-      If you have questions regarding the plugin, consult the {{{faq.html}FAQ}} and feel
-      free to contact the {{{mailing-lists.html}user mailing list}}. Posts to the mailing list are archived and might
-      already contain the answer to your question. Hence, it is also worth browsing/searching
-      the {{{mailing-lists.html}mail archive}}.
-    
-      If you think the plugin is missing a feature or has a defect, you can file a feature request or bug report in the
-      {{{issue-management.html}issue management system}}. When creating a new issue, please provide a comprehensive description of your
-      concern. Especially for fixing bugs, it is crucial that the developers can reproduce your problem. For this reason,
-      entire debug logs, POMs or most preferably little demo projects attached to the issue are very much appreciated.
-      Of course, patches are welcome, too. Contributors can check out the project from our
-      {{{scm.html}source repository}} and will find supplementary information in the
-      {{{/guides/development/guide-helping.html}guide to helping with Maven}}. 
-    
-    * Examples
-    
-      To help you understand some usages of the Plugin Name,
-      you can take a look at the following examples:
-    
-      * {{{./examples/example-one.html}Example Description One}}
-    
-      * {{{./examples/example-two.html}Example Description Two}}
-    
-    ```
+
+    The `---` block at the top carries the page title, author and date; the site skin turns
+    them into the document title and its `author` and `date` meta tags. If the page needs
+    Velocity — to interpolate a version into an example POM, say — name it `index.md.vm`
+    instead, and keep headings below level one away from `##`, which Velocity reads as a
+    line comment.
 
 - Goals
 
