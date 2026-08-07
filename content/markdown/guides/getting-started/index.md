@@ -864,7 +864,7 @@ Here is an example using scp and username/password authentication:
 </settings>
 ```
 
-Note that if you are connecting to an openssh ssh server which has the parameter "PasswordAuthentication" set to "no" in the sshd\_config, you will have to type your password each time for username/password authentication (although you can log in using another ssh client by typing in the username and password). You might want to switch to public key authentication in this case.
+Note that if you are connecting to an openssh ssh server which has the parameter "PasswordAuthentication" set to "no" in the sshd_config, you will have to type your password each time for username/password authentication (although you can log in using another ssh client by typing in the username and password). You might want to switch to public key authentication in this case.
 
 Care should be taken if using passwords in `settings.xml`. For more information, see [Password Encryption](../mini/guide-encryption.html).
 
