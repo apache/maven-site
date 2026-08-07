@@ -1,0 +1,36 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+** Testing
+* {{{$prefix/guide-attached-tests.html}Reusable Test JARs}}
+-->
+
+- [Configuring for Reproducible Builds]($prefix/guide-reproducible-builds.html)
+- [Creating Assemblies]($prefix/guide-assemblies.html)
+- [Configuring Archive Plugins]($prefix/guide-archive-configuration.html)
+- [Configuring Maven]($prefix/guide-configuring-maven.html)
+- [Generating Sources]($prefix/guide-generating-sources.html)
+- [Working with Manifests]($prefix/guide-manifest.html)
+- [Maven Classloading]($prefix/guide-maven-classloading.html)
+- [Using Multiple Modules in a Build]($prefix/guide-multiple-modules.html)
+- [Using the Release Plugin]($prefix/guide-releasing.html)
+- [Using Ant with Maven]($prefix/guide-using-ant.html)
+- [Using Modello]($prefix/guide-using-modello.html)
+- [Using Extensions]($prefix/guide-using-extensions.html)
+- [Building For Different Environments]($prefix/guide-building-for-different-environments.html)
+- [Using Toolchains]($prefix/guide-using-toolchains.html)
+- [Injecting POM Properties via settings.xml](/examples/injecting-properties-via-settings.html)
