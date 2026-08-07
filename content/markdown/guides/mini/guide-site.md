@@ -26,11 +26,11 @@ The first step to creating your site is to create some content. In Maven, the si
 ```
 +- src/
    +- site/
-      +- apt/
-      |  +- index.apt
-      !
       +- markdown/
-      |  +- content.md
+      |  +- index.md
+      |
+      +- apt/
+      |  +- content.apt
       |
       +- fml/
       |  +- general.fml
@@ -46,8 +46,8 @@ You will notice there is now a `${project.basedir}/src/site` directory within wh
 
 Let's take a look at the examples of the various document types:
 
-- `apt`: the APT format, "Almost Plain Text", is a wiki-like format that allows you to write simple, structured documents (like this one) very quickly. A full reference of the [APT Format](/doxia/references/apt-format.html) is available,
-- `markdown`: the well known [Markdown](https://en.wikipedia.org/wiki/Markdown) format,
+- `markdown`: the well known [Markdown](https://en.wikipedia.org/wiki/Markdown) format, and the one this page is written in. It is what new documentation should use,
+- `apt`: the APT format, "Almost Plain Text", a wiki-like format that predates Maven's support for Markdown. It is still supported, but the Maven project itself has moved its own documentation off it; see the [APT Format](/doxia/references/apt-format.html) reference if you are maintaining an existing page, and [doxia-converter](/doxia/doxia-tools/doxia-converter/) if you would like to convert one,
 - `fml`: the FML format is the [FAQ format](/doxia/references/fml-format.html),
 - `xdoc`: an XML document conforming to a small and simple set of tags, see the [full reference](/doxia/references/xdoc-format.html).
 
