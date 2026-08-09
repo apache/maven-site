@@ -274,7 +274,7 @@ the [Guide to Plugin Snapshot Repositories](/guides/development/guide-testing-de
 See the following links:
 
 - [Maven XSD](/xsd/maven-4.0.0.xsd)
-- [Maven Settings XSD](/xsd/settings-1.0.0.xsd)
+- [Maven Settings XSD](/xsd/settings-1.2.0.xsd)
 
 Your favorite IDE probably supports XSD schema's for `pom.xml` and `settings.xml` editing.
 You need to specify the following:
@@ -292,10 +292,10 @@ You need to specify the following:
 
 ```xml
 
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
-                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0
+                      https://maven.apache.org/xsd/settings-1.2.0.xsd">
 
   <!-- ... -->
 </settings>
