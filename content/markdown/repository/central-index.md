@@ -24,7 +24,7 @@ Central repository provides [an index in `/.index`](https://repo.maven.apache.or
 - full index (`nexus-maven-repository-index.gz`) is updated weekly,
 - incremental index (`nexus-maven-repository-index.<n>.gz` + `nexus-maven-repository-index.properties`).
 
-This index is build using [Maven Indexer](/maven-indexer/): see [indexer-core documentation](/maven-indexer/indexer-core/) for more details on the fields that are available.
+This index is built using [Maven Indexer](/maven-indexer/): see [indexer-core documentation](/maven-indexer/indexer-core/) for more details on the available fields.
 
 You can use [Maven Indexer API](/maven-indexer/indexer-core/apidocs/) (see [examples](/maven-indexer/indexer-examples/)) to use this index with a dedicated API, or use [Apache Lucene](https://lucene.apache.org/) indexes browsers like [Luke](https://github.com/DmitryKey/luke) or [Marple](https://github.com/flaxsearch/marple) after unpacking the index (see [`-u` CLI option](/maven-indexer/indexer-cli/)).
 
