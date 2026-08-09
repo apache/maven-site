@@ -108,17 +108,17 @@ Everything that changes the repository has to be merged **before** INFRA archive
 3. Delete stale topic branches. Whatever survives is frozen by the archive, and a branch that still carries a `Jenkinsfile` can keep a build job alive.
 4. Update `.asf.yaml`:
    1. Add " (RETIRED)" at the end of the project name.
-   2. Point `homepage` at https://maven.apache.org/ rather than the plugin's own site, which moves to the archive along with the plugin. Note that asfyaml only applies a homepage when one is given: removing the key stops it being reasserted but does not clear what GitHub already stores.
-   3. Remove `autolink_jira`. This stops the file claiming a Jira project that is being archived, though it does not delete autolinks GitHub has already created — ask INFRA for that.
+   2. Leave `homepage` pointing at the plugin's own site. That site stays published, so the link keeps working.
+   3. Remove `autolink_jira`. This stops the file claiming a Jira project that is being archived. It does not delete autolinks GitHub has already created. Ask INFRA for that.
    4. Leave `features.issues` enabled. An archived repository keeps its issues readable, so disabling the feature would hide every report, including any migrated out of Jira.
-5. Replace the `README` with a short retirement notice. The file is otherwise a guide to forking the repository and opening pull requests, which is not actionable on a retired plugin. Keep it to what a visitor needs: that the plugin is retired, the last released version, and a link to the [mailing lists](https://maven.apache.org/mailing-lists.html) for questions. Do not link the plugin's own site, which will not outlive the plugin.
+5. Replace the `README` with a short retirement notice. The file is otherwise a guide to forking the repository and opening pull requests, which is not actionable on a retired plugin. Keep it to what a visitor needs: that the plugin is retired, the last released version, a link to the plugin's site, and a link to the [mailing lists](https://maven.apache.org/mailing-lists.html) for questions.
 6. Ask INFRA to archive git repos (gitbox + github). Ask in the same ticket for the plugin's Jira project to be archived, if it has one.
-7. When relevant update summary pages for [plugins](https://maven.apache.org/plugins/index.html) or [shared components](https://maven.apache.org/shared/index.html)
+7. When relevant, update summary pages for [plugins](https://maven.apache.org/plugins/index.html) or [shared components](https://maven.apache.org/shared/index.html)
 8. Comment the [dist-tool configuration](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/dist-tool.conf.html) entry. Also comment the plugin's entry in the `GetPrerequisites.java` and `ListBranchesReport` files.
 9. Remove from `Source Repository`
    1. [https://maven.apache.org/scm.html](https://maven.apache.org/scm.html) (includes the plantUML diagram)
    2. [https://github.com/apache/maven-sources](https://github.com/apache/maven-sources), moving the entry from `default.xml` to `retired.xml` and removing the matching `<module>` from the aggregator pom. Both, or the aggregator build breaks for everyone who syncs the manifest.
-10. Remove distribution from current [dist area](https://dist.apache.org/repos/dist/release/maven/) (history remains available in [archive](https://archive.apache.org/dist/maven/)). This needs to be done by PMC members. Remove the `.asc` and `.sha512` files as well as the archive itself — leaving them behind publishes a signature for a file that no longer exists.
+10. Remove distribution from current [dist area](https://dist.apache.org/repos/dist/release/maven/) (history remains available in [archive](https://archive.apache.org/dist/maven/)). This needs to be done by PMC members. Remove the `.asc` and `.sha512` files as well as the archive itself. Leaving them behind publishes a signature for a file that no longer exists.
 11. Update board report. This needs to be done by PMC members.
 12. Announce the fact that the plugin has been retired/moved on the announce and users mailing lists. Explain to people what they should do if they would like to continue development of the plugin. Example for retirement email:
 
