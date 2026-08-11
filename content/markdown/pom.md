@@ -225,15 +225,15 @@ There are three methods for dealing with this scenario.
 
 1. Install the dependency locally using the *Maven Install Plugin*. The method is the simplest recommended method. For example:
 
-```
-mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
-```
+    ```
+    mvn install:install-file -Dfile=non-maven-proj.jar -DgroupId=some.group -DartifactId=non-maven-proj -Dversion=1 -Dpackaging=jar
+    ```
 
-Notice that an address is still required, only this time you use the command line and the Maven Install Plugin will create a POM for you with the given address.
+    Notice that an address is still required, only this time you use the command line and the Maven Install Plugin will create a POM for you with the given address.
 
-2. Create your own repository and deploy it there. This is a favorite method for companies with an intranet and need to be able to keep everyone in synch. There is a Maven goal called `deploy:deploy-file` which is similar to the `install:install-file` goal (read the plugin's goal page for more information).
+1. Create your own repository and deploy it there. This is a favorite method for companies with an intranet and need to be able to keep everyone in synch. There is a Maven goal called `deploy:deploy-file` which is similar to the `install:install-file` goal (read the plugin's goal page for more information).
 
-3. Set the dependency scope to `system` and define a `systemPath`. This is not recommended, however, but leads us to explaining the following elements:
+1. Set the dependency scope to `system` and define a `systemPath`. This is not recommended, however, but leads us to explaining the following elements:
 
 * `<classifier>`:
   The classifier distinguishes artifacts that were built from the same POM but differ in content.
@@ -801,16 +801,16 @@ They come in five different styles:
 1. `env.X`: Prefixing a variable with "env." will return the shell's environment variable.
    For example, `${env.PATH}` contains the PATH environment variable.
 
-*Note*: While environment variables themselves are case-insensitive on Windows, lookup of properties is case-sensitive.
-In other words, while the Windows shell returns the same value for `%PATH%` and `%Path%`, Maven distinguishes between `${env.PATH}` and `${env.Path}`.
-**The names of environment variables are normalized to all upper-case** for the sake of reliability.
+    *Note*: While environment variables themselves are case-insensitive on Windows, lookup of properties is case-sensitive.
+    In other words, while the Windows shell returns the same value for `%PATH%` and `%Path%`, Maven distinguishes between `${env.PATH}` and `${env.Path}`.
+    **The names of environment variables are normalized to all upper-case** for the sake of reliability.
 
-2. `project.x`: A dot (`.`) notated path in the POM will contain the corresponding element's value.
+1. `project.x`: A dot (`.`) notated path in the POM will contain the corresponding element's value.
    For example: `<project><version>1.0</version></project`> is accessible via `${project.version}`.
-3. `settings.x`: A dot (`.`) notated path in the `settings.xml` will contain the corresponding element's value.
+1. `settings.x`: A dot (`.`) notated path in the `settings.xml` will contain the corresponding element's value.
    For example: `<settings><offline>false</offline></settings`> is accessible via `${settings.offline}`.
-4. Java System Properties: All properties accessible via `java.lang.System.getProperties()` are available as POM properties, such as `${java.home}`.
-5. `x`: Set within a `<properties /`> element in the POM. The value of `<properties><someVar>value</someVar></properties`> may be used as `${someVar}`.
+1. Java System Properties: All properties accessible via `java.lang.System.getProperties()` are available as POM properties, such as `${java.home}`.
+1. `x`: Set within a `<properties /`> element in the POM. The value of `<properties><someVar>value</someVar></properties`> may be used as `${someVar}`.
 
 ## Build Settings
 
@@ -1489,7 +1489,7 @@ should not be contacted about the project, they do not need to be listed here.
   developer's name and email address.
 
 * `<organization>`, `<organizationUrl>`:
-  As you probably guessed, these are the developer's organization name and it's URL, respectively.
+  As you probably guessed, these are the developer's organization name and its URL, respectively.
 
 * `<roles>`:
   A `role` should specify the standard actions that the person is responsible for. Like a single person
@@ -1701,7 +1701,7 @@ does not exist in the local repository, it will then attempt to download from a 
 The repository elements within a POM specify those alternate repositories to search.
 
 The repository is one of the most powerful features of the Maven community. By default, Maven searches
-the central repository at [https://repo.maven.apache.org/maven2/]. Additional repositories can be
+the central repository at <https://repo.maven.apache.org/maven2/>. Additional repositories can be
 configured in the pom.xml `repositories` element.
 
 ```xml

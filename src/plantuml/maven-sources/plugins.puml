@@ -35,7 +35,6 @@ package Plugins {
     rectangle resources
     rectangle site
     rectangle surefire
-    rectangle verifier
   }
 
   package Packaging {
@@ -80,7 +79,6 @@ package Plugins {
     rectangle scm
     rectangle "scm-publish"
     rectangle scripting
-    rectangle stage
     rectangle toolchains
   }
 }
@@ -96,7 +94,6 @@ deploy    -[hidden]> install
 install   -[hidden]> resources
 resources -[hidden]> site
 site      -[hidden]> surefire
-surefire  -[hidden]> verifier
 
 ear       -[hidden]> ejb
 ejb       -[hidden]> jar
@@ -131,8 +128,7 @@ release -[hidden]>"remote-resources"
 "remote-resources" -[hidden]> scm
 scm -[hidden]> "scm-publish"
 "scm-publish" -[hidden]> scripting
-scripting -[hidden]> stage
-stage -[hidden]> toolchains
+scripting -[hidden]> toolchains
 
 
 
@@ -143,7 +139,6 @@ url of install is [[https://github.com/apache/maven-install-plugin]]
 url of resources is [[https://github.com/apache/maven-resources-plugin]]
 url of site is [[https://github.com/apache/maven-site-plugin]]
 url of surefire is [[https://github.com/apache/maven-surefire]]
-url of verifier is [[https://github.com/apache/maven-verifier-plugin]]
 
 url of ear is [[https://github.com/apache/maven-ear-plugin]]
 url of ejb is [[https://github.com/apache/maven-ejb-plugin]]
@@ -182,7 +177,6 @@ url of "remote-resources" is [[https://github.com/apache/maven-remote-resources-
 url of scm is [[https://github.com/apache/maven-scm]]
 url of "scm-publish" is [[https://github.com/apache/maven-scm-publish-plugin]]
 url of scripting is [[https://github.com/apache/maven-scripting-plugin]]
-url of stage is [[https://github.com/apache/maven-stage-plugin]]
 url of toolchains is [[https://github.com/apache/maven-toolchains-plugin]]
 
 

@@ -20,14 +20,14 @@ under the License.
 -->
 
 Maven 4 introduces several updates and improvements (see ["What's new in Maven 4?"](/whatsnewinmaven4.html)).
-Some of them are backwards compatible with Maven 3 or optional, but some require changes of your build environment or Maven project.
+Some of them are backwards compatible with Maven 3, but some require changes of your build environment or Maven project.
 This page offers help for users who want to build their projects with Maven 4 (and check with RCs that everything is fine).
 
 In short, the general suggestion for the migration is to do it in three steps:
 
 1. **prepare**: Meet the prerequisites with latest Maven 3
-2. **test**: Build in parallel with Maven 4 ([latest RC of Maven 4](/docs/history.html)) and do minimal fixes (report us if anything is unexpected)
-3. **migrate**: Introduce optional Maven 4 features (see also [Maven Upgrade Tool](/tools/mvnup.html))
+2. **test**: Build in parallel with Maven 4 ([latest RC of Maven 4](/docs/history.html)) and do minimal Maven 3-compatible fixes (report us if anything is unexpected)
+3. **migrate**: Drop Maven 3 and introduce optional Maven 4 features (see also [Maven Upgrade Tool](/tools/mvnup.html))
 
 If you run into any issues, please don't hesitate to contact the [users mailing list](/mailing-lists.html).
 The Maven team is interested in all your migration experiences - either good or bad!
@@ -40,9 +40,9 @@ Many OSS projects have already published releases to [Maven Central with Maven 4
   This means it will still receive updates after Maven 4 (RC or final) has been released.
 * Since Maven 4.0.0-rc-4, Maven ships with a built-in migration tool for "step 3 -- migrate" (see [Maven Upgrade Tool](/tools/mvnup.html)), doing most of the steps needed to benefit from optional Maven 4 specific features.
 * This guide does not contain information about how to update plugins to use the new Maven 4 plugin API.
-  We plan to create a separate guide for this: for now, we focus on using Maven 4 (RC) with classical Maven 3 plugins.
+  We plan to create a separate guide for this when we'll work on Maven 4.1: for now, we focus on using Maven 4.0.x (RC) with classical Maven 3 plugins.
 
-## Table of content
+**Table of content**
 
 <!--MACRO{toc|fromDepth=2|toDepth=4}-->
 
@@ -158,7 +158,14 @@ In Maven 4 those phases are removed in favor of new `before:` and `after:` phase
 
 Update your plugin executions that bind to a `pre-integration-test` or `post-integration-test` phase with the corresponding `before:integration-test` or `after:integration-test` phases.
 
-## Step 3 -- migrate: Use Optional Maven 4 features
+## Step 3 -- migrate: Drop Maven 3, use Optional Maven 4 features
+
+In this step, we'll update your project's `pom.xml` to benefit from new Maven 4 features that are not available in Maven 3:
+by applying required changes, you won't be able to build your project with Maven 3 any more.
+
+Notice that [Maven 4 Consumer POM](/whatsnewinmaven4.html#Consumer_POM) will automatically be triggered, which makes sure the
+output of your project can still be used by any tool, be it Maven 3 or other build tools: only **building** your project from `pom.xml`
+in your source control (aka. *Build POM*) requires Maven 4.
 
 ### Changed default values
 
@@ -192,7 +199,7 @@ When the root directory is not defined, the following warning is displayed:
 
 > [WARNING] Unable to find the root directory. Create a .mvn directory in the root directory or add the root="true" attribute on the root project's model to identify it.
 
-As written in the warning there are two ways to define the root directory:
+As written in the warning, there are two ways to define the project's root directory:
 
 1. Create a `.mvn` directory in the root directory.
    From Maven's perspective, the directory can be empty, but some version control systems do not check in an empty directory.
@@ -204,35 +211,35 @@ As written in the warning there are two ways to define the root directory:
 
 #### Use `<subprojects>` instead of `<modules>`
 
-In Maven 4 subprojects are no longer called modules.
+In Maven 4 subprojects are no longer called modules, to avoid confusion between *Maven modules* and *Java Modules* introduced in Java 9.
 While the `<modules>` element is still supported, it was marked as deprecated in model version 4.1.0 and will get removed in a future version.
 So you should replace it with the new `<subprojects>` element instead.
 
 ```xml
 <!-- Requires model version 4.0.0 (Maven 3, deprecated in model version 4.1.0) -->
  <modules>
-     <module>ModuleA</module>
-     <module>ModuleB</module>
+     <module>moduleA</module>
+     <module>moduleB</module>
  </modules>
 
 <!-- Requires model version 4.1.0 (Maven 4) -->
  <subprojects>
-     <subproject>ModuleA</subproject>
-     <subproject>ModuleB</subproject>
+     <subproject>moduleA</subproject>
+     <subproject>moduleB</subproject>
  </subprojects>
 ```
 
 #### Automatic versioning in multi subprojects setups
 
 Maven 4 contains a lot of improvements for projects which contain subprojects.
-Those include automatic version detection of the parent and project own dependencies.
+Those include automatic version detection of the parent and project own dependencies, and automatic detection of parent groupId and artifactId.
 
-Using Maven 3 with model version 4.0.0 you need to declare those.
-While the parent's version always must be hardcoded, you can use the `${project.version` property to declare another subproject as a dependency.
-Using Maven 4 and model version 4.1.0 those definitions are optional.
+Using Maven 3 with model version 4.0.0, you need to declare those.
+While the parent's version always must be hardcoded, you can use the `${project.version}` property to declare another subproject as a dependency.
+Using Maven 4 and model version 4.1.0, those definitions are optional: they are automatically inferred from content on disk.
 
-The following example of a pom.xml shows the associated part for a subproject called "SubprojectB".
-This subproject declares its parent and the dependency to "SubprojectA", which is also a subproject in the same multi subproject setup.
+The following example of a `pom.xml` shows the associated part for a subproject called "subprojectB".
+This subproject declares its parent and the dependency to "subprojectA", which is also a subproject in the same multi subproject setup.
 
 In Maven 3 with model version 4.0.0 such a declaration looks like the following.
 
@@ -242,19 +249,20 @@ In Maven 3 with model version 4.0.0 such a declaration looks like the following.
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
    
    <modelVersion>4.0.0</modelVersion>
-   <artifactId>SubprojectB</artifactId>
+   <artifactId>subprojectB</artifactId>
    
    <parent>
+      <!-- The parent groupId and artifactId must be "hardcoded" -->
       <groupId>demo.maven</groupId>
-      <artifactId>TheParentProjecct</artifactId>
-      <!-- The parents version must be "hardcoded" -->
+      <artifactId>theParentProjecct</artifactId>
+      <!-- The parents' version must be "hardcoded" -->
       <version>0.0.1-SNAPSHOT</version>
    </parent>
    
    <dependencies>
       <dependency>
          <groupId>demo.maven</groupId>
-         <artifactId>SubprojectA</artifactId>
+         <artifactId>subprojectA</artifactId>
          <!-- The subproject dependency version declaration can make use of the project.version property-->
          <version>${project.version}</version>
       </dependency>
@@ -264,7 +272,7 @@ In Maven 3 with model version 4.0.0 such a declaration looks like the following.
 </project>
 ```
 
-In Maven 4 and model version 4.1.0 the version declaration is not needed anymore.
+In Maven 4 and model version 4.1.0, the version declarations and parent coordinates are not needed anymore.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.1.0"
@@ -272,17 +280,14 @@ In Maven 4 and model version 4.1.0 the version declaration is not needed anymore
          xsi:schemaLocation="http://maven.apache.org/POM/4.1.0 http://maven.apache.org/xsd/maven-4.1.0.xsd">
    
    <modelVersion>4.1.0</modelVersion>
-   <artifactId>SubprojectB</artifactId>
+   <artifactId>subprojectB</artifactId>
    
-   <parent>
-      <groupId>demo.maven</groupId>
-      <artifactId>TheParentProjecct</artifactId>
-   </parent>
+   <parent/>
    
    <dependencies>
       <dependency>
          <groupId>demo.maven</groupId>
-         <artifactId>SubprojectA</artifactId>
+         <artifactId>subprojectA</artifactId>
       </dependency>
    </dependencies>
    
@@ -312,7 +317,7 @@ The following code snippet shows an example for a BOM POM using the new `<packag
 
     <modelVersion>4.1.0</modelVersion>
     <groupId>demo.maven</groupId>
-    <artifactId>Maven4-example-bom</artifactId>
+    <artifactId>maven4-example-bom</artifactId>
     <version>1.0.0</version>
 
     <packaging>bom</packaging>
@@ -354,7 +359,7 @@ Maven 3 has two explicitly named XML elements (`<sourceDirectory>` and `<testSou
 ```
 
 Maven 4 introduces the new `<sources>` element for this.
-This makes source directory declarations more flexible for future improvements.
+This makes source directory declarations more flexible for future improvements like Java Modules.
 When migrate to Maven 4, you should use the new element.
 
 ```xml

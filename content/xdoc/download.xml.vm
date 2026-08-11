@@ -38,6 +38,7 @@ under the License.
         <li><a href="#Maven">Apache Maven</a>
           <ul>
             <li><a href="#CurrentMaven">Current Maven ${currentStableVersion}</a></li>
+            <li><a href="#Maven310x">Preview Maven ${current310xVersion}</a></li>
             <li><a href="#Maven4x">Preview Maven ${current4xVersion}</a></li>
           </ul>
         </li>
@@ -123,6 +124,57 @@ under the License.
         <a href="./docs/history.html">Maven Releases History</a> and can download files from
         the  <a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for versions 3.0.4+
         and <a href="https://archive.apache.org/dist/maven/binaries/">legacy archives</a> for earlier releases.</p>
+      </subsection>
+
+      <subsection name="Preview 3.10.x Release" id="Maven310x">
+        <p>Maven 3.10.x is currently under development, so while we are encouraging users to try it and report any issues, it is <b>NOT</b> safe for production use.</p>
+
+        <p>Maven 3.10+ requires JDK 8 or above to execute. It still allows you to build against 1.3 and other JDK versions
+          <a href="/guides/mini/guide-using-toolchains.html">by using toolchains</a>.</p>
+
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Link</th>
+              <th>Checksums</th>
+              <th>Signature</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Binary tar.gz archive</td>
+              <td><a href="[preferred]maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.tar.gz">apache-maven-${current310xVersion}-bin.tar.gz</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.tar.gz.sha512">apache-maven-${current310xVersion}-bin.tar.gz.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.tar.gz.asc">apache-maven-${current310xVersion}-bin.tar.gz.asc</a></td>
+            </tr>
+            <tr>
+              <td>Binary zip archive</td>
+              <td><a href="[preferred]maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.zip">apache-maven-${current310xVersion}-bin.zip</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.zip.sha512">apache-maven-${current310xVersion}-bin.zip.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/binaries/apache-maven-${current310xVersion}-bin.zip.asc">apache-maven-${current310xVersion}-bin.zip.asc</a></td>
+            </tr>
+            <tr>
+              <td>Source tar.gz archive</td>
+              <td><a href="[preferred]maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.tar.gz">apache-maven-${current310xVersion}-src.tar.gz</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.tar.gz.sha512">apache-maven-${current310xVersion}-src.tar.gz.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.tar.gz.asc">apache-maven-${current310xVersion}-src.tar.gz.asc</a>
+              </td>
+            </tr>
+            <tr>
+              <td>Source zip archive </td>
+              <td><a href="[preferred]maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.zip">apache-maven-${current310xVersion}-src.zip</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.zip.sha512">apache-maven-${current310xVersion}-src.zip.sha512</a></td>
+              <td><a href="https://downloads.apache.org/maven/maven-3/${current310xVersion}/source/apache-maven-${current310xVersion}-src.zip.asc">apache-maven-${current310xVersion}-src.zip.asc</a></td>
+            </tr>
+          </tbody>
+        </table>
+        <ul>
+          <li>${current310xVersion} <a href="./docs/${current310xVersion}/release-notes.html">Release Notes</a> and
+            <a href="./ref/${current310xVersion}/">Release Reference Documentation</a></li>
+          <li>Distributed under the <a href="https://www.apache.org/licenses/">Apache License, version 2.0</a></li>
+          <li><a href="https://archive.apache.org/dist/maven/maven-3/">Maven 3 archives</a> for older 3.x releases.</li>
+        </ul>
       </subsection>
 
       <subsection name="Preview 4.x Release" id="Maven4x">

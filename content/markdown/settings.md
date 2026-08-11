@@ -50,8 +50,8 @@ your needs.
 Here is an overview of the top elements under `settings`:
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
   <localRepository/>
   <interactiveMode/>
   <offline/>
@@ -81,8 +81,8 @@ Half of the top-level `settings` elements are simple values,
 representing a range of values which describe elements of the build
 system that are active full-time.
 
-        <settings xmlns="http://maven.apache.org/SETTINGS/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 https://maven.apache.org/xsd/settings-1.0.0.xsd">
+        <settings xmlns="http://maven.apache.org/SETTINGS/1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.2.0 https://maven.apache.org/xsd/settings-1.2.0.xsd">
           <localRepository>${user.home}/.m2/repository</localRepository>
           <interactiveMode>true</interactiveMode>
           <offline>false</offline>
@@ -109,7 +109,7 @@ not provided in the command line. This list automatically contains
 `org.apache.maven.plugins` and `org.codehaus.mojo`.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <pluginGroups>
     <pluginGroup>org.eclipse.jetty</pluginGroup>
@@ -133,7 +133,7 @@ should not be distributed along with the `pom.xml`. This type of
 information should exist on the build server in the `settings.xml`.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <servers>
     <server>
@@ -179,7 +179,7 @@ page](./guides/mini/guide-encryption.html)
 ### Mirrors
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <mirrors>
     <mirror>
@@ -212,7 +212,7 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 ### Proxies
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <proxies>
     <proxy>
@@ -265,7 +265,7 @@ certain circumstances; those circumstances are specified via an
 `activation` element.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   <!-- ... -->
   <profiles>
     <profile>
@@ -353,7 +353,7 @@ all accessible from the `settings.xml` file:
 <!-- -->
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <profiles>
     <profile>
@@ -381,7 +381,7 @@ profile they may be searched for a matching release or snapshot
 artifact.
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <profiles>
     <profile>
@@ -461,7 +461,7 @@ Maven can find new plugins.
 ### Active Profiles
 
 ```xml
-<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0">
+<settings xmlns="http://maven.apache.org/SETTINGS/1.2.0">
   ...
   <activeProfiles>
     <activeProfile>env-test</activeProfile>
