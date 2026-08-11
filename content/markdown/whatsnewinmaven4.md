@@ -170,9 +170,8 @@ standard `<classifier>` element on the import dependency:
 </dependencyManagement>
 ```
 
-There is no dedicated `<bomClassifier>` element in the POM model or XSD.
 Classified BOM artifacts are produced by attaching an additional POM artifact with a classifier (for example via a
-BOM-building plugin), not by a model element on the producing project.
+BOM-building plugin). Consumers import that artifact with the standard `<classifier>` element as shown above.
 
 Therefore, the Maven team suggests that project BOMs should be published as classified artifacts when appropriate.
 This means that an imported BOM must **not** come from the same reactor as the current build but be available outside
