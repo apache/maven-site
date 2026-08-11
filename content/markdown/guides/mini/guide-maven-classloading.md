@@ -52,15 +52,15 @@ It contains only Plexus Classworlds and imports the platform classloader.
 
 The second classloader down the graph contains the core requirements of Maven. **It is used by Maven internally but not by plugins**. The core classloader has the libraries in `${maven.home}/lib`. In general these are just Maven libraries. For example instances of [`MavenProject`](/ref/current/apidocs/org/apache/maven/project/MavenProject.html) belong to this classloader.
 
-Contents of this classloader are configured in `${maven.home}/bin/m2.conf` and typically contains `${maven.home}/lib/ext/*.jar` and `${maven.home}/lib/*.jar`.
+Contents of this classloader are configured in `${maven.home}/bin/m2.conf` and typically contain `${maven.home}/lib/ext/*.jar` and `${maven.home}/lib/*.jar`.
 
 You can add elements to this classloader by the means outlined in [Core Extension](./guide-using-extensions.html). These are loaded through the same classloader as `${maven.home}/lib` and hence are available to the Maven core and all plugins for the current project (through the API Classloader, see next paragraph). More information is available in [Core Extension](./guide-using-extensions.html).
 
 ## Core Extensions
 
-Core Extensions is a mechanism introduced in Maven 3.3.0 which allows additional components to be loaded into Maven Core as part of a build session.
+Core Extensions enable additional components to be loaded into Maven Core as part of a build session.
 
-Each core extension is loaded in a separate classloader and there is no mechanism to share classes among core extensions. Core extension classloaders use Maven Core classloader as the parent and have access to both exported and internal Maven Core classes.
+Each core extension is loaded in a separate classloader. There is no mechanism to share classes among core extensions.
 
 A core extension can use a `META-INF/maven/extension.xml` descriptor to declare packages and artifacts exported by the extension. If the descriptor is not present, no packages or artifacts are exported, but the extension can still contribute components to Maven Core extension points.
 
@@ -91,9 +91,9 @@ This classloader is created only when core extensions are configured for the bui
 
 The API classloader aggregates exported packages from both the Maven Core classloader and any Maven Core Extensions classloaders. It does not include any classes directly.
 
-This has been introduced with Maven 3.3.1 ([MNG-5771](https://issues.apache.org/jira/browse/MNG-5771)). The main API is listed in [Maven Core Extensions Reference](/ref/current/maven-core/core-extensions.html).
+The main API is listed in [Maven Core Extensions Reference](/ref/current/maven-core/core-extensions.html).
 
-The Maven API classloader uses the approximate JVM Bootstrap classloader as its parent (there is no public API to access the JVM Bootstrap classloader; the implementation uses `ClassLoader.getSystemClassLoader().getParent()`). This parent does not contain any application or javaagent classes, which allows for a consistent Maven API classpath regardless of how the Maven JVM was launched.
+The Maven API classloader uses the approximate JVM Bootstrap classloader as its parent. Because there is no public API to access the JVM Bootstrap classloader, the implementation uses `ClassLoader.getSystemClassLoader().getParent()`. This parent does not contain any application or javaagent classes, which allows for a consistent Maven API classpath regardless of how the Maven JVM was launched.
 
 ## Build Extension Classloaders
 
@@ -101,7 +101,7 @@ The Maven API classloader uses the approximate JVM Bootstrap classloader as its 
 
 For every plugin which is marked with `<extensions>true</extensions>` and every [build extension](/ref/current/maven-model/maven.html#class_extension) listed in the according section of the POM, there is a dedicated classloader. Those are isolated. That is, one build extension does not have access to other build extensions. It imports everything from the API classloader. All JSR 330 or Plexus components declared in the underlying JAR are registered in the global Plexus container while creating the classloader. In addition all component references in the plugin descriptor are properly wired from the underlying Plexus container. Build extensions have limited effect as they are loaded late.
 
-Modern Maven 3.x build extensions are those that either consist of multiple artifacts or include a `META-INF/maven/extension.xml` descriptor. Each such extension is loaded in a fully isolated classloader — it is not possible to share classes or inject components among extensions. Build extension classloaders use the ClassWorlds bootstrap classloader as the parent, which allows build extensions access to `-javaagent` classes.
+Maven build extensions either consist of multiple artifacts or include a `META-INF/maven/extension.xml` descriptor. Each such extension is loaded in a fully isolated classloader — it is not possible to share classes or inject components among extensions. Build extension classloaders use the ClassWorlds bootstrap classloader as the parent, which allows build extensions access to `-javaagent` classes.
 
 Maven guarantees that each distinct modern build extension (as identified by groupId, artifactId, version and set of dependencies) is loaded by one and only one extension classloader, and that classloader is wired to all projects that use the extension.
 
@@ -127,7 +127,7 @@ Plugin classloaders are wired differently depending on whether the project uses 
 
 - **With build extensions**: plugin classloaders are wired to project classloaders, giving plugin code access to both Maven API packages and packages exported by the project build extensions. Maven will create one and only one classloader for each unique plugin+dependencies+build-extensions combination.
 
-All plugin classloaders use the ClassWorlds bootstrap classloader as the parent. This provides a relatively clean and therefore consistent plugin classpath, while still allowing plugins access to `-javaagent` classes (see [MNG-4747](https://issues.apache.org/jira/browse/MNG-4747)).
+All plugin classloaders use the ClassWorlds bootstrap classloader as the parent. This provides a relatively clean and consistent plugin classpath, while still allowing plugins access to `-javaagent` classes (see [MNG-4747](https://issues.apache.org/jira/browse/MNG-4747)).
 
 Note: Reporting plugins are wired differently and are outside the scope of this document.
 
