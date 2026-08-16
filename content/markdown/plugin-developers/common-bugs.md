@@ -213,20 +213,16 @@ At first glance, one might be tempted to argue that the project base directory i
 Hence this example code is prone to misbehave:
 
 ```java
-public class MyMojo extends AbstractMojo
-{
-    /**
-     * @parameter
-     */
+public class MyMojo extends AbstractMojo {
+    @Parameter
     private String outputDirectory;
 
-    public void execute()
-    {
+    public void execute() {
         /*
          * FIXME: This will resolve relative paths like "target/classes" against
          * the user's working directory instead of the project's base directory.
          */
-        File outputDir = new File( outputDirectory ).getAbsoluteFile();
+        File outputDir = new File(outputDirectory).getAbsoluteFile();
     }
 }
 ```
@@ -234,10 +230,9 @@ public class MyMojo extends AbstractMojo
 In order to guarantee reliable builds, Maven and its plugins must manually resolve relative paths against the project's base directory. A simple idiom like the following will do just fine:
 
 ```java
-File file = new File( path );
-if ( !file.isAbsolute() )
-{
-    file = new File( project.getBasedir(), file );
+File file = new File(path);
+if (!file.isAbsolute()) {
+    file = new File(project.getBasedir(), file);
 }
 ```
 
@@ -250,20 +245,15 @@ Most reporting plugins inherit from `AbstractMavenReport`. In doing so, they nee
 Now, some plugins need to create additional files in the report output directory that accompany the report generated via the sink interface. While it is tempting to use either the method `getOutputDirectory()` or the field `outputDirectory` directly in order to setup a path for the output files, this leads most likely to a bug. More precisely, those plugins will not properly output files when run by the Maven Site Plugin as part of the site lifecycle. This is best noticed when the output directory for the site is configured directly in the Maven Site Plugin such that it deviates from the expression `${project.reporting.outputDirectory}` that the plugins use by default. Multi-language site generation is another scenario to exploit this bug which is illustrated below:
 
 ```java
-public class MyReportMojo extends AbstractMavenReport
-{
-    /**
-     * @parameter default-value="${project.reporting.outputDirectory}"
-     */
+public class MyReportMojo extends AbstractMavenReport {
+    @Parameter(defaultValue = "${project.reporting.outputDirectory}")
     private File outputDirectory;
 
-    protected String getOutputDirectory()
-    {
+    protected String getOutputDirectory() {
         return outputDirectory.getAbsolutePath();
     }
 
-    public void executeReport( Locale locale )
-    {
+    public void executeReport(Locale locale) {
         /*
          * FIXME: This assumes the mojo parameter reflects the effective
          * output directory as used by the Maven Site Plugin.
