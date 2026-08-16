@@ -71,7 +71,8 @@ An easy way to implement both `Mojo` and `MavenReport` interfaces is to extend t
 
 The class will need to implement the following methods:
 
-- `public String getOutputName()`: returns the name of page that will be produced
+- `public String getOutputPath()`: returns the path of the page that will be produced
+- `public String getOutputName()`: deprecated in favour of `getOutputPath()`, but still declared abstract by `MavenReport`, so it has to be implemented — delegate it to `getOutputPath()`
 - `public String getName(Locale locale)`: returns the display name of the report
 - `public String getDescription(Locale locale)`: returns the description of the report
 - `protected void executeReport(Locale locale) throws MavenReportException`: produces the actual report
@@ -115,8 +116,8 @@ The below examples can be copied and pasted as a template.
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <doxiaVersion>1.10</doxiaVersion>
-        <doxiaSitetoolsVersion>1.10</doxiaSitetoolsVersion>
+        <doxiaVersion>2.1.0</doxiaVersion>
+        <doxiaSitetoolsVersion>2.1.0</doxiaSitetoolsVersion>
     </properties>
 
     <dependencies>
@@ -136,19 +137,25 @@ The below examples can be copied and pasted as a template.
         <dependency>
             <groupId>org.apache.maven.reporting</groupId>
             <artifactId>maven-reporting-impl</artifactId>
-            <version>3.0.0</version>
+            <version>4.0.0</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven.reporting</groupId>
             <artifactId>maven-reporting-api</artifactId>
-            <version>3.0</version>
+            <version>4.0.0</version>
         </dependency>
 
         <!-- plugin API and plugin-tools -->
         <dependency>
             <groupId>org.apache.maven</groupId>
+            <artifactId>maven-core</artifactId>
+            <version>3.9.11</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>3.5.2</version>
+            <version>3.9.11</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -157,12 +164,6 @@ The below examples can be copied and pasted as a template.
             <version>$context.get("version.maven-plugin-tools")</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>org.apache.maven.shared</groupId>
-            <artifactId>maven-shared-utils</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-
     </dependencies>
 
 
@@ -209,7 +210,6 @@ import org.apache.maven.doxia.sink.Sink;
 import org.apache.maven.plugin.logging.Log;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
-import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.apache.maven.project.MavenProject;
 import org.apache.maven.reporting.AbstractMavenReport;
@@ -232,7 +232,17 @@ import org.apache.maven.reporting.MavenReportException;
      )
 public class SimpleReport extends AbstractMavenReport {
 
+    /**
+     * @deprecated use {@link #getOutputPath()} instead
+     */
+    @Override
+    @Deprecated
     public String getOutputName() {
+        return getOutputPath();
+    }
+
+    @Override
+    public String getOutputPath() {
         // This report will generate simple-report.html when invoked in a project with `mvn site`
         return "simple-report";
     }
@@ -248,12 +258,6 @@ public class SimpleReport extends AbstractMavenReport {
         + "shows off Maven's wonderful reporting capabilities.";
     }
 
-    /**
-     * Practical reference to the Maven project
-     */
-    @Parameter(defaultValue = "\${project}", readonly = true)
-    private MavenProject project;
-
     @Override
     protected void executeReport(Locale locale) throws MavenReportException {
 
@@ -261,7 +265,7 @@ public class SimpleReport extends AbstractMavenReport {
         Log logger = getLog();
 
         // Some info
-        logger.info("Generating " + getOutputName() + ".html"
+        logger.info("Generating " + getOutputPath() + ".html"
                 + " for " + project.getName() + " " + project.getVersion());
 
         // Get the Maven Doxia Sink, which will be used to generate the
