@@ -59,6 +59,31 @@ under the License.
         <item name="Maven Upgrade Tool" href="/tools/mvnup.html"/>
         <item name="Maven Wrapper" href="/tools/mavenwrapper.html"/>
       </item>
+      <item name="Doxia" href="/doxia/index.html" collapse="true">
+        <item name="Overview" href="/doxia/overview.html"/>
+        <item name="Downloads" href="/doxia/downloads.html"/>
+        <item name="FAQ" href="/doxia/faq.html"/>
+        <item name="Format References" href="/doxia/references/index.html" collapse="true">
+          <item name="Markdown Format" href="/doxia/references/markdown-format.html"/>
+          <item name="Apt Format" href="/doxia/references/apt-format.html" collapse="true">
+            <item name="Doxia Apt Enhancements" href="/doxia/references/doxia-apt.html"/>
+          </item>
+          <item name="FML Format" href="/doxia/references/fml-format.html"/>
+          <item name="Xdoc Format" href="/doxia/references/xdoc-format.html"/>
+        </item>
+        <item name="Doxia Modules Guide" href="/doxia/modules/index.html"/>
+        <item name="Doxia Macros Guide" href="/doxia/macros/index.html"/>
+        <item name="Issues &amp; Gotchas" href="/doxia/issues/index.html"/>
+        <item name="External Resources" href="/doxia/resources.html"/>
+        <item name="Developer Docs" href="/doxia/developers/index.html" collapse="true">
+          <item name="Create a Doxia Module" href="/doxia/developers/modules.html"/>
+          <item name="Create a Doxia Macro" href="/doxia/developers/macros.html"/>
+          <item name="Using the Sink API" href="/doxia/developers/sink.html"/>
+        </item>
+        <item name="Doxia Base" href="/doxia/doxia/index.html"/>
+        <item name="Doxia Sitetools" href="/doxia/doxia-sitetools/index.html"/>
+        <item name="Doxia Tools" href="/doxia/doxia-tools/index.html"/>
+      </item>
       <item name="Index (category)" href="/guides/index.html"/>
 
       <item name="User Manual" href="/users/index.html" collapse="true">
