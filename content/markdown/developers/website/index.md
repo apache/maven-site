@@ -26,7 +26,7 @@ The Maven [https://maven.apache.org](https://maven.apache.org) website is compos
 
 And [Doxia](https://maven.apache.org/doxia/) website has the same dual structure.
 
-These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in `/www/maven.apache.org/content` (see [`svnwcsub` configured in infra Puppet](https://github.com/apache/infrastructure-puppet/blob/deployment/modules/svnwcsub/files/svnwcsub.conf#L123)):
+These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in `/www/maven.apache.org/content` (see [`svnwcsub` configured in infra Puppet](https://github.com/apache/infrastructure-p6/blob/production/modules/svnwcsub/files/svnwcsub.conf#L104)):
 
 - `/` comes from [https://svn.apache.org/repos/asf/maven/website/content/](https://svn.apache.org/viewvc/maven/website/content/),
 - [`/components`](https://maven.apache.org/components) comes from [https://svn.apache.org/repos/asf/maven/website/components/](https://svn.apache.org/repos/asf/maven/website/components/),
