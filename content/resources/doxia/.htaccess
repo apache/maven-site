@@ -1,0 +1,17 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements; and to You under the Apache License, Version 2.0.
+RedirectMatch permanent ^/doxia/doxia-1.2/(.*)$ /doxia/doxia-archives/doxia-1.2/$1
+RedirectMatch permanent ^/doxia/doxia-sitetools-1.2 /doxia/doxia-sitetools-archives/doxia-sitetools-1.2/$1
+# support resources pointed from /doxia/*-archives/: the skin writes them to the site root,
+# which is / now that the Doxia pages are built as part of the main site
+Redirect Permanent /doxia/images/apache-maven-project.png  /images/apache-maven-project.png
+RedirectMatch permanent ^/doxia/.*-archives/images/(.*)$ /images/$1
+RedirectMatch permanent ^/doxia/.*-archives/css/(.*)$ /css/$1
+#RedirectMatch permanent ^/doxia/.*-archives/index.html$ /doxia/index.html
+
+# project information pages, generated for the standalone Doxia site until it was folded
+# into the main site
+Redirect Permanent /doxia/team.html /team.html
+Redirect Permanent /doxia/mailing-lists.html /mailing-lists.html
+Redirect Permanent /doxia/ci-management.html /ci-management.html
+Redirect Permanent /doxia/issue-management.html /issue-management.html
+Redirect Permanent /doxia/project-info.html /doxia/index.html

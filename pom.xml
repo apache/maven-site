@@ -69,6 +69,8 @@
     <site.output>${project.build.directory}/site</site.output>
     <javaVersion>17</javaVersion>
     <siteDirectory>${project.basedir}/content</siteDirectory>
+    <doxiaVersion>2.1.0</doxiaVersion>
+    <!-- Doxia release advertised by content/markdown/doxia/ -->
     <version.plantuml-maven-plugin>0.4.16</version.plantuml-maven-plugin>
     <!-- required by plantuml-m-p 0.3 -->
     <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
@@ -304,6 +306,7 @@
             <exclude>content/resources/developers/svn-eol-style.txt</exclude>
             <exclude>content/resources/download.cgi</exclude>
             <exclude>content/resources/badges/*.json</exclude>
+            <exclude>content/resources/doxia/images/architecture.odg</exclude>
           </excludes>
         </configuration>
         <executions>

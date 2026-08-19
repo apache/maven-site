@@ -1,0 +1,128 @@
+---
+title: Doxia Developers Centre
+author: 
+  - Vincent Siveton
+date: 2008-03-02
+---
+
+<!-- Licensed to the Apache Software Foundation (ASF) under one-->
+<!-- or more contributor license agreements.  See the NOTICE file-->
+<!-- distributed with this work for additional information-->
+<!-- regarding copyright ownership.  The ASF licenses this file-->
+<!-- to you under the Apache License, Version 2.0 (the-->
+<!-- "License"); you may not use this file except in compliance-->
+<!-- with the License.  You may obtain a copy of the License at-->
+<!---->
+<!--   http://www.apache.org/licenses/LICENSE-2.0-->
+<!---->
+<!-- Unless required by applicable law or agreed to in writing,-->
+<!-- software distributed under the License is distributed on an-->
+<!-- "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY-->
+<!-- KIND, either express or implied.  See the License for the-->
+<!-- specific language governing permissions and limitations-->
+<!-- under the License.-->
+
+# Create a New Doxia Module
+
+First, the easiest way is to create a POM with _doxia-modules_ as parent:
+
+```unknown
+<project>
+  <parent>
+    <groupId>org.apache.maven.doxia</groupId>
+    <artifactId>doxia-modules</artifactId>
+    <version>${doxiaVersion}</version> <!-- Latest release -->
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <artifactId>doxia-module-my</artifactId>
+  <name>Doxia :: MY Module</name>
+
+  ...
+</project>
+```
+
+Secondly, you should implement some Doxia classes, depending on what features you want: parsing or generating markup.
+
+${esc.h}${esc.h} Parsing
+
+- _MyParser_ class
+
+    ```unknown
+    import org.apache.maven.doxia.parser.AbstractParser;
+    import org.apache.maven.doxia.parser.Parser;
+    import org.codehaus.plexus.component.annotations.Component;
+    
+    @Component( role = Parser.class, hint = "my" )
+    public class MyParser
+        extends AbstractParser
+    {
+    ...
+    }
+    ```
+
+    Depending on the type markup, extending `AbstractTextParser`, `AbstractXmlParser` or `XhtmlBaseParser` may give you more features.
+
+- _MyParseException_ class (optional)
+
+    ```unknown
+    import org.apache.maven.doxia.parser.ParseException;
+    
+    public class MyParseException
+        extends ParseException
+    {
+    ...
+    }
+    ```
+
+- _MyParserModule_ class
+
+    ```unknown
+    import org.apache.maven.doxia.parser.module.AbstractParserModule;
+    import org.codehaus.plexus.component.annotations.Component;
+    
+    @Component( role = ParserModule.class, hint = "my" )
+    public class MyParserModule
+        extends AbstractParserModule
+    {
+    ...
+    }
+    ```
+
+${esc.h}${esc.h} Generating
+
+- _MySink_ class
+
+    ```unknown
+    import org.apache.maven.doxia.sink.SinkAdapter;
+    
+    public class MySink
+        extends SinkAdapter
+    {
+    ...
+    }
+    ```
+
+    Depending on the type markup, extending `AbstractTextSink`, `AbstractXmlSink` or `XhtmlBaseSink` may give you more features.
+
+- _MySinkFactory_ class
+
+    ```unknown
+    import org.apache.maven.doxia.sink.SinkFactory;
+    import org.codehaus.plexus.component.annotations.Component;
+    
+    @Component( role = SinkFactory.class, hint = "my" )
+    public class MySinkFactory
+        extends SinkFactory
+    {
+    ...
+    }
+    ```
+
+    Depending on the type markup, extending `AbstractTextSinkFactory`, `AbstractXmlSinkFactory` or `AbstractBinarySinkFactory` may give you more features.
+
+${esc.h}${esc.h} <a id="References"></a>References
+
+- [Doxia Modules Guide](../modules/index.html)
+- [Doxia Macros Guide](../macros/index.html)
+- [Doxia API Reference](../doxia/apidocs/index.html)
+- [Doxia Sitetools API Reference](../doxia-sitetools/apidocs/index.html)
