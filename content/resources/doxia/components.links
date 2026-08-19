@@ -1,0 +1,9 @@
+# Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements; and to You under the Apache License, Version 2.0.
+
+# links property file for Ant's symlink task in pom.xml:
+# links to components in https://maven.apache.org/doxia/components/
+doxia=components/doxia
+doxia-archives=components/doxia-archives
+doxia-sitetools=components/doxia-sitetools
+doxia-sitetools-archives=components/doxia-sitetools-archives
+doxia-tools-archives=components/doxia-tools-archives
