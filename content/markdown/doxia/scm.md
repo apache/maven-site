@@ -23,25 +23,4 @@ under the License.
 
 # Source Repository
 
-Maven Doxia projects use [Git](https://git-scm.com/) to manage their source code. 
-
-Instructions on Git use can be found in the online book [Pro Git](https://git-scm.com/book/). The Apache Software Foundation hosts its Git repositories at [GitBox](https://gitbox.apache.org/), which is mirrored to [GitHub](https://github.com/apache/). 
-
-## Doxia Website
-
-The sources for this site are available in a separate Git repository: 
-
-|   |   |   |
-|---|---|---|
-|[Apache Maven Doxia website](/doxia/)|<pre><code><a href="https://gitbox.apache.org/repos/asf/maven-doxia-site.git" class="externalLink">https://gitbox.apache.org/repos/asf/maven-doxia-site.git</a></code></pre>|[(GitHub mirror)](https://github.com/apache/maven-doxia-site/)|
-
-## Components in Git
-
-The components in Git are: 
-
-|   |   |   |
-|---|---|---|
-|[Apache Maven Doxia base](doxia/)|<pre><code><a href="https://gitbox.apache.org/repos/asf/maven-doxia.git" class="externalLink">https://gitbox.apache.org/repos/asf/maven-doxia.git</a></code></pre>|[(GitHub mirror)](https://github.com/apache/maven-doxia/)|
-|[Apache Maven Doxia Sitetools](doxia-sitetools/)|<pre><code><a href="https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git" class="externalLink">https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git</a></code></pre>|[(GitHub mirror)](https://github.com/apache/maven-doxia-sitetools/)|
-|Doxia Tools|
-|[Apache Maven Doxia Converter](doxia-tools/doxia-converter/)|<pre><code><a href="https://gitbox.apache.org/repos/asf/maven-doxia-converter.git" class="externalLink">https://gitbox.apache.org/repos/asf/maven-doxia-converter.git</a></code></pre>|[(GitHub mirror)](https://github.com/apache/maven-doxia-converter/)|
+Moved to [Maven Source Repositories](../scm.html).

@@ -103,11 +103,8 @@ function instructions() {
     v4x = false;
     v4xBox.style.display = 'none';
   }
-  if (category.indexOf("doxia") == 0) {
-    svnmucc = replaceAll(svnmucc, 'maven/website/components', 'maven/doxia/website/components');
-    if (category != "doxia-tools") {
-      document.getElementById('artifactId').value = category;
-    }
+  if (category.indexOf("doxia") == 0 && category != "doxia-tools") {
+    document.getElementById('artifactId').value = category;
   }
   if (category == "resolver" || category == "others" || category == "doxia" || category == "doxia-sitetools") {
     // category directory is based on artifactId

@@ -24,14 +24,10 @@ The Maven [https://maven.apache.org](https://maven.apache.org) website is compos
 - a main content,
 - multiple components reference documentation, published for each component release.
 
-And [Doxia](https://maven.apache.org/doxia/) website has the same dual structure.
-
-These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in `/www/maven.apache.org/content` (see [`svnwcsub` configured in infra Puppet](https://github.com/apache/infrastructure-p6/blob/production/modules/svnwcsub/files/svnwcsub.conf#L104)):
+These contents are stored in svn, and svnpubsub/svnwcsub maintains a working copy on the webservers in `/www/maven.apache.org/content` (see [`svnwcsub` configured in infra Puppet](https://github.com/apache/infrastructure-staged/blob/main/svnwcsub.conf#L64)):
 
 - `/` comes from [https://svn.apache.org/repos/asf/maven/website/content/](https://svn.apache.org/viewvc/maven/website/content/),
 - [`/components`](https://maven.apache.org/components) comes from [https://svn.apache.org/repos/asf/maven/website/components/](https://svn.apache.org/repos/asf/maven/website/components/),
-- `/doxia` comes from [https://svn.apache.org/repos/asf/maven/doxia/website/content/](https://svn.apache.org/viewvc/maven/doxia/website/content/),
-- [`/doxia/components`](https://maven.apache.org/doxia/components) comes from [https://svn.apache.org/repos/asf/maven/doxia/website/components/](https://svn.apache.org/repos/asf/maven/doxia/website/components/),
 
 and the link between main content and components reference documentation (for example from `/plugins/maven-xxx-plugin` to internal `/components/plugins/maven-xxx-plugin`) is done with symbolic links. These links are configured in `components.links` files in `content/resources/` and subdirectories:
 
@@ -43,14 +39,14 @@ and the link between main content and components reference documentation (for ex
 - [`/shared/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/shared/components.links) for [`/shared/`](https://svn.apache.org/viewvc/maven/website/content/shared/),
 - [`/skins/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/skins/components.links) for [`/skins/`](https://svn.apache.org/viewvc/maven/website/content/skins/),
 - [`/tools/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/tools/components.links) for [`/tools/`](https://svn.apache.org/viewvc/maven/website/content/tools/),
-- [`/doxia/components.links`](https://github.com/apache/maven-doxia-site/blob/master/content/resources/components.links) for [`/doxia/`](https://svn.apache.org/viewvc/maven/doxia/website/content/),
-- [`/doxia/doxia-tools/components.links`](https://github.com/apache/maven-doxia-site/blob/master/content/resources/doxia-tools/components.links) for [`/doxia/doxia-tools/`](https://svn.apache.org/viewvc/maven/doxia/website/content/doxia-tools/).
+- [`/doxia/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/doxia/components.links) for [`/doxia/`](https://svn.apache.org/viewvc/maven/website/content/doxia/),
+- [`/doxia/doxia-tools/components.links`](https://github.com/apache/maven-site/blob/master/content/resources/doxia/doxia-tools/components.links) for [`/doxia/doxia-tools/`](https://svn.apache.org/viewvc/maven/website/content/doxia/doxia-tools/).
 
 # How website publication works
 
 Instructions on how to publish website content are split in separate documents:
 
-- on every main content source commit ([maven-site.git](https://github.com/apache/maven-site) and [maven-doxia-site.git](https://github.com/apache/maven-doxia-site)), main content rebuild and publish is triggered through Jenkins jobs ([maven-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/) and [doxia-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-doxia-site/)), which basically run `mvn site-deploy` (it can be run locally if CI is off...),
+- on every main content source commit ([maven-site.git](https://github.com/apache/maven-site), main content rebuild and publish is triggered through Jenkins jobs ([maven-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/), which basically run `mvn site-deploy` (it can be run locally if CI is off...),
 - on every Maven component release, release manager follows "[deploying Maven components reference documentation](./deploy-component-reference-documentation.html)", eventually using [Component Reference Documentation Helper](./component-reference-documentation-helper.html) to easily prepare `svnmucc` command line.
 
 # Analytics

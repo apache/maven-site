@@ -28,7 +28,6 @@ under the License.
 package "Maven Doxia" {
   rectangle Doxia
   rectangle "Site Tools"
-  rectangle Site #LightGrey
   package Tools {
     rectangle Converter
   }
@@ -36,12 +35,10 @@ package "Maven Doxia" {
 
 'hidden dependencies to change layout
 Doxia -[hidden]right-> "Site Tools"
-"Site Tools" -[hidden]right-> Site
 "Site Tools" -[hidden]right-> Tools
 
 url of Doxia is [[https://github.com/apache/maven-doxia]]
 url of "Site Tools" is [[https://github.com/apache/maven-doxia-sitetools]]
-url of Site is [[https://github.com/apache/maven-doxia-site]]
 url of Converter is [[https://github.com/apache/maven-doxia-converter]]
 
 @enduml
