@@ -152,9 +152,28 @@ the [live coding by Maven maintainer Karl Heinz Marbaise at IntelliJ IDEA Conf 2
 
 **Note**: With Maven 4, it's also possible to exclude dependencies that are declared by BOMs using the existing
 `<exclusions>` element.
-Also note that in Maven 4, importing BOMs with a classifier is now possible.
-Therefore, the Maven team suggests that project BOMs should be generated as classified artifacts, using the
-`<bomClassifier>` element.
+Also note that in Maven 4 (model version 4.1.0 and later), importing BOMs with a classifier is possible by using the
+standard `<classifier>` element on the import dependency:
+
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.example</groupId>
+      <artifactId>example</artifactId>
+      <version>1.0.0</version>
+      <type>pom</type>
+      <classifier>bom</classifier>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+```
+
+Classified BOM artifacts are produced by attaching an additional POM artifact with a classifier (for example via a
+BOM-building plugin). Consumers import that artifact with the standard `<classifier>` element as shown above.
+
+Therefore, the Maven team suggests that project BOMs should be published as classified artifacts when appropriate.
 This means that an imported BOM must **not** come from the same reactor as the current build but be available outside
 the project before the build.
 In other words: you should only import external BOMs.
