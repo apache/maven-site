@@ -1,3 +1,10 @@
+---
+title: Maven Central Repository
+author:
+  - Brett Porter
+  - Hervé Boutemy
+---
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -16,12 +23,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
-<head>
-   <title>Maven Central Repository</title>
-   <meta name="author" content="Brett Porter" />
-   <meta name="author" content="Hervé Boutemy" />
-</head>
 
 # Maven Central Repository
 

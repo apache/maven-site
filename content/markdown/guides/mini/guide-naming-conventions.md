@@ -1,3 +1,7 @@
+---
+title: Naming conventions of Maven coordinates (groupId, artifactId, and version)
+---
+
 <!--
 Licensed to the Apache Software Foundation (ASF) under one
 or more contributor license agreements.  See the NOTICE file
@@ -16,10 +20,6 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-
-<head>
-   <title>Naming conventions of Maven coordinates (groupId, artifactId, and version)</title>
-</head>
 
 # Naming convention of Maven coordinates
 
