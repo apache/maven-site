@@ -298,8 +298,8 @@
             <exclude>**/*.links</exclude>
             <exclude>**/.htaccess</exclude>
             <eexclude>**/*.pdf</eexclude>
-            <exclude>content/apt/guides/plugin/notes.txt</exclude>
-            <exclude>content/apt/guides/suggestions/non-standard-directories.txt</exclude>
+            <exclude>content/markdown/guides/plugin/notes.txt</exclude>
+            <exclude>content/markdown/guides/mini/non-standard-directories.txt</exclude>
             <exclude>content/filtered-resources/.htaccess</exclude>
             <exclude>content/filtered-resources/.well-known/atproto-did</exclude>
             <exclude>content/filtered-resources/.well-known/security.txt</exclude>
