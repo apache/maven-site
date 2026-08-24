@@ -24,7 +24,7 @@ select component category, then type artifact id and version to generate svn com
 <table>
 <tr><td>
 <a id="Component_category"></a>
-<output role="heading" aria-level="3" style="display:block;margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Component category</output>
+<p style="margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Component category</p>
 <ul>
 <li><a href="?core">core</a></li>
 <li><a href="?shared">shared components</a></li>
@@ -42,7 +42,7 @@ select component category, then type artifact id and version to generate svn com
 
 </td><td>
 <a id="Component_information"></a>
-<output role="heading" aria-level="3" style="display:block;margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Component information</output>
+<p style="margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Component information</p>
 
 <div>directory (~artifact id): <input type="text" name="artifactId" id="artifactId" style="vertical-align: baseline"/></div>
 <div>version: <input type="text" name="version" id="version" style="vertical-align: baseline"/></div>
@@ -53,7 +53,7 @@ select component category, then type artifact id and version to generate svn com
 
 <tr><td colspan="3">
 <a id="Instructions_to_publish_component_release_documentation"></a>
-<output role="heading" aria-level="3" style="display:block;margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Instructions to publish component release documentation</output>
+<p style="margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Instructions to publish component release documentation</p>
 <pre id="svnmucc">svnmucc -m "Publish ${artifactId} ${version} documentation" \
   -U https://svn.apache.org/repos/asf/maven/website/components \
   cp HEAD ${category}-archives/${artifactId}-LATEST${vSuffix} ${category}-archives/${artifactId}-${version} \
