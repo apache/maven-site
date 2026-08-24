@@ -58,25 +58,13 @@ manifest:
 ## Maven Sources Overview
 
 <p>
-   <object type="image/svg+xml" data="maven-sources/site.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/core.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/plugins.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/doxia.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/misc.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/shared.svg"/>
-</p>
-<p>
-   <object type="image/svg+xml" data="maven-sources/plexus.svg"/>
+   <object type="image/svg+xml" data="maven-sources/site.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/core.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plugins.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/doxia.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/misc.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/shared.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plexus.svg"></object><br>
 </p>
 
 Each component has its own Jira project or component for issue tracking: see
