@@ -41,6 +41,8 @@ The implemented solution adds the following capabilities:
 - server entries in the `settings.xml` have passwords and/or keystore passphrases encrypted
   - for now - this is done via CLI **after** master password has been created and stored in appropriate location
 
+**Important:** The password encryption provided by Maven 3.x is *obfuscation-grade* (it relies on a single-hash key derivation and provides no authenticated encryption). It is useful to keep secrets out of logs and screenshots, but it will not resist a determined attacker with access to the encrypted values. It is not a substitute for proper secrets management: keep restrictive file permissions on your `settings.xml` (e.g. `chmod 600`), prefer a secrets vault or your CI/CD secret store, or move to [Maven 4](./guide-encryption-4.html) for stronger protection.
+
 ## How to create a master password
 
 Use the following command line:
