@@ -152,11 +152,27 @@
     </pluginManagement>
     <plugins>
       <plugin>
+        <groupId>io.github.git-commit-id</groupId>
+        <artifactId>git-commit-id-maven-plugin</artifactId>
+        <version>10.0.0</version>
+        <executions>
+          <execution>
+            <id>get-the-git-infos</id>
+            <goals>
+              <goal>revision</goal>
+            </goals>
+            <phase>pre-site</phase>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-scm-publish-plugin</artifactId>
         <configuration>
           <!-- no need for site:stage, use target/site -->
           <content>${project.reporting.outputDirectory}</content>
+          <!-- more informative messages in https://svn.apache.org/viewvc/maven/website/content/ -->
+          <checkinComment>${git.commit.id.describe} ${git.commit.message.short}</checkinComment>
         </configuration>
         <executions>
           <execution>
