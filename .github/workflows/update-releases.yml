@@ -53,13 +53,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: automation/update-release-metadata
-        run: |
-          if gh pr list \
+          pr_count="$(gh pr list \
             --repo "${GITHUB_REPOSITORY}" \
             --state open \
             --head "${BRANCH}" \
             --json number \
-            --jq 'length' | grep -qx '0'; then
+            --jq 'length')"
+
+          if [[ "${pr_count}" == "0" ]]; then
             echo "exists=false" >> "${GITHUB_OUTPUT}"
           else
             echo "exists=true" >> "${GITHUB_OUTPUT}"
