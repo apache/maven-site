@@ -109,6 +109,18 @@ Examples
 2.3.4+15433
 ```
 
+### Maximum version length
+
+Version strings are limited to **256 characters**. This bound prevents
+pathological inputs from causing excessive resource consumption during
+version parsing: the recursive parser can nest one frame per separator,
+and digit runs beyond 18 characters are parsed into `BigInteger` at
+quadratic cost. The limit of 256 characters is far beyond any
+real-world version identifier (the longest versions observed on Maven
+Central are around 25 characters) while keeping the nesting depth and
+numeric items small. A version string that exceeds this limit will
+cause an `IllegalArgumentException` at parse time.
+
 ### Unstable versions (SNAPSHOT)
 
 `SNAPSHOT`s are artifacts built in between releases.
