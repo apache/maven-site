@@ -385,6 +385,7 @@
               <arguments>
                 <argument>plugins</argument>
                 <argument>shared</argument>
+                <argument>pom</argument>
               </arguments>
             </configuration>
             <executions>
