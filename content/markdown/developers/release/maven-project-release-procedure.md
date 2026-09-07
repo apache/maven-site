@@ -225,7 +225,10 @@ Once the release is deemed fit for public consumption it can be transferred to a
 
    As above, deploy the website if appropriate and update the project site for the new release: use [Component Reference Documentation Helper](../website/component-reference-documentation-helper.html) to generate commands or see [Publishing versioned component reference documentation](../website/deploy-component-reference-documentation.html#Publishing_versioned_component_reference_documentation) for explanations. Note that not all projects follow these conventions exactly.
 
-   In case there's an overview table with version (e.g. [plugins](/plugins/index.html), [shared](/shared/index.html), [skins](/skins/index.html)), update the table: you can directly edit it on the github page.
+   In case there's an overview table with version (e.g. [plugins](/plugins/index.html), [shared](/shared/index.html), [skins](/skins/index.html)), 
+   update the table: you can directly edit it on the GitHub page.
+   You can run [Update Maven Release Metadata](https://github.com/apache/maven-site/actions/workflows/update-releases.yml) workflow 
+   to prepare PR with updates automatically.
 
    For plugins and shared, you can also run `mvn -Pupdate package` of the site, then review and commit proposed `index.apt` updates.
 
