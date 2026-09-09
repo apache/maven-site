@@ -27,6 +27,7 @@ plugin-testing-archives=components/plugin-testing-archives
 plugin-testing=components/plugin-testing
 plugin-tools-archives=components/plugin-tools-archives
 plugin-tools=components/plugin-tools
+plugin-tools-4.x=components/plugin-tools-4.x/
 plugins-archives=components/plugins-archives
 #plugins
 pom-archives=components/pom-archives
