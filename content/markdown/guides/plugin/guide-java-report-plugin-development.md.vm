@@ -443,7 +443,7 @@ public class SimpleReport extends AbstractMavenReport {
 
 The above example will create a `other-report.html` HTML file along with `simple-report.html`.
 
-Note: Despite the fact that you will be creating additional HTML files, the Velocity variable `$currentFileName` passed to the `site.vm` script of the Maven Skin will keep the name of the original report (i.e. the result of your _getOutputName()_ method). [More information about the Velocity variables](/doxia/doxia-sitetools/doxia-site-renderer/).
+Note: Despite the fact that you will be creating additional HTML files, the Velocity variable `#[[$currentFilePath]]#` passed to the `site.vm` script of the Maven Skin will keep the path of the original report (that is, the result of your _getOutputPath()_ method). [More information about the Velocity variables](/doxia/doxia-sitetools/doxia-site-renderer/).
 
 Resources
 ---------
