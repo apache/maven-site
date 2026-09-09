@@ -136,8 +136,8 @@ The `site.xml` file is used to describe the structure of the site. A sample is g
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd"
+<site xmlns="http://maven.apache.org/SITE/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd"
   name="Maven">
   <bannerLeft href="https://maven.apache.org/">
     <image src="https://maven.apache.org/images/apache-maven-project.png" alt="Maven"/>
