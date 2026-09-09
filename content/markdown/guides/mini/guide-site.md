@@ -135,43 +135,41 @@ Deploying the site is done in 2 steps:
 The `site.xml` file is used to describe the structure of the site. A sample is given below:
 
 ```xml
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<project xmlns="http://maven.apache.org/DECORATION/1.8.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0 https://maven.apache.org/xsd/decoration-1.8.0.xsd"
+<?xml version="1.0" encoding="UTF-8"?>
+<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd"
   name="Maven">
-  <bannerLeft>
-    <name>Maven</name>
-    <src>https://maven.apache.org/images/apache-maven-project.png</src>
-    <href>https://maven.apache.org/</href>
+  <bannerLeft href="https://maven.apache.org/">
+    <image src="https://maven.apache.org/images/apache-maven-project.png" alt="Maven"/>
   </bannerLeft>
-  <bannerRight>
-    <src>https://maven.apache.org/images/maven-small.gif</src>
-  </bannerRight>
+
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>2.1.0</version>
+  </skin>
 
   <body>
     <links>
-      <item name="Apache" href="http://www.apache.org/" />
-      <item name="Maven 1.x" href="https://maven.apache.org/maven-1.x/"/>
-      <item name="Maven 2" href="https://maven.apache.org/"/>
+      <item name="Apache" href="https://www.apache.org/"/>
     </links>
 
-    <menu name="Maven 2.0">
+    <menu name="Overview">
       <item name="Introduction" href="index.html"/>
       <item name="Download" href="download.html"/>
-      <item name="Release Notes" href="release-notes.html" />
-      <item name="General Information" href="about.html"/>
-      <item name="For Maven 1.x Users" href="maven1.html"/>
-      <item name="Road Map" href="roadmap.html" />
+      <item name="Release Notes" href="release-notes.html"/>
     </menu>
 
     <menu ref="reports"/>
 
     ...
   </body>
-</project>
+</site>
 ```
 
 <!--TODO: deserves more explanation.-->
+
+**Note:** A skin is mandatory. Projects inheriting from the [Apache Parent POM](/pom/asf/) or from another parent that declares one inherit it and need no `<skin>` element of their own.
 
 **Note:** The `<menu ref="reports"/>` element above. When building the site, this is replaced by a menu with links to all the reports that you have configured.
 

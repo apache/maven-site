@@ -75,8 +75,8 @@ Book XSD 1.0
 Document XSD 1.0.1
 : [https://maven.apache.org/xsd/document-1.0.1.xsd](/xsd/document-1.0.1.xsd)
 
-Decoration XSD 1.0
-: [https://maven.apache.org/xsd/decoration-1.0.0.xsd](/xsd/decoration-1.0.0.xsd)
+Site XSD 2.1.0
+: [https://maven.apache.org/xsd/site-2.1.0.xsd](/xsd/site-2.1.0.xsd)
 
 Your favorite IDE probably supports XSD schema's for Xdoc and FML files. You need to specify the following:
 
@@ -114,11 +114,11 @@ Your favorite IDE probably supports XSD schema's for Xdoc and FML files. You nee
 ```
 
 ```xml
-<project xmlns="http://maven.apache.org/DECORATION/1.0.0"
+<site xmlns="http://maven.apache.org/SITE/2.1.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd">
   ...
-</project>
+</site>
 ```
 
 **Note**: for performance reasons, all XSDs/DTDs use a cache in ${java.io.tmpdir}.
