@@ -80,6 +80,10 @@ public class Update {
         } else if (!Character.isDigit(version.charAt(0))) {
             // plugin index has an additional column (build or report)
             column++;
+            if (column >= cols.length) {
+                // not a release table row: no version column
+                return line;
+            }
             versionCol = cols[column];
             version = versionCol.trim();
         }
