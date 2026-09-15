@@ -81,13 +81,18 @@ mvn -Preporting site site:stage
 
 1. Follow the release preparation, **staging** and **closing** the repository steps outlined in [Publishing Maven Releases](https://infra.apache.org/publishing-maven-artifacts.html).
 
-   Staging repository **MUST** be closed with message like `VOTE Maven component name x.y.z`
+   Staging repository **MUST** be closed with message like `VOTE Maven component name x.y.z`.
+
+   If you want to automatically upload to [ATR](https://releases.apache.org/committees/maven),
+   use the [`push-to-atr` profile](/pom/asf/#the-push-to-atr-profile): `mvn release:perform -Ppush-to-atr`.
 
 2. Stage the latest documentation as explained in [deploying Maven components reference documentation](../website/deploy-component-reference-documentation.html).
 
 ## Call the vote
 
-Propose a vote on the dev list with the closed issues, the issues left, the staging repository and the staging site. For instance:
+Propose a vote on the dev list with the closed issues, the issues left, the staging repository and the staging site.
+
+This can be done either by hand or with ATR's help. For instance:
 
 ```
 To: "Maven Developers List" <dev@maven.apache.org>
@@ -119,10 +124,11 @@ Vote open for at least 72 hours.
 [ ] +1
 [ ] +0
 [ ] -1
-
 ```
 
 ## Check the vote results
+
+If using ATR, vote result can be automated. If still doing manual vote, you can follow classical manual instructions:
 
 The "vote is open for at least 72 hours" means that you need to wait _at least_ 72 hours before proceeding. This gives others time to test your staged release and check that everything is good, with the help of our [Guide to testing staged releases](/guides/development/guide-testing-releases.html).
 
@@ -191,6 +197,8 @@ Start the process for version `Y.Z+1` from the beginning.
 ## Copy the source release to the Apache Distribution Area
 
 The official Apache release is the 'source-release' bundle distributed in `www.apache.org/dist`, as described in [Apache Release Distribution Policy](https://www.apache.org/dev/release-distribution). All releases for Maven must be copied to [the official Maven release area](https://www.apache.org/dist/maven/).
+
+This task can also be done by ATR, but following instructions remain here for manual process reference:
 
 The release area is maintained with svnpubsub. To deliver a release, you add it to [the subversion repository for the dist area](https://dist.apache.org/repos/dist/release/maven): add the release, its signature and sha512 checksum files, copying them from `target/checkout/target/` directory created during `mvn release:perform` step. Currently this requires to be in maven-pmc group (see [INFRA-5945](https://issues.apache.org/jira/browse/INFRA-5945)). If you are not a PMC member, drop a line to _private@maven.apache.org_ and ask them to do this step (and the next one) for you: the PMC member will get the source release bundle and its signature from Nexus staging repository and will create sha512 checksum file by hand, for example using shell:
 
