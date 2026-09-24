@@ -68,19 +68,22 @@ Maven 4.0.0-rc-7 continues gathering feedback before releasing Maven 4.0.0 GA. T
 
 ## 🚀 New features and improvements
 
-- Externalize default lifecycle plugin versions to POM properties ([#13137](https://github.com/apache/maven/pull/13137)) @gnodet
-- Improve standalone ApiRunner to properly apply settings ([#13014](https://github.com/apache/maven/pull/13014)) @gnodet
-- Strip executable() conditions from consumer POMs ([#12960](https://github.com/apache/maven/pull/12960)) @gnodet
 - Log API enhancements and mojo MDC ([#12690](https://github.com/apache/maven/pull/12690)) @gnodet
-- Emit clear error when running JDK cannot compile source level ([#12922](https://github.com/apache/maven/pull/12922)) @gnodet
 - Optimize reactor sort and phase comparator performance ([#12901](https://github.com/apache/maven/pull/12901)) @gnodet
-- Enable PathConflictResolver by default ([#12893](https://github.com/apache/maven/pull/12893)) @gnodet
 - Add AsyncDrainWriter to eliminate PrintWriter lock contention ([#12892](https://github.com/apache/maven/pull/12892)) @gnodet
-- [mvnup] Add maven-war-plugin and maven-ear-plugin to plugin upgrade list ([#12685](https://github.com/apache/maven/pull/12685)) @gnodet
 - Add validation for Plexus-based plugin dependency injection ([#12649](https://github.com/apache/maven/pull/12649)) @slawekjaranowski
+
+## 🔧 Maintenance
+
+- Externalize default lifecycle plugin versions to POM properties ([#13137](https://github.com/apache/maven/pull/13137)) @gnodet
 
 ## 🐛 Bug Fixes
 
+- Improve standalone ApiRunner to properly apply settings ([#13014](https://github.com/apache/maven/pull/13014)) @gnodet
+- Strip executable() conditions from consumer POMs ([#12960](https://github.com/apache/maven/pull/12960)) @gnodet
+- Emit clear error when running JDK cannot compile source level ([#12922](https://github.com/apache/maven/pull/12922)) @gnodet
+- Enable PathConflictResolver by default ([#12893](https://github.com/apache/maven/pull/12893)) @gnodet
+- [mvnup] Add maven-war-plugin and maven-ear-plugin to plugin upgrade list ([#12685](https://github.com/apache/maven/pull/12685)) @gnodet
 - Fix #13191: add -Dmaven.maven3Personality hint to FATAL message for wrong parent relativePath ([#13202](https://github.com/apache/maven/pull/13202)) @gnodet
 - Fix #13200: publish a complete set from MavenProject.getArtifacts ([#13203](https://github.com/apache/maven/pull/13203)) @gnodet
 - Fix #13190: pre-build full reactor once using BUILD_PROJECT, drop temp dir in PluginUpgradeStrategy ([#13197](https://github.com/apache/maven/pull/13197)) @gnodet
