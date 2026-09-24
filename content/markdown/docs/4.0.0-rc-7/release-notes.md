@@ -58,6 +58,8 @@ If your build still fails, run it with the `-e` option to generate a detailed st
 
 ### Upgrading from Maven 4.0.0-rc-6
 
+This release candidate is expected to be the last before the Maven 4.0.0 GA release, which we aim to publish in the coming weeks, pending community feedback.
+
 This release contains a large number of bug fixes and improvements since rc-6.
 
 ## Changelog
