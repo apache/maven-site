@@ -100,6 +100,30 @@
     <pluginManagement>
       <plugins>
         <plugin>
+          <groupId>org.apache.rat</groupId>
+          <artifactId>apache-rat-plugin</artifactId>
+          <configuration>
+            <inputExcludes combine.children="append">
+
+              <exclude>**/*.svg</exclude>
+              <exclude>**/*.ai</exclude>
+              <exclude>**/*.links</exclude>
+              <exclude>**/.htaccess</exclude>
+              <eexclude>**/*.pdf</eexclude>
+              <exclude>content/markdown/guides/plugin/notes.txt</exclude>
+              <exclude>content/markdown/guides/mini/non-standard-directories.txt</exclude>
+              <exclude>content/filtered-resources/.htaccess</exclude>
+              <exclude>content/filtered-resources/.well-known/atproto-did</exclude>
+              <exclude>content/filtered-resources/.well-known/security.txt</exclude>
+              <exclude>content/resources/developers/svn-eol-style.txt</exclude>
+              <exclude>content/resources/download.cgi</exclude>
+              <exclude>content/resources/badges/*.json</exclude>
+              <exclude>content/resources/doxia/images/architecture.odg</exclude>
+
+            </inputExcludes>
+          </configuration>
+        </plugin>
+        <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
           <executions>
@@ -304,37 +328,6 @@
         </executions>
       </plugin>
 
-      <plugin>
-        <groupId>org.apache.rat</groupId>
-        <artifactId>apache-rat-plugin</artifactId>
-        <configuration>
-          <excludes combine.children="append">
-            <exclude>**/*.svg</exclude>
-            <exclude>**/*.ai</exclude>
-            <exclude>**/*.links</exclude>
-            <exclude>**/.htaccess</exclude>
-            <eexclude>**/*.pdf</eexclude>
-            <exclude>content/markdown/guides/plugin/notes.txt</exclude>
-            <exclude>content/markdown/guides/mini/non-standard-directories.txt</exclude>
-            <exclude>content/filtered-resources/.htaccess</exclude>
-            <exclude>content/filtered-resources/.well-known/atproto-did</exclude>
-            <exclude>content/filtered-resources/.well-known/security.txt</exclude>
-            <exclude>content/resources/developers/svn-eol-style.txt</exclude>
-            <exclude>content/resources/download.cgi</exclude>
-            <exclude>content/resources/badges/*.json</exclude>
-            <exclude>content/resources/doxia/images/architecture.odg</exclude>
-          </excludes>
-        </configuration>
-        <executions>
-          <execution>
-            <id>rat-check</id>
-            <!-- overwrite phase from parent POM -->
-            <!-- should be executed after spotless ... but I can't a way to configure such -->
-            <!-- post-site is not executed by Maven 3 -->
-            <phase>pre-site</phase>
-          </execution>
-        </executions>
-      </plugin>
     </plugins>
   </build>
 
@@ -367,6 +360,7 @@
   </reporting>
 
   <profiles>
+
     <profile>
       <id>update</id>
       <activation>
