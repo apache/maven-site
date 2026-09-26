@@ -40,7 +40,6 @@ package "Shared" {
   rectangle "reporting-exec"
   rectangle "reporting-impl"
   rectangle "script-interpreter"
-  rectangle "shared-incremental"
   rectangle "shared-jar"
   rectangle "shared-resources"
   rectangle "shared-utils"
@@ -65,8 +64,7 @@ package "Shared" {
 "reporting-exec" -[hidden]> "reporting-impl"
 "reporting-impl" -[hidden]> "script-interpreter"
 
-"script-interpreter" -[hidden]> "shared-incremental"
-"shared-incremental" -[hidden]> "shared-jar"
+"script-interpreter" -[hidden]> "shared-jar"
 "shared-jar" -[hidden]> "shared-resources"
 "shared-resources" -[hidden]> "shared-utils"
 "shared-utils" -[hidden]> "verifier"
@@ -86,7 +84,6 @@ url of "reporting-api" is [[https://github.com/apache/maven-reporting-api]]
 url of "reporting-exec" is [[https://github.com/apache/maven-reporting-exec]]
 url of "reporting-impl" is [[https://github.com/apache/maven-reporting-impl]]
 url of "script-interpreter" is [[https://github.com/apache/maven-script-interpreter]]
-url of "shared-incremental" is [[https://github.com/apache/maven-shared-incremental]]
 url of "shared-jar" is [[https://github.com/apache/maven-shared-jar]]
 url of "shared-resources" is [[https://github.com/apache/maven-shared-resources]]
 url of "shared-utils" is [[https://github.com/apache/maven-shared-utils]]
