@@ -33,7 +33,12 @@ If you have any questions, please consult:
 
 ## Overview About the Changes
 
-TBD
+The main driver for new generation was to align Maven 3.10.x with Maven 4+ versions regarding Resolver version, hence Maven 3.10.0 same major version of Resolver 2.0.x line, that is used by Maven 4+. On the other hand, at "Maven level", changes are minimal, and upgrading should be pretty straightforward.
+Maven 3.10.0 received many security and other enhancements as well. Still, most of the changes happened "under the surface", so end users might even be unaware of them. some of the key changes (without completeness) are:
+* use of Resolver 2.0.x
+* full `settings.xml` interpolation, no Maven 3.x version allowed interpolating values like ports before
+* promotion of new properties: `session.topDirectory` and `session.rootDirectory`; now Maven 3.10 and 4+ both supports use of these properties as any other property
+* support for user-wide and installation-wide extensions, from now on, not only the `.mvn/extensions.xml` are observed, but also `~/.m2/extensions.xml` and `$MAVEN_HOME/conf/extensions.xml` as well.
 
 ## Full changelog
 
@@ -45,7 +50,7 @@ No known issues.
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
-TBD
+Maven 3.10.0 raises the POM validation level, many WARNINGs from 3.9 lineage (in fact, from 3.1 lineage) will not FAIL the build. Things like duplicated dependency entries or duplicated plugin entries will not be tolerated anymore. This aspect was not changed since Maven 3.1 lineage, and was really time to force users to clean up their POMs.
 
 ## Complete Release Notes
 
