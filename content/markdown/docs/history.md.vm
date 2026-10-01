@@ -56,7 +56,7 @@ $b_</td>
 #end
 
 The Apache Maven team maintains the last version of the last two series of GA releases.
-The last release is currently **${current39xVersion}**, the Apache Maven team project will currently maintain the latest core versions.
+These are currently **${current310xVersion}** and **${current39xVersion}**.
 
 Older versions have reached their end of life and are no longer supported in any way.
 This means the Maven team will not provide any bug or security fixes or add new features.
@@ -113,7 +113,8 @@ $esc.h$esc.h Maven 3.10.x+
 <!--  release( date version announce latest-minor jdk rowspan ) -->
 <!-- The following two lines needs to be fixed in x days if the archive picks up the announcement mail. -->
 
-#release( "2026-07-09" "3.10.0-rc-1" "https://lists.apache.org/thread/8mqy3w0yz0d1rr0t0ctsct874qb2orq9" "true" "Java 8" "1" )
+#release( "2026-09-27" "3.10.0" "" "true" "Java 8" "2" )
+#release( "2026-07-09" "3.10.0-rc-1" "https://lists.apache.org/thread/8mqy3w0yz0d1rr0t0ctsct874qb2orq9" "" "" "" )
 
 </table>
 
