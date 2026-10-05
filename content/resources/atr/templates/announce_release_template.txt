@@ -1,0 +1,15 @@
+The Apache {{COMMITTEE}} project team is pleased to announce the release of {{PROJECT_NAME}} {{VERSION}}.
+
+{{HOMEPAGE}}
+
+You can download the appropriate sources etc. from the download page:
+
+{{DOWNLOAD_PAGE}}
+
+Release Notes - {{PROJECT_NAME}} - Version {{VERSION}}
+
+https://github.com/apache/{{PROJECT_KEY}}/releases/tag/{{PROJECT_KEY}}-{{VERSION}}
+
+Enjoy,
+On behalf of the Apache {{COMMITTEE}} project team,
+{{YOUR_FULL_NAME}} ({{YOUR_ASF_ID}})

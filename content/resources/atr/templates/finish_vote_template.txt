@@ -1,0 +1,10 @@
+Dear {{COMMITTEE}} participants,
+
+The vote on {{PROJECT_NAME}} {{VERSION}} {{OUTCOME}}.
+
+{{ATR_TALLY}}
+
+Thank you for your participation.
+
+Sincerely,
+{{YOUR_FULL_NAME}} ({{YOUR_ASF_ID}})

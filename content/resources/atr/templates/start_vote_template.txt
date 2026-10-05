@@ -1,0 +1,36 @@
+Hello {{COMMITTEE}},
+
+I'd like to call a vote on releasing the following artifacts as Apache {{PROJECT_NAME}} {{VERSION}}.
+This vote is being conducted using a Beta version of the Apache Trusted Releases (ATR) platform.
+Please report any bugs or issues to the ASF Tooling team.
+
+The release candidate page, including downloads, can be found at:
+{{REVIEW_URL}}
+
+The release artifacts are signed with one or more OpenPGP keys from:
+{{KEYS_FILE}}
+
+We solved issues:
+https://github.com/apache/{{PROJECT_KEY}}/issues?q=milestone%3A{{VERSION}}
+
+Staging repo:
+
+Staging site:
+https://maven.apache.org/archives/{{PROJECT_KEY}}-LATEST
+
+Guide to testing staged releases:
+https://maven.apache.org/guides/development/guide-testing-releases.html
+
+Please review the release candidate and vote accordingly.
+
+[ ] +1 Release this package
+[ ] +0 Abstain
+[ ] -1 Do not release this package (please provide specific comments)
+
+You can vote on ATR at the URL above, or manually by replying to this email.
+
+The vote is open for {{DURATION}} hours.
+
+{{RELEASE_CHECKLIST}}
+Thanks,
+{{YOUR_FULL_NAME}} ({{YOUR_ASF_ID}})
