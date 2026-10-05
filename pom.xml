@@ -104,7 +104,6 @@
           <artifactId>apache-rat-plugin</artifactId>
           <configuration>
             <inputExcludes combine.children="append">
-
               <exclude>**/*.svg</exclude>
               <exclude>**/*.ai</exclude>
               <exclude>**/*.links</exclude>
@@ -119,9 +118,16 @@
               <exclude>content/resources/download.cgi</exclude>
               <exclude>content/resources/badges/*.json</exclude>
               <exclude>content/resources/doxia/images/architecture.odg</exclude>
-
+              <exclude>content/resources/atr/templates/**</exclude>
             </inputExcludes>
           </configuration>
+          <executions>
+            <execution>
+              <id>rat-check</id>
+              <!-- overwrite phase from parent POM -->
+              <phase>pre-site</phase>
+            </execution>
+          </executions>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>

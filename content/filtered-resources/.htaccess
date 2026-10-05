@@ -86,3 +86,26 @@ Redirect Permanent /maven-ci-friendly.html /guides/mini/guide-maven-ci-friendly.
 
 Redirect Permanent /guides/mini/guide-multiple-modules-4.html /guides/mini/guide-multiple-subprojects-4.html
 Redirect Permanent /mvnd.html /tools/mvnd.html
+
+# used in ATR vote templates - https://maven.apache.org/archives/{{PROJECT_KEY}}-LATEST
+# we simply templates by redirecting to the latest version of the component in the archives
+
+# first matching rule wins - specific rules must precede generic ones
+RedirectMatch ^/archives/maven-apache-resources-LATEST(.*)$ /apache-resource-bundles-archives/apache-resource-bundles-LATEST$1
+RedirectMatch ^/archives/maven-enforcer-LATEST(.*)$ /enforcer-archives/enforcer-LATEST$1
+RedirectMatch ^/archives/maven-surefire-LATEST(.*)$ /surefire-archives/surefire-LATEST$1
+RedirectMatch ^/archives/maven-plugin-tools-LATEST(.*)$ /plugin-tools-archives/plugin-tools-LATEST$1
+RedirectMatch ^/archives/maven-plugin-testing-LATEST(.*)$ /plugin-testing-archives/LATEST$1
+RedirectMatch ^/archives/maven-(.*)-plugin-LATEST(.*)$ /plugins-archives/maven-$1-plugin-LATEST$2
+RedirectMatch ^/archives/maven-file-management-LATEST(.*)$ /shared-archives/file-management-LATEST$1
+RedirectMatch ^/archives/(maven-(archiver|common-artifact-filters|dependency-analyzer|dependency-tree|filtering|invoker|jarsigner|mapping|reporting-api|reporting-exec|reporting-impl|script-interpreter|shared-incremental|shared-io|shared-jar|shared-resources|shared-utils|verifier))-LATEST(.*)$ /shared-archives/$1-LATEST$3
+RedirectMatch ^/archives/maven-doxia-LATEST(.*)$ /doxia/doxia-archives/doxia-LATEST$1
+RedirectMatch ^/archives/maven-doxia-sitetools-LATEST(.*)$ /doxia/doxia-sitetools-archives/doxia-sitetools-LATEST$1
+RedirectMatch ^/archives/maven-resolver-ant-tasks-LATEST(.*)$ /resolver-archives/resolver-ant-tasks-LATEST$1
+RedirectMatch ^/archives/maven-(scm|wagon|archetype|archetypes|jxr|executor|resolver)-LATEST(.*)$ /$1-archives/$1-LATEST$2
+RedirectMatch ^/archives/maven-(release|indexer)-LATEST(.*)$ /maven-$1-archives/maven-$1-LATEST$2
+RedirectMatch ^/archives/maven-wrapper-LATEST(.*)$ /tools-archives/wrapper-LATEST$1
+RedirectMatch ^/archives/maven-apache-parent-LATEST(.*)$ /pom-archives/asf-LATEST$1
+RedirectMatch ^/archives/maven-parent-LATEST(.*)$ /pom-archives/maven-LATEST$1
+RedirectMatch ^/archives/(maven-.*-skin)-LATEST(.*)$ /skins-archives/$1-LATEST$2
+RedirectMatch ^/archives/(maven-.*-extension)-LATEST(.*)$ /extensions-archives/$1-LATEST$2
