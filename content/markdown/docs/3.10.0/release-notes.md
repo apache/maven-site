@@ -109,7 +109,9 @@ now FAIL the build. Things like duplicated dependency entries or duplicated plug
 anymore. This aspect was not changed since Maven 3.1 lineage, and was really time to force users to clean up their
 POMs. The checks promoted to errors for the project being built are the 3.1 level ones: duplicated plugins, invalid
 characters in a version, malformed snapshot versions and reserved or malformed repository ids. Dependencies keep being
-validated at the minimal level. `relativePath` of a parent is validated as well, which no Maven 3.x version did so far.
+validated at the minimal level (and failure lead to transitive dependencies not being available). 
+`relativePath` of a parent is validated as well, which no Maven 3.x version did so far.
+To temporarily disable the stricter validation add `-Dmaven.resolver.validation=off` to your Maven incovation.
 
 ### Classpath ordering change
 
