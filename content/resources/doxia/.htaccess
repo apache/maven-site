@@ -3,7 +3,9 @@ RedirectMatch permanent ^/doxia/doxia-1.2/(.*)$ /doxia/doxia-archives/doxia-1.2/
 RedirectMatch permanent ^/doxia/doxia-sitetools-1.2 /doxia/doxia-sitetools-archives/doxia-sitetools-1.2/$1
 # support resources pointed from /doxia/*-archives/: the skin writes them to the site root,
 # which is / now that the Doxia pages are built as part of the main site
-Redirect Permanent /doxia/images/apache-maven-project.png  /images/apache-maven-project.png
+RedirectMatch permanent ^/doxia/images/(apache-maven-project[^/]*)$ /images/$1
+# the Doxia logo lives in /doxia/images/, not the site root; keep this before the catch-all below
+RedirectMatch permanent ^/doxia/[^/]+-archives/images/(doxia-logo\.png)$ /doxia/images/$1
 RedirectMatch permanent ^/doxia/.*-archives/images/(.*)$ /images/$1
 RedirectMatch permanent ^/doxia/.*-archives/css/(.*)$ /css/$1
 #RedirectMatch permanent ^/doxia/.*-archives/index.html$ /doxia/index.html
