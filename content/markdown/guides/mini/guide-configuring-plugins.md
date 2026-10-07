@@ -153,6 +153,30 @@ The detailed type coercion is explained in the table below. For conversion to pr
 |  `java.net.URI`  |                                                                                   [`new URI(String)`](https://docs.oracle.com/javase/8/docs/api/java/net/URI.html#URI-java.lang.String-)                                                                                   |
 |  `java.net.URL`  |                                                                                   [`new URL(String)`](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html#URL-java.lang.String-)                                                                                   |
 
+#### Empty String Parameters (Since Maven 4.1.0)
+
+When a mojo field has a Java-initialized default value (e.g. `"article,report,book"`),
+the XML form of an empty configuration element determines whether that default is preserved or cleared:
+
+- **Explicit empty tag** (`<param></param>`): overrides the mojo's pre-initialized default with an
+  empty string. The field receives `""` instead of the original Java default.
+- **Self-closing tag** (`<param/>`): leaves the mojo's Java-initialized default unchanged. It is
+  effectively a no-op for that parameter.
+
+```xml
+<configuration>
+  <!-- Overrides the default to empty string: field gets "" -->
+  <docClasses></docClasses>
+
+  <!-- Preserves the Java default: field keeps its initialized value -->
+  <docClasses/>
+</configuration>
+```
+
+This distinction applies to `String`, `CharSequence`, `StringBuilder`, and `StringBuffer` fields.
+For non-string scalar types (e.g. `int`, `boolean`), an empty element is treated as absent and the
+Java-initialized default is always preserved in both forms.
+
 #### Mapping Complex Objects
 
 Mapping complex types is also fairly straight forward. Let's look at a simple example where we are trying to map a configuration for Person object. The `<configuration/>` element might look like the following:
