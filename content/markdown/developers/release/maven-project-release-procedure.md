@@ -83,10 +83,24 @@ mvn -Preporting site site:stage
 
    Staging repository **MUST** be closed with message like `VOTE Maven component name x.y.z`.
 
-   If you want to automatically upload to [ATR](https://releases.apache.org/committees/maven),
-   use the [`push-to-atr` profile](/pom/asf/#the-push-to-atr-profile): `mvn release:perform -Ppush-to-atr`.
-
 2. Stage the latest documentation as explained in [deploying Maven components reference documentation](../website/deploy-component-reference-documentation.html).
+
+## Release with the Apache Team Release (ATR)
+
+**NOTE** Project should have `ATR` configuration in the `.asf.yaml` file. 
+If not, check project configuration and update `.asf.yaml` first.
+
+Prepare local environment for `ATR Maven Plugin` usage, see [ATR Maven Plugin](https://apache.github.io/tooling-atr-maven-plugin/usage.html) for details.
+
+1. Look for candidate project at [ATR](https://releases.apache.org/committees/maven)
+2. Start a new release by providing the version
+3. Upload the 'source-release' with `mvn release:perform -Ppush-to-atr` ([`push-to-atr` profile](/pom/asf/#the-push-to-atr-profile))
+4. Start the vote and wait for the result
+5. After the vote is successful, `ATR` will promote the 'source-release' to the Apache distribution area, **NOTE** old releases are not removed yet
+6. Finish the release by sending the announcement in `ATR`
+
+With `ATR`, you can skip only `Vote` and `Announce` steps, as `ATR` will take care of them, 
+rest of the steps are still required to be done by the release manager.
 
 ## Call the vote
 
