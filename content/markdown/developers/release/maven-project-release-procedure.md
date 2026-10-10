@@ -90,6 +90,8 @@ mvn -Preporting site site:stage
 **NOTE** Project should have `ATR` configuration in the `.asf.yaml` file. 
 If not, check project configuration and update `.asf.yaml` first.
 
+Prepare local environment for `ATR Maven Plugin` usage, see [ATR Maven Plugin](https://apache.github.io/tooling-atr-maven-plugin/usage.html) for details.
+
 1. Look for candidate project at [ATR](https://releases.apache.org/committees/maven)
 2. Start a new release by providing the version
 3. Upload the 'source-release' with `mvn release:perform -Ppush-to-atr` ([`push-to-atr` profile](/pom/asf/#the-push-to-atr-profile))
