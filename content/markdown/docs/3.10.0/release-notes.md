@@ -43,8 +43,8 @@ Maven 3.10.0 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
 
 - [Maven Resolver](/resolver/) 2.x (2.0.24) is used, the same lineage as in Maven 4+, which brings version range filtering,
   improved remote repository filtering, a transitive dependency manager and user-defined relocations
-- support for user-wide (`~/.m2/extensions.xml`) and installation-wide (`$MAVEN_HOME/conf/extensions.xml`) extensions,
-  in addition to the project `.mvn/extensions.xml`
+- support for user-wide extensions (in `~/.m2/extensions.xml`) and installation-wide extensions (in `$MAVEN_HOME/conf/extensions.xml`) extensions,
+  in addition to the usual project-specific `.mvn/extensions.xml`
 - full `settings.xml` interpolation, including non-string values such as ports
 - `session.topDirectory`, `session.rootDirectory` and `project.rootDirectory` are promoted to regular Maven properties,
   usable in interpolation and in profile activation
@@ -85,7 +85,8 @@ Maven 3.10.0 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
 
 - upgrade `SLF4J` to 2.x
 - migration from JAnsi to JLine, with the `MessageBuilderFactory` service promoted for colored message support
-- promote java version in `JavaToolchain`
+(as a [`maven-shared-utils` styled message API](/shared/maven-shared-utils/) replacement)
+- promote java version in [`JavaToolchain`](/ref/current/maven-core/apidocs/org/apache/maven/toolchain/java/JavaToolchain.html)
 - model problems collected during project building are retained in `MavenSession.getModelProblems()`, so that plugins
   can inspect them and reject a build with model warnings
   ([#8485](https://github.com/apache/maven/issues/8485))
@@ -156,6 +157,12 @@ origin, so its credentials have to be declared explicitly:
 Plugins and extensions used by your build are checked against Maven supported APIs and conventions: this "plugin
 validation" may report WARNINGs at the end of your build. See [plugin validation documentation](../../guides/plugins/validation/)
 to better understand what to do when your build suffers from such warnings.
+
+### Reproducible Builds
+
+Reproducible Builds is active by default, and with a fixed timestamp value for archive entries:
+if you rely on timestamp value for your consumption, updating timestamp value during release or even
+disabling Reproducible Builds may be a choice: see [FAQ](/guides/mini/guide-reproducible-builds.html).
 
 ## Complete Release Notes
 
