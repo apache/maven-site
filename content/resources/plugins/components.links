@@ -44,6 +44,7 @@ maven-reactor-plugin=../components/plugins/maven-reactor-plugin
 maven-remote-resources-plugin=../components/plugins/maven-remote-resources-plugin
 maven-repository-plugin=../components/plugins/maven-repository-plugin
 maven-resources-plugin=../components/plugins/maven-resources-plugin
+maven-resources-plugin-4.x=../components/plugins/maven-resources-plugin-4.x
 maven-scm-publish-plugin=../components/plugins/maven-scm-publish-plugin
 maven-scripting-plugin=../components/plugins/maven-scripting-plugin
 maven-shade-plugin=../components/plugins/maven-shade-plugin
