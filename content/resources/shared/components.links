@@ -11,6 +11,7 @@ maven-downloader=../components/shared/maven-downloader
 maven-doxia-tools=../components/shared/maven-doxia-tools
 maven-enforcer-rule-api=../components/shared/maven-enforcer-rule-api
 maven-filtering=../components/shared/maven-filtering
+maven-filtering-4.x=../components/shared/maven-filtering-4.x
 maven-invoker=../components/shared/maven-invoker
 maven-jarsigner=../components/shared/maven-jarsigner
 maven-mapping=../components/shared/maven-mapping
