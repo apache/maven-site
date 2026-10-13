@@ -27,8 +27,9 @@ The pages in this section will give information about additional Maven tools, wh
 |:-------------------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------|:--------------------|
 | [Maven Daemon](./mvnd.html)          | `mvnd` speeds up Maven builds using daemon process management and caching.                                                                               | [Github][1]         |
 | [Maven Shell](./mvnsh.html)          | `mvnsh` is a shell that permits reuse of a single JVM during development.  It's a built-in tool, shipped with Maven.                                     | -                   |
-| [Maven Upgrade Tool](./mvnup.html)   | `mvnup` allows you to automatically upgrade your Maven project to newer Maven versions, starting with Maven 4. It's a built-in tool, shipped with Maven. | -                   |
-| [Maven Wrapper](./mavenwrapper.html) | `mvnw` ensures that a project is built with a desired Maven version and/or JDK by automatically downloading them.                                        | [Project's site][2] |
+| [Maven Upgrade Tool](./mvnup.html)            | `mvnup` allows you to automatically upgrade your Maven project to newer Maven versions, starting with Maven 4. It's a built-in tool, shipped with Maven.       | -                   |
+| [Maven POM Validation Tool](./mvnval.html)    | `mvnval` validates POM files and reports all problems without running a build. It's a built-in tool, shipped with Maven 4.1.0.                                 | -                   |
+| [Maven Wrapper](./mavenwrapper.html)          | `mvnw` ensures that a project is built with a desired Maven version and/or JDK by automatically downloading them.                                              | [Project's site][2] |
 
 [1]: https://github.com/apache/maven-mvnd
 [2]: https://maven.apache.org/wrapper/
