@@ -35,6 +35,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check for a pending update pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          BRANCH: automation/update-release-metadata
+        run: |
+          pr_url="$(gh pr list \
+            --repo "${GITHUB_REPOSITORY}" \
+            --state open \
+            --head "${BRANCH}" \
+            --json url \
+            --jq '.[0].url // empty')"
+
+          if [[ -n "${pr_url}" ]]; then
+            echo "::error::Pending update pull request exists: ${pr_url} - merge or close it first."
+            exit 1
+          fi
+
       - name: Check out repository
         uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -48,31 +65,10 @@ jobs:
           java-version: '21'
           cache: maven
 
-      - name: Check for a pending update pull request
-        id: pending-pr
-        env:
-          GH_TOKEN: ${{ github.token }}
-          BRANCH: automation/update-release-metadata
-        run: |
-          pr_count="$(gh pr list \
-            --repo "${GITHUB_REPOSITORY}" \
-            --state open \
-            --head "${BRANCH}" \
-            --json number \
-            --jq 'length')"
-
-          if [[ "${pr_count}" == "0" ]]; then
-            echo "exists=false" >> "${GITHUB_OUTPUT}"
-          else
-            echo "exists=true" >> "${GITHUB_OUTPUT}"
-          fi
-
       - name: Update Maven release metadata
-        if: steps.pending-pr.outputs.exists == 'false'
         run: mvn --batch-mode --errors --no-transfer-progress package -P update
 
       - name: Create pull request when files changed
-        if: steps.pending-pr.outputs.exists == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
           BRANCH: automation/update-release-metadata
