@@ -101,6 +101,7 @@ RedirectMatch ^/archives/maven-file-management-LATEST(.*)$ /shared-archives/file
 RedirectMatch ^/archives/(maven-(archiver|common-artifact-filters|dependency-analyzer|dependency-tree|filtering|invoker|jarsigner|mapping|reporting-api|reporting-exec|reporting-impl|script-interpreter|shared-incremental|shared-io|shared-jar|shared-resources|shared-utils|verifier))-LATEST(.*)$ /shared-archives/$1-LATEST$3
 RedirectMatch ^/archives/maven-doxia-LATEST(.*)$ /doxia/doxia-archives/doxia-LATEST$1
 RedirectMatch ^/archives/maven-doxia-sitetools-LATEST(.*)$ /doxia/doxia-sitetools-archives/doxia-sitetools-LATEST$1
+RedirectMatch ^/archives/maven-doxia-converter-LATEST(.*)$ /doxia/doxia-tools-archives/doxia-converter-LATEST$1
 RedirectMatch ^/archives/maven-resolver-ant-tasks-LATEST(.*)$ /resolver-archives/resolver-ant-tasks-LATEST$1
 RedirectMatch ^/archives/maven-(scm|wagon|archetype|archetypes|jxr|executor|resolver)-LATEST(.*)$ /$1-archives/$1-LATEST$2
 RedirectMatch ^/archives/maven-(release|indexer)-LATEST(.*)$ /maven-$1-archives/maven-$1-LATEST$2
