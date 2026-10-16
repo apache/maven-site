@@ -19,9 +19,9 @@ under the License.
 
 # Security and Deployment Settings
 
-Repositories to deploy to are defined in a project in the `distributionManagement` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own settings with an id that matches that of the deployment repository in the project.
+Repositories to deploy to are defined in a project in the `distributionManagement` section. However, you cannot put your username, password, or other security settings in that project. For that reason, you should add a server definition to your own [settings](/settings.html) with an id that matches that of the deployment repository in the project.
 
-In addition, some repositories may require authorisation to download from, so the corresponding settings can be specified in a server element in the same way.
+In addition, some repositories may require authorisation to download from, so the corresponding settings can be specified in a `server` element in the same way.
 
 Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
 
@@ -47,4 +47,35 @@ Which settings are required will depend on the type of repository you are deploy
 
 To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
 
-**Note**: The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../maven-settings/settings.html).
+**Note**: The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../ref/current/maven-settings/settings.html).
+
+## repositoryOrigin
+
+In Maven [3.10.0](https://github.com/apache/maven/pull/13275) and [4.0.0](https://github.com/apache/maven/pull/13314),
+new `repositoryOrigin` has been added: TBD explain why, what the values mean
+
+```xml
+<settings>
+  .
+  .
+  <servers>
+    <server>
+      <id>repo1</id>
+      <username>repouser</username>
+      <!-- other optional elements:
+        <password>my_login_password</password>
+        <privateKey>/path/to/identity</privateKey> (default is ~/.ssh/id_dsa)
+        <passphrase>my_key_passphrase</passphrase>
+      -->
+    <repositoryOrigins>
+      <repositoryOrigin>https://repo.example.org</repositoryOrigin>
+      <repositoryOrigin>https://mirror.example.org:8443</repositoryOrigin>
+    </repositoryOrigins>
+  </server>
+  </servers>
+  .
+  .
+</settings>
+```
+
+TODO: what is the error message when such config is missing?

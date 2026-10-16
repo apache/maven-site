@@ -55,7 +55,7 @@ Maven 3.10.0 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
 - a `<server>` in `settings.xml` can declare `<aliases>`, so that one set of credentials serves several server ids
   ([#7757](https://github.com/apache/maven/issues/7757))
 - a `<server>` in `settings.xml` can declare `<repositoryOrigins>`, to state explicitly which repository origins its
-  credentials may be used with
+  credentials may be used with: see [Security and Deployment Settings](/guides/mini/guide-deployment-security-settings.html) for detailed instructions
 - the reactor summary is complete again: every module is listed, including the skipped ones, and failures are reported
   last at error level, so they are easier to spot
 - a toolchain requested by a plugin, but misconfigured, now fails the build instead of silently falling back to the JDK
