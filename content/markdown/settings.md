@@ -170,6 +170,45 @@ information should exist on the build server in the `settings.xml`.
 *Note:* If you use a private key to login to the server, make sure you
 omit the `<password>` element. Otherwise, the key will be ignored.
 
+#### Server Aliases
+
+Since Maven 3.10.0 and 4.0.0-rc-6 (settings model `1.3.0`), a server can declare a list
+of `aliases`. This is useful when the same credentials should be used for
+several repositories or mirrors with different IDs, without copying the
+whole `server` element.
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.3.0 https://maven.apache.org/xsd/settings-1.3.0.xsd">
+  ...
+  <servers>
+    <server>
+      <id>company-releases</id>
+      <username>my_login</username>
+      <password>my_password</password>
+      <aliases>
+        <alias>company-snapshots</alias>
+        <alias>company-mirror</alias>
+      </aliases>
+    </server>
+  </servers>
+  ...
+</settings>
+```
+
+- **aliases**: For each `alias`, Maven generates an additional server
+  entry with the same configuration as the original one, but with the
+  `id` replaced by the alias and with an empty aliases list.
+  In the example above, the servers `company-releases`,
+  `company-snapshots` and `company-mirror` all use the same credentials.
+
+The additional servers are created in memory when the settings are built,
+so they are visible to Maven and plugins like any other server
+declared in `settings.xml`.
+
+An alias must not be empty, and it should be unique across all server IDs
+and aliases. Otherwise Maven reports a warning.
+
 #### Password Encryption
 
 A new feature - server password and passphrase encryption has been added
