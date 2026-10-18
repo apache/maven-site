@@ -53,7 +53,7 @@ Maven 3.10.0 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
 - new CLI options for fine-grained update policy control: `-UA` (force artifact updates only), `-UM` (force metadata
   updates only), `--artifacts-update-policy=<policy>`, `--metadata-update-policy=<policy>`
 - a `<server>` in `settings.xml` can declare `<aliases>`, so that one set of credentials serves several server ids
-  ([#7757](https://github.com/apache/maven/issues/7757))
+  (see [Introduction to Settings](/settings.html))
 - a `<server>` in `settings.xml` can declare `<repositoryOrigins>`, to state explicitly which repository origins its
   credentials may be used with
 - the reactor summary is complete again: every module is listed, including the skipped ones, and failures are reported
