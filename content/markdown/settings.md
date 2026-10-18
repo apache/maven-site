@@ -196,24 +196,23 @@ whole `server` element.
 </settings>
 ```
 
-- **aliases**: For each `alias`, Maven generates an additional server
+- **aliases**: For each `alias`, Maven creates an additional `server`
   entry with the same configuration as the original one, but with the
-  `id` replaced by the alias and with an empty aliases list.
+  `id` replaced by the alias and with an empty `aliases` list.
   In the example above, the servers `company-releases`,
-  `company-snapshots` and `company-mirror` all use the same credentials.
+  `company-snapshots` and `company-mirror` are available at runtime, all use the same credentials.
 
-The additional servers are created in memory when the settings are built,
+The additional servers are created in memory when the effective settings are built,
 so they are visible to Maven and plugins like any other server
-declared in `settings.xml`.
+declared in `settings.xml`: you can see them with `mvn help:effective-settings`.
 
 An alias must not be empty, and it should be unique across all server IDs
 and aliases. Otherwise Maven reports a warning.
 
 #### Password Encryption
 
-A new feature - server password and passphrase encryption has been added
-to 2.1.0+. See details [on this
-page](./guides/mini/guide-encryption.html)
+Since Maven 2.1.0, server password and passphrase encryption is available and strongly encouraged:
+See details on [Guide to Password Encryption](./guides/mini/guide-encryption.html).
 
 ### Mirrors
 

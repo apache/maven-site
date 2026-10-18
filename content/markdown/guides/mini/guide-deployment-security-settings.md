@@ -47,4 +47,4 @@ Which settings are required will depend on the type of repository you are deploy
 
 To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
 
-**Note**: The settings descriptor documentation can be found on the [Maven Local Settings Model Website](../../maven-settings/settings.html).
+**Note**: The settings descriptor documentation can be found on the [Maven Settings Descriptor Model](/ref/current/maven-settings/settings.html).
