@@ -146,13 +146,13 @@ class YourMojoTest {
 
 # Integration/Functional testing
 
+## maven-executor
+
+[Maven Executor](/executor/) runs Maven from JUnit tests, either forked or embedded in the test JVM, and captures its output for your assertions. Maven itself uses it to run its core integration tests. For more information, see [Creating a Maven Integration Test](https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test).
+
 ## maven-verifier
 
-maven-verifier tests are run using JUnit, and provide a simple class allowing you to launch Maven and assert on its log file and built artifacts. It also provides a `ResourceExtractor`, which extracts a Maven project from the src/test/resources directory into a temporary working directory where you can do tricky stuff with it. Follow the [Getting Started](/shared/maven-verifier/getting-started.html) guide to learn more about creating maven-verifier tests.
-
-Maven itself uses maven-verifier to run its core integration tests. For more information, see [Creating a Maven Integration Test](https://cwiki.apache.org/confluence/display/MAVEN/Creating+a+Maven+Integration+Test).
-
-**Note**: maven-verifier and maven-verifier-plugin sound similar, but are totally different unrelated pieces of code. maven-verifier-plugin simply verifies the existence/absence of files on the filesystem. You could use it for functional testing, but you may need more features than maven-verifier-plugin provides.
+maven-verifier is retired, and 2.0.0 is its final release. Existing tests keep working against that release, but new tests should use [Maven Executor](#maven-executor); the [migration guide](https://github.com/apache/maven-verifier/blob/master/MIGRATION.md) covers moving existing tests.
 
 ## maven-invoker-plugin
 
