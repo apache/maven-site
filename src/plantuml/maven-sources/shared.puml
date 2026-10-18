@@ -43,7 +43,6 @@ package "Shared" {
   rectangle "shared-jar"
   rectangle "shared-resources"
   rectangle "shared-utils"
-  rectangle "verifier"
 }
 
 'hidden dependencies to change layout
@@ -67,7 +66,6 @@ package "Shared" {
 "script-interpreter" -[hidden]> "shared-jar"
 "shared-jar" -[hidden]> "shared-resources"
 "shared-resources" -[hidden]> "shared-utils"
-"shared-utils" -[hidden]> "verifier"
 
 
 url of "archiver" is [[https://github.com/apache/maven-archiver]]
@@ -87,6 +85,5 @@ url of "script-interpreter" is [[https://github.com/apache/maven-script-interpre
 url of "shared-jar" is [[https://github.com/apache/maven-shared-jar]]
 url of "shared-resources" is [[https://github.com/apache/maven-shared-resources]]
 url of "shared-utils" is [[https://github.com/apache/maven-shared-utils]]
-url of "verifier" is [[https://github.com/apache/maven-verifier]]
 @enduml
 
