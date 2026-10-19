@@ -628,13 +628,15 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 ### Maven Resolver
 
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
-Maven 4 includes the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
+Maven 4 includes the 2.0 release of this library, which contains more than 150 fixes, upgrades, and
 improvements.
+Resolver 2.x has also been backported to Maven 3.10.x, so users can benefit from these improvements without
+upgrading to Maven 4.
 
 Key improvements in Resolver 2.0 include:
 
 * **Java native HTTP transport**: The legacy Wagon-based transport is replaced with a modern HTTP client built on
-  Java's `HttpClient` API, taking advantage of the Java 17 baseline.
+  Java's `HttpClient` API.
 * **Named locks**: Safe concurrent access to the local repository using named read-write locks, replacing the
   file-based locking mechanism from Resolver 1.x. This improves reliability when multiple Maven processes
   (or the concurrent builder) access the same local repository simultaneously.
@@ -642,8 +644,7 @@ Key improvements in Resolver 2.0 include:
   resolver, making scope semantics more flexible and consistent.
 * **BOM exclusions**: Exclusions declared on BOM imports are now properly supported (see also the [bom packaging](#new-packaging-type-bom) section above).
 
-Another major difference compared to Maven 3 is that in the new major version, the resolver is hidden behind the new
-Maven API and is no longer used directly by plugins.
+In Maven 4, the resolver is additionally hidden behind the new Maven API and is no longer used directly by plugins.
 
 ### Maven Shell
 
