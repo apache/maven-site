@@ -23,7 +23,7 @@ As with any open source project, there are several ways you can help:
 
 - Join the [mailing lists](../../mailing-lists.html) and answer other user's questions.
 - Report bugs, feature requests and other issues in the [issue management system](../../issue-management.html).
-- Build any [Maven subproject](/scm.html) for yourself, in order to fix bugs. Hint: Start simple with a plugin or a component or even `maven-site`, before going more advanced with [Maven core](./guide-building-maven.html), which is the most complex part.
+- [Build any Maven subproject](./guide-building-maven.html) for yourself, in order to fix bugs. Hint: Start simple with a plugin or a component or even `maven-site`, before going more advanced with Maven core, which is the most complex part.
 - [Submit patches](./guide-maven-development.html#Creating_and_submitting_a_patch) to reported issues (both those you find, or that others have filed).
   If you consider picking up larger chunks of work, please reach out on the [dev@maven.apache.org list](../../mailing-lists.html) to discuss if the idea and solution strategy might work.
 - [Test releases](./guide-testing-releases.html) help test releases that are being voted on (see the [dev@maven.apache.org list](../../mailing-lists.html) for release votes)
