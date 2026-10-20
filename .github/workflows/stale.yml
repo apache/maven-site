@@ -25,4 +25,8 @@ on:
 
 jobs:
   stale:
+    permissions:
+      actions: write
+      issues: write
+      pull-requests: write
     uses: 'apache/maven-gh-actions-shared/.github/workflows/stale.yml@v5'
