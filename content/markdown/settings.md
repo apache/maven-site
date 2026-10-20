@@ -273,6 +273,11 @@ The binding is controlled by the `maven.repository.credentialScope` user propert
 For Maven 4, `repositoryOrigins` in project settings (`.mvn/settings.xml`) are ignored with a warning,
 like credentials are, so a project cannot widen the set of hosts your credentials are sent to.
 
+*Note:* The binding applies only to credentials used by Maven Resolver, for example when artifacts are downloaded
+or deployed with the [Maven Deploy Plugin](/plugins/maven-deploy-plugin/). Plugins that read a server from
+`settings.xml` directly, for example the [Maven Release Plugin](/plugins/maven-release-plugin/) for SCM credentials,
+are not affected by it.
+
 #### Password Encryption
 
 Since Maven 2.1.0, server password and passphrase encryption is available and strongly encouraged:
