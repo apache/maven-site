@@ -209,6 +209,70 @@ declared in `settings.xml`: you can see them with `mvn help:effective-settings`.
 An alias must not be empty, and it should be unique across all server IDs
 and aliases. Otherwise Maven reports a warning.
 
+#### Server Repository Origins
+
+Since Maven 3.10.0 and 4.0.0, the credentials of a server are bound to the origins
+(scheme, host and port) of the repositories and mirrors declared with the same
+ID in `settings.xml`.
+
+When Maven starts, it takes into account only the repositories from `settings.xml` profiles
+listed in `<activeProfiles>` and mirrors. Repositories from other profiles, and repositories declared in a `pom.xml`
+(in `repositories`, `pluginRepositories` or `distributionManagement`), are not known at that time.
+For such a repository, Maven reports a warning, or refuses the credentials
+when `maven.repository.credentialScope=strict` is set.
+
+The binding protects your credentials: before, Maven matched credentials only by server ID, so any `pom.xml`, including
+the POM of a dependency or a parent, could declare a repository with the same ID pointing to another host and
+receive your username and password. Now, once Maven knows the hosts of a server ID, its credentials are sent only
+to them, and `repositoryOrigins` lets you add the hosts Maven cannot find by itself.
+
+For such repositories, a server (settings model `1.3.0`) can declare a list of `repositoryOrigins`
+its credentials may be used with:
+
+```xml
+<settings xmlns="http://maven.apache.org/SETTINGS/1.3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.3.0 https://maven.apache.org/xsd/settings-1.3.0.xsd">
+  ...
+  <servers>
+    <server>
+      <id>company-releases</id>
+      <username>my_login</username>
+      <password>my_password</password>
+      <repositoryOrigins>
+        <repositoryOrigin>https://repo.example.com</repositoryOrigin>
+        <repositoryOrigin>https://mirror.example.com:8443</repositoryOrigin>
+      </repositoryOrigins>
+    </server>
+  </servers>
+  ...
+</settings>
+```
+
+- **repositoryOrigins**: Each `repositoryOrigin` is written as `scheme://host` or
+  `scheme://host:port`. It is an origin, not a full repository URL. If a path, query or fragment
+  is given, Maven reports a warning and ignores it. A value without a scheme or host,
+  or with user information, is reported as an error.
+  The comparison is case-insensitive, and the default ports `80` (http) and `443` (https)
+  are the same as no port.
+
+The declared origins are added to the origins Maven finds from repositories and mirrors.
+Nothing is replaced, so existing configurations keep working.
+Servers created from [aliases](#Server_Aliases) get the same `repositoryOrigins`.
+
+When a server has at least one origin, from repositories, mirrors or `repositoryOrigins`, its credentials are
+not sent to a repository with the same ID at another origin.
+
+The binding is controlled by the `maven.repository.credentialScope` user property:
+
+| Value              | Description                                                                                        |
+|--------------------|----------------------------------------------------------------------------------------------------|
+| `origin` (default) | Credentials are bound to the known origins. A server without any origin works as before, with a warning. |
+| `strict`           | Credentials are bound to the known origins. A server without any origin is not used.               |
+| `id`               | Previous behavior: credentials are matched by server ID only.                                      |
+
+For Maven 4, `repositoryOrigins` in project settings (`.mvn/settings.xml`) are ignored with a warning,
+like credentials are, so a project cannot widen the set of hosts your credentials are sent to.
+
 #### Password Encryption
 
 Since Maven 2.1.0, server password and passphrase encryption is available and strongly encouraged:
