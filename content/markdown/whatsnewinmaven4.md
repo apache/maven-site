@@ -73,11 +73,11 @@ and properties), and deploys this to the remote repository instead of the full `
 By default, the consumer POM preserves all dependencies from the build POM, including `provided` scope dependencies.
 Only build-time-only elements are stripped.
 
-Optionally, flattening can be enabled to produce a fully self-contained consumer POM. When flattening is enabled:
+Enable flattening to produce a fully self-contained consumer POM. When flattening is enabled:
 
-* Parent POM references are resolved (all inherited elements are included directly)
+* Parent POM references are resolved; all inherited elements are included directly
 * BOM imports are flattened into the dependency list
-* Only transitive dependencies are kept (`compile` and `runtime` scopes); non-transitive scopes (`provided`, `test`, `system`) are stripped
+* Transitive dependencies are kept (`compile` and `runtime` scopes). Non-transitive scopes are stripped (`provided`, `test`, `system` scopes)
 * Managed dependencies are kept only if they are actually used by the project
 
 When flattening is enabled, the full build POM (with all dependency scopes) is still published alongside the consumer
