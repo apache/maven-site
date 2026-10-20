@@ -360,6 +360,93 @@ The tags `<exists>` and `<missing>` can be interpolated. Supported variables are
 
 Different implicit activation types can be combined in one profile. The profile is then only active if all conditions are met. Using the same type more than once in the same profile is not supported ([MNG-5909](https://issues.apache.org/jira/browse/MNG-5909), [MNG-3328](https://issues.apache.org/jira/browse/MNG-3328)).
 
+#### Cascading profile activation
+
+_Since Maven 4.1._
+
+When a POM profile is activated and defines `<properties>`, those properties are immediately available to trigger the activation of other profiles in the same POM. Maven iterates through the remaining inactive profiles until no new profiles are activated (a fixed-point is reached). This is called **cascading profile activation**.
+
+This allows building chains or groups of profiles where one profile acts as a trigger that enables a set of related profiles, eliminating the need for external scripts, wrapper POMs, or duplicating activation conditions.
+
+```xml
+<profiles>
+  <!-- Activated by -Dstart.cascade=true -->
+  <profile>
+    <id>trigger</id>
+    <activation>
+      <condition>${start.cascade} == 'true'</condition>
+    </activation>
+    <properties>
+      <enable.checks>true</enable.checks>
+    </properties>
+  </profile>
+  <!-- Automatically activated when trigger sets enable.checks -->
+  <profile>
+    <id>run-checkstyle</id>
+    <activation>
+      <condition>${enable.checks} == 'true'</condition>
+    </activation>
+    <!-- checkstyle plugin configuration -->
+  </profile>
+  <profile>
+    <id>run-spotbugs</id>
+    <activation>
+      <condition>${enable.checks} == 'true'</condition>
+    </activation>
+    <!-- spotbugs plugin configuration -->
+  </profile>
+</profiles>
+```
+
+Running `mvn validate -Dstart.cascade=true` activates `trigger`, which sets `enable.checks=true`, which in turn cascades to activate both `run-checkstyle` and `run-spotbugs`.
+
+Cascading also works with the traditional `<property>` activation element:
+
+```xml
+<profiles>
+  <profile>
+    <id>quality</id>
+    <activation>
+      <property>
+        <name>quality</name>
+        <value>true</value>
+      </property>
+    </activation>
+    <properties>
+      <run.checkstyle>true</run.checkstyle>
+      <run.spotbugs>true</run.spotbugs>
+    </properties>
+  </profile>
+  <profile>
+    <id>checkstyle</id>
+    <activation>
+      <property>
+        <name>run.checkstyle</name>
+        <value>true</value>
+      </property>
+    </activation>
+    <!-- checkstyle configuration -->
+  </profile>
+  <profile>
+    <id>spotbugs</id>
+    <activation>
+      <property>
+        <name>run.spotbugs</name>
+        <value>true</value>
+      </property>
+    </activation>
+    <!-- spotbugs configuration -->
+  </profile>
+</profiles>
+```
+
+Important notes about cascading activation:
+
+- **POM profiles only**: Cascading activation only applies to profiles defined in the POM, not in `settings.xml`. Properties contributed by cascading are never visible to settings profiles.
+- **Property priority**: User properties (from `-D` flags) and system properties always take precedence over properties contributed by cascading. Cascading cannot override explicitly set values.
+- **No circular dependencies**: If profile A sets a property that activates profile B, and B sets a property that would activate A, this is harmless — A is already active and won't be re-evaluated.
+- **Ordering**: Profiles are evaluated in POM declaration order during each iteration. The activation order may matter if multiple profiles set the same property to different values.
+
 ### Deactivating a profile
 
 One or more profiles can be deactivated using the command line by prefixing their identifier with either the character '!' or '-' as shown below.
