@@ -52,8 +52,6 @@ Before submitting a patch, it is advised to run the integration tests, which are
 mvn -Prun-its verify
 ```
 
-See [Core ITs documentation](/core-its/) for more options.
-
 ### Building Maven core
 
 Until Maven 3.3, Maven core build could be bootstrapped with an Ant build.
@@ -72,3 +70,6 @@ If you want to have the resulting Maven directly copied to a directory, you can 
 mvn -DdistributionTargetDir="$HOME/app/maven/apache-maven-SNAPSHOT" install
 ```
 
+#### Running Core Integration Tests
+
+See [Core ITs documentation](/core-its/) for core-specific details.
