@@ -27,9 +27,9 @@ Throughout the years, Maven has maintained backward compatibility, especially of
 4.0.0.
 
 The POM file fulfills two needs.
-First, the POM holds all the information and configuration, which are needed to build the artifact.
+First, the POM holds all the information and configuration that are needed to build the artifact.
 After the artifact is created, this build information is not relevant anymore.
-Second, the POM also contains information, for example dependencies, which are needed by projects which depend on the
+Second, the POM contains information such as dependencies that is needed by projects which depend on the
 artifact.
 These dependent projects are called the "consumers".
 
@@ -81,7 +81,7 @@ parent POMs or understanding the internal structure of your multi-project build.
 
 ### Model version 4.1.0
 
-Maven 4 updates the POM version to 4.1.0 which defines the namespace `http://maven.apache.org/POM/4.1.0`.
+Maven 4 updates the POM version to 4.1.0 and the namespace to `http://maven.apache.org/POM/4.1.0`.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the build POM (stored in source control), while the consumer POM (available in remote repositories like Maven Central) will still use
 version 4.0.0.
