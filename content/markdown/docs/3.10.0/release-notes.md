@@ -138,7 +138,7 @@ set to `mild` or `off`, but the coordinates should be fixed instead.
 ### Repository credentials are scoped
 
 Credentials of a `settings.xml` server are only offered to repositories and mirrors whose origin Maven could associate
-with that server id. Origins Maven cannot find by itself can be declared with `<repositoryOrigins>`, see
+with that server id. Origins Maven cannot securely associate via id can be declared with `<repositoryOrigins>`, see
 [Server Repository Origins](/settings.html#Server_Repository_Origins).
 
 ### Plugin validation
