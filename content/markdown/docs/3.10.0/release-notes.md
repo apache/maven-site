@@ -56,6 +56,7 @@ Maven 3.10.0 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
   (see [Introduction to Settings](/settings.html))
 - a `<server>` in `settings.xml` can declare `<repositoryOrigins>`, to state explicitly which repository origins its
   credentials may be used with
+  (see [Server Repository Origins](/settings.html#Server_Repository_Origins))
 - the reactor summary is complete again: every module is listed, including the skipped ones, and failures are reported
   last at error level, so they are easier to spot
 - a toolchain requested by a plugin, but misconfigured, now fails the build instead of silently falling back to the JDK
@@ -137,20 +138,8 @@ set to `mild` or `off`, but the coordinates should be fixed instead.
 ### Repository credentials are scoped
 
 Credentials of a `settings.xml` server are only offered to repositories and mirrors whose origin Maven could associate
-with that server id. A repository declared in a profile that is activated through `<activation>` or `-P` contributes no
-origin, so its credentials have to be declared explicitly:
-
-```xml
-<server>
-  <id>internal</id>
-  <username>u</username>
-  <password>p</password>
-  <repositoryOrigins>
-    <repositoryOrigin>https://repo.example.org</repositoryOrigin>
-    <repositoryOrigin>https://mirror.example.org:8443</repositoryOrigin>
-  </repositoryOrigins>
-</server>
-```
+with that server id. Origins Maven cannot securely associate via id can be declared with `<repositoryOrigins>`, see
+[Server Repository Origins](/settings.html#Server_Repository_Origins).
 
 ### Plugin validation
 
