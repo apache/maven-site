@@ -34,7 +34,7 @@ jobs:
   build:
     # don't change the name without updating the .asf.yaml
     name: Verify and build Maven Site
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
 
     steps:
       - name: Checkout
