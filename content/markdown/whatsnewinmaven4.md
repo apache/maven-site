@@ -22,16 +22,14 @@ under the License.
 
 # What's new in Maven 4?
 
-**Note**: This article will continuously be updated at least until Maven 4.0.0 is released.
-
 Maven is over 20 years old, and is the most widely used build tool in the Java world.
 Throughout the years, Maven has maintained backward compatibility, especially of its [POM file][2] with Model version
 4.0.0.
 
 The POM file fulfills two needs.
-First, the POM holds all the information and configuration, which are needed to build the artifact.
+First, the POM holds all the information and configuration that are needed to build the artifact.
 After the artifact is created, this build information is not relevant anymore.
-Second, the POM also contains information, for example dependencies, which are needed by projects which depend on the
+Second, the POM contains information such as dependencies that is needed by projects which depend on the
 artifact.
 These dependent projects are called the "consumers".
 
@@ -67,7 +65,7 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 
 ### Consumer POM
 
-Maven 4 can generate a stripped down consumer POM that removes build information not needed by consumers, and deploys this
+Maven 4 generates a stripped down consumer POM that removes build information not needed by consumers, and deploys this
 to the remote repository.
 It does not deploy the `pom.xml` used to build the project.
 
@@ -81,13 +79,9 @@ The consumer POM is a **flattened** version of the build POM, meaning:
 This flattening ensures that consumers of your artifact have all the information they need without requiring access to
 parent POMs or understanding the internal structure of your multi-project build.
 
-The flatten feature is disabled by default to avoid unexpected behavior and better control of listing (transitive) dependencies in the consumer POM.
-To publish a flattened consumer POM instead of the full build POM, the user property `maven.consumer.pom.flatten` must be set to `true`.
-User properties can be controlled using `${session.rootDirectory}/.mvn/maven-user.properties` for a per-reactor configuration.
-
 ### Model version 4.1.0
 
-Maven 4 updates the POM version to 4.1.0 which defines the namespace `http://maven.apache.org/POM/4.1.0`.
+Maven 4 updates the POM version to 4.1.0 and the namespace to `http://maven.apache.org/POM/4.1.0`.
 Version 4.1.0 adds some new elements and attributes, while others are marked as deprecated.
 To not break the ecosystem, this version is only available for the build POM (stored in source control), while the consumer POM (available in remote repositories like Maven Central) will still use
 version 4.0.0.
@@ -138,7 +132,7 @@ The other types are new:
 The `jar` and `processor` types use heuristic rules for deciding where to place the JAR file, but the result is not always what the developer wants.
 The types with `classpath-` or `modular-` prefix give control to the developer.
 
-**Limitation:** As of October 2025, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
+**Limitation:** As of Maven 4.0.0, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
 Other plugins will be updated progressively.
 
 ### New packaging type: bom
@@ -581,6 +575,43 @@ These are especially useful for applying consistent setup and teardown logic aro
 
 Together, these new phases provide a powerful and intuitive structure for defining and customizing build behavior in complex Maven projects.
 
+## Configuration
+
+### Maven properties files
+
+Maven 4 introduces a layered properties system based on `maven.properties` files.
+The main entry point is `${maven.home}/conf/maven.properties`, which loads additional files from user-level
+(`~/.m2/maven-user.properties`) and project-level (`${session.rootDirectory}/.mvn/maven-user.properties`) locations.
+Unlike standard Java properties files, Maven properties files are UTF-8 encoded, support file inclusion via the special
+`${includes}` key, and undergo property substitution with access to environment variables, system properties, and
+session properties.
+
+This replaces the need to pass many `-D` flags on the command line or rely on `MAVEN_OPTS` for configuration that
+should travel with the project.
+
+### Project-level settings
+
+Maven 4 supports project-level `settings.xml` files in `${session.rootDirectory}/.mvn/settings.xml`, in addition to
+the existing user-level (`~/.m2/settings.xml`) and installation-level (`${maven.home}/conf/settings.xml`) settings.
+This allows teams to share repository, mirror, and server configurations as part of the project source code.
+
+### Auto CI detection
+
+Maven 4 automatically detects common CI environments and adjusts its behavior accordingly.
+When running in CI, Maven enables batch mode and uses a simpler output format suitable for log files,
+without requiring explicit `-B` flags in CI scripts.
+
+### UTF-8 default encoding
+
+Maven 4 defaults to UTF-8 for source file encoding ([MNG-7763][34]).
+In Maven 3, the platform default encoding was used, which led to inconsistent builds across operating systems.
+Maven 4 eliminates this long-standing portability issue.
+
+### Comments in maven.config
+
+The `.mvn/maven.config` file now supports comments using the `#` prefix ([MNG-7698][35]).
+This makes it easier to document why specific options are configured.
+
 ## Maven plugins, security, and tools
 
 ### Maven plugins
@@ -618,10 +649,23 @@ article ["Handling sensitive data in Maven"][31] by Maven maintainer Tamás Cser
 ### Maven Resolver
 
 The [Maven Artifact Resolver][28] is a library for working with artifact repositories and dependency resolution.
-Maven 4 includes the new 2.0 release of this library, which contains more than 150 fixes, upgrades, and
-improvements, for example, a Java native HTTP-Client - thanks to raising the Java version requirement to JDK 17!
-Another major difference compared to Maven 3 is that in the new major version, the resolver is hidden behind the new
-Maven API and is no longer used directly by plugins.
+Maven 4 includes the 2.0 release of this library, which contains more than 150 fixes, upgrades, and
+improvements.
+Resolver 2.x has also been backported to Maven 3.10.x, so users can benefit from these improvements without
+upgrading to Maven 4.
+
+Key improvements in Resolver 2.0 include:
+
+* **Java native HTTP transport**: The legacy Wagon-based transport is replaced with a modern HTTP client built on
+  Java's `HttpClient` API.
+* **Named locks**: Safe concurrent access to the local repository using named read-write locks, replacing the
+  file-based locking mechanism from Resolver 1.x. This improves reliability when multiple Maven processes
+  (or the concurrent builder) access the same local repository simultaneously.
+* **Scope management**: Dependency scope handling is now defined by Maven itself rather than being hardcoded in the
+  resolver, making scope semantics more flexible and consistent.
+* **BOM exclusions**: Exclusions declared on BOM imports are now properly supported (see also the [bom packaging](#new-packaging-type-bom) section above).
+
+In Maven 4, the resolver is additionally hidden behind the new Maven API and is no longer used directly by plugins.
 
 ### Maven Shell
 
@@ -646,6 +690,48 @@ The Maven Upgrade Tool can be used to:
 * Validate that your project is ready for Maven 4
 
 Refer to [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html) for more information on usage and the upgrade process in general.
+
+## Architecture and internals
+
+While most of the changes above are directly visible to users, Maven 4 also includes a significant internal
+overhaul that lays the foundation for future evolution.
+
+### Three-tier module architecture
+
+Maven 4 reorganizes its internals into three layers:
+
+* **API** (`maven-api-*`): A set of new, clean interfaces defining Maven's public contract — sessions,
+  projects, artifacts, dependencies, lifecycle, and more. All API types are immutable.
+* **Implementation** (`maven-impl`, `maven-core`, `maven-cli`, etc.): Internal implementations hidden from plugins.
+* **Compatibility** (`maven-compat`, `maven-plugin-api`, `maven-model`, etc.): Thin wrappers that preserve Maven 3.x's
+  public types, allowing existing plugins to run unmodified against the new internals.
+
+This separation ensures that Maven can evolve its internals without breaking the plugin ecosystem.
+
+### Built-in dependency injection
+
+Maven 4 replaces the legacy Plexus/Sisu dependency injection framework with a lightweight, built-in DI container
+(`maven-di`).
+Plugins using standard JSR-330 annotations (`@Inject`, `@Named`, `@Singleton`) continue to work as before.
+Only plugins still relying on the long-deprecated Plexus-specific annotations need updating.
+
+### New Maven API (experimental)
+
+Maven 4 introduces a new immutable API for plugin and extension development.
+This API provides a clean, type-safe way to interact with Maven's core model — projects, sessions, dependencies,
+and lifecycle — without relying on mutable internal objects.
+
+**This API is marked `@Experimental` in Maven 4.0.0** and may evolve in future 4.x releases.
+Plugin authors should continue using the existing Maven 3.x-compatible plugin API for now.
+The new API will be stabilized progressively and is intended to become the primary plugin development API
+in a future Maven version.
+
+### JPMS readiness
+
+All API modules include `module-info.java` descriptors, making Maven's public API compatible with the Java Platform
+Module System.
+This positions Maven for a future where plugins and extensions can take advantage of strong encapsulation
+and reliable configuration provided by JPMS.
 
 ## Issue overview
 
@@ -684,4 +770,6 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
 [32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 [33]: https://maven.apache.org/guides/mini/guide-encryption-4.html
+[34]: https://issues.apache.org/jira/browse/MNG-7763
+[35]: https://issues.apache.org/jira/browse/MNG-7698
 
