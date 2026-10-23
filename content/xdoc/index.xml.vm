@@ -38,7 +38,6 @@ under the License.
         section of the sidebar. This includes an in-depth description of <a href="what-is-maven.html">what Maven is</a> and a list of some of its main features.
       </p>
       <p>
-        <!-- TODO: this could be the big button type thing instead of a list of links -->
         This site is separated into the following sections:
       </p>
       <!-- TODO: use CSS -->
