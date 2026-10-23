@@ -63,5 +63,16 @@ body ul {
   background-color: #f9f9f9;
 }
 
+.home-section-heading,
+.home-section-links {
+  font-weight: bold;
+  white-space: nowrap;
+}
 
+.home-section-heading {
+  font-size: 1.75em;
+}
 
+.home-section-links {
+  font-size: 1.25em;
+}
