@@ -202,7 +202,7 @@ Worth mentioning is the new upgrade tool which can be used to fix your `pom.xml`
 - Maven 4.0.x backport mimir ([#11180](https://github.com/apache/maven/pull/11180)) @cstamas
 - commons-cli deprecations (#11170) ([#11176](https://github.com/apache/maven/pull/11176)) @cstamas
 - Mimir updates (#11161) ([#11166](https://github.com/apache/maven/pull/11166)) @cstamas
-- [[[MNG-8696]](https://issues.apache.org/jira/browse/MNG-8696) - ](https://issues.apache.org/jira/browse/MNG-8696) - Hide the cache from DefaultDependencyResolverResult constructor ([#11154](https://github.com/apache/maven/pull/11154)) @desruisseaux
+- [\[MNG-8696\]](https://issues.apache.org/jira/browse/MNG-8696) - Hide the cache from DefaultDependencyResolverResult constructor ([#11154](https://github.com/apache/maven/pull/11154)) @desruisseaux
 - Generating configuration documentation during site build ([#10979](https://github.com/apache/maven/pull/10979)) @slawekjaranowski
 - Improvements in ITs executing - provide default local repo ([#10963](https://github.com/apache/maven/pull/10963)) @slawekjaranowski
 - Backport: Fix build and Jenkinsfile  (#10904) ([#10905](https://github.com/apache/maven/pull/10905)) @cstamas
