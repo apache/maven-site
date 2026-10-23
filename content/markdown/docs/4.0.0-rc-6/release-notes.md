@@ -82,11 +82,11 @@ Maven 4.0.0-rc-6 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Backport the use of hardlink instead of file copy ([#11564](https://github.com/apache/maven/pull/11564)) @desruisseaux
 - Accept Java module names as attached artifactId even if they differ from the project's artifactId ([#11573](https://github.com/apache/maven/pull/11573)) @desruisseaux
 - Add module-aware resource handling for modular sources ([#11700](https://github.com/apache/maven/pull/11700)) @desruisseaux
-- [[MNG-8507]](https://issues.apache.org/jira/browse/MNG-8507) - Reduce allocation pressure in model building pipeline ([#12540](https://github.com/apache/maven/pull/12540)) @gnodet
+- [\[MNG-8507\]](https://issues.apache.org/jira/browse/MNG-8507) - Reduce allocation pressure in model building pipeline ([#12540](https://github.com/apache/maven/pull/12540)) @gnodet
 - Fix #12530: add mvnup upgrade strategies for Maven 4 known compatibility issues ([#12560](https://github.com/apache/maven/pull/12560)) @gnodet
 - Introduce validation control ([#12548](https://github.com/apache/maven/pull/12548)) @cstamas
 - Backport #12505: mvnup: widen exact Maven version pins to allow Maven 4 ([#12508](https://github.com/apache/maven/pull/12508)) @gnodet
-- [[MNG-5913]](https://issues.apache.org/jira/browse/MNG-5913) - Allow defining aliases for existing server configurations in settings.xml ([#12473](https://github.com/apache/maven/pull/12473)) @slawekjaranowski
+- [\[MNG-5913\]](https://issues.apache.org/jira/browse/MNG-5913) - Allow defining aliases for existing server configurations in settings.xml ([#12473](https://github.com/apache/maven/pull/12473)) @slawekjaranowski
 - Backport #12454: mvnup upgrade strategies and compatibility improvements ([#12467](https://github.com/apache/maven/pull/12467)) @gnodet
 - In failed build limit reactor summary to only failed modules ([#12469](https://github.com/apache/maven/pull/12469)) @slawekjaranowski
 - Add mvnup SourceStrategy for migrating to `<source>` elements ([#12357](https://github.com/apache/maven/pull/12357)) @gnodet
@@ -104,7 +104,7 @@ Maven 4.0.0-rc-6 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Remove an optimization on PathSelector producing false negatives ([#12623](https://github.com/apache/maven/pull/12623)) @desruisseaux
 - Remove erroneous path normalization optimization + regression test ([#12621](https://github.com/apache/maven/pull/12621)) @gnodet
 - Fix #12583: Inverted file existence check in DefaultTransport.put() ([#12619](https://github.com/apache/maven/pull/12619)) @gnodet @elharo
-- [[MNG-8507]](https://issues.apache.org/jira/browse/MNG-8507) mvnup: skip dedup inside plugin `<configuration>` elements ([#12582](https://github.com/apache/maven/pull/12582)) @gnodet
+- [\[MNG-8507\]](https://issues.apache.org/jira/browse/MNG-8507) mvnup: skip dedup inside plugin `<configuration>` elements ([#12582](https://github.com/apache/maven/pull/12582)) @gnodet
 - Fix BOM consumer POM leaving property references unresolved ([#12627](https://github.com/apache/maven/pull/12627)) @gnodet
 - [MNG-8425] Fix mvnenc init saving invalid master source configuration ([#12564](https://github.com/apache/maven/pull/12564)) @gnodet
 - Consumer POM of multi-module project should exclude `<build>` and `<dependencies>` elements ([#11764](https://github.com/apache/maven/pull/11764)) @desruisseaux
@@ -113,7 +113,7 @@ Maven 4.0.0-rc-6 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Fix #12531: filter NO_REPOSITORY sentinel from mapped exceptions in ArtifactResolverResult ([#12561](https://github.com/apache/maven/pull/12561)) @gnodet
 - Fix #12534: Wire up @After annotation processing in Maven core ([#12566](https://github.com/apache/maven/pull/12566)) @gnodet
 - Fix #12427: Reject path-traversal segments in coordinate ids and versions ([#12565](https://github.com/apache/maven/pull/12565)) @gnodet
-- [[MNG-11147]](https://issues.apache.org/jira/browse/MNG-11147) - Fix BOM version inference for sibling modules in dependencyManagement ([#12569](https://github.com/apache/maven/pull/12569)) @gnodet
+- [\[MNG-11147\]](https://issues.apache.org/jira/browse/MNG-11147) - Fix BOM version inference for sibling modules in dependencyManagement ([#12569](https://github.com/apache/maven/pull/12569)) @gnodet
 - Preserve unresolved ${...} in CLI -D values ([#12524](https://github.com/apache/maven/pull/12524)) @ascheman
 - Avoid IllegalStateException on duplicate profile ids in DefaultModelBuilder ([#12506](https://github.com/apache/maven/pull/12506)) @ascheman
 - Fix deadlock in AbstractRequestCache ([#12468](https://github.com/apache/maven/pull/12468)) @gnodet
@@ -123,7 +123,7 @@ Maven 4.0.0-rc-6 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Fix CI-friendly ${revision} not interpolated for non-build POM reads ([#12322](https://github.com/apache/maven/pull/12322)) @gnodet
 - Fix mvn.cmd jvm.config read failing silently on Windows CI ([#12379](https://github.com/apache/maven/pull/12379)) @gnodet
 - Fix mvnup spurious pluginManagement injection for remote parent plugins ([#12351](https://github.com/apache/maven/pull/12351)) @gnodet
-- [[MNG-8650]](https://issues.apache.org/jira/browse/MNG-8650) - Fix MAVEN_ARGS backslash stripping on Windows ([#12349](https://github.com/apache/maven/pull/12349)) @gnodet
+- [\[MNG-8650\]](https://issues.apache.org/jira/browse/MNG-8650) - Fix MAVEN_ARGS backslash stripping on Windows ([#12349](https://github.com/apache/maven/pull/12349)) @gnodet
 - Do not force metadata download for plugin prefix resolution ([#12343](https://github.com/apache/maven/pull/12343)) @gnodet
 - Fix NPE in DefaultLookup.lookupOptional() when container returns null ([#12340](https://github.com/apache/maven/pull/12340)) @gnodet
 - Use stack-passed Set for activeModelReads cycle detection ([#12325](https://github.com/apache/maven/pull/12325)) @gnodet
