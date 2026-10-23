@@ -32,24 +32,27 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-class ReleaseNotesMarkdownTest {
+class MarkdownDocsTest {
     private static final Pattern UNESCAPED_ISSUE_LINK =
             Pattern.compile("\\[\\[([A-Z][A-Z0-9]*-[0-9]+)]]\\((https?://[^)\\s]+)\\)");
 
     @Test
-    void releaseNotesEscapeIssueKeysInLinkLabels() throws IOException {
-        Path contentDirectory = Paths.get("content/markdown/docs");
+    void markdownDocsEscapeIssueKeysInLinkLabels() throws IOException {
+        Path contentDirectory = Paths.get("content/markdown");
         List<String> violations = new ArrayList<>();
 
         try (Stream<Path> files = Files.walk(contentDirectory)) {
-            files.filter(path -> path.getFileName().toString().equals("release-notes.md"))
+            files.filter(path -> {
+                        String name = path.getFileName().toString();
+                        return name.endsWith(".md") || name.endsWith(".md.vm");
+                    })
                     .sorted()
                     .forEach(path -> collectViolations(contentDirectory, path, violations));
         }
 
         assertTrue(
                 violations.isEmpty(),
-                () -> "Issue keys in link labels must have their square brackets escaped, "
+                () -> "Issue keys in link labels must have their square brackets escaped in Markdown docs, "
                         + "otherwise the generated link target is the issue key instead of the URL. "
                         + "Use [\\[MNG-1234\\]](https://issues.apache.org/jira/browse/MNG-1234).\n"
                         + String.join("\n", violations));
