@@ -34,17 +34,13 @@ under the License.
       <item name="Maven" href="https://maven.apache.org/index.html"/>
     </breadcrumbs>
 
-    <menu>
-      <item name="Welcome" href="/index.html"/>
-      <item name="License" href="https://www.apache.org/licenses/"/>
-    </menu>
-
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Installation" href="/install.html" />
       <item name="Downloads" href="/download.html"/>
       <item name="Use" href="/run.html"/>
       <item name="Configure" href="/configure.html"/>
+      <item name="License" href="https://www.apache.org/licenses/"/>
       <item name="Release Notes" href="/docs/history.html"/>
       <item name="Security Reports" href="/security.html"/>
     </menu>
