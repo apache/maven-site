@@ -210,7 +210,7 @@ See [Sisu's lifecycle support documentation](https://eclipse.dev/sisu/org.eclips
 [plexus]: https://codehaus-plexus.github.io/plexus-containers/
 [plexus-component-metadata]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/
 [plexus-annotations]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/
-[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/maven-3.10.x/core-it-suite/src/test/resources/mng-5382
+[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/fdd9945/core-it-suite/src/test/resources/mng-5382
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343
