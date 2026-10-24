@@ -240,7 +240,6 @@ under the License.
           <item name="Plugins Compatibility Plan" href="/developers/compatibility-plan.html"/>
         </item>
       </item>
-      <item name="Books and Resources" href="/articles.html"/>
     </menu>
 
     <menu name="Community">
@@ -251,6 +250,7 @@ under the License.
       <item name="Issue Management" href="/issue-management.html"/>
       <item name="Getting Maven Source" href="/scm.html"/>
       <item name="The Maven Team" href="/team.html"/>
+      <item name="Books and Resources" href="/articles.html"/>
     </menu>
   </body>
 </site>
