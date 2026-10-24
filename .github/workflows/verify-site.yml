@@ -48,6 +48,7 @@ jobs:
           java-version: 21
           distribution: 'zulu'
           cache: 'maven'
+          cache-jdk: false
           cache-read-only: ${{ github.event_name == 'pull_request' }}
 
       - name: Set up Maven
