@@ -217,8 +217,12 @@ under the License.
           <item name="Maven Null Annotations" href="/null-annotations.html" />
         </item>
       </item>
-      <item name="Contribute to Maven" href="/developers/index.html" collapse="true">
-        <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html"/>
+      <item name="Books and Resources" href="/articles.html"/>
+    </menu>
+
+    <menu name="Contribute">
+      <item name="Contribute to Maven" href="/developers/index.html" />
+      <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html"/>
         <item name="Code Style and Conventions" href="/developers/conventions/code.html"/>
         <item name="Git Convention" href="/developers/conventions/git.html"/>
         <item name="GitHub Convention" href="/developers/conventions/github.html"/>
@@ -247,14 +251,11 @@ under the License.
           <item name="Maven Dependency Policies" href="/developers/dependency-policies.html"/>
           <item name="Plugins Compatibility Plan" href="/developers/compatibility-plan.html"/>
         </item>
-      </item>
-      <item name="Books and Resources" href="/articles.html"/>
     </menu>
 
     <menu name="Community">
       <item name="Community Overview" href="/community.html"/>
       <item name="Project Roles" href="/project-roles.html"/>
-      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Getting Help" href="/users/getting-help.html"/>
       <item name="Issue Management" href="/issue-management.html"/>
       <item name="Getting Maven Source" href="/scm.html"/>
