@@ -40,14 +40,13 @@ under the License.
       <p>
         This site is separated into the following sections:
       </p>
-      <!-- TODO: use CSS -->
       <table>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="3">Use</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+        <th class="home-section-heading" rowspan="3">Use</th>
+        <th class="home-section-links">
           <a href="download.html">Download</a>, <a href="install.html">Install</a>, <a href="configure.html">Configure</a>, <a href="run.html">Run</a> Maven
         </th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em">
+        <th class="home-section-links">
            <a href="plugins/index.html">Maven Plugins</a> and <a href="extensions/index.html">Maven Extensions</a>
         </th>
       </tr>
@@ -64,9 +63,9 @@ under the License.
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Extend</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="plugin-developers/index.html">Write Maven Plugins</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="repository/index.html">Improve the Maven Central Repository</a></th>
+        <th class="home-section-heading" rowspan="2">Extend</th>
+        <th class="home-section-links"><a href="plugin-developers/index.html">Write Maven Plugins</a></th>
+        <th class="home-section-links"><a href="repository/index.html">Improve the Maven Central Repository</a></th>
       </tr>
       <tr>
         <td>
@@ -78,9 +77,9 @@ under the License.
         </td>
       </tr>
       <tr>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.75em" rowspan="2">Contribute</th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="guides/development/guide-helping.html">Help Maven</a></th>
-        <th style="white-space:nowrap; font-weight: bold; font-size: 1.25em"><a href="developers/index.html">Develop Maven</a></th>
+        <th class="home-section-heading" rowspan="2">Contribute</th>
+        <th class="home-section-links"><a href="guides/development/guide-helping.html">Help Maven</a></th>
+        <th class="home-section-links"><a href="developers/index.html">Develop Maven</a></th>
       </tr>
       <tr>
         <td>
