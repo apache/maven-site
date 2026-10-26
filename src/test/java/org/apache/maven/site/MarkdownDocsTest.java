@@ -19,7 +19,6 @@
 package org.apache.maven.site;
 
 import java.io.IOException;
-import java.io.UncheckedIOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -30,64 +29,76 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
+import com.vladsch.flexmark.ext.wikilink.WikiLink;
+import com.vladsch.flexmark.ext.wikilink.WikiLinkExtension;
+import com.vladsch.flexmark.parser.Parser;
+import com.vladsch.flexmark.util.ast.Node;
+import com.vladsch.flexmark.util.ast.NodeVisitor;
+import com.vladsch.flexmark.util.ast.VisitHandler;
+import com.vladsch.flexmark.util.data.MutableDataSet;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 class MarkdownDocsTest {
-    private static final Pattern UNESCAPED_ISSUE_LINK =
-            Pattern.compile("\\[\\[([A-Z][A-Z0-9]*-[0-9]+)]]\\((https?://[^)\\s]+)\\)");
+    private static final Pattern PARENTHESIZED_DESTINATION = Pattern.compile("^\\([^)\\s]+\\)");
+
+    private static final Parser MARKDOWN_PARSER = Parser.builder(
+                    new MutableDataSet().set(Parser.EXTENSIONS, List.of(WikiLinkExtension.create())))
+            .build();
 
     @Test
-    void markdownDocsEscapeIssueKeysInLinkLabels() throws IOException {
+    void markdownDocsHaveWellFormedLinks() throws IOException {
         Path contentDirectory = Paths.get("content/markdown");
-        List<String> violations = new ArrayList<>();
+        List<Path> files;
+        try (Stream<Path> stream = Files.walk(contentDirectory)) {
+            files = stream.filter(MarkdownDocsTest::isMarkdownSource).sorted().toList();
+        }
 
-        try (Stream<Path> files = Files.walk(contentDirectory)) {
-            files.filter(path -> {
-                        String name = path.getFileName().toString();
-                        return name.endsWith(".md") || name.endsWith(".md.vm");
-                    })
-                    .sorted()
-                    .forEach(path -> {
-                        try {
-                            collectViolations(contentDirectory, path, violations);
-                        } catch (IOException e) {
-                            throw new UncheckedIOException(e);
-                        }
-                    });
+        List<String> violations = new ArrayList<>();
+        for (Path file : files) {
+            collectViolations(contentDirectory, file, violations);
         }
 
         assertTrue(
                 violations.isEmpty(),
-                () -> "Issue keys in link labels must have their square brackets escaped in Markdown docs, "
+                () -> "Markdown docs must escape square brackets in link labels, "
                         + "otherwise the generated link target is the issue key instead of the URL. "
                         + "Use [\\[MNG-1234\\]](https://issues.apache.org/jira/browse/MNG-1234).\n"
                         + String.join("\n", violations));
     }
 
+    private static boolean isMarkdownSource(Path path) {
+        String name = path.getFileName().toString();
+        return name.endsWith(".md") || name.endsWith(".md.vm");
+    }
+
     private static void collectViolations(Path contentDirectory, Path file, List<String> violations)
             throws IOException {
-        List<String> lines = Files.readAllLines(file, StandardCharsets.UTF_8);
-        boolean inCodeBlock = false;
+        String markdown = Files.readString(file, StandardCharsets.UTF_8);
+        Node document = MARKDOWN_PARSER.parse(markdown);
 
-        for (int i = 0; i < lines.size(); i++) {
-            String line = lines.get(i);
-            String trimmed = line.trim();
-            if (trimmed.startsWith("```") || trimmed.startsWith("~~~")) {
-                inCodeBlock = !inCodeBlock;
-                continue;
-            }
-            if (inCodeBlock) {
-                continue;
-            }
+        new NodeVisitor(new VisitHandler<>(WikiLink.class, link -> {
+                    int end = link.getEndOffset();
+                    Matcher destination = PARENTHESIZED_DESTINATION.matcher(markdown.substring(end));
+                    if (destination.find()) {
+                        violations.add(String.format(
+                                "  %s:%d: %s",
+                                contentDirectory.relativize(file),
+                                lineNumber(markdown, link.getStartOffset()),
+                                markdown.substring(link.getStartOffset(), end + destination.end())));
+                    }
+                }))
+                .visit(document);
+    }
 
-            Matcher matcher = UNESCAPED_ISSUE_LINK.matcher(line);
-            while (matcher.find()) {
-                violations.add(String.format(
-                        "  %s:%d: %s (expected [\\[%s\\]](%s))",
-                        contentDirectory.relativize(file), i + 1, matcher.group(), matcher.group(1), matcher.group(2)));
+    private static int lineNumber(String text, int offset) {
+        int line = 1;
+        for (int i = 0; i < offset; i++) {
+            if (text.charAt(i) == '\n') {
+                line++;
             }
         }
+        return line;
     }
 }
