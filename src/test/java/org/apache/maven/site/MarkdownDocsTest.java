@@ -62,10 +62,7 @@ class MarkdownDocsTest {
 
         assertTrue(
                 violations.isEmpty(),
-                () -> "Markdown link labels must escape square brackets. "
-                        + "Otherwise the generated link target is the label instead of the URL. "
-                        + "For example: [\\[MNG-1\\]](https://issues.apache.org/jira/browse/MNG-1).\n"
-                        + String.join("\n", violations));
+                () -> "Markdown link labels must escape square brackets.\n" + String.join("\n", violations));
     }
 
     private static boolean isMarkdownSource(Path path) {
