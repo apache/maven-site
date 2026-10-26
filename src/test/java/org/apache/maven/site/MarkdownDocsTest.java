@@ -50,21 +50,21 @@ class MarkdownDocsTest {
     @Test
     void markdownDocsHaveWellFormedLinks() throws IOException {
         Path contentDirectory = Paths.get("content/markdown");
-        List<Path> files;
-        try (Stream<Path> stream = Files.walk(contentDirectory)) {
-            files = stream.filter(MarkdownDocsTest::isMarkdownSource).sorted().toList();
-        }
-
         List<String> violations = new ArrayList<>();
-        for (Path file : files) {
-            collectViolations(contentDirectory, file, violations);
+
+        try (Stream<Path> files = Files.walk(contentDirectory)) {
+            List<Path> markdownFiles =
+                    files.filter(MarkdownDocsTest::isMarkdownSource).sorted().toList();
+            for (Path file : markdownFiles) {
+                collectViolations(contentDirectory, file, violations);
+            }
         }
 
         assertTrue(
                 violations.isEmpty(),
-                () -> "Markdown docs must escape square brackets in link labels, "
-                        + "otherwise the generated link target is the issue key instead of the URL. "
-                        + "Use [\\[MNG-1234\\]](https://issues.apache.org/jira/browse/MNG-1234).\n"
+                () -> "Markdown link labels must escape square brackets. "
+                        + "Otherwise the generated link target is the label instead of the URL. "
+                        + "For example: [\\[MNG-1\\]](https://issues.apache.org/jira/browse/MNG-1).\n"
                         + String.join("\n", violations));
     }
 
