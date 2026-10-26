@@ -1,5 +1,5 @@
 ---
-title: Books and Resources
+title: External Resources on Maven
 author:
   - Brett Porter
   - Vincent Massol
@@ -24,16 +24,16 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Books and Resources
+# External Resources on Maven
 
-## Books
+## Books on Maven
 
 |                                                                                                                                                | Title                     | Covers  |           Published            | Authors            | Buy the Book                                                                                                                                                                            |
 |:----------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------|:-------:|:------------------------------:|:-------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [![Apache Maven Cookbook](images/books/apache_maven_cookbook.jpg)](https://www.packtpub.com/en-us/product/apache-maven-cookbook-9781785289453) | Apache Maven Cookbook     | Maven 3 | Packt Publishing (August 2015) | Raghuram Bharathan | [Packt](https://www.packtpub.com/en-us/product/apache-maven-cookbook-9781785289453), [Amazon](https://www.amazon.com/Apache-Maven-Cookbook-Raghuram-Bharathan/dp/1785286129/ref=sr_1_1) |
 |                                      ![Apache Maven 3.0 Cookbook](images/books/apache_maven_cookbook.jpg)                                      | Apache Maven 3.0 Cookbook | Maven 3 | Packt Publishing (August 2011) | Srirangan          | [Amazon](https://www.amazon.com/Apache-Maven-3-Cookbook-Srirangan/dp/1849512442/ref=sr_1_1?ie=UTF8&amp;qid=1315861966&amp;sr=8-1)                                                       |
 
-## Videos
+## Videos on Maven
 
 | Title                                                         |         Covers         |               Published               | Authors                         | Watch the Video                                                                   |
 |:--------------------------------------------------------------|:----------------------:|:-------------------------------------:|:--------------------------------|:----------------------------------------------------------------------------------|
@@ -42,7 +42,7 @@ under the License.
 | How to use Apache Maven Toolchains in an Apache Maven Project | Maven 3.8.6 and above  |               July 2022               | Karl Heinz Marbaise             | [Youtube](https://www.youtube.com/watch?v=-KbDcJcglPc)                            |
 | Getting started with Apache Maven                             | Maven 2.2.1, and above | Packt Publishing (September 30, 2013) | Russell Gold                    | [Packt](https://www.youtube.com/playlist?list=PLTgRMOcmRb3OGBIfqPSZFk0Nn0B4xGZqs) |
 
-## Articles
+## Articles on Maven
 
 If you are writing an article on Maven we suggest contacting the developers on the mailing list as we would be happy to
 provide feedback to help ensure accuracy in your article.
