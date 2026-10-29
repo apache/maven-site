@@ -53,7 +53,7 @@ under the License.
       <item name="Maven Plugins" href="/plugins/index.html"/>
       <item name="Maven Extensions" href="/extensions/index.html"/>
 
-      <item name="Maven Tools" href="/tools/index.html">
+      <item name="Maven Tools" href="/tools/index.html" collapse="true">
         <item name="Maven Daemon" href="/tools/mvnd.html"/>
         <item name="Maven Shell" href="/tools/mvnsh.html"/>
         <item name="Maven Upgrade Tool" href="/tools/mvnup.html"/>
