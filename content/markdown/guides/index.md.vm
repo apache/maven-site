@@ -40,6 +40,7 @@ User Centre
 - [Repositories](./introduction/introduction-to-repositories.html)
 - [What is an Archetype](./introduction/introduction-to-archetypes.html)
 - [Creating Archetypes](./mini/guide-creating-archetypes.html)
+- [Testing Archetypes](./mini/guide-testing-archetypes.html)
 - [The Dependency Mechanism](./introduction/introduction-to-dependency-mechanism.html)
 - [ Optional Dependencies and Dependency Exclusions](./introduction/introduction-to-optional-and-excludes-dependencies.html)
 - [Glossary](../glossary.html)

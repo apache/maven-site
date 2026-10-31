@@ -43,5 +43,5 @@ For the list of archetypes that Maven provides, see [Maven Archetype Bundles](ht
 
 ## What makes up an Archetype?
 
-Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of archetype, and a set of [Velocity](https://velocity.apache.org/) templates which make up the prototype project. If you would like to know how to make your own archetypes, please refer to our [Guide to creating archetypes](../mini/guide-creating-archetypes.html).
+Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of archetype, and a set of [Velocity](https://velocity.apache.org/) templates which make up the prototype project. If you would like to know how to make your own archetypes, please refer to our [Guide to creating archetypes](../mini/guide-creating-archetypes.html), and to test them, the [Guide to testing archetypes](../mini/guide-testing-archetypes.html).
 
