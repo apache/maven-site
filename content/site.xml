@@ -114,6 +114,7 @@ under the License.
             </item>
             <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
             <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
+            <item name="Deploying over HTTP, FTP and SSH" href="/guides/mini/guide-deployment-transports.html"/>
             <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
             <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html"/>
             <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html"/>

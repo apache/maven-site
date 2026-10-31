@@ -45,6 +45,8 @@ Which settings are required will depend on the type of repository you are deploy
 </settings>
 ```
 
+For repository URLs, extensions and settings of the HTTP, FTP and SSH transports, see [Deploying over HTTP, FTP and SSH](./guide-deployment-transports.html).
+
 To encrypt passwords in these sections, refer to [Encryption Settings](./guide-encryption.html).
 
 **Note**: The settings descriptor documentation can be found on the [Maven Settings Descriptor Model](/ref/current/maven-settings/settings.html).
