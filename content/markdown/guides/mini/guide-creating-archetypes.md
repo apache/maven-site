@@ -127,20 +127,42 @@ An example for a prototype `pom.xml` is:
     <packaging>jar</packaging>
 
     <name>${artifactId}</name>
-    <url>http://www.myorganization.org</url>
+    <url>https://www.myorganization.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>5.11.0</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <dependencies>
         <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                 <version>4.12</version>
-                <scope>test</scope>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>
 ```
 
-## 4. Install the archetype and run the archetype plugin
+The `junit-bom` import in `dependencyManagement` sets the version of every JUnit artifact, so the dependencies do not declare one.
+
+## 4. Test the archetype
+
+Before you install the archetype, add at least one integration test. Each test is a directory in `src/test/resources/projects/` of the archetype project, containing an `archetype.properties` file with the values for the generation and a `goal.txt` file with the Maven goals to run in the generated project. It can also contain a `reference/` directory with the expected project, and a `verify.groovy` script. The `archetype:integration-test` goal, which the `maven-archetype` packaging runs during `mvn verify`, generates a project for each test and checks it. For the details, see [Test an archetype](/archetype/maven-archetype-plugin/examples/test-an-archetype.html).
+
+## 5. Install the archetype and run the archetype plugin
 
 Now you are ready to install the archetype:
 
@@ -173,4 +195,4 @@ mvn archetype:generate
   -DarchetypeArtifactId=maven-archetype-archetype
 ```
 
-Afterwhich, you can now customize the contents of the `archetype-resources` directory, and `archetype-metadata.xml`, then, proceed to Step#4 (Install the archetype and run the archetype plugin).
+Afterwhich, you can now customize the contents of the `archetype-resources` directory, and `archetype-metadata.xml`, then test, install and try out the archetype as described in the previous steps.

@@ -39,24 +39,9 @@ Please refer to [Archetype Plugin page](/archetype/maven-archetype-plugin/).
 
 ## Provided Archetypes
 
-Maven provides several Archetype artifacts:
-
-| Archetype ArtifactIds       | Description                                                                                                                                                          |
-|:----------------------------|:---------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| maven-archetype-archetype   | An archetype to generate a sample archetype project.                                                                                                                 |
-| maven-archetype-j2ee-simple | An archetype to generate a simplifed sample J2EE application.                                                                                                        |
-| maven-archetype-plugin      | An archetype to generate a sample Maven plugin.                                                                                                                      |
-| maven-archetype-plugin-site | An archetype to generate a sample Maven plugin site.                                                                                                                 |
-| maven-archetype-portlet     | An archetype to generate a sample JSR-268 Portlet.                                                                                                                   |
-| maven-archetype-quickstart  | An archetype to generate a sample Maven project.                                                                                                                     |
-| maven-archetype-simple      | An archetype to generate a simple Maven project.                                                                                                                     |
-| maven-archetype-site        | An archetype to generate a sample Maven site which demonstrates some of the supported document types like APT, XDoc, and FML and demonstrates how to i18n your site. |
-| maven-archetype-site-simple | An archetype to generate a sample Maven site.                                                                                                                        |
-| maven-archetype-webapp      | An archetype to generate a sample Maven Webapp project.                                                                                                              |
-
-For more information on these archetypes, please refer to the [Maven Archetype Bundles page](/archetypes/index.html).
+For the list of archetypes that Maven provides, see [Maven Archetype Bundles](https://maven.apache.org/archetypes/).
 
 ## What makes up an Archetype?
 
-Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of archetype, and a set of [Velocity](http://velocity.apache.org/) templates which make up the prototype project. If you would like to know how to make your own archetypes, please refer to our [Guide to creating archetypes](../mini/guide-creating-archetypes.html).
+Archetypes are packaged up in a JAR and they consist of the archetype metadata which describes the contents of archetype, and a set of [Velocity](https://velocity.apache.org/) templates which make up the prototype project. If you would like to know how to make your own archetypes, please refer to our [Guide to creating archetypes](../mini/guide-creating-archetypes.html).
 
