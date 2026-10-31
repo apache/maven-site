@@ -5,6 +5,17 @@ Redirect Permanent /release-notes.html /docs/history.html
 Redirect Permanent /download.html /download.cgi
 RedirectMatch permanent ^/(.*)/download.html$ /$1/download.cgi
 
+# maven-core pages that are no longer published; these must come before the /ref/current rule, which would otherwise match first
+Redirect Permanent /ref/current/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/3-LATEST/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/4-LATEST/impl/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/current/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/3-LATEST/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/4-LATEST/impl/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/current/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
+Redirect Permanent /ref/3-LATEST/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
+Redirect Permanent /ref/4-LATEST/impl/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
+
 Redirect /ref/current/ /ref/${currentStableVersion}/
 Redirect /ref/current /ref/${currentStableVersion}/
 
@@ -45,6 +56,8 @@ Redirect Permanent /plugins/maven-site-plugin/examples/creatingskins.html /skins
 Redirect Permanent /plugins/maven-site-plugin/examples/filtering-content.html /guides/mini/guide-site.html#Filtering_with_Maven_Resources_Plugin
 Redirect Permanent /plugins/maven-site-plugin/examples/mermaid-diagrams.html /doxia/mermaid-diagrams.html
 Redirect Permanent /plugins/maven-site-plugin/examples/multimodule.html /guides/mini/guide-multimodule-site.html
+Redirect Permanent /plugins/maven-scm-publish-plugin/examples/importing-maven-site.html /plugins/maven-scm-publish-plugin/
+Redirect Permanent /plugins/maven-site-plugin/examples/site-deploy-to-sourceforge.net.html /guides/mini/guide-site.html#Deploying_the_Site
 Redirect Permanent /plugins/maven-site-plugin/i18n.html /plugins/localization.html
 Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/index.html /guides/mini/guide-using-toolchains.html
 Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/jdk.html /guides/mini/guide-using-toolchains.html#JDK_Toolchain
