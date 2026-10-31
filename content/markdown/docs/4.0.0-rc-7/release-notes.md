@@ -95,37 +95,37 @@ Maven 4.0.0-rc-7 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Fix #13084: sandbox profile activation context for external model builds ([#13158](https://github.com/apache/maven/pull/13158)) @gnodet
 - Fix: implement Node.getRepository() via local repository manager lookup ([#13159](https://github.com/apache/maven/pull/13159)) @gnodet
 - Fix #13100: honor repositories from legitimately-active external model profiles ([#13155](https://github.com/apache/maven/pull/13155)) @gnodet
-- [[MNG-5146]](https://issues.apache.org/jira/browse/MNG-5146) - Fix parent relativePath mismatch check ([#13157](https://github.com/apache/maven/pull/13157)) @gnodet
+- [MNG-5146](https://issues.apache.org/jira/browse/MNG-5146) - Fix parent relativePath mismatch check ([#13157](https://github.com/apache/maven/pull/13157)) @gnodet
 - Lower-case the OS family before matching it against the family names ([#13154](https://github.com/apache/maven/pull/13154)) @gnodet
 - Normalize lazy StAX parse failures in MavenXpp3Reader ([#13149](https://github.com/apache/maven/pull/13149)) @gnodet
 - Evaluate profile activation conditions lazily ([#13144](https://github.com/apache/maven/pull/13144)) @gnodet
-- [[MNG-6979]](https://issues.apache.org/jira/browse/MNG-6979) - Initialize the current project from the execution root ([#13143](https://github.com/apache/maven/pull/13143)) @gnodet
+- [MNG-6979](https://issues.apache.org/jira/browse/MNG-6979) - Initialize the current project from the execution root ([#13143](https://github.com/apache/maven/pull/13143)) @gnodet
 - Fix NPE on a recursive property reference in a list field ([#13145](https://github.com/apache/maven/pull/13145)) @gnodet
-- [[MNG-6568]](https://issues.apache.org/jira/browse/MNG-6568) - Fix comparison cycles in version qualifiers ([#13113](https://github.com/apache/maven/pull/13113)) @gnodet
-- [[MNG-8678]](https://issues.apache.org/jira/browse/MNG-8678) - Concurrent executor ignores java.lang.Error subclasses ([#13067](https://github.com/apache/maven/pull/13067)) @gnodet
+- [MNG-6568](https://issues.apache.org/jira/browse/MNG-6568) - Fix comparison cycles in version qualifiers ([#13113](https://github.com/apache/maven/pull/13113)) @gnodet
+- [MNG-8678](https://issues.apache.org/jira/browse/MNG-8678) - Concurrent executor ignores java.lang.Error subclasses ([#13067](https://github.com/apache/maven/pull/13067)) @gnodet
 - Fix #13068: make PluginDependenciesResolver methods default ([#13069](https://github.com/apache/maven/pull/13069)) @ascheman
 - Fix filterByScope to expand lifecycle scopes for build ordering ([#13070](https://github.com/apache/maven/pull/13070)) @gnodet
 - Fix getDispatchedPaths() leaking mutable nested lists ([#13057](https://github.com/apache/maven/pull/13057)) @gnodet
-- [[MNG-8174]](https://issues.apache.org/jira/browse/MNG-8174) - Fix NPE when a property references itself in a plugin configuration ([#12935](https://github.com/apache/maven/pull/12935)) @elharo
+- [MNG-8174](https://issues.apache.org/jira/browse/MNG-8174) - Fix NPE when a property references itself in a plugin configuration ([#12935](https://github.com/apache/maven/pull/12935)) @elharo
 - Fix #12985: Upgrade toolchains-plugin when adding select-jdk-toolchain execution ([#13026](https://github.com/apache/maven/pull/13026)) @gnodet
 - Fix ToolchainPluginStrategy to detect inherited source levels from parent POMs ([#13025](https://github.com/apache/maven/pull/13025)) @gnodet
 - Fix consumer POM leaving extension-contributed user properties uninterpolated ([#13023](https://github.com/apache/maven/pull/13023)) @gnodet
 - Fix #12986: Throw descriptive UnsupportedOperationException instead of NPE in MavenSession.lookup() ([#13020](https://github.com/apache/maven/pull/13020)) @gnodet
 - Fix #12989: mvnup plugin upgrades should respect project JDK version ([#13024](https://github.com/apache/maven/pull/13024)) @gnodet
-- [[MNG-8633]](https://issues.apache.org/jira/browse/MNG-8633) - mvnup: inject standalone Nashorn for antrun JavaScript compatibility ([#13022](https://github.com/apache/maven/pull/13022)) @gnodet
+- [MNG-8633](https://issues.apache.org/jira/browse/MNG-8633) - mvnup: inject standalone Nashorn for antrun JavaScript compatibility ([#13022](https://github.com/apache/maven/pull/13022)) @gnodet
 - mvnup: upgrade BND plugins to fix ConcurrentModificationException on JDK 17.0.13+ ([#13021](https://github.com/apache/maven/pull/13021)) @gnodet
-- [[MNG-8765]](https://issues.apache.org/jira/browse/MNG-8765) - Pre-interpolate plugin configuration before type conversion ([#13019](https://github.com/apache/maven/pull/13019)) @gnodet
+- [MNG-8765](https://issues.apache.org/jira/browse/MNG-8765) - Pre-interpolate plugin configuration before type conversion ([#13019](https://github.com/apache/maven/pull/13019)) @gnodet
 - Fix #13004: enable deterministic profile activation for BUILD_CONSUMER ([#13015](https://github.com/apache/maven/pull/13015)) @gnodet
-- [[MNG-8765]](https://issues.apache.org/jira/browse/MNG-8765) - Pre-interpolate plugin configuration before type conversion ([#13017](https://github.com/apache/maven/pull/13017)) @gnodet
+- [MNG-8765](https://issues.apache.org/jira/browse/MNG-8765) - Pre-interpolate plugin configuration before type conversion ([#13017](https://github.com/apache/maven/pull/13017)) @gnodet
 - Fix #12991: skip shade-plugin upgrade when custom ResourceTransformers are present ([#13016](https://github.com/apache/maven/pull/13016)) @gnodet
-- [[MNG-12984]](https://issues.apache.org/jira/browse/MNG-12984) - Fix invalid Automatic-Module-Name entries in mvnup plugin upgrades ([#13013](https://github.com/apache/maven/pull/13013)) @gnodet
+- [MNG-12984](https://issues.apache.org/jira/browse/MNG-12984) - Fix invalid Automatic-Module-Name entries in mvnup plugin upgrades ([#13013](https://github.com/apache/maven/pull/13013)) @gnodet
 - Fix compatibility spelling in CLI help text ([#13012](https://github.com/apache/maven/pull/13012)) @gnodet
-- [[MNG-8708]](https://issues.apache.org/jira/browse/MNG-8708) - Fix parent inference ([#13010](https://github.com/apache/maven/pull/13010)) @gnodet
+- [MNG-8708](https://issues.apache.org/jira/browse/MNG-8708) - Fix parent inference ([#13010](https://github.com/apache/maven/pull/13010)) @gnodet
 - Scope server credentials and validate legacy relocation coordinates ([#12977](https://github.com/apache/maven/pull/12977)) @gnodet
 - Fix version comparison and parsing inconsistencies in maven-artifact ([#12942](https://github.com/apache/maven/pull/12942)) @slachiewicz
 - Validate metadata inputs across legacy and new API paths, clone proxies before decryption ([#12945](https://github.com/apache/maven/pull/12945)) @slachiewicz
-- [[MNG-8450]](https://issues.apache.org/jira/browse/MNG-8450) - Report BOM import warnings only at declaration sites ([#13003](https://github.com/apache/maven/pull/13003)) @gnodet
-- [[MNG-8287]](https://issues.apache.org/jira/browse/MNG-8287) - Fix consumer POM packaging profile resolution ([#12967](https://github.com/apache/maven/pull/12967)) @gnodet
+- [MNG-8450](https://issues.apache.org/jira/browse/MNG-8450) - Report BOM import warnings only at declaration sites ([#13003](https://github.com/apache/maven/pull/13003)) @gnodet
+- [MNG-8287](https://issues.apache.org/jira/browse/MNG-8287) - Fix consumer POM packaging profile resolution ([#12967](https://github.com/apache/maven/pull/12967)) @gnodet
 - Fix #12931: do not rewrite unmodified POMs in mvnup apply ([#12972](https://github.com/apache/maven/pull/12972)) @gnodet
 - Fix modello velocity phase for concurrent builder compatibility ([#12963](https://github.com/apache/maven/pull/12963)) @gnodet
 - Fix #12912: assign FastTerminal before starting the build thread ([#12961](https://github.com/apache/maven/pull/12961)) @gnodet
@@ -135,7 +135,7 @@ Maven 4.0.0-rc-7 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Fix operator precedence skipping type=bom dependency imports ([#12930](https://github.com/apache/maven/pull/12930)) @gnodet
 - Fix: make ProjectIndex thread-safe for parallel builds ([#12926](https://github.com/apache/maven/pull/12926)) @gnodet
 - Fix #12602: Preserve Properties defaults in immutable copies ([#12910](https://github.com/apache/maven/pull/12910)) @goutamadwant
-- [[MNG-8693]](https://issues.apache.org/jira/browse/MNG-8693) - Avoid resolving unused plugins for direct goals ([#12920](https://github.com/apache/maven/pull/12920)) @gnodet
+- [MNG-8693](https://issues.apache.org/jira/browse/MNG-8693) - Avoid resolving unused plugins for direct goals ([#12920](https://github.com/apache/maven/pull/12920)) @gnodet
 - Fix: interpolate properties in module/subproject path before filesystem resolution ([#12924](https://github.com/apache/maven/pull/12924)) @gnodet
 - Fix #12600: handle missing project index in forked executions ([#12917](https://github.com/apache/maven/pull/12917)) @gnodet
 - Re-include macOS JLine native libraries in distribution ([#12888](https://github.com/apache/maven/pull/12888)) @gnodet
@@ -156,14 +156,14 @@ Maven 4.0.0-rc-7 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Fix: synchronize ReflectionValueExtractor class-introspection caches ([#12862](https://github.com/apache/maven/pull/12862)) @gnodet
 - Fix duplicate model problem reporting, fixes #12691 ([#12807](https://github.com/apache/maven/pull/12807)) @gnodet
 - Fix ArtifactCoordinates.getId() double colon when classifier is empty ([#12855](https://github.com/apache/maven/pull/12855)) @gnodet
-- [[MNG-8129]](https://issues.apache.org/jira/browse/MNG-8129) - Handle InvalidPathException for broken relativePath on Windows ([#12849](https://github.com/apache/maven/pull/12849)) @gnodet
+- [MNG-8129](https://issues.apache.org/jira/browse/MNG-8129) - Handle InvalidPathException for broken relativePath on Windows ([#12849](https://github.com/apache/maven/pull/12849)) @gnodet
 - Fix #12761: do not wait for the terminal on the thread building it ([#12854](https://github.com/apache/maven/pull/12854)) @gnodet
 - Make run-its profile extract the built distribution ([#12852](https://github.com/apache/maven/pull/12852)) @gnodet
-- [[MDEP-590]](https://issues.apache.org/jira/browse/MDEP-590) - Resolve classified POM artifacts from the reactor ([#12831](https://github.com/apache/maven/pull/12831)) @wilx
-- [[MNG-8709]](https://issues.apache.org/jira/browse/MNG-8709) - Use active profile properties for consumer POM validation ([#12684](https://github.com/apache/maven/pull/12684)) @goutamadwant
+- [MDEP-590](https://issues.apache.org/jira/browse/MDEP-590) - Resolve classified POM artifacts from the reactor ([#12831](https://github.com/apache/maven/pull/12831)) @wilx
+- [MNG-8709](https://issues.apache.org/jira/browse/MNG-8709) - Use active profile properties for consumer POM validation ([#12684](https://github.com/apache/maven/pull/12684)) @goutamadwant
 - Fix #12730: quiet mode implies raw streams to avoid stdout decoration ([#12830](https://github.com/apache/maven/pull/12830)) @gnodet
 - Fix #12640: BOM consumer POM must not include inherited dependency management ([#12802](https://github.com/apache/maven/pull/12802)) @gnodet
-- [[MNG-8129]](https://issues.apache.org/jira/browse/MNG-8129) - Handle InvalidPathException for broken relativePath on Windows ([#12741](https://github.com/apache/maven/pull/12741)) @gnodet
+- [MNG-8129](https://issues.apache.org/jira/browse/MNG-8129) - Handle InvalidPathException for broken relativePath on Windows ([#12741](https://github.com/apache/maven/pull/12741)) @gnodet
 - Make profile activation conditions locale-independent ([#12798](https://github.com/apache/maven/pull/12798)) @gnodet
 - Fix parent profile cache matching across activation contexts ([#12801](https://github.com/apache/maven/pull/12801)) @gnodet
 - fix(api-core): properly implement Clock.withZone() in MonotonicClock ([#12797](https://github.com/apache/maven/pull/12797)) @gnodet
@@ -194,7 +194,7 @@ Maven 4.0.0-rc-7 continues gathering feedback before releasing Maven 4.0.0 GA. T
 - Validate coordinates and repository precedence during artifact resolution ([#12944](https://github.com/apache/maven/pull/12944)) @slachiewicz
 - Fix flaky FastTerminalReentrancyTest by avoiding PTY creation ([#12971](https://github.com/apache/maven/pull/12971)) @gnodet
 - Replace deprecated Terminal.getWidth/getHeight with getColumns/getRows ([#12969](https://github.com/apache/maven/pull/12969)) @gnodet
-- [[MNG-8129]](https://issues.apache.org/jira/browse/MNG-8129) - Clarify relativePath validation comment ([#12965](https://github.com/apache/maven/pull/12965)) @gnodet
+- [MNG-8129](https://issues.apache.org/jira/browse/MNG-8129) - Clarify relativePath validation comment ([#12965](https://github.com/apache/maven/pull/12965)) @gnodet
 - Add integration test for #12660: BOM version from imported BOM ([#12940](https://github.com/apache/maven/pull/12940)) @gnodet
 - Use try-with-resources for AuthenticationContext ([#12844](https://github.com/apache/maven/pull/12844)) @slachiewicz
 - Fix deprecated Maven testing API compatibility ([#12683](https://github.com/apache/maven/pull/12683)) @goutamadwant
