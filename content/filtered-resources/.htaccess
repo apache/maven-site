@@ -27,6 +27,12 @@ Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/mave
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
 
+Redirect Permanent /shared/maven-archiver/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath
+Redirect Permanent /shared/maven-archiver/examples/manifest.html /guides/mini/guide-manifest.html#Default_Manifest
+Redirect Permanent /shared/maven-archiver/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
+Redirect Permanent /shared/maven-archiver/examples/manifestFile.html /guides/mini/guide-manifest.html#Using_Your_Own_Manifest_File
+Redirect Permanent /shared/maven-archiver/examples/manifestSections.html /guides/mini/guide-manifest.html#Manifest_Sections
+
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
 RedirectMatch ^/maven-1.x/reference/plugins/(.*)$ /archives/maven-1.x/plugins/$1
