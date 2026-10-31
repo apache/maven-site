@@ -39,6 +39,9 @@ The first step to creating your site is to create some content. In Maven, the si
       +- xdoc/
       |  +- other.xml
       |
+      +- xhtml/
+      |  +- xhtml-content.xhtml
+      |
       +- site.xml
 ```
 
@@ -46,16 +49,36 @@ You will notice there is now a `${project.basedir}/src/site` directory within wh
 
 Let's take a look at the examples of the various document types:
 
-- `markdown`: the well known [Markdown](https://en.wikipedia.org/wiki/Markdown) format, and the one this page is written in. It is what new documentation should use,
-- `apt`: the APT format, "Almost Plain Text", a wiki-like format that predates Maven's support for Markdown. It is still supported, but the Maven project itself has moved its own documentation off it; see the [APT Format](/doxia/references/apt-format.html) reference if you are maintaining an existing page, and [doxia-converter](/doxia/doxia-tools/doxia-converter/) if you would like to convert one,
+- `markdown`: the well known [Markdown](https://en.wikipedia.org/wiki/Markdown) format (supported since Maven Site Plugin 3.3), and the one this page is written in. It is what new documentation should use,
+- `apt`: the APT format, "Almost Plain Text", a wiki-like format that predates Maven's support for Markdown. It is still supported, but the Maven project itself has moved its own documentation off it; see the [APT Format](/doxia/references/apt-format.html) reference if you are maintaining an existing page, and [Migrating APT to Markdown](/doxia/migrating-apt-to-markdown.html) if you would like to convert one,
 - `fml`: the FML format is the [FAQ format](/doxia/references/fml-format.html),
-- `xdoc`: an XML document conforming to a small and simple set of tags, see the [full reference](/doxia/references/xdoc-format.html).
+- `xdoc`: an XML document conforming to a small and simple set of tags, see the [full reference](/doxia/references/xdoc-format.html),
+- `xhtml`: plain XHTML documents.
 
-Other formats are available, but at this point these 4 are the best tested.
+Other formats are available, but at this point the first 4 are the best tested. Any other format for which a Doxia parser exists (see the list of [Doxia Markup Languages](/doxia/references/index.html)) can be used as well, but you need to add the corresponding Doxia module to the dependencies of the Maven Site Plugin.
 
-There are also several possible output formats, but as of Maven Site Plugin, only XHTML is available.
+There are also several possible output formats, but as of Maven Site Plugin, only XHTML5 is available.
 
-Note that all of the above is optional - just one index file is required in one of the input trees. Each of the paths will be merged together to form the root directory of the site.
+Note that all of the above is optional - just one index file is required in one of the input trees. Each of the paths will be merged together to form the root directory of the site. After running `mvn site` on the example above you will end up with this in your `target` directory:
+
+```
++- target/
+   +- site/
+      +- css/
+      |
+      +- images/
+      |
+      +- index.html
+      +- content.html
+      +- general.html
+      +- faq.html
+      +- other.html
+      +- xhtml-content.html
+```
+
+This means that `src/site/apt/content.apt` is available in the site as `/content.html`, whichever directory it comes from. So, in your [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html) you link to `index.html` and `other.html`, where the sources of these two files are `src/site/markdown/index.md` and `src/site/xdoc/other.xml`.
+
+The `css` and `images` directories contain the stylesheets and images of the skin being used.
 
 ## Customizing the Look &amp; Feel
 
@@ -63,9 +86,7 @@ If you want to tune the way your site looks, you can use a custom **skin** to pr
 
 You can visit the [Skins index](/skins/) to have a look at some of the skins that you can use to change the look of your site.
 
-<!--  TODO: The following link is currently not available. Restore it when it becomes available again.-->
-<!--  For an in-depth discussion of site customization, please have a look at the-->
-<!--  {{{http://www.sonatype.com/book/site-generation.html} Maven User Guide, Chapter 9, "Site Generation"}}.-->
+To build a skin of your own, see [Creating a skin](/skins/#Creating_a_skin).
 
 ## Generating the Site
 
@@ -117,7 +138,7 @@ For example with a project hosted on GitHub and using GitHub Pages for its site 
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-scm-publish-plugin</artifactId>
-  <version>3.1.0</version>
+  <version>3.3.0</version>
   <configuration>
     <pubScmUrl>${project.scm.developerConnection}</pubScmUrl>
     <scmBranch>gh-pages</scmBranch>
@@ -190,9 +211,95 @@ You can add any arbitrary resource to your site by including them in a `resource
             +- pic1.jpg
 ```
 
-The file `site.css` will be added to the default XHTML output, so it can be used to adjust the default Maven stylesheets if desired.
+The file `site.css` will be added to the default XHTML5 output, so it can be used to adjust the default Maven stylesheets if desired.
 
 The file `pic1.jpg` will be available via a relative reference to the `images` directory from any page in your site.
+
+## Using Properties in Content
+
+To add simple logic to your content, for example to filter properties, add a `.vm` extension to the file name (this is valid for all supported formats). [Apache Velocity](https://velocity.apache.org/) is the templating engine.
+
+For example, the Maven website itself has a [`content/xdoc/download.xml.vm`](https://github.com/apache/maven-site/blob/master/content/xdoc/download.xml.vm) file, which uses the expression `${currentStableVersion}` to filter in a property set in the [POM](https://github.com/apache/maven-site/blob/master/pom.xml).
+
+Some properties are defined by default: see [Doxia Site Renderer's Velocity processing reference](/doxia/doxia-sitetools/doxia-site-renderer/#Velocity_processing) for more information. For a complete usage overview, see Velocity's [user guide](https://velocity.apache.org/engine/2.3/user-guide.html).
+
+Since version 3.5 of the Maven Site Plugin, you can save the processed markup by setting [`saveProcessedContent`](/plugins/maven-site-plugin/site-mojo.html#saveProcessedContent) to `true`.
+
+### Common Issues and Workarounds
+
+- **Dotted properties**: Velocity uses a dot notation to traverse beans, so you **cannot** use dotted properties defined in `<properties>` directly. Access them through the `$context` tool instead: for example `$context.get("my.property")`.
+- **Markdown conflicts with Velocity on the `##` syntax**: `##` starts a [single line comment](https://velocity.apache.org/engine/2.3/vtl-reference.html#single-line-comments) in Velocity, so Markdown headings written with it are suppressed from the generated content. Use the [unparsed content syntax](https://velocity.apache.org/engine/2.3/vtl-reference.html#unparsed-content), `#[[## Heading]]#`, or the [escape tool](https://velocity.apache.org/tools/3.1/apidocs/org/apache/velocity/tools/generic/EscapeTool.html), `${esc.h}${esc.h} Heading`. The same tool writes a literal `$` as `${esc.d}`.
+
+### Filtering with Maven Resources Plugin
+
+Velocity has drawbacks for plain property interpolation:
+
+- not everyone is familiar with the Velocity syntax,
+- the web-based preview (for example on GitHub) does not work,
+- Velocity and Markdown both use `##`, for different purposes, and
+- the overhead is large for simple replacements.
+
+For simple property interpolation, regular [Maven filtering](./guide-filtering-resources.html) is often more suitable. Create a dedicated source directory that [`maven-resources-plugin:copy-resources`](/plugins/maven-resources-plugin/copy-resources-mojo.html) processes before the site is created. In the following example, the directory `src/site` is copied with filtering to `target/site-src`:
+
+```xml
+<project>
+  ...
+  <build>
+    <plugins>
+      <plugin>
+        <!-- prepare site content by filtering ${project.*} values -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>filter-site</id>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${project.build.directory}/site-src</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>src/site</directory>
+                  <filtering>true</filtering>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+</project>
+```
+
+Then generate the site from the filtered sources by adjusting the [`siteDirectory`](/plugins/maven-site-plugin/site-mojo.html#siteDirectory) of the Maven Site Plugin. Also adjust the [`alternativeSiteSourceDirectories`](/plugins/maven-site-plugin/site-mojo.html#alternativeSiteSourceDirectories), which the edit buttons use:
+
+```xml
+<project>
+  ...
+  <build>
+    <plugins>
+      ...
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <configuration>
+          <siteDirectory>${project.build.directory}/site-src</siteDirectory>
+          <alternativeSiteSourceDirectories>${basedir}/src/site</alternativeSiteSourceDirectories>
+        </configuration>
+      </plugin>
+      ...
+    </plugins>
+  </build>
+</project>
+```
+
+## Multi-module Sites
+
+Running `mvn site` on a multi-module project builds the site of every module individually, and relative links between module sites work only after you stage or deploy. See [Building multi-module sites](./guide-multimodule-site.html) for staging, deployment, site descriptor inheritance and aggregate reports.
 
 ## Configuring Reports
 
@@ -220,7 +327,7 @@ To add these reports to your site, you must add the Project Info Reports plugin 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.8</version><!-- define version here if not already defined in build/plugins or build/pluginManagement -->
+        <version>3.9.0</version><!-- define version here if not already defined in build/plugins or build/pluginManagement -->
       </plugin>
     </plugins>
   </reporting>
@@ -238,7 +345,7 @@ Many other plugins provide reporting goals: look for "R" (Reporting) value in th
 
 ## Internationalization
 
-Internationalization in Maven is very simple, as long as the reports you are using have that particular locale defined. For an overview of supported languages and instructions on how to add further languages, please see the related article [Internationalization](../../plugins/maven-site-plugin/i18n.html) from the Maven Site Plugin.
+Internationalization in Maven is very simple, as long as the reports you are using have that particular locale defined. For an overview of supported languages and instructions on how to add further languages, see [Internationalization](/plugins/localization.html).
 
 To enable multiple locales, add a configuration similar to the following to your POM:
 
@@ -250,9 +357,9 @@ To enable multiple locales, add a configuration similar to the following to your
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-site-plugin</artifactId>
-        <version>3.4</version>
+        <version>3.22.0</version>
         <configuration>
-          <locales>en,fr</locales>
+          <locales>default,fr</locales>
         </configuration>
       </plugin>
     </plugins>
@@ -261,7 +368,7 @@ To enable multiple locales, add a configuration similar to the following to your
 </project>
 ```
 
-This will generate both an English and a French version of the site. If `en` is your current locale, then it will be generated at the root of the site, with a copy of the French translation of the site in the `fr/` subdirectory.
+This generates both a default (`Locale#ROOT`) and a French version of the site. The default version is at the root of the site, with a copy of the French translation in the `fr/` subdirectory.
 
 To add your own content for that translation instead of using the default, place a subdirectory with that locale name in your site directory and create a new site descriptor with the locale in the file name. For example:
 
@@ -279,4 +386,4 @@ To add your own content for that translation instead of using the default, place
       +- site_fr.xml      (French site descriptor)
 ```
 
-With one site descriptor per language, the translated site(s) can evolve independently.
+With one site descriptor per language, the translated sites can evolve independently.
