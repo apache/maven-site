@@ -27,6 +27,7 @@ Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/mave
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
 
+Redirect Permanent /plugins/maven-artifact-plugin/reproducible.html /guides/mini/guide-reproducible-builds.html#Reading_the_artifact.3Acompare_output
 Redirect Permanent /shared/maven-archiver/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath
 Redirect Permanent /shared/maven-archiver/examples/manifest.html /guides/mini/guide-manifest.html#Default_Manifest
 Redirect Permanent /shared/maven-archiver/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
