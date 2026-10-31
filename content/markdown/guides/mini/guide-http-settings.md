@@ -23,7 +23,7 @@ under the License.
 
 <!-- MACRO{toc} -->
 
-You can use the default wagon implementation for a given protocol, or select an alternative wagon provider on a per-protocol basis; see the [Guide to Wagon Providers](./guide-wagon-providers.html). With Maven 3.9.0 and later, Wagon is used when you select it with `-Dmaven.resolver.transport=wagon`. The native HTTP transport reads only the `<all>` block of `httpConfiguration` (`get`, `head` and `put` are ignored) and warns about the deprecation, so the per-method configuration below applies to Wagon only.
+Maven bundles `wagon-http` for HTTP and HTTPS; see the [Guide to Wagon Providers](./guide-wagon-providers.html). With Maven 3.9.0 and later, Wagon is used when you select it with `-Dmaven.resolver.transport=wagon`. The native HTTP transport reads only the `<all>` block of `httpConfiguration` (`get`, `head` and `put` are ignored) and warns about the deprecation, so the per-method configuration below applies to Wagon only.
 
 This page documents the `<configuration>` block that
 [wagon-http](https://maven.apache.org/wagon/wagon-providers/wagon-http/) reads — headers, request parameters,
