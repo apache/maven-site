@@ -192,7 +192,7 @@ For detailed explanations, see [Maven "Reproducible/Verifiable Builds" Wiki page
   Details depend on your release process tooling:
 
   - if you use [maven-release-plugin](/plugins/maven-release-plugin/), you'll need **version 3.0.0-M1 or later**: it will automatically update the timestamp value in `pom.xml` during the release in the same commit that updates version,
-  - if you have a custom release process tooling, you'll need to add the feature to your release tooling. Notice that if you're using `versions-maven-plugin` in custom release scripts, starting with release 2.9.0, [`versions:set` goal updates the property](https://github.com/mojohaus/versions-maven-plugin/issues/453).
+  - if you have a custom release process tooling, you'll need to add the feature to your release tooling. Notice that if you're using `versions-maven-plugin` in custom release scripts, starting with release 2.9.0, [`versions:set` goal updates the property](https://github.com/mojohaus/versions/issues/453).
   - instead of explicitly writing a timestamp in their `pom.xml`, some people tend to prefer using last Git commit timestamp, like `${git.commit.time}` from [git-commit-id-maven-plugin](https://github.com/git-commit-id/git-commit-id-maven-plugin) (with `<dateFormatTimeZone>UTC</dateFormatTimeZone>` to be independent from user's timezone).
 
 Don't hesitate to share your questions or solutions on [user mailing-list](/mailing-lists.html).

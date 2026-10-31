@@ -27,8 +27,8 @@ The following table lists skins that are available for you to use in your Maven 
 
 | **Skin**                                          | **Version** | Site Plugin Version | **Description**              | **Source Repository**                                                                                                     | **Issue Tracking**                                                  |
 |:--------------------------------------------------|:------------|:--------------------|:-----------------------------|:--------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
-| [ `Maven Fluido Skin`](/skins/maven-fluido-skin/) | 2.1.0       | [3.21.0,)           | Skin based on Bootstrap CSS. | [Git](http://gitbox.apache.org/repos/asf/maven-fluido-skin.git) / [GitHub](https://github.com/apache/maven-fluido-skin/)  | [GitHub Issues](https://github.com/apache/maven-fluido-skin/issues) |
-| [ `Maven Fluido Skin`](/skins/maven-fluido-skin/) | 1.12.0      | [3.10.0,3.20.0)     | Skin based on Bootstrap CSS. | [Git](http://gitbox.apache.org/repos/asf/maven-fluido-skin.git/) / [GitHub](https://github.com/apache/maven-fluido-skin/) | [GitHub Issues](https://github.com/apache/maven-fluido-skin/issues) |
+| [ `Maven Fluido Skin`](/skins/maven-fluido-skin/) | 2.1.0       | [3.21.0,)           | Skin based on Bootstrap CSS. | [Git](https://gitbox.apache.org/repos/asf/maven-fluido-skin.git) / [GitHub](https://github.com/apache/maven-fluido-skin/)  | [GitHub Issues](https://github.com/apache/maven-fluido-skin/issues) |
+| [ `Maven Fluido Skin`](/skins/maven-fluido-skin/) | 1.12.0      | [3.10.0,3.20.0)     | Skin based on Bootstrap CSS. | [Git](https://gitbox.apache.org/repos/asf/maven-fluido-skin.git) / [GitHub](https://github.com/apache/maven-fluido-skin/) | [GitHub Issues](https://github.com/apache/maven-fluido-skin/issues) |
 
 ### Retired
 
