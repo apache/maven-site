@@ -23,6 +23,7 @@ under the License.
 - [Creating Assemblies]($prefix/guide-assemblies.html)
 - [Configuring Archive Plugins]($prefix/guide-archive-configuration.html)
 - [Configuring Maven]($prefix/guide-configuring-maven.html)
+- [Filtering Resources]($prefix/guide-filtering-resources.html)
 - [Generating Sources]($prefix/guide-generating-sources.html)
 - [Working with Manifests]($prefix/guide-manifest.html)
 - [Maven Classloading]($prefix/guide-maven-classloading.html)

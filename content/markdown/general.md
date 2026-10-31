@@ -21,6 +21,8 @@ under the License.
 
 <!--MACRO{toc|fromDepth=2}-->
 
+<a id="encoding-warning"></a>
+
 ## How do I prevent "[WARNING] Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!"
 
 This or a similar warning is emitted by a plugin that processes plain text files but has not been configured to
