@@ -166,6 +166,8 @@ under the License.
           <item name="Building for Different Environments"
             href="/guides/mini/guide-building-for-different-environments.html"/>
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html"/>
+          <item name="Targeting a Java Version" href="/guides/mini/guide-java-target.html"/>
+          <item name="Building Multi-Release JARs" href="/guides/mini/guide-multi-release-jars.html"/>
           <item name="Maven CI Friendly Version" href="/guides/mini/guide-maven-ci-friendly.html"/>
         </item>
 
