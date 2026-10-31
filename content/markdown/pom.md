@@ -1649,20 +1649,20 @@ version control) is an integral part of any healthy project. If your Maven proje
   through Maven. Where connection requires read access for Maven to be able to find the source
   code (for example, an update), developerConnection requires a connection that will give write
   access. The Maven project has spawned another project named
-  Maven SCM, which creates a common API for any SCMs that wish to implement it. The most popular
-  are CVS and Subversion, however, there is a growing list of other supported
-  [SCMs](/scm/scms-overview.html). All SCM connections are made
-  through a common URL structure.
+  Maven SCM, which creates a common API for any SCMs that wish to implement it.
+  All SCM connections are made through a common URL structure.
 
 ```
 scm:[provider]:[provider_specific]
 ```
 
-Where provider is the type of SCM system. For example, connecting to a CVS repository may look like this:
+Where provider is the type of SCM system. For example, connecting to a Git repository may look like this:
 
 ```
-scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
+scm:git:https://github.com/example/my-project.git
 ```
+
+The [SCM URLs](./pom-scm-urls.html) page describes the URL format and the URLs of the supported SCMs.
 
 * `<tag>`:
   Specifies the tag that this project lives under. HEAD (meaning, the SCM root) is the default.

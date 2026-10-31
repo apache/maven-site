@@ -23,6 +23,10 @@ Redirect Permanent /developers/release/pmc-release-process.html /developers/rele
 Redirect Permanent /development-process.html /archives/maven-1.x/development-process.html
 Redirect Permanent /welcome-to-new-committers.html /developers/welcome-to-new-committers.html
 
+Redirect Permanent /scm/local.html /pom-scm-urls.html#Local_file_system
+Redirect Permanent /scm/scm-url-format.html /pom-scm-urls.html
+Redirect Permanent /scm/scms-overview.html /pom-scm-urls.html#Supported_SCMs
+
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
