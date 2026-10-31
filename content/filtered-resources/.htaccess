@@ -37,6 +37,9 @@ Redirect Permanent /plugins/maven-compiler-plugin/examples/compile-using-differe
 Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-release.html /guides/mini/guide-java-target.html
 Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html /guides/mini/guide-java-target.html#Using_the_source_and_target_Options
 Redirect Permanent /plugins/maven-compiler-plugin/multirelease.html /guides/mini/guide-multi-release-jars.html
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-ftp.html /guides/mini/guide-deployment-transports.html#FTP
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-http.html /guides/mini/guide-deployment-transports.html#HTTP.28S.29
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-ssh-external.html /guides/mini/guide-deployment-transports.html#SSH_with_external_executables
 Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/index.html /guides/mini/guide-using-toolchains.html
 Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/jdk.html /guides/mini/guide-using-toolchains.html#JDK_Toolchain
 Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/custom.html /guides/mini/guide-using-toolchains.html#Custom_Toolchains

@@ -79,6 +79,7 @@ Maven Repository Centre
 - [Large Scale Centralized Deployments](./mini/guide-large-scale-centralized-deployments.html)
 - [Mirror Settings](./mini/guide-mirror-settings.html)
 - [Deployment and Security Settings](./mini/guide-deployment-security-settings.html)
+- [Deploying over HTTP, FTP and SSH](./mini/guide-deployment-transports.html)
 - [Using Proxies](./mini/guide-proxies.html)
 - [Authenticated HTTPS](./mini/guide-repository-ssl.html)
 - [Remote repository access through authenticated HTTPS](./mini/guide-repository-ssl.html)
