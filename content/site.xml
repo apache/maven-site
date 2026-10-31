@@ -135,7 +135,9 @@ under the License.
             <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
             <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
           </item>
-          <item name="POM 4.0.0 Reference" href="/pom.html"/>
+          <item name="POM 4.0.0 Reference" href="/pom.html" collapse="true">
+            <item name="SCM URLs" href="/pom-scm-urls.html"/>
+          </item>
           <item name="Settings Reference"
                 href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         </item>

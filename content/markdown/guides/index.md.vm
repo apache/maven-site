@@ -56,6 +56,7 @@ User Centre
 - [Profiles](./introduction/introduction-to-profiles.html)
 - [Configuring Plug-ins](./mini/guide-configuring-plugins.html)
 - [POM Overview](../pom.html) ([Technical Project Descriptor](../ref/current/maven-model/maven.html))
+- [SCM URLs](../pom-scm-urls.html)
 - [Settings Overview](../settings.html) ([Technical Settings Descriptor](../ref/current/maven-settings/settings.html))
 
 Plugin Developer Centre
