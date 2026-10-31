@@ -55,3 +55,4 @@ Sections:
 * [Layout](layout.md)
 * [Local Repositories](local.md)
 * [Remote Repositories](remote.md)
+* [Dependency Resolution Misconceptions](dependency-resolution-misconceptions.md)
