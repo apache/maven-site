@@ -67,6 +67,7 @@ under the License.
           <item name="FML Format" href="/doxia/references/fml-format.html"/>
           <item name="Xdoc Format" href="/doxia/references/xdoc-format.html"/>
         </item>
+        <item name="Migrating APT to Markdown" href="/doxia/migrating-apt-to-markdown.html"/>
         <item name="Doxia Modules Guide" href="/doxia/modules/index.html"/>
         <item name="Doxia Macros Guide" href="/doxia/macros/index.html"/>
         <item name="Issues &amp; Gotchas" href="/doxia/issues/index.html"/>
