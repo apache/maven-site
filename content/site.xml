@@ -96,6 +96,7 @@ under the License.
 
           <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
             <item name="Markup Formats" href="/doxia/references/index.html"/>
+            <item name="Multi-module Sites" href="/guides/mini/guide-multimodule-site.html"/>
             <item name="Snippet Macro" href="/guides/mini/guide-snippet-macro.html"/>
           </item>
           <item name="Archetypes" href="/guides/introduction/introduction-to-archetypes.html" collapse="true">

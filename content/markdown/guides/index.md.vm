@@ -47,6 +47,7 @@ User Centre
 #[[#### Site]]#
 
 - [Creating a Site](./mini/guide-site.html)
+- [Building Multi-module Sites](./mini/guide-multimodule-site.html)
 - [The APT Format](/doxia/references/apt-format.html)
 - [Snippet Macro](./mini/guide-snippet-macro.html)
 #[[### Getting Started with Maven]]#

@@ -67,3 +67,21 @@ For example, to use the Maven Fluido Skin, you would include this in your `site.
 </site>
 ```
 
+## Creating a skin
+
+If you want to tune the way your site looks, you can use a custom skin to provide your own CSS stylesheets. If that is still not enough, you can tweak the output templates that Maven uses to generate the site documentation.
+
+A skin contains the following elements:
+
+- Resources to copy into each project (such as images used by the CSS)
+- A couple of CSS files, containing the visual styling
+- A Velocity template in `/META-INF/maven/site.vm` for an alternate HTML rendering of the site
+- Since Maven Site Plugin 3.5, an optional [skin descriptor](/doxia/doxia-sitetools/doxia-skin-model/index.html) in `/META-INF/maven/skin.xml` containing metadata about the skin
+
+The [`maven-archetype-site-skin` archetype](/archetypes/maven-archetype-site-skin/) creates a complete new skin project, including its dedicated `/META-INF/maven/site.vm`.
+
+A skin is built like any other JAR, with a `packaging` of `jar`. No additional plugins are needed. Put resources in the normal `src/main/resources` directory. Once the JAR is built and deployed, projects can use it.
+
+To construct your own CSS, copy the file [`maven-theme.css`](https://github.com/apache/maven-fluido-skin/tree/master/src/main/resources/css/maven-theme.css) from Maven Fluido Skin and modify it to suit your needs.
+
+The format of the Velocity template is out of scope for this page. For more information about how to write Velocity templates see the [Velocity User Guide](https://velocity.apache.org/engine/2.3/user-guide.html) and the [Velocity Template Language Reference Guide](https://velocity.apache.org/engine/2.3/vtl-reference.html). Velocity 2.3 is used since Maven Site Plugin 4.0.0-M2; version 1.7 was used previously.
