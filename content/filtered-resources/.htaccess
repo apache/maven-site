@@ -30,6 +30,9 @@ Redirect Permanent /scm/scms-overview.html /pom-scm-urls.html#Supported_SCMs
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
+Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-release.html /guides/mini/guide-java-target.html
+Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html /guides/mini/guide-java-target.html#Using_the_source_and_target_Options
+Redirect Permanent /plugins/maven-compiler-plugin/multirelease.html /guides/mini/guide-multi-release-jars.html
 
 Redirect Permanent /plugins/maven-artifact-plugin/reproducible.html /guides/mini/guide-reproducible-builds.html#Reading_the_artifact.3Acompare_output
 Redirect Permanent /shared/maven-archiver/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath

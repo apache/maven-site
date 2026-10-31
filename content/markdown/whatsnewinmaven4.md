@@ -661,7 +661,7 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [3]: https://en.wikipedia.org/wiki/Java_Platform_Module_System
 [4]: https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#bill-of-materials-bom-poms
 [5]: https://www.youtube.com/watch?v=ZD_YxTmQ16Q&t=16710s
-[6]: https://maven.apache.org/plugins/maven-compiler-plugin/examples/set-compiler-release.html
+[6]: https://maven.apache.org/guides/mini/guide-java-target.html
 [7]: https://maven.apache.org/guides/mini/guide-using-toolchains.html
 [8]: https://maarten.mulders.it/2021/03/introduction-to-maven-toolchains/
 [9]: https://issues.apache.org/jira/projects/MNG/issues/MNG-8061

@@ -33,4 +33,6 @@ under the License.
 - [Using Extensions]($prefix/guide-using-extensions.html)
 - [Building For Different Environments]($prefix/guide-building-for-different-environments.html)
 - [Using Toolchains]($prefix/guide-using-toolchains.html)
+- [Targeting a Java Version]($prefix/guide-java-target.html)
+- [Building Multi-Release JARs]($prefix/guide-multi-release-jars.html)
 - [Injecting POM Properties via settings.xml](/examples/injecting-properties-via-settings.html)
