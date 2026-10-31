@@ -23,6 +23,9 @@ Redirect Permanent /developers/release/pmc-release-process.html /developers/rele
 Redirect Permanent /development-process.html /archives/maven-1.x/development-process.html
 Redirect Permanent /welcome-to-new-committers.html /developers/welcome-to-new-committers.html
 
+Redirect Permanent /plugins/maven-resources-plugin/examples/encoding.html /guides/mini/guide-filtering-resources.html#Encoding
+Redirect Permanent /plugins/maven-resources-plugin/examples/escape-filtering.html /guides/mini/guide-filtering-resources.html#Escaping
+Redirect Permanent /plugins/maven-resources-plugin/examples/filter.html /guides/mini/guide-filtering-resources.html
 Redirect Permanent /scm/local.html /pom-scm-urls.html#Local_file_system
 Redirect Permanent /scm/scm-url-format.html /pom-scm-urls.html
 Redirect Permanent /scm/scms-overview.html /pom-scm-urls.html#Supported_SCMs
