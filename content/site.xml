@@ -20,10 +20,11 @@ under the License.
 -->
 
 
-<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd"
+<site xmlns="http://maven.apache.org/SITE/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd"
       name="Maven">
   <version position="none"/>
+  <mermaid/>
 
   <body>
     <links>
@@ -70,6 +71,7 @@ under the License.
         <item name="Migrating APT to Markdown" href="/doxia/migrating-apt-to-markdown.html"/>
         <item name="Doxia Modules Guide" href="/doxia/modules/index.html"/>
         <item name="Doxia Macros Guide" href="/doxia/macros/index.html"/>
+        <item name="Mermaid Diagrams" href="/doxia/mermaid-diagrams.html"/>
         <item name="Issues &amp; Gotchas" href="/doxia/issues/index.html"/>
         <item name="External Resources" href="/doxia/resources.html"/>
         <item name="Developer Docs" href="/doxia/developers/index.html" collapse="true">
