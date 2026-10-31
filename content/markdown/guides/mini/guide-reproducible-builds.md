@@ -81,6 +81,98 @@ If something is still not reproducible after initial setup and [automatic check 
 2. Find the plugin that generated this output.
 3. Check if a reproducible version of the plugin is available. If not, please open an issue to help plugin maintainers improving Reproducible Builds support at every plugin level.
 
+### Reading the artifact:compare output
+
+If `artifact:compare` reports that the current build output is not the same as the reference, the log shows where to look. This example rebuilds Doxia 1.9.1 against the release published on Central:
+
+```
+$ mvn -Papache-release clean verify -Dgpg.skip artifact:compare
+[INFO] Scanning for projects...
+...
+[INFO] --- maven-artifact-plugin:3.7.0:buildinfo (default-cli) @ doxia-module-markdown ---
+[INFO] Saved aggregate info on build to /tmp/doxia-1.9.1/doxia-modules/doxia-module-markdown/target/doxia-module-markdown-1.9.1.buildinfo
+[INFO] Checking against reference build from central...
+Downloading from central: https://repo.maven.apache.org/maven2/org/apache/maven/doxia/doxia-module-markdown/1.9.1/doxia-module-markdown-1.9.1.buildinfo
+[WARNING] Reference buildinfo file not found: it will be generated from downloaded reference artifacts
+[INFO] Reference build java.version: 1.8 (from MANIFEST.MF Build-Jdk-Spec)
+[INFO] Reference build java.version: 1.8 (from MANIFEST.MF Build-Jdk-Spec)
+[ERROR] Current build java.version: 1.7 (from MANIFEST.MF Build-Jdk-Spec)
+[INFO] Reference build os.name: Unix (from pom.properties newline)
+[INFO] Minimal buildinfo generated from downloaded artifacts: /tmp/doxia-1.9.1/target/reference/doxia-module-markdown-1.9.1.buildinfo
+[WARNING] size mismatch doxia-logging-api-1.9.1.jar: investigate with diffoscope target/reference/doxia-logging-api-1.9.1.jar doxia-logging-api/target/doxia-logging-api-1.9.1.jar
+...
+[WARNING] size mismatch doxia-module-markdown-1.9.1.jar: investigate with diffoscope target/reference/doxia-module-markdown-1.9.1.jar doxia-modules/doxia-module-markdown/target/doxia-module-markdown-1.9.1.jar
+[WARNING] Reproducible Build output summary: 39 files ok, 18 different
+[WARNING] see diff target/reference/doxia-module-markdown-1.9.1.buildinfo doxia-modules/doxia-module-markdown/target/doxia-module-markdown-1.9.1.buildinfo
+[WARNING] see also https://maven.apache.org/guides/mini/guide-reproducible-builds.html
+[INFO] Reproducible Build output comparison saved to /tmp/doxia-1.9.1/doxia-modules/doxia-module-markdown/target/doxia-module-markdown-1.9.1.buildcompare
+[INFO] Aggregate buildcompare copied to /tmp/doxia-1.9.1/target/doxia-1.9.1.buildcompare
+...
+```
+
+The log has several parts worth reading:
+
+- the summary: `[WARNING] Reproducible Build output summary: 39 files ok, 18 different`
+- key information on reference build environment:  
+    `[INFO] Reference build java.version: 1.8 (from MANIFEST.MF Build-Jdk-Spec)`  
+    `[INFO] Reference build os.name: Unix (from pom.properties newline)`  
+    which are the key requirements (JDK major version and Operating System) for the build environment to reproduce the reference build
+- eventual mismatch with current build environment:  
+    `[ERROR] Current build java.version: 1.7 (from MANIFEST.MF Build-Jdk-Spec)`
+- on each artifact different from reference, a command is provided to investigate differences using [diffoscope tool](https://diffoscope.org/), a diff tool working inside archives (jar, zip, tar, ...):  
+    simply copy paste provided command like `diffoscope target/reference/doxia-logging-api-1.9.1.jar doxia-logging-api/target/doxia-logging-api-1.9.1.jar` and you'll see where differences are:
+
+    ```shell
+    $ diffoscope target/reference/doxia-logging-api-1.9.1.jar doxia-logging-api/target/doxia-logging-api-1.9.1.jar
+    --- target/reference/doxia-logging-api-1.9.1.jar
+    +++ doxia-logging-api/target/doxia-logging-api-1.9.1.jar
+    ├── zipinfo /dev/stdin
+    │ @@ -1,8 +1,8 @@
+    │ -Zip file size: 11516 bytes, number of entries: 19
+    │ +Zip file size: 11497 bytes, number of entries: 19
+    │  -rw-r--r--  2.0 unx      337 b- defN 20-Feb-13 21:11 META-INF/MANIFEST.MF
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 META-INF/
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 org/
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 org/apache/
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 org/apache/maven/
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 org/apache/maven/doxia/
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 org/apache/maven/doxia/logging/
+    │ @@ -11,11 +11,11 @@
+    │  drwxr-xr-x  2.0 unx        0 b- stor 20-Feb-13 21:11 META-INF/maven/org.apache.maven.doxia/doxia-logging-api/
+    │  -rw-r--r--  2.0 unx     1641 b- defN 20-Feb-13 21:11 META-INF/DEPENDENCIES
+    │  -rw-r--r--  2.0 unx    11358 b- defN 20-Feb-13 21:11 META-INF/LICENSE
+    │  -rw-r--r--  2.0 unx      177 b- defN 20-Feb-13 21:11 META-INF/NOTICE
+    │  -rw-r--r--  2.0 unx      716 b- defN 20-Feb-13 21:11 org/apache/maven/doxia/logging/Log.class
+    │  -rw-r--r--  2.0 unx      198 b- defN 20-Feb-13 21:11 org/apache/maven/doxia/logging/LogEnabled.class
+    │  -rw-r--r--  2.0 unx     2840 b- defN 20-Feb-13 21:11 org/apache/maven/doxia/logging/PlexusLoggerWrapper.class
+    │ --rw-r--r--  2.0 unx     4208 b- defN 20-Feb-13 21:11 org/apache/maven/doxia/logging/SystemStreamLog.class
+    │ +-rw-r--r--  2.0 unx     4192 b- defN 20-Feb-13 21:11 org/apache/maven/doxia/logging/SystemStreamLog.class
+    │  -rw-r--r--  2.0 unx     1539 b- defN 20-Feb-13 21:11 META-INF/maven/org.apache.maven.doxia/doxia-logging-api/pom.xml
+    │  -rw-r--r--  2.0 unx       74 b- defN 20-Feb-13 21:11 META-INF/maven/org.apache.maven.doxia/doxia-logging-api/pom.properties
+    │ -19 files, 23088 bytes uncompressed, 8842 bytes compressed:  61.7%
+    │ +19 files, 23072 bytes uncompressed, 8823 bytes compressed:  61.8%
+    ├── META-INF/MANIFEST.MF
+    │ @@ -1,10 +1,10 @@
+    │  Manifest-Version: 1.0
+    │ +Implementation-Vendor: The Apache Software Foundation
+    │  Implementation-Title: Doxia :: Logging API
+    │  Implementation-Version: 1.9.1
+    │ +Build-Jdk-Spec: 1.7
+    │  Specification-Vendor: The Apache Software Foundation
+    │ -Specification-Title: Doxia :: Logging API
+    │ -Build-Jdk-Spec: 1.8
+    │  Created-By: Maven Jar Plugin 3.2.0
+    │ +Specification-Title: Doxia :: Logging API
+    │  Specification-Version: 1.9
+    │ -Implementation-Vendor: The Apache Software Foundation
+    ├── org/apache/maven/doxia/logging/PlexusLoggerWrapper.class
+    ...
+    ```
+
+In this example, reference build was done with JDK 8 (see `│ -Build-Jdk-Spec: 1.8`), but the current build was done with JDK 7 (see `│ +Build-Jdk-Spec: 1.7`): this explains both difference in content of `META-INF/MANIFEST.MF` of every .jar file, but also of some bytecode in `.class` files.
+
+When general environment issues have been fixed, find for each remaining issue which Maven plugin generated the content, and check whether an update of that plugin generates reproducible output: the [required upgrades list](/plugins/maven-artifact-plugin/plugin-issues.html) is a starting point.
+
 ## More Details
 
 Reproducible Builds for Maven:
