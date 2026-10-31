@@ -49,7 +49,7 @@ Doxia can be used to transform an arbitrary input document to any supported outp
 
 It is recommended that you use [Plexus](http://plexus.codehaus.org/) to look up the parser. In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
 
-You could also use the [Doxia Converter Tool](http://maven.apache.org/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir.
+You could also use the [Doxia Converter Tool](/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir. To move a site from APT to Markdown, see [Migrating APT to Markdown](/doxia/migrating-apt-to-markdown.html).
 
 ## <a id="Generating_documents"></a>Generating documents
 
