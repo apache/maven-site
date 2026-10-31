@@ -110,3 +110,14 @@ RedirectMatch ^/archives/maven-apache-parent-LATEST(.*)$ /pom-archives/asf-LATES
 RedirectMatch ^/archives/maven-parent-LATEST(.*)$ /pom-archives/maven-LATEST$1
 RedirectMatch ^/archives/(maven-.*-skin)-LATEST(.*)$ /skins-archives/$1-LATEST$2
 RedirectMatch ^/archives/(maven-.*-extension)-LATEST(.*)$ /extensions-archives/$1-LATEST$2
+
+# used in ATR announce templates - https://maven.apache.org/release-notes/{{PROJECT_KEY}}/{{VERSION}}
+# redirect to the GitHub release page, the Git tag is usually <artifactId>-<version>
+
+# first matching rule wins - specific rules must precede generic ones
+RedirectMatch ^/release-notes/maven-apache-parent/([^/]+)$ https://github.com/apache/maven-apache-parent/releases/tag/apache-$1
+RedirectMatch ^/release-notes/maven-apache-resources/([^/]+)$ https://github.com/apache/maven-apache-resources/releases/tag/apache-resource-bundles-$1
+RedirectMatch ^/release-notes/maven-archetypes/([^/]+)$ https://github.com/apache/maven-archetypes/releases/tag/maven-archetype-bundles-$1
+RedirectMatch ^/release-notes/maven-mvnd/([^/]+)$ https://github.com/apache/maven-mvnd/releases/tag/$1
+RedirectMatch ^/release-notes/maven-(doxia|doxia-converter|doxia-sitetools|enforcer|executor|file-management|jxr|surefire|wagon)/([^/]+)$ https://github.com/apache/maven-$1/releases/tag/$1-$2
+RedirectMatch ^/release-notes/([^/]+)/([^/]+)$ https://github.com/apache/$1/releases/tag/$1-$2
