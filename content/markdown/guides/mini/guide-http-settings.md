@@ -23,343 +23,496 @@ under the License.
 
 <!-- MACRO{toc} -->
 
-You can use the default wagon implementation for a given protocol, or you can select an alternative wagon `provider` on a per-protocol basis. For more information, see the [Guide to Wagon Providers](./guide-wagon-providers.html) [3]. The default wagon http(s) is the HttpClient based on [Apache Http Client 4.5](https://hc.apache.org/httpcomponents-client-4.5.x/). HTTP connection pooling prevents reopening new connections to the same server for each request. This pool feature is configurable with some parameters [4]. The default wagon comes with some default configuration:
+You can use the default wagon implementation for a given protocol, or select an alternative wagon provider on a per-protocol basis; see the [Guide to Wagon Providers](./guide-wagon-providers.html). With Maven 3.9.0 and later, Wagon is used when you select it with `-Dmaven.resolver.transport=wagon`. The native HTTP transport reads only the `<all>` block of `httpConfiguration` (`get`, `head` and `put` are ignored) and warns about the deprecation, so the per-method configuration below applies to Wagon only.
 
-- http(s) connection pool: default to 20.
-- readTimeout: default to 1800000 (~30 minutes) (see section `Read time out` below)
-- default Preemptive Authentication only with PUT (GET doesn't use anymore default Preemptive Authentication)
+This page documents the `<configuration>` block that
+[wagon-http](https://maven.apache.org/wagon/wagon-providers/wagon-http/) reads — headers, request parameters,
+timeouts, preemptive authentication and authentication scope — and how each setting
+maps onto Apache HttpClient 4.5. It describes Wagon 3.5.3, the version Maven 3.9.x and
+3.10.x ship with. Four behaviours marked "Wagon 3.5.3" below change in later Wagon
+releases, so check the release notes of the Wagon version you use.
 
-## Introduction
+Everything here comes from `AbstractHttpClientWagon` in `wagon-http-shared`, so it
+applies equally to [wagon-webdav-jackrabbit](https://maven.apache.org/wagon/wagon-providers/wagon-webdav-jackrabbit/),
+which extends the same class. It does **not** apply to
+[wagon-http-lightweight](https://maven.apache.org/wagon/wagon-providers/wagon-http-lightweight/), which is a
+different implementation built on `java.net.HttpURLConnection`.
 
-The HttpClient-based HTTP wagon offers more control over the configuration used to access HTTP-based Maven repositories. For starters, you have fine-grained control over what HTTP headers are used when resolving artifacts. In addition, you can also configure a wide range of parameters to control the behavior of HttpClient itself. Best of all, you have the ability to control these headers and parameters for all requests, or individual request types (GET, HEAD, and PUT).
+Settings that are global rather than per-server are exposed as system properties
+instead; see [System properties](#System_properties) at the end.
 
-## The Basics
+## Where configuration goes
 
-Without any special configuration, Maven's HTTP wagon uses some default HTTP headers and client parameters when managing artifacts. The default headers are:
+In a Maven build, per-server configuration lives in `settings.xml`, inside the
+`<server>` whose `<id>` matches the repository or `distributionManagement` id:
+
+```xml
+<settings>
+  <servers>
+    <server>
+      <id>my-repository</id>
+      <username>deploy</username>
+      <password>secret</password>
+      <configuration>
+        <!-- everything on this page goes here -->
+      </configuration>
+    </server>
+  </servers>
+</settings>
+```
+
+The elements inside `<configuration>` are mapped onto the Wagon instance as Plexus
+component configuration: element names correspond to the fields and setters of the
+provider class. Programmatically the same settings are the `setHttpConfiguration`,
+`setHttpHeaders`, `setBasicAuthScope`, `setProxyBasicAuthScope` and
+`setInitialBackoffSeconds` methods of `AbstractHttpClientWagon`.
+
+## `httpConfiguration`
+
+`httpConfiguration` is the main entry point. It is an
+[`HttpConfiguration`](https://maven.apache.org/wagon/apidocs/org/apache/maven/wagon/shared/http/HttpConfiguration.html)
+with five optional children, one for "every method" plus one per HTTP method the
+providers issue:
+
+| Element | Applies to |
+| --- | --- |
+| `all` | every request |
+| `get` | `GET` — downloads |
+| `put` | `PUT` — uploads |
+| `head` | `HEAD` — `resourceExists` |
+| `mkcol` | `MKCOL` — WebDAV collection creation |
+
+Each is an
+[`HttpMethodConfiguration`](https://maven.apache.org/wagon/apidocs/org/apache/maven/wagon/shared/http/HttpMethodConfiguration.html)
+with the same six properties:
+
+| Property | Type | Default |
+| --- | --- | --- |
+| `useDefaultHeaders` | boolean | `true` |
+| `headers` | `Properties` | empty |
+| `params` | `Properties` | empty |
+| `connectionTimeout` | int, milliseconds | 60000 |
+| `readTimeout` | int, milliseconds | 1800000, or the value of the `maven.wagon.rto` system property |
+| `usePreemptive` | boolean | `false` |
+
+```xml
+<configuration>
+  <httpConfiguration>
+    <all>
+      <connectionTimeout>10000</connectionTimeout>
+      <readTimeout>60000</readTimeout>
+      <headers>
+        <User-Agent>my-build/1.0</User-Agent>
+      </headers>
+      <params>
+        <http.protocol.max-redirects>5</http.protocol.max-redirects>
+      </params>
+    </all>
+    <put>
+      <readTimeout>600000</readTimeout>
+    </put>
+  </httpConfiguration>
+</configuration>
+```
+
+### How `all` and the per-method block are combined
+
+For each request, `HttpConfiguration.getMethodConfiguration(HttpUriRequest)` looks at
+the method name and merges `all` with the matching block. Anything that is not `GET`,
+`PUT`, `HEAD` or `MKCOL` gets `all` alone.
+
+The merge, in `ConfigurationUtils.merge(base, local)`:
+
+- if only one of the two is present, it is used as-is;
+- otherwise `all` is copied and then the per-method block is layered on top:
+  `headers` and `params` are merged key by key (the per-method value wins);
+  `useDefaultHeaders` is taken from the per-method block if it was set explicitly;
+  `connectionTimeout` and `readTimeout` are taken from the per-method block only if
+  they differ from `Wagon.DEFAULT_CONNECTION_TIMEOUT` and `Wagon.DEFAULT_READ_TIMEOUT`
+  respectively.
+
+That last rule has a consequence worth knowing in Wagon 3.5.3: you cannot use a per-method block to
+set a timeout *back* to the default value. Writing `<readTimeout>1800000</readTimeout>`
+inside `<get>` is indistinguishable from not writing it at all, and the value from
+`<all>` survives.
+
+**Wagon 3.5.3: `usePreemptive` is not carried through the merge at all.** The copy step does not
+copy it and the merge step does not apply it, so if both `<all>` and the block for
+the method in question are present, the effective `usePreemptive` is always `false`.
+Set it in `<all>` and leave that method's own block out, or set it only in the
+method block and leave `<all>` out. This is what
+`HttpWagonPreemptiveTest` does — it configures nothing but
+`setAll(new HttpMethodConfiguration().setUsePreemptive(true))`.
+
+### Writing `headers` and `params`
+
+Both are `java.util.Properties`, and Plexus accepts two spellings for those. The
+short form uses the key as the element name:
+
+```xml
+<headers>
+  <User-Agent>my-build/1.0</User-Agent>
+</headers>
+```
+
+The long form spells out each entry and works with every Plexus component
+configurator:
+
+```xml
+<headers>
+  <property>
+    <name>User-Agent</name>
+    <value>my-build/1.0</value>
+  </property>
+</headers>
+```
+
+Use the long form for keys that are not valid XML element names — most of the `params`
+keys below contain dots, which is fine, but nothing stops a header name from
+containing characters that are not.
+
+### `headers`
+
+Headers from the configuration are applied with `setHeader`, so they replace any
+header of the same name that the provider had already added.
+
+`User-Agent` gets special handling: `getUserAgent(HttpUriRequest)` looks it up in
+`httpHeaders` first, then in the merged method configuration's `headers`, and the
+result is set on the request. If nothing supplies one, no `User-Agent` is added by
+Wagon.
+
+### `useDefaultHeaders`
+
+When `true` — the default — every request gets
 
 ```
 Cache-control: no-cache
-Cache-store: no-store
 Pragma: no-cache
-Expires: 0
-Accept-Encoding: gzip
 ```
 
-In addition, PUT requests made with the HTTP wagon use the following HttpClient parameter:
+before your own headers are applied. Set it to `false` to suppress them.
 
-```
-http.protocol.expect-continue=true
-```
+### `params`
 
-From the HttpClient documentation[2], this parameter provides the following functionality:
+`<params>` is an escape hatch onto HttpClient's `RequestConfig`. Only the keys below
+are recognised; anything else is silently ignored. Values may optionally be prefixed
+with a legacy type coercion of the form `%type,value` — for example
+`%Integer,3` — in which case only the part after the comma is used.
 
-```
-Activates 'Expect: 100-Continue' handshake for the entity enclosing methods. 
-The 'Expect: 100-Continue' handshake allows a client that is sending a request 
-message with a request body to determine if the origin server is willing to 
-accept the request (based on the request headers) before the client sends the 
-request body.
+| Parameter | `RequestConfig` setting |
+| --- | --- |
+| `http.socket.timeout` | `setSocketTimeout(int)` |
+| `http.connection.timeout` | `setConnectTimeout(int)` |
+| `http.connection.stalecheck` | `setStaleConnectionCheckEnabled(boolean)` |
+| `http.conn-manager.timeout` | `setConnectionRequestTimeout(int)` |
+| `http.protocol.expect-continue` | `setExpectContinueEnabled(boolean)` |
+| `http.protocol.handle-authentication` | `setAuthenticationEnabled(boolean)` |
+| `http.protocol.handle-redirects` | `setRedirectsEnabled(boolean)` |
+| `http.protocol.max-redirects` | `setMaxRedirects(int)` |
+| `http.protocol.allow-circular-redirects` | `setCircularRedirectsAllowed(boolean)` |
+| `http.protocol.reject-relative-redirect` | `setRelativeRedirectsAllowed(!value)` |
+| `http.protocol.handle-content-compression` | `setContentCompressionEnabled(boolean)` |
+| `http.protocol.handle-uri-normalization` | `setNormalizeUri(boolean)` |
+| `http.protocol.cookie-policy` | `setCookieSpec(String)` |
+| `http.route.default-proxy` | `setProxy(HttpHost.create(value))` |
+| `http.route.local-address` | `setLocalAddress(InetAddress)`; an unresolvable name is ignored |
+| `http.auth.target-scheme-pref` | `setTargetPreferredAuthSchemes(...)`, comma-separated |
+| `http.auth.proxy-scheme-pref` | `setProxyPreferredAuthSchemes(...)`, comma-separated |
 
-The use of the 'Expect: 100-continue' handshake can result in noticeable performance 
-improvement for entity enclosing requests (such as POST and PUT) that require 
-the target server's authentication.
+Two of these interact with settings applied elsewhere. `params` are applied *after*
+the request has already been given the Wagon's own connect and read timeouts, so
+`http.socket.timeout` and `http.connection.timeout` take precedence over
+`connectionTimeout`/`readTimeout` and over `setTimeout`/`setReadTimeout`. Also, the
+cookie policy is set to `CookieSpecs.BROWSER_COMPATIBILITY` before `params` are
+applied, so `http.protocol.cookie-policy` overrides that default.
 
-'Expect: 100-continue' handshake should be used with caution, as it may cause 
-problems with HTTP servers and proxies that do not support HTTP/1.1 protocol.
-```
+`Expect: 100-continue` is enabled unconditionally for `PUT` requests, before `params`
+are applied; `http.protocol.expect-continue` can therefore turn it off. It is
+deliberately not enabled for `MKCOL`, which has no body.
 
-Without this setting, PUT requests that require authentication transfer their entire payload to the server before that server issues an authentication challenge. In order to complete the PUT request, the client must then re-send the payload with the proper credentials specified in the HTTP headers. This results in twice the bandwidth usage, and twice the time to transfer each artifact.
+### Ignoring cookies
 
-Another option to avoid this double transfer is what's known as preemptive authentication, which involves sending the authentication headers along with the original PUT request. However, there are a few potential issues with this approach. For one thing, in the event you have an unused `<server>` entry that specifies an invalid username/password combination, some servers may respond with a `401 Unauthorized` even if the server doesn't actually require any authentication for the request. In addition, blindly sending authentication credentials with every request regardless of whether the server has made a challenge can result in a security hole, since the server may not make provisions to secure credentials for paths that don't require authentication.
-
-We'll discuss preemptive authentication in another example, below.
-
-## Configuring GET, HEAD, PUT, or All of the Above
-
-**Starting with Maven 3.9.0 native HTTP transport will pick up the "all" settings only (get, head, put are neglected!)" but it will WARN about its deprecation. For users sticking with Wagon nothing changes.**
-
-In all of the examples below, it's important to understand that you can configure the HTTP settings for all requests made to a given server, or for only one method. To configure all methods for a server, use the following section of the `settings.xml` file:
+Some repositories send session cookies, often by mistake, alongside HTTP redirection. The
+cookie's `Path` can then disagree with the path the client uses, and requests fail. If you
+know you do not need the session cookie, ignore cookies for the server:
 
 ```xml
-<settings>
-  [...]
-  <servers>
-    <server>
-      <id>the-server</id>
-      <configuration>
-        <httpConfiguration>
-          <all>
-            [ Your configuration here. ]
-          </all>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <httpConfiguration>
+    <all>
+      <params>
+        <http.protocol.cookie-policy>ignore</http.protocol.cookie-policy>
+      </params>
+    </all>
+  </httpConfiguration>
+</configuration>
 ```
 
-On the other hand, if you can live with the default configuration for most requests — say, HEAD and GET requests, which are used to check for the existence of a file and retrieve a file respectively — maybe you only need to configure the PUT method:
+## Authentication
+
+### Target server credentials
+
+At `connect` time, if the `AuthenticationInfo` has a non-empty user name *and* a
+non-empty password, a `UsernamePasswordCredentials` is registered in the
+`CredentialsProvider` under an `AuthScope` derived from the repository's host and
+port. A user name without a password registers nothing.
+
+The client is built with an auth scheme registry containing exactly three schemes:
+
+| Scheme | Factory |
+| --- | --- |
+| Basic | `BasicSchemeFactory`, UTF-8 |
+| Digest | `DigestSchemeFactory`, UTF-8 |
+| NTLM | `NTLMSchemeFactory` |
+
+Basic and Digest both work against the target server with a plain user name and
+password, negotiated in response to the server's challenge. Use
+`http.auth.target-scheme-pref` if you need to force the order in which schemes are
+tried.
+
+**NTLM against the target server is not supported.** The target credentials are
+always `UsernamePasswordCredentials`, never `NTCredentials`, so the registered NTLM
+scheme has nothing usable to offer. NTLM is only wired up for proxies — see below.
+
+### Preemptive authentication
+
+By default HttpClient waits for a `401` challenge before sending credentials. With
+`usePreemptive` set, a `BasicScheme` is placed in the `AuthCache` for the target host
+before the request goes out, provided credentials for that scope exist — so the first
+request already carries an `Authorization: Basic` header:
 
 ```xml
-<settings>
-  [...]
-  <servers>
-    <server>
-      <id>the-server</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            [ Your configuration here. ]
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <httpConfiguration>
+    <all>
+      <usePreemptive>true</usePreemptive>
+    </all>
+  </httpConfiguration>
+</configuration>
 ```
 
-For clarity, the other two sections are `<get>` for GET requests, and `<head>` for HEAD requests. I know that's going to be hard to remember...
+Note the merge caveat above: adding a `<get>` block alongside this would switch
+preemptive authentication back off.
 
-## Taking Control of Your HTTP Headers
+Without `Expect: 100-continue`, a `PUT` that needs authentication would send its whole payload before the server issues the challenge, and then send it again with credentials: twice the bandwidth and time per artifact. Preemptive authentication avoids that by sending the credentials with the first request, at a price. An unused `<server>` entry with a wrong user name or password can make some servers answer `401 Unauthorized` even for requests that need no authentication, and sending credentials blindly can leak them to paths the server does not protect.
 
-As you may have noticed above, the default HTTP headers do have the potential to cause problems. For instance, some websites set the encoding for downloading GZipped files as `gzip`, in spite of the fact that the HTTP request itself isn't being sent using GZip compression. If the client is using the `Accept-Encoding: gzip` header, this can result in the client itself decompressing the GZipped file _during the transfer_ and writing the decompressed file to the local disk with the original filename. This can be misleading to say the least, and can use up an inordinate amount of disk space on the local computer.
+Preemptive Basic authentication is only ever Basic — the cache entry is a
+`BasicScheme`. It has no effect on Digest or NTLM.
 
-To turn off this default behavior, simply disable the default headers. Then, respecify the other headers that you are still interested in, like this:
+`PUT` is a special case in Wagon 3.5.3: `AbstractHttpClientWagon.put` primes the `AuthCache` with a
+`BasicScheme` for the target host whenever credentials exist, regardless of
+`usePreemptive`. Uploads are therefore preemptively authenticated by default. The
+source marks this as a known wart ("FIXME Perform only when preemptive has been
+configured").
+
+### `basicAuth` and `proxyAuth` — overriding the authentication scope
+
+By default the `AuthScope` for the target is built from the repository's own host and
+port with `AuthScope.ANY_REALM`, and a port of `-1` becomes `AuthScope.ANY_PORT`.
+[`BasicAuthScope`](https://maven.apache.org/wagon/apidocs/org/apache/maven/wagon/shared/http/BasicAuthScope.html)
+lets you override `host`, `port` and `realm`.
+
+`host` and `port` accept the literal string `ANY` to mean "match anything", and
+setting `host`, `port` and `realm` all to `ANY` yields `AuthScope.ANY`.
+
+`realm` does not work that way, and it is worth being explicit about it because the
+asymmetry is easy to trip over in Wagon 3.5.3. Omitting `realm` gives you `AuthScope.ANY_REALM`,
+which is what "match any realm" means. Setting it to any value — *including* `ANY`,
+unless `host` and `port` are `ANY` too — matches that string verbatim, so
+`<realm>ANY</realm>` on its own produces a scope that only matches a server whose
+realm is literally `ANY`. Leave `realm` out unless you mean to pin it.
+
+This is the setting to reach for when credentials are not being sent because the
+server's realm or port does not match what Wagon derived from the URL — for instance
+a repository fronted by a redirect to another host, or one that delegates authentication
+to an external system that challenges from a different host.
+
+The two scopes are held in fields named `basicAuth` (for the target) and `proxyAuth`
+(for the proxy), reachable through `setBasicAuthScope` and `setProxyBasicAuthScope`.
 
 ```xml
-<settings>
-  [...]
-  <servers>
-    <server>
-      <id>openssl</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            <useDefaultHeaders>false</useDefaultHeaders>
-            <headers>
-              <property>
-                <name>Cache-control</name>
-                <value>no-cache</value>
-              </property>
-              <property>
-                <name>Cache-store</name>
-                <value>no-store</value>
-              </property>
-              <property>
-                <name>Pragma</name>
-                <value>no-cache</value>
-              </property>
-              <property>
-                <name>Expires</name>
-                <value>0</value>
-              </property>
-              <property>
-                <name>Accept-Encoding</name>
-                <value>*</value>
-              </property>
-            </headers>
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-    [...]
-  </servers>
-  [...]
-</settings>
+<configuration>
+  <basicAuth>
+    <host>ANY</host>
+    <port>ANY</port>
+    <realm>ANY</realm>
+  </basicAuth>
+</configuration>
 ```
 
-## Fine-Tuning HttpClient Parameters
-
-Going beyond the power of HTTP request parameters, HttpClient provides a host of other configuration options. In most cases, you won't need to customize these. But in case you do, Maven provides access to specify your own fine-grained configuration for HttpClient. Again, you can specify these parameter customizations per-method (HEAD, GET, or PUT), or for all methods of interacting with a given server. For a complete list of supported parameters, see the link[2] in Resources section below.
-
-### Non-String Parameter Values
-
-Many of the configuration parameters for HttpClient have simple string values; however, there are important exceptions to this. In some cases, you may need to specify boolean, integer, or long values. In others, you may even need to specify a collection of string values. You can specify these using a simple formatting syntax, as follows:
-
-1. **booleans:** `%b,<value>`
-2. **integer:** `%i,<value>`
-3. **long:** `%l,<value>` (yes, that's an 'L', not a '1')
-4. **double:** `%d,<value>`
-5. **collection of strings:** `%c,<value1>,<value2>,<value3>,...`, which could also be specified as:
-
-   ```
-   %c,
-   <value1>,
-   <value2>,
-   <value3>,
-   ...
-   ```
-
-As you may have noticed, this syntax is similar to the format-and-data strategy used by functions like `sprintf()` in many languages. The syntax has been chosen with this similarity in mind, to make it a little more intuitive to use.
-
-#### Example: Using Preemptive Authentication
-
-Using the above syntax, you can configure preemptive authentication for PUT requests using the boolean HttpClient parameter `http.authentication.preemptive`, like this:
+That is the all-`ANY` case, which short-circuits to `AuthScope.ANY` and so does match
+any realm. To widen only the host and port, omit `realm` rather than setting it to
+`ANY`:
 
 ```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            <params>
-              <property>
-                <name>http.authentication.preemptive</name>
-                <value>%b,true</value>
-              </property>
-            </params>
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <basicAuth>
+    <host>ANY</host>
+    <port>ANY</port>
+  </basicAuth>
+</configuration>
 ```
 
-Another option is to make write it like this:
+## Proxies
+
+Proxy settings come from Maven's `<proxy>` configuration rather than from
+`<server><configuration>`; Wagon receives them as a
+[`ProxyInfo`](https://maven.apache.org/wagon/apidocs/org/apache/maven/wagon/proxy/ProxyInfo.html). What the HTTP
+provider does with them:
+
+- The proxy is only used when the `ProxyInfo`'s `type` matches the repository's
+  protocol and the target host does not match `nonProxyHosts`. See
+  [Configuring a proxy](./guide-proxies.html).
+- If the `ProxyInfo` carries a user name and a password, credentials are registered
+  under a scope derived from the proxy host and port, overridable through `proxyAuth`
+  exactly as `basicAuth` overrides the target scope.
+- **NTLM.** If either `ntlmHost` or `ntlmDomain` is set on the `ProxyInfo`, the proxy
+  credentials become `NTCredentials(username, password, ntlmHost, ntlmDomain)`
+  instead of `UsernamePasswordCredentials`, and the registered `NTLMSchemeFactory`
+  handles the challenge. Use `http.auth.proxy-scheme-pref` to control which scheme is
+  preferred when the proxy offers several.
+- Proxy authentication is always primed preemptively: whenever proxy credentials
+  exist, a `BasicScheme` with `ChallengeState.PROXY` is put in the `AuthCache` for the
+  proxy host.
+
+## Connection timeout
+
+Every Wagon that extends `AbstractWagon` (SCP, HTTP, FTP and others) accepts a flat
+connection timeout in milliseconds, which applies to all methods:
 
 ```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            <usePreemptive>true</usePreemptive>
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <timeout>6000</timeout>
+</configuration>
 ```
 
-### Example: Lifting auth scope restriction for external authentication systems
+`connectionTimeout` inside `httpConfiguration` is the per-method alternative. The `params`
+`http.socket.timeout` and `http.connection.timeout` still take precedence over both.
 
-Maven Wagon by default limits supplied credentials to the host:port combination scope, ignoring any other target servers. When the target server delegates authentication to an external system, you need to deliberately lift that scope limitation. Configure your server element to pass authentication to all target servers which challenge the client. +---+ _settings_ _servers_ _server_ _id_my-server_/id_ _configuration_ _basicAuthScope_ _host_ANY_/host_ _port_ANY_/port_ _!-- or even 443 to force the use of TLS --_ _/basicAuthScope_ _httpConfiguration_ _all_ _params_ _property_ _name_http.protocol.cookie-policy_/name_ _value_standard_/value_ _/property_ _/params_ _/all_ _/httpConfiguration_ _/configuration_ _/server_ _/servers_ _/settings_ +---+
-
-### Ignoring Cookies
-
-Like the example above, telling the HttpClient to ignore cookies for all methods of request is a simple matter of configuring the `http.protocol.cookie-policy` parameter (it uses a regular string value, so no special syntax is required):
+## Deprecated: `httpHeaders`
 
 ```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpConfiguration>
-          <all>
-            <params>
-              <param>
-                <name>http.protocol.cookie-policy</name>
-                <value>ignore</value>
-              </param>
-            </params>
-          </all>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <httpHeaders>
+    <property>
+      <name>User-Agent</name>
+      <value>my-build/1.0</value>
+    </property>
+  </httpHeaders>
+</configuration>
 ```
 
-The configuration above can be useful in cases where the repository is using cookies - like the session cookies that are often mistakenly turned on or left on in appservers - alongside HTTP redirection. In these cases, it becomes far more likely that the cookie issued by the appserver uses a `Path` that is inconsistent with the one used by the client to access the server. If you have this problem, and know that you don't need to use this session cookie, you can ignore cookies from this server with the above configuration.
+`httpHeaders` is a flat `Properties` of headers applied to every request. It predates
+`httpConfiguration` and is marked deprecated in the source in favour of it. It is
+still honoured, and it is applied *before* the `httpConfiguration` headers, so a
+header set in both places takes its value from `httpConfiguration`. The one exception
+is `User-Agent` lookup, which consults `httpHeaders` first.
 
-## Support for General-Wagon Configuration Standards
+## Backoff on 429
 
-It should be noted that configuration options previously available in the HttpClient-driven HTTP wagon are still supported in addition to this new, fine-grained approach. These include the configuration of HTTP headers and connection timeouts. Let's examine each of these briefly:
-
-### HTTP Headers
-
-In all HTTP Wagon implementations, you can add your own HTTP headers like this:
+When the server answers `429 Too Many Requests`, the provider sleeps and retries,
+doubling the wait each time until it would reach the maximum, at which point it
+throws `TransferFailedException`. The initial wait is 5 seconds and the maximum is
+180 seconds; both are system properties (below), and the initial value is also
+settable per server:
 
 ```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpHeaders>
-          <property>
-            <name>Foo</name>
-            <value>Bar</value>
-          </property>
-        </httpHeaders>
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<configuration>
+  <initialBackoffSeconds>10</initialBackoffSeconds>
+</configuration>
 ```
 
-It's important to understand that the above approach doesn't allow you to turn off all of the default HTTP headers; nor does it allow you to specify headers on a per-method basis. However, this configuration remains available in both the lightweight and httpclient-based Wagon implementations.
+## System properties
 
-### Connection Timeouts
+These are JVM-wide, not per-server. Several are read into `static final` fields when
+`AbstractHttpClientWagon` is first loaded, so they must be set before any transfer
+starts — on the command line, or in `MAVEN_OPTS`.
 
-All wagon implementations that extend the `AbstractWagon` class, including those for SCP, HTTP, FTP, and more, allow the configuration of a connection timeout, to allow the user to tell Maven how long to wait before giving up on a connection that has not responded. This option is preserved in the HttpClient-based wagon, but this wagon also provides a fine-grained alternative configuration that can allow you to specify timeouts per-method for a given server. The old configuration option - which is still supported - looks like this:
+### Connection pool
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `maven.wagon.http.pool` | `true` | enable the pooling connection manager; when `false`, total connections are capped at 1 and idle connections are closed on disconnect |
+| `maven.wagon.httpconnectionManager.maxPerRoute` | `20` | max connections per route |
+| `maven.wagon.httpconnectionManager.maxTotal` | `40` | max connections overall |
+| `maven.wagon.httpconnectionManager.ttlSeconds` | `300` | connection time-to-live; `-1` keeps connections indefinitely |
+
+### Timeouts
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `maven.wagon.rto` | `1800000` | default read timeout in milliseconds |
+
+### TLS
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `maven.wagon.http.ssl.insecure` | `false` | accept any certificate chain whose dates are valid |
+| `maven.wagon.http.ssl.allowall` | `false` | with `insecure`, skip hostname verification |
+| `maven.wagon.http.ssl.ignore.validity.dates` | `false` | with `insecure`, also ignore certificate dates |
+| `https.protocols` | — | comma-separated list of enabled TLS protocols |
+| `https.cipherSuites` | — | comma-separated list of enabled cipher suites |
+
+Without `maven.wagon.http.ssl.insecure`, the default JSSE socket factory is used with
+HttpClient's browser-compatible hostname verifier.
+
+### Retries
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `maven.wagon.http.retryHandler.class` | `standard` | `default`, `standard`, or a fully qualified `HttpRequestRetryHandler` with a no-arg constructor |
+| `maven.wagon.http.retryHandler.requestSentEnabled` | `false` | retry requests that were already sent (`default` and `standard` only) |
+| `maven.wagon.http.retryHandler.count` | `3` | retry count (`default` and `standard` only) |
+| `maven.wagon.http.retryHandler.nonRetryableClasses` | — | comma-separated exception class names to never retry (`default` only) |
+| `maven.wagon.http.serviceUnavailableRetryStrategy.class` | `none` | `none`, `default`, `standard`, or a fully qualified `ServiceUnavailableRetryStrategy` with a no-arg constructor |
+| `maven.wagon.http.serviceUnavailableRetryStrategy.retryInterval` | `1000` | milliseconds between retries |
+| `maven.wagon.http.serviceUnavailableRetryStrategy.maxRetries` | `5` | maximum retries |
+
+A retry handler only reacts to failures while sending the request and reading the
+response head. It cannot recover a response body that fails part-way through.
+
+### Backoff
+
+| Property | Default | Effect |
+| --- | --- | --- |
+| `maven.wagon.httpconnectionManager.backoffSeconds` | `5` | initial wait after a `429` |
+| `maven.wagon.httpconnectionManager.maxBackoffSeconds` | `180` | give up once the next wait would reach this |
+
+## Worked example
+
+A server that needs preemptive Basic authentication, a custom user agent, no
+redirects, and a generous read timeout for uploads:
 
 ```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <timeout>6000</timeout> <!-- milliseconds -->
-      </configuration>
-    </server>
-  </servers>
-</settings>
+<server>
+  <id>internal-releases</id>
+  <username>deploy</username>
+  <password>secret</password>
+  <configuration>
+    <httpConfiguration>
+      <all>
+        <usePreemptive>true</usePreemptive>
+        <connectionTimeout>10000</connectionTimeout>
+        <headers>
+          <User-Agent>acme-build/2.1</User-Agent>
+        </headers>
+        <params>
+          <http.protocol.handle-redirects>false</http.protocol.handle-redirects>
+          <http.socket.timeout>600000</http.socket.timeout>
+        </params>
+      </all>
+    </httpConfiguration>
+  </configuration>
+</server>
 ```
 
-...while the new configuration option looks more like this:
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            <connectionTimeout>10000</connectionTimeout> <!-- milliseconds -->
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
-```
-
-If all you need is a per-server timeout configuration, you still have the option to use the old `<timeout>` parameter. If you need to separate timeout preferences according to HTTP method, you can use one more like that specified directly above.
-
-### Read time out
-
-The default timeout is 30 minutes. If you want to change this value, you can add the following setup in your settings:
-
-```xml
-<settings>
-  <servers>
-    <server>
-      <id>my-server</id>
-      <configuration>
-        <httpConfiguration>
-          <put>
-            <readTimeout>120000</readTimeout> <!-- milliseconds -->
-          </put>
-        </httpConfiguration>
-      </configuration>
-    </server>
-  </servers>
-</settings>
-```
+Everything is in `<all>` on purpose: adding a `<get>` or `<put>` block would drop
+`usePreemptive`. Where a per-method setting is unavoidable, use `params` — those do
+merge correctly.
 
 ## Resources
 
 1. [HttpClient website](https://hc.apache.org/httpcomponents-client-4.5.x/)
 2. [HttpClient preference architecture and configuration guide](https://hc.apache.org/httpclient-3.x/preference-api.html)
 3. [Guide to Wagon Providers](./guide-wagon-providers.html)
-4. [Wagon Http](/wagon/wagon-providers/wagon-http/)
-
+4. [Wagon HTTP provider](https://maven.apache.org/wagon/wagon-providers/wagon-http/)
