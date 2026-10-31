@@ -160,7 +160,7 @@ The `junit-bom` import in `dependencyManagement` sets the version of every JUnit
 
 ## 4. Test the archetype
 
-Before you install the archetype, add at least one integration test. Each test is a directory in `src/test/resources/projects/` of the archetype project, containing an `archetype.properties` file with the values for the generation and a `goal.txt` file with the Maven goals to run in the generated project. It can also contain a `reference/` directory with the expected project, and a `verify.groovy` script. The `archetype:integration-test` goal, which the `maven-archetype` packaging runs during `mvn verify`, generates a project for each test and checks it. For the details, see [Test an archetype](/archetype/maven-archetype-plugin/examples/test-an-archetype.html).
+Before you install the archetype, add at least one integration test. Each test is a directory in `src/test/resources/projects/` of the archetype project, containing an `archetype.properties` file with the values for the generation and a `goal.txt` file with the Maven goals to run in the generated project. It can also contain a `reference/` directory with the expected project, and a `verify.groovy` script. The `archetype:integration-test` goal, which the `maven-archetype` packaging runs during `mvn verify`, generates a project for each test and checks it. For the details, see the [Guide to Testing Archetypes](./guide-testing-archetypes.html).
 
 ## 5. Install the archetype and run the archetype plugin
 

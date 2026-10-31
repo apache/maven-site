@@ -101,6 +101,7 @@ under the License.
           </item>
           <item name="Archetypes" href="/guides/introduction/introduction-to-archetypes.html" collapse="true">
             <item name="Creating Archetypes" href="/guides/mini/guide-creating-archetypes.html"/>
+            <item name="Testing Archetypes" href="/guides/mini/guide-testing-archetypes.html"/>
           </item>
           <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
             <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html"/>
