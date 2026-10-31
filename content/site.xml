@@ -187,6 +187,7 @@ under the License.
         <item name="Maven Layout" href="/repositories/layout.html"/>
         <item name="Maven Local Repository" href="/repositories/local.html"/>
         <item name="Maven Remote Repositories" href="/repositories/remote.html"/>
+        <item name="Dependency Resolution Misconceptions" href="/repositories/dependency-resolution-misconceptions.html"/>
       </item>
       <item name="Plugin Development" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>

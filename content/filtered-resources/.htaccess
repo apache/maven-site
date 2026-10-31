@@ -118,6 +118,8 @@ RedirectMatch ^/archives/maven-parent-LATEST(.*)$ /pom-archives/maven-LATEST$1
 RedirectMatch ^/archives/(maven-.*-skin)-LATEST(.*)$ /skins-archives/$1-LATEST$2
 RedirectMatch ^/archives/(maven-.*-extension)-LATEST(.*)$ /extensions-archives/$1-LATEST$2
 
+Redirect Permanent /resolver/common-misconceptions.html /repositories/dependency-resolution-misconceptions.html
+
 # used in ATR announce templates - https://maven.apache.org/release-notes/{{PROJECT_KEY}}/{{VERSION}}
 # redirect to the GitHub release page, the Git tag is usually <artifactId>-<version>
 
