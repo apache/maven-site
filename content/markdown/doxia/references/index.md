@@ -46,7 +46,7 @@ The source directory is the directory under which Maven expects source documents
 
 Note some modules are not included per default with the site plugin. Have a look at the available modules here: [https://repo.maven.apache.org/maven2/org/apache/maven/doxia/](https://repo.maven.apache.org/maven2/org/apache/maven/doxia/).   
 
-If you need to add module for the `maven-site-plugin` simply add it as a dependency of the plugin:
+If you need to add a module that is not bundled, for example AsciiDoc, add it as a dependency of the plugin:
 
 ```xml
 <plugin>
@@ -55,9 +55,9 @@ If you need to add module for the `maven-site-plugin` simply add it as a depende
   <version>...</version>
   <dependencies>
     <dependency>
-      <groupId>org.apache.maven.doxia</groupId>
-      <artifactId>doxia-module-markdown</artifactId>
-      <version>...</version>
+      <groupId>org.asciidoctor</groupId>
+      <artifactId>asciidoctor-parser-doxia-module</artifactId>
+      <version>3.2.0</version>
     </dependency>
   </dependencies>
 </plugin>

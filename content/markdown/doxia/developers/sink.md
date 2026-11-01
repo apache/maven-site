@@ -47,7 +47,7 @@ Doxia can be used to transform an arbitrary input document to any supported outp
   parser.parse( reader, sink );
 ```
 
-It is recommended that you use [Plexus](http://plexus.codehaus.org/) to look up the parser. In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
+It is recommended that you use [Plexus](https://codehaus-plexus.github.io/) to look up the parser. In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
 
 You could also use the [Doxia Converter Tool](/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir. To move a site from APT to Markdown, see [Migrating APT to Markdown](/doxia/migrating-apt-to-markdown.html).
 
@@ -104,7 +104,7 @@ The snippet below gives a simple example of how to generate a document using the
     }
 ```
 
-A more complete example that also shows the &apos;canonical&apos; order of events to use when generating a document, can be found in the Doxia [SinkTestDocument](./doxia/doxia-core/xref-test/org/apache/maven/doxia/sink/SinkTestDocument.html) class.
+A more complete example that also shows the &apos;canonical&apos; order of events to use when generating a document, can be found in the Doxia [SinkTestDocument](https://github.com/apache/maven-doxia/blob/master/doxia-core/src/test/java/org/apache/maven/doxia/sink/impl/SinkTestDocument.java) class.
 
 ## <a id="Passing_attributes_to_Sink_events"></a>Passing attributes to Sink events
 
@@ -124,7 +124,7 @@ The kind of attributes supported depends on the event and the sink implementatio
 In **Doxia 1\.0** it was a common practice to use sink.rawText() to generate elements that were not supported by the Sink API. For example, the following snippet could be used to generate a styled HTML &lt;div&gt; block:
 
 ```java
-sink.RawText( "<div style=\"cool\">" );
+sink.rawText( "<div style=\"cool\">" );
 sink.text( "A text with a cool style." );
 sink.rawText( "</div>" );
 ```
@@ -139,12 +139,12 @@ The correct way to generate the above &lt;div&gt; block is now:
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.STYLE, "cool" );
 
-sink.unknown( "div", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_START )}, atts );
+sink.unknown( "div", new Object[]{HtmlMarkup.TAG_TYPE_START}, atts );
 sink.text( "A text with a cool style." );
-sink.unknown( "div", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_END )}, null );
+sink.unknown( "div", new Object[]{HtmlMarkup.TAG_TYPE_END}, null );
 ```
 
-Read the javadocs of the unknown() method in the [Sink](./doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) interface and the [XhtmlbaseSink](./doxia/doxia-core/apidocs/org/apache/maven/doxia/sink/XhtmlBaseSink.html) for information on the method parameters. Note that an arbitrary sink may be expected to ignore the unknown event completely!
+Read the javadocs of the unknown() method in the [Sink](../doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) interface and the [Xhtml5BaseSink](../doxia/doxia-core/apidocs/org/apache/maven/doxia/sink/impl/Xhtml5BaseSink.html) for information on the method parameters. Note that an arbitrary sink may be expected to ignore the unknown event completely!
 
 **In general, the rawText method should be avoided alltogether when emitting events into an arbitrary Sink.**
 
@@ -161,9 +161,9 @@ String javascriptCode = "\n function javascriptFunction() {...} \n //";
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.TYPE, "text/javascript" );
 
-sink.unknown( "script", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_START )}, atts );
-sink.unknown( "cdata", new Object[]{new Integer( HtmlMarkup.CDATA_TYPE ), javascriptCode }, null );
-sink.unknown( "script", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_END )}, null );
+sink.unknown( "script", new Object[]{HtmlMarkup.TAG_TYPE_START}, atts );
+sink.unknown( "cdata", new Object[]{HtmlMarkup.CDATA_TYPE, javascriptCode}, null );
+sink.unknown( "script", new Object[]{HtmlMarkup.TAG_TYPE_END}, null );
 ```
 
 ## <a id="References"></a>References

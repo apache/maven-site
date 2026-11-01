@@ -54,7 +54,7 @@ To find out more about the Sink API, you could read the Javadoc [here](http://ma
 
 ## Doxia Core
 
-The _Core_ is the API to parse a source and populate it in a _Sink_ object. The _Parser_ interface contains only one method: 
+The _Core_ is the API to parse a source and populate it in a _Sink_ object. The _Parser_ interface's central method is: 
 
 ```java
 void parse( Reader source, Sink sink )
@@ -65,7 +65,7 @@ The _ParseException_ class has the responsibility to catch all parsing exception
 
 The _AbstractParser_ class is an abstract implementation of the _Parser_. It provides a macro mechanism to give dynamic functionalities for the parsing. For more information on macros, read the [Doxia Macro Guide](./macros/index.html). 
 
-Finally, the _SiteModule_ interface is the last part of the puzzle. It provides main definitions of a given Doxia module and it is used by the _doxia-site-renderer_ site tools. 
+Finally, the _ParserModule_ interface is the last part of the puzzle. It provides main definitions of a given Doxia module and it is used by the _doxia-site-renderer_ site tools. 
 
 ## Doxia Modules
 
@@ -73,7 +73,7 @@ A Doxia module is an implementation of a given markup language like APT or Xdoc.
 
 - _Parser_ interface, more specifically the _AbstractParser_ class
 
-- _SiteModule_ interface
+- _ParserModule_ interface
 
 Several modules provide also a _Sink_ implementation to handle a specific output markup language. 
 
@@ -81,7 +81,6 @@ For more information on modules, read the [Doxia Module Guide](./modules/index.h
 
 ## Doxia Site Tools
 
-The _Site Tools_ are a collection of tools to renderer an output. The main tool used by Maven, specifically the [Maven Site Plugin](http://maven.apache.org/plugins/maven-site-plugin/), is the _doxia-site-renderer_ which renders in HTML any documents written with supported markup syntax. It uses [Velocity templates](http://velocity.apache.org/) to customize the renderer and the _site-decoration-model_ tool to decorate the renderer. This component describes the layout of the site defined in the _site.xml_ file. 
+The _Site Tools_ are a collection of tools to renderer an output. The main tool used by Maven, specifically the [Maven Site Plugin](http://maven.apache.org/plugins/maven-site-plugin/), is the _doxia-site-renderer_ which renders in HTML any documents written with supported markup syntax. It uses [Velocity templates](http://velocity.apache.org/) to customize the renderer and the _doxia-site-model_ tool to decorate the renderer. This component describes the layout of the site defined in the _site.xml_ file. 
 
-The _doxia-doc-renderer_ tool is used to renderer any document in another document. 
 

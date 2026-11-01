@@ -318,7 +318,7 @@ In the configuration section, the element name ("`greeting`") is the parameter n
 Using Setters
 -------------
 
-You are not restricted to using private field mapping which is helpful if you are trying to make your Mojos reusable outside the context of Maven. In the example above, we could define public setter methods that the configuration mapping mechanism can use. You can also add an `@Parameter` annotation on the setter method (from version 3.7.0 of \`plugin-tools\`)
+You are not restricted to using private field mapping which is helpful if you are trying to make your Mojos reusable outside the context of Maven. In the example above, we could define public setter methods that the configuration mapping mechanism can use. You can also add an `@Parameter` annotation on the setter method (from version 3.7.0 of `plugin-tools`)
 
 So the Mojo would look like the following:
 
