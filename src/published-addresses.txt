@@ -1,0 +1,800 @@
+# Every address maven.apache.org has published from this repository: a file, and the ids on
+# that page a link could point at. The list only grows. `mvn site` checks that each address
+# still leads to a page with the id, through the redirects in the .htaccess files.
+# Add the addresses of new pages with -Daddresses=record, which keeps these comment lines and
+# sorts the rest; see https://maven.apache.org/developers/website/move-a-page.html
+/.well-known/atproto-did
+/.well-known/security.txt
+/about.html About_Maven Can_I_get_involved.3F Tell_me_about_the_goals_of_Maven_3.0 What_plugin_languages_does_Maven_support.3F_What_about_.5Binsert_language_here.5D.3F Where_do_I_get_help_with_Maven.3F
+/aether.html Aether_import_plan_to_Maven Code_integration IP_Clearance Versions_history
+/ant/build-a1.xml
+/ant/build-a2.xml
+/ant/build-a3.xml
+/ant/build-a4.xml
+/archives/components.links
+/archives/maven-2.x/index.html Design_Notes Plugin_List This_is_the_Maven_2_Graveyard
+/archives/maven-2.x/maven-2.1-architectural-goals.html Aggregator_Mojo_Handling Architectural_Goals Backward_Compatibility Core_Refactorings Custom_Components Determining_project_type_in_Eclipse_.28Igor_Fedorenko.29 Embedding Integration_and_promotion_of_scriptable_plugins Java_5 Lifecycle Maven_2.1 Mercury Other_Use_Cases_to_Integrate POM_changes Plugin_API Plugin_API_1 Plugin_and_Extension_Loading Reporting Shading_of_plexus-utils_causing_a_ClassCastException_on_plugin.getConfiguration.28.29_.28.5BMNG-3012.7Chttps.3A.2F.2Fissues.apache.org.2Fjira.2Fbrowse.2FMNG-3012.5D.29 Strategies_for_ensuring_backward_compatibility Toolchains
+/archives/maven-2.x/offline-mode.html Accessibility_of_offline_status Assumptions.3A_What_is_Offline.3F Control_over_downloads Control_over_mojos_in_the_lifecycle DefaultLifecycleExecutor Dependency_Resolution Deployment_mojos Implementation_Notes Implications_for_Mojo_Execution Implications_for_Resolution Implications_for_Subsystems Maven-Artifact Maven-Core Maven-SCM Maven-Wagon Offline_Mode_Design Plugin_Resolution SCM_mojos Testing_mojos UPDATE.3A_18-April-2005 Why_is_Offline_Mode_Important.3F
+/archives/maven-2.x/plugin-execution-isolation.html Maven_plugin_execution_isolation
+/articles.html Articles_on_Maven Books_on_Maven External_Resources_on_Maven Videos_on_Maven
+/atr/templates/announce_release_template.txt
+/atr/templates/finish_vote_template.txt
+/atr/templates/start_vote_template.txt
+/avatars/00000000000000000000000000000000.jpg
+/avatars/187d7c84095d8fbd8a0731eebaaa30de.jpg
+/avatars/1db61ec29963d4a77ef2275140144fd4.jpg
+/avatars/29837f2f27fc887ad3e48390c2937e8f.jpg
+/avatars/2b4749fa0d95a408e9e276b2b4e882f4.jpg
+/avatars/2b5aa3653c59f40a08f2a314c04aa854.jpg
+/avatars/2c27249f3e6df269751ee1c5d74c7d2e.jpg
+/avatars/35b0cc47b5e6d602734c636082d630df.jpg
+/avatars/3aedf60487a104a09251c580d64fafec.jpg
+/avatars/3c2ad6b6efb1c84d9ff60259f8c8ef95.jpg
+/avatars/456da78808527c596ccd30fba769dd6d.jpg
+/avatars/4d2493f7bfc80a760d9351a44c78fee3.jpg
+/avatars/5f46e5f33b0d23121af7113258485a2b.jpg
+/avatars/638136a641ed5c512f446444339cf271.jpg
+/avatars/6559d4b2de15cb1433fc13c34599e4c7.jpg
+/avatars/76b019aa23f8756fa9d99d794c69d982.jpg
+/avatars/785a1a564fbfc3a91478a886e9262eee.jpg
+/avatars/81f0dd51add422563de0b7ce828b0728.jpg
+/avatars/843c139514b33ef9121f6e4bfd2ef547.jpg
+/avatars/84b52fef91820858d5e18cc0363b3bbe.jpg
+/avatars/89d44feb36e50e382410b6b797cfa812.jpg
+/avatars/90cc13b765c79d2d55ca64388ea2bc5f.jpg
+/avatars/a7a7de61eca1a5af56823753b1b3b838.jpg
+/avatars/af54a0871600db7fbdbb5c558a6e29a3.jpg
+/avatars/b44837697ce1ec56d63e7e851ee3967e.jpg
+/avatars/bab29f762bea8e578505424443d8cd41.jpg
+/avatars/bb362cf0ab5e1d0068665a9d9f0167e7.jpg
+/avatars/c10f4d927ec131d4c95fdc7b24929a80.jpg
+/avatars/c662f616ca2c1b04d5ba7b96ca3b5171.jpg
+/avatars/c7279715ebb81d73b0331799094b8292.jpg
+/avatars/c8686cad245196c9e392201ad7bb364f.jpg
+/avatars/cbe8a9133ef3337eb267252a06f649bf.jpg
+/avatars/cdbe99fe3d6af6a18dd8c35b0687a50b.jpg
+/avatars/d035aeb839495240c58bbb03992ceda8.jpg
+/avatars/ea3935a08a086d01b5ee12fb2d6e923a.jpg
+/avatars/efe7252f3b18253bf4318062ece95a3b.jpg
+/avatars/f1d16806fc23bffc6b7fbdefba6441b2.jpg
+/avatars/feb64254400eb261c6ba03afadd092a3.jpg
+/background/history-of-maven.html History_of_Maven History_of_Maven_by_Jason_van_Zyl
+/background/philosophy-of-maven.html Philosophy_of_Maven
+/badges/asf_jira-ARCHETYPE.json
+/badges/asf_jira-DOXIA.json
+/badges/asf_jira-DOXIASITETOOLS.json
+/badges/asf_jira-DOXIATOOLS.json
+/badges/asf_jira-JXR.json
+/badges/asf_jira-MACR.json
+/badges/asf_jira-MANTRUN.json
+/badges/asf_jira-MARCHETYPES.json
+/badges/asf_jira-MARTIFACT.json
+/badges/asf_jira-MASFRES.json
+/badges/asf_jira-MASSEMBLY.json
+/badges/asf_jira-MBUILDCACHE.json
+/badges/asf_jira-MCHANGELOG.json
+/badges/asf_jira-MCHANGES.json
+/badges/asf_jira-MCHECKSTYLE.json
+/badges/asf_jira-MCLEAN.json
+/badges/asf_jira-MCOMPILER.json
+/badges/asf_jira-MDEP.json
+/badges/asf_jira-MDEPLOY.json
+/badges/asf_jira-MDOAP.json
+/badges/asf_jira-MDOCCK.json
+/badges/asf_jira-MEAR.json
+/badges/asf_jira-MEJB.json
+/badges/asf_jira-MENFORCER.json
+/badges/asf_jira-MGPG.json
+/badges/asf_jira-MINDEXER.json
+/badges/asf_jira-MINSTALL.json
+/badges/asf_jira-MINVOKER.json
+/badges/asf_jira-MJAR.json
+/badges/asf_jira-MJARSIGNER.json
+/badges/asf_jira-MJAVADOC.json
+/badges/asf_jira-MJDEPRSCAN.json
+/badges/asf_jira-MJDEPS.json
+/badges/asf_jira-MJLINK.json
+/badges/asf_jira-MJMOD.json
+/badges/asf_jira-MLINKCHECK.json
+/badges/asf_jira-MNG.json
+/badges/asf_jira-MNGSITE.json
+/badges/asf_jira-MPATCH.json
+/badges/asf_jira-MPDF.json
+/badges/asf_jira-MPH.json
+/badges/asf_jira-MPIR.json
+/badges/asf_jira-MPLUGIN.json
+/badges/asf_jira-MPLUGINTESTING.json
+/badges/asf_jira-MPMD.json
+/badges/asf_jira-MPOM.json
+/badges/asf_jira-MRAR.json
+/badges/asf_jira-MRELEASE.json
+/badges/asf_jira-MRESOLVER.json
+/badges/asf_jira-MRESOURCES.json
+/badges/asf_jira-MRRESOURCES.json
+/badges/asf_jira-MSCMPUB.json
+/badges/asf_jira-MSCRIPTING.json
+/badges/asf_jira-MSHADE.json
+/badges/asf_jira-MSHARED.json
+/badges/asf_jira-MSITE.json
+/badges/asf_jira-MSKINS.json
+/badges/asf_jira-MSOURCES.json
+/badges/asf_jira-MSTAGE.json
+/badges/asf_jira-MTOOLCHAINS.json
+/badges/asf_jira-MVERIFIER.json
+/badges/asf_jira-MWAR.json
+/badges/asf_jira-MWRAPPER.json
+/badges/asf_jira-SCM.json
+/badges/asf_jira-SUREFIRE.json
+/badges/asf_jira-WAGON.json
+/badges/ml-users.json
+/buildExtensionClassRealm.svg
+/ci-management.html Access Notifiers Overview
+/code-quality-management.html Code_Quality_Management Quality_management_technologies_and_platforms
+/community.html Be_a_Kind_Public_Repository_User Being_a_Good_Maven_Citizen Commit_Questions_or_Answers_to_the_Maven_User_FAQ Developers Help_Log_Defects_in_GitHub Helping_With_Maven Mailing_Lists Slack The_Maven_Community User_Gathering_Spots
+/components.links
+/configure.html Configuring_Apache_Maven MAVEN_ARGS_environment_variable.3A MAVEN_OPTS_environment_variable.3A Other_guides a.mavenrc_file.3A a.mvn.2Fextensions.xml_file.3A a.mvn.2Fjvm.config_file.3A a.mvn.2Fmaven.config_file.3A a.mvn_directory.3A settings.xml_file.3A
+/css/apache-maven-fluido-2.1.0.min.css
+/css/print.css
+/css/site.css
+/developers/committer-environment.html Committer_Environment Introduction Maven_Code_Style Source_File_Encoding Useful_software
+/developers/committer-settings.html Enable_Apache_Servers Enable_sending_announcement_e-mails Introduction
+/developers/compatibility-plan.html Context Maven_Plan Maven_Plugins_Compatibility_Plan Scope
+/developers/conventions/code.html FML_Code_Convention Generic_Code_Style_And_Convention Generic_XML_Code_Convention Java JavaDoc_Convention Java_Code_Convention Java_Code_Convention_-_import_layouts Java_Code_Style Maven_Code_Style_And_Code_Conventions POM_Code_Convention XDOC_Code_Convention XML XML_Code_Style
+/developers/conventions/git.html Apply_User_Patch Commit_Message_Template Edit_Commit_Message For_committers For_contributors_who_are_not_committers Git_Configuration Maven_Git_Convention Other_useful_Git_commands_while_developing Review_policy Workflow power-git_checkout
+/developers/conventions/github.html Assignee Automated_actions Component.2Fs Fix_Version.2Fs Further_Links GitHub_Issues.2C_Pull_Request_-_Recommendations. How_To_Use_Issue_and_Pull_Request_Details.3F Labels Maven_GitHub_Conventions Priority Pull_Request Release_Notes Reviewers Type
+/developers/dependency-policies.html Applicability Background Core_Maven_Distribution_Dependencies Maven_Dependency_Policies Non-Core_Dependencies Scope
+/developers/index.html Committers_Resources Contribute_to_Maven Contributors_Resources Developers_Conventions General_Resources Making_Releases Maven_Website Other_Resources
+/developers/maven.xml
+/developers/mojo-api-specification.html Introduction Mojo_API_Specification_.28Maven_3.29 Mojo_Code Project_Descriptor_.28POM.29_Requirements Resources The_Descriptor_and_Annotations
+/developers/release/index.html Releasing_A_Maven_Project
+/developers/release/maven-core-release.html Add_New_Version_to_ASF_Distribution_Directory Complete_the_release Deploy_the_Latest_Documentation_to_Target_Versioned_Location Deploying_the_Release_Website Information_on_.2Fref.2Fcurrent_mechanism Prepare_the_Release_Notes Proceed_with_Announcement Produce_Release_Candidates Produce_the_Release Releasing_Maven Remove_Old_Versions_from_ASF_Distribution_Directory Stage_the_Latest_Documentation Update_the_DOAP_Information Update_the_Web_Site
+/developers/release/maven-project-release-procedure.html Add_the_release_for_next_board_report Before_you_begin Call_the_vote Check_Consistency Check_the_GitHub_milestone Check_the_vote_results Consider_updating_the_parent_versions Consider_updating_the_project_dependencies Copy_the_source_release_to_the_Apache_Distribution_Area Make_sure_that_site_compilation_works Performing_a_Maven_Project_Release Prepare_release_notes Prerequisites Promote_the_release Release_with_the_Apache_Trusted_Releases_.28ATR.29 Stage_the_Release Successful_vote Unsuccessful_vote
+/developers/release/parent-pom-release.html Call_the_vote Rationale Releasing_A_Parent_POM Stage_the_release
+/developers/release/pmc-gpg-keys.html Committer_public_key_KEYS_file Distributing_Your_Public_Keys Generate_a_new_key Introduction Maven_Project_Keys
+/developers/retirement-plan-plugins.html Retirement_Plan_for_Plugins Step_1.3A_Decide_to_retire Step_2.3A_Make_the_final_release Step_3.3A_Clean_up_after_the_release
+/developers/svn-eol-style.txt
+/developers/website/component-reference-documentation-helper.html Component_category Component_information Instructions_to_publish_component_release_documentation Preparing_Component_Release_Documentation archives artifactId index-page svnmucc v4x v4x-box version
+/developers/website/component-reference-documentation.png
+/developers/website/deploy-component-reference-documentation.html How_components_reference_documentation_publication_works Introduction Overview Publishing_versioned_component_reference_documentation Staging_component_reference_documentation Updating_index_page_in_the_Maven_site
+/developers/website/deploy-maven-website.html Edit_source_content How_main_website_publication_works Introduction Overview Publish_site_content
+/developers/website/index.html Analytics How_website_publication_works Introduction Moving_or_removing_a_page
+/developers/website/main-website.png
+/developers/website/move-a-page.html Add_a_page Move_a_section_to_another_page Move_or_rename_a_page Moving_or_Removing_a_Page Read_the_output_of_the_check Remove_a_page Remove_a_section Rename_or_merge_a_section
+/developers/website/website-overview.html Introduction
+/developers/website/website-overview.odg
+/developers/website/website-overview.png
+/developers/welcome-to-new-committers.html Guide_for_new_Maven_committers
+/docs/2.0.1/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.1
+/docs/2.0.10/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.10
+/docs/2.0.11/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.11
+/docs/2.0.2/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.2
+/docs/2.0.3/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.3
+/docs/2.0.4/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.4
+/docs/2.0.5/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.5
+/docs/2.0.6/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.6
+/docs/2.0.7/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.7
+/docs/2.0.8/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.8
+/docs/2.0.9/release-notes.html Complete_release_notes Issue_Summary Maven_2.0.9
+/docs/2.0/release-notes.html Issue_Summary Maven_2.0
+/docs/2.1.0/release-notes.html Complete_release_notes Issue_Summary Maven_2.1.0
+/docs/2.2.0/release-notes.html Complete_release_notes Issue_Summary Maven_2.2.0
+/docs/2.2.1/release-notes.html Complete_release_notes Issue_Summary Maven_2.2.1
+/docs/3.0-alpha-3/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-alpha-3
+/docs/3.0-alpha-4/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-alpha-4
+/docs/3.0-alpha-5/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-alpha-5
+/docs/3.0-alpha-6/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-alpha-6
+/docs/3.0-alpha-7/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-alpha-7
+/docs/3.0-beta-1/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-beta-1
+/docs/3.0-beta-2/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-beta-2
+/docs/3.0-beta-3/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0-beta-3
+/docs/3.0.1/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0.1
+/docs/3.0.2/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0.2
+/docs/3.0.3/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0.3
+/docs/3.0.4/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0.4
+/docs/3.0.5/release-notes.html Apache_Maven_3.0.5 Complete_Release_Notes Issue_Summary
+/docs/3.0/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.0
+/docs/3.1.0-alpha-1/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.1.0-alpha-1
+/docs/3.1.0/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.1.0
+/docs/3.1.1/release-notes.html Complete_Release_Notes Issue_Summary Maven_3.1.1
+/docs/3.10.0-rc-1/release-notes.html Changes_in_the_Super_POM.3A Classpath_ordering_change Complete_Release_Notes Full_changelog Known_issues Maven_3.10.0-rc-1_Release_Notes New_API_and_Updates_for_Maven_Plugins New_Features_and_Improvements Notable_Changes_in_Maven_3.10.0-rc-1 Overview_of_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.9.x.29
+/docs/3.10.0/release-notes.html Artifact_and_metadata_validation_in_Resolver Changes_in_the_Super_POM Classpath_ordering_change Complete_Release_Notes Full_changelog Known_issues Maven_3.10.0_Release_Notes New_API_and_Updates_for_Maven_Plugins New_Features_and_Improvements Notable_Changes_in_Maven_3.10.0 Overview_About_the_Changes Plugin_validation Potentially_Breaking_Core_Changes_.28if_migrating_from_3.9.x.29 Repository_credentials_are_scoped Reproducible_Builds Security_Hardening Stricter_POM_validation
+/docs/3.2.1/release-notes.html AbstractMavenLifecycleParticipant_changes_.28MNG-5389.29 Complete_Release_Notes Continuous_delivery_friendly_versions_.28MNG-5576.29 Custom_lifecycle_mapping_.28MNG-5581.29 Highlights Maven_3.2.1 New_Builder_interface_.28MNG-5575.29 Reactor_changes Release_Notes_-_Maven_3.2.1 Transitive_dependency_excludes_.28MNG-2315.29
+/docs/3.2.2/release-notes.html Complete_Release_Notes Highlights Maven_3.2.2 Release_Notes_.E2.80.93_Maven_3.2.2 Requiring_multiple_profile_activation_conditions_to_be_true_does_not_work_.28MNG-4565.29 Support_resolution_of_Import_Scope_POMs_from_Repo_that_contains_a_.24.7Bparameter.7D_.28MNG-5639.29 Support_version_ranges_in_parent_elements_.28MNG-2199.29 Update_maven-plugin-plugin.3Adescriptor_default_binding_from_generate-resources_phase_to_process-classes_.28MNG-5346.29 a.24.7Bmaven.build.timestamp.7D_should_use_UTC_instead_of_local_timezone_.28or_be_configurable.29_.28MNG-5452.29 a.24.7Bmaven.build.timestamp.7D_uses_incorrect_ISO_datetime_separator_.28MNG-5647.29
+/docs/3.2.3/release-notes.html Complete_Release_Notes Highlights Maven_3.2.3 Release_Notes_.E2.80.93_Maven_3.2.3 Switch_access_to_Maven_Central_to_HTTPS_.28MNG-5672.29
+/docs/3.2.5/release-notes.html Complete_Release_Notes Maven_3.2.5 Release_Notes_.E2.80.93_Maven_3.2.5
+/docs/3.3.1/release-notes.html Core_Extensions JVM_and_Command_Line_Options Overview Plugin_Goal_Invocation_from_Command_Line Release_Notes_.E2.80.93_Maven_3.3.1 Release_Notes_In_Detail Toolchains
+/docs/3.3.3/release-notes.html Complete_Release_Notes Maven_3.3.3 Release_Notes_.E2.80.93_Maven_3.3.3
+/docs/3.3.9/release-notes.html Bugs Complete_Release_Notes Improvements Release_Notes_.E2.80.93_Maven_3.3.9 Reporters_and_Contributors_of_this_release Task
+/docs/3.5.0-alpha-1/release-notes.html Complete_Release_Notes Known_Issues Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.5.0-alpha-1 Reporters_and_Contributors_of_this_release Why_not_Maven_3.4.0.3F
+/docs/3.5.0-beta-1/release-notes.html Complete_Release_Notes Known_Issues Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.5.0-beta-1 Reporters_and_Contributors_of_this_release Why_not_Maven_3.4.0.3F
+/docs/3.5.0/release-notes.html Bugs Complete_Release_Notes Dependency_upgrade Improvements Improvements_1 New_Features Overview_about_the_changes Release_Notes_.E2.80.93_Maven_3.5.0 Reporters_and_Contributors_of_this_release Tasks Testers Why_not_Maven_3.4.0.3F Wishes
+/docs/3.5.2/release-notes.html Bugs Complete_Release_Notes Improvements Improvements_1 New_Features Release_Notes_.E2.80.93_Maven_3.5.2 Reporters_and_Contributors_of_this_release Sub-tasks Tasks Testers
+/docs/3.5.3/release-notes.html Complete_Release_Notes Dependency_upgrade Improvements Known_Issues New_Feature Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.5.3 Reporters_and_Contributors_of_this_release Task The_detailed_issue_list
+/docs/3.5.4/release-notes.html Bugs Complete_Release_Notes Dependency_upgrades Improvements Known_Issues Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.5.4 Reporters_and_Contributors_of_this_release Tasks The_detailed_issue_list
+/docs/3.6.0/release-notes.html Bugs.3A Complete_Release_Notes Dependency_upgrades Improvements.3A Known_Issues Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.6.0 Reporters_and_Contributors_of_this_release Task The_detailed_issue_list
+/docs/3.6.1/release-notes.html Bugs.3A Complete_Release_Notes Dependency_upgrade Improvements Known_Issues Overview_about_the_changes Preliminary_Testers Release_Notes_.E2.80.93_Maven_3.6.1 Reporters_and_Contributors_of_this_release Task The_detailed_issue_list User_visible_Changes Wish
+/docs/3.6.2/release-notes.html Complete_Release_Notes Overview_about_the_changes Release_Notes_.E2.80.93_Maven_3.6.2 Reporters_and_Contributors_of_this_release The_detailed_issue_list
+/docs/3.6.3/release-notes.html Complete_Release_Notes Overview_about_the_changes Release_Notes_.E2.80.93_Maven_3.6.3 Reporters_and_Contributors_of_this_release The_detailed_issue_list
+/docs/3.8.1/release-notes.html CVE-2020-13956 CVE-2021-26291 Complete_Release_Notes How_to_fix_when_I_get_a_HTTP_repository_blocked.3F Overview_about_the_changes Release_Notes_.E2.80.93_Maven_3.8.1 The_detailed_issue_list Why_does_this_version_have_the_value_3.8.1.3F
+/docs/3.8.2/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.2
+/docs/3.8.3/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.3
+/docs/3.8.4/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.4
+/docs/3.8.5/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.5
+/docs/3.8.6/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.6
+/docs/3.8.7/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.7
+/docs/3.8.8/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.8
+/docs/3.8.9/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_3.8.9
+/docs/3.9.0/release-notes.html Complete_Release_Notes Known_Issues Notable_Core_Improvements Notable_Resolver_1.9.x_Improvements Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.0
+/docs/3.9.1/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.1
+/docs/3.9.10/release-notes.html Complete_Release_Notes Known_issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.10
+/docs/3.9.11/release-notes.html Complete_Release_Notes Full_changelog Known_issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.11
+/docs/3.9.12/release-notes.html Complete_Release_Notes Full_changelog Known_issues Maven_3.9.12_Release_Notes Notable_Changes_in_Maven_3.9.12 Notable_Changes_in_Resolver_1.9.25 Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29
+/docs/3.9.13/release-notes.html Complete_Release_Notes Full_changelog Known_issues Maven_3.9.13_Release_Notes Notable_Changes_in_Maven_3.9.13 Notable_Changes_in_Resolver_1.9.27 Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29
+/docs/3.9.14/release-notes.html Complete_Release_Notes Full_changelog Known_issues Maven_3.9.14_Release_Notes Notable_Changes_in_Maven_3.9.14 Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29
+/docs/3.9.15/release-notes.html Complete_Release_Notes Full_changelog Known_issues Maven_3.9.15_Release_Notes Notable_Changes_in_Maven_3.9.15 Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29
+/docs/3.9.16/release-notes.html Complete_Release_Notes Full_changelog Known_issues Maven_3.9.16_Release_Notes Notable_Changes_in_Maven_3.9.16 Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29
+/docs/3.9.2/release-notes.html Complete_Release_Notes Known_Issues Notable_New_Features Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.2
+/docs/3.9.3/release-notes.html Complete_Release_Notes Known_Issues Notable_New_Features Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.3
+/docs/3.9.4/release-notes.html Complete_Release_Notes Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.4
+/docs/3.9.5/release-notes.html Complete_Release_Notes Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.5
+/docs/3.9.6/release-notes.html Complete_Release_Notes Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.6
+/docs/3.9.7/release-notes.html Complete_Release_Notes Known_issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.7
+/docs/3.9.8/release-notes.html Complete_Release_Notes Known_issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.8
+/docs/3.9.9/release-notes.html Complete_Release_Notes Known_issues Overview_About_the_Changes Potentially_Breaking_Core_Changes_.28if_migrating_from_3.8.x.29 Release_Notes_.E2.80.93_Maven_3.9.9
+/docs/4.0.0-alpha-10/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-10
+/docs/4.0.0-alpha-12/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-12
+/docs/4.0.0-alpha-13/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-13
+/docs/4.0.0-alpha-2/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-2
+/docs/4.0.0-alpha-3/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-3
+/docs/4.0.0-alpha-4/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-4
+/docs/4.0.0-alpha-5/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-5
+/docs/4.0.0-alpha-7/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-7
+/docs/4.0.0-alpha-8/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-8
+/docs/4.0.0-alpha-9/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-alpha-9
+/docs/4.0.0-beta-3/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-beta-3
+/docs/4.0.0-beta-4/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-beta-4
+/docs/4.0.0-beta-5/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-beta-5
+/docs/4.0.0-rc-1/release-notes.html Complete_Release_Notes Known_Issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-rc-1
+/docs/4.0.0-rc-2/release-notes.html Bug_fixes Change_log Dependency_upgrade Full_changelog Improvements Known_issues Overview_About_the_Changes Release_Notes_.E2.80.93_Maven_4.0.0-rc-2 Upgrading_from_Maven_3
+/docs/4.0.0-rc-3/release-notes.html Bug Changelog Dependency_upgrade Improvement New_Feature Release_Notes_.E2.80.93_Maven_4.0.0-rc-3 Task Upgrading_from_Maven_3 Upgrading_from_Maven_4.0.0-rc-2
+/docs/4.0.0-rc-4/release-notes.html Apache_Maven_4.0.0-rc-4_Release_Notes Changelog Full_changelog Important_Notes Maven_4.x Upgrading_from_Maven_3 Upgrading_from_Maven_4.0.0-rc-3 a.3F.3F_Bug_Fixes a.3F.3F_Build a.3F.3F_Dependency_updates a.3F.3F_Documentation_updates a.3F.3F_Maintenance a.3F.3F_New_features_and_improvements
+/docs/4.0.0-rc-5/release-notes.html Apache_Maven_4.0.0-rc-5_Release_Notes BOM_packaging Bean_configuration_bug Changelog Concurrency_issue_in_the_v4_API Full_changelog Important_Notes Known_issues Maven_4.x Upgrading_from_Maven_3 Upgrading_from_Maven_4.0.0-rc-4 a.3F.3F_Breaking_changes a.3F.3F_Bug_Fixes a.3F.3F_Build a.3F.3F_Dependency_updates a.3F.3F_Maintenance a.3F.3F_New_features_and_improvements macOS.3A_JLine_native_library_may_be_blocked_by_Gatekeeper_on_first_use
+/docs/4.0.0-rc-6/release-notes.html Apache_Maven_4.0.0-rc-6_Release_Notes BOM_consumer_POM_property_references Changelog Full_changelog Important_Notes Known_issues Maven_4.x Upgrading_from_Maven_3 Upgrading_from_Maven_4.0.0-rc-5 a.3F.3F_Bug_Fixes a.3F.3F_New_features_and_improvements
+/docs/4.0.0-rc-7/release-notes.html Apache_Maven_4.0.0-rc-7_Release_Notes Changelog Full_changelog Important_Notes Maven_4.x Upgrading_from_Maven_3 Upgrading_from_Maven_4.0.0-rc-6 a.3F.3F_Bug_Fixes a.3F.3F_Dependency_updates a.3F.3F_Documentation_updates a.3F.3F_Maintenance a.3F.3F_Maintenance_1 a.3F.3F_New_features_and_improvements
+/docs/history.html Maven_1 Maven_2 Maven_3.10.x.2B Maven_3.8.x_and_before Maven_3.9.x.2B Maven_4.0.2B_.28not_yet_GA.29 Maven_Releases_History
+/download.html Apache_Maven Apache_Maven_3.10.0 CurrentDaemon CurrentMaven Daemon Daemon2x Downloading_Apache_Maven_and_Maven_Daemon Maven Maven39x Maven4x Maven_Daemon Maven_Daemon_1.0.6 Preview_4.x_Release Preview_Daemon_2.x_Release Previous_Stable_3.9.x_Release TOC
+/doxia/components.links
+/doxia/developers/index.html Doxia_Developers_Centre
+/doxia/developers/macros.html Create_a_New_Doxia_Macro References
+/doxia/developers/modules.html Create_a_New_Doxia_Module Generating Parsing References
+/doxia/developers/sink.html Avoid_sink.rawText.21 Generating_documents How_to_inject_javascript_code_into_HTML Passing_attributes_to_Sink_events References Transforming_documents Using_the_Doxia_Sink_API
+/doxia/doap_Doxia.rdf
+/doxia/downloads.html Maven_Doxia_Releases
+/doxia/doxia-tools/components.links
+/doxia/doxia-tools/index.html Available_Doxia_Tools Retired
+/doxia/faq.html Frequently_Asked_Questions How_to_define_character_entities_in_Doxia_XML_files_with_XSD.3F How_to_export_in_PDF How_to_export_in_PDF.3F How_to_handle_style_in_the_APT_markup_language How_to_handle_style_in_the_APT_markup_language.3F Where_are_the_Maven_Doxia_XSD_schemas_files.3F Why_XML_based_sinks_don.27t_generate_nicely_formatted_documents.3F Why_XML_based_sinks_don_t_generate_nicely_formatted_documents doxia-character-entities doxia-xsd top
+/doxia/images/architecture.odg
+/doxia/images/architecture.png
+/doxia/images/doxia-logo.png
+/doxia/images/doxia-logo.svg
+/doxia/index.html Brief_History Doxia_Reference_Pages Main_Features Maven_Doxia
+/doxia/issues/index.html Apt_anchors_and_links Doxia_Issues_.26_Gotchas Empty_Generated_Page Figure_sink_events
+/doxia/macros/index.html Doxia_Macros_Guide Echo_Macro Removed_Macros Snippet_Macro TOC_Macro
+/doxia/mermaid-diagrams.html Configuration Embed_in_generated_site Mermaid_Diagrams Reference_from_external_server Setup Usage
+/doxia/migrating-apt-to-markdown.html Checking_the_result Converting Differences_that_are_improvements Do_not_tidy_away_a_code_block.27s_info_string Know_what_this_comparison_cannot_see Migrating_a_project.27s_site_from_APT_to_Markdown Raw_HTML_does_not_survive_the_way_it_looks_like_it_will References_the_source_meant_to_show.2C_not_resolve The_one_rule_that_matters Things_Markdown_cannot_express Velocity_and_Markdown_disagree_about_.23 What_not_to_convert
+/doxia/modules/index.html APT Doxia_Modules_Guide FML Markdown XDoc XHTML
+/doxia/overview.html Doxia_Core Doxia_Modules Doxia_Site_Tools Overview_Of_The_Doxia_Framework Sink_API
+/doxia/references/apt-format.html Anchor_and_link Block_level_elements Comment Document_elements Document_structure Figure Font Horizontal_rule Important_Notice Line_break List Non_breaking_space Page_break Paragraph Section Special_character Table Text_level_elements The_APT_format Title Verbatim_text
+/doxia/references/doxia-apt.html Anchor_construction Anchors Anchors_for_section_titles Enhancements_to_the_APT_format Figure_extensions Links Multi-lines_cells_in_table Paragraphs_in_list_items Table_header_cells
+/doxia/references/fml-format.html FML_Sample Overview The_FML_format The_FML_format_1 Validation
+/doxia/references/index.html Doxia_Markup_Languages_References Former_Doxia_Formats
+/doxia/references/markdown-format.html Converting_an_existing_document Document_metadata Macros Markdown_Format_Reference Velocity What_Markdown_cannot_express Which_Markdown
+/doxia/references/xdoc-format.html A_subsubsection Additional_sectioning Don.27t_nest_block_level_elements Don.27t_put_.3Csource.3E_inside_paragraphs Dont_nest_block_level_elements Dont_put_source_inside_paragraphs Overview Put_inline_elements_inside_block_level_elements Referencing_sections_and_subsections Right_order_of_elements_in_.3Cproperties.3E Right_order_of_elements_in_properties The_.3Csource.3E_tag The_XDoc_format The_XDoc_xsd The_source_tag Validation XDoc_Sample
+/doxia/resources.html Articles Extensions External_Resources Related_External_Projects
+/doxia/scm.html Source_Repository
+/errors/404.html Page_Not_Found
+/examples/index.html Examples
+/examples/injecting-properties-via-settings.html Example.3A_Injecting_POM_Properties_via_Settings.xml Explanation Impetus Plugin_Configuration settings.xml
+/examples/maven-3-lifecycle-extensions.html Build_Your_Extension Example.3A_Using_Maven_3_lifecycle_extension Lifecycle_Extension_Points Load_Your_Extension
+/extensions/components.links
+/extensions/index.html Available_Extensions Commercial Maintained_By_The_Maven_Project Open_Source Outside_The_Maven_Land
+/faq-unoffical.html Answered_Questions_.28unofficial.29 Are_there_any_recommendations_on_how_to_handle_dependencies.2C_which_aren.27t_always_required.3F Can_I_add_a_java_source_to_my_war_package.3F Can_I_define_the_antrun_plugin_to_be_executed_on_demand_like_.E2.80.9Cmvn_antrun.3Arun.E2.80.9D.3F Can_I_disable_transitive_dependencies.3F Can_a_profile_inherit_the_configuration_of_a_.E2.80.9Csibling.E2.80.9D_profile.3F Does_a_POM_inherit_its_resources.3F Does_it_matter_if_the_project.27s_directory_name_is_not_the_same_as_the_artifactId.3F Does_maven_support_automated_build_and_test_from_non-Java_applications.3F Does_the_v4.0.0_POM_include_a_.3C_versions.2F_.3E_element.3F General How_can_I_add_two_different_source-directories_to_a_project.3F How_can_I_change_the_default_location_of_the_generated_jar_when_I_command_.E2.80.9Cmvn_package.E2.80.9D.3F How_can_I_create_an_archetype_with_resources_mapped_to_the_class_files_directory.3F How_can_I_disable_the_timestamp_appended_in_my_deployed_artifact.3F How_can_I_have_a_child_project_not_inherit_a_goal_.28like_install.29_from_the_parent.3F How_can_I_make_the_war_plugin_produces_an_exploded_war_instead_of_.war_file.3F How_can_I_reference_windows_or_unix_environment_variables_in_my_POM.3F How_can_I_stop_this_the_.E2.80.9CThis_artifact_has_been_relocated_to.E2.80.9D_warning.3F How_do_I_access_downloaded_sources_in_eclipse.3F How_do_I_add_a_description_to_the_welcome_page_of_the_generated_site_when_I_execute_mvn_site.3F How_do_I_add_main_class_in_a_generated_jar.27s_manifest.3F How_do_I_add_my_generated_sources_to_the_compile_path_of_Maven.2C_when_using_Modello.3F How_do_I_add_properties_to_a_pom.3F How_do_I_change_the_default_remote_repository.3F How_do_I_compile_1.3_java_sources_with_a_1.4.x_or_1.5.x_JDK.3F How_do_I_configure_a_project_to_use_a_specific_version_of_a_JDK.3F How_do_I_create_a_command_line_parameter_.28i.e..2C_-Dname.3Dvalue_.29_in_my_mojo.3F How_do_I_create_a_report_that_does_not_require_Doxia.27s_Sink_interface.3F How_do_I_deploy_my_binary_during_the_deploy_phase.3F How_do_I_determine_my_project.27s_transitive_dependencies.2C_and_if_needed.2C_exclude_a_particular_transitive_dependency.3F How_do_I_determine_the_stale_resources_in_a_Mojo_to_avoid_reprocessing_them.3F How_do_I_determine_which_POM_contains_missing_transitive_dependency.3F How_do_I_execute_the_assembly_plugin_with_different_configurations.3F How_do_I_filter_resources_in_the_war.3F How_do_I_filter_which_classes_should_be_put_inside_the_packaged_jar.3F How_do_I_generate_Maven_plug-in_sites.2C_with_pages_that_include_an_overview_of_the_goals_and_parameters_for_each_plug-in.3F How_do_I_generate_sources_with_the_antrun_plug-in.3F How_do_I_get_a_plugin.27s_dependencies_from_a_Mojo.3F How_do_I_get_the_project.27s_sources_from_a_Mojo.3F How_do_I_get_the_top_line_of_a_table_to_be_.E2.80.9Cheaders.E2.80.9D_for_that_column_in_APT.3F How_do_I_include.2Fexclude_the_other_modules_in_the_navigation_menu_in_the_parent_site.3F How_do_I_include_tools.jar_in_my_dependencies.3F How_do_I_indicate_array_types_in_a_MOJO_configuration.3F How_do_I_install_a_file_in_my_local_repository_along_with_a_generic_POM.3F How_do_I_install_a_file_in_my_local_repository_along_with_my_customized_POM.3F How_do_I_install_artifacts_to_a_remote_repository.3F How_do_I_install_the_package_generated_by_the_assembly_plugin_to_be_installed_in_the_local_repository.3F How_do_I_integrate_static_.28x.29html_into_my_Maven_site.3F How_do_I_know_which_phase_a_plug-in_is_associated_with.3F How_do_I_merge_a_list_of_configuration_items_in_a_parent_POM_with_those_in_a_child_POM.3F How_do_I_prevent_tests_from_running_twice.2C_after_adding_a_configuration_for_the_surefire_plugin.3F How_do_I_prevent_verification_warnings_with_custom_repositories.3F How_do_I_properly_populate_variables.2C_when_extending_a_mojo_from_another_plugin.3F How_do_I_read_the_version_from_the_pom.xml_and_then_using_Java_display_the_version_on_my_application.3F How_do_I_replace_.3CattainGoal.3E_from_Maven_1_in_Maven_2.3F How_do_I_resolve_the_.E2.80.9C.3C_plugin_name_.3E_does_not_exist_or_no_valid_version.E2.80.9D_error.3F How_do_I_run_a_process_without_waiting_for_reports_or_unit_tests.3F How_do_I_run_a_process_without_waiting_for_reports_or_unit_tests.3F.29. How_do_I_run_an_ant_task_twice.2C_against_two_different_phases.3F How_do_I_set_the_base_directory_for_creating_the_packages_created_by_assembly.3F How_do_I_setup_the_classpath_of_my_antrun_plugin_to_use_the_classpath_from_maven.3F How_do_I_skip_unit_tests_when_building_a_project.3F How_do_I_specify_my_remote_repo_in_Maven.3F How_do_I_specify_that_all_web_modules_will_inherit_the_group.27s_common_files_from_a_parent_web_module.3F How_do_I_specify_which_output_directories_the_Eclipse_plugin_puts_into_the_.classpath_file.3F How_do_I_use_SNAPSHOT_versions_of_plug-ins.3F How_not_to_include_all_jar_files_from_parent_pom.3F How_should_I_point_a_path_for_Maven_to_use_a_certain_version_of_JDK_when_I_have_different_versions_of_JDK_installed_on_my_PC_and_my_JAVA_HOME_already_set.3F How_to_encrypt_a_secure_password_that_includes_an_ampersand How_to_list_all_goals_available_for_a_certain_plugin.3F How_to_make_Continuum_work_in_service_mode_when_an_Error_1067_is_reported.3F How_to_make_a_war_artifact_as_a_dependency.3F How_to_remove_the_artifact_in_the_local_repository.3F How_to_resolve_problems_with_jtaxxx.jar.3F How_to_run_a_java_program_from_Maven.3F I.27m_wondering_what_a_.E2.80.9Csnapshot.E2.80.9D_actually_is. I.27ve_just_created_a_maven_plugin._Is_there_a_sample_plugin_integration_test_I_can_use.3F I_don.27t_have_a_domain_name_and_I_don.27t_want_use_my_employer.27s_domain_name._What_should_I_name_my_plugin_package.3F I_have_my_web.xml_in_my_customized_directory_layout_for_my_webapp.2C_but_why_am_I_getting_the_error I_would_like_clarification_on_what_version_of_the_JDK_is_required_for_m2_-_particularly_with_respect_to_creating_Plugins. If_two_versions_of_the_same_dependency_are_at_the_same_depth.2C_how_do_you_know_or_predict_which_version_will_be_used.3F In_a_multi-module_project.2C_is_there_any_way_for_Maven_to_build_only_those_modules_that_have_changed_from_the_previous_build_and_leave_the_unchanged_modules_alone_.28i.e._not_build_them.29.3F Is_it_possible_that_if_I_do_mvn_eclipse.3Aeclipse_goal.2C_my_project_would_get_disconnected_from_the_SVN_repository.3F Is_it_possible_to_exclude_a_package_from_the_generated_jar_file.3F Is_it_possible_to_specify_multiple_.3Cmodule.3E.28s.29_in_a_POM_at_a_greater_depth_than_1_level.3F Is_it_possible_to_use_HashMap_as_configurable_parameter_in_a_plugin.3F_How_do_I_configure_that_in_pom.xml.3F Is_maven_.E2.80.98deploy.E2.80.99_goal_and_actually_copying_of_a_dependency_or_artifact_jar_to_remote_repository_same.3F Is_there_a_preferred_way_to_communicate_dependencies_in_documentation.3F Is_there_a_setting_for_testing.2C_where_I_can_add_a_directory_to_the_classpath.2C_which_will_allow_the_tests_to_access_the_files.3F Is_there_a_way_to_get_Maven_to_report_the_number_of_compile_errors_found.3F Is_there_a_way_to_read_and_examine_the_contents_of_a_pom.xml_file_from_inside_an_application.3F Is_there_a_way_to_specify_a_different_output_directory_without_having_to_edit_the_pom_or_configuration_file_each_time_I_do_a_build.3F Is_there_a_way_to_use_the_current_date_in_the_POM.3F Is_there_a_way_to_use_the_deploy_phase_to_perform_some_tasks_without_maven_trying_to_install_the_artifact_to_a_maven_repository.3F Is_there_any_variable_to_determine_what_version_of_an_artifact_was_deployed_after_the_deploy_step_runs.3F List_of_available_Maven_mirrors. Maven_doesn.27t_work.2C_how_do_I_get_help.3F Reports_.26_Site_Docs Repositories Repository_precedence Sites_.26_Reporting The_snapshot_version_of_the_plugin_is_not_updated_in_the_snapshot_repo.2C_What_should_I_do_to_update_my_copy_of_the_plugin.3F Unsupported_Protocol_Error_when_deploying_a_3rd_party_jar._What_should_I_do.3F Using_xdoclet.2C_how_come What_does_.28f.29_and_.28s.29_debug_output_mean.3F What_does_aggregator_mean_in_mojo.3F What_does_the_.22ERROR.3A_Cannot_override_read-only_parameter.3A What_does_the_.E2.80.9CYou_cannot_have_two_plugin_executions_with_the_same_.28or_missing.29_.3Cid.2F.3E_elements.E2.80.9D_message_mean.3F What_is_Maven.27s_order_of_inheritance.3F What_is_a_Snapshot.3F What_is_reactorProjects.3F_executedProject.3F What_is_the_purpose_of_displaying_read-only.2C_plug-in_fields_in_user_documentation.2C_if_they_are_not_configurable_in_the_project_descriptor.3F What_is_the_purpose_of_remote_repository_.28other_than_ibilbilo.29.3F What_is_the_suggested_way_to_download_a_remote_file.3F What_would_be_the_appropriate_way_to_enable_inheritance_of_classes_in_the_test_hierarchy_across_modules_during_the_test-compile_phase_of_a_multi-pom_project.3F What_would_it_take_for_the_MOJO_one_to_get_out_of_the_sandbox.3F When_I_run_mvn_release.3Aprepare.2C_I_get_a_build_failure_saying_.E2.80.9CUnable_to_tag_SCM.2C_File_.28.E2.80.A6.29_already_exists.E2.80.9D. Whenever_a_file_is_modified_in_a_maven_project_how_is_the_SNAPSHOT_jar_updated_in_the_remote_repository.3F Where_can_I_get_the_Maven_plugin_for_Eclipse.3F Where_do_I_configure_report_plug-ins.2C_like_javadoc.3F Where_is_the_plugin-registry.xml.3F Where_to_find_the_source_code_for_org.apache.maven.model_package.3F Where_to_get_sun.jdk-tools-jar-1.4.0_on_MacOSX.3F Which_part_in_pom.xml_the_javadoc_plugin_should_be_configured.3F Which_plugins_have_StarTeam_.28SCM.29_support.3F_How_do_they_differ.3F Why_do_I_get_java.lang.NoClassDefFoundError.3A_org.2Fcodehaus.2Fclassworlds.2FLauncher_when_I_try_to_execute_Maven.3F Why_do_I_not_get_an_index.html_page_generated_for_my_project_website.3F Why_does_Maven_compile_my_test_classes_but_doesn.27t_run_them.3F Why_does_release_prepare_goal_requires_the_project_to_be_released_be_a_snapshot.3F_Is_it_possible_to_do_a_release_prepare_from_a_parent_project.3F_What_about_from_a_subproject.3F Why_there_are_no_dependency_properties_in_Maven.3F pom.xml_or_settings.xml.3F_What_is_the_best_practice_configuration_usage_for_these_files.3F
+/fonts/glyphicons-halflings-regular.eot
+/fonts/glyphicons-halflings-regular.svg
+/fonts/glyphicons-halflings-regular.ttf
+/fonts/glyphicons-halflings-regular.woff
+/general.html Frequently_Asked_Technical_Questions Handle_special_characters_in_site How_can_I_run_a_single_unit_test.3F How_can_I_use_Ant_tasks_in_a_Maven_build.3F How_can_I_use_Maven_features_in_an_Ant_build.3F How_do_I_determine_what_version_of_a_plugin_I_am_using.3F How_do_I_list_available_plugins.3F How_do_I_prevent_.E2.80.9C.5BWARNING.5D_Using_platform_encoding_.28Cp1252_actually.29_to_copy_filtered_resources.2C_i.e._build_is_platform_dependent.21.E2.80.9D How_do_I_prevent_including_JARs_in_WEB-INF.2Flib.3F_I_need_a_.E2.80.9Ccompile_only.E2.80.9D_scope.21 How_do_I_set_up_Maven_so_it_will_compile_with_a_target_and_source_JVM_of_my_choice.3F How_do_I_skip_the_tests.3F How_do_I_unsubscribe_from_Maven_mailing_lists.3F How_to_find_dependencies_on_public_Maven_repositories.3F How_to_produce_execution_debug_output_or_error_messages.3F I_have_a_jar_that_I_want_to_put_into_my_local_repository._How_can_I_copy_it_in.3F Is_it_possible_to_create_my_own_directory_structure.3F Maven_can.27t_seem_to_download_the_dependencies._Is_my_installation_correct.3F Maven_compiles_my_test_classes_but_doesn.27t_run_them.3F Maven_doesn.27t_work.2C_how_do_I_get_help.3F What_is_a_Mojo.3F Where_are_Maven_SNAPSHOT_artifacts.3F Where_are_the_Maven_XSD_schemas.3F Where_is_the_source_code.3F_I_couldn.27t_seem_to_find_a_link_anywhere_on_the_Maven_site Why_is_my_Javadoc_JAR_built_twice_during_release.3F encoding-warning
+/glossary.html Glossary Project
+/guides/MavenQuickReferenceCard.pdf
+/guides/development/guide-building-maven.html Building_Maven Building_Maven_1 Building_Maven_core Building_a_Maven_Plugin_or_Component Checking_out_the_sources Running_Core_Integration_Tests Running_Integration_Tests Why_would_I_want_to_build_Maven.3F
+/guides/development/guide-committer-school.html Do_you_want_to_become_a_Maven_Committer.3F Example How_to_get_your_patches_noticed What_makes_a_good_patch.3F
+/guides/development/guide-documentation-style.html Date_format Example Guide_To_Maven_Documentation_Style Naming_Documentation_Files POM_Snippet References Updating_Documentation_Files Where_did_the_style_came_from.3F Write_Thinking
+/guides/development/guide-helping.html Developers_Conventions Guide_to_helping_with_Maven How_do_I_Join_the_Project.3F Resources_for_Apache_Software_Foundation_committers Why_Would_I_Want_to_Help.3F
+/guides/development/guide-maven-development.html Creating_and_submitting_a_patch Developing_Maven Don.27t_forget_tests.21 Finding_some_work_to_do Pull_request_acceptance_criteria Related_Projects Small_amendments_of_the_documentation Sub_Projects Where.27s_the_source.3F
+/guides/development/guide-plugin-documentation.html Generated_Documentation Introduction Navigation_Links Optional_Elements POM_Elements Plugin_Goals_List_and_Configuration_Parameters_for_each_Goal Recommended_Configured_Reports Required_Elements Site_Descriptor Site_Organization Where_did_the_standard_come_from.3F Why_do_we_need_a_documentation_standard.3F
+/guides/development/guide-testing-development-plugins.html Guide_to_Testing_Development_Versions_of_Plugins How_do_I_do_this.3F How_do_I_make_changes_to_the_source_and_test_development_versions_of_the_plugins.3F Using_Settings_without_Modifying_the_Project Using_a_Repository_Manager Why_would_I_want_to_do_this.3F
+/guides/development/guide-testing-releases.html Checking_Reproducible_Builds Guide_to_Testing_Staged_Releases Setting_up_Archiva_to_Test_Staged_Releases Using_a_Settings_Profile
+/guides/getting-started/index.html How_can_Maven_benefit_my_development_process.3F How_do_I_add_resources_to_my_JAR.3F How_do_I_build_more_than_one_project_at_once.3F How_do_I_build_other_types_of_projects.3F How_do_I_compile_my_application_sources.3F How_do_I_compile_my_test_sources_and_run_my_unit_tests.3F How_do_I_create_a_JAR_and_install_it_in_my_local_repository.3F How_do_I_create_documentation.3F How_do_I_deploy_my_jar_in_my_remote_repository.3F How_do_I_filter_resource_files.3F How_do_I_make_my_first_Maven_project.3F How_do_I_setup_Maven.3F How_do_I_use_external_dependencies.3F How_do_I_use_plugins.3F Maven_Getting_Started_Guide Sections What_is_Maven.3F What_is_a_SNAPSHOT_version.3F
+/guides/getting-started/maven-in-five-minutes.html Build_the_Project Conclusion Creating_a_Project Generating_the_Site Installation Java_9_or_later Maven_Phases Maven_in_5_Minutes Prerequisites Running_Maven_Tools The_POM What_did_I_just_do.3F
+/guides/getting-started/windows-prerequisites.html Firewalls_and_Anti-virus Maven_Unpacked Maven_in_PATH Maven_on_Windows Prerequisites
+/guides/index.html Documentation Getting_Started_with_Maven Guides Javadoc_API Maven_Build_Config_Fundamentals Maven_Build_Fundamentals Maven_Developer_Centre Maven_Repository_Centre Plugin_Developer_Centre Site The_Central_Repository The_Maven_Community User_Centre
+/guides/introduction/introduction-to-archetypes.html Introduction_to_Archetypes Provided_Archetypes Using_an_Archetype What_is_Archetype.3F What_makes_up_an_Archetype.3F
+/guides/introduction/introduction-to-dependency-mechanism.html Bill_of_Materials_.28BOM.29_POMs Dependency_Management Dependency_Scope Historical_usage.3A_Java_EE_.28javax.29_libraries_of_the_JDK Importing_Dependencies Introduction_to_the_Dependency_Mechanism System_Dependencies Transitive_Dependencies
+/guides/introduction/introduction-to-optional-and-excludes-dependencies.html Dependency_Exclusions Example How_dependency_exclusion_works_and_when_to_use_it_.28_as_a_last_resort.21_.29 How_do_I_use_the_optional_tag.3F How_do_optional_dependencies_work.3F How_to_use_dependency_exclusions Introduction Optional_Dependencies Why_exclusions_are_made_on_a_per-dependency_basis.2C_rather_than_at_the_POM_level Why_use_optional_dependencies.3F
+/guides/introduction/introduction-to-plugin-prefix-mapping.html Configuring_Maven_to_Search_for_Plugins Introduction_to_Plugin_Prefix_Resolution Mapping_Prefixes_to_Plugins Resources Specifying_a_Plugin.27s_Prefix a1
+/guides/introduction/introduction-to-plugins.html Introduction_to_Maven_Plugin_Development Resources What_is_a_Mojo_.28And_Why_the_H.E2.80.94_is_it_Named_.E2.80.98Mojo.E2.80.99.29.3F What_is_a_Plugin.3F What_is_the_Build_Lifecycle.3F_.28Overview.29
+/guides/introduction/introduction-to-profiles.html Active_by_default Cascading_profile_activation Deactivating_a_profile Details_on_profile_activation Examples Explicit_profile_activation External_Properties Files How_can_I_tell_which_profiles_are_in_effect_during_a_build.3F How_can_a_profile_be_triggered.3F_How_does_this_vary_according_to_the_type_of_profile_being_used.3F Implicit_profile_activation Incomplete_Specification_of_a_Natural_Profile_Set Introduction_to_Build_Profiles JDK Multiple_conditions Naming_Conventions OS POM_elements_outside_.3Cprofiles.3E Packaging_property Profile_Inheritance Profile_Order Profile_Pitfalls Profiles_in_POMs Profiles_in_external_files Properties System_or_CLI_user_property What_are_the_different_types_of_profile.3F_Where_is_each_defined.3F Which_areas_of_a_POM_can_be_customized_by_each_type_of_profile.3F_Why.3F
+/guides/introduction/introduction-to-repositories.html Artifact_Repositories Building_Offline Deploying_to_the_Internal_Repository Downloading_from_a_Remote_Repository Internal_Repositories Introduction_to_Repositories Setting_up_the_Internal_Repository Uploading_to_a_Remote_Repository Using_Mirrors_for_the_Central_Repository Using_Repositories Using_the_Internal_Repository
+/guides/introduction/introduction-to-the-lifecycle.html A_Build_Lifecycle_is_Made_Up_of_Phases A_Build_Phase_is_Made_Up_of_Plugin_Goals Build_Lifecycle_Basics Built-in_Lifecycle_Bindings Clean_Lifecycle Clean_Lifecycle_Bindings Default_Lifecycle Default_Lifecycle_Bindings_-_Packaging_ear Default_Lifecycle_Bindings_-_Packaging_ejb_.2F_jar_.2F_rar_.2F_war Default_Lifecycle_Bindings_-_Packaging_maven-plugin Default_Lifecycle_Bindings_-_Packaging_pom Introduction_to_the_Build_Lifecycle Lifecycle_Reference Packaging Plugins References Setting_Up_Your_Project_to_Use_the_Build_Lifecycle Site_Lifecycle Site_Lifecycle_Bindings Some_Phases_Are_Not_Usually_Called_From_the_Command_Line Usual_Command_Line_Calls
+/guides/introduction/introduction-to-the-pom.html Available_Variables Example_1 Example_2 Example_3 Example_4 Example_5 Introduction_to_the_POM Minimal_POM Project_Aggregation Project_Inheritance Project_Inheritance_vs_Project_Aggregation Project_Interpolation_and_Variables Project_Model_Variables Properties Special_Variables Super_POM The_Scenario The_Scenario_1 The_Scenario_2 The_Scenario_3 The_Scenario_4 The_Solution The_Solution_1 The_Solution_2 The_Solution_3 The_Solution_4 What_is_a_POM.3F
+/guides/introduction/introduction-to-the-standard-directory-layout.html Introduction_to_the_Standard_Directory_Layout
+/guides/mini/guide-3rd-party-jars-local.html Guide_to_installing_3rd_party_JARs
+/guides/mini/guide-3rd-party-jars-remote.html Deploying_Source_Jars Deploying_a_3rd_party_JAR_with_a_customized_POM Deploying_a_3rd_party_JAR_with_a_generic_POM Guide_to_deploying_3rd_party_JARs_to_remote_repository
+/guides/mini/guide-archive-configuration.html Configuring_the_Manifest Disabling_Maven_Meta_Information Guide_to_Configuring_Archive_Plugins
+/guides/mini/guide-assemblies.html Creating_a_binary_assembly Guide_to_creating_assemblies
+/guides/mini/guide-attached-tests.html Guide_to_using_attached_tests
+/guides/mini/guide-bash-m2-completion.html Guide_to_Maven_auto_completion_using_BASH
+/guides/mini/guide-building-for-different-environments.html Building_For_Different_Environments Caveats Resources
+/guides/mini/guide-configuring-maven.html Configuring_Maven Configuring_Parallel_Artifact_Resolution Configuring_a_Proxy Configuring_your_Local_Repository Optional_configuration Profiles Security Security_and_Deployment_Settings Settings Toolchains Using_Mirrors_for_Repositories
+/guides/mini/guide-configuring-plugins.html Configuring_Build_Plugins Configuring_Parameters Configuring_Reporting_Plugins Generic_Configuration Guide_to_Configuring_Plug-ins Help_Goal Introduction Mapping_Collection_Types Mapping_Collections_and_Arrays Mapping_Complex_Objects Mapping_Maps Mapping_Properties Mapping_Value_Objects Using_the_.3Cdependencies.3E_Tag Using_the_.3Cexecutions.3E_Tag Using_the_.3Cinherited.3E_Tag_In_Build_Plugins Using_the_.3Cinherited.3E_Tag_In_Reporting_Plugins Using_the_.3CreportSets.3E_Tag Using_the_.3Creporting.3E_Tag_VS_.3Cbuild.3E_Tag
+/guides/mini/guide-creating-archetypes.html Alternative_way_to_start_creating_your_Archetype Guide_to_Creating_Archetypes a1._Create_a_new_project_and_pom.xml_for_the_archetype_artifact a2._Create_the_archetype_descriptor a3._Create_the_prototype_files_and_the_prototype_pom.xml a4._Install_the_archetype_and_run_the_archetype_plugin a4._Test_the_archetype a5._Install_the_archetype_and_run_the_archetype_plugin
+/guides/mini/guide-default-execution-ids.html Default_executionIds_for_Implied_Executions Example.3A_Command-line_variant_invocation_of_the_assembly_plugin Example.3A_Configuring_compile_and_testCompile_mojos_separately Example.3A_Configuring_compile_to_run_twice Guide_to_Configuring_Default_Mojo_Executions
+/guides/mini/guide-deployment-security-settings.html Security_and_Deployment_Settings
+/guides/mini/guide-deployment-transports.html Deploying_over_HTTP.2C_FTP_and_SSH Deploying_over_an_unreliable_network Deploying_to_a_local_staging_directory FTP HTTP.28S.29 Retrying SSH_with_external_executables
+/guides/mini/guide-encryption-4.html Configuration_File Create_encrypted_values Dispatchers Implementation Introduction Legacy_Dispatcher Master Master_Key_Sources Master_Source_Lookup_Dispatcher Password_Encryption_.28Maven_4.29 Setup
+/guides/mini/guide-encryption.html Escaping_curly-brace_literals_in_your_password_.28Since.3A_Maven_2.2.0.29 How_to_create_a_master_password How_to_encrypt_server_passwords How_to_keep_the_master_password_on_removable_drive Introduction Password_Encryption Password_Escaping_on_different_platforms Password_Security Prompting_for_Password Tips
+/guides/mini/guide-filtering-resources.html Binary_files Enabling_filtering Encoding Escaping Filter_files Guide_to_Filtering_Resources See_also Setting_values
+/guides/mini/guide-generating-sources.html Guide_to_generating_sources
+/guides/mini/guide-http-settings.html Advanced_configuration_to_HttpClient_HTTP_Wagon Authentication Backoff Backoff_on_429 Configuring_GET.2C_HEAD.2C_PUT.2C_or_All_of_the_Above Connection_Timeouts Connection_pool Connection_timeout Deprecated.3A_httpHeaders Example.3A_Lifting_auth_scope_restriction_for_external_authentication_systems Example.3A_Using_Preemptive_Authentication Fine-Tuning_HttpClient_Parameters HTTP_Headers How_all_and_the_per-method_block_are_combined Ignoring_Cookies Ignoring_cookies Introduction Non-String_Parameter_Values Preemptive_authentication Proxies Read_time_out Resources Retries Support_for_General-Wagon_Configuration_Standards System_properties TLS Taking_Control_of_Your_HTTP_Headers Target_server_credentials The_Basics Timeouts Where_configuration_goes Worked_example Writing_headers_and_params basicAuth_and_proxyAuth_.E2.80.94_overriding_the_authentication_scope headers httpConfiguration params useDefaultHeaders
+/guides/mini/guide-java-target.html Building_on_JDK_8 Guide_to_Targeting_a_Java_Version See_Also Using_the_release_Option Using_the_source_and_target_Options
+/guides/mini/guide-large-scale-centralized-deployments.html Guide_to_Large_Scale_Centralized_Deployments Managing_Downloads_from_the_Repository_Manager Managing_Uploads_to_the_Repository_Manager Repository_Manager_Layout Settings_File_Locations
+/guides/mini/guide-manifest.html Adding_Implementation_And_Specification_Details Adding_a_Class-Path_Entry Default_Manifest Defining_a_Classpath_Directory_Prefix Guide_to_Working_with_Manifests Handling_Snapshot_Versions Making_the_Jar_Executable Manifest_Entries Manifest_Sections Setting_Up_the_Classpath Using_Your_Own_Manifest_File Using_a_Custom_Classpath_Format Using_a_Maven_Repository-Style_Classpath
+/guides/mini/guide-maven-ci-friendly.html Dependencies Install_.2F_Deploy Maven_CI_Friendly_Versions Multi-Subproject_Setup_.28Maven_4.29 Multi-module_Setup_.28Maven_3.29 Single_Project_Setup
+/guides/mini/guide-maven-classloading.html API_Classloader Build_Extension_Classloaders Core_Classloader Custom_Classloaders Guide_to_Maven_Classloading Overview Platform_Classloader Plugin_Classloaders Project_Classloaders System_Classloader
+/guides/mini/guide-migration-to-mvn4.html Automatic_versioning_in_multi_subprojects_setups CI-friendly_variables_without_flatten-maven-plugin Changed_default_values Define_project.27s_root_directory Duplicate_plugin_declaration Fix_plugin_misconfigurations Install.2Fdeploy_at_end_of_build_.28breaking_change.29 Install_and_use_Maven_4 New_way_to_declare_source_directories Replace_plugin_bindings_to_pre-_and_post-_lifecycle_phase Replace_removed_directory_properties Starting_with_Maven_4 Step_1_.E2.80.93_prepare.3A_Maven_3_Prerequisites Step_2_.E2.80.93_test.3A_Minimal_Updates_for_Maven_4 Step_3_.E2.80.93_migrate.3A_Drop_Maven_3.2C_use_Optional_Maven_4_features Troubleshooting_and_required_changes_if_situation_applies Update_few_necessary_plugins_to_Maven_4_version Upgrade_build_environment_to_support_Java_17 Upgrade_plugins_to_their_latest_Maven_3_version Use_.3Csubprojects.3E_instead_of_.3Cmodules.3E Use_POM_model_version_4.1.0 Use_latest_version_of_Maven_3.9 Use_the_new_all_and_each_life_cycle_phases Using_BOM_packaging
+/guides/mini/guide-mirror-settings.html Advanced_Mirror_Specification Creating_Your_Own_Mirror Using_A_Single_Repository Using_Mirrors_for_Repositories
+/guides/mini/guide-mixins.html Advanced_Features After_.28With_Mixins.29 Basic_Usage Before_.28Traditional_Inheritance.29 Best_Practices Combining_with_Inheritance Common_Issues Common_Use_Cases Conclusion Creating_Mixin_POMs Debugging_Mixin_Resolution Declaring_Mixins Maven_Mixins_.28Maven_4.1.29 Migration_from_Parent_POMs Mixin_Composition_Order Model_Version_Requirement Overview Troubleshooting Version_Management a1._Keep_Mixins_Focused a1._Technology_Stack_Mixins a2._Quality_Assurance_Mixins a2._Use_Semantic_Versioning a3._Document_Your_Mixins a3._Testing_Mixins a4._Test_Your_Mixins a5._Organize_Mixins_in_a_Dedicated_Repository
+/guides/mini/guide-multi-release-jars.html Challenges Guide_to_Multi-Release_JARs Pattern_1.3A_Maven_Multimodule Pattern_2.3A_Multi_Project Pattern_3.3A_Single_Project Pattern_4.3A_Maven_Extension_and_Plugin Patterns Summary The_Problem The_Solution
+/guides/mini/guide-multimodule-site.html Aggregate_Reports Building_multi-module_sites Inheritance Staging_and_deploying
+/guides/mini/guide-multiple-modules.html Command_Line_Options Guide_to_Working_with_Multiple_Modules More_information Reactor_Sorting The_Reactor
+/guides/mini/guide-multiple-repositories.html Repository_IDs Repository_Order Setting_up_Multiple_Repositories
+/guides/mini/guide-multiple-subprojects-4.html Bringing_it_together Collecting_subprojects Command_Line_Options Dealing_with_failures Differences_between_Maven_3_and_4 Guide_to_Working_with_Multiple_Subprojects_in_Maven_4 Inclusion_and_exclusion More_information Relationships_between_subprojects Selecting_subprojects Sorting_subprojects The_Reactor
+/guides/mini/guide-naming-conventions.html Artifact_identifier Maximum_version_length Naming_convention_of_Maven_coordinates Project_group_identifier Unstable_versions_.28SNAPSHOT.29 Version_identifier
+/guides/mini/guide-new-committers.html Guide_for_new_committers
+/guides/mini/guide-proxies.html Configuring_a_proxy Resources
+/guides/mini/guide-releasing.html I_get_a_.E2.80.9CThe_authenticity_of_host_.E2.80.98host.E2.80.99_can.27t_be_established..E2.80.9D_error_and_the_build_hangs Introduction Performing_the_release Preparing_the_release Releasing The_site_deploy_goal_hangs Troubleshooting
+/guides/mini/guide-relocation.html Apache_Ant Apache_POI Examples Guide_to_relocation How_to_relocate_a_Maven_2_artifact_to_a_different_groupId Releasing_the_next_version Testing Working_on_past_versions
+/guides/mini/guide-repository-ssl.html Guide_to_Remote_repository_access_through_authenticated_HTTPS Links Setting_properties Storing_certificate The_problem The_solution
+/guides/mini/guide-reproducible-builds.html Configuring_for_Reproducible_Builds FAQ How_do_I_configure_my_Maven_build.3F How_to_fix_my_Maven_build_reproducibility.3F How_to_test_my_Maven_build_reproducibility.3F More_Details Reading_the_artifact.3Acompare_output Staging What_are_Reproducible_Builds.3F
+/guides/mini/guide-resolver-transport.html Custom_HTTP_Headers Execution_level Guide_for_Resolver_Transport How_To_Upgrade_from_Wagon.3F_.28or_.E2.80.9Cnative_transport_does_not_work.E2.80.9D.29 Low-level_Resolver_configuration Per_Transport_configuration_details Project_level Switching_Between_Transports System_level Timeouts
+/guides/mini/guide-site.html Adding_Extra_Resources Classical_Website_deployment Common_Issues_and_Workarounds Configuring_Reports Creating_Content Creating_a_Site_Descriptor Creating_a_site Customizing_the_Look_.26_Feel Deploying_the_Site Filtering_with_Maven_Resources_Plugin Generating_the_Site GitHub_Pages.2C_Apache_svnpubsub.2Fgitpubsub_Deployment Internationalization Multi-module_Sites Using_Properties_in_Content
+/guides/mini/guide-snippet-macro.html APT Guide_to_the_Snippet_Macro JSP Java Snippets_in_Documentation Snippets_in_Sources XML
+/guides/mini/guide-testing-archetypes.html Compare_with_a_reference_project Guide_to_Testing_Archetypes Lay_out_a_test Run_the_tests Test_an_archetype_that_needs_a_parent_project Verify_the_result_with_a_script
+/guides/mini/guide-using-ant.html Guide_to_using_Ant_with_Maven
+/guides/mini/guide-using-extensions.html Build_Extension Core_Extension Loading_Extensions Using_Extensions
+/guides/mini/guide-using-modello.html Guide_to_using_Modello
+/guides/mini/guide-using-one-source-directory.html How_do_I_do_this.3F How_do_I_do_this.3F_1 Producing_Multiple_JARs_from_a_single_POM Producing_Multiple_Unique_JARs_from_a_Single_Source_Directory Using_Maven_When_You_Can.27t_Use_the_Conventions Using_Multiple_Source_Directories What_are_the_limitations.3F What_are_the_limitations.3F_1 Why_isn.27t_this_recommended.3F Why_isn.27t_this_recommended.3F_1
+/guides/mini/guide-using-toolchains.html Compiling_Without_Toolchains Creating_a_Custom_Toolchain Creating_a_Plugin_Using_a_Toolchain Custom_Toolchains Guide_to_Using_Toolchains JDK_Toolchain Prerequisites Setting_a_Toolchain_for_a_Single_Plugin Using_Toolchains_in_Your_Project Using_the_Custom_Toolchain_and_its_Plugin What_are_Toolchains.3F
+/guides/mini/guide-wagon-providers.html Available_Wagon_Providers Command-Line_Configuration Guide_to_Selecting_Alternative_Wagon_Providers settings.xml_Configuration
+/guides/mini/index.html Maven_Mini_Guides
+/guides/plugin/guide-java-plugin-development.html A_Simple_Mojo Attaching_the_Mojo_to_the_Build_Lifecycle Building_a_Plugin Configuring_Parameters_in_a_Project Defining_Parameters_Within_a_Mojo Executing_Your_First_Mojo Guide_to_Developing_Java_Plugins Important_Notice Mojo_archetype Parameters Plugin_Documentation Project_Definition Resources Shortening_the_Command_Line Using_Setters Your_First_Mojo Your_First_Plugin
+/guides/plugin/guide-java-report-plugin-development.html A_.28Very.29_Simple_Report Basic_Requirements_of_a_Report_Mojo Building_the_Simple_Plugin Creating_more_than_one_document How_It_Works Introduction Invoking_the_Simple_Plugin More_Information Resources The_Doxia_Sink_API a..2Fpom.xml a..2Fsrc.2Fmain.2Fjava.2Fcom.2Fmycompany.2Fmaven.2FSimpleReport.java
+/guides/plugins/validation/index.html Exclude_plugins_from_validation External_issues Internal_issues Manage_Plugin_Validation_verbosity Plugin_Validation
+/images/Close_Repo.png
+/images/Promote.png
+/images/Validate_Artifacts.png
+/images/accessories-text-editor.png
+/images/add.gif
+/images/apache-maven-project-2.png
+/images/apache-maven-project-blue.png
+/images/apache-maven-project-dark-theme.svg
+/images/apache-maven-project-light-theme.svg
+/images/apache-maven-project.jpg
+/images/apache-maven-project.png
+/images/apache-maven.png
+/images/archiva.png
+/images/asf_logo_wide_clear.gif
+/images/banner.jpg
+/images/bg.jpg
+/images/books/apache_maven_2_effective_implementation.jpg
+/images/books/apache_maven_3_0_cookbook.jpg
+/images/books/apache_maven_cookbook.jpg
+/images/books/better_builds.png
+/images/books/definitive_guide.jpg
+/images/books/developer_notebook.gif
+/images/books/getting_started.png
+/images/books/pearson_apache_maven_fr.jpg
+/images/books/pearson_apache_maven_fr.png
+/images/branding/i_am_a_maven_committer_1.png
+/images/branding/i_am_a_maven_content_contributor_1.png
+/images/branding/i_am_a_maven_contributor_1.png
+/images/branding/i_am_a_proud_maven_user_1.png
+/images/branding/i_maintain_maven_plugins_1.png
+/images/branding/i_sumbitted_my_first_maven_pull_request_1.png
+/images/branding/im_a_grateful_maven_user_1.png
+/images/branding/im_a_happy_maven_user_1.png
+/images/branding/my_first_maven_pr_was_merged_1.png
+/images/breadcrumbs.jpg
+/images/close.gif
+/images/collapsed.gif
+/images/collapsed.png
+/images/expanded.gif
+/images/expanded.png
+/images/external-classic.png
+/images/external.png
+/images/favicon.ico
+/images/file.gif
+/images/fix.gif
+/images/folder-closed.gif
+/images/folder-open.gif
+/images/h3.gif
+/images/h3.jpg
+/images/h5.jpg
+/images/help_logo.gif
+/images/icon_alert.gif
+/images/icon_alertsml.gif
+/images/icon_arrowfolder1_sml.gif
+/images/icon_arrowfolder2_sml.gif
+/images/icon_arrowfolderclosed1_sml.gif
+/images/icon_arrowfolderopen2_sml.gif
+/images/icon_arrowmembers1_sml.gif
+/images/icon_arrowmembers2_sml.gif
+/images/icon_arrowusergroups1_sml.gif
+/images/icon_arrowusergroups2_sml.gif
+/images/icon_arrowwaste1_sml.gif
+/images/icon_arrowwaste2_sml.gif
+/images/icon_confirmsml.gif
+/images/icon_doc_lrg.gif
+/images/icon_doc_sml.gif
+/images/icon_error_lrg.gif
+/images/icon_error_sml.gif
+/images/icon_folder_lrg.gif
+/images/icon_folder_sml.gif
+/images/icon_help_lrg.gif
+/images/icon_help_sml.gif
+/images/icon_info_lrg.gif
+/images/icon_info_sml.gif
+/images/icon_infosml.gif
+/images/icon_members_lrg.gif
+/images/icon_members_sml.gif
+/images/icon_sortdown.gif
+/images/icon_sortleft.gif
+/images/icon_sortright.gif
+/images/icon_sortup.gif
+/images/icon_success_lrg.gif
+/images/icon_success_sml.gif
+/images/icon_usergroups_lrg.gif
+/images/icon_usergroups_sml.gif
+/images/icon_warning_lrg.gif
+/images/icon_warning_sml.gif
+/images/icon_waste_lrg.gif
+/images/icon_waste_sml.gif
+/images/jakarta-logo-blue.gif
+/images/jakarta-logo-blue.png
+/images/logo_apache.jpg
+/images/logo_maven.jpg
+/images/logos/MavenLogoLeaf.png
+/images/logos/MavenLogoLeaf.svg
+/images/logos/MavenLogoLeafSmall.png
+/images/logos/build-by-maven-black.png
+/images/logos/build-by-maven-white.png
+/images/logos/logo_infosupport.svg
+/images/logos/logo_takari.png
+/images/logos/logo_vogella.png
+/images/logos/logo_webagesolutions.svg
+/images/logos/maven-bolt.png
+/images/logos/maven-brewed.png
+/images/logos/maven-build-successfull.png
+/images/logos/maven-built.png
+/images/logos/maven-bulldozer.png
+/images/logos/maven-button-1.png
+/images/logos/maven-button-2.png
+/images/logos/maven-button-3.png
+/images/logos/maven-button-4.png
+/images/logos/maven-button-5.png
+/images/logos/maven-button-black.png
+/images/logos/maven-button-blue.png
+/images/logos/maven-button-copper.png
+/images/logos/maven-button-green.png
+/images/logos/maven-button-pinky.png
+/images/logos/maven-button-purple.png
+/images/logos/maven-button-teal.png
+/images/logos/maven-feather.png
+/images/logos/maven-frankenstein.png
+/images/logos/maven-inside.png
+/images/logos/maven-mavenfactured.png
+/images/logos/maven-petesucks.png
+/images/logos/maven-propaganda-2.png
+/images/logos/maven-propaganda.png
+/images/logos/maven-redgreen.png
+/images/mascot-large.png
+/images/mascot-large.svg
+/images/mascot-small.png
+/images/mascot-small.svg
+/images/mascot-student.png
+/images/mascot-student.svg
+/images/maven-1.x.png
+/images/maven-blue.png
+/images/maven-console.png
+/images/maven-logo-2.gif
+/images/maven-logo-black-on-white.png
+/images/maven-logo-black-on-white.purevec.svg
+/images/maven-logo-black-on-white.svg
+/images/maven-logo-white-on-black.png
+/images/maven-logo-white-on-black.purevec.svg
+/images/maven-logo-white-on-black.svg
+/images/maven-small.gif
+/images/maven.gif
+/images/maven.jpg
+/images/maven.png
+/images/maven_logo_option1.png
+/images/maven_logo_option2.png
+/images/maventxt_logo_200-2.ai
+/images/maventxt_logo_200.ai
+/images/maventxt_logo_200.gif
+/images/newwindow-classic.png
+/images/newwindow.png
+/images/none.png
+/images/nw_maj.gif
+/images/nw_maj_hi.gif
+/images/nw_maj_rond.gif
+/images/nw_med.gif
+/images/nw_med_hi.gif
+/images/nw_med_rond.gif
+/images/nw_min.gif
+/images/nw_min_036.gif
+/images/nw_min_hi.gif
+/images/pdf.gif
+/images/poweredby_036.gif
+/images/product_logo.gif
+/images/profiles/pre-release.png
+/images/profiles/retired.png
+/images/profiles/sandbox.png
+/images/remove.gif
+/images/rss.png
+/images/se_maj_rond.gif
+/images/strich.gif
+/images/sw_maj_rond.gif
+/images/sw_med_rond.gif
+/images/sw_min.gif
+/images/update.gif
+/images/window-new.png
+/img/glyphicons-halflings-white.png
+/img/glyphicons-halflings.png
+/index.html Apache_Software_Foundation How_to_Get_Support Welcome_to_Apache_Maven
+/install.html APT Binary_distribution Chocolatey DNF Homebrew Installation Linux MacPorts Prerequisites SDKMAN.21 Scoop Windows YUM macOS
+/issue-management.html Issue_Management Overview
+/js/apache-maven-fluido-2.1.0.min.js
+/js/mermaid-11.13.0.min.js
+/logoupdate.html Legacy_Maven_Logos New_Maven_Logo
+/logovote.html Option_1 Option_2 Voting_new_Maven_logo
+/mailing-lists.html Project_Mailing_Lists
+/maven-1.x-eol.html End_Of_Life_Apache_Maven_1.x
+/maven-2.x-eol.html End_Of_Life_Apache_Maven_2.x List_Of_Last_Plugins_Versions_Which_Support_Maven_2.x
+/maven-conventions.html Artifact_Naming Directory_Structure Maven_Conventions
+/maven-di.html How_to_use_Maven_DI How_to_use_Maven_DI_in_Maven_4_plugins Implementation_Details Interoperability_of_Maven_DI_.3C-.3E_Eclipse_Sisu Maven_Dependency_Injection_.28DI.29 What_is_Maven_Dependency_Injection_.28DI.29.3F
+/maven-jsr330.html How_to_use_JSR-330 How_to_use_JSR-330_in_plugins Implementation_Details Lifecycle_annotations_.28JSR-250.29 Maven_.26_JSR-330 Why_JSR-330.3F
+/maven-logging.html Changing_the_SLF4J_implementation Configuring_logging Maven_3.1.x_logging Maven_implementation_details
+/maven-sources.png
+/maven-sources/core.svg
+/maven-sources/doxia.svg
+/maven-sources/misc.svg
+/maven-sources/plexus.svg
+/maven-sources/plugins.svg
+/maven-sources/shared.svg
+/maven-sources/site.svg
+/multi-subproject.svg
+/null-annotations.html How_is_Maven_evaluating_those_annotations_at_run_time.3F Maven_Null_Annotations Which_classes_are_using_those_annotations_yet.3F Which_compile_time_tools_support_those_custom_annotations Which_null_annotations_are_used_within_Maven.3F Why_is_Maven_not_using_standard_annotations.3F
+/pdf-config.xml
+/plugin-developers/common-bugs.html Common_Bugs_and_Pitfalls Converting_between_URLs_and_Filesystem_Paths Creating_Resource_Bundle_Families Determining_the_Output_Directory_for_a_Site_Report Handling_Strings_Case-insensitively Reading_and_Writing_Text_Files Resolving_Relative_Paths Using_Shutdown_Hooks Using_System_Properties
+/plugin-developers/cookbook/index.html Maven_Extensions_Cookbook
+/plugin-developers/cookbook/plexus-plugin-upgrade.html Cookbook.3A_How_To_Upgrade_from_Plexus_Javadoc_Tags_to_Plexus_Java_Annotations.3F Equivalence_Table Plugin_Configuration Prerequisite_Plugins Recipe Replacing_Plexus_Javadoc_Tags_with_Plexus_Java_5_Annotations Summary
+/plugin-developers/index.html Extensions Plugin_Developers_Centre Reference
+/plugin-developers/plugin-testing.html Integration.2FFunctional_testing Introduction Testing_Styles.3A_Unit_Testing_vs._Functional.2FIntegration_Testing Unit_Tests Using_JUnit_alone Using_PlexusTestCase maven-executor maven-invoker-plugin maven-plugin-testing-harness maven-verifier
+/pluginClassRealm.svg
+/plugins/components.links
+/plugins/index.html Available_Plugins Misc Outside_The_Maven_Land Resources Retired Supported_By_The_Maven_Project codehaus.org
+/plugins/localization.html IDE_plugins Localization_of_Plugins Localizing_a_Plugin References Tools Tools_to_convert_a_file_from_one_encoding_to_another_encoding Tools_to_find_out_the_charset_of_a_file Tools_to_write_a_file_in_a_given_charset
+/pom-scm-urls.html Different_fetch_and_push_URLs Git Local_file_system Mercurial SCM_URL_format SCM_URLs Subversion Supported_SCMs
+/pom.html A_final_note_on_.28Inheritance_v._Aggregation.29 Advanced_configuration_inheritance.3A_combine.children_and_combine.self Aggregation_.28or_Multi-Module.29 Build Build_Settings Continuous_Integration_Management Contributors Default_plugin_configuration_inheritance Dependencies Dependency_Management Dependency_Management_1 Dependency_Version_Requirement_Specification Developers Directories Distribution_Management Environment_Settings Exclusions Extensions Final Inheritance Introduction Issue_Management Licenses Mailing_Lists Maven_Coordinates More_Project_Information Organization POM_Reference POM_Relationships Packaging Plugin_Management Plugin_Repositories Plugins Prerequisites Profiles Properties Quick_Overview Relocation Report_Sets Reporting Repositories Repository Resources SCM Site_Distribution Status The_BaseBuild_Element_Set The_BaseBuild_Element_Set_.28revisited.29 The_Basics The_Build_Element_Set The_Super_POM Version_Order_Specification Version_Order_Testing What_is_the_POM.3F downloadUrl
+/pom/components.links
+/pom/index.html Parent_POMs
+/project-faq.html Frequently_Asked_Questions_About_Project_Metadata How_do_I_make_sure_my_project.27s_dependency_metadata_is_correct.3F Why_do_I_care.3F
+/project-info.html
+/project-roles.html Apache_Maven_Project_Roles Committers Consumers Contributors Emeritus_committers Forks_of_the_project_codebase Formal_roles Informal_roles Lurkers Project_Management_Chair Project_Management_Committee Promotion_of_other_projects Standards_for_Community_Commitment Users
+/reference/maven-classloading.html Build_Extension_classloaders ClassWorlds_bootstrap_classloader Exported_artifacts_and_packages Maven_API_classloader Maven_Core_Extensions_classloaders Maven_Core_classloader Maven_classloading Maven_extensions_classloader Plugin_classloaders Project_classloaders
+/release-notes-all.html Release_Notes Release_Notes_1
+/repositories/artifacts.html Artifact_Properties Coordinates_of_Build_Plugins_and_Build_Extensions Coordinates_of_Dependencies Coordinates_of_POM_Files Maven_Artifacts Summary
+/repositories/dependencies.html Dependency_Scopes Dependency_Types Maven_Dependencies
+/repositories/dependency-resolution-misconceptions.html Common_Misconceptions_About_Dependency_Resolution Important_Consequences Misconception_Number_1.3A_How_Resolver_Works Misconception_Number_2.3A_.E2.80.9CTest_graph.E2.80.9D_is_a_Superset_of_the_.E2.80.9CRuntime_graph.E2.80.9D
+/repositories/index.html Maven_Repositories
+/repositories/layout.html Maven_Repository_Layout
+/repositories/local.html Maven_Local_Repositories The_baseVersion_Artifact_Property
+/repositories/metadata.html Maven_Metadata The_A_Level_Metadata The_G_Level_Metadata The_V_Level_Metadata
+/repositories/remote.html Consuming_Snapshot_Artifacts Deploying_Snapshot_Artifact Maven_Remote_Repositories The_baseVersion_Artifact_Property
+/repository-management.html Available_Repository_Managers Benefits_and_Features Best_Practice_-_Using_a_Repository_Manager Purpose
+/repository/central-index.html Central_Index Digging_Into_Central_Index_with_Luke
+/repository/central-metadata.html Guide_to_add.2C_improve_or_fix_metadata_in_the_Central_Maven_Repository Other_Issues POM_Metadata
+/repository/guide-central-repository-upload.html A_basic_sample.3A Approved_Repository_Hosting FAQ_and_common_mistakes Guide_to_uploading_artifacts_to_the_Central_Repository Other_Projects PGP_Signature Publishing_your_artifacts_to_the_Central_Repository Requirements
+/repository/index.html Content Maven_Central_Repository
+/repository/layout.html Additional_Content Archetype_Catalog Index Maven_Repository_Layout Metadata Protocol SNAPSHOT
+/repository/maven-central-repository.png
+/repository/maven-repositories.png
+/resource/branding/actioncards.html Action_Cards
+/run-maven/index.html Building_a_Project_with_Maven Inconsistent_output Missing_Dependencies More_than_just_the_Build When_Things_go_Wrong
+/run.html Running_Apache_Maven
+/scm.html Components_in_Git Components_in_Subversion Doxia Full_Maven_Sources Maven_Core Maven_Site Maven_Sources_Overview Other_Components Parent_POMs Plugins Shared_Components Skins Source_Repository
+/security-plexus-archiver.html What_parts_of_Maven_are_vulnerable.3F When_are_you_affected_by_this_vulnerability.3F Zip_Slip_Vulnerability
+/security.html CVE-2012-6153_Apache_Maven_Wagon_.3A.3A_WebDAV_Provider CVE-2013-0253_Apache_Maven_3.0.4 CVE-2021-26291_Apache_Maven_3.8.1 Maven_Dependency.2C_EAR.2C_Javadoc.2C_WAR_and_Plugin_Plugins Security_Model Security_Reports Security_Vulnerabilities
+/settings.html Activation Active_Profiles Introduction Mirrors Password_Encryption Plugin_Groups Plugin_Repositories Profiles Properties Proxies Quick_Overview Repositories Server_Aliases Server_Repository_Origins Servers Settings_Details Settings_Reference Simple_Values
+/shared/components.links
+/shared/index.html Shared_Components
+/skins/components.links
+/skins/index.html Available_Skins Creating_a_skin Instructions Maintained_By_The_Maven_Project Outside_The_Maven_Land Retired
+/team.html Contributors Members Project_Team adangel agudian aheritier andham aramirez ascheman baerrach bayard bdemers bellingard bentmann bimargulies bmarwell brett brianf carlos chrisgwarp chrisjs cstamas dantran dblevins dbradicich dennisl dfabulich dkulp dlr elharo eolivelli epunzalan evenisse felipeal fgiust gboue gnodet godin handyande hboutemy henning ifedorenko imod jdcasey jjensen jmcconnell joakime jruiz jstrachan jtolentino jvanzyl kenney khmarbaise krosenvold kwin ltheussl markh martinkanters mauro mbuenger mfriedenhagen michaelo mkleint mmoser mperham mthmulders nicolas oching ogusakov olamy pgier pschneider ptahchiev rafale rfscholte rgoers rinku schulte shinobu simonetripodi sjaranowski slachiewicz smorgrav snicoll sor sparsick stephenc struberg tchemit tibordigana trygvis vmassol vsiveton wfay wsmoak
+/testimonials.html Testimonials
+/tools/components.links
+/tools/index.html Maven_Tools Supported_By_The_Maven_Project
+/tools/mavenwrapper.html Maven_Wrapper One_tool_-_three_parts Usage
+/tools/mvnd.html Features Installation Maven_Daemon Usage
+/tools/mvnsh.html Description Maven_Shell See_also Usage
+/tools/mvnup.html Advanced_XML_Processing Basic_upgrade_workflow Examples Features Help Intelligent_Model_Inference_.28Maven_4_only.29 Maven_4_Compatibility_Fixes Maven_Upgrade_Tool More_arguments Output Plugin_Compatibility_.26_Upgrades Specific_upgrades Specify_project_directory Usage
+/tools/mvnval.html Basic_examples Context_lines Exit_codes Integration Local_repository_options Maven_POM_Validation_Tool Modes Output_format See_also Usage Why_Not_mvn_validate
+/users/getting-help.html Ask_on_the_user_list Getting_Help How.3F References Search_the_user-list_archives Submit_an_issue Try_the_latest_version_of_Maven_or_the_plugin_in_question Where.3F You_did_check_the_documentation.2C_didn.27t_you.3F
+/users/index.html Maven_4 Maven_Users_Centre Reference
+/what-is-maven.html Feature_summary Introduction Making_the_build_process_easy Maven.27s_Objectives Providing_a_uniform_build_system Providing_guidelines_for_best_practices_development Providing_quality_project_information What_is_Maven_Not.3F
+/whatsnewinmaven4.html All-_and_each-phases Alternate_POM_syntaxes Application_maintenance Automatic_versioning_.28POM_inference.29 Before-_and_after-phases.2C_ordering_of_executions Behavioral_change.3A_phase_execution_scope Comparing_build_POM_and_consumer_POM Condition-based_profile_activation Consumer_POM Declaring_the_root_directory_and_directory_properties Example Full_support_of_CI-friendly_variables Further_improvements Improved_encryption Improvements_for_subprojects Improvements_to_profiles Issue_overview Lifecycle_changed_from_graph_to_tree Lifecycle_changes Maven_Resolver Maven_Shell Maven_Upgrade_Tool Maven_plugins Maven_plugins.2C_security.2C_and_tools Model_version_4.1.0 Modules_are_now_subprojects New_artifact_types New_packaging_type.3A_bom New_way_to_declare_source_directories POM_Changes Parent_inference Reactor_improvements_and_fixes Required_Java_version Subprojects_discovery What.27s_new_in_Maven_4.3F Workflow.2C_lifecycle_and_runtime_changes a.E2.80.9CFail_on_severity.E2.80.9D_parameter
+/xsd/archetype-1.0.0.xsd
+/xsd/archetype-catalog-1.0.0.xsd
+/xsd/archetype-descriptor-1.0.0.xsd
+/xsd/archetype-descriptor-1.1.0.xsd
+/xsd/archetype-descriptor-1.2.0.xsd
+/xsd/archetype-registry-1.0.0.xsd
+/xsd/assembly-1.0.0.xsd
+/xsd/assembly-1.1.0.xsd
+/xsd/assembly-1.1.1.xsd
+/xsd/assembly-1.1.2.xsd
+/xsd/assembly-1.1.3.xsd
+/xsd/assembly-2.0.0.xsd
+/xsd/assembly-2.1.0.xsd
+/xsd/assembly-2.1.1.xsd
+/xsd/assembly-2.2.0.xsd
+/xsd/assembly-component-2.0.0.xsd
+/xsd/assembly-component-2.1.0.xsd
+/xsd/assembly-component-2.1.1.xsd
+/xsd/assembly-component-2.2.0.xsd
+/xsd/book-1.0.0.xsd
+/xsd/build-cache-build-1.0.0.xsd
+/xsd/build-cache-build-1.2.0.xsd
+/xsd/build-cache-config-1.0.0.xsd
+/xsd/build-cache-config-1.2.0.xsd
+/xsd/build-cache-diff-1.0.0.xsd
+/xsd/build-cache-diff-1.2.0.xsd
+/xsd/build-cache-report-1.0.0.xsd
+/xsd/build-cache-report-1.2.0.xsd
+/xsd/changes-1.0.0.xsd
+/xsd/changes-2.0.0.xsd
+/xsd/component-1.0.0.xsd
+/xsd/component-1.1.0.xsd
+/xsd/component-1.1.1.xsd
+/xsd/component-1.1.2.xsd
+/xsd/component-1.1.3.xsd
+/xsd/core-extensions-1.0.0.xsd
+/xsd/core-extensions-1.1.0.xsd
+/xsd/core-extensions-1.2.0-alpha-10.xsd
+/xsd/core-extensions-1.2.0-alpha-12.xsd
+/xsd/core-extensions-1.2.0-alpha-13.xsd
+/xsd/core-extensions-1.2.0-alpha-8.xsd
+/xsd/core-extensions-1.2.0-beta-3.xsd
+/xsd/core-extensions-1.2.0-beta-4.xsd
+/xsd/core-extensions-1.2.0-beta-5.xsd
+/xsd/core-extensions-1.2.0-rc-1.xsd
+/xsd/core-extensions-1.2.0-rc-2.xsd
+/xsd/core-extensions-1.2.0-rc-3.xsd
+/xsd/core-extensions-1.2.0-rc-4.xsd
+/xsd/core-extensions-1.2.0-rc-6.xsd
+/xsd/decoration-1.0.0.xsd
+/xsd/decoration-1.0.1.xsd
+/xsd/decoration-1.1.0.xsd
+/xsd/decoration-1.3.0.xsd
+/xsd/decoration-1.4.0.xsd
+/xsd/decoration-1.6.0.xsd
+/xsd/decoration-1.7.0.xsd
+/xsd/decoration-1.8.0.xsd
+/xsd/decoration-1.8.1.xsd
+/xsd/document-1.0.0.xsd
+/xsd/document-1.0.1.xsd
+/xsd/fml-1.0.1.xsd
+/xsd/fml-1.0.xsd
+/xsd/git-settings-1.1.0.xsd
+/xsd/lifecycle-1.0.0-alpha-13.xsd
+/xsd/lifecycle-1.0.0-beta-3.xsd
+/xsd/lifecycle-1.0.0-beta-4.xsd
+/xsd/lifecycle-1.0.0-beta-5.xsd
+/xsd/lifecycle-1.0.0-rc-1.xsd
+/xsd/lifecycle-1.0.0-rc-2.xsd
+/xsd/lifecycle-1.0.0.xsd
+/xsd/lifecycle-2.0.0-rc-3.xsd
+/xsd/lifecycle-2.0.0-rc-4.xsd
+/xsd/lifecycle-2.0.0-rc-6.xsd
+/xsd/maven-4.0.0.xsd
+/xsd/maven-4.1.0-alpha-10.xsd
+/xsd/maven-4.1.0-alpha-12.xsd
+/xsd/maven-4.1.0-alpha-13.xsd
+/xsd/maven-4.1.0-alpha-8.xsd
+/xsd/maven-4.1.0-beta-3.xsd
+/xsd/maven-4.1.0-beta-4.xsd
+/xsd/maven-4.1.0-beta-5.xsd
+/xsd/maven-4.1.0-rc-1.xsd
+/xsd/maven-4.1.0-rc-2.xsd
+/xsd/maven-4.1.0-rc-3.xsd
+/xsd/maven-4.1.0-rc-4.xsd
+/xsd/maven-4.1.0-rc-6.xsd
+/xsd/maven-project-3.0.0.xsd
+/xsd/maven-v3_0_0.xsd
+/xsd/paramdoc-1.0.0-beta-3.xsd
+/xsd/paramdoc-1.0.0-beta-4.xsd
+/xsd/paramdoc-1.0.0.xsd
+/xsd/plugin-2.0.0-alpha-13.xsd
+/xsd/plugin-2.0.0-beta-3.xsd
+/xsd/plugin-2.0.0-beta-4.xsd
+/xsd/plugin-2.0.0-beta-5.xsd
+/xsd/plugin-2.0.0-rc-1.xsd
+/xsd/plugin-2.0.0-rc-3.xsd
+/xsd/plugin-2.0.0-rc-4.xsd
+/xsd/plugin-2.0.0-rc-6.xsd
+/xsd/plugin-metadata-1.0.0.xsd
+/xsd/profiles-1.0.0-beta-3.xsd
+/xsd/profiles-1.0.0-beta-4.xsd
+/xsd/profiles-1.0.0.xsd
+/xsd/remote-resources-1.1.0.xsd
+/xsd/repository-metadata-1.1.0.xsd
+/xsd/repository-metadata-1.2.0-alpha-13.xsd
+/xsd/repository-metadata-1.2.0-beta-3.xsd
+/xsd/repository-metadata-1.2.0-beta-4.xsd
+/xsd/repository-metadata-1.2.0-beta-5.xsd
+/xsd/repository-metadata-1.2.0-rc-1.xsd
+/xsd/repository-metadata-1.2.0-rc-2.xsd
+/xsd/repository-metadata-1.2.0-rc-3.xsd
+/xsd/repository-metadata-1.2.0-rc-4.xsd
+/xsd/repository-metadata-1.2.0-rc-6.xsd
+/xsd/settings-1.0.0.xsd
+/xsd/settings-1.1.0.xsd
+/xsd/settings-1.2.0.xsd
+/xsd/settings-1.3.0-alpha-10.xsd
+/xsd/settings-1.3.0-alpha-12.xsd
+/xsd/settings-1.3.0-alpha-13.xsd
+/xsd/settings-1.3.0-alpha-8.xsd
+/xsd/settings-1.3.0-beta-3.xsd
+/xsd/settings-1.3.0-beta-4.xsd
+/xsd/settings-1.3.0-beta-5.xsd
+/xsd/settings-1.3.0.xsd
+/xsd/settings-2.0.0-alpha-13.xsd
+/xsd/settings-2.0.0-beta-3.xsd
+/xsd/settings-2.0.0-beta-4.xsd
+/xsd/settings-2.0.0-beta-5.xsd
+/xsd/settings-2.0.0-rc-1.xsd
+/xsd/settings-2.0.0-rc-2.xsd
+/xsd/settings-2.0.0-rc-3.xsd
+/xsd/settings-2.0.0-rc-4.xsd
+/xsd/settings-2.0.0-rc-6.xsd
+/xsd/site-2.0.0.xsd
+/xsd/site-2.1.0.xsd
+/xsd/skin-1.7.0.xsd
+/xsd/skin-2.0.0.xsd
+/xsd/skin-2.1.0.xsd
+/xsd/supplemental-model-1.0.0.xsd
+/xsd/svn-settings-2.1.2.xsd
+/xsd/toolchains-1.0.0.xsd
+/xsd/toolchains-1.1.0-alpha-13.xsd
+/xsd/toolchains-1.1.0-beta-3.xsd
+/xsd/toolchains-1.1.0-beta-4.xsd
+/xsd/toolchains-1.1.0-beta-5.xsd
+/xsd/toolchains-1.1.0-rc-1.xsd
+/xsd/toolchains-1.1.0-rc-2.xsd
+/xsd/toolchains-1.1.0.xsd
+/xsd/toolchains-1.2.0-rc-3.xsd
+/xsd/toolchains-1.2.0-rc-4.xsd
+/xsd/toolchains-1.2.0-rc-6.xsd
+/xsd/verifications-1.0.0.xsd
+/xsd/xdoc-2.0.xsd
