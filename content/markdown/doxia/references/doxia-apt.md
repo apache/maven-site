@@ -38,19 +38,19 @@ In the following we provide a list of differences/enhancements to the original [
 
 Contrary to the original APT parser, the Doxia APT parser does not put list items within paragraphs. Eg, the example given in the APT guide:
 
-```unknown
+```text
     * List item 1.
 ```
 
 will, for instance, produce the following html:
 
-```unknown
+```xml
     <li>List item 1.</li>
 ```
 
 To get the same result as aptconvert, use
 
-```unknown
+```text
     *
 
       List item 1.
@@ -58,7 +58,7 @@ To get the same result as aptconvert, use
 
 which will produce:
 
-```unknown
+```xml
     <li><p>List item 1.</p></li>
 ```
 
@@ -68,7 +68,7 @@ which will produce:
 
 Header cells are defined by an additional pipe character &apos;|&apos; at the beginning of the cell:
 
-```unknown
+```text
 *-----------+-----------+
 || Header 1 || Header 2 |
 *-----------+-----------+
@@ -87,7 +87,7 @@ produces:
 
 Since 1\.1, multi-lines cells are recognized with the character &apos;\\&apos; at the end of the cells:
 
-```unknown
+```text
 *-----------+-----------+
 || Header 1 || Header 2 |
 *-----------+-----------+
@@ -109,7 +109,7 @@ produces:
 
 When a document is rendered as part of a Maven site, Doxia gives every section title an anchor of its own, built from the title text by the rules below. Because that name follows the wording, rewording a title moves the anchor and breaks links aimed at it. Define the anchor explicitly where a reference has to hold:
 
-```unknown
+```text
 * {Anchors for section titles}
 ```
 
@@ -175,7 +175,7 @@ Since Doxia 1\.4 there is support for literal anchors, by using 2 hashed (\#\#) 
 
 Contrary to the original APT format, a figure name has to be given fully **with** extension. For instance:
 
-```unknown
+```text
 [/home/joe/docs/mylogo.jpeg] Figure caption
 ```
 

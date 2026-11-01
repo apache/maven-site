@@ -48,7 +48,7 @@ The full documentation is available in the annotated [xdoc-2.0.xsd](https://mave
 
 The following is a sample XDoc document: 
 
-```unknown
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <document xmlns="http://maven.apache.org/XDOC/2.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -99,7 +99,7 @@ code line 2
 
 `<source>` tags are special. Anything within this tag is rendered within a &quot;verbatim box&quot; as pre-formatted text. If you are embedding other XML/XHTML markup within the source tags, then you need to place a CDATA section within the source section. Example: 
 
-```unknown
+```xml
 <source><![CDATA[ content here <a href="">foo</a>]]></source>
 ```
 
@@ -108,7 +108,7 @@ code line 2
 
 Since Doxia 2\.0, `<section>` and `<subsection>` elements produce `<h1>` and `<h2>` headings respectively; before 2\.0 they started at `<h2>`. It is therefore perfectly valid to put some sub-headings (`<h3>` to `<h6>`) inside a subsection. For instance, 
 
-```unknown
+```xml
 <h3>A subsubsection</h3>
 ```
 
@@ -123,7 +123,7 @@ When a document is rendered as part of a Maven site, Doxia creates an anchor for
 
 For a reference that has to survive editing, name the anchor yourself. Either provide an explicit anchor: 
 
-```unknown
+```xml
 <a name="Section1"/>
 <section name="Section">
 
@@ -136,7 +136,7 @@ For a reference that has to survive editing, name the anchor yourself. Either pr
 
 or use an `id` attribute for section and subsections (note that `id`&apos;s have to be unique within one xdoc source document): 
 
-```unknown
+```xml
 <section name="Section" id="Section1">
 
   <subsection name="SubSection" id="SubSection1">
@@ -160,7 +160,7 @@ Here is a list of common mistakes to be aware of:
 
 Wrong:
 
-```unknown
+```xml
 <p>
   Here's a list:
   <ul>
@@ -173,7 +173,7 @@ Wrong:
 
 Correct:
 
-```unknown
+```xml
 <p>
   Here's a list:
 </p>
@@ -193,7 +193,7 @@ Typical block level elements are list elements, `<table>`, `<source>`, `<div>`, 
 
 Wrong:
 
-```unknown
+```xml
 <section name="Downloads">
   <a href="downloads.html">Downloads</a>
 </section>
@@ -201,7 +201,7 @@ Wrong:
 
 Correct:
 
-```unknown
+```xml
 <section name="Downloads">
   <p>
     <a href="downloads.html">Downloads</a>
@@ -221,7 +221,7 @@ The `<title>` element has to come before `<author>`.
 
 Wrong:
 
-```unknown
+```xml
 <p>
   The following command executes the program:
   <source>java -jar CoolApp.jar</source>
@@ -230,7 +230,7 @@ Wrong:
 
 Correct:
 
-```unknown
+```xml
 <p>
   The following command executes the program:
 </p>

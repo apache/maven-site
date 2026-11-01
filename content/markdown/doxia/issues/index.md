@@ -33,13 +33,13 @@ This document collects some infos about specific issues and &apos;gotchas&apos; 
 
 Using **Doxia 1\.1** you may see a lot of warnings when processing old Apt source files:
 
-```unknown
+```text
 [WARNING] [Apt Parser] Ambiguous link: 'doxia-apt.html'. If this is a local link, prepend "./"!
 ```
 
 and
 
-```unknown
+```text
 [WARNING] [Apt Parser] Modified invalid link: references/doxia-apt.html
 ```
 
@@ -51,7 +51,7 @@ The reason is that in Apt, links to other source documents have to start with ei
 
 Doxia distinguishes between figures, which are block-level elements, and images (or icons), which are in-line elements. For instance, the following sequence of sink events
 
-```unknown
+```java
 sink.figure( null );
 
 sink.figureGraphics( "figure.png", null );
@@ -65,7 +65,7 @@ sink.figure_();
 
 should output the equivalent of this html snippet:
 
-```unknown
+```xml
 <div class="figure">
   <p><img src="figure.png"/></p>
   <p>Figure caption</p>
@@ -76,7 +76,7 @@ while the `figureGraphics( ... );` event alone can be used to generate an in-lin
 
 **Note** that we are using the forms that take a `SinkEventAttributeSet` above, even though we are just passing in null values. The reason is that the alternative forms (without `SinkEventAttributeSet`) have a different behavior, which is kept for backward compatibility (but the methods have been deprecated). Using the same sequence of sink events as above, but omitting the `null` method parameters, will generate
 
-```unknown
+```xml
 <img src="figure.png" alt="Figure caption"/>
 ```
 

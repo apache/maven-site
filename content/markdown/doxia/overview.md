@@ -38,7 +38,7 @@ The _Sink_ interface is a generic markup language interface. It contains several
 
 For instance, you could do things like: 
 
-```unknown
+```java
 sink.paragraph();
 sink.text( "my text" );
 sink.paragraph_(); 
@@ -46,7 +46,7 @@ sink.paragraph_();
 
 similar to this HTML markup: 
 
-```unknown
+```xml
 <p>my text</p>
 ```
 
@@ -56,7 +56,7 @@ To find out more about the Sink API, you could read the Javadoc [here](http://ma
 
 The _Core_ is the API to parse a source and populate it in a _Sink_ object. The _Parser_ interface contains only one method: 
 
-```unknown
+```java
 void parse( Reader source, Sink sink )
     throws ParseException; 
 ```

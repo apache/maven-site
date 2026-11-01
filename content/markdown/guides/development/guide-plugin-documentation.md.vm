@@ -89,7 +89,7 @@ The [Maven Plugin Report Plugin](/plugin-tools/maven-plugin-report-plugin/) is r
 
 It needs to be added to the `<reporting>` section, unless it is already inherited from a parent POM:
 
-```unknown
+```xml
 <project>
   [...]
   <reporting>
@@ -109,7 +109,7 @@ The comments, annotations and plugin goals parameter names are extracted from th
 
 - All `@Parameter` fields should have a descriptive comment, informative enough that a regular user can understand.
 
-    ```unknown
+    ```java
         [...]
         /**
          * Put something informative here that a regular user can understand.
@@ -121,7 +121,7 @@ The comments, annotations and plugin goals parameter names are extracted from th
 
 - If a parameter is not just a simple Java type or a list of simple types, but a specific additional class, give a sample XML snippet showing the structure of objects that can be configured.
 
-    ```unknown
+    ```java
         [...]
         /**
          * A complex configuration
@@ -143,7 +143,7 @@ The comments, annotations and plugin goals parameter names are extracted from th
 
 - The class level comment should explain what the goal does.
 
-    ```unknown
+    ```java
     [...]
     /**
      * Everything here will show up on the top of the generated plugin info page.
@@ -173,7 +173,7 @@ You must define a [skin](../../skins/) if you are using a site descriptor. No de
 
 Below is the suggested site descriptor template (with maven-fluido-skin).
 
-```unknown
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <project>
   <skin>
@@ -270,7 +270,7 @@ Below is the suggested site descriptor template (with maven-fluido-skin).
 
     A well documented project always collates frequently asked questions which are usually located in `src/site/fml/faq.fml`. The example below provides a template for your FAQ:
 
-    ```unknown
+    ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <faqs id="FAQ" title="Frequently Asked Questions">
       <part id="General">
@@ -306,7 +306,7 @@ There are 2 recommended report plugins to enhance the plugin documentation, Java
 
     To enable javadoc for your plugin add the following to your `pom.xml`
 
-    ```unknown
+    ```xml
     <project>
       [...]
       <build>
@@ -339,7 +339,7 @@ There are 2 recommended report plugins to enhance the plugin documentation, Java
 
     To enable source code cross-references, add the following to your `pom.xml`
 
-    ```unknown
+    ```xml
     <project>
       [...]
       <build>

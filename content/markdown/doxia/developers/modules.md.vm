@@ -28,7 +28,7 @@ under the License.
 
 First, the easiest way is to create a POM with _doxia-modules_ as parent:
 
-```unknown
+```xml
 <project>
   <parent>
     <groupId>org.apache.maven.doxia</groupId>
@@ -49,7 +49,7 @@ ${esc.h}${esc.h} Parsing
 
 - _MyParser_ class
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.parser.AbstractParser;
     import org.apache.maven.doxia.parser.Parser;
     import org.codehaus.plexus.component.annotations.Component;
@@ -66,7 +66,7 @@ ${esc.h}${esc.h} Parsing
 
 - _MyParseException_ class (optional)
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.parser.ParseException;
     
     public class MyParseException
@@ -78,7 +78,7 @@ ${esc.h}${esc.h} Parsing
 
 - _MyParserModule_ class
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.parser.module.AbstractParserModule;
     import org.codehaus.plexus.component.annotations.Component;
     
@@ -94,7 +94,7 @@ ${esc.h}${esc.h} Generating
 
 - _MySink_ class
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.sink.SinkAdapter;
     
     public class MySink
@@ -108,7 +108,7 @@ ${esc.h}${esc.h} Generating
 
 - _MySinkFactory_ class
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.sink.SinkFactory;
     import org.codehaus.plexus.component.annotations.Component;
     

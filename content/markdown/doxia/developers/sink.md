@@ -31,7 +31,7 @@ under the License.
 
 Doxia can be used to transform an arbitrary input document to any supported output format. The following snippet shows how to use a Doxia _Parser_ to transform an apt file to html:
 
-```unknown
+```java
   File userDir = new File( System.getProperty ( "user.dir" ) );
   File inputFile = new File( userDir, "test.apt" );
   File outputFile = new File( userDir, "test.html" );
@@ -55,7 +55,7 @@ You could also use the [Doxia Converter Tool](/doxia/doxia-tools/doxia-converter
 
 The snippet below gives a simple example of how to generate a document using the Doxia Sink API.
 
-```unknown
+```java
     /**
      * Generate a simple document and emit it
      * into the specified sink. The sink is flushed but not closed.
@@ -110,7 +110,7 @@ A more complete example that also shows the &apos;canonical&apos; order of event
 
 A number of methods in the Sink API enable passing a set of attributes to many sink events. A typical use case is:
 
-```unknown
+```java
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.ALIGN, "center" );
 
@@ -123,7 +123,7 @@ The kind of attributes supported depends on the event and the sink implementatio
 
 In **Doxia 1\.0** it was a common practice to use sink.rawText() to generate elements that were not supported by the Sink API. For example, the following snippet could be used to generate a styled HTML &lt;div&gt; block:
 
-```unknown
+```java
 sink.RawText( "<div style=\"cool\">" );
 sink.text( "A text with a cool style." );
 sink.rawText( "</div>" );
@@ -135,7 +135,7 @@ In **Doxia 1\.1** a new method unknown() was added to the Sink API that can be u
 
 The correct way to generate the above &lt;div&gt; block is now:
 
-```unknown
+```java
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.STYLE, "cool" );
 
@@ -152,7 +152,7 @@ Read the javadocs of the unknown() method in the [Sink](./doxia/doxia-sink-api/a
 
 Related to the above, here is the correct way of injecting a javascript snippet into a Sink:
 
-```unknown
+```java
 // the javascript code is emitted within a commented CDATA section
 // so we have to start with a newline and comment the CDATA closing in the end
 // note that the sink will replace the newline by the system EOL

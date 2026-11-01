@@ -28,7 +28,7 @@ under the License.
 
 You need to add the following [plexus-component-metadata plugin](https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/) configuration to generate the correct Plexus _component.xml_ file from annotations for the project containing your macro:
 
-```unknown
+```xml
 <project>
   ...
   <build>
@@ -55,7 +55,7 @@ You need to add the following [plexus-component-metadata plugin](https://codehau
 
 You should implement the _AbstractMacro_ class:
 
-```unknown
+```java
 import org.apache.maven.doxia.macro.AbstractMacro;
 
 /**
@@ -79,13 +79,13 @@ To use it, you need to write the following markups:
 
 - APT
 
-    ```unknown
+    ```text
     %{my|myParam=myValue} <!-- my is the macro name defined by role-hint -->
     ```
 
 - XDoc
 
-    ```unknown
+    ```xml
     <macro name="my"> <!-- my is the required macro name defined by role-hint -->
       <param name="myParam" value="myValue"/>
     </macro>
