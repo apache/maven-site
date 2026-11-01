@@ -49,7 +49,7 @@ A short APT document is contained in a single text file. A longer document may b
 <dd>Splitting the APT document in several text files on a section boundary is not mandatory. The split may occur anywhere. However doing so is recommended because a text file containing a section is by itself a valid APT document.</dd>
 </dl>
 
-A file contains a sequence of paragraphs and \`\`displays&apos;&apos; (non paragraphs such as tables) separated by open lines.
+A file contains a sequence of paragraphs and "displays" (non paragraphs such as tables) separated by open lines.
 
 A paragraph is simply a sequence of consecutive text lines.
 
@@ -64,7 +64,7 @@ A paragraph is simply a sequence of consecutive text lines.
 
 The indentation of the first line of a paragraph is the main method used by an APT processor to recognize the type of the paragraph. For example, a section title must not be indented at all.
 
-A \`\`plain&apos;&apos; paragraph must be indented by a certain amount of space. For example, a plain paragraph which is not contained in a list may be indented by two spaces.
+A "plain" paragraph must be indented by a certain amount of space. For example, a plain paragraph which is not contained in a list may be indented by two spaces.
 
 ```text
 My section title (not indented).
@@ -453,7 +453,7 @@ Unicode characters may be specified by their codes using the `\u`_NNNN_ notation
 
 Text found after two tildes (`~~`) is ignored up to the end of line.
 
-A line of `~` is often used to \`\`underline&apos;&apos; section titles in order to make them stand out of other paragraphs.
+A line of `~` is often used to "underline" section titles in order to make them stand out of other paragraphs.
 
 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~-->
 

@@ -100,8 +100,7 @@ produces:
 
 |Header 1|Header 2|
 |:---|:---|
-|Cell�  
-1|Cell 2|
+|Cell<br />1|Cell 2|
 ## <a id="Anchors"></a>Anchors
 
 <!--~~~~~~~~~~~~~~~~~~~-->

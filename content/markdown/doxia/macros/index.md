@@ -136,6 +136,7 @@ The `id` parameter is not required if you want to include the entire file. If yo
 |file|The path of the file to include (since doxia-1\.0-alpha-9).|
 |verbatim|If the content should be output as verbatim escaped text. If this is set to `false` then the content of the snippet will not be escaped. This means that you can use it like Server-Side Includes on a webserver. Default value is `true`.|
 |encoding|The encoding of the file to read (since Doxia 1\.6). If omitted the default JVM encoding will be used.|
+
 ## <a id="TOC_Macro"></a>TOC Macro
 
 The _TOC_ macro prints a Table Of Content of a document. It is useful if you have several sections and subsections in your document. For instance, in an APT file, you could write:
@@ -153,8 +154,8 @@ In a xdoc file, it will be:
 ```xml
 <macro name="toc">
   <param name="section" value="2"/>
-  <param name="fromDepth" value="0"/>
-  <param name="toDepth" value="4"/>
+  <param name="fromDepth" value="2"/>
+  <param name="toDepth" value="3"/>
 </macro>
 ```
 

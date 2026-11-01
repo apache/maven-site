@@ -62,7 +62,7 @@ ${esc.h}${esc.h} Parsing
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextParser`, `AbstractXmlParser` or `XhtmlBaseParser` may give you more features.
+    Depending on the type markup, extending `AbstractTextParser`, `AbstractXmlParser` or `Xhtml5BaseParser` may give you more features.
 
 - _MyParseException_ class (optional)
 
@@ -95,7 +95,7 @@ ${esc.h}${esc.h} Generating
 - _MySink_ class
 
     ```java
-    import org.apache.maven.doxia.sink.SinkAdapter;
+    import org.apache.maven.doxia.sink.impl.SinkAdapter;
     
     public class MySink
         extends SinkAdapter
@@ -104,7 +104,7 @@ ${esc.h}${esc.h} Generating
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextSink`, `AbstractXmlSink` or `XhtmlBaseSink` may give you more features.
+    Depending on the type markup, extending `AbstractTextSink`, `AbstractXmlSink` or `Xhtml5BaseSink` may give you more features.
 
 - _MySinkFactory_ class
 
@@ -114,13 +114,13 @@ ${esc.h}${esc.h} Generating
     
     @Component( role = SinkFactory.class, hint = "my" )
     public class MySinkFactory
-        extends SinkFactory
+        implements SinkFactory
     {
     ...
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextSinkFactory`, `AbstractXmlSinkFactory` or `AbstractBinarySinkFactory` may give you more features.
+    Depending on the type markup, extending `AbstractTextSinkFactory` or `AbstractXmlSinkFactory` may give you more features.
 
 ${esc.h}${esc.h} <a id="References"></a>References
 

@@ -129,7 +129,7 @@ The comments, annotations and plugin goals parameter names are extracted from th
          * &lt;complexparameter&gt;
          *   &lt;field1&gt;field 1 value&lt;/field1&gt;
          *   [...]
-         * &lt;/complexparameter&gt
+         * &lt;/complexparameter&gt;
          * </pre>
          */
         @Parameter
@@ -150,7 +150,7 @@ The comments, annotations and plugin goals parameter names are extracted from th
      */
     @Mojo(name = "somegoal", defaultPhase = LifecyclePhase.COMPILE)
     public class ExampleMojo
-        extends AbstractWarMojo
+        extends AbstractMojo
     {
         public void execute()
             throws MojoExecutionException, MojoFailureException
@@ -175,7 +175,8 @@ Below is the suggested site descriptor template (with maven-fluido-skin).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<project>
+<site xmlns="http://maven.apache.org/SITE/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd">
   <skin>
     <groupId>org.apache.maven.skins</groupId>
     <artifactId>maven-fluido-skin</artifactId>
@@ -195,7 +196,7 @@ Below is the suggested site descriptor template (with maven-fluido-skin).
       <item name="description2" href="examples/example-two.html"/>
     </menu>
   </body>
-</project>
+</site>
 ```
 
 #[[#### Navigation Links]]#
@@ -350,7 +351,7 @@ There are 2 recommended report plugins to enhance the plugin documentation, Java
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-jxr-plugin</artifactId>
-            <version>3.3.1</version>
+            <version>3.6.0</version>
           </plugin>
         </plugins>
       </reporting>
