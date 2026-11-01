@@ -56,7 +56,7 @@ At its simplest, a Java mojo consists simply of a single class representing one 
 
 Listed below is a simple mojo class which has no parameters. This is about as simple as a mojo can be. After the listing is a description of the various parts of the source.
 
-```unknown
+```java
 package sample.plugin;
 
 import org.apache.maven.plugin.AbstractMojo;
@@ -99,7 +99,7 @@ Once the mojos have been written for the plugin, it is time to build the plugin.
 
 Listed below is an illustration of the sample mojo project's pom with the parameters set as described in the above table:
 
-```unknown
+```xml
 <project>
   <modelVersion>4.0.0</modelVersion>
 
@@ -184,7 +184,7 @@ For more details, you can look at [ detailed bindings for `maven-plugin` packagi
 
 The most direct means of executing your new plugin is to specify the plugin goal directly on the command line. To do this, configure the `hello-maven-plugin` plugin in the project:
 
-```unknown
+```xml
 <project>
 ...
   <build>
@@ -220,7 +220,7 @@ There are several ways to reduce the amount of required typing:
 - You can assign a shortened prefix to your plugin, such as `mvn hello:sayhi`. This is done automatically if you follow the convention of using `${esc.d}{prefix}-maven-plugin` (or `maven-${esc.d}{prefix}-plugin` if the plugin is part of the Apache Maven project). You may also assign one through additional configuration. For more information, see [ Introduction to Plugin Prefix Mapping](../introduction/introduction-to-plugin-prefix-mapping.html).
 - Finally, you can also add your plugin's group ID to the list of group IDs searched by default. To do this, add the following to your `${esc.d}{user.home}/.m2/settings.xml` file:
 
-    ```unknown
+    ```xml
     <pluginGroups>
       <pluginGroup>sample.plugin</pluginGroup>
     </pluginGroups>
@@ -232,7 +232,7 @@ At this point, you can run the mojo with "`mvn hello:sayhi`".
 
 You can also configure the plugin to attach specific goals to a particular phase of the build lifecycle. Here is an example:
 
-```unknown
+```xml
   <build>
     <pluginManagement>
       <plugins>
@@ -286,7 +286,7 @@ It is unlikely that a mojo will be very useful without parameters. Parameters pr
 
 Defining a parameter is as simple as creating an instance variable in the mojo and adding the proper annotations. Listed below is an example of a parameter for the simple mojo:
 
-```unknown
+```java
     /**
      * The greeting to display.
      */
@@ -300,7 +300,7 @@ The Javadoc comment is the description of the parameter. The `@Parameter` annota
 
 Each Maven project can configure the plugins it uses in the `pluginManagement` section of the pom.xml. For example:
 
-```unknown
+```xml
 <plugin>
   <groupId>sample.plugin</groupId>
   <artifactId>hello-maven-plugin</artifactId>
@@ -322,7 +322,7 @@ You are not restricted to using private field mapping which is helpful if you ar
 
 So the Mojo would look like the following:
 
-```unknown
+```java
 
 public class MyQueryMojo extends AbstractMojo {
 

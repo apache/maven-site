@@ -53,7 +53,7 @@ A file contains a sequence of paragraphs and \`\`displays&apos;&apos; (non parag
 
 A paragraph is simply a sequence of consecutive text lines.
 
-```unknown
+```text
   First line of first paragraph.
   Second line of first paragraph.
   Third line of first paragraph.
@@ -66,7 +66,7 @@ The indentation of the first line of a paragraph is the main method used by an A
 
 A \`\`plain&apos;&apos; paragraph must be indented by a certain amount of space. For example, a plain paragraph which is not contained in a list may be indented by two spaces.
 
-```unknown
+```text
 My section title (not indented).
 
   My paragraph first line (indented by 2 spaces).
@@ -74,7 +74,7 @@ My section title (not indented).
 
 Indentation is not rigid. Any amount of space will do. You don&apos;t even need to use a consistent indentation all over your document. What really matters for an APT processor is whether the paragraph is not indented at all or, when inside a list, whether a paragraph is more or less indented than the first item of the list (more about this later).
 
-```unknown
+```text
     First paragraph has its first line indented by four
 spaces. Then the author did not even bother to indent the
 other lines of the paragraph.
@@ -98,7 +98,7 @@ Note that tabs are expanded with a tab width set to 8\.
 
 A title is optional. If used, it must appear as the first block of the document.
 
-```unknown
+```text
             ------
             Title
             ------
@@ -117,7 +117,7 @@ The author sub-block may optionally be followed by a date sub-block using the sa
 
 The following example is used for a document with an title and a date but with no declared author.
 
-```unknown
+```text
             ------
             Title
             ------
@@ -140,7 +140,7 @@ where **YYYY** is the year in the Gregorian calendar, **MM** is the month of the
 
 Paragraphs other than the title block may appear before the first section.
 
-```unknown
+```text
   Paragraph 1, line 1.
   Paragraph 1, line 2.
 
@@ -156,7 +156,7 @@ Paragraphs are indented. They have already been described in the [Document struc
 
 Sections are created by inserting section titles into the document. Simple documents need not contain sections.
 
-```unknown
+```text
 Section title
 
 * Sub-section title
@@ -174,7 +174,7 @@ Section titles are not indented. A sub-section title begins with one asterisk (`
 
 <!--~~~~~~-->
 
-```unknown
+```text
       * List item 1.
 
       * List item 2.
@@ -196,7 +196,7 @@ To nest a list inside a list, indent its first item more than its parent list. T
 
 Section titles always end a list. Displays cannot end a list but the `[]` pseudo-element may be used to force the end of a list.
 
-```unknown
+```text
       * List item 3.
         Force end of list:
 
@@ -211,7 +211,7 @@ In the previous example, without the `[]`, the verbatim text (not indented as al
 
 A single `[]` may be used to end several nested lists at the same time. The indentation of `[]` may be used to specify exactly which lists should be ended. Example:
 
-```unknown
+```text
       * List item 1.
 
       * List item 2.
@@ -229,7 +229,7 @@ Verbatim text contained in list item 2, but not in sub-list item 2
 
 There are three kind of lists, the bulleted lists we have already described, the numbered lists and the definition lists.
 
-```unknown
+```text
       [[1]] Numbered item 1.
 
                 [[A]] Numbered item A.
@@ -256,7 +256,7 @@ A numbered list item begins with a label between two square brackets. The label 
 
 The labels of the items other than the first one are ignored. It is recommended to take the time to type the correct label for each item in order to keep the APT source document readable.
 
-```unknown
+```text
       [Defined term 1] of definition list 2.
 
       [Defined term 2] of definition list 2.
@@ -268,7 +268,7 @@ A definition list item begins with a defined term: text between square brackets.
 
 <!--~~~~~~~~~~~~~~~-->
 
-```unknown
+```text
 ----------------------------------------
 Verbatim
          text,
@@ -289,7 +289,7 @@ Like in HTML, verbatim text is preformatted. Unlike HTML, verbatim text is escap
 
 <!--~~~~~~~~-->
 
-```unknown
+```text
 [Figure name] Figure caption
 ```
 
@@ -313,7 +313,7 @@ The first line is not only used to recognize a table but also to specify column 
 - the plus sign (`+`) specifies that column 2 is left aligned,
 - the colon (`:`) specifies that column 3 is right aligned.
 
-```unknown
+```text
 *----------*--------------+----------------:
 | Centered | Left-aligned | Right-aligned  |
 | cell 1,1 | cell 1,2     | cell 1,3       |
@@ -333,7 +333,7 @@ The last `|` is only used to make the table nicer. The first `|` is not only use
 
 The following example shows a simple table with no grid and no caption.
 
-```unknown
+```text
 *-----*------*
  cell | cell
 *-----*------*
@@ -345,7 +345,7 @@ The following example shows a simple table with no grid and no caption.
 
 <!--~~~~~~~~~~~~~~~~~-->
 
-```unknown
+```text
 =====================
 ```
 
@@ -355,7 +355,7 @@ A non indented line containing at least 3 equal signs (`===`).
 
 <!--~~~~~~~~~~~~-->
 
-```unknown
+```text
 ^L
 ```
 
@@ -368,7 +368,7 @@ A non indented line containing a single form feed character (Control-L).
 
 <!--~~~~~~-->
 
-```unknown
+```text
   <Italic> font. <<Bold>> font. <<<Monospaced>>> font.
 ```
 
@@ -382,7 +382,7 @@ It is not recommended to use font elements inside titles, section titles, links 
 
 <!--~~~~~~~~~~~~~~~~~-->
 
-```unknown
+```text
   {Anchor}. Link to {{anchor}}. Link to {{http://www.pixware.fr}}.
   Link to {{{anchor}showing alternate text}}.
   Link to {{{http://www.pixware.fr}Pixware home page}}.
@@ -404,7 +404,7 @@ Section titles are implicitly defined anchors. [\[Change\]](./doxia-apt.html#Anc
 
 <!--~~~~~~~~~~~~-->
 
-```unknown
+```text
   Force line\
   break.
 ```
@@ -417,7 +417,7 @@ Line breaks must not be used inside titles and tables (which are line oriented b
 
 <!--~~~~~~~~~~~~~~~~~~~~-->
 
-```unknown
+```text
   Non\ breaking\ space.
 ```
 
@@ -427,7 +427,7 @@ A backslash character (`\`) followed by a space character.
 
 <!--~~~~~~~~~~~~~~~~~~~-->
 
-```unknown
+```text
   Escaped special characters: \~, \=, \-, \+, \*, \[, \], \<, \>, \{, \}, \\.
 ```
 
@@ -435,7 +435,7 @@ In certain contexts, these characters have a special meaning and therefore must 
 
 Note that an asterisk, for example, needs to be escaped only if its begins a paragraph. (`*` has no special meaning in the middle of a paragraph.)
 
-```unknown
+```text
   Copyright symbol: \251, \xA9, \u00a9.
 ```
 
@@ -447,7 +447,7 @@ Unicode characters may be specified by their codes using the `\u`_NNNN_ notation
 
 <!--~~~~~~~~~-->
 
-```unknown
+```text
 ~~Commented out.
 ```
 

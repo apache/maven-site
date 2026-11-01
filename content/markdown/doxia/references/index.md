@@ -48,7 +48,7 @@ Note some modules are not included per default with the site plugin. Have a look
 
 If you need to add module for the `maven-site-plugin` simply add it as a dependency of the plugin:
 
-```unknown
+```xml
 <plugin>
   <groupId>org.apache.maven.plugins</groupId>
   <artifactId>maven-site-plugin</artifactId>
