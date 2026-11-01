@@ -196,6 +196,37 @@ public class Jsr330Mojo
 }
 ```
 
+## How to name components
+
+Where a library offers several implementations of one interface, `@Named` gives each implementation the name that
+callers select it by. Plexus called this name the role hint. Doxia parsers, sink factories and macros work this way:
+
+```java
+import javax.inject.Named;
+import javax.inject.Singleton;
+
+import org.apache.maven.doxia.parser.AbstractTextParser;
+
+@Singleton
+@Named("my")
+public class MyParser extends AbstractTextParser {
+    ...
+}
+```
+
+A component that needs one implementation injects it by interface and name, which replaces the Plexus
+`lookup(Parser.ROLE, "my")` call:
+
+```java
+@Inject
+public MyComponent(@Named("my") Parser parser) {
+    this.parser = parser;
+}
+```
+
+The implementation is found only if its JAR contains the index that the `sisu-maven-plugin` writes, as described in
+[How to use JSR-330](#How_to_use_JSR-330).
+
 ## Lifecycle annotations (JSR-250)
 
 Sisu managed beans also support lifecycle annotations defined by [JSR-250](https://jcp.org/en/jsr/detail?id=250) (for example `@PostConstruct`).

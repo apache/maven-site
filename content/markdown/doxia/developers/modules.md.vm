@@ -43,18 +43,20 @@ First, the easiest way is to create a POM with _doxia-modules_ as parent:
 </project>
 ```
 
-Secondly, you should implement some Doxia classes, depending on what features you want: parsing or generating markup.
+Secondly, you should implement some Doxia classes, depending on what features you want: parsing or generating markup. Parsers, parser modules and sink factories are JSR-330 components, named by `@Named`; the _doxia-modules_ parent already writes the component index. For details, see [Maven & JSR-330](/maven-jsr330.html#How_to_name_components).
 
 ${esc.h}${esc.h} Parsing
 
 - _MyParser_ class
 
     ```java
-    import org.apache.maven.doxia.parser.AbstractParser;
-    import org.apache.maven.doxia.parser.Parser;
-    import org.codehaus.plexus.component.annotations.Component;
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = Parser.class, hint = "my" )
+    import org.apache.maven.doxia.parser.AbstractParser;
+    
+    @Singleton
+    @Named("my")
     public class MyParser
         extends AbstractParser
     {
@@ -79,10 +81,13 @@ ${esc.h}${esc.h} Parsing
 - _MyParserModule_ class
 
     ```java
-    import org.apache.maven.doxia.parser.module.AbstractParserModule;
-    import org.codehaus.plexus.component.annotations.Component;
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = ParserModule.class, hint = "my" )
+    import org.apache.maven.doxia.parser.module.AbstractParserModule;
+    
+    @Singleton
+    @Named("my")
     public class MyParserModule
         extends AbstractParserModule
     {
@@ -109,10 +114,13 @@ ${esc.h}${esc.h} Generating
 - _MySinkFactory_ class
 
     ```java
-    import org.apache.maven.doxia.sink.SinkFactory;
-    import org.codehaus.plexus.component.annotations.Component;
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = SinkFactory.class, hint = "my" )
+    import org.apache.maven.doxia.sink.SinkFactory;
+    
+    @Singleton
+    @Named("my")
     public class MySinkFactory
         implements SinkFactory
     {
