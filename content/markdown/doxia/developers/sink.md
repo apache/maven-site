@@ -32,22 +32,30 @@ under the License.
 Doxia can be used to transform an arbitrary input document to any supported output format. The following snippet shows how to use a Doxia _Parser_ to transform an apt file to html:
 
 ```java
-  File userDir = new File( System.getProperty ( "user.dir" ) );
-  File inputFile = new File( userDir, "test.apt" );
-  File outputFile = new File( userDir, "test.html" );
+  @Inject
+  public MyConverter( @Named( "xhtml" ) SinkFactory sinkFactory, @Named( "apt" ) Parser parser )
+  {
+      this.sinkFactory = sinkFactory;
+      this.parser = parser;
+  }
 
-  SinkFactory sinkFactory = (SinkFactory) lookup( SinkFactory.ROLE, "html" ); // Plexus lookup
+  public void convert()
+      throws IOException, ParseException
+  {
+      File userDir = new File( System.getProperty( "user.dir" ) );
+      File inputFile = new File( userDir, "test.apt" );
+      File outputFile = new File( userDir, "test.html" );
 
-  Sink sink = sinkFactory.createSink( outputFile.getParentFile(), outputFile.getName() ) );
+      Sink sink = sinkFactory.createSink( outputFile.getParentFile(), outputFile.getName() );
 
-  Parser parser = (AptParser) lookup( Parser.ROLE, "apt" ); // Plexus lookup
-
-  Reader reader = ReaderFactory.newReader( inputFile, "UTF-8" );
-
-  parser.parse( reader, sink );
+      try ( Reader reader = Files.newBufferedReader( inputFile.toPath(), StandardCharsets.UTF_8 ) )
+      {
+          parser.parse( reader, sink );
+      }
+  }
 ```
 
-It is recommended that you use [Plexus](https://codehaus-plexus.github.io/) to look up the parser. In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
+It is recommended that you inject the parser and the sink factory by name, as described in [How to name components](/maven-jsr330.html#How_to_name_components). In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
 
 You could also use the [Doxia Converter Tool](/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir. To move a site from APT to Markdown, see [Migrating APT to Markdown](/doxia/migrating-apt-to-markdown.html).
 

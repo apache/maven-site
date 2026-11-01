@@ -26,41 +26,21 @@ under the License.
 
 # Create a New Doxia Macro
 
-You need to add the following [plexus-component-metadata plugin](https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/) configuration to generate the correct Plexus _component.xml_ file from annotations for the project containing your macro:
-
-```xml
-<project>
-  ...
-  <build>
-    ...
-    <plugins>
-      <plugin>
-        <groupId>org.codehaus.plexus</groupId>
-        <artifactId>plexus-component-metadata</artifactId>
-        <executions>
-          <execution>
-            <goals>
-              <goal>generate-metadata</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      ...
-    </plugins>
-  ...
-  </build>
-  ...
-</project>
-```
+A macro is a JSR-330 component named after the macro. Set up the project that contains it as described in [How to use JSR-330](/maven-jsr330.html#How_to_use_JSR-330): a `javax.inject` dependency and the `sisu-maven-plugin` index.
 
 You should implement the _AbstractMacro_ class:
 
 ```java
-import org.apache.maven.doxia.macro.AbstractMacro;
+import javax.inject.Named;
+import javax.inject.Singleton;
 
-/**
- * @plexus.component role="org.apache.maven.doxia.macro.Macro" role-hint="my"
- */
+import org.apache.maven.doxia.macro.AbstractMacro;
+import org.apache.maven.doxia.macro.MacroExecutionException;
+import org.apache.maven.doxia.macro.MacroRequest;
+import org.apache.maven.doxia.sink.Sink;
+
+@Singleton
+@Named("my")
 public class MyMacro
     extends AbstractMacro
 {
@@ -80,13 +60,13 @@ To use it, you need to write the following markups:
 - APT
 
     ```text
-    %{my|myParam=myValue} <!-- my is the macro name defined by role-hint -->
+    %{my|myParam=myValue} <!-- my is the macro name set by @Named -->
     ```
 
 - XDoc
 
     ```xml
-    <macro name="my"> <!-- my is the required macro name defined by role-hint -->
+    <macro name="my"> <!-- my is the required macro name set by @Named -->
       <param name="myParam" value="myValue"/>
     </macro>
     ```
@@ -97,4 +77,4 @@ To use it, you need to write the following markups:
 - [Doxia Macros Guide](../macros/index.html)
 - [Doxia API Reference](../doxia/apidocs/index.html)
 - [Doxia Sitetools API Reference](../doxia-sitetools/apidocs/index.html)
-- [Upgrading from Plexus Javadoc Tags to Plexus Java Annotations](/plugin-developers/cookbook/plexus-plugin-upgrade.html)
+- [Maven & JSR-330](/maven-jsr330.html)
