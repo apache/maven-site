@@ -19,7 +19,12 @@ under the License.
 
 # Guide to Selecting Alternative Wagon Providers
 
+<a id="Command-Line_Configuration"></a>
+<a id="settings.xml_Configuration"></a>
+
 Maven 2.2.1 let you choose between several Wagon implementations for one protocol, with the `maven.wagon.provider.<protocol>` property or a `<wagonProvider>` element in a `<server>` entry of `settings.xml`. Maven 3 and Maven 4 no longer support this: they look up the Wagon by the protocol alone, and they remove `<wagonProvider>` from the server configuration before passing it on.
+
+<a id="Available_Wagon_Providers"></a>
 
 Maven 3 and Maven 4 bundle two Wagons: `wagon-http`, based on Apache HttpClient, for `http` and `https`, and `wagon-file` for `file`. Since Maven 3.9.0, Maven by default uses the native transports of Maven Resolver for these protocols, and Wagon only for the protocols they don't cover or when you select it with `-Dmaven.resolver.transport=wagon`. For details, see the [Guide for Resolver Transport](./guide-resolver-transport.html).
 
