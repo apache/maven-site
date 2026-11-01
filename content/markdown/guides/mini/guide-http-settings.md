@@ -19,6 +19,8 @@ under the License.
 
 # Advanced configuration to HttpClient HTTP Wagon
 
+<a id="Introduction"></a>
+
 **This page contains Wagon specific information, but the default transport in Maven 3.9.0+ is NOT Wagon anymore. Make sure to check the [Resolver Transport guide](./guide-resolver-transport.html) first, as things have changed.**
 
 <!-- MACRO{toc} -->
@@ -40,6 +42,8 @@ different implementation built on `java.net.HttpURLConnection`.
 
 Settings that are global rather than per-server are exposed as system properties
 instead; see [System properties](#System_properties) at the end.
+
+<a id="The_Basics"></a>
 
 ## Where configuration goes
 
@@ -66,6 +70,9 @@ component configuration: element names correspond to the fields and setters of t
 provider class. Programmatically the same settings are the `setHttpConfiguration`,
 `setHttpHeaders`, `setBasicAuthScope`, `setProxyBasicAuthScope` and
 `setInitialBackoffSeconds` methods of `AbstractHttpClientWagon`.
+
+<a id="Configuring_GET.2C_HEAD.2C_PUT.2C_or_All_of_the_Above"></a>
+<a id="Read_time_out"></a>
 
 ## `httpConfiguration`
 
@@ -144,6 +151,8 @@ method block and leave `<all>` out. This is what
 `HttpWagonPreemptiveTest` does — it configures nothing but
 `setAll(new HttpMethodConfiguration().setUsePreemptive(true))`.
 
+<a id="Non-String_Parameter_Values"></a>
+
 ### Writing `headers` and `params`
 
 Both are `java.util.Properties`, and Plexus accepts two spellings for those. The
@@ -171,6 +180,8 @@ Use the long form for keys that are not valid XML element names — most of the 
 keys below contain dots, which is fine, but nothing stops a header name from
 containing characters that are not.
 
+<a id="Taking_Control_of_Your_HTTP_Headers"></a>
+
 ### `headers`
 
 Headers from the configuration are applied with `setHeader`, so they replace any
@@ -191,6 +202,8 @@ Pragma: no-cache
 ```
 
 before your own headers are applied. Set it to `false` to suppress them.
+
+<a id="Fine-Tuning_HttpClient_Parameters"></a>
 
 ### `params`
 
@@ -229,6 +242,8 @@ applied, so `http.protocol.cookie-policy` overrides that default.
 `Expect: 100-continue` is enabled unconditionally for `PUT` requests, before `params`
 are applied; `http.protocol.expect-continue` can therefore turn it off. It is
 deliberately not enabled for `MKCOL`, which has no body.
+
+<a id="Ignoring_Cookies"></a>
 
 ### Ignoring cookies
 
@@ -274,6 +289,8 @@ tried.
 always `UsernamePasswordCredentials`, never `NTCredentials`, so the registered NTLM
 scheme has nothing usable to offer. NTLM is only wired up for proxies — see below.
 
+<a id="Example.3A_Using_Preemptive_Authentication"></a>
+
 ### Preemptive authentication
 
 By default HttpClient waits for a `401` challenge before sending credentials. With
@@ -304,6 +321,8 @@ Preemptive Basic authentication is only ever Basic — the cache entry is a
 `usePreemptive`. Uploads are therefore preemptively authenticated by default. The
 source marks this as a known wart ("FIXME Perform only when preemptive has been
 configured").
+
+<a id="Example.3A_Lifting_auth_scope_restriction_for_external_authentication_systems"></a>
 
 ### `basicAuth` and `proxyAuth` — overriding the authentication scope
 
@@ -375,6 +394,9 @@ provider does with them:
   exist, a `BasicScheme` with `ChallengeState.PROXY` is put in the `AuthCache` for the
   proxy host.
 
+<a id="Support_for_General-Wagon_Configuration_Standards"></a>
+<a id="Connection_Timeouts"></a>
+
 ## Connection timeout
 
 Every Wagon that extends `AbstractWagon` (SCP, HTTP, FTP and others) accepts a flat
@@ -388,6 +410,8 @@ connection timeout in milliseconds, which applies to all methods:
 
 `connectionTimeout` inside `httpConfiguration` is the per-method alternative. The `params`
 `http.socket.timeout` and `http.connection.timeout` still take precedence over both.
+
+<a id="HTTP_Headers"></a>
 
 ## Deprecated: `httpHeaders`
 
