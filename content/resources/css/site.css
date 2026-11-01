@@ -76,3 +76,11 @@ body ul {
 .home-section-links {
   font-size: 1.25em;
 }
+
+/* on a phone the headings wrap instead of running past the edge of the screen */
+@media (max-width: 767px) {
+  .home-section-heading,
+  .home-section-links {
+    white-space: normal;
+  }
+}
