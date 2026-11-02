@@ -585,39 +585,47 @@ For plugin configuration you can overwrite the inheritance behaviour with the at
 Similar to the inheritance of objects in object-oriented programming, POMs that extend
 a parent POM inherit certain values from that parent. Moreover, just as Java objects
 ultimately inherit from `java.lang.Object`, all Project Object Models inherit from
-a base Super POM. The snippet below is the Super POM for Maven 3.9.12.
+a base Super POM. The snippet below is the Super POM for Maven 3.10.0.
 
-Note: The latest Super POM for Maven 3 is available [here](https://maven.apache.org/ref/3-LATEST/maven-model-builder/super-pom.html).
+`${maven.repo.central}` is `https://repo.maven.apache.org/maven2` unless you set the `maven.repo.central` user property.
+Maven 3.9.x Super POMs also pin the versions of four plugins and define a `release-profile`.
+The [Super POM of the latest Maven 3 release](https://maven.apache.org/ref/3-LATEST/maven-model-builder/super-pom.html) is in the Maven Core reference documentation.
 
 ```xml
 <project>
-  
   <modelVersion>4.0.0</modelVersion>
-  
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Fixed date for reproducible build -->
+    <project.build.outputTimestamp>1980-02-01T00:00:00Z</project.build.outputTimestamp>
+  </properties>
+
   <repositories>
     <repository>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>${maven.repo.central}</url>
       <layout>default</layout>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
-  
+
   <pluginRepositories>
     <pluginRepository>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>${maven.repo.central}</url>
       <layout>default</layout>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-  
+
   <build>
     <directory>${project.basedir}/target</directory>
     <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -636,79 +644,12 @@ Note: The latest Super POM for Maven 3 is available [here](https://maven.apache.
         <directory>${project.basedir}/src/test/resources</directory>
       </testResource>
     </testResources>
-    <pluginManagement>
-      <!-- NOTE: These plugins will be removed from future versions of the super POM -->
-      <!-- They are kept for the moment as they are very unlikely to conflict with lifecycle mappings (MNG-4453) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>3.0.1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
-  
+
   <reporting>
     <outputDirectory>${project.build.directory}/site</outputDirectory>
   </reporting>
-  
-  <profiles>
-    <!-- NOTE: The release profile will be removed from future versions of the super POM -->
-    <profile>
-      <id>release-profile</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-deploy-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-  
+
 </project>
 ```
 
@@ -966,7 +907,7 @@ to bundle the resource correctly, you would specify resources similar to the fol
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.5.1</version>
         <extensions>false</extensions>
         <inherited>true</inherited>
         <configuration>
@@ -1142,7 +1083,7 @@ You would get an `execution` like this:
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.1</version>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>echodir</id>
@@ -1152,9 +1093,9 @@ You would get an `execution` like this:
             <phase>verify</phase>
             <inherited>false</inherited>
             <configuration>
-              <tasks>
-                <echo>Build Dir: \${project.build.directory}</echo>
-              </tasks>
+              <target>
+                <echo>Build Dir: ${project.build.directory}</echo>
+              </target>
             </configuration>
           </execution>
         </executions>
@@ -1203,7 +1144,7 @@ The children have every right to override `pluginManagement` definitions.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.5.1</version>
           <executions>
             <execution>
               <id>pre-process-classes</id>
@@ -1293,7 +1234,7 @@ For this reason, extensions are excellent for specifying one out of multiple imp
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ftp</artifactId>
-        <version>1.0-alpha-3</version>
+        <version>3.5.3</version>
       </extension>
     </extensions>
     ...
@@ -1328,7 +1269,7 @@ also be suppressed in the following, more verbose, way, which effectively turns 
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.0.1</version>
+        <version>3.9.0</version>
         <reportSets>
           <reportSet></reportSet>
         </reportSets>
