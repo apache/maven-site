@@ -28,16 +28,26 @@ This variable contains parameters used to start up the JVM running Maven and
 can be used to supply additional options to it. E.g. JVM memory
 settings can be defined with the value `-Xms256m -Xmx512m`.
 
+When an option is set both here and in `.mvn/jvm.config`, Maven 3 uses the value from
+`MAVEN_OPTS` and Maven 4 the one from `jvm.config`.
+
 ## `MAVEN_ARGS` environment variable:
 
 Starting with Maven 3.9.0, this variable contains arguments passed to Maven before
 CLI arguments. E.g., options and goals could be defined with the value
 `-B -V checkstyle:checkstyle`.
 
+## `MAVEN_REPO_CENTRAL` environment variable:
+
+Starting with Maven 3.10.0, this variable replaces the URL of the central repository,
+`https://repo.maven.apache.org/maven2`, for example with the URL of a repository manager. The `maven.repo.central`
+user property does the same.
+
 ## `settings.xml` file:
 
-Located in USER_HOME/.m2, the settings files is designed to contain any
-configuration for Maven usage across projects.
+The settings files are designed to contain any configuration for Maven usage across projects. Maven reads the
+installation settings in `${maven.home}/conf/settings.xml` and the user settings in `${user.home}/.m2/settings.xml`;
+Maven 4 also reads project settings in `.mvn/settings.xml`. See the [Settings Reference](./settings.html).
 
 ## `.mvn` directory:
 
@@ -73,6 +83,10 @@ From now on this can be done much more simpler and more Maven like way. Define a
 ```
 
 Now you can simply use an extension by defining the usual maven coordinates groupId, artifactId, version as any other artifact. Furthermore, all transitive dependencies of those extensions will automatically being downloaded from your repository. So no need to create a shaded artifact anymore.
+
+Starting with Maven 3.10.0, Maven also loads the extensions listed in `${user.home}/.m2/extensions.xml`, for all of
+your builds, and in `${maven.home}/conf/extensions.xml`, for every build that uses that Maven installation. Both files
+have the same format as `.mvn/extensions.xml`.
 
 ### `.mvn/maven.config` file:
 

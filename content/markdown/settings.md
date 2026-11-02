@@ -41,6 +41,10 @@ The former `settings.xml` is also called global settings, the latter
 their contents get merged, with the user-specific `settings.xml` being
 dominant.
 
+Maven 4 also reads project settings from `.mvn/settings.xml` in the project's top level directory. Because that file
+is part of the project, Maven ignores the elements that belong to you rather than to the project, such as
+`localRepository` and server credentials. It warns about them only when run with `-e`.
+
 Tip: If you need to create user-specific settings from scratch, it's
 easiest to copy the global settings from your Maven installation to your
 `${user.home}/.m2` directory. Maven's default `settings.xml` is a
