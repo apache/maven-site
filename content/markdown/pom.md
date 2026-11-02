@@ -113,7 +113,7 @@ This marks a specific place in a repository, acting like a coordinate system for
 * `<groupId>`:
   This is generally unique amongst an organization or a project. For example, all core
   Maven artifacts do (well, should) live under the groupId `org.apache.maven`. Group ID's do not
-  necessarily use the dot notation, for example, the junit project. Note that the dot-notated
+  necessarily use the dot notation, for example, the commons-io project (groupId `commons-io`). Note that the dot-notated
   groupId does not have to correspond to the package structure that the project contains. It is,
   however, a good practice to follow. When stored within a repository, the group acts much like the
   Java packaging structure does in an operating system. The dots are replaced by OS specific directory
@@ -132,8 +132,8 @@ This marks a specific place in a repository, acting like a coordinate system for
 
 * `<version>`:
   This is the last piece of the naming puzzle. `groupId:artifactId` denotes a single project, but
-  it does not indicate which incarnation of that project we are talking about. Do we want the `junit:junit`
-  of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
+  it does not indicate which incarnation of that project we are talking about. Do we want the `commons-io:commons-io`
+  of 2026 (version 2.22.0), or of 2008 (version 1.4)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. `my-project` version 1.0 files live in the directory
   structure `$M2_REPO/org/codehaus/mojo/my-project/1.0`.

@@ -47,37 +47,21 @@ The following are some common problems when building with Maven, and how to reso
 A missing dependency presents with an error like the following:
 
 ```
-[INFO] Failed to resolve artifact.
-
-Missing:
- ----------
-1) jnuit:junit:jar:3.8.1
-
-  Try downloading the file manually from the project website.
-
-  Then, install it using the command:
-      mvn install:install-file -DgroupId=jnuit -DartifactId=junit \
-          -Dversion=3.8.1 -Dpackaging=jar -Dfile=/path/to/file
-
-  Path to dependency:
-        1) org.apache.maven:maven:pom:2.1-SNAPSHOT
-        2) jnuit:junit:jar:3.8.1
-
- ----------
-1 required artifact is missing.
-
-for artifact:
-  org.apache.maven:maven:pom:2.1-SNAPSHOT
-
-from the specified remote repositories:
-  central (https://repo.maven.apache.org/maven2)
+[WARNING] The POM for org.junit.jupitr:junit-jupiter:jar:5.11.0 is missing, no dependency information available
+[INFO] ------------------------------------------------------------------------
+[ERROR] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+...
+[ERROR] Failed to execute goal on project my-app: Could not resolve dependencies for project com.mycompany.app:my-app:jar:1.0-SNAPSHOT
+[ERROR] dependency: org.junit.jupitr:junit-jupiter:jar:5.11.0 (test)
+[ERROR] 	Could not find artifact org.junit.jupitr:junit-jupiter:jar:5.11.0 in central (https://repo.maven.apache.org/maven2)
 ```
 
 To resolve this issue, it depends on what the dependency is and why it is missing.
-The most common cause is because it can not be redistributed from the repository and must be manually installed using the instructions given in the message.
+The most common cause is because it can not be redistributed from the repository and must be installed manually with `mvn install:install-file`.
 This is most common with some older JARs from Sun (usually `javax.*` group IDs), and is further documented in the [Guide to Coping with Sun JARs](../guides/mini/guide-coping-with-sun-jars.html).
 
-You can check the list of repositories at the end of the error to ensure that the expected ones are listed - it may be that the project requires an alternative repository that has not been declared properly or is not accessible with your Maven configuration.
+You can check the repositories named in the error to ensure that the expected ones are listed - it may be that the project requires an alternative repository that has not been declared properly or is not accessible with your Maven configuration.
 
 In other cases, it may be an incorrectly declared dependency (like the typo in the example above) which the project would need to fix, like a compilation error.
 
