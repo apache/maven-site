@@ -178,7 +178,12 @@ as depicted above.
 | Also make dependencies outside of current scope                    | parent, subproject-a, subproject-b, subproject-c, subproject-c-2 | N/A                                                            | `cd subproject-c/subproject-c-2 && mvn compile -am`           |
 | Also make dependents outside of current scope                      | subproject-a, subproject-b, subproject-c-2                       | N/A                                                            | `cd subproject-a && mvn compile -amd`                         |
 | Resuming from a subproject and build all dependencies              | parent, subproject-a, subproject-b, subproject-c, subproject-c-2 | N/A                                                            | `mvn compile -rf :subproject-c-2 -am` or `mvn compile -r -am` |
-| Run specific goal on one subproject with dependencies from project | subproject-c-2                                                   | `mvn install && mvn jetty:run -f subproject-c/subproject-c-2`  | `mvn compile && mvn jetty:run -f subproject-c/subproject-c-2` |
+| Run specific goal on one subproject with dependencies from project | subproject-c-2                                                   | `mvn install && mvn jetty:run -f subproject-c/subproject-c-2`  | `mvn package && mvn jetty:run -f subproject-c/subproject-c-2` |
+
+In the last row, Maven 4 finds the other subprojects in the project-local repository, `.mvn/target/project-local-repo`
+in the root directory, which Maven creates itself. `mvn package` and later phases put each subproject's artifacts
+there, and `mvn clean` removes them, so after only `mvn compile` the build with `-f` cannot resolve the subprojects it
+depends on.
 
 ## More information
 

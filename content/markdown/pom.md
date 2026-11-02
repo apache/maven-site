@@ -572,6 +572,8 @@ Notable elements which are **not** inherited include:
 
 Notice the `<relativePath>` element.
 It is not required, but may be used as a signifier to Maven to first search the path given for this project's parent, before searching the local and then remote repositories.
+Without it, Maven looks in `../pom.xml`, and uses the POM it finds there only if its coordinates match the `<parent>` element.
+With an empty `<relativePath/>`, Maven 3 skips the file system and searches the repositories; Maven 4 also finds the parent among the projects of the build.
 
 To see inheritance in action, just have a look at the [ASF](https://github.com/apache/maven-apache-parent/blob/master/pom.xml) or [Maven](https://github.com/apache/maven-parent/blob/master/pom.xml) parent POM's.
 
