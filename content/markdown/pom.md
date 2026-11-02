@@ -190,9 +190,9 @@ allowing your list to focus solely on the dependencies your project requires.
   ...
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <type>jar</type>
       <scope>test</scope>
       <optional>true</optional>
@@ -722,7 +722,7 @@ child POMs and transitive dependencies. One of those elements is
 `<dependencyManagement>`.
 
 `<dependencyManagement>` is used by a POM to help manage dependency information across all of its children.
-If the `my-parent` project uses `dependencyManagement` to define a dependency on `junit:junit:4.12`, then POMs inheriting from this one can set their dependency giving  the `groupId`=`junit` and `artifactId`=`junit` only and Maven will fill in the `version` set by the parent.
+If the `my-parent` project uses `dependencyManagement` to define a dependency on `org.junit.jupiter:junit-jupiter:5.11.0`, then POMs inheriting from this one can set their dependency giving  the `groupId`=`org.junit.jupiter` and `artifactId`=`junit-jupiter` only and Maven will fill in the `version` set by the parent.
 The benefits of this method are obvious.
 Dependency details can be set in one central location, which propagates to all inheriting POMs.
 
