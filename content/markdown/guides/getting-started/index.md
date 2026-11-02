@@ -735,30 +735,31 @@ With this information about a dependency, Maven will be able to reference the de
 
 What about dependencies built somewhere else? How do they get into my local repository? Whenever a project references a dependency that isn't available in the local repository, Maven will download the dependency from a remote repository into the local repository. You probably noticed Maven downloading a lot of things when you built your very first project (these downloads were dependencies for the various plugins used to build the project). By default, the remote repository Maven uses can be found (and browsed) at [https://repo.maven.apache.org/maven2/](https://repo.maven.apache.org/maven2/). You can also set up your own remote repository (maybe a central repository for your company) to use instead of or in addition to the default remote repository. For more information on repositories you can refer to the [Introduction to Repositories](../introduction/introduction-to-repositories.html).
 
-Let's add another dependency to our project. Let's say we've added some logging to the code and need to add log4j as a dependency. First, we need to know what the groupId, artifactId, and version are for log4j. The appropriate directory on Maven Central is called [/maven2/log4j/log4j](https://repo.maven.apache.org/maven2/log4j/log4j/). In that directory is a file called maven-metadata.xml. Here's what the maven-metadata.xml for log4j looks like:
+Let's add another dependency to our project. Let's say we've added some logging to the code and need to add the Log4j API as a dependency. First, we need to know what the groupId, artifactId, and version are. The Log4j API is in the directory [/maven2/org/apache/logging/log4j/log4j-api](https://repo.maven.apache.org/maven2/org/apache/logging/log4j/log4j-api/) on Maven Central: each dot in the groupId becomes a directory. In that directory is a file called maven-metadata.xml. Here's an excerpt of it:
 
 ```xml
 <metadata>
-  <groupId>log4j</groupId>
-  <artifactId>log4j</artifactId>
-  <version>1.1.3</version>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-api</artifactId>
   <versioning>
+    <latest>3.0.0-beta2</latest>
+    <release>3.0.0-beta2</release>
     <versions>
-      <version>1.1.3</version>
-      <version>1.2.4</version>
-      <version>1.2.5</version>
-      <version>1.2.6</version>
-      <version>1.2.7</version>
-      <version>1.2.8</version>
-      <version>1.2.11</version>
-      <version>1.2.9</version>
-      <version>1.2.12</version>
+      <version>2.0-alpha1</version>
+      ...
+      <version>2.25.5</version>
+      <version>2.26.0</version>
+      <version>2.26.1</version>
+      <version>3.0.0-alpha1</version>
+      <version>3.0.0-beta1</version>
+      <version>3.0.0-beta2</version>
     </versions>
+    <lastUpdated>20260706082302</lastUpdated>
   </versioning>
 </metadata>
 ```
 
-From this file, we can see that the groupId we want is "log4j" and the artifactId is "log4j". We see lots of different version values to choose from; for now, we'll just use the latest version, 1.2.12 (some maven-metadata.xml files may also specify which version is the current release version: see [repository metadata reference](/ref/current/maven-repository-metadata/repository-metadata.html)). Alongside the maven-metadata.xml file, we can see a directory corresponding to each version of the log4j library. Inside each of these, we'll find the actual jar file (e.g. log4j-1.2.12.jar) as well as a pom file (this is the `pom.xml` for the dependency, indicating any further dependencies it might have and other information) and another maven-metadata.xml file. There's also an md5 file corresponding to each of these, which contains an MD5 hash for these files. You can use this to authenticate the library or to figure out which version of a particular library you may be using already.
+From this file, we can see that the groupId we want is `org.apache.logging.log4j` and the artifactId is `log4j-api`. We see lots of different version values to choose from. The `release` element names the last release version deployed, which here is a 3.0.0 beta (see [repository metadata reference](/ref/current/maven-repository-metadata/repository-metadata.html)), so it is not necessarily the one you want; for now, we'll use the newest stable version, 2.26.1. Alongside the maven-metadata.xml file, we can see a directory corresponding to each version of the library. Inside each of these, we'll find the actual jar file (e.g. log4j-api-2.26.1.jar) as well as a pom file (this is the `pom.xml` for the dependency, indicating any further dependencies it might have and other information). Each file comes with `.md5` and `.sha1` files holding its checksums, which you can use to check that a download is complete or to figure out which version of a particular library you may be using already, and an `.asc` file holding its signature, which you can verify with the project's public key to make sure the file comes from the project.
 
 Now that we know the information we need, we can add the dependency to our pom.xml:
 
@@ -783,16 +784,16 @@ Now that we know the information we need, we can add the dependency to our pom.x
       <scope>test</scope>
     </dependency>
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.12</version>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-api</artifactId>
+      <version>2.26.1</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
 </project>
 ```
 
-Now, when we compile the project (`mvn compile`), we'll see Maven download the log4j dependency for us.
+Now, when we compile the project (`mvn compile`), we'll see Maven download the Log4j API for us.
 
 <!--DJ: Current-->
 
