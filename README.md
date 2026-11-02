@@ -36,6 +36,12 @@ $ mvn site:run
 
 to run locally and see the website on <http://localhost:8080/>.
 
+## Moving or Removing a Page
+
+`mvn clean site` checks that every page and section anchor the site has published still works,
+through the redirects in `content/filtered-resources/.htaccess`. When you move, rename or remove a page or
+section, see [Moving or Removing a Page](https://maven.apache.org/developers/website/move-a-page.html).
+
 Additional Resources
 --------------------
 

@@ -49,6 +49,10 @@ Instructions on how to publish website content are split in separate documents:
 - on every main content source commit ([maven-site.git](https://github.com/apache/maven-site), main content rebuild and publish is triggered through Jenkins jobs ([maven-site job](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-site/), which basically run `mvn site-deploy` (it can be run locally if CI is off...),
 - on every Maven component release, release manager follows "[deploying Maven components reference documentation](./deploy-component-reference-documentation.html)", eventually using [Component Reference Documentation Helper](./component-reference-documentation-helper.html) to easily prepare `svnmucc` command line.
 
+# Moving or removing a page
+
+Every address the site has published keeps working: see [Moving or Removing a Page](./move-a-page.html).
+
 # Analytics
 
 As part of Privacy enhancements, the whole Maven site is moving to [Apache's Analytics infrastructure](https://privacy.apache.org/matomo/): see [Maven statistics](https://analytics.apache.org/index.php?module=CoreHome&action=index&date=yesterday&period=day&idSite=3).

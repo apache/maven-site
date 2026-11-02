@@ -74,6 +74,8 @@
     <version.plantuml-maven-plugin>0.4.16</version.plantuml-maven-plugin>
     <!-- required by plantuml-m-p 0.3 -->
     <minimalJavaBuildVersion>17</minimalJavaBuildVersion>
+    <!-- check, or record to add the addresses of new pages to src/published-addresses.txt -->
+    <addresses>check</addresses>
   </properties>
 
   <dependencies>
@@ -119,6 +121,8 @@
               <exclude>content/resources/badges/*.json</exclude>
               <exclude>content/resources/doxia/images/architecture.odg</exclude>
               <exclude>content/resources/atr/templates/**</exclude>
+              <!-- a list of addresses, read and written by Addresses.java -->
+              <exclude>src/published-addresses.txt</exclude>
             </inputExcludes>
           </configuration>
           <executions>
@@ -334,6 +338,36 @@
         </executions>
       </plugin>
 
+      <!--
+        After site:site, over the rendered site: every address the site has published still leads to
+        its page and anchors, through the redirects in .htaccess. -Daddresses=record adds the addresses
+        of new pages to the list. `mvn site` compiles nothing, so Java runs the source file.
+      -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.6.4</version>
+        <executions>
+          <execution>
+            <id>addresses</id>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+            <phase>site</phase>
+            <configuration>
+              <executable>${java.home}/bin/java</executable>
+              <arguments>
+                <argument>-classpath</argument>
+                <classpath />
+                <argument>${project.basedir}/src/main/java/org/apache/maven/site/check/Addresses.java</argument>
+                <argument>${addresses}</argument>
+                <argument>${project.reporting.outputDirectory}</argument>
+                <argument>${project.basedir}/src/published-addresses.txt</argument>
+              </arguments>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
     </plugins>
   </build>
 
