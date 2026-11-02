@@ -42,7 +42,7 @@ Maven `central` repository, even if they don't use Maven as their build tool.
   repository
 * [Fixing Central Metadata](./central-metadata.html) - How to fix issues in content already uploaded
 
-<img src="maven-central-repository.png" border="0" usemap="#map" />
+<img src="maven-central-repository.png" border="0" usemap="#map" alt="How artifacts reach the central repository from staging repositories, and where central publishes them: the CDN, mirrors, the archetype catalog and the index" />
 
 <map name="map">
 <area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />

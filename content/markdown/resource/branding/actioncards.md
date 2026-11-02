@@ -26,33 +26,33 @@ With these action cards you can share your passion for Maven on social media!
 <li class="span12"></li> <!--  hack to align grid -->
 
 <li class="span3">
-<a href="/images/branding/i_am_a_proud_maven_user_1.png"><img src="/images/branding/i_am_a_proud_maven_user_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/i_am_a_proud_maven_user_1.png"><img src="/images/branding/i_am_a_proud_maven_user_1.png" class="thumbnail" alt="Action card: I'm a proud Maven user" /></a>
 </li>
 <li class="span3">
-<a href="/images/branding/im_a_grateful_maven_user_1.png"><img src="/images/branding/im_a_grateful_maven_user_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/im_a_grateful_maven_user_1.png"><img src="/images/branding/im_a_grateful_maven_user_1.png" class="thumbnail" alt="Action card: I'm a grateful Maven user" /></a>
 </li>
 <li class="span3">
-<a href="/images/branding/im_a_happy_maven_user_1.png"><img src="/images/branding/im_a_happy_maven_user_1.png" class="thumbnail" alt="" /></a>
-</li>
-
-<li class="span3">
-<a href="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png"><img src="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png" class="thumbnail" alt="" /></a>
-</li>
-<li class="span3">
-<a href="/images/branding/my_first_maven_pr_was_merged_1.png"><img src="/images/branding/my_first_maven_pr_was_merged_1.png" class="thumbnail" alt="" /></a>
-</li>
-<li class="span3">
-<a href="/images/branding/i_am_a_maven_contributor_1.png"><img src="/images/branding/i_am_a_maven_contributor_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/im_a_happy_maven_user_1.png"><img src="/images/branding/im_a_happy_maven_user_1.png" class="thumbnail" alt="Action card: I'm a happy Maven user" /></a>
 </li>
 
 <li class="span3">
-<a href="/images/branding/i_am_a_maven_content_contributor_1.png"><img src="/images/branding/i_am_a_maven_content_contributor_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png"><img src="/images/branding/i_sumbitted_my_first_maven_pull_request_1.png" class="thumbnail" alt="Action card: I submitted my first Maven pull request" /></a>
 </li>
 <li class="span3">
-<a href="/images/branding/i_maintain_maven_plugins_1.png"><img src="/images/branding/i_maintain_maven_plugins_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/my_first_maven_pr_was_merged_1.png"><img src="/images/branding/my_first_maven_pr_was_merged_1.png" class="thumbnail" alt="Action card: My first Maven PR was merged" /></a>
 </li>
 <li class="span3">
-<a href="/images/branding/i_am_a_maven_committer_1.png"><img src="/images/branding/i_am_a_maven_committer_1.png" class="thumbnail" alt="" /></a>
+<a href="/images/branding/i_am_a_maven_contributor_1.png"><img src="/images/branding/i_am_a_maven_contributor_1.png" class="thumbnail" alt="Action card: I am a Maven contributor" /></a>
+</li>
+
+<li class="span3">
+<a href="/images/branding/i_am_a_maven_content_contributor_1.png"><img src="/images/branding/i_am_a_maven_content_contributor_1.png" class="thumbnail" alt="Action card: I am a Maven content contributor" /></a>
+</li>
+<li class="span3">
+<a href="/images/branding/i_maintain_maven_plugins_1.png"><img src="/images/branding/i_maintain_maven_plugins_1.png" class="thumbnail" alt="Action card: I maintain Maven plugins" /></a>
+</li>
+<li class="span3">
+<a href="/images/branding/i_am_a_maven_committer_1.png"><img src="/images/branding/i_am_a_maven_committer_1.png" class="thumbnail" alt="Action card: I am a Maven committer" /></a>
 </li>
 
 </ul>
