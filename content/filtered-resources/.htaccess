@@ -77,6 +77,11 @@ Redirect Permanent /shared/maven-archiver/examples/manifest.html /guides/mini/gu
 Redirect Permanent /shared/maven-archiver/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
 Redirect Permanent /shared/maven-archiver/examples/manifestFile.html /guides/mini/guide-manifest.html#Using_Your_Own_Manifest_File
 Redirect Permanent /shared/maven-archiver/examples/manifestSections.html /guides/mini/guide-manifest.html#Manifest_Sections
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifest.html /guides/mini/guide-manifest.html#Default_Manifest
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestFile.html /guides/mini/guide-manifest.html#Using_Your_Own_Manifest_File
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestSections.html /guides/mini/guide-manifest.html#Manifest_Sections
 
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
