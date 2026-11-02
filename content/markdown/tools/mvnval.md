@@ -90,11 +90,11 @@ By default `mvnval` writes human-readable text output with XML context lines aro
 ```
 pom.xml:
   ERROR 'dependencies.dependency.(groupId:artifactId:type:classifier)' must be unique:
-        junit:junit:jar -> version 4.13.2 vs 4.12 @ line 12, column 5
+        org.junit.jupiter:junit-jupiter:jar -> version 5.11.0 vs 5.10.0 @ line 12, column 5
      10 |     <dependency>
-     11 |       <groupId>junit</groupId>
-  >  12 |       <artifactId>junit</artifactId>
-     13 |       <version>4.12</version>
+     11 |       <groupId>org.junit.jupiter</groupId>
+  >  12 |       <artifactId>junit-jupiter</artifactId>
+     13 |       <version>5.10.0</version>
      14 |     </dependency>
 ```
 
