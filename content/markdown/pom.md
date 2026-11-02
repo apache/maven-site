@@ -485,7 +485,7 @@ the dependencies you use, so you exclude all the transitive dependencies:
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.8.6</version>
+      <version>3.10.0</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
