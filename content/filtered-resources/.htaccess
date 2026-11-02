@@ -1,6 +1,14 @@
 IndexOptions +SuppressIcon
 ErrorDocument 404 /errors/404.html
 
+# Stylesheets and scripts keep their names when the site changes, so make browsers check for a new version on every
+# use; the ETag answers that check with a 304 when nothing has changed.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 Redirect Permanent /release-notes.html /docs/history.html
 Redirect Permanent /download.html /download.cgi
 RedirectMatch permanent ^/(.*)/download.html$ /$1/download.cgi
