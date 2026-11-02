@@ -19,7 +19,7 @@ under the License.
 
 # Guide to Working with Multiple Modules
 
-(If you're working with Maven 4, please refer to the [Maven 4 edition of this guide](./guide-multiple-modules-4.html))
+(If you're working with Maven 4, please refer to the [Maven 4 edition of this guide](./guide-multiple-subprojects-4.html))
 
 As seen in the introduction to the POM, Maven supports [project](/glossary.html#Project) aggregation in addition to project inheritance. This section outlines how Maven processes projects with multiple modules, and how you can work with them more effectively.
 

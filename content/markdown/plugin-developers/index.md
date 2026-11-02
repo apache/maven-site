@@ -31,7 +31,6 @@ This documentation centre is for those who are developing Maven plugins. This mi
 - [Your First Report Mojo](../guides/plugin/guide-java-report-plugin-development.html) - Learn how to write your first reporting plugin
 - [Writing Plugin Documentation](../guides/development/guide-plugin-documentation.html) - Learn how to write documentation for your plugin
 - [Testing your Plugin](./plugin-testing.html) - How to write tests for your plugins
-- TODO: creating and using custom packaging (like [`maven-archetype` packaging](/archetype/archetype-packaging/))
 - [Common Bugs and Pitfalls](./common-bugs.html) - Overview of problematic coding patterns
 
 <!--TODO: trails-->

@@ -21,7 +21,7 @@ under the License.
 
 ## Prerequisites
 
-You must understand how to install software on your computer. If you do not know how to do this, please ask someone at your office, school, etc. or pay someone to explain this to you. The Maven mailing lists are not the best place to ask for this advice.
+You must understand how to install software on your computer. If you do not know how to do this, please ask someone at your office, school, etc. The Maven mailing lists are not the best place to ask for this advice.
 
 ## Installation
 

@@ -73,7 +73,7 @@ Repositories to deploy to are defined in a project in the `<distributionManageme
 
 In addition, some repositories may require authorization to download from, so the corresponding settings can be specified in a `server` element in the same way.
 
-Which settings are required will depend on the type of repository you are deploying to. As of the first release, only SCP deployments and file deployments are supported by default, so only the following SCP configuration is needed:
+Which settings are required will depend on the type of repository you are deploying to: usually a `username` and `password`, or a private key for SSH, in a `server` whose `id` matches the repository:
 
 ```xml
 <settings>

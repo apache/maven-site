@@ -44,4 +44,4 @@ issue management systems depending on which component is involved:
 
 * Wagon: <https://github.com/apache/maven-wagon/issues>
 
-or for Central Repository: <https://issues.sonatype.org/browse/MVNCENTRAL>
+or for Central Repository: <https://central.sonatype.org/faq/get-support/>
