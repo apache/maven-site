@@ -329,8 +329,9 @@ Upon executing this command you should see the following output:
 
 Note that the surefire plugin (which executes the test) looks for tests contained in files with a particular naming convention. By default the tests included are:
 
-- `**/*Test.java`
 - `**/Test*.java`
+- `**/*Test.java`
+- `**/*Tests.java`
 - `**/*TestCase.java`
 
 And the default excludes are:

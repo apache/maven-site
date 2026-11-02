@@ -49,10 +49,9 @@ the `PATH` environment variable
 ```
 Apache Maven ${currentStableVersion} (${currentStableVersionDetails})
 Maven home: /opt/apache-maven-${currentStableVersion}
-Java version: 1.8.0_45, vendor: Oracle Corporation
-Java home: /Library/Java/JavaVirtualMachines/jdk1.8.0_45.jdk/Contents/Home/jre
-Default locale: en_US, platform encoding: UTF-8
-OS name: "mac os x", version: "10.8.5", arch: "x86_64", family: "mac"
+Java version: 21.0.12.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-21-openjdk-arm64
+Default locale: en, platform encoding: UTF-8, time zone: Etc/UTC
+OS name: "linux", version: "7.0.0-1013-oracle", arch: "aarch64", family: "unix"
 ```
 
 That’s it! Maven is now installed.
