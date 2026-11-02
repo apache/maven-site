@@ -212,6 +212,9 @@ declared in `settings.xml`: you can see them with `mvn help:effective-settings`.
 An alias must not be empty, and it should be unique across all server IDs
 and aliases. Otherwise Maven reports a warning.
 
+Maven 3.9 does not know `aliases`: it warns about an `Unrecognised tag` and ignores them, so a repository that
+uses an alias as its ID gets no credentials, and a server that requires them answers with status 401.
+
 #### Server Repository Origins
 
 Since Maven 3.10.0 and 4.0.0, the credentials of a server are bound to the origins
@@ -261,6 +264,8 @@ its credentials may be used with:
 The declared origins are added to the origins Maven finds from repositories and mirrors.
 Nothing is replaced, so existing configurations keep working.
 Servers created from [aliases](#Server_Aliases) get the same `repositoryOrigins`.
+Maven 3.9 warns about an `Unrecognised tag` and ignores `repositoryOrigins`, so it keeps sending credentials by
+server ID only.
 
 When a server has at least one origin, from repositories, mirrors or `repositoryOrigins`, its credentials are
 not sent to a repository with the same ID at another origin.
