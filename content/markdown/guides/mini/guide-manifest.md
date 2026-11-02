@@ -162,14 +162,14 @@ The examples in this section assume a project with these dependencies:
 ```xml
 <dependencies>
   <dependency>
-    <groupId>commons-lang</groupId>
-    <artifactId>commons-lang</artifactId>
-    <version>2.1</version>
+    <groupId>org.apache.commons</groupId>
+    <artifactId>commons-lang3</artifactId>
+    <version>3.21.0</version>
   </dependency>
   <dependency>
     <groupId>org.codehaus.plexus</groupId>
     <artifactId>plexus-utils</artifactId>
-    <version>1.1</version>
+    <version>4.1.0</version>
   </dependency>
 </dependencies>
 ```
@@ -189,7 +189,7 @@ The manifest excerpts show only the entries that the example adds. In the file i
 ```
 
 ```
-Class-Path: commons-lang-2.1.jar plexus-utils-1.1.jar
+Class-Path: commons-lang3-3.21.0.jar plexus-utils-4.1.0.jar
 ```
 
 ### Making the Jar Executable
@@ -206,7 +206,7 @@ An executable jar also needs the main class, set with `<mainClass>`:
 ```
 
 ```
-Class-Path: commons-lang-2.1.jar plexus-utils-1.1.jar
+Class-Path: commons-lang3-3.21.0.jar plexus-utils-4.1.0.jar
 Main-Class: fully.qualified.MainClass
 ```
 
@@ -224,7 +224,7 @@ When the dependencies live in a directory next to the archive, for example in a 
 ```
 
 ```
-Class-Path: lib/commons-lang-2.1.jar lib/plexus-utils-1.1.jar
+Class-Path: lib/commons-lang3-3.21.0.jar lib/plexus-utils-4.1.0.jar
 ```
 
 ### Using a Maven Repository-Style Classpath
@@ -242,7 +242,7 @@ If the archive holds a Maven repository-style directory tree, set `<classpathLay
 ```
 
 ```
-Class-Path: lib/commons-lang/commons-lang/2.1/commons-lang-2.1.jar lib/org/codehaus/plexus/plexus-utils/1.1/plexus-utils-1.1.jar
+Class-Path: lib/org/apache/commons/commons-lang3/3.21.0/commons-lang3-3.21.0.jar lib/org/codehaus/plexus/plexus-utils/4.1.0/plexus-utils-4.1.0.jar
 ```
 
 ### Using a Custom Classpath Format
@@ -260,7 +260,7 @@ For any other layout, set `<classpathLayoutType>` to `custom` and describe the l
 ```
 
 ```
-Class-Path: WEB-INF/lib/commons-lang/commons-lang-2.1.jar WEB-INF/lib/org/codehaus/plexus/plexus-utils-1.1.jar
+Class-Path: WEB-INF/lib/org/apache/commons/commons-lang3-3.21.0.jar WEB-INF/lib/org/codehaus/plexus/plexus-utils-4.1.0.jar
 ```
 
 Maven Archiver resolves each expression in the layout like this:
