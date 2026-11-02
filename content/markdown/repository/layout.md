@@ -74,7 +74,7 @@ Classifier and extension definition is completely different at artifact *publica
 
 ## SNAPSHOT
 
-In case of a SNAPSHOT version, version directory uses base version, i.e. version ending in `-SNAPSHOT`, for example `3.8.4-SNAPSHOT`.
+In case of a SNAPSHOT version, version directory uses base version, i.e. version ending in `-SNAPSHOT`, for example `3.10.1-SNAPSHOT`.
 
 For artifact files, there are 2 options available:
 
