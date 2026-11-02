@@ -186,7 +186,7 @@ Hello World!
 
 ## Java 9 or later
 
-Recent Maven versions use a recent `maven-compiler-plugin` by default (3.15.0 with Maven 3.9.16, 3.16.0 with Maven 3.10.0). With an older Maven, you need at least version 3.6.0 of the `maven-compiler-plugin` to target Java 9 or later. Either way, set the `maven.compiler.release` property to the Java release you are targeting (e.g. 17, 21 or 25), and pin the plugin version so that your build does not change with the Maven version that runs it.
+Maven 3.9.0 and later use a `maven-compiler-plugin` that can target Java 9 or later by default (3.10.1 with Maven 3.9.0, 3.16.0 with Maven 3.10.0). Set the `maven.compiler.release` property to the Java release you are targeting (e.g. 17, 21 or 25), and pin the plugin version so that your build does not change with the Maven version that runs it.
 
 In the following example, we have configured our Maven project to use version 3.16.0 of `maven-compiler-plugin` and target Java 17:
 
