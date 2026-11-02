@@ -25,7 +25,7 @@ fundamental concepts of Maven since its inception: Maven command line tool and M
 were molded together and developed since the beginning of Maven project itself.
 
 <p align="center">
-<img src="../repository/maven-repositories.png" border="0" usemap="#map" />
+<img src="../repository/maven-repositories.png" border="0" usemap="#map" alt="How Maven reaches repositories: central by default, a repository manager through settings.xml mirrorOf, other repositories through pom.xml, and its local repository" />
 
 <map name="map">
 <area shape="rect" coords="596,326,666,363" alt="JBoss"                         href="http://repository.jboss.org/maven2/" />
