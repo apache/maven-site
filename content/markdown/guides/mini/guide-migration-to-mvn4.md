@@ -154,7 +154,7 @@ This includes the following properties:
 ### Replace plugin bindings to `pre-` and `post-` lifecycle phase
 
 In Maven 3, `integration-test`, `clean` and `test` [lifecycle phases](/ref/3-LATEST/maven-core/lifecycles.html) have `pre-` and `post-` phases.
-In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for [all lifecycle phases](/ref/4-LATEST/maven-impl-modules/maven-core/lifecycles.html).
+In Maven 4 those phases are removed in favor of new `before:` and `after:` phases, available for [all lifecycle phases](/ref/4-LATEST/impl/maven-core/lifecycles.html).
 
 Update your plugin executions that bind to a `pre-integration-test` or `post-integration-test` phase with the corresponding `before:integration-test` or `after:integration-test` phases.
 
@@ -341,7 +341,7 @@ The following code snippet shows an example for a BOM POM using the new `<packag
 
 ### Use the new `all` and `each` life cycle phases
 
-Maven 4 introduces several new [lifecycle phases](/ref/4-LATEST/maven-impl-modules/maven-core/lifecycles.html) — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
+Maven 4 introduces several new [lifecycle phases](/ref/4-LATEST/impl/maven-core/lifecycles.html) — `all`, `each`, `before:all`, `after:all`, `before:each`, and `after:each`.
 They give users finer control over plugin execution, particularly in multi-project and concurrent builds.
 If you want to execute a plugin before/after all or each of your (sub-)projects, consider to use them.
 
