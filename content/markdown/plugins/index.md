@@ -142,7 +142,7 @@ Here are a few common ones:
 | [ `native`](https://www.mojohaus.org/maven-native/native-maven-plugin/)                   | Compiles C and C++ code with native compilers.                                   |
 | [ `sql`](https://www.mojohaus.org/sql-maven-plugin/)                                      | Executes SQL scripts from files or inline.                                       |
 | [ `taglist`](https://www.mojohaus.org/taglist-maven-plugin/)                              | Generate a list of tasks based on tags in your code.                             |
-| [ `versions`](https://www.mojohaus.org/versions-maven-plugin/)                            | Manage versions of your project, its modules, dependencies and plugins.          |
+| [ `versions`](https://www.mojohaus.org/versions/versions-maven-plugin/)                   | Manage versions of your project, its modules, dependencies and plugins.          |
 
 ### Misc
 

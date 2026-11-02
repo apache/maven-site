@@ -114,7 +114,7 @@ Places where you might have to configure Maven 4 usage aside installation:
 If there is a dedicated Maven 4 version for used plugins, you should evaluate updating to such a version.
 You can use the [Versions Maven Plugin's `display-plugin-updates` goal][versionpluginupdate] to check for updates.
 
-**Note**: Maven 4 aims to support all Maven 3.9 compatible plugins that do not use old Maven 2 APIs. This is why we promote upgrading to latest release, and to Maven 4 specific release only when a plugin requires definitively a Maven 4-specific update (bugfix or feature. TODO: list the few known plugins requiring 4.x, either to benefit from new features like Compiler, or fix bugs that cannot be fixed with Maven 3)
+**Note**: Maven 4 aims to support all Maven 3.9 compatible plugins that do not use old Maven 2 APIs. This is why we promote upgrading to latest release, and to Maven 4 specific release only when a plugin requires definitively a Maven 4-specific update (bugfix or feature)
 
 ## Troubleshooting and required changes if situation applies
 

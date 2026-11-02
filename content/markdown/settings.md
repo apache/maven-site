@@ -159,9 +159,8 @@ information should exist on the build server in the `settings.xml`.
 - **privateKey**, **passphrase**: Like the previous two elements, this
   pair specifies a path to a private key (default is
   `${user.home}/.ssh/id_dsa`) and a `passphrase`, if required. The
-  `passphrase` and `password` elements may be externalized in the
-  future, but for now they must be set plain-text in the
-  `settings.xml` file.
+  `passphrase` and `password` elements can be
+  [encrypted](./guides/mini/guide-encryption.html) instead of set in plain text.
 - **filePermissions**, **directoryPermissions**: When a repository
   file or directory is created on deployment, these are the
   permissions to use. The legal values of each is a three digit number
@@ -339,8 +338,9 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 
 - **id**: The unique identifier for this proxy. This is used to
   differentiate between `proxy` elements.
-- **active**: `true` if this proxy is active. This is useful for
-  declaring a set of proxies, but only one may be active at a time.
+- **active**: `true` (the default) if this proxy is active. This is useful for
+  declaring a set of proxies; when several are active, Maven uses the first one
+  whose protocol matches.
 - **protocol**, **host**, **port**: The `protocol://host:port` of the
   proxy, separated into discrete elements.
 - **username**, **password**: These elements appear as a pair denoting
