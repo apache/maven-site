@@ -194,6 +194,14 @@ h2.mh-group {
   margin: 0;
 }
 
+/* Links inside running text need more than colour to stand out from the grey text around them (WCAG 1.4.1). */
+.mh-callout a,
+.mh-card p:not(.mh-card-title) a,
+.mh-note a,
+.mh-asf p a {
+  text-decoration: underline;
+}
+
 @media (max-width: 767px) {
   .mh-lead {
     font-size: 1.15em;
