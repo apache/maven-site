@@ -298,7 +298,7 @@ Standardize testing configurations:
     <packaging>pom</packaging>
     
     <properties>
-        <junit.version>5.9.2</junit.version>
+        <junit.version>5.11.0</junit.version>
         <mockito.version>5.1.1</mockito.version>
     </properties>
     
@@ -431,7 +431,7 @@ company-maven-mixins/
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <spring-boot.version>3.1.0</spring-boot.version>
-        <junit.version>5.9.2</junit.version>
+        <junit.version>5.11.0</junit.version>
     </properties>
 
     <!-- All dependencies and plugins -->

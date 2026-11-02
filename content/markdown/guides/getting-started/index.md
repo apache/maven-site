@@ -170,23 +170,24 @@ Upon executing this command you should see output like the following:
 
 ```
 [INFO] Scanning for projects...
+[INFO] Loaded 24323 auto-discovered prefixes for remote repository central (prefixes-central.txt)
 [INFO]
 [INFO] ----------------------< com.mycompany.app:my-app >----------------------
 [INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ my-app ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
 [INFO] skip non existing resourceDirectory <dir>/my-app/src/main/resources
 [INFO]
-[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ my-app ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 1 source file to <dir>/my-app/target/classes
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/classes
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  0.899 s
-[INFO] Finished at: 2020-07-12T11:31:54+01:00
+[INFO] Total time:  4.709 s
+[INFO] Finished at: 2026-11-02T07:42:13Z
 [INFO] ------------------------------------------------------------------------
 ```
 
@@ -210,33 +211,34 @@ Upon executing this command you should see output like the following:
 
 ```
 [INFO] Scanning for projects...
+[INFO] Loaded 24323 auto-discovered prefixes for remote repository central (prefixes-central.txt)
 [INFO]
 [INFO] ----------------------< com.mycompany.app:my-app >----------------------
 [INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ my-app ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
 [INFO] skip non existing resourceDirectory <dir>/my-app/src/main/resources
 [INFO]
-[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ my-app ---
-[INFO] Nothing to compile - all classes are up to date
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
 [INFO]
-[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ my-app ---
-[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
 [INFO] skip non existing resourceDirectory <dir>/my-app/src/test/resources
 [INFO]
-[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ my-app ---
-[INFO] Changes detected - recompiling the module!
-[INFO] Compiling 1 source file to <dir>/my-app/target/test-classes
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 1 source file with javac [debug release 17] to target/test-classes
 [INFO]
-[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ my-app ---
+[INFO] --- surefire:3.3.0:test (default-test) @ my-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
 [INFO]
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.mycompany.app.AppTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.mycompany.app.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.148 s -- in com.mycompany.app.AppTest
 [INFO]
 [INFO] Results:
 [INFO]
@@ -245,8 +247,8 @@ Upon executing this command you should see output like the following:
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.881 s
-[INFO] Finished at: 2020-07-12T12:00:33+01:00
+[INFO] Total time:  6.854 s
+[INFO] Finished at: 2026-11-02T07:42:24Z
 [INFO] ------------------------------------------------------------------------
 ```
 
@@ -285,45 +287,50 @@ Upon executing this command you should see the following output:
 
 ```
 [INFO] Scanning for projects...
+[INFO] Loaded 24323 auto-discovered prefixes for remote repository central (prefixes-central.txt)
 [INFO]
 [INFO] ----------------------< com.mycompany.app:my-app >----------------------
 [INFO] Building my-app 1.0-SNAPSHOT
+[INFO]   from pom.xml
 [INFO] --------------------------------[ jar ]---------------------------------
 [INFO]
-[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ my-app ---
-...
-[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ my-app ---
-[INFO] Nothing to compile - all classes are up to date
+[INFO] --- resources:3.3.1:resources (default-resources) @ my-app ---
+[INFO] skip non existing resourceDirectory <dir>/my-app/src/main/resources
 [INFO]
-[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ my-app ---
-...
-[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ my-app ---
-[INFO] Nothing to compile - all classes are up to date
+[INFO] --- compiler:3.13.0:compile (default-compile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
 [INFO]
-[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ my-app ---
+[INFO] --- resources:3.3.1:testResources (default-testResources) @ my-app ---
+[INFO] skip non existing resourceDirectory <dir>/my-app/src/test/resources
+[INFO]
+[INFO] --- compiler:3.13.0:testCompile (default-testCompile) @ my-app ---
+[INFO] Nothing to compile - all classes are up to date.
+[INFO]
+[INFO] --- surefire:3.3.0:test (default-test) @ my-app ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
 [INFO]
 [INFO] -------------------------------------------------------
 [INFO]  T E S T S
 [INFO] -------------------------------------------------------
 [INFO] Running com.mycompany.app.AppTest
-[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.025 s - in com.mycompany.app.AppTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.176 s -- in com.mycompany.app.AppTest
 [INFO]
 [INFO] Results:
 [INFO]
 [INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
 [INFO]
 [INFO]
-[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ my-app ---
+[INFO] --- jar:3.4.2:jar (default-jar) @ my-app ---
 [INFO] Building jar: <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar
 [INFO]
-[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ my-app ---
-[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
+[INFO] --- install:3.1.2:install (default-install) @ my-app ---
 [INFO] Installing <dir>/my-app/pom.xml to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.pom
+[INFO] Installing <dir>/my-app/target/my-app-1.0-SNAPSHOT.jar to <local-repository>/com/mycompany/app/my-app/1.0-SNAPSHOT/my-app-1.0-SNAPSHOT.jar
 [INFO] ------------------------------------------------------------------------
 [INFO] BUILD SUCCESS
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  1.678 s
-[INFO] Finished at: 2020-07-12T12:04:45+01:00
+[INFO] Total time:  7.034 s
+[INFO] Finished at: 2026-11-02T07:42:36Z
 [INFO] ------------------------------------------------------------------------
 ```
 
@@ -519,9 +526,9 @@ To have Maven filter resources when copying, simply set `filtering` to true for 
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -587,9 +594,9 @@ Next, we'll add a reference to this new file in the `pom.xml`:
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -634,9 +641,9 @@ the next execution of the `mvn process-resources` command will put our new prope
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -691,9 +698,9 @@ The `dependencies` section of the `pom.xml` lists all of the external dependenci
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -770,9 +777,9 @@ Now that we know the information we need, we can add the dependency to our pom.x
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -810,9 +817,9 @@ Here is an example using scp and username/password authentication:
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>
@@ -909,9 +916,9 @@ Note that these must all be on a single line. This will create a directory calle
 
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
