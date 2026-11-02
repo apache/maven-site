@@ -41,11 +41,13 @@ Currently the only cipher used is `AES/GCM/NoPadding` leveraging `PBKDF2WithHmac
 The `masterSourceLookup` dispatcher (introduced in [Maven 4.0.0-rc-3](https://issues.apache.org/jira/browse/MNG-8555)) does not actually perform any crypto operations. It merely looks up a secret value references from one of Master Key Sources.
 Instead of using an actually encrypted value one leverages master key source configurations within the `settings.xml`.
 The placeholder to be used within the `settings.xml` should be created with `mvnenc encrypt` as outlined in section *Create encrypted values*.
-It has the format `{[name=masterSourceLookup,version=4.0]<master source config>}`.
+It has the format `{[name=masterSourceLookup,version=<version>]<master source config>}`.
 
 ### Legacy Dispatcher
 
 This is provided as compatibility layer with the [Maven 3 encryption](guide-encryption.html) and should only be used if the same `settings.xml` is supposed to be used with Maven < 4 and above. It is using the same decryption and master key as in Maven 3.
+
+It reads the `<master>` element of `~/.m2/settings-security.xml`, or of the file named by the `settings.security` system property, and does not follow a [`<relocation>`](guide-encryption.html#How_to_keep_the_master_password_on_removable_drive) to another file. With a relocated master password, Maven 4 stops with "Could not decrypt password".
 
 ## Master Key Sources
 
@@ -68,6 +70,8 @@ There is a dedicated tool named `mvnenc` shipping with Maven 4 which helps both 
 Start by executing `mvnenc init` and then select the desired dispatcher.
 
 Depending on this choice there may be multiple subsequent configuration steps.
+A master source that needs a name or a path, such as an environment variable or a file, is offered with a placeholder, for example `env:$VARIABLE_NAME`.
+Type the actual value, such as `env:MAVEN_MASTER_PASSWORD`, when `mvnenc` asks you to customize it.
 
 Afterwards check with `mvnenc diag` if the configuration is valid.
 
@@ -78,10 +82,12 @@ Afterwards check with `mvnenc diag` if the configuration is valid.
 Execute `mvnenc encrypt` and afterwards enter the value to encrypt via the CLI. The tool emits the encrypted value in the format
 
 ```
-{[name=<dispatcher name>,<dispatcher-specific attributes>,version=4.0]<the encrypted value>}
+{[name=<dispatcher name>,<dispatcher-specific attributes>,version=<version>]<the encrypted value>}
 ```
 
 which can be just used as is in the `settings.xml`.
+
+`version` is the version of the [Plexus Security Dispatcher](#Implementation) that encrypted the value, for example `4.2` with Maven 4.0.0-rc-7.
 
 ## Implementation
 
