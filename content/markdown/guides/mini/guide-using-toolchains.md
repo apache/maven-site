@@ -31,19 +31,28 @@ For more details about Toolchains' design and implementation, see [Toolchains](h
 
 Below are some plugins which are toolchain-aware, with the toolchain-type used:
 
-| Toolchain type | **Plugin**                                                                                                 | **Starting with**   | **Hosted at** |
-|:--------------:|:-----------------------------------------------------------------------------------------------------------|:--------------------|:--------------|
-|      jdk       | [`maven-compiler-plugin`](/plugins/maven-compiler-plugin/)                                                 | 2.1                 | Apache Maven  |
-|      jdk       | [`maven-jarsigner-plugin`](/plugins/maven-jarsigner-plugin/)                                               | 1.3                 | Apache Maven  |
-|      jdk       | [`maven-javadoc-plugin`](/plugins/maven-javadoc-plugin/)                                                   | 2.5                 | Apache Maven  |
-|      jdk       | [`maven-pmd-plugin`](/plugins/maven-pmd-plugin/)                                                           | 3.14.0              | Apache Maven  |
-|      jdk       | [`maven-surefire-plugin`](/plugins/maven-surefire-plugin/)                                                 | 2.5                 | Apache Maven  |
-|      jdk       | [`maven-failsafe-plugin`](/plugins/maven-failsafe-plugin/)                                                 | 2.5                 | Apache Maven  |
-|      jdk       | [`animal-sniffer-maven-plugin`](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/)      | 1.3                 | MojoHaus      |
-|      jdk       | [`cassandra-maven-plugin`](https://www.mojohaus.org/cassandra-maven-plugin/)                               | 0.7.0-1             | MojoHaus      |
-|      jdk       | [`exec-maven-plugin`](https://www.mojohaus.org/exec-maven-plugin/)                                         | 1.1.1               | MojoHaus      |
-|      jdk       | [`keytool-maven-plugin`](https://www.mojohaus.org/keytool/)                                                 | 1.4                 | MojoHaus      |
-|    protobuf    | [`protobuf-maven-plugin`](https://www.xolstice.org/protobuf-maven-plugin/examples/protobuf-toolchain.html) | 0.6.1               | github        |
+| Toolchain type | **Plugin**                                                                                                 | **Starting with**       | **Hosted at** |
+|:--------------:|:-----------------------------------------------------------------------------------------------------------|:------------------------|:--------------|
+|      jdk       | [`maven-compiler-plugin`](/plugins/maven-compiler-plugin/)                                                 | 2.1                     | Apache Maven  |
+|      jdk       | [`maven-jar-plugin`](/plugins/maven-jar-plugin/)                                                           | 3.4.0 ¹                 | Apache Maven  |
+|      jdk       | [`maven-jarsigner-plugin`](/plugins/maven-jarsigner-plugin/)                                               | 1.3                     | Apache Maven  |
+|      jdk       | [`maven-javadoc-plugin`](/plugins/maven-javadoc-plugin/)                                                   | 2.5                     | Apache Maven  |
+|      jdk       | [`maven-jdeprscan-plugin`](/plugins/maven-jdeprscan-plugin/)                                               | 3.0.0                   | Apache Maven  |
+|      jdk       | [`maven-jdeps-plugin`](/plugins/maven-jdeps-plugin/)                                                       | 3.0.0                   | Apache Maven  |
+|      jdk       | [`maven-jlink-plugin`](/plugins/maven-jlink-plugin/)                                                       | 3.0.0                   | Apache Maven  |
+|      jdk       | [`maven-jmod-plugin`](/plugins/maven-jmod-plugin/)                                                         | 3.0.0                   | Apache Maven  |
+|      jdk       | [`maven-pmd-plugin`](/plugins/maven-pmd-plugin/)                                                           | 3.14.0                  | Apache Maven  |
+|      jdk       | [`maven-surefire-plugin`](/plugins/maven-surefire-plugin/)                                                 | 2.4.3                   | Apache Maven  |
+|      jdk       | [`maven-failsafe-plugin`](/plugins/maven-failsafe-plugin/)                                                 | 2.5                     | Apache Maven  |
+|      jdk       | [`animal-sniffer-maven-plugin`](https://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/)      | 1.3, `build` goal only  | MojoHaus      |
+|      jdk       | [`cassandra-maven-plugin`](https://www.mojohaus.org/cassandra-maven-plugin/)                               | 0.7.0-1                 | MojoHaus      |
+|      jdk       | [`exec-maven-plugin`](https://www.mojohaus.org/exec-maven-plugin/)                                         | 1.1.1, `exec` goal only | MojoHaus      |
+|      jdk       | [`keytool-maven-plugin`](https://www.mojohaus.org/keytool/)                                                | 1.4 to 1.7 ²            | MojoHaus      |
+|    protobuf    | [`protobuf-maven-plugin`](https://www.xolstice.org/protobuf-maven-plugin/examples/protobuf-toolchain.html) | 0.5.0                   | github        |
+
+¹ Only to write the `Build-Jdk-Spec` manifest entry for the JDK of the toolchain.
+
+² Version 2.0.0 and later no longer use toolchains.
 
 ## Using Toolchains in Your Project
 
