@@ -44,9 +44,9 @@ select component category, then type artifact id and version to generate svn com
 <a id="Component_information"></a>
 <p style="margin:10px 0;font-weight:bold;line-height:40px;color:inherit;font-size:24.5px;">Component information</p>
 
-<div>directory (~artifact id): <input type="text" name="artifactId" id="artifactId" style="vertical-align: baseline"/></div>
-<div>version: <input type="text" name="version" id="version" style="vertical-align: baseline"/></div>
-<div id="v4x-box"><b>4.x</b> version suffix: <input type="checkbox" id="v4x" style="vertical-align: baseline"/></div>
+<div><label for="artifactId">directory (~artifact id):</label> <input type="text" name="artifactId" id="artifactId" style="vertical-align: baseline"/></div>
+<div><label for="version">version:</label> <input type="text" name="version" id="version" style="vertical-align: baseline"/></div>
+<div id="v4x-box"><label for="v4x"><b>4.x</b> version suffix:</label> <input type="checkbox" id="v4x" style="vertical-align: baseline"/></div>
 <div><br/><button onclick="instructions()">Publish instructions</button></div>
 
 </td></tr>
@@ -64,9 +64,9 @@ When using windows, replace the `\` with `^` to ensure correct multiline command
 
 </td></tr>
 
-<tr><td colspan="2"><iframe id="index-page" src="" width="100%" height="300px"></iframe></td>
+<tr><td colspan="2"><iframe id="index-page" title="Component index page" src="" width="100%" height="300px"></iframe></td>
 <td>archives directory<br/>
-<iframe id="archives" src="" width="100%" height="300px"></iframe>
+<iframe id="archives" title="Component archives directory" src="" width="100%" height="300px"></iframe>
 </td>
 </tr>
 </table>

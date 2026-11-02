@@ -58,13 +58,13 @@ manifest:
 ## Maven Sources Overview
 
 <p>
-   <object type="image/svg+xml" data="maven-sources/site.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/core.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/plugins.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/doxia.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/misc.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/shared.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/plexus.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/site.svg" aria-label="Source repositories: Site"></object><br>
+   <object type="image/svg+xml" data="maven-sources/core.svg" aria-label="Source repositories: Maven Core"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plugins.svg" aria-label="Source repositories: Plugins"></object><br>
+   <object type="image/svg+xml" data="maven-sources/doxia.svg" aria-label="Source repositories: Maven Doxia"></object><br>
+   <object type="image/svg+xml" data="maven-sources/misc.svg" aria-label="Source repositories: Misc"></object><br>
+   <object type="image/svg+xml" data="maven-sources/shared.svg" aria-label="Source repositories: Shared"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plexus.svg" aria-label="Source repositories: Plexus"></object><br>
 </p>
 
 Each component has its own Jira project or component for issue tracking: see

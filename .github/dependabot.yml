@@ -20,6 +20,10 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+  - package-ecosystem: "npm"
+    directory: "/.github/accessibility"
+    schedule:
+      interval: "daily"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:

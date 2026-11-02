@@ -57,7 +57,9 @@ Many thanks to all reporters and contributors for their time and support.
 
 - The toolchain.xml file supports environment variables (see [MNG-6665](https://issues.apache.org/jira/browse/MNG-6665)).
 
-## The detailed issue list[](#Details)
+<a id="Details"></a>
+
+## The detailed issue list
 
 Sub-task
 
