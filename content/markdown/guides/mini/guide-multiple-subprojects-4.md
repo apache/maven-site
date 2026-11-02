@@ -65,6 +65,7 @@ The following relationships are honoured when sorting projects:
 * a plugin declaration where the plugin is another subproject in the build
 * a plugin dependency on another subproject in the build
 * a build extension declaration on another subproject in the build
+* the parent of a project, when the parent is another subproject in the build
 * the order declared in the `<subprojects>` element (if no other rule applies)
 
 Note that only "instantiated" references are used - `dependencyManagement` and `pluginManagement` elements do not cause
@@ -88,6 +89,8 @@ Using `--projects` you can specify which subprojects to build.
 You can do this by specifying a comma-delimited list of project selectors.
 A project selector is a string that is composed of the `groupId:artifactId`, only `:artifactId` or the relative path to
 a subproject.
+A bare name is always read as a relative path: to select a subproject by its artifactId, prefix it with `:`, as in
+`-pl :my-app`.
 
 A subproject can be selected (default), or excluded from the build.
 You exclude a subproject by prefixing the selector with a `!` or `-`.
@@ -96,6 +99,7 @@ To explicitly select a subproject, prefix it with a `+`.
 When a selector does not resolve to an existing subproject, Maven fails the build.
 You can prevent this by adding the `?` prefix.
 This prefix should always go after the other prefixes.
+Maven 3 does not support the `?` prefix.
 
 #### Relationships between subprojects
 
@@ -117,7 +121,8 @@ There are several ways to customize how the reactor deals with failures.
   In this case, subprojects that do not depend on a failed subproject will still be built.
 * `--fail-fast`, in contrast, fails the build as soon as one subproject has failed.
   This is the default behaviour.
-* `--fail-never` ignores build failures.
+* `--fail-never` ignores build failures: Maven still reports `BUILD FAILURE`, but exits with 0, and still tries to build
+  the subprojects that depend on a failed one.
 
 When a build has failed, and you want to start it again, you can skip building the subprojects that were previously
 built successfully using `--resume` (or `-r`).

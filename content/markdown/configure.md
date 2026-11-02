@@ -109,6 +109,9 @@ So for example if you put the following JVM options into the `.mvn/jvm.config` f
 
 You don't need to use these options in `MAVEN_OPTS` or switch between different configurations.
 
+Lines starting with `#` are comments in Maven 4. Maven 3 does not support comments in this file: a `#` line makes it
+fail with `Could not find or load main class #`.
+
 ### `.mavenrc` file:
 
 Located in `$HOME/.mavenrc` (or `%USERPROFILE%\mavenrc.cmd` on Windows using Maven 4. Using Maven 3 the file needs to be `%USERPROFILE%\mavenrc_pre.cmd`) this file defines environment variables used when Maven builds the project. With this users can define environment variables in either the `settings.xml` or `pom.xml` and have them read the property that was set by the `.mavenrc` file.
