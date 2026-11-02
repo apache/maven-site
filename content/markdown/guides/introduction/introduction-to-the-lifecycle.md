@@ -103,6 +103,8 @@ Code coverage tools such as Jacoco and execution container plugins such as Tomca
 
 Failsafe and code coverage plugins bind goals to `integration-test` and `verify` phases. The net result is test and coverage reports are available after the `verify` phase. If `integration-test` were to be called from the command line, no reports are generated. Worse is that the integration test container environment is left in a hanging state; the Tomcat webserver or Docker instance is left running, and Maven may not even terminate by itself.
 
+This holds for Maven 3. Maven 4 gives every phase a `before:` and an `after:` phase, which take the place of the `pre-` and `post-` phases (bindings to the old names still work), and always runs both with the phase itself: `mvn integration-test` also runs the goals bound to `post-integration-test`. See [What's new in Maven 4](../../whatsnewinmaven4.html#Before-_and_after-phases.2C_ordering_of_executions).
+
 _[top](./introduction-to-the-lifecycle.html)._
 
 ## Setting Up Your Project to Use the Build Lifecycle
