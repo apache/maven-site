@@ -101,7 +101,7 @@ As you can see in the example above, a JDK toolchain with `<version>` "21" and `
 
 The `toolchains.xml` file (see below) is the configuration file where you set the installation paths of your toolchains. This file should be put in the `${user.home}/.m2` directory. When the `maven-toolchains-plugin` executes, it looks for the `toolchains.xml` file, reads it and looks for a toolchain matching the toolchains requirements configured in the plugin. In this example, that is a JDK toolchain with `<version>` "21" and `<vendor>` "temurin". Once a match is found, the plugin then stores the toolchain to be used in the MavenSession. As you can see in the `toolchains.xml` below, there is indeed a JDK toolchain with `<version>` "21" and `<vendor>` "temurin" configured. So when the `maven-compiler-plugin` configured in the `pom.xml` above executes, it sees that a JDK toolchain is set in the MavenSession and will use that toolchain (that would be the JDK installed at `/path/to/jdk/21` in this example) to compile the sources.
 
-Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `-t,--toolchains` option (or `-gt,--global-toolchains` for the global file), but it is recommended to locate it into `${user.home}/.m2/`.
+Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `toolchains.xml` file wherever you like by using the `-t,--toolchains` option (or `-gt,--global-toolchains` for the global file), but it is recommended to locate it into `${user.home}/.m2/`. Maven 4 calls the global file the installation toolchains file: the option for it is `-it,--install-toolchains`, and `-gt,--global-toolchains` still works but is deprecated.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -143,7 +143,7 @@ Starting with [Maven 3.3.1](/docs/3.3.1/release-notes.html) you can put the `too
 
 You can configure as many toolchains as you want in your `toolchains.xml` file.
 
-Instead of writing the JDK entries by hand, the Toolchains Plugin can [discover the installed JDKs](/plugins/maven-toolchains-plugin/toolchains/jdk-discovery.html) and select a matching one with the [`toolchains:select-jdk-toolchain`](/plugins/maven-toolchains-plugin/select-jdk-toolchain-mojo.html) goal, or print them in `toolchains.xml` format with `toolchains:generate-jdk-toolchains-xml`.
+Instead of writing the JDK entries by hand, the Toolchains Plugin (since version 3.2.0) can [discover the installed JDKs](/plugins/maven-toolchains-plugin/toolchains/jdk-discovery.html) and select a matching one with the [`toolchains:select-jdk-toolchain`](/plugins/maven-toolchains-plugin/select-jdk-toolchain-mojo.html) goal, or print them in `toolchains.xml` format with `toolchains:generate-jdk-toolchains-xml`.
 
 ## JDK Toolchain
 
@@ -175,7 +175,7 @@ For example, to accept any JDK of version 17 or greater:
 
 ## Setting a Toolchain for a Single Plugin
 
-The `maven-toolchains-plugin` configures one JDK toolchain for all the toolchain-aware plugins of the build. Since `maven-compiler-plugin` 3.6, used with Maven 3.3.1 or later, the compiler plugin also accepts its own toolchain with the [`jdkToolchain`](/plugins/maven-compiler-plugin/compile-mojo.html#jdkToolchain) parameter, which overrules the one selected by the `maven-toolchains-plugin`. This is useful when different executions need different JDKs, for example when the test sources need a different compiler than the main sources:
+The `maven-toolchains-plugin` configures one JDK toolchain for all the toolchain-aware plugins of the build. Since `maven-compiler-plugin` 3.6, used with Maven 3.3.1 or later, the compiler plugin also accepts its own toolchain with the [`jdkToolchain`](/plugins/maven-compiler-plugin/compile-mojo.html#jdkToolchain) parameter, which overrules the one selected by the `maven-toolchains-plugin`. The Surefire and Failsafe plugins (since 3.0.0-M5) and the Javadoc plugin (since 3.0.0) have the same `jdkToolchain` parameter. This is useful when different executions need different JDKs, for example when the test sources need a different compiler than the main sources:
 
 ```xml
 <plugin>
