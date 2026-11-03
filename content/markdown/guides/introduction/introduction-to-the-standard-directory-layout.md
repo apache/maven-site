@@ -27,17 +27,19 @@ The next section documents the directory layout expected by Maven and the direct
 |:---------------------|:---------------------------------------------------------------------------|
 | `src/main/java`      | Application/Library sources                                                |
 | `src/main/resources` | Application/Library resources                                              |
-| `src/main/filters`   | Resource filter files                                                      |
+| `src/main/filters`   | Resource filter files (convention only, see below)                         |
 | `src/main/webapp`    | Web application sources                                                    |
 | `src/test/java`      | Test sources                                                               |
 | `src/test/resources` | Test resources                                                             |
-| `src/test/filters`   | Test resource filter files                                                 |
+| `src/test/filters`   | Test resource filter files (convention only, see below)                    |
 | `src/it`             | Integration Tests (primarily for plugins)                                  |
-| `src/assembly`       | Assembly descriptors                                                       |
+| `src/assembly`       | Assembly descriptors (convention only, see below)                          |
 | `src/site`           | Site                                                                       |
 | `LICENSE.txt`        | Project's license                                                          |
 | `NOTICE.txt`         | Notices and attributions required by libraries that the project depends on |
 | `README.txt`         | Project's readme                                                           |
+
+Maven builds from `src/main/java`, `src/main/resources`, `src/test/java` and `src/test/resources` without any configuration, and the WAR, Invoker and Site plugins use `src/main/webapp`, `src/it` and `src/site` by default. `src/main/filters`, `src/test/filters` and `src/assembly` are only where these files conventionally go: no plugin reads them unless the POM names the files, the filters in `<build><filters>` (see [Filtering resources](../mini/guide-filtering-resources.html)) and the assembly descriptors in the Assembly Plugin's `descriptors` parameter.
 
 At the top level, files descriptive of the project: a `pom.xml` file. In addition, there are textual documents meant for the user to be able to read immediately on receiving the source: `README.txt`, `LICENSE.txt`, etc.
 
