@@ -68,10 +68,14 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 ### Consumer POM
 
 Maven 4 generates a consumer POM that removes build information not needed by consumers (such as plugin configuration
-and properties), and deploys this to the remote repository instead of the full `pom.xml` used to build the project.
+and properties), and deploys it as the project's POM (`<artifactId>-<version>.pom`). The full `pom.xml` used to build
+the project is deployed next to it as `<artifactId>-<version>-build.pom` (classifier `build`); with Maven 4.0.0-rc-7
+this happens whether or not flattening is enabled.
 
 By default, the consumer POM preserves all dependencies from the build POM, including `provided` scope dependencies.
-Only build-time-only elements are stripped.
+Only build-time-only elements are stripped. It also keeps the `<parent>` reference, so consumers still resolve the
+parent POM, and the consumer POM of a parent (packaging `pom`) keeps its `<build>` and `<properties>`, which its
+subprojects inherit.
 
 Enable flattening to produce a fully self-contained consumer POM. When flattening is enabled:
 
@@ -80,8 +84,8 @@ Enable flattening to produce a fully self-contained consumer POM. When flattenin
 * Transitive dependencies are kept (`compile` and `runtime` scopes). Non-transitive scopes are stripped (`provided`, `test`, `system` scopes)
 * Managed dependencies are kept only if they are actually used by the project
 
-When flattening is enabled, the full build POM (with all dependency scopes) is still published alongside the consumer
-POM with a `build` classifier.
+With flattening enabled too, the full build POM (with all dependency scopes) is published alongside the consumer
+POM with the `build` classifier.
 
 The flatten feature is disabled by default to avoid unexpected behavior and better control of listing (transitive) dependencies in the consumer POM.
 To publish a flattened consumer POM, set the user property `maven.consumer.pom.flatten` to `true`.
@@ -318,6 +322,10 @@ You can use either of these forms:
 * or even `<parent/>` - shorthand form that defaults to looking in the parent directory (`..`)
 
 This makes it easier to maintain multi-project builds without duplicating `<version>` and coordinate information.
+
+Maven 4.0.0-rc-7 also accepts both forms in a POM with model version 4.0.0 and writes the parent's full coordinates
+into the consumer POM; Maven 3 rejects such a POM. Leaving out the version of a dependency on another subproject (see
+above) does need model version 4.1.0: with 4.0.0 the build fails.
 
 #### Subprojects discovery
 
