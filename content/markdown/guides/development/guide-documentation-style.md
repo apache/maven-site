@@ -22,13 +22,60 @@ under the License.
 ## Where did the style came from?
 
 The documentation style guide was created to make our documentation more consistent and also to apply best practices to the documentation as well.
-The standard has just been started and will expand over time based on the suggestions made on the Maven dev mailing list.
-It is a community consensus of how we should write our documentation.
+It grows with the suggestions made on the Maven dev mailing list and is a community consensus of how we should write our documentation.
 
 Each rule in this guide should come with a motivation as to why it exists.
 References to external sources are encouraged.
 
 The styleguide might evolve over time.
+
+## Voice
+
+Write for a reader who wants to get something done. Address the reader as "you", use the active voice and the present tense, and say what Maven does rather than what it "will" do.
+Start with what the reader needs; move history and background to the end of the page or to a page of its own.
+Keep sentences short and avoid jokes, idioms and phrases such as "simply" or "just", which do not travel well across languages and make a reader who is stuck feel worse.
+
+## Kinds of pages
+
+Decide what kind of page you are writing before you write it, and keep to that kind on the page:
+
+- a **tutorial** takes a newcomer through a complete task that works, step by step (for example [Maven in 5 Minutes](../getting-started/maven-in-five-minutes.html));
+- a **how-to guide** solves one problem for a reader who already knows the basics (most pages under `guides/mini`);
+- a **reference** page lists facts to look up, complete and without opinions (the [POM Reference](/pom.html), the [Settings Reference](/settings.html), plugin goal pages);
+- an **explanation** says why Maven works the way it does (for example [Introduction to the Build Lifecycle](../introduction/introduction-to-the-lifecycle.html)).
+
+A how-to guide that grows a long reference table, or a reference page that grows a tutorial, is easier to use as two pages that link to each other.
+These four kinds come from [Diátaxis](https://diataxis.fr/).
+
+## Maven versions
+
+Say which Maven versions a page or a statement holds for whenever behavior differs between them, for example "Maven 3.9 and later" or "Maven 4 only".
+The guides assume Maven 3.9.0 or later; do not describe how older versions behaved unless it still matters to readers.
+When Maven 3 and Maven 4 behave differently, show both and say which is which, rather than describing only one of them.
+
+## Check what a page shows
+
+Every command, POM snippet and output on a page must have been run, with the Maven versions the page names, before it is published.
+Copy output from a real run instead of writing it by hand, and shorten it with `...` rather than editing what remains.
+Use current plugin and dependency versions in samples, and update them when a page is changed for another reason.
+
+## Links and anchors
+
+Pages are linked from other sites, from issues and from answers on the web, so their addresses must not break:
+
+- when a page is moved, removed or merged into another, add a redirect for its old address to `content/filtered-resources/.htaccess` (or to the `.htaccess` of the section it is in);
+- when a heading is renamed, keep its old anchor by adding an empty element with the old id above the heading, for example `<a id="The_Basics"></a>`;
+- link to other pages of this site with relative links, and to an anchor only when the anchor exists.
+
+## Code blocks
+
+Give every code block its language, such as `xml`, `java`, `text` for program output, or `shell` for commands, so that it is highlighted correctly.
+Show commands without a prompt (`mvn verify`, not `$ mvn verify`), so that they can be copied as they are.
+
+## Images
+
+Give every image an alternative text that says what the image shows, or what the reader should learn from it; a diagram's text needs to carry the diagram's content.
+Prefer SVG for diagrams. Do not put text that the reader needs only inside an image.
 
 ## Date format
 
