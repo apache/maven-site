@@ -136,6 +136,9 @@ After the archetype generation of your first project you will also notice that t
 
 ```
 my-app
+|-- .mvn
+|   |-- jvm.config
+|   `-- maven.config
 |-- pom.xml
 `-- src
     |-- main
@@ -152,7 +155,7 @@ my-app
                         `-- AppTest.java
 ```
 
-As you can see, the project created from the archetype has a POM, a source tree for your application's sources and a source tree for your test sources. This is the standard layout for Maven projects (the application sources reside in `${project.basedir}/src/main/java` and test sources reside in `${project.basedir}/src/test/java`, where `${project.basedir}` represents the directory containing `pom.xml`).
+As you can see, the project created from the archetype has a POM, a source tree for your application's sources, a source tree for your test sources, and a `.mvn` directory with two empty files for project-wide [Maven and JVM options](../../configure.html#a.mvn_directory.3A). This is the standard layout for Maven projects (the application sources reside in `${project.basedir}/src/main/java` and test sources reside in `${project.basedir}/src/test/java`, where `${project.basedir}` represents the directory containing `pom.xml`).
 
 If you were to create a Maven project by hand this is the directory structure that we recommend using. This is a Maven convention and to learn more about it you can read our [Introduction to the Standard Directory Layout](../introduction/introduction-to-the-standard-directory-layout.html).
 
@@ -421,6 +424,9 @@ You see below in our example we have added the directory `${project.basedir}/src
 
 ```
 my-app
+|-- .mvn
+|   |-- jvm.config
+|   `-- maven.config
 |-- pom.xml
 `-- src
     |-- main
@@ -471,6 +477,9 @@ To add resources to the classpath for your unit tests, you follow the same patte
 
 ```
 my-app
+|-- .mvn
+|   |-- jvm.config
+|   `-- maven.config
 |-- pom.xml
 `-- src
     |-- main

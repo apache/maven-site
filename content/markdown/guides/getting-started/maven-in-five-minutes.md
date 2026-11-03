@@ -67,6 +67,9 @@ Under this directory you will notice the following [standard project structure](
 
 ```
 my-app
+|-- .mvn
+|   |-- jvm.config
+|   `-- maven.config
 |-- pom.xml
 `-- src
     |-- main
@@ -84,6 +87,10 @@ my-app
 ```
 
 The `src/main/java` directory contains the project source code, the `src/test/java` directory contains the test source, and the `pom.xml` file is the project's Project Object Model, or POM.
+
+The two files in `.mvn` are empty. They are there for options you want on every build of this project: Maven reads `.mvn/maven.config` for command-line options and `.mvn/jvm.config` for JVM options (see [Configuring Apache Maven](../../configure.html#a.mvn_directory.3A)).
+
+While generating, the archetype prints three warnings that contain `Don't override file` (for the two `com/mycompany/app` source directories and for `.mvn`). They report that the directory already existed when the archetype came to create it; the project is generated correctly, and you can ignore them.
 
 ### The POM
 
