@@ -136,6 +136,8 @@ The `id` parameter is not required if you want to include the entire file. If yo
 |file|The path of the file to include (since doxia-1\.0-alpha-9).|
 |verbatim|If the content should be output as verbatim escaped text. If this is set to `false` then the content of the snippet will not be escaped. This means that you can use it like Server-Side Includes on a webserver. Default value is `true`.|
 |encoding|The encoding of the file to read (since Doxia 1\.6). If omitted the default JVM encoding will be used.|
+|source|If the verbatim content is marked as source code, rendered as `<pre><code>` in HTML. Default value is `true`.|
+|class|CSS classes for the verbatim content, such as `language-yaml` for a client-side syntax highlighter. The classes go on a `code` element inside the `pre` element, as for a Markdown fenced code block, whatever the value of `source`.|
 
 ## <a id="TOC_Macro"></a>TOC Macro
 
