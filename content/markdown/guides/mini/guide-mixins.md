@@ -18,7 +18,7 @@ under the License.
 -->
 # Maven Mixins (Maven 4.1)
 
-Maven Mixins will provide (in Maven 4.1) a powerful mechanism for sharing common POM configuration across multiple projects without the limitations of traditional inheritance. Mixins allow you to compose your project configuration from multiple sources, promoting better code reuse and maintainability.
+Maven Mixins provide (since Maven 4.1) a powerful mechanism for sharing common POM configuration across multiple projects without the limitations of traditional inheritance. Mixins allow you to compose your project configuration from multiple sources, promoting better code reuse and maintainability.
 
 ## Overview
 
@@ -514,6 +514,84 @@ Use the Maven help plugin to see the effective POM after mixin resolution:
 ```bash
 mvn help:effective-pom
 ```
+
+## Mixins vs. Packaging
+
+A natural question when working with Maven 4 is: *when should I use a mixin instead of a custom `<packaging>` type?*
+
+### What `<packaging>` does
+
+The `<packaging>` element in a POM serves two distinct roles:
+
+1. **Artifact type declaration** — it identifies what the project produces (e.g. `jar`, `war`, `pom`) and how that artifact is treated by dependents. This is backed by an `ArtifactHandler` that defines the artifact's extension, classifier, and language.
+2. **Lifecycle binding injection** — it selects a `LifecycleMappingProvider` that wires default plugin goals to lifecycle phases automatically. For example, `<packaging>jar</packaging>` causes `maven-compiler-plugin:compile` to run at `compile`, `maven-jar-plugin:jar` at `package`, and so on — without any explicit plugin configuration in the POM.
+
+Custom packaging types (e.g. `maven-plugin`, `ejb`, `war`, `ear`) are registered via the `PackagingProvider` SPI, which Maven discovers through the DI container.
+
+### What mixins do
+
+A mixin is **POM-level composition**. It contributes `<properties>`, `<dependencyManagement>`, `<build><plugins>`, and other POM fragments into the consumer project. Plugin executions declared in a mixin are merged into the effective POM just like a parent POM's build configuration.
+
+### Decision guide
+
+Use **`<packaging>`** (or a custom `PackagingProvider`) when:
+
+- The project produces a **non-standard artifact type** that dependents need to handle specially (custom extension, classifier, or language)
+- You need **lifecycle bindings that activate based on the artifact type** at the SPI level — i.e. a plugin goal should run automatically for *any* project of this type, even when the consumer doesn't configure anything
+- You are writing a Maven extension that ships its own packaging (e.g. `maven-archetype`, `nar`, `rpm`)
+
+Use a **mixin** when:
+
+- You want to share **plugin configuration, dependency management, or properties** across multiple projects
+- The goal-to-phase bindings you need can be expressed as **explicit `<execution>` blocks** in a POM — which covers the vast majority of real-world cases
+- You need **multiple concerns composed independently** (e.g. a Java compilation mixin + a testing mixin + a quality mixin), something single inheritance cannot do
+
+### Example: Maven 4 plugin projects
+
+In Maven 3, writing a plugin required `<packaging>maven-plugin</packaging>`, which implicitly ran `maven-plugin-plugin:descriptor` at `process-classes` via the built-in lifecycle mapping.
+
+In Maven 4, the same result can be achieved with a dedicated mixin that pulls in the annotation processor which generates the plugin descriptor at compile time — no `maven-plugin-plugin` required and no custom packaging needed:
+
+```xml
+<project>
+    <modelVersion>4.2.0</modelVersion>
+
+    <groupId>com.example</groupId>
+    <artifactId>my-maven-plugin</artifactId>
+    <version>1.0.0</version>
+
+    <mixins>
+        <mixin>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-plugin-mixin</artifactId>
+            <version>4.1.0</version>
+        </mixin>
+    </mixins>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.maven</groupId>
+            <artifactId>maven-api-plugin</artifactId>
+            <version>4.1.0</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+This mixin approach also resolves the classic bootstrap problem: building a Maven plugin no longer requires the external `maven-plugin-plugin`, which is itself a Maven plugin.
+
+### Summary
+
+| | `<packaging>` | Mixin |
+|---|---|---|
+| Shares plugin config | ✅ (via lifecycle binding) | ✅ (via POM merge) |
+| Defines artifact type/extension | ✅ | ❌ |
+| Works with single inheritance | N/A | ✅ multiple mixins |
+| Requires SPI registration | ✅ (PackagingProvider) | ❌ |
+| Available since | Maven 1 | Maven 4.1 |
+| Model version required | any | 4.2.0+ |
+
+In practice, **mixins cover most use cases that previously pushed teams toward custom packaging types**. Custom packaging remains the right tool when the artifact type itself — not just the build configuration — needs to be distinct.
 
 ## Conclusion
 
