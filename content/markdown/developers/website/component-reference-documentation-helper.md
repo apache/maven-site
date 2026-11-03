@@ -46,7 +46,7 @@ select component category, then type artifact id and version to generate svn com
 
 <div><label for="artifactId">directory (~artifact id):</label> <input type="text" name="artifactId" id="artifactId" style="vertical-align: baseline"/></div>
 <div><label for="version">version:</label> <input type="text" name="version" id="version" style="vertical-align: baseline"/></div>
-<div id="v4x-box"><label for="v4x"><b>4.x</b> version suffix:</label> <input type="checkbox" id="v4x" style="vertical-align: baseline"/></div>
+<div id="v4x-box"><label for="v4x"><b>4.x</b> version suffix:</label> <input type="checkbox" id="v4x" style="vertical-align: middle; width: 24px; height: 24px; margin: 0"/></div>
 <div><br/><button onclick="instructions()">Publish instructions</button></div>
 
 </td></tr>
