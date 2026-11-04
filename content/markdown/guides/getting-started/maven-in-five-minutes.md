@@ -21,7 +21,7 @@ under the License.
 
 ## Prerequisites
 
-You must understand how to install software on your computer. If you do not know how to do this, please ask someone at your office, school, etc. or pay someone to explain this to you. The Maven mailing lists are not the best place to ask for this advice.
+You must understand how to install software on your computer. If you do not know how to do this, please ask someone at your office, school, etc. The Maven mailing lists are not the best place to ask for this advice.
 
 ## Installation
 
@@ -36,11 +36,11 @@ mvn --version
 It should print out your installed version of Maven, for example:
 
 ```
-Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
-Maven home: D:\apache-maven-3.6.3\apache-maven\bin..
-Java version: 1.8.0_232, vendor: AdoptOpenJDK, runtime: C:\Program Files\AdoptOpenJDK\jdk-8.0.232.09-hotspot\jre
-Default locale: en_US, platform encoding: Cp1250
-OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+Apache Maven 3.10.0 (c43a36b8d67be7e0805a411bc0898af1a51f5472)
+Maven home: /opt/apache-maven-3.10.0
+Java version: 21.0.12.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-21-openjdk-arm64
+Default locale: en, platform encoding: UTF-8, time zone: Etc/UTC
+OS name: "linux", version: "7.0.0-1013-oracle", arch: "aarch64", family: "unix"
 ```
 
 Depending upon your network setup, you may require extra configuration. Check out the [Guide to Configuring Maven](../mini/guide-configuring-maven.html) if necessary.
@@ -186,13 +186,13 @@ Hello World!
 
 ## Java 9 or later
 
-By default your version of Maven might use an old version of the `maven-compiler-plugin` that is not compatible with Java 9 or later versions. To target Java 9 or later, you should at least use version 3.6.0 of the `maven-compiler-plugin` and set the `maven.compiler.release` property to the Java release you are targetting (e.g. 9, 10, 11, 12, etc.).
+Maven 3.9.0 and later use a `maven-compiler-plugin` that can target Java 9 or later by default (3.10.1 with Maven 3.9.0, 3.16.0 with Maven 3.10.0). Set the `maven.compiler.release` property to the Java release you are targeting (e.g. 17, 21 or 25), and pin the plugin version so that your build does not change with the Maven version that runs it.
 
-In the following example, we have configured our Maven project to use version 3.8.1 of `maven-compiler-plugin` and target Java 11:
+In the following example, we have configured our Maven project to use version 3.16.0 of `maven-compiler-plugin` and target Java 17:
 
 ```xml
     <properties>
-        <maven.compiler.release>11</maven.compiler.release>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
     <build>
@@ -201,7 +201,7 @@ In the following example, we have configured our Maven project to use version 3.
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.8.1</version>
+                    <version>3.16.0</version>
                 </plugin>
             </plugins>
         </pluginManagement>

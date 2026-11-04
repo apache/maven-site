@@ -41,6 +41,10 @@ The former `settings.xml` is also called global settings, the latter
 their contents get merged, with the user-specific `settings.xml` being
 dominant.
 
+Maven 4 also reads project settings from `.mvn/settings.xml` in the project's top level directory. Because that file
+is part of the project, Maven ignores the elements that belong to you rather than to the project, such as
+`localRepository` and server credentials. It warns about them only when run with `-e`.
+
 Tip: If you need to create user-specific settings from scratch, it's
 easiest to copy the global settings from your Maven installation to your
 `${user.home}/.m2` directory. Maven's default `settings.xml` is a
@@ -159,9 +163,8 @@ information should exist on the build server in the `settings.xml`.
 - **privateKey**, **passphrase**: Like the previous two elements, this
   pair specifies a path to a private key (default is
   `${user.home}/.ssh/id_dsa`) and a `passphrase`, if required. The
-  `passphrase` and `password` elements may be externalized in the
-  future, but for now they must be set plain-text in the
-  `settings.xml` file.
+  `passphrase` and `password` elements can be
+  [encrypted](./guides/mini/guide-encryption.html) instead of set in plain text.
 - **filePermissions**, **directoryPermissions**: When a repository
   file or directory is created on deployment, these are the
   permissions to use. The legal values of each is a three digit number
@@ -208,6 +211,9 @@ declared in `settings.xml`: you can see them with `mvn help:effective-settings`.
 
 An alias must not be empty, and it should be unique across all server IDs
 and aliases. Otherwise Maven reports a warning.
+
+Maven 3.9 does not know `aliases`: it warns about an `Unrecognised tag` and ignores them, so a repository that
+uses an alias as its ID gets no credentials, and a server that requires them answers with status 401.
 
 #### Server Repository Origins
 
@@ -258,6 +264,8 @@ its credentials may be used with:
 The declared origins are added to the origins Maven finds from repositories and mirrors.
 Nothing is replaced, so existing configurations keep working.
 Servers created from [aliases](#Server_Aliases) get the same `repositoryOrigins`.
+Maven 3.9 warns about an `Unrecognised tag` and ignores `repositoryOrigins`, so it keeps sending credentials by
+server ID only.
 
 When a server has at least one origin, from repositories, mirrors or `repositoryOrigins`, its credentials are
 not sent to a repository with the same ID at another origin.
@@ -339,8 +347,9 @@ Mirror Settings](./guides/mini/guide-mirror-settings.html).
 
 - **id**: The unique identifier for this proxy. This is used to
   differentiate between `proxy` elements.
-- **active**: `true` if this proxy is active. This is useful for
-  declaring a set of proxies, but only one may be active at a time.
+- **active**: `true` (the default) if this proxy is active. This is useful for
+  declaring a set of proxies; when several are active, Maven uses the first one
+  whose protocol matches.
 - **protocol**, **host**, **port**: The `protocol://host:port` of the
   proxy, separated into discrete elements.
 - **username**, **password**: These elements appear as a pair denoting

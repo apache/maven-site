@@ -40,12 +40,14 @@ User Centre
 - [Repositories](./introduction/introduction-to-repositories.html)
 - [What is an Archetype](./introduction/introduction-to-archetypes.html)
 - [Creating Archetypes](./mini/guide-creating-archetypes.html)
+- [Testing Archetypes](./mini/guide-testing-archetypes.html)
 - [The Dependency Mechanism](./introduction/introduction-to-dependency-mechanism.html)
 - [ Optional Dependencies and Dependency Exclusions](./introduction/introduction-to-optional-and-excludes-dependencies.html)
 - [Glossary](../glossary.html)
 #[[#### Site]]#
 
 - [Creating a Site](./mini/guide-site.html)
+- [Building Multi-module Sites](./mini/guide-multimodule-site.html)
 - [The APT Format](/doxia/references/apt-format.html)
 - [Snippet Macro](./mini/guide-snippet-macro.html)
 #[[### Getting Started with Maven]]#
@@ -55,6 +57,7 @@ User Centre
 - [Profiles](./introduction/introduction-to-profiles.html)
 - [Configuring Plug-ins](./mini/guide-configuring-plugins.html)
 - [POM Overview](../pom.html) ([Technical Project Descriptor](../ref/current/maven-model/maven.html))
+- [SCM URLs](../pom-scm-urls.html)
 - [Settings Overview](../settings.html) ([Technical Settings Descriptor](../ref/current/maven-settings/settings.html))
 
 Plugin Developer Centre
@@ -77,6 +80,7 @@ Maven Repository Centre
 - [Large Scale Centralized Deployments](./mini/guide-large-scale-centralized-deployments.html)
 - [Mirror Settings](./mini/guide-mirror-settings.html)
 - [Deployment and Security Settings](./mini/guide-deployment-security-settings.html)
+- [Deploying over HTTP, FTP and SSH](./mini/guide-deployment-transports.html)
 - [Using Proxies](./mini/guide-proxies.html)
 - [Authenticated HTTPS](./mini/guide-repository-ssl.html)
 - [Remote repository access through authenticated HTTPS](./mini/guide-repository-ssl.html)

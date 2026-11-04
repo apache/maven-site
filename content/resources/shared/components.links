@@ -2,6 +2,7 @@
 # links to components in https://maven.apache.org/components
 file-management=../components/shared/file-management
 maven-archiver=../components/shared/maven-archiver
+maven-archiver-4.x=../components/shared/maven-archiver-4.x
 maven-artifact-resolver=../components/shared/maven-artifact-resolver
 maven-artifact-transfer=../components/shared/maven-artifact-transfer
 maven-common-artifact-filters=../components/shared/maven-common-artifact-filters

@@ -99,7 +99,9 @@ Options to fix are:
 
 - keep the dependency version but [define a mirror in your settings](/guides/mini/guide-mirror-settings.html).
 
-## The detailed issue list[](#Details)
+<a id="Details"></a>
+
+## The detailed issue list
 
 Bug
 

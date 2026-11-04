@@ -42,17 +42,16 @@ Maven `central` repository, even if they don't use Maven as their build tool.
   repository
 * [Fixing Central Metadata](./central-metadata.html) - How to fix issues in content already uploaded
 
-<img src="maven-central-repository.png" border="0" usemap="#map" />
+<img src="maven-central-repository.png" border="0" alt="How artifacts reach the central repository from staging repositories, and where central publishes them: the CDN, mirrors, the archetype catalog and the index" />
 
-<map name="map">
-<area shape="rect" coords="0,0,189,128"     alt="standalone public artifact repositories" href="/guides/introduction/introduction-to-repositories.html" />
-<area shape="rect" coords="264,76,354,111"  alt="Apache"   href="https://repository.apache.org/content/groups/public/" />
-<area shape="rect" coords="378,76,468,111"  alt="OSSRH"    href="https://central.sonatype.org/pages/ossrh-guide.html" />
-<area shape="rect" coords="490,75,520,111"  alt="Producers" href="https://central.sonatype.org/pages/producers.html" />
-<area shape="rect" coords="329,274,426,312" alt="central index" href="./central-index.html" />
-<area shape="rect" coords="39,274,205,314"  alt="archetype" href="/archetype/archetype-models/archetype-catalog/archetype-catalog.html" />
-<area shape="rect" coords="65,348,205,383"  alt="repo"     href="https://repo.maven.apache.org/maven2/" />
-<area shape="rect" coords="292,356,365,391" alt="ibiblio"  href="http://mirrors.ibiblio.org/pub/mirrors/maven2/" />
-<area shape="rect" coords="373,356,447,391" alt="Google"   href="https://storage-download.googleapis.com/maven-central/index.html" />
-<area shape="rect" coords="100,126,424,239" alt="Central Upload"                href="./guide-central-repository-upload.html" />
-</map>
+The diagram shows how releases reach the central repository through Apache's and Sonatype's repositories, and
+where central publishes them. These pages explain each part:
+
+* [Introduction to Repositories](/guides/introduction/introduction-to-repositories.html)
+* [Guide to Uploading Artifacts to the Central Repository](./guide-central-repository-upload.html)
+* [Publishing through the Central Portal](https://central.sonatype.org/publish/publish-portal-guide/)
+* [Apache's public repository](https://repository.apache.org/content/groups/public/)
+* [The Central Index](./central-index.html)
+* [The Archetype Catalog](/archetype/archetype-models/archetype-catalog/archetype-catalog.html)
+* [repo.maven.apache.org](https://repo.maven.apache.org/maven2/)
+* [Google's mirror of the central repository](https://storage-download.googleapis.com/maven-central/index.html)

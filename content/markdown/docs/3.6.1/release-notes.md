@@ -183,7 +183,9 @@ Detailed explanations can be found in [Inheritance Assembly][inheritance-assembl
 
 [inheritance-assembly]: https://maven.apache.org/ref/3.6.1/maven-model-builder/index.html#Inheritance_Assembly
 
-## The detailed issue list[](#Details)
+<a id="Details"></a>
+
+## The detailed issue list
 
 ### Bugs:
 

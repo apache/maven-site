@@ -40,7 +40,7 @@ How It Works
 
 1.  A regular Maven project usually invokes _reporting goals_ of a plugin by declaring such plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
-    ```unknown
+    ```xml
     <project>
       ...
       <reporting>
@@ -101,7 +101,7 @@ The below examples can be copied and pasted as a template.
 
 #[[### ./pom.xml]]#
 
-```unknown
+```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
@@ -114,8 +114,13 @@ The below examples can be copied and pasted as a template.
 
     <name>Simple Plugin</name>
 
+    <prerequisites>
+        <maven>3.9.0</maven>
+    </prerequisites>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>8</maven.compiler.release>
         <doxiaVersion>2.1.0</doxiaVersion>
         <doxiaSitetoolsVersion>2.1.0</doxiaSitetoolsVersion>
     </properties>
@@ -149,13 +154,13 @@ The below examples can be copied and pasted as a template.
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-core</artifactId>
-            <version>3.9.11</version>
+            <version>3.9.16</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
-            <version>3.9.11</version>
+            <version>3.9.16</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -201,7 +206,7 @@ The below examples can be copied and pasted as a template.
 
 #[[### ./src/main/java/com/mycompany/maven/SimpleReport.java]]#
 
-```unknown
+```java
 package com.mycompany.maven;
 
 import java.util.Locale;
@@ -350,7 +355,7 @@ simple:simple
 
 To invoke the _report Mojo_ of our plugin in another Maven project, we just need to declare the plugin in the [`<reporting>`](/plugins/maven-site-plugin/examples/configuring-reports.html) section of its `pom.xml` as in the example below:
 
-```unknown
+```xml
 <project>
   ...
   <reporting>
@@ -377,7 +382,7 @@ In your `executeReport()` method, you will leverage the [Doxia Sink API](/doxia/
 
 You will use the [`Sink`](/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) object associated to the report:
 
-```unknown
+```java
 Sink sink = getSink();
 ```
 
@@ -407,7 +412,7 @@ The Doxia Sink API allows you to specify [_SinkEventAttributes_](/doxia/doxia/do
 
 You may need to create not just one HTML file, but several of them (like Javadoc produces one HTML file for each Java class). To do so, you will need to get a new _Sink_ for each HTML file you need to produce. This is achieved by using the [`SinkFactory`](/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/SinkFactory.html) object that you can easily obtain with the [`getSinkFactory()`](/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html#getSinkFactory.28.29) method of your [`AbstractMavenReport`](/shared/maven-reporting-impl/apidocs/org/apache/maven/reporting/AbstractMavenReport.html) instance, as in the example below.
 
-```unknown
+```java
 public class SimpleReport extends AbstractMavenReport {
 
   ...

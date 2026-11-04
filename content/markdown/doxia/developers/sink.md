@@ -31,31 +31,39 @@ under the License.
 
 Doxia can be used to transform an arbitrary input document to any supported output format. The following snippet shows how to use a Doxia _Parser_ to transform an apt file to html:
 
-```unknown
-  File userDir = new File( System.getProperty ( "user.dir" ) );
-  File inputFile = new File( userDir, "test.apt" );
-  File outputFile = new File( userDir, "test.html" );
+```java
+  @Inject
+  public MyConverter( @Named( "xhtml" ) SinkFactory sinkFactory, @Named( "apt" ) Parser parser )
+  {
+      this.sinkFactory = sinkFactory;
+      this.parser = parser;
+  }
 
-  SinkFactory sinkFactory = (SinkFactory) lookup( SinkFactory.ROLE, "html" ); // Plexus lookup
+  public void convert()
+      throws IOException, ParseException
+  {
+      File userDir = new File( System.getProperty( "user.dir" ) );
+      File inputFile = new File( userDir, "test.apt" );
+      File outputFile = new File( userDir, "test.html" );
 
-  Sink sink = sinkFactory.createSink( outputFile.getParentFile(), outputFile.getName() ) );
+      Sink sink = sinkFactory.createSink( outputFile.getParentFile(), outputFile.getName() );
 
-  Parser parser = (AptParser) lookup( Parser.ROLE, "apt" ); // Plexus lookup
-
-  Reader reader = ReaderFactory.newReader( inputFile, "UTF-8" );
-
-  parser.parse( reader, sink );
+      try ( Reader reader = Files.newBufferedReader( inputFile.toPath(), StandardCharsets.UTF_8 ) )
+      {
+          parser.parse( reader, sink );
+      }
+  }
 ```
 
-It is recommended that you use [Plexus](http://plexus.codehaus.org/) to look up the parser. In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
+It is recommended that you inject the parser and the sink factory by name, as described in [How to name components](/maven-jsr330.html#How_to_name_components). In principle you could instantiate the parser directly ( `Parser parser = new AptParser();` ) but then some special features like macros will not be available.
 
-You could also use the [Doxia Converter Tool](http://maven.apache.org/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir.
+You could also use the [Doxia Converter Tool](/doxia/doxia-tools/doxia-converter/index.html) to parse a given file/dir to another file/dir. To move a site from APT to Markdown, see [Migrating APT to Markdown](/doxia/migrating-apt-to-markdown.html).
 
 ## <a id="Generating_documents"></a>Generating documents
 
 The snippet below gives a simple example of how to generate a document using the Doxia Sink API.
 
-```unknown
+```java
     /**
      * Generate a simple document and emit it
      * into the specified sink. The sink is flushed but not closed.
@@ -104,13 +112,13 @@ The snippet below gives a simple example of how to generate a document using the
     }
 ```
 
-A more complete example that also shows the &apos;canonical&apos; order of events to use when generating a document, can be found in the Doxia [SinkTestDocument](./doxia/doxia-core/xref-test/org/apache/maven/doxia/sink/SinkTestDocument.html) class.
+A more complete example that also shows the &apos;canonical&apos; order of events to use when generating a document, can be found in the Doxia [SinkTestDocument](https://github.com/apache/maven-doxia/blob/master/doxia-core/src/test/java/org/apache/maven/doxia/sink/impl/SinkTestDocument.java) class.
 
 ## <a id="Passing_attributes_to_Sink_events"></a>Passing attributes to Sink events
 
 A number of methods in the Sink API enable passing a set of attributes to many sink events. A typical use case is:
 
-```unknown
+```java
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.ALIGN, "center" );
 
@@ -123,8 +131,8 @@ The kind of attributes supported depends on the event and the sink implementatio
 
 In **Doxia 1\.0** it was a common practice to use sink.rawText() to generate elements that were not supported by the Sink API. For example, the following snippet could be used to generate a styled HTML &lt;div&gt; block:
 
-```unknown
-sink.RawText( "<div style=\"cool\">" );
+```java
+sink.rawText( "<div style=\"cool\">" );
 sink.text( "A text with a cool style." );
 sink.rawText( "</div>" );
 ```
@@ -135,16 +143,16 @@ In **Doxia 1\.1** a new method unknown() was added to the Sink API that can be u
 
 The correct way to generate the above &lt;div&gt; block is now:
 
-```unknown
+```java
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.STYLE, "cool" );
 
-sink.unknown( "div", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_START )}, atts );
+sink.unknown( "div", new Object[]{HtmlMarkup.TAG_TYPE_START}, atts );
 sink.text( "A text with a cool style." );
-sink.unknown( "div", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_END )}, null );
+sink.unknown( "div", new Object[]{HtmlMarkup.TAG_TYPE_END}, null );
 ```
 
-Read the javadocs of the unknown() method in the [Sink](./doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) interface and the [XhtmlbaseSink](./doxia/doxia-core/apidocs/org/apache/maven/doxia/sink/XhtmlBaseSink.html) for information on the method parameters. Note that an arbitrary sink may be expected to ignore the unknown event completely!
+Read the javadocs of the unknown() method in the [Sink](../doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html) interface and the [Xhtml5BaseSink](../doxia/doxia-core/apidocs/org/apache/maven/doxia/sink/impl/Xhtml5BaseSink.html) for information on the method parameters. Note that an arbitrary sink may be expected to ignore the unknown event completely!
 
 **In general, the rawText method should be avoided alltogether when emitting events into an arbitrary Sink.**
 
@@ -152,7 +160,7 @@ Read the javadocs of the unknown() method in the [Sink](./doxia/doxia-sink-api/a
 
 Related to the above, here is the correct way of injecting a javascript snippet into a Sink:
 
-```unknown
+```java
 // the javascript code is emitted within a commented CDATA section
 // so we have to start with a newline and comment the CDATA closing in the end
 // note that the sink will replace the newline by the system EOL
@@ -161,9 +169,9 @@ String javascriptCode = "\n function javascriptFunction() {...} \n //";
 SinkEventAttributeSet atts = new SinkEventAttributeSet();
 atts.addAttribute( SinkEventAttributes.TYPE, "text/javascript" );
 
-sink.unknown( "script", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_START )}, atts );
-sink.unknown( "cdata", new Object[]{new Integer( HtmlMarkup.CDATA_TYPE ), javascriptCode }, null );
-sink.unknown( "script", new Object[]{new Integer( HtmlMarkup.TAG_TYPE_END )}, null );
+sink.unknown( "script", new Object[]{HtmlMarkup.TAG_TYPE_START}, atts );
+sink.unknown( "cdata", new Object[]{HtmlMarkup.CDATA_TYPE, javascriptCode}, null );
+sink.unknown( "script", new Object[]{HtmlMarkup.TAG_TYPE_END}, null );
 ```
 
 ## <a id="References"></a>References

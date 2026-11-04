@@ -28,7 +28,7 @@ under the License.
 
 First, the easiest way is to create a POM with _doxia-modules_ as parent:
 
-```unknown
+```xml
 <project>
   <parent>
     <groupId>org.apache.maven.doxia</groupId>
@@ -43,18 +43,20 @@ First, the easiest way is to create a POM with _doxia-modules_ as parent:
 </project>
 ```
 
-Secondly, you should implement some Doxia classes, depending on what features you want: parsing or generating markup.
+Secondly, you should implement some Doxia classes, depending on what features you want: parsing or generating markup. Parsers, parser modules and sink factories are JSR-330 components, named by `@Named`; the _doxia-modules_ parent already writes the component index. For details, see [Maven & JSR-330](/maven-jsr330.html#How_to_name_components).
 
 ${esc.h}${esc.h} Parsing
 
 - _MyParser_ class
 
-    ```unknown
-    import org.apache.maven.doxia.parser.AbstractParser;
-    import org.apache.maven.doxia.parser.Parser;
-    import org.codehaus.plexus.component.annotations.Component;
+    ```java
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = Parser.class, hint = "my" )
+    import org.apache.maven.doxia.parser.AbstractParser;
+    
+    @Singleton
+    @Named("my")
     public class MyParser
         extends AbstractParser
     {
@@ -62,11 +64,11 @@ ${esc.h}${esc.h} Parsing
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextParser`, `AbstractXmlParser` or `XhtmlBaseParser` may give you more features.
+    Depending on the type markup, extending `AbstractTextParser`, `AbstractXmlParser` or `Xhtml5BaseParser` may give you more features.
 
 - _MyParseException_ class (optional)
 
-    ```unknown
+    ```java
     import org.apache.maven.doxia.parser.ParseException;
     
     public class MyParseException
@@ -78,11 +80,14 @@ ${esc.h}${esc.h} Parsing
 
 - _MyParserModule_ class
 
-    ```unknown
-    import org.apache.maven.doxia.parser.module.AbstractParserModule;
-    import org.codehaus.plexus.component.annotations.Component;
+    ```java
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = ParserModule.class, hint = "my" )
+    import org.apache.maven.doxia.parser.module.AbstractParserModule;
+    
+    @Singleton
+    @Named("my")
     public class MyParserModule
         extends AbstractParserModule
     {
@@ -94,8 +99,8 @@ ${esc.h}${esc.h} Generating
 
 - _MySink_ class
 
-    ```unknown
-    import org.apache.maven.doxia.sink.SinkAdapter;
+    ```java
+    import org.apache.maven.doxia.sink.impl.SinkAdapter;
     
     public class MySink
         extends SinkAdapter
@@ -104,23 +109,26 @@ ${esc.h}${esc.h} Generating
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextSink`, `AbstractXmlSink` or `XhtmlBaseSink` may give you more features.
+    Depending on the type markup, extending `AbstractTextSink`, `AbstractXmlSink` or `Xhtml5BaseSink` may give you more features.
 
 - _MySinkFactory_ class
 
-    ```unknown
-    import org.apache.maven.doxia.sink.SinkFactory;
-    import org.codehaus.plexus.component.annotations.Component;
+    ```java
+    import javax.inject.Named;
+    import javax.inject.Singleton;
     
-    @Component( role = SinkFactory.class, hint = "my" )
+    import org.apache.maven.doxia.sink.SinkFactory;
+    
+    @Singleton
+    @Named("my")
     public class MySinkFactory
-        extends SinkFactory
+        implements SinkFactory
     {
     ...
     }
     ```
 
-    Depending on the type markup, extending `AbstractTextSinkFactory`, `AbstractXmlSinkFactory` or `AbstractBinarySinkFactory` may give you more features.
+    Depending on the type markup, extending `AbstractTextSinkFactory` or `AbstractXmlSinkFactory` may give you more features.
 
 ${esc.h}${esc.h} <a id="References"></a>References
 

@@ -32,13 +32,13 @@ Macros are supported by the APT, Xdoc, FML, XHTML and Markdown formats.
 
 A macro in an APT source file is a **non-indented** line that looks like this:
 
-```unknown
+```text
 %{macro_name|param1=value1|param2=value2|...}
 ```
 
 An Xdoc or FML macro has the following syntax:
 
-```unknown
+```xml
 <macro name="macro_name">
   <param name="param1" value="value1"/>
   <param name="param2" value="value2"/>
@@ -48,7 +48,7 @@ An Xdoc or FML macro has the following syntax:
 
 Since Doxia 1\.7, an XHTML or Markdown macro has the following syntax:
 
-```unknown
+```xml
 <!-- MACRO{macro_name|param1=value1|param2=value2|...} -->
 ```
 
@@ -59,13 +59,13 @@ The following macros are available:
 
 The _Echo_ macro is a very simple macro: it prints out the key and value of any supplied parameters. For instance, in an APT file, you could write:
 
-```unknown
+```text
 %{echo|param1=value1|param2=value2}
 ```
 
 Similarly, it will be for xdoc file:
 
-```unknown
+```xml
 <macro name="echo">
   <param name="param1" value="value1"/>
   <param name="param2" value="value2"/>
@@ -74,7 +74,7 @@ Similarly, it will be for xdoc file:
 
 and it will output
 
-```unknown
+```text
   param1 ---> value1
   param2 ---> value2
 ```
@@ -83,13 +83,13 @@ and it will output
 
 The _Snippet_ macro is a very useful macro: it prints out the content of a file or a URL. For instance, in an APT file, you could write:
 
-```unknown
+```text
 %{snippet|id=myid|url=http://myserver/path/to/file.txt}
 ```
 
 In a xdoc file, it will be:
 
-```unknown
+```xml
 <macro name="snippet">
   <param name="id" value="myid"/>
   <param name="url" value="http://myserver/path/to/file.txt"/>
@@ -100,7 +100,7 @@ The `id` parameter is not required if you want to include the entire file. If yo
 
 - Start and end snippets in a Java file
 
-    ```unknown
+    ```java
     public class MyClass
     {
         // START SNIPPET: myid
@@ -114,7 +114,7 @@ The `id` parameter is not required if you want to include the entire file. If yo
 
 - Start and end snippets in a XML file
 
-    ```unknown
+    ```xml
     <project>
     ...
       <build>
@@ -136,11 +136,14 @@ The `id` parameter is not required if you want to include the entire file. If yo
 |file|The path of the file to include (since doxia-1\.0-alpha-9).|
 |verbatim|If the content should be output as verbatim escaped text. If this is set to `false` then the content of the snippet will not be escaped. This means that you can use it like Server-Side Includes on a webserver. Default value is `true`.|
 |encoding|The encoding of the file to read (since Doxia 1\.6). If omitted the default JVM encoding will be used.|
+|source|If the verbatim content is marked as source code, rendered as `<pre><code>` in HTML. Default value is `true`.|
+|class|CSS classes for the verbatim content, such as `language-yaml` for a client-side syntax highlighter. The classes go on a `code` element inside the `pre` element, as for a Markdown fenced code block, whatever the value of `source`.|
+
 ## <a id="TOC_Macro"></a>TOC Macro
 
 The _TOC_ macro prints a Table Of Content of a document. It is useful if you have several sections and subsections in your document. For instance, in an APT file, you could write:
 
-```unknown
+```text
 %{toc|section=2|fromDepth=2|toDepth=3}
 ```
 
@@ -150,11 +153,11 @@ This displays a TOC for the second section in the document, including all subsec
 
 In a xdoc file, it will be:
 
-```unknown
+```xml
 <macro name="toc">
   <param name="section" value="2"/>
-  <param name="fromDepth" value="0"/>
-  <param name="toDepth" value="4"/>
+  <param name="fromDepth" value="2"/>
+  <param name="toDepth" value="3"/>
 </macro>
 ```
 
@@ -166,7 +169,7 @@ In a xdoc file, it will be:
 
 From **Doxia 1\.1\.1** on you may also specify any of the html base attributes (_i.e._ any of `id`, `class`, `style`, `lang`, `title`) as parameters, e.g.:
 
-```unknown
+```text
 %{toc|class=myTOC}
 ```
 

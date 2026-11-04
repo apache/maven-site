@@ -20,10 +20,11 @@ under the License.
 -->
 
 
-<site xmlns="http://maven.apache.org/SITE/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://maven.apache.org/SITE/2.0.0 https://maven.apache.org/xsd/site-2.0.0.xsd"
+<site xmlns="http://maven.apache.org/SITE/2.1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://maven.apache.org/SITE/2.1.0 https://maven.apache.org/xsd/site-2.1.0.xsd"
       name="Maven">
   <version position="none"/>
+  <mermaid/>
 
   <body>
     <links>
@@ -34,17 +35,13 @@ under the License.
       <item name="Maven" href="https://maven.apache.org/index.html"/>
     </breadcrumbs>
 
-    <menu>
-      <item name="Welcome" href="/index.html"/>
-      <item name="License" href="https://www.apache.org/licenses/"/>
-    </menu>
-
     <menu name="About Maven">
       <item name="What is Maven?" href="/what-is-maven.html"/>
       <item name="Installation" href="/install.html" />
       <item name="Downloads" href="/download.html"/>
       <item name="Use" href="/run.html"/>
       <item name="Configure" href="/configure.html"/>
+      <item name="License" href="https://www.apache.org/licenses/"/>
       <item name="Release Notes" href="/docs/history.html"/>
       <item name="Security Reports" href="/security.html"/>
     </menu>
@@ -71,8 +68,10 @@ under the License.
           <item name="FML Format" href="/doxia/references/fml-format.html"/>
           <item name="Xdoc Format" href="/doxia/references/xdoc-format.html"/>
         </item>
+        <item name="Migrating APT to Markdown" href="/doxia/migrating-apt-to-markdown.html"/>
         <item name="Doxia Modules Guide" href="/doxia/modules/index.html"/>
         <item name="Doxia Macros Guide" href="/doxia/macros/index.html"/>
+        <item name="Mermaid Diagrams" href="/doxia/mermaid-diagrams.html"/>
         <item name="Issues &amp; Gotchas" href="/doxia/issues/index.html"/>
         <item name="External Resources" href="/doxia/resources.html"/>
         <item name="Developer Docs" href="/doxia/developers/index.html" collapse="true">
@@ -97,10 +96,12 @@ under the License.
 
           <item name="Creating a site" href="/guides/mini/guide-site.html" collapse="true">
             <item name="Markup Formats" href="/doxia/references/index.html"/>
+            <item name="Multi-module Sites" href="/guides/mini/guide-multimodule-site.html"/>
             <item name="Snippet Macro" href="/guides/mini/guide-snippet-macro.html"/>
           </item>
           <item name="Archetypes" href="/guides/introduction/introduction-to-archetypes.html" collapse="true">
             <item name="Creating Archetypes" href="/guides/mini/guide-creating-archetypes.html"/>
+            <item name="Testing Archetypes" href="/guides/mini/guide-testing-archetypes.html"/>
           </item>
           <item name="Repositories" href="/guides/introduction/introduction-to-repositories.html" collapse="true">
             <item name="Install to Local" href="/guides/mini/guide-3rd-party-jars-local.html"/>
@@ -116,6 +117,7 @@ under the License.
             </item>
             <item name="Using Proxies" href="/guides/mini/guide-proxies.html"/>
             <item name="Authenticated HTTPS" href="/guides/mini/guide-repository-ssl.html"/>
+            <item name="Deploying over HTTP, FTP and SSH" href="/guides/mini/guide-deployment-transports.html"/>
             <item name="Resolver Transport" href="/guides/mini/guide-resolver-transport.html"/>
             <item name="Advanced Wagon HTTP Configuration" href="/guides/mini/guide-http-settings.html"/>
             <item name="Alternative Wagon Providers" href="/guides/mini/guide-wagon-providers.html"/>
@@ -138,7 +140,9 @@ under the License.
             <item name="Plugin Prefix Resolution" href="/guides/introduction/introduction-to-plugin-prefix-mapping.html"/>
             <item name="Configuring Default Mojo Executions" href="/guides/mini/guide-default-execution-ids.html"/>
           </item>
-          <item name="POM 4.0.0 Reference" href="/pom.html"/>
+          <item name="POM 4.0.0 Reference" href="/pom.html" collapse="true">
+            <item name="SCM URLs" href="/pom-scm-urls.html"/>
+          </item>
           <item name="Settings Reference"
                 href="/settings.html"/> <!-- TODO: all references should be collected under another area instead/as well, reconsider -->
         </item>
@@ -169,6 +173,9 @@ under the License.
           <item name="Building for Different Environments"
             href="/guides/mini/guide-building-for-different-environments.html"/>
           <item name="Using Toolchains" href="/guides/mini/guide-using-toolchains.html"/>
+          <item name="Targeting a Java Version" href="/guides/mini/guide-java-target.html"/>
+          <item name="Building Multi-Release JARs" href="/guides/mini/guide-multi-release-jars.html"/>
+          <item name="Filtering Resources" href="/guides/mini/guide-filtering-resources.html"/>
           <item name="Maven CI Friendly Version" href="/guides/mini/guide-maven-ci-friendly.html"/>
         </item>
 
@@ -190,6 +197,7 @@ under the License.
         <item name="Maven Layout" href="/repositories/layout.html"/>
         <item name="Maven Local Repository" href="/repositories/local.html"/>
         <item name="Maven Remote Repositories" href="/repositories/remote.html"/>
+        <item name="Dependency Resolution Misconceptions" href="/repositories/dependency-resolution-misconceptions.html"/>
       </item>
       <item name="Plugin Development" href="/plugin-developers/index.html" collapse="true">
         <item name="Introduction" href="/guides/introduction/introduction-to-plugins.html"/>
@@ -209,8 +217,12 @@ under the License.
           <item name="Maven Null Annotations" href="/null-annotations.html" />
         </item>
       </item>
-      <item name="Contribute to Maven" href="/developers/index.html" collapse="true">
-        <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html"/>
+      <item name="Books and Resources" href="/articles.html"/>
+    </menu>
+
+    <menu name="Contribute">
+      <item name="Contribute to Maven" href="/developers/index.html" />
+      <item name="Guide to Helping with Maven" href="/guides/development/guide-helping.html"/>
         <item name="Code Style and Conventions" href="/developers/conventions/code.html"/>
         <item name="Git Convention" href="/developers/conventions/git.html"/>
         <item name="GitHub Convention" href="/developers/conventions/github.html"/>
@@ -239,14 +251,11 @@ under the License.
           <item name="Maven Dependency Policies" href="/developers/dependency-policies.html"/>
           <item name="Plugins Compatibility Plan" href="/developers/compatibility-plan.html"/>
         </item>
-      </item>
-      <item name="Books and Resources" href="/articles.html"/>
     </menu>
 
     <menu name="Community">
       <item name="Community Overview" href="/community.html"/>
       <item name="Project Roles" href="/project-roles.html"/>
-      <item name="How to Contribute" href="/guides/development/guide-helping.html"/>
       <item name="Getting Help" href="/users/getting-help.html"/>
       <item name="Issue Management" href="/issue-management.html"/>
       <item name="Getting Maven Source" href="/scm.html"/>

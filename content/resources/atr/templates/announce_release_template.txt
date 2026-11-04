@@ -8,7 +8,7 @@ You can download the appropriate sources etc. from the download page:
 
 Release Notes - {{PROJECT_NAME}} - Version {{VERSION}}
 
-https://github.com/apache/{{PROJECT_KEY}}/releases/tag/{{PROJECT_KEY}}-{{VERSION}}
+https://maven.apache.org/release-notes/{{PROJECT_KEY}}/{{VERSION}}
 
 Enjoy,
 On behalf of the Apache {{COMMITTEE}} project team,

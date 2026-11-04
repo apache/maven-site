@@ -107,9 +107,9 @@ In addition, we add classical Maven plugin dependencies
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -182,12 +182,12 @@ public class Jsr330Mojo
     @Inject
     public Jsr330Mojo( Jsr330Component component )
     {
-        this.component = component;    
+        this.component = component;
     }
 
     public void execute()
         throws MojoExecutionException
-    {    
+    {
         //
         // Say hello to the world, my little constructor injected component!
         //
@@ -195,6 +195,37 @@ public class Jsr330Mojo
     }
 }
 ```
+
+## How to name components
+
+Where a library offers several implementations of one interface, `@Named` gives each implementation the name that
+callers select it by. Plexus called this name the role hint. Doxia parsers, sink factories and macros work this way:
+
+```java
+import javax.inject.Named;
+import javax.inject.Singleton;
+
+import org.apache.maven.doxia.parser.AbstractTextParser;
+
+@Singleton
+@Named("my")
+public class MyParser extends AbstractTextParser {
+    ...
+}
+```
+
+A component that needs one implementation injects it by interface and name, which replaces the Plexus
+`lookup(Parser.ROLE, "my")` call:
+
+```java
+@Inject
+public MyComponent(@Named("my") Parser parser) {
+    this.parser = parser;
+}
+```
+
+The implementation is found only if its JAR contains the index that the `sisu-maven-plugin` writes, as described in
+[How to use JSR-330](#How_to_use_JSR-330).
 
 ## Lifecycle annotations (JSR-250)
 
@@ -210,7 +241,7 @@ See [Sisu's lifecycle support documentation](https://eclipse.dev/sisu/org.eclips
 [plexus]: https://codehaus-plexus.github.io/plexus-containers/
 [plexus-component-metadata]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-metadata/
 [plexus-annotations]: https://codehaus-plexus.github.io/plexus-containers/plexus-component-annotations/
-[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/master/core-it-suite/src/test/resources/mng-5382
+[jsr330-plugin]: https://github.com/apache/maven-integration-testing/tree/fdd9945/core-it-suite/src/test/resources/mng-5382
 [guice]: https://code.google.com/p/google-guice/
 [sisu-maven-plugin]: https://eclipse.org/sisu/docs/api/org.eclipse.sisu.mojos/
 [MNG-5343]: https://issues.apache.org/jira/browse/MNG-5343

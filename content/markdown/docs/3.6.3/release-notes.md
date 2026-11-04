@@ -63,7 +63,9 @@ you'll get bit-by-bit identical output (`apache-maven-3.6.3-bin.zip` and `.tar.g
 If you're building on any Unix system, you'll need to add "`-Dline.separator=$'\r\n'`".  
 See the [Maven - Guide to Configuring for Reproducible Builds](/guides/mini/guide-reproducible-builds.html) for more details.
 
-## The detailed issue list[](#Details)
+<a id="Details"></a>
+
+## The detailed issue list
 
 Sub-task
 

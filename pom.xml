@@ -136,6 +136,8 @@
               <exclude>content/resources/badges/*.json</exclude>
               <exclude>content/resources/doxia/images/architecture.odg</exclude>
               <exclude>content/resources/atr/templates/**</exclude>
+              <exclude>.github/accessibility/package*.json</exclude>
+              <exclude>.github/accessibility/node_modules/**</exclude>
             </inputExcludes>
           </configuration>
           <executions>

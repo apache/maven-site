@@ -113,7 +113,7 @@ This marks a specific place in a repository, acting like a coordinate system for
 * `<groupId>`:
   This is generally unique amongst an organization or a project. For example, all core
   Maven artifacts do (well, should) live under the groupId `org.apache.maven`. Group ID's do not
-  necessarily use the dot notation, for example, the junit project. Note that the dot-notated
+  necessarily use the dot notation, for example, the commons-io project (groupId `commons-io`). Note that the dot-notated
   groupId does not have to correspond to the package structure that the project contains. It is,
   however, a good practice to follow. When stored within a repository, the group acts much like the
   Java packaging structure does in an operating system. The dots are replaced by OS specific directory
@@ -132,8 +132,8 @@ This marks a specific place in a repository, acting like a coordinate system for
 
 * `<version>`:
   This is the last piece of the naming puzzle. `groupId:artifactId` denotes a single project, but
-  it does not indicate which incarnation of that project we are talking about. Do we want the `junit:junit`
-  of 2018 (version 4.12), or of 2007 (version 3.8.2)? In short: code changes, those changes
+  it does not indicate which incarnation of that project we are talking about. Do we want the `commons-io:commons-io`
+  of 2026 (version 2.22.0), or of 2008 (version 1.4)? In short: code changes, those changes
   should be versioned, and this element keeps those versions in line. It is also used within an artifact's
   repository to separate versions from each other. `my-project` version 1.0 files live in the directory
   structure `$M2_REPO/org/codehaus/mojo/my-project/1.0`.
@@ -190,9 +190,9 @@ allowing your list to focus solely on the dependencies your project requires.
   ...
   <dependencies>
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>5.11.0</version>
       <type>jar</type>
       <scope>test</scope>
       <optional>true</optional>
@@ -485,7 +485,7 @@ the dependencies you use, so you exclude all the transitive dependencies:
     <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-embedder</artifactId>
-      <version>3.8.6</version>
+      <version>3.10.0</version>
       <exclusions>
         <exclusion>
           <groupId>*</groupId>
@@ -572,6 +572,8 @@ Notable elements which are **not** inherited include:
 
 Notice the `<relativePath>` element.
 It is not required, but may be used as a signifier to Maven to first search the path given for this project's parent, before searching the local and then remote repositories.
+Without it, Maven looks in `../pom.xml`, and uses the POM it finds there only if its coordinates match the `<parent>` element.
+With an empty `<relativePath/>`, Maven 3 skips the file system and searches the repositories; Maven 4 also finds the parent among the projects of the build.
 
 To see inheritance in action, just have a look at the [ASF](https://github.com/apache/maven-apache-parent/blob/master/pom.xml) or [Maven](https://github.com/apache/maven-parent/blob/master/pom.xml) parent POM's.
 
@@ -585,39 +587,47 @@ For plugin configuration you can overwrite the inheritance behaviour with the at
 Similar to the inheritance of objects in object-oriented programming, POMs that extend
 a parent POM inherit certain values from that parent. Moreover, just as Java objects
 ultimately inherit from `java.lang.Object`, all Project Object Models inherit from
-a base Super POM. The snippet below is the Super POM for Maven 3.9.12.
+a base Super POM. The snippet below is the Super POM for Maven 3.10.0.
 
-Note: The latest Super POM for Maven 3 is available [here](https://maven.apache.org/ref/3-LATEST/maven-model-builder/super-pom.html).
+`${maven.repo.central}` is `https://repo.maven.apache.org/maven2` unless you set the `maven.repo.central` user property.
+Maven 3.9.x Super POMs also pin the versions of four plugins and define a `release-profile`.
+The [Super POM of the latest Maven 3 release](https://maven.apache.org/ref/3-LATEST/maven-model-builder/super-pom.html) is in the Maven Core reference documentation.
 
 ```xml
 <project>
-  
   <modelVersion>4.0.0</modelVersion>
-  
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    <!-- Fixed date for reproducible build -->
+    <project.build.outputTimestamp>1980-02-01T00:00:00Z</project.build.outputTimestamp>
+  </properties>
+
   <repositories>
     <repository>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>${maven.repo.central}</url>
       <layout>default</layout>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </repository>
   </repositories>
-  
+
   <pluginRepositories>
     <pluginRepository>
       <id>central</id>
       <name>Central Repository</name>
-      <url>https://repo.maven.apache.org/maven2</url>
+      <url>${maven.repo.central}</url>
       <layout>default</layout>
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
     </pluginRepository>
   </pluginRepositories>
-  
+
   <build>
     <directory>${project.basedir}/target</directory>
     <outputDirectory>${project.build.directory}/classes</outputDirectory>
@@ -636,79 +646,12 @@ Note: The latest Super POM for Maven 3 is available [here](https://maven.apache.
         <directory>${project.basedir}/src/test/resources</directory>
       </testResource>
     </testResources>
-    <pluginManagement>
-      <!-- NOTE: These plugins will be removed from future versions of the super POM -->
-      <!-- They are kept for the moment as they are very unlikely to conflict with lifecycle mappings (MNG-4453) -->
-      <plugins>
-        <plugin>
-          <artifactId>maven-antrun-plugin</artifactId>
-          <version>3.1.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-assembly-plugin</artifactId>
-          <version>3.7.1</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-dependency-plugin</artifactId>
-          <version>3.7.0</version>
-        </plugin>
-        <plugin>
-          <artifactId>maven-release-plugin</artifactId>
-          <version>3.0.1</version>
-        </plugin>
-      </plugins>
-    </pluginManagement>
   </build>
-  
+
   <reporting>
     <outputDirectory>${project.build.directory}/site</outputDirectory>
   </reporting>
-  
-  <profiles>
-    <!-- NOTE: The release profile will be removed from future versions of the super POM -->
-    <profile>
-      <id>release-profile</id>
-      <activation>
-        <property>
-          <name>performRelease</name>
-          <value>true</value>
-        </property>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-sources</id>
-                <goals>
-                  <goal>jar-no-fork</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>attach-javadocs</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <inherited>true</inherited>
-            <artifactId>maven-deploy-plugin</artifactId>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
-  
+
 </project>
 ```
 
@@ -722,7 +665,7 @@ child POMs and transitive dependencies. One of those elements is
 `<dependencyManagement>`.
 
 `<dependencyManagement>` is used by a POM to help manage dependency information across all of its children.
-If the `my-parent` project uses `dependencyManagement` to define a dependency on `junit:junit:4.12`, then POMs inheriting from this one can set their dependency giving  the `groupId`=`junit` and `artifactId`=`junit` only and Maven will fill in the `version` set by the parent.
+If the `my-parent` project uses `dependencyManagement` to define a dependency on `org.junit.jupiter:junit-jupiter:5.11.0`, then POMs inheriting from this one can set their dependency giving  the `groupId`=`org.junit.jupiter` and `artifactId`=`junit-jupiter` only and Maven will fill in the `version` set by the parent.
 The benefits of this method are obvious.
 Dependency details can be set in one central location, which propagates to all inheriting POMs.
 
@@ -966,7 +909,7 @@ to bundle the resource correctly, you would specify resources similar to the fol
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
-        <version>2.6</version>
+        <version>3.5.1</version>
         <extensions>false</extensions>
         <inherited>true</inherited>
         <configuration>
@@ -1142,7 +1085,7 @@ You would get an `execution` like this:
     <plugins>
       <plugin>
         <artifactId>maven-antrun-plugin</artifactId>
-        <version>1.1</version>
+        <version>3.2.0</version>
         <executions>
           <execution>
             <id>echodir</id>
@@ -1152,9 +1095,9 @@ You would get an `execution` like this:
             <phase>verify</phase>
             <inherited>false</inherited>
             <configuration>
-              <tasks>
-                <echo>Build Dir: \${project.build.directory}</echo>
-              </tasks>
+              <target>
+                <echo>Build Dir: ${project.build.directory}</echo>
+              </target>
             </configuration>
           </execution>
         </executions>
@@ -1203,7 +1146,7 @@ The children have every right to override `pluginManagement` definitions.
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-jar-plugin</artifactId>
-          <version>2.6</version>
+          <version>3.5.1</version>
           <executions>
             <execution>
               <id>pre-process-classes</id>
@@ -1293,7 +1236,7 @@ For this reason, extensions are excellent for specifying one out of multiple imp
       <extension>
         <groupId>org.apache.maven.wagon</groupId>
         <artifactId>wagon-ftp</artifactId>
-        <version>1.0-alpha-3</version>
+        <version>3.5.3</version>
       </extension>
     </extensions>
     ...
@@ -1328,7 +1271,7 @@ also be suppressed in the following, more verbose, way, which effectively turns 
     <plugins>
       <plugin>
         <artifactId>maven-project-info-reports-plugin</artifactId>
-        <version>2.0.1</version>
+        <version>3.9.0</version>
         <reportSets>
           <reportSet></reportSet>
         </reportSets>
@@ -1649,20 +1592,20 @@ version control) is an integral part of any healthy project. If your Maven proje
   through Maven. Where connection requires read access for Maven to be able to find the source
   code (for example, an update), developerConnection requires a connection that will give write
   access. The Maven project has spawned another project named
-  Maven SCM, which creates a common API for any SCMs that wish to implement it. The most popular
-  are CVS and Subversion, however, there is a growing list of other supported
-  [SCMs](/scm/scms-overview.html). All SCM connections are made
-  through a common URL structure.
+  Maven SCM, which creates a common API for any SCMs that wish to implement it.
+  All SCM connections are made through a common URL structure.
 
 ```
 scm:[provider]:[provider_specific]
 ```
 
-Where provider is the type of SCM system. For example, connecting to a CVS repository may look like this:
+Where provider is the type of SCM system. For example, connecting to a Git repository may look like this:
 
 ```
-scm:cvs:pserver:127.0.0.1:/cvs/root:my-project
+scm:git:https://github.com/example/my-project.git
 ```
+
+The [SCM URLs](./pom-scm-urls.html) page describes the URL format and the URLs of the supported SCMs.
 
 * `<tag>`:
   Specifies the tag that this project lives under. HEAD (meaning, the SCM root) is the default.

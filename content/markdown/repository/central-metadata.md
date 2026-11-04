@@ -31,7 +31,7 @@ You need to contact the original publisher of the metadata to make sure in next 
 
 ## Other Issues
 
-For any other types of issues related to metadata in the repository (POM related, or [`maven-metadata.xml`](/ref/current/maven-repository-metadata/), or anything else), open an issue at [MVNCENTRAL](https://issues.sonatype.org/browse/MVNCENTRAL) with the relevant information and explain the reasons why it is an issue.
+For any other types of issues related to metadata in the repository (POM related, or [`maven-metadata.xml`](/ref/current/maven-repository-metadata/), or anything else), contact [Central Support](https://central.sonatype.org/faq/get-support/) with the relevant information and explain the reasons why it is an issue.
 
 **Important:** by default assume that we won't trust your info, so you must provide all links to the project documentation you can to convince us that your solution is right.
 

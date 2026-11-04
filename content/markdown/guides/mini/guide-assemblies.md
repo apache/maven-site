@@ -126,7 +126,7 @@ How to use such pre-defined assembly descriptors is described in the [documentat
       <unpack>true</unpack>
       <scope>runtime</scope>
       <excludes>
-        <exclude>junit:junit</exclude>
+        <exclude>org.junit.jupiter:junit-jupiter</exclude>
         <exclude>commons-lang:commons-lang</exclude>
         <exclude>commons-logging:commons-logging</exclude>
         <exclude>commons-cli:commons-cli</exclude>

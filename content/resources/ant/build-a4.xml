@@ -38,7 +38,7 @@ under the License.
       </src>
       <classpath>
         <fileset dir="${libdir}">
-          <include name="/path/to/junit-3.8.1.jar"/>
+          <include name="/path/to/junit-jupiter-api-5.11.0.jar"/>
         </fileset>
       </classpath>
     </javac>
@@ -46,19 +46,21 @@ under the License.
   <target name="jar" description="o Create the jar" depends="compile">
     <jar jarfile="target/${final.name.api}.jar"/>
   </target>
-  <target name="test" depends="test:compile" description="Run all acceptance tests and unit tests">
+  <target name="test" depends="test-compile" description="Run all acceptance tests and unit tests">
     <mkdir dir="${test.reports.dir}"/>
-    <junit printsummary="no" fork="yes" forkmode="once" haltonfailure="${junit.haltonfailure}" includeantruntime="true">
-      <sysproperty key="java.awt.headless" value="true"/>
+    <junitlauncher printsummary="true" haltonfailure="${junit.haltonfailure}">
       <classpath refid="classpath"/>
-      <formatter type="brief" usefile="no"/>
-      <formatter type="xml"/>
-      <batchtest todir="${test.reports.dir}">
-        <fileset dir="src/test/java">
-          <include name="${test.src.includes}"/>
+      <testclasses outputdir="${test.reports.dir}">
+        <fileset dir="${test.classesdir}">
+          <include name="**/*Test.class"/>
         </fileset>
-      </batchtest>
-    </junit>
+        <fork>
+          <sysproperty key="java.awt.headless" value="true"/>
+        </fork>
+        <listener type="legacy-brief" sendSysOut="true"/>
+        <listener type="legacy-xml" sendSysErr="true" sendSysOut="true"/>
+      </testclasses>
+    </junitlauncher>
     <junitreport todir="${test.reports.dir}">
       <fileset dir="${test.reports.dir}">
         <include name="TEST-*.xml"/>

@@ -19,7 +19,7 @@ under the License.
 
 # Guide to Working with Multiple Modules
 
-(If you're working with Maven 4, please refer to the [Maven 4 edition of this guide](./guide-multiple-modules-4.html))
+(If you're working with Maven 4, please refer to the [Maven 4 edition of this guide](./guide-multiple-subprojects-4.html))
 
 As seen in the introduction to the POM, Maven supports [project](/glossary.html#Project) aggregation in addition to project inheritance. This section outlines how Maven processes projects with multiple modules, and how you can work with them more effectively.
 
@@ -41,6 +41,7 @@ The following relationships are honoured when sorting projects:
 - a plugin declaration where the plugin is another module in the build
 - a plugin dependency on another module in the build
 - a build extension declaration on another module in the build
+- the parent of a project, when the parent is another module in the build
 - the order declared in the `<modules>` element (if no other rule applies)
 
 Note that only "instantiated" references are used - `dependencyManagement` and `pluginManagement` elements do not cause a change to the reactor sort order.
@@ -51,11 +52,13 @@ No special configuration is required to take advantage of the reactor, however i
 
 The following command line switches are available:
 
+- `--projects` - build only the specified projects, given as relative paths or as `[groupId]:artifactId`. A bare name is always a path: `-pl my-module` selects the directory `my-module`, and `-pl :my-module` the project with that artifactId
 - `--resume-from` - resumes a reactor from the specified project (e.g. when it fails in the middle)
 - `--also-make` - build the specified projects, and any of their dependencies in the reactor
 - `--also-make-dependents` - build the specified projects, and any that depend on them
 - `--fail-fast` - the default behavior - whenever a module build fails, stop the overall build immediately
 - `--fail-at-end` - if a particular module build fails, continue the rest of the reactor and report all failed modules at the end instead
+- `--fail-never` - never fail the build: Maven still reports `BUILD FAILURE` for a failed module, but exits with 0 and still tries to build the modules that depend on it
 - `--non-recursive` - do not use a reactor build, even if the current project declares modules and just build the project in the current directory
 
 Refer to the Maven command line interface reference for more information on these switches.

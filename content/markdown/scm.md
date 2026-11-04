@@ -58,13 +58,13 @@ manifest:
 ## Maven Sources Overview
 
 <p>
-   <object type="image/svg+xml" data="maven-sources/site.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/core.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/plugins.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/doxia.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/misc.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/shared.svg"></object><br>
-   <object type="image/svg+xml" data="maven-sources/plexus.svg"></object><br>
+   <object type="image/svg+xml" data="maven-sources/site.svg" aria-label="Source repositories: Site"></object><br>
+   <object type="image/svg+xml" data="maven-sources/core.svg" aria-label="Source repositories: Maven Core"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plugins.svg" aria-label="Source repositories: Plugins"></object><br>
+   <object type="image/svg+xml" data="maven-sources/doxia.svg" aria-label="Source repositories: Maven Doxia"></object><br>
+   <object type="image/svg+xml" data="maven-sources/misc.svg" aria-label="Source repositories: Misc"></object><br>
+   <object type="image/svg+xml" data="maven-sources/shared.svg" aria-label="Source repositories: Shared"></object><br>
+   <object type="image/svg+xml" data="maven-sources/plexus.svg" aria-label="Source repositories: Plexus"></object><br>
 </p>
 
 Each component has its own Jira project or component for issue tracking: see
@@ -79,7 +79,7 @@ The sources for this site are available in a distinct Git repository.
 | [Apache Maven Site](/) | [`https://gitbox.apache.org/repos/asf/maven-site.git`](https://gitbox.apache.org/repos/asf/maven-site.git) | [GitHub](https://github.com/apache/maven-site/) | [GitHub Issues](https://github.com/apache/maven-site/issues/) |
 
 *Note*: If you want to submit small site amendments, for example correct a spelling mistake, you don't have to install Git locally.
-You can simply hit the "Edit" ![Edit button](../images/accessories-text-editor.png "Edit button") button after the page's title in the breadcrumb section on the top of the page.
+You can use the "Edit" link after the page title in the breadcrumbs.
 This will open the page's source file on GitHub, where you can edit it and easily open a pull request containing your change.
 
 ## Maven Core
@@ -208,8 +208,8 @@ The components in Git are shown in the following table.
 | Content                                                      | Repository                                                                                                                       | Mirror                                                     | Issues                                                                  |
 |--------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------|-------------------------------------------------------------------------|
 | [Apache Maven Doxia base](doxia/)                            | [`https://gitbox.apache.org/repos/asf/maven-doxia.git`](https://gitbox.apache.org/repos/asf/maven-doxia.git)                     | [GitHub](https://github.com/apache/maven-doxia/)           | [GitHub Issues](https://github.com/apache/maven-doxia/issues)           |
-| [Apache Maven Doxia Sitetools](doxia-sitetools/)             | [`https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git`](https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git) | [GitHub](https://github.com/apache/maven-doxia-sitetools/) | [GitHub Issues](https://github.com/apache/maven-doxia-sitetools/issues) |
-| [Apache Maven Doxia Converter](doxia-tools/doxia-converter/) | [`https://gitbox.apache.org/repos/asf/maven-doxia-converter.git`](https://gitbox.apache.org/repos/asf/maven-doxia-converter.git) | [GitHub](https://github.com/apache/maven-doxia-converter/) | [GitHub Issues](https://github.com/apache/maven-doxia-converter/issues) |
+| [Apache Maven Doxia Sitetools](doxia/doxia-sitetools/)             | [`https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git`](https://gitbox.apache.org/repos/asf/maven-doxia-sitetools.git) | [GitHub](https://github.com/apache/maven-doxia-sitetools/) | [GitHub Issues](https://github.com/apache/maven-doxia-sitetools/issues) |
+| [Apache Maven Doxia Converter](doxia/doxia-tools/doxia-converter/) | [`https://gitbox.apache.org/repos/asf/maven-doxia-converter.git`](https://gitbox.apache.org/repos/asf/maven-doxia-converter.git) | [GitHub](https://github.com/apache/maven-doxia-converter/) | [GitHub Issues](https://github.com/apache/maven-doxia-converter/issues) |
 
 #### Components in Subversion
 

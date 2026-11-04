@@ -37,7 +37,7 @@ Below the root element `faqs` there are one or more `part` elements. Each `part`
 
 The following is a sample FML document: 
 
-```unknown
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <faqs xmlns="http://maven.apache.org/FML/1.0.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

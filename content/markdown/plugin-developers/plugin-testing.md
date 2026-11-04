@@ -82,11 +82,93 @@ class GreetingMojoTest {
 }
 ```
 
-## Using PlexusTestCase
+<a id="Using_PlexusTestCase"></a>
+
+## Using plexus-testing
 
 Mojo variables are injected by Guice, sometimes with a Plexus adapter to support the legacy `@Component` annotation. Currently some mojos are fully guicified with constructor injection, while others that have not yet been converted use Plexus field injection.
 
-Both Guice-based and Plexus-based mojos rely on the Guice Plexus adapter to inject dependencies by having the test class extend `PlexusTestCase` and calling the **lookup()**&gt; method to instantiate the mojo. Tests for fully Guicified mojos can also inject dependencies directly into the constructor without extending `PlexusTestCase`. These dependencies can be Mockito mocks or instances of the actual model classes. If a particular test does not access the injected field — that is, it's only injected to fulfill the constructor signature — you can usually also pass null as the value of that argument.
+Tests for fully Guicified mojos can inject dependencies directly into the constructor. These dependencies can be Mockito mocks or instances of the actual model classes. If a particular test does not access the injected field — that is, it's only injected to fulfill the constructor signature — you can usually also pass null as the value of that argument.
+
+To test the components a mojo uses together with their real dependencies, annotate the test class with `@PlexusTest` from [plexus-testing](https://github.com/codehaus-plexus/plexus-testing). It starts a Plexus container for each test, injects the test class's `@Inject` fields, and lets you look components up from the injected `PlexusContainer`. It replaces the JUnit 3 base class `PlexusTestCase`.
+
+```xml
+<dependencyManagement>
+  <dependencies>
+    <dependency>
+      <groupId>org.junit</groupId>
+      <artifactId>junit-bom</artifactId>
+      <version>5.11.0</version>
+      <type>pom</type>
+      <scope>import</scope>
+    </dependency>
+  </dependencies>
+</dependencyManagement>
+
+<dependencies>
+  <dependency>
+    <groupId>org.codehaus.plexus</groupId>
+    <artifactId>plexus-testing</artifactId>
+    <version>2.2.0</version>
+    <scope>test</scope>
+  </dependency>
+  <dependency>
+    <groupId>org.junit.jupiter</groupId>
+    <artifactId>junit-jupiter</artifactId>
+    <scope>test</scope>
+  </dependency>
+</dependencies>
+
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.eclipse.sisu</groupId>
+      <artifactId>sisu-maven-plugin</artifactId>
+      <version>1.1.0</version>
+      <executions>
+        <execution>
+          <goals>
+            <goal>main-index</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+  </plugins>
+</build>
+```
+
+The `junit-bom` import keeps the JUnit version that plexus-testing brings in line with your other JUnit dependencies; without it, mixed versions fail with a `NoSuchMethodError`. The container finds `@Named` components through the index in `META-INF/sisu/javax.inject.Named`, which the `main-index` goal of sisu-maven-plugin writes. A plugin that inherits from the Maven parent POM gets the `junit-bom` import and the plugin's configuration from its parent, and only needs to add `sisu-maven-plugin` to its `<build><plugins>`.
+
+For a component such as the following (its annotations come from `javax.inject`, which a plugin usually declares with `provided` scope)
+
+```java
+@Named
+@Singleton
+public class Greeter {
+    public String greet(String name) {
+        return "Hello " + name;
+    }
+}
+```
+
+the test looks like this:
+
+```java
+@PlexusTest
+class GreeterTest {
+    @Inject
+    private Greeter greeter;
+
+    @Inject
+    private PlexusContainer container;
+
+    @Test
+    void injectsAndLooksUp() throws Exception {
+        assertEquals("Hello Maven", greeter.greet("Maven"));
+        assertEquals("Hello lookup", container.lookup(Greeter.class).greet("lookup"));
+    }
+}
+```
 
 With that said, if you need to inject Maven objects into your mojo, you'll probably prefer to use the maven-plugin-testing-harness.
 
@@ -158,7 +240,7 @@ maven-verifier is retired, and 2.0.0 is its final release. Existing tests keep w
 
 You can use [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoker-plugin/) to invoke Maven and to provide some BeanShell/Groovy tests. Tests written in this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
 
-You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/asf/maven/plugins/trunk/maven-install-plugin/src/it/) to see how integration tests are written.
+You can take a look at the [maven-install-plugin](https://github.com/apache/maven-install-plugin/tree/master/src/it) to see how integration tests are written.
 
 ```xml
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -169,7 +251,7 @@ You can take a look at the [maven-install-plugin](https://svn.apache.org/repos/a
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-invoker-plugin</artifactId>
-        <version>3.9.1</version>
+        <version>3.10.1</version>
         <configuration>
           <projectsDirectory>src/it</projectsDirectory>
           <pomIncludes>

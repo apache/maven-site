@@ -1,9 +1,28 @@
 IndexOptions +SuppressIcon
 ErrorDocument 404 /errors/404.html
 
+# Stylesheets and scripts keep their names when the site changes, so make browsers check for a new version on every
+# use; the ETag answers that check with a 304 when nothing has changed.
+<IfModule mod_headers.c>
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
 Redirect Permanent /release-notes.html /docs/history.html
 Redirect Permanent /download.html /download.cgi
 RedirectMatch permanent ^/(.*)/download.html$ /$1/download.cgi
+
+# maven-core pages that are no longer published; these must come before the /ref/current rule, which would otherwise match first
+Redirect Permanent /ref/current/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/3-LATEST/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/4-LATEST/impl/maven-core/offline-mode.html /archives/maven-2.x/offline-mode.html
+Redirect Permanent /ref/current/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/3-LATEST/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/4-LATEST/impl/maven-core/plugin-execution-isolation.html /archives/maven-2.x/plugin-execution-isolation.html
+Redirect Permanent /ref/current/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
+Redirect Permanent /ref/3-LATEST/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
+Redirect Permanent /ref/4-LATEST/impl/maven-core/inheritance.html /guides/introduction/introduction-to-the-pom.html#Project_Inheritance
 
 Redirect /ref/current/ /ref/${currentStableVersion}/
 Redirect /ref/current /ref/${currentStableVersion}/
@@ -23,9 +42,46 @@ Redirect Permanent /developers/release/pmc-release-process.html /developers/rele
 Redirect Permanent /development-process.html /archives/maven-1.x/development-process.html
 Redirect Permanent /welcome-to-new-committers.html /developers/welcome-to-new-committers.html
 
+Redirect Permanent /plugins/maven-resources-plugin/examples/encoding.html /guides/mini/guide-filtering-resources.html#Encoding
+Redirect Permanent /plugins/maven-resources-plugin/examples/escape-filtering.html /guides/mini/guide-filtering-resources.html#Escaping
+Redirect Permanent /plugins/maven-resources-plugin/examples/filter.html /guides/mini/guide-filtering-resources.html
+Redirect Permanent /scm/local.html /pom-scm-urls.html#Local_file_system
+Redirect Permanent /scm/scm-url-format.html /pom-scm-urls.html
+Redirect Permanent /scm/scms-overview.html /pom-scm-urls.html#Supported_SCMs
+
 Redirect Permanent /plugins/maven-checkstyle-plugin/customize.html /plugins/maven-checkstyle-plugin/examples/custom-checker-config.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/howto.html /plugins/maven-checkstyle-plugin/usage.html
 Redirect Permanent /plugins/maven-checkstyle-plugin/tips.html /plugins/maven-checkstyle-plugin/examples/multi-module-config.html
+Redirect Permanent /plugins/maven-compiler-plugin/examples/compile-using-different-jdk.html /guides/mini/guide-using-toolchains.html
+Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-release.html /guides/mini/guide-java-target.html
+Redirect Permanent /plugins/maven-compiler-plugin/examples/set-compiler-source-and-target.html /guides/mini/guide-java-target.html#Using_the_source_and_target_Options
+Redirect Permanent /plugins/maven-compiler-plugin/multirelease.html /guides/mini/guide-multi-release-jars.html
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-ftp.html /guides/mini/guide-deployment-transports.html#FTP
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-http.html /guides/mini/guide-deployment-transports.html#HTTP.28S.29
+Redirect Permanent /plugins/maven-deploy-plugin/examples/deploy-ssh-external.html /guides/mini/guide-deployment-transports.html#SSH_with_external_executables
+Redirect Permanent /plugins/maven-site-plugin/examples/creating-content.html /guides/mini/guide-site.html#Creating_Content
+Redirect Permanent /plugins/maven-site-plugin/examples/creatingskins.html /skins/#Creating_a_skin
+Redirect Permanent /plugins/maven-site-plugin/examples/filtering-content.html /guides/mini/guide-site.html#Filtering_with_Maven_Resources_Plugin
+Redirect Permanent /plugins/maven-site-plugin/examples/mermaid-diagrams.html /doxia/mermaid-diagrams.html
+Redirect Permanent /plugins/maven-site-plugin/examples/multimodule.html /guides/mini/guide-multimodule-site.html
+Redirect Permanent /plugins/maven-scm-publish-plugin/examples/importing-maven-site.html /plugins/maven-scm-publish-plugin/
+Redirect Permanent /plugins/maven-site-plugin/examples/site-deploy-to-sourceforge.net.html /guides/mini/guide-site.html#Deploying_the_Site
+Redirect Permanent /plugins/maven-site-plugin/i18n.html /plugins/localization.html
+Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/index.html /guides/mini/guide-using-toolchains.html
+Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/jdk.html /guides/mini/guide-using-toolchains.html#JDK_Toolchain
+Redirect Permanent /plugins/maven-toolchains-plugin/toolchains/custom.html /guides/mini/guide-using-toolchains.html#Custom_Toolchains
+
+Redirect Permanent /plugins/maven-artifact-plugin/reproducible.html /guides/mini/guide-reproducible-builds.html#Reading_the_artifact.3Acompare_output
+Redirect Permanent /shared/maven-archiver/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath
+Redirect Permanent /shared/maven-archiver/examples/manifest.html /guides/mini/guide-manifest.html#Default_Manifest
+Redirect Permanent /shared/maven-archiver/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
+Redirect Permanent /shared/maven-archiver/examples/manifestFile.html /guides/mini/guide-manifest.html#Using_Your_Own_Manifest_File
+Redirect Permanent /shared/maven-archiver/examples/manifestSections.html /guides/mini/guide-manifest.html#Manifest_Sections
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/classpath.html /guides/mini/guide-manifest.html#Setting_Up_the_Classpath
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifest.html /guides/mini/guide-manifest.html#Default_Manifest
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestEntries.html /guides/mini/guide-manifest.html#Manifest_Entries
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestFile.html /guides/mini/guide-manifest.html#Using_Your_Own_Manifest_File
+Redirect Permanent /shared-archives/maven-archiver-LATEST/examples/manifestSections.html /guides/mini/guide-manifest.html#Manifest_Sections
 
 RedirectMatch ^/maven2/(.*)$ /$1
 RedirectMatch ^/reference/(.*)$ /archives/maven-1.x/reference/$1
@@ -110,3 +166,16 @@ RedirectMatch ^/archives/maven-apache-parent-LATEST(.*)$ /pom-archives/asf-LATES
 RedirectMatch ^/archives/maven-parent-LATEST(.*)$ /pom-archives/maven-LATEST$1
 RedirectMatch ^/archives/(maven-.*-skin)-LATEST(.*)$ /skins-archives/$1-LATEST$2
 RedirectMatch ^/archives/(maven-.*-extension)-LATEST(.*)$ /extensions-archives/$1-LATEST$2
+
+Redirect Permanent /resolver/common-misconceptions.html /repositories/dependency-resolution-misconceptions.html
+
+# used in ATR announce templates - https://maven.apache.org/release-notes/{{PROJECT_KEY}}/{{VERSION}}
+# redirect to the GitHub release page, the Git tag is usually <artifactId>-<version>
+
+# first matching rule wins - specific rules must precede generic ones
+RedirectMatch ^/release-notes/maven-apache-parent/([^/]+)$ https://github.com/apache/maven-apache-parent/releases/tag/apache-$1
+RedirectMatch ^/release-notes/maven-apache-resources/([^/]+)$ https://github.com/apache/maven-apache-resources/releases/tag/apache-resource-bundles-$1
+RedirectMatch ^/release-notes/maven-archetypes/([^/]+)$ https://github.com/apache/maven-archetypes/releases/tag/maven-archetype-bundles-$1
+RedirectMatch ^/release-notes/maven-mvnd/([^/]+)$ https://github.com/apache/maven-mvnd/releases/tag/$1
+RedirectMatch ^/release-notes/maven-(doxia|doxia-converter|doxia-sitetools|enforcer|executor|file-management|jxr|surefire|wagon)/([^/]+)$ https://github.com/apache/maven-$1/releases/tag/$1-$2
+RedirectMatch ^/release-notes/([^/]+)/([^/]+)$ https://github.com/apache/$1/releases/tag/$1-$2

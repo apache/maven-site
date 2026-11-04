@@ -32,3 +32,10 @@ The following list of plugins contains plugins which are Maven 2 specific. Apart
 
 \* **B**uild or **R**eporting plugin
 
+## Design Notes
+
+These notes describe Maven 2 design decisions and are kept for their history:
+
+- [Maven 2.1 Architectural Goals](./maven-2.1-architectural-goals.html)
+- [Offline Mode Design](./offline-mode.html)
+- [Maven Plugin Execution Isolation](./plugin-execution-isolation.html)

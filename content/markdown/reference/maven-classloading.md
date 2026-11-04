@@ -19,7 +19,7 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-![](maven-classloading.png)
+![Maven classloader hierarchy: the ClassWorlds bootstrap, Maven Core, core extensions and the Maven API, then project build extensions and plugins](maven-classloading.png)
 
 ## ClassWorlds bootstrap classloader
 

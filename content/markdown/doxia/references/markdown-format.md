@@ -127,4 +127,4 @@ If you are converting an existing document, these have no Markdown equivalent:
 [`doxia-converter`](../doxia-tools/doxia-converter/) converts APT, XDoc and XHTML sources to
 Markdown. Its output is a good first draft rather than a finished page; build the site
 before and after and compare the generated HTML, since the failure modes above are all
-invisible in the converted source.
+invisible in the converted source. [Migrating APT to Markdown](../migrating-apt-to-markdown.html) lists them and the procedure that catches them.

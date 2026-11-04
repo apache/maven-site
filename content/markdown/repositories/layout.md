@@ -38,7 +38,7 @@ The transformation rule is quite simple for that matter: consider artifact prope
 |-------------|---------------------------------------------------------|------------------------------------------|
 | groupId     | Replace "." (dot) characters with "/" (slash) character | `org.apache.maven` -> `org/apache/maven` |
 | artifactId  | none                                                    | `apache-maven`                           |
-| version     | none                                                    | `3.8.4`                                  |
+| version     | none                                                    | `3.10.0`                                 |
 | baseVersion | none                                                    | (in this example same as version)        |
 | classifier  | none                                                    | `bin`                                    |
 | extension   | none                                                    | `tar.gz`                                 |
@@ -58,13 +58,13 @@ ${groupId as directory}/${artifactId}/${baseVersion}/${artifactId}-${version}-${
 So the example artifact above noted as GAV:
 
 ```
-org.apache.maven:apache-maven:3.8.4:bin:tar.gz
+org.apache.maven:apache-maven:3.10.0:bin:tar.gz
 ```
 
 is translated to path as:
 
 ```
-org/apache/maven/apache-maven/3.8.4/apache-maven-3.8.4-bin.tar.gz
+org/apache/maven/apache-maven/3.10.0/apache-maven-3.10.0-bin.tar.gz
 ```
 
 And that is it! By applying this "algorithm" above to ANY Artifact we can build up the path segment that

@@ -38,7 +38,7 @@ under the License.
       </src>
       <classpath>
         <fileset dir="${libdir}">
-          <include name="/path/to/junit-3.8.1.jar"/>
+          <include name="/path/to/junit-jupiter-api-5.11.0.jar"/>
         </fileset>
       </classpath>
     </javac>

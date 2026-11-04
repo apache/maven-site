@@ -25,19 +25,20 @@ fundamental concepts of Maven since its inception: Maven command line tool and M
 were molded together and developed since the beginning of Maven project itself.
 
 <p align="center">
-<img src="../repository/maven-repositories.png" border="0" usemap="#map" />
-
-<map name="map">
-<area shape="rect" coords="596,326,666,363" alt="JBoss"                         href="http://repository.jboss.org/maven2/" />
-<area shape="rect" coords="0,184,460,421"   alt="central (default)"             href="../repository/index.html" />
-<area shape="rect" coords="187,593,277,629" alt="Maven"                         href="/what-is-maven.html" />
-<area shape="rect" coords="280,628,403,649" alt="local repository"              href="/guides/mini/guide-configuring-maven.html" />
-<area shape="rect" coords="364,498,570,534" alt="Repository Manager"            href="/repository-management.html" />
-<area shape="rect" coords="303,545,451,584" alt="settings.xml &lt;mirrorOf&gt;" href="/guides/mini/guide-mirror-settings.html" />
-<area shape="rect" coords="407,589,628,653" alt="pom.xml &lt;repository&gt;"    href="/guides/mini/guide-multiple-repositories.html" />
-</map>
+<img src="../repository/maven-repositories.png" border="0" alt="How Maven reaches repositories: central by default, a repository manager through settings.xml mirrorOf, other repositories through pom.xml, and its local repository" />
 
 </p>
+
+The diagram shows Maven reaching the central repository by default, a repository manager set up with
+`<mirrorOf>` in `settings.xml`, other repositories declared with `<repository>` in `pom.xml`, and its local
+repository. These pages explain each part:
+
+* [The Central Repository](../repository/index.html)
+* [Using a Repository Manager](/repository-management.html)
+* [Using Mirrors for Repositories](/guides/mini/guide-mirror-settings.html)
+* [Setting up Multiple Repositories](/guides/mini/guide-multiple-repositories.html)
+* [Configuring Maven and the Local Repository](/guides/mini/guide-configuring-maven.html)
+* [What is Maven?](/what-is-maven.html)
 
 See also the [Introduction to Repositories](/guides/introduction/introduction-to-repositories.html) and [Repository Layout](../repository/layout.html).
 
@@ -55,3 +56,4 @@ Sections:
 * [Layout](layout.md)
 * [Local Repositories](local.md)
 * [Remote Repositories](remote.md)
+* [Dependency Resolution Misconceptions](dependency-resolution-misconceptions.md)

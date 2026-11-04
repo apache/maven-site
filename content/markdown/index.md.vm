@@ -1,0 +1,117 @@
+---
+title: Welcome to Apache Maven
+author:
+  - Brett Porter
+  - Jason van Zyl
+  - Olivier Lamy
+  - Sylwester Lachiewicz
+---
+
+<!--
+
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+
+-->
+
+# Welcome to Apache Maven
+
+<div class="mh-hero">
+  <p class="mh-lead">Apache Maven builds, tests and documents Java projects from a single project object model (POM).</p>
+  <p class="mh-actions">
+    <a class="mh-btn mh-btn-primary" href="download.html">Download Maven ${currentStableVersion}</a>
+    <a class="mh-btn" href="guides/getting-started/maven-in-five-minutes.html">Maven in 5 minutes</a>
+    <a class="mh-btn" href="what-is-maven.html">What is Maven?</a>
+  </p>
+</div>
+
+<div class="mh-callout">
+  <p><strong>Maven 4 (${current4xVersion})</strong> is on its way. Read <a href="whatsnewinmaven4.html">what's new</a>, <a href="guides/mini/guide-migration-to-mvn4.html">migrate a project</a>, or let the <a href="tools/mvnup.html">Maven Upgrade Tool</a> do the heavy lifting.</p>
+</div>
+
+#[[##]]# Use
+
+<div class="mh-grid">
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="run.html">Build a project</a></p>
+    <p><a href="download.html">Download</a>, <a href="install.html">install</a>, <a href="configure.html">configure</a> and <a href="run.html">run</a> Maven.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="plugins/index.html">Plugins</a></p>
+    <p>The plugins that do the actual work: compile, test, package, deploy and more.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="extensions/index.html">Extensions</a></p>
+    <p>Hook into the build itself: build caches, wagons, custom lifecycle behaviour.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="tools/index.html">Tools</a></p>
+    <p>Maven Daemon, Maven Wrapper, Maven Shell and the Maven Upgrade Tool.</p>
+  </div>
+</div>
+
+#[[##]]# Extend
+
+<div class="mh-grid">
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="plugin-developers/index.html">Write a plugin</a></p>
+    <p>Package your own build logic as a reusable Maven plugin.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="repository/index.html">Publish to Central</a></p>
+    <p>Get your project and its metadata into the Maven Central Repository, whichever build tool you use.</p>
+  </div>
+</div>
+
+#[[##]]# Contribute
+
+<div class="mh-grid">
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="guides/development/guide-helping.html">Help Maven</a></p>
+    <p>Answer questions, improve these docs, triage issues. No commit rights needed.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="developers/index.html">Develop Maven</a></p>
+    <p>Conventions, release process and how to work on Maven core and its plugins.</p>
+  </div>
+</div>
+
+<p class="mh-note">Looking for something specific? The <a href="guides/index.html">documentation index</a> lists every guide, reference page and cookbook example.</p>
+
+#[[##]]# How to Get Support
+
+<div class="mh-grid mh-grid-compact">
+  <div class="mh-card">
+    <p class="mh-card-title">Search first</p>
+    <p>The <a href="issue-management.html">issue tracker</a>, the <a href="mailing-lists.html">mailing list archives</a> and the <a href="https://cwiki.apache.org/confluence/display/MAVEN">wiki</a> often already have the answer.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="mailing-lists.html">Ask on users@</a></p>
+    <p>The Maven Users mailing list is the main support channel, answered by users and developers alike and archived for the next person.</p>
+  </div>
+  <div class="mh-card">
+    <p class="mh-card-title"><a href="community.html">Chat on Slack</a></p>
+    <p>Reach the Maven developers directly in the ASF Slack workspace.</p>
+  </div>
+</div>
+
+#[[##]]# Apache Software Foundation
+
+<div class="mh-asf">
+  <a href="https://www.apache.org/events/current-event.html"><img src="https://www.apache.org/events/current-event-234x60.png" alt="Apache Events"/></a>
+  <p>Maven is a project of the <a href="https://www.apache.org/">Apache Software Foundation</a>. Thanks to the <a href="https://www.apache.org/foundation/thanks.html">sponsors</a> who keep it running (<a href="https://www.apache.org/foundation/sponsorship.html">become one</a>). Meet the Maven team at <a href="https://www.apache.org/events/current-event.html">Apache events</a>; ask on the users@ list who is going.</p>
+</div>

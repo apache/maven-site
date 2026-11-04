@@ -85,7 +85,7 @@ mvn -Preporting site site:stage
 
 2. Stage the latest documentation as explained in [deploying Maven components reference documentation](../website/deploy-component-reference-documentation.html).
 
-## Release with the Apache Team Release (ATR)
+## Release with the Apache Trusted Releases (ATR)
 
 **NOTE** Project should have `ATR` configuration in the `.asf.yaml` file. 
 If not, check project configuration and update `.asf.yaml` first.

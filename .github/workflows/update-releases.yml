@@ -64,6 +64,7 @@ jobs:
           distribution: zulu
           java-version: '21'
           cache: maven
+          cache-jdk: false
 
       - name: Update Maven release metadata
         run: mvn --batch-mode --errors --no-transfer-progress package -P update
