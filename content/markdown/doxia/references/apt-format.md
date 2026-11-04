@@ -2,6 +2,8 @@
 title: The APT format
 author: 
   - Jason van Zyl
+  - Lukas Theussl
+  - Robert Scholte
 date: 2009-03-02
 ---
 
@@ -34,7 +36,7 @@ This document provides some examples of available APT formatting.
 
 ## Important Notice
 
-The information contained in this document corresponds to the original APT format as published by [Xmlmind](http://www.xmlmind.com/). In version 1\.1 Maven Doxia has applied several modifications to this original format, see this separate [document](./doxia-apt.html) for a detailed description. Notable differences are highlighted below with a [\[Change\]](./doxia-apt.html) link.
+The information contained in this document corresponds to the original APT format as published by [Xmlmind](http://www.xmlmind.com/). In version 1\.1 Maven Doxia has applied several modifications to this original format, described in [Enhancements to the APT format](#Enhancements_to_the_APT_format) at the end of this document. Notable differences are highlighted below with a [\[Change\]](#Enhancements_to_the_APT_format) link.
 
 The following sections contain formatted text that demonstrates the use of APT to create paragraphs, headers, sections, lists, code samples, figures, tables, rules, breaks, and text level elements such as font styles, anchors, and special characters. Boxes containing text in typewriter-like font are examples of APT source.
 
@@ -295,7 +297,7 @@ Like in HTML, verbatim text is preformatted. Unlike HTML, verbatim text is escap
 
 A figure block is not indented. It begins with the figure name between square brackets. The figure name is optionally followed by some text: the figure caption.
 
-The figure name is the pathname of the file containing the figure but without an extension. Example: if your figure is contained in `/home/joe/docs/mylogo.jpeg`, the figure name is `/home/joe/docs/mylogo`. [\[Change\]](./doxia-apt.html#Figure_extensions)
+The figure name is the pathname of the file containing the figure but without an extension. Example: if your figure is contained in `/home/joe/docs/mylogo.jpeg`, the figure name is `/home/joe/docs/mylogo`. [\[Change\]](#Figure_extensions)
 
 If the figure name comes from a relative pathname (recommended practice) rather than from an absolute pathname, this relative pathname is taken to be relative to the directory of the current APT document (a la HTML) rather than relative to the current working directory.
 
@@ -390,7 +392,7 @@ It is not recommended to use font elements inside titles, section titles, links 
 
 Text between curly braces (`{}`) specifies an anchor. Text between double curly braces (`{{}}`) specifies a link.
 
-It is an error to create a link element that does not refer to an anchor of the same name. The name of an anchor/link is its text with all non alphanumeric characters stripped. [\[Change\]](./doxia-apt.html#Anchor_construction)
+It is an error to create a link element that does not refer to an anchor of the same name. The name of an anchor/link is its text with all non alphanumeric characters stripped. [\[Change\]](#Anchor_construction)
 
 This rule does not apply to links to _external_ anchors. Text beginning with `http:/`, `https:/`, `ftp:/`, `file:/`, `mailto:`, `../`, `./` (`..\` and `.\` on Windows) is recognized as an external anchor name.
 
@@ -398,7 +400,7 @@ When the construct **\{\{\{**_name_**\}**_text_**\}\}** is used, the link text _
 
 Anchor/link elements may appear anywhere except inside other anchor/link elements.
 
-Section titles are implicitly defined anchors. [\[Change\]](./doxia-apt.html#Anchors_for_section_titles)
+Section titles are implicitly defined anchors. [\[Change\]](#Anchors_for_section_titles)
 
 #### Line break
 
@@ -562,5 +564,157 @@ Table caption
   Copyright symbol: \251, \xA9, \u00a9.
 
 ~~Commented out.
+```
+
+## Enhancements to the APT format
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+In the following we provide a list of differences/enhancements to the original APT format described above that were incorporated in Doxia. Apart from some exceptions, these differences are usually &apos;backwards-compatible&apos;. That is, any document that gets correctly processed by Aptconvert should also be a valid Doxia input file and lead to identical results when processed by a Doxia parser.
+
+### <a id="Paragraphs_in_list_items"></a>Paragraphs in list items
+
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+Contrary to the original APT parser, the Doxia APT parser does not put list items within paragraphs. Eg, the example given in the APT guide:
+
+```text
+    * List item 1.
+```
+
+will, for instance, produce the following html:
+
+```xml
+    <li>List item 1.</li>
+```
+
+To get the same result as aptconvert, use
+
+```text
+    *
+
+      List item 1.
+```
+
+which will produce:
+
+```xml
+    <li><p>List item 1.</p></li>
+```
+
+### <a id="Table_header_cells"></a>Table header cells
+
+<!--~~~~~~~~~~~~~~~~~~~~-->
+
+Header cells are defined by an additional pipe character &apos;|&apos; at the beginning of the cell:
+
+```text
+*-----------+-----------+
+|| Header 1 || Header 2 |
+*-----------+-----------+
+| Cell 1    | Cell 2    |
+*-----------+-----------+
+```
+
+produces:
+
+|Header 1|Header 2|
+|:---|:---|
+|Cell 1|Cell 2|
+### <a id="Multi-lines_cells_in_table"></a>Multi-lines cells in table
+
+<!--~~~~~~~~~~~~~~~~~~~~-->
+
+Since 1\.1, multi-lines cells are recognized with the character &apos;\\&apos; at the end of the cells:
+
+```text
+*-----------+-----------+
+|| Header 1 || Header 2 |
+*-----------+-----------+
+| Cell\     | Cell 2    |
+| 1         |           |
+*-----------+-----------+
+```
+
+produces:
+
+|Header 1|Header 2|
+|:---|:---|
+|Cell<br />1|Cell 2|
+### <a id="Anchors"></a>Anchors
+
+<!--~~~~~~~~~~~~~~~~~~~-->
+#### <a id="Anchors_for_section_titles"></a>Anchors for section titles
+
+When a document is rendered as part of a Maven site, Doxia gives every section title an anchor of its own, built from the title text by the rules below. Because that name follows the wording, rewording a title moves the anchor and breaks links aimed at it. Define the anchor explicitly where a reference has to hold:
+
+```text
+* {Anchors for section titles}
+```
+
+#### <a id="Anchor_construction"></a>Anchor construction
+
+Contrary to the original APT format, an anchor/link is **not** its text with all non alphanumeric characters stripped. Ideally, an anchor should be a valid Doxia id, ie it must begin with a letter (\[A-Za-z\]) and may be followed by any number of letters, digits (\[0-9\]), hyphens (&quot;\-&quot;), underscores (&quot;\_&quot;), colons (&quot;:&quot;), and periods (&quot;.&quot;). Any anchor that does not satisfy this pattern is transformed according to the following rules:
+
+- Any whitespace at the start and end is removed
+- If the first character is not a letter, prepend the letter &apos;a&apos;
+- Any spaces are replaced with an underscore &apos;\_&apos;
+- Any characters not matching the above pattern are stripped.
+
+Note in particular that case is preserved in this conversation and that APT anchors and links are case-sensitive. So the anchor for the section title in the previous example would be `Anchors_for_section_titles`.
+
+### <a id="Links"></a>Links
+
+<!--~~~~~~~~~~~~~~~~~~~-->
+
+In **Doxia-1\.1** the notion of a &apos;_local_&apos; link was introduced in addition to _internal_ links and _external_ links.
+
+- An **internal** link is a link to an anchor within the same source document.
+
+    In the APT format used by **Doxia-1\.1**, internal links have to be valid Doxia ids, as specified in the anchors section above.
+
+    Note in particular that internal links in APT do **not** start with &apos;\#&apos;.
+
+- A **local** link is a link to another document within the same site.
+
+    In the APT format used by **Doxia-1\.1**, local links **have to** start with either `./` or `../` to distinguish them from internal links. E.g.,
+
+    ```
+      {{{doc/standalone.html}Standalone}}
+    ```
+
+    is not valid, it should be
+
+    ```
+      {{{./doc/standalone.html}Standalone}}
+    ```
+
+    Note in particular that the following link
+
+    ```
+      {{{standalone.html}Standalone}}
+    ```
+
+    will be interpreted as an internal link (dots are valid characters in anchor names). Since you most likely meant to link to another source document, you should again prepend a &quot;./&quot;.
+
+- An **external** link is a link that is neither local nor internal.
+
+    An external link should be a valid [URI](http://www.ietf.org/rfc/rfc2396.txt).
+
+Anchors are always translated to a valid id, including escaping. In some situation this can cause issues, especially when referring to a javadoc-link.  
+Since Doxia 1\.4 there is support for literal anchors, by using 2 hashed (\#\#) instead of 1\. This implies that the writer is responsible for using the right URL encoding!
+
+```
+  {{{../apidocs/groovyx/net/http/ParserRegistry.html##parseText(org.apache.http.HttpResponse)}ParserRegistry}}
+```
+
+### <a id="Figure_extensions"></a>Figure extensions
+
+<!--~~~~~~~~~~~~~~~~~~~-->
+
+Contrary to the original APT format, a figure name has to be given fully **with** extension. For instance:
+
+```text
+[/home/joe/docs/mylogo.jpeg] Figure caption
 ```
 

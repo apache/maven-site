@@ -149,7 +149,7 @@ The _TOC_ macro prints a Table Of Content of a document. It is useful if you hav
 
 This displays a TOC for the second section in the document, including all subsections (depth 2) and sub-subsections (depth 3).
 
-**Note** that when a site is rendered, Doxia anchors each section title for you, so the entries this macro emits resolve without further work. Define an anchor explicitly (see [Enhancements to the APT format](../references/doxia-apt.html)) where a link has to survive the title being reworded.
+**Note** that when a site is rendered, Doxia anchors each section title for you, so the entries this macro emits resolve without further work. Define an anchor explicitly (see [Enhancements to the APT format](../references/apt-format.html#Enhancements_to_the_APT_format)) where a link has to survive the title being reworded.
 
 In a xdoc file, it will be:
 

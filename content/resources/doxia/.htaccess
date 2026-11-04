@@ -17,3 +17,6 @@ Redirect Permanent /doxia/mailing-lists.html /mailing-lists.html
 Redirect Permanent /doxia/ci-management.html /ci-management.html
 Redirect Permanent /doxia/issue-management.html /issue-management.html
 Redirect Permanent /doxia/project-info.html /doxia/index.html
+
+# the Doxia APT enhancements were merged into the APT format page; browsers keep the #fragment
+Redirect Permanent /doxia/references/doxia-apt.html /doxia/references/apt-format.html

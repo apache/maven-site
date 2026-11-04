@@ -63,7 +63,7 @@ under the License.
         <item name="Format References" href="/doxia/references/index.html" collapse="true">
           <item name="Markdown Format" href="/doxia/references/markdown-format.html"/>
           <item name="Apt Format" href="/doxia/references/apt-format.html" collapse="true">
-            <item name="Doxia Apt Enhancements" href="/doxia/references/doxia-apt.html"/>
+            <item name="Doxia Apt Enhancements" href="/doxia/references/apt-format.html#Enhancements_to_the_APT_format"/>
           </item>
           <item name="FML Format" href="/doxia/references/fml-format.html"/>
           <item name="Xdoc Format" href="/doxia/references/xdoc-format.html"/>
