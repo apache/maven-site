@@ -1,6 +1,7 @@
 Hello {{COMMITTEE}},
 
 I'd like to call a vote on releasing the following artifacts as Apache {{PROJECT_NAME}} {{VERSION}}.
+
 This vote is being conducted using a Beta version of the Apache Trusted Releases (ATR) platform.
 Please report any bugs or issues to the ASF Tooling team.
 
@@ -31,6 +32,5 @@ You can vote on ATR at the URL above, or manually by replying to this email.
 
 The vote is open for {{DURATION}} hours.
 
-{{RELEASE_CHECKLIST}}
 Thanks,
 {{YOUR_FULL_NAME}} ({{YOUR_ASF_ID}})
