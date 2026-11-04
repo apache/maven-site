@@ -60,9 +60,7 @@ class MarkdownDocsTest {
             }
         }
 
-        assertTrue(
-                violations.isEmpty(),
-                () -> "Markdown syntax errors:\n" + String.join("\n", violations));
+        assertTrue(violations.isEmpty(), () -> "Markdown syntax errors:\n" + String.join("\n", violations));
     }
 
     private static boolean isMarkdownSource(Path path) {
