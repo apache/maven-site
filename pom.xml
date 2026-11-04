@@ -82,6 +82,23 @@
       <artifactId>jsoup</artifactId>
       <version>1.23.2</version>
     </dependency>
+    <dependency>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.vladsch.flexmark</groupId>
+      <artifactId>flexmark</artifactId>
+      <version>0.62.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.vladsch.flexmark</groupId>
+      <artifactId>flexmark-ext-wikilink</artifactId>
+      <version>0.62.2</version>
+      <scope>test</scope>
+    </dependency>
   </dependencies>
 
   <repositories>

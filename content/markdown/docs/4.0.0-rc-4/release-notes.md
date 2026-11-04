@@ -134,7 +134,7 @@ Worth mentioning is the new upgrade tool which can be used to fix your `pom.xml`
 - [[MNG-8670](https://issues.apache.org/jira/browse/MNG-8670)] - Fix concurrent builder missing/wrong project events ([#2251](https://github.com/apache/maven/pull/2251)) @oehme
 - [[MNG-8674](https://issues.apache.org/jira/browse/MNG-8674)] - Deprecate mergeId in the Maven 3 model and remove it in the new model ([#2233](https://github.com/apache/maven/pull/2233)) @gnodet
 - [[MNG-8694](https://issues.apache.org/jira/browse/MNG-8694)] - Fix version interpolation and ternary operator ([#2272](https://github.com/apache/maven/pull/2272)) @kamilkrzywanski
-- [[MNGSITE-393]](https://issues.apache.org/jira/browse/MNGSITE-393) - Remove Maven 1 and 2 references ([#2276](https://github.com/apache/maven/pull/2276)) @elharo
+- [\[MNGSITE-393\]](https://issues.apache.org/jira/browse/MNGSITE-393) - Remove Maven 1 and 2 references ([#2276](https://github.com/apache/maven/pull/2276)) @elharo
 - Remove unneeded toString and valueOf calls ([#2230](https://github.com/apache/maven/pull/2230)) @elharo
 - Drop unused assembly exclude ([#2266](https://github.com/apache/maven/pull/2266)) @cstamas
 - aether repository system isn't used ([#2237](https://github.com/apache/maven/pull/2237)) @elharo
@@ -152,7 +152,7 @@ Worth mentioning is the new upgrade tool which can be used to fix your `pom.xml`
 - Grammar and typo fixes in javadoc and other comments ([#2222](https://github.com/apache/maven/pull/2222)) @elharo
 - Remove methods that duplicate superclass methods ([#2211](https://github.com/apache/maven/pull/2211)) @elharo
 - [[MNG-8637](https://issues.apache.org/jira/browse/MNG-8637)] - Pull out Standalone API from UTs ([#2226](https://github.com/apache/maven/pull/2226)) @gnodet
-- [[MRESOLVER-673]](https://issues.apache.org/jira/browse/MRESOLVER-673) - Improve model validator error messages ([#2227](https://github.com/apache/maven/pull/2227)) @cstamas
+- [\[MRESOLVER-673\]](https://issues.apache.org/jira/browse/MRESOLVER-673) - Improve model validator error messages ([#2227](https://github.com/apache/maven/pull/2227)) @cstamas
 - [[MNG-8660](https://issues.apache.org/jira/browse/MNG-8660)] - Decouple legacy prompter from implementation details ([#2196](https://github.com/apache/maven/pull/2196)) @oehme
 - Add missing Javadoc to API subprojects ([#2218](https://github.com/apache/maven/pull/2218)) @gnodet
 - prefer primitive type ([#2216](https://github.com/apache/maven/pull/2216)) @elharo
