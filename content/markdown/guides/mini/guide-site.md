@@ -322,6 +322,45 @@ With either setup, note the following:
 - Resource filtering also replaces `@...@` expressions by default. If a page contains such text, for example an email address, set `<useDefaultDelimiters>false</useDefaultDelimiters>` and declare only the delimiters you need.
 - Keep binary files, such as images, out of the filtered directory, or copy them with a second `<resource>` without filtering, because filtering can corrupt them.
 
+## Configuring Parsers
+
+The Maven Site Plugin renders every source file with the [Doxia](/doxia/) parser for its format. Since version 3.23.0 of the Maven Site Plugin, the [`parserConfigurations`](/plugins/maven-site-plugin/site-mojo.html#parserConfigurations) parameter sets properties of these parsers, for all files of a format or only for files at a given path.
+
+The parameter lists `configuration` elements below the id of the parser (`markdown`, `xdoc`, `apt` and so on). Each element sets properties of the parser, for example `emitComments` or `emitAnchorsForIndexableEntries`, and optionally restricts them to `patterns`:
+
+```xml
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-site-plugin</artifactId>
+  <configuration>
+    <parserConfigurations>
+      <markdown>
+        <configuration>
+          <patterns>
+            <pattern>glob:**/markdown/drafts/*.md</pattern>
+          </patterns>
+          <emitComments>true</emitComments>
+        </configuration>
+      </markdown>
+      <xdoc>
+        <configuration>
+          <emitComments>true</emitComments>
+        </configuration>
+      </xdoc>
+    </parserConfigurations>
+  </configuration>
+</plugin>
+```
+
+In this example, comments in Markdown files below a `drafts` directory and in all XDoc files end up in the generated HTML. Other Markdown files keep the default of the Maven Site Plugin and drop their comments.
+
+A pattern starts with `glob:` or `regex:` and is matched against the absolute path of the source file:
+
+- A `glob:` pattern separates directories with `/` on every platform.
+- A `regex:` pattern sees the platform's own separator, `\` on Windows. To work on every platform, accept both with an alternation, such as `regex:.*(/|\\)drafts(/|\\).*\.md`. Avoid a character class such as `[/\\]` followed by an escaped character: on macOS with Java 8 such a pattern fails to compile.
+
+The first `configuration` for the parser id with a matching pattern, or without patterns, is applied. Parsers without a matching `configuration` keep the defaults of the Maven Site Plugin: `emitComments` is `false` and `emitAnchorsForIndexableEntries` is `true`.
+
 ## Multi-module Sites
 
 Running `mvn site` on a multi-module project builds the site of every module individually, and relative links between module sites work only after you stage or deploy. See [Building multi-module sites](./guide-multimodule-site.html) for staging, deployment, site descriptor inheritance and aggregate reports.
