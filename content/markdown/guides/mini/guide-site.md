@@ -297,6 +297,33 @@ Then generate the site from the filtered sources by adjusting the [`siteDirector
 </project>
 ```
 
+To filter only some pages, keep them in a separate directory, such as `src/site-filtered`, and copy it with filtering into `${project.build.directory}/generated-site` instead. That is the default [`generatedSiteDirectory`](/plugins/maven-site-plugin/site-mojo.html#generatedSiteDirectory) of the Maven Site Plugin, which renders it together with `src/site`, so the plugin needs no configuration and the pages in `src/site` stay unfiltered:
+
+```xml
+<execution>
+  <id>filter-site</id>
+  <phase>pre-site</phase>
+  <goals>
+    <goal>copy-resources</goal>
+  </goals>
+  <configuration>
+    <outputDirectory>${project.build.directory}/generated-site</outputDirectory>
+    <resources>
+      <resource>
+        <directory>src/site-filtered</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+  </configuration>
+</execution>
+```
+
+With either setup, note the following:
+
+- The `pre-site` phase runs only when you invoke the `site` lifecycle phase, as in `mvn site`. A direct call of the goal, `mvn site:site`, skips it.
+- Resource filtering also replaces `@...@` expressions by default. If a page contains such text, for example an email address, set `<useDefaultDelimiters>false</useDefaultDelimiters>` and declare only the delimiters you need.
+- Keep binary files, such as images, out of the filtered directory, or copy them with a second `<resource>` without filtering, because filtering can corrupt them.
+
 ## Multi-module Sites
 
 Running `mvn site` on a multi-module project builds the site of every module individually, and relative links between module sites work only after you stage or deploy. See [Building multi-module sites](./guide-multimodule-site.html) for staging, deployment, site descriptor inheritance and aggregate reports.
