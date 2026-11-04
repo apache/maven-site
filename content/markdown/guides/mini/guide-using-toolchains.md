@@ -153,7 +153,8 @@ Predefined `<provides>` identification tokens, for requirement matching in plugi
 
 - `version` marks the version of the JDK in `toolchains.xml`. In the plugin configuration, this can be either a single version or a [version range](/enforcer/enforcer-rules/versionRanges.html).
   A single version must equal the one in `toolchains.xml`: `17` does not match a toolchain that provides `17.0.20`, and neither `8` nor `1.8` matches `1.8.0_504`. To accept such toolchains, use a range like `[17,18)` or `[1.8,1.9)`.
-- Other tokens, such as `vendor`, are accepted, but only exact matches are supported.
+  How the version is written depends on what wrote the entry: `toolchains:generate-jdk-toolchains-xml` writes the JDK's full version, such as `17.0.20` or `1.8.0_504`, while `actions/setup-java` on GitHub Actions writes its `java-version` input as given, such as `17` or `8`. `[17,18)` matches both `17` and `17.0.20`; for Java 8, `[8,9)` matches `8` and `[1.8,1.9)` matches `1.8.0_504`.
+- Other tokens, such as `vendor`, are accepted, but only exact matches are supported; case is ignored. `actions/setup-java` writes the distribution name, such as `temurin`, as the vendor, and `toolchains:generate-jdk-toolchains-xml` writes the JDK's `java.vendor` property.
 
 In `toolchains.xml`, the only child of the `<configuration>` element is `jdkHome`. It designates the root directory of a JDK installation.
 
