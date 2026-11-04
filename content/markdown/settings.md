@@ -266,6 +266,9 @@ Nothing is replaced, so existing configurations keep working.
 Servers created from [aliases](#Server_Aliases) get the same `repositoryOrigins`.
 Maven 3.9 warns about an `Unrecognised tag` and ignores `repositoryOrigins`, so it keeps sending credentials by
 server ID only.
+Maven 4.0.0-rc-7 and earlier release candidates do not support `repositoryOrigins` either. They skip the element
+and report only "1 problem was encountered while building the effective settings"; run Maven with `-e` to see the
+`Unrecognised tag`. Use Maven 3.10.0 or a later Maven 4 release for `repositoryOrigins`.
 
 When a server has at least one origin, from repositories, mirrors or `repositoryOrigins`, its credentials are
 not sent to a repository with the same ID at another origin.
