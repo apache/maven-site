@@ -76,7 +76,7 @@ Note that all of the above is optional - just one index file is required in one 
       +- xhtml-content.html
 ```
 
-This means that `src/site/apt/content.apt` is available in the site as `/content.html`, whichever directory it comes from. So, in your [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html) you link to `index.html` and `other.html`, where the sources of these two files are `src/site/markdown/index.md` and `src/site/xdoc/other.xml`.
+This means that `src/site/apt/content.apt` is available in the site as `/content.html`, whichever directory it comes from. So, in your [site descriptor](/guides/mini/guide-site-descriptor.html) you link to `index.html` and `other.html`, where the sources of these two files are `src/site/markdown/index.md` and `src/site/xdoc/other.xml`.
 
 The `css` and `images` directories contain the stylesheets and images of the skin being used.
 
@@ -188,13 +188,11 @@ The `site.xml` file is used to describe the structure of the site. A sample is g
 </site>
 ```
 
-<!--TODO: deserves more explanation.-->
-
 **Note:** A skin is mandatory. Projects inheriting from the [Apache Parent POM](/pom/asf/) or from another parent that declares one inherit it and need no `<skin>` element of their own.
 
 **Note:** The `<menu ref="reports"/>` element above. When building the site, this is replaced by a menu with links to all the reports that you have configured.
 
-More information about the site descriptor is available at the [dedicated page of Maven Site Plugin](/plugins/maven-site-plugin/examples/sitedescriptor.html).
+For all the elements of the site descriptor, see [Configuring the Site Descriptor](./guide-site-descriptor.html).
 
 ## Adding Extra Resources
 

@@ -61,6 +61,47 @@ It is possible to inherit menus as well. To do so, use the `inherit` attribute i
 </site>
 ```
 
+## Inheritance of the Site Distribution Management
+
+Inside your POM you can not only configure the `distributionManagement` for the releases and snapshots of your project, but also where to deploy your site when using the [`site:deploy`](/plugins/maven-site-plugin/deploy-mojo.html) goal. The following configuration would deploy the project's site to a local directory called `bar`.
+
+```xml
+<distributionManagement>
+  <site>
+      <id>local</id>
+      <url>file:///C:/foo/bar</url>
+  </site>
+</distributionManagement>
+```
+
+The content of this directory would look similar to the following after your deployment:
+
+```
+bar/ (root of site)
+├── css
+└── report.html
+```
+
+All files are placed directly inside the directory, and no subdirectory named after the `artifactId` is created. That is a small but important difference from the `deploy` phase of the build lifecycle, which always creates a subdirectory for each project. So do not use the same site URL for several projects, as otherwise the files of the first deployed project are overwritten by the files of the second deployed one and so on.
+
+To handle this, use the same parent POM for each of your projects. A child project inherits the site configuration from the parent, with its `artifactId` appended to the URL, so each child project is deployed to its own subdirectory:
+
+```
+bar/ (root of site)
+├── css
+├── project-A
+│   ├── css
+│   └── report.html
+├── project-B
+│   ├── css
+│   └── report.html
+└── report.html
+```
+
+The site content of the parent POM is located in the root of the site directory, while the content of each project using the parent POM ("project-A" and "project-B" in the example) is located inside a subdirectory.
+
+A parent that sets `child.site.url.inherit.append.path="false"` on its `<site>` element tells Maven not to append the `artifactId` to the URL its children inherit. Since version 3.23.0, the Maven Site Plugin also no longer treats such a parent as the top of the site when a child declares a site URL outside the parent's, so the child is staged and deployed on its own instead of relative to the parent. To override the calculated top-level site explicitly, set the [`topSiteURL`](/plugins/maven-site-plugin/stage-mojo.html#topSiteURL) parameter.
+
 ## Aggregate Reports
 
 Some reports can be run against the sum of all modules: these are aggregate reports. This is the case of maven-javadoc-plugin, maven-jxr-plugin or maven-checkstyle-plugin.
