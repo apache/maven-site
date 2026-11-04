@@ -91,3 +91,5 @@ To benefit from aggregate reports, configure a report set in the parent POM, and
   ...
 </project>
 ```
+
+The aggregate report then runs only in the parent. For which reports run in the modules, see [How Report Sets Are Selected](./guide-site.html#How_Report_Sets_Are_Selected).
