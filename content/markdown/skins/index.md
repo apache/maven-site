@@ -21,7 +21,7 @@ under the License.
 
 The following table lists skins that are available for you to use in your Maven generated site.
 
-**Note: You always have to define a skin, if you are using a [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html). There is no default skin applied automatically.**
+**Note: You always have to define a skin, if you are using a [site descriptor](/guides/mini/guide-site-descriptor.html). There is no default skin applied automatically.**
 
 ## Maintained By The Maven Project
 
@@ -51,7 +51,7 @@ The following table lists skins that are available for you to use in your Maven 
 
 ## Instructions
 
-To apply one of these skins to your project's site, you use the `skin` element of the [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html).
+To apply one of these skins to your project's site, you use the `skin` element of the [site descriptor](/guides/mini/guide-site-descriptor.html).
 This is a regular artifact or dependency-like element.
 For example, to use the Maven Fluido Skin, you would include this in your `site.xml` file:
 

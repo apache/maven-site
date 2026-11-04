@@ -167,7 +167,7 @@ Visibility of the information is also crucial. Uniform navigation links greatly 
 
 #[[### Site Descriptor]]#
 
-The [site descriptor](/plugins/maven-site-plugin/examples/sitedescriptor.html) describes the navigation links and the layout of the page. It can be found in `src/site/site.xml`.
+The [site descriptor](/guides/mini/guide-site-descriptor.html) describes the navigation links and the layout of the page. It can be found in `src/site/site.xml`.
 
 You must define a [skin](../../skins/) if you are using a site descriptor. No default skin is applied automatically.
 
