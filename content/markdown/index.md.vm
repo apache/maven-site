@@ -31,7 +31,7 @@ under the License.
 # Welcome to Apache Maven
 
 <div class="mh-hero">
-  <p class="mh-lead">Apache Maven builds, tests and documents Java projects from a single project object model (POM).</p>
+  <p class="mh-lead">Apache Maven builds, tests, and documents Java projects from a single project object model (POM).</p>
   <p class="mh-actions">
     <a class="mh-btn mh-btn-primary" href="download.html">Download Maven ${currentStableVersion}</a>
     <a class="mh-btn" href="guides/getting-started/maven-in-five-minutes.html">Maven in 5 minutes</a>
