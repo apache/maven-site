@@ -646,6 +646,8 @@ You can configure a reporting plugin using the `<reportSets>` tag. This is most 
    ```
 2. Refer to each Plugin Documentation (i.e. plugin-info.html) to know the available report goals.
 
+For which report sets run in which module of a multi-module build, see [How Report Sets Are Selected](./guide-site.html#How_Report_Sets_Are_Selected).
+
 ### Using the `<inherited>` Tag In Reporting Plugins
 
 Similar to the build plugins, to break the inheritance, you can use the `<inherited>` tag:

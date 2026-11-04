@@ -341,7 +341,45 @@ Many other plugins provide reporting goals: look for "R" (Reporting) value in th
 
 **Note:** Many report plugins provide a parameter called `outputDirectory` or similar to specify the destination for their report outputs. This parameter is only relevant if the report plugin is run standalone, i.e. by invocation directly from the command line. In contrast, when reports are generated as part of the site, the configuration of the Maven Site Plugin will determine the effective output directory to ensure that all reports end up in a central location.
 
-<!--TODO: explain report sets-->
+### How Report Sets Are Selected
+
+The Maven Site Plugin does not choose one report set. For every module it runs the reports in these steps:
+
+1. Maven's model inheritance merges the `<reporting>` section of the parent POMs into the module. A `<reportSet>` with `<inherited>false</inherited>` is not passed on to child modules; any other report set is.
+2. The reports named in _all_ the report sets of a plugin are collected, whatever their `<id>`. A plugin without report sets gets every report goal it has, except the aggregator goals, which are added only in the root of the reactor when it has `pom` packaging and declares modules.
+3. Each collected report is asked whether it can run for the module (for example, a source cross-reference or Javadoc report has nothing to do in a `pom` module). Reports that cannot run are skipped, and the log says `Skipping <plugin>:<goal> report` for the ones you listed explicitly.
+
+So on a `pom` module the only report that is left is usually the aggregate one, even if you listed several report sets: the other reports were collected but skipped. To see what was collected and what was skipped, look at the lines `Configured n reports for ...` and `Skipping ...` in the output of `mvn site`.
+
+For example, with the `maven-jxr-plugin` configured in a parent POM as follows:
+
+```xml
+<reportSets>
+  <reportSet>
+    <id>default</id>
+    <reports><report>jxr</report></reports>
+  </reportSet>
+  <reportSet>
+    <id>aggregate</id>
+    <inherited>false</inherited>
+    <reports><report>aggregate</report></reports>
+  </reportSet>
+  <reportSet>
+    <id>tests</id>
+    <reports><report>test-jxr</report></reports>
+  </reportSet>
+</reportSets>
+```
+
+the site build of a reactor reports:
+
+| Module | Configured reports | Generated |
+|--------|--------------------|-----------|
+| Parent POM (`pom` packaging, has modules) | `jxr`, `aggregate`, `test-jxr` | `aggregate` (`jxr` and `test-jxr` are skipped) |
+| Child with `jar` packaging, main and test sources | `jxr`, `test-jxr` | `jxr`, `test-jxr` |
+| Child with `pom` packaging | `jxr`, `test-jxr` | none (both are skipped) |
+
+For the elements of a report set, see [Report Sets in the POM reference](../../pom.html#Report_Sets).
 
 ## Internationalization
 
