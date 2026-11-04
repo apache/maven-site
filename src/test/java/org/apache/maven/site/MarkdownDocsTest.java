@@ -48,7 +48,7 @@ class MarkdownDocsTest {
             .build();
 
     @Test
-    void markdownDocsHaveWellFormedLinks() throws IOException {
+    void markdownDocsAreWellFormed() throws IOException {
         Path contentDirectory = Paths.get("content/markdown");
         List<String> violations = new ArrayList<>();
 
