@@ -212,8 +212,8 @@ declared in `settings.xml`: you can see them with `mvn help:effective-settings`.
 An alias must not be empty, and it should be unique across all server IDs
 and aliases. Otherwise Maven reports a warning.
 
-Maven 3.9 does not know `aliases`: it warns about an `Unrecognised tag` and ignores them, so a repository that
-uses an alias as its ID gets no credentials, and a server that requires them answers with status 401.
+Maven 3.9.16 and earlier do not know `aliases`: they warn about an `Unrecognised tag` and ignore them, so a
+repository that uses an alias as its ID gets no credentials, and a server that requires them answers with status 401.
 
 #### Server Repository Origins
 
@@ -264,8 +264,8 @@ its credentials may be used with:
 The declared origins are added to the origins Maven finds from repositories and mirrors.
 Nothing is replaced, so existing configurations keep working.
 Servers created from [aliases](#Server_Aliases) get the same `repositoryOrigins`.
-Maven 3.9 warns about an `Unrecognised tag` and ignores `repositoryOrigins`, so it keeps sending credentials by
-server ID only.
+Maven 3.9.16 and earlier warn about an `Unrecognised tag` and ignore `repositoryOrigins`, so they keep sending
+credentials by server ID only.
 Maven 4.0.0-rc-7 and earlier release candidates do not support `repositoryOrigins` either. They skip the element
 and report only "1 problem was encountered while building the effective settings"; run Maven with `-e` to see the
 `Unrecognised tag`. Use Maven 3.10.0 or a later Maven 4 release for `repositoryOrigins`.
