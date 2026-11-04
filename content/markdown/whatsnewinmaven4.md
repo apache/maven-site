@@ -67,19 +67,19 @@ article [Introduction to Maven Toolchains][8] by Maven maintainer Maarten Mulder
 
 ### Consumer POM
 
-Maven 4 generates a consumer POM that removes build information not needed by consumers (such as plugin configuration
-and properties), and deploys it as the project's POM (`<artifactId>-<version>.pom`). The full `pom.xml` used to build
-the project is deployed next to it as `<artifactId>-<version>-build.pom` (classifier `build`); with Maven 4.0.0-rc-7
-this happens whether or not flattening is enabled.
+Maven 4 generates a consumer POM and deploys it as the project's POM (`<artifactId>-<version>.pom`). The full `pom.xml`
+used to build the project is deployed next to it as `<artifactId>-<version>-build.pom` (classifier `build`); with Maven
+4.0.0-rc-7 this happens whether or not flattening is enabled.
 
 By default, the consumer POM preserves all dependencies from the build POM, including `provided` scope dependencies.
-Only build-time-only elements are stripped. It also keeps the `<parent>` reference, so consumers still resolve the
-parent POM, and the consumer POM of a parent (packaging `pom`) keeps its `<build>` and `<properties>`, which its
-subprojects inherit.
+With Maven 4.0.0-rc-7 it also keeps the `<parent>` reference, `<properties>` and `<build>`, including plugin
+configuration. Consumers still resolve the parent POM, and the subprojects of a parent (packaging `pom`) still inherit
+its `<build>` and `<properties>`.
 
 Enable flattening to produce a fully self-contained consumer POM. When flattening is enabled:
 
 * Parent POM references are resolved; all inherited elements are included directly
+* Build information such as `<build>` and `<properties>` is removed
 * BOM imports are flattened into the dependency list
 * Transitive dependencies are kept (`compile` and `runtime` scopes). Non-transitive scopes are stripped (`provided`, `test`, `system` scopes)
 * Managed dependencies are kept only if they are actually used by the project
