@@ -99,7 +99,9 @@ Profiles can also be active by default using a configuration like the following 
 </profiles>
 ```
 
-This profile will automatically be active for all builds unless another profile in the same POM is activated using one of the previously described methods. All profiles that are active by default are automatically deactivated when a profile in the POM is activated on the command line or through its activation config.
+This profile will automatically be active for all builds unless another profile in the same POM is activated, either explicitly via the command line `-P` option or automatically through one of its activation conditions (file, property, JDK, OS). All `activeByDefault` profiles in the same POM are suppressed as soon as any other profile in that POM becomes active.
+
+**Note:** this suppression only applies within the same POM. External profiles defined in `settings.xml` with `<activeByDefault>true</activeByDefault>` are suppressed only by an explicit `-P` request — they are **not** suppressed when a POM profile activates via a condition. See the [Active by default](#active-by-default) section below for details.
 
 #### Implicit profile activation
 
@@ -111,7 +113,11 @@ The activation occurs when all the specified criteria have been met.
 ##### Active by default
 
 Boolean flag which determines if the profile is active by default. Is `false` by default.
-This flag is only evaluated if no other profile is explicitly activated via command line, `settings.xml` or activated through some other activator. Otherwise, it has no effect.
+
+The suppression behavior differs depending on where the profile is defined:
+
+- **POM profiles** (`pom.xml`): an `activeByDefault` profile is suppressed as soon as any other profile in the same POM becomes active, whether via explicit `-P` or via a condition activator (file, property, JDK, OS).
+- **External profiles** (`settings.xml`): an `activeByDefault` profile is only suppressed when another profile is explicitly requested via `-P` / `--activate-profiles`. A condition-based POM profile activating does **not** suppress external `activeByDefault` profiles. This asymmetry is intentional: external profiles typically carry environment configuration (repositories, credentials) that should remain active regardless of which build-variant POM profile is triggered by the environment.
 
 Example to set a profile active by default.
 
