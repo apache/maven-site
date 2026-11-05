@@ -359,7 +359,7 @@ A pattern starts with `glob:` or `regex:` and is matched against the absolute pa
 - A `glob:` pattern separates directories with `/` on every platform.
 - A `regex:` pattern sees the platform's own separator, `\` on Windows. To work on every platform, accept both with an alternation, such as `regex:.*(/|\\)drafts(/|\\).*\.md`. Avoid a character class such as `[/\\]` followed by an escaped character: on macOS with Java 8 such a pattern fails to compile.
 
-The first `configuration` for the parser id with a matching pattern, or without patterns, is applied. Parsers without a matching `configuration` keep the defaults of the Maven Site Plugin: `emitComments` is `false` and `emitAnchorsForIndexableEntries` is `true`.
+The first `configuration` for the parser id with a matching pattern, or without patterns, is applied. Files without a matching `configuration` use the defaults of the Maven Site Plugin: `emitComments` is `false` and `emitAnchorsForIndexableEntries` is `true`, and a `configuration` that does not set these two properties gets the same defaults. Any other parser property that a `configuration` does not set keeps the value left by the previous file of the same parser, because Doxia uses one parser instance for all files; set such a property in every `configuration` of that parser.
 
 ## Multi-module Sites
 
