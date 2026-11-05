@@ -96,10 +96,10 @@ Prepare local environment for `ATR Maven Plugin` usage, see [ATR Maven Plugin](h
 2. Start a new release by providing the version
 3. Upload the 'source-release' with `mvn release:perform -Ppush-to-atr` ([`push-to-atr` profile](/pom/asf/#the-push-to-atr-profile))
 4. Start the vote and wait for the result
-5. After the vote is successful, `ATR` will promote the 'source-release' to the Apache distribution area, **NOTE** old releases are not removed yet
+5. After the vote is successful, `ATR` will promote the 'source-release' to the Apache distribution area and remove superseded releases
 6. Finish the release by sending the announcement in `ATR`
 
-With `ATR`, you can skip only `Vote` and `Announce` steps, as `ATR` will take care of them, 
+With `ATR`, you can skip only `Vote`, `Copy the source release to the Apache Distribution Area` and `Announce` steps, as `ATR` will take care of them, 
 rest of the steps are still required to be done by the release manager.
 
 ## Call the vote
@@ -229,6 +229,7 @@ wagon/wagon-2.2-source-release.zip.sha512
 ```
 
 You should also run 'svn rm' as needed to clear out older releases. As per [Apache Release Policy](https://www.apache.org/legal/release-policy.html#where-do-releases-go), only the latest release on a branch should stay in the main dist areas. So long as the previous release is at least a day old, the automatic archiver will have copied it to the archive.
+With `ATR`, superseded releases are removed by `ATR`.
 
 To check that everything is ok in the dist area, dist-tool-plugin has been written and run once a day to produce ["Check Source Release" and "Check Errors" reports](https://ci-maven.apache.org/job/Maven/job/maven-box/job/maven-dist-tool/job/master/site/).
 
