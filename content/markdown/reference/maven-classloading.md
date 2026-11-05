@@ -74,7 +74,7 @@ Maven API uses approximate JVM Bootstrap classloader as its parent. (there is no
 
 Modern Maven 3.x build extensions are build extensions that either consist of multiple artifacts or have `META-INF/maven/extension.xml`. Each modern build extension is loaded in a a fully isolated classloader, i.e. it is not possible to share classes or inject components among extensions.
 
-Maven guarantees that each distinct modern build extension (as identified by plugin groupId, artifactId, version and set of dependecies) is loaded by one and only one extensions classloader and the classloader is wired to all projects that use the extension.
+Maven guarantees that each distinct modern build extension (as identified by plugin groupId, artifactId, version and set of dependencies) is loaded by one and only one extensions classloader and the classloader is wired to all projects that use the extension.
 
 Build extension classloaders use ClassWorld bootstrap classloader as the parent, which allows build extensions access to `-javaagent` classes.
 
