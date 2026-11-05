@@ -44,6 +44,10 @@ https://dist.apache.org/repos/dist/dev/maven/maven-3/
           `-- apache-maven-$VERSION-src.zip.sha512
 ```
 
+**NOTE** When releasing with the [Apache Trusted Releases (ATR)](./maven-project-release-procedure.html#release-with-the-apache-trusted-releases-atr),
+the release candidate is uploaded to `ATR` instead of the svn `dev` tree,
+and `ATR` promotes it to the `release` tree after a successful vote.
+
 Note that the policy for failed releases is to move forward with a new
 version. The tag that produced the failed released is left in place for
 posterity. So if the release of, say, 3.2.4 fails then we move forward
@@ -56,6 +60,8 @@ For non-alpha/beta releases, release candidates are produced before the actual r
 Checkout https://dist.apache.org/repos/dist/dev/maven/maven-3 then create the necessary directory tree.
 
 Copy the binaries and src-tar.gz with their sha512/asc to the created directories.
+
+With `ATR`, the two steps above are not needed, the distribution archives are uploaded to `ATR` by `mvn release:perform -Ppush-to-atr`.
 
 To produce a release candidate, follow the first seven steps only from the following procedure:
 
@@ -99,6 +105,10 @@ mvn scm-publish:publish-scm
 
 This will publish the Maven core site in [/ref/3-LATEST](/ref/3-LATEST).
 
+This step is still required with `ATR`. The Maven core vote template
+[start_vote_template_maven.txt](/atr/templates/start_vote_template_maven.txt) links to this staged site
+as `https://maven.apache.org/ref/{{MAJOR_VERSION}}-LATEST`.
+
 ## Complete the release
 
 After a successful vote you should do the following steps to finish the release.
@@ -106,7 +116,9 @@ After a successful vote you should do the following steps to finish the release.
 ### Add New Version to ASF Distribution Directory
 
 In addition to promoting the repository, the release archives should be
-moved to the release svnpubsub tree:
+moved to the release svnpubsub tree.
+
+This task is done by `ATR` after a successful vote, but following instructions remain here for manual process reference:
 
 ```
 svn mv https://dist.apache.org/repos/dist/dev/maven/maven-3/$VERSION https://dist.apache.org/repos/dist/release/maven/maven-3 -m "Publish Maven $VERSION Distribution Archives"
@@ -150,7 +162,11 @@ Commit your changes and then [deploy the main Maven site](../website/deploy-mave
 
 Next, any superseded releases should be removed from the above locations (after confirming that they exist in /www/archive.apache.org/dist/maven).
 
+With `ATR`, this step is not needed, superseded releases are removed by `ATR`.
+
 ### Proceed with Announcement
 
 You can now proceed with the steps outlined after deploying the website on [Maven Project Common Release Procedure](./maven-project-release-procedure.html)
+
+With `ATR`, the announcement is sent from `ATR`.
 
