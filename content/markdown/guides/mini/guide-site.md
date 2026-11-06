@@ -324,7 +324,7 @@ With either setup, note the following:
 
 ## Configuring Parsers
 
-The Maven Site Plugin renders every source file with the [Doxia](/doxia/) parser for its format. Since version 3.23.0 of the Maven Site Plugin, the [`parserConfigurations`](/plugins/maven-site-plugin/site-mojo.html#parserConfigurations) parameter sets properties of these parsers, for all files of a format or only for files at a given path.
+The Maven Site Plugin converts every source file to HTML using the [Doxia](/doxia/) parser for the source file's format (Markdown, XDoc, APT and so on). Since version 3.23.0 of the Maven Site Plugin, the [`parserConfigurations`](/plugins/maven-site-plugin/site-mojo.html#parserConfigurations) parameter sets properties of these parsers, for all files of a format or only for files at a given path.
 
 The parameter lists `configuration` elements below the id of the parser (`markdown`, `xdoc`, `apt` and so on). Each element sets properties of the parser, for example `emitComments` or `emitAnchorsForIndexableEntries`, and optionally restricts them to `patterns`:
 
@@ -352,7 +352,7 @@ The parameter lists `configuration` elements below the id of the parser (`markdo
 </plugin>
 ```
 
-In this example, comments in Markdown files below a `drafts` directory and in all XDoc files end up in the generated HTML. Other Markdown files keep the default of the Maven Site Plugin and drop their comments.
+In this example, comments in Markdown files inside a `drafts` directory and in all XDoc files end up in the generated HTML. Other Markdown files keep the default of the Maven Site Plugin and drop their comments.
 
 A pattern starts with `glob:` or `regex:` and is matched against the absolute path of the source file:
 
