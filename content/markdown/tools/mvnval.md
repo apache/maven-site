@@ -20,7 +20,7 @@ under the License.
 -->
 
 The Maven POM Validation Tool (`mvnval`) validates POM files and reports all problems without
-running a build. It is a built-in tool, shipped with Maven 4.1.0.
+running a build. It is a built-in tool, shipped with Maven 4.2.0.
 
 <!--MACRO{toc|fromDepth=2}-->
 
