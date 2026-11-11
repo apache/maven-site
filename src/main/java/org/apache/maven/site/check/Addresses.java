@@ -280,9 +280,8 @@ public class Addresses {
         if (dir != null) {
             path = dir + "index.html";
             if (!Files.exists(file(path)) && Files.isDirectory(file(dir))) {
-                // the server lists a directory without an index page
-                o.path = dir;
-                return o;
+                // the server lists a directory without an index page; a listing has no anchors
+                path = dir;
             }
         }
         o.path = path;
@@ -294,7 +293,7 @@ public class Addresses {
                         ? "does not exist, and no redirect leads away from it"
                         : "leads to " + path + ", which does not exist";
             }
-        } else if (o.anchor != null && path.endsWith(".html") && !idsOf(path).contains(o.anchor)) {
+        } else if (o.anchor != null && !idsOf(path).contains(o.anchor)) {
             o.problem = "leads to " + path + "#" + o.anchor + ", which lacks that anchor";
         }
         return o;
@@ -324,9 +323,9 @@ public class Addresses {
         return "/" + String.join("/", segments);
     }
 
-    /** True when path is in a part of the server that another build writes, or the download script. */
+    /** True when path is in a part of the server that another build writes, or a download script. */
     private boolean isOutside(String path) {
-        if (path.endsWith(".cgi")) {
+        if (path.endsWith("/download.cgi")) {
             return true;
         }
         for (String root : outsideRoots) {
@@ -341,7 +340,7 @@ public class Addresses {
         return site.resolve(path.substring(1));
     }
 
-    /** The ids of a page of the build that a link could point at, of its frame too. */
+    /** The ids of a page of the build that a link could point at, of its frame too; none for other files. */
     private Set<String> idsOf(String path) {
         return allIds.getOrDefault(path, Set.of());
     }
@@ -500,8 +499,9 @@ public class Addresses {
                 outside++;
                 continue;
             }
-            // a redirect with an anchor of its own sends every link to that anchor; follow() checked it
-            if (!a.getValue().isEmpty() && o.anchor == null && o.path.endsWith(".html")) {
+            // a redirect with an anchor of its own sends every link to that anchor; follow() checked it.
+            // A file that is not a page, or a directory listing, has no anchors.
+            if (!a.getValue().isEmpty() && o.anchor == null) {
                 Set<String> missing = new LinkedHashSet<>(a.getValue());
                 missing.removeAll(idsOf(o.path));
                 if (!missing.isEmpty()) {
@@ -566,6 +566,11 @@ public class Addresses {
                 }
                 break;
             case "check":
+                if (known.isEmpty()) {
+                    System.out.println("Addresses: " + list + " is missing or lists no address, so there is"
+                            + " nothing to check against; create it with: mvn clean site -Daddresses=record");
+                    System.exit(1);
+                }
                 if (addresses.check(known) > 0) {
                     System.exit(1);
                 }
