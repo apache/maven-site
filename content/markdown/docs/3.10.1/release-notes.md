@@ -59,7 +59,15 @@ For a full list of changes, please refer to the [GitHub release page](https://gi
 
 ## Known issues
 
-No known issues.
+
+### Warning with stack trace during `install` when hard links are not supported
+
+If the build directory and the local repository are on different volumes, hard links
+cannot be created and Maven Resolver falls back to copying. Artifacts are installed correctly,
+but a `WARNING` with a full stack trace (`Invalid cross-device link`) is logged.
+
+To turn off hard linking and the warning, use `-Daether.installer.hardLink=false`
+(on the command line or in `.mvn/maven.config`).
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
