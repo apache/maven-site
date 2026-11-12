@@ -362,7 +362,7 @@ Different implicit activation types can be combined in one profile. The profile 
 
 #### Cascading profile activation
 
-_Since Maven 4.1._
+_Since Maven 4.2._
 
 When a POM profile is activated and defines `<properties>`, those properties are immediately available to trigger the activation of other profiles in the same POM. Maven iterates through the remaining inactive profiles until no new profiles are activated (a fixed-point is reached). This is called **cascading profile activation**.
 

@@ -16,9 +16,9 @@ KIND, either express or implied.  See the License for the
 specific language governing permissions and limitations
 under the License.
 -->
-# Maven Mixins (Maven 4.1)
+# Maven Mixins (Maven 4.2.0)
 
-Maven Mixins will provide (in Maven 4.1) a powerful mechanism for sharing common POM configuration across multiple projects without the limitations of traditional inheritance. Mixins allow you to compose your project configuration from multiple sources, promoting better code reuse and maintainability.
+Maven Mixins will provide (in Maven 4.2.0) a powerful mechanism for sharing common POM configuration across multiple projects without the limitations of traditional inheritance. Mixins allow you to compose your project configuration from multiple sources, promoting better code reuse and maintainability.
 
 ## Overview
 
@@ -64,7 +64,7 @@ Mixins are declared in the `<mixins>` section of your POM:
 
 ### Model Version Requirement
 
-Mixins require **model version 4.2.0** (introduced with Maven 4.1.0) or higher. This new model version was introduced specifically to support the mixins feature while maintaining backward compatibility.
+Mixins require **model version 4.2.0** (introduced with Maven 4.2.0) or higher. This new model version was introduced specifically to support the mixins feature while maintaining backward compatibility.
 
 ## Creating Mixin POMs
 
