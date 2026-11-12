@@ -57,6 +57,7 @@ User Centre
 - [The POM](./introduction/introduction-to-the-pom.html)
 - [Profiles](./introduction/introduction-to-profiles.html)
 - [Configuring Plug-ins](./mini/guide-configuring-plugins.html)
+- [Skipping Mojo Executions (maven.lifecycle.filter)](./mini/guide-lifecycle-filter.html)
 - [POM Overview](../pom.html) ([Technical Project Descriptor](../ref/current/maven-model/maven.html))
 - [SCM URLs](../pom-scm-urls.html)
 - [Settings Overview](../settings.html) ([Technical Settings Descriptor](../ref/current/maven-settings/settings.html))
