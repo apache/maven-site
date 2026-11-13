@@ -63,6 +63,70 @@ If you need to add a module that is not bundled, for example AsciiDoc, add it as
 </plugin>
 ```
 
+## Limitations
+
+Every format is converted through the Doxia Sink API. A markup feature that the API cannot express, or that the target format has no syntax for, is dropped or approximated in the output. The following sections list what an author sees per format. A feature that is not listed is written as expected.
+
+### Markdown sink
+
+The Markdown sink writes CommonMark with GitHub-style tables. For the cases that Markdown cannot express at all, such as a table caption or a table without a header row, see [What Markdown cannot express](./markdown-format.html#What_Markdown_cannot_express). The sink handles the following features as shown.
+
+| Feature | Output |
+|---|---|
+| Anchor | An empty `<a id="name"></a>` element in front of the text, because Markdown has no anchor syntax. The text that follows is not wrapped. A name that is not a valid id is encoded, so `my anchor` becomes `my_anchor`, and links to it get the same encoding. |
+| Figure | `![caption](src)`. The caption becomes the alternative text, and the `alt`, `title`, `width` and `id` attributes are dropped. A standalone image keeps its `alt` text but loses `title` and `width`. |
+| Table alignment | Written once, in the delimiter row after the first row, from the column alignment or from the alignment of the first-row cells. Alignment on later rows is ignored. A column without alignment inherits the one before it. |
+| Table cell spans and grid | `colspan`, `rowspan` and the grid flag are dropped, so a spanning cell occupies one column. |
+| Numbered list style | Always decimal. Other styles, such as roman numerals, are replaced with a warning. |
+| Definition list | Raw HTML `<dl>`, `<dt>` and `<dd>` elements, with a warning. |
+| Inline styles | Code, emphasis, strong and strikethrough use Markdown syntax. Others, such as subscript, superscript and small, are written as raw HTML elements. |
+| Elements without a Sink event | Raw HTML, for example `<div>`, `<wbr />`, `<time>` and `<data>`. |
+| Page break | Ignored, with a warning. |
+| Source block language | A source block opens with the info string `unknown`, because the language is not carried over. |
+| Link inside a code block | Dropped, with a warning. |
+| `id`, `class`, `style` and other attributes | Dropped on headings, paragraphs, lists, tables and links. |
+
+### APT sink
+
+| Feature | Output |
+|---|---|
+| Anchor | The anchor name is ignored. The anchored text becomes the name, written as `{text}`. |
+| Inline styles | Only italic, bold and monospaced are written. Others, such as strikethrough and subscript, keep their text and lose the markup. |
+| Table alignment | Taken from the column alignment only. Cell alignment attributes are ignored, and columns without alignment are centered. |
+| Table caption | Written as plain text after the table. |
+| Table cell spans | Not written. |
+| Line break in a table cell | Splits the table row. |
+| Figure | `[src] caption` on one line. The figure attributes are dropped. |
+| Block quote, division, article, header, footer, navigation, time and data | No markup. The text content is kept. |
+| Section title deeper than level 5 | Written as level 5, with a warning. |
+| Elements without a Sink event | Dropped, with a warning. |
+
+### XDoc sink
+
+| Feature | Output |
+|---|---|
+| Section titles at level 3 to 6 | XDoc has only `section` and `subsection` elements. Deeper titles are written as `<h3>` to `<h6>` headings without an enclosing element. |
+| Page break | An XML comment, `<!-- PB -->`. |
+
+### XHTML5 sink
+
+| Feature | Output |
+|---|---|
+| Page break | An HTML comment, `<!-- PB -->`. |
+| Anchor | A name that is not a valid id is encoded, so `my anchor` becomes `my_anchor`. |
+| Elements without a Sink event and without a known HTML tag | Dropped, with a warning. |
+
+### Parsers
+
+The following parser behavior is visible in the output of other formats.
+
+- Markdown: task list syntax is not recognized. `- [ ] task` stays a list item with the literal text `[ ] task`.
+- Markdown: a footnote becomes an item of a numbered list at the end of the document, with a back link.
+- Markdown: front matter keys other than `title`, `author` and `date`, such as `keywords` or `subtitle`, reach the sink as `meta` elements without a Sink event. The APT sink drops them.
+- Markdown: table alignment is passed on cell by cell, not as column alignment, so the APT sink does not write it.
+- XHTML5, XDoc and FML: an element that is not recognized is passed to the sink as an element without a Sink event, with a warning. What survives depends on the sink, as in the tables above.
+- FML has a parser but no sink.
+
 ## Former Doxia Formats
 
 The following table gives an overview of the formats which used to be supported mostly as Parser in former versions of Doxia: 
