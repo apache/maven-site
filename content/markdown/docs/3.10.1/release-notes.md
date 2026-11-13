@@ -73,6 +73,8 @@ To turn off hard linking and the warning, use `-Daether.installer.hardLink=false
 
 To enable colors, use `--color=always` on the command line, in `.mvn/maven.config`,
 or in the `MAVEN_ARGS` environment variable.
+No other command line terminal, which is available by default, is effected.
+
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
 ### Stricter POM validation
