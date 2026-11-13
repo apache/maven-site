@@ -28,7 +28,7 @@ Please review the release candidate and vote accordingly.
 [ ] +0 Abstain
 [ ] -1 Do not release this package (please provide specific comments)
 
-You can vote on ATR at the URL above, or manually by replying to this email.
+{{VOTE_INSTRUCTIONS}}
 
 The vote is open for {{DURATION}} hours.
 
