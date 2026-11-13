@@ -45,6 +45,21 @@ In Maven 3 you must attach the site descriptor yourself, even for projects with 
 
 By default, all the parent descriptor settings are inherited with the only exception of menus, see below. From the body, the links and breadcrumbs accumulate to contain all the links and breadcrumbs of the parent site descriptor. If the parent contains a breadcrumb and the inheriting site descriptor doesn't, a breadcrumb with the name of the current site descriptor is added automatically.
 
+Since site descriptor 2.2.0 (Doxia Sitetools 2.2.0), a child can keep only its own links or breadcrumbs with `combine.links="override"` or `combine.breadcrumbs="override"` on `<body>`. With `combine.breadcrumbs="override"`, the breadcrumb for the current site descriptor is not added either, so an empty list stays empty:
+
+```xml
+<site xmlns="http://maven.apache.org/SITE/2.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/SITE/2.2.0 https://maven.apache.org/xsd/site-2.2.0.xsd">
+  <body combine.breadcrumbs="override">
+    <breadcrumbs>
+      <item name="My project" href="https://example.com/"/>
+    </breadcrumbs>
+  </body>
+</site>
+```
+
+To ignore the parent site descriptor completely, use `<site combine.self="override">`.
+
 It is possible to inherit menus as well. To do so, use the `inherit` attribute in the site descriptor. This can be either `top` or `bottom`, indicating where the inherited menu is placed. For example:
 
 ```xml

@@ -237,7 +237,7 @@ To configure breadcrumbs, add a `<breadcrumbs>` element to the `<body>` element 
 </site>
 ```
 
-**Note** that in a multi-module build, if the parent contains a breadcrumb and the inheriting site descriptor doesn&apos;t, a breadcrumb with the current site descriptor&apos;s name will be added automatically. See the notes on [building a multi-module site](https://maven.apache.org/guides/mini/guide-multimodule-site.html) for more details.
+**Note** that in a multi-module build, if the parent contains a breadcrumb and the inheriting site descriptor doesn&apos;t, a breadcrumb with the current site descriptor&apos;s name will be added automatically, unless the inheriting site descriptor sets `combine.breadcrumbs="override"` on `<body>` (site descriptor 2.2.0 and later). See the notes on [building a multi-module site](https://maven.apache.org/guides/mini/guide-multimodule-site.html) for more details.
 
 ## Custom footer
 
