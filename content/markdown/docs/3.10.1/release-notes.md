@@ -51,14 +51,13 @@ Release 3.10.1 focused on fixing all the regressions, but there are still some f
 
 ### Regression fixes
 
-There are way many to list them here, check out full changelog below.
+There are too many to list here; see the full changelog below.
 
 ## Full changelog
 
 For a full list of changes, please refer to the [GitHub release page](https://github.com/apache/maven/releases/tag/maven-3.10.1).
 
 ## Known issues
-
 
 ### Warning with stack trace during `install` when hard links are not supported
 
@@ -73,7 +72,7 @@ To turn off hard linking and the warning, use `-Daether.installer.hardLink=false
 
 To enable colors, use `--color=always` on the command line, in `.mvn/maven.config`,
 or in the `MAVEN_ARGS` environment variable.
-No other command line terminal, which is available by default, is effected.
+Other terminals available by default are not affected.
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
