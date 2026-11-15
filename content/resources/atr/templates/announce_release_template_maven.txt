@@ -1,0 +1,25 @@
+The Apache {{COMMITTEE}} project team is pleased to announce the release of Apache Maven {{VERSION}}.
+
+{{HOMEPAGE}}
+
+Apache Maven {{VERSION}} is available for download from:
+{{DOWNLOAD_PAGE}}
+
+The core release is independent of plugin releases.
+Further releases of plugins will be made separately.
+
+If you have any questions, please consult:
+
+- the website: {{HOMEPAGE}}
+- the maven-user mailing list: {{MAILING_LISTS}}
+- the reference documentation: https://maven.apache.org/ref/{{VERSION}}/
+
+For more information, read:
+https://maven.apache.org/docs/{{VERSION}}/release-notes.html
+
+Detailed changes:
+https://maven.apache.org/release-notes/maven/{{VERSION}}
+
+Enjoy,
+On behalf of the Apache {{COMMITTEE}} project team,
+{{YOUR_FULL_NAME}} ({{YOUR_ASF_ID}})
