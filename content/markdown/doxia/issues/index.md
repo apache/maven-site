@@ -24,63 +24,56 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 # Doxia Issues &amp; Gotchas
 
-This document collects some infos about specific issues and &apos;gotchas&apos; when working with Doxia. Please check also the [Frequently Asked Questions](../faq.html).
+This page collects behavior that tends to surprise authors and plugin developers. See also the
+[Frequently Asked Questions](../faq.html) and the [limitations of each format](../references/index.html#Limitations).
 
 <!-- MACRO{toc|section=1|fromDepth=2|toDepth=2} -->
 ## <a id="Apt_anchors_and_links"></a>Apt anchors and links
 
-Using **Doxia 1\.1** you may see a lot of warnings when processing old Apt source files:
+In APT, a link to another document must start with `./` or `../`. Without it, Doxia treats the target as an anchor
+in the same page, and an internal link must _not_ start with `#`. Read the [anchors](../references/apt-format.html#Anchors)
+and [links](../references/apt-format.html#Links) sections of the APT reference.
 
-```text
-[WARNING] [Apt Parser] Ambiguous link: 'doxia-apt.html'. If this is a local link, prepend "./"!
-```
+Doxia does not warn about a link that lacks the prefix. It turns the link into an anchor in the same page, so
+`{{{doxia-apt.html}text}}` becomes `<a href="#doxia-apt.html">` and `{{{references/doxia-apt.html}text}}` becomes
+`<a href="#references.2Fdoxia-apt.html">`. Both are broken in the output and Doxia does not warn, so check the
+links in the generated pages, or run a link checker over `target/site`.
 
-and
-
-```text
-[WARNING] [Apt Parser] Modified invalid link: references/doxia-apt.html
-```
-
-The reason is that in Apt, links to other source documents have to start with either `./` or `../` to distinguish them from internal links. Please read the sections on [anchors](../references/doxia-apt.html#Anchors) and [links](../references/doxia-apt.html#Links) in our Apt guide. Note in particular that internal links in Apt do **not** start with &apos;\#&apos;.
-
-**You should pay attention to these warnings since your links will most likely be broken.** Unfortunately, the warning message cannot indicate the source file with the broken link (see eg [MPDF-11](https://issues.apache.org/jira/browse/MPDF-11)), however, if you run in `DEBUG` mode, eg invoke maven with the `-X` switch, you can see which source document is being parsed when the warning is emitted.
+Converting the page to [Markdown](../migrating-apt-to-markdown.html) avoids the problem, since Markdown links work
+as written.
 
 ## <a id="Figure_sink_events"></a>Figure sink events
 
-Doxia distinguishes between figures, which are block-level elements, and images (or icons), which are in-line elements. For instance, the following sequence of sink events
+Doxia distinguishes between figures, which are block-level elements, and images, which are inline. A figure is
+written as a sequence of events:
 
 ```java
-sink.figure( null );
+sink.figure();
 
-sink.figureGraphics( "figure.png", null );
+sink.figureGraphics("figure.png");
 
-sink.figureCaption( null );
-sink.text( "Figure caption", null );
+sink.figureCaption();
+sink.text("Figure caption");
 sink.figureCaption_();
 
 sink.figure_();
 ```
 
-should output the equivalent of this html snippet:
+The HTML5 sink writes this as:
 
-```xml
-<div class="figure">
-  <p><img src="figure.png"/></p>
-  <p>Figure caption</p>
-</div>
+```html
+<figure><img src="figure.png" /><figcaption>Figure caption</figcaption></figure>
 ```
 
-while the `figureGraphics( ... );` event alone can be used to generate an in-line image, i.e. just the `<img>` tag in case of html.
-
-**Note** that we are using the forms that take a `SinkEventAttributeSet` above, even though we are just passing in null values. The reason is that the alternative forms (without `SinkEventAttributeSet`) have a different behavior, which is kept for backward compatibility (but the methods have been deprecated). Using the same sequence of sink events as above, but omitting the `null` method parameters, will generate
-
-```xml
-<img src="figure.png" alt="Figure caption"/>
-```
+A `figureGraphics(...)` event on its own, outside `figure()`, writes just the inline `<img>` element. Pass the
+alternative text as the `alt` attribute in a `SinkEventAttributeSet`; a caption is not used as alternative text.
 
 ## <a id="Empty_Generated_Page"></a>Empty Generated Page
 
-After running `mvn site` using your Maven reporting plugin, you see that the generated page is empty. Be sure that the the code calls `sink.close()`.
-
+If a report page comes out empty after `mvn site`, check that the report closes its sink with `sink.close()`. Reports
+that extend `AbstractMavenReport` from [Maven Reporting Implementation](/shared/maven-reporting-impl/) get this
+for free, including the sub-page sinks created through the `SinkFactory` passed to `generate()`. A report that
+implements `MavenReport` directly, or that creates sinks of its own, must close each of them.

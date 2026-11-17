@@ -3,7 +3,7 @@ title: Introduction
 author: 
   - Jason van Zyl
   - Vincent Siveton
-date: 2010-05-28
+date: 2026-11-17
 ---
 
 <!--
@@ -25,34 +25,62 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 # Maven Doxia
 
-Doxia is a content generation framework which aims to provide its users with powerful techniques for generating static and dynamic content: Doxia can be used in web-based publishing context to generate static sites, in addition to being incorporated into dynamic content generation systems like blogs, wikis and content management systems.
+Doxia is the document engine behind every Maven site. It reads the pages you write in Markdown, APT, Xdoc, FML or
+XHTML and the reports that plugins generate, and turns them into HTML. When you run `mvn site`, the
+[Maven Site Plugin](/plugins/maven-site-plugin/) uses Doxia to do the work.
 
-Doxia supports [markup languages with simple syntaxes](./references/index.html). Lightweight markup languages are used by people who might be expected to read the document source as well as the rendered output.
+The current release of [Doxia](./doxia/) is ${doxiaVersion}.
 
-Doxia is used extensively by [Maven](http://maven.apache.org) and it powers the entire documentation system of Maven. It gives Maven the ability to take any document that Doxia supports and output it any format.
+<a id="Doxia_Reference_Pages"></a>
 
-The current version of [Doxia base framework](./doxia/) is ${doxiaVersion}.
+${esc.h}${esc.h} Write a site
 
-${esc.h}${esc.h} Brief History
+You don't need to install or configure Doxia: the Maven Site Plugin includes every format listed here. Put your
+pages under `src/site/<format>/` and run `mvn site`. The [guide to creating a site](/guides/mini/guide-site.html)
+covers the whole setup.
 
-<!-- {{{http://www.xmlmind.com/aptconvert.html}Aptconvert}}-->
+- [Choose a format](./references/index.html). Markdown is the best choice for new pages. APT and Xdoc still work,
+  and [Migrating APT to Markdown](./migrating-apt-to-markdown.html) shows how to move existing pages. FML is
+  deprecated since Doxia 2.2.0.
+- [Add generated content with macros](./macros/index.html), such as a table of contents (`toc`) or a code
+  excerpt from a source file (`snippet`).
+- [Draw diagrams with Mermaid](./mermaid-diagrams.html).
+- [Check what each format can and cannot express](./references/index.html#Limitations) before you convert a page.
+- If something renders differently from what you expect, see the [FAQ](./faq.html) and
+  [Issues and Gotchas](./issues/index.html).
 
-Based on the (now defunct) Aptconvert project developed by [Xmlmind](http://www.xmlmind.com/), Doxia was initially hosted by [Codehaus](http://codehaus.org/), to become a sub-project of Maven early in 2006\.
+${esc.h}${esc.h} Write a plugin report or extend Doxia
 
-${esc.h}${esc.h} Main Features
+Report plugins write their output through the Doxia Sink API, which keeps them independent of the output format.
 
-- Developed in Java
-- [Support of several markup formats](./references/index.html): APT (Almost Plain Text), Markdown, FML (FAQ Markup Language), XDoc (popular in Apache land), XHTML
-- Easy to [learn the syntax of the supported markup formats](./modules/index.html)
-- Macro support
-- No need to have a corporate infrastructure (like wiki) to host your documentation
-- Extensible framework
-- [Site Tools extension](./doxia-sitetools/) for site or document rendering
-- [Additional Tools](./doxia-tools/) like [Doxia Converter](./doxia-tools/doxia-converter/index.html) (see also [Migrating APT to Markdown](./migrating-apt-to-markdown.html))
+- [Using the Sink API](./developers/sink.html) shows how to emit headings, tables and links.
+- [Creating a Doxia Macro](./developers/macros.html) and [Creating a Doxia Module](./developers/modules.html) show
+  how to add your own macro or markup format.
+- The [Overview](./overview.html) explains how parsers, sinks and the site renderer fit together.
 
-${esc.h}${esc.h} Doxia Reference Pages
+<a id="Main_Features"></a>
 
-See [Doxia Markup Languages References](./references/index.html) page for a listing of all supported markups for each format.
+${esc.h}${esc.h} Components
 
+Doxia is released as three components.
+
+| Component | What it does |
+|---|---|
+| [Doxia](./doxia/) | The Sink API, the parsers and sinks for each format, and the macros. |
+| [Doxia Sitetools](./doxia-sitetools/) | The site model (`site.xml`) and the renderer that applies a skin to the pages. |
+| [Doxia Tools](./doxia-tools/) | Stand-alone tools, such as the [Doxia Converter](./doxia-tools/doxia-converter/index.html), which converts a document from one format to another. |
+
+All components are published to Maven Central under the `org.apache.maven.doxia` group ID, see
+[Downloads](./downloads.html).
+
+<a id="Brief_History"></a>
+
+${esc.h}${esc.h} History
+
+Doxia is based on the Aptconvert project by [XMLmind](https://www.xmlmind.com/), was first hosted at
+Codehaus, and became a Maven subproject in 2006. Doxia 2.0, released in 2024, moved the output to HTML5 and
+removed the PDF, LaTeX, RTF, DocBook, Confluence and TWiki modules; see
+[Former Doxia Formats](./references/index.html#Former_Doxia_Formats).

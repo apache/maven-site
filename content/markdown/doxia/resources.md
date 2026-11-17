@@ -24,20 +24,26 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 # External Resources
 
 ## Extensions
 
-|Name|Author|
-|:---|:---|
-|[Doxia :: Include Macro](http://doxia-include.sourceforge.net/)|Juergen Kellerer|
+The following projects add formats or macros to Doxia. They are not maintained by the Maven project.
+
+| Name | What it adds | Doxia line |
+|:---|:---|:---|
+| [Asciidoctor Doxia modules](https://docs.asciidoctor.org/maven-tools/latest/site-integration/parser-module-setup-and-configuration/) | AsciiDoc pages in a Maven site; see [Markup Languages References](./references/index.html) for setup | 2.x |
+| [Doxia Include Macro](http://doxia-include.sourceforge.net/) | Includes files, snippets and Velocity templates with syntax highlighting, by Juergen Kellerer | 1.x, not updated since |
+
 ## Articles
 
-|Title|Publisher|Author|
+| Title | Publisher | Author |
 |:---|:---|:---|
-|[Quick and dirty typesetting with APT](https://www.linux.com/news/quick-and-dirty-typesetting-apt/)|linux.com|Scott Nesbitt|
-|[Lightweight markup language](http://en.wikipedia.org/wiki/Lightweight_markup_language)|wikipedia.org|?|
+| [Quick and dirty typesetting with APT](https://www.linux.com/news/quick-and-dirty-typesetting-apt/) | linux.com | Scott Nesbitt |
+| [Lightweight markup language](https://en.wikipedia.org/wiki/Lightweight_markup_language) | wikipedia.org | |
+
 ## Related External Projects
 
-- [XWiki](http://www.xwiki.org/) which uses Doxia in its [rendering](http://svn.xwiki.org/svnroot/xwiki/platform/core/trunk/xwiki-rendering/xwiki-rendering-parsers/xwiki-rendering-parser-doxia/).
-- [Mylyn WikiText](http://wiki.eclipse.org/Mylyn/Incubator/WikiText) (originally known as Textile-J).
+- [XWiki Rendering](https://github.com/xwiki/xwiki-rendering), the rendering engine of [XWiki](https://www.xwiki.org/),
+  builds on Doxia 1.x for some of its syntaxes.
