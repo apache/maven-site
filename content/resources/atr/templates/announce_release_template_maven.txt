@@ -5,7 +5,7 @@ The Apache {{COMMITTEE}} project team is pleased to announce the release of Apac
 Apache Maven {{VERSION}} is available for download from:
 {{DOWNLOAD_PAGE}}
 
-The core release is independent of plugin releases.
+This release is independent of plugin releases.
 Further releases of plugins will be made separately.
 
 If you have any questions, please consult:
