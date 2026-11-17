@@ -24,12 +24,14 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 # Doxia Developers Centre
 
-This documentation centre is for those that are developing Doxia modules or macro.
+These pages are for developers who write Maven reports or extend Doxia with new formats or macros.
 
-Currently you can find information on the following topics:
+- [Using the Doxia Sink API](./sink.html): write report pages and convert documents between formats.
+- [Creating Doxia Macros](./macros.html): add a macro that generates content while a page is parsed.
+- [Creating Doxia Modules](./modules.html): add a parser or sink for a new markup format.
 
-- [Creating Doxia Modules](./modules.html)
-- [Creating Doxia Macros](./macros.html)
-- [Using the Doxia Sink API](./sink.html)
+The [Overview](../overview.html) explains how parsers, sinks and the site renderer fit together, and the
+[Doxia Javadoc](../doxia/apidocs/) documents the API.

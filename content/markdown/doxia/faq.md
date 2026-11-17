@@ -35,8 +35,8 @@ under the License.
 
 ### How to handle style in the APT markup language?
 
-APT does not support style. If you need more control you should use
-[xdoc](references/xdoc-format.html) instead.
+APT does not support style. If you need more control, write the page in
+[Markdown](references/markdown-format.html), which accepts inline HTML, or in [Xdoc](references/xdoc-format.html).
 
 <a id="How_to_export_in_PDF"></a>
 
@@ -69,21 +69,15 @@ Xdoc XSD 2.0
 FML XSD 1.0.1
 : [https://maven.apache.org/xsd/fml-1.0.1.xsd](/xsd/fml-1.0.1.xsd)
 
-Book XSD 1.0
-: [https://maven.apache.org/xsd/book-1.0.0.xsd](/xsd/book-1.0.0.xsd)
-
-Document XSD 1.0.1
-: [https://maven.apache.org/xsd/document-1.0.1.xsd](/xsd/document-1.0.1.xsd)
-
 Site XSD 2.1.0
 : [https://maven.apache.org/xsd/site-2.1.0.xsd](/xsd/site-2.1.0.xsd)
 
-Your favorite IDE probably supports XSD schema's for Xdoc and FML files. You need to specify the following:
+Most IDEs validate and complete Xdoc and FML files once the root element declares the schema:
 
 ```xml
 <document xmlns="http://maven.apache.org/XDOC/2.0"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 https://maven.apache.org/xsd/xdoc-2.0.xsd">
   ...
 </document>
 ```
@@ -91,26 +85,9 @@ Your favorite IDE probably supports XSD schema's for Xdoc and FML files. You nee
 ```xml
 <faqs xmlns="http://maven.apache.org/FML/1.0.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 http://maven.apache.org/xsd/fml-1.0.1.xsd">
+  xsi:schemaLocation="http://maven.apache.org/FML/1.0.1 https://maven.apache.org/xsd/fml-1.0.1.xsd">
   ...
 </faqs>
-```
-
-```xml
-<book xmlns="http://maven.apache.org/BOOK/1.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/BOOK/1.0.0 http://maven.apache.org/xsd/book-1.0.0.xsd">
-  ...
-</book>
-```
-
-```xml
-<document xmlns="http://maven.apache.org/DOCUMENT/1.0.1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/DOCUMENT/1.0.1 http://maven.apache.org/xsd/document-1.0.1.xsd"
-  outputName="...">
-  ...
-</document>
 ```
 
 ```xml
@@ -121,7 +98,11 @@ Your favorite IDE probably supports XSD schema's for Xdoc and FML files. You nee
 </site>
 ```
 
-**Note**: for performance reasons, all XSDs/DTDs use a cache in ${java.io.tmpdir}.
+The Book and Document schemas (`book-1.0.0.xsd`, `document-1.0.1.xsd`) belonged to the book and PDF renderers,
+which are retired; they stay online for old documents.
+
+**Note**: the Xdoc and FML modules bundle their schemas, so validating those files needs no network access. Other
+schemas and entity sets, including the XHTML entity sets, are downloaded once per build and kept in memory.
 
 <a id="doxia-character-entities"></a>
 
@@ -146,7 +127,7 @@ For instance, you could add the following in your Xdoc XML files to be similar t
 ]>
 <document xmlns="http://maven.apache.org/XDOC/2.0"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 https://maven.apache.org/xsd/xdoc-2.0.xsd">
 ...
 </document>
 ```

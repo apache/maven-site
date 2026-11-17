@@ -1,8 +1,8 @@
 ---
-title: Overview Of The Doxia Framework
+title: Overview of the Doxia framework
 author: 
   - Vincent Siveton
-date: 2009-03-02
+date: 2026-11-17
 ---
 
 <!--
@@ -24,63 +24,70 @@ specific language governing permissions and limitations
 under the License.
 -->
 
-# Overview Of The Doxia Framework
 
-The following figure represents the main components of the Doxia Framework. 
+# Overview of the Doxia framework
 
-![Doxia Framework](images/architecture.png) 
+<a id="Overview_Of_The_Doxia_Framework"></a>
 
-**Note**: Just like Maven, Doxia uses [Plexus](https://codehaus-plexus.github.io/) extensively. 
+Doxia turns documents into other documents. A _parser_ reads a source document and reports what it finds, a
+heading, a paragraph, a table cell, as a stream of events. A _sink_ receives those events and writes them in its own
+output format. Any parser can feed any sink, so adding a format means writing one parser or one sink, not one
+converter per pair of formats.
+
+The following figure shows the main components.
+
+![Doxia Framework](images/architecture.png)
+
+Doxia components are [JSR-330](/maven-jsr330.html) components, managed by Eclipse Sisu just like Maven's own.
 
 ## Sink API
 
-The _Sink_ interface is a generic markup language interface. It contains several methods that encapsulate common text syntax. A start tag is denoted by _xxxx()_ method and a end of tag by _xxxx\_()_ method. 
-
-For instance, you could do things like: 
+The `Sink` interface describes a document as a sequence of events. A method such as `paragraph()` opens an element,
+and the same name with a trailing underscore, `paragraph_()`, closes it:
 
 ```java
 sink.paragraph();
-sink.text( "my text" );
-sink.paragraph_(); 
+sink.text("my text");
+sink.paragraph_();
 ```
 
-similar to this HTML markup: 
+The HTML sink writes this as:
 
-```xml
+```html
 <p>my text</p>
 ```
 
-To find out more about the Sink API, you could read the Javadoc [here](http://maven.apache.org/doxia/doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html). 
+Maven report plugins use the Sink API directly to write their pages. See
+[Using the Doxia Sink API](./developers/sink.html) and the
+[`Sink` Javadoc](./doxia/doxia-sink-api/apidocs/org/apache/maven/doxia/sink/Sink.html).
 
 ## Doxia Core
 
-The _Core_ is the API to parse a source and populate it in a _Sink_ object. The _Parser_ interface's central method is: 
+Doxia Core holds the parser API and the shared implementations. The central method of the `Parser` interface is:
 
 ```java
-void parse( Reader source, Sink sink )
-    throws ParseException; 
+void parse(Reader source, Sink sink) throws ParseException;
 ```
 
-The _ParseException_ class has the responsibility to catch all parsing exceptions. It provides an helper method, _getLineNumber()_, which helps to find where an error occurred. 
+A `ParseException` carries the line and column where parsing failed, through `getLineNumber()` and
+`getColumnNumber()`.
 
-The _AbstractParser_ class is an abstract implementation of the _Parser_. It provides a macro mechanism to give dynamic functionalities for the parsing. For more information on macros, read the [Doxia Macro Guide](./macros/index.html). 
+`AbstractParser` is the base class for parsers. It runs macros, which insert generated content such as a table of
+contents while a document is parsed. See the [Doxia Macros Guide](./macros/index.html).
 
-Finally, the _ParserModule_ interface is the last part of the puzzle. It provides main definitions of a given Doxia module and it is used by the _doxia-site-renderer_ site tools. 
+A `ParserModule` tells the site renderer which source directory and file extensions belong to a parser, for example
+`src/site/markdown` and `.md` for the Markdown parser.
 
 ## Doxia Modules
 
-A Doxia module is an implementation of a given markup language like APT or Xdoc. Each module should implement these interfaces: 
-
-- _Parser_ interface, more specifically the _AbstractParser_ class
-
-- _ParserModule_ interface
-
-Several modules provide also a _Sink_ implementation to handle a specific output markup language. 
-
-For more information on modules, read the [Doxia Module Guide](./modules/index.html). 
+A Doxia module implements one markup format. It provides a `Parser`, usually by extending `AbstractParser`, and a
+`ParserModule`. Most modules also provide a `Sink` and a `SinkFactory`, so they can write the format as well as read
+it. The [format references](./references/index.html) list which modules can do what, and
+[Create a Doxia Module](./developers/modules.html) shows how to write one.
 
 ## Doxia Site Tools
 
-The _Site Tools_ are a collection of tools to renderer an output. The main tool used by Maven, specifically the [Maven Site Plugin](http://maven.apache.org/plugins/maven-site-plugin/), is the _doxia-site-renderer_ which renders in HTML any documents written with supported markup syntax. It uses [Velocity templates](http://velocity.apache.org/) to customize the renderer and the _doxia-site-model_ tool to decorate the renderer. This component describes the layout of the site defined in the _site.xml_ file. 
-
-
+[Doxia Sitetools](./doxia-sitetools/) builds a whole site from single documents. The site renderer, used by the
+[Maven Site Plugin](/plugins/maven-site-plugin/), parses every source document with the matching module, writes it
+through the HTML sink, and decorates the result with a skin, using [Apache Velocity](https://velocity.apache.org/)
+templates. The site model describes the menus, breadcrumbs and other decoration set in `site.xml`.

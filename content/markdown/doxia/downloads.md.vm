@@ -24,8 +24,23 @@ specific language governing permissions and limitations
 under the License.
 -->
 
+
 # Maven Doxia Releases
 
-Releases of Maven Doxia are made available in both binary and source distributions. Individual JARs are also made available through Apache Maven repositories.
+Doxia is published to Maven Central under the
+[`org.apache.maven.doxia`](https://central.sonatype.com/namespace/org.apache.maven.doxia) group ID. To write a Maven
+site you don't need to download anything: the Maven Site Plugin brings Doxia with it.
 
-Releases of all Doxia sub-project components (currently Doxia, Doxia Sitetools and Doxia Tools) may be downloaded from Maven Central in the usual way.
+To use Doxia in your own code, add the modules you need as dependencies, for example:
+
+```xml
+<dependency>
+  <groupId>org.apache.maven.doxia</groupId>
+  <artifactId>doxia-module-markdown</artifactId>
+  <version>${doxiaVersion}</version>
+</dependency>
+```
+
+Source releases of each component, with their signatures, are listed on the download page of the component:
+[Doxia](./doxia/download.html), [Doxia Sitetools](./doxia-sitetools/download.html) and
+[Doxia Converter](./doxia-tools/doxia-converter/download.html).
