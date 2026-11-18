@@ -45,8 +45,8 @@ Maven 3.10.2 is a bugfix release for 3.10.1. It fixes regressions reported after
 
 While Maven itself has no new feature or improvement since 3.10.1 release, the included Maven Resolver 2.0.26 has some:
 
-- Treat HTTP response code 502 and 504 as retryable
-- Improve backward compatibility with Resolver 1.9 (Maven 3.9.x)
+- Treat HTTP response code 502 and 504 as retryable response
+- Improve backward compatibility with Resolver 1.9.x / Maven 3.9.x
 
 ### Regression fixes
 
@@ -64,7 +64,7 @@ None.
 
 ### Stricter POM validation
 
-Maven 3.10.0 raises the POM validation level: many WARNINGs from the 3.9 lineage (in fact, from the 3.1 lineage) will
+Maven 3.10.x raises the POM validation level: many WARNINGs from the 3.9 lineage (in fact, from the 3.1 lineage) will
 now FAIL the build. Things like duplicated dependency entries or duplicated plugin entries will not be tolerated
 anymore. This aspect was not changed since Maven 3.1 lineage, and was really time to force users to clean up their
 POMs. The checks promoted to errors for the project being built are the 3.1 level ones: duplicated plugins, invalid
