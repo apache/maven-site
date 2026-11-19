@@ -1,0 +1,121 @@
+<!--
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
+
+# Maven 3.10.2 Release Notes
+
+The Apache Maven team would like to announce the release of Maven 3.10.2.
+
+Maven 3.10.2 is [available for download][0].
+
+The core release is independent of plugin releases. Further releases of plugins will be made separately. See the [Plugin list][1] for more information.
+
+If you have any questions, please consult:
+
+- the website: [https://maven.apache.org/][2]
+- the maven-user mailing list: [https://maven.apache.org/mailing-lists.html](/mailing-lists.html)
+- the reference documentation: [https://maven.apache.org/ref/3.10.2/](/ref/3.10.2/)
+
+## Overview About the Changes
+
+The main driver for new generation was to align Maven 3 and 4 majors versions on same Resolver version. Hence, Maven 3.10 is now using Resolver 2.0 lineage, same one that is used by Maven 4+. On the other hand, at "Maven level", changes are kept minimal, and upgrading should be pretty straightforward. Also, 3.10 received many security and other enhancements as well. Still, most of the changes happened "under the surface", end users might even be unaware of them. The key changes are listed below.
+
+Maven 3.10.2 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
+
+## Notable Changes in Maven 3.10.1
+
+Maven 3.10.2 is a bugfix release for 3.10.1. It fixes regressions reported after 3.10.1, backports fixes from Maven 4, and makes startup lighter.
+
+### New Features and Improvements
+
+While Maven itself has no new feature or improvement since 3.10.1 release, the included Maven Resolver 2.0.26 has some:
+
+- Treat HTTP response code 502 and 504 as retryable response
+- Improve backward compatibility with Resolver 1.9.x / Maven 3.9.x
+
+### Regression fixes
+
+There are too many to list here; see the full changelog below.
+
+## Full changelog
+
+For a full list of changes, please refer to the [GitHub release page](https://github.com/apache/maven/releases/tag/maven-3.10.2).
+
+## Known issues
+
+None.
+
+## Potentially Breaking Core Changes (if migrating from 3.9.x)
+
+### Stricter POM validation
+
+Maven 3.10.x raises the POM validation level: many WARNINGs from the 3.9 lineage (in fact, from the 3.1 lineage) will
+now FAIL the build. Things like duplicated dependency entries or duplicated plugin entries will not be tolerated
+anymore. This aspect was not changed since Maven 3.1 lineage, and was really time to force users to clean up their
+POMs. The checks promoted to errors for the project being built are the 3.1 level ones: duplicated plugins, invalid
+characters in a version, malformed snapshot versions and reserved or malformed repository ids. Dependencies keep being
+validated at the minimal level (and failure lead to transitive dependencies not being available). 
+`relativePath` of a parent is validated as well, which no Maven 3.x version did so far.
+To temporarily disable the stricter validation add `-Dmaven.resolver.validation=off` to your Maven invocation.
+
+### Classpath ordering change
+
+Dependency classpath ordering changed from "pre-order" (depth-first) to "level-order" (breadth-first),
+aligning with Maven 4 behavior and Resolver 2.x defaults.
+
+To restore the previous behavior, add `-Daether.system.dependencyVisitor=preOrder` to your Maven invocation.
+
+### Changes in the Super POM
+
+- removed deprecated `release-profile`; each project should have its own release profile
+- removed plugin management; each project should have its own plugin management
+- set default values for `project.build.sourceEncoding` and `project.reporting.outputEncoding` to `UTF-8`
+- set a default value for `project.build.outputTimestamp`, which makes builds reproducible by default
+
+### Artifact and metadata validation in Resolver
+
+Resolver 2.x validates artifact and metadata coordinates, and rejects values that cannot be safely mapped to a
+repository layout. A build relying on non-conformant coordinates can be unblocked with `maven.resolver.validation`
+set to `mild` or `off`, but the coordinates should be fixed instead.
+
+### Repository credentials are scoped
+
+Credentials of a `settings.xml` server are only offered to repositories and mirrors whose origin Maven could associate
+with that server id. Origins Maven cannot securely associate via id can be declared with `<repositoryOrigins>`, see
+[Server Repository Origins](/settings.html#Server_Repository_Origins).
+
+### Plugin validation
+
+Plugins and extensions used by your build are checked against Maven supported APIs and conventions: this "plugin
+validation" may report WARNINGs at the end of your build. See [plugin validation documentation](../../guides/plugins/validation/)
+to better understand what to do when your build suffers from such warnings.
+
+### Reproducible Builds
+
+Reproducible Builds is active by default, and with a fixed timestamp value for archive entries:
+if you rely on timestamp value for your consumption, updating timestamp value during release or even
+disabling Reproducible Builds may be a choice: see [FAQ](/guides/mini/guide-reproducible-builds.html).
+
+## Complete Release Notes
+
+See [complete release notes for all versions][3]
+
+[0]: ../../download.html
+[1]: ../../plugins/index.html
+[2]: https://maven.apache.org/
+[3]: ../../docs/history.html
