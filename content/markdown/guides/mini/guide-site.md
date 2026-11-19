@@ -322,6 +322,44 @@ With either setup, note the following:
 - Resource filtering also replaces `@...@` expressions by default. If a page contains such text, for example an email address, set `<useDefaultDelimiters>false</useDefaultDelimiters>` and declare only the delimiters you need.
 - Keep binary files, such as images, out of the filtered directory, or copy them with a second `<resource>` without filtering, because filtering can corrupt them.
 
+## Configuring Parsers
+
+The Maven Site Plugin converts every source file to HTML using the [Doxia](/doxia/) parser for the source file's format (Markdown, XDoc, APT and so on). Since version 3.23.0 of the Maven Site Plugin, the [`parserConfigurations`](/plugins/maven-site-plugin/site-mojo.html#parserConfigurations) parameter sets properties of these parsers, for all files of a format or only for files at a given path.
+
+The parameter holds one element per parser id (`markdown`, `xdoc`, `apt` and so on), and each of them lists `configuration` elements. Each element sets properties of the parser, for example `emitComments` or `emitAnchorsForIndexableEntries`, and optionally restricts them to `patterns`:
+
+```xml
+<plugin>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-site-plugin</artifactId>
+  <configuration>
+    <parserConfigurations>
+      <markdown>
+        <configuration>
+          <patterns>
+            <pattern>glob:**/markdown/drafts/*.md</pattern>
+          </patterns>
+          <emitComments>true</emitComments>
+        </configuration>
+      </markdown>
+      <xdoc>
+        <configuration>
+          <emitComments>true</emitComments>
+        </configuration>
+      </xdoc>
+    </parserConfigurations>
+  </configuration>
+</plugin>
+```
+
+In this example, comments in the Markdown files directly inside `src/site/markdown/drafts` and in all XDoc files end up in the generated HTML. Other Markdown files keep the default of the Maven Site Plugin and drop their comments.
+
+A pattern starts with `glob:` or `regex:` and is matched against the absolute path of the source file. Use `glob:` where you can: it separates directories with `/` on every platform.
+
+A `regex:` pattern sees the platform's own separator, `\` on Windows. To work on every platform, accept both with an alternation, such as `regex:.*(/|\\)drafts(/|\\).*\.md`. Avoid a character class such as `[/\\]` followed by an escaped character: on macOS with Java 8 such a pattern fails to compile.
+
+The first `configuration` for the parser id with a matching pattern, or without patterns, is applied. Files without a matching `configuration` use the defaults of the Maven Site Plugin: `emitComments` is `false` and `emitAnchorsForIndexableEntries` is `true`, and a `configuration` that does not set these two properties gets the same defaults. Any other parser property that a `configuration` does not set keeps the value left by the previous file of the same parser, because Doxia uses one parser instance for all files; set such a property in every `configuration` of that parser.
+
 ## Multi-module Sites
 
 Running `mvn site` on a multi-module project builds the site of every module individually, and relative links between module sites work only after you stage or deploy. See [Building multi-module sites](./guide-multimodule-site.html) for staging, deployment, site descriptor inheritance and aggregate reports.
