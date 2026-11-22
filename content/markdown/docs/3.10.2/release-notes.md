@@ -37,7 +37,7 @@ The main driver for new generation was to align Maven 3 and 4 majors versions on
 
 Maven 3.10.2 requires Java 8 or above to run, same as the Maven 3.9.x lineage.
 
-## Notable Changes in Maven 3.10.1
+## Notable Changes in Maven 3.10.2
 
 Maven 3.10.2 is a bugfix release for 3.10.1. It fixes regressions reported after 3.10.1, backports fixes from Maven 4, and makes startup lighter.
 
