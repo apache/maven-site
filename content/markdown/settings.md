@@ -281,6 +281,25 @@ The binding is controlled by the `maven.repository.credentialScope` user propert
 | `strict`           | Credentials are bound to the known origins. A server without any origin is not used.               |
 | `id`               | Previous behavior: credentials are matched by server ID only.                                      |
 
+Maven 3.9.17 and later 3.9 releases support `repositoryOrigins` and the property too, with another default:
+`warn`. Credentials are matched by server ID only, as before, and Maven reports a warning wherever the `origin` scope
+would not use them, so the settings can be completed before the move to Maven 3.10. The `warn` value exists in
+Maven 3.9 only.
+
+##### The `central` Server ID
+
+`central` is the ID of the default repository, which Maven always knows, so a server with this ID is bound to
+`https://repo.maven.apache.org`. Since Maven 3.10.3 it is also bound to the origins Maven Central is published to,
+`https://central.sonatype.com` and `https://ossrh-staging-api.central.sonatype.com`, because `central` is the server ID
+commonly used for publishing. With Maven 3.10.0 to 3.10.2, declare `https://central.sonatype.com` in the
+`repositoryOrigins` of the server.
+
+The publishing origins are bound only as long as `central` stands for the default repository alone. When a mirror or a
+repository with the ID `central` is declared in `settings.xml` at another host, or the server declares its own
+`repositoryOrigins`, the credentials are bound to those origins instead and are not used for Maven Central. Use
+another server ID for publishing in that case, or add the publishing origin to `repositoryOrigins`. A `pom.xml` that
+declares a repository `central` at another host does not receive the credentials.
+
 For Maven 4, `repositoryOrigins` in project settings (`.mvn/settings.xml`) are ignored with a warning,
 like credentials are, so a project cannot widen the set of hosts your credentials are sent to.
 

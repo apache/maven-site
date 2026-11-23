@@ -58,7 +58,27 @@ For a full list of changes, please refer to the [GitHub release page](https://gi
 
 ## Known issues
 
-None.
+### Snapshot deployments to Maven Central fail with status 401 when the server ID is `central`
+
+Maven binds the server ID `central` to its default repository at `https://repo.maven.apache.org`, so the credentials of
+a `settings.xml` server with that ID are not used for `https://central.sonatype.com`, where snapshots are deployed.
+`central` is the default `publishingServerId` of the `central-publishing-maven-plugin`. Releases published as a bundle
+are not affected.
+
+This is fixed in Maven 3.10.3. With an earlier 3.10 release, declare the origin on the server:
+
+```xml
+<server>
+  <id>central</id>
+  <username>...</username>
+  <password>...</password>
+  <repositoryOrigins>
+    <repositoryOrigin>https://central.sonatype.com</repositoryOrigin>
+  </repositoryOrigins>
+</server>
+```
+
+See [Server Repository Origins](/settings.html#Server_Repository_Origins).
 
 ## Potentially Breaking Core Changes (if migrating from 3.9.x)
 
@@ -98,6 +118,17 @@ set to `mild` or `off`, but the coordinates should be fixed instead.
 Credentials of a `settings.xml` server are only offered to repositories and mirrors whose origin Maven could associate
 with that server id. Origins Maven cannot securely associate via id can be declared with `<repositoryOrigins>`, see
 [Server Repository Origins](/settings.html#Server_Repository_Origins).
+
+When the credentials of a server are not used, a deployment or a download that worked with Maven 3.9 fails with
+`HTTP Status: 401`, and the log contains this warning before the failure (it is not printed with `-q`):
+
+```
+[WARNING] Not using credentials of server 'company' for repository https://repo.example.com/releases/: the origins declared for this id are [https://mirror.example.com]. Add 'https://repo.example.com' to <repositoryOrigins> of that server in settings if these credentials belong there, or set maven.repository.credentialScope=id to restore legacy id-only credential matching.
+```
+
+Add the origin named in the warning to the `<repositoryOrigins>` of that server. Setting
+`maven.repository.credentialScope=id` turns the scoping off for the whole build, so use it only until the settings are
+updated.
 
 ### Plugin validation
 
