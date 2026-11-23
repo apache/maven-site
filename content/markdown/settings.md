@@ -227,6 +227,11 @@ listed in `<activeProfiles>` and mirrors. Repositories from other profiles, and 
 For such a repository, Maven reports a warning, or refuses the credentials
 when `maven.repository.credentialScope=strict` is set.
 
+Since Maven 3.10.3 and 3.9.17, a deployment repository given on the command line as `id::url` with the
+`altDeploymentRepository`, `altReleaseDeploymentRepository` or `altSnapshotDeploymentRepository` user property of the
+[Maven Deploy Plugin](/plugins/maven-deploy-plugin/) is known when Maven starts, so the server with that ID is bound to
+its origin.
+
 The binding protects your credentials: before, Maven matched credentials only by server ID, so any `pom.xml`, including
 the POM of a dependency or a parent, could declare a repository with the same ID pointing to another host and
 receive your username and password. Now, once Maven knows the hosts of a server ID, its credentials are sent only
