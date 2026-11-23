@@ -1203,11 +1203,11 @@ for the POM as a whole. Since they do not exist in profile builds, these cannot 
 <project xmlns="http://maven.apache.org/POM/4.0.0">
   ...
   <build>
-    <sourceDirectory>\${project.basedir}/src/main/java</sourceDirectory>
-    <scriptSourceDirectory>\${project.basedir}/src/main/scripts</scriptSourceDirectory>
-    <testSourceDirectory>\${project.basedir}/src/test/java</testSourceDirectory>
-    <outputDirectory>\${project.basedir}/target/classes</outputDirectory>
-    <testOutputDirectory>\${project.basedir}/target/test-classes</testOutputDirectory>
+    <sourceDirectory>${project.basedir}/src/main/java</sourceDirectory>
+    <scriptSourceDirectory>${project.basedir}/src/main/scripts</scriptSourceDirectory>
+    <testSourceDirectory>${project.basedir}/src/test/java</testSourceDirectory>
+    <outputDirectory>${project.basedir}/target/classes</outputDirectory>
+    <testOutputDirectory>${project.basedir}/target/test-classes</testOutputDirectory>
     ...
   </build>
 </project>
