@@ -43,13 +43,13 @@ For more information, please see [How to Help](https://maven.apache.org/guides/d
 
 ## What plugin languages does Maven support? What about [insert language here]?
 
-Maven plugins are written in Java. Earlier releases also supported Beanshell, which is no longer supported.
+Maven plugins are written in Java. Beanshell plugins are deprecated.
 Java is the preferred language for its familiarity and speed.
 We get asked a lot whether Maven will support other languages, in particular Groovy.
 We will allow the use of Groovy (and virtually any other scripting language - if there is demand), if someone can commit
 a small amount of time to implementing a factory for it.
-Beanshell was more mature, and we wanted a language that users would find answers for when they look, and that when they
-found bugs, it was clearly defined where they actually were.
+Beanshell is more mature, and we want a language that users will find answers for when they look, and that when they
+find bugs, it is clearly defined where they actually are.
 We may consider emphasising a different language if there are compelling technical reasons for doing so.
 If you have a suggestion, feel free to contact the development list.
 
