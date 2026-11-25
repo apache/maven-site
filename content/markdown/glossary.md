@@ -63,7 +63,7 @@ sometimes be confusing for newcomers.
   goals and use the metadata found in the POM to perform their task.
   Examples of plugins are: jar, eclipse, war. Plugins are primarily
   written in Java, but Maven also supports writing plug-ins in
-  Beanshell and Ant Scripting.
+  Ant Scripting.
 
 - **Mojo**: A plugin written in Java consists of one or more mojos. A
   mojo is a Java class that implements the

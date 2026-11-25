@@ -238,7 +238,7 @@ maven-verifier is retired, and 2.0.0 is its final release. Existing tests keep w
 
 ## maven-invoker-plugin
 
-You can use [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoker-plugin/) to invoke Maven and to provide some BeanShell/Groovy tests. Tests written in this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
+You can use [maven-invoker-plugin](https://maven.apache.org/plugins/maven-invoker-plugin/) to invoke Maven and to provide some Groovy tests. Tests written in this way don't run under JUnit/TestNG; instead, they're run by Maven itself.
 
 You can take a look at the [maven-install-plugin](https://github.com/apache/maven-install-plugin/tree/master/src/it) to see how integration tests are written.
 
