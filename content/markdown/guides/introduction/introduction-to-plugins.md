@@ -45,6 +45,8 @@ The packaging defines what your project produces. Default packaging - jar - prod
 
 A packaging associates - binds - [goals](#what-is-a-mojo-and-why-the-h—-is-it-named-‘mojo’) to [lifecycle](https://maven.apache.org/ref/current/maven-core/lifecycles.html). One of the lifecycle goal "must" set the default artifact.
 
+Packaging is defined by the [`packaging`](https://maven.apache.org/pom.html#packaging) element in pom.
+
 # Resources
 
 1. [Plugin Development Center](/plugin-developers/index.html)
