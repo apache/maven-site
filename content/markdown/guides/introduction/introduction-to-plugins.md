@@ -39,13 +39,15 @@ MOJO is a play on POJO (Plain-old-Java-object), substituting "Maven" for "Plain"
 
 The build lifecycle is a series of common **stage**s through which all project builds naturally progress. Plugin goals are bound to specific stages in the lifecycle.
 
-## What is the Packaging ?
+See reference documentation for [built-in lifecycles](ref/current/maven-core/lifecycles.html).
 
-The packaging defines what your project produces. Default packaging - jar - produces a jar file. "war" produces a war file ; "ear" prduces an ear file.
+## What is a Packaging?
 
-A packaging associates - binds - [goals](#what-is-a-mojo-and-why-the-h—-is-it-named-‘mojo’) to [lifecycle](https://maven.apache.org/ref/current/maven-core/lifecycles.html). One of the lifecycle goal "must" set the default artifact.
+The packaging defines what your project produces. Default packaging - `jar` - produces a jar file. `war` produces a war file ; `ear` produces an ear file.
 
-Packaging is defined by the [`packaging`](https://maven.apache.org/pom.html#packaging) element in pom.
+It is done by associating (or binding) plugin goals to lifecycle phases: see for example [default bindings for built-in packagings](/ref/current/maven-core/default-bindings.html).
+
+When you define a new packaging plugin, you may want to create a new packaging type for it (TBD).
 
 # Resources
 
