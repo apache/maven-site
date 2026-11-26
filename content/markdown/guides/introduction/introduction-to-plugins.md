@@ -19,9 +19,11 @@ under the License.
 
 # Introduction to Maven Plugin Development
 
-Maven consists of a core engine which provides basic project-processing capabilities and build-process management, and a host of plugins which are used to execute the actual build tasks.
+Maven Plugin Development is the process of writing custom Java extensions for Apache Maven to automate tasks or add new behaviors to a project's build lifecycle.
 
 ## What is a Plugin?
+
+A plugin in Apache Maven is a reusable software module (a .jar package) that performs the actual tasks during a project's build process.
 
 "Maven" is really just a core framework for a collection of Maven Plugins. In other words, plugins are where much of the real action is performed, plugins are used to: create jar files, create war files, compile code, unit test code, create project documentation, and on and on. Almost any action that you can think of performing on a project is implemented as a Maven plugin.
 
