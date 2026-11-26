@@ -37,8 +37,13 @@ Consolidated view for all LATEST plugins release is visible in a [daily generate
 - Since June 2020, Maven Plugin API used by plugins >= 3.1.0 + Java 8 prerequisites [Technical details](https://s.apache.org/MVN-PLUGIN-MIGRATION-3.1)
 - In March 2023, Maven before 3.2.5 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), meaning that plugins should use 3.2.5 as minimum
 - In April 2023, Maven before 3.6.3 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), meaning that plugins should use 3.6.3 as minimum
-- In February 2024, Maven 4 after 4.0.0-alpha-12 will require Java 17 (as per [vote on the Mailing List](https://lists.apache.org/thread/bfkvvjftrxypp06yj8zj919fcz0dt2zt)).
 - In October 2025, Maven before 3.8.3 has been [marked as EOL](/docs/history.html#Maven_3.8.x_and_before), [PR#842](https://github.com/apache/maven-site/pull/842) meaning that plugins should use 3.9.0 as minimum (as per [Mailing List](https://lists.apache.org/thread/s2dvm1jg37vhrkkkplfknk494c68zfyv))
+ 
+## Maven 4 Plan
+
+- In February 2024, Maven 4 after 4.0.0-alpha-12 will require Java 17 (as per [vote on the Mailing List](https://lists.apache.org/thread/bfkvvjftrxypp06yj8zj919fcz0dt2zt)).
+- Maven 4.0 is about opening the door for a more ecosystem independent development of Maven itself, without leaving the users behind. Therefor, Maven 3.x plugins are expected to be compatible with Maven 4.0. With the release of Maven 4.0, the Maven 4 plugin API [will only be experimental](https://lists.apache.org/thread.html/7dmfmy8hlvbtl7xlhfzz1mqwz08j61kw).
+- The next minor version of Maven 4 will be 4.2 to align Maven's version and model version ([ML discussion](https://lists.apache.org/thread.html/sloz0jopgvwtz29m6tkzx5k6tr22h4hc), [PR](https://github.com/apache/maven/pull/13656))
 
 ## Context
 
