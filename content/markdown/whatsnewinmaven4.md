@@ -142,7 +142,7 @@ The other types are new:
 The `jar` and `processor` types use heuristic rules for deciding where to place the JAR file, but the result is not always what the developer wants.
 The types with `classpath-` or `modular-` prefix give control to the developer.
 
-**Limitation:** As of Maven 4.0.0, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) complies with the new types.
+**Limitation:** As of Maven 4.0.0, only Maven Compiler Plugin (version 4.0.0-beta-3 and newer) supports the new types.
 Other plugins will be updated progressively.
 
 ### New packaging type: bom
@@ -615,6 +615,8 @@ This allows teams to share repository, mirror, and server configurations as part
 ### Auto CI detection
 
 Maven 4 automatically detects common CI environments and adjusts its behavior accordingly.
+Supported environments include GitHub Actions, Jenkins, CircleCI, TeamCity, Travis CI, and any
+environment that sets the standard `CI=true` environment variable.
 When running in CI, Maven enables batch mode and uses a simpler output format suitable for log files,
 without requiring explicit `-B` flags in CI scripts.
 
@@ -673,8 +675,9 @@ upgrading to Maven 4.
 
 Key improvements in Resolver 2.0 include:
 
-* **Java native HTTP transport**: The legacy Wagon-based transport is replaced with a modern HTTP client built on
-  Java's `HttpClient` API.
+* **Improved HTTP transport**: Resolver 2.0 ships multiple transport implementations, including a JDK native HTTP
+  transport built on Java's `HttpClient` API (available as an optional add-on). Maven 4 continues to use the
+  Apache HttpClient-based transport by default.
 * **Named locks**: Safe concurrent access to the local repository using named read-write locks, replacing the
   file-based locking mechanism from Resolver 1.x. This improves reliability when multiple Maven processes
   (or the concurrent builder) access the same local repository simultaneously.
