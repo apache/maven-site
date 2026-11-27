@@ -61,9 +61,8 @@ sometimes be confusing for newcomers.
 - **Plug-in**: Maven is organized in plugins. Every piece of
   functionality in Maven is provided by a plugin. Plugins provide
   goals and use the metadata found in the POM to perform their task.
-  Examples of plugins are: jar, eclipse, war. Plugins are primarily
-  written in Java, but Maven also supports writing plug-ins in
-  Ant Scripting.
+  Examples of plugins are: jar, eclipse, war. Plugins are
+  written in Java.
 
 - **Mojo**: A plugin written in Java consists of one or more mojos. A
   mojo is a Java class that implements the
