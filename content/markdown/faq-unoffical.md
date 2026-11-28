@@ -314,8 +314,7 @@ The antrun plugin can be executed on demand only if:
 - a variable is passed from the command line, eg `-Dtarget=foo antrun:run`
 - the appropriate target in the script is executed based on the variable
 
-However, it is recommended that developers write plugins for their goals (Ant support for
-plugins will be available soon, currently you must write them in java or beanshell).
+However, it is recommended that developers write plugins for their goals (currently you must write them in Java).
 
 _Plugins and Lifecycle, Ant-related_
 

@@ -69,7 +69,7 @@ Note that you must give the plugin prefix as the argument to plugin, not it's ar
 
 There are currently two alternatives:
 
-- For use in a plugin written in Java, Beanshell or other Java-like scripting language, you can construct
+- For use in a plugin written in Java, you can construct
   the Ant tasks using the [instructions given in the Ant documentation](https://ant.apache.org/manual/antexternal.html).
 - If you have very small amounts of Ant script specific to your project, you can use
   the [AntRun plugin](/plugins/maven-antrun-plugin/index.html).
