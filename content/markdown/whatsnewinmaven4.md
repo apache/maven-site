@@ -29,7 +29,7 @@ Throughout the years, Maven has maintained backward compatibility, especially of
 The POM file fulfills two needs.
 First, the POM holds all the information and configuration that are needed to build the artifact.
 After the artifact is created, this build information is not relevant anymore.
-Second, the POM contains information such as dependencies that is needed by projects which depend on the
+Second, the POM contains information, such as dependencies, that is needed by projects that depend on the
 artifact.
 These dependent projects are called the "consumers".
 
@@ -603,13 +603,12 @@ Unlike standard Java properties files, Maven properties files are UTF-8 encoded,
 `${includes}` key, and undergo property substitution with access to environment variables, system properties, and
 session properties.
 
-This replaces the need to pass many `-D` flags on the command line or rely on `MAVEN_OPTS` for configuration that
-should travel with the project.
+This replaces the need to pass many `-D` flags on the command line for configuration that should travel with the project.
 
 ### Project-level settings
 
 Maven 4 supports project-level `settings.xml` files in `${session.rootDirectory}/.mvn/settings.xml`, in addition to
-the existing user-level (`~/.m2/settings.xml`) and installation-level (`${maven.home}/conf/settings.xml`) settings.
+the existing user-level (`~/.m2/settings.xml`) and installation-level (`${maven.home}/conf/settings.xml`) settings ([MNG-5659][36]).
 This allows teams to share repository, mirror, and server configurations as part of the project source code.
 
 ### Auto CI detection
@@ -678,9 +677,8 @@ Key improvements in Resolver 2.0 include:
 * **Improved HTTP transport**: Resolver 2.0 ships multiple transport implementations, including a JDK native HTTP
   transport built on Java's `HttpClient` API (available as an optional add-on). Maven 4 continues to use the
   Apache HttpClient-based transport by default.
-* **Named locks**: Safe concurrent access to the local repository using named read-write locks, replacing the
-  file-based locking mechanism from Resolver 1.x. This improves reliability when multiple Maven processes
-  (or the concurrent builder) access the same local repository simultaneously.
+* **Named locks**: Safe concurrent access to the local repository using named read-write locks.
+  This improves reliability when multiple Maven processes (or the concurrent builder) access the same local repository simultaneously.
 * **Scope management**: Dependency scope handling is now defined by Maven itself rather than being hardcoded in the
   resolver, making scope semantics more flexible and consistent.
 * **BOM exclusions**: Exclusions declared on BOM imports are now properly supported (see also the [bom packaging](#new-packaging-type-bom) section above).
@@ -792,4 +790,5 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [33]: https://maven.apache.org/guides/mini/guide-encryption-4.html
 [34]: https://issues.apache.org/jira/browse/MNG-7763
 [35]: https://issues.apache.org/jira/browse/MNG-7698
+[36]: https://issues.apache.org/jira/browse/MNG-5659
 
