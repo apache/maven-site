@@ -788,7 +788,7 @@ The Maven issue tracker provides a [full list of all resolved issues of Maven 4.
 [31]: https://cstamas.org/blog/2024/09/handling-sensitive-data-in-maven/
 [32]: https://maven.apache.org/guides/introduction/introduction-to-the-standard-directory-layout.html
 [33]: https://maven.apache.org/guides/mini/guide-encryption-4.html
-[34]: https://issues.apache.org/jira/browse/MNG-7763
-[35]: https://issues.apache.org/jira/browse/MNG-7698
-[36]: https://issues.apache.org/jira/browse/MNG-5659
+[34]: https://github.com/apache/maven/issues/9225
+[35]: https://github.com/apache/maven/issues/8820
+[36]: https://github.com/apache/maven/issues/6464
 
