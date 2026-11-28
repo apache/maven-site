@@ -702,10 +702,12 @@ compatibility with Maven 4.
 
 The Maven Upgrade Tool can be used to:
 
-* Update your POM files to use the new model version 4.1.0 (if desired)
-* Identify deprecated features and suggest replacements
-* Migrate from deprecated plugin configurations to their modern equivalents
-* Validate that your project is ready for Maven 4
+* Fix POM incompatibilities with Maven 4 (`combine.children`/`combine.self` attribute renames, duplicate dependency/plugin removal, bad `parent.relativePath`, etc.)
+* Upgrade plugins to Maven 4-compatible versions
+* Optionally update the model version to 4.1.0 (Maven 4-only features, including intelligent inference to remove redundant declarations)
+* Upgrade deprecated lifecycle phase names to their Maven 4 equivalents
+
+It ships with Maven 4 (no extra installation needed) and uses a `check`/`apply` workflow so you can preview changes before writing them.
 
 Refer to [Maven Upgrade Tool](https://maven.apache.org/tools/mvnup.html) for more information on usage and the upgrade process in general.
 
